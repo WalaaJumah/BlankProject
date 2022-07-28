@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="sporter.com Smoke Test">
+    <test name="sporter.com Smoke Test" preserve-order="true">
+        <parameter name="ReviewDescription" value="This is test data for Review Description"/>
+        <classes>
+            <class name="sporter_test.ProductDetailsTestCases"/>
+            <!--            <class name="sporter_test.AddToCartTestCases"/>-->
+        </classes>
+    </test><!-- test -->
+</suite> <!-- Suite -->

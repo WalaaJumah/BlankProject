@@ -1,15 +1,13 @@
 package sporter_test;
 
 import core.BaseTest;
-import core.SeleniumWait;
+import core.DataHelperAndWait;
 import org.testng.annotations.Test;
 import sporter_pages.AddToCartPage;
 import sporter_pages.ProductDetailsPage;
 
-import java.util.concurrent.TimeUnit;
-
 public class AddToCartTestCases extends BaseTest {
-    private SeleniumWait wait= new SeleniumWait();
+    private DataHelperAndWait wait= new DataHelperAndWait();
     private AddToCartPage addToCartPage;
     private ProductDetailsPage productDetailsPage;
     @Test(description = "Make sure the shopper is able to add the product to the cart successfully",priority = 1)
@@ -17,7 +15,9 @@ public class AddToCartTestCases extends BaseTest {
     public void addProductToCartSuccessfullyAsGuestUser() {
         productDetailsPage= new ProductDetailsPage(webDriver);
         addToCartPage= new AddToCartPage(webDriver);
-        productDetailsPage.switchCountryThenAddProductToCart();
+        productDetailsPage.switchCountry();
+        productDetailsPage.clickOnProductInHomePage();
+        productDetailsPage.addToCart();
         productDetailsPage.viewCart();
         wait.implicitWait(20);
         addToCartPage.clickOnProceedToCheckOutButton();

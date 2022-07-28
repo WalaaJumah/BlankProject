@@ -1,23 +1,20 @@
 package sporter_pages;
 
-import core.SeleniumWait;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import core.DataHelperAndWait;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.Keys;
 
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static core.BaseTest.webDriver;
 
 public class AddToCartPage {
+    JavascriptExecutor js;
     public AddToCartPage(WebDriver webDriver) {
         PageFactory.initElements(webDriver, this);
+        //How this statment will be work
+        this.js = (JavascriptExecutor) webDriver;
     }
     @FindBy(xpath= "//*[@id=\"algolia-searchbox\"]/button")
     private WebElement searchBtn;
@@ -77,24 +74,24 @@ public class AddToCartPage {
     Select citymenu= new Select(webDriver.findElement(By.xpath("/html/body/div[2]/main/div[2]/div/div[2]/div[3]/dl/dd[2]/div/div/form/div/div[7]/div/div/span/span[1]/span/span[1]")));
 
 
-    SeleniumWait seleniumWait= new SeleniumWait();;
+    DataHelperAndWait dataHelperAndWait = new DataHelperAndWait();;
 
     public void clickOnSearchBtn() {
-        seleniumWait.waitToBeClickable(searchBtn,5);
+        dataHelperAndWait.waitToBeClickable(searchBtn,5);
         this.searchBtn.click();
-        seleniumWait.waitToBeClickable(productCard,5);
+        dataHelperAndWait.waitToBeClickable(productCard,5);
         this.productCard.click();
     }
     public void clickOnSearchResult() {
-        seleniumWait.waitToBeClickable(productCard,5);
+        dataHelperAndWait.waitToBeClickable(productCard,5);
         this.productCard.click();
     }
     public void clickOnProceedToCheckOutButton() {
-        seleniumWait.waitToBeClickable(proceedToCheckOutBtn,5);
+        dataHelperAndWait.waitToBeClickable(proceedToCheckOutBtn,5);
         this.proceedToCheckOutBtn.click();
     }
     public void clickOnGuestCheckoutBtn() {
-        seleniumWait.waitToBeClickable(guestCheckoutBtn,5);
+        dataHelperAndWait.waitToBeClickable(guestCheckoutBtn,5);
         this.guestCheckoutBtn.click();}
 
 public void fillShippingInformation(){
@@ -106,14 +103,14 @@ public void fillShippingInformation(){
         this.addressLineOneField.sendKeys("Ali Street");
         this.addressLineTwoField.sendKeys("Ali Street2");
         this.cityField.click();
-        seleniumWait.implicitWait(10);
+        dataHelperAndWait.implicitWait(10);
        // this.CityFieldSearch.sendKeys("Dubai");
        this.citymenu.selectByIndex(1);
 
 
 
 
-        seleniumWait.implicitWait(10);
+        dataHelperAndWait.implicitWait(10);
         this.countinueBtn.click();
 }
 public void clickOnContinueBtnInShippingPage(){
