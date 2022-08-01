@@ -6,15 +6,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
+import java.util.List;
 public class ProductDetailsPage {
     private DataHelperAndWait dataHelperAndWait = new DataHelperAndWait();
-    JavascriptExecutor js;
     public ProductDetailsPage(WebDriver webDriver) {
         PageFactory.initElements(webDriver, this);
-        //How this statment will be work
-//        this.js = (JavascriptExecutor) webDriver;
     }
+    //declare all locators related to the Product Details Page
     @FindBy(id = "qty")
     private WebElement quantityField;
     @FindBy(xpath = "//a[@class='btn-qty-control btn-qty-control--plus']")
@@ -23,20 +21,12 @@ public class ProductDetailsPage {
     private WebElement qtyMinusButton;
     @FindBy(id = "product-addtocart-button")
     private WebElement addToCartBtn;
-        @FindBy(id = "popup-block")
+    @FindBy(id = "popup-block")
     private WebElement cartPopUp;
-//    @FindBy(xpath = "/html/body/div[5]/div/div[2]/a[1]")
-//    private WebElement keepShippingBtn;
     @FindBy(xpath = "//*[@id=\"popup-block\"]/div[2]/a[1]")
     private WebElement keepShippingBtn;
     @FindBy(xpath = "//button[@class='button close-popup-err']")
     private WebElement inconvenienceWarningMsg;
-
-
-
-//@FindBy( className = "custom-button close-popup shopping-btn")
-//private WebElement keepShippingBtn;
-
     @FindBy(xpath = "//*[@id=\"popup-block\"]/div[2]/a[2]")
     private WebElement viewCartBtn;
     @FindBy(id = "option-label-size-165-item-10037")
@@ -53,7 +43,7 @@ public class ProductDetailsPage {
     private WebElement aeCountry;
     @FindBy(xpath = "//li[@class='country_switch']/span[@class='OM']")
     private WebElement omanCountry;
-    @FindBy(xpath="//li[@class='country_switch']/span[@class='JO']")
+    @FindBy(xpath = "//li[@class='country_switch']/span[@class='JO']")
     private WebElement joCountry;
     @FindBy(xpath = "//*[@id=\"maincontent\"]/div[3]/div/div[2]/div[2]/a[1]/picture/img")
     private WebElement firstProductInHomePage;
@@ -81,30 +71,39 @@ public class ProductDetailsPage {
     private WebElement arabicLangBtn;
     @FindBy(xpath = "//*[text()='English']")
     private WebElement englishLangBtn;
-    @FindBy(id="switcher-language")
+    @FindBy(id = "switcher-language")
     private WebElement languageSwitcher;
     @FindBy(xpath = "//span[contains(text(),\"We're sorry for not being able to provide you with\")]")
     private WebElement OOSMsg;
     @FindBy(xpath = "//div[@class='error-content-outer offer-not-available']/div[@class='block-content-wrapper search-outer']")
     private WebElement productUnavialableForCountry;
-
-    @FindBy(partialLinkText= "Sales & Offe")
-    private WebElement salesAndOffersMenu;
-
-    @FindBy(linkText= "Shop By")
+    @FindBy(linkText = "Shop By")
     private WebElement shopByMenyu;
-    @FindBy(css="div[class='product-column--side'] span[class='price']")
+    @FindBy(css = "div[class='product-column--side'] span[class='price']")
     private WebElement productPrice;
-    @FindBy(xpath="//input[@id='search']")
+    @FindBy(xpath = "//input[@id='search']")
     private WebElement searchField;
-    @FindBy (xpath="//select")
+    @FindBy(xpath = ".//*[@class='nav-primary']/li[1]")
+    private WebElement shopeByMenu;
+    @FindBy(xpath = ".//*[@class='cd-dropdown-content']/li[8]")
+    private WebElement salesAndOffersMenu;
+    @FindBy(xpath = "//select")
     private WebElement bundleMenu;
+    @FindBy(xpath = ".//*[@class='swiper-wrapper clearfix']/li[3]")
+    private WebElement buy1Get1Card;
+    @FindBy(xpath = "//ol[@class='products list items product-items']//li")
+    private WebElement firstProductInTheCategoryList;
+    @FindBy(xpath = "//ol[@class='products list items product-items']//li")
+    private List productsListInTheCategoryPage;
+    @FindBy(xpath = "//strong[contains(text(),'Free')]")
+    private WebElement freeProductLabel;
+    @FindBy(xpath = "//ol[@class='products list items product-items']//li")
+    private List<WebElement> megaMenuList;
+
     //Getter Methods
-    public WebElement getBundleMenu(){return bundleMenu;}
+    public WebElement getBundleMenu() {return bundleMenu;}
     public WebElement getQuantityField() {return quantityField;}
-    public WebElement getQtyPlusButton() {
-        return qtyPlusButton;
-    }
+    public WebElement getQtyPlusButton() {return qtyPlusButton;}
     public WebElement getQtyMinusButton() {
         return qtyMinusButton;
     }
@@ -132,11 +131,11 @@ public class ProductDetailsPage {
     public WebElement getProductCard() {
         return productCard;
     }
-    public WebElement getInconvenienceWarningMsg(){return inconvenienceWarningMsg;}
+    public WebElement getInconvenienceWarningMsg() {return inconvenienceWarningMsg;}
     public WebElement getOOSMsg() {
         return OOSMsg;
     }
-    public WebElement getAddReviewButton(){return addReviewButton;}
+    public WebElement getAddReviewButton() {return addReviewButton;}
     public WebElement getProductUnavialableForCountry() {
         return productUnavialableForCountry;
     }
@@ -146,14 +145,15 @@ public class ProductDetailsPage {
     public WebElement getReviewToastMsg() {
         return reviewToastMsg;
     }
-    public WebElement getLanguageSwitcher(){return languageSwitcher;}
-
+    public WebElement getLanguageSwitcher() {return languageSwitcher;}
     public WebElement getCountryList() {
         return countryList;
     }
-    public WebElement getHomeBreadcrumbs(){return HomeBreadcrumbs;}
-    public WebElement getEnglishLangBtn(){return englishLangBtn;}
-    public WebElement getProductPrice(){return productPrice;}
+    public WebElement getHomeBreadcrumbs() {return HomeBreadcrumbs;}
+    public WebElement getEnglishLangBtn() {return englishLangBtn;}
+    public WebElement getProductPrice() {return productPrice;}
+    public WebElement getFreeProductLabel() {return freeProductLabel;}
+    public WebElement getFirstProductInTheCategoryList() {return firstProductInTheCategoryList;}
 
     //Define the main actions we need to execute our TCs
     public void clickOnTheProductAttrubuits() {
@@ -165,25 +165,16 @@ public class ProductDetailsPage {
         DataHelperAndWait.isDisplayed(addToCartBtn, 10);
         this.addToCartBtn.click();
     }
-
-    public void keepShopping() {
-//        DataHelperAndWait.waitForElement(keepShippingBtn,5);
-        //DataHelperAndWait.waitToBeVisible(keepShippingBtn, 5);
-        this.keepShippingBtn.click();
-    }
+    public void keepShopping() {this.keepShippingBtn.click();}
     public void viewCart() {
         this.viewCartBtn.click();
     }
     public void clickOnSearchBtn() {
         dataHelperAndWait.waitToBeClickable(searchBtn, 10);
-        this.searchBtn.click();
-    }
-    public void searchForBundle(){
+        this.searchBtn.click();}
+    public void searchForBundle() {
         dataHelperAndWait.waitToBeClickable(searchField, 10);
         this.searchField.sendKeys("Box");
-
-
-
     }
     public void clickOnTheProductCard() {
         DataHelperAndWait.waitToBeClickable(productCard, 10);
@@ -208,7 +199,6 @@ public class ProductDetailsPage {
     public void clickOnProductQuantity() {
         this.quantityField.click();
     }
-
     public void increaseTheQuantity() {
         this.quantityField.click();
         this.qtyPlusButton.click();
@@ -218,13 +208,15 @@ public class ProductDetailsPage {
         this.qtyMinusButton.click();
     }
     public void clickOnProductInHomePage() {
-        this.productInHomePage.click();}
-
+        this.productInHomePage.click();
+    }
     public void selectStarInReview() {
         this.oneStarReview.click();
     }
-
-
+    public void clickOnSalesAndOffersMenu() {
+        DataHelperAndWait.isDisplayed(salesAndOffersMenu, 10);
+        this.salesAndOffersMenu.click();
+    }
     public void submitProductReview(String reviewDesc, String reviewSummary, String nickeName) {
         this.addReviewButton.click();
         this.reviewDescField.sendKeys(reviewDesc);
@@ -246,17 +238,20 @@ public class ProductDetailsPage {
         this.clickOnProductInHomePage();
         this.addToCart();
         dataHelperAndWait.implicitWait(20);
-
     }
-
-/////////////////////////////////////////////////////
-//? How we can handle verifying non-existing element
-    /////////////////////////////////////////////
-//    private Optional<WebElement> webElementName(){
-//        try{
-//            return Optional.of(webDriver.findElement(By.cssSelector(".selector")));
-//        }catch(NoSuchElementException noElement){
-//            return Optional.empty();
-//        }
-//    }
+    public void clickOnShopeByMenu() {
+        dataHelperAndWait.isDisplayed(shopeByMenu, 10);
+        this.shopeByMenu.click();
+    }
+    public void clickOnBuy1Get1Card() {
+        dataHelperAndWait.isDisplayed(buy1Get1Card, 10);
+        this.buy1Get1Card.click();
+    }
+    public void clickOnFirstProductInTheCategoryList() {
+        dataHelperAndWait.isDisplayed(firstProductInTheCategoryList, 10);
+        for (WebElement webElement : megaMenuList) {
+            webElement.click();
+            break;
+        }
+    }
 }

@@ -11,7 +11,6 @@ import sporter_pages.ProductDetailsPage;
 public class ProductDetailsPageTestCases extends BaseTest {
     private ProductDetailsPage productDetailsPage;
     private DataHelperAndWait wait = new DataHelperAndWait();
-
     @Test(description = "Make sure the shopper is able to keep the shopping after adding the product to the cart ", priority = 1)
     public void keepShoppingAfterAddingToTheCart() {
         productDetailsPage = new ProductDetailsPage(webDriver);
@@ -23,7 +22,6 @@ public class ProductDetailsPageTestCases extends BaseTest {
         productDetailsPage.keepShopping();
         Assert.assertEquals(webDriver.getCurrentUrl(), currentURL);
     }
-
     @Test(description = "Make sure the shopper is able to View the cart after adding the product to it ", priority = 2)
     public void viewCartAfterAddingTheProductToIt() {
         productDetailsPage = new ProductDetailsPage(webDriver);
@@ -34,7 +32,6 @@ public class ProductDetailsPageTestCases extends BaseTest {
         productDetailsPage.viewCart();
         Assert.assertEquals(webDriver.getCurrentUrl(), "https://www.sporter.com/en-ae/checkout/cart/");
     }
-
     @Test(description = "Make sure the out of stock message appears when displaying out of stock product ", priority = 3)
     public void verifyOOSMessageIsDisplayed() {
         productDetailsPage = new ProductDetailsPage(webDriver);
@@ -45,7 +42,6 @@ public class ProductDetailsPageTestCases extends BaseTest {
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getOOSMsg(), 10);
         Assert.assertTrue(productDetailsPage.getOOSMsg().isDisplayed());
     }
-
     @Test(description = "Make sure the shopper is unable to add out of stock product to the cart", priority = 4)
     public void verifyUnabilityToAddOosProductToTheCart() {
         productDetailsPage = new ProductDetailsPage(webDriver);
@@ -56,7 +52,6 @@ public class ProductDetailsPageTestCases extends BaseTest {
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getOOSMsg(), 10);
         Assert.assertFalse(DataHelperAndWait.isWebElementPresent(productDetailsPage.getAddToCartBtn()));
     }
-
     @Test(description = "Make sure to display the product from search screen", priority = 5)
     public void verifyAbilityToDisplayTheProductFromSearchScreen() {
         productDetailsPage = new ProductDetailsPage(webDriver);
@@ -68,7 +63,6 @@ public class ProductDetailsPageTestCases extends BaseTest {
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getAddToCartBtn(), 10);
         Assert.assertTrue(productDetailsPage.getAddToCartBtn().isDisplayed());
     }
-
     @Test(description = "Make sure the system will display a message when the offer is not available in the selected country", priority = 6)
     public void verifyUnabilityToDisplayUnAvailableOffer() {
         productDetailsPage = new ProductDetailsPage(webDriver);
@@ -79,7 +73,6 @@ public class ProductDetailsPageTestCases extends BaseTest {
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductUnavialableForCountry(), 10);
         Assert.assertTrue(productDetailsPage.getProductUnavialableForCountry().isDisplayed());
     }
-
     @Test(description = "Make sure that the increase quantity function works fine ", priority = 7)
     public void verifyIncreaseQuantityButtonWorkingFine() {
         productDetailsPage = new ProductDetailsPage(webDriver);
@@ -90,7 +83,6 @@ public class ProductDetailsPageTestCases extends BaseTest {
         productDetailsPage.increaseTheQuantity();
         Assert.assertEquals(productDetailsPage.getQuantityField().getAttribute("value"), "2");
     }
-
     @Test(description = "Make sure that the Decrease quantity function works fine ", priority = 8)
     public void verifyDecreaseQuantityButtonWorkingFine() {
         productDetailsPage = new ProductDetailsPage(webDriver);
@@ -103,7 +95,6 @@ public class ProductDetailsPageTestCases extends BaseTest {
         productDetailsPage.decreaseTheQuantity();
         Assert.assertEquals(productDetailsPage.getQuantityField().getAttribute("value"), "1");
     }
-
     @Test(description = "Make sure that the customer can submit his review successfully ", priority = 9)
     public void verifyAbilityToSubmitTheProductReview() {
         productDetailsPage = new ProductDetailsPage(webDriver);
@@ -116,7 +107,6 @@ public class ProductDetailsPageTestCases extends BaseTest {
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getReviewToastMsg(), 10);
         Assert.assertTrue(productDetailsPage.getReviewToastMsg().isDisplayed());
     }
-
     @Test(description = "Make sure that the customer is unable to submit his review without selecting any star ", priority = 10)
     public void verifyInabilityToSubmitReviewWithoutSelectingStar() {
         productDetailsPage = new ProductDetailsPage(webDriver);
@@ -128,7 +118,6 @@ public class ProductDetailsPageTestCases extends BaseTest {
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getReviewErrorMsg(), 5);
         Assert.assertTrue(productDetailsPage.getReviewErrorMsg().isDisplayed());
     }
-
     @Test(description = "Make sure that the customer can submit his review when filling Review Form with Long Length", priority = 11)
     public void verifyAbilityToFillTheReviewWIthLongLength() {
         productDetailsPage = new ProductDetailsPage(webDriver);
@@ -141,7 +130,6 @@ public class ProductDetailsPageTestCases extends BaseTest {
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getReviewToastMsg(), 5);
         Assert.assertTrue(productDetailsPage.getReviewToastMsg().isDisplayed());
     }
-
     @Test(description = "Make sure that the customer can navigate to the home page using the BreadCrumb ", priority = 12)
     public void verifyAbilityToNavigatetToHomePageUsingTheBreadCrumb() {
         productDetailsPage = new ProductDetailsPage(webDriver);
@@ -152,7 +140,6 @@ public class ProductDetailsPageTestCases extends BaseTest {
         productDetailsPage.clickOnBreadcrumbHomePage();
         Assert.assertEquals(webDriver.getCurrentUrl(), aeSiteURL);
     }
-
     @Test(description = "Make sure that the customer can switch to Arabic Language from PDP ", priority = 13)
     public void verifyAbilityToSwitchToArabicVersionFromPDP() {
         productDetailsPage = new ProductDetailsPage(webDriver);
@@ -164,7 +151,6 @@ public class ProductDetailsPageTestCases extends BaseTest {
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getEnglishLangBtn(), 5);
         Assert.assertTrue(productDetailsPage.getEnglishLangBtn().isDisplayed());
     }
-
     @Test(description = "Make sure that the customer can add the same product more than once by clicking on theAddToProduct button in each time ", priority = 14)
     public void verifyAbilityToAddProductToCartMultiTimes() {
         productDetailsPage = new ProductDetailsPage(webDriver);
@@ -173,15 +159,12 @@ public class ProductDetailsPageTestCases extends BaseTest {
         productDetailsPage.clickOnProductInHomePage();
         productDetailsPage.addToCart();
         productDetailsPage.keepShopping();
-        ;
         String oldProductURL = webDriver.getCurrentUrl();
         productDetailsPage.addToCart();
         productDetailsPage.keepShopping();
-        ;
         String newProductURL = webDriver.getCurrentUrl();
         Assert.assertEquals(oldProductURL, newProductURL);
     }
-
     @Test(description = "Make sure that the product price is changed when you change the quantity ", priority = 15)
     public void verifyTheProductPriceChangesBasedOnTheSelectedQty() {
         productDetailsPage = new ProductDetailsPage(webDriver);
@@ -224,18 +207,17 @@ public class ProductDetailsPageTestCases extends BaseTest {
         String newSelectedOptionText= newSelectedOption.getText();
         Assert.assertNotEquals(currentSelectedOptionText,newSelectedOptionText);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @Test(description = "Verify that the system display a label on the PDP to indicate for the customer he will get a free product", priority = 18)
+    public void verifyTheresLabelInPdpToIndicateThatTheresAnOfferOnThisProduct(){
+        productDetailsPage = new ProductDetailsPage(webDriver);
+        DataHelperAndWait.waitToBeVisible(productDetailsPage.getCountryList(), 10);
+        productDetailsPage.switchCountry();
+        productDetailsPage.clickOnShopeByMenu();
+        productDetailsPage.clickOnSalesAndOffersMenu();
+        productDetailsPage.clickOnBuy1Get1Card();
+        DataHelperAndWait.waitToBeVisible(productDetailsPage.getFirstProductInTheCategoryList(),10);
+        productDetailsPage.clickOnFirstProductInTheCategoryList();
+             DataHelperAndWait.waitToBeVisible(productDetailsPage.getFreeProductLabel(), 10);
+        Assert.assertTrue(productDetailsPage.getFreeProductLabel().isDisplayed());
+    }
 }

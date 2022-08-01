@@ -5,8 +5,7 @@
     <test name="sporter.com Smoke Test" preserve-order="true">
         <parameter name="ReviewDescription" value="This is test data for Review Description"/>
         <classes>
-            <class name="sporter_test.ProductDetailsTestCases"/>
-            <!--            <class name="sporter_test.AddToCartTestCases"/>-->
+            <class name="sporter_test.ProductDetailsPageTestCases"/>
         </classes>
     </test><!-- test -->
 </suite> <!-- Suite -->

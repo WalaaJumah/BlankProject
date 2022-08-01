@@ -5,10 +5,9 @@
         <classes>
         <class name="sporter_test.ProductDetailsPageTestCases">
             <methods>
-                <include name="verifyAbilityToDisplayBundleAndSelectOption"></include>
+<!--                <include name="verifyAbilityToDisplayBundleAndSelectOption"></include>-->
             </methods>
         </class>
-<!--            <class name="-"/>-->
         </classes>
     </test><!-- test -->
 </suite> <!-- Suite -->
