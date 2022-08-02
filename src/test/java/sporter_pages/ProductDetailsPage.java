@@ -1,7 +1,6 @@
 package sporter_pages;
 
 import core.DataHelperAndWait;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -87,6 +86,9 @@ public class ProductDetailsPage {
     private WebElement shopeByMenu;
     @FindBy(xpath = ".//*[@class='cd-dropdown-content']/li[8]")
     private WebElement salesAndOffersMenu;
+    @FindBy(xpath = ".//*[@class='cd-dropdown-content']/li[1]")
+    private WebElement SportsSupplementsMenu;
+
     @FindBy(xpath = "//select")
     private WebElement bundleMenu;
     @FindBy(xpath = ".//*[@class='swiper-wrapper clearfix']/li[3]")
@@ -99,7 +101,10 @@ public class ProductDetailsPage {
     private WebElement freeProductLabel;
     @FindBy(xpath = "//ol[@class='products list items product-items']//li")
     private List<WebElement> megaMenuList;
-
+    @FindBy(xpath="//div[@class='swatch-attribute flavor']/div/div[@tabindex=0 and @index='0']")
+    private WebElement firtProdutFlavor;
+    @FindBy(xpath="//div[@class='swatch-attribute flavor']/div/div[@tabindex=0 and @index='2']")
+    private WebElement secondProductFlavor;
     //Getter Methods
     public WebElement getBundleMenu() {return bundleMenu;}
     public WebElement getQuantityField() {return quantityField;}
@@ -155,6 +160,8 @@ public class ProductDetailsPage {
     public WebElement getFreeProductLabel() {return freeProductLabel;}
     public WebElement getFirstProductInTheCategoryList() {return firstProductInTheCategoryList;}
 
+
+
     //Define the main actions we need to execute our TCs
     public void clickOnTheProductAttrubuits() {
         DataHelperAndWait.isDisplayed(productAttrubuit, 5);
@@ -179,6 +186,14 @@ public class ProductDetailsPage {
     public void clickOnTheProductCard() {
         DataHelperAndWait.waitToBeClickable(productCard, 10);
         this.productCard.click();
+    }
+    public void clickOnFirstProductFlavor(){
+        DataHelperAndWait.waitToBeClickable(firtProdutFlavor, 10);
+        this.firtProdutFlavor.click();
+    }
+    public void clickOnSecondProductFlavor(){
+        DataHelperAndWait.waitToBeClickable(secondProductFlavor, 20);
+        this.secondProductFlavor.click();
     }
     public void switchCountry() {
         DataHelperAndWait.waitToBeVisible(countryList, 20);
@@ -217,6 +232,11 @@ public class ProductDetailsPage {
         DataHelperAndWait.isDisplayed(salesAndOffersMenu, 10);
         this.salesAndOffersMenu.click();
     }
+    public void clickOnSportsSupplementsMenu() {
+        DataHelperAndWait.isDisplayed(SportsSupplementsMenu, 10);
+        this.SportsSupplementsMenu.click();
+    }
+
     public void submitProductReview(String reviewDesc, String reviewSummary, String nickeName) {
         this.addReviewButton.click();
         this.reviewDescField.sendKeys(reviewDesc);
@@ -253,5 +273,15 @@ public class ProductDetailsPage {
             webElement.click();
             break;
         }
+    }
+    public void DisplayProductInTheList(int listIndex){
+        dataHelperAndWait.isDisplayed(firstProductInTheCategoryList, 10);
+        for(int i = 1; i<megaMenuList.size(); i++){
+            WebElement productIndex= megaMenuList.get(listIndex);
+            productIndex.click();
+        }
+
+
+
     }
 }

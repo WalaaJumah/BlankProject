@@ -1,13 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="sporter.com Smoke Test">
-    <test name="sporter.com Smoke Test" preserve-order="true">
+<suite name="TestSuite" thread-count="1" parallel="tests" >
+
+    <test name="EdgeTest">
+        <parameter name="browser" value="Edge" />
         <classes>
-        <class name="sporter_test.ProductDetailsPageTestCases">
-            <methods>
-<!--                <include name="verifyAbilityToDisplayBundleAndSelectOption"></include>-->
-            </methods>
-        </class>
+            <class name="sporter_test.CartTestCases">
+                <methods>
+                    <include name="viewCartFromPDP"></include>
+                    <include name="verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct"></include>
+                </methods>
+            </class>
         </classes>
-    </test><!-- test -->
-</suite> <!-- Suite -->
+    </test>
+    <test name="ChromeTest">
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="sporter_test.CartTestCases">
+                <methods>
+                    <include name="viewCartFromPDP"></include>
+                    <include name="verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+<!--    <test name="FireFoxTest">-->
+<!--        <parameter name="browser" value="firefox" />-->
+<!--        <classes>-->
+<!--            <class name="sporter_test.CartTestCases">-->
+<!--                <methods>-->
+<!--                    <include name="viewCartFromPDP"></include>-->
+<!--                    <include name="verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct"></include>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+</suite>
+
+

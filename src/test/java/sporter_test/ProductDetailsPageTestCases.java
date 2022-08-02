@@ -2,6 +2,7 @@ package sporter_test;
 
 import core.BaseTest;
 import core.DataHelperAndWait;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -10,7 +11,11 @@ import sporter_pages.ProductDetailsPage;
 
 public class ProductDetailsPageTestCases extends BaseTest {
     private ProductDetailsPage productDetailsPage;
-    private DataHelperAndWait wait = new DataHelperAndWait();
+
+  //  public ProductDetailsPageTestCases(WebDriver webDriver) {
+
+   // }
+
     @Test(description = "Make sure the shopper is able to keep the shopping after adding the product to the cart ", priority = 1)
     public void keepShoppingAfterAddingToTheCart() {
         productDetailsPage = new ProductDetailsPage(webDriver);

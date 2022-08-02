@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1543f19a-355a-420f-8233-95e332a91e4b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/CartPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/CartTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AddToCartPage.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/ProductDetailsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/ProductDetailsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AddToCartTestCases.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/ProductDetailsPageTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/ProductDetailsPageTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/SmokeTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/SmokeTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/TestData.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/TestData.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +26,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -39,16 +42,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/java&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/w.jumaa/IdeaProjects/sporter-web-automation&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_directory_selection": "C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/java",
+    "last_opened_file_path": "C:/Users/w.jumaa/IdeaProjects/sporter-web-automation",
+    "run.code.analysis.last.selected.profile": "pProject Default"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\w.jumaa\IdeaProjects\sporter-web-automation\src\main\java\sporter-pages" />
@@ -70,7 +73,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductDetailsPageTestCases" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CartTestCases.verifyAbilityToAddBundleToCart" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
       <extension name="coverage">
         <pattern>
@@ -79,25 +82,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="sporter_test" />
-      <option name="MAIN_CLASS_NAME" value="sporter_test.ProductDetailsPageTestCases" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductDetailsPageTestCases.verifyAbilityToDisplayBundleAndSelectAllOptions" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="sporter-web-automation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sporter_test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="sporter_test" />
-      <option name="MAIN_CLASS_NAME" value="sporter_test.ProductDetailsPageTestCases" />
-      <option name="METHOD_NAME" value="verifyAbilityToDisplayBundleAndSelectAllOptions" />
+      <option name="MAIN_CLASS_NAME" value="sporter_test.CartTestCases" />
+      <option name="METHOD_NAME" value="verifyAbilityToAddBundleToCart" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -105,7 +91,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductDetailsPageTestCases.verifyTheresLabelInPdpToIndicateThatTheresAnOfferOnThisProduct" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CartTestCases.verifyAbilityToAddBundleWithAllItsOptionsToCart" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
       <extension name="coverage">
         <pattern>
@@ -114,8 +100,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="sporter_test" />
-      <option name="MAIN_CLASS_NAME" value="sporter_test.ProductDetailsPageTestCases" />
-      <option name="METHOD_NAME" value="verifyTheresLabelInPdpToIndicateThatTheresAnOfferOnThisProduct" />
+      <option name="MAIN_CLASS_NAME" value="sporter_test.CartTestCases" />
+      <option name="METHOD_NAME" value="verifyAbilityToAddBundleWithAllItsOptionsToCart" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -123,7 +109,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductDetailsPageTestCases.verifyUnabilityToDisplayUnAvailableOffer" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CartTestCases.verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
       <extension name="coverage">
         <pattern>
@@ -132,8 +118,26 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="sporter_test" />
-      <option name="MAIN_CLASS_NAME" value="sporter_test.ProductDetailsPageTestCases" />
-      <option name="METHOD_NAME" value="verifyUnabilityToDisplayUnAvailableOffer" />
+      <option name="MAIN_CLASS_NAME" value="sporter_test.CartTestCases" />
+      <option name="METHOD_NAME" value="verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CartTestCases.viewCartFromPDP" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="sporter-web-automation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sporter_test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sporter_test" />
+      <option name="MAIN_CLASS_NAME" value="sporter_test.CartTestCases" />
+      <option name="METHOD_NAME" value="viewCartFromPDP" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -144,10 +148,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/SmokeTest.xml" />
-        <item itemvalue="TestNG.ProductDetailsPageTestCases.verifyTheresLabelInPdpToIndicateThatTheresAnOfferOnThisProduct" />
-        <item itemvalue="TestNG.ProductDetailsPageTestCases.verifyAbilityToDisplayBundleAndSelectAllOptions" />
-        <item itemvalue="TestNG.ProductDetailsPageTestCases" />
-        <item itemvalue="TestNG.ProductDetailsPageTestCases.verifyUnabilityToDisplayUnAvailableOffer" />
+        <item itemvalue="TestNG.CartTestCases.verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct" />
+        <item itemvalue="TestNG.CartTestCases.viewCartFromPDP" />
+        <item itemvalue="TestNG.CartTestCases.verifyAbilityToAddBundleWithAllItsOptionsToCart" />
+        <item itemvalue="TestNG.CartTestCases.verifyAbilityToAddBundleToCart" />
       </list>
     </recent_temporary>
   </component>
@@ -180,6 +184,15 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/sporter_test/CartTestCases.java</url>
+          <line>88</line>
+          <properties class="sporter_test.CartTestCases" method="verifyAbilityToAddBundleWithAllItsOptionsToCart">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
