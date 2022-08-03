@@ -1,5 +1,6 @@
 package core;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.*;
@@ -25,14 +26,22 @@ public class DataHelperAndWait extends BaseTest {
         wait = new WebDriverWait(webDriver, Time);
         return wait.until(ExpectedConditions.visibilityOf(element)).isDisplayed();
     }
-    public static boolean isWebElementPresent(WebElement webElement) {
-        try {
-            webElement.isDisplayed();
-            return true;
-        } catch (Exception e) {
+//    public static boolean isPresent(WebElement webElement) {
+//        try {
+//            webElement.isDisplayed();
+//            return true;
+//        } catch (Exception e) {
+//            return false;
+//        }
+//    }
+public static boolean isPresent(WebElement webElement){
+    if(webElement.isDisplayed())
+        return true;
+    else
             return false;
-        }
-    }
+}
+
+
     public static void implicitWait(int timeSecond) {
         webDriver.manage().timeouts().implicitlyWait(timeSecond, TimeUnit.SECONDS);
     }
@@ -71,4 +80,11 @@ public class DataHelperAndWait extends BaseTest {
             }
         });
     }
+
+    //JS Executor
+    public static void JsExecutorToClickOnElement(WebElement element){
+    JavascriptExecutor jse = (JavascriptExecutor)webDriver;
+    //Find The element
+jse.executeScript("arguments[0].click()", element);
+}
 }

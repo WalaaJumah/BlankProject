@@ -280,7 +280,10 @@ public class ProductDetailsPage {
             WebElement productIndex= megaMenuList.get(listIndex);
             productIndex.click();
         }
-
+    }
+    public void fillInQtyField(String qtyNumber){
+        dataHelperAndWait.isDisplayed(quantityField, 10);
+        this.quantityField.sendKeys(qtyNumber);
 
 
     }

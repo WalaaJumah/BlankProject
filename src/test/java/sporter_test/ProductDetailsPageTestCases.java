@@ -2,7 +2,6 @@ package sporter_test;
 
 import core.BaseTest;
 import core.DataHelperAndWait;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -11,11 +10,6 @@ import sporter_pages.ProductDetailsPage;
 
 public class ProductDetailsPageTestCases extends BaseTest {
     private ProductDetailsPage productDetailsPage;
-
-  //  public ProductDetailsPageTestCases(WebDriver webDriver) {
-
-   // }
-
     @Test(description = "Make sure the shopper is able to keep the shopping after adding the product to the cart ", priority = 1)
     public void keepShoppingAfterAddingToTheCart() {
         productDetailsPage = new ProductDetailsPage(webDriver);
@@ -55,7 +49,7 @@ public class ProductDetailsPageTestCases extends BaseTest {
         webDriver.navigate().to(outOfStockProduct);
         productDetailsPage.switchCountry();
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getOOSMsg(), 10);
-        Assert.assertFalse(DataHelperAndWait.isWebElementPresent(productDetailsPage.getAddToCartBtn()));
+        Assert.assertFalse(DataHelperAndWait.isPresent(productDetailsPage.getAddToCartBtn()));
     }
     @Test(description = "Make sure to display the product from search screen", priority = 5)
     public void verifyAbilityToDisplayTheProductFromSearchScreen() {
@@ -222,7 +216,8 @@ public class ProductDetailsPageTestCases extends BaseTest {
         productDetailsPage.clickOnBuy1Get1Card();
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getFirstProductInTheCategoryList(),10);
         productDetailsPage.clickOnFirstProductInTheCategoryList();
-             DataHelperAndWait.waitToBeVisible(productDetailsPage.getFreeProductLabel(), 10);
+        DataHelperAndWait.waitToBeVisible(productDetailsPage.getFreeProductLabel(), 10);
         Assert.assertTrue(productDetailsPage.getFreeProductLabel().isDisplayed());
     }
 }
+

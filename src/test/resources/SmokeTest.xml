@@ -7,23 +7,23 @@
         <classes>
             <class name="sporter_test.CartTestCases">
                 <methods>
-                    <include name="viewCartFromPDP"></include>
-                    <include name="verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct"></include>
+                    <include name="verifyDecreaseQtyBtnInCartPageWorking"></include>
+<!--                    <include name="verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct"></include>-->
                 </methods>
             </class>
         </classes>
     </test>
-    <test name="ChromeTest">
-        <parameter name="browser" value="chrome" />
-        <classes>
-            <class name="sporter_test.CartTestCases">
-                <methods>
-                    <include name="viewCartFromPDP"></include>
-                    <include name="verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct"></include>
-                </methods>
-            </class>
-        </classes>
-    </test>
+<!--    <test name="ChromeTest">-->
+<!--        <parameter name="browser" value="chrome" />-->
+<!--        <classes>-->
+<!--            <class name="sporter_test.CartTestCases">-->
+<!--                <methods>-->
+<!--                    <include name="viewCartFromPDP"></include>-->
+<!--                    <include name="verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct"></include>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
 <!--    <test name="FireFoxTest">-->
 <!--        <parameter name="browser" value="firefox" />-->
 <!--        <classes>-->

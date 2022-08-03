@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1543f19a-355a-420f-8233-95e332a91e4b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/CartPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/CartTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/CartPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/ProductDetailsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/ProductDetailsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/CartTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/CartTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/ProductDetailsPageTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/ProductDetailsPageTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/SmokeTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/SmokeTest.xml" afterDir="false" />
     </list>
@@ -73,7 +73,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CartTestCases.verifyAbilityToAddBundleToCart" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CartTestCases" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
       <extension name="coverage">
         <pattern>
@@ -83,8 +83,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="sporter_test" />
       <option name="MAIN_CLASS_NAME" value="sporter_test.CartTestCases" />
-      <option name="METHOD_NAME" value="verifyAbilityToAddBundleToCart" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -148,10 +147,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/SmokeTest.xml" />
+        <item itemvalue="TestNG.CartTestCases.verifyAbilityToAddBundleWithAllItsOptionsToCart" />
+        <item itemvalue="TestNG.CartTestCases" />
         <item itemvalue="TestNG.CartTestCases.verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct" />
         <item itemvalue="TestNG.CartTestCases.viewCartFromPDP" />
-        <item itemvalue="TestNG.CartTestCases.verifyAbilityToAddBundleWithAllItsOptionsToCart" />
-        <item itemvalue="TestNG.CartTestCases.verifyAbilityToAddBundleToCart" />
       </list>
     </recent_temporary>
   </component>
@@ -184,15 +183,6 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/sporter_test/CartTestCases.java</url>
-          <line>88</line>
-          <properties class="sporter_test.CartTestCases" method="verifyAbilityToAddBundleWithAllItsOptionsToCart">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
