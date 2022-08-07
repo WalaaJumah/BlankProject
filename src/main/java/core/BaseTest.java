@@ -20,19 +20,22 @@ public class BaseTest {
 //Check if parameter passed from TestNG is 'firefox'
         switch (browser) {
             case "firefox":
-                System.setProperty("webdriver.gecko.driver", "C:\\Users\\w.jumaa\\geckodriver.exe");
+//                System.setProperty("webdriver.gecko.driver", "C:\\Users\\w.jumaa\\geckodriver.exe");
+                System.setProperty("webdriver.gecko.driver", "src/test/resources/geckodriver.exe");
                 webDriver = new FirefoxDriver();
                 webDriver.manage().window().maximize();
                 webDriver.navigate().to(siteURL);
                 break;
             case "chrome":
-                System.setProperty("webdriver.chrome.driver", "C:\\Users\\w.jumaa\\chromedriver.exe");
+//                System.setProperty("webdriver.chrome.driver", "C:\\Users\\w.jumaa\\chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
                 webDriver = new ChromeDriver();
                 webDriver.manage().window().maximize();
                 webDriver.navigate().to(siteURL);
                 break;
             case "Edge":
-                System.setProperty("webdriver.edge.driver", "C:\\Users\\w.jumaa\\msedgedriver.exe");
+//                System.setProperty("webdriver.edge.driver", "C:\\Users\\w.jumaa\\msedgedriver.exe");
+                System.setProperty("webdriver.edge.driver", "src/test/resources/msedgedriver.exe");
                 webDriver = new EdgeDriver();
                 webDriver.manage().window().maximize();
                 webDriver.navigate().to(siteURL);
