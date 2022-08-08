@@ -46,7 +46,7 @@ public class ProductDetailsPage {
     private WebElement joCountry;
     @FindBy(xpath = "//*[@id=\"maincontent\"]/div[3]/div/div[2]/div[2]/a[1]/picture/img")
     private WebElement firstProductInHomePage;
-    @FindBy(xpath = "//body/div[2]/main[1]/div[3]/div[1]/div[6]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]")
+    @FindBy(xpath = "//*[@id=\"tab-38-all38\"]/div[1]/div/div[2]/div/a")
     private WebElement productInHomePage;
     @FindBy(id = "Overall Evaluation_1_label")
     private WebElement oneStarReview;
@@ -174,6 +174,7 @@ public class ProductDetailsPage {
     }
     public void keepShopping() {this.keepShippingBtn.click();}
     public void viewCart() {
+        DataHelperAndWait.waitToBeClickable(viewCartBtn,10);
         this.viewCartBtn.click();
     }
     public void clickOnSearchBtn() {

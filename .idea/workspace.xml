@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1543f19a-355a-420f-8233-95e332a91e4b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/geckodriver.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/msedgedriver.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/CartPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/ProductDetailsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/ProductDetailsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/CartTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/CartTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/SmokeTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/SmokeTest.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,16 +40,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_directory_selection": "C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/java",
-    "last_opened_file_path": "C:/Users/w.jumaa/IdeaProjects/sporter-web-automation",
-    "run.code.analysis.last.selected.profile": "pProject Default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/w.jumaa/IdeaProjects/sporter-web-automation&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\w.jumaa\IdeaProjects\sporter-web-automation\src\main\java\sporter-pages" />
@@ -74,7 +74,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CartTestCases" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CartTestCases.verifyProductPriceChangesWhenChangingTheProductQtyFromTheCartPage" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
       <extension name="coverage">
         <pattern>
@@ -84,24 +84,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="sporter_test" />
       <option name="MAIN_CLASS_NAME" value="sporter_test.CartTestCases" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CartTestCases.verifyAbilityToAddBundleWithAllItsOptionsToCart" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="sporter-web-automation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sporter_test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="sporter_test" />
-      <option name="MAIN_CLASS_NAME" value="sporter_test.CartTestCases" />
-      <option name="METHOD_NAME" value="verifyAbilityToAddBundleWithAllItsOptionsToCart" />
+      <option name="METHOD_NAME" value="verifyProductPriceChangesWhenChangingTheProductQtyFromTheCartPage" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -109,7 +92,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CartTestCases.verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CartTestCases.verifyTheFreeGiftIsAddedCorrectlyToTheCart" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
       <extension name="coverage">
         <pattern>
@@ -119,7 +102,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="sporter_test" />
       <option name="MAIN_CLASS_NAME" value="sporter_test.CartTestCases" />
-      <option name="METHOD_NAME" value="verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct" />
+      <option name="METHOD_NAME" value="verifyTheFreeGiftIsAddedCorrectlyToTheCart" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -127,7 +110,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CartTestCases.viewCartFromPDP" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CartTestCases.verifyToDisplayRequestedQtyIsNotAvailableMsgWhenProductOOSinCartPage" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
       <extension name="coverage">
         <pattern>
@@ -137,7 +120,25 @@
       </extension>
       <option name="PACKAGE_NAME" value="sporter_test" />
       <option name="MAIN_CLASS_NAME" value="sporter_test.CartTestCases" />
-      <option name="METHOD_NAME" value="viewCartFromPDP" />
+      <option name="METHOD_NAME" value="verifyToDisplayRequestedQtyIsNotAvailableMsgWhenProductOOSinCartPage" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CartTestCases.verifyUnabilityToAddMoreThan2QtyOfSameProductFromTheCartPageForJordanStore" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="sporter-web-automation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sporter_test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sporter_test" />
+      <option name="MAIN_CLASS_NAME" value="sporter_test.CartTestCases" />
+      <option name="METHOD_NAME" value="verifyUnabilityToAddMoreThan2QtyOfSameProductFromTheCartPageForJordanStore" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -148,10 +149,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/SmokeTest.xml" />
-        <item itemvalue="TestNG.CartTestCases.verifyAbilityToAddBundleWithAllItsOptionsToCart" />
-        <item itemvalue="TestNG.CartTestCases" />
-        <item itemvalue="TestNG.CartTestCases.verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct" />
-        <item itemvalue="TestNG.CartTestCases.viewCartFromPDP" />
+        <item itemvalue="TestNG.CartTestCases.verifyTheFreeGiftIsAddedCorrectlyToTheCart" />
+        <item itemvalue="TestNG.CartTestCases.verifyUnabilityToAddMoreThan2QtyOfSameProductFromTheCartPageForJordanStore" />
+        <item itemvalue="TestNG.CartTestCases.verifyProductPriceChangesWhenChangingTheProductQtyFromTheCartPage" />
+        <item itemvalue="TestNG.CartTestCases.verifyToDisplayRequestedQtyIsNotAvailableMsgWhenProductOOSinCartPage" />
       </list>
     </recent_temporary>
   </component>

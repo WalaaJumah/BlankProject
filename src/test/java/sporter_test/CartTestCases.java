@@ -3,7 +3,9 @@ package sporter_test;
 import core.BaseTest;
 import core.DataHelperAndWait;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.CartPage;
@@ -174,7 +176,7 @@ public class CartTestCases extends BaseTest {
         String currentURL = webDriver.getCurrentUrl();
         Assert.assertEquals(webDriver.getCurrentUrl(), aeSiteURL);
     }
-    @Test(description ="Verify ability to increase the product quantity from Cart page from the Cart Page works successfully",priority = 10)
+    @Test(description ="Verify ability to increase the product quantity from Cart page from the Cart Page works successfully",priority = 11)
     public void verifyIecreaseQtyBtnInCartPageWorking(){
         cartPage= new CartPage(webDriver);
         this.viewCartFromPDP();
@@ -182,7 +184,7 @@ public class CartTestCases extends BaseTest {
         cartPage.clickOnIecreseQtyBtn();
         Assert.assertEquals(cartPage.getQtyField().getAttribute("value"), "2");
     }
-    @Test(description ="Verify ability to Decrease the product quantity from Cart page from the Cart Page works successfully",priority = 11)
+    @Test(description ="Verify ability to Decrease the product quantity from Cart page from the Cart Page works successfully",priority = 12)
     public void verifyDecreaseQtyBtnInCartPageWorking(){
         cartPage= new CartPage(webDriver);
         this.viewCartFromPDP();
@@ -192,7 +194,107 @@ public class CartTestCases extends BaseTest {
         cartPage.clickOnDecreseQtyBtn();
         Assert.assertEquals(cartPage.getQtyField().getAttribute("value"), "1");
     }
-
+    @Test(description ="Verify that The requested qty is not available message appear when the product becomes OOS in Cart Page successfully",priority = 13)
+    public void verifyToDisplayRequestedQtyIsNotAvailableMsgWhenProductOOSinCartPage(){
+        cartPage= new CartPage(webDriver);
+        this.viewCartFromPDP();
+        cartPage.FillInQtyField("500");
+        cartPage.clickOnIecreseQtyBtn();
+        Assert.assertTrue(cartPage.getQtyUnavailableMsgInCartPage().isDisplayed());}
+        @Test(description ="Verify ability to display the product from the Cart Page works successfully",priority = 14)
+        public void verifyAbilityToDisplayTheProductFromTheCartPage(){
+            cartPage= new CartPage(webDriver);
+            this.viewCartFromPDP();
+            cartPage.clickOnProductCartInCartPage();
+            Assert.assertNotEquals(webDriver.getCurrentUrl(), aeSiteURL);
+        }
+        /////
+    @Test(description ="Make sure that the product price is changed when you change the quantity from the Cart Page",priority = 15)
+    public void verifyProductPriceChangesWhenChangingTheProductQtyFromTheCartPage(){
+        cartPage= new CartPage(webDriver);
+        this.viewCartFromPDP();
+        String currectProductPrice = cartPage.getPriceInCartPage().getText();
+        cartPage.clickOnIecreseQtyBtn();
+        DataHelperAndWait.refreshPage();
+        String newProductPrice = cartPage.getPriceInCartPage().getText();
+        Assert.assertNotEquals(currectProductPrice,newProductPrice);
+    }
+    @Test(description ="Make sure that the customer can't add more than 2 Qty of the same product when switching to Jordan Store from Cart Page",priority = 16)
+    public void verifyUnabilityToAddMoreThan2QtyOfSameProductFromTheCartPageForJordanStore(){
+        productDetailsPage = new ProductDetailsPage(webDriver);
+        WebDriverWait wait = new WebDriverWait(webDriver, 30);
+        cartPage= new CartPage(webDriver);
+        DataHelperAndWait.waitToBeVisible(productDetailsPage.getCountryList(), 10);
+        productDetailsPage.switchToJOCountry();
+        productDetailsPage.clickOnShopeByMenu();
+        productDetailsPage.clickOnSportsSupplementsMenu();
+        productDetailsPage.DisplayProductInTheList(0);
+        productDetailsPage.clickOnFirstProductFlavor();
+        productDetailsPage.addToCart();
+        productDetailsPage.viewCart();
+        cartPage.clickOnIecreseQtyBtn();
+        if(wait.until(ExpectedConditions.alertIsPresent())!=null)
+            webDriver.switchTo().alert().dismiss();
+    }
+    @Test(description ="Make sure that the Free Gift is added correctly to the Cart",priority = 17)
+    public void verifyTheFreeGiftIsAddedCorrectlyToTheCart(){
+    productDetailsPage = new ProductDetailsPage(webDriver);
+    cartPage= new CartPage(webDriver);
+        productDetailsPage.switchCountry();
+        productDetailsPage.clickOnShopeByMenu();
+        productDetailsPage.clickOnSalesAndOffersMenu();
+        productDetailsPage.clickOnBuy1Get1Card();
+        DataHelperAndWait.waitToBeVisible(productDetailsPage.getFirstProductInTheCategoryList(), 10);
+        productDetailsPage.DisplayProductInTheList(0);
+        productDetailsPage.addToCart();
+        productDetailsPage.viewCart();
+        Assert.assertTrue(cartPage.getFreeFromSporterSection().isDisplayed());
+    }
+    @Test(description ="Make sure that the Free Gift does not have a price",priority = 18)
+    public void verifyTheFreeGiftIsDoesnotHavePrice(){
+        productDetailsPage = new ProductDetailsPage(webDriver);
+        cartPage= new CartPage(webDriver);
+        productDetailsPage.switchCountry();
+        productDetailsPage.clickOnShopeByMenu();
+        productDetailsPage.clickOnSalesAndOffersMenu();
+        productDetailsPage.clickOnBuy1Get1Card();
+        DataHelperAndWait.waitToBeVisible(productDetailsPage.getFirstProductInTheCategoryList(), 10);
+        productDetailsPage.DisplayProductInTheList(0);
+        productDetailsPage.addToCart();
+        productDetailsPage.viewCart();
+        Assert.assertTrue(cartPage.getFreePrice().isDisplayed());
+    }
+    @Test(description ="Make sure that the Free Gift is removedfrom the cart when you remove the product",priority = 19)
+    public void verifyTheFreeGiftIsRemovedWhenRemovingTheProduct(){
+        productDetailsPage = new ProductDetailsPage(webDriver);
+        cartPage= new CartPage(webDriver);
+        productDetailsPage.switchCountry();
+        productDetailsPage.clickOnShopeByMenu();
+        productDetailsPage.clickOnSalesAndOffersMenu();
+        productDetailsPage.clickOnBuy1Get1Card();
+        DataHelperAndWait.waitToBeVisible(productDetailsPage.getFirstProductInTheCategoryList(), 10);
+        productDetailsPage.DisplayProductInTheList(0);
+        productDetailsPage.addToCart();
+        productDetailsPage.viewCart();
+        Assert.assertTrue(cartPage.getFreePrice().isDisplayed());
+        cartPage.clickOnRemoveItem();
+        DataHelperAndWait.isDisplayed(cartPage.getNoItemInCartLabel(),10);
+        Assert.assertTrue(cartPage.getNoItemInCartLabel().isDisplayed());
+    }
+    @Test(description ="Make sure that all payment methods are appear correctly in the Cart page",priority = 20)
+    public void verifyAllPaymentMethodAppearinTheCartPage(){
+        cartPage= new CartPage(webDriver);
+        this.viewCartFromPDP();
+        Assert.assertTrue(cartPage.getWeAcceptLabel().isDisplayed());
+        Assert.assertTrue(cartPage.getCodOption().isDisplayed());
+        Assert.assertTrue(cartPage.getCreditCardOption().isDisplayed());
+    }
+    @Test(description ="Make sure that Make sure that complete your order, to get 100% GENUINE PRODUCTS and SUPER DELIVERY WITHIN 2 WORKING DAYS label appears in the Cart Page",priority = 21)
+    public void verifytheFreeShippingLabelAppearCorrectlyInTheCartPage(){
+        cartPage= new CartPage(webDriver);
+        this.viewCartFromPDP();
+        Assert.assertTrue(cartPage.getFreeShippingLabel().isDisplayed());
+    }
 
 
 
