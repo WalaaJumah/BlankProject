@@ -87,4 +87,11 @@ public static boolean isPresent(WebElement webElement){
     //Find The element
 jse.executeScript("arguments[0].click()", element);
 }
+   public static float convertTheStringToFloat(WebElement element){
+        String elementValue= element.getText();
+       String elementValueWithoutCurrency = elementValue.replaceAll("AED", "");
+       String elementValueWithoutSpace= elementValueWithoutCurrency.replaceAll(" ", "");
+       float elemetdouble= Float.parseFloat(elementValueWithoutSpace);
+        return elemetdouble;
+   }
 }

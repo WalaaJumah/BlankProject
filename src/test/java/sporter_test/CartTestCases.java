@@ -295,10 +295,96 @@ public class CartTestCases extends BaseTest {
         this.viewCartFromPDP();
         Assert.assertTrue(cartPage.getFreeShippingLabel().isDisplayed());
     }
-
-
-
-
+    @Test(description ="Make sure that the product counter that appears in the cart page works correctly",priority = 22)
+    public void verifyProductCounterAppearsInTheCartPageWorksCorrectly(){
+        productDetailsPage = new ProductDetailsPage(webDriver);
+        cartPage= new CartPage(webDriver);
+        productDetailsPage.switchCountry();
+        productDetailsPage.clickOnShopeByMenu();
+        productDetailsPage.clickOnSportsSupplementsMenu();
+        DataHelperAndWait.waitToBeVisible(productDetailsPage.getFirstProductInTheCategoryList(), 10);
+        productDetailsPage.DisplayProductInTheList(0);
+        productDetailsPage.addToCart();
+        productDetailsPage.keepShopping();
+        productDetailsPage.clickOnShopeByMenu();
+        productDetailsPage.clickOnSportsSupplementsMenu();
+        DataHelperAndWait.waitToBeVisible(productDetailsPage.getFirstProductInTheCategoryList(), 10);
+        productDetailsPage.DisplayProductInTheList(1);
+        productDetailsPage.addToCart();
+        productDetailsPage.viewCart();
+        String itemsCounter = "(2 Items)";
+        DataHelperAndWait.waitToBeVisible(cartPage.getItemsCounterInCartPage(), 15);
+        Assert.assertEquals(cartPage.getItemsCounterInCartPage().getText(), itemsCounter);
+    }
+    @Test(description ="Make sure that the product counter that appears in the cart page counts the free gift correctly",priority = 23)
+    public void verifyProductCounterAppearsInTheCartPageCountsFreeGifts(){
+        productDetailsPage = new ProductDetailsPage(webDriver);
+        cartPage= new CartPage(webDriver);
+        productDetailsPage.switchCountry();
+        productDetailsPage.clickOnShopeByMenu();
+        productDetailsPage.clickOnSalesAndOffersMenu();
+        productDetailsPage.clickOnBuy1Get1Card();
+        DataHelperAndWait.waitToBeVisible(productDetailsPage.getFirstProductInTheCategoryList(), 10);
+        productDetailsPage.DisplayProductInTheList(0);
+        productDetailsPage.addToCart();
+        productDetailsPage.keepShopping();
+        productDetailsPage.clickOnShopeByMenu();
+        productDetailsPage.clickOnSalesAndOffersMenu();
+        productDetailsPage.clickOnBuy1Get1Card();
+        DataHelperAndWait.waitToBeVisible(productDetailsPage.getFirstProductInTheCategoryList(), 10);
+        productDetailsPage.DisplayProductInTheList(1);
+        productDetailsPage.addToCart();
+        productDetailsPage.viewCart();
+        String itemsCounter = "(4 Items)";
+        DataHelperAndWait.waitToBeVisible(cartPage.getItemsCounterInCartPage(), 15);
+        Assert.assertEquals(cartPage.getItemsCounterInCartPage().getText(), itemsCounter);
+    }
+    @Test(description ="Make sure that the Expected delivery date field in the cart page retrieves data",priority = 24)
+    public void verifyExpectedDeliveryDateRetrievesData(){
+        productDetailsPageTestCases = new ProductDetailsPageTestCases();
+        cartPage= new CartPage(webDriver);
+        productDetailsPageTestCases.viewCartAfterAddingTheProductToIt();
+        Assert.assertTrue(cartPage.getExpectedDeliveryDateLable().isDisplayed());
+        String expectedDeliveryDate=cartPage.getExpectedDeliveryDateValue().getText();
+        Assert.assertTrue(expectedDeliveryDate!=null);
+    }
+    @Test(description ="Make sure that theProceed to checkout button appears in the cart page works correctly",priority = 25)
+    public void verifyProceedCheckoutBtnAppearsCorrectlyInCartPage(){
+        productDetailsPageTestCases = new ProductDetailsPageTestCases();
+        cartPage= new CartPage(webDriver);
+        productDetailsPageTestCases.viewCartAfterAddingTheProductToIt();
+        Assert.assertTrue(cartPage.getProceedCheckoutBtn().isDisplayed());}
+    @Test(description ="Make sure that the system will empty the cart after switching the country",priority = 26)
+    public void verifyTheCartWillRemoveAllProductsAfterSwitchingTheCountry(){
+        productDetailsPageTestCases = new ProductDetailsPageTestCases();
+        productDetailsPage= new ProductDetailsPage(webDriver);
+        cartPage= new CartPage(webDriver);
+        productDetailsPageTestCases.viewCartAfterAddingTheProductToIt();
+        productDetailsPage.switchToJOCountry();
+        Assert.assertTrue(cartPage.getNoItemInCartLabel().isDisplayed());
+    }
+    @Test(description ="Make sure that the ability to switch to Arabic version from the cart page correctly",priority = 27)
+    public void verifyAbilityToSwitchToArabicVersionFromCartPage(){
+        productDetailsPageTestCases = new ProductDetailsPageTestCases();
+        productDetailsPage= new ProductDetailsPage(webDriver);
+        cartPage= new CartPage(webDriver);
+        productDetailsPageTestCases.viewCartAfterAddingTheProductToIt();
+        DataHelperAndWait.waitToBeVisible(productDetailsPage.getLanguageSwitcher(), 10);
+        productDetailsPage.switchToArabicVersion();
+        DataHelperAndWait.waitToBeVisible(productDetailsPage.getEnglishLangBtn(), 5);
+        Assert.assertTrue(productDetailsPage.getEnglishLangBtn().isDisplayed());}
+    @Test(description ="Make sure that the order total calculation in the cart page works correctly",priority = 28)
+    public void verifyOrderTotalCalculationInCartPageWorksCorrectly(){
+        productDetailsPageTestCases = new ProductDetailsPageTestCases();
+        productDetailsPage= new ProductDetailsPage(webDriver);
+        cartPage= new CartPage(webDriver);
+        productDetailsPageTestCases.viewCartAfterAddingTheProductToIt();
+        float subTotal= DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue());
+        float tax= DataHelperAndWait.convertTheStringToFloat(cartPage.getTaxValue());
+        float orderTotal= DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue());
+        float cartTotal= subTotal+tax;
+        Assert.assertEquals(orderTotal,cartTotal);
+    }
 
 
 

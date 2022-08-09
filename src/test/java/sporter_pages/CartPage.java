@@ -48,6 +48,18 @@ public class CartPage {
     private WebElement creditCardOption;
     @FindBy(xpath="//div[@class='free-shipping-container']")
     private WebElement freeShippingLabel;
+    @FindBy(xpath = "//td[@class='expect-date']")
+    private WebElement expectedDeliveryDateLable;
+    @FindBy(xpath="//td[@class='date-info']")
+    private WebElement expectedDeliveryDateValue;
+    @FindBy(xpath = "//span[text()='Proceed to Checkout']")
+    private WebElement proceedCheckoutBtn;
+    @FindBy(xpath = "//span[@data-th='Subtotal']")
+    private WebElement subTotalValue;
+    @FindBy(css = "tr[class='totals-tax']:nth-child(n) td span")
+    private WebElement taxValue;
+    @FindBy(css = "td[class='grand-price']:nth-child(n) span")
+    private WebElement orderTotalValue;
     //Getter Methods
     public WebElement getItemsCounterInCartPage() {return itemsCounter;}
     public WebElement getRequestedQtyUnAvailableMsg(){return requestedQtyUnAvailableMsg;}
@@ -65,6 +77,15 @@ public class CartPage {
     public WebElement getWeAcceptLabel(){return weAcceptLabel;}
     public WebElement getCreditCardOption(){return creditCardOption;}
     public WebElement getFreeShippingLabel(){return freeShippingLabel;}
+    public WebElement getExpectedDeliveryDateLable(){return expectedDeliveryDateLable;}
+    public WebElement getExpectedDeliveryDateValue(){return expectedDeliveryDateValue;}
+    public WebElement getProceedCheckoutBtn(){return proceedCheckoutBtn;}
+    public WebElement getSubTotalValue(){return subTotalValue;}
+    public WebElement getTaxValue(){return taxValue;}
+    public WebElement getOrderTotalValue(){return orderTotalValue;}
+
+
+
     //Define the main actions we need to execute our TCs
     public void clickOnTheContinueShoppingBtn() {
         DataHelperAndWait.isDisplayed(continueShoppingBtn, 10);

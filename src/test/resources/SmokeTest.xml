@@ -7,7 +7,7 @@
         <classes>
             <class name="sporter_test.CartTestCases">
                 <methods>
-                    <include name="verifytheFreeShippingLabelAppearCorrectlyInTheCartPage"></include>
+                    <include name="verifyOrderTotalCalculationInCartPageWorksCorrectly"></include>
 <!--                    <include name="verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct"></include>-->
                 </methods>
             </class>
