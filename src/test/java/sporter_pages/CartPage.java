@@ -6,8 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import javax.xml.xpath.XPath;
+
 public class CartPage {
-    private DataHelperAndWait dataHelperAndWait= new DataHelperAndWait();
     public CartPage(WebDriver webDriver){
         PageFactory.initElements(webDriver, this);
     }
@@ -60,6 +61,30 @@ public class CartPage {
     private WebElement taxValue;
     @FindBy(css = "td[class='grand-price']:nth-child(n) span")
     private WebElement orderTotalValue;
+    @FindBy(xpath= "//a[@class='action showcart']")
+    private WebElement carticon;
+    @FindBy(xpath="//span[text()='View Cart']")
+    private WebElement viewCartInCartPopup;
+    @FindBy(xpath = "//span[@class='counter-number']")
+    private WebElement cartCounter;
+    @FindBy(xpath = "//span[@class='item-count']")
+    private WebElement itemCounterInCartPopUp;
+    @FindBy(xpath = "//button[@id='top-cart-btn-checkout']")
+    private WebElement proceedCheckoutBtnInCartPopup;
+    @FindBy(xpath = "//a[@id='btn-minicart-close']")
+    private WebElement cartCloseIcon;
+    @FindBy(xpath="//input[@id='coupon_code']")
+    private WebElement coupounCodeField;
+    @FindBy(xpath = "//button[@value='Apply']")
+    private WebElement applyCopouneCodeBtn;
+    @FindBy(xpath = "//div[text()='You used free gift code \"spo15\".']")
+    private WebElement usedFreeCouponeMsg;
+    @FindBy(xpath = "//button[@value='Cancel']")
+    private WebElement cancelCouponeCodeBtn;
+    @FindBy(xpath ="//div[@data-bind='html: $parent.prepareMessageForHtml(message.text)']")
+    private WebElement notExistCouponeMsg;
+    @FindBy(xpath = "//div[@id='coupon_code-error']")
+    private WebElement requiredCouponeMsg;
     //Getter Methods
     public WebElement getItemsCounterInCartPage() {return itemsCounter;}
     public WebElement getRequestedQtyUnAvailableMsg(){return requestedQtyUnAvailableMsg;}
@@ -83,9 +108,13 @@ public class CartPage {
     public WebElement getSubTotalValue(){return subTotalValue;}
     public WebElement getTaxValue(){return taxValue;}
     public WebElement getOrderTotalValue(){return orderTotalValue;}
-
-
-
+    public WebElement getCartCounter(){return cartCounter;}
+    public  WebElement getItemCounterInCartPopUp(){return itemCounterInCartPopUp;}
+    public WebElement getCloseIconInCartPopup(){return cartCloseIcon;}
+    public WebElement getUsedFreeCouponeMsg(){return usedFreeCouponeMsg;}
+    public WebElement getApplyCouponeCode(){return applyCopouneCodeBtn;}
+    public WebElement getNotExistCouponeMsg(){return notExistCouponeMsg;}
+    public WebElement getRequiredCouponeMsg(){return requiredCouponeMsg;}
     //Define the main actions we need to execute our TCs
     public void clickOnTheContinueShoppingBtn() {
         DataHelperAndWait.isDisplayed(continueShoppingBtn, 10);
@@ -115,6 +144,33 @@ public class CartPage {
         DataHelperAndWait.waitToBeVisible(productCartInCartPage,15);
         this.productCartInCartPage.click();
     }
+    public void clickOnCartIcon(){
+        DataHelperAndWait.waitToBeVisible(carticon,10);
+        this.carticon.click();
+    }
+    public void clickOnViewCartInCartPopUp(){
+        DataHelperAndWait.waitToBeVisible(viewCartInCartPopup,10);
+        this.viewCartInCartPopup.click();
+    }
+    public void clickOnProceedCheckoutBtnInCartPopup(){
+        DataHelperAndWait.waitToBeClickable(proceedCheckoutBtnInCartPopup,10);
+        this.proceedCheckoutBtnInCartPopup.click();
+    }
+    public void clickOnCartCloseIcon(){
+        DataHelperAndWait.waitToBeVisible(cartCloseIcon,10);
+        this.cartCloseIcon.click();
+    }
+    public void FillinCouponeCode(String couponeCode){
+        DataHelperAndWait.waitToBeVisible(coupounCodeField,10);
+        this.coupounCodeField.sendKeys(couponeCode);
+        DataHelperAndWait.waitToBeClickable(applyCopouneCodeBtn,10);
+        this.applyCopouneCodeBtn.click();
+    }
+    public void clickOnCancelCouponeCodeBtn(){
+        DataHelperAndWait.waitToBeClickable(cancelCouponeCodeBtn,10);
+        this.cancelCouponeCodeBtn.click();
+    }
+
 
 
 

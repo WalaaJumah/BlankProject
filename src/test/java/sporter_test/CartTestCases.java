@@ -385,7 +385,77 @@ public class CartTestCases extends BaseTest {
         float cartTotal= subTotal+tax;
         Assert.assertEquals(orderTotal,cartTotal);
     }
-
+    @Test(description ="Make sure that the customer can view the cart using Cart Icon",priority = 29)
+    public void verifyAbilityToViewCartFromCartIcon(){
+        productDetailsPageTestCases = new ProductDetailsPageTestCases();
+        cartPage= new CartPage(webDriver);
+        productDetailsPageTestCases.keepShoppingAfterAddingToTheCart();
+        cartPage.clickOnCartIcon();
+        cartPage.clickOnViewCartInCartPopUp();
+        Assert.assertEquals(webDriver.getCurrentUrl(), cartURL);
+    }
+    @Test(description ="Make sure that the counter-number appears in the cart pop up works correctly",priority = 30)
+    public void verifyTheCounterInCartIconWorksCorrectly(){
+        cartPage= new CartPage(webDriver);
+       this.verifyTheFreeGiftIsAddedCorrectlyToTheCart();
+        Assert.assertEquals(cartPage.getCartCounter().getText(), "2");
+    }
+    @Test(description ="Make sure that the item-count appears in the cart pop up works correctly",priority = 31)
+    public void verifyTheItemsCounterInCartPopupWorksCorrectly(){
+        cartPage= new CartPage(webDriver);
+        this.verifyTheFreeGiftIsAddedCorrectlyToTheCart();
+        cartPage.clickOnCartIcon();
+        Assert.assertEquals(cartPage.getItemCounterInCartPopUp().getText(), "(2 of 2 Items )");
+    }
+    @Test(description ="Make sure that the item-count appears in the cart pop up works correctly",priority = 32)
+    public void verifyTheProceedCheckoutBtnInCartPopupWorksCorrectlyForGuestUser(){
+        cartPage= new CartPage(webDriver);
+        this.verifyTheItemsCounterInCartPopupWorksCorrectly();
+        cartPage.clickOnProceedCheckoutBtnInCartPopup();
+        Assert.assertEquals(webDriver.getCurrentUrl(), checkoutLoginStepURL);
+    }
+    @Test(description ="Make sure that the  close icon appears in the cart pop-up works correctly",priority = 33)
+    public void verifyTheCloseIconInCartPopupWorksCorrectly(){
+        cartPage= new CartPage(webDriver);
+        this.verifyTheFreeGiftIsAddedCorrectlyToTheCart();
+        cartPage.clickOnCartIcon();
+        cartPage.clickOnCartCloseIcon();
+        Assert.assertFalse(cartPage.getCloseIconInCartPopup().isDisplayed());
+    }
+    @Test(description ="Make sure that the free coupone code working fine",priority = 34)
+    public void verifyFreeCoupopneCodeFunctionWorksCorrectly(){
+        cartPage= new CartPage(webDriver);
+        this.viewCartFromPDP();
+        cartPage.FillinCouponeCode(freeCouponeCode);
+        DataHelperAndWait.waitToBeVisible(cartPage.getUsedFreeCouponeMsg(),15);
+        Assert.assertTrue(cartPage.getFreeFromSporterSection().isDisplayed());
+    }
+    @Test(description ="Make sure that the system does not apply invalid coupon code",priority = 35)
+    public void verifyInabilityToApplyInvalidCouponCode(){
+        cartPage= new CartPage(webDriver);
+        this.viewCartFromPDP();
+        cartPage.FillinCouponeCode("test");
+        DataHelperAndWait.waitToBeVisible(cartPage.getNotExistCouponeMsg(),15);
+        Assert.assertTrue(cartPage.getNotExistCouponeMsg().isDisplayed());
+    }
+    @Test(description ="Make sure that the system cancel the coupon code correctly",priority = 36)
+    public void verifyAbilityToCancelTheCouponCode(){
+        cartPage= new CartPage(webDriver);
+        this.viewCartFromPDP();
+        cartPage.FillinCouponeCode(freeCouponeCode);
+        DataHelperAndWait.waitToBeVisible(cartPage.getUsedFreeCouponeMsg(),15);
+        cartPage.clickOnCancelCouponeCodeBtn();
+        Assert.assertFalse(cartPage.getFreeFromSporterSection().isDisplayed());
+        Assert.assertTrue(cartPage.getApplyCouponeCode().isDisplayed());
+    }
+    @Test(description ="Make sure inability to apply coupon code without filling the code",priority = 37)
+    public void verifyInabilityToApplyCouponCodeWithoutFillingTheCode(){
+        cartPage= new CartPage(webDriver);
+        this.viewCartFromPDP();
+        cartPage.FillinCouponeCode(" ");
+        DataHelperAndWait.waitToBeVisible(cartPage.getRequiredCouponeMsg(),15);
+        Assert.assertTrue(cartPage.getRequiredCouponeMsg().isDisplayed());
+    }
 
 
 

@@ -5,10 +5,11 @@
     <test name="EdgeTest">
         <parameter name="browser" value="Edge" />
         <classes>
-            <class name="sporter_test.CartTestCases">
+            <class name="sporter_test.RecommendedProductsTestCases">
                 <methods>
-                    <include name="verifyOrderTotalCalculationInCartPageWorksCorrectly"></include>
-<!--                    <include name="verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct"></include>-->
+<!--                    <include name="verifyKeepShoppingBtnWorksCorrectly"></include>-->
+<!--                    <include name="verifyViewCartWorksBtnCorrectly"></include>-->
+                    <include name="verifyCloseRecommendedPopupCorrectly"></include>
                 </methods>
             </class>
         </classes>
