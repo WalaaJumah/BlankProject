@@ -11,6 +11,7 @@ public class BaseTest {
     public String stgSiteURL = "https://stg.sporter.com/en-ae";
     public String cartURL= "https://www.sporter.com/en-ae/checkout/cart/";
     public String aeSiteURL = "https://www.sporter.com/en-ae/";
+    public String ksaSiteURL = "https://www.sporter.com/en-sa/";
     public String checkoutLoginStepURL = "https://www.sporter.com/en-ae/checkout/#checkout-login-step";
     public String freeCouponeCode= "spo15";
     public String discaountCouponeCode= "";
@@ -31,8 +32,8 @@ public class BaseTest {
                 webDriver.navigate().to(siteURL);
                 break;
             case "chrome":
-//                System.setProperty("webdriver.chrome.driver", "C:\\Users\\w.jumaa\\chromedriver.exe");
-                System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver","C:\\Users\\w.jumaa\\chromedriver.exe");
+//                System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
                 webDriver = new ChromeDriver();
                 webDriver.manage().window().maximize();
                 webDriver.navigate().to(siteURL);

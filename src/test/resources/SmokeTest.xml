@@ -2,29 +2,28 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="TestSuite" thread-count="1" parallel="tests" >
 
-    <test name="EdgeTest">
-        <parameter name="browser" value="Edge" />
-        <classes>
-            <class name="sporter_test.RecommendedProductsTestCases">
-                <methods>
-<!--                    <include name="verifyKeepShoppingBtnWorksCorrectly"></include>-->
-<!--                    <include name="verifyViewCartWorksBtnCorrectly"></include>-->
-                    <include name="verifyCloseRecommendedPopupCorrectly"></include>
-                </methods>
-            </class>
-        </classes>
-    </test>
-<!--    <test name="ChromeTest">-->
-<!--        <parameter name="browser" value="chrome" />-->
+<!--    <test name="EdgeTest">-->
+<!--        <parameter name="browser" value="Edge" />-->
 <!--        <classes>-->
-<!--            <class name="sporter_test.CartTestCases">-->
+<!--            <class name="sporter_test.RecommendedProductsTestCases">-->
 <!--                <methods>-->
-<!--                    <include name="viewCartFromPDP"></include>-->
-<!--                    <include name="verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct"></include>-->
+<!--&lt;!&ndash;                    <include name="verifyKeepShoppingBtnWorksCorrectly"></include>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="verifyViewCartWorksBtnCorrectly"></include>&ndash;&gt;-->
+<!--                    <include name="verifyAbilityToAddRecommendedProductToCart"></include>-->
 <!--                </methods>-->
 <!--            </class>-->
 <!--        </classes>-->
 <!--    </test>-->
+    <test name="ChromeTest">
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="sporter_test.KsaHomePageTestCases">
+                <methods>
+                    <include name="verifyMainOptionsInTheMegaMenyAreDisplayed"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
 <!--    <test name="FireFoxTest">-->
 <!--        <parameter name="browser" value="firefox" />-->
 <!--        <classes>-->

@@ -46,7 +46,7 @@ public class ProductDetailsPage {
     private WebElement joCountry;
     @FindBy(xpath = "//*[@id=\"maincontent\"]/div[3]/div/div[2]/div[2]/a[1]/picture/img")
     private WebElement firstProductInHomePage;
-    @FindBy(xpath = "//*[@id=\"tab-38-all38\"]/div[1]/div/div[2]/div/a")
+    @FindBy(xpath = "//*[@id=\"tab-38-all38\"]/div[1]/div/div[3]/div/a")
     private WebElement productInHomePage;
     @FindBy(id = "Overall Evaluation_1_label")
     private WebElement oneStarReview;

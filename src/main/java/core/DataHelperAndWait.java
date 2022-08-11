@@ -94,4 +94,5 @@ jse.executeScript("arguments[0].click()", element);
        float elemetdouble= Float.parseFloat(elementValueWithoutSpace);
         return elemetdouble;
    }
+
 }
