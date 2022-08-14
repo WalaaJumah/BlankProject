@@ -21,7 +21,7 @@ public class BaseTest {
     public static WebDriver webDriver;
     @BeforeMethod
     @Parameters("browser")
-    public void setupBrowser(String browser) throws Exception {
+    public void setupBrowser( String browser) throws Exception {
 //Check if parameter passed from TestNG is 'firefox'
         switch (browser) {
             case "firefox":

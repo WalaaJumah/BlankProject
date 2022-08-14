@@ -17,11 +17,11 @@
     <test name="ChromeTest">
         <parameter name="browser" value="chrome" />
         <classes>
-            <class name="sporter_test.KsaHomePageTestCases">
+            <class name="sporter_test.AEGuestUserTestCases">
                 <methods>
-                    <include name="verifyPreviousBtnInTrendingOnSporterSectionWorks"></include>
-                    <include name="verifyAbilityToClickOnTheVitaminsAndHealthLinkInNewArrivalsSection"></include>
-                    <include name="verifyAbilityToClickOnPhoneBtnInGotQuestionSectionCorrectly"></include>
+                    <include name="verifyTheGuestUserCanFillTheShippingInformationCorrectly"></include>
+<!--&lt;!&ndash;                    <include name="verifyAbilityToAccessTheGuestCheckoutPagefromTheCartPopUpCorrectly"></include>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="verifyAbilityToClickOnPhoneBtnInGotQuestionSectionCorrectly"></include>&ndash;&gt;-->
 
                 </methods>
             </class>
