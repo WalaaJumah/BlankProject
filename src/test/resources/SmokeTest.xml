@@ -19,9 +19,9 @@
         <classes>
             <class name="sporter_test.KsaHomePageTestCases">
                 <methods>
-<!--                    <include name="verifyAbilityToClickOnTheAllLinkInTopSellersSection"></include>-->
-<!--                    <include name="verifyNextBtnInNewArrivalsSectionWorks"></include>-->
-<!--                    <include name="verifyPreviousBtnInNewArrivalsSectionWorks"></include>-->
+                    <include name="verifyPreviousBtnInTrendingOnSporterSectionWorks"></include>
+                    <include name="verifyAbilityToClickOnTheVitaminsAndHealthLinkInNewArrivalsSection"></include>
+                    <include name="verifyAbilityToClickOnPhoneBtnInGotQuestionSectionCorrectly"></include>
 
                 </methods>
             </class>

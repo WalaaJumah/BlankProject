@@ -9,6 +9,7 @@
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/KsaHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/KsaHomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/KsaHomePageTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/KsaHomePageTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/SmokeTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/SmokeTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/TestData.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,24 +92,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CartTestCases.verifyUnabilityToAddMoreThan2QtyOfSameProductFromTheCartPageForJordanStore" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="sporter-web-automation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sporter_test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="sporter_test" />
-      <option name="MAIN_CLASS_NAME" value="sporter_test.CartTestCases" />
-      <option name="METHOD_NAME" value="verifyUnabilityToAddMoreThan2QtyOfSameProductFromTheCartPageForJordanStore" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="KsaHomePageTestCases.verifyMainOptionsInTheMegaMenyAreDisplayed" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
       <extension name="coverage">
@@ -120,6 +103,25 @@
       <option name="PACKAGE_NAME" value="sporter_test" />
       <option name="MAIN_CLASS_NAME" value="sporter_test.KsaHomePageTestCases" />
       <option name="METHOD_NAME" value="verifyMainOptionsInTheMegaMenyAreDisplayed" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KsaHomePageTestCases.verifyTopSellingStacksSectionAreDisplayed" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="sporter-web-automation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sporter_test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/SmokeTest.xml" />
+      <option name="PACKAGE_NAME" value="sporter_test" />
+      <option name="MAIN_CLASS_NAME" value="sporter_test.KsaHomePageTestCases" />
+      <option name="METHOD_NAME" value="verifyTopSellingStacksSectionAreDisplayed" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -148,10 +150,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/SmokeTest.xml" />
+        <item itemvalue="TestNG.KsaHomePageTestCases.verifyTopSellingStacksSectionAreDisplayed" />
         <item itemvalue="TestNG.KsaHomePageTestCases.verifyMainOptionsInTheMegaMenyAreDisplayed" />
         <item itemvalue="TestNG.RecommendedProductsTestCases.verifyAbilityToAddRecommendedProductToCart" />
         <item itemvalue="TestNG.CartTestCases.verifyTheFreeGiftIsAddedCorrectlyToTheCart" />
-        <item itemvalue="TestNG.CartTestCases.verifyUnabilityToAddMoreThan2QtyOfSameProductFromTheCartPageForJordanStore" />
       </list>
     </recent_temporary>
   </component>
