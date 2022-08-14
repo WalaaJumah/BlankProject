@@ -2,6 +2,7 @@ package sporter_test;
 
 import core.BaseTest;
 import core.DataHelperAndWait;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -54,6 +55,10 @@ public class AEGuestUserTestCases extends BaseTest {
         Select select = new Select(aeGuestUserPage.getCityMenu());
         WebElement cityOption = select.getOptions().get(2);
         cityOption.click();
+        aeGuestUserPage.clickOnContinueBtn();
+        DataHelperAndWait.implicitWait(10);
+        Assert.assertTrue(aeGuestUserPage.getShippingMethodSection().isDisplayed());
+
     }
 
 

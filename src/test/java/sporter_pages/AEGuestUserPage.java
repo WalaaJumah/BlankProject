@@ -64,6 +64,8 @@ public class AEGuestUserPage {
     private WebElement continueBtn;
     @FindBy(xpath = "//select[@class='select select2-hidden-accessible']")
     private WebElement cityMenu;
+    @FindBy(xpath = "//ul[@class='table-checkout-shipping-method']")
+    private WebElement shippingMethodSection;
 
 
 
@@ -74,6 +76,7 @@ public class AEGuestUserPage {
     public WebElement getUsedFreeCouponeMsg(){return usedFreeCouponeMsg;}
     public WebElement getRegisterAtSporterOption(){return registerAtSporterOption;}
     public WebElement getCityMenu(){return cityMenu;}
+    public WebElement getShippingMethodSection(){return shippingMethodSection;}
 
 
 
@@ -134,7 +137,10 @@ public class AEGuestUserPage {
         DataHelperAndWait.waitToBeVisible(streetLineTwoField,10);
         streetLineTwoField.sendKeys(streetLineTwo);
     }
-
+    public void clickOnContinueBtn(){
+        DataHelperAndWait.waitToBeClickable(continueBtn,10);
+        this.continueBtn.click();
+    }
 
 
 
