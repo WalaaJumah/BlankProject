@@ -19,7 +19,7 @@
         <classes>
             <class name="sporter_test.AEGuestUserTestCases">
                 <methods>
-                    <include name="verifyTheGuestUserCanFillTheShippingInformationCorrectly"></include>
+<!--                    <include name="verifyAbilityToNavigateToHomePageByClickingOnSporterLogo"></include>-->
 <!--&lt;!&ndash;                    <include name="verifyAbilityToAccessTheGuestCheckoutPagefromTheCartPopUpCorrectly"></include>&ndash;&gt;-->
 <!--&lt;!&ndash;                    <include name="verifyAbilityToClickOnPhoneBtnInGotQuestionSectionCorrectly"></include>&ndash;&gt;-->
 
