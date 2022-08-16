@@ -12,7 +12,7 @@ public class KsaHomePage {
         PageFactory.initElements(webDriver, this);
     }
     //declare all locators related to the Cart Page
-    @FindBy(xpath = "//span[@class='fas fa-chevron-down']")
+    @FindBy(id = "switcher-store-trigger")
     private WebElement countryList;
     @FindBy(xpath = "//li[@class='country_switch']/span[@class='SA']")
     private WebElement saCountry;

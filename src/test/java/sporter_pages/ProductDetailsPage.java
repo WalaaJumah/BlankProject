@@ -36,7 +36,7 @@ public class ProductDetailsPage {
     private WebElement searchBtn;
     @FindBy(xpath = "//a[@data-position='1']/div[@class= 'result-thumbnail product-image-wrapper']")
     private WebElement productCard;
-    @FindBy(xpath = "//span[@class='fas fa-chevron-down']")
+    @FindBy(id = "switcher-store-trigger")
     private WebElement countryList;
     @FindBy(xpath = "//li[@class='country_switch']/span[@class='AE']")
     private WebElement aeCountry;
