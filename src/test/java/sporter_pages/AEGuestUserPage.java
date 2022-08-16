@@ -101,6 +101,8 @@ public class AEGuestUserPage {
     private WebElement returnToCartLink;
     @FindBy(xpath = "//a[@href='https://www.sporter.com/en-ae/']")
     private WebElement sporterLogo;
+    @FindBy(xpath="//p[text()='You have no items in your shopping cart.']")
+    private WebElement noItemInCartLabel;
 
     //Getter Methods
     public WebElement getRegisterAtSporterOption() {
@@ -190,6 +192,8 @@ public class AEGuestUserPage {
     public WebElement getStreetLineTwoField() {
         return streetLineTwoField;
     }
+    public WebElement getNoItemInCartLabel(){return noItemInCartLabel;}
+
 
     //Define the main actions we need to execute our TCs
     public void switchToAECountry() {
