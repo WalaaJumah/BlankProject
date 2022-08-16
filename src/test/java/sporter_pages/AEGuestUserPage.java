@@ -14,7 +14,7 @@ public class AEGuestUserPage {
     }
 
     //declare all locators related to the Cart Page
-    @FindBy(xpath = "//span[@class='fas fa-chevron-down']")
+    @FindBy(id = "switcher-store-trigger")
     private WebElement countryList;
     @FindBy(xpath = "//li[@class='country_switch']/span[@class='AE']")
     private WebElement aeCountry;
@@ -41,7 +41,7 @@ public class AEGuestUserPage {
     private WebElement productInHomePage;
     @FindBy(xpath = "//div[@class='inner-seller-prod wp-id-45575']")
     private WebElement productInHomePageAr;
-    @FindBy(xpath = "//*[@id=\"checkout_step_col1_col2\"]/div[2]/div/button")
+    @FindBy(xpath = "//*[@id='checkout_step_col1_col2']/div[2]/div/button")
     private WebElement guestCheckoutBtn;
     @FindBy(xpath = "//div[@class='input-box field checkbox-field register-account input-with-value input-active']")
     private WebElement registerAtSporterOption;
@@ -73,8 +73,10 @@ public class AEGuestUserPage {
     private WebElement languageSwitcher;
     @FindBy(xpath = "//div/input[@name='lastname']/following-sibling::div")
     private WebElement lastNameRequiredFieldMsg;
-    @FindBy(xpath = "//div[3]/div/div[1]/input/following-sibling::div[1]")
+    @FindBy(xpath = "//div[3]/div/div[1]/input/following-sibling::div[2]")
     private WebElement emailRequiredFieldMsg;
+    @FindBy(xpath = "//div[3]/div/div[1]/input/following-sibling::div[1]")
+    private WebElement emailValidationFormateMsg;
     @FindBy(xpath = "//div[4]/div/div[1]/div[@class='field-error']/span")
     private WebElement phoneRequiredFieldMsg;
     @FindBy(xpath = "//div[7]/div/div[1]/div[@class='field-error']/span")
@@ -103,6 +105,8 @@ public class AEGuestUserPage {
     private WebElement sporterLogo;
     @FindBy(xpath="//p[text()='You have no items in your shopping cart.']")
     private WebElement noItemInCartLabel;
+    @FindBy(xpath="//select[@name='country_id']")
+    private WebElement countryField;
 
     //Getter Methods
     public WebElement getRegisterAtSporterOption() {
@@ -193,6 +197,9 @@ public class AEGuestUserPage {
         return streetLineTwoField;
     }
     public WebElement getNoItemInCartLabel(){return noItemInCartLabel;}
+    public WebElement getCountryField(){return countryField;}
+    public WebElement getEmailValidationFormateMsg(){return emailValidationFormateMsg;}
+
 
 
     //Define the main actions we need to execute our TCs
@@ -237,7 +244,7 @@ public class AEGuestUserPage {
     }
 
     public void clickOnGuestCheckoutBtn() {
-        DataHelperAndWait.waitToBeClickable(guestCheckoutBtn, 10);
+        DataHelperAndWait.waitToBeClickable(guestCheckoutBtn, 15);
         this.guestCheckoutBtn.click();
     }
 

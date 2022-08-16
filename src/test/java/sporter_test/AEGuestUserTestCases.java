@@ -10,9 +10,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.AEGuestUserPage;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class AEGuestUserTestCases extends BaseTest {
     private AEGuestUserPage aeGuestUserPage;
     String firstName = "Automation";
@@ -66,8 +63,14 @@ public class AEGuestUserTestCases extends BaseTest {
         DataHelperAndWait.implicitWait(10);
         Assert.assertTrue(aeGuestUserPage.getShippingMethodSection().isDisplayed());
     }
+    @Test(description = "Make sure the system displays the store country by default in country field", priority = 4)
+    public void verifyTheCountryRetrievedInCountryFieldBasedOnStoreCountry(){
+        aeGuestUserPage = new AEGuestUserPage(webDriver);
+        this.verifyAbilityToAccessTheGuestCheckoutPagefromTheCartPageCorrectly();
+        Assert.assertEquals(aeGuestUserPage.getCountryField().getText(),"United Arab Emirates");
+    }
 
-    @Test(description = "Make sure the Guest user can filling the shipping information correctly", priority = 4)
+    @Test(description = "Make sure the Guest user can filling the shipping information correctly", priority = 5)
         public void verifyTheGuestUserCanFillTheShippingInformationWhenSwitchingToArabicCorrectly() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
         aeGuestUserPage.switchToArabicVersion();
@@ -86,8 +89,8 @@ public class AEGuestUserTestCases extends BaseTest {
         Assert.assertTrue(aeGuestUserPage.getShippingMethodSection().isDisplayed());
     }
 
-    @Test(description = "Make sure the Guest user cannot submit the shipping information when keeping the required fields empty", priority = 5)
-    public void verifyTheGuestUserCannotsubmitTheShippingInformationWithoutFillingTheRequiredFields() {
+    @Test(description = "Make sure the Guest user cannot submit the shipping information when keeping the required fields empty", priority = 6)
+    public void verifyTheGuestUserCannotSubmitTheShippingInformationWithoutFillingTheRequiredFields() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
         this.verifyAbilityToAccessTheGuestCheckoutPagefromTheCartPageCorrectly();
         aeGuestUserPage.fillInShippingInformationInputField(" ", " ", " ", " ", " ", " ", streetLineTwo);
@@ -96,18 +99,18 @@ public class AEGuestUserTestCases extends BaseTest {
         cityOption.click();
         aeGuestUserPage.clickOnContinueBtn();
         DataHelperAndWait.implicitWait(15);
-        Assert.assertEquals(aeGuestUserPage.getFirstnameRequiredFieldMsg().getText(), "This is a required field.");
+            Assert.assertEquals(aeGuestUserPage.getFirstnameRequiredFieldMsg().getText(), "This is a required field.");
         Assert.assertEquals(aeGuestUserPage.getLastNameRequiredFieldMsg().getText(), "This is a required field.");
         Assert.assertEquals(aeGuestUserPage.getemailRequiredFieldMsg().getText(), "This is a required field.");
         Assert.assertEquals(aeGuestUserPage.getPhoneRequiredFieldMsg().getText(), "Text length does not satisfy specified text range.");
         Assert.assertEquals(aeGuestUserPage.getAddressRequiredFieldMsg().getText(), "This is a required field.");
         Assert.assertEquals(aeGuestUserPage.getStreetlineOneRequiredFieldMsg().getText(), "This is a required field.");
-        //There's a bug in the following statment
+        //There's a bug in the following statement
         Assert.assertEquals(aeGuestUserPage.getCityRequiredFieldMsg().getText(), "This is a required field.");
     }
 
-    @Test(description = "Make sure the Guest user cannot submit the shipping information when the phone number length is small ", priority = 6)
-    public void verifyTheGuestUserCannotsubmitTheShippingInformationWhenPhoneFieldHaveSmallTextLength() {
+    @Test(description = "Make sure the Guest user cannot submit the shipping information when the phone number length is small ", priority = 7)
+    public void verifyTheGuestUserCannotSubmitTheShippingInformationWhenPhoneFieldHaveSmallTextLength() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
         aeGuestUserPage.switchToAECountry();
         aeGuestUserPage.clickOnProductInHomePage();
@@ -124,8 +127,8 @@ public class AEGuestUserTestCases extends BaseTest {
         Assert.assertEquals(aeGuestUserPage.getPhoneRequiredFieldMsg().getText(), "Text length does not satisfy specified text range.");
     }
 
-    @Test(description = "Make sure the Guest user cannot submit the shipping information with incorrect email format ", priority = 7)
-    public void verifyTheGuestUserCannotsubmitTheShippingInformationWithIncorrectEmailFormat() {
+    @Test(description = "Make sure the Guest user cannot submit the shipping information with incorrect email format ", priority = 8)
+    public void verifyTheGuestUserCannotSubmitTheShippingInformationWithIncorrectEmailFormat() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
         aeGuestUserPage.switchToAECountry();
         aeGuestUserPage.clickOnProductInHomePage();
@@ -138,19 +141,14 @@ public class AEGuestUserTestCases extends BaseTest {
         WebElement cityOption = select.getOptions().get(2);
         cityOption.click();
         aeGuestUserPage.clickOnContinueBtn();
-        DataHelperAndWait.waitToBeVisible(aeGuestUserPage.getemailRequiredFieldMsg(), 15);
-        Assert.assertEquals(aeGuestUserPage.getemailRequiredFieldMsg().getText(), "Please enter a valid email address.");
+        DataHelperAndWait.waitToBeVisible(aeGuestUserPage.getEmailValidationFormateMsg(), 15);
+        Assert.assertEquals(aeGuestUserPage.getEmailValidationFormateMsg().getText(), "Please enter a valid email address.");
     }
 
-    @Test(description = "Make sure the city Search field works correctly and retrieved the matched result ", priority = 8)
+    @Test(description = "Make sure the city Search field works correctly and retrieved the matched result ", priority = 9)
     public void verifyCitySearchWorksFineAndRetrievedTheMatchedResult() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
-        aeGuestUserPage.switchToAECountry();
-        aeGuestUserPage.clickOnProductInHomePage();
-        aeGuestUserPage.addToCart();
-        aeGuestUserPage.viewCart();
-        aeGuestUserPage.clickOnProceedCheckoutBtn();
-        aeGuestUserPage.clickOnGuestCheckoutBtn();
+        this.verifyAbilityToAccessTheGuestCheckoutPagefromTheCartPageCorrectly();
         aeGuestUserPage.getCityListField().click();
         aeGuestUserPage.getCitySearchField().sendKeys("D");
         for (WebElement webElement : aeGuestUserPage.getSearchMenu()) {
@@ -159,15 +157,10 @@ public class AEGuestUserTestCases extends BaseTest {
         }
     }
 
-    @Test(description = "Make sure the city Search field works correctly when searching for option does not exist in the list ", priority = 9)
-    public void verifyCitySearchWorksFineWhenSearchingForOptionDoesnotExist() {
+    @Test(description = "Make sure the city Search field works correctly when searching for option does not exist in the list ", priority = 10)
+    public void verifyCitySearchWorksFineWhenSearchingForOptionDoesNotExist() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
-        aeGuestUserPage.switchToAECountry();
-        aeGuestUserPage.clickOnProductInHomePage();
-        aeGuestUserPage.addToCart();
-        aeGuestUserPage.viewCart();
-        aeGuestUserPage.clickOnProceedCheckoutBtn();
-        aeGuestUserPage.clickOnGuestCheckoutBtn();
+        this.verifyAbilityToAccessTheGuestCheckoutPagefromTheCartPageCorrectly();
         aeGuestUserPage.getCityListField().click();
         aeGuestUserPage.getCitySearchField().sendKeys("test");
         for (WebElement webElement : aeGuestUserPage.getSearchMenu()) {
@@ -176,34 +169,22 @@ public class AEGuestUserTestCases extends BaseTest {
         }
     }
 
-    @Test(description = "Make sure the city Search list will retrieve all city options when searching using Space", priority = 10)
+    @Test(description = "Make sure the city Search list will retrieve all city options when searching using Space", priority = 11)
     public void verifyCitySearchListRetrieveAllOptionWhenEnteringSpace() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
-        aeGuestUserPage.switchToAECountry();
-        aeGuestUserPage.clickOnProductInHomePage();
-        aeGuestUserPage.addToCart();
-        aeGuestUserPage.viewCart();
-        aeGuestUserPage.clickOnProceedCheckoutBtn();
-        aeGuestUserPage.clickOnGuestCheckoutBtn();
+        this.verifyAbilityToAccessTheGuestCheckoutPagefromTheCartPageCorrectly();
         aeGuestUserPage.getCityListField().click();
         aeGuestUserPage.getCitySearchField().sendKeys(" ");
-        List<String> currentSearchResult = new ArrayList<>();
         for (WebElement webElement : aeGuestUserPage.getSearchMenu()) {
-            currentSearchResult.add(webElement.getText());
             Assert.assertEquals(webElement.getText(), "Select city\n" + "Dubai\n" + "Abu Dhabi\n" + "Sharjah\n" + "Ajman\n" + "Al Ain\n" + "Ras Al Khaimah\n" + "Fujairah\n" + "Umm Al Quwain");
         }
     }
 
-    @Test(description = "Make sure  ability to fill and navigate between the shipping information form using Tab key and keyboard shortcuts", priority = 11)
+    @Test(description = "Make sure  ability to fill and navigate between the shipping information form using Tab key and keyboard shortcuts", priority = 12)
     public void verifyAbilityToFillAndNavigateBetweenTheShippingInformationFormUsingTabKeyAndKeyboardShortCut() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
         Actions act = new Actions(webDriver);
-        aeGuestUserPage.switchToAECountry();
-        aeGuestUserPage.clickOnProductInHomePage();
-        aeGuestUserPage.addToCart();
-        aeGuestUserPage.viewCart();
-        aeGuestUserPage.clickOnProceedCheckoutBtn();
-        aeGuestUserPage.clickOnGuestCheckoutBtn();
+        this.verifyAbilityToAccessTheGuestCheckoutPagefromTheCartPageCorrectly();
         aeGuestUserPage.clickOnFirstNameField();
         aeGuestUserPage.getFirstNameField().sendKeys(firstName);
         act.sendKeys(Keys.TAB).build().perform();
@@ -231,7 +212,7 @@ public class AEGuestUserTestCases extends BaseTest {
 
     /////////////////////
     @Test(description = "Make sure inability to submit the shipping information when filling " +
-            "streetLine 1&2 & First Name & LastNamefields with the text length>=255 symbols & the validation message appears correctly", priority = 12)
+            "streetLine 1&2 & First Name & LastNamefields with the text length>=255 symbols & the validation message appears correctly", priority = 13)
     public void verifyInabilityToSubmitTheShippingInformationFormWhenFillingFieldsWithTextLengthGreaterThan255Symbols() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
         this.verifyAbilityToAccessTheGuestCheckoutPagefromTheCartPageCorrectly();
@@ -247,34 +228,29 @@ public class AEGuestUserTestCases extends BaseTest {
         Assert.assertEquals(aeGuestUserPage.getStreetlineTwoRequiredFieldMsg().getText(), "Please enter less or equal than 255 symbols.");
     }
 
-    @Test(description = "Make sure the Select a billing address from your address book or enter a new address header appears correctly ", priority = 13)
+    @Test(description = "Make sure the Select a billing address from your address book or enter a new address header appears correctly ", priority = 14)
     public void verifyTheHeaderOfShippingInformationFormIsDisplayed() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
-        aeGuestUserPage.switchToAECountry();
-        aeGuestUserPage.clickOnProductInHomePage();
-        aeGuestUserPage.addToCart();
-        aeGuestUserPage.viewCart();
-        aeGuestUserPage.clickOnProceedCheckoutBtn();
-        aeGuestUserPage.clickOnGuestCheckoutBtn();
+        this.verifyAbilityToAccessTheGuestCheckoutPagefromTheCartPageCorrectly();
         DataHelperAndWait.waitToBeVisible(aeGuestUserPage.getTitleOfGuectUserShippingInformationScreen(), 10);
         Assert.assertTrue(aeGuestUserPage.getTitleOfGuectUserShippingInformationScreen().isDisplayed());
     }
 
-    @Test(description = "Make sure the return to the cart link works correctly  ", priority = 14)
+    @Test(description = "Make sure the return to the cart link works correctly  ", priority = 15)
     public void verifyBackToCartLinkWorksCorrectly() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
         this.verifyAbilityToAccessTheGuestCheckoutPagefromTheCartPageCorrectly();
         aeGuestUserPage.clickOnReturnToCartIcon();
         Assert.assertEquals(webDriver.getCurrentUrl(), "https://www.sporter.com/en-ae/checkout/cart/");
     }
-    @Test(description = "Make sure ability to navigate to the home page by clicking on the sporter logo ", priority = 14)
+    @Test(description = "Make sure ability to navigate to the home page by clicking on the sporter logo ", priority = 16)
     public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogo() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
         this.verifyAbilityToAccessTheGuestCheckoutPagefromTheCartPageCorrectly();
         aeGuestUserPage.clickOnSporterLogo();
         Assert.assertEquals(webDriver.getCurrentUrl(), "https://www.sporter.com/en-ae/");
     }
-    @Test(description = "Make sure inability to navigate to the shipping information  directly from the URL without adding any item to the Cart ", priority = 15)
+    @Test(description = "Make sure inability to navigate to the shipping information  directly from the URL without adding any item to the Cart ", priority = 17)
     public void verifyInabilityToNavigateToShippingInformationViaUrlWithoutAddingProductToCart(){
         aeGuestUserPage = new AEGuestUserPage(webDriver);
         aeGuestUserPage.switchToAECountry();
