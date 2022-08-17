@@ -249,9 +249,13 @@ public class AEGuestUserPage {
         this.viewCartBtn.click();
     }
 
-    public void clickOnGuestCheckoutBtn() {
+    public void clickOnGuestCheckoutBtn() {try{
+        DataHelperAndWait.waitToBeClickable(guestCheckoutBtn, 15);
+        this.guestCheckoutBtn.click();}
+    catch(Exception e){
         DataHelperAndWait.waitToBeClickable(guestCheckoutBtn, 15);
         this.guestCheckoutBtn.click();
+    }
     }
 
     public void clickOnProceedCheckoutBtn() {
