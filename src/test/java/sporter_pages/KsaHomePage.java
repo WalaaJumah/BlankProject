@@ -80,6 +80,8 @@ public class KsaHomePage {
     private WebElement healthyFoodActiveLink;
     @FindBy(xpath = "//li[@class='tabli-6-686 active']")
     private WebElement vitaminsAndHealthActiveLink;
+    @FindBy(xpath = "//li[@class='tabli-67-686 active']")
+    private WebElement vitaminsAndHealthActiveLinkInTopeSellersSection;
     @FindBy(xpath = "//li[@class='tabli-67-736 active']")
     private WebElement sportswearAndAccessoriesActiveLink;
     @FindBy(xpath = "//*[@id=\"tab-67-all67\"]/div[2]")
@@ -230,6 +232,8 @@ public class KsaHomePage {
     }
     public WebElement getVitaminsAndHealthActiveLink() {
         return vitaminsAndHealthActiveLink;
+    }    public WebElement getVitaminsAndHealthActiveLinkInTopSellersSection() {
+        return vitaminsAndHealthActiveLinkInTopeSellersSection;
     }
     public WebElement getSportswearAndAccessoriesActiveLink() {
         return sportswearAndAccessoriesActiveLink;
@@ -297,11 +301,17 @@ public class KsaHomePage {
     }
 
     //Define the main actions we need to execute our TCs
-    public void switchToKsaCountry() {
+    public void switchToKsaCountry() {try{
+        DataHelperAndWait.isDisplayed(countryList, 15);
+        this.countryList.click();
+        DataHelperAndWait.implicitWait(6);
+        this.saCountry.click();}
+    catch(Exception e){
         DataHelperAndWait.isDisplayed(countryList, 15);
         this.countryList.click();
         DataHelperAndWait.implicitWait(6);
         this.saCountry.click();
+    }
     }
     public void clickOnviewAllBtnInTopSellingStacksSection(){
         DataHelperAndWait.isDisplayed(viewAllBtnInTopSellingStacksSection,10);

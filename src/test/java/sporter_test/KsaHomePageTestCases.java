@@ -139,8 +139,8 @@ public class KsaHomePageTestCases extends BaseTest {
         ksaHomePage= new KsaHomePage(webDriver);
         ksaHomePage.switchToKsaCountry();
         ksaHomePage.clickOnVitaminsAndHealthLinkInTopSellerSection();
-        DataHelperAndWait.waitToBeVisible(ksaHomePage.getVitaminsAndHealthActiveLink(),10);
-        Assert.assertTrue(ksaHomePage.getVitaminsAndHealthActiveLink().isDisplayed());
+        DataHelperAndWait.waitToBeVisible(ksaHomePage.getVitaminsAndHealthActiveLinkInTopSellersSection(),10);
+        Assert.assertTrue(ksaHomePage.getVitaminsAndHealthActiveLinkInTopSellersSection().isDisplayed());
     }
     @Test(description = "Make sure ability to click on the Sportswear And Accessories link that appear in the Top Seller Section ",priority = 19)
     public void verifyAbilityToClickOnTheSportswearAndAccessoriesLinkInTopSellersSection(){

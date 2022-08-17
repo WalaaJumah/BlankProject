@@ -196,21 +196,37 @@ public class ProductDetailsPage {
         DataHelperAndWait.waitToBeClickable(secondProductFlavor, 20);
         this.secondProductFlavor.click();
     }
-    public void switchCountry() {
+    public void switchCountry() {try{
+        DataHelperAndWait.waitToBeVisible(countryList, 20);
+        this.countryList.click();
+        DataHelperAndWait.implicitWait(10);
+        this.aeCountry.click();}
+    catch (Exception e){
         DataHelperAndWait.waitToBeVisible(countryList, 20);
         this.countryList.click();
         DataHelperAndWait.implicitWait(10);
         this.aeCountry.click();
     }
-    public void switchToOmanCountry() {
+    }
+    public void switchToOmanCountry() {try{
+        DataHelperAndWait.isDisplayed(countryList, 10);
+        this.countryList.click();
+        this.omanCountry.click();}
+    catch (Exception e){
         DataHelperAndWait.isDisplayed(countryList, 10);
         this.countryList.click();
         this.omanCountry.click();
     }
-    public void switchToJOCountry() {
+    }
+    public void switchToJOCountry() {try{
+        DataHelperAndWait.isDisplayed(countryList, 10);
+        this.countryList.click();
+        this.joCountry.click();}
+    catch(Exception e){
         DataHelperAndWait.isDisplayed(countryList, 10);
         this.countryList.click();
         this.joCountry.click();
+    }
     }
     public void clickOnProductQuantity() {
         this.quantityField.click();

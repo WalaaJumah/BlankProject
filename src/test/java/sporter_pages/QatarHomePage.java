@@ -299,11 +299,17 @@ public class QatarHomePage {
     }
 
     //Define the main actions we need to execute our TCs
-    public void switchToQatarCountry() {
+    public void switchToQatarCountry() {try{
+        DataHelperAndWait.isDisplayed(countryList, 15);
+        this.countryList.click();
+        DataHelperAndWait.implicitWait(6);
+        this.qaterCountry.click();}
+    catch(Exception e){
         DataHelperAndWait.isDisplayed(countryList, 15);
         this.countryList.click();
         DataHelperAndWait.implicitWait(6);
         this.qaterCountry.click();
+    }
     }
     public void clickOnviewAllBtnInTopSellingStacksSection(){
         DataHelperAndWait.isDisplayed(viewAllBtnInTopSellingStacksSection,10);

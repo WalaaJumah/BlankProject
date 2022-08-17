@@ -203,11 +203,17 @@ public class AEGuestUserPage {
 
 
     //Define the main actions we need to execute our TCs
-    public void switchToAECountry() {
+    public void switchToAECountry() {try{
+        DataHelperAndWait.isDisplayed(countryList, 15);
+        this.countryList.click();
+        DataHelperAndWait.implicitWait(6);
+        this.aeCountry.click();}
+    catch(Exception e){
         DataHelperAndWait.isDisplayed(countryList, 15);
         this.countryList.click();
         DataHelperAndWait.implicitWait(6);
         this.aeCountry.click();
+    }
     }
 
     public void clickOnCartIcon() {
