@@ -1,8 +1,10 @@
 package core;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 
@@ -12,6 +14,8 @@ public class BaseTest {
     public String cartURL= "https://www.sporter.com/en-ae/checkout/cart/";
     public String aeSiteURL = "https://www.sporter.com/en-ae/";
     public String ksaSiteURL = "https://www.sporter.com/en-sa/";
+    public String qaterSiteURL = "https://www.sporter.com/en-qa/";
+
     public String checkoutLoginStepURL = "https://www.sporter.com/en-ae/checkout/#checkout-login-step";
     public String freeCouponeCode= "spo15";
     public String discaountCouponeCode= "";
@@ -19,6 +23,7 @@ public class BaseTest {
 
     public String outOfStockProduct = "https://www.sporter.com/en-ae/grenade-reload-protein-oat-bar";
     public static WebDriver webDriver;
+    public static WebDriver driver;
     @BeforeMethod
     @Parameters("browser")
     public void setupBrowser( String browser) throws Exception {
@@ -51,7 +56,7 @@ public class BaseTest {
         }
     }
     @AfterMethod(alwaysRun = true)
-    public void tearDown() throws Exception {
+    public void tearDown()  {
         webDriver.close();
     }
 }

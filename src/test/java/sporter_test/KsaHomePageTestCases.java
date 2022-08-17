@@ -18,7 +18,8 @@ public class KsaHomePageTestCases extends BaseTest {
     @Test(description = "Make sure the HomePage rotating slider section is displayed in Home Page", priority = 2)
     public void verifyHomePageRotatingSliderIsDisplayed(){
         ksaHomePage= new KsaHomePage(webDriver);
-        ksaHomePage.switchToKsaCountry();        Assert.assertTrue(ksaHomePage.getHomePageRotatingSlider().isDisplayed());
+        ksaHomePage.switchToKsaCountry();
+        Assert.assertTrue(ksaHomePage.getHomePageRotatingSlider().isDisplayed());
        for (int i=0; i<ksaHomePage.getHomePageRotatingSliderlist().size();i++) {
            Assert.assertTrue(ksaHomePage.getHomePageRotatingSliderlist().get(i).isDisplayed());
        }}
@@ -163,7 +164,6 @@ public class KsaHomePageTestCases extends BaseTest {
         ksaHomePage.clickOnNextButtonInTopSellersSection();
         DataHelperAndWait.implicitWait(6);
         Assert.assertTrue(ksaHomePage.getTopSellerSectionpositionAfterClickingOnNext().isDisplayed() );
-
     }
     @Test(description = "Make sure the previous button appearing in the Top Seller section works Correctly ",priority = 22)
     public void verifyPreviousBtnInTopSellerSectionWorks(){
@@ -174,7 +174,6 @@ public class KsaHomePageTestCases extends BaseTest {
         DataHelperAndWait.implicitWait(6);
         Assert.assertTrue(ksaHomePage.getTopSellerSectionpositionAfterClickingOnPrevious().isDisplayed() );
     }
-
     @Test(description = "Make sure the Trending On Sporter sections are displayed ",priority = 23)
     public void verifyTrendingOnSporterSectionAreDisplayed(){
         ksaHomePage= new KsaHomePage(webDriver);

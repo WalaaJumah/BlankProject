@@ -17,13 +17,13 @@
     <test name="ChromeTest">
         <parameter name="browser" value="chrome" />
         <classes>
-            <class name="sporter_test.AEGuestUserTestCases">
-                <methods>
-<!--                  <include name="verifyTheGuestUserCanFillTheShippingInformationWhenSwitchingToArabicCorrectly"></include>-->
-<!--&lt;!&ndash;                    <include name="verifyAbilityToAccessTheGuestCheckoutPagefromTheCartPopUpCorrectly"></include>&ndash;&gt;-->
+            <class name="sporter_test.QatarHomePageTestCases">
+<!--                <methods>-->
+<!--                  <include name="verifyTheSwitchCountryPopUpWillDisplayWhenNavigationDirectlyToOtherCountryByUrl"></include>-->
+<!--                    <include name="verifyAbilityToClickOnPhoneBtnInGotQuestionSectionCorrectly"></include>-->
 <!--&lt;!&ndash;                    <include name="verifyAbilityToClickOnPhoneBtnInGotQuestionSectionCorrectly"></include>&ndash;&gt;-->
 
-                </methods>
+<!--                </methods>-->
             </class>
         </classes>
     </test>
