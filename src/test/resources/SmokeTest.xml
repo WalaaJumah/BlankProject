@@ -19,13 +19,13 @@
         <classes>
 <!--            <class name="sporter_test.KsaHomePageTestCases"></class>-->
 <!--            <class name="sporter_test.QatarHomePageTestCases"></class>-->
-            <class name="sporter_test.AEGuestUserTestCases">
-<!--                <methods>-->
-<!--                  <include name="verifyAbilityToClickOnTheVitaminsAndHealthLinkInTopSellersSection"></include>-->
+            <class name="sporter_test.AEFooterPageTestCases">
+                <methods>
+                  <include name="verifyOrdersAndShippingSectionAppearsCorrectlyInFooter"></include>
 <!--                    <include name="verifyAbilityToClickOnPhoneBtnInGotQuestionSectionCorrectly"></include>-->
 <!--&lt;!&ndash;                    <include name="verifyAbilityToClickOnPhoneBtnInGotQuestionSectionCorrectly"></include>&ndash;&gt;-->
 
-<!--                </methods>-->
+                </methods>
             </class>
         </classes>
     </test>
