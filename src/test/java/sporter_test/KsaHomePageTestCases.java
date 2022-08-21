@@ -300,7 +300,7 @@ public class KsaHomePageTestCases extends BaseTest {
         ksaHomePage.switchToKsaCountry();
         ksaHomePage.clickOnPhoneBtn();
         // store window handles in Set
-        String currentwindow = webDriver.getWindowHandle();
-        webDriver.switchTo().window(currentwindow);
+        String myWindowHandle = webDriver.getWindowHandle();
+        webDriver.switchTo().window(myWindowHandle);
     }
         }

@@ -21,8 +21,12 @@
 <!--            <class name="sporter_test.QatarHomePageTestCases"></class>-->
             <class name="sporter_test.AEFooterPageTestCases">
                 <methods>
-                  <include name="verifyOrdersAndShippingSectionAppearsCorrectlyInFooter"></include>
-<!--                    <include name="verifyAbilityToClickOnPhoneBtnInGotQuestionSectionCorrectly"></include>-->
+                  <include name="verifyBCAAsAndAminoAcidsLinkAppearsInFooterWorksCorrectly"></include>
+                  <include name="verifyTheFooterSectionAppearsInTheBCAAsAndAminoAcidsPage"></include>
+<!--                    <include name="verifyProductAuthenticityLinkAppearsInFooterWorksCorrectly"></include>-->
+<!--                    <include name="verifyWholesaleLinkAppearsInFooterWorksCorrectly"></include>-->
+<!--                    <include name="verifyCareersLinkAppearsInFooterWorksCorrectly"></include>-->
+<!--                    <include name="verifySporterBlogLinkAppearsInFooterWorksCorrectly"></include>-->
 <!--&lt;!&ndash;                    <include name="verifyAbilityToClickOnPhoneBtnInGotQuestionSectionCorrectly"></include>&ndash;&gt;-->
 
                 </methods>

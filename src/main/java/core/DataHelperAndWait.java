@@ -1,9 +1,8 @@
 package core;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.*;
+
+import javax.xml.crypto.Data;
 import java.time.Duration;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -11,10 +10,12 @@ import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 public class DataHelperAndWait extends BaseTest {
     public static WebDriverWait wait;
+
     public static void waitForElement(WebElement element, int Time) {
         wait = new WebDriverWait(webDriver, Time);
         wait.until(ExpectedConditions.visibilityOf(element));
     }
+
     public void waitForTime(int milis) {
         try {
             Thread.sleep(milis);
@@ -22,11 +23,13 @@ public class DataHelperAndWait extends BaseTest {
             e.printStackTrace();
         }
     }
+
     public static boolean isDisplayed(WebElement element, int Time) {
         wait = new WebDriverWait(webDriver, Time);
         return wait.until(ExpectedConditions.visibilityOf(element)).isDisplayed();
     }
-//    public static boolean isPresent(WebElement webElement) {
+
+    //    public static boolean isPresent(WebElement webElement) {
 //        try {
 //            webElement.isDisplayed();
 //            return true;
@@ -34,32 +37,37 @@ public class DataHelperAndWait extends BaseTest {
 //            return false;
 //        }
 //    }
-public static boolean isPresent(WebElement webElement){
-    if(webElement.isDisplayed())
-        return true;
-    else
+    public static boolean isPresent(WebElement webElement) {
+        if (webElement.isDisplayed())
+            return true;
+        else
             return false;
-}
+    }
 
 
     public static void implicitWait(int timeSecond) {
         webDriver.manage().timeouts().implicitlyWait(timeSecond, TimeUnit.SECONDS);
     }
+
     public static void waitToBeClickable(WebElement element, int Time) {
         wait = new WebDriverWait(webDriver, Time);
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
+
     public static void waitToBePresent(String Xpath, int Time) {
         wait = new WebDriverWait(webDriver, Time);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Xpath)));
     }
+
     public static void waitToBeVisible(WebElement element, int Time) {
         wait = new WebDriverWait(webDriver, Time);
         wait.until(ExpectedConditions.visibilityOf(element));
     }
+
     public static void refreshPage() {
         webDriver.navigate().refresh();
     }
+
     public static void selectAllDropDownListOptions(Select select) {
         List<WebElement> elementCount = select.getOptions();
         int menuSize = elementCount.size();
@@ -67,6 +75,7 @@ public static boolean isPresent(WebElement webElement){
             select.selectByIndex(i);
         }
     }
+
     public static void fluentWait(WebElement element, int timeOut, int pollingEveryTime) {
         Wait<WebDriver> Fwait = new FluentWait<WebDriver>(webDriver)
                 .withTimeout(Duration.ofSeconds(timeOut))
@@ -82,17 +91,20 @@ public static boolean isPresent(WebElement webElement){
     }
 
     //JS Executor
-    public static void JsExecutorToClickOnElement(WebElement element){
-    JavascriptExecutor jse = (JavascriptExecutor)webDriver;
-    //Find The element
-jse.executeScript("arguments[0].click()", element);
-}
-   public static float convertTheStringToFloat(WebElement element){
-        String elementValue= element.getText();
-       String elementValueWithoutCurrency = elementValue.replaceAll("AED", "");
-       String elementValueWithoutSpace= elementValueWithoutCurrency.replaceAll(" ", "");
-       float elemetdouble= Float.parseFloat(elementValueWithoutSpace);
+    public static void JsExecutorToClickOnElement(WebElement element) {
+        JavascriptExecutor jse = (JavascriptExecutor) webDriver;
+        //Find The element
+        jse.executeScript("arguments[0].click()", element);
+    }
+
+    public static float convertTheStringToFloat(WebElement element) {
+        String elementValue = element.getText();
+        String elementValueWithoutCurrency = elementValue.replaceAll("AED", "");
+        String elementValueWithoutSpace = elementValueWithoutCurrency.replaceAll(" ", "");
+        float elemetdouble = Float.parseFloat(elementValueWithoutSpace);
         return elemetdouble;
-   }
+    }
+
+
 
 }
