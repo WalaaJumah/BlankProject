@@ -57,6 +57,7 @@ public class BaseTest {
     }
     @AfterMethod(alwaysRun = true)
     public void tearDown()  {
-        webDriver.close();
+        webDriver.quit();
+//        webDriver.close();
     }
 }

@@ -21,13 +21,26 @@
 <!--            <class name="sporter_test.QatarHomePageTestCases"></class>-->
             <class name="sporter_test.AEFooterPageTestCases">
                 <methods>
-                  <include name="verifyBCAAsAndAminoAcidsLinkAppearsInFooterWorksCorrectly"></include>
-                  <include name="verifyTheFooterSectionAppearsInTheBCAAsAndAminoAcidsPage"></include>
+                  <include name="verifyTheFooterSectionAppearsInThePrivacyPolicyPage"></include>
+                  <include name="verifyPrivacyPolicyLinkAppearsInFooterWorksCorrectly"></include>
+                    <include name="verifyTheFooterSectionAppearsInTheTermsAndServicePage"></include>
+                    <include name="verifyTermsAndServiceLinkAppearsInFooterWorksCorrectly"></include>
+
+
+
+<!--                    <include name="verifyFAQsLinkAppearsInFooterWorksCorrectly"></include>-->
+<!--                    <include name="verifyGrenadeReloadProteinOatBarLinkAppearsInFooterWorksCorrectly"></include>-->
+<!--                    <include name="verifyDramatizeIso100ProteinLinkAppearsInFooterWorksCorrectly"></include>-->
+<!--                    <include name="verifyGrenadeCarbKillaProteinBarLinkAppearsInFooterWorksCorrectly"></include>-->
+<!--                    <include name="verifyGrenadeCarbKillaProteinBarBoxOf12LinkAppearsInFooterWorksCorrectly"></include>-->
+<!--                    <include name="verifyQuestNutritionBarsBoxOf12LinkAppearsInFooterWorksCorrectly"></include>-->
+<!--                    <include name="verifyAboutSporterLinkAppearsInFooterWorksCorrectly"></include>-->
+<!--                    <include name="verifyProductQualityLinkAppearsInFooterWorksCorrectly"></include>-->
 <!--                    <include name="verifyProductAuthenticityLinkAppearsInFooterWorksCorrectly"></include>-->
 <!--                    <include name="verifyWholesaleLinkAppearsInFooterWorksCorrectly"></include>-->
 <!--                    <include name="verifyCareersLinkAppearsInFooterWorksCorrectly"></include>-->
 <!--                    <include name="verifySporterBlogLinkAppearsInFooterWorksCorrectly"></include>-->
-<!--&lt;!&ndash;                    <include name="verifyAbilityToClickOnPhoneBtnInGotQuestionSectionCorrectly"></include>&ndash;&gt;-->
+<!--                    <include name="verifyContactInfoLinkAppearsInFooterWorksCorrectly"></include>-->
 
                 </methods>
             </class>

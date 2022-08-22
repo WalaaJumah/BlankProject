@@ -4,6 +4,7 @@ import org.openqa.selenium.support.ui.*;
 
 import javax.xml.crypto.Data;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
@@ -28,22 +29,12 @@ public class DataHelperAndWait extends BaseTest {
         wait = new WebDriverWait(webDriver, Time);
         return wait.until(ExpectedConditions.visibilityOf(element)).isDisplayed();
     }
-
-    //    public static boolean isPresent(WebElement webElement) {
-//        try {
-//            webElement.isDisplayed();
-//            return true;
-//        } catch (Exception e) {
-//            return false;
-//        }
-//    }
     public static boolean isPresent(WebElement webElement) {
         if (webElement.isDisplayed())
             return true;
         else
             return false;
     }
-
 
     public static void implicitWait(int timeSecond) {
         webDriver.manage().timeouts().implicitlyWait(timeSecond, TimeUnit.SECONDS);
@@ -104,7 +95,9 @@ public class DataHelperAndWait extends BaseTest {
         float elemetdouble = Float.parseFloat(elementValueWithoutSpace);
         return elemetdouble;
     }
+    public static void switchToTabBrowser(int tabIndex) {
+        ArrayList<String> numberOfTabsTwo = new ArrayList<String>(webDriver.getWindowHandles());
+        webDriver.switchTo().window(numberOfTabsTwo.get(tabIndex));
+    }
 
-
-
-}
+    }

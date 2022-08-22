@@ -6,6 +6,11 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.AEFooterPage;
 
+import javax.xml.crypto.Data;
+
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
+
 public class AEFooterPageTestCases extends BaseTest {
     String trackOrderUrl="https://www.sporter.com/en-ae/track/";
     String shippingAndDeliveryUrl="https://www.sporter.com/en-ae/orders-delivery/";
@@ -41,6 +46,24 @@ public class AEFooterPageTestCases extends BaseTest {
     String fatBurnersUrl="https://www.sporter.com/en-ae/sport-supplements/weight-management/";
     String proteinBarsUrl="https://www.sporter.com/en-ae/healthy-food/snacks-drinks/protein-bars/";
     String healthySnacksUrl="https://www.sporter.com/en-ae/healthy-food/";
+    String multivitaminsUrl="https://www.sporter.com/en-ae/vitamins/multivitamins/";
+    String vitamindUrl="https://www.sporter.com/en-ae/vitamins/essential-vitamins/vitamin-d/";
+    String vitamincUrl="https://www.sporter.com/en-ae/vitamins/essential-vitamins/vitamin-c/";
+    String vitamineUrl="https://www.sporter.com/en-ae/vitamins/essential-vitamins/vitamin-e/";
+    String fishOilOmegasUrl="https://www.sporter.com/en-ae/vitamins/fish-oil-omegas/";
+    String folicAcidUrl="https://www.sporter.com/en-ae/vitamins/essential-vitamins/folic-acid/";
+    String boneJointSupportUrl="https://www.sporter.com/en-ae/vitamins/bone-joint/";
+    String collagenUrl="https://www.sporter.com/en-ae/vitamins/beauty/collagen/";
+    String hairSkinNailsUrl="https://www.sporter.com/en-ae/vitamins/beauty/hair-skin-nails/";
+    String testosteroneBoosterUrl="https://www.sporter.com/en-ae/sport-supplements/muscles-boosters/testosterone-booster/";
+    String melatoninSleepSupportUrl="https://www.sporter.com/en-ae/vitamins/healthy-lifestyle/sleep-support/";
+    String digestionSupportUrl="https://www.sporter.com/en-ae/vitamins/digestion/";
+    String termsAndServiceUrl ="https://www.sporter.com/en-ae/terms/";
+    String privacyPolicyUrl ="https://www.sporter.com/en-ae/privacy-policy/";
+    String instagramURL ="https://www.instagram.com/sportercom/?hl=en";
+    String facebookURL ="https://www.facebook.com/sportercom";
+    String twitterURL ="https://twitter.com/sportercom?lang=en";
+    String youtubeURL ="https://www.youtube.com/user/SporterVideos";
 
     AEFooterPage aeFooterPage= new AEFooterPage(webDriver);
 
@@ -142,8 +165,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getTrackYourOrderOption().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertEquals(webDriver.getCurrentUrl(),trackOrderUrl);
-//We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
-    }
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The Page is empty");}
     @Test(description = "Make sure the footer section appears correctly in the Track Your Order page", priority = 10)
     public void verifyTheFooterSectionAppearsInTheTrackYourOrderPage(){
         aeFooterPage = new AEFooterPage(webDriver);
@@ -157,8 +182,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getShippingAndDeliveryOption().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertEquals(webDriver.getCurrentUrl(),shippingAndDeliveryUrl);
-//We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
-    }
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The Page is empty");}
     @Test(description = "Make sure the footer section appears correctly in the Shipping and Delivery page", priority = 12)
     public void verifyTheFooterSectionAppearsInTheShippingAndDeliveryPage(){
         aeFooterPage = new AEFooterPage(webDriver);
@@ -172,8 +199,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getRefundAndReturnsOption().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertEquals(webDriver.getCurrentUrl(),refundAndReturnUrl);
-//We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
-    }
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The Page is empty");}
     @Test(description = "Make sure the footer section appears correctly in the Refund And Returns page", priority = 14)
     public void verifyTheFooterSectionAppearsInTheRefundAndReturnPage(){
         aeFooterPage = new AEFooterPage(webDriver);
@@ -195,8 +224,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getWowCustomerServiceOption().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertEquals(webDriver.getCurrentUrl(),customerServiceUrl);
-//We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
-    }
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The Page is empty");}
     @Test(description = "Make sure the footer section appears correctly in the Wow Customer Service page", priority = 17)
     public void verifyTheFooterSectionAppearsInTheWowCustomerServicePage(){
         aeFooterPage = new AEFooterPage(webDriver);
@@ -210,8 +241,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getFAQsOption().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertEquals(webDriver.getCurrentUrl(),fAQsUrl);
-//We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
-    }
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The Page is empty");}
     @Test(description = "Make sure the footer section appears correctly in the FAQs page", priority = 19)
     public void verifyTheFooterSectionAppearsInTheFAQsPage(){
         aeFooterPage = new AEFooterPage(webDriver);
@@ -236,8 +269,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getGrenadeReloadProteinOatBarOption().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertEquals(webDriver.getCurrentUrl(),grenadeReloadProteinOatBar);
-//We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
-    }
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The Page is empty");}
     @Test(description = "Make sure the footer section appears correctly in the Grenade Reload Protein Oat Bar page", priority = 22)
     public void verifyTheFooterSectionAppearsInTheGrenadeReloadProteinOatBarPage(){
         aeFooterPage = new AEFooterPage(webDriver);
@@ -251,8 +286,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getDymatizeISO100ProteinOption().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(dramatizeIso100Protein));
-//We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
-    }
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The Page is empty");}
     @Test(description = "Make sure the footer section appears correctly in the Dramatize Iso 100 Protein page", priority = 24)
     public void verifyTheFooterSectionAppearsInTheDramatizeIso100ProteinPage(){
         aeFooterPage = new AEFooterPage(webDriver);
@@ -266,8 +303,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getGrenadeCarbKillaProteinBarOption().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(grenadeCrabKillaProteinBar));
-//We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
-    }
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The Page is empty");}
     @Test(description = "Make sure the footer section appears correctly in the Dramatize Iso 100 Protein page", priority = 26)
     public void verifyTheFooterSectionAppearsInTheGrenadeCarbKillaProteinBarPage(){
         aeFooterPage = new AEFooterPage(webDriver);
@@ -281,8 +320,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getGrenadeCarbKillaProteinBarBoxOf12Option().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(grenadeCrabKillaProteinBarBoxOf12));
-//We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
-    }
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The Page is empty");}
     @Test(description = "Make sure the footer section appears correctly in the Grenade Carb Killa Protein Bar Box Of 12 page", priority = 28)
     public void verifyTheFooterSectionAppearsInTheGrenadeCarbKillaProteinBarBoxOf12Page(){
         aeFooterPage = new AEFooterPage(webDriver);
@@ -296,8 +337,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getQuestNutritionBarsBox12Option().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(questNutritionBarsBoxOf12));
-//We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
-    }
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The Page is empty");}
     @Test(description = "Make sure the footer section appears correctly in the Quest Nutrition Bars Box Of 12 page", priority = 30)
     public void verifyTheFooterSectionAppearsInTheQuestNutritionBarsBoxOf12Page(){
         aeFooterPage = new AEFooterPage(webDriver);
@@ -324,8 +367,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getAboutSporterOption().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aboutSporterUrl));
-//We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
-    }
+            Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+            assertFalse(verifyTitle,"Page Not Found Is Displayed");
+            boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+            assertFalse(isTheElementPresent,"The Page is empty");}
     @Test(description = "Make sure the footer section appears correctly in the About Sporter page", priority = 33)
     public void verifyTheFooterSectionAppearsInTheAboutSporterPage(){
         aeFooterPage = new AEFooterPage(webDriver);
@@ -339,8 +384,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getProductQualityOption().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(productQualityUrl));
-//We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
-    }
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The Page is empty");}
     @Test(description = "Make sure the footer section appears correctly in the Product Quality page", priority = 35)
     public void verifyTheFooterSectionAppearsInTheProductQualityPage(){
         aeFooterPage = new AEFooterPage(webDriver);
@@ -354,8 +401,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getProductAuthenticityOption().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(productAuthenticityUrl));
-//We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
-    }
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The Page is empty");}
     @Test(description = "Make sure the footer section appears correctly in the Product Authenticity page", priority = 37)
     public void verifyTheFooterSectionAppearsInTheProductAuthenticityPage(){
         aeFooterPage = new AEFooterPage(webDriver);
@@ -369,8 +418,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getWholesaleOption().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(wholesaleUrl));
-//We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
-    }
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The Page is empty");}
 
     //Bug: The footer section is missing from Wholesale page.
     @Test(description = "Make sure the footer section appears correctly in the Wholesale page", priority = 39)
@@ -387,8 +438,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getCareersOption().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(careersUrl));
-//We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
-    }
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The Page is empty");}
     //Bug: Clicking on the Sporter Blog link redirect the user to 404 Page
     @Test(description = "Make sure the Sporter Blog appears in the footer works correctly", priority = 41)
     public void verifySporterBlogLinkAppearsInFooterWorksCorrectly() {
@@ -397,8 +450,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getSporterBlogOption().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(sporterBlogUrl));
-//We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
-    }
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The Page is empty");}
     //Bug: Clicking on the Sporter Blog link redirect the user to 404 Page
      @Test(description = "Make sure the footer section appears correctly in the Sporter Blog page", priority = 42)
     public void verifyTheFooterSectionAppearsInTheSporterBlogPage(){
@@ -425,8 +480,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getContactInfoOption().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(contactUsUrl));
-        //We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
-
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The page is empty");
     }
     //Bug: Clicking on the Sporter Blog link redirect the user to 404 Page
     @Test(description = "Make sure the footer section appears correctly in the contact US page", priority = 45)
@@ -444,7 +501,6 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getPhoneNumber().click();
         String myWindowHandle = webDriver.getWindowHandle();
         webDriver.switchTo().window(myWindowHandle);
-
     }
     @Test(description = "Make sure the Accessories & Apparel Section Appears Correctly In Footer", priority = 47)
     public void verifyAccessoriesAndApparelSectionAppearsCorrectlyInFooter() {
@@ -466,7 +522,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getTrainingApparelOption().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(trainingApparelUrl));
-//We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The page is empty");
     }
     @Test(description = "Make sure the footer section appears correctly in the Training Apparel page", priority = 49)
     public void verifyTheFooterSectionAppearsInTheTrainingApparelPage(){
@@ -481,8 +540,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getFitnessAccessoriesOption().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(fitnessAccessoriesUrl));
-//We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
-    }
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The page is empty");}
     @Test(description = "Make sure the footer section appears correctly in the Fitness Accessories page", priority = 51)
     public void verifyTheFooterSectionAppearsInTheFitnessAccessoriesPage(){
         aeFooterPage = new AEFooterPage(webDriver);
@@ -496,8 +557,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getShakersOption().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(shakersUrl));
-//We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
-    }
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The page is empty");}
     @Test(description = "Make sure the footer section appears correctly in the Shakers page", priority = 53)
     public void verifyTheFooterSectionAppearsInTheShakersPage(){
         aeFooterPage = new AEFooterPage(webDriver);
@@ -511,8 +574,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getHomeGymEquipmentOption().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(homeGymEquipmentUrl));
-        //We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
-    }
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The page is empty");}
     @Test(description = "Make sure the footer section appears correctly in the Home Gym Equipment page", priority = 55)
     public void verifyTheFooterSectionAppearsInTheHomeGymEquipmentPage(){
         aeFooterPage = new AEFooterPage(webDriver);
@@ -526,8 +591,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getWatchesOption().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(watchesUrl));
-        //We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
-    }
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The page is empty");}
     @Test(description = "Make sure the footer section appears correctly in the Watches page", priority = 57)
     public void verifyTheFooterSectionAppearsInTheWatchesPage(){
         aeFooterPage = new AEFooterPage(webDriver);
@@ -541,8 +608,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getStrapsOption().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(strapsUrl));
-        //We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
-    }
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The page is empty");}
     @Test(description = "Make sure the footer section appears correctly in the Straps page", priority = 59)
     public void verifyTheFooterSectionAppearsInTheStrapsPage(){
         aeFooterPage = new AEFooterPage(webDriver);
@@ -556,8 +625,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getBagsOption().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(bagsUrl));
-        //We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
-    }
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The page is empty");}
     @Test(description = "Make sure the footer section appears correctly in the Straps page", priority = 61)
     public void verifyTheFooterSectionAppearsInTheBagsPage(){
         aeFooterPage = new AEFooterPage(webDriver);
@@ -587,8 +658,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getWheyProteinOption().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(wheyProteinUrl));
-        //We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
-    }
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The page is empty");}
     @Test(description = "Make sure the footer section appears correctly in the Whey Protein page", priority = 64)
     public void verifyTheFooterSectionAppearsInTheWheyProteinPage(){
         aeFooterPage = new AEFooterPage(webDriver);
@@ -602,8 +675,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getWheyProteinIsolateOption().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(wheyProteinIsolateUrl));
-        //We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
-    }
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The page is empty");}
     @Test(description = "Make sure the footer section appears correctly in the Whey Protein Isolate page", priority = 66)
     public void verifyTheFooterSectionAppearsInTheWheyProteinIsolatePage(){
         aeFooterPage = new AEFooterPage(webDriver);
@@ -617,8 +692,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getCaseinProteinOption().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(caseinProteinUrl));
-        //We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
-    }
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The page is empty");}
     @Test(description = "Make sure the footer section appears correctly in the Casein Protein page", priority = 68)
     public void verifyTheFooterSectionAppearsInTheCaseinProteinPage(){
         aeFooterPage = new AEFooterPage(webDriver);
@@ -632,8 +709,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getWeightGainAndMassGainerOption().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(weightGainAndMassGainerUrl));
-        //We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
-    }
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The page is empty");}
     @Test(description = "Make sure the footer section appears correctly in the Weight Gain And Mass Gainer page", priority = 70)
     public void verifyTheFooterSectionAppearsInTheWeightGainAndMassGainerPage(){
         aeFooterPage = new AEFooterPage(webDriver);
@@ -647,8 +726,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getBCAAsAndAminoAcidsOption().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(bCAAsAndAminoAcidsUrl));
-        //We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
-    }
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The page is empty");}
     @Test(description = "Make sure the footer section appears correctly in the BCAAs And Amino Acids page", priority = 72)
     public void verifyTheFooterSectionAppearsInTheBCAAsAndAminoAcidsPage(){
         aeFooterPage = new AEFooterPage(webDriver);
@@ -662,8 +743,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getPreWorkoutAndEnduranceOption().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(preWorkoutAndEnduranceUrl));
-        //We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
-    }
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The page is empty");}
     @Test(description = "Make sure the footer section appears correctly in the Pre-Workout And Endurance page", priority = 74)
     public void verifyTheFooterSectionAppearsInThePreWorkoutAndEndurancePage(){
         aeFooterPage = new AEFooterPage(webDriver);
@@ -677,8 +760,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getGlutamineAndRecoveryOption().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(glutamineAndRecoveryUrl));
-        //We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
-    }
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The page is empty");}
     @Test(description = "Make sure the footer section appears correctly in the Glutamine And Recovery page", priority = 76)
     public void verifyTheFooterSectionAppearsInTheGlutamineAndRecoveryPage(){
         aeFooterPage = new AEFooterPage(webDriver);
@@ -692,8 +777,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getFatBurnersOption().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(fatBurnersUrl));
-        //We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
-    }
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The page is empty");}
     @Test(description = "Make sure the footer section appears correctly in the Fat Burners page", priority = 78)
     public void verifyTheFooterSectionAppearsInTheFatBurnersPage(){
         aeFooterPage = new AEFooterPage(webDriver);
@@ -707,8 +794,10 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getProteinBarsOption().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(proteinBarsUrl));
-        //We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
-    }
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The page is empty");}
     @Test(description = "Make sure the footer section appears correctly in the Protein Bars page", priority = 80)
     public void verifyTheFooterSectionAppearsInTheProteinBarsPage(){
         aeFooterPage = new AEFooterPage(webDriver);
@@ -722,12 +811,338 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.getHealthySnacksOption().click();
         DataHelperAndWait.implicitWait(5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(healthySnacksUrl));
-        //We should add assertion to ensure that the 404 page/"we cannot find products...' page is not displayed
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The page is empty");
     }
     @Test(description = "Make sure the footer section appears correctly in the Healthy Snacks page", priority = 82)
     public void verifyTheFooterSectionAppearsInTheHealthySnacksPage(){
         aeFooterPage = new AEFooterPage(webDriver);
         this.verifyHealthySnacksLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
+    }
+    @Test(description = "Make sure the Vitamins & Health Section Appears Correctly In Footer", priority = 83)
+    public void verifyVitaminsAndHealthSectionAppearsCorrectlyInFooter() {
+        aeFooterPage = new AEFooterPage(webDriver);
+        aeFooterPage.switchToAECountry();
+        Assert.assertEquals(aeFooterPage.getVitaminsAndHealthHeader().getText(),"Vitamins & Health");
+        Assert.assertEquals(aeFooterPage.getMultivitaminsOption().getText(),"Multivitamins");
+        Assert.assertEquals(aeFooterPage.getVitaminsdOption().getText(),"Vitamin D");
+        Assert.assertEquals(aeFooterPage.getVitaminscOption().getText(),"Vitamin C");
+        Assert.assertEquals(aeFooterPage.getVitaminseOption().getText(),"Vitamin E");
+        Assert.assertEquals(aeFooterPage.getFishOilAndOmega3Option().getText(),"Fish Oil & Omega 3");
+        Assert.assertEquals(aeFooterPage.getFolicAcidOption().getText(),"Folic Acid");
+        Assert.assertEquals(aeFooterPage.getBoneAndJointSupportOption().getText(),"Bone & Joint Support");
+        Assert.assertEquals(aeFooterPage.getCollagenOption().getText(),"Collagen");
+        Assert.assertEquals(aeFooterPage.getHairSkinAndNailsOption().getText(),"Hair Skin & Nails");
+        Assert.assertEquals(aeFooterPage.getTestosteroneBoosterOption().getText(),"Testosterone Booster");
+        Assert.assertEquals(aeFooterPage.getMelatoninAndSleepSupportOption().getText(),"Melatonin & Sleep Support");
+        Assert.assertEquals(aeFooterPage.getDigestiveSupportOption().getText(),"Digestive Support");
+    }
+    @Test(description = "Make sure the Multivitamins Link appears in the footer works correctly", priority = 84)
+    public void verifyMultivitaminsLinkAppearsInFooterWorksCorrectly() {
+        aeFooterPage = new AEFooterPage(webDriver);
+        aeFooterPage.switchToAECountry();
+        aeFooterPage.getMultivitaminsOption().click();
+        DataHelperAndWait.implicitWait(5);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(multivitaminsUrl));
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The page is empty");
+    }
+    @Test(description = "Make sure the footer section appears correctly in the Multivitamins page", priority = 85)
+    public void verifyTheFooterSectionAppearsInTheMultivitaminsPage(){
+        aeFooterPage = new AEFooterPage(webDriver);
+        this.verifyMultivitaminsLinkAppearsInFooterWorksCorrectly();
+        Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
+    }
+        @Test(description = "Make sure the Vitamins D Link appears in the footer works correctly", priority = 86)
+    public void verifyVitaminsdLinkAppearsInFooterWorksCorrectly() {
+        aeFooterPage = new AEFooterPage(webDriver);
+        aeFooterPage.switchToAECountry();
+        aeFooterPage.getVitaminsdOption().click();
+        DataHelperAndWait.implicitWait(5);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(vitamindUrl));
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The page is empty");
+    }
+    @Test(description = "Make sure the footer section appears correctly in the Vitamins D page", priority = 87)
+    public void verifyTheFooterSectionAppearsInTheVitaminsdPage(){
+        aeFooterPage = new AEFooterPage(webDriver);
+        this.verifyVitaminsdLinkAppearsInFooterWorksCorrectly();
+        Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
+    }
+    @Test(description = "Make sure the Vitamins C Link appears in the footer works correctly", priority = 88)
+    public void verifyVitaminscLinkAppearsInFooterWorksCorrectly() {
+        aeFooterPage = new AEFooterPage(webDriver);
+        aeFooterPage.switchToAECountry();
+        aeFooterPage.getVitaminscOption().click();
+        DataHelperAndWait.implicitWait(5);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(vitamincUrl));
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The page is empty");
+    }
+    @Test(description = "Make sure the footer section appears correctly in the Vitamins C page", priority = 89)
+    public void verifyTheFooterSectionAppearsInTheVitaminscPage(){
+        aeFooterPage = new AEFooterPage(webDriver);
+        this.verifyVitaminscLinkAppearsInFooterWorksCorrectly();
+        Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
+    }
+    @Test(description = "Make sure the Vitamins E Link appears in the footer works correctly", priority = 90)
+    public void verifyVitaminseLinkAppearsInFooterWorksCorrectly() {
+        aeFooterPage = new AEFooterPage(webDriver);
+        aeFooterPage.switchToAECountry();
+        aeFooterPage.getVitaminseOption().click();
+        DataHelperAndWait.implicitWait(5);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(vitamineUrl));
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The page is empty");
+    }
+    @Test(description = "Make sure the footer section appears correctly in the Vitamins E page", priority = 91)
+    public void verifyTheFooterSectionAppearsInTheVitaminsePage(){
+        aeFooterPage = new AEFooterPage(webDriver);
+        this.verifyVitaminseLinkAppearsInFooterWorksCorrectly();
+        Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
+    }
+    @Test(description = "Make sure the Fish Oil & Omega 3 Link appears in the footer works correctly", priority = 92)
+    public void verifyFishOilAndOmega3LinkAppearsInFooterWorksCorrectly() {
+        aeFooterPage = new AEFooterPage(webDriver);
+        aeFooterPage.switchToAECountry();
+        aeFooterPage.getFishOilAndOmega3Option().click();
+        DataHelperAndWait.implicitWait(5);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(fishOilOmegasUrl));
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The page is empty");
+    }
+    @Test(description = "Make sure the footer section appears correctly in the Fish Oil & Omega 3 page", priority = 93)
+    public void verifyTheFooterSectionAppearsInTheFishOilAndOmega3Page(){
+        aeFooterPage = new AEFooterPage(webDriver);
+        this.verifyFishOilAndOmega3LinkAppearsInFooterWorksCorrectly();
+        Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
+    }
+    @Test(description = "Make sure the Folic Acid Link appears in the footer works correctly", priority = 94)
+    public void verifyFolicAcidLinkAppearsInFooterWorksCorrectly() {
+        aeFooterPage = new AEFooterPage(webDriver);
+        aeFooterPage.switchToAECountry();
+        aeFooterPage.getFolicAcidOption().click();
+        DataHelperAndWait.implicitWait(5);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(folicAcidUrl));
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The page is empty");
+    }
+    @Test(description = "Make sure the footer section appears correctly in the Folic Acid page", priority = 95)
+    public void verifyTheFooterSectionAppearsInTheFolicAcidPage(){
+        aeFooterPage = new AEFooterPage(webDriver);
+        this.verifyFolicAcidLinkAppearsInFooterWorksCorrectly();
+        Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
+    }
+    @Test(description = "Make sure the Bone & Joint Support Link appears in the footer works correctly", priority = 96)
+    public void verifyBoneAndJointSupportLinkAppearsInFooterWorksCorrectly() {
+        aeFooterPage = new AEFooterPage(webDriver);
+        aeFooterPage.switchToAECountry();
+        aeFooterPage.getBoneAndJointSupportOption().click();
+        DataHelperAndWait.implicitWait(5);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(boneJointSupportUrl));
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The page is empty");
+    }
+    @Test(description = "Make sure the footer section appears correctly in the Bone & Joint Support page", priority = 97)
+    public void verifyTheFooterSectionAppearsInTheBoneAndJointSupportPage(){
+        aeFooterPage = new AEFooterPage(webDriver);
+        this.verifyBoneAndJointSupportLinkAppearsInFooterWorksCorrectly();
+        Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
+    }
+    @Test(description = "Make sure the Collagen Link appears in the footer works correctly", priority = 98)
+    public void verifyCollagenLinkAppearsInFooterWorksCorrectly() {
+        aeFooterPage = new AEFooterPage(webDriver);
+        aeFooterPage.switchToAECountry();
+        aeFooterPage.getCollagenOption().click();
+        DataHelperAndWait.implicitWait(5);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(collagenUrl));
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The page is empty");
+    }
+    @Test(description = "Make sure the footer section appears correctly in the Collagen page", priority = 99)
+    public void verifyTheFooterSectionAppearsInTheCollagenPage(){
+        aeFooterPage = new AEFooterPage(webDriver);
+        this.verifyCollagenLinkAppearsInFooterWorksCorrectly();
+        Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
+    }
+    @Test(description = "Make sure the Hair Skin & Nails Link appears in the footer works correctly", priority = 100)
+    public void verifyHairSkinAndNailsLinkAppearsInFooterWorksCorrectly() {
+        aeFooterPage = new AEFooterPage(webDriver);
+        aeFooterPage.switchToAECountry();
+        aeFooterPage.getHairSkinAndNailsOption().click();
+        DataHelperAndWait.implicitWait(5);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(hairSkinNailsUrl));
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The page is empty");
+    }
+    @Test(description = "Make sure the footer section appears correctly in the Hair Skin & Nails page", priority = 101)
+    public void verifyTheFooterSectionAppearsInTheHairSkinAndNailsPage(){
+        aeFooterPage = new AEFooterPage(webDriver);
+        this.verifyHairSkinAndNailsLinkAppearsInFooterWorksCorrectly();
+        Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
+    }
+    @Test(description = "Make sure the Testosterone Booster Link appears in the footer works correctly", priority = 102)
+    public void verifyTestosteroneBoosterLinkAppearsInFooterWorksCorrectly() {
+        aeFooterPage = new AEFooterPage(webDriver);
+        aeFooterPage.switchToAECountry();
+        aeFooterPage.getTestosteroneBoosterOption().click();
+        DataHelperAndWait.implicitWait(5);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(testosteroneBoosterUrl));
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The page is empty");
+    }
+    @Test(description = "Make sure the footer section appears correctly in the Hair Testosterone Booster page", priority = 103)
+    public void verifyTheFooterSectionAppearsInTheTestosteroneBoosterPage(){
+        aeFooterPage = new AEFooterPage(webDriver);
+        this.verifyTestosteroneBoosterLinkAppearsInFooterWorksCorrectly();
+        Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
+    }
+    @Test(description = "Make sure the Melatonin & Sleep Support Link appears in the footer works correctly", priority = 104)
+    public void verifyMelatoninAndSleepSupportLinkAppearsInFooterWorksCorrectly() {
+        aeFooterPage = new AEFooterPage(webDriver);
+        aeFooterPage.switchToAECountry();
+        aeFooterPage.getMelatoninAndSleepSupportOption().click();
+        DataHelperAndWait.implicitWait(5);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(melatoninSleepSupportUrl));
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The page is empty");
+    }
+    @Test(description = "Make sure the footer section appears correctly in the  Melatonin & Sleep Support page", priority = 105)
+    public void verifyTheFooterSectionAppearsInTheMelatoninAndSleepSupportPage(){
+        aeFooterPage = new AEFooterPage(webDriver);
+        this.verifyMelatoninAndSleepSupportLinkAppearsInFooterWorksCorrectly();
+        Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
+    }
+    @Test(description = "Make sure the Digestive Support Link appears in the footer works correctly", priority = 106)
+    public void verifyDigestiveSupportLinkAppearsInFooterWorksCorrectly() {
+        aeFooterPage = new AEFooterPage(webDriver);
+        aeFooterPage.switchToAECountry();
+        aeFooterPage.getDigestiveSupportOption().click();
+        DataHelperAndWait.implicitWait(5);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(digestionSupportUrl));
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The page is empty");
+    }
+    @Test(description = "Make sure the footer section appears correctly in the Digestive Support  page", priority = 107)
+    public void verifyTheFooterSectionAppearsInTheDigestiveSupportPage(){
+        aeFooterPage = new AEFooterPage(webDriver);
+        this.verifyDigestiveSupportLinkAppearsInFooterWorksCorrectly();
+        Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
+    }
+    @Test(description = "Make sure the Terms of Service Link appears in the footer works correctly", priority = 108)
+    public void verifyTermsAndServiceLinkAppearsInFooterWorksCorrectly() {
+        aeFooterPage = new AEFooterPage(webDriver);
+        aeFooterPage.switchToAECountry();
+        aeFooterPage.getTermsAndServiceOption().click();
+        DataHelperAndWait.implicitWait(5);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(termsAndServiceUrl));
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The page is empty");
+    }
+    @Test(description = "Make sure the footer section appears correctly in the Terms of Service page", priority = 109)
+    public void verifyTheFooterSectionAppearsInTheTermsAndServicePage(){
+        aeFooterPage = new AEFooterPage(webDriver);
+        this.verifyTermsAndServiceLinkAppearsInFooterWorksCorrectly();
+        Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
+    }
+    @Test(description = "Make sure the Privacy Policy Link appears in the footer works correctly", priority = 110)
+    public void verifyPrivacyPolicyLinkAppearsInFooterWorksCorrectly() {
+        aeFooterPage = new AEFooterPage(webDriver);
+        aeFooterPage.switchToAECountry();
+        aeFooterPage.getPrivacyPolicyOption().click();
+        DataHelperAndWait.implicitWait(5);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(privacyPolicyUrl));
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent,"The page is empty");
+    }
+    @Test(description = "Make sure the footer section appears correctly in the Privacy Policy page", priority = 111)
+    public void verifyTheFooterSectionAppearsInThePrivacyPolicyPage(){
+        aeFooterPage = new AEFooterPage(webDriver);
+        this.verifyPrivacyPolicyLinkAppearsInFooterWorksCorrectly();
+        Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
+    }
+    @Test(description = "Make sure the ability to click on the instagram icon correctly", priority = 112)
+    public void verifyAbilityToClickOnInstagramIconCorrectly() {
+        aeFooterPage = new AEFooterPage(webDriver);
+        aeFooterPage.switchToAECountry();
+        aeFooterPage.getInstagramIcon().click();
+        DataHelperAndWait.implicitWait(5);
+        DataHelperAndWait.switchToTabBrowser(1);
+        DataHelperAndWait.implicitWait(5);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(instagramURL));
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+    }
+    @Test(description = "Make sure the ability to click on the facebook icon correctly", priority = 113)
+    public void verifyAbilityToClickOnFacebookIconCorrectly() {
+        aeFooterPage = new AEFooterPage(webDriver);
+        aeFooterPage.switchToAECountry();
+        aeFooterPage.getFacebookIcon().click();
+        DataHelperAndWait.implicitWait(5);
+        DataHelperAndWait.switchToTabBrowser(1);
+        DataHelperAndWait.implicitWait(5);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(facebookURL));
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+    }
+        @Test(description = "Make sure the ability to click on the twitter icon correctly", priority = 114)
+    public void verifyAbilityToClickOnTwitterIconCorrectly() {
+        aeFooterPage = new AEFooterPage(webDriver);
+        aeFooterPage.switchToAECountry();
+        aeFooterPage.getTwitterIcon().click();
+        DataHelperAndWait.implicitWait(5);
+        DataHelperAndWait.switchToTabBrowser(1);
+        DataHelperAndWait.implicitWait(5);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(twitterURL));
+            Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+        }
+    @Test(description = "Make sure the ability to click on the youtube icon correctly", priority = 115)
+    public void verifyAbilityToClickOnYouTubeIconCorrectly() {
+        aeFooterPage = new AEFooterPage(webDriver);
+        aeFooterPage.switchToAECountry();
+        aeFooterPage.getYoutubeIcon().click();
+        DataHelperAndWait.implicitWait(5);
+        DataHelperAndWait.switchToTabBrowser(1);
+        DataHelperAndWait.implicitWait(5);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(youtubeURL));
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle,"Page Not Found Is Displayed");
+    }
+    @Test(description = "Make sure the copyright statment appears correctly in the footer section", priority = 116)
+    public void verifyTheCopyRightStatmentAppearsInTheFooter(){
+        aeFooterPage = new AEFooterPage(webDriver);
+        Assert.assertTrue(aeFooterPage.getCopyright().isDisplayed());
     }
 }

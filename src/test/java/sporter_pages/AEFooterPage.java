@@ -62,8 +62,48 @@ public class AEFooterPage {
     private WebElement accessoriesAndApparelHeader;
     @FindBy(xpath="(//div[@class='footer-column 1'])[1]/span")
     private WebElement proteinAndFitnessHeader;
+    @FindBy(xpath="(//div[@class='footer-column 2'])[1]/span")
+    private WebElement vitaminsAndHealthHeader;
     @FindBy(xpath="(//div[@class='footer-column 3'])[1]/ul/li[1]/a")
     private WebElement trainingApparelOption;
+    @FindBy(xpath="(//div[@class='footer-column 2'])[1]/ul/li[1]/a")
+    private WebElement multivitaminsOption;
+    @FindBy(xpath="(//div[@class='footer-column 2'])[1]/ul/li[2]/a")
+    private WebElement vitaminsdOption;
+    @FindBy(xpath="(//div[@class='footer-column 2'])[1]/ul/li[3]/a")
+    private WebElement vitaminscOption;
+    @FindBy(xpath="(//div[@class='footer-column 2'])[1]/ul/li[4]/a")
+    private WebElement vitaminseOption;
+    @FindBy(xpath="(//div[@class='footer-column 2'])[1]/ul/li[5]/a")
+    private WebElement fishOilAndOmega3Option;
+    @FindBy(xpath="(//div[@class='footer-column 2'])[1]/ul/li[6]/a")
+    private WebElement folicAcidOption;
+    @FindBy(xpath="(//div[@class='footer-column 2'])[1]/ul/li[7]/a")
+    private WebElement boneAndJointSupportOption;
+    @FindBy(xpath="(//div[@class='footer-column 2'])[1]/ul/li[8]/a")
+    private WebElement collagenOption;
+    @FindBy(xpath="(//div[@class='footer-column 2'])[1]/ul/li[9]/a")
+    private WebElement hairSkinAndNailsOption;
+    @FindBy(xpath="(//div[@class='footer-column 2'])[1]/ul/li[10]/a")
+    private WebElement testosteroneBoosterOption;
+    @FindBy(xpath="(//div[@class='footer-column 2'])[1]/ul/li[11]/a")
+    private WebElement melatoninAndSleepSupportOption;
+    @FindBy(xpath="(//div[@class='footer-column 2'])[1]/ul/li[12]/a")
+    private WebElement digestiveSupportOption;
+    @FindBy(xpath="(//li[@class='footer-links-wide-item footer-links-tc-item'])[1]/a")
+    private WebElement termsAndServiceOption;
+    @FindBy(xpath="(//a[@class='footer-links-media-link'])[1]")
+    private WebElement instagramIcon;
+    @FindBy(xpath="(//a[@class='footer-links-media-link'])[2]")
+    private WebElement facebookIcon;
+    @FindBy(xpath="(//a[@class='footer-links-media-link'])[3]")
+    private WebElement twitterIcon;
+    @FindBy(xpath="(//a[@class='footer-links-media-link'])[4]")
+    private WebElement youtubeIcon;
+    @FindBy(xpath="(//div[@class='copyright'])[2]")
+    private WebElement copyright;
+    @FindBy(xpath="(//li[@class='footer-links-wide-item footer-links-tc-item'])[2]/a")
+    private WebElement privacyPolicyOption;
     @FindBy(xpath="(//div[@class='footer-column 3'])[1]/ul/li[2]/a")
     private WebElement fitnessAccessoriesOption;
     @FindBy(xpath="(//div[@class='footer-column 3'])[1]/ul/li[3]/a")
@@ -245,6 +285,26 @@ public class AEFooterPage {
     public WebElement getFatBurnersOption() {return fatBurnersOption;}
     public WebElement getProteinBarsOption() {return proteinBarsOption;}
     public WebElement getHealthySnacksOption() {return healthySnacksOption;}
+    public WebElement getVitaminsAndHealthHeader() {return vitaminsAndHealthHeader;}
+    public WebElement getMultivitaminsOption() {return multivitaminsOption;}
+    public WebElement getVitaminsdOption() {return vitaminsdOption;}
+    public WebElement getVitaminscOption() {return vitaminscOption;}
+    public WebElement getVitaminseOption() {return vitaminseOption;}
+    public WebElement getFishOilAndOmega3Option() {return fishOilAndOmega3Option;}
+    public WebElement getFolicAcidOption() {return folicAcidOption;}
+    public WebElement getBoneAndJointSupportOption() {return boneAndJointSupportOption;}
+    public WebElement getCollagenOption() {return collagenOption;}
+    public WebElement getHairSkinAndNailsOption() {return hairSkinAndNailsOption;}
+    public WebElement getTestosteroneBoosterOption() {return testosteroneBoosterOption;}
+    public WebElement getMelatoninAndSleepSupportOption() {return melatoninAndSleepSupportOption;}
+    public WebElement getDigestiveSupportOption() {return digestiveSupportOption;}
+    public WebElement getPrivacyPolicyOption() {return privacyPolicyOption;}
+    public WebElement getTermsAndServiceOption() {return termsAndServiceOption;}
+    public WebElement getInstagramIcon() {return instagramIcon;}
+    public WebElement getFacebookIcon() {return facebookIcon;}
+    public WebElement getTwitterIcon() {return twitterIcon;}
+    public WebElement getYoutubeIcon() {return youtubeIcon;}
+    public WebElement getCopyright() {return copyright;}
 
     //Define the main actions we need to execute our TCs
     public void switchToAECountry() {try{
@@ -281,33 +341,4 @@ public class AEFooterPage {
         int randomInt = randomGenerator.nextInt(1000);
         return "username"+ randomInt +"@gmail.com";
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
