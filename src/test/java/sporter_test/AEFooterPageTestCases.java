@@ -104,6 +104,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.fillInemailFieldInNewsletterBlock(aeFooterPage.generateRandomEmail());
         aeFooterPage.selectMaleOptionInNewsletterBlock();
         aeFooterPage.clickOnJoinBtnInNewsletterBlock();
+        DataHelperAndWait.implicitWait(5);
         DataHelperAndWait.waitToBeVisible(aeFooterPage.getSubscriptionSuccessfulMsg(),15);
         Assert.assertTrue(aeFooterPage.getSubscriptionSuccessfulMsg().isDisplayed());
     }
@@ -114,6 +115,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.fillInemailFieldInNewsletterBlock(aeFooterPage.generateRandomEmail());
         aeFooterPage.selectFemaleOptionInNewsletterBlock();
         aeFooterPage.clickOnJoinBtnInNewsletterBlock();
+        DataHelperAndWait.implicitWait(5);
         DataHelperAndWait.waitToBeVisible(aeFooterPage.getSubscriptionSuccessfulMsg(),15);
         Assert.assertTrue(aeFooterPage.getSubscriptionSuccessfulMsg().isDisplayed());
         Assert.assertEquals(aeFooterPage.getSubscriptionSuccessfulMsg().getText(),"Thank you for your subscription.");
@@ -485,7 +487,6 @@ public class AEFooterPageTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent,"The page is empty");
     }
-    //Bug: Clicking on the Sporter Blog link redirect the user to 404 Page
     @Test(description = "Make sure the footer section appears correctly in the contact US page", priority = 45)
     public void verifyTheFooterSectionAppearsInTheContactUsPage(){
         aeFooterPage = new AEFooterPage(webDriver);

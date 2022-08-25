@@ -7,6 +7,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
+import org.testng.annotations.Parameters;
 
 public class BaseTest {
     public String siteURL = "http://www.sporter.com";
@@ -24,37 +25,51 @@ public class BaseTest {
     public String outOfStockProduct = "https://www.sporter.com/en-ae/grenade-reload-protein-oat-bar";
     public static WebDriver webDriver;
     public static WebDriver driver;
+//    The Below Methods we need to run the TCs across the broswers
+//    @BeforeMethod
+//    @Parameters("browser")
+//    public void setupBrowser( String browser) throws Exception {
+////Check if parameter passed from TestNG is 'firefox'
+//        switch (browser) {
+    //Check if parameter passed from TestNG is 'firefox'
+//            case "firefox":
+//                System.setProperty("webdriver.gecko.driver", "src/test/resources/geckodriver.exe");
+//                webDriver = new FirefoxDriver();
+//                webDriver.manage().window().maximize();
+//                webDriver.navigate().to(siteURL);
+//                break;
+//            case "chrome":
+//                System.setProperty("webdriver.chrome.driver","C:\\Users\\w.jumaa\\chromedriver.exe");
+//                webDriver = new ChromeDriver();
+//                webDriver.manage().window().maximize();
+//                webDriver.navigate().to(siteURL);
+//                break;
+//            case "Edge":
+//                System.setProperty("webdriver.edge.driver", "src/test/resources/msedgedriver.exe");
+//                webDriver = new EdgeDriver();
+//                webDriver.manage().window().maximize();
+//                webDriver.navigate().to(siteURL);
+//                break;
+//            default:
+//////If no browser passed throw exception
+//                throw new Exception("Browser is not correct");
+//        }
+//    }
+
+
+
+
+
+
+    // The Below Method to run the TCs on Onc Browser like Chrome
     @BeforeMethod
-    @Parameters("browser")
-    public void setupBrowser( String browser) throws Exception {
-//Check if parameter passed from TestNG is 'firefox'
-        switch (browser) {
-            case "firefox":
-//                System.setProperty("webdriver.gecko.driver", "C:\\Users\\w.jumaa\\geckodriver.exe");
-                System.setProperty("webdriver.gecko.driver", "src/test/resources/geckodriver.exe");
-                webDriver = new FirefoxDriver();
-                webDriver.manage().window().maximize();
-                webDriver.navigate().to(siteURL);
-                break;
-            case "chrome":
-                System.setProperty("webdriver.chrome.driver","C:\\Users\\w.jumaa\\chromedriver.exe");
-//                System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
-                webDriver = new ChromeDriver();
-                webDriver.manage().window().maximize();
-                webDriver.navigate().to(siteURL);
-                break;
-            case "Edge":
-//                System.setProperty("webdriver.edge.driver", "C:\\Users\\w.jumaa\\msedgedriver.exe");
-                System.setProperty("webdriver.edge.driver", "src/test/resources/msedgedriver.exe");
-                webDriver = new EdgeDriver();
-                webDriver.manage().window().maximize();
-                webDriver.navigate().to(siteURL);
-                break;
-            default:
-////If no browser passed throw exception
-                throw new Exception("Browser is not correct");
-        }
+    public void setupBrowser( ) throws Exception {
+    System.setProperty("webdriver.chrome.driver","C:\\Users\\w.jumaa\\chromedriver.exe");
+    webDriver = new ChromeDriver();
+    webDriver.manage().window().maximize();
+    webDriver.navigate().to(siteURL);
     }
+
     @AfterMethod(alwaysRun = true)
     public void tearDown()  {
         webDriver.quit();

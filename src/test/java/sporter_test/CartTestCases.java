@@ -87,7 +87,7 @@ public class CartTestCases extends BaseTest {
         Assert.assertEquals(webDriver.getCurrentUrl(), cartURL);
     }
 //This Method needs to investigate
-    @Test(description = "Make sure ability to add a bundle to the cart with all bundle options",enabled = false, priority = 6)
+    @Test(description = "Make sure ability to add a bundle to the cart with all bundle options",enabled = true, priority = 6)
     public void verifyAbilityToAddBundleWithAllItsOptionsToCart() {
 //        productDetailsPage = new ProductDetailsPage(webDriver);
 //        DataHelperAndWait.waitToBeVisible(productDetailsPage.getCountryList(), 10);

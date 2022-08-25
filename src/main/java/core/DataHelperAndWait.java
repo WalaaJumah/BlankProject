@@ -7,6 +7,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 public class DataHelperAndWait extends BaseTest {
@@ -98,6 +99,11 @@ public class DataHelperAndWait extends BaseTest {
     public static void switchToTabBrowser(int tabIndex) {
         ArrayList<String> numberOfTabsTwo = new ArrayList<String>(webDriver.getWindowHandles());
         webDriver.switchTo().window(numberOfTabsTwo.get(tabIndex));
+    }
+    public String generateRandomEmail(){
+        Random randomGenerator = new Random();
+        int randomInt = randomGenerator.nextInt(1000);
+        return "username"+ randomInt +"@gmail.com";
     }
 
     }

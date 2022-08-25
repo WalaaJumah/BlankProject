@@ -1,30 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="TestSuite" thread-count="1" parallel="tests" >
+<suite name="TestSuite" thread-count="3" parallel="tests" >
 
-<!--    <test name="EdgeTest">-->
-<!--        <parameter name="browser" value="Edge" />-->
-<!--        <classes>-->
-<!--            <class name="sporter_test.RecommendedProductsTestCases">-->
-<!--                <methods>-->
-<!--&lt;!&ndash;                    <include name="verifyKeepShoppingBtnWorksCorrectly"></include>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <include name="verifyViewCartWorksBtnCorrectly"></include>&ndash;&gt;-->
-<!--                    <include name="verifyAbilityToAddRecommendedProductToCart"></include>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
-    <test name="ChromeTest">
-        <parameter name="browser" value="chrome" />
+    <test name="EdgeTest">
+        <parameter name="browser" value="Edge" />
         <classes>
-<!--            <class name="sporter_test.KsaHomePageTestCases"></class>-->
-<!--            <class name="sporter_test.QatarHomePageTestCases"></class>-->
-            <class name="sporter_test.AEFooterPageTestCases">
+            <class name="sporter_test.RecommendedProductsTestCases">
                 <methods>
-                  <include name="verifyTheFooterSectionAppearsInThePrivacyPolicyPage"></include>
-                  <include name="verifyPrivacyPolicyLinkAppearsInFooterWorksCorrectly"></include>
-                    <include name="verifyTheFooterSectionAppearsInTheTermsAndServicePage"></include>
-                    <include name="verifyTermsAndServiceLinkAppearsInFooterWorksCorrectly"></include>
+<!--                    <include name="verifyKeepShoppingBtnWorksCorrectly"></include>-->
+<!--                    <include name="verifyViewCartWorksBtnCorrectly"></include>-->
+<!--                    <include name="verifyAbilityToAddRecommendedProductToCart"></include>-->
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="ChromeTest">
+        <parameter name="browser" value="chrome"/>
+<!--        <parameter name="browser" value="chrome" />-->
+        <classes>
+            <class name="sporter_test.AEGuestUserTestCases">
+                <methods>
+<!--                  <include name="verifySportsSupplementsMenuInTheShopByMenuDisplayTheCorrectCategoriesAndSubCategories"></include>-->
+<!--                  <include name="verifyPrivacyPolicyLinkAppearsInFooterWorksCorrectly"></include>-->
+<!--                    <include name="verifyTheFooterSectionAppearsInTheTermsAndServicePage"></include>-->
+<!--                    <include name="verifyTermsAndServiceLinkAppearsInFooterWorksCorrectly"></include>-->
 
 
 
@@ -46,17 +45,17 @@
             </class>
         </classes>
     </test>
-<!--    <test name="FireFoxTest">-->
-<!--        <parameter name="browser" value="firefox" />-->
-<!--        <classes>-->
-<!--            <class name="sporter_test.CartTestCases">-->
-<!--                <methods>-->
+    <test name="FireFoxTest">
+        <parameter name="browser" value="firefox" />
+        <classes>
+            <class name="sporter_test.AEFooterPageTestCases">
+                <methods>
 <!--                    <include name="viewCartFromPDP"></include>-->
 <!--                    <include name="verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct"></include>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+                </methods>
+            </class>
+        </classes>
+    </test>
 </suite>
 
 
