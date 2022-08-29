@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1543f19a-355a-420f-8233-95e332a91e4b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/AEMegaMenuPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AEMegaMenuTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AEFooterPageTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AEFooterPageTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/CartTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/CartTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/SmokeTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/SmokeTestCrossBrowsers.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AEMegaMenuPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/AEMegaMenuPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AEMegaMenuTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AEMegaMenuTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,16 +42,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_directory_selection": "C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/java",
-    "last_opened_file_path": "C:/Users/w.jumaa/IdeaProjects/sporter-web-automation",
-    "run.code.analysis.last.selected.profile": "pProject Default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/w.jumaa/IdeaProjects/sporter-web-automation&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\w.jumaa\IdeaProjects\sporter-web-automation\src\main\java\sporter-pages" />
@@ -72,24 +66,6 @@
     </option>
   </component>
   <component name="RunManager" selected="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/TestExecution.xml">
-    <configuration name="AEGuestUserTestCases.verifyTheGuestUserCanFillTheShippingInformationCorrectly" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="sporter-web-automation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sporter_test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="sporter_test" />
-      <option name="MAIN_CLASS_NAME" value="sporter_test.AEGuestUserTestCases" />
-      <option name="METHOD_NAME" value="verifyTheGuestUserCanFillTheShippingInformationCorrectly" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="AEMegaMenuTestCases.verifySportsSupplementsMenuInTheShopByMenuDisplayTheCorrectCategoriesAndSubCategories" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
       <extension name="coverage">
@@ -101,6 +77,24 @@
       <option name="PACKAGE_NAME" value="sporter_test" />
       <option name="MAIN_CLASS_NAME" value="sporter_test.AEMegaMenuTestCases" />
       <option name="METHOD_NAME" value="verifySportsSupplementsMenuInTheShopByMenuDisplayTheCorrectCategoriesAndSubCategories" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AEMegaMenuTestCases.verifyVitaminsAndHealthMenuInsideShopByMenuDisplayTheCorrectCategoriesAndSubCategories" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="sporter-web-automation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sporter_test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sporter_test" />
+      <option name="MAIN_CLASS_NAME" value="sporter_test.AEMegaMenuTestCases" />
+      <option name="METHOD_NAME" value="verifyVitaminsAndHealthMenuInsideShopByMenuDisplayTheCorrectCategoriesAndSubCategories" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -141,10 +135,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/TestExecution.xml" />
+        <item itemvalue="TestNG.AEMegaMenuTestCases.verifyVitaminsAndHealthMenuInsideShopByMenuDisplayTheCorrectCategoriesAndSubCategories" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/SmokeTestCrossBrowsers.xml" />
         <item itemvalue="TestNG.AEMegaMenuTestCases.verifySportsSupplementsMenuInTheShopByMenuDisplayTheCorrectCategoriesAndSubCategories" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/SmokeTest.xml" />
-        <item itemvalue="TestNG.AEGuestUserTestCases.verifyTheGuestUserCanFillTheShippingInformationCorrectly" />
       </list>
     </recent_temporary>
   </component>
