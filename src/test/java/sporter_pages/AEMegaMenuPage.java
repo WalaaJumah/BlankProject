@@ -37,6 +37,9 @@ public class AEMegaMenuPage {
     private List<WebElement> vitaminsAndHealthList;
     @FindBy(css = "ul.cd-secondary-dropdown.full-height.is-hidden.is-active")
     private List<WebElement> HealthyFoodList;
+
+    @FindBy(css = "ul.cd-secondary-dropdown.full-height.is-hidden.is-active")
+    private List<WebElement> optionList;
     @FindBy(xpath = "//nav[@id='nav']/ul/li/nav/ul/li[2]/a/i")
     private WebElement vitaminsAndHealthArrowIcon;
     @FindBy(xpath = "//ul[@class='cd-dropdown-content']/li[3]/a")
@@ -348,9 +351,122 @@ public class AEMegaMenuPage {
     private WebElement digestiveSupportOptionInVitaminsAndHealthMenu;
     @FindBy(xpath = "(.//span[@data-vertical='Vitamins & Health']/a)[45]")
     private WebElement probioticsOptionInVitaminsAndHealthMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[1]")
+    private WebElement menOptionInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[2]")
+    private WebElement clothingInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[3]")
+    private WebElement topsInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[4]")
+    private WebElement pantsInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[5]")
+    private WebElement shortsInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[6]")
+    private WebElement jacketsAndCoatsInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[7]")
+    private WebElement safetyMasksInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[8]")
+    private WebElement footwearInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[9]")
+    private WebElement sneakersInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[10]")
+    private WebElement trainingShoesInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[11]")
+    private WebElement runningShoesInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[12]")
+    private WebElement hikingShoesInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[13]")
+    private WebElement accessoriesInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[14]")
+    private WebElement glovesInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[15]")
+    private WebElement beltsInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[16]")
+    private WebElement capsAndHatsInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[17]")
+    private WebElement capInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[18]")
+    private WebElement shakersInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[19]")
+    private WebElement waterBottlesInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[20]")
+    private WebElement bugHereInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[21]")
+    private WebElement socksInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[22]")
+    private WebElement towelsInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[23]")
+    private WebElement sunglassesInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[24]")
+    private WebElement mixerInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[25]")
+    private WebElement bagsInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[26]")
+    private WebElement backPacksInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[27]")
+    private WebElement shouldersBagsInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[28]")
+    private WebElement wearableTechInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[29]")
+    private WebElement watchesInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[30]")
+    private WebElement gamingAccessoriesInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[31]")
+    private WebElement equipmentInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[32]")
+    private WebElement gripsInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[33]")
+    private WebElement ballsInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[34]")
+    private WebElement rollersInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[35]")
+    private WebElement weightsInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[36]")
+    private WebElement womenInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[37]")
+    private WebElement womenClothingInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[38]")
+    private WebElement womenTopsInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[39]")
+    private WebElement womenShortsInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[40]")
+    private WebElement womenSafetyMasksInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[41]")
+    private WebElement womenAccessoriesInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[42]")
+    private WebElement womenGlovesInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[43]")
+    private WebElement glovesBugCategoryInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[44]")
+    private WebElement womenBeltsInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[45]")
+    private WebElement womenCapsAndHatsInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[46]")
+    private WebElement womenCapsInSportsMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[47]")
+    private WebElement womenShakersInSportsMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[48]")
+    private WebElement womenWaterBottlesInSportsMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[49]")
+    private WebElement womenSocksInSportsMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[50]")
+    private WebElement womenTowelsInSportsMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[51]")
+    private WebElement womenSunglassesInSportsMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[52]")
+    private WebElement womenMixerInSportsMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[53]")
+    private WebElement womenBagsInSportsMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[54]")
+    private WebElement womenBackPacksInSportsMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[55]")
+    private WebElement womenSholdersBagsInSportsMenu;
+
+
     //Getter Methods
     public List<WebElement> getMegaMenuList(){return megaMenuList;}
     public List<WebElement> getSubMenuList(){return subMenuList;}
+    public List<WebElement> getOptionList(){return optionList;}
     public WebElement getShopByList(){return shopByList;}
     public WebElement getMegaMenuSection(){return megaMenuSection;}
     public WebElement getShopeByMenu(){return shopeByMenu;}
@@ -514,6 +630,61 @@ public class AEMegaMenuPage {
     public WebElement getKetoSnacksOptionInHealthyFoodMenu(){return ketoSnacksOptionInHealthyFoodMenu;}
     public WebElement getManukaHoneyOptionInHealthyFoodMenu(){return manukaHoneyOptionInHealthyFoodMenu;}
     public WebElement getMeatSnacksOptionInHealthyFoodMenu(){return meatSnacksOptionInHealthyFoodMenu;}
+    public WebElement getMenOptionInSportsMenu(){return menOptionInSportsMenu;}
+    public WebElement getClothingInSportsMenu(){return clothingInSportsMenu;}
+    public WebElement getTopsInSportsMenu(){return topsInSportsMenu;}
+    public WebElement getPantsInSportsMenu(){return pantsInSportsMenu;}
+    public WebElement getShortsInSportsMenu(){return shortsInSportsMenu;}
+    public WebElement getJacketsAndCoatsInSportsMenu(){return jacketsAndCoatsInSportsMenu;}
+    public WebElement getSafetyMasksInSportsMenu(){return safetyMasksInSportsMenu;}
+    public WebElement getFootwearInSportsMenu() {return footwearInSportsMenu;}
+    public WebElement getSneakersInSportsMenu() {return sneakersInSportsMenu;}
+    public WebElement getTrainingShoesInSportsMenu() {return trainingShoesInSportsMenu;}
+    public WebElement getRunningShoesInSportsMenu() {return runningShoesInSportsMenu;}
+    public WebElement getHikingShoesInSportsMenu() {return hikingShoesInSportsMenu;}
+    public WebElement getAccessoriesInSportsMenu() {return accessoriesInSportsMenu;}
+    public WebElement getGlovesInSportsMenu() {return glovesInSportsMenu;}
+    public WebElement getBeltsInSportsMenu() {return beltsInSportsMenu;}
+    public WebElement getCapsAndHatsInSportsMenu() {return capsAndHatsInSportsMenu;}
+    public WebElement getCapInSportsMenu() {return capInSportsMenu;}
+    public WebElement getShakersInSportsMenu() {return shakersInSportsMenu;}
+    public WebElement getWaterBottlesInSportsMenu() {return waterBottlesInSportsMenu;}
+    public WebElement getBugHereInSportsMenu() {return bugHereInSportsMenu;}
+    public WebElement getSocksInSportsMenu() {return socksInSportsMenu;}
+    public WebElement getTowelsInSportsMenu() {return towelsInSportsMenu;}
+    public WebElement getSunglassesInSportsMenu() {return sunglassesInSportsMenu;}
+    public WebElement getMixerInSportsMenu() {return mixerInSportsMenu;}
+    public WebElement getBagsInSportsMenu() {return bagsInSportsMenu;}
+    public WebElement getBackPacksInSportsMenu() {return backPacksInSportsMenu;}
+    public WebElement getShoulderBagsInSportsMenu() {return shouldersBagsInSportsMenu;}
+    public WebElement getWearableTechInSportsMenu() {return wearableTechInSportsMenu;}
+    public WebElement getWatchesInSportsMenu() {return watchesInSportsMenu;}
+    public WebElement getGamingAccessoriesInSportsMenu() {return gamingAccessoriesInSportsMenu;}
+    public WebElement geEquipmentInSportsMenu() {return equipmentInSportsMenu;}
+    public WebElement getgripsInSportsMenu() {return gripsInSportsMenu;}
+    public WebElement getBallsInSportsMenu() {return ballsInSportsMenu;}
+    public WebElement getRollersInSportsMenu() {return rollersInSportsMenu;}
+    public WebElement getWeightsInSportsMenu() {return weightsInSportsMenu;}
+    public WebElement getWomenInSportsMenu() {return womenInSportsMenu;}
+    public WebElement getWomenClothingInSportsMenu() {return womenClothingInSportsMenu;}
+    public WebElement getWomenTopsInSportsMenu() {return womenTopsInSportsMenu;}
+    public WebElement getWomenShortsInSportsMenu() {return womenShortsInSportsMenu;}
+    public WebElement getWomenSafetyMasksInSportsMenu() {return womenSafetyMasksInSportsMenu;}
+    public WebElement getWomenAccessoriesInSportsMenu() {return womenAccessoriesInSportsMenu;}
+    public WebElement getWomenGlovesInSportsMenu() {return womenGlovesInSportsMenu;}
+    public WebElement getBugGlovesInSportsMenu() {return glovesBugCategoryInSportsMenu;}
+    public WebElement getWomenCapsAndHatsInSportsMenu() {return womenCapsAndHatsInSportsMenu;}
+    public WebElement getWomenCapsInSportsMenu() {return womenCapsInSportsMenu;}
+    public WebElement getWomenShakersInSportsMenu() {return womenShakersInSportsMenu;}
+    public WebElement getWomenWaterBottlesInSportsMenu() {return womenWaterBottlesInSportsMenu;}
+    public WebElement getWomenSocksInSportsMenu() {return womenSocksInSportsMenu;}
+    public WebElement getWomenTowelsInSportsMenu() {return womenTowelsInSportsMenu;}
+    public WebElement getWomenSunglassesInSportsMenu() {return womenSunglassesInSportsMenu;}
+    public WebElement getWomenMixerInSportsMenu() {return womenMixerInSportsMenu;}
+    public WebElement getWomenBagsInSportsMenu() {return womenBagsInSportsMenu;}
+    public WebElement getWomenBackPacksInSportsMenu() {return womenBackPacksInSportsMenu;}
+    public WebElement getWomenSholdersBagsInSportsMenu() {return womenSholdersBagsInSportsMenu;}
+    public WebElement getWomenBeltsInSportsMenu() {return womenBeltsInSportsMenu;}
 
     //Define the main actions we need to execute our TCs
     public void switchToAECountry() {try{
@@ -528,4 +699,6 @@ public class AEMegaMenuPage {
         this.aeCountry.click();
     }
     }
+
+
 }

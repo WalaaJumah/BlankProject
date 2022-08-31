@@ -56,11 +56,6 @@ public class BaseTest {
 //        }
 //    }
 
-
-
-
-
-
     // The Below Method to run the TCs on Onc Browser like Chrome
     @BeforeMethod
     public void setupBrowser( ) throws Exception {
