@@ -10,13 +10,13 @@
 
                         <class name="sporter_test.AEMegaMenuTestCases">
                 <methods>
-                    <include name="verifyClickingOnSneakersOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL"></include>
-<!--                    <include name="verifyTheMainCategoriesInTheSportsMenuInsideShopByMenuAppearingInUppercase"></include>-->
-<!--                    <include name="verifyHealthyFoodMenuInsideShopByMenuDisplayTheCorrectCategoriesAndSubCategories"></include>-->
-<!--&lt;!&ndash;                    <include name="verifyClickingOnCarbohydratePowdersOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL"></include>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <include name="verifyClickingOnStimulantEnergyOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL"></include>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <include name="verifyClickingOnNonStimulantEnergyOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL"></include>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <include name="verifyClickingOnGamingSupplementsOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL"></include>&ndash;&gt;-->
+                    <include name="verifyClickingOnOptimumNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL"></include>
+<!--&lt;!&ndash;                    <include name="verifyTheMainCategoriesInTheSportsMenuInsideShopByMenuAppearingInUppercase"></include>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="verifyHealthyFoodMenuInsideShopByMenuDisplayTheCorrectCategoriesAndSubCategories"></include>&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    <include name="verifyClickingOnCarbohydratePowdersOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL"></include>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    <include name="verifyClickingOnStimulantEnergyOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL"></include>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    <include name="verifyClickingOnNonStimulantEnergyOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL"></include>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                    <include name="verifyClickingOnGamingSupplementsOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL"></include>&ndash;&gt;&ndash;&gt;-->
 
                 </methods>
             </class>

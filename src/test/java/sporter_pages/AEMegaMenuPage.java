@@ -14,6 +14,8 @@ public class AEMegaMenuPage {
     //declare all locators related to the AEMegaMenuPage
     @FindBy(xpath = "//ul[@class='nav-primary']")
     private List<WebElement> megaMenuList;
+    @FindBy(xpath = "//ul[@class='nav-primary']")
+    private WebElement megaMenuListSection;
     @FindBy(xpath = "//ul[@class='cd-dropdown-content']")
     private WebElement shopByList;
     @FindBy(xpath = "//ul[@class='nav-primary']")
@@ -461,6 +463,74 @@ public class AEMegaMenuPage {
     private WebElement womenBackPacksInSportsMenu;
   @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[55]")
     private WebElement womenSholdersBagsInSportsMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[1]")
+    private WebElement supplementsOptionInByBrandMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[2]")
+    private WebElement optimumNutritionOptionInByBrandMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[3]")
+    private WebElement muscletechOptionInByBrandMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[4]")
+    private WebElement cellucorOptionInByBrandMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[5]")
+    private WebElement dymatizeOptionInByBrandMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[6]")
+    private WebElement xtendOptionInByBrandMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[7]")
+    private WebElement animalNutritionOptionInByBrandMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[8]")
+    private WebElement musclePharmOptionInByBrandMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[9]")
+    private WebElement universalNutritionOptionInByBrandMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[10]")
+    private WebElement bsnOptionInByBrandMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[11]")
+    private WebElement ehplabsOptionInByBrandMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[12]")
+    private WebElement jymSupplementScienceOptionInByBrandMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[13]")
+    private WebElement bpiSportsOptionInByBrandMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[14]")
+    private WebElement russianBearOptionInByBrandMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[15]")
+    private WebElement isopureOptionInByBrandMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[16]")
+    private WebElement oneUpNutritionOptionInByBrandMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[17]")
+    private WebElement musclemedsOptionInByBrandMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[18]")
+    private WebElement mhpOptionInByBrandMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[19]")
+    private WebElement evlNutritionOptionInByBrandMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[20]")
+    private WebElement nlaForHerOptionInByBrandMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[21]")
+    private WebElement muscleNutritionOptionInByBrandMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[22]")
+    private WebElement gatNutritionOptionInByBrandMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[23]")
+    private WebElement labradaOptionInByBrandMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[24]")
+    private WebElement orgainOptionInByBrandMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[25]")
+    private WebElement nutrexResearchOptionInByBrandMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[25]")
+    private WebElement scitecNutritionOptionInByBrandMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[26]")
+    private WebElement brolabOptionInByBrandMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[27]")
+    private WebElement sotruOptionInByBrandMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[28]")
+    private WebElement divineHealthOptionInByBrandMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[29]")
+    private WebElement ghostOptionInByBrandMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[30]")
+    private WebElement womensBestOptionInByBrandMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[31]")
+    private WebElement efxSportsOptionInByBrandMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[32]")
+    private WebElement basixOptionInByBrandMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[33]")
+    private WebElement ak47OptionInByBrandMenu;
 
 
     //Getter Methods
@@ -661,7 +731,7 @@ public class AEMegaMenuPage {
     public WebElement getWatchesInSportsMenu() {return watchesInSportsMenu;}
     public WebElement getGamingAccessoriesInSportsMenu() {return gamingAccessoriesInSportsMenu;}
     public WebElement geEquipmentInSportsMenu() {return equipmentInSportsMenu;}
-    public WebElement getgripsInSportsMenu() {return gripsInSportsMenu;}
+    public WebElement getGripsInSportsMenu() {return gripsInSportsMenu;}
     public WebElement getBallsInSportsMenu() {return ballsInSportsMenu;}
     public WebElement getRollersInSportsMenu() {return rollersInSportsMenu;}
     public WebElement getWeightsInSportsMenu() {return weightsInSportsMenu;}
@@ -685,6 +755,42 @@ public class AEMegaMenuPage {
     public WebElement getWomenBackPacksInSportsMenu() {return womenBackPacksInSportsMenu;}
     public WebElement getWomenSholdersBagsInSportsMenu() {return womenSholdersBagsInSportsMenu;}
     public WebElement getWomenBeltsInSportsMenu() {return womenBeltsInSportsMenu;}
+    public WebElement getMegaMenuListSection() {return megaMenuListSection;}
+    public WebElement getOptimumNutritionOptionInByBrandMenu() {return optimumNutritionOptionInByBrandMenu;}
+    public WebElement getMuscletechOptionInByBrandMenu() {return muscletechOptionInByBrandMenu;}
+    public WebElement getCellucorOptionInByBrandMenu() {return cellucorOptionInByBrandMenu;}
+    public WebElement getSupplementsOptionInByBrandMenu() {return supplementsOptionInByBrandMenu;}
+    public WebElement getDymatizeOptionInByBrandMenu() {return dymatizeOptionInByBrandMenu;}
+    public WebElement getXtendOptionInByBrandMenu() {return xtendOptionInByBrandMenu;}
+    public WebElement getAnimalNutritionOptionInByBrandMenu() {return animalNutritionOptionInByBrandMenu;}
+    public WebElement getMusclePharmOptionInByBrandMenu() {return musclePharmOptionInByBrandMenu;}
+    public WebElement getUniversalNutritionOptionInByBrandMenu() {return universalNutritionOptionInByBrandMenu;}
+    public WebElement getBsnOptionInByBrandMenu() {return bsnOptionInByBrandMenu;}
+    public WebElement getEhplabsOptionInByBrandMenu() {return ehplabsOptionInByBrandMenu;}
+    public WebElement getJymSupplementScienceOptionInByBrandMenu() {return jymSupplementScienceOptionInByBrandMenu;}
+    public WebElement getBpiSportsOptionInByBrandMenu() {return bpiSportsOptionInByBrandMenu;}
+    public WebElement getRussianBearOptionInByBrandMenu() {return russianBearOptionInByBrandMenu;}
+    public WebElement getIsopureOptionInByBrandMenu() {return isopureOptionInByBrandMenu;}
+    public WebElement getOneUpNutritionOptionInByBrandMenu() {return oneUpNutritionOptionInByBrandMenu;}
+    public WebElement getMusclemedsOptionInByBrandMenu() {return musclemedsOptionInByBrandMenu;}
+    public WebElement gethMhpOptionInByBrandMenu() {return mhpOptionInByBrandMenu;}
+    public WebElement getEvlNutritionOptionInByBrandMenu() {return evlNutritionOptionInByBrandMenu;}
+    public WebElement getNlaForHerOptionInByBrandMenu() {return nlaForHerOptionInByBrandMenu;}
+    public WebElement getMuscleNutritionOptionInByBrandMenu() {return muscleNutritionOptionInByBrandMenu;}
+    public WebElement getGatNutritionOptionInByBrandMenu() {return gatNutritionOptionInByBrandMenu;}
+    public WebElement getLabradaOptionInByBrandMenu() {return labradaOptionInByBrandMenu;}
+    public WebElement getOrgainOptionInByBrandMenu() {return orgainOptionInByBrandMenu;}
+    public WebElement getNutrexResearchOptionInByBrandMenu() {return nutrexResearchOptionInByBrandMenu;}
+    public WebElement getScitecNutritionOptionInByBrandMenu() {return scitecNutritionOptionInByBrandMenu;}
+    public WebElement getProlabOptionInByBrandMenu() {return brolabOptionInByBrandMenu;}
+    public WebElement getSotruOptionInByBrandMenu() {return sotruOptionInByBrandMenu;}
+    public WebElement getDivineHealthOptionInByBrandMenu() {return divineHealthOptionInByBrandMenu;}
+    public WebElement getGhostOptionInByBrandMenu() {return ghostOptionInByBrandMenu;}
+    public WebElement getWomensBestOptionInByBrandMenu() {return womensBestOptionInByBrandMenu;}
+    public WebElement getEfxSportsOptionInByBrandMenu() {return efxSportsOptionInByBrandMenu;}
+    public WebElement getBasixOptionInByBrandMenu() {return basixOptionInByBrandMenu;}
+    public WebElement getAk47OptionInByBrandMenu() {return ak47OptionInByBrandMenu;}
+
 
     //Define the main actions we need to execute our TCs
     public void switchToAECountry() {try{
@@ -699,6 +805,7 @@ public class AEMegaMenuPage {
         this.aeCountry.click();
     }
     }
+
 
 
 }
