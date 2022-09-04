@@ -249,6 +249,39 @@ public class AEMegaMenuTestCases extends BaseTest {
     String efxSportsInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/supplements/efx-sports/";
     String basixInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/supplements/basix/";
     String ak47InByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/supplements/ak-47/";
+    String nfSportsInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/supplements/nf-sports/";
+    String fullyDosedInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/supplements/fully-dosed/";
+    String fivePercentNutritionInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/supplements/5-nutrition/";
+    String olimpSportNutritionInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/supplements/olimp/";
+    String jnxSportsInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/supplements/jnx-sports/";
+    String fitAndLeanInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/supplements/fit-lean/";
+    String gymqueenInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/supplements/gymqueen/";
+    String thePackInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/supplements/the-pack/";
+    String betancourtNutritionInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/supplements/betancourt-nutrition/";
+    String yallaProteinInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/supplements/yalla-protein/";
+    String proteinWorldInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/supplements/protein-world/";
+    String obviInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/supplements/obvi/";
+    String naughtyBoyInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/supplements/naughty-boy/";
+    String steelFitInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/supplements/steel-fit/";
+    String usnInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/supplements/usn/";
+    String xGamerInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/supplements/x-gamer/";
+    String innosuppsInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/supplements/innosupps/";
+    String outbreakNutritionInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/supplements/outbreak-nutrition/";
+    String insaneLabzInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/supplements//insane-labz";
+    String allMaxInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/supplements//all-max";
+    String glaxonInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/supplements//glaxon";
+    String redcon1InByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/supplements//redcon1";
+    String pandaSupplementsInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/supplements//panda-supplements";
+    String nutrendInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/supplements//nutrend";
+    String ostrovitInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/supplements//ostrovit";
+    String betteryInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/supplements//bettery";
+    String healthyFoodSnacksAndMealReplacementInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/snacks-more/";
+    String wowHydrateInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/snacks-more/wow-hydrate/";
+    String questNutritionInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/snacks-more/quest-nutrition/";
+    String grenadeInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/snacks-more/grenade/";
+    String reignEnergyInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/snacks-more/reign/";
+    String monsterEnergyInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/snacks-more/monster-energy/";
+    String thirdEnergyInByBrandMenuUrl = "https://www.sporter.com/en-ae/brands/snacks-more/3d-energy/";
 
 
 
@@ -265,8 +298,6 @@ public class AEMegaMenuTestCases extends BaseTest {
                 "SPORTS\n" +
                 "Women's Only", "The MegaMenu is not correct");
     }
-
-
     @Test(description = "Make sure the Shop By menu display the correct options ", priority = 2)
     public void verifyShopByMenuDisplayTheCorrectOptions() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -4172,4 +4203,1251 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
+    @Test(description = "Make sure clicking on the Nf Sports Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnNfSportsOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getNfSportsOptionInByBrandMenu()).perform();
+        aeMegamenuPage.getNfSportsOptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),nfSportsInByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Fully Dosed Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnFullyDosedOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getFullyDosedOptionInByBrandMenu()).perform();
+        aeMegamenuPage.getFullyDosedOptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),fullyDosedInByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the 5% Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnFivePercentNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getFivePercentNutritionOptionInByBrandMenu()).perform();
+        aeMegamenuPage.getFivePercentNutritionOptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),fivePercentNutritionInByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Olimp Sport Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnOlimpSportNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getOlimpSportNutritionOptionInByBrandMenu()).perform();
+        aeMegamenuPage.getOlimpSportNutritionOptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),olimpSportNutritionInByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Jnx Sports Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnJnxSportsOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getJnxSportsOptionInByBrandMenu()).perform();
+        aeMegamenuPage.getJnxSportsOptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),jnxSportsInByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Fit & Lean Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnFitAndLeanOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getFitAndLeanOptionInByBrandMenu()).perform();
+        aeMegamenuPage.getFitAndLeanOptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),fitAndLeanInByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Gymqueen Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnGymqueenOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getGymqueenOptionInByBrandMenu()).perform();
+        aeMegamenuPage.getGymqueenOptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),gymqueenInByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the The Pack Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnThePackOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getThePackOptionInByBrandMenu()).perform();
+        aeMegamenuPage.getThePackOptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),thePackInByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Betancourt Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnBetancourtNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getBetancourtNutritionOptionInByBrandMenu()).perform();
+        aeMegamenuPage.getBetancourtNutritionOptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),betancourtNutritionInByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Yalla Protein Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnYallaProteinOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getYallaProteinOptionInByBrandMenu()).perform();
+        aeMegamenuPage.getYallaProteinOptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),yallaProteinInByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Protein World Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnProteinWorldOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getProteinWorldOptionInByBrandMenu()).perform();
+        aeMegamenuPage.getProteinWorldOptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),proteinWorldInByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Obvi Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnObviOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getObviOptionInByBrandMenu()).perform();
+        aeMegamenuPage.getObviOptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),obviInByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Naughty Boy Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnNaughtyBoyOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getNaughtyBoyOptionInByBrandMenu()).perform();
+        aeMegamenuPage.getNaughtyBoyOptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),naughtyBoyInByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Steel Fit Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnSteelFitOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getSteelFitOptionInByBrandMenu()).perform();
+        aeMegamenuPage.getSteelFitOptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),steelFitInByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the USN Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnUsnOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getUsnOptionInByBrandMenu()).perform();
+        aeMegamenuPage.getUsnOptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),usnInByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the X-Gamer Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnXGamerOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getXGamerOptionInByBrandMenu()).perform();
+        aeMegamenuPage.getXGamerOptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),xGamerInByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Innosupps Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnInnosuppsOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getInnosuppsOptionInByBrandMenu()).perform();
+        aeMegamenuPage.getInnosuppsOptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),innosuppsInByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Outbreak Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnOutbreakNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getOutbreakNutritionOptionInByBrandMenu()).perform();
+        aeMegamenuPage.getOutbreakNutritionOptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),outbreakNutritionInByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Insane Labz Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnInsaneLabzOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getInsaneLabzOptionInByBrandMenu()).perform();
+        aeMegamenuPage.getInsaneLabzOptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),insaneLabzInByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the All Max Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnAllMaxOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getAllMaxOptionInByBrandMenu()).perform();
+        aeMegamenuPage.getAllMaxOptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),allMaxInByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Glaxon Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnGlaxonOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getGlaxonOptionInByBrandMenu()).perform();
+        aeMegamenuPage.getGlaxonOptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),glaxonInByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Redcon1 Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnRedconOneOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getRedcon1OptionInByBrandMenu()).perform();
+        aeMegamenuPage.getRedcon1OptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),redcon1InByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Panda Supplements Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnPandaSupplementsOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getPandaSupplementsOptionInByBrandMenu()).perform();
+        aeMegamenuPage.getPandaSupplementsOptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),pandaSupplementsInByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Nutrend Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnNutrendOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getNutrendOptionInByBrandMenu()).perform();
+        aeMegamenuPage.getNutrendOptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),nutrendInByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Ostrovit Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnOstrovitOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getOstrovitOptionInByBrandMenu()).perform();
+        aeMegamenuPage.getOstrovitOptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),ostrovitInByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Bettery Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnBetteryOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getBetteryOptionInByBrandMenu()).perform();
+        aeMegamenuPage.getBetteryOptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),betteryInByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Healthy Food, Snacks & Meal Replacement Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnHealthyFoodSnacksAndMealReplacementOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getHealthyFoodSnacksAndMealReplacementOptionInByBrandMenu()).perform();
+        aeMegamenuPage.getHealthyFoodSnacksAndMealReplacementOptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),healthyFoodSnacksAndMealReplacementInByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Wow Hydrate Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnWowHydrateOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getWowHydrateOptionInByBrandMenu()).perform();
+        aeMegamenuPage.getWowHydrateOptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),wowHydrateInByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Quest Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnQuestNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getQuestNutritionOptionInByBrandMenu()).perform();
+        aeMegamenuPage.getQuestNutritionOptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),questNutritionInByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Grenade Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnGrenadeOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getGrenadeOptionInByBrandMenu()).perform();
+        aeMegamenuPage.getGrenadeOptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),grenadeInByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Reign Energy Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnReignEnergyOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getReignEnergyOptionInByBrandMenu()).perform();
+        aeMegamenuPage.getReignEnergyOptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),reignEnergyInByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Monster Energy Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnMonsterEnergyOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getMonsterEnergyOptionInByBrandMenu()).perform();
+        aeMegamenuPage.getMonsterEnergyOptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),monsterEnergyInByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the 3d Energy  Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    public void verifyClickingOnThirdEnergyOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
+        action.moveToElement(aeMegamenuPage.getThirdEnergyOptionInByBrandMenu()).perform();
+        aeMegamenuPage.getThirdEnergyOptionInByBrandMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),thirdEnergyInByBrandMenuUrl );
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+
+    ///////SportSupplementsMainMenuTCs///////////////////
+    @Test(description = "Make sure the Down-arrow Icon display correctly next to the Sport Supplements main menu", priority = 4)
+    public void verifyTheDownArrowIconAppearsCorrectlyNextToTheSportSupplementsMainMenu() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action = new Actions(webDriver);
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        Assert.assertTrue(aeMegamenuPage.getDownArrowKeyInSportSupplementsMenu().isDisplayed());
+    }
+    @Test(description = "Make sure the system will display the sub Menu once hovering on the Sport Supplements main menu", priority = 4)
+    public void verifyTheSubMenuWillAppearsCorrectlyOnceHoveringOnSportSupplementsMainMenu() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action = new Actions(webDriver);
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        Assert.assertTrue(aeMegamenuPage.getMegaMenuSection().isDisplayed());
+    }
+    @Test(description = "Make sure the Sports Supplements main menu display the correct categories and sub-categories", priority = 17)
+    public void verifySportsSupplementsMainMenuDisplayTheCorrectCategoriesAndSubCategories() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        DataHelperAndWait.implicitWait(5);
+        Assert.assertEquals(aeMegamenuPage.getSportsSupplementMainMenuList().get(0).getText(), "PROTEIN\n" + "Whey Protein\n" + "Whey Protein Isolate\n" +
+                "Protein Blends\n" + "Non-dairy Protein\n" + "Casein Protein\n" + "Diet Protein\n" + "Mass Gainers\n" + "CREATINE\n" +
+                "Creatine Monohydrate\n" + "Creatine Blends\n" + "AMINO ACIDS\n" + "BCAA\n" + "EAA\n" + "Arginine\n" + "Beta Alanine\n" +
+                "HMB\n" + "Amino Acid Powders\n" + "Amino Acid Pills\n" + "Citrulline\n" + "Amino Acid Liquids\n" + "MUSCLE BOOSTERS\n" +
+                "Testosterone Boosters\n" + "Gh Boosters\n" + "WEIGHT MANAGEMENT\n" + "Stimulant Weight Loss\n" + "Non-stimulant Weight Loss\n" +
+                "Meal Replacements\n" + "Metabolism Support\n" + "Toning Creams\n" + "MCT\n" + "RECOVERY\n" + "Glutamine\n" + "Recovery Blends\n" +
+                "Electrolytes & Hydration\n" + "CARBOHYDRATES\n" + "Carbohydrate Powders\n" + "ENERGY & ENDURANCE\n" + "Stimulant Energy\n" +
+                "Non-stimulant Energy\n" + "GAMING & FOCUS\n" + "Gaming Essentials");
+    }
+    @Test(description = "Make sure clicking on the Sports Supplements main menu will redirect the User to the correct URL", priority = 7)
+    public void verifyClickingOnSportsSupplementsManiMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action = new Actions(webDriver);
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getSportSupplementsMainMenu().click();
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(sportSupplementsUrl));
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure the main categories in the Sports Supplements main menu appearing in Bold Font", priority = 18)
+    public void verifyTheMainCategoriesInTheSportsSupplementsMainMenuAppearingInBoldFont() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        Assert.assertTrue(aeMegamenuPage.getProteinOptionInSportSupplementsMenu().getCssValue("font-weight").contains("700"));
+        Assert.assertTrue(aeMegamenuPage.getCreatineOptionInSportSupplementsMenu().getCssValue("font-weight").contains("700"));
+        Assert.assertTrue(aeMegamenuPage.getAminoAcidsOptionInSportSupplementsMenu().getCssValue("font-weight").contains("700"));
+        Assert.assertEquals(aeMegamenuPage.getMuscleBoostersOptionInSportSupplementsMainMenu().getCssValue("text-transform"), "uppercase");
+        Assert.assertTrue(aeMegamenuPage.getWeightManagementOptionInSportSupplementsMenu().getCssValue("font-weight").contains("700"));
+        Assert.assertTrue(aeMegamenuPage.getRecoveryOptionInSportSupplementsMenu().getCssValue("font-weight").contains("700"));
+        Assert.assertTrue(aeMegamenuPage.getCarbohydratesOptionInSportSupplementsMenu().getCssValue("font-weight").contains("700"));
+        Assert.assertTrue(aeMegamenuPage.getEnergyAndEnduranceOptionInSportSupplementsMenu().getCssValue("font-weight").contains("700"));
+        Assert.assertTrue(aeMegamenuPage.getGamingAndFocusOptionInSportSupplementsMenu().getCssValue("font-weight").contains("700"));
+    }
+    @Test(description = "Make sure the main categories in the Sports Supplements main menu appearing in uppercase", priority = 19)
+    public void verifyTheMainCategoriesInTheSportsSupplementsMainMenuAppearingInUppercase() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        Assert.assertEquals(aeMegamenuPage.getProteinOptionInSportSupplementsMainMenu().getCssValue("text-transform"), "uppercase");
+        Assert.assertEquals(aeMegamenuPage.getCreatineOptionInSportSupplementsMainMenu().getCssValue("text-transform"), "uppercase");
+        Assert.assertEquals(aeMegamenuPage.getAminoAcidsOptionInSportSupplementsMainMenu().getCssValue("text-transform"), "uppercase");
+        Assert.assertEquals(aeMegamenuPage.getMuscleBoostersOptionInSportSupplementsMainMenu().getCssValue("text-transform"), "uppercase");
+        Assert.assertEquals(aeMegamenuPage.getWeightManagementOptionInSportSupplementsMainMenu().getCssValue("text-transform"), "uppercase");
+        Assert.assertEquals(aeMegamenuPage.getRecoveryOptionInSportSupplementsMainMenu().getCssValue("text-transform"), "uppercase");
+        Assert.assertEquals(aeMegamenuPage.getCarbohydratesOptionInSportSupplementsMainMenu().getCssValue("text-transform"), "uppercase");
+        Assert.assertEquals(aeMegamenuPage.getEnergyAndEnduranceOptionInSportSupplementsMainMenu().getCssValue("text-transform"), "uppercase");
+        Assert.assertEquals(aeMegamenuPage.getGamingAndFocusOptionInSportSupplementsMainMenu().getCssValue("text-transform"), "uppercase");
+    }
+    @Test(description = "Make sure clicking on the Protein option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 20)
+    public void verifyClickingOnProteinOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getProteinOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getProteinOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), proteinOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Whey Protein Option appearing in the Sports Supplements main menu  will redirect the User to the correct URL", priority = 29)
+    public void verifyClickingOnWheyProteinOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getWheyProteinOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getWheyProteinOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), wheyProteinOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+
+    @Test(description = "Make sure clicking on the Whey Protein Isolate Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 30)
+    public void verifyClickingOnWheyProteinIsolateOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getWheyProteinIsolateOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getWheyProteinIsolateOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), WheyProteinIsolateOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+
+    @Test(description = "Make sure clicking on the protein Blends Option  appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 31)
+    public void verifyClickingOnProteinBlendsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getProteinBlendsOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getProteinBlendsOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), proteinBlendsOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+
+    @Test(description = "Make sure clicking on the Non Dairy Protein Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 32)
+    public void verifyClickingOnNonDairyProteinOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getNonDairyProteinOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getNonDairyProteinOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), nonDairyProteinOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+
+    @Test(description = "Make sure clicking on the casein Protein Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 33)
+    public void verifyClickingOnCaseinProteinOptionInSportsSupplementsMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getCaseinProteinOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getCaseinProteinOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), caseinProteinOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+
+    @Test(description = "Make sure clicking on the diet Protein Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 34)
+    public void verifyClickingOnDietProteinOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getDietProteinOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getDietProteinOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), dietProteinOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Mass Gainers Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 35)
+    public void verifyClickingOnMassGainersOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getMassGainersOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getMassGainersOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), massGainersOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Creatine Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 35)
+    public void verifyClickingOnCreatineOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getCreatineOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getCreatineOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), creatineOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Creatine Monohydrate Option appearing in the Sports Supplements Main menu will redirect the User to the correct URL", priority = 36)
+    public void verifyClickingOnCreatineMonohydrateOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getCreatineMonohydrateOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getCreatineMonohydrateOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), creatineMonohydrateOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+
+    @Test(description = "Make sure clicking on the Creatine Blends Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 37)
+    public void verifyClickingOnCreatineBlendsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getCreatineBlendsOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getCreatineBlendsOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), creatineBlendsOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Amino Acids Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 37)
+    public void verifyClickingOnAminoAcidsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getAminoAcidsOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getAminoAcidsOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), aminoAcidsOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the BCAA Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 38)
+    public void verifyClickingOnBCAAOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getbCAAOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getbCAAOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), bCAAOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+
+    @Test(description = "Make sure clicking on the EAA Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 39)
+    public void verifyClickingOnEAAOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.geteAAOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.geteAAOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), eAAOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+
+    @Test(description = "Make sure clicking on the Arginine Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 40)
+    public void verifyClickingOnArginineOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getArginineOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getArginineOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), arginineOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+
+    @Test(description = "Make sure clicking on the Beta Alanine Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 41)
+    public void verifyClickingOnBetaAlanineOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getBetaAlanineOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getBetaAlanineOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), betaAlanineOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+
+    @Test(description = "Make sure clicking on the HMB Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 42)
+    public void verifyClickingOnHMbOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.gethMBOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.gethMBOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), hMBOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+
+    @Test(description = "Make sure clicking on the Amino Acid Powders Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 43)
+    public void verifyClickingOnAminoAcidPowdersOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getAminoAcidPowdersOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getAminoAcidPowdersOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), aminoAcidPowdersOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+
+    @Test(description = "Make sure clicking on the Amino Acid Pills Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 44)
+    public void verifyClickingOnAminoAcidPillsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getAminoAcidPillsOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getAminoAcidPillsOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), aminoAcidPillsOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+
+    @Test(description = "Make sure clicking on the Citrulline Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 45)
+    public void verifyClickingOnCitrullineOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getCitrullineOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getCitrullineOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), citrullineOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+
+    @Test(description = "Make sure clicking on the Amino Acid Liquids Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 46)
+    public void verifyClickingOnAminoAcidLiquidsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getAminoAcidLiquidsOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getAminoAcidLiquidsOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), aminoAcidLiquidsOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Musclev Boosters Liquids Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 46)
+    public void verifyClickingOnMuscleBoostersOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getMuscleBoostersOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getMuscleBoostersOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), muscleBoostersOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Testosterone Boosters Option appearing in the Sports Supplements main menu  will redirect the User to the correct URL", priority = 47)
+    public void verifyClickingOnTestosteroneBoostersOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getTestosteroneBoostersOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getTestosteroneBoostersOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), testosteroneBoostersOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+
+    @Test(description = "Make sure clicking on the Gh Boosters Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 48)
+    public void verifyClickingOnGhBoostersOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getGhBoostersOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getGhBoostersOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), ghBoostersOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+
+    @Test(description = "Make sure clicking on the Weight Management Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 48)
+    public void verifyClickingOnWeightManagementOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getWeightManagementOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getWeightManagementOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), weightManagementOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Stimulant Weight Loss Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 49)
+    public void verifyClickingOnStimulantWeightLossOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getStimulantWeightLossOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getStimulantWeightLossOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), stimulantWeightLossOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+
+    @Test(description = "Make sure clicking on the Non Stimulant Weight Loss Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 50)
+    public void verifyClickingOnNonStimulantWeightLossOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getNonStimulantWeightLossOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getNonStimulantWeightLossOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), nonStimulantWeightLossOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+
+    @Test(description = "Make sure clicking on the Meal Replacements Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 51)
+    public void verifyClickingOnMealReplacementsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getMealReplacementsOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getMealReplacementsOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), mealReplacementsOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+
+    @Test(description = "Make sure clicking on the Metabolism Support Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 52)
+    public void verifyClickingOnMetabolismSupportOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getMetabolismSupportOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getMetabolismSupportOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), metabolismSupportOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+
+    @Test(description = "Make sure clicking on the Toning Creams Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 53)
+    public void verifyClickingOnToningCreamsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getToningCreamsOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getToningCreamsOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), toningCreamsOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+
+    @Test(description = "Make sure clicking on the MCT Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 54)
+    public void verifyClickingOnMctOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getMctOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getMctOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), mctOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Recovery Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 54)
+    public void verifyClickingOnRecoveryOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getRecoveryOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getRecoveryOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),recoveryOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Glutamine Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 55)
+    public void verifyClickingOnGlutamineOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getGlutamineOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getGlutamineOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), glutamineOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+
+    @Test(description = "Make sure clicking on the Recovery Blend Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 56)
+    public void verifyClickingOnRecoveryBlendOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getRecoveryBlendOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getRecoveryBlendOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), recoveryBlendOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+
+    @Test(description = "Make sure clicking on the Electrolytes And Hydration Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 57)
+    public void verifyClickingOnElectrolytesAndHydrationOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getElectrolytesAndHydrationOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getElectrolytesAndHydrationOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), electrolytesAndHydrationOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Carbohydrates Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 57)
+    public void verifyClickingOnCarbohydratesOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getCarbohydratesOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getCarbohydratesOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), carbohydratesOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Carbohydrate Powders Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 58)
+    public void verifyClickingOnCarbohydratePowdersOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getCarbohydratePowdersOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getCarbohydratePowdersOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), carbohydratePowdersOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Energy And Endurance Powders Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 58)
+    public void verifyClickingOnEnergyAndEnduranceOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getEnergyAndEnduranceOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getEnergyAndEnduranceOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), energyAndEnduranceOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Stimulant Energy Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 59)
+    public void verifyClickingOnStimulantEnergyOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getStimulantEnergyOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getStimulantEnergyOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), stimulantEnergyOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+
+    @Test(description = "Make sure clicking on the Non Stimulant Energy Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 60)
+    public void verifyClickingOnNonStimulantEnergyOptionInSportsSupplementsbMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getNonStimulantEnergyOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getNonStimulantEnergyOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), nonStimulantEnergyOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Gaming And Focus Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 60)
+    public void verifyClickingOnGamingAndFocusOptionInSportsSupplementsbMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getGamingAndFocusOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getGamingAndFocusOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), gamingAndFocusOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Gaming Essentials Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 60)
+    public void verifyClickingOnGamingEssentialsOptionInSportsSupplementsbMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getGamingEssentialsOptionInSportSupplementsMainMenu()).perform();
+        aeMegamenuPage.getGamingEssentialsOptionInSportSupplementsMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), gamingEssentialsOptionInSportSupplementsMenuUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    /////Vitamins & Health TCS////
+    @Test(description = "Make sure the Down-arrow Icon display correctly next to the Vitamins & Health main menu", priority = 4)
+    public void verifyTheDownArrowIconAppearsCorrectlyNextToTheVitaminsAndHealthMainMenu() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action = new Actions(webDriver);
+        action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
+        Assert.assertTrue(aeMegamenuPage.getDownArrowKeyInVitaminsAndHealthMenu().isDisplayed());
+    }
+    @Test(description = "Make sure the system will display the sub Menu once hovering on the Vitamins & Health main menu", priority = 4)
+    public void verifyTheSubMenuWillAppearsCorrectlyOnceHoveringOnVitaminsAndHealthMainMenu() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action = new Actions(webDriver);
+        action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
+        Assert.assertTrue(aeMegamenuPage.getMegaMenuSection().isDisplayed());
+    }
+    @Test(description = "Make sure the Vitamins & Health main menu display the correct categories and sub-categories", priority = 17)
+        public void verifyVitaminsAndHealthMainMenuDisplayTheCorrectCategoriesAndSubCategories() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
+        DataHelperAndWait.implicitWait(5);
+        Assert.assertEquals(aeMegamenuPage.getVitaminsAndHealthMainMenuList().get(0).getText(), "FEATURED\n" + "Alive! Vitamins\n" + "Sexual Health\n" + "ESSENTIAL VITAMINS\n" +
+                "Folic Acid\n" + "Vitamin A\n" + "Vitamin B\n" + "Vitamin C\n" + "Vitamin D\n" + "Vitamin E\n" + "Vitamin K\n" + "MULTIVITAMINS\n" + "Vitamins For Kids\n" +
+                "Multivitamins For Men\n" + "Multivitamins For Women\n" + "BONE & JOINT\n" + "Bone Health\n" + "Joint Health\n" + "BEAUTY\n" + "Collagen\n" + "Hair, Skin & Nails\n" +
+                "FISH OIL & OMEGAS\n" + "Fish Oil\n" + "Omega 3 6 9\n" + "HEALTHY LIFESTYLE\n" + "Antioxidants\n" + "Blood Sugar Support\n" + "Brain Support\n" + "Heart Health\n" +
+                "Detox & Cleanse\n" + "Energy Formulas\n" + "Eye Health\n" + "Herbs\n" + "Hormones Balance\n" + "Immune Support\n" + "Mens Health\n" + "Stress Relief\n" +
+                "Sleep Support\n" + "Superfoods\n" + "Urinary Tract Support\n" + "Weight Management\n" + "Womens Health\n" + "DIGESTION\n" + "Digestive Support\n" + "Probiotics\n" +
+                "SPORT VITAMINS\n" + "Amino Acids\n" + "MINERALS\n" + "Calcium\n" + "Iron\n" + "Magnesium\n" + "Multimineral Formulas\n" + "Zinc\n" + "Potassium\n" + "HEALTHY DRINKS\n" +
+                "Drinkable Vitamins\n" + "PETS\n" + "Supplements & More");
+    }
+    @Test(description = "Make sure clicking on the Vitamins & Health main menu will redirect the User to the correct URL", priority = 7)
+    public void verifyClickingOnVitaminsAndHealthManiMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action = new Actions(webDriver);
+        action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
+        aeMegamenuPage.getVitaminsAndHealthMainMenu().click();
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(healthVitaminsUrl));
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the FEATURED Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 60)
+    public void verifyClickingOnFeaturedOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
+        action.moveToElement(aeMegamenuPage.getFeaturedOptionInVitaminsAndHealthMainMenu()).perform();
+        aeMegamenuPage.getFeaturedOptionInVitaminsAndHealthMainMenu().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(), featuredOptionInVitaminsAndHealthUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+
 }
