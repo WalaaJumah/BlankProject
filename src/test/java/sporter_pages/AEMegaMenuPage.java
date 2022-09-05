@@ -34,6 +34,14 @@ public class AEMegaMenuPage {
     private WebElement sportSupplementsMainMenu;
     @FindBy(xpath = ".//*[@class='nav-primary']/li[3]")
     private WebElement vitaminsAndHealthMainMenu;
+    @FindBy(xpath = ".//*[@class='nav-primary']/li[4]")
+    private WebElement healthyFoodMainMenu;
+    @FindBy(xpath = ".//*[@class='nav-primary']/li[5]")
+    private WebElement sportsMainMenu;
+    @FindBy(xpath = ".//*[@class='nav-primary']/li[6]/a")
+    private WebElement womenOnlyMainMenu;
+    @FindBy(xpath = ".//*[@class='nav-primary']/li[6]/a/span")
+    private WebElement womenOnlyMainMenuText;
     @FindBy(xpath = "//ul[@class='cd-dropdown-content']/li[1]/a")
     private WebElement sportsSupplementsOption;
 
@@ -819,6 +827,216 @@ public class AEMegaMenuPage {
     private WebElement digestiveSupportOptionInVitaminsAndHealthMainMenu;
     @FindBy(xpath = "(.//span[@data-vertical='Vitamins & Health'][@data-nav_type='top']/a)[45]")
     private WebElement probioticsOptionInVitaminsAndHealthMainMenu;
+    //Health Food Main Menu
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[1]")
+    private WebElement groceryOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[2]")
+    private WebElement bakingAndCookingOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[3]")
+    private WebElement cannedOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[4]")
+    private WebElement coffeeOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[5]")
+    private WebElement condimentsOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[6]")
+    private WebElement milkAndCreamOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[7]")
+    private WebElement nutsAndOatsOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[8]")
+    private WebElement oilsOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[9]")
+    private WebElement pastaOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[10]")
+    private WebElement riceAndGrainsOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[11]")
+    private WebElement seasoningsAndSpicesOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[12]")
+    private WebElement sugarSweetenersOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[13]")
+    private WebElement syrupsOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[14]")
+    private WebElement teaAndHerbsOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[15]")
+    private WebElement superfoodsOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[16]")
+    private WebElement readyMixesOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[17]")
+    private WebElement breakfastAndCerealOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[18]")
+    private WebElement readyToDrinkOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[19]")
+    private WebElement aminoAndBcaasOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[20]")
+    private WebElement energyDrinksOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[21]")
+    private WebElement proteinShakesOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[22]")
+    private WebElement electrolytesAndHydrationOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[23]")
+    private WebElement healthySnacksOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[24]")
+    private WebElement proteinBarsOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[25]")
+    private WebElement cookiesOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[26]")
+    private WebElement chipsOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[27]")
+    private WebElement browniesAndPancakesOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[28]")
+    private WebElement snackBarsOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[29]")
+    private WebElement spreadsOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[30]")
+    private WebElement otherHealthySnacksOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[31]")
+    private WebElement readyToEatOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[32]")
+    private WebElement healthyMealsOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[33]")
+    private WebElement featuredOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[34]")
+    private WebElement healthyMealReplacementOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[35]")
+    private WebElement proteinCoffeeOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[36]")
+    private WebElement candiesOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[37]")
+    private WebElement flavoringAgentsOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[38]")
+    private WebElement ketoSnacksOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[39]")
+    private WebElement manukaHoneyOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='Healthy Food'][@data-nav_type='top']/a)[40]")
+    private WebElement meatSnacksOptionInHealthyFoodMainMenu;
+    @FindBy(xpath = "(//ul[@class='groupmenu-drop'])[3]")
+    private List<WebElement> healthyFoodMainMenuList;
+    @FindBy(xpath = "(//ul[@class='groupmenu-drop'])[4]")
+    private List<WebElement> sportsMainMenuList;
+    @FindBy(xpath = "(//ul[@class='groupmenu-drop'])[5]")
+    private List<WebElement> womenOnlyMainMenuList;
+
+    //Sports Main Menu
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[1]")
+    private WebElement menOptionInSportsMainMenu;
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[2]")
+    private WebElement sportOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[3]")
+    private WebElement footballOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[4]")
+    private WebElement basketballOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[5]")
+    private WebElement baseballOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[6]")
+    private WebElement runningOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[7]")
+    private WebElement swimmingOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[8]")
+    private WebElement yogaOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[9]")
+    private WebElement fitnessAndTrainingOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[10]")
+    private WebElement mmaOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[11]")
+    private WebElement jiuJitsuOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[12]")
+    private WebElement boardGamesOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[13]")
+    private WebElement sportsTechOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[14]")
+    private WebElement wearableTechOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[15]")
+    private WebElement camerasOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[16]")
+    private WebElement phoneAccessoriesOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[17]")
+    private WebElement personalCareOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[18]")
+    private WebElement showeringOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[19]")
+    private WebElement shavingOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[20]")
+    private WebElement skinCareOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[21]")
+    private WebElement bodyCareOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[22]")
+    private WebElement oralCareOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[23]")
+    private WebElement therapyOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[24]")
+    private WebElement masksOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[25]")
+    private WebElement fitnessAndTrainingCategoryOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[26]")
+    private WebElement fitnessEquipmentOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[27]")
+    private WebElement skippingRopesOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[28]")
+    private WebElement weightBeltsOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[29]")
+    private WebElement scootersOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[30]")
+    private WebElement trainingAccessoriesOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[31]")
+    private WebElement shakersAndBottlesOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[32]")
+    private WebElement bagsOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[33]")
+    private WebElement glovesOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[34]")
+    private WebElement bracesAndSleevesOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[35]")
+    private WebElement mouthguardOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[36]")
+    private WebElement apparelOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[37]")
+    private WebElement sportswearOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[38]")
+    private WebElement pantsOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[39]")
+    private WebElement shortsOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[40]")
+    private WebElement hoodiesOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[41]")
+    private WebElement tShirtsOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[42]")
+    private WebElement TanksOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[43]")
+    private WebElement footwearOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[44]")
+    private WebElement sneakersOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[45]")
+    private WebElement trainingShoesOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[46]")
+    private WebElement runnigShoesOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[47]")
+    private WebElement womenOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[48]")
+    private WebElement womenSportsTechOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[49]")
+    private WebElement womenWearableTechOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[50]")
+    private WebElement womenCamerasOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[51]")
+    private WebElement womenPhoneAccessoriesOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[52]")
+    private WebElement womenPersonalCareOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[53]")
+    private WebElement womenShoweringOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[54]")
+    private WebElement womenSkinCareOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[55]")
+    private WebElement womenBodyCareOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[56]")
+    private WebElement womenOralCareOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[57]")
+    private WebElement womenTherapyOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[58]")
+    private WebElement womenMasksOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[59]")
+    private WebElement womenFitnessAndTrainingOptionInSportsMainMenu;
+  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[60]")
+    private WebElement womenTrainingAccessoriesOptionInSportsMainMenu;
+
     //Getter Methods
     public List<WebElement> getMegaMenuList(){return megaMenuList;}
     public List<WebElement> getSubMenuList(){return subMenuList;}
@@ -1213,12 +1431,134 @@ public class AEMegaMenuPage {
     public WebElement getHealthyDrinksOptionInVitaminsAndHealthMainMenu() {return healthyDrinksOptionInVitaminsAndHealthMainMenu;}
     public WebElement getDrinkableVitaminsOptionInVitaminsAndHealthMainMenu() {return drinkableVitaminsOptionInVitaminsAndHealthMainMenu;}
     public WebElement getWomensHealthOptionInVitaminsAndHealthMainMenu() {return womensHealthOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getPetsOptionInVitaminsAndHealthMianMenu() {return petsOptionInVitaminsAndHealthMianMenu;}
+    public WebElement getPetsOptionInVitaminsAndHealthMainMenu() {return petsOptionInVitaminsAndHealthMianMenu;}
     public WebElement getSupplementsMoreOptionInVitaminsAndHealthMainMenu() {return supplementsMoreOptionInVitaminsAndHealthMainMenu;}
     public WebElement getDigestiveSupportOptionInVitaminsAndHealthMainMenu() {return digestiveSupportOptionInVitaminsAndHealthMainMenu;}
     public WebElement getProbioticsOptionInVitaminsAndHealthMainMenu() {return probioticsOptionInVitaminsAndHealthMainMenu;}
     public WebElement getVitaminsAndHealthMainMenu() {return vitaminsAndHealthMainMenu;}
     public List<WebElement> getVitaminsAndHealthMainMenuList() {return VitaminsAndHealthMainMenuList;}
+    ////HealthyFood Page
+    public WebElement getHealthyFoodMainMenu() {return healthyFoodMainMenu;}
+    public WebElement getGroceryOptionInHealthyFoodMainMenu() {return groceryOptionInHealthyFoodMainMenu;}
+    public WebElement getBakingAndCookingOptionInHealthyFoodMainMenu() {return bakingAndCookingOptionInHealthyFoodMainMenu;}
+    public WebElement getCannedOptionInHealthyFoodMainMenu() {return cannedOptionInHealthyFoodMainMenu;}
+    public WebElement getCoffeeOptionInHealthyFoodMainMenu() {return coffeeOptionInHealthyFoodMainMenu;}
+    public WebElement getCondimentsOptionInHealthyFoodMainMenu() {return condimentsOptionInHealthyFoodMainMenu;}
+    public WebElement getMilkAndCreamOptionInHealthyFoodMainMenu() {return milkAndCreamOptionInHealthyFoodMainMenu;}
+    public WebElement getNutsAndOatsOptionInHealthyFoodMainMenu() {return nutsAndOatsOptionInHealthyFoodMainMenu;}
+    public WebElement getOilsOptionInHealthyFoodMainMenu() {return oilsOptionInHealthyFoodMainMenu;}
+    public WebElement getPastaOptionInHealthyFoodMainMenu() {return pastaOptionInHealthyFoodMainMenu;}
+    public WebElement getRiceAndGrainsOptionInHealthyFoodMainMenu() {return riceAndGrainsOptionInHealthyFoodMainMenu;}
+    public WebElement getSeasoningsAndSpicesOptionInHealthyFoodMainMenu() {return seasoningsAndSpicesOptionInHealthyFoodMainMenu;}
+    public WebElement getSugarSweetenersOptionInHealthyFoodMainMenu() {return sugarSweetenersOptionInHealthyFoodMainMenu;}
+    public WebElement getSyrupsOptionInHealthyFoodMainMenu() {return syrupsOptionInHealthyFoodMainMenu;}
+    public WebElement getTeaAndHerbsOptionInHealthyFoodMainMenu() {return teaAndHerbsOptionInHealthyFoodMainMenu;}
+    public WebElement getSuperfoodsOptionInHealthyFoodMainMenu() {return superfoodsOptionInHealthyFoodMainMenu;}
+    public WebElement getReadyMixesOptionInHealthyFoodMainMenu() {return readyMixesOptionInHealthyFoodMainMenu;}
+    public WebElement getBreakfastAndCerealOptionInHealthyFoodMainMenu() {return breakfastAndCerealOptionInHealthyFoodMainMenu;}
+    public WebElement getReadyToDrinkOptionInHealthyFoodMainMenu() {return readyToDrinkOptionInHealthyFoodMainMenu;}
+    public WebElement getAminoAndBcaasOptionInHealthyFoodMainMenu() {return aminoAndBcaasOptionInHealthyFoodMainMenu;}
+    public WebElement getEnergyDrinksOptionInHealthyFoodMainMenu() {return energyDrinksOptionInHealthyFoodMainMenu;}
+    public WebElement getProteinShakesOptionInHealthyFoodMainMenu() {return proteinShakesOptionInHealthyFoodMainMenu;}
+    public WebElement getElectrolytesAndHydrationOptionInHealthyFoodMainMenu() {return electrolytesAndHydrationOptionInHealthyFoodMainMenu;}
+    public WebElement getHealthySnacksOptionInHealthyFoodMainMenu() {return healthySnacksOptionInHealthyFoodMainMenu;}
+    public WebElement getProteinBarsOptionInHealthyFoodMainMenu() {return proteinBarsOptionInHealthyFoodMainMenu;}
+    public WebElement getCookiesOptionInHealthyFoodMainMenu() {return cookiesOptionInHealthyFoodMainMenu;}
+    public WebElement getChipsOptionInHealthyFoodMainMenu() {return chipsOptionInHealthyFoodMainMenu;}
+    public WebElement getBrowniesAndPancakesOptionInHealthyFoodMainMenu() {return browniesAndPancakesOptionInHealthyFoodMainMenu;}
+    public WebElement getSnackBarsOptionInHealthyFoodMainMenu() {return snackBarsOptionInHealthyFoodMainMenu;}
+    public WebElement getSpreadsOptionInHealthyFoodMainMenu() {return spreadsOptionInHealthyFoodMainMenu;}
+    public WebElement getOtherHealthySnacksOptionInHealthyFoodMainMenu() {return otherHealthySnacksOptionInHealthyFoodMainMenu;}
+    public WebElement getReadyToEatOptionInHealthyFoodMainMenu() {return readyToEatOptionInHealthyFoodMainMenu;}
+    public WebElement getHealthyMealsOptionInHealthyFoodMainMenu() {return healthyMealsOptionInHealthyFoodMainMenu;}
+    public WebElement getFeaturedOptionInHealthyFoodMainMenu() {return featuredOptionInHealthyFoodMainMenu;}
+    public WebElement getHealthyMealReplacementOptionInHealthyFoodMainMenu() {return healthyMealReplacementOptionInHealthyFoodMainMenu;}
+    public WebElement getProteinCoffeeOptionInHealthyFoodMainMenu() {return proteinCoffeeOptionInHealthyFoodMainMenu;}
+    public WebElement getCandiesOptionInHealthyFoodMainMenu() {return candiesOptionInHealthyFoodMainMenu;}
+    public WebElement getFlavoringAgentsOptionInHealthyFoodMainMenu() {return flavoringAgentsOptionInHealthyFoodMainMenu;}
+    public WebElement getKetoSnacksOptionInHealthyFoodMainMenu() {return ketoSnacksOptionInHealthyFoodMainMenu;}
+    public WebElement getManukaHoneyOptionInHealthyFoodMainMenu() {return manukaHoneyOptionInHealthyFoodMainMenu;}
+    public WebElement getMeatSnacksOptionInHealthyFoodMainMenu() {return meatSnacksOptionInHealthyFoodMainMenu;}
+    public List<WebElement> getHealthyFoodMainMenuList() {return healthyFoodMainMenuList;}
+    //Sports Main Menu
+    public WebElement getSportsMainMenu() {return sportsMainMenu;}
+    public List<WebElement> getSportsMainMenuList() {return sportsMainMenuList;}
+    public List<WebElement> getSportsSupplementsMainMenuList() {return sportsSupplementsMainMenuList;}
+    public WebElement getCountryList() {return countryList;}
+    public WebElement getAeCountry() {return aeCountry;}
+    public WebElement geteAAOptionInSportSupplementsMenu() {return eAAOptionInSportSupplementsMenu;}
+    public WebElement gethMBOptionInSportSupplementsMenu() {return hMBOptionInSportSupplementsMenu;}
+    public WebElement getShouldersBagsInSportsMenu() {return shouldersBagsInSportsMenu;}
+    public WebElement getEquipmentInSportsMenu() {return equipmentInSportsMenu;}
+    public WebElement getGlovesBugCategoryInSportsMenu() {return glovesBugCategoryInSportsMenu;}
+    public WebElement getMhpOptionInByBrandMenu() {return mhpOptionInByBrandMenu;}
+    public WebElement getBrolabOptionInByBrandMenu() {return brolabOptionInByBrandMenu;}
+    public WebElement getxGamerOptionInByBrandMenu() {return xGamerOptionInByBrandMenu;}
+    public WebElement getPetsOptionInVitaminsAndHealthMianMenu() {return petsOptionInVitaminsAndHealthMianMenu;}
+    public WebElement getMenOptionInSportsMainMenu() {return menOptionInSportsMainMenu;}
+    public WebElement getSportOptionInSportsMainMenu() {return sportOptionInSportsMainMenu;}
+    public WebElement getFootballOptionInSportsMainMenu() {return footballOptionInSportsMainMenu;}
+    public WebElement getBasketballOptionInSportsMainMenu() {return basketballOptionInSportsMainMenu;}
+    public WebElement getBaseballOptionInSportsMainMenu() {return baseballOptionInSportsMainMenu;}
+    public WebElement getRunningOptionInSportsMainMenu() {return runningOptionInSportsMainMenu;}
+    public WebElement getSwimmingOptionInSportsMainMenu() {return swimmingOptionInSportsMainMenu;}
+    public WebElement getYogaOptionInSportsMainMenu() {return yogaOptionInSportsMainMenu;}
+    public WebElement getFitnessAndTrainingOptionInSportsMainMenu() {return fitnessAndTrainingOptionInSportsMainMenu;}
+    public WebElement getFitnessEquipmentOptionInSportsMainMenu() {return fitnessEquipmentOptionInSportsMainMenu;}
+    public WebElement getSkippingRopesOptionInSportsMainMenu() {return skippingRopesOptionInSportsMainMenu;}
+    public WebElement getWeightBeltsOptionInSportsMainMenu() {return weightBeltsOptionInSportsMainMenu;}
+    public WebElement getScootersOptionInSportsMainMenu() {return scootersOptionInSportsMainMenu;}
+    public WebElement getTrainingAccessoriesOptionInSportsMainMenu() {return trainingAccessoriesOptionInSportsMainMenu;}
+    public WebElement getShakersAndBottlesOptionInSportsMainMenu() {return shakersAndBottlesOptionInSportsMainMenu;}
+    public WebElement getBagsOptionInSportsMainMenu() {return bagsOptionInSportsMainMenu;}
+    public WebElement getGlovesOptionInSportsMainMenu() {return glovesOptionInSportsMainMenu;}
+    public WebElement getBracesAndSleevesOptionInSportsMainMenu() {return bracesAndSleevesOptionInSportsMainMenu;}
+    public WebElement getMouthguardOptionInSportsMainMenu() {return mouthguardOptionInSportsMainMenu;}
+    public WebElement getApparelOptionInSportsMainMenu() {return apparelOptionInSportsMainMenu;}
+    public WebElement getSportswearOptionInSportsMainMenu() {return sportswearOptionInSportsMainMenu;}
+    public WebElement getPantsOptionInSportsMainMenu() {return pantsOptionInSportsMainMenu;}
+    public WebElement getShortsOptionInSportsMainMenu() {return shortsOptionInSportsMainMenu;}
+    public WebElement getHoodiesOptionInSportsMainMenu() {return hoodiesOptionInSportsMainMenu;}
+    public WebElement gettShirtsOptionInSportsMainMenu() {return tShirtsOptionInSportsMainMenu;}
+    public WebElement getTanksOptionInSportsMainMenu() {return TanksOptionInSportsMainMenu;}
+    public WebElement getFootwearOptionInSportsMainMenu() {return footwearOptionInSportsMainMenu;}
+    public WebElement getSneakersOptionInSportsMainMenu() {return sneakersOptionInSportsMainMenu;}
+    public WebElement getTrainingShoesOptionInSportsMainMenu() {return trainingShoesOptionInSportsMainMenu;}
+    public WebElement getRunnigShoesOptionInSportsMainMenu() {return runnigShoesOptionInSportsMainMenu;}
+    public WebElement getWomenOptionInSportsMainMenu() {return womenOptionInSportsMainMenu;}
+    public WebElement getWomenSportsTechOptionInSportsMainMenu() {return womenSportsTechOptionInSportsMainMenu;}
+    public WebElement getWomenWearableTechOptionInSportsMainMenu() {return womenWearableTechOptionInSportsMainMenu;}
+    public WebElement getWomenCamerasOptionInSportsMainMenu() {return womenCamerasOptionInSportsMainMenu;}
+    public WebElement getWomenPhoneAccessoriesOptionInSportsMainMenu() {return womenPhoneAccessoriesOptionInSportsMainMenu;}
+    public WebElement getWomenPersonalCareOptionInSportsMainMenu() {return womenPersonalCareOptionInSportsMainMenu;}
+    public WebElement getWomenShoweringOptionInSportsMainMenu() {return womenShoweringOptionInSportsMainMenu;}
+    public WebElement getWomenSkinCareOptionInSportsMainMenu() {return womenSkinCareOptionInSportsMainMenu;}
+    public WebElement getWomenBodyCareOptionInSportsMainMenu() {return womenBodyCareOptionInSportsMainMenu;}
+    public WebElement getWomenOralCareOptionInSportsMainMenu() {return womenOralCareOptionInSportsMainMenu;}
+    public WebElement getWomenTherapyOptionInSportsMainMenu() {return womenTherapyOptionInSportsMainMenu;}
+    public WebElement getWomenMasksOptionInSportsMainMenu() {return womenMasksOptionInSportsMainMenu;}
+    public WebElement getWomenFitnessAndTrainingOptionInSportsMainMenu() {return womenFitnessAndTrainingOptionInSportsMainMenu;}
+    public WebElement getWomenTrainingAccessoriesOptionInSportsMainMenu() {return womenTrainingAccessoriesOptionInSportsMainMenu;}
+    public WebElement getMmaOptionInSportsMainMenu() {return mmaOptionInSportsMainMenu;}
+    public WebElement getJiuJitsuOptionInSportsMainMenu() {return jiuJitsuOptionInSportsMainMenu;}
+    public WebElement getBoardGamesOptionInSportsMainMenu() {return boardGamesOptionInSportsMainMenu;}
+    public WebElement getSportsTechOptionInSportsMainMenu() {return sportsTechOptionInSportsMainMenu;}
+    public WebElement getWearableTechOptionInSportsMainMenu() {return wearableTechOptionInSportsMainMenu;}
+    public WebElement getCamerasOptionInSportsMainMenu() {return camerasOptionInSportsMainMenu;}
+    public WebElement getPhoneAccessoriesOptionInSportsMainMenu() {return phoneAccessoriesOptionInSportsMainMenu;}
+    public WebElement getPersonalCareOptionInSportsMainMenu() {return personalCareOptionInSportsMainMenu;}
+    public WebElement getShoweringOptionInSportsMainMenu() {return showeringOptionInSportsMainMenu;}
+    public WebElement getShavingOptionInSportsMainMenu() {return shavingOptionInSportsMainMenu;}
+    public WebElement getSkinCareOptionInSportsMainMenu() {return skinCareOptionInSportsMainMenu;}
+    public WebElement getBodyCareOptionInSportsMainMenu() {return bodyCareOptionInSportsMainMenu;}
+    public WebElement getOralCareOptionInSportsMainMenu() {return oralCareOptionInSportsMainMenu;}
+    public WebElement getTherapyOptionInSportsMainMenu() {return therapyOptionInSportsMainMenu;}
+    public WebElement getMasksOptionInSportsMainMenu() {return masksOptionInSportsMainMenu;}
+    public WebElement getFitnessAndTrainingCategoryOptionInSportsMainMenu() {return fitnessAndTrainingCategoryOptionInSportsMainMenu;}
+    public WebElement getWomenOnlyMainMenu() {return womenOnlyMainMenu;}
+    public WebElement getWomenOnlyMainMenuText() {return womenOnlyMainMenuText;}
+    public List<WebElement> getWomenOnlyMainMenuList() {return womenOnlyMainMenuList;}
+
     //Define the main actions we need to execute our TCs
     public void switchToAECountry() {try{
         DataHelperAndWait.isDisplayed(countryList, 15);

@@ -5,6 +5,9 @@ import core.DataHelperAndWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.KsaHomePage;
+
+import static org.testng.Assert.assertFalse;
+
 public class KsaHomePageTestCases extends BaseTest {
     private KsaHomePage ksaHomePage;
     String allProductsInTopSellingStacksSectionURL ="https://www.sporter.com/en-sa/";
@@ -93,6 +96,10 @@ public class KsaHomePageTestCases extends BaseTest {
         ksaHomePage.switchToKsaCountry();
         ksaHomePage.clickOnviewAllBtnInTopSellingStacksSection();
         Assert.assertEquals(webDriver.getCurrentUrl(),allProductsInTopSellingStacksSectionURL);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
     }
     @Test(description = "Make sure the Top Sellers sections are displayed ",priority = 13)
     public void verifyTopSellersSectionAreDisplayed(){
@@ -293,6 +300,10 @@ public class KsaHomePageTestCases extends BaseTest {
         ksaHomePage.switchToKsaCountry();
         ksaHomePage.clickOnEmailBtn();
         Assert.assertEquals(webDriver.getCurrentUrl(),contactUsUrl);
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
     }
     @Test(description = "Make sure the Ability to click on phone button that appears in the Got A Question section correctly ",priority = 38)
     public void verifyAbilityToClickOnPhoneBtnInGotQuestionSectionCorrectly(){
