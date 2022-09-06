@@ -9,6 +9,8 @@ import org.testng.annotations.Test;
 import sporter_pages.KsaHomePage;
 import sporter_pages.QatarHomePage;
 
+import static org.testng.Assert.assertFalse;
+
 public class QatarHomePageTestCases extends BaseTest {
     private QatarHomePage qatarHomePage;
     String allProductsInTopSellingStacksSectionURL ="https://www.sporter.com/en-qa/";
@@ -307,5 +309,56 @@ public class QatarHomePageTestCases extends BaseTest {
         // store window handles in Set
         String currentwindow = webDriver.getWindowHandle();
         webDriver.switchTo().window(currentwindow);
+    }
+    @Test(description = "Make sure clicking on the Sports Supplements category does not redirect the user to 404 page or No Content Found Page ",priority = 39)
+    public void verifyClickingOnSportsSupplementsCategoryDoeNotRedirectTheUserTo404PageOrNoContentFoundPage(){
+        qatarHomePage= new QatarHomePage(webDriver);
+        qatarHomePage.switchToQatarCountry();
+        qatarHomePage.clickOnSportsSupplementsCategory();
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Healthy Food category does not redirect the user to 404 page or No Content Found Page ",priority = 40)
+    public void verifyClickingOnHealthyFoodCategoryDoeNotRedirectTheUserTo404PageOrNoContentFoundPage(){
+        qatarHomePage= new QatarHomePage(webDriver);
+        qatarHomePage.switchToQatarCountry();
+        qatarHomePage.clickOnHealthyFoodCategory();
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Vitamins And Health category does not redirect the user to 404 page or No Content Found Page ",priority = 41)
+    public void verifyClickingOnVitaminsAndHealthCategoryDoeNotRedirectTheUserTo404PageOrNoContentFoundPage(){
+        qatarHomePage= new QatarHomePage(webDriver);
+        qatarHomePage.switchToQatarCountry();
+        qatarHomePage.clickOnVitaminsAndHealthCategory();
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the Sportswear & Accessories category does not redirect the user to 404 page or No Content Found Page ",priority = 42)
+    public void verifyClickingOnSportswearAndAccessoriesCategoryDoeNotRedirectTheUserTo404PageOrNoContentFoundPage(){
+        qatarHomePage= new QatarHomePage(webDriver);
+        qatarHomePage.switchToQatarCountry();
+        qatarHomePage.clickOnSportswearAndAccessoriesCategory();
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Make sure clicking on the HomePage Horizontal Banner does not redirect the user to 404 page or No Content Found Page ",priority = 43)
+    public void verifyClickingOnHomePageHorizontalBannerDoeNotRedirectTheUserTo404PageOrNoContentFoundPage(){
+        qatarHomePage= new QatarHomePage(webDriver);
+        qatarHomePage.switchToQatarCountry();
+        Assert.assertTrue(qatarHomePage.getHorizontalBanner().isDisplayed(), "The HomePage Horizontal Banner is missing");
+        qatarHomePage.clickOnHomePageHorizontalBanner();
+        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
     }
 }

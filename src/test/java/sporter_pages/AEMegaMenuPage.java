@@ -20,6 +20,14 @@ public class AEMegaMenuPage {
     private WebElement shopByList;
     @FindBy(xpath = "(//ul[@class='groupmenu-drop'])[1]")
     private List<WebElement> sportsSupplementsMainMenuList;
+    @FindBy(xpath = "(//ul[@class='groupmenu-drop'])[1]")
+    private WebElement sportsSupplementsSubMenuSection;
+    @FindBy(xpath = "(//ul[@class='groupmenu-drop'])[2]")
+    private WebElement vitaminsAndHealthSubMenuSection;
+    @FindBy(xpath = "(//ul[@class='groupmenu-drop'])[3]")
+    private WebElement healthyFoodSubMenuSection;
+    @FindBy(xpath = "(//ul[@class='groupmenu-drop'])[4]")
+    private WebElement sportsSubMenuSection;
     @FindBy(xpath = "(//ul[@class='groupmenu-drop'])[2]")
     private List<WebElement> VitaminsAndHealthMainMenuList;
     @FindBy(xpath = "//ul[@class='nav-primary']")
@@ -1558,7 +1566,10 @@ public class AEMegaMenuPage {
     public WebElement getWomenOnlyMainMenu() {return womenOnlyMainMenu;}
     public WebElement getWomenOnlyMainMenuText() {return womenOnlyMainMenuText;}
     public List<WebElement> getWomenOnlyMainMenuList() {return womenOnlyMainMenuList;}
-
+    public WebElement getSportsSupplementsSubMenuSection() {return sportsSupplementsSubMenuSection;}
+    public WebElement getVitaminsAndHealthSubMenuSection() {return vitaminsAndHealthSubMenuSection;}
+    public WebElement getHealthyFoodSubMenuSection() {return healthyFoodSubMenuSection;}
+    public WebElement getSportsSubMenuSection() {return sportsSubMenuSection;}
     //Define the main actions we need to execute our TCs
     public void switchToAECountry() {try{
         DataHelperAndWait.isDisplayed(countryList, 15);

@@ -22,7 +22,8 @@ public class BaseTest {
     public String discaountCouponeCode= "";
 
 
-    public String outOfStockProduct = "https://www.sporter.com/en-ae/grenade-reload-protein-oat-bar";
+    public String outOfStockProduct = "https://www.sporter.com/en-ae/healthy-food/snacks-drinks/spreads/gymqueen-smooth-peanut-butter-spread";
+    public String product = "https://www.sporter.com/en-ae/optimum-gold-standard-100-whey";
     public static WebDriver webDriver;
     public static WebDriver driver;
 //    The Below Methods we need to run the TCs across the broswers

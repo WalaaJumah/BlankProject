@@ -12,6 +12,7 @@ import static org.testng.Assert.assertFalse;
 public class AEMegaMenuTestCases extends BaseTest {
     Actions action;
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
+
     String sportSupplementsUrl = "https://www.sporter.com/en-ae/sport-supplements";
     String healthVitaminsUrl = "https://www.sporter.com/en-ae/health-vitamins/";
     String sportsUrl = "https://www.sporter.com/en-ae/sports/";
@@ -405,15 +406,20 @@ public class AEMegaMenuTestCases extends BaseTest {
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsSupplementsOption()).perform();
+        DataHelperAndWait.isDisplayed(aeMegamenuPage.getSubMenuSection(),10);
         Assert.assertTrue(aeMegamenuPage.getSubMenuSection().isDisplayed(), "The Sports Supplements sub menu is missing");
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
+        DataHelperAndWait.isDisplayed(aeMegamenuPage.getSubMenuSection(),10);
         Assert.assertTrue(aeMegamenuPage.getSubMenuSection().isDisplayed(), "The Vitamins And Health sub menu is missing");
         action.moveToElement(aeMegamenuPage.getHealthFoodOption()).perform();
+        DataHelperAndWait.isDisplayed(aeMegamenuPage.getSubMenuSection(),10);
         Assert.assertTrue(aeMegamenuPage.getSubMenuSection().isDisplayed(), "The Health Food sub menu is missing");
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
+        DataHelperAndWait.isDisplayed(aeMegamenuPage.getSubMenuSection(),10);
         Assert.assertTrue(aeMegamenuPage.getSubMenuSection().isDisplayed(), "The Sports sub menu is missing");
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
-        Assert.assertTrue(aeMegamenuPage.getByBrandSubMenuSection().isDisplayed(), "The By Brand sub menu is missing");
+        DataHelperAndWait.isDisplayed(aeMegamenuPage.getSubMenuSection(),10);
+        Assert.assertTrue(aeMegamenuPage.getSubMenuSection().isDisplayed(), "The By Brand sub menu is missing");
     }
 
     @Test(description = "Make sure clicking on the Sports Supplements menu appearing in the ShopBy Menu will redirect the User to the correct URL", priority = 7)
@@ -1384,7 +1390,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Folic Acid Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Folic Acid Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 69)
     public void verifyClickingOnFolicAcidOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1400,7 +1406,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Vitamin A Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Vitamin A Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 70)
     public void verifyClickingOnVitaminAOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1416,7 +1422,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Vitamin B Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Vitamin B Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 71)
     public void verifyClickingOnVitaminBOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1432,7 +1438,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Vitamin C Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Vitamin C Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 72)
     public void verifyClickingOnVitaminCOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1448,7 +1454,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Vitamin D Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Vitamin D Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 73)
     public void verifyClickingOnVitaminDOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1464,7 +1470,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Vitamin E Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Vitamin E Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 74)
     public void verifyClickingOnVitaminEOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1480,7 +1486,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Vitamin K Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Vitamin K Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 75)
     public void verifyClickingOnVitaminKOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1496,7 +1502,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Multi Vitamins Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Multi Vitamins Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 76)
     public void verifyClickingOnMultiVitaminsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1512,7 +1518,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Vitamins For Kids Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Vitamins For Kids Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 77)
     public void verifyClickingOnVitaminsForKidsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1528,7 +1534,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Vitamins For Men Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Vitamins For Men Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 78)
     public void verifyClickingOnVitaminsForMenOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1544,7 +1550,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Vitamins For Women Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Vitamins For Women Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 79)
     public void verifyClickingOnVitaminsForWomenOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1560,7 +1566,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Bone And Joint Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Bone And Joint Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 80)
     public void verifyClickingOnBoneAndJointOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1576,7 +1582,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Bone Health Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Bone Health Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 81)
     public void verifyClickingOnBoneHealthOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1592,7 +1598,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Joint Health Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Joint Health Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 82)
     public void verifyClickingOnJointHealthOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1608,7 +1614,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Beauty Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Beauty Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 83)
     public void verifyClickingOnBeautyOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1624,7 +1630,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Collagen Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Collagen Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 84)
     public void verifyClickingOnCollagenOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1640,7 +1646,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Hair, Skin AndNails Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Hair, Skin AndNails Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 85)
     public void verifyClickingOnHairSkinAndNailsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1656,7 +1662,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Fish Oil Omegas Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Fish Oil Omegas Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 86)
     public void verifyClickingOnFishOilOmegasOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1672,7 +1678,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Fish Oil Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Fish Oil Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 87)
     public void verifyClickingOnFishOilOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1688,7 +1694,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Omega369 Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Omega369 Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 88)
     public void verifyClickingOnOmega369OptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1704,7 +1710,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Health Lifestyle Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Health Lifestyle Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 89)
     public void verifyClickingOnHealthLifestyleOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1720,7 +1726,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Antioxidants Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Antioxidants Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 90)
     public void verifyClickingOnAntioxidantsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1736,7 +1742,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Blood Sugar Support Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Blood Sugar Support Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 91)
     public void verifyClickingOnBloodSugarSupportOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1752,7 +1758,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Brain Support Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Brain Support Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 92)
     public void verifyClickingOnBrainSupportOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1768,7 +1774,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Detox And Cleanse Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Detox And Cleanse Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 93)
     public void verifyClickingOnDetoxAndCleanseOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1784,7 +1790,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Energy Formulas Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Energy Formulas Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 94)
     public void verifyClickingOnEnergyFormulasOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1800,7 +1806,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Eye Health Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Eye Health Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 95)
     public void verifyClickingOnEyeHealthOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1816,7 +1822,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Herbs Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Herbs Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 96)
     public void verifyClickingOnHerbsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1832,7 +1838,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Hormones Balance Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Hormones Balance Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 97)
     public void verifyClickingOnHormonesBalanceOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1848,7 +1854,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Immune Support Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Immune Support Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 98)
     public void verifyClickingOnImmuneSupportOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1864,7 +1870,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Mens Health Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Mens Health Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 99)
     public void verifyClickingOnMensHealthOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1880,7 +1886,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Stress Relief Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Stress Relief Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 100)
     public void verifyClickingOnStressReliefOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1896,7 +1902,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Sleep Support Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Sleep Support Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 101)
     public void verifyClickingOnSleepSupportOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1912,7 +1918,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Super Foods Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Super Foods Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 102)
     public void verifyClickingOnSuperFoodsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1928,7 +1934,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Urinary Tract Support Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Urinary Tract Support Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 103)
     public void verifyClickingOnUrinaryTractSupportOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1944,7 +1950,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Weight Management Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Weight Management Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 104)
     public void verifyClickingOnWeightManagementOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1959,7 +1965,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Womens Health Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Womens Health Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 105)
     public void verifyClickingOnWomensHealthOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1974,7 +1980,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Digestion Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Digestion Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 106)
     public void verifyClickingOnDigestionOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1989,7 +1995,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Digestion Support Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Digestion Support Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 107)
     public void verifyClickingOnDigestionSupportOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2004,7 +2010,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Probiotics Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Probiotics Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 108)
     public void verifyClickingOnProbioticsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2019,7 +2025,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Sport Vitamins Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Sport Vitamins Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 109)
     public void verifyClickingOnSportVitaminsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2034,7 +2040,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Amino Acid Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Amino Acid Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 110)
     public void verifyClickingOnAminoAcidOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2049,7 +2055,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Minerals Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Minerals Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 111)
     public void verifyClickingOnMineralsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2064,7 +2070,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Calcium Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Calcium Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 112)
     public void verifyClickingOnCalciumOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2079,7 +2085,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Iron Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Iron Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 113)
     public void verifyClickingOnIronOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2094,7 +2100,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Magnesium Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Magnesium Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 114)
     public void verifyClickingOnMagnesiumOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2109,7 +2115,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Multi mineral Formulas Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Multi mineral Formulas Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 115)
     public void verifyClickingOnMultimineralFormulasOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2124,7 +2130,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Zinc Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Zinc Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 116)
     public void verifyClickingOnZincOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2139,7 +2145,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Potassium Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Potassium Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 117)
     public void verifyClickingOnPotassiumOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2154,7 +2160,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Healthy Drinks Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Healthy Drinks Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 118)
     public void verifyClickingOnHealthyDrinksOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2169,7 +2175,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Drinkable Vitamins Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Drinkable Vitamins Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 119)
     public void verifyClickingOnDrinkableVitaminsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2184,7 +2190,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Pets Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Pets Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 120)
     public void verifyClickingOnPetsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2199,7 +2205,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Supplements More Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Supplements More Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 121)
     public void verifyClickingOnSupplementsMoreOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2214,7 +2220,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure the Healthy Food menu Inside ShopBy Menu display the correct categories and sub-categories", priority = 62)
+    @Test(description = "Make sure the Healthy Food menu Inside ShopBy Menu display the correct categories and sub-categories", priority = 122)
     public void verifyHealthyFoodMenuInsideShopByMenuDisplayTheCorrectCategoriesAndSubCategories() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2229,7 +2235,7 @@ public class AEMegaMenuTestCases extends BaseTest {
                 "Healthy Meal Replacement\n" + "Protein Coffee\n" + "Candies\n" + "Flavoring Agents\n" + "Keto Snacks\n" + "Manuka Honey\n" + "Meat Snacks");
     }
 
-    @Test(description = "Make sure clicking on the Grocery Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Grocery Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 123)
     public void verifyClickingOnGroceryOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2244,7 +2250,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Baking And Cooking Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Baking And Cooking Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 124)
     public void verifyClickingOnBakingAndCookingOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2259,7 +2265,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Canned Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Canned Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 125)
     public void verifyClickingOnCannedOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2274,7 +2280,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Coffee Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Coffee Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 126)
     public void verifyClickingOnCoffeeOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2289,7 +2295,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Condiments Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Condiments Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 127)
     public void verifyClickingOnCondimentsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2304,7 +2310,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Milk And Cream Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Milk And Cream Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 128)
     public void verifyClickingOnMilkAndCreamOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2319,7 +2325,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Nuts And Oats Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Nuts And Oats Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 129)
     public void verifyClickingOnNutsAndOatsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2334,7 +2340,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Oils Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Oils Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 130)
     public void verifyClickingOnOilsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2349,7 +2355,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Pasta Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Pasta Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 131)
     public void verifyClickingOnPastaOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2364,7 +2370,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Rice And Grains Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Rice And Grains Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 132)
     public void verifyClickingOnRiceAndGrainsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2379,7 +2385,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Seasonings And Spices Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+        @Test(description = "Make sure clicking on the Seasonings And Spices Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 133)
     public void verifyClickingOnSeasoningsAndSpicesOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2394,7 +2400,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Sugar And Sweeteners Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Sugar And Sweeteners Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 134)
     public void verifyClickingOnSugarSweetenersOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2409,7 +2415,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Syrups Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Syrups Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 135)
     public void verifyClickingOnSyrupsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2424,7 +2430,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Tea And Herbs Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Tea And Herbs Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 136)
     public void verifyClickingOnTeaAndHerbsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2439,7 +2445,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Superfoods Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Superfoods Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 137)
     public void verifyClickingOnSuperfoodsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2454,7 +2460,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Ready Mixes Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Ready Mixes Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 138)
     public void verifyClickingOnReadyMixesOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2469,7 +2475,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Breakfast And Cereal Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Breakfast And Cereal Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 139)
     public void verifyClickingOnBreakfastAndCerealOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2484,7 +2490,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Ready To Drink Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Ready To Drink Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 140)
     public void verifyClickingOnReadyToDrinkOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2499,7 +2505,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Amino And Bcaas Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Amino And Bcaas Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 141)
     public void verifyClickingOnAminoAndBcaasOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2514,7 +2520,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Energy Drinks Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Energy Drinks Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 142)
     public void verifyClickingOnEnergyDrinksOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2529,7 +2535,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Protein Shakes Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Protein Shakes Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 143)
     public void verifyClickingOnProteinShakesOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2544,7 +2550,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Electrolytes And Hydration Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Electrolytes And Hydration Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 144)
     public void verifyClickingOnElectrolytesAndHydrationOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2559,7 +2565,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Healthy Snacks Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Healthy Snacks Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 145)
     public void verifyClickingOnHealthySnacksOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2574,7 +2580,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Protein Bars Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Protein Bars Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 146)
     public void verifyClickingOnProteinBarsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2589,7 +2595,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Cookies Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Cookies Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 147)
     public void verifyClickingOnCookiesOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2604,7 +2610,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Chips Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Chips Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 148)
     public void verifyClickingOnChipsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2619,7 +2625,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Brownies And Pancakes Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Brownies And Pancakes Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 149)
     public void verifyClickingOnBrowniesAndPancakesOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2634,7 +2640,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Snack Bars Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Snack Bars Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 150)
     public void verifyClickingOnSnackBarsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2649,7 +2655,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Spreads Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Spreads Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 151)
     public void verifyClickingOnSpreadsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2664,7 +2670,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Other Healthy Snacks Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Other Healthy Snacks Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 152)
     public void verifyClickingOnOtherHealthySnacksOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2679,7 +2685,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Ready To Eat Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Ready To Eat Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 153)
     public void verifyClickingOnReadyToEatOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2694,7 +2700,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Healthy Meals Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Healthy Meals Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 154)
     public void verifyClickingOnHealthyMealsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2709,7 +2715,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Featured Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Featured Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 155)
     public void verifyClickingOnFeaturedOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2724,7 +2730,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Healthy Meal Replacement Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Healthy Meal Replacement Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 156)
     public void verifyClickingOnHealthyMealReplacementOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2739,7 +2745,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Protein Coffee Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Protein Coffee Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 157)
     public void verifyClickingOnProteinCoffeeOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2754,7 +2760,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Candies Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Candies Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 158)
     public void verifyClickingOnCandiesOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2769,7 +2775,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Flavoring Agents Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Flavoring Agents Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 159)
     public void verifyClickingOnFlavoringAgentsOptionOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2784,7 +2790,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Keto Snacks Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Keto Snacks Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 160)
     public void verifyClickingOnKetoSnacksOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2799,7 +2805,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Manuka Honey Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Manuka Honey Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 161)
     public void verifyClickingOnManukaHoneyOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2814,7 +2820,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Meat Snacks Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Meat Snacks Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 162)
     public void verifyClickingOnMeatSnacksOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2829,7 +2835,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure the Sports menu Inside ShopBy Menu display the correct categories and sub-categories", priority = 62)
+    @Test(description = "Make sure the Sports menu Inside ShopBy Menu display the correct categories and sub-categories", priority = 163)
     public void verifySportsMenuInsideShopByMenuDisplayTheCorrectCategoriesAndSubCategories() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2844,7 +2850,7 @@ public class AEMegaMenuTestCases extends BaseTest {
                 "CLOTHING\n" + "Tops\n" + "Shorts\n" + "Safety Masks\n" + "ACCESSORIES\n" + "GLOVES\n" + "Gloves\n" + "Belts\n" + "CAPS & HATS\n" + "Cap\n" + "SHAKERS\n" +
                 "Water Bottles\n" + "Socks\n" + "Towels\n" + "Sunglasses\n" + "Mixer\n" + "BAGS\n" + "Backpacks\n" + "Shoulder Bags");
     }
-    @Test(description = "Make sure the main categories in the Sports  menu Inside ShopBy Menu appearing in Bold Font", priority = 18)
+    @Test(description = "Make sure the main categories in the Sports  menu Inside ShopBy Menu appearing in Bold Font", priority = 164)
     public void verifyTheMainCategoriesInTheSportsMenuInsideShopByMenuAppearingInBoldFont() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2869,7 +2875,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(aeMegamenuPage.getWomenBagsInSportsMenu().getCssValue("font-weight").contains("700"));
 
     }
-    @Test(description = "Make sure the main categories in the Sports  menu Inside ShopBy Menu menu appearing in uppercase", priority = 19)
+    @Test(description = "Make sure the main categories in the Sports  menu Inside ShopBy Menu menu appearing in uppercase", priority = 165)
     public void verifyTheMainCategoriesInTheSportsMenuInsideShopByMenuAppearingInUppercase() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2893,7 +2899,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertEquals(aeMegamenuPage.getWomenShakersInSportsMenu().getCssValue("text-transform"), "uppercase");
         Assert.assertEquals(aeMegamenuPage.getWomenBagsInSportsMenu().getCssValue("text-transform"), "uppercase");
     }
-    @Test(description = "Make sure clicking on the Men Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Men Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 166)
     public void verifyClickingOnMenOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2908,7 +2914,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Clothing Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Clothing Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 167)
     public void verifyClickingOnClothingOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2923,7 +2929,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Tops Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Tops Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 168)
     public void verifyClickingOnTopsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2938,7 +2944,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Pants Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Pants Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 169)
     public void verifyClickingOnPantsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2953,7 +2959,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Shorts Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Shorts Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 170)
     public void verifyClickingOnShortsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2968,7 +2974,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Jackets And Coats Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Jackets And Coats Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 171)
     public void verifyClickingOnJacketsAndCoatsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2983,7 +2989,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Safety Masks Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Safety Masks Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 172)
     public void verifyClickingOnSafetyMasksOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2998,7 +3004,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Footwear Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Footwear Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 173)
     public void verifyClickingOnFootwearOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3013,7 +3019,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Sneakers Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Sneakers Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 174)
     public void verifyClickingOnSneakersOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3028,7 +3034,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Training Shoes Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Training Shoes Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 175)
     public void verifyClickingOnTrainingShoesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3043,7 +3049,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Running Shoes Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Running Shoes Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 176)
     public void verifyClickingOnRunningShoesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3058,7 +3064,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Hiking Shoes Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Hiking Shoes Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 177)
     public void verifyClickingOnHikingShoesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3073,7 +3079,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Accessories Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Accessories Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 178)
     public void verifyClickingOnAccessoriesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3088,7 +3094,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Gloves Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Gloves Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 179)
     public void verifyClickingOnGlovesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3103,7 +3109,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Belts Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Belts Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 180)
     public void verifyClickingOnBeltsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3118,7 +3124,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Caps And Hats Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Caps And Hats Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 181)
     public void verifyClickingOnCapsAndHatsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3133,7 +3139,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Caps Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Caps Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 182)
     public void verifyClickingOnCapsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3148,7 +3154,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Shakers Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Shakers Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 183)
     public void verifyClickingOnShakersOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3163,7 +3169,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Water Bottles Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Water Bottles Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 184)
     public void verifyClickingOnWaterBottlesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3179,7 +3185,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
     //Theres A Bug Here Due To Water Bottles Option Appearing Duplicated ut I added this test case to save the qoption position
-    @Test(description = "Theres A Bug Here Due To Water Bottles Option Appearing Duplicated", priority = 68)
+    @Test(description = "Theres A Bug Here Due To Water Bottles Option Appearing Duplicated", priority = 185)
     public void theresABugHereDueToWaterBottlesOptionAppearingDuplicated() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3195,7 +3201,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
         System.out.println("Theres A Bug Here Due To Water Bottles Option Appearing Duplicated");
     }
-    @Test(description = "Make sure clicking on the Socks Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Socks Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 186)
     public void verifyClickingOnSocksOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3210,7 +3216,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Towels Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Towels Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 187)
     public void verifyClickingOnTowelsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3225,7 +3231,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Sunglasses Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Sunglasses Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 188)
     public void verifyClickingOnSunglassesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3240,7 +3246,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Mixer Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Mixer Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 189)
     public void verifyClickingOnMixterOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3255,7 +3261,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Bags Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Bags Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 190)
     public void verifyClickingOnBagsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3270,7 +3276,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Back Packs Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Back Packs Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 191)
     public void verifyClickingOnBackPacksOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3285,7 +3291,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Shoulder Bags Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Shoulder Bags Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 192)
     public void verifyClickingOnShoulderBagsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3300,7 +3306,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Wearable Tech Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Wearable Tech Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 193)
     public void verifyClickingOnWearableTechOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3315,7 +3321,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Watches Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Watches Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 194)
     public void verifyClickingOnWatchesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3330,7 +3336,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Gaming Accessories Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Gaming Accessories Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 195)
     public void verifyClickingOnGamingAccessoriesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3345,7 +3351,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Equipment Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Equipment Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 196)
     public void verifyClickingOnEquipmentOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3360,7 +3366,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Grips Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Grips Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 197)
     public void verifyClickingOnGripstOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3375,7 +3381,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Balls Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Balls Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 198)
     public void verifyClickingOnBallstOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3390,7 +3396,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Rollers Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Rollers Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 199)
     public void verifyClickingOnRollerstOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3405,7 +3411,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Weights Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Weights Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 200)
     public void verifyClickingOnWeightsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3420,7 +3426,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Women Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Women Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 201)
     public void verifyClickingOnWomenOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3435,7 +3441,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Women Clothing Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Women Clothing Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 202)
     public void verifyClickingOnWomenClothingOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3450,7 +3456,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Women Tops Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Women Tops Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 203)
     public void verifyClickingOnWomenTopsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3465,7 +3471,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Women Shorts Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Women Shorts Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 204)
     public void verifyClickingOnWomenShortsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3480,7 +3486,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Women Safety Masks Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Women Safety Masks Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 205)
     public void verifyClickingOnWomenSafetyMasksOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3495,7 +3501,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Women Accessories Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Women Accessories Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 206)
     public void verifyClickingOnWomenAccessoriesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3510,7 +3516,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Theres A Bug Here Due To Gloves Option Appearing Duplicated", priority = 68)
+    @Test(description = "Theres A Bug Here Due To Gloves Option Appearing Duplicated", priority = 207)
     public void theresABugHereDueToGlovesOptionAppearingDuplicated() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3526,7 +3532,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
         System.out.println("Theres A Bug Here Due To Gloves Option Appearing Duplicated");
     }
-    @Test(description = "Make sure clicking on the Women Gloves Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Women Gloves Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 208)
     public void verifyClickingOnWomenGlovesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3541,7 +3547,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Women Belts Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Women Belts Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 209)
     public void verifyClickingOnWomenBeltsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3556,7 +3562,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Women Caps And Hats Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Women Caps And Hats Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 210)
     public void verifyClickingOnWomenCapsAndHatsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3571,7 +3577,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Women Caps Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Women Caps Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 211)
     public void verifyClickingOnWomenCapsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3586,7 +3592,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Women Shakers Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Women Shakers Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 212)
     public void verifyClickingOnWomenShakersOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3601,7 +3607,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Women Water Bottles Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Women Water Bottles Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 213)
     public void verifyClickingOnWomenWaterBottlesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3616,7 +3622,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Women Socks Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Women Socks Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 214)
     public void verifyClickingOnWomenSocksOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3631,7 +3637,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Women Towels Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Women Towels Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 215)
     public void verifyClickingOnWomenTowelsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3646,7 +3652,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Women Sunglasses Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Women Sunglasses Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 216)
     public void verifyClickingOnWomenSunglassesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3661,7 +3667,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Women Mixer Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Women Mixer Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 217)
     public void verifyClickingOnWomenMixerOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3676,7 +3682,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Women Bags Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Women Bags Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 218)
     public void verifyClickingOnWomenBagsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3691,7 +3697,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Women Back Packs Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Women Back Packs Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 219)
     public void verifyClickingOnWomenBackPacksOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3706,7 +3712,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Women Sholders Bags Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Women Sholders Bags Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 220)
     public void verifyClickingOnWomenSholdersBagsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3722,7 +3728,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
     ///// By Brand
-    @Test(description = "Make sure clicking on the Supplements Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Supplements Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 221)
     public void verifyClickingOnSupplementsOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3737,7 +3743,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Optimum Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Optimum Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 222)
     public void verifyClickingOnOptimumNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3752,8 +3758,8 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Muscletech Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
-    public void verifyClickingOnMuscletechOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+    @Test(description = "Make sure clicking on the Muscletech Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 223)
+        public void verifyClickingOnMuscletechOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
         aeMegamenuPage.switchToAECountry();
@@ -3767,7 +3773,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Cellucor Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Cellucor Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 224)
     public void verifyClickingOnCellucorOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3782,7 +3788,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Dymatize Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Dymatize Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 225)
     public void verifyClickingOnDymatizeOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3797,7 +3803,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Xtend Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Xtend Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 226)
     public void verifyClickingOnXtendOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3812,7 +3818,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Animal Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Animal Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 227)
     public void verifyClickingOnAnimalNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3827,7 +3833,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Muscle Pharm Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Muscle Pharm Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 228)
     public void verifyClickingOnMusclePharmOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3842,7 +3848,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Universal Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Universal Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 229)
     public void verifyClickingOnUniversalNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3857,7 +3863,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the BSN Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the BSN Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 230)
     public void verifyClickingOnBSNOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3872,7 +3878,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the EHPLABS Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the EHPLABS Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 231)
     public void verifyClickingOnEhplabsOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3887,7 +3893,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Jym Supplement Science Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Jym Supplement Science Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 232)
     public void verifyClickingOnJymSupplementScienceOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3902,7 +3908,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Bpi Sports Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Bpi Sports Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 233)
     public void verifyClickingOnBpiSportsOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3917,7 +3923,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Russian Bear Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Russian Bear Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 234)
     public void verifyClickingOnRussianBearOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3932,8 +3938,8 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Isopure Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
-    public void verifyClickingOnIsopureOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
+    @Test(description = "Make sure clicking on the Isopure Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 235)
+        public void verifyClickingOnIsopureOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
         aeMegamenuPage.switchToAECountry();
@@ -3947,7 +3953,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the 1 Up Nutrition  Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the 1 Up Nutrition  Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 236)
     public void verifyClickingOnOneUpNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3962,7 +3968,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Musclemeds  Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Musclemeds  Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 237)
     public void verifyClickingOnMusclemedsOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3977,7 +3983,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the MHP  Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the MHP  Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 238)
     public void verifyClickingOnMhpOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3992,7 +3998,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Evl Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Evl Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 239)
     public void verifyClickingOnEvlNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4007,7 +4013,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Nla For Her Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Nla For Her Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 240)
     public void verifyClickingOnNlaForHerOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4022,7 +4028,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Muscle Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Muscle Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 241)
     public void verifyClickingOnMuscleNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4037,7 +4043,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Gat Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Gat Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 242)
     public void verifyClickingOnGatNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4052,7 +4058,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Labrada Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Labrada Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 243)
     public void verifyClickingOnLabradaOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4067,7 +4073,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Orgain Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Orgain Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 244)
     public void verifyClickingOnOrgainOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4082,7 +4088,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Nutrex Research Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Nutrex Research Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 245)
     public void verifyClickingOnNutrexResearchOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4097,7 +4103,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Scitec Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Scitec Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 246)
     public void verifyClickingOnScitecNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4112,7 +4118,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Prolab Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Prolab Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 247)
     public void verifyClickingOnProlabOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4127,7 +4133,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the SOTRU Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the SOTRU Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 248)
     public void verifyClickingOnSotruOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4142,7 +4148,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Divine Health Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Divine Health Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 249)
     public void verifyClickingOnDivineHealthOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4157,7 +4163,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Ghost Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Ghost Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 250)
     public void verifyClickingOnGhostOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4172,7 +4178,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Womens Best Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Womens Best Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 251)
     public void verifyClickingOnWomensBestOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4187,7 +4193,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Efx Sports Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Efx Sports Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 252)
     public void verifyClickingOnEfxSportsOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4202,7 +4208,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Basix Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Basix Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 253)
     public void verifyClickingOnBasixOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4217,7 +4223,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the AK-47 Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the AK-47 Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 254)
     public void verifyClickingOnAK47OptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4232,7 +4238,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Nf Sports Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Nf Sports Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 255)
     public void verifyClickingOnNfSportsOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4247,7 +4253,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Fully Dosed Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Fully Dosed Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 256)
     public void verifyClickingOnFullyDosedOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4262,7 +4268,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the 5% Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the 5% Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 257)
     public void verifyClickingOnFivePercentNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4277,7 +4283,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Olimp Sport Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Olimp Sport Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 258)
     public void verifyClickingOnOlimpSportNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4292,7 +4298,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Jnx Sports Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Jnx Sports Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 259)
     public void verifyClickingOnJnxSportsOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4307,7 +4313,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Fit & Lean Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Fit & Lean Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 260)
     public void verifyClickingOnFitAndLeanOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4322,7 +4328,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Gymqueen Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Gymqueen Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 261)
     public void verifyClickingOnGymqueenOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4337,7 +4343,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the The Pack Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the The Pack Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 262)
     public void verifyClickingOnThePackOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4352,7 +4358,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Betancourt Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Betancourt Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 263)
     public void verifyClickingOnBetancourtNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4367,7 +4373,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Yalla Protein Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Yalla Protein Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 264)
     public void verifyClickingOnYallaProteinOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4382,7 +4388,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Protein World Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Protein World Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 265)
     public void verifyClickingOnProteinWorldOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4397,7 +4403,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Obvi Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Obvi Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 266)
     public void verifyClickingOnObviOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4412,7 +4418,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Naughty Boy Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Naughty Boy Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 267)
     public void verifyClickingOnNaughtyBoyOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4427,7 +4433,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Steel Fit Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Steel Fit Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 268)
     public void verifyClickingOnSteelFitOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4442,7 +4448,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the USN Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the USN Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 269)
     public void verifyClickingOnUsnOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4457,7 +4463,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the X-Gamer Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the X-Gamer Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 270)
     public void verifyClickingOnXGamerOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4472,7 +4478,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Innosupps Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Innosupps Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 271)
     public void verifyClickingOnInnosuppsOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4487,7 +4493,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Outbreak Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Outbreak Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 272)
     public void verifyClickingOnOutbreakNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4502,7 +4508,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Insane Labz Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Insane Labz Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 273)
     public void verifyClickingOnInsaneLabzOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4517,7 +4523,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the All Max Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the All Max Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 274)
     public void verifyClickingOnAllMaxOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4532,7 +4538,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Glaxon Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Glaxon Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 275)
     public void verifyClickingOnGlaxonOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4547,7 +4553,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Redcon1 Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Redcon1 Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 276)
     public void verifyClickingOnRedconOneOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4562,7 +4568,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Panda Supplements Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Panda Supplements Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 277)
     public void verifyClickingOnPandaSupplementsOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4577,7 +4583,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Nutrend Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Nutrend Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 278)
     public void verifyClickingOnNutrendOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4592,7 +4598,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Ostrovit Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Ostrovit Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 279)
     public void verifyClickingOnOstrovitOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4607,7 +4613,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Bettery Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Bettery Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 280)
     public void verifyClickingOnBetteryOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4622,7 +4628,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Healthy Food, Snacks & Meal Replacement Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Healthy Food, Snacks & Meal Replacement Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 281)
     public void verifyClickingOnHealthyFoodSnacksAndMealReplacementOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4637,7 +4643,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Wow Hydrate Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Wow Hydrate Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 282)
     public void verifyClickingOnWowHydrateOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4652,7 +4658,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Quest Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Quest Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 283)
     public void verifyClickingOnQuestNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4667,7 +4673,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Grenade Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Grenade Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 284)
     public void verifyClickingOnGrenadeOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4682,7 +4688,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Reign Energy Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Reign Energy Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 285)
     public void verifyClickingOnReignEnergyOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4697,7 +4703,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Monster Energy Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Monster Energy Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 286)
     public void verifyClickingOnMonsterEnergyOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4712,7 +4718,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the 3d Energy  Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the 3d Energy  Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 287)
     public void verifyClickingOnThirdEnergyOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4729,7 +4735,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     }
 
     ///////SportSupplementsMainMenuTCs///////////////////
-    @Test(description = "Make sure the Down-arrow Icon display correctly next to the Sport Supplements main menu", priority = 4)
+    @Test(description = "Make sure the Down-arrow Icon display correctly next to the Sport Supplements main menu", priority = 288)
     public void verifyTheDownArrowIconAppearsCorrectlyNextToTheSportSupplementsMainMenu() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         aeMegamenuPage.switchToAECountry();
@@ -4737,7 +4743,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getDownArrowKeyInSportSupplementsMenu().isDisplayed());
     }
-    @Test(description = "Make sure the system will display the sub Menu once hovering on the Sport Supplements main menu", priority = 4)
+    @Test(description = "Make sure the system will display the sub Menu once hovering on the Sport Supplements main menu", priority = 289)
     public void verifyTheSubMenuWillAppearsCorrectlyOnceHoveringOnSportSupplementsMainMenu() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         aeMegamenuPage.switchToAECountry();
@@ -4745,7 +4751,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getMegaMenuSection().isDisplayed());
     }
-    @Test(description = "Make sure the Sports Supplements main menu display the correct categories and sub-categories", priority = 17)
+    @Test(description = "Make sure the Sports Supplements main menu display the correct categories and sub-categories", priority = 290)
     public void verifySportsSupplementsMainMenuDisplayTheCorrectCategoriesAndSubCategories() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4761,7 +4767,7 @@ public class AEMegaMenuTestCases extends BaseTest {
                 "Electrolytes & Hydration\n" + "CARBOHYDRATES\n" + "Carbohydrate Powders\n" + "ENERGY & ENDURANCE\n" + "Stimulant Energy\n" +
                 "Non-stimulant Energy\n" + "GAMING & FOCUS\n" + "Gaming Essentials");
     }
-    @Test(description = "Make sure clicking on the Sports Supplements main menu will redirect the User to the correct URL", priority = 7)
+    @Test(description = "Make sure clicking on the Sports Supplements main menu will redirect the User to the correct URL", priority = 291)
     public void verifyClickingOnSportsSupplementsManiMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         aeMegamenuPage.switchToAECountry();
@@ -4774,7 +4780,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure the main categories in the Sports Supplements main menu appearing in Bold Font", priority = 18)
+    @Test(description = "Make sure the main categories in the Sports Supplements main menu appearing in Bold Font", priority = 293)
     public void verifyTheMainCategoriesInTheSportsSupplementsMainMenuAppearingInBoldFont() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4790,7 +4796,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(aeMegamenuPage.getEnergyAndEnduranceOptionInSportSupplementsMenu().getCssValue("font-weight").contains("700"));
         Assert.assertTrue(aeMegamenuPage.getGamingAndFocusOptionInSportSupplementsMenu().getCssValue("font-weight").contains("700"));
     }
-    @Test(description = "Make sure the main categories in the Sports Supplements main menu appearing in uppercase", priority = 19)
+    @Test(description = "Make sure the main categories in the Sports Supplements main menu appearing in uppercase", priority = 294)
     public void verifyTheMainCategoriesInTheSportsSupplementsMainMenuAppearingInUppercase() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4806,7 +4812,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertEquals(aeMegamenuPage.getEnergyAndEnduranceOptionInSportSupplementsMainMenu().getCssValue("text-transform"), "uppercase");
         Assert.assertEquals(aeMegamenuPage.getGamingAndFocusOptionInSportSupplementsMainMenu().getCssValue("text-transform"), "uppercase");
     }
-    @Test(description = "Make sure clicking on the Protein option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 20)
+    @Test(description = "Make sure clicking on the Protein option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 295)
     public void verifyClickingOnProteinOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4820,7 +4826,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Whey Protein Option appearing in the Sports Supplements main menu  will redirect the User to the correct URL", priority = 29)
+    @Test(description = "Make sure clicking on the Whey Protein Option appearing in the Sports Supplements main menu  will redirect the User to the correct URL", priority = 296)
     public void verifyClickingOnWheyProteinOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4835,7 +4841,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Whey Protein Isolate Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 30)
+    @Test(description = "Make sure clicking on the Whey Protein Isolate Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 297)
     public void verifyClickingOnWheyProteinIsolateOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4850,7 +4856,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the protein Blends Option  appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 31)
+    @Test(description = "Make sure clicking on the protein Blends Option  appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 298)
     public void verifyClickingOnProteinBlendsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4865,7 +4871,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Non Dairy Protein Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 32)
+    @Test(description = "Make sure clicking on the Non Dairy Protein Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 299)
     public void verifyClickingOnNonDairyProteinOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4880,7 +4886,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the casein Protein Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 33)
+    @Test(description = "Make sure clicking on the casein Protein Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 300)
     public void verifyClickingOnCaseinProteinOptionInSportsSupplementsMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4895,7 +4901,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the diet Protein Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 34)
+    @Test(description = "Make sure clicking on the diet Protein Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 301)
     public void verifyClickingOnDietProteinOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4909,7 +4915,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Mass Gainers Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 35)
+    @Test(description = "Make sure clicking on the Mass Gainers Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 302)
     public void verifyClickingOnMassGainersOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4923,7 +4929,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Creatine Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 35)
+    @Test(description = "Make sure clicking on the Creatine Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 303)
     public void verifyClickingOnCreatineOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4937,7 +4943,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Creatine Monohydrate Option appearing in the Sports Supplements Main menu will redirect the User to the correct URL", priority = 36)
+    @Test(description = "Make sure clicking on the Creatine Monohydrate Option appearing in the Sports Supplements Main menu will redirect the User to the correct URL", priority = 304)
     public void verifyClickingOnCreatineMonohydrateOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4952,7 +4958,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Creatine Blends Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 37)
+    @Test(description = "Make sure clicking on the Creatine Blends Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 305)
     public void verifyClickingOnCreatineBlendsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4966,7 +4972,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Amino Acids Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 37)
+    @Test(description = "Make sure clicking on the Amino Acids Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 306)
     public void verifyClickingOnAminoAcidsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4980,7 +4986,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the BCAA Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 38)
+    @Test(description = "Make sure clicking on the BCAA Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 307)
     public void verifyClickingOnBCAAOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4995,7 +5001,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the EAA Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 39)
+    @Test(description = "Make sure clicking on the EAA Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 308)
     public void verifyClickingOnEAAOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5010,7 +5016,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Arginine Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 40)
+    @Test(description = "Make sure clicking on the Arginine Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 309)
     public void verifyClickingOnArginineOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5025,7 +5031,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Beta Alanine Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 41)
+    @Test(description = "Make sure clicking on the Beta Alanine Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 310)
     public void verifyClickingOnBetaAlanineOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5040,7 +5046,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the HMB Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 42)
+    @Test(description = "Make sure clicking on the HMB Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 311)
     public void verifyClickingOnHMbOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5055,7 +5061,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Amino Acid Powders Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 43)
+    @Test(description = "Make sure clicking on the Amino Acid Powders Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 312)
     public void verifyClickingOnAminoAcidPowdersOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5070,7 +5076,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Amino Acid Pills Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 44)
+    @Test(description = "Make sure clicking on the Amino Acid Pills Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 313)
     public void verifyClickingOnAminoAcidPillsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5085,7 +5091,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Citrulline Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 45)
+    @Test(description = "Make sure clicking on the Citrulline Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 314)
     public void verifyClickingOnCitrullineOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5100,7 +5106,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Amino Acid Liquids Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 46)
+    @Test(description = "Make sure clicking on the Amino Acid Liquids Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 315)
     public void verifyClickingOnAminoAcidLiquidsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5114,7 +5120,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Musclev Boosters Liquids Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 46)
+    @Test(description = "Make sure clicking on the Musclev Boosters Liquids Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 316)
     public void verifyClickingOnMuscleBoostersOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5128,7 +5134,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Testosterone Boosters Option appearing in the Sports Supplements main menu  will redirect the User to the correct URL", priority = 47)
+    @Test(description = "Make sure clicking on the Testosterone Boosters Option appearing in the Sports Supplements main menu  will redirect the User to the correct URL", priority = 317)
     public void verifyClickingOnTestosteroneBoostersOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5143,7 +5149,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Gh Boosters Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 48)
+    @Test(description = "Make sure clicking on the Gh Boosters Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 318)
     public void verifyClickingOnGhBoostersOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5158,7 +5164,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Weight Management Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 48)
+    @Test(description = "Make sure clicking on the Weight Management Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 319)
     public void verifyClickingOnWeightManagementOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5172,7 +5178,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Stimulant Weight Loss Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 49)
+    @Test(description = "Make sure clicking on the Stimulant Weight Loss Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 320)
     public void verifyClickingOnStimulantWeightLossOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5187,7 +5193,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Non Stimulant Weight Loss Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 50)
+    @Test(description = "Make sure clicking on the Non Stimulant Weight Loss Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 321)
     public void verifyClickingOnNonStimulantWeightLossOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5202,7 +5208,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Meal Replacements Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 51)
+    @Test(description = "Make sure clicking on the Meal Replacements Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 322)
     public void verifyClickingOnMealReplacementsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5217,7 +5223,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Metabolism Support Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 52)
+    @Test(description = "Make sure clicking on the Metabolism Support Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 323)
     public void verifyClickingOnMetabolismSupportOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5232,7 +5238,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Toning Creams Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 53)
+    @Test(description = "Make sure clicking on the Toning Creams Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 324)
     public void verifyClickingOnToningCreamsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5247,7 +5253,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the MCT Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 54)
+    @Test(description = "Make sure clicking on the MCT Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 325)
     public void verifyClickingOnMctOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5261,7 +5267,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Recovery Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 54)
+    @Test(description = "Make sure clicking on the Recovery Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 326)
     public void verifyClickingOnRecoveryOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5275,7 +5281,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Glutamine Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 55)
+    @Test(description = "Make sure clicking on the Glutamine Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 327)
     public void verifyClickingOnGlutamineOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5290,7 +5296,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Recovery Blend Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 56)
+    @Test(description = "Make sure clicking on the Recovery Blend Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 328)
     public void verifyClickingOnRecoveryBlendOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5305,7 +5311,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Electrolytes And Hydration Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 57)
+    @Test(description = "Make sure clicking on the Electrolytes And Hydration Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 329)
     public void verifyClickingOnElectrolytesAndHydrationOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5319,7 +5325,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Carbohydrates Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 57)
+    @Test(description = "Make sure clicking on the Carbohydrates Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 330)
     public void verifyClickingOnCarbohydratesOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5333,7 +5339,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Carbohydrate Powders Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 58)
+    @Test(description = "Make sure clicking on the Carbohydrate Powders Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 331)
     public void verifyClickingOnCarbohydratePowdersOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5347,7 +5353,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Energy And Endurance Powders Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 58)
+    @Test(description = "Make sure clicking on the Energy And Endurance Powders Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 332)
     public void verifyClickingOnEnergyAndEnduranceOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5361,7 +5367,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Stimulant Energy Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 59)
+    @Test(description = "Make sure clicking on the Stimulant Energy Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 333)
     public void verifyClickingOnStimulantEnergyOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5376,7 +5382,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Non Stimulant Energy Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 60)
+    @Test(description = "Make sure clicking on the Non Stimulant Energy Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 334)
     public void verifyClickingOnNonStimulantEnergyOptionInSportsSupplementsbMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5390,7 +5396,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Gaming And Focus Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 60)
+    @Test(description = "Make sure clicking on the Gaming And Focus Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 335)
     public void verifyClickingOnGamingAndFocusOptionInSportsSupplementsbMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5404,7 +5410,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Gaming Essentials Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 60)
+    @Test(description = "Make sure clicking on the Gaming Essentials Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 336)
     public void verifyClickingOnGamingEssentialsOptionInSportsSupplementsbMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5419,7 +5425,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
     /////Vitamins & Health TCS////
-    @Test(description = "Make sure the Down-arrow Icon display correctly next to the Vitamins & Health main menu", priority = 4)
+    @Test(description = "Make sure the Down-arrow Icon display correctly next to the Vitamins & Health main menu", priority = 337)
     public void verifyTheDownArrowIconAppearsCorrectlyNextToTheVitaminsAndHealthMainMenu() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         aeMegamenuPage.switchToAECountry();
@@ -5427,7 +5433,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getDownArrowKeyInVitaminsAndHealthMenu().isDisplayed());
     }
-    @Test(description = "Make sure the system will display the sub Menu once hovering on the Vitamins & Health main menu", priority = 4)
+    @Test(description = "Make sure the system will display the sub Menu once hovering on the Vitamins & Health main menu", priority = 338)
     public void verifyTheSubMenuWillAppearsCorrectlyOnceHoveringOnVitaminsAndHealthMainMenu() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         aeMegamenuPage.switchToAECountry();
@@ -5435,7 +5441,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getMegaMenuSection().isDisplayed());
     }
-    @Test(description = "Make sure the Vitamins & Health main menu display the correct categories and sub-categories", priority = 17)
+    @Test(description = "Make sure the Vitamins & Health main menu display the correct categories and sub-categories", priority = 339)
         public void verifyVitaminsAndHealthMainMenuDisplayTheCorrectCategoriesAndSubCategories() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5451,7 +5457,7 @@ public class AEMegaMenuTestCases extends BaseTest {
                 "SPORT VITAMINS\n" + "Amino Acids\n" + "MINERALS\n" + "Calcium\n" + "Iron\n" + "Magnesium\n" + "Multimineral Formulas\n" + "Zinc\n" + "Potassium\n" + "HEALTHY DRINKS\n" +
                 "Drinkable Vitamins\n" + "PETS\n" + "Supplements & More");
     }
-    @Test(description = "Make sure clicking on the Vitamins & Health main menu will redirect the User to the correct URL", priority = 7)
+    @Test(description = "Make sure clicking on the Vitamins & Health main menu will redirect the User to the correct URL", priority = 340)
     public void verifyClickingOnVitaminsAndHealthManiMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         aeMegamenuPage.switchToAECountry();
@@ -5464,7 +5470,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the FEATURED Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 60)
+    @Test(description = "Make sure clicking on the FEATURED Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 341)
     public void verifyClickingOnFeaturedOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5478,7 +5484,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Alive Vitamins Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 66)
+    @Test(description = "Make sure clicking on the Alive Vitamins Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 342)
     public void verifyClickingOnAliveVitaminsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5493,7 +5499,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Sexual Health Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 67)
+    @Test(description = "Make sure clicking on the Sexual Health Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 343)
     public void verifyClickingOnSexualHealthOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5509,7 +5515,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Essential Vitamins Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Essential Vitamins Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 344)
     public void verifyClickingOnEssentialVitaminsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5524,7 +5530,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Folic Acid Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Folic Acid Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 354)
     public void verifyClickingOnFolicAcidOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5539,7 +5545,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Vitamin A Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Vitamin A Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 355)
     public void verifyClickingOnVitaminAOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5554,7 +5560,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Vitamin B Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Vitamin B Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 356)
     public void verifyClickingOnVitaminBOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5569,7 +5575,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Vitamin C Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Vitamin C Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 357)
     public void verifyClickingOnVitaminCOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5584,7 +5590,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Vitamin D Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Vitamin D Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 358)
     public void verifyClickingOnVitaminDOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5599,7 +5605,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Vitamin E Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Vitamin E Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 359)
     public void verifyClickingOnVitaminEOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5614,7 +5620,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Vitamin K Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Vitamin K Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 360)
     public void verifyClickingOnVitaminKOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5629,7 +5635,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Multi Vitamins Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Multi Vitamins Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 361)
     public void verifyClickingOnMultiVitaminsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5644,7 +5650,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Vitamins For Kids Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Vitamins For Kids Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 362)
     public void verifyClickingOnVitaminsForKidsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5659,7 +5665,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Vitamins For Men Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Vitamins For Men Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 363)
     public void verifyClickingOnVitaminsForMenOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5674,7 +5680,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Vitamins For Women Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Vitamins For Women Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 364)
     public void verifyClickingOnVitaminsForWomenOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5689,7 +5695,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Bone And Joint Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Bone And Joint Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 365)
     public void verifyClickingOnBoneAndJointOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5704,7 +5710,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Bone Health Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Bone Health Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 366)
     public void verifyClickingOnBoneHealthOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5719,7 +5725,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Joint Health Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Joint Health Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 367)
     public void verifyClickingOnJointHealthOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5734,7 +5740,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Beauty Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Beauty Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 368)
     public void verifyClickingOnBeautyOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5749,7 +5755,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Collagen Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Collagen Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 369)
     public void verifyClickingOnCollagenOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5764,7 +5770,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Hair, Skin AndNails Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Hair, Skin AndNails Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 370)
     public void verifyClickingOnHairSkinAndNailsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5779,7 +5785,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Fish Oil Omegas Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Fish Oil Omegas Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 371)
     public void verifyClickingOnFishOilOmegasOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5794,7 +5800,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Fish Oil Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Fish Oil Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 372)
     public void verifyClickingOnFishOilOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5809,7 +5815,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Omega369 Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Omega369 Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 373)
     public void verifyClickingOnOmega369OptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5824,7 +5830,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Health Lifestyle Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Health Lifestyle Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 374)
     public void verifyClickingOnHealthLifestyleOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5839,7 +5845,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Antioxidants Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Antioxidants Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 375)
     public void verifyClickingOnAntioxidantsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5854,7 +5860,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Blood Sugar Support Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Blood Sugar Support Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 376)
     public void verifyClickingOnBloodSugarSupportOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5869,7 +5875,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Brain Support Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Brain Support Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 377)
     public void verifyClickingOnBrainSupportOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5884,7 +5890,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Detox And Cleanse Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Detox And Cleanse Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 378)
     public void verifyClickingOnDetoxAndCleanseOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5899,7 +5905,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Energy Formulas Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Energy Formulas Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 379)
     public void verifyClickingOnEnergyFormulasOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5914,7 +5920,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Eye Health Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Eye Health Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 380)
     public void verifyClickingOnEyeHealthOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5929,7 +5935,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Herbs Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Herbs Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 381)
     public void verifyClickingOnHerbsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5944,7 +5950,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Hormones Balance Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Hormones Balance Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 382)
     public void verifyClickingOnHormonesBalanceOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5959,7 +5965,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Immune Support Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Immune Support Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 382)
     public void verifyClickingOnImmuneSupportOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5974,7 +5980,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Mens Health Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Mens Health Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 383)
     public void verifyClickingOnMensHealthOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -5989,7 +5995,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Stress Relief Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Stress Relief Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 384)
     public void verifyClickingOnStressReliefOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6004,7 +6010,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Sleep Support Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Sleep Support Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 385)
     public void verifyClickingOnSleepSupportOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6019,7 +6025,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Super Foods Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Super Foods Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 386)
     public void verifyClickingOnSuperFoodsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6034,7 +6040,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Urinary Tract Support Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Urinary Tract Support Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 387)
     public void verifyClickingOnUrinaryTractSupportOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6049,7 +6055,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure clicking on the Weight Management Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Weight Management Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 388)
     public void verifyClickingOnWeightManagementOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6063,7 +6069,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Womens Health Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Womens Health Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 389)
     public void verifyClickingOnWomensHealthOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6077,7 +6083,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Digestion Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Digestion Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 390)
     public void verifyClickingOnDigestionOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6091,7 +6097,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Digestion Support Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Digestion Support Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 391)
     public void verifyClickingOnDigestionSupportOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6105,7 +6111,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Probiotics Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Probiotics Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 392)
     public void verifyClickingOnProbioticsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6119,7 +6125,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Sport Vitamins Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Sport Vitamins Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 393)
     public void verifyClickingOnSportVitaminsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6133,7 +6139,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Amino Acid Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Amino Acid Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 394)
     public void verifyClickingOnAminoAcidOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6147,7 +6153,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Minerals Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Minerals Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 395)
     public void verifyClickingOnMineralsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6161,7 +6167,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Calcium Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Calcium Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 396)
     public void verifyClickingOnCalciumOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6175,7 +6181,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Iron Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Iron Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 397)
     public void verifyClickingOnIronOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6189,7 +6195,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Magnesium Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Magnesium Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 398)
     public void verifyClickingOnMagnesiumOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6203,7 +6209,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Multi mineral Formulas Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Multi mineral Formulas Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 399)
     public void verifyClickingOnMultimineralFormulasOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6217,7 +6223,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Zinc Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Zinc Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 400)
     public void verifyClickingOnZincOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6231,7 +6237,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Potassium Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Potassium Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 401)
     public void verifyClickingOnPotassiumOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6245,7 +6251,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Healthy Drinks Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Healthy Drinks Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 402)
     public void verifyClickingOnHealthyDrinksOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6259,7 +6265,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Drinkable Vitamins Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Drinkable Vitamins Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 403)
     public void verifyClickingOnDrinkableVitaminsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6273,7 +6279,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Pets Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Pets Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 404)
     public void verifyClickingOnPetsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6287,7 +6293,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Supplements More Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Supplements More Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 405)
     public void verifyClickingOnSupplementsMoreOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6302,7 +6308,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
     ////HealthyFood Test Cases
-    @Test(description = "Make sure the Down-arrow Icon display correctly next to the Healthy Food main menu", priority = 4)
+    @Test(description = "Make sure the Down-arrow Icon display correctly next to the Healthy Food main menu", priority = 406)
     public void verifyTheDownArrowIconAppearsCorrectlyNextToTheHealthyFoodMainMenu() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         aeMegamenuPage.switchToAECountry();
@@ -6310,7 +6316,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getDownArrowKeyInHealthyFoodMenu().isDisplayed());
     }
-    @Test(description = "Make sure the system will display the sub Menu once hovering on the Healthy Food main menu", priority = 4)
+    @Test(description = "Make sure the system will display the sub Menu once hovering on the Healthy Food main menu", priority = 407)
     public void verifyTheSubMenuWillAppearsCorrectlyOnceHoveringOnHealthyFoodMainMenu() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         aeMegamenuPage.switchToAECountry();
@@ -6318,7 +6324,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getMegaMenuSection().isDisplayed());
     }
-    @Test(description = "Make sure the Healthy Food main menu display the correct categories and sub-categories", priority = 17)
+    @Test(description = "Make sure the Healthy Food main menu display the correct categories and sub-categories", priority = 408)
     public void verifyHealthFoodMainMenuDisplayTheCorrectCategoriesAndSubCategories() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6332,7 +6338,7 @@ public class AEMegaMenuTestCases extends BaseTest {
                 "Healthy Meals\n" + "FEATURED\n" + "Healthy Meal Replacement\n" + "Protein Coffee\n" + "Candies\n" + "Flavoring Agents\n" + "Keto Snacks\n" + "Manuka Honey\n" +
                 "Meat Snacks");
     }
-    @Test(description = "Make sure clicking on the Healthy Food main menu will redirect the User to the correct URL", priority = 7)
+    @Test(description = "Make sure clicking on the Healthy Food main menu will redirect the User to the correct URL", priority = 409)
     public void verifyClickingOnHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         aeMegamenuPage.switchToAECountry();
@@ -6345,7 +6351,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Grocery Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Grocery Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 410)
     public void verifyClickingOnGroceryOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6359,7 +6365,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Baking And Cooking Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Baking And Cooking Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 411)
     public void verifyClickingOnBakingAndCookingOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6373,7 +6379,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Canned Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Canned Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 412)
     public void verifyClickingOnCannedOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6387,7 +6393,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Coffee Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Coffee Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 413)
     public void verifyClickingOnCoffeeOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6401,7 +6407,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Condiments Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Condiments Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 414)
     public void verifyClickingOnCondimentsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6415,7 +6421,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Milk And Cream Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Milk And Cream Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 415)
     public void verifyClickingOnMilkAndCreamOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6429,7 +6435,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Nuts And Oats Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Nuts And Oats Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 416)
     public void verifyClickingOnNutsAndOatsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6443,7 +6449,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Oils Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Oils Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 417)
     public void verifyClickingOnOilsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6457,7 +6463,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Pasta Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Pasta Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 418)
     public void verifyClickingOnPastaOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6471,7 +6477,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Rice And Grains Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Rice And Grains Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 419)
     public void verifyClickingOnRiceAndGrainsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6485,7 +6491,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Seasonings And Spices Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Seasonings And Spices Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 420)
     public void verifyClickingOnSeasoningsAndSpicesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6499,7 +6505,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Sugar And Sweeteners Option appearing in the Healthy Food main menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Sugar And Sweeteners Option appearing in the Healthy Food main menu inside ShopBy Menu will redirect the User to the correct URL", priority = 421)
     public void verifyClickingOnSugarSweetenersOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6513,7 +6519,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Syrups Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Syrups Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 422)
     public void verifyClickingOnSyrupsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6527,7 +6533,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Tea And Herbs Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Tea And Herbs Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 423)
     public void verifyClickingOnTeaAndHerbsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6541,7 +6547,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Superfoods Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Superfoods Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 424)
     public void verifyClickingOnSuperfoodsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6555,7 +6561,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Ready Mixes Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Ready Mixes Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 425)
     public void verifyClickingOnReadyMixesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6569,7 +6575,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Breakfast And Cereal Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Breakfast And Cereal Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 426)
     public void verifyClickingOnBreakfastAndCerealOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6583,7 +6589,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Ready To Drink Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Ready To Drink Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 427)
     public void verifyClickingOnReadyToDrinkOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6597,7 +6603,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Amino And Bcaas Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Amino And Bcaas Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 428)
     public void verifyClickingOnAminoAndBcaasOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6611,7 +6617,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Energy Drinks Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Energy Drinks Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 429)
     public void verifyClickingOnEnergyDrinksOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6625,7 +6631,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Protein Shakes Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Protein Shakes Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 430)
     public void verifyClickingOnProteinShakesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6639,7 +6645,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Electrolytes And Hydration Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Electrolytes And Hydration Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 431)
     public void verifyClickingOnElectrolytesAndHydrationOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6653,7 +6659,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Healthy Snacks Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Healthy Snacks Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 432)
     public void verifyClickingOnHealthySnacksOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6667,7 +6673,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Protein Bars Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Protein Bars Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 433)
     public void verifyClickingOnProteinBarsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6681,7 +6687,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Cookies Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Cookies Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 434)
     public void verifyClickingOnCookiesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6695,7 +6701,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Chips Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Chips Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 435)
     public void verifyClickingOnChipsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6709,7 +6715,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Brownies And Pancakes Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Brownies And Pancakes Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 436)
     public void verifyClickingOnBrowniesAndPancakesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6723,7 +6729,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Snack Bars Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Snack Bars Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 437)
     public void verifyClickingOnSnackBarsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6737,7 +6743,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Spreads Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Spreads Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 438)
     public void verifyClickingOnSpreadsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6751,7 +6757,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Other Healthy Snacks Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Other Healthy Snacks Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 439)
     public void verifyClickingOnOtherHealthySnacksOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6765,7 +6771,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Ready To Eat Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Ready To Eat Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 440)
     public void verifyClickingOnReadyToEatOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6779,7 +6785,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Healthy Meals Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Healthy Meals Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 441)
     public void verifyClickingOnHealthyMealsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6793,7 +6799,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Featured Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Featured Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 442)
     public void verifyClickingOnFeaturedOptionInHealthyFoodMianMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6807,7 +6813,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Healthy Meal Replacement Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Healthy Meal Replacement Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 443)
     public void verifyClickingOnHealthyMealReplacementOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6821,7 +6827,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Protein Coffee Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Protein Coffee Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 444)
     public void verifyClickingOnProteinCoffeeOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6835,7 +6841,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Candies Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Candies Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 445)
     public void verifyClickingOnCandiesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6849,7 +6855,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Flavoring Agents Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Flavoring Agents Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 446)
     public void verifyClickingOnFlavoringAgentsOptionOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6863,7 +6869,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Keto Snacks Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Keto Snacks Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 447)
     public void verifyClickingOnKetoSnacksOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6877,7 +6883,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Manuka Honey Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Manuka Honey Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 448)
     public void verifyClickingOnManukaHoneyOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6891,7 +6897,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Meat Snacks Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Meat Snacks Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 449)
     public void verifyClickingOnMeatSnacksOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6906,7 +6912,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
     ////Sports Test Cases
-    @Test(description = "Make sure the Down-arrow Icon display correctly next to the Sports main menu", priority = 4)
+    @Test(description = "Make sure the Down-arrow Icon display correctly next to the Sports main menu", priority = 450)
     public void verifyTheDownArrowIconAppearsCorrectlyNextToTheSportsMainMenu() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         aeMegamenuPage.switchToAECountry();
@@ -6914,7 +6920,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getDownArrowKeyInSportsMenu().isDisplayed());
     }
-    @Test(description = "Make sure the system will display the sub Menu once hovering on the Sports main menu", priority = 4)
+    @Test(description = "Make sure the system will display the sub Menu once hovering on the Sports main menu", priority = 451)
     public void verifyTheSubMenuWillAppearsCorrectlyOnceHoveringOnSportsMainMenu() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         aeMegamenuPage.switchToAECountry();
@@ -6922,7 +6928,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getMegaMenuSection().isDisplayed());
     }
-    @Test(description = "Make sure the Sports main menu display the correct categories and sub-categories", priority = 17)
+    @Test(description = "Make sure the Sports main menu display the correct categories and sub-categories", priority = 452)
     public void verifySportsMainMenuDisplayTheCorrectCategoriesAndSubCategories() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6937,7 +6943,7 @@ public class AEMegaMenuTestCases extends BaseTest {
                 "WOMEN\n" + "SPORTS TECH\n" + "Wearable Tech\n" + "Cameras\n" + "Phone Accessories\n" + "PERSONAL CARE\n" + "Showering\n" + "Skin Care\n" + "Body Care\n" +
                 "Oral Care\n" + "Therapy\n" + "Masks\n" + "FITNESS AND TRAINING\n" + "TRAINING ACCESSORIES");
     }
-    @Test(description = "Make sure clicking on the Sports main menu will redirect the User to the correct URL", priority = 7)
+    @Test(description = "Make sure clicking on the Sports main menu will redirect the User to the correct URL", priority = 453)
     public void verifyClickingOnSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         aeMegamenuPage.switchToAECountry();
@@ -6950,7 +6956,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Men Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Men Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 454)
     public void verifyClickingOnMenOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6964,7 +6970,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Sport Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Sport Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 455)
     public void verifyClickingOnSportOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6978,7 +6984,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Football Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Football Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 456)
     public void verifyClickingOnFootballOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6992,7 +6998,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Basketball Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Basketball Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 457)
     public void verifyClickingOnBasketballOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7006,7 +7012,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Baseball Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Baseball Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 458)
     public void verifyClickingOnBaseballOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7020,7 +7026,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Running Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Running Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 459)
     public void verifyClickingOnRunningOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7034,7 +7040,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Swimming Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Swimming Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 460)
     public void verifyClickingOnSwimmingOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7048,7 +7054,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Yoga Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Yoga Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 461)
     public void verifyClickingOnYogaOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7062,7 +7068,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Fitness And Training Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Fitness And Training Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 462)
     public void verifyClickingOnFitnessAndTrainingOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7076,7 +7082,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the MMA Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the MMA Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 463)
     public void verifyClickingOnMmaOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7090,7 +7096,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Jiu Jitsu Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Jiu Jitsu Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 464)
     public void verifyClickingOnJiuJitsuOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7104,7 +7110,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Board Games Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Board Games Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 465)
     public void verifyClickingOnBoardGamesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7118,7 +7124,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the SPORTS TECH Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the SPORTS TECH Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 466)
     public void verifyClickingOnSportsTechOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7132,7 +7138,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Wearable Tech Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Wearable Tech Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 467)
     public void verifyClickingOnWearableTechOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7146,7 +7152,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Cameras Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Cameras Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 468)
     public void verifyClickingOnCamerasOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7160,7 +7166,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Phone Accessories Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Phone Accessories Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 469)
     public void verifyClickingOnPhoneAccessoriesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7174,7 +7180,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the PERSONAL CARE Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the PERSONAL CARE Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 470)
     public void verifyClickingOnPersonalCareOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7188,7 +7194,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Showering Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Showering Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 471)
     public void verifyClickingOnShoweringOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7202,7 +7208,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Shaving Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Shaving Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 472)
     public void verifyClickingOnShavingOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7216,7 +7222,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Skin Care Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Skin Care Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 473)
     public void verifyClickingOnSkinCareOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7230,7 +7236,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Body Care Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Body Care Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 474)
     public void verifyClickingOnBodyCareOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7244,7 +7250,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Oral Care Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Oral Care Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 475)
     public void verifyClickingOnOralCareOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7258,7 +7264,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Therapy Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Therapy Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 476)
     public void verifyClickingOnTherapyOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7272,7 +7278,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Masks Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Masks Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 477)
     public void verifyClickingOnMasksOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7286,7 +7292,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the FITNESS AND TRAINING Category Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the FITNESS AND TRAINING Category Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 480)
     public void verifyClickingOnFitnessAndTrainingCategoryOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7300,7 +7306,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the FITNESS EQUIPMENT Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the FITNESS EQUIPMENT Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 481)
     public void verifyClickingOnFitnessEquipmentOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7314,7 +7320,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Skipping Ropes Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Skipping Ropes Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 482)
     public void verifyClickingOnSkippingRopesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7328,7 +7334,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Weight Belts Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Weight Belts Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 483)
     public void verifyClickingOnWeightBeltsOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7342,7 +7348,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Scooters Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Scooters Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 484)
     public void verifyClickingOnScootersOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7356,7 +7362,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the TRAINING ACCESSORIES Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the TRAINING ACCESSORIES Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 485)
     public void verifyClickingOnTrainingAccessoriesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7370,7 +7376,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Shakers & Bottles Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Shakers & Bottles Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 486)
     public void verifyClickingOnShakersAndBottlesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7384,7 +7390,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Bags Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Bags Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 487)
     public void verifyClickingOnBagsOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7398,7 +7404,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Gloves Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Gloves Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 488)
     public void verifyClickingOnGlovesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7412,7 +7418,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Braces & Sleeves Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Braces & Sleeves Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 489)
     public void verifyClickingOnBracesAndSleevesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7426,7 +7432,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Mouthguard Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Mouthguard Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 490)
     public void verifyClickingOnMouthguardOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7440,7 +7446,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the APPAREL Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the APPAREL Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 491)
     public void verifyClickingOnApperalOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7454,7 +7460,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the SPORTSWEAR Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the SPORTSWEAR Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 492)
     public void verifyClickingOnSportswearOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7468,7 +7474,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Pants Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Pants Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 493)
     public void verifyClickingOnPantsOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7482,7 +7488,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Shorts Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Shorts Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 494)
     public void verifyClickingOnShortsOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7496,7 +7502,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Hoodies Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Hoodies Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 495)
     public void verifyClickingOnHoodiesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7510,7 +7516,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the T-Shirts Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the T-Shirts Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 496)
     public void verifyClickingOnTShirtsOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7524,7 +7530,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Tanks Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Tanks Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 497)
     public void verifyClickingOnTanksOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7538,7 +7544,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the FOOTWEAR Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the FOOTWEAR Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 498)
     public void verifyClickingOnFootwearOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7552,7 +7558,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Sneakers Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Sneakers Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 499)
     public void verifyClickingOnSneakersOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7566,7 +7572,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Training Shoes Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Training Shoes Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 500)
     public void verifyClickingOnTrainingShoesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7580,7 +7586,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Running Shoes Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Running Shoes Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 501)
     public void verifyClickingOnRunningShoesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7594,7 +7600,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the WOMEN Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the WOMEN Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 502)
     public void verifyClickingOnWomenOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7608,7 +7614,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the WOMEN SPORTS TECH Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the WOMEN SPORTS TECH Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 503)
     public void verifyClickingOnWomenSportsTechOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7622,7 +7628,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the WOMEN Wearable Tech Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the WOMEN Wearable Tech Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 504)
     public void verifyClickingOnWomenWearableTechOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7636,7 +7642,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the WOMEN Cameras Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the WOMEN Cameras Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 505)
     public void verifyClickingOnWomenCamerasOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7650,7 +7656,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the WOMEN Phone Accessories Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the WOMEN Phone Accessories Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 506)
     public void verifyClickingOnWomenPhoneAccessoriesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7664,7 +7670,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the WOMEN PERSONAL CARE Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the WOMEN PERSONAL CARE Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 507)
     public void verifyClickingOnWomenPersonalCareOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7678,7 +7684,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the WOMEN Showering Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the WOMEN Showering Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 508)
     public void verifyClickingOnWomenShoweringOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7692,7 +7698,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the WOMEN Skin Care Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the WOMEN Skin Care Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 509)
     public void verifyClickingOnWomenSkinCareOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7706,7 +7712,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the WOMEN Body Care Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the WOMEN Body Care Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 510)
     public void verifyClickingOnWomenBodyCareOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7720,7 +7726,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the WOMEN Oral Care Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the WOMEN Oral Care Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 511)
     public void verifyClickingOnWomenOralCareOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7734,7 +7740,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the WOMEN Therapy Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the WOMEN Therapy Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 512)
     public void verifyClickingOnWomenTherapyOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7748,7 +7754,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the WOMEN Masks Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the WOMEN Masks Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 513)
     public void verifyClickingOnWomenMasksOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7762,7 +7768,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the WOMEN FITNESS AND TRAINING Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the WOMEN FITNESS AND TRAINING Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 514)
     public void verifyClickingOnWomenFitnessAndTrainingOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7776,7 +7782,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the WOMEN TRAINING ACCESSORIES Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the WOMEN TRAINING ACCESSORIES Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 515)
     public void verifyClickingOnWomenTrainingAccessoriesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7790,7 +7796,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-    @Test(description = "Make sure clicking on the Women's Only main menu will redirect the User to the correct URL", priority = 68)
+    @Test(description = "Make sure clicking on the Women's Only main menu will redirect the User to the correct URL", priority = 516)
     public void verifyClickingOnWomensOnlyMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7804,5 +7810,96 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
-
+    //The following test cases to handle (#8456 - Main menu not working when you try to open it from OOS product page)
+    @Test(description = "Make sure the ShopBy menu is displayed when hovering on it from OOS Product page ", priority = 517)
+    public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromOosProductPage() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(outOfStockProduct);
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        Assert.assertTrue(aeMegamenuPage.getSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
+    }
+    @Test(description = "Make sure the Sport Supplements menu is displayed when hovering on it from OOS Product page ", priority = 518)
+    public void verifySportSupplementsMenuIsDisplayedWhenHoveringOnItFromOosProductPage() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(outOfStockProduct);
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        Assert.assertTrue(aeMegamenuPage.getSportsSupplementsSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
+    }
+    @Test(description = "Make sure the Vitamins & Health menu is displayed when hovering on it from OOS Product page ", priority = 519)
+    public void verifyVitaminsAndHealthMenuIsDisplayedWhenHoveringOnItFromOosProductPage() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(outOfStockProduct);
+        action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
+        Assert.assertTrue(aeMegamenuPage.getVitaminsAndHealthSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
+    }
+    @Test(description = "Make sure the Healthy Food menu is displayed when hovering on it from OOS Product page ", priority = 520)
+    public void verifyHealthyFoodMenuIsDisplayedWhenHoveringOnItFromOosProductPage() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(outOfStockProduct);
+        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
+        Assert.assertTrue(aeMegamenuPage.getHealthyFoodSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
+    }
+    @Test(description = "Make sure the Sports menu is displayed when hovering on it from OOS Product page ", priority = 521)
+    public void verifySportsMenuIsDisplayedWhenHoveringOnItFromOosProductPage() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(outOfStockProduct);
+        action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
+        Assert.assertTrue(aeMegamenuPage.getSportsSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
+    }
+    //The following Test Cases handle displaying the Mega Menu from Product Page
+    @Test(description = "Make sure the ShopBy menu is displayed when hovering on it from OOS Product page ", priority = 522)
+    public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductPage() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(product);
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        Assert.assertTrue(aeMegamenuPage.getSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from Product Page");
+    }
+    @Test(description = "Make sure the Sport Supplements menu is displayed when hovering on it from OOS Product page ", priority = 523)
+    public void verifySportSupplementsMenuIsDisplayedWhenHoveringOnItFromProductPage() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(product);
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        Assert.assertTrue(aeMegamenuPage.getSportsSupplementsSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from Product Page");
+    }
+    @Test(description = "Make sure the Vitamins & Health menu is displayed when hovering on it from OOS Product page ", priority = 524)
+    public void verifyVitaminsAndHealthMenuIsDisplayedWhenHoveringOnItFromProductPage() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(product);
+        action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
+        Assert.assertTrue(aeMegamenuPage.getVitaminsAndHealthSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
+    }
+    @Test(description = "Make sure the Healthy Food menu is displayed when hovering on it from Product page ", priority = 525)
+    public void verifyHealthyFoodMenuIsDisplayedWhenHoveringOnItFromProductPage() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(product);
+        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
+        Assert.assertTrue(aeMegamenuPage.getHealthyFoodSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
+    }
+    @Test(description = "Make sure the Sports menu is displayed when hovering on it from Product page ", priority = 526)
+    public void verifySportsMenuIsDisplayedWhenHoveringOnItFromProductPage() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(product);
+        action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
+        Assert.assertTrue(aeMegamenuPage.getSportsSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
+    }
 }

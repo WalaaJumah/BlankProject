@@ -5,67 +5,19 @@
 
 
         <classes>
-<!--            <class name="sporter_test.AEFooterPageTestCases"></class>-->
-<!--            <class name="sporter_test.AEGuestUserTestCases"></class>-->
+            <class name="sporter_test.QatarHomePageTestCases">
+<!--            <class name="sporter_test.AEGuestUserTestCases">-->
 
-                        <class name="sporter_test.AEMegaMenuTestCases">
-                <methods>
-                    <include name="verifyTheWomensOnlyMainMenuOptionAppearingInRedColor"></include>
-<!--                    <include name="verifySportsMainMenuDisplayTheCorrectCategoriesAndSubCategories"></include>-->
-<!--                    <include name="verifyTheSubMenuWillAppearsCorrectlyOnceHoveringOnSportsMainMenu"></include>-->
-<!--                    <include name="verifyClickingOnCoffeeOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnCondimentsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnMilkAndCreamOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnNutsAndOatsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnOilsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnPastaOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnRiceAndGrainsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnSeasoningsAndSpicesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnSugarSweetenersOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnSyrupsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnTeaAndHerbsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnSuperfoodsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnReadyMixesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnBreakfastAndCerealOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnReadyToDrinkOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnAminoAndBcaasOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnEnergyDrinksOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnProteinShakesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnHealthySnacksOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnProteinBarsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnCookiesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnChipsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnBrowniesAndPancakesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnSnackBarsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnSpreadsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnOtherHealthySnacksOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnReadyToEatOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnHealthyMealsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnHealthyMealReplacementOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnProteinCoffeeOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnCandiesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnFlavoringAgentsOptionOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnKetoSnacksOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnManukaHoneyOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnMeatSnacksOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnWeightManagementOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnWomensHealthOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnDigestionOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnDigestionSupportOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnProbioticsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnAminoAcidOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnMineralsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnCalciumOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnIronOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnMagnesiumOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnMultimineralFormulasOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnZincOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnHealthyDrinksOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnDrinkableVitaminsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnPetsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL"></include>-->
-<!--                    <include name="verifyClickingOnSupplementsMoreOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL"></include>-->
+<!--                        <class name="sporter_test.AEMegaMenuTestCases">-->
+<!--                <methods>-->
+<!--                    <include name="verifyClickingOnHomePageHorizontalBannerDoeNotRedirectTheUserTo404PageOrNoContentFoundPage"></include>-->
+<!--                    <include name="verifyClickingOnSportswearAndAccessoriesCategoryDoeNotRedirectTheUserTo404PageOrNoContentFoundPage"></include>-->
+<!--                    <include name="verifyClickingOnVitaminsAndHealthCategoryDoeNotRedirectTheUserTo404PageOrNoContentFoundPage"></include>-->
+<!--                    <include name="verifyClickingOnHealthyFoodCategoryDoeNotRedirectTheUserTo404PageOrNoContentFoundPage"></include>-->
+<!--                    <include name="verifyClickingOnSportsSupplementsCategoryDoeNotRedirectTheUserTo404PageOrNoContentFoundPage"></include>-->
 
-                </methods>
+
+<!--                </methods>-->
             </class>
         </classes>
 

@@ -143,6 +143,15 @@ public class QatarHomePage {
     private WebElement phoneBtn;
     @FindBy(xpath = "//*[text()='Email ']")
     private WebElement emailBtn;
+    @FindBy(xpath = "(//a[@title='Start Shopping'])[1]")
+    private WebElement sportsSupplementsCategory;
+    @FindBy(xpath = "(//a[@title='Start Shopping'])[2]")
+    private WebElement healthyFoodCategory;
+    @FindBy(xpath = "(//a[@title='Start Shopping'])[3]")
+    private WebElement vitaminsAndHealthCategory;
+    @FindBy(xpath = "(//a[@title='Start Shopping'])[4]")
+    private WebElement sportswearAndAccessoriesCategory;
+
     //Getter Methods
     public WebElement getNextArrowInHomePageRotatingSlider() {
         return nextArrowInHomePageRotatingSlider;
@@ -390,6 +399,26 @@ public class QatarHomePage {
     public void clickOnEmailBtn(){
         DataHelperAndWait.isDisplayed(emailBtn,10);
         this.emailBtn.click();
+    }
+    public void clickOnHomePageHorizontalBanner(){
+        DataHelperAndWait.isDisplayed(homePageHorizontalBanner,10);
+        this.homePageHorizontalBanner.click();
+    }
+    public void clickOnSportsSupplementsCategory(){
+        DataHelperAndWait.isDisplayed(sportsSupplementsCategory,10);
+        this.sportsSupplementsCategory.click();
+    }
+    public void clickOnHealthyFoodCategory(){
+        DataHelperAndWait.isDisplayed(healthyFoodCategory,10);
+        this.healthyFoodCategory.click();
+    }
+    public void clickOnVitaminsAndHealthCategory(){
+        DataHelperAndWait.isDisplayed(vitaminsAndHealthCategory,10);
+        this.vitaminsAndHealthCategory.click();
+    }
+    public void clickOnSportswearAndAccessoriesCategory(){
+        DataHelperAndWait.isDisplayed(sportswearAndAccessoriesCategory,10);
+        this.sportswearAndAccessoriesCategory.click();
     }
 }
 
