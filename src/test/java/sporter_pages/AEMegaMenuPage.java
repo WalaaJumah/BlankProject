@@ -10,7 +10,10 @@ import java.util.List;
 
 public class AEMegaMenuPage {
 
-    public AEMegaMenuPage(WebDriver webDriver) {PageFactory.initElements(webDriver, this);}
+    public AEMegaMenuPage(WebDriver webDriver) {
+        PageFactory.initElements(webDriver, this);
+    }
+
     //declare all locators related to the AEMegaMenuPage
     @FindBy(xpath = "//ul[@class='nav-primary']")
     private List<WebElement> megaMenuList;
@@ -52,7 +55,6 @@ public class AEMegaMenuPage {
     private WebElement womenOnlyMainMenuText;
     @FindBy(xpath = "//ul[@class='cd-dropdown-content']/li[1]/a")
     private WebElement sportsSupplementsOption;
-
     @FindBy(xpath = "//nav[@id='nav']/ul/li/nav/ul/li[1]/a/i")
     private WebElement sportsSupplementsArrowIcon;
     @FindBy(xpath = "//ul[@class='cd-dropdown-content']/li[2]/a")
@@ -63,7 +65,6 @@ public class AEMegaMenuPage {
     private List<WebElement> vitaminsAndHealthList;
     @FindBy(css = "ul.cd-secondary-dropdown.full-height.is-hidden.is-active")
     private List<WebElement> HealthyFoodList;
-
     @FindBy(css = "ul.cd-secondary-dropdown.full-height.is-hidden.is-active")
     private List<WebElement> optionList;
     @FindBy(xpath = "//nav[@id='nav']/ul/li/nav/ul/li[2]/a/i")
@@ -471,27 +472,27 @@ public class AEMegaMenuPage {
     private WebElement womenCapsInSportsMenu;
     @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[47]")
     private WebElement womenShakersInSportsMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[48]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[48]")
     private WebElement womenWaterBottlesInSportsMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[49]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[49]")
     private WebElement womenSocksInSportsMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[50]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[50]")
     private WebElement womenTowelsInSportsMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[51]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[51]")
     private WebElement womenSunglassesInSportsMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[52]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[52]")
     private WebElement womenMixerInSportsMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[53]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[53]")
     private WebElement womenBagsInSportsMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[54]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[54]")
     private WebElement womenBackPacksInSportsMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[55]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS']/a)[55]")
     private WebElement womenSholdersBagsInSportsMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[1]")
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[1]")
     private WebElement supplementsOptionInByBrandMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[2]")
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[2]")
     private WebElement optimumNutritionOptionInByBrandMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[3]")
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[3]")
     private WebElement muscletechOptionInByBrandMenu;
     @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[4]")
     private WebElement cellucorOptionInByBrandMenu;
@@ -565,73 +566,70 @@ public class AEMegaMenuPage {
     private WebElement olimpSportNutritionOptionInByBrandMenu;
     @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[39]")
     private WebElement jnxSportsOptionInByBrandMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[40]")
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[40]")
     private WebElement fitAndLeanOptionInByBrandMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[41]")
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[41]")
     private WebElement gymqueenOptionInByBrandMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[42]")
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[42]")
     private WebElement thePackOptionInByBrandMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[43]")
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[43]")
     private WebElement betancourtNutritionOptionInByBrandMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[44]")
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[44]")
     private WebElement yallaProteinOptionInByBrandMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[45]")
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[45]")
     private WebElement proteinWorldOptionInByBrandMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[46]")
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[46]")
     private WebElement obviOptionInByBrandMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[47]")
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[47]")
     private WebElement naughtyBoyOptionInByBrandMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[48]")
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[48]")
     private WebElement steelFitOptionInByBrandMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[49]")
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[49]")
     private WebElement usnOptionInByBrandMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[50]")
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[50]")
     private WebElement xGamerOptionInByBrandMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[51]")
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[51]")
     private WebElement innosuppsOptionInByBrandMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[52]")
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[52]")
     private WebElement outbreakNutritionOptionInByBrandMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[53]")
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[53]")
     private WebElement insaneLabzOptionInByBrandMenu;
- @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[54]")
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[54]")
     private WebElement allMaxOptionInByBrandMenu;
- @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[55]")
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[55]")
     private WebElement glaxonOptionInByBrandMenu;
- @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[56]")
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[56]")
     private WebElement redcon1OptionInByBrandMenu;
-@FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[57]")
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[57]")
     private WebElement pandaSupplementsOptionInByBrandMenu;
-@FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[58]")
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[58]")
     private WebElement nutrendOptionInByBrandMenu;
-@FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[59]")
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[59]")
     private WebElement ostrovitOptionInByBrandMenu;
-@FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[60]")
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[60]")
     private WebElement betteryOptionInByBrandMenu;
-@FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[61]")
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[61]")
     private WebElement healthyFoodSnacksAndMealReplacementOptionInByBrandMenu;
-
-@FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[62]")
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[62]")
     private WebElement wowHydrateOptionInByBrandMenu;
-@FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[63]")
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[63]")
     private WebElement questNutritionOptionInByBrandMenu;
-@FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[64]")
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[64]")
     private WebElement grenadeOptionInByBrandMenu;
-@FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[65]")
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[65]")
     private WebElement reignEnergyOptionInByBrandMenu;
-@FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[66]")
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[66]")
     private WebElement monsterEnergyOptionInByBrandMenu;
-@FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[67]")
+    @FindBy(xpath = "(.//span[@data-vertical='By Brand']/a)[67]")
     private WebElement thirdEnergyOptionInByBrandMenu;
-//Sport Supplements Main Menu
-@FindBy(xpath = "(*//i[@class='fas fa-angle-down'])[1]")
+    //Sport Supplements Main Menu
+    @FindBy(xpath = "(*//i[@class='fas fa-angle-down'])[1]")
     private WebElement downArrowKeyInSportSupplementsMenu;
-
-@FindBy(xpath = "(*//i[@class='fas fa-angle-down'])[2]")
+    @FindBy(xpath = "(*//i[@class='fas fa-angle-down'])[2]")
     private WebElement downArrowKeyInVitaminsAndHealthMenu;
-@FindBy(xpath = "(*//i[@class='fas fa-angle-down'])[3]")
+    @FindBy(xpath = "(*//i[@class='fas fa-angle-down'])[3]")
     private WebElement downArrowKeyInHealthyFoodMenu;
-
-@FindBy(xpath = "(*//i[@class='fas fa-angle-down'])[4]")
+    @FindBy(xpath = "(*//i[@class='fas fa-angle-down'])[4]")
     private WebElement downArrowKeyInSportsMenu;
     @FindBy(xpath = "(.//span[@data-vertical='Sport Supplements']/a)[1]")
     private WebElement proteinOptionInSportSupplementsMainMenu;
@@ -642,7 +640,7 @@ public class AEMegaMenuPage {
     @FindBy(xpath = "(.//span[@data-vertical='Sport Supplements']/a)[22]")
     private WebElement muscleBoostersOptionInSportSupplementsMainMenu;
     @FindBy(xpath = "(.//span[@data-vertical='Sport Supplements']/a)[25]")
-  private WebElement weightManagementOptionInSportSupplementsMainMenu;
+    private WebElement weightManagementOptionInSportSupplementsMainMenu;
     @FindBy(xpath = "(.//span[@data-vertical='Sport Supplements']/a)[32]")
     private WebElement recoveryOptionInSportSupplementsMainMenu;
     @FindBy(xpath = "(.//span[@data-vertical='Sport Supplements']/a)[36]")
@@ -758,7 +756,6 @@ public class AEMegaMenuPage {
     private WebElement beautyOptionInVitaminsAndHealthMainMenu;
     @FindBy(xpath = "(.//span[@data-vertical='Vitamins & Health'][@data-nav_type='top']/a)[20]")
     private WebElement collagenOptionInVitaminsAndHealthMainMenu;
-
     @FindBy(xpath = "(.//span[@data-vertical='Vitamins & Health'][@data-nav_type='top']/a)[21]")
     private WebElement hairSkinAndNailsOptionInVitaminsAndHealthMainMenu;
     @FindBy(xpath = "(.//span[@data-vertical='Vitamins & Health'][@data-nav_type='top']/a)[22]")
@@ -922,668 +919,2196 @@ public class AEMegaMenuPage {
     private List<WebElement> sportsMainMenuList;
     @FindBy(xpath = "(//ul[@class='groupmenu-drop'])[5]")
     private List<WebElement> womenOnlyMainMenuList;
-
     //Sports Main Menu
     @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[1]")
     private WebElement menOptionInSportsMainMenu;
     @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[2]")
     private WebElement sportOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[3]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[3]")
     private WebElement footballOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[4]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[4]")
     private WebElement basketballOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[5]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[5]")
     private WebElement baseballOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[6]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[6]")
     private WebElement runningOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[7]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[7]")
     private WebElement swimmingOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[8]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[8]")
     private WebElement yogaOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[9]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[9]")
     private WebElement fitnessAndTrainingOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[10]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[10]")
     private WebElement mmaOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[11]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[11]")
     private WebElement jiuJitsuOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[12]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[12]")
     private WebElement boardGamesOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[13]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[13]")
     private WebElement sportsTechOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[14]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[14]")
     private WebElement wearableTechOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[15]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[15]")
     private WebElement camerasOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[16]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[16]")
     private WebElement phoneAccessoriesOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[17]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[17]")
     private WebElement personalCareOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[18]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[18]")
     private WebElement showeringOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[19]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[19]")
     private WebElement shavingOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[20]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[20]")
     private WebElement skinCareOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[21]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[21]")
     private WebElement bodyCareOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[22]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[22]")
     private WebElement oralCareOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[23]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[23]")
     private WebElement therapyOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[24]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[24]")
     private WebElement masksOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[25]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[25]")
     private WebElement fitnessAndTrainingCategoryOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[26]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[26]")
     private WebElement fitnessEquipmentOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[27]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[27]")
     private WebElement skippingRopesOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[28]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[28]")
     private WebElement weightBeltsOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[29]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[29]")
     private WebElement scootersOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[30]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[30]")
     private WebElement trainingAccessoriesOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[31]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[31]")
     private WebElement shakersAndBottlesOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[32]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[32]")
     private WebElement bagsOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[33]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[33]")
     private WebElement glovesOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[34]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[34]")
     private WebElement bracesAndSleevesOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[35]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[35]")
     private WebElement mouthguardOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[36]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[36]")
     private WebElement apparelOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[37]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[37]")
     private WebElement sportswearOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[38]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[38]")
     private WebElement pantsOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[39]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[39]")
     private WebElement shortsOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[40]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[40]")
     private WebElement hoodiesOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[41]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[41]")
     private WebElement tShirtsOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[42]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[42]")
     private WebElement TanksOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[43]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[43]")
     private WebElement footwearOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[44]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[44]")
     private WebElement sneakersOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[45]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[45]")
     private WebElement trainingShoesOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[46]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[46]")
     private WebElement runnigShoesOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[47]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[47]")
     private WebElement womenOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[48]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[48]")
     private WebElement womenSportsTechOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[49]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[49]")
     private WebElement womenWearableTechOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[50]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[50]")
     private WebElement womenCamerasOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[51]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[51]")
     private WebElement womenPhoneAccessoriesOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[52]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[52]")
     private WebElement womenPersonalCareOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[53]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[53]")
     private WebElement womenShoweringOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[54]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[54]")
     private WebElement womenSkinCareOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[55]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[55]")
     private WebElement womenBodyCareOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[56]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[56]")
     private WebElement womenOralCareOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[57]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[57]")
     private WebElement womenTherapyOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[58]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[58]")
     private WebElement womenMasksOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[59]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[59]")
     private WebElement womenFitnessAndTrainingOptionInSportsMainMenu;
-  @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[60]")
+    @FindBy(xpath = "(.//span[@data-vertical='SPORTS'][@data-nav_type='top']/a)[60]")
     private WebElement womenTrainingAccessoriesOptionInSportsMainMenu;
 
     //Getter Methods
-    public List<WebElement> getMegaMenuList(){return megaMenuList;}
-    public List<WebElement> getSubMenuList(){return subMenuList;}
-    public List<WebElement> getOptionList(){return optionList;}
-    public WebElement getShopByList(){return shopByList;}
-    public WebElement getMegaMenuSection(){return megaMenuSection;}
-    public WebElement getShopeByMenu(){return shopeByMenu;}
-    public WebElement getSportsSupplementsOption(){return sportsSupplementsOption;}
-    public WebElement getVitaminsAndHealthOption(){return vitaminsAndHealthOption;}
-    public WebElement getHealthFoodOption(){return healthFoodOption;}
-    public WebElement getSportsOption(){return sportsOption;}
-    public WebElement getWomensOnlyOption(){return womensOnlyOption;}
-    public WebElement getByBrandOption(){return byBrandOption;}
-    public WebElement getByGoalOption(){return byGoalOption;}
-    public WebElement getSalesAndOffersOption(){return salesAndOffersOption;}
-    public WebElement getSporterStacksOption(){return sporterStacksOption;}
-    public WebElement getSubMenuSection(){return subMenuSection;}
-    public WebElement getByBrandSubMenuSection(){return byBrandSubMenuSection;}
-    public WebElement getProteinOptionInSportSupplementsMenu(){return proteinOptionInSportSupplementsMenu;}
-    public WebElement getHamburgerMenuIcon(){return hamburgerMenuIcon;}
-    public WebElement getSportsArrowIcon(){return sportsArrowIcon;}
-    public WebElement getSportsSupplementsArrowIcon(){return sportsSupplementsArrowIcon;}
-    public WebElement getByBrandArrowIcon(){return byBrandArrowIcon;}
-    public WebElement getHealthFoodArrowIcon(){return healthFoodArrowIcon;}
-    public WebElement getVitaminsAndHealthArrowIcon(){return vitaminsAndHealthArrowIcon;}
-    public WebElement getCreatineOptionInSportSupplementsMenu(){return creatineOptionInSportSupplementsMenu;}
-    public WebElement getAminoAcidsOptionInSportSupplementsMenu(){return aminoAcidsOptionInSportSupplementsMenu;}
-    public WebElement getMuscleBoostersOptionInSportSupplementsMenu(){return muscleBoostersOptionInSportSupplementsMenu;}
-    public WebElement getWeightManagementOptionInSportSupplementsMenu(){return weightManagementOptionInSportSupplementsMenu;}
-    public WebElement getRecoveryOptionInSportSupplementsMenu(){return recoveryOptionInSportSupplementsMenu;}
-    public WebElement getCarbohydratesOptionInSportSupplementsMenu(){return carbohydratesOptionInSportSupplementsMenu;}
-    public WebElement getEnergyAndEnduranceOptionInSportSupplementsMenu(){return energyAndEnduranceOptionInSportSupplementsMenu;}
-    public WebElement getGamingAndFocusOptionInSportSupplementsMenu(){return gamingAndFocusOptionInSportSupplementsMenu;}
-    public WebElement getWheyProteinOptionInSportSupplementsMenu(){return wheyProteinOptionInSportSupplementsMenu;}
-    public WebElement getWheyProteinIsolateOptionInSportSupplementsMenu(){return wheyProteinIsolateOptionInSportSupplementsMenu;}
-    public WebElement getProteinBlendsOptionInSportSupplementsMenu(){return proteinBlendsOptionInSportSupplementsMenu;}
-    public WebElement getNonDairyProteinOptionInSportSupplementsMenu(){return nonDairyProteinOptionInSportSupplementsMenu;}
-    public WebElement getCaseinProteinOptionInSportSupplementsMenu(){return caseinProteinOptionInSportSupplementsMenu;}
-    public WebElement getDietProteinOptionInSportSupplementsMenu(){return dietProteinOptionInSportSupplementsMenu;}
-    public WebElement getMassGainersOptionInSportSupplementsMenu(){return massGainersOptionInSportSupplementsMenu;}
-    public WebElement getCreatineMonohydrateOptionInSportSupplementsMenu(){return creatineMonohydrateOptionInSportSupplementsMenu;}
-    public WebElement getCreatineBlendsOptionInSportSupplementsMenu(){return creatineBlendsOptionInSportSupplementsMenu;}
-    public WebElement getbCAAOptionInSportSupplementsMenu(){return bCAAOptionInSportSupplementsMenu;}
-    public WebElement getEAAOptionInSportSupplementsMenu(){return eAAOptionInSportSupplementsMenu;}
-    public WebElement getArginineOptionInSportSupplementsMenu(){return arginineOptionInSportSupplementsMenu;}
-    public WebElement getBetaAlanineOptionInSportSupplementsMenu(){return betaAlanineOptionInSportSupplementsMenu;}
-    public WebElement getHMBOptionInSportSupplementsMenu(){return hMBOptionInSportSupplementsMenu;}
-    public WebElement getAminoAcidPowdersOptionInSportSupplementsMenu(){return aminoAcidPowdersOptionInSportSupplementsMenu;}
-    public WebElement getAminoAcidPillsOptionInSportSupplementsMenu(){return aminoAcidPillsOptionInSportSupplementsMenu;}
-    public WebElement getCitrullineOptionInSportSupplementsMenu(){return citrullineOptionInSportSupplementsMenu;}
-    public WebElement getAminoAcidLiquidsOptionInSportSupplementsMenu(){return aminoAcidLiquidsOptionInSportSupplementsMenu;}
-    public WebElement getTestosteroneBoostersOptionInSportSupplementsMenu(){return testosteroneBoostersOptionInSportSupplementsMenu;}
-    public WebElement getGhBoostersOptionInSportSupplementsMenu(){return ghBoostersOptionInSportSupplementsMenu;}
-    public WebElement getStimulantWeightLossOptionInSportSupplementsMenu(){return stimulantWeightLossOptionInSportSupplementsMenu;}
-    public WebElement getNonStimulantWeightLossOptionInSportSupplementsMenu(){return nonStimulantWeightLossOptionInSportSupplementsMenu;}
-    public WebElement getMealReplacementsOptionInSportSupplementsMenu(){return mealReplacementsOptionInSportSupplementsMenu;}
-    public WebElement getMetabolismSupportOptionInSportSupplementsMenu(){return metabolismSupportOptionInSportSupplementsMenu;}
-    public WebElement getToningCreamsOptionInSportSupplementsMenu(){return toningCreamsOptionInSportSupplementsMenu;}
-    public WebElement getMctOptionInSportSupplementsMenu(){return mctOptionInSportSupplementsMenu;}
-    public WebElement getGlutamineOptionInSportSupplementsMenu(){return glutamineOptionInSportSupplementsMenu;}
-    public WebElement getRecoveryBlendOptionInSportSupplementsMenu(){return recoveryBlendOptionInSportSupplementsMenu;}
-    public WebElement getElectrolytesAndHydrationOptionInSportSupplementsMenu(){return electrolytesAndHydrationOptionInSportSupplementsMenu;}
-    public WebElement getCarbohydratePowdersOptionInSportSupplementsMenu(){return carbohydratePowdersOptionInSportSupplementsMenu;}
-    public WebElement getStimulantEnergyOptionInSportSupplementsMenu(){return stimulantEnergyOptionInSportSupplementsMenu;}
-    public WebElement getNonStimulantEnergyOptionInSportSupplementsMenu(){return nonStimulantEnergyOptionInSportSupplementsMenu;}
-    public WebElement getGamingEssentialsOptionInSportSupplementsMenu(){return gamingEssentialsOptionInSportSupplementsMenu;}
-    public WebElement getFeaturedOptionInVitaminsAndHealthMenu(){return featuredOptionInVitaminsAndHealthMenu;}
-    public WebElement getAliveVitaminsOptionInVitaminsAndHealthMenu(){return aliveVitaminsOptionInVitaminsAndHealthMenu;}
-    public WebElement getSexualHealthOptionInVitaminsAndHealthMenu(){return sexualHealthOptionInVitaminsAndHealthMenu;}
-    public WebElement getEssentialVitaminsOptionInVitaminsAndHealthMenu(){return essentialVitaminsOptionInVitaminsAndHealthMenu;}
-    public WebElement getFolicAcidOptionInVitaminsAndHealthMenu(){return folicAcidOptionInVitaminsAndHealthMenu;}
-    public WebElement getVitaminAOptionInVitaminsAndHealthMenu(){return vitaminAOptionInVitaminsAndHealthMenu;}
-    public WebElement getVitaminBOptionInVitaminsAndHealthMenu(){return vitaminBOptionInVitaminsAndHealthMenu;}
-    public WebElement getVitaminCOptionInVitaminsAndHealthMenu(){return vitaminCOptionInVitaminsAndHealthMenu;}
-    public WebElement getVitaminDOptionInVitaminsAndHealthMenu(){return vitaminDOptionInVitaminsAndHealthMenu;}
-    public WebElement getVitaminEOptionInVitaminsAndHealthMenu(){return vitaminEOptionInVitaminsAndHealthMenu;}
-    public WebElement getVitaminKOptionInVitaminsAndHealthMenu(){return vitaminKOptionInVitaminsAndHealthMenu;}
-    public WebElement getMultiVitaminsOptionInVitaminsAndHealthMenu(){return multiVitaminsOptionInVitaminsAndHealthMenu;}
-    public WebElement getVitaminsForKidsOptionInVitaminsAndHealthMenu(){return vitaminsForKidsOptionInVitaminsAndHealthMenu;}
-    public WebElement getVitaminsForMenOptionInVitaminsAndHealthMenu(){return vitaminsForMenOptionInVitaminsAndHealthMenu;}
-    public WebElement getVitaminsForWomenOptionInVitaminsAndHealthMenu(){return vitaminsForWomenOptionInVitaminsAndHealthMenu;}
-    public WebElement getBoneAndJointOptionInVitaminsAndHealthMenu(){return boneAndJointOptionInVitaminsAndHealthMenu;}
-    public WebElement getBoneHealthOptionInVitaminsAndHealthMenu(){return boneHealthOptionInVitaminsAndHealthMenu;}
-    public WebElement getJointHealthOptionInVitaminsAndHealthMenu(){return jointHealthOptionInVitaminsAndHealthMenu;}
-    public WebElement getBeautyOptionInVitaminsAndHealthMenu(){return beautyOptionInVitaminsAndHealthMenu;}
-    public WebElement getCollagenOptionInVitaminsAndHealthMenu(){return collagenOptionInVitaminsAndHealthMenu;}
-    public WebElement getHairSkinAndNailsOptionInVitaminsAndHealthMenu(){return hairSkinAndNailsOptionInVitaminsAndHealthMenu;}
-    public WebElement getFishOilOmegasOptionInVitaminsAndHealthMenu(){return fishOilOmegasOptionInVitaminsAndHealthMenu;}
-    public WebElement getFishOilOptionInVitaminsAndHealthMenu(){return fishOilOptionInVitaminsAndHealthMenu;}
-    public WebElement getOmega369OptionInVitaminsAndHealthMenu(){return omega369OptionInVitaminsAndHealthMenu;}
-    public WebElement getHealthLifestyleOptionInVitaminsAndHealthMenu(){return healthLifestyleOptionInVitaminsAndHealthMenu;}
-    public WebElement getBrainSupportOptionInVitaminsAndHealthMenu(){return brainSupportOptionInVitaminsAndHealthMenu;}
-    public WebElement getDigestionOptionInVitaminsAndHealthMenu(){return digestionOptionInVitaminsAndHealthMenu;}
-    public WebElement getDetoxAndCleanseOptionInVitaminsAndHealthMenu(){return detoxAndCleanseOptionInVitaminsAndHealthMenu;}
-    public WebElement getEnergyFormulasOptionInVitaminsAndHealthMenu(){return energyFormulasOptionInVitaminsAndHealthMenu;}
-    public WebElement getSportVitaminsOptionInVitaminsAndHealthMenu(){return sportVitaminsOptionInVitaminsAndHealthMenu;}
-    public WebElement getHerbsOptionInVitaminsAndHealthMenu(){return herbsOptionInVitaminsAndHealthMenu;}
-    public WebElement getMineralsOptionInVitaminsAndHealthMenu(){return mineralsOptionInVitaminsAndHealthMenu;}
-    public WebElement getMensHealthOptionInVitaminsAndHealthMenu(){return mensHealthOptionInVitaminsAndHealthMenu;}
-    public WebElement getStressReliefOptionInVitaminsAndHealthMenu(){return stressReliefOptionInVitaminsAndHealthMenu;}
-    public WebElement getSleepSupportOptionInVitaminsAndHealthMenu(){return sleepSupportOptionInVitaminsAndHealthMenu;}
-    public WebElement getSuperFoodsOptionInVitaminsAndHealthMenu(){return superFoodsOptionInVitaminsAndHealthMenu;}
-    public WebElement getUrinaryTractSupportOptionInVitaminsAndHealthMenu(){return urinaryTractSupportOptionInVitaminsAndHealthMenu;}
-    public WebElement getHealthyDrinksOptionInVitaminsAndHealthMenu(){return healthyDrinksOptionInVitaminsAndHealthMenu;}
-    public WebElement getWomensHealthOptionInVitaminsAndHealthMenu(){return womensHealthOptionInVitaminsAndHealthMenu;}
-    public WebElement getPetsOptionInVitaminsAndHealthMenu(){return petsOptionInVitaminsAndHealthMenu;}
-    public WebElement getDigestiveSupportOptionInVitaminsAndHealthMenu(){return digestiveSupportOptionInVitaminsAndHealthMenu;}
-    public List<WebElement> getVitaminsAndHealthList(){return vitaminsAndHealthList;}
-    public List<WebElement> getHealthyFoodList(){return HealthyFoodList;}
-    public WebElement getAntioxidantsOptionInVitaminsAndHealthMenu(){return antioxidantsOptionInVitaminsAndHealthMenu;}
-    public WebElement getBloodSugarSupportOptionInVitaminsAndHealthMenu(){return bloodSugarSupportOptionInVitaminsAndHealthMenu;}
-    public WebElement getHeartHealthOptionInVitaminsAndHealthMenu(){return heartHealthOptionInVitaminsAndHealthMenu;}
-    public WebElement getEyeHealthOptionInVitaminsAndHealthMenu(){return eyeHealthOptionInVitaminsAndHealthMenu;}
-    public WebElement getHormonesBalanceOptionInVitaminsAndHealthMenu(){return hormonesBalanceOptionInVitaminsAndHealthMenu;}
-    public WebElement getImmuneSupportOptionInVitaminsAndHealthMenu(){return immuneSupportOptionInVitaminsAndHealthMenu;}
-    public WebElement getWeightManagementOptionInVitaminsAndHealthMenu(){return weightManagementOptionInVitaminsAndHealthMenu;}
-    public WebElement getProbioticsOptionInVitaminsAndHealthMenu(){return probioticsOptionInVitaminsAndHealthMenu;}
-    public WebElement getAminoAcidOptionInVitaminsAndHealthMenu(){return aminoAcidOptionInVitaminsAndHealthMenu;}
-    public WebElement getCalciumOptionInVitaminsAndHealthMenu(){return calciumOptionInVitaminsAndHealthMenu;}
-    public WebElement getIronOptionInVitaminsAndHealthMenu(){return ironOptionInVitaminsAndHealthMenu;}
-    public WebElement getMagnesiumOptionInVitaminsAndHealthMenu(){return magnesiumOptionInVitaminsAndHealthMenu;}
-    public WebElement getMultimineralFormulasOptionInVitaminsAndHealthMenu(){return multimineralFormulasOptionInVitaminsAndHealthMenu;}
-    public WebElement getZincOptionInVitaminsAndHealthMenu(){return zincOptionInVitaminsAndHealthMenu;}
-    public WebElement getPotassiumOptionInVitaminsAndHealthMenu(){return potassiumOptionInVitaminsAndHealthMenu;}
-    public WebElement getDrinkableVitaminsOptionInVitaminsAndHealthMenu(){return drinkableVitaminsOptionInVitaminsAndHealthMenu;}
-    public WebElement getSupplementsMoreOptionInVitaminsAndHealthMenu(){return supplementsMoreOptionInVitaminsAndHealthMenu;}
-    public WebElement getHealthyFoodOption(){return healthyFoodOption;}
-    public WebElement getGroceryOptionInHealthyFoodMenu(){return groceryOptionInHealthyFoodMenu;}
-    public WebElement getBakingAndCookingOptionInHealthyFoodMenu(){return bakingAndCookingOptionInHealthyFoodMenu;}
-    public WebElement getCannedOptionInHealthyFoodMenu(){return cannedOptionInHealthyFoodMenu;}
-    public WebElement getCoffeeOptionInHealthyFoodMenu(){return coffeeOptionInHealthyFoodMenu;}
-    public WebElement getCondimentsOptionInHealthyFoodMenu(){return condimentsOptionInHealthyFoodMenu;}
-    public WebElement getMilkAndCreamOptionInHealthyFoodMenu(){return milkAndCreamOptionInHealthyFoodMenu;}
-    public WebElement getNutsAndOatsOptionInHealthyFoodMenu(){return nutsAndOatsOptionInHealthyFoodMenu;}
-    public WebElement getOilsOptionInHealthyFoodMenu(){return oilsOptionInHealthyFoodMenu;}
-    public WebElement getPastaOptionInHealthyFoodMenu(){return pastaOptionInHealthyFoodMenu;}
-    public WebElement getRiceAndGrainsOptionInHealthyFoodMenu(){return riceAndGrainsOptionInHealthyFoodMenu;}
-    public WebElement getSeasoningsAndSpicesOptionInHealthyFoodMenu(){return seasoningsAndSpicesOptionInHealthyFoodMenu;}
-    public WebElement getSugarSweetenersOptionInHealthyFoodMenu(){return sugarSweetenersOptionInHealthyFoodMenu;}
-    public WebElement getSyrupsOptionInHealthyFoodMenu(){return syrupsOptionInHealthyFoodMenu;}
-    public WebElement getTeaAndHerbsOptionInHealthyFoodMenu(){return teaAndHerbsOptionInHealthyFoodMenu;}
-    public WebElement getSuperfoodsOptionInHealthyFoodMenu(){return superfoodsOptionInHealthyFoodMenu;}
-    public WebElement getReadyMixesOptionInHealthyFoodMenu(){return readyMixesOptionInHealthyFoodMenu;}
-    public WebElement getBreakfastAndCerealOptionInHealthyFoodMenu(){return breakfastAndCerealOptionInHealthyFoodMenu;}
-    public WebElement getReadyToDrinkOptionInHealthyFoodMenu(){return readyToDrinkOptionInHealthyFoodMenu;}
-    public WebElement getAminoAndBcaasOptionInHealthyFoodMenu(){return aminoAndBcaasOptionInHealthyFoodMenu;}
-    public WebElement getEnergyDrinksOptionInHealthyFoodMenu(){return energyDrinksOptionInHealthyFoodMenu;}
-    public WebElement getProteinShakesOptionInHealthyFoodMenu(){return proteinShakesOptionInHealthyFoodMenu;}
-    public WebElement getElectrolytesAndHydrationOptionInHealthyFoodMenu(){return electrolytesAndHydrationOptionInHealthyFoodMenu;}
-    public WebElement getHealthySnacksOptionInHealthyFoodMenu(){return healthySnacksOptionInHealthyFoodMenu;}
-    public WebElement getProteinBarsOptionInHealthyFoodMenu(){return proteinBarsOptionInHealthyFoodMenu;}
-    public WebElement getCookiesOptionInHealthyFoodMenu(){return cookiesOptionInHealthyFoodMenu;}
-    public WebElement getChipsOptionInHealthyFoodMenu(){return chipsOptionInHealthyFoodMenu;}
-    public WebElement getBrowniesAndPancakesOptionInHealthyFoodMenu(){return browniesAndPancakesOptionInHealthyFoodMenu;}
-    public WebElement getSnackBarsOptionInHealthyFoodMenu(){return snackBarsOptionInHealthyFoodMenu;}
-    public WebElement getSpreadsOptionInHealthyFoodMenu(){return spreadsOptionInHealthyFoodMenu;}
-    public WebElement getOtherHealthySnacksOptionInHealthyFoodMenu(){return otherHealthySnacksOptionInHealthyFoodMenu;}
-    public WebElement getReadyToEatOptionInHealthyFoodMenu(){return readyToEatOptionInHealthyFoodMenu;}
-    public WebElement getHealthyMealsOptionInHealthyFoodMenu(){return healthyMealsOptionInHealthyFoodMenu;}
-    public WebElement getFeaturedOptionInHealthyFoodMenu(){return featuredOptionInHealthyFoodMenu;}
-    public WebElement getHealthyMealReplacementOptionInHealthyFoodMenu(){return healthyMealReplacementOptionInHealthyFoodMenu;}
-    public WebElement getProteinCoffeeOptionInHealthyFoodMenu(){return proteinCoffeeOptionInHealthyFoodMenu;}
-    public WebElement getCandiesOptionInHealthyFoodMenu(){return candiesOptionInHealthyFoodMenu;}
-    public WebElement getFlavoringAgentsOptionInHealthyFoodMenu(){return flavoringAgentsOptionInHealthyFoodMenu;}
-    public WebElement getKetoSnacksOptionInHealthyFoodMenu(){return ketoSnacksOptionInHealthyFoodMenu;}
-    public WebElement getManukaHoneyOptionInHealthyFoodMenu(){return manukaHoneyOptionInHealthyFoodMenu;}
-    public WebElement getMeatSnacksOptionInHealthyFoodMenu(){return meatSnacksOptionInHealthyFoodMenu;}
-    public WebElement getMenOptionInSportsMenu(){return menOptionInSportsMenu;}
-    public WebElement getClothingInSportsMenu(){return clothingInSportsMenu;}
-    public WebElement getTopsInSportsMenu(){return topsInSportsMenu;}
-    public WebElement getPantsInSportsMenu(){return pantsInSportsMenu;}
-    public WebElement getShortsInSportsMenu(){return shortsInSportsMenu;}
-    public WebElement getJacketsAndCoatsInSportsMenu(){return jacketsAndCoatsInSportsMenu;}
-    public WebElement getSafetyMasksInSportsMenu(){return safetyMasksInSportsMenu;}
-    public WebElement getFootwearInSportsMenu() {return footwearInSportsMenu;}
-    public WebElement getSneakersInSportsMenu() {return sneakersInSportsMenu;}
-    public WebElement getTrainingShoesInSportsMenu() {return trainingShoesInSportsMenu;}
-    public WebElement getRunningShoesInSportsMenu() {return runningShoesInSportsMenu;}
-    public WebElement getHikingShoesInSportsMenu() {return hikingShoesInSportsMenu;}
-    public WebElement getAccessoriesInSportsMenu() {return accessoriesInSportsMenu;}
-    public WebElement getGlovesInSportsMenu() {return glovesInSportsMenu;}
-    public WebElement getBeltsInSportsMenu() {return beltsInSportsMenu;}
-    public WebElement getCapsAndHatsInSportsMenu() {return capsAndHatsInSportsMenu;}
-    public WebElement getCapInSportsMenu() {return capInSportsMenu;}
-    public WebElement getShakersInSportsMenu() {return shakersInSportsMenu;}
-    public WebElement getWaterBottlesInSportsMenu() {return waterBottlesInSportsMenu;}
-    public WebElement getBugHereInSportsMenu() {return bugHereInSportsMenu;}
-    public WebElement getSocksInSportsMenu() {return socksInSportsMenu;}
-    public WebElement getTowelsInSportsMenu() {return towelsInSportsMenu;}
-    public WebElement getSunglassesInSportsMenu() {return sunglassesInSportsMenu;}
-    public WebElement getMixerInSportsMenu() {return mixerInSportsMenu;}
-    public WebElement getBagsInSportsMenu() {return bagsInSportsMenu;}
-    public WebElement getBackPacksInSportsMenu() {return backPacksInSportsMenu;}
-    public WebElement getShoulderBagsInSportsMenu() {return shouldersBagsInSportsMenu;}
-    public WebElement getWearableTechInSportsMenu() {return wearableTechInSportsMenu;}
-    public WebElement getWatchesInSportsMenu() {return watchesInSportsMenu;}
-    public WebElement getGamingAccessoriesInSportsMenu() {return gamingAccessoriesInSportsMenu;}
-    public WebElement geEquipmentInSportsMenu() {return equipmentInSportsMenu;}
-    public WebElement getGripsInSportsMenu() {return gripsInSportsMenu;}
-    public WebElement getBallsInSportsMenu() {return ballsInSportsMenu;}
-    public WebElement getRollersInSportsMenu() {return rollersInSportsMenu;}
-    public WebElement getWeightsInSportsMenu() {return weightsInSportsMenu;}
-    public WebElement getWomenInSportsMenu() {return womenInSportsMenu;}
-    public WebElement getWomenClothingInSportsMenu() {return womenClothingInSportsMenu;}
-    public WebElement getWomenTopsInSportsMenu() {return womenTopsInSportsMenu;}
-    public WebElement getWomenShortsInSportsMenu() {return womenShortsInSportsMenu;}
-    public WebElement getWomenSafetyMasksInSportsMenu() {return womenSafetyMasksInSportsMenu;}
-    public WebElement getWomenAccessoriesInSportsMenu() {return womenAccessoriesInSportsMenu;}
-    public WebElement getWomenGlovesInSportsMenu() {return womenGlovesInSportsMenu;}
-    public WebElement getBugGlovesInSportsMenu() {return glovesBugCategoryInSportsMenu;}
-    public WebElement getWomenCapsAndHatsInSportsMenu() {return womenCapsAndHatsInSportsMenu;}
-    public WebElement getWomenCapsInSportsMenu() {return womenCapsInSportsMenu;}
-    public WebElement getWomenShakersInSportsMenu() {return womenShakersInSportsMenu;}
-    public WebElement getWomenWaterBottlesInSportsMenu() {return womenWaterBottlesInSportsMenu;}
-    public WebElement getWomenSocksInSportsMenu() {return womenSocksInSportsMenu;}
-    public WebElement getWomenTowelsInSportsMenu() {return womenTowelsInSportsMenu;}
-    public WebElement getWomenSunglassesInSportsMenu() {return womenSunglassesInSportsMenu;}
-    public WebElement getWomenMixerInSportsMenu() {return womenMixerInSportsMenu;}
-    public WebElement getWomenBagsInSportsMenu() {return womenBagsInSportsMenu;}
-    public WebElement getWomenBackPacksInSportsMenu() {return womenBackPacksInSportsMenu;}
-    public WebElement getWomenSholdersBagsInSportsMenu() {return womenSholdersBagsInSportsMenu;}
-    public WebElement getWomenBeltsInSportsMenu() {return womenBeltsInSportsMenu;}
-    public WebElement getMegaMenuListSection() {return megaMenuListSection;}
-    public WebElement getOptimumNutritionOptionInByBrandMenu() {return optimumNutritionOptionInByBrandMenu;}
-    public WebElement getMuscletechOptionInByBrandMenu() {return muscletechOptionInByBrandMenu;}
-    public WebElement getCellucorOptionInByBrandMenu() {return cellucorOptionInByBrandMenu;}
-    public WebElement getSupplementsOptionInByBrandMenu() {return supplementsOptionInByBrandMenu;}
-    public WebElement getDymatizeOptionInByBrandMenu() {return dymatizeOptionInByBrandMenu;}
-    public WebElement getXtendOptionInByBrandMenu() {return xtendOptionInByBrandMenu;}
-    public WebElement getAnimalNutritionOptionInByBrandMenu() {return animalNutritionOptionInByBrandMenu;}
-    public WebElement getMusclePharmOptionInByBrandMenu() {return musclePharmOptionInByBrandMenu;}
-    public WebElement getUniversalNutritionOptionInByBrandMenu() {return universalNutritionOptionInByBrandMenu;}
-    public WebElement getBsnOptionInByBrandMenu() {return bsnOptionInByBrandMenu;}
-    public WebElement getEhplabsOptionInByBrandMenu() {return ehplabsOptionInByBrandMenu;}
-    public WebElement getJymSupplementScienceOptionInByBrandMenu() {return jymSupplementScienceOptionInByBrandMenu;}
-    public WebElement getBpiSportsOptionInByBrandMenu() {return bpiSportsOptionInByBrandMenu;}
-    public WebElement getRussianBearOptionInByBrandMenu() {return russianBearOptionInByBrandMenu;}
-    public WebElement getIsopureOptionInByBrandMenu() {return isopureOptionInByBrandMenu;}
-    public WebElement getOneUpNutritionOptionInByBrandMenu() {return oneUpNutritionOptionInByBrandMenu;}
-    public WebElement getMusclemedsOptionInByBrandMenu() {return musclemedsOptionInByBrandMenu;}
-    public WebElement gethMhpOptionInByBrandMenu() {return mhpOptionInByBrandMenu;}
-    public WebElement getEvlNutritionOptionInByBrandMenu() {return evlNutritionOptionInByBrandMenu;}
-    public WebElement getNlaForHerOptionInByBrandMenu() {return nlaForHerOptionInByBrandMenu;}
-    public WebElement getMuscleNutritionOptionInByBrandMenu() {return muscleNutritionOptionInByBrandMenu;}
-    public WebElement getGatNutritionOptionInByBrandMenu() {return gatNutritionOptionInByBrandMenu;}
-    public WebElement getLabradaOptionInByBrandMenu() {return labradaOptionInByBrandMenu;}
-    public WebElement getOrgainOptionInByBrandMenu() {return orgainOptionInByBrandMenu;}
-    public WebElement getNutrexResearchOptionInByBrandMenu() {return nutrexResearchOptionInByBrandMenu;}
-    public WebElement getScitecNutritionOptionInByBrandMenu() {return scitecNutritionOptionInByBrandMenu;}
-    public WebElement getProlabOptionInByBrandMenu() {return brolabOptionInByBrandMenu;}
-    public WebElement getSotruOptionInByBrandMenu() {return sotruOptionInByBrandMenu;}
-    public WebElement getDivineHealthOptionInByBrandMenu() {return divineHealthOptionInByBrandMenu;}
-    public WebElement getGhostOptionInByBrandMenu() {return ghostOptionInByBrandMenu;}
-    public WebElement getWomensBestOptionInByBrandMenu() {return womensBestOptionInByBrandMenu;}
-    public WebElement getEfxSportsOptionInByBrandMenu() {return efxSportsOptionInByBrandMenu;}
-    public WebElement getBasixOptionInByBrandMenu() {return basixOptionInByBrandMenu;}
-    public WebElement getAk47OptionInByBrandMenu() {return ak47OptionInByBrandMenu;}
-    public WebElement getNfSportsOptionInByBrandMenu() {return nfSportsOptionInByBrandMenu;}
-    public WebElement getFullyDosedOptionInByBrandMenu() {return fullyDosedOptionInByBrandMenu;}
-    public WebElement getFivePercentNutritionOptionInByBrandMenu() {return fivePercentNutritionOptionInByBrandMenu;}
-    public WebElement getOlimpSportNutritionOptionInByBrandMenu() {return olimpSportNutritionOptionInByBrandMenu;}
-    public WebElement getJnxSportsOptionInByBrandMenu() {return jnxSportsOptionInByBrandMenu;}
-    public WebElement getFitAndLeanOptionInByBrandMenu() {return fitAndLeanOptionInByBrandMenu;}
-    public WebElement getGymqueenOptionInByBrandMenu() {return gymqueenOptionInByBrandMenu;}
-    public WebElement getThePackOptionInByBrandMenu() {return thePackOptionInByBrandMenu;}
-    public WebElement getBetancourtNutritionOptionInByBrandMenu() {return betancourtNutritionOptionInByBrandMenu;}
-    public WebElement getYallaProteinOptionInByBrandMenu() {return yallaProteinOptionInByBrandMenu;}
-    public WebElement getProteinWorldOptionInByBrandMenu() {return proteinWorldOptionInByBrandMenu;}
-    public WebElement getObviOptionInByBrandMenu() {return obviOptionInByBrandMenu;}
-    public WebElement getNaughtyBoyOptionInByBrandMenu() {return naughtyBoyOptionInByBrandMenu;}
-    public WebElement getSteelFitOptionInByBrandMenu() {return steelFitOptionInByBrandMenu;}
-    public WebElement getUsnOptionInByBrandMenu() {return usnOptionInByBrandMenu;}
-    public WebElement getXGamerOptionInByBrandMenu() {return xGamerOptionInByBrandMenu;}
-    public WebElement getInnosuppsOptionInByBrandMenu() {return innosuppsOptionInByBrandMenu;}
-    public WebElement getOutbreakNutritionOptionInByBrandMenu() {return outbreakNutritionOptionInByBrandMenu;}
-    public WebElement getInsaneLabzOptionInByBrandMenu() {return insaneLabzOptionInByBrandMenu;}
-    public WebElement getAllMaxOptionInByBrandMenu() {return allMaxOptionInByBrandMenu;}
-    public WebElement getGlaxonOptionInByBrandMenu() {return glaxonOptionInByBrandMenu;}
-    public WebElement getRedcon1OptionInByBrandMenu() {return redcon1OptionInByBrandMenu;}
-    public WebElement getPandaSupplementsOptionInByBrandMenu() {return pandaSupplementsOptionInByBrandMenu;}
-    public WebElement getNutrendOptionInByBrandMenu() {return nutrendOptionInByBrandMenu;}
-    public WebElement getOstrovitOptionInByBrandMenu() {return ostrovitOptionInByBrandMenu;}
-    public WebElement getBetteryOptionInByBrandMenu() {return betteryOptionInByBrandMenu;}
-    public WebElement getHealthyFoodSnacksAndMealReplacementOptionInByBrandMenu() {return healthyFoodSnacksAndMealReplacementOptionInByBrandMenu;}
-    public WebElement getWowHydrateOptionInByBrandMenu() {return wowHydrateOptionInByBrandMenu;}
-    public WebElement getQuestNutritionOptionInByBrandMenu() {return questNutritionOptionInByBrandMenu;}
-    public WebElement getGrenadeOptionInByBrandMenu() {return grenadeOptionInByBrandMenu;}
-    public WebElement getReignEnergyOptionInByBrandMenu() {return reignEnergyOptionInByBrandMenu;}
-    public WebElement getMonsterEnergyOptionInByBrandMenu() {return monsterEnergyOptionInByBrandMenu;}
-    public WebElement getThirdEnergyOptionInByBrandMenu() {return thirdEnergyOptionInByBrandMenu;}
-    public WebElement getDownArrowKeyInSportSupplementsMenu() {return downArrowKeyInSportSupplementsMenu;}
-    public WebElement getDownArrowKeyInVitaminsAndHealthMenu() {return downArrowKeyInVitaminsAndHealthMenu;}
-    public WebElement getDownArrowKeyInHealthyFoodMenu() {return downArrowKeyInHealthyFoodMenu;}
-    public WebElement getDownArrowKeyInSportsMenu() {return downArrowKeyInSportsMenu;}
-    public WebElement getSportSupplementsMainMenu() {return sportSupplementsMainMenu;}
-    public WebElement getProteinOptionInSportSupplementsMainMenu() {return proteinOptionInSportSupplementsMainMenu;}
-    public WebElement getCreatineOptionInSportSupplementsMainMenu() {return creatineOptionInSportSupplementsMainMenu;}
-    public WebElement getAminoAcidsOptionInSportSupplementsMainMenu() {return aminoAcidsOptionInSportSupplementsMainMenu;}
-    public WebElement getMuscleBoostersOptionInSportSupplementsMainMenu() {return muscleBoostersOptionInSportSupplementsMainMenu;}
-    public WebElement getRecoveryOptionInSportSupplementsMainMenu() {return recoveryOptionInSportSupplementsMainMenu;}
-    public WebElement getCarbohydratesOptionInSportSupplementsMainMenu() {return carbohydratesOptionInSportSupplementsMainMenu;}
-    public WebElement getEnergyAndEnduranceOptionInSportSupplementsMainMenu() {return energyAndEnduranceOptionInSportSupplementsMainMenu;}
-    public WebElement getGamingAndFocusOptionInSportSupplementsMainMenu() {return gamingAndFocusOptionInSportSupplementsMainMenu;}
-    public WebElement getWheyProteinOptionInSportSupplementsMainMenu() {return wheyProteinOptionInSportSupplementsMainMenu;}
-    public WebElement getWheyProteinIsolateOptionInSportSupplementsMainMenu() {return wheyProteinIsolateOptionInSportSupplementsMainMenu;}
+    public List<WebElement> getMegaMenuList() {
+        return megaMenuList;
+    }
 
-    public WebElement getProteinBlendsOptionInSportSupplementsMainMenu() {return proteinBlendsOptionInSportSupplementsMainMenu;}
+    public List<WebElement> getSubMenuList() {
+        return subMenuList;
+    }
 
-    public WebElement getNonDairyProteinOptionInSportSupplementsMainMenu() {return nonDairyProteinOptionInSportSupplementsMainMenu;}
-    public WebElement getCaseinProteinOptionInSportSupplementsMainMenu() {return caseinProteinOptionInSportSupplementsMainMenu;}
-    public WebElement getDietProteinOptionInSportSupplementsMainMenu() {return dietProteinOptionInSportSupplementsMainMenu;}
-    public WebElement getMassGainersOptionInSportSupplementsMainMenu() {return massGainersOptionInSportSupplementsMainMenu;}
-    public WebElement getWeightManagementOptionInSportSupplementsMainMenu() {return weightManagementOptionInSportSupplementsMainMenu;}
-    public List<WebElement> getSportsSupplementMainMenuList() {return sportsSupplementsMainMenuList;}
-    public WebElement getCreatineMonohydrateOptionInSportSupplementsMainMenu() {return creatineMonohydrateOptionInSportSupplementsMainMenu;}
-    public WebElement getCreatineBlendsOptionInSportSupplementsMainMenu() {return creatineBlendsOptionInSportSupplementsMainMenu;}
-    public WebElement getbCAAOptionInSportSupplementsMainMenu() {return bCAAOptionInSportSupplementsMainMenu;}
-    public WebElement geteAAOptionInSportSupplementsMainMenu() {return eAAOptionInSportSupplementsMainMenu;}
-    public WebElement getArginineOptionInSportSupplementsMainMenu() {return arginineOptionInSportSupplementsMainMenu;}
-    public WebElement getBetaAlanineOptionInSportSupplementsMainMenu() {return betaAlanineOptionInSportSupplementsMainMenu;}
-    public WebElement gethMBOptionInSportSupplementsMainMenu() {return hMBOptionInSportSupplementsMainMenu;}
-    public WebElement getAminoAcidPowdersOptionInSportSupplementsMainMenu() {return aminoAcidPowdersOptionInSportSupplementsMainMenu;}
-    public WebElement getAminoAcidPillsOptionInSportSupplementsMainMenu() {return aminoAcidPillsOptionInSportSupplementsMainMenu;}
-    public WebElement getCitrullineOptionInSportSupplementsMainMenu() {return citrullineOptionInSportSupplementsMainMenu;}
-    public WebElement getAminoAcidLiquidsOptionInSportSupplementsMainMenu() {return aminoAcidLiquidsOptionInSportSupplementsMainMenu;}
-    public WebElement getTestosteroneBoostersOptionInSportSupplementsMainMenu() {return testosteroneBoostersOptionInSportSupplementsMainMenu;}
-    public WebElement getGhBoostersOptionInSportSupplementsMainMenu() {return ghBoostersOptionInSportSupplementsMainMenu;}
-    public WebElement getStimulantWeightLossOptionInSportSupplementsMainMenu() {return stimulantWeightLossOptionInSportSupplementsMainMenu;}
-    public WebElement getNonStimulantWeightLossOptionInSportSupplementsMainMenu() {return nonStimulantWeightLossOptionInSportSupplementsMainMenu;}
-    public WebElement getMealReplacementsOptionInSportSupplementsMainMenu() {return mealReplacementsOptionInSportSupplementsMainMenu;}
-    public WebElement getMetabolismSupportOptionInSportSupplementsMainMenu() {return metabolismSupportOptionInSportSupplementsMainMenu;}
-    public WebElement getToningCreamsOptionInSportSupplementsMainMenu() {return toningCreamsOptionInSportSupplementsMainMenu;}
-    public WebElement getMctOptionInSportSupplementsMainMenu() {return mctOptionInSportSupplementsMainMenu;}
-    public WebElement getGlutamineOptionInSportSupplementsMainMenu() {return glutamineOptionInSportSupplementsMainMenu;}
-    public WebElement getRecoveryBlendOptionInSportSupplementsMainMenu() {return recoveryBlendOptionInSportSupplementsMainMenu;}
-    public WebElement getElectrolytesAndHydrationOptionInSportSupplementsMainMenu() {return electrolytesAndHydrationOptionInSportSupplementsMainMenu;}
-    public WebElement getCarbohydratePowdersOptionInSportSupplementsMainMenu() {return carbohydratePowdersOptionInSportSupplementsMainMenu;}
-    public WebElement getStimulantEnergyOptionInSportSupplementsMainMenu() {return stimulantEnergyOptionInSportSupplementsMainMenu;}
-    public WebElement getNonStimulantEnergyOptionInSportSupplementsMainMenu() {return nonStimulantEnergyOptionInSportSupplementsMainMenu;}
-    public WebElement getGamingEssentialsOptionInSportSupplementsMainMenu() {return gamingEssentialsOptionInSportSupplementsMainMenu;}
-    public WebElement getFeaturedOptionInVitaminsAndHealthMainMenu() {return featuredOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getAliveVitaminsOptionInVitaminsAndHealthMainMenu() {return aliveVitaminsOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getSexualHealthOptionInVitaminsAndHealthMainMenu() {return sexualHealthOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getEssentialVitaminsOptionInVitaminsAndHealthMainMenu() {return essentialVitaminsOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getFolicAcidOptionInVitaminsAndHealthMainMenu() {return folicAcidOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getVitaminAOptionInVitaminsAndHealthMainMenu() {return vitaminAOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getVitaminBOptionInVitaminsAndHealthMainMenu() {return vitaminBOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getVitaminCOptionInVitaminsAndHealthMainMenu() {return vitaminCOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getVitaminDOptionInVitaminsAndHealthMainMenu() {return vitaminDOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getVitaminEOptionInVitaminsAndHealthMainMenu() {return vitaminEOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getVitaminKOptionInVitaminsAndHealthMainMenu() {return vitaminKOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getMultiVitaminsOptionInVitaminsAndHealthMainMenu() {return multiVitaminsOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getVitaminsForKidsOptionInVitaminsAndHealthMainMenu() {return vitaminsForKidsOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getVitaminsForMenOptionInVitaminsAndHealthMainMenu() {return vitaminsForMenOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getVitaminsForWomenOptionInVitaminsAndHealthMainMenu() {return vitaminsForWomenOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getBoneAndJointOptionInVitaminsAndHealthMainMenu() {return boneAndJointOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getBoneHealthOptionInVitaminsAndHealthMainMenu() {return boneHealthOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getJointHealthOptionInVitaminsAndHealthMainMenu() {return jointHealthOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getBeautyOptionInVitaminsAndHealthMainMenu() {return beautyOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getCollagenOptionInVitaminsAndHealthMainMenu() {return collagenOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getHairSkinAndNailsOptionInVitaminsAndHealthMainMenu() {return hairSkinAndNailsOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getFishOilOmegasOptionInVitaminsAndHealthMainMenu() {return fishOilOmegasOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getFishOilOptionInVitaminsAndHealthMainMenu() {return fishOilOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getOmega369OptionInVitaminsAndHealthMainMenu() {return omega369OptionInVitaminsAndHealthMainMenu;}
-    public WebElement getHealthLifestyleOptionInVitaminsAndHealthMainMenu() {return healthLifestyleOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getAntioxidantsOptionInVitaminsAndHealthMainMenu() {return antioxidantsOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getBloodSugarSupportOptionInVitaminsAndHealthMainMenu() {return bloodSugarSupportOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getBrainSupportOptionInVitaminsAndHealthMainMenu() {return brainSupportOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getHeartHealthOptionInVitaminsAndHealthMainMenu() {return heartHealthOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getDigestionOptionInVitaminsAndHealthMainMenu() {return digestionOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getDetoxAndCleanseOptionInVitaminsAndHealthMainMenu() {return detoxAndCleanseOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getEnergyFormulasOptionInVitaminsAndHealthMainMenu() {return energyFormulasOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getEyeHealthOptionInVitaminsAndHealthMainMenu() {return eyeHealthOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getSportVitaminsOptionInVitaminsAndHealthMainMenu() {return sportVitaminsOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getAminoAcidOptionInVitaminsAndHealthMainMenu() {return aminoAcidOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getHerbsOptionInVitaminsAndHealthMainMenu() {return herbsOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getHormonesBalanceOptionInVitaminsAndHealthMainMenu() {return hormonesBalanceOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getMineralsOptionInVitaminsAndHealthMainMenu() {return mineralsOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getCalciumOptionInVitaminsAndHealthMainMenu() {return calciumOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getIronOptionInVitaminsAndHealthMainMenu() {return ironOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getMagnesiumOptionInVitaminsAndHealthMainMenu() {return magnesiumOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getMultimineralFormulasOptionInVitaminsAndHealthMainMenu() {return multimineralFormulasOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getZincOptionInVitaminsAndHealthMainMenu() {return zincOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getPotassiumOptionInVitaminsAndHealthMainMenu() {return potassiumOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getImmuneSupportOptionInVitaminsAndHealthMainMenu() {return immuneSupportOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getMensHealthOptionInVitaminsAndHealthMainMenu() {return mensHealthOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getStressReliefOptionInVitaminsAndHealthMainMenu() {return stressReliefOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getSleepSupportOptionInVitaminsAndHealthMainMenu() {return sleepSupportOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getSuperFoodsOptionInVitaminsAndHealthMainMenu() {return superFoodsOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getUrinaryTractSupportOptionInVitaminsAndHealthMainMenu() {return urinaryTractSupportOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getWeightManagementOptionInVitaminsAndHealthMainMenu() {return weightManagementOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getHealthyDrinksOptionInVitaminsAndHealthMainMenu() {return healthyDrinksOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getDrinkableVitaminsOptionInVitaminsAndHealthMainMenu() {return drinkableVitaminsOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getWomensHealthOptionInVitaminsAndHealthMainMenu() {return womensHealthOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getPetsOptionInVitaminsAndHealthMainMenu() {return petsOptionInVitaminsAndHealthMianMenu;}
-    public WebElement getSupplementsMoreOptionInVitaminsAndHealthMainMenu() {return supplementsMoreOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getDigestiveSupportOptionInVitaminsAndHealthMainMenu() {return digestiveSupportOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getProbioticsOptionInVitaminsAndHealthMainMenu() {return probioticsOptionInVitaminsAndHealthMainMenu;}
-    public WebElement getVitaminsAndHealthMainMenu() {return vitaminsAndHealthMainMenu;}
-    public List<WebElement> getVitaminsAndHealthMainMenuList() {return VitaminsAndHealthMainMenuList;}
+    public List<WebElement> getOptionList() {
+        return optionList;
+    }
+
+    public WebElement getShopByList() {
+        return shopByList;
+    }
+
+    public WebElement getMegaMenuSection() {
+        return megaMenuSection;
+    }
+
+    public WebElement getShopeByMenu() {
+        return shopeByMenu;
+    }
+
+    public WebElement getSportsSupplementsOption() {
+        return sportsSupplementsOption;
+    }
+
+    public WebElement getVitaminsAndHealthOption() {
+        return vitaminsAndHealthOption;
+    }
+
+    public WebElement getHealthFoodOption() {
+        return healthFoodOption;
+    }
+
+    public WebElement getSportsOption() {
+        return sportsOption;
+    }
+
+    public WebElement getWomensOnlyOption() {
+        return womensOnlyOption;
+    }
+
+    public WebElement getByBrandOption() {
+        return byBrandOption;
+    }
+
+    public WebElement getByGoalOption() {
+        return byGoalOption;
+    }
+
+    public WebElement getSalesAndOffersOption() {
+        return salesAndOffersOption;
+    }
+
+    public WebElement getSporterStacksOption() {
+        return sporterStacksOption;
+    }
+
+    public WebElement getSubMenuSection() {
+        return subMenuSection;
+    }
+
+
+    public WebElement getProteinOptionInSportSupplementsMenu() {
+        return proteinOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getHamburgerMenuIcon() {
+        return hamburgerMenuIcon;
+    }
+
+    public WebElement getSportsArrowIcon() {
+        return sportsArrowIcon;
+    }
+
+    public WebElement getSportsSupplementsArrowIcon() {
+        return sportsSupplementsArrowIcon;
+    }
+
+    public WebElement getByBrandArrowIcon() {
+        return byBrandArrowIcon;
+    }
+
+    public WebElement getHealthFoodArrowIcon() {
+        return healthFoodArrowIcon;
+    }
+
+    public WebElement getVitaminsAndHealthArrowIcon() {
+        return vitaminsAndHealthArrowIcon;
+    }
+
+    public WebElement getCreatineOptionInSportSupplementsMenu() {
+        return creatineOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getAminoAcidsOptionInSportSupplementsMenu() {
+        return aminoAcidsOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getMuscleBoostersOptionInSportSupplementsMenu() {
+        return muscleBoostersOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getWeightManagementOptionInSportSupplementsMenu() {
+        return weightManagementOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getRecoveryOptionInSportSupplementsMenu() {
+        return recoveryOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getCarbohydratesOptionInSportSupplementsMenu() {
+        return carbohydratesOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getEnergyAndEnduranceOptionInSportSupplementsMenu() {
+        return energyAndEnduranceOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getGamingAndFocusOptionInSportSupplementsMenu() {
+        return gamingAndFocusOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getWheyProteinOptionInSportSupplementsMenu() {
+        return wheyProteinOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getWheyProteinIsolateOptionInSportSupplementsMenu() {
+        return wheyProteinIsolateOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getProteinBlendsOptionInSportSupplementsMenu() {
+        return proteinBlendsOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getNonDairyProteinOptionInSportSupplementsMenu() {
+        return nonDairyProteinOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getCaseinProteinOptionInSportSupplementsMenu() {
+        return caseinProteinOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getDietProteinOptionInSportSupplementsMenu() {
+        return dietProteinOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getMassGainersOptionInSportSupplementsMenu() {
+        return massGainersOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getCreatineMonohydrateOptionInSportSupplementsMenu() {
+        return creatineMonohydrateOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getCreatineBlendsOptionInSportSupplementsMenu() {
+        return creatineBlendsOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getbCAAOptionInSportSupplementsMenu() {
+        return bCAAOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getEAAOptionInSportSupplementsMenu() {
+        return eAAOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getArginineOptionInSportSupplementsMenu() {
+        return arginineOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getBetaAlanineOptionInSportSupplementsMenu() {
+        return betaAlanineOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getHMBOptionInSportSupplementsMenu() {
+        return hMBOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getAminoAcidPowdersOptionInSportSupplementsMenu() {
+        return aminoAcidPowdersOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getAminoAcidPillsOptionInSportSupplementsMenu() {
+        return aminoAcidPillsOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getCitrullineOptionInSportSupplementsMenu() {
+        return citrullineOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getAminoAcidLiquidsOptionInSportSupplementsMenu() {
+        return aminoAcidLiquidsOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getTestosteroneBoostersOptionInSportSupplementsMenu() {
+        return testosteroneBoostersOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getGhBoostersOptionInSportSupplementsMenu() {
+        return ghBoostersOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getStimulantWeightLossOptionInSportSupplementsMenu() {
+        return stimulantWeightLossOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getNonStimulantWeightLossOptionInSportSupplementsMenu() {
+        return nonStimulantWeightLossOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getMealReplacementsOptionInSportSupplementsMenu() {
+        return mealReplacementsOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getMetabolismSupportOptionInSportSupplementsMenu() {
+        return metabolismSupportOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getToningCreamsOptionInSportSupplementsMenu() {
+        return toningCreamsOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getMctOptionInSportSupplementsMenu() {
+        return mctOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getGlutamineOptionInSportSupplementsMenu() {
+        return glutamineOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getRecoveryBlendOptionInSportSupplementsMenu() {
+        return recoveryBlendOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getElectrolytesAndHydrationOptionInSportSupplementsMenu() {
+        return electrolytesAndHydrationOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getCarbohydratePowdersOptionInSportSupplementsMenu() {
+        return carbohydratePowdersOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getStimulantEnergyOptionInSportSupplementsMenu() {
+        return stimulantEnergyOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getNonStimulantEnergyOptionInSportSupplementsMenu() {
+        return nonStimulantEnergyOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getGamingEssentialsOptionInSportSupplementsMenu() {
+        return gamingEssentialsOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getFeaturedOptionInVitaminsAndHealthMenu() {
+        return featuredOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getAliveVitaminsOptionInVitaminsAndHealthMenu() {
+        return aliveVitaminsOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getSexualHealthOptionInVitaminsAndHealthMenu() {
+        return sexualHealthOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getEssentialVitaminsOptionInVitaminsAndHealthMenu() {
+        return essentialVitaminsOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getFolicAcidOptionInVitaminsAndHealthMenu() {
+        return folicAcidOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getVitaminAOptionInVitaminsAndHealthMenu() {
+        return vitaminAOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getVitaminBOptionInVitaminsAndHealthMenu() {
+        return vitaminBOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getVitaminCOptionInVitaminsAndHealthMenu() {
+        return vitaminCOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getVitaminDOptionInVitaminsAndHealthMenu() {
+        return vitaminDOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getVitaminEOptionInVitaminsAndHealthMenu() {
+        return vitaminEOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getVitaminKOptionInVitaminsAndHealthMenu() {
+        return vitaminKOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getMultiVitaminsOptionInVitaminsAndHealthMenu() {
+        return multiVitaminsOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getVitaminsForKidsOptionInVitaminsAndHealthMenu() {
+        return vitaminsForKidsOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getVitaminsForMenOptionInVitaminsAndHealthMenu() {
+        return vitaminsForMenOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getVitaminsForWomenOptionInVitaminsAndHealthMenu() {
+        return vitaminsForWomenOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getBoneAndJointOptionInVitaminsAndHealthMenu() {
+        return boneAndJointOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getBoneHealthOptionInVitaminsAndHealthMenu() {
+        return boneHealthOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getJointHealthOptionInVitaminsAndHealthMenu() {
+        return jointHealthOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getBeautyOptionInVitaminsAndHealthMenu() {
+        return beautyOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getCollagenOptionInVitaminsAndHealthMenu() {
+        return collagenOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getHairSkinAndNailsOptionInVitaminsAndHealthMenu() {
+        return hairSkinAndNailsOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getFishOilOmegasOptionInVitaminsAndHealthMenu() {
+        return fishOilOmegasOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getFishOilOptionInVitaminsAndHealthMenu() {
+        return fishOilOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getOmega369OptionInVitaminsAndHealthMenu() {
+        return omega369OptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getHealthLifestyleOptionInVitaminsAndHealthMenu() {
+        return healthLifestyleOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getBrainSupportOptionInVitaminsAndHealthMenu() {
+        return brainSupportOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getDigestionOptionInVitaminsAndHealthMenu() {
+        return digestionOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getDetoxAndCleanseOptionInVitaminsAndHealthMenu() {
+        return detoxAndCleanseOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getEnergyFormulasOptionInVitaminsAndHealthMenu() {
+        return energyFormulasOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getSportVitaminsOptionInVitaminsAndHealthMenu() {
+        return sportVitaminsOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getHerbsOptionInVitaminsAndHealthMenu() {
+        return herbsOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getMineralsOptionInVitaminsAndHealthMenu() {
+        return mineralsOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getMensHealthOptionInVitaminsAndHealthMenu() {
+        return mensHealthOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getStressReliefOptionInVitaminsAndHealthMenu() {
+        return stressReliefOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getSleepSupportOptionInVitaminsAndHealthMenu() {
+        return sleepSupportOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getSuperFoodsOptionInVitaminsAndHealthMenu() {
+        return superFoodsOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getUrinaryTractSupportOptionInVitaminsAndHealthMenu() {
+        return urinaryTractSupportOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getHealthyDrinksOptionInVitaminsAndHealthMenu() {
+        return healthyDrinksOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getWomensHealthOptionInVitaminsAndHealthMenu() {
+        return womensHealthOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getPetsOptionInVitaminsAndHealthMenu() {
+        return petsOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getDigestiveSupportOptionInVitaminsAndHealthMenu() {
+        return digestiveSupportOptionInVitaminsAndHealthMenu;
+    }
+
+
+
+
+
+    public WebElement getAntioxidantsOptionInVitaminsAndHealthMenu() {
+        return antioxidantsOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getBloodSugarSupportOptionInVitaminsAndHealthMenu() {
+        return bloodSugarSupportOptionInVitaminsAndHealthMenu;
+    }
+
+
+
+    public WebElement getEyeHealthOptionInVitaminsAndHealthMenu() {
+        return eyeHealthOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getHormonesBalanceOptionInVitaminsAndHealthMenu() {
+        return hormonesBalanceOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getImmuneSupportOptionInVitaminsAndHealthMenu() {
+        return immuneSupportOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getWeightManagementOptionInVitaminsAndHealthMenu() {
+        return weightManagementOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getProbioticsOptionInVitaminsAndHealthMenu() {
+        return probioticsOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getAminoAcidOptionInVitaminsAndHealthMenu() {
+        return aminoAcidOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getCalciumOptionInVitaminsAndHealthMenu() {
+        return calciumOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getIronOptionInVitaminsAndHealthMenu() {
+        return ironOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getMagnesiumOptionInVitaminsAndHealthMenu() {
+        return magnesiumOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getMultimineralFormulasOptionInVitaminsAndHealthMenu() {
+        return multimineralFormulasOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getZincOptionInVitaminsAndHealthMenu() {
+        return zincOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getPotassiumOptionInVitaminsAndHealthMenu() {
+        return potassiumOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getDrinkableVitaminsOptionInVitaminsAndHealthMenu() {
+        return drinkableVitaminsOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getSupplementsMoreOptionInVitaminsAndHealthMenu() {
+        return supplementsMoreOptionInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getHealthyFoodOption() {
+        return healthyFoodOption;
+    }
+
+    public WebElement getGroceryOptionInHealthyFoodMenu() {
+        return groceryOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getBakingAndCookingOptionInHealthyFoodMenu() {
+        return bakingAndCookingOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getCannedOptionInHealthyFoodMenu() {
+        return cannedOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getCoffeeOptionInHealthyFoodMenu() {
+        return coffeeOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getCondimentsOptionInHealthyFoodMenu() {
+        return condimentsOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getMilkAndCreamOptionInHealthyFoodMenu() {
+        return milkAndCreamOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getNutsAndOatsOptionInHealthyFoodMenu() {
+        return nutsAndOatsOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getOilsOptionInHealthyFoodMenu() {
+        return oilsOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getPastaOptionInHealthyFoodMenu() {
+        return pastaOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getRiceAndGrainsOptionInHealthyFoodMenu() {
+        return riceAndGrainsOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getSeasoningsAndSpicesOptionInHealthyFoodMenu() {
+        return seasoningsAndSpicesOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getSugarSweetenersOptionInHealthyFoodMenu() {
+        return sugarSweetenersOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getSyrupsOptionInHealthyFoodMenu() {
+        return syrupsOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getTeaAndHerbsOptionInHealthyFoodMenu() {
+        return teaAndHerbsOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getSuperfoodsOptionInHealthyFoodMenu() {
+        return superfoodsOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getReadyMixesOptionInHealthyFoodMenu() {
+        return readyMixesOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getBreakfastAndCerealOptionInHealthyFoodMenu() {
+        return breakfastAndCerealOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getReadyToDrinkOptionInHealthyFoodMenu() {
+        return readyToDrinkOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getAminoAndBcaasOptionInHealthyFoodMenu() {
+        return aminoAndBcaasOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getEnergyDrinksOptionInHealthyFoodMenu() {
+        return energyDrinksOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getProteinShakesOptionInHealthyFoodMenu() {
+        return proteinShakesOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getElectrolytesAndHydrationOptionInHealthyFoodMenu() {
+        return electrolytesAndHydrationOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getHealthySnacksOptionInHealthyFoodMenu() {
+        return healthySnacksOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getProteinBarsOptionInHealthyFoodMenu() {
+        return proteinBarsOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getCookiesOptionInHealthyFoodMenu() {
+        return cookiesOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getChipsOptionInHealthyFoodMenu() {
+        return chipsOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getBrowniesAndPancakesOptionInHealthyFoodMenu() {
+        return browniesAndPancakesOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getSnackBarsOptionInHealthyFoodMenu() {
+        return snackBarsOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getSpreadsOptionInHealthyFoodMenu() {
+        return spreadsOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getOtherHealthySnacksOptionInHealthyFoodMenu() {
+        return otherHealthySnacksOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getReadyToEatOptionInHealthyFoodMenu() {
+        return readyToEatOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getHealthyMealsOptionInHealthyFoodMenu() {
+        return healthyMealsOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getFeaturedOptionInHealthyFoodMenu() {
+        return featuredOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getHealthyMealReplacementOptionInHealthyFoodMenu() {
+        return healthyMealReplacementOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getProteinCoffeeOptionInHealthyFoodMenu() {
+        return proteinCoffeeOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getCandiesOptionInHealthyFoodMenu() {
+        return candiesOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getFlavoringAgentsOptionInHealthyFoodMenu() {
+        return flavoringAgentsOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getKetoSnacksOptionInHealthyFoodMenu() {
+        return ketoSnacksOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getManukaHoneyOptionInHealthyFoodMenu() {
+        return manukaHoneyOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getMeatSnacksOptionInHealthyFoodMenu() {
+        return meatSnacksOptionInHealthyFoodMenu;
+    }
+
+    public WebElement getMenOptionInSportsMenu() {
+        return menOptionInSportsMenu;
+    }
+
+    public WebElement getClothingInSportsMenu() {
+        return clothingInSportsMenu;
+    }
+
+    public WebElement getTopsInSportsMenu() {
+        return topsInSportsMenu;
+    }
+
+    public WebElement getPantsInSportsMenu() {
+        return pantsInSportsMenu;
+    }
+
+    public WebElement getShortsInSportsMenu() {
+        return shortsInSportsMenu;
+    }
+
+    public WebElement getJacketsAndCoatsInSportsMenu() {
+        return jacketsAndCoatsInSportsMenu;
+    }
+
+    public WebElement getSafetyMasksInSportsMenu() {
+        return safetyMasksInSportsMenu;
+    }
+
+    public WebElement getFootwearInSportsMenu() {
+        return footwearInSportsMenu;
+    }
+
+    public WebElement getSneakersInSportsMenu() {
+        return sneakersInSportsMenu;
+    }
+
+    public WebElement getTrainingShoesInSportsMenu() {
+        return trainingShoesInSportsMenu;
+    }
+
+    public WebElement getRunningShoesInSportsMenu() {
+        return runningShoesInSportsMenu;
+    }
+
+    public WebElement getHikingShoesInSportsMenu() {
+        return hikingShoesInSportsMenu;
+    }
+
+    public WebElement getAccessoriesInSportsMenu() {
+        return accessoriesInSportsMenu;
+    }
+
+    public WebElement getGlovesInSportsMenu() {
+        return glovesInSportsMenu;
+    }
+
+    public WebElement getBeltsInSportsMenu() {
+        return beltsInSportsMenu;
+    }
+
+    public WebElement getCapsAndHatsInSportsMenu() {
+        return capsAndHatsInSportsMenu;
+    }
+
+    public WebElement getCapInSportsMenu() {
+        return capInSportsMenu;
+    }
+
+    public WebElement getShakersInSportsMenu() {
+        return shakersInSportsMenu;
+    }
+
+    public WebElement getWaterBottlesInSportsMenu() {
+        return waterBottlesInSportsMenu;
+    }
+
+    public WebElement getBugHereInSportsMenu() {
+        return bugHereInSportsMenu;
+    }
+
+    public WebElement getSocksInSportsMenu() {
+        return socksInSportsMenu;
+    }
+
+    public WebElement getTowelsInSportsMenu() {
+        return towelsInSportsMenu;
+    }
+
+    public WebElement getSunglassesInSportsMenu() {
+        return sunglassesInSportsMenu;
+    }
+
+    public WebElement getMixerInSportsMenu() {
+        return mixerInSportsMenu;
+    }
+
+    public WebElement getBagsInSportsMenu() {
+        return bagsInSportsMenu;
+    }
+
+    public WebElement getBackPacksInSportsMenu() {
+        return backPacksInSportsMenu;
+    }
+
+    public WebElement getShoulderBagsInSportsMenu() {
+        return shouldersBagsInSportsMenu;
+    }
+
+    public WebElement getWearableTechInSportsMenu() {
+        return wearableTechInSportsMenu;
+    }
+
+    public WebElement getWatchesInSportsMenu() {
+        return watchesInSportsMenu;
+    }
+
+    public WebElement getGamingAccessoriesInSportsMenu() {
+        return gamingAccessoriesInSportsMenu;
+    }
+
+    public WebElement geEquipmentInSportsMenu() {
+        return equipmentInSportsMenu;
+    }
+
+    public WebElement getGripsInSportsMenu() {
+        return gripsInSportsMenu;
+    }
+
+    public WebElement getBallsInSportsMenu() {
+        return ballsInSportsMenu;
+    }
+
+    public WebElement getRollersInSportsMenu() {
+        return rollersInSportsMenu;
+    }
+
+    public WebElement getWeightsInSportsMenu() {
+        return weightsInSportsMenu;
+    }
+
+    public WebElement getWomenInSportsMenu() {
+        return womenInSportsMenu;
+    }
+
+    public WebElement getWomenClothingInSportsMenu() {
+        return womenClothingInSportsMenu;
+    }
+
+    public WebElement getWomenTopsInSportsMenu() {
+        return womenTopsInSportsMenu;
+    }
+
+    public WebElement getWomenShortsInSportsMenu() {
+        return womenShortsInSportsMenu;
+    }
+
+    public WebElement getWomenSafetyMasksInSportsMenu() {
+        return womenSafetyMasksInSportsMenu;
+    }
+
+    public WebElement getWomenAccessoriesInSportsMenu() {
+        return womenAccessoriesInSportsMenu;
+    }
+
+    public WebElement getWomenGlovesInSportsMenu() {
+        return womenGlovesInSportsMenu;
+    }
+
+    public WebElement getBugGlovesInSportsMenu() {
+        return glovesBugCategoryInSportsMenu;
+    }
+
+    public WebElement getWomenCapsAndHatsInSportsMenu() {
+        return womenCapsAndHatsInSportsMenu;
+    }
+
+    public WebElement getWomenCapsInSportsMenu() {
+        return womenCapsInSportsMenu;
+    }
+
+    public WebElement getWomenShakersInSportsMenu() {
+        return womenShakersInSportsMenu;
+    }
+
+    public WebElement getWomenWaterBottlesInSportsMenu() {
+        return womenWaterBottlesInSportsMenu;
+    }
+
+    public WebElement getWomenSocksInSportsMenu() {
+        return womenSocksInSportsMenu;
+    }
+
+    public WebElement getWomenTowelsInSportsMenu() {
+        return womenTowelsInSportsMenu;
+    }
+
+    public WebElement getWomenSunglassesInSportsMenu() {
+        return womenSunglassesInSportsMenu;
+    }
+
+    public WebElement getWomenMixerInSportsMenu() {
+        return womenMixerInSportsMenu;
+    }
+
+    public WebElement getWomenBagsInSportsMenu() {
+        return womenBagsInSportsMenu;
+    }
+
+    public WebElement getWomenBackPacksInSportsMenu() {
+        return womenBackPacksInSportsMenu;
+    }
+
+    public WebElement getWomenSholdersBagsInSportsMenu() {
+        return womenSholdersBagsInSportsMenu;
+    }
+
+    public WebElement getWomenBeltsInSportsMenu() {
+        return womenBeltsInSportsMenu;
+    }
+
+
+
+    public WebElement getOptimumNutritionOptionInByBrandMenu() {
+        return optimumNutritionOptionInByBrandMenu;
+    }
+
+    public WebElement getMuscletechOptionInByBrandMenu() {
+        return muscletechOptionInByBrandMenu;
+    }
+
+    public WebElement getCellucorOptionInByBrandMenu() {
+        return cellucorOptionInByBrandMenu;
+    }
+
+    public WebElement getSupplementsOptionInByBrandMenu() {
+        return supplementsOptionInByBrandMenu;
+    }
+
+    public WebElement getDymatizeOptionInByBrandMenu() {
+        return dymatizeOptionInByBrandMenu;
+    }
+
+    public WebElement getXtendOptionInByBrandMenu() {
+        return xtendOptionInByBrandMenu;
+    }
+
+    public WebElement getAnimalNutritionOptionInByBrandMenu() {
+        return animalNutritionOptionInByBrandMenu;
+    }
+
+    public WebElement getMusclePharmOptionInByBrandMenu() {
+        return musclePharmOptionInByBrandMenu;
+    }
+
+    public WebElement getUniversalNutritionOptionInByBrandMenu() {
+        return universalNutritionOptionInByBrandMenu;
+    }
+
+    public WebElement getBsnOptionInByBrandMenu() {
+        return bsnOptionInByBrandMenu;
+    }
+
+    public WebElement getEhplabsOptionInByBrandMenu() {
+        return ehplabsOptionInByBrandMenu;
+    }
+
+    public WebElement getJymSupplementScienceOptionInByBrandMenu() {
+        return jymSupplementScienceOptionInByBrandMenu;
+    }
+
+    public WebElement getBpiSportsOptionInByBrandMenu() {
+        return bpiSportsOptionInByBrandMenu;
+    }
+
+    public WebElement getRussianBearOptionInByBrandMenu() {
+        return russianBearOptionInByBrandMenu;
+    }
+
+    public WebElement getIsopureOptionInByBrandMenu() {
+        return isopureOptionInByBrandMenu;
+    }
+
+    public WebElement getOneUpNutritionOptionInByBrandMenu() {
+        return oneUpNutritionOptionInByBrandMenu;
+    }
+
+    public WebElement getMusclemedsOptionInByBrandMenu() {
+        return musclemedsOptionInByBrandMenu;
+    }
+
+    public WebElement gethMhpOptionInByBrandMenu() {
+        return mhpOptionInByBrandMenu;
+    }
+
+    public WebElement getEvlNutritionOptionInByBrandMenu() {
+        return evlNutritionOptionInByBrandMenu;
+    }
+
+    public WebElement getNlaForHerOptionInByBrandMenu() {
+        return nlaForHerOptionInByBrandMenu;
+    }
+
+    public WebElement getMuscleNutritionOptionInByBrandMenu() {
+        return muscleNutritionOptionInByBrandMenu;
+    }
+
+    public WebElement getGatNutritionOptionInByBrandMenu() {
+        return gatNutritionOptionInByBrandMenu;
+    }
+
+    public WebElement getLabradaOptionInByBrandMenu() {
+        return labradaOptionInByBrandMenu;
+    }
+
+    public WebElement getOrgainOptionInByBrandMenu() {
+        return orgainOptionInByBrandMenu;
+    }
+
+    public WebElement getNutrexResearchOptionInByBrandMenu() {
+        return nutrexResearchOptionInByBrandMenu;
+    }
+
+    public WebElement getScitecNutritionOptionInByBrandMenu() {
+        return scitecNutritionOptionInByBrandMenu;
+    }
+
+    public WebElement getProlabOptionInByBrandMenu() {
+        return brolabOptionInByBrandMenu;
+    }
+
+    public WebElement getSotruOptionInByBrandMenu() {
+        return sotruOptionInByBrandMenu;
+    }
+
+    public WebElement getDivineHealthOptionInByBrandMenu() {
+        return divineHealthOptionInByBrandMenu;
+    }
+
+    public WebElement getGhostOptionInByBrandMenu() {
+        return ghostOptionInByBrandMenu;
+    }
+
+    public WebElement getWomensBestOptionInByBrandMenu() {
+        return womensBestOptionInByBrandMenu;
+    }
+
+    public WebElement getEfxSportsOptionInByBrandMenu() {
+        return efxSportsOptionInByBrandMenu;
+    }
+
+    public WebElement getBasixOptionInByBrandMenu() {
+        return basixOptionInByBrandMenu;
+    }
+
+    public WebElement getAk47OptionInByBrandMenu() {
+        return ak47OptionInByBrandMenu;
+    }
+
+    public WebElement getNfSportsOptionInByBrandMenu() {
+        return nfSportsOptionInByBrandMenu;
+    }
+
+    public WebElement getFullyDosedOptionInByBrandMenu() {
+        return fullyDosedOptionInByBrandMenu;
+    }
+
+    public WebElement getFivePercentNutritionOptionInByBrandMenu() {
+        return fivePercentNutritionOptionInByBrandMenu;
+    }
+
+    public WebElement getOlimpSportNutritionOptionInByBrandMenu() {
+        return olimpSportNutritionOptionInByBrandMenu;
+    }
+
+    public WebElement getJnxSportsOptionInByBrandMenu() {
+        return jnxSportsOptionInByBrandMenu;
+    }
+
+    public WebElement getFitAndLeanOptionInByBrandMenu() {
+        return fitAndLeanOptionInByBrandMenu;
+    }
+
+    public WebElement getGymqueenOptionInByBrandMenu() {
+        return gymqueenOptionInByBrandMenu;
+    }
+
+    public WebElement getThePackOptionInByBrandMenu() {
+        return thePackOptionInByBrandMenu;
+    }
+
+    public WebElement getBetancourtNutritionOptionInByBrandMenu() {
+        return betancourtNutritionOptionInByBrandMenu;
+    }
+
+    public WebElement getYallaProteinOptionInByBrandMenu() {
+        return yallaProteinOptionInByBrandMenu;
+    }
+
+    public WebElement getProteinWorldOptionInByBrandMenu() {
+        return proteinWorldOptionInByBrandMenu;
+    }
+
+    public WebElement getObviOptionInByBrandMenu() {
+        return obviOptionInByBrandMenu;
+    }
+
+    public WebElement getNaughtyBoyOptionInByBrandMenu() {
+        return naughtyBoyOptionInByBrandMenu;
+    }
+
+    public WebElement getSteelFitOptionInByBrandMenu() {
+        return steelFitOptionInByBrandMenu;
+    }
+
+    public WebElement getUsnOptionInByBrandMenu() {
+        return usnOptionInByBrandMenu;
+    }
+
+    public WebElement getXGamerOptionInByBrandMenu() {
+        return xGamerOptionInByBrandMenu;
+    }
+
+    public WebElement getInnosuppsOptionInByBrandMenu() {
+        return innosuppsOptionInByBrandMenu;
+    }
+
+    public WebElement getOutbreakNutritionOptionInByBrandMenu() {
+        return outbreakNutritionOptionInByBrandMenu;
+    }
+
+    public WebElement getInsaneLabzOptionInByBrandMenu() {
+        return insaneLabzOptionInByBrandMenu;
+    }
+
+    public WebElement getAllMaxOptionInByBrandMenu() {
+        return allMaxOptionInByBrandMenu;
+    }
+
+    public WebElement getGlaxonOptionInByBrandMenu() {
+        return glaxonOptionInByBrandMenu;
+    }
+
+    public WebElement getRedcon1OptionInByBrandMenu() {
+        return redcon1OptionInByBrandMenu;
+    }
+
+    public WebElement getPandaSupplementsOptionInByBrandMenu() {
+        return pandaSupplementsOptionInByBrandMenu;
+    }
+
+    public WebElement getNutrendOptionInByBrandMenu() {
+        return nutrendOptionInByBrandMenu;
+    }
+
+    public WebElement getOstrovitOptionInByBrandMenu() {
+        return ostrovitOptionInByBrandMenu;
+    }
+
+    public WebElement getBetteryOptionInByBrandMenu() {
+        return betteryOptionInByBrandMenu;
+    }
+
+    public WebElement getHealthyFoodSnacksAndMealReplacementOptionInByBrandMenu() {
+        return healthyFoodSnacksAndMealReplacementOptionInByBrandMenu;
+    }
+
+    public WebElement getWowHydrateOptionInByBrandMenu() {
+        return wowHydrateOptionInByBrandMenu;
+    }
+
+    public WebElement getQuestNutritionOptionInByBrandMenu() {
+        return questNutritionOptionInByBrandMenu;
+    }
+
+    public WebElement getGrenadeOptionInByBrandMenu() {
+        return grenadeOptionInByBrandMenu;
+    }
+
+    public WebElement getReignEnergyOptionInByBrandMenu() {
+        return reignEnergyOptionInByBrandMenu;
+    }
+
+    public WebElement getMonsterEnergyOptionInByBrandMenu() {
+        return monsterEnergyOptionInByBrandMenu;
+    }
+
+    public WebElement getThirdEnergyOptionInByBrandMenu() {
+        return thirdEnergyOptionInByBrandMenu;
+    }
+
+    public WebElement getDownArrowKeyInSportSupplementsMenu() {
+        return downArrowKeyInSportSupplementsMenu;
+    }
+
+    public WebElement getDownArrowKeyInVitaminsAndHealthMenu() {
+        return downArrowKeyInVitaminsAndHealthMenu;
+    }
+
+    public WebElement getDownArrowKeyInHealthyFoodMenu() {
+        return downArrowKeyInHealthyFoodMenu;
+    }
+
+    public WebElement getDownArrowKeyInSportsMenu() {
+        return downArrowKeyInSportsMenu;
+    }
+
+    public WebElement getSportSupplementsMainMenu() {
+        return sportSupplementsMainMenu;
+    }
+
+    public WebElement getProteinOptionInSportSupplementsMainMenu() {
+        return proteinOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getCreatineOptionInSportSupplementsMainMenu() {
+        return creatineOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getAminoAcidsOptionInSportSupplementsMainMenu() {
+        return aminoAcidsOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getMuscleBoostersOptionInSportSupplementsMainMenu() {
+        return muscleBoostersOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getRecoveryOptionInSportSupplementsMainMenu() {
+        return recoveryOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getCarbohydratesOptionInSportSupplementsMainMenu() {
+        return carbohydratesOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getEnergyAndEnduranceOptionInSportSupplementsMainMenu() {
+        return energyAndEnduranceOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getGamingAndFocusOptionInSportSupplementsMainMenu() {
+        return gamingAndFocusOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getWheyProteinOptionInSportSupplementsMainMenu() {
+        return wheyProteinOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getWheyProteinIsolateOptionInSportSupplementsMainMenu() {
+        return wheyProteinIsolateOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getProteinBlendsOptionInSportSupplementsMainMenu() {
+        return proteinBlendsOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getNonDairyProteinOptionInSportSupplementsMainMenu() {
+        return nonDairyProteinOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getCaseinProteinOptionInSportSupplementsMainMenu() {
+        return caseinProteinOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getDietProteinOptionInSportSupplementsMainMenu() {
+        return dietProteinOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getMassGainersOptionInSportSupplementsMainMenu() {
+        return massGainersOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getWeightManagementOptionInSportSupplementsMainMenu() {
+        return weightManagementOptionInSportSupplementsMainMenu;
+    }
+
+    public List<WebElement> getSportsSupplementMainMenuList() {
+        return sportsSupplementsMainMenuList;
+    }
+
+    public WebElement getCreatineMonohydrateOptionInSportSupplementsMainMenu() {
+        return creatineMonohydrateOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getCreatineBlendsOptionInSportSupplementsMainMenu() {
+        return creatineBlendsOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getbCAAOptionInSportSupplementsMainMenu() {
+        return bCAAOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement geteAAOptionInSportSupplementsMainMenu() {
+        return eAAOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getArginineOptionInSportSupplementsMainMenu() {
+        return arginineOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getBetaAlanineOptionInSportSupplementsMainMenu() {
+        return betaAlanineOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement gethMBOptionInSportSupplementsMainMenu() {
+        return hMBOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getAminoAcidPowdersOptionInSportSupplementsMainMenu() {
+        return aminoAcidPowdersOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getAminoAcidPillsOptionInSportSupplementsMainMenu() {
+        return aminoAcidPillsOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getCitrullineOptionInSportSupplementsMainMenu() {
+        return citrullineOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getAminoAcidLiquidsOptionInSportSupplementsMainMenu() {
+        return aminoAcidLiquidsOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getTestosteroneBoostersOptionInSportSupplementsMainMenu() {
+        return testosteroneBoostersOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getGhBoostersOptionInSportSupplementsMainMenu() {
+        return ghBoostersOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getStimulantWeightLossOptionInSportSupplementsMainMenu() {
+        return stimulantWeightLossOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getNonStimulantWeightLossOptionInSportSupplementsMainMenu() {
+        return nonStimulantWeightLossOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getMealReplacementsOptionInSportSupplementsMainMenu() {
+        return mealReplacementsOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getMetabolismSupportOptionInSportSupplementsMainMenu() {
+        return metabolismSupportOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getToningCreamsOptionInSportSupplementsMainMenu() {
+        return toningCreamsOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getMctOptionInSportSupplementsMainMenu() {
+        return mctOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getGlutamineOptionInSportSupplementsMainMenu() {
+        return glutamineOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getRecoveryBlendOptionInSportSupplementsMainMenu() {
+        return recoveryBlendOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getElectrolytesAndHydrationOptionInSportSupplementsMainMenu() {
+        return electrolytesAndHydrationOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getCarbohydratePowdersOptionInSportSupplementsMainMenu() {
+        return carbohydratePowdersOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getStimulantEnergyOptionInSportSupplementsMainMenu() {
+        return stimulantEnergyOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getNonStimulantEnergyOptionInSportSupplementsMainMenu() {
+        return nonStimulantEnergyOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getGamingEssentialsOptionInSportSupplementsMainMenu() {
+        return gamingEssentialsOptionInSportSupplementsMainMenu;
+    }
+
+    public WebElement getFeaturedOptionInVitaminsAndHealthMainMenu() {
+        return featuredOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getAliveVitaminsOptionInVitaminsAndHealthMainMenu() {
+        return aliveVitaminsOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getSexualHealthOptionInVitaminsAndHealthMainMenu() {
+        return sexualHealthOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getEssentialVitaminsOptionInVitaminsAndHealthMainMenu() {
+        return essentialVitaminsOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getFolicAcidOptionInVitaminsAndHealthMainMenu() {
+        return folicAcidOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getVitaminAOptionInVitaminsAndHealthMainMenu() {
+        return vitaminAOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getVitaminBOptionInVitaminsAndHealthMainMenu() {
+        return vitaminBOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getVitaminCOptionInVitaminsAndHealthMainMenu() {
+        return vitaminCOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getVitaminDOptionInVitaminsAndHealthMainMenu() {
+        return vitaminDOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getVitaminEOptionInVitaminsAndHealthMainMenu() {
+        return vitaminEOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getVitaminKOptionInVitaminsAndHealthMainMenu() {
+        return vitaminKOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getMultiVitaminsOptionInVitaminsAndHealthMainMenu() {
+        return multiVitaminsOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getVitaminsForKidsOptionInVitaminsAndHealthMainMenu() {
+        return vitaminsForKidsOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getVitaminsForMenOptionInVitaminsAndHealthMainMenu() {
+        return vitaminsForMenOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getVitaminsForWomenOptionInVitaminsAndHealthMainMenu() {
+        return vitaminsForWomenOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getBoneAndJointOptionInVitaminsAndHealthMainMenu() {
+        return boneAndJointOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getBoneHealthOptionInVitaminsAndHealthMainMenu() {
+        return boneHealthOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getJointHealthOptionInVitaminsAndHealthMainMenu() {
+        return jointHealthOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getBeautyOptionInVitaminsAndHealthMainMenu() {
+        return beautyOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getCollagenOptionInVitaminsAndHealthMainMenu() {
+        return collagenOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getHairSkinAndNailsOptionInVitaminsAndHealthMainMenu() {
+        return hairSkinAndNailsOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getFishOilOmegasOptionInVitaminsAndHealthMainMenu() {
+        return fishOilOmegasOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getFishOilOptionInVitaminsAndHealthMainMenu() {
+        return fishOilOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getOmega369OptionInVitaminsAndHealthMainMenu() {
+        return omega369OptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getHealthLifestyleOptionInVitaminsAndHealthMainMenu() {
+        return healthLifestyleOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getAntioxidantsOptionInVitaminsAndHealthMainMenu() {
+        return antioxidantsOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getBloodSugarSupportOptionInVitaminsAndHealthMainMenu() {
+        return bloodSugarSupportOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getBrainSupportOptionInVitaminsAndHealthMainMenu() {
+        return brainSupportOptionInVitaminsAndHealthMainMenu;
+    }
+
+
+
+    public WebElement getDigestionOptionInVitaminsAndHealthMainMenu() {
+        return digestionOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getDetoxAndCleanseOptionInVitaminsAndHealthMainMenu() {
+        return detoxAndCleanseOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getEnergyFormulasOptionInVitaminsAndHealthMainMenu() {
+        return energyFormulasOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getEyeHealthOptionInVitaminsAndHealthMainMenu() {
+        return eyeHealthOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getSportVitaminsOptionInVitaminsAndHealthMainMenu() {
+        return sportVitaminsOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getAminoAcidOptionInVitaminsAndHealthMainMenu() {
+        return aminoAcidOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getHerbsOptionInVitaminsAndHealthMainMenu() {
+        return herbsOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getHormonesBalanceOptionInVitaminsAndHealthMainMenu() {
+        return hormonesBalanceOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getMineralsOptionInVitaminsAndHealthMainMenu() {
+        return mineralsOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getCalciumOptionInVitaminsAndHealthMainMenu() {
+        return calciumOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getIronOptionInVitaminsAndHealthMainMenu() {
+        return ironOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getMagnesiumOptionInVitaminsAndHealthMainMenu() {
+        return magnesiumOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getMultimineralFormulasOptionInVitaminsAndHealthMainMenu() {
+        return multimineralFormulasOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getZincOptionInVitaminsAndHealthMainMenu() {
+        return zincOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getPotassiumOptionInVitaminsAndHealthMainMenu() {
+        return potassiumOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getImmuneSupportOptionInVitaminsAndHealthMainMenu() {
+        return immuneSupportOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getMensHealthOptionInVitaminsAndHealthMainMenu() {
+        return mensHealthOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getStressReliefOptionInVitaminsAndHealthMainMenu() {
+        return stressReliefOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getSleepSupportOptionInVitaminsAndHealthMainMenu() {
+        return sleepSupportOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getSuperFoodsOptionInVitaminsAndHealthMainMenu() {
+        return superFoodsOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getUrinaryTractSupportOptionInVitaminsAndHealthMainMenu() {
+        return urinaryTractSupportOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getWeightManagementOptionInVitaminsAndHealthMainMenu() {
+        return weightManagementOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getHealthyDrinksOptionInVitaminsAndHealthMainMenu() {
+        return healthyDrinksOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getDrinkableVitaminsOptionInVitaminsAndHealthMainMenu() {
+        return drinkableVitaminsOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getWomensHealthOptionInVitaminsAndHealthMainMenu() {
+        return womensHealthOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getPetsOptionInVitaminsAndHealthMainMenu() {
+        return petsOptionInVitaminsAndHealthMianMenu;
+    }
+
+    public WebElement getSupplementsMoreOptionInVitaminsAndHealthMainMenu() {
+        return supplementsMoreOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getDigestiveSupportOptionInVitaminsAndHealthMainMenu() {
+        return digestiveSupportOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getProbioticsOptionInVitaminsAndHealthMainMenu() {
+        return probioticsOptionInVitaminsAndHealthMainMenu;
+    }
+
+    public WebElement getVitaminsAndHealthMainMenu() {
+        return vitaminsAndHealthMainMenu;
+    }
+
+    public List<WebElement> getVitaminsAndHealthMainMenuList() {
+        return VitaminsAndHealthMainMenuList;
+    }
+
     ////HealthyFood Page
-    public WebElement getHealthyFoodMainMenu() {return healthyFoodMainMenu;}
-    public WebElement getGroceryOptionInHealthyFoodMainMenu() {return groceryOptionInHealthyFoodMainMenu;}
-    public WebElement getBakingAndCookingOptionInHealthyFoodMainMenu() {return bakingAndCookingOptionInHealthyFoodMainMenu;}
-    public WebElement getCannedOptionInHealthyFoodMainMenu() {return cannedOptionInHealthyFoodMainMenu;}
-    public WebElement getCoffeeOptionInHealthyFoodMainMenu() {return coffeeOptionInHealthyFoodMainMenu;}
-    public WebElement getCondimentsOptionInHealthyFoodMainMenu() {return condimentsOptionInHealthyFoodMainMenu;}
-    public WebElement getMilkAndCreamOptionInHealthyFoodMainMenu() {return milkAndCreamOptionInHealthyFoodMainMenu;}
-    public WebElement getNutsAndOatsOptionInHealthyFoodMainMenu() {return nutsAndOatsOptionInHealthyFoodMainMenu;}
-    public WebElement getOilsOptionInHealthyFoodMainMenu() {return oilsOptionInHealthyFoodMainMenu;}
-    public WebElement getPastaOptionInHealthyFoodMainMenu() {return pastaOptionInHealthyFoodMainMenu;}
-    public WebElement getRiceAndGrainsOptionInHealthyFoodMainMenu() {return riceAndGrainsOptionInHealthyFoodMainMenu;}
-    public WebElement getSeasoningsAndSpicesOptionInHealthyFoodMainMenu() {return seasoningsAndSpicesOptionInHealthyFoodMainMenu;}
-    public WebElement getSugarSweetenersOptionInHealthyFoodMainMenu() {return sugarSweetenersOptionInHealthyFoodMainMenu;}
-    public WebElement getSyrupsOptionInHealthyFoodMainMenu() {return syrupsOptionInHealthyFoodMainMenu;}
-    public WebElement getTeaAndHerbsOptionInHealthyFoodMainMenu() {return teaAndHerbsOptionInHealthyFoodMainMenu;}
-    public WebElement getSuperfoodsOptionInHealthyFoodMainMenu() {return superfoodsOptionInHealthyFoodMainMenu;}
-    public WebElement getReadyMixesOptionInHealthyFoodMainMenu() {return readyMixesOptionInHealthyFoodMainMenu;}
-    public WebElement getBreakfastAndCerealOptionInHealthyFoodMainMenu() {return breakfastAndCerealOptionInHealthyFoodMainMenu;}
-    public WebElement getReadyToDrinkOptionInHealthyFoodMainMenu() {return readyToDrinkOptionInHealthyFoodMainMenu;}
-    public WebElement getAminoAndBcaasOptionInHealthyFoodMainMenu() {return aminoAndBcaasOptionInHealthyFoodMainMenu;}
-    public WebElement getEnergyDrinksOptionInHealthyFoodMainMenu() {return energyDrinksOptionInHealthyFoodMainMenu;}
-    public WebElement getProteinShakesOptionInHealthyFoodMainMenu() {return proteinShakesOptionInHealthyFoodMainMenu;}
-    public WebElement getElectrolytesAndHydrationOptionInHealthyFoodMainMenu() {return electrolytesAndHydrationOptionInHealthyFoodMainMenu;}
-    public WebElement getHealthySnacksOptionInHealthyFoodMainMenu() {return healthySnacksOptionInHealthyFoodMainMenu;}
-    public WebElement getProteinBarsOptionInHealthyFoodMainMenu() {return proteinBarsOptionInHealthyFoodMainMenu;}
-    public WebElement getCookiesOptionInHealthyFoodMainMenu() {return cookiesOptionInHealthyFoodMainMenu;}
-    public WebElement getChipsOptionInHealthyFoodMainMenu() {return chipsOptionInHealthyFoodMainMenu;}
-    public WebElement getBrowniesAndPancakesOptionInHealthyFoodMainMenu() {return browniesAndPancakesOptionInHealthyFoodMainMenu;}
-    public WebElement getSnackBarsOptionInHealthyFoodMainMenu() {return snackBarsOptionInHealthyFoodMainMenu;}
-    public WebElement getSpreadsOptionInHealthyFoodMainMenu() {return spreadsOptionInHealthyFoodMainMenu;}
-    public WebElement getOtherHealthySnacksOptionInHealthyFoodMainMenu() {return otherHealthySnacksOptionInHealthyFoodMainMenu;}
-    public WebElement getReadyToEatOptionInHealthyFoodMainMenu() {return readyToEatOptionInHealthyFoodMainMenu;}
-    public WebElement getHealthyMealsOptionInHealthyFoodMainMenu() {return healthyMealsOptionInHealthyFoodMainMenu;}
-    public WebElement getFeaturedOptionInHealthyFoodMainMenu() {return featuredOptionInHealthyFoodMainMenu;}
-    public WebElement getHealthyMealReplacementOptionInHealthyFoodMainMenu() {return healthyMealReplacementOptionInHealthyFoodMainMenu;}
-    public WebElement getProteinCoffeeOptionInHealthyFoodMainMenu() {return proteinCoffeeOptionInHealthyFoodMainMenu;}
-    public WebElement getCandiesOptionInHealthyFoodMainMenu() {return candiesOptionInHealthyFoodMainMenu;}
-    public WebElement getFlavoringAgentsOptionInHealthyFoodMainMenu() {return flavoringAgentsOptionInHealthyFoodMainMenu;}
-    public WebElement getKetoSnacksOptionInHealthyFoodMainMenu() {return ketoSnacksOptionInHealthyFoodMainMenu;}
-    public WebElement getManukaHoneyOptionInHealthyFoodMainMenu() {return manukaHoneyOptionInHealthyFoodMainMenu;}
-    public WebElement getMeatSnacksOptionInHealthyFoodMainMenu() {return meatSnacksOptionInHealthyFoodMainMenu;}
-    public List<WebElement> getHealthyFoodMainMenuList() {return healthyFoodMainMenuList;}
-    //Sports Main Menu
-    public WebElement getSportsMainMenu() {return sportsMainMenu;}
-    public List<WebElement> getSportsMainMenuList() {return sportsMainMenuList;}
-    public List<WebElement> getSportsSupplementsMainMenuList() {return sportsSupplementsMainMenuList;}
-    public WebElement getCountryList() {return countryList;}
-    public WebElement getAeCountry() {return aeCountry;}
-    public WebElement geteAAOptionInSportSupplementsMenu() {return eAAOptionInSportSupplementsMenu;}
-    public WebElement gethMBOptionInSportSupplementsMenu() {return hMBOptionInSportSupplementsMenu;}
-    public WebElement getShouldersBagsInSportsMenu() {return shouldersBagsInSportsMenu;}
-    public WebElement getEquipmentInSportsMenu() {return equipmentInSportsMenu;}
-    public WebElement getGlovesBugCategoryInSportsMenu() {return glovesBugCategoryInSportsMenu;}
-    public WebElement getMhpOptionInByBrandMenu() {return mhpOptionInByBrandMenu;}
-    public WebElement getBrolabOptionInByBrandMenu() {return brolabOptionInByBrandMenu;}
-    public WebElement getxGamerOptionInByBrandMenu() {return xGamerOptionInByBrandMenu;}
-    public WebElement getPetsOptionInVitaminsAndHealthMianMenu() {return petsOptionInVitaminsAndHealthMianMenu;}
-    public WebElement getMenOptionInSportsMainMenu() {return menOptionInSportsMainMenu;}
-    public WebElement getSportOptionInSportsMainMenu() {return sportOptionInSportsMainMenu;}
-    public WebElement getFootballOptionInSportsMainMenu() {return footballOptionInSportsMainMenu;}
-    public WebElement getBasketballOptionInSportsMainMenu() {return basketballOptionInSportsMainMenu;}
-    public WebElement getBaseballOptionInSportsMainMenu() {return baseballOptionInSportsMainMenu;}
-    public WebElement getRunningOptionInSportsMainMenu() {return runningOptionInSportsMainMenu;}
-    public WebElement getSwimmingOptionInSportsMainMenu() {return swimmingOptionInSportsMainMenu;}
-    public WebElement getYogaOptionInSportsMainMenu() {return yogaOptionInSportsMainMenu;}
-    public WebElement getFitnessAndTrainingOptionInSportsMainMenu() {return fitnessAndTrainingOptionInSportsMainMenu;}
-    public WebElement getFitnessEquipmentOptionInSportsMainMenu() {return fitnessEquipmentOptionInSportsMainMenu;}
-    public WebElement getSkippingRopesOptionInSportsMainMenu() {return skippingRopesOptionInSportsMainMenu;}
-    public WebElement getWeightBeltsOptionInSportsMainMenu() {return weightBeltsOptionInSportsMainMenu;}
-    public WebElement getScootersOptionInSportsMainMenu() {return scootersOptionInSportsMainMenu;}
-    public WebElement getTrainingAccessoriesOptionInSportsMainMenu() {return trainingAccessoriesOptionInSportsMainMenu;}
-    public WebElement getShakersAndBottlesOptionInSportsMainMenu() {return shakersAndBottlesOptionInSportsMainMenu;}
-    public WebElement getBagsOptionInSportsMainMenu() {return bagsOptionInSportsMainMenu;}
-    public WebElement getGlovesOptionInSportsMainMenu() {return glovesOptionInSportsMainMenu;}
-    public WebElement getBracesAndSleevesOptionInSportsMainMenu() {return bracesAndSleevesOptionInSportsMainMenu;}
-    public WebElement getMouthguardOptionInSportsMainMenu() {return mouthguardOptionInSportsMainMenu;}
-    public WebElement getApparelOptionInSportsMainMenu() {return apparelOptionInSportsMainMenu;}
-    public WebElement getSportswearOptionInSportsMainMenu() {return sportswearOptionInSportsMainMenu;}
-    public WebElement getPantsOptionInSportsMainMenu() {return pantsOptionInSportsMainMenu;}
-    public WebElement getShortsOptionInSportsMainMenu() {return shortsOptionInSportsMainMenu;}
-    public WebElement getHoodiesOptionInSportsMainMenu() {return hoodiesOptionInSportsMainMenu;}
-    public WebElement gettShirtsOptionInSportsMainMenu() {return tShirtsOptionInSportsMainMenu;}
-    public WebElement getTanksOptionInSportsMainMenu() {return TanksOptionInSportsMainMenu;}
-    public WebElement getFootwearOptionInSportsMainMenu() {return footwearOptionInSportsMainMenu;}
-    public WebElement getSneakersOptionInSportsMainMenu() {return sneakersOptionInSportsMainMenu;}
-    public WebElement getTrainingShoesOptionInSportsMainMenu() {return trainingShoesOptionInSportsMainMenu;}
-    public WebElement getRunnigShoesOptionInSportsMainMenu() {return runnigShoesOptionInSportsMainMenu;}
-    public WebElement getWomenOptionInSportsMainMenu() {return womenOptionInSportsMainMenu;}
-    public WebElement getWomenSportsTechOptionInSportsMainMenu() {return womenSportsTechOptionInSportsMainMenu;}
-    public WebElement getWomenWearableTechOptionInSportsMainMenu() {return womenWearableTechOptionInSportsMainMenu;}
-    public WebElement getWomenCamerasOptionInSportsMainMenu() {return womenCamerasOptionInSportsMainMenu;}
-    public WebElement getWomenPhoneAccessoriesOptionInSportsMainMenu() {return womenPhoneAccessoriesOptionInSportsMainMenu;}
-    public WebElement getWomenPersonalCareOptionInSportsMainMenu() {return womenPersonalCareOptionInSportsMainMenu;}
-    public WebElement getWomenShoweringOptionInSportsMainMenu() {return womenShoweringOptionInSportsMainMenu;}
-    public WebElement getWomenSkinCareOptionInSportsMainMenu() {return womenSkinCareOptionInSportsMainMenu;}
-    public WebElement getWomenBodyCareOptionInSportsMainMenu() {return womenBodyCareOptionInSportsMainMenu;}
-    public WebElement getWomenOralCareOptionInSportsMainMenu() {return womenOralCareOptionInSportsMainMenu;}
-    public WebElement getWomenTherapyOptionInSportsMainMenu() {return womenTherapyOptionInSportsMainMenu;}
-    public WebElement getWomenMasksOptionInSportsMainMenu() {return womenMasksOptionInSportsMainMenu;}
-    public WebElement getWomenFitnessAndTrainingOptionInSportsMainMenu() {return womenFitnessAndTrainingOptionInSportsMainMenu;}
-    public WebElement getWomenTrainingAccessoriesOptionInSportsMainMenu() {return womenTrainingAccessoriesOptionInSportsMainMenu;}
-    public WebElement getMmaOptionInSportsMainMenu() {return mmaOptionInSportsMainMenu;}
-    public WebElement getJiuJitsuOptionInSportsMainMenu() {return jiuJitsuOptionInSportsMainMenu;}
-    public WebElement getBoardGamesOptionInSportsMainMenu() {return boardGamesOptionInSportsMainMenu;}
-    public WebElement getSportsTechOptionInSportsMainMenu() {return sportsTechOptionInSportsMainMenu;}
-    public WebElement getWearableTechOptionInSportsMainMenu() {return wearableTechOptionInSportsMainMenu;}
-    public WebElement getCamerasOptionInSportsMainMenu() {return camerasOptionInSportsMainMenu;}
-    public WebElement getPhoneAccessoriesOptionInSportsMainMenu() {return phoneAccessoriesOptionInSportsMainMenu;}
-    public WebElement getPersonalCareOptionInSportsMainMenu() {return personalCareOptionInSportsMainMenu;}
-    public WebElement getShoweringOptionInSportsMainMenu() {return showeringOptionInSportsMainMenu;}
-    public WebElement getShavingOptionInSportsMainMenu() {return shavingOptionInSportsMainMenu;}
-    public WebElement getSkinCareOptionInSportsMainMenu() {return skinCareOptionInSportsMainMenu;}
-    public WebElement getBodyCareOptionInSportsMainMenu() {return bodyCareOptionInSportsMainMenu;}
-    public WebElement getOralCareOptionInSportsMainMenu() {return oralCareOptionInSportsMainMenu;}
-    public WebElement getTherapyOptionInSportsMainMenu() {return therapyOptionInSportsMainMenu;}
-    public WebElement getMasksOptionInSportsMainMenu() {return masksOptionInSportsMainMenu;}
-    public WebElement getFitnessAndTrainingCategoryOptionInSportsMainMenu() {return fitnessAndTrainingCategoryOptionInSportsMainMenu;}
-    public WebElement getWomenOnlyMainMenu() {return womenOnlyMainMenu;}
-    public WebElement getWomenOnlyMainMenuText() {return womenOnlyMainMenuText;}
-    public List<WebElement> getWomenOnlyMainMenuList() {return womenOnlyMainMenuList;}
-    public WebElement getSportsSupplementsSubMenuSection() {return sportsSupplementsSubMenuSection;}
-    public WebElement getVitaminsAndHealthSubMenuSection() {return vitaminsAndHealthSubMenuSection;}
-    public WebElement getHealthyFoodSubMenuSection() {return healthyFoodSubMenuSection;}
-    public WebElement getSportsSubMenuSection() {return sportsSubMenuSection;}
-    //Define the main actions we need to execute our TCs
-    public void switchToAECountry() {try{
-        DataHelperAndWait.isDisplayed(countryList, 15);
-        this.countryList.click();
-        DataHelperAndWait.implicitWait(6);
-        this.aeCountry.click();}
-    catch(Exception e){
-        DataHelperAndWait.isDisplayed(countryList, 15);
-        this.countryList.click();
-        DataHelperAndWait.implicitWait(6);
-        this.aeCountry.click();
-    }
+    public WebElement getHealthyFoodMainMenu() {
+        return healthyFoodMainMenu;
     }
 
+    public WebElement getGroceryOptionInHealthyFoodMainMenu() {
+        return groceryOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getBakingAndCookingOptionInHealthyFoodMainMenu() {
+        return bakingAndCookingOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getCannedOptionInHealthyFoodMainMenu() {
+        return cannedOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getCoffeeOptionInHealthyFoodMainMenu() {
+        return coffeeOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getCondimentsOptionInHealthyFoodMainMenu() {
+        return condimentsOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getMilkAndCreamOptionInHealthyFoodMainMenu() {
+        return milkAndCreamOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getNutsAndOatsOptionInHealthyFoodMainMenu() {
+        return nutsAndOatsOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getOilsOptionInHealthyFoodMainMenu() {
+        return oilsOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getPastaOptionInHealthyFoodMainMenu() {
+        return pastaOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getRiceAndGrainsOptionInHealthyFoodMainMenu() {
+        return riceAndGrainsOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getSeasoningsAndSpicesOptionInHealthyFoodMainMenu() {
+        return seasoningsAndSpicesOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getSugarSweetenersOptionInHealthyFoodMainMenu() {
+        return sugarSweetenersOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getSyrupsOptionInHealthyFoodMainMenu() {
+        return syrupsOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getTeaAndHerbsOptionInHealthyFoodMainMenu() {
+        return teaAndHerbsOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getSuperfoodsOptionInHealthyFoodMainMenu() {
+        return superfoodsOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getReadyMixesOptionInHealthyFoodMainMenu() {
+        return readyMixesOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getBreakfastAndCerealOptionInHealthyFoodMainMenu() {
+        return breakfastAndCerealOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getReadyToDrinkOptionInHealthyFoodMainMenu() {
+        return readyToDrinkOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getAminoAndBcaasOptionInHealthyFoodMainMenu() {
+        return aminoAndBcaasOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getEnergyDrinksOptionInHealthyFoodMainMenu() {
+        return energyDrinksOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getProteinShakesOptionInHealthyFoodMainMenu() {
+        return proteinShakesOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getElectrolytesAndHydrationOptionInHealthyFoodMainMenu() {
+        return electrolytesAndHydrationOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getHealthySnacksOptionInHealthyFoodMainMenu() {
+        return healthySnacksOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getProteinBarsOptionInHealthyFoodMainMenu() {
+        return proteinBarsOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getCookiesOptionInHealthyFoodMainMenu() {
+        return cookiesOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getChipsOptionInHealthyFoodMainMenu() {
+        return chipsOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getBrowniesAndPancakesOptionInHealthyFoodMainMenu() {
+        return browniesAndPancakesOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getSnackBarsOptionInHealthyFoodMainMenu() {
+        return snackBarsOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getSpreadsOptionInHealthyFoodMainMenu() {
+        return spreadsOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getOtherHealthySnacksOptionInHealthyFoodMainMenu() {
+        return otherHealthySnacksOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getReadyToEatOptionInHealthyFoodMainMenu() {
+        return readyToEatOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getHealthyMealsOptionInHealthyFoodMainMenu() {
+        return healthyMealsOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getFeaturedOptionInHealthyFoodMainMenu() {
+        return featuredOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getHealthyMealReplacementOptionInHealthyFoodMainMenu() {
+        return healthyMealReplacementOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getProteinCoffeeOptionInHealthyFoodMainMenu() {
+        return proteinCoffeeOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getCandiesOptionInHealthyFoodMainMenu() {
+        return candiesOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getFlavoringAgentsOptionInHealthyFoodMainMenu() {
+        return flavoringAgentsOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getKetoSnacksOptionInHealthyFoodMainMenu() {
+        return ketoSnacksOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getManukaHoneyOptionInHealthyFoodMainMenu() {
+        return manukaHoneyOptionInHealthyFoodMainMenu;
+    }
+
+    public WebElement getMeatSnacksOptionInHealthyFoodMainMenu() {
+        return meatSnacksOptionInHealthyFoodMainMenu;
+    }
+
+    public List<WebElement> getHealthyFoodMainMenuList() {
+        return healthyFoodMainMenuList;
+    }
+
+    //Sports Main Menu
+    public WebElement getSportsMainMenu() {
+        return sportsMainMenu;
+    }
+
+    public List<WebElement> getSportsMainMenuList() {
+        return sportsMainMenuList;
+    }
+
+    public WebElement gethMBOptionInSportSupplementsMenu() {
+        return hMBOptionInSportSupplementsMenu;
+    }
+
+    public WebElement getShouldersBagsInSportsMenu() {
+        return shouldersBagsInSportsMenu;
+    }
+
+    public WebElement getEquipmentInSportsMenu() {
+        return equipmentInSportsMenu;
+    }
+
+    public WebElement getGlovesBugCategoryInSportsMenu() {
+        return glovesBugCategoryInSportsMenu;
+    }
+
+    public WebElement getMhpOptionInByBrandMenu() {
+        return mhpOptionInByBrandMenu;
+    }
+
+    public WebElement getBrolabOptionInByBrandMenu() {
+        return brolabOptionInByBrandMenu;
+    }
+
+    public WebElement getxGamerOptionInByBrandMenu() {
+        return xGamerOptionInByBrandMenu;
+    }
+
+    public WebElement getPetsOptionInVitaminsAndHealthMianMenu() {
+        return petsOptionInVitaminsAndHealthMianMenu;
+    }
+
+    public WebElement getMenOptionInSportsMainMenu() {
+        return menOptionInSportsMainMenu;
+    }
+
+    public WebElement getSportOptionInSportsMainMenu() {
+        return sportOptionInSportsMainMenu;
+    }
+
+    public WebElement getFootballOptionInSportsMainMenu() {
+        return footballOptionInSportsMainMenu;
+    }
+
+    public WebElement getBasketballOptionInSportsMainMenu() {
+        return basketballOptionInSportsMainMenu;
+    }
+
+    public WebElement getBaseballOptionInSportsMainMenu() {
+        return baseballOptionInSportsMainMenu;
+    }
+
+    public WebElement getRunningOptionInSportsMainMenu() {
+        return runningOptionInSportsMainMenu;
+    }
+
+    public WebElement getSwimmingOptionInSportsMainMenu() {
+        return swimmingOptionInSportsMainMenu;
+    }
+
+    public WebElement getYogaOptionInSportsMainMenu() {
+        return yogaOptionInSportsMainMenu;
+    }
+
+    public WebElement getFitnessAndTrainingOptionInSportsMainMenu() {
+        return fitnessAndTrainingOptionInSportsMainMenu;
+    }
+
+    public WebElement getFitnessEquipmentOptionInSportsMainMenu() {
+        return fitnessEquipmentOptionInSportsMainMenu;
+    }
+
+    public WebElement getSkippingRopesOptionInSportsMainMenu() {
+        return skippingRopesOptionInSportsMainMenu;
+    }
+
+    public WebElement getWeightBeltsOptionInSportsMainMenu() {
+        return weightBeltsOptionInSportsMainMenu;
+    }
+
+    public WebElement getScootersOptionInSportsMainMenu() {
+        return scootersOptionInSportsMainMenu;
+    }
+
+    public WebElement getTrainingAccessoriesOptionInSportsMainMenu() {
+        return trainingAccessoriesOptionInSportsMainMenu;
+    }
+
+    public WebElement getShakersAndBottlesOptionInSportsMainMenu() {
+        return shakersAndBottlesOptionInSportsMainMenu;
+    }
+
+    public WebElement getBagsOptionInSportsMainMenu() {
+        return bagsOptionInSportsMainMenu;
+    }
+
+    public WebElement getGlovesOptionInSportsMainMenu() {
+        return glovesOptionInSportsMainMenu;
+    }
+
+    public WebElement getBracesAndSleevesOptionInSportsMainMenu() {
+        return bracesAndSleevesOptionInSportsMainMenu;
+    }
+
+    public WebElement getMouthguardOptionInSportsMainMenu() {
+        return mouthguardOptionInSportsMainMenu;
+    }
+
+    public WebElement getApparelOptionInSportsMainMenu() {
+        return apparelOptionInSportsMainMenu;
+    }
+
+    public WebElement getSportswearOptionInSportsMainMenu() {
+        return sportswearOptionInSportsMainMenu;
+    }
+
+    public WebElement getPantsOptionInSportsMainMenu() {
+        return pantsOptionInSportsMainMenu;
+    }
+
+    public WebElement getShortsOptionInSportsMainMenu() {
+        return shortsOptionInSportsMainMenu;
+    }
+
+    public WebElement getHoodiesOptionInSportsMainMenu() {
+        return hoodiesOptionInSportsMainMenu;
+    }
+
+    public WebElement gettShirtsOptionInSportsMainMenu() {
+        return tShirtsOptionInSportsMainMenu;
+    }
+
+    public WebElement getTanksOptionInSportsMainMenu() {
+        return TanksOptionInSportsMainMenu;
+    }
+
+    public WebElement getFootwearOptionInSportsMainMenu() {
+        return footwearOptionInSportsMainMenu;
+    }
+
+    public WebElement getSneakersOptionInSportsMainMenu() {
+        return sneakersOptionInSportsMainMenu;
+    }
+
+    public WebElement getTrainingShoesOptionInSportsMainMenu() {
+        return trainingShoesOptionInSportsMainMenu;
+    }
+
+    public WebElement getRunnigShoesOptionInSportsMainMenu() {
+        return runnigShoesOptionInSportsMainMenu;
+    }
+
+    public WebElement getWomenOptionInSportsMainMenu() {
+        return womenOptionInSportsMainMenu;
+    }
+
+    public WebElement getWomenSportsTechOptionInSportsMainMenu() {
+        return womenSportsTechOptionInSportsMainMenu;
+    }
+
+    public WebElement getWomenWearableTechOptionInSportsMainMenu() {
+        return womenWearableTechOptionInSportsMainMenu;
+    }
+
+    public WebElement getWomenCamerasOptionInSportsMainMenu() {
+        return womenCamerasOptionInSportsMainMenu;
+    }
+
+    public WebElement getWomenPhoneAccessoriesOptionInSportsMainMenu() {
+        return womenPhoneAccessoriesOptionInSportsMainMenu;
+    }
+
+    public WebElement getWomenPersonalCareOptionInSportsMainMenu() {
+        return womenPersonalCareOptionInSportsMainMenu;
+    }
+
+    public WebElement getWomenShoweringOptionInSportsMainMenu() {
+        return womenShoweringOptionInSportsMainMenu;
+    }
+
+    public WebElement getWomenSkinCareOptionInSportsMainMenu() {
+        return womenSkinCareOptionInSportsMainMenu;
+    }
+
+    public WebElement getWomenBodyCareOptionInSportsMainMenu() {
+        return womenBodyCareOptionInSportsMainMenu;
+    }
+
+    public WebElement getWomenOralCareOptionInSportsMainMenu() {
+        return womenOralCareOptionInSportsMainMenu;
+    }
+
+    public WebElement getWomenTherapyOptionInSportsMainMenu() {
+        return womenTherapyOptionInSportsMainMenu;
+    }
+
+    public WebElement getWomenMasksOptionInSportsMainMenu() {
+        return womenMasksOptionInSportsMainMenu;
+    }
+
+    public WebElement getWomenFitnessAndTrainingOptionInSportsMainMenu() {
+        return womenFitnessAndTrainingOptionInSportsMainMenu;
+    }
+
+    public WebElement getWomenTrainingAccessoriesOptionInSportsMainMenu() {
+        return womenTrainingAccessoriesOptionInSportsMainMenu;
+    }
+
+    public WebElement getMmaOptionInSportsMainMenu() {
+        return mmaOptionInSportsMainMenu;
+    }
+
+    public WebElement getJiuJitsuOptionInSportsMainMenu() {
+        return jiuJitsuOptionInSportsMainMenu;
+    }
+
+    public WebElement getBoardGamesOptionInSportsMainMenu() {
+        return boardGamesOptionInSportsMainMenu;
+    }
+
+    public WebElement getSportsTechOptionInSportsMainMenu() {
+        return sportsTechOptionInSportsMainMenu;
+    }
+
+    public WebElement getWearableTechOptionInSportsMainMenu() {
+        return wearableTechOptionInSportsMainMenu;
+    }
+
+    public WebElement getCamerasOptionInSportsMainMenu() {
+        return camerasOptionInSportsMainMenu;
+    }
+
+    public WebElement getPhoneAccessoriesOptionInSportsMainMenu() {
+        return phoneAccessoriesOptionInSportsMainMenu;
+    }
+
+    public WebElement getPersonalCareOptionInSportsMainMenu() {
+        return personalCareOptionInSportsMainMenu;
+    }
+
+    public WebElement getShoweringOptionInSportsMainMenu() {
+        return showeringOptionInSportsMainMenu;
+    }
+
+    public WebElement getShavingOptionInSportsMainMenu() {
+        return shavingOptionInSportsMainMenu;
+    }
+
+    public WebElement getSkinCareOptionInSportsMainMenu() {
+        return skinCareOptionInSportsMainMenu;
+    }
+
+    public WebElement getBodyCareOptionInSportsMainMenu() {
+        return bodyCareOptionInSportsMainMenu;
+    }
+
+    public WebElement getOralCareOptionInSportsMainMenu() {
+        return oralCareOptionInSportsMainMenu;
+    }
+
+    public WebElement getTherapyOptionInSportsMainMenu() {
+        return therapyOptionInSportsMainMenu;
+    }
+
+    public WebElement getMasksOptionInSportsMainMenu() {
+        return masksOptionInSportsMainMenu;
+    }
+
+    public WebElement getFitnessAndTrainingCategoryOptionInSportsMainMenu() {
+        return fitnessAndTrainingCategoryOptionInSportsMainMenu;
+    }
+
+    public WebElement getWomenOnlyMainMenu() {
+        return womenOnlyMainMenu;
+    }
+
+    public WebElement getWomenOnlyMainMenuText() {
+        return womenOnlyMainMenuText;
+    }
+
+    public List<WebElement> getWomenOnlyMainMenuList() {
+        return womenOnlyMainMenuList;
+    }
+
+    public WebElement getSportsSupplementsSubMenuSection() {
+        return sportsSupplementsSubMenuSection;
+    }
+
+    public WebElement getVitaminsAndHealthSubMenuSection() {
+        return vitaminsAndHealthSubMenuSection;
+    }
+
+    public WebElement getHealthyFoodSubMenuSection() {
+        return healthyFoodSubMenuSection;
+    }
+
+    public WebElement getSportsSubMenuSection() {
+        return sportsSubMenuSection;
+    }
+
+    //Define the main actions we need to execute our TCs
+    public void switchToAECountry() {
+        try {
+            DataHelperAndWait.isDisplayed(countryList, 15);
+            this.countryList.click();
+            DataHelperAndWait.implicitWait(6);
+            this.aeCountry.click();
+        } catch (Exception e) {
+            DataHelperAndWait.isDisplayed(countryList, 15);
+            this.countryList.click();
+            DataHelperAndWait.implicitWait(6);
+            this.aeCountry.click();
+        }
+    }
 
 
 }

@@ -2,13 +2,21 @@ package sporter_test;
 
 import core.BaseTest;
 import core.DataHelperAndWait;
+import okhttp3.Request;
 import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.ProductDetailsPage;
 import sporter_pages.RecommendedProductsPage;
+
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 
 public class RecommendedProductsTestCases extends BaseTest {
     private ProductDetailsPageTestCases productDetailsPageTestCases;
@@ -85,6 +93,12 @@ public class RecommendedProductsTestCases extends BaseTest {
         productDetailsPage.clickOnProductInHomePage();
         productDetailsPage.addToCart();
         recommendedProductspage.clickOnAddToCart();
-        Assert.assertTrue(productDetailsPage.getAddToCartBtn().isDisplayed());
+
     }
+
+    @Test
+    public  void testHttpResponseCode() {
+    }
+
+
 }

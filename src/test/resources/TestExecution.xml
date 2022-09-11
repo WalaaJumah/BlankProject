@@ -5,16 +5,16 @@
 
 
         <classes>
-            <class name="sporter_test.QatarHomePageTestCases">
+            <class name="sporter_test.AEMegaMenuTestCases">
 <!--            <class name="sporter_test.AEGuestUserTestCases">-->
 
 <!--                        <class name="sporter_test.AEMegaMenuTestCases">-->
 <!--                <methods>-->
-<!--                    <include name="verifyClickingOnHomePageHorizontalBannerDoeNotRedirectTheUserTo404PageOrNoContentFoundPage"></include>-->
-<!--                    <include name="verifyClickingOnSportswearAndAccessoriesCategoryDoeNotRedirectTheUserTo404PageOrNoContentFoundPage"></include>-->
-<!--                    <include name="verifyClickingOnVitaminsAndHealthCategoryDoeNotRedirectTheUserTo404PageOrNoContentFoundPage"></include>-->
-<!--                    <include name="verifyClickingOnHealthyFoodCategoryDoeNotRedirectTheUserTo404PageOrNoContentFoundPage"></include>-->
-<!--                    <include name="verifyClickingOnSportsSupplementsCategoryDoeNotRedirectTheUserTo404PageOrNoContentFoundPage"></include>-->
+<!--                    <include name="test"></include>-->
+<!--&lt;!&ndash;                    <include name="verifyClickingOnSportswearAndAccessoriesCategoryDoeNotRedirectTheUserTo404PageOrNoContentFoundPage"></include>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="verifyClickingOnVitaminsAndHealthCategoryDoeNotRedirectTheUserTo404PageOrNoContentFoundPage"></include>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="verifyClickingOnHealthyFoodCategoryDoeNotRedirectTheUserTo404PageOrNoContentFoundPage"></include>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="verifyClickingOnSportsSupplementsCategoryDoeNotRedirectTheUserTo404PageOrNoContentFoundPage"></include>&ndash;&gt;-->
 
 
 <!--                </methods>-->
