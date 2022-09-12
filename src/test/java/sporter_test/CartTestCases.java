@@ -13,6 +13,8 @@ import sporter_pages.ProductDetailsPage;
 
 import java.util.List;
 
+import static org.testng.Assert.assertFalse;
+
 public class CartTestCases extends BaseTest {
     private ProductDetailsPageTestCases productDetailsPageTestCases;
     private ProductDetailsPage productDetailsPage;
@@ -34,7 +36,7 @@ public class CartTestCases extends BaseTest {
     @Test(description = "Make sure to view the cart after adding more than products to it", priority = 3)
     public void verifyAbilityToViewTheCartAfterAddingMoreThanProducts() {
         productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.switchCountry();
+        productDetailsPage.switchToAeCountry();
         productDetailsPage.clickOnShopeByMenu();
         productDetailsPage.clickOnSalesAndOffersMenu();
         productDetailsPage.clickOnBuy1Get1Card();
@@ -55,7 +57,7 @@ public class CartTestCases extends BaseTest {
     public void verifyAbilityToViewTheCartAfterAddingMoreThanSimpleOfTheSameConfig() {
         productDetailsPage = new ProductDetailsPage(webDriver);
         cartPage = new CartPage(webDriver);
-        productDetailsPage.switchCountry();
+        productDetailsPage.switchToAeCountry();
         productDetailsPage.clickOnShopeByMenu();
         productDetailsPage.clickOnSportsSupplementsMenu();
         productDetailsPage.DisplayProductInTheList(0);
@@ -73,7 +75,7 @@ public class CartTestCases extends BaseTest {
     public void verifyAbilityToAddBundleToCart() {
         productDetailsPage = new ProductDetailsPage(webDriver);
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getCountryList(), 10);
-        productDetailsPage.switchCountry();
+        productDetailsPage.switchToAeCountry();
         productDetailsPage.searchForBundle();
         productDetailsPage.clickOnSearchBtn();
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductCard(), 20);
@@ -86,31 +88,12 @@ public class CartTestCases extends BaseTest {
         productDetailsPage.viewCart();
         Assert.assertEquals(webDriver.getCurrentUrl(), cartURL);
     }
-//This Method needs to investigate
-    @Test(description = "Make sure ability to add a bundle to the cart with all bundle options",enabled = true, priority = 6)
+    @Test(description = "Make sure ability to add a bundle to the cart with all bundle options", priority = 6)
     public void verifyAbilityToAddBundleWithAllItsOptionsToCart() {
-//        productDetailsPage = new ProductDetailsPage(webDriver);
-//        DataHelperAndWait.waitToBeVisible(productDetailsPage.getCountryList(), 10);
-//        productDetailsPage.switchCountry();
-//        productDetailsPage.searchForBundle();
-//        productDetailsPage.clickOnSearchBtn();
-//        DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductCard(), 20);
-//        productDetailsPage.clickOnTheProductCard();
-//        DataHelperAndWait.waitToBeVisible(productDetailsPage.getBundleMenu(), 20);
-//        Select select=new Select(productDetailsPage.getBundleMenu());
-//        List<WebElement> elementCount = select.getOptions();
-//        int menuSize = elementCount.size();
-//        for (int i = 0; i < menuSize; i++) {
-//            select.selectByIndex(i);
-//            productDetailsPage.addToCart();
-//            productDetailsPage.keepShopping();}
-//        productDetailsPage.viewCart();
-//        Assert.assertEquals(webDriver.getCurrentUrl(), cartURL);
-
-
         productDetailsPage = new ProductDetailsPage(webDriver);
+        cartPage = new CartPage(webDriver);
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getCountryList(), 10);
-        productDetailsPage.switchCountry();
+        productDetailsPage.switchToAeCountry();
         productDetailsPage.searchForBundle();
         productDetailsPage.clickOnSearchBtn();
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductCard(), 20);
@@ -120,25 +103,24 @@ public class CartTestCases extends BaseTest {
         List<WebElement> elementCount = select.getOptions();
         int menuSize = elementCount.size();
         for (int i = 0; i < menuSize; i++) {
-            select.selectByIndex(i);
-            productDetailsPage.addToCart();
-            productDetailsPage.keepShopping();
-            if (DataHelperAndWait.isPresent(cartPage.getRequestedQtyUnAvailableMsg()))
-                break;
-            else
-                continue;
-
+            try {
+                select.selectByIndex(i);
+                productDetailsPage.addToCart();
+                productDetailsPage.keepShopping();
+            } catch (Exception e) {
+                cartPage.clickOnTheContinueShoppingBtn();
+            }
         }
-        //            productDetailsPage.keepShopping();}
-//        productDetailsPage.viewCart();
-//        Assert.assertEquals(webDriver.getCurrentUrl(), cartURL);
+        cartPage.clickOnCartIcon();
+        cartPage.clickOnViewCartInCartPopUp();
+        Assert.assertEquals(webDriver.getCurrentUrl(), cartURL);
     }
     @Test(description ="Verify that the The requested qty is not available message appear when the product becomes OOS",priority = 7)
     public void verifyToDisplayRequestedQtyIsNotAvailableMsg(){
         productDetailsPage = new ProductDetailsPage(webDriver);
         cartPage = new CartPage(webDriver);
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getCountryList(), 10);
-        productDetailsPage.switchCountry();
+        productDetailsPage.switchToAeCountry();
         productDetailsPage.clickOnProductInHomePage();
         productDetailsPage.fillInQtyField("500");
         productDetailsPage.addToCart();
@@ -150,7 +132,7 @@ public class CartTestCases extends BaseTest {
         productDetailsPage = new ProductDetailsPage(webDriver);
         cartPage = new CartPage(webDriver);
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getCountryList(), 10);
-        productDetailsPage.switchCountry();
+        productDetailsPage.switchToAeCountry();
         productDetailsPage.clickOnProductInHomePage();
         productDetailsPage.fillInQtyField("500");
         String currentURL = webDriver.getCurrentUrl();
@@ -240,7 +222,7 @@ public class CartTestCases extends BaseTest {
     public void verifyTheFreeGiftIsAddedCorrectlyToTheCart(){
     productDetailsPage = new ProductDetailsPage(webDriver);
     cartPage= new CartPage(webDriver);
-        productDetailsPage.switchCountry();
+        productDetailsPage.switchToAeCountry();
         productDetailsPage.clickOnShopeByMenu();
         productDetailsPage.clickOnSalesAndOffersMenu();
         productDetailsPage.clickOnBuy1Get1Card();
@@ -254,7 +236,7 @@ public class CartTestCases extends BaseTest {
     public void verifyTheFreeGiftIsDoesnotHavePrice(){
         productDetailsPage = new ProductDetailsPage(webDriver);
         cartPage= new CartPage(webDriver);
-        productDetailsPage.switchCountry();
+        productDetailsPage.switchToAeCountry();
         productDetailsPage.clickOnShopeByMenu();
         productDetailsPage.clickOnSalesAndOffersMenu();
         productDetailsPage.clickOnBuy1Get1Card();
@@ -268,7 +250,7 @@ public class CartTestCases extends BaseTest {
     public void verifyTheFreeGiftIsRemovedWhenRemovingTheProduct(){
         productDetailsPage = new ProductDetailsPage(webDriver);
         cartPage= new CartPage(webDriver);
-        productDetailsPage.switchCountry();
+        productDetailsPage.switchToAeCountry();
         productDetailsPage.clickOnShopeByMenu();
         productDetailsPage.clickOnSalesAndOffersMenu();
         productDetailsPage.clickOnBuy1Get1Card();
@@ -299,7 +281,7 @@ public class CartTestCases extends BaseTest {
     public void verifyProductCounterAppearsInTheCartPageWorksCorrectly(){
         productDetailsPage = new ProductDetailsPage(webDriver);
         cartPage= new CartPage(webDriver);
-        productDetailsPage.switchCountry();
+        productDetailsPage.switchToAeCountry();
         productDetailsPage.clickOnShopeByMenu();
         productDetailsPage.clickOnSportsSupplementsMenu();
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getFirstProductInTheCategoryList(), 10);
@@ -320,7 +302,7 @@ public class CartTestCases extends BaseTest {
     public void verifyProductCounterAppearsInTheCartPageCountsFreeGifts(){
         productDetailsPage = new ProductDetailsPage(webDriver);
         cartPage= new CartPage(webDriver);
-        productDetailsPage.switchCountry();
+        productDetailsPage.switchToAeCountry();
         productDetailsPage.clickOnShopeByMenu();
         productDetailsPage.clickOnSalesAndOffersMenu();
         productDetailsPage.clickOnBuy1Get1Card();

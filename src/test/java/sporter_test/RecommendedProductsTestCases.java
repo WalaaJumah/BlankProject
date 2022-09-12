@@ -2,20 +2,11 @@ package sporter_test;
 
 import core.BaseTest;
 import core.DataHelperAndWait;
-import okhttp3.Request;
-import org.openqa.selenium.By;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.ProductDetailsPage;
 import sporter_pages.RecommendedProductsPage;
-
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 
 
 public class RecommendedProductsTestCases extends BaseTest {
@@ -37,8 +28,7 @@ public class RecommendedProductsTestCases extends BaseTest {
     public void verifyCloseRecommendedPopupCorrectly(){
         productDetailsPage= new ProductDetailsPage(webDriver);
         recommendedProductspage= new RecommendedProductsPage(webDriver);
-        DataHelperAndWait.waitToBeVisible(productDetailsPage.getCountryList(), 10);
-        productDetailsPage.switchCountry();
+        productDetailsPage.switchToAeCountry();
         productDetailsPage.clickOnProductInHomePage();
         productDetailsPage.addToCart();
         recommendedProductspage.clickOnRecommendedProductsCloseIcon();
@@ -49,8 +39,7 @@ public class RecommendedProductsTestCases extends BaseTest {
     @Test(description = "Make sure to close the Recommended products pop up when clicking outside the pop-up", priority = 4)
     public void verifyCloseRecommendedPopupCorrectlyWhenClickingOutsideThePopup(){
         productDetailsPage= new ProductDetailsPage(webDriver);
-        DataHelperAndWait.waitToBeVisible(productDetailsPage.getCountryList(), 10);
-        productDetailsPage.switchCountry();
+        productDetailsPage.switchToAeCountry();
         productDetailsPage.clickOnProductInHomePage();
         productDetailsPage.addToCart();
         Actions act = new Actions(webDriver);
@@ -61,8 +50,7 @@ public class RecommendedProductsTestCases extends BaseTest {
     public void verifyAllRecommendedPopupComponentsIsExist(){
         recommendedProductspage= new RecommendedProductsPage(webDriver);
         productDetailsPage= new ProductDetailsPage(webDriver);
-        DataHelperAndWait.waitToBeVisible(productDetailsPage.getCountryList(), 10);
-        productDetailsPage.switchCountry();
+        productDetailsPage.switchToAeCountry();
         productDetailsPage.clickOnProductInHomePage();
         productDetailsPage.addToCart();
         //Make sure the check circle icon is displayed
@@ -88,17 +76,42 @@ public class RecommendedProductsTestCases extends BaseTest {
     public void verifyAbilityToAddRecommendedProductToCart(){
         recommendedProductspage= new RecommendedProductsPage(webDriver);
         productDetailsPage= new ProductDetailsPage(webDriver);
-        DataHelperAndWait.waitToBeVisible(productDetailsPage.getCountryList(), 10);
-        productDetailsPage.switchCountry();
+        productDetailsPage.switchToAeCountry();
         productDetailsPage.clickOnProductInHomePage();
         productDetailsPage.addToCart();
         recommendedProductspage.clickOnAddToCart();
-
     }
-
-    @Test
-    public  void testHttpResponseCode() {
+    @Test(description = "Make sure the name of product added to the Cart displayed correctly in the Recommended product pop-up", priority = 7)
+    public void verifyTheNameOfProductAddedToCatDisplayedInTheRecommendedPopup(){
+        recommendedProductspage= new RecommendedProductsPage(webDriver);
+        productDetailsPage= new ProductDetailsPage(webDriver);
+        productDetailsPage.switchToAeCountry();
+        productDetailsPage.clickOnProductInHomePage();
+        productDetailsPage.addToCart();
+        Assert.assertTrue(recommendedProductspage.getAddedProductToCartMsg().getText().contains(productDetailsPage.getProductName().getText()));
     }
-
+    @Test(description = "Make sure the product price displayed in the Recommended product pop-up matches with the product price displayed in PDP", priority = 8)
+    public void verifyTheProductPriceInTheRecommendedPopupMatchesWithThePriceDisplaysInPdp(){
+        recommendedProductspage= new RecommendedProductsPage(webDriver);
+        productDetailsPage= new ProductDetailsPage(webDriver);
+        productDetailsPage.switchToAeCountry();
+        productDetailsPage.clickOnProductInHomePage();
+        productDetailsPage.addToCart();
+        String productPriceInRecommendedPopup= recommendedProductspage.getProductPriceForFirstProduct().getText();
+        recommendedProductspage.clickOnAddToCartBtnForFirstProduct();
+        String productPriceInPdp= productDetailsPage.getProductPrice().getText();
+        Assert.assertEquals(productPriceInPdp,productPriceInRecommendedPopup, "The product Price displayed in the Recommended pop-up is not match with the price in PDP ");
+    }
+    @Test(description = "Make sure the clicking on the product card appears in the Recommended product pop-up will display the PDP correctly", priority = 9)
+    public void verifyClickingOnProductCardInTheRecommendedPopupWillDisplayThePdp(){
+        recommendedProductspage= new RecommendedProductsPage(webDriver);
+        productDetailsPage= new ProductDetailsPage(webDriver);
+        productDetailsPage.switchToAeCountry();
+        productDetailsPage.clickOnProductInHomePage();
+        productDetailsPage.addToCart();
+        String productNameInRecommendedPopup= recommendedProductspage.getFirstProductName().getText();
+        recommendedProductspage.clickOnFirstProductCard();
+        Assert.assertEquals(productNameInRecommendedPopup,productDetailsPage.getProductName().getText() , "The product name displayed in the Recommended pop-up is not match with the name in PDP ");
+    }
 
 }

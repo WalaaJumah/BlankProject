@@ -26,12 +26,20 @@ public class RecommendedProductsPage {
     private WebElement productImages;
     @FindBy(xpath="//div[@class='item-price']")
     private WebElement productPrice;
+    @FindBy(xpath="(//div[@class='item-price'])[1]//span[@data-price-type='finalPrice']")
+    private WebElement productPriceForFirstProduct;
+    @FindBy(xpath="(//div[@class='cart-button'])[1]")
+    private WebElement addToCartBtnForFirstProduct;
     @FindBy(css="div[id='popup-block'] h2:nth-child(1)")
     private WebElement recommendedProductsTitle;
     @FindBy(xpath = "//div[@class='cart-button']")
     private WebElement addToCartBtns;
     @FindBy(xpath="//div[3]/div/div/div[2]/div[2]/button")
     private WebElement addToCart;
+    @FindBy(xpath="(//div[@class='inner-seller-prod'])[1]")
+    private WebElement firstProductCard;
+    @FindBy(xpath="(//a[@class='rcmd-product-name'])[1]")
+    private WebElement firstProductname;
 
     //Getter Methods
     public WebElement getCircleIcon(){return circleIcon;}
@@ -41,12 +49,23 @@ public class RecommendedProductsPage {
     public WebElement getProductPrice(){return productPrice;}
     public WebElement getProductImages(){return productImages;}
     public WebElement getAddToCartBtns(){return addToCartBtns;}
+    public WebElement getProductPriceForFirstProduct(){return productPriceForFirstProduct;}
+    public WebElement getFirstProductName(){return firstProductname;}
     //Define the main actions we need to execute our TCs
     public void clickOnRecommendedProductsCloseIcon(){
         DataHelperAndWait.waitToBeVisible(recommendedProductsCloseIcon,10);
         this.recommendedProductsCloseIcon.click();
-    }    public void clickOnAddToCart(){
+    }
+    public void clickOnAddToCart(){
         DataHelperAndWait.waitToBeVisible(addToCart,10);
         this.addToCart.click();
+    }
+    public void clickOnAddToCartBtnForFirstProduct(){
+        DataHelperAndWait.waitToBeVisible(addToCartBtnForFirstProduct,10);
+        this.addToCartBtnForFirstProduct.click();
+    }
+    public void clickOnFirstProductCard(){
+        DataHelperAndWait.waitToBeVisible(firstProductCard,10);
+        this.firstProductCard.click();
     }
 }

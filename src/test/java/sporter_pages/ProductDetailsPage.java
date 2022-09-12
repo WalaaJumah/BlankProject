@@ -34,20 +34,22 @@ public class ProductDetailsPage {
     private WebElement productFlavor;
     @FindBy(xpath = "//*[@id=\"algolia-searchbox\"]/button")
     private WebElement searchBtn;
-    @FindBy(xpath = "//a[@data-position='1']/div[@class= 'result-thumbnail product-image-wrapper']")
+    @FindBy(xpath = "//a[@data-position='2']/div[@class= 'result-thumbnail product-image-wrapper']")
     private WebElement productCard;
     @FindBy(id = "switcher-store-trigger")
     private WebElement countryList;
     @FindBy(xpath = "//li[@class='country_switch']/span[@class='AE']")
     private WebElement aeCountry;
-    @FindBy(xpath = "//li[@class='country_switch']/span[@class='OM']")
-    private WebElement omanCountry;
+    @FindBy(xpath = "//li[@class='country_switch']/span[@class='LB']")
+    private WebElement lebanonCountry;
     @FindBy(xpath = "//li[@class='country_switch']/span[@class='JO']")
     private WebElement joCountry;
     @FindBy(xpath = "//*[@id=\"maincontent\"]/div[3]/div/div[2]/div[2]/a[1]/picture/img")
     private WebElement firstProductInHomePage;
-    @FindBy(xpath = "//*[@id=\"tab-38-all38\"]/div[1]/div/div[3]/div/a")
+    @FindBy(xpath = "//*[@id=\"tab-38-all38\"]/div[1]/div/div[2]/div/a")
     private WebElement productInHomePage;
+    @FindBy(xpath = "//*[@id=\"tab-67-all67\"]/div[1]/div/div[1]/div/a")
+    private WebElement joProductInHomePage;
     @FindBy(id = "Overall Evaluation_1_label")
     private WebElement oneStarReview;
     @FindBy(xpath = "//span[@class='button button-review orange-btn']")
@@ -78,7 +80,7 @@ public class ProductDetailsPage {
     private WebElement productUnavialableForCountry;
     @FindBy(linkText = "Shop By")
     private WebElement shopByMenyu;
-    @FindBy(css = "div[class='product-column--side'] span[class='price']")
+    @FindBy(css = "div[class='product-column--side'] span[data-price-type='finalPrice'] span")
     private WebElement productPrice;
     @FindBy(xpath = "//input[@id='search']")
     private WebElement searchField;
@@ -88,7 +90,6 @@ public class ProductDetailsPage {
     private WebElement salesAndOffersMenu;
     @FindBy(xpath = ".//*[@class='cd-dropdown-content']/li[1]")
     private WebElement SportsSupplementsMenu;
-
     @FindBy(xpath = "//select")
     private WebElement bundleMenu;
     @FindBy(xpath = ".//*[@class='swiper-wrapper clearfix']/li[3]")
@@ -103,8 +104,49 @@ public class ProductDetailsPage {
     private List<WebElement> megaMenuList;
     @FindBy(xpath="//div[@class='swatch-attribute flavor']/div/div[@tabindex=0 and @index='0']")
     private WebElement firtProdutFlavor;
+    @FindBy(xpath="//div[@class='swatch-option text' and @index='0']")
+    private WebElement firstProdutsize;
+    @FindBy(xpath="//div[@class='swatch-option text' and @index='1']")
+    private WebElement secondProdutsize;
     @FindBy(xpath="//div[@class='swatch-attribute flavor']/div/div[@tabindex=0 and @index='2']")
     private WebElement secondProductFlavor;
+    @FindBy(xpath="//div[@class='product attribute description']")
+    private WebElement aboutThisProductSection;
+    @FindBy(xpath="//div[@class='product attribute directions_of_use']")
+    private WebElement directionsOfUseSection;
+    @FindBy(xpath="//div[@class='about-brand']")
+    private WebElement aboutBrandSection;
+    @FindBy(xpath="//div[@class='product attribute description']/h3")
+    private WebElement aboutThisProductTitle;
+    @FindBy(id="product-attribute-specs-table")
+    private WebElement supplementFactsTabel;
+    @FindBy(id="//div[@class='product attribute supplement_facts']/h2")
+    private WebElement supplementFactsTitle;
+    @FindBy(xpath="//a[@class='user-account']")
+    private WebElement accountProfileIcon;
+    @FindBy(xpath="(//div[@id='header-account']/div/ul)[2]")
+    private WebElement accountProfileOptions;
+    @FindBy(xpath="//div[@class='page-title-wrapper product']/h1/span")
+    private WebElement productName;
+    @FindBy(xpath="//div[@class='header-bar main-container']")
+    private WebElement ProductHeaderBar;
+    @FindBy(xpath="(//button[@title='Add to Cart'])[1]")
+    private WebElement addToCartBtnInProductHeaderBar;
+    @FindBy(xpath="//div[@class='ratings brands-label']/a")
+    private WebElement productBrandLink;
+    @FindBy(xpath="(//a[@title='View Details'])[1]")
+    private WebElement firstProductInWheyProtienPage;
+    @FindBy(xpath="//div[@class='expected-delivery mobile-add-cart']")
+    private WebElement expectedDeliveryDateLable;
+    @FindBy(xpath="//div[@class='expected-delivery mobile-add-cart']/label")
+    private WebElement expectedDeliveryDateValue;
+    @FindBy(xpath="(//a[@class='page'])[1]")
+    private WebElement pageBtnInReviewSection;
+    @FindBy(xpath="//a[@class='action  next ']")
+    private WebElement nextReviewPageBtn;
+    @FindBy(xpath="//a[@class='action  previous ']")
+    private WebElement previousReviewPageBtn;
+
     //Getter Methods
     public WebElement getBundleMenu() {return bundleMenu;}
     public WebElement getQuantityField() {return quantityField;}
@@ -159,6 +201,18 @@ public class ProductDetailsPage {
     public WebElement getProductPrice() {return productPrice;}
     public WebElement getFreeProductLabel() {return freeProductLabel;}
     public WebElement getFirstProductInTheCategoryList() {return firstProductInTheCategoryList;}
+    public WebElement getAboutThisProductSection() {return aboutThisProductSection;}
+    public WebElement getAboutThisProductTitle() {return aboutThisProductTitle;}
+    public WebElement getSupplementFactsTabel() {return supplementFactsTabel;}
+    public WebElement getSupplementFactsTitle() {return supplementFactsTitle;}
+    public WebElement getAccountProfileIcon() {return accountProfileIcon;}
+    public WebElement getAccountProfileOptions() {return accountProfileOptions;}
+    public WebElement getProductName() {return productName;}
+    public WebElement getDirectionsOfUseSection() {return directionsOfUseSection;}
+    public WebElement getAboutBrandSection() {return aboutBrandSection;}
+    public WebElement getProductHeaderBar() {return ProductHeaderBar;}
+    public WebElement getExpectedDeliveryDateLable() {return expectedDeliveryDateLable;}
+    public WebElement getExpectedDeliveryDateValue() {return expectedDeliveryDateValue;}
 
 
 
@@ -196,7 +250,7 @@ public class ProductDetailsPage {
         DataHelperAndWait.waitToBeClickable(secondProductFlavor, 20);
         this.secondProductFlavor.click();
     }
-    public void switchCountry() {try{
+    public void switchToAeCountry() {try{
         DataHelperAndWait.waitToBeVisible(countryList, 20);
         this.countryList.click();
         DataHelperAndWait.implicitWait(10);
@@ -208,14 +262,14 @@ public class ProductDetailsPage {
         this.aeCountry.click();
     }
     }
-    public void switchToOmanCountry() {try{
+    public void switchToLebanonCountry() {try{
         DataHelperAndWait.isDisplayed(countryList, 10);
         this.countryList.click();
-        this.omanCountry.click();}
+        this.lebanonCountry.click();}
     catch (Exception e){
         DataHelperAndWait.isDisplayed(countryList, 10);
         this.countryList.click();
-        this.omanCountry.click();
+        this.lebanonCountry.click();
     }
     }
     public void switchToJOCountry() {try{
@@ -241,6 +295,8 @@ public class ProductDetailsPage {
     }
     public void clickOnProductInHomePage() {
         this.productInHomePage.click();
+    }    public void clickOnJOProductInHomePage() {
+        this.joProductInHomePage.click();
     }
     public void selectStarInReview() {
         this.oneStarReview.click();
@@ -270,7 +326,7 @@ public class ProductDetailsPage {
         this.arabicLangBtn.click();
     }
     public void switchCountryThenAddProductToCart() {
-        this.switchCountry();
+        this.switchToAeCountry();
         dataHelperAndWait.implicitWait(5);
         this.clickOnProductInHomePage();
         this.addToCart();
@@ -301,7 +357,42 @@ public class ProductDetailsPage {
     public void fillInQtyField(String qtyNumber){
         dataHelperAndWait.isDisplayed(quantityField, 10);
         this.quantityField.sendKeys(qtyNumber);
-
-
     }
+    public void clickOnAccountProfileIcon(){
+        dataHelperAndWait.isDisplayed(accountProfileIcon, 10);
+        this.accountProfileIcon.click();
+    }
+    public void clickOnAddToCartBtnInProductHeaderBar(){
+        dataHelperAndWait.isDisplayed(addToCartBtnInProductHeaderBar, 10);
+        this.addToCartBtnInProductHeaderBar.click();
+    }
+    public void clickOnProductBrandLink(){
+        dataHelperAndWait.isDisplayed(productBrandLink, 10);
+        this.productBrandLink.click();
+    }
+    public void clickOnFirstProductInWheyProtienPage(){
+        dataHelperAndWait.isDisplayed(firstProductInWheyProtienPage, 10);
+        this.firstProductInWheyProtienPage.click();
+    }
+    public void clickOnPageBtnInReviewSection(){
+        dataHelperAndWait.isDisplayed(pageBtnInReviewSection, 10);
+        this.pageBtnInReviewSection.click();
+    }
+    public void clickOnPreviousReviewPageBtn(){
+        dataHelperAndWait.isDisplayed(previousReviewPageBtn, 10);
+        this.previousReviewPageBtn.click();
+    }
+    public void clickOnNextReviewPageBtn(){
+        dataHelperAndWait.isDisplayed(nextReviewPageBtn, 10);
+        this.nextReviewPageBtn.click();
+    }
+    public void clickOnFirstProductSize(){
+        dataHelperAndWait.isDisplayed(firstProdutsize, 10);
+        this.firstProdutsize.click();
+    }
+    public void clickOnSecondProductSize(){
+        dataHelperAndWait.isDisplayed(secondProdutsize, 10);
+        this.secondProdutsize.click();
+    }
+
 }
