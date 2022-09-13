@@ -8,7 +8,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import sporter_pages.CartPage;
 import sporter_pages.ProductDetailsPage;
 
 import static org.testng.Assert.*;
@@ -395,10 +394,10 @@ aeMegaMenuTestCases.verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductPage()
         productDetailsPage.clickOnShopeByMenu();
         productDetailsPage.clickOnSportsSupplementsMenu();
         productDetailsPage.DisplayProductInTheList(0);
-        String firstPrice= productDetailsPage.getProductPrice().getText();
+        String firstPrice= productDetailsPage.getFinalProductPrice().getText();
         productDetailsPage.clickOnFirstProductSize();
         DataHelperAndWait.implicitWait(3);
-        String secondPrice= productDetailsPage.getProductPrice().getText();
+        String secondPrice= productDetailsPage.getFinalProductPrice().getText();
         System.out.println(firstPrice );
         System.out.println(secondPrice );
         Assert.assertNotEquals(firstPrice,secondPrice);

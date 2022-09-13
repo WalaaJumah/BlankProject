@@ -81,6 +81,8 @@ public class ProductDetailsPage {
     @FindBy(linkText = "Shop By")
     private WebElement shopByMenyu;
     @FindBy(css = "div[class='product-column--side'] span[data-price-type='finalPrice'] span")
+    private WebElement FinalProductPrice;
+    @FindBy(css = "div[class='product-column--side'] span[class='price']")
     private WebElement productPrice;
     @FindBy(xpath = "//input[@id='search']")
     private WebElement searchField;
@@ -198,6 +200,7 @@ public class ProductDetailsPage {
     }
     public WebElement getHomeBreadcrumbs() {return HomeBreadcrumbs;}
     public WebElement getEnglishLangBtn() {return englishLangBtn;}
+    public WebElement getFinalProductPrice() {return FinalProductPrice;}
     public WebElement getProductPrice() {return productPrice;}
     public WebElement getFreeProductLabel() {return freeProductLabel;}
     public WebElement getFirstProductInTheCategoryList() {return firstProductInTheCategoryList;}

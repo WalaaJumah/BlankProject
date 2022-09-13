@@ -99,7 +99,7 @@ public class RecommendedProductsTestCases extends BaseTest {
         productDetailsPage.addToCart();
         String productPriceInRecommendedPopup= recommendedProductspage.getProductPriceForFirstProduct().getText();
         recommendedProductspage.clickOnAddToCartBtnForFirstProduct();
-        String productPriceInPdp= productDetailsPage.getProductPrice().getText();
+        String productPriceInPdp= productDetailsPage.getFinalProductPrice().getText();
         Assert.assertEquals(productPriceInPdp,productPriceInRecommendedPopup, "The product Price displayed in the Recommended pop-up is not match with the price in PDP ");
     }
     @Test(description = "Make sure the clicking on the product card appears in the Recommended product pop-up will display the PDP correctly", priority = 9)
