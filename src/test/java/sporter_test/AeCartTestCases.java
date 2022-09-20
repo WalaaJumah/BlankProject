@@ -3,21 +3,29 @@ package sporter_test;
 import core.BaseTest;
 import core.DataHelperAndWait;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import sporter_pages.AEGuestUserPage;
+import sporter_pages.AEMegaMenuPage;
 import sporter_pages.CartPage;
 import sporter_pages.ProductDetailsPage;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
 
-public class CartTestCases extends BaseTest {
+public class AeCartTestCases extends BaseTest {
     private ProductDetailsPageTestCases productDetailsPageTestCases;
     private ProductDetailsPage productDetailsPage;
+    AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
+    AEGuestUserPage aeGuestUserPage;
+    Actions action;
     private CartPage cartPage;
     @Test(description = "Make sure to view the cart from PDP after adding  product to it", priority = 1)
     public void viewCartFromPDP() {
@@ -47,13 +55,12 @@ public class CartTestCases extends BaseTest {
         productDetailsPage.clickOnShopeByMenu();
         productDetailsPage.clickOnSalesAndOffersMenu();
         productDetailsPage.clickOnBuy1Get1Card();
-        DataHelperAndWait.waitToBeVisible(productDetailsPage.getFirstProductInTheCategoryList(), 10);
         productDetailsPage.DisplayProductInTheList(1);
         productDetailsPage.addToCart();
         productDetailsPage.viewCart();
         Assert.assertEquals(webDriver.getCurrentUrl(), cartURL);
     }
-    @Test(description = "Adding a config to the cart more than one with differnt simple in each time", priority = 4)
+    @Test(description = "Adding a config to the cart more than one with different simple in each time", priority = 4)
     public void verifyAbilityToViewTheCartAfterAddingMoreThanSimpleOfTheSameConfig() {
         productDetailsPage = new ProductDetailsPage(webDriver);
         cartPage = new CartPage(webDriver);
@@ -67,23 +74,18 @@ public class CartTestCases extends BaseTest {
         productDetailsPage.clickOnSecondProductFlavor();
         productDetailsPage.addToCart();
         productDetailsPage.viewCart();
-        String itemsCounter = "(2 Items)";
+        String itemsCounter = "(3 Items)";
         DataHelperAndWait.waitToBeVisible(cartPage.getItemsCounterInCartPage(), 15);
         Assert.assertEquals(cartPage.getItemsCounterInCartPage().getText(), itemsCounter);
     }
     @Test(description = "Make sure ability to add bundle to the Cart", priority = 5)
     public void verifyAbilityToAddBundleToCart() {
         productDetailsPage = new ProductDetailsPage(webDriver);
-        DataHelperAndWait.waitToBeVisible(productDetailsPage.getCountryList(), 10);
         productDetailsPage.switchToAeCountry();
         productDetailsPage.searchForBundle();
         productDetailsPage.clickOnSearchBtn();
-        DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductCard(), 20);
         productDetailsPage.clickOnTheProductCard();
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getBundleMenu(), 20);
-        Select select = new Select(productDetailsPage.getBundleMenu());
-        WebElement newSelectedOption = select.getFirstSelectedOption();
-        newSelectedOption.click();
         productDetailsPage.addToCart();
         productDetailsPage.viewCart();
         Assert.assertEquals(webDriver.getCurrentUrl(), cartURL);
@@ -92,7 +94,6 @@ public class CartTestCases extends BaseTest {
     public void verifyAbilityToAddBundleWithAllItsOptionsToCart() {
         productDetailsPage = new ProductDetailsPage(webDriver);
         cartPage = new CartPage(webDriver);
-        DataHelperAndWait.waitToBeVisible(productDetailsPage.getCountryList(), 10);
         productDetailsPage.switchToAeCountry();
         productDetailsPage.searchForBundle();
         productDetailsPage.clickOnSearchBtn();
@@ -119,7 +120,6 @@ public class CartTestCases extends BaseTest {
     public void verifyToDisplayRequestedQtyIsNotAvailableMsg(){
         productDetailsPage = new ProductDetailsPage(webDriver);
         cartPage = new CartPage(webDriver);
-        DataHelperAndWait.waitToBeVisible(productDetailsPage.getCountryList(), 10);
         productDetailsPage.switchToAeCountry();
         productDetailsPage.clickOnProductInHomePage();
         productDetailsPage.fillInQtyField("500");
@@ -131,7 +131,6 @@ public class CartTestCases extends BaseTest {
     public void verifyContinueShoppingBtnWorksCorrectlyWhenTheProductBecomeOOS(){
         productDetailsPage = new ProductDetailsPage(webDriver);
         cartPage = new CartPage(webDriver);
-        DataHelperAndWait.waitToBeVisible(productDetailsPage.getCountryList(), 10);
         productDetailsPage.switchToAeCountry();
         productDetailsPage.clickOnProductInHomePage();
         productDetailsPage.fillInQtyField("500");
@@ -155,11 +154,10 @@ public class CartTestCases extends BaseTest {
         this.verifyAbilityToRemoveProductFromCart();
         DataHelperAndWait.isDisplayed(cartPage.getHereLink(),10);
         cartPage.clickOnHereLink();
-        String currentURL = webDriver.getCurrentUrl();
         Assert.assertEquals(webDriver.getCurrentUrl(), aeSiteURL);
     }
     @Test(description ="Verify ability to increase the product quantity from Cart page from the Cart Page works successfully",priority = 11)
-    public void verifyIecreaseQtyBtnInCartPageWorking(){
+    public void verifyIncreaseQtyBtnInCartPageWorking(){
         cartPage= new CartPage(webDriver);
         this.viewCartFromPDP();
         DataHelperAndWait.waitToBeClickable(cartPage.getIncreaseQtyBtn(),10);
@@ -179,9 +177,10 @@ public class CartTestCases extends BaseTest {
     @Test(description ="Verify that The requested qty is not available message appear when the product becomes OOS in Cart Page successfully",priority = 13)
     public void verifyToDisplayRequestedQtyIsNotAvailableMsgWhenProductOOSinCartPage(){
         cartPage= new CartPage(webDriver);
-        this.viewCartFromPDP();
-        cartPage.FillInQtyField("500");
+        this.verifyAbilityToAddBundleToCart();
+        cartPage.FillInQtyField("1000");
         cartPage.clickOnIecreseQtyBtn();
+        DataHelperAndWait.waitToBeVisible(cartPage.getQtyUnavailableMsgInCartPage(),10);
         Assert.assertTrue(cartPage.getQtyUnavailableMsgInCartPage().isDisplayed());}
         @Test(description ="Verify ability to display the product from the Cart Page works successfully",priority = 14)
         public void verifyAbilityToDisplayTheProductFromTheCartPage(){
@@ -190,23 +189,21 @@ public class CartTestCases extends BaseTest {
             cartPage.clickOnProductCartInCartPage();
             Assert.assertNotEquals(webDriver.getCurrentUrl(), aeSiteURL);
         }
-        /////
     @Test(description ="Make sure that the product price is changed when you change the quantity from the Cart Page",priority = 15)
     public void verifyProductPriceChangesWhenChangingTheProductQtyFromTheCartPage(){
         cartPage= new CartPage(webDriver);
         this.viewCartFromPDP();
-        String currectProductPrice = cartPage.getPriceInCartPage().getText();
+        String currentProductPrice = cartPage.getPriceInCartPage().getText();
         cartPage.clickOnIecreseQtyBtn();
         DataHelperAndWait.refreshPage();
         String newProductPrice = cartPage.getPriceInCartPage().getText();
-        Assert.assertNotEquals(currectProductPrice,newProductPrice);
+        Assert.assertNotEquals(currentProductPrice,newProductPrice);
     }
     @Test(description ="Make sure that the customer can't add more than 2 Qty of the same product when switching to Jordan Store from Cart Page",priority = 16)
-    public void verifyUnabilityToAddMoreThan2QtyOfSameProductFromTheCartPageForJordanStore(){
+    public void verifyInabilityToAddMoreThan2QtyOfSameProductFromTheCartPageForJordanStore(){
         productDetailsPage = new ProductDetailsPage(webDriver);
         WebDriverWait wait = new WebDriverWait(webDriver, 30);
         cartPage= new CartPage(webDriver);
-        DataHelperAndWait.waitToBeVisible(productDetailsPage.getCountryList(), 10);
         productDetailsPage.switchToJOCountry();
         productDetailsPage.clickOnShopeByMenu();
         productDetailsPage.clickOnSportsSupplementsMenu();
@@ -226,8 +223,7 @@ public class CartTestCases extends BaseTest {
         productDetailsPage.clickOnShopeByMenu();
         productDetailsPage.clickOnSalesAndOffersMenu();
         productDetailsPage.clickOnBuy1Get1Card();
-        DataHelperAndWait.waitToBeVisible(productDetailsPage.getFirstProductInTheCategoryList(), 10);
-        productDetailsPage.DisplayProductInTheList(0);
+        productDetailsPage.DisplayProductInTheList(1);
         productDetailsPage.addToCart();
         productDetailsPage.viewCart();
         Assert.assertTrue(cartPage.getFreeFromSporterSection().isDisplayed());
@@ -240,13 +236,12 @@ public class CartTestCases extends BaseTest {
         productDetailsPage.clickOnShopeByMenu();
         productDetailsPage.clickOnSalesAndOffersMenu();
         productDetailsPage.clickOnBuy1Get1Card();
-        DataHelperAndWait.waitToBeVisible(productDetailsPage.getFirstProductInTheCategoryList(), 10);
-        productDetailsPage.DisplayProductInTheList(0);
+        productDetailsPage.DisplayProductInTheList(1);
         productDetailsPage.addToCart();
         productDetailsPage.viewCart();
         Assert.assertTrue(cartPage.getFreePrice().isDisplayed());
     }
-    @Test(description ="Make sure that the Free Gift is removedfrom the cart when you remove the product",priority = 19)
+    @Test(description ="Make sure that the Free Gift is removed from the cart when you remove the product",priority = 19)
     public void verifyTheFreeGiftIsRemovedWhenRemovingTheProduct(){
         productDetailsPage = new ProductDetailsPage(webDriver);
         cartPage= new CartPage(webDriver);
@@ -255,7 +250,7 @@ public class CartTestCases extends BaseTest {
         productDetailsPage.clickOnSalesAndOffersMenu();
         productDetailsPage.clickOnBuy1Get1Card();
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getFirstProductInTheCategoryList(), 10);
-        productDetailsPage.DisplayProductInTheList(0);
+        productDetailsPage.DisplayProductInTheList(1);
         productDetailsPage.addToCart();
         productDetailsPage.viewCart();
         Assert.assertTrue(cartPage.getFreePrice().isDisplayed());
@@ -264,7 +259,7 @@ public class CartTestCases extends BaseTest {
         Assert.assertTrue(cartPage.getNoItemInCartLabel().isDisplayed());
     }
     @Test(description ="Make sure that all payment methods are appear correctly in the Cart page",priority = 20)
-    public void verifyAllPaymentMethodAppearinTheCartPage(){
+    public void verifyAllPaymentMethodAppearingTheCartPage(){
         cartPage= new CartPage(webDriver);
         this.viewCartFromPDP();
         Assert.assertTrue(cartPage.getWeAcceptLabel().isDisplayed());
@@ -294,7 +289,7 @@ public class CartTestCases extends BaseTest {
         productDetailsPage.DisplayProductInTheList(1);
         productDetailsPage.addToCart();
         productDetailsPage.viewCart();
-        String itemsCounter = "(2 Items)";
+        String itemsCounter = "(3 Items)";
         DataHelperAndWait.waitToBeVisible(cartPage.getItemsCounterInCartPage(), 15);
         Assert.assertEquals(cartPage.getItemsCounterInCartPage().getText(), itemsCounter);
     }
@@ -328,7 +323,7 @@ public class CartTestCases extends BaseTest {
         productDetailsPageTestCases.viewCartAfterAddingTheProductToIt();
         Assert.assertTrue(cartPage.getExpectedDeliveryDateLable().isDisplayed());
         String expectedDeliveryDate=cartPage.getExpectedDeliveryDateValue().getText();
-        Assert.assertTrue(expectedDeliveryDate!=null);
+        Assert.assertNotNull(expectedDeliveryDate);
     }
     @Test(description ="Make sure that theProceed to checkout button appears in the cart page works correctly",priority = 25)
     public void verifyProceedCheckoutBtnAppearsCorrectlyInCartPage(){
@@ -438,20 +433,101 @@ public class CartTestCases extends BaseTest {
         DataHelperAndWait.waitToBeVisible(cartPage.getRequiredCouponeMsg(),15);
         Assert.assertTrue(cartPage.getRequiredCouponeMsg().isDisplayed());
     }
+    @Test(description ="Make sure that My Shopping Cart title appears in the Cart Page",priority = 38)
+    public void verifyMyShoppingCartTitleAppearCorrectlyInTheCartPage(){
+        cartPage= new CartPage(webDriver);
+        this.viewCartFromPDP();
+        Assert.assertTrue(cartPage.getMyShoppingCartMsg().getText().contains("My Shopping Cart"));
+    }
+    @Test(description ="Make sure that the free gift is not calculated in the cart price",priority = 39)
+    public void verifyTheFreeGiftIsNotCalculatedInTheCartPrice(){
+        cartPage= new CartPage(webDriver);
+        this.verifyTheFreeGiftIsAddedCorrectlyToTheCart();
+        Assert.assertEquals(cartPage.getPriceInCartPage().getText(),cartPage.getSubTotalValue().getText());
+    }
+    @Test(description ="Make sure the tax calculate correctly",priority = 40)
+    public void verifyTheTaxCalculatedCorrectly(){
+        DecimalFormat df = new DecimalFormat("0.00");
+        productDetailsPageTestCases = new ProductDetailsPageTestCases();
+        productDetailsPage= new ProductDetailsPage(webDriver);
+        cartPage= new CartPage(webDriver);
+        productDetailsPageTestCases.viewCartAfterAddingTheProductToIt();
+        float subTotal= DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue());
+        float tax= subTotal *(float) (0.05);
+        float expectedCartTotal= subTotal+tax;
+        float actualCartTotal= DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue());
+        Assert.assertEquals(df.format(actualCartTotal),df.format(expectedCartTotal));
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    //      The following Test Cases handle displaying the Mega Menu from Product Page
+    @Test(description = "Verify that the ShopBy Menu Is Displayed When Hovering On It From Cart Page", priority = 41)
+    public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromCartPage() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        this.viewCartFromPDP();
+        action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+        Assert.assertTrue(aeMegamenuPage.getShopeByMenu().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from Product Page");
+    }
+    @Test(description = "Verify that the Sport Supplements Menu Is Displayed When Hovering On It From Cart Page", priority = 42)
+    public void verifySportSupplementsMenuIsDisplayedWhenHoveringOnItFromCartPage() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        this.viewCartFromPDP();
+        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        Assert.assertTrue(aeMegamenuPage.getSportsSupplementsSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from Product Page");
+    }
+    @Test(description = "Verify that the Vitamins And Health Menu Is Displayed When Hovering On It From Cart Page", priority = 43)
+    public void verifyVitaminsAndHealthMenuIsDisplayedWhenHoveringOnItFromCartPage() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        this.viewCartFromPDP();
+        action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
+        Assert.assertTrue(aeMegamenuPage.getVitaminsAndHealthSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from Product Page");
+    }
+    @Test(description = "Verify that the Healthy Food Menu Is Displayed When Hovering On It From Cart Page", priority = 44)
+    public void verifyHealthyFoodMenuIsDisplayedWhenHoveringOnItFromCartPage() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        this.viewCartFromPDP();
+        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
+        Assert.assertTrue(aeMegamenuPage.getHealthyFoodSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from Product Page");
+    }
+    @Test(description = "Verify that the Sports Menu Is Displayed When Hovering On It From Cart Page", priority = 45)
+    public void verifySportsMenuIsDisplayedWhenHoveringOnItFromCartPage() {
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        this.viewCartFromPDP();
+        action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
+        Assert.assertTrue(aeMegamenuPage.getSportsSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from Product Page");
+    }
+    @Test(description = "Verify that the account Profile icon works correctly in the Cart Page", priority = 46)
+    public void verifyAccountProfileIconWorksCorrectlyInCartPage() {
+        productDetailsPage = new ProductDetailsPage(webDriver);
+        productDetailsPage.switchToAeCountry();
+        productDetailsPage.clickOnProductInHomePage();
+        productDetailsPage.clickOnAccountProfileIcon();
+        assertTrue(productDetailsPage.getAccountProfileOptions().isDisplayed());
+    }
+    @Test(description = "Make sure ability to navigate to the home page by clicking on the sporter logo from the Cart Page ", priority = 47)
+    public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromCartPage() {
+        aeGuestUserPage= new AEGuestUserPage(webDriver);
+        this.viewCartFromPDP();
+        aeGuestUserPage.clickOnSporterLogo();
+        Assert.assertEquals(webDriver.getCurrentUrl(), "https://www.sporter.com/en-ae/");
+    }
+    @Test(description = "Verify that the search button works correctly from the Cart Page", priority = 48)
+    public void verifySearchBtnWorksCorrectlyFromCartPage() {
+        aeGuestUserPage= new AEGuestUserPage(webDriver);
+        productDetailsPage = new ProductDetailsPage(webDriver);
+        this.viewCartFromPDP();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
+        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
 }
 
 

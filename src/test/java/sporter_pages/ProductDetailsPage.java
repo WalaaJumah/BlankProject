@@ -34,7 +34,7 @@ public class ProductDetailsPage {
     private WebElement productFlavor;
     @FindBy(xpath = "//*[@id=\"algolia-searchbox\"]/button")
     private WebElement searchBtn;
-    @FindBy(xpath = "//a[@data-position='2']/div[@class= 'result-thumbnail product-image-wrapper']")
+    @FindBy(xpath = "//a[@data-position='1']/div[@class= 'result-thumbnail product-image-wrapper']")
     private WebElement productCard;
     @FindBy(id = "switcher-store-trigger")
     private WebElement countryList;

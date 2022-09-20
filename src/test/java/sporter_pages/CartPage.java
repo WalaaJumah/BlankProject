@@ -85,6 +85,9 @@ public class CartPage {
     private WebElement notExistCouponeMsg;
     @FindBy(xpath = "//div[@id='coupon_code-error']")
     private WebElement requiredCouponeMsg;
+       @FindBy(xpath = "//span[@class='nobr']")
+    private WebElement myShoppingCartMsg;
+
     //Getter Methods
     public WebElement getItemsCounterInCartPage() {return itemsCounter;}
     public WebElement getRequestedQtyUnAvailableMsg(){return requestedQtyUnAvailableMsg;}
@@ -115,6 +118,7 @@ public class CartPage {
     public WebElement getApplyCouponeCode(){return applyCopouneCodeBtn;}
     public WebElement getNotExistCouponeMsg(){return notExistCouponeMsg;}
     public WebElement getRequiredCouponeMsg(){return requiredCouponeMsg;}
+    public WebElement getMyShoppingCartMsg(){return myShoppingCartMsg;}
     //Define the main actions we need to execute our TCs
     public void clickOnTheContinueShoppingBtn() {
         DataHelperAndWait.isDisplayed(continueShoppingBtn, 10);

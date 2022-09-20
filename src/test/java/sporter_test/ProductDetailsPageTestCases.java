@@ -8,13 +8,15 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import sporter_pages.AEGuestUserPage;
 import sporter_pages.ProductDetailsPage;
 
 import static org.testng.Assert.*;
 
 public class ProductDetailsPageTestCases extends BaseTest {
     private ProductDetailsPage productDetailsPage;
-    AEMegaMenuTestCases aeMegaMenuTestCases  ;
+    AEMegaMenuTestCases aeMegaMenuTestCases ;
+    AEGuestUserPage aeGuestUserPage;
     String productUrl="https://www.sporter.com/en-ae/dymatize-iso-100-6350";
 
     @Test(description = "Make sure the shopper is able to keep the shopping after adding the product to the cart ", priority = 1)
@@ -257,7 +259,8 @@ aeMegaMenuTestCases.verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductPage()
     @Test(description = "Verify that the Sport Supplements Menu Is Displayed When Hovering On It From Product Details Page", priority = 22)
     public void verifySportSupplementsMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
         aeMegaMenuTestCases=new AEMegaMenuTestCases();
-        aeMegaMenuTestCases.verifySportSupplementsMenuIsDisplayedWhenHoveringOnItFromProductPage();
+
+        aeMegaMenuTestCases.verifySportsSupplementsMainMenuDisplayTheCorrectCategoriesAndSubCategories();
     }
     @Test(description = "Verify that the Vitamins And Health Menu Is Displayed When Hovering On It From Product Details Page", priority = 23)
     public void verifyVitaminsAndHealthMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
@@ -401,5 +404,14 @@ aeMegaMenuTestCases.verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductPage()
         System.out.println(firstPrice );
         System.out.println(secondPrice );
         Assert.assertNotEquals(firstPrice,secondPrice);
+    }
+    @Test(description = "Make sure ability to navigate to the home page by clicking on the sporter logo from the product Details Page  ", priority = 38)
+    public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromPdp() {
+        aeGuestUserPage= new AEGuestUserPage(webDriver);
+        productDetailsPage = new ProductDetailsPage(webDriver);
+        productDetailsPage.switchToAeCountry();
+        productDetailsPage.clickOnProductInHomePage();
+        aeGuestUserPage.clickOnSporterLogo();
+        Assert.assertEquals(webDriver.getCurrentUrl(), "https://www.sporter.com/en-ae/");
     }
 }
