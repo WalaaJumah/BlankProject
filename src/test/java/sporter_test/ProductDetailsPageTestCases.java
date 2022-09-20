@@ -396,7 +396,7 @@ aeMegaMenuTestCases.verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductPage()
         productDetailsPage.switchToAeCountry();
         productDetailsPage.clickOnShopeByMenu();
         productDetailsPage.clickOnSportsSupplementsMenu();
-        productDetailsPage.DisplayProductInTheList(0);
+        productDetailsPage.DisplayProductInTheList(4);
         String firstPrice= productDetailsPage.getFinalProductPrice().getText();
         productDetailsPage.clickOnFirstProductSize();
         DataHelperAndWait.implicitWait(3);

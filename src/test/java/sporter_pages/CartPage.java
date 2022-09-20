@@ -63,7 +63,7 @@ public class CartPage {
     private WebElement orderTotalValue;
     @FindBy(xpath= "//a[@class='action showcart']")
     private WebElement carticon;
-    @FindBy(xpath="//span[text()='View Cart']")
+    @FindBy(xpath="//a[@class='action viewcart']")
     private WebElement viewCartInCartPopup;
     @FindBy(xpath = "//span[@class='counter-number']")
     private WebElement cartCounter;

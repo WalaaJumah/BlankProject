@@ -49,13 +49,13 @@ public class AeCartTestCases extends BaseTest {
         productDetailsPage.clickOnSalesAndOffersMenu();
         productDetailsPage.clickOnBuy1Get1Card();
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getFirstProductInTheCategoryList(), 10);
-        productDetailsPage.DisplayProductInTheList(0);
+        productDetailsPage.DisplayProductInTheList(3);
         productDetailsPage.addToCart();
         productDetailsPage.keepShopping();
         productDetailsPage.clickOnShopeByMenu();
         productDetailsPage.clickOnSalesAndOffersMenu();
         productDetailsPage.clickOnBuy1Get1Card();
-        productDetailsPage.DisplayProductInTheList(1);
+        productDetailsPage.DisplayProductInTheList(4);
         productDetailsPage.addToCart();
         productDetailsPage.viewCart();
         Assert.assertEquals(webDriver.getCurrentUrl(), cartURL);
@@ -74,7 +74,7 @@ public class AeCartTestCases extends BaseTest {
         productDetailsPage.clickOnSecondProductFlavor();
         productDetailsPage.addToCart();
         productDetailsPage.viewCart();
-        String itemsCounter = "(3 Items)";
+        String itemsCounter = "(2 Items)";
         DataHelperAndWait.waitToBeVisible(cartPage.getItemsCounterInCartPage(), 15);
         Assert.assertEquals(cartPage.getItemsCounterInCartPage().getText(), itemsCounter);
     }
@@ -223,7 +223,7 @@ public class AeCartTestCases extends BaseTest {
         productDetailsPage.clickOnShopeByMenu();
         productDetailsPage.clickOnSalesAndOffersMenu();
         productDetailsPage.clickOnBuy1Get1Card();
-        productDetailsPage.DisplayProductInTheList(1);
+        productDetailsPage.DisplayProductInTheList(3);
         productDetailsPage.addToCart();
         productDetailsPage.viewCart();
         Assert.assertTrue(cartPage.getFreeFromSporterSection().isDisplayed());
@@ -236,7 +236,7 @@ public class AeCartTestCases extends BaseTest {
         productDetailsPage.clickOnShopeByMenu();
         productDetailsPage.clickOnSalesAndOffersMenu();
         productDetailsPage.clickOnBuy1Get1Card();
-        productDetailsPage.DisplayProductInTheList(1);
+        productDetailsPage.DisplayProductInTheList(3);
         productDetailsPage.addToCart();
         productDetailsPage.viewCart();
         Assert.assertTrue(cartPage.getFreePrice().isDisplayed());
@@ -250,7 +250,7 @@ public class AeCartTestCases extends BaseTest {
         productDetailsPage.clickOnSalesAndOffersMenu();
         productDetailsPage.clickOnBuy1Get1Card();
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getFirstProductInTheCategoryList(), 10);
-        productDetailsPage.DisplayProductInTheList(1);
+        productDetailsPage.DisplayProductInTheList(3);
         productDetailsPage.addToCart();
         productDetailsPage.viewCart();
         Assert.assertTrue(cartPage.getFreePrice().isDisplayed());
@@ -286,7 +286,7 @@ public class AeCartTestCases extends BaseTest {
         productDetailsPage.clickOnShopeByMenu();
         productDetailsPage.clickOnSportsSupplementsMenu();
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getFirstProductInTheCategoryList(), 10);
-        productDetailsPage.DisplayProductInTheList(1);
+        productDetailsPage.DisplayProductInTheList(4);
         productDetailsPage.addToCart();
         productDetailsPage.viewCart();
         String itemsCounter = "(3 Items)";
@@ -302,14 +302,14 @@ public class AeCartTestCases extends BaseTest {
         productDetailsPage.clickOnSalesAndOffersMenu();
         productDetailsPage.clickOnBuy1Get1Card();
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getFirstProductInTheCategoryList(), 10);
-        productDetailsPage.DisplayProductInTheList(0);
+        productDetailsPage.DisplayProductInTheList(3);
         productDetailsPage.addToCart();
         productDetailsPage.keepShopping();
         productDetailsPage.clickOnShopeByMenu();
         productDetailsPage.clickOnSalesAndOffersMenu();
         productDetailsPage.clickOnBuy1Get1Card();
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getFirstProductInTheCategoryList(), 10);
-        productDetailsPage.DisplayProductInTheList(1);
+        productDetailsPage.DisplayProductInTheList(3);
         productDetailsPage.addToCart();
         productDetailsPage.viewCart();
         String itemsCounter = "(4 Items)";
