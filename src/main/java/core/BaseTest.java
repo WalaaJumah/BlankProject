@@ -25,14 +25,13 @@ public class BaseTest {
     public String outOfStockProduct = "https://www.sporter.com/en-ae/healthy-food/snacks-drinks/spreads/gymqueen-smooth-peanut-butter-spread";
     public String product = "https://www.sporter.com/en-ae/optimum-gold-standard-100-whey";
     public static WebDriver webDriver;
-    public static WebDriver driver;
 //    The Below Methods we need to run the TCs across the broswers
 //    @BeforeMethod
 //    @Parameters("browser")
 //    public void setupBrowser( String browser) throws Exception {
 ////Check if parameter passed from TestNG is 'firefox'
 //        switch (browser) {
-    //Check if parameter passed from TestNG is 'firefox'
+////    Check if parameter passed from TestNG is 'firefox'
 //            case "firefox":
 //                System.setProperty("webdriver.gecko.driver", "src/test/resources/geckodriver.exe");
 //                webDriver = new FirefoxDriver();

@@ -3098,14 +3098,12 @@ public class AEMegaMenuPage {
     //Define the main actions we need to execute our TCs
     public void switchToAECountry() {
         try {
-            DataHelperAndWait.isDisplayed(countryList, 15);
             this.countryList.click();
-            DataHelperAndWait.implicitWait(6);
+            DataHelperAndWait.implicitWait(3);
             this.aeCountry.click();
         } catch (Exception e) {
-            DataHelperAndWait.isDisplayed(countryList, 15);
             this.countryList.click();
-            DataHelperAndWait.implicitWait(6);
+            DataHelperAndWait.implicitWait(3);
             this.aeCountry.click();
         }
     }

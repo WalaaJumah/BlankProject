@@ -25,9 +25,9 @@ public class KsaHomePage {
     @FindBy(css = "ul.slides li.flex-active-slide:nth-child(2)")
     private WebElement homePageRotatingSlider;
     @FindBy(xpath = "//*[@class='flex-control-nav flex-control-paging']")
-    private List<WebElement> homePageRotatingSliderPaginglist;
+    private List<WebElement> homePageRotatingSliderPagingList;
     @FindBy(css = "#maincontent > div.columns > div > div.advertise-banner-3.imagewidgetclass > ul")
-    private List<WebElement> homePageUnderShopbyCategoryBanners;
+    private List<WebElement> homePageUnderShopByCategoryBanners;
     @FindBy(xpath = "//ul[@class='nav-primary']/li[1]")
     private WebElement shopByOption;
     @FindBy(xpath = "//ul[@class='nav-primary']/li[2]")
@@ -73,7 +73,7 @@ public class KsaHomePage {
     @FindBy(xpath = "//li[@class='tabli-67-736']")
     private WebElement sportswearAndAccessoriesLink;
     @FindBy(xpath = "//li[@class='tabli-67-583 active']")
-    private WebElement spportSupplementsActiveLink;
+    private WebElement sportSupplementsActiveLink;
     @FindBy(xpath = "//ul[@class='tabs tabs67']/li[@class='active']")
     private WebElement allActiveLink;
     @FindBy(xpath = "//li[@class='tabli-67-618 active']")
@@ -97,13 +97,13 @@ public class KsaHomePage {
     @FindBy(xpath = "//*[@id=\"maincontent\"]/div[3]/div/div[8]/div[4]")
     private WebElement previousBtnInTrendingOnSporterSection;
     @FindBy(xpath = "//div[@style='transform: translate3d(-1482px, 0px, 0px); transition-duration: 0ms;']")
-    private WebElement trendingOnSporterSectionPostitionAfterClickingOnNext;
+    private WebElement trendingOnSporterSectionPositionAfterClickingOnNext;
     @FindBy(xpath = "//div[@style='transform: translate3d(-1235px, 0px, 0px); transition-duration: 0ms;']")
-    private WebElement trendingOnSporterSectionPostitionAfterClickingOnPrevious;
+    private WebElement trendingOnSporterSectionPositionAfterClickingOnPrevious;
     @FindBy(xpath = "//div[@style='transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;']")
-    private WebElement topSellerSectionPostitionAfterClickingOnPrevious;
+    private WebElement topSellerSectionPositionAfterClickingOnPrevious;
     @FindBy(xpath = "//div[@style='transform: translate3d(-249px, 0px, 0px); transition-duration: 0ms;']")
-    private WebElement topSellerSectionPostitionAfterClickingOnNext;
+    private WebElement topSellerSectionPositionAfterClickingOnNext;
     @FindBy(xpath = "//div[@style='transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;']")
     private WebElement NewArrivalSectionPositionAfterClickingOnPrevious;
     @FindBy(xpath = "//div[@style='transform: translate3d(-249px, 0px, 0px); transition-duration: 0ms;']")
@@ -121,9 +121,9 @@ public class KsaHomePage {
     @FindBy(xpath = "//li[@class='tabli-6-686']")
     private WebElement newArrivalsVitaminsAndHealthLink;
     @FindBy(xpath = "//li[@class='tabli-6-736']")
-    private WebElement newArrivalsSportwearAndAccessoriesLink;
+    private WebElement newArrivalsSportWearAndAccessoriesLink;
     @FindBy(xpath = "//li[@class='tabli-6-583 active']")
-    private WebElement newArrivalsSpportSupplementsActiveLink;
+    private WebElement newArrivalsSportSupplementsActiveLink;
     @FindBy(xpath = "//ul[@class='tabs tabs6']/li[@class='active']")
     private WebElement newArrivalsAllActiveLink;
     @FindBy(xpath = "//li[@class='tabli-6-618 active']")
@@ -184,16 +184,16 @@ public class KsaHomePage {
     public WebElement getTopSellingStacksSections() {
         return topSellingStacksSections;
     }
-    public WebElement getMegaMenuMaincomponent() {
+    public WebElement getMegaMenuMainComponent() {
         return megaMenuMaincomponent;
     }
     public WebElement getHorizontalBanner() {
         return homePageHorizontalBanner;
     }
-    public List<WebElement> getHomePageRotatingSliderlist() {
+    public List<WebElement> getHomePageRotatingSliderList() {
         return homePageRotatingSliderlist;
     }
-    public WebElement getShopeByOption() {
+    public WebElement getShopByOption() {
         return shopByOption;}
         public WebElement getSportSupplementsOption() {
             return sportSupplementsOption;
@@ -210,11 +210,11 @@ public class KsaHomePage {
     public WebElement getWomenOnlyOption() {
         return womenOnlyOption;
     }
-    public List<WebElement> getHomePageRotatingSliderPaginglist() {
-        return homePageRotatingSliderPaginglist;
+    public List<WebElement> getHomePageRotatingSliderPagingList() {
+        return homePageRotatingSliderPagingList;
     }
-    public List<WebElement> getHomePageUnderShopbyCategoryBanners() {
-        return homePageUnderShopbyCategoryBanners;
+    public List<WebElement> getHomePageUnderShopByCategoryBanners() {
+        return homePageUnderShopByCategoryBanners;
     }
     public WebElement getSportSupplementsLink() {
         return sportSupplementsLink;
@@ -230,10 +230,10 @@ public class KsaHomePage {
     }
     public WebElement getSportswearAndAccessoriesLink() {
         return sportswearAndAccessoriesLink;
-    }    public WebElement getSpportSupplementsActiveLink() {
-        return spportSupplementsActiveLink;
+    }    public WebElement getSportSupplementsActiveLink() {
+        return sportSupplementsActiveLink;
     }
-    public WebElement getAllLActiveink() {
+    public WebElement getAllLActiveLink() {
         return allActiveLink;
     }
     public WebElement getHealthyFoodActiveLink() {
@@ -261,33 +261,33 @@ public class KsaHomePage {
     }
     public WebElement getPreviousBtnInTrendingOnSporterSection() {
         return previousBtnInTrendingOnSporterSection;}
-    public WebElement getTrendingOnSporterSectionpositionAfterClickingOnNext() {
-        return trendingOnSporterSectionPostitionAfterClickingOnNext;}
-    public WebElement getTrendingOnSporterSectionpositionAfterClickingOnPrevious() {
-        return trendingOnSporterSectionPostitionAfterClickingOnPrevious;}
+    public WebElement getTrendingOnSporterSectionPositionAfterClickingOnNext() {
+        return trendingOnSporterSectionPositionAfterClickingOnNext;}
+    public WebElement getTrendingOnSporterSectionPositionAfterClickingOnPrevious() {
+        return trendingOnSporterSectionPositionAfterClickingOnPrevious;}
 
-    public WebElement getTopSellerSectionpositionAfterClickingOnPrevious() {
-        return topSellerSectionPostitionAfterClickingOnPrevious;}
-    public WebElement getTopSellerSectionpositionAfterClickingOnNext() {
-        return topSellerSectionPostitionAfterClickingOnNext;}
+    public WebElement getTopSellerSectionPositionAfterClickingOnPrevious() {
+        return topSellerSectionPositionAfterClickingOnPrevious;}
+    public WebElement getTopSellerSectionPositionAfterClickingOnNext() {
+        return topSellerSectionPositionAfterClickingOnNext;}
     public WebElement getNewArrivalsHeader() {
         return newArrivalsHeader;}
     public WebElement getNewArrivalsSection() {
         return newArrivalsSection;}
     public WebElement getNewArrivalsAllLink() {
         return newArrivalsAllLink;}
-    public WebElement getNewArrivalsSpportSupplementsLink() {
+    public WebElement getNewArrivalsSportSupplementsLink() {
         return newArrivalsSpportSupplementsLink;}
     public WebElement getNewArrivalsHealthyFoodLinkLink() {
         return newArrivalsHealthyFoodLink;}
     public WebElement getNewArrivalsVitaminsAndHealthLink() {
         return newArrivalsVitaminsAndHealthLink;}
-    public WebElement getNewArrivalsSportwearAndAccessoriesLink() {
-        return newArrivalsSportwearAndAccessoriesLink;}
+    public WebElement getNewArrivalsSportWearAndAccessoriesLink() {
+        return newArrivalsSportWearAndAccessoriesLink;}
     public WebElement getNewArrivalsAllActiveLink() {
         return newArrivalsAllActiveLink;}
-    public WebElement getNewArrivalsSpportSupplementsActiveLink() {
-        return newArrivalsSpportSupplementsActiveLink;}
+    public WebElement getNewArrivalsSportSupplementsActiveLink() {
+        return newArrivalsSportSupplementsActiveLink;}
     public WebElement getNewArrivalsHealthyFoodActiveLink() {
         return newArrivalsHealthyFoodActiveLink;}
     public WebElement getNewArrivalsSportwearAndAccessoriesActiveLink() {
@@ -322,7 +322,7 @@ public class KsaHomePage {
         this.saCountry.click();
     }
     }
-    public void clickOnviewAllBtnInTopSellingStacksSection(){
+    public void clickOnViewAllBtnInTopSellingStacksSection(){
         DataHelperAndWait.isDisplayed(viewAllBtnInTopSellingStacksSection,10);
         this.viewAllBtnInTopSellingStacksSection.click();
     }
@@ -383,8 +383,8 @@ public class KsaHomePage {
         this.newArrivalsVitaminsAndHealthLink.click();
     }
     public void clickOnSportswearAndAccessoriesLinkInNewArrivalsSection(){
-        DataHelperAndWait.isDisplayed(newArrivalsSportwearAndAccessoriesLink,10);
-        this.newArrivalsSportwearAndAccessoriesLink.click();
+        DataHelperAndWait.isDisplayed(newArrivalsSportWearAndAccessoriesLink,10);
+        this.newArrivalsSportWearAndAccessoriesLink.click();
     }
     public void clickOnPreviousButtonInNewArrivalSection(){
         DataHelperAndWait.isDisplayed(previousBtnInNewArrivalsSection,10);

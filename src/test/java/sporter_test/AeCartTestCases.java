@@ -74,7 +74,7 @@ public class AeCartTestCases extends BaseTest {
         productDetailsPage.clickOnSecondProductFlavor();
         productDetailsPage.addToCart();
         productDetailsPage.viewCart();
-        String itemsCounter = "(2 Items)";
+        String itemsCounter = "(3 Items)";
         DataHelperAndWait.waitToBeVisible(cartPage.getItemsCounterInCartPage(), 15);
         Assert.assertEquals(cartPage.getItemsCounterInCartPage().getText(), itemsCounter);
     }
@@ -161,7 +161,7 @@ public class AeCartTestCases extends BaseTest {
         cartPage= new CartPage(webDriver);
         this.viewCartFromPDP();
         DataHelperAndWait.waitToBeClickable(cartPage.getIncreaseQtyBtn(),10);
-        cartPage.clickOnIecreseQtyBtn();
+        cartPage.clickOnIncreaseQtyBtn();
         Assert.assertEquals(cartPage.getQtyField().getAttribute("value"), "2");
     }
     @Test(description ="Verify ability to Decrease the product quantity from Cart page from the Cart Page works successfully",priority = 12)
@@ -169,17 +169,17 @@ public class AeCartTestCases extends BaseTest {
         cartPage= new CartPage(webDriver);
         this.viewCartFromPDP();
         DataHelperAndWait.waitToBeClickable(cartPage.getIncreaseQtyBtn(),10);
-        cartPage.clickOnIecreseQtyBtn();
-        DataHelperAndWait.waitToBeClickable(cartPage.getDecreseQtyBtn(),10);
-        cartPage.clickOnDecreseQtyBtn();
+        cartPage.clickOnIncreaseQtyBtn();
+        DataHelperAndWait.waitToBeClickable(cartPage.getDecreaseQtyBtn(),10);
+        cartPage.clickOnDecreaseQtyBtn();
         Assert.assertEquals(cartPage.getQtyField().getAttribute("value"), "1");
     }
     @Test(description ="Verify that The requested qty is not available message appear when the product becomes OOS in Cart Page successfully",priority = 13)
     public void verifyToDisplayRequestedQtyIsNotAvailableMsgWhenProductOOSinCartPage(){
         cartPage= new CartPage(webDriver);
         this.verifyAbilityToAddBundleToCart();
-        cartPage.FillInQtyField("1000");
-        cartPage.clickOnIecreseQtyBtn();
+        cartPage.FillInQtyField("500");
+        cartPage.clickOnIncreaseQtyBtn();
         DataHelperAndWait.waitToBeVisible(cartPage.getQtyUnavailableMsgInCartPage(),10);
         Assert.assertTrue(cartPage.getQtyUnavailableMsgInCartPage().isDisplayed());}
         @Test(description ="Verify ability to display the product from the Cart Page works successfully",priority = 14)
@@ -194,7 +194,7 @@ public class AeCartTestCases extends BaseTest {
         cartPage= new CartPage(webDriver);
         this.viewCartFromPDP();
         String currentProductPrice = cartPage.getPriceInCartPage().getText();
-        cartPage.clickOnIecreseQtyBtn();
+        cartPage.clickOnIncreaseQtyBtn();
         DataHelperAndWait.refreshPage();
         String newProductPrice = cartPage.getPriceInCartPage().getText();
         Assert.assertNotEquals(currentProductPrice,newProductPrice);
@@ -211,7 +211,7 @@ public class AeCartTestCases extends BaseTest {
         productDetailsPage.clickOnFirstProductFlavor();
         productDetailsPage.addToCart();
         productDetailsPage.viewCart();
-        cartPage.clickOnIecreseQtyBtn();
+        cartPage.clickOnIncreaseQtyBtn();
         if(wait.until(ExpectedConditions.alertIsPresent())!=null)
             webDriver.switchTo().alert().dismiss();
     }
@@ -289,7 +289,7 @@ public class AeCartTestCases extends BaseTest {
         productDetailsPage.DisplayProductInTheList(4);
         productDetailsPage.addToCart();
         productDetailsPage.viewCart();
-        String itemsCounter = "(3 Items)";
+        String itemsCounter = "(2 Items)";
         DataHelperAndWait.waitToBeVisible(cartPage.getItemsCounterInCartPage(), 15);
         Assert.assertEquals(cartPage.getItemsCounterInCartPage().getText(), itemsCounter);
     }
@@ -321,7 +321,7 @@ public class AeCartTestCases extends BaseTest {
         productDetailsPageTestCases = new ProductDetailsPageTestCases();
         cartPage= new CartPage(webDriver);
         productDetailsPageTestCases.viewCartAfterAddingTheProductToIt();
-        Assert.assertTrue(cartPage.getExpectedDeliveryDateLable().isDisplayed());
+        Assert.assertTrue(cartPage.getExpectedDeliveryDateLabel().isDisplayed());
         String expectedDeliveryDate=cartPage.getExpectedDeliveryDateValue().getText();
         Assert.assertNotNull(expectedDeliveryDate);
     }
@@ -403,35 +403,35 @@ public class AeCartTestCases extends BaseTest {
     public void verifyFreeCoupopneCodeFunctionWorksCorrectly(){
         cartPage= new CartPage(webDriver);
         this.viewCartFromPDP();
-        cartPage.FillinCouponeCode(freeCouponeCode);
-        DataHelperAndWait.waitToBeVisible(cartPage.getUsedFreeCouponeMsg(),15);
+        cartPage.FillInCouponCode(freeCouponeCode);
+        DataHelperAndWait.waitToBeVisible(cartPage.getUsedFreeCouponMsg(),15);
         Assert.assertTrue(cartPage.getFreeFromSporterSection().isDisplayed());
     }
     @Test(description ="Make sure that the system does not apply invalid coupon code",priority = 35)
     public void verifyInabilityToApplyInvalidCouponCode(){
         cartPage= new CartPage(webDriver);
         this.viewCartFromPDP();
-        cartPage.FillinCouponeCode("test");
-        DataHelperAndWait.waitToBeVisible(cartPage.getNotExistCouponeMsg(),15);
-        Assert.assertTrue(cartPage.getNotExistCouponeMsg().isDisplayed());
+        cartPage.FillInCouponCode("test");
+        DataHelperAndWait.waitToBeVisible(cartPage.getNotExistCouponMsg(),15);
+        Assert.assertTrue(cartPage.getNotExistCouponMsg().isDisplayed());
     }
     @Test(description ="Make sure that the system cancel the coupon code correctly",priority = 36)
     public void verifyAbilityToCancelTheCouponCode(){
         cartPage= new CartPage(webDriver);
         this.viewCartFromPDP();
-        cartPage.FillinCouponeCode(freeCouponeCode);
-        DataHelperAndWait.waitToBeVisible(cartPage.getUsedFreeCouponeMsg(),15);
-        cartPage.clickOnCancelCouponeCodeBtn();
+        cartPage.FillInCouponCode(freeCouponeCode);
+        DataHelperAndWait.waitToBeVisible(cartPage.getUsedFreeCouponMsg(),15);
+        cartPage.clickOnCancelCouponCodeBtn();
         Assert.assertFalse(cartPage.getFreeFromSporterSection().isDisplayed());
-        Assert.assertTrue(cartPage.getApplyCouponeCode().isDisplayed());
+        Assert.assertTrue(cartPage.getApplyCouponCode().isDisplayed());
     }
     @Test(description ="Make sure inability to apply coupon code without filling the code",priority = 37)
     public void verifyInabilityToApplyCouponCodeWithoutFillingTheCode(){
         cartPage= new CartPage(webDriver);
         this.viewCartFromPDP();
-        cartPage.FillinCouponeCode(" ");
-        DataHelperAndWait.waitToBeVisible(cartPage.getRequiredCouponeMsg(),15);
-        Assert.assertTrue(cartPage.getRequiredCouponeMsg().isDisplayed());
+        cartPage.FillInCouponCode(" ");
+        DataHelperAndWait.waitToBeVisible(cartPage.getRequiredCouponMsg(),15);
+        Assert.assertTrue(cartPage.getRequiredCouponMsg().isDisplayed());
     }
     @Test(description ="Make sure that My Shopping Cart title appears in the Cart Page",priority = 38)
     public void verifyMyShoppingCartTitleAppearCorrectlyInTheCartPage(){

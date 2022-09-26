@@ -297,6 +297,7 @@ public class ProductDetailsPage {
         this.qtyMinusButton.click();
     }
     public void clickOnProductInHomePage() {
+        DataHelperAndWait.waitToBeClickable(this.productInHomePage,10);
         this.productInHomePage.click();
     }    public void clickOnJOProductInHomePage() {
         this.joProductInHomePage.click();
@@ -309,7 +310,7 @@ public class ProductDetailsPage {
         this.salesAndOffersMenu.click();
     }
     public void clickOnSportsSupplementsMenu() {
-        DataHelperAndWait.isDisplayed(SportsSupplementsMenu, 10);
+        DataHelperAndWait.waitToBeClickable(SportsSupplementsMenu, 10);
         this.SportsSupplementsMenu.click();
     }
 

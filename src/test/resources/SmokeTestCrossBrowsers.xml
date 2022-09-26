@@ -5,7 +5,7 @@
     <test name="EdgeTest">
         <parameter name="browser" value="Edge" />
         <classes>
-            <class name="sporter_test.AEMegaMenuTestCases">
+            <class name="sporter_test.RecommendedProductsTestCases">
                 <methods>
 <!--                    <include name="verifyKeepShoppingBtnWorksCorrectly"></include>-->
 <!--                    <include name="verifyViewCartWorksBtnCorrectly"></include>-->
@@ -18,7 +18,7 @@
         <parameter name="browser" value="chrome"/>
 <!--        <parameter name="browser" value="chrome" />-->
         <classes>
-            <class name="sporter_test.AEGuestUserTestCases">
+            <class name="sporter_test.RecommendedProductsTestCases">
                 <methods>
 <!--                  <include name="verifySportsSupplementsMenuInTheShopByMenuDisplayTheCorrectCategoriesAndSubCategories"></include>-->
 <!--                  <include name="verifyPrivacyPolicyLinkAppearsInFooterWorksCorrectly"></include>-->
@@ -48,7 +48,7 @@
     <test name="FireFoxTest">
         <parameter name="browser" value="firefox" />
         <classes>
-            <class name="sporter_test.AEFooterPageTestCases">
+            <class name="sporter_test.RecommendedProductsTestCases">
                 <methods>
 <!--                    <include name="viewCartFromPDP"></include>-->
 <!--                    <include name="verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct"></include>-->

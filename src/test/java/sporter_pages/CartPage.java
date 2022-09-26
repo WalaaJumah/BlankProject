@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import javax.xml.xpath.XPath;
 
 public class CartPage {
     public CartPage(WebDriver webDriver){
@@ -26,7 +25,7 @@ public class CartPage {
     @FindBy(xpath="//a[text()='here']")
     private WebElement hereLink;
     @FindBy(xpath="//a[@class='decreaseQty btn-qty-control btn-qty-control--minus']")
-    private WebElement decreseQtyBtn;
+    private WebElement decreaseQtyBtn;
     @FindBy(xpath="//a[@class='increaseQty btn-qty-control btn-qty-control--plus']")
     private WebElement increaseQtyBtn;
     @FindBy(css = "div[class='input-box input-with-value input-active']:nth-child(n) input")
@@ -50,7 +49,7 @@ public class CartPage {
     @FindBy(xpath="//div[@class='free-shipping-container']")
     private WebElement freeShippingLabel;
     @FindBy(xpath = "//td[@class='expect-date']")
-    private WebElement expectedDeliveryDateLable;
+    private WebElement expectedDeliveryDateLabel;
     @FindBy(xpath="//td[@class='date-info']")
     private WebElement expectedDeliveryDateValue;
     @FindBy(xpath = "//span[text()='Proceed to Checkout']")
@@ -62,8 +61,8 @@ public class CartPage {
     @FindBy(css = "td[class='grand-price']:nth-child(n) span")
     private WebElement orderTotalValue;
     @FindBy(xpath= "//a[@class='action showcart']")
-    private WebElement carticon;
-    @FindBy(xpath="//a[@class='action viewcart']")
+    private WebElement cartIcon;
+    @FindBy(xpath="//a[@class='action viewcart']/span")
     private WebElement viewCartInCartPopup;
     @FindBy(xpath = "//span[@class='counter-number']")
     private WebElement cartCounter;
@@ -74,17 +73,17 @@ public class CartPage {
     @FindBy(xpath = "//a[@id='btn-minicart-close']")
     private WebElement cartCloseIcon;
     @FindBy(xpath="//input[@id='coupon_code']")
-    private WebElement coupounCodeField;
+    private WebElement couponCodeField;
     @FindBy(xpath = "//button[@value='Apply']")
-    private WebElement applyCopouneCodeBtn;
+    private WebElement applyCouponCodeBtn;
     @FindBy(xpath = "//div[text()='You used free gift code \"spo15\".']")
-    private WebElement usedFreeCouponeMsg;
+    private WebElement usedFreeCouponMsg;
     @FindBy(xpath = "//button[@value='Cancel']")
-    private WebElement cancelCouponeCodeBtn;
+    private WebElement cancelCouponCodeBtn;
     @FindBy(xpath ="//div[@data-bind='html: $parent.prepareMessageForHtml(message.text)']")
-    private WebElement notExistCouponeMsg;
+    private WebElement notExistCouponMsg;
     @FindBy(xpath = "//div[@id='coupon_code-error']")
-    private WebElement requiredCouponeMsg;
+    private WebElement requiredCouponMsg;
        @FindBy(xpath = "//span[@class='nobr']")
     private WebElement myShoppingCartMsg;
 
@@ -94,7 +93,7 @@ public class CartPage {
     public WebElement getContinueShoppingBtn(){return continueShoppingBtn;}
     public WebElement getNoItemInCartLabel(){return noItemInCartLabel;}
     public WebElement getHereLink(){return hereLink;}
-    public WebElement getDecreseQtyBtn(){return decreseQtyBtn;}
+    public WebElement getDecreaseQtyBtn(){return decreaseQtyBtn;}
     public WebElement getIncreaseQtyBtn(){return increaseQtyBtn;}
     public WebElement getQtyField(){return qtyField;}
     public WebElement getQtyUnavailableMsgInCartPage(){return qtyUnavailableMsgInCartPage;}
@@ -105,7 +104,7 @@ public class CartPage {
     public WebElement getWeAcceptLabel(){return weAcceptLabel;}
     public WebElement getCreditCardOption(){return creditCardOption;}
     public WebElement getFreeShippingLabel(){return freeShippingLabel;}
-    public WebElement getExpectedDeliveryDateLable(){return expectedDeliveryDateLable;}
+    public WebElement getExpectedDeliveryDateLabel(){return expectedDeliveryDateLabel;}
     public WebElement getExpectedDeliveryDateValue(){return expectedDeliveryDateValue;}
     public WebElement getProceedCheckoutBtn(){return proceedCheckoutBtn;}
     public WebElement getSubTotalValue(){return subTotalValue;}
@@ -114,10 +113,10 @@ public class CartPage {
     public WebElement getCartCounter(){return cartCounter;}
     public  WebElement getItemCounterInCartPopUp(){return itemCounterInCartPopUp;}
     public WebElement getCloseIconInCartPopup(){return cartCloseIcon;}
-    public WebElement getUsedFreeCouponeMsg(){return usedFreeCouponeMsg;}
-    public WebElement getApplyCouponeCode(){return applyCopouneCodeBtn;}
-    public WebElement getNotExistCouponeMsg(){return notExistCouponeMsg;}
-    public WebElement getRequiredCouponeMsg(){return requiredCouponeMsg;}
+    public WebElement getUsedFreeCouponMsg(){return usedFreeCouponMsg;}
+    public WebElement getApplyCouponCode(){return applyCouponCodeBtn;}
+    public WebElement getNotExistCouponMsg(){return notExistCouponMsg;}
+    public WebElement getRequiredCouponMsg(){return requiredCouponMsg;}
     public WebElement getMyShoppingCartMsg(){return myShoppingCartMsg;}
     //Define the main actions we need to execute our TCs
     public void clickOnTheContinueShoppingBtn() {
@@ -132,11 +131,9 @@ public class CartPage {
        DataHelperAndWait.isDisplayed(hereLink , 10);
        this.hereLink.click();
     }
-    public void clickOnDecreseQtyBtn(){
-//        DataHelperAndWait.waitToBeClickable(decreseQtyBtn,15);
-//        this.decreseQtyBtn.click();
-        DataHelperAndWait.JsExecutorToClickOnElement(this.decreseQtyBtn);   }
-    public void clickOnIecreseQtyBtn(){
+    public void clickOnDecreaseQtyBtn(){
+        DataHelperAndWait.JsExecutorToClickOnElement(this.decreaseQtyBtn);   }
+    public void clickOnIncreaseQtyBtn(){
         DataHelperAndWait.waitToBeClickable(increaseQtyBtn,10);
         this.increaseQtyBtn.click();
     }
@@ -149,8 +146,8 @@ public class CartPage {
         this.productCartInCartPage.click();
     }
     public void clickOnCartIcon(){
-        DataHelperAndWait.waitToBeVisible(carticon,10);
-        this.carticon.click();
+        DataHelperAndWait.waitToBeVisible(cartIcon,10);
+        this.cartIcon.click();
     }
     public void clickOnViewCartInCartPopUp(){
         DataHelperAndWait.waitToBeVisible(viewCartInCartPopup,10);
@@ -164,15 +161,15 @@ public class CartPage {
         DataHelperAndWait.waitToBeVisible(cartCloseIcon,10);
         this.cartCloseIcon.click();
     }
-    public void FillinCouponeCode(String couponeCode){
-        DataHelperAndWait.waitToBeVisible(coupounCodeField,10);
-        this.coupounCodeField.sendKeys(couponeCode);
-        DataHelperAndWait.waitToBeClickable(applyCopouneCodeBtn,10);
-        this.applyCopouneCodeBtn.click();
+    public void FillInCouponCode(String couponCode){
+        DataHelperAndWait.waitToBeVisible(couponCodeField,10);
+        this.couponCodeField.sendKeys(couponCode);
+        DataHelperAndWait.waitToBeClickable(applyCouponCodeBtn,10);
+        this.applyCouponCodeBtn.click();
     }
-    public void clickOnCancelCouponeCodeBtn(){
-        DataHelperAndWait.waitToBeClickable(cancelCouponeCodeBtn,10);
-        this.cancelCouponeCodeBtn.click();
+    public void clickOnCancelCouponCodeBtn(){
+        DataHelperAndWait.waitToBeClickable(cancelCouponCodeBtn,10);
+        this.cancelCouponCodeBtn.click();
     }
 
 
