@@ -25,6 +25,7 @@ public class AeCartTestCases extends BaseTest {
     private ProductDetailsPage productDetailsPage;
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     AEGuestUserPage aeGuestUserPage;
+    //comment
     Actions action;
     private CartPage cartPage;
     @Test(description = "Make sure to view the cart from PDP after adding  product to it", priority = 1)
