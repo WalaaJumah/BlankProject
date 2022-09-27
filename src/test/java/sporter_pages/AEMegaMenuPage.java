@@ -1464,9 +1464,6 @@ public class AEMegaMenuPage {
     }
 
 
-
-
-
     public WebElement getAntioxidantsOptionInVitaminsAndHealthMenu() {
         return antioxidantsOptionInVitaminsAndHealthMenu;
     }
@@ -1474,7 +1471,6 @@ public class AEMegaMenuPage {
     public WebElement getBloodSugarSupportOptionInVitaminsAndHealthMenu() {
         return bloodSugarSupportOptionInVitaminsAndHealthMenu;
     }
-
 
 
     public WebElement getEyeHealthOptionInVitaminsAndHealthMenu() {
@@ -1916,7 +1912,6 @@ public class AEMegaMenuPage {
     public WebElement getWomenBeltsInSportsMenu() {
         return womenBeltsInSportsMenu;
     }
-
 
 
     public WebElement getOptimumNutritionOptionInByBrandMenu() {
@@ -2490,7 +2485,6 @@ public class AEMegaMenuPage {
     public WebElement getBrainSupportOptionInVitaminsAndHealthMainMenu() {
         return brainSupportOptionInVitaminsAndHealthMainMenu;
     }
-
 
 
     public WebElement getDigestionOptionInVitaminsAndHealthMainMenu() {
@@ -3107,6 +3101,4 @@ public class AEMegaMenuPage {
             this.aeCountry.click();
         }
     }
-
-
 }

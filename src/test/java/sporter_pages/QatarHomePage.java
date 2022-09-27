@@ -12,6 +12,7 @@ public class QatarHomePage {
     public QatarHomePage(WebDriver webDriver) {
         PageFactory.initElements(webDriver, this);
     }
+
     //declare all locators related to the Cart Page
     @FindBy(id = "switcher-store-trigger")
     private WebElement countryList;
@@ -156,270 +157,372 @@ public class QatarHomePage {
     public WebElement getNextArrowInHomePageRotatingSlider() {
         return nextArrowInHomePageRotatingSlider;
     }
+
     public WebElement getPreviousArrowInHomePageRotatingSlider() {
         return previousArrowInHomePageRotatingSlider;
     }
+
     public WebElement getHomePageRotatingSliderPagingControl() {
         return homePageRotatingSliderPagingControl;
     }
+
     public WebElement getHomePageRotatingSlider() {
         return homePageRotatingSlider;
     }
+
     public WebElement getHomePageSideBanner() {
         return homePageSideBanner;
     }
+
     public WebElement getShopByCategoryHeader() {
         return shopByCategoryHeader;
-    }    public WebElement getTopSellingStacksHeader() {
+    }
+
+    public WebElement getTopSellingStacksHeader() {
         return topSellingStacksHeader;
     }
+
     public WebElement getTopSellerHeader() {
         return topSellerHeader;
     }
+
     public WebElement getShopByCategorySections() {
         return shopByCategorysections;
     }
+
     public WebElement getTopSellerSections() {
         return topSellerSections;
     }
+
     public WebElement getTopSellingStacksSections() {
         return topSellingStacksSections;
     }
+
     public WebElement getMegaMenuMaincomponent() {
         return megaMenuMaincomponent;
     }
+
     public WebElement getHorizontalBanner() {
         return homePageHorizontalBanner;
     }
+
     public List<WebElement> getHomePageRotatingSliderlist() {
         return homePageRotatingSliderlist;
     }
+
     public WebElement getShopeByOption() {
-        return shopByOption;}
+        return shopByOption;
+    }
+
     public WebElement getSportSupplementsOption() {
         return sportSupplementsOption;
     }
+
     public WebElement getVitaminsAndHealthOption() {
         return vitaminsAndHealthOption;
     }
+
     public WebElement getHealthyFoodOption() {
         return healthyFoodOption;
     }
+
     public WebElement getSportsOption() {
         return sportsOption;
     }
+
     public WebElement getWomenOnlyOption() {
         return womenOnlyOption;
     }
+
     public List<WebElement> getHomePageRotatingSliderPaginglist() {
         return homePageRotatingSliderPaginglist;
     }
+
     public List<WebElement> getHomePageUnderShopbyCategoryBanners() {
         return homePageUnderShopbyCategoryBanners;
     }
+
     public WebElement getSportSupplementsLink() {
         return sportSupplementsLink;
     }
+
     public WebElement getAllLink() {
         return allLink;
     }
+
     public WebElement getHealthyFoodLink() {
         return healthyFoodLink;
     }
+
     public WebElement getVitaminsAndHealthLink() {
         return vitaminsAndHealthLink;
     }
+
     public WebElement getSportswearAndAccessoriesLink() {
         return sportswearAndAccessoriesLink;
-    }    public WebElement getSpportSupplementsActiveLink() {
+    }
+
+    public WebElement getSpportSupplementsActiveLink() {
         return spportSupplementsActiveLink;
     }
+
     public WebElement getAllLActiveink() {
         return allActiveLink;
     }
+
     public WebElement getHealthyFoodActiveLink() {
         return healthyFoodActiveLink;
     }
+
     public WebElement getVitaminsAndHealthActiveLink() {
         return vitaminsAndHealthActiveLink;
-    }    public WebElement getNewArrivalVitaminsAndHealthActiveLink() {
+    }
+
+    public WebElement getNewArrivalVitaminsAndHealthActiveLink() {
         return newArrivalVitaminsAndHealthActiveLink;
     }
+
     public WebElement getSportswearAndAccessoriesActiveLink() {
         return sportswearAndAccessoriesActiveLink;
     }
+
     public WebElement getNextButtonInTopSellerSection() {
         return nextButtonInTopSellerSection;
     }
+
     public WebElement getPreviousButtonInTopSellerSection() {
         return previousButtonInTopSellerSection;
     }
+
     public WebElement getTrendingOnSporterHeader() {
         return trendingOnSporterHeader;
     }
+
     public WebElement getTrendingOnSporterSection() {
         return trendingOnSporterSection;
     }
+
     public WebElement getTrendingOnSporterSectionpositionAfterClickingOnNext() {
-        return trendingOnSporterSectionPostitionAfterClickingOnNext;}
+        return trendingOnSporterSectionPostitionAfterClickingOnNext;
+    }
+
     public WebElement getTrendingOnSporterSectionpositionAfterClickingOnPrevious() {
-        return trendingOnSporterSectionPostitionAfterClickingOnPrevious;}
+        return trendingOnSporterSectionPostitionAfterClickingOnPrevious;
+    }
 
     public WebElement getTopSellerSectionpositionAfterClickingOnPrevious() {
-        return topSellerSectionPostitionAfterClickingOnPrevious;}
+        return topSellerSectionPostitionAfterClickingOnPrevious;
+    }
+
     public WebElement getTopSellerSectionpositionAfterClickingOnNext() {
-        return topSellerSectionPostitionAfterClickingOnNext;}
+        return topSellerSectionPostitionAfterClickingOnNext;
+    }
+
     public WebElement getNewArrivalsHeader() {
-        return newArrivalsHeader;}
+        return newArrivalsHeader;
+    }
+
     public WebElement getNewArrivalsSection() {
-        return newArrivalsSection;}
+        return newArrivalsSection;
+    }
+
     public WebElement getNewArrivalsAllLink() {
-        return newArrivalsAllLink;}
+        return newArrivalsAllLink;
+    }
+
     public WebElement getNewArrivalsSpportSupplementsLink() {
-        return newArrivalsSpportSupplementsLink;}
+        return newArrivalsSpportSupplementsLink;
+    }
+
     public WebElement getNewArrivalsHealthyFoodLinkLink() {
-        return newArrivalsHealthyFoodLink;}
+        return newArrivalsHealthyFoodLink;
+    }
+
     public WebElement getNewArrivalsVitaminsAndHealthLink() {
-        return newArrivalsVitaminsAndHealthLink;}
+        return newArrivalsVitaminsAndHealthLink;
+    }
+
     public WebElement getNewArrivalsSportwearAndAccessoriesLink() {
-        return newArrivalsSportwearAndAccessoriesLink;}
+        return newArrivalsSportwearAndAccessoriesLink;
+    }
+
     public WebElement getNewArrivalsAllActiveLink() {
-        return newArrivalsAllActiveLink;}
+        return newArrivalsAllActiveLink;
+    }
+
     public WebElement getNewArrivalsSpportSupplementsActiveLink() {
-        return newArrivalsSpportSupplementsActiveLink;}
+        return newArrivalsSpportSupplementsActiveLink;
+    }
+
     public WebElement getNewArrivalsHealthyFoodActiveLink() {
-        return newArrivalsHealthyFoodActiveLink;}
+        return newArrivalsHealthyFoodActiveLink;
+    }
+
     public WebElement getNewArrivalsSportwearAndAccessoriesActiveLink() {
-        return newArrivalsSportswearAndAccessoriesActiveLink;}
+        return newArrivalsSportswearAndAccessoriesActiveLink;
+    }
+
     public WebElement getNewArrivalsSectionPositionAfterClickingOnPrevious() {
-        return NewArrivalSectionPositionAfterClickingOnPrevious;}
+        return NewArrivalSectionPositionAfterClickingOnPrevious;
+    }
+
     public WebElement getNewArrivalsSectionPositionAfterClickingOnNext() {
-        return NewArrivalSectionPositionAfterClickingOnNext;}
+        return NewArrivalSectionPositionAfterClickingOnNext;
+    }
+
     public WebElement getPreviousBtnInNewArrivalsSection() {
-        return previousBtnInNewArrivalsSection;}
-    public WebElement getQuestionBlock(){
+        return previousBtnInNewArrivalsSection;
+    }
+
+    public WebElement getQuestionBlock() {
         return getQuestionBlock;
     }
-    public WebElement getPhoneBtn(){
+
+    public WebElement getPhoneBtn() {
         return phoneBtn;
     }
-    public WebElement getEmailBtn(){
+
+    public WebElement getEmailBtn() {
         return emailBtn;
     }
 
     //Define the main actions we need to execute our TCs
-    public void switchToQatarCountry() {try{
-        DataHelperAndWait.isDisplayed(countryList, 15);
-        this.countryList.click();
-        DataHelperAndWait.implicitWait(6);
-        this.qaterCountry.click();}
-    catch(Exception e){
-        DataHelperAndWait.isDisplayed(countryList, 15);
-        this.countryList.click();
-        DataHelperAndWait.implicitWait(6);
-        this.qaterCountry.click();
+    public void switchToQatarCountry() {
+        try {
+            DataHelperAndWait.isDisplayed(countryList, 15);
+            this.countryList.click();
+            DataHelperAndWait.implicitWait(6);
+            this.qaterCountry.click();
+        } catch (Exception e) {
+            DataHelperAndWait.isDisplayed(countryList, 15);
+            this.countryList.click();
+            DataHelperAndWait.implicitWait(6);
+            this.qaterCountry.click();
+        }
     }
-    }
-    public void clickOnviewAllBtnInTopSellingStacksSection(){
-        DataHelperAndWait.isDisplayed(viewAllBtnInTopSellingStacksSection,10);
+
+    public void clickOnviewAllBtnInTopSellingStacksSection() {
+        DataHelperAndWait.isDisplayed(viewAllBtnInTopSellingStacksSection, 10);
         this.viewAllBtnInTopSellingStacksSection.click();
     }
-    public void clickOnAllLinkInTopSellerSection(){
-        DataHelperAndWait.isDisplayed(allLink,10);
+
+    public void clickOnAllLinkInTopSellerSection() {
+        DataHelperAndWait.isDisplayed(allLink, 10);
         this.allLink.click();
     }
-    public void clickOnSportSupplementsLinkInTopSellerSection(){
-        DataHelperAndWait.isDisplayed(sportSupplementsLink,10);
+
+    public void clickOnSportSupplementsLinkInTopSellerSection() {
+        DataHelperAndWait.isDisplayed(sportSupplementsLink, 10);
         this.sportSupplementsLink.click();
     }
-    public void clickOnHealthyFoodLinkInTopSellerSection(){
-        DataHelperAndWait.isDisplayed(healthyFoodLink,10);
+
+    public void clickOnHealthyFoodLinkInTopSellerSection() {
+        DataHelperAndWait.isDisplayed(healthyFoodLink, 10);
         this.healthyFoodLink.click();
     }
-    public void clickOnVitaminsAndHealthLinkInTopSellerSection(){
-        DataHelperAndWait.waitToBeVisible(vitaminsAndHealthLink,10);
+
+    public void clickOnVitaminsAndHealthLinkInTopSellerSection() {
+        DataHelperAndWait.waitToBeVisible(vitaminsAndHealthLink, 10);
         this.vitaminsAndHealthLink.click();
     }
-    public void clickOnSportswearAndAccessoriesLinkInTopSellerSection(){
-        DataHelperAndWait.isDisplayed(sportswearAndAccessoriesLink,10);
+
+    public void clickOnSportswearAndAccessoriesLinkInTopSellerSection() {
+        DataHelperAndWait.isDisplayed(sportswearAndAccessoriesLink, 10);
         this.sportswearAndAccessoriesLink.click();
     }
-    public void clickOnNextButtonInTopSellerSectionInTopSellerSection(){
-        DataHelperAndWait.isDisplayed(nextButtonInTopSellerSection,10);
+
+    public void clickOnNextButtonInTopSellerSectionInTopSellerSection() {
+        DataHelperAndWait.isDisplayed(nextButtonInTopSellerSection, 10);
         this.nextButtonInTopSellerSection.click();
     }
-    public void clickOnNextButtonInTrendingOnSporterSection(){
-        DataHelperAndWait.isDisplayed(nextBtnInTrendingOnSporterSection,10);
+
+    public void clickOnNextButtonInTrendingOnSporterSection() {
+        DataHelperAndWait.isDisplayed(nextBtnInTrendingOnSporterSection, 10);
         this.nextBtnInTrendingOnSporterSection.click();
     }
-    public void clickOnPreviousButtonInTrendingOnSporterSection(){
-        DataHelperAndWait.isDisplayed(previousBtnInTrendingOnSporterSection,10);
+
+    public void clickOnPreviousButtonInTrendingOnSporterSection() {
+        DataHelperAndWait.isDisplayed(previousBtnInTrendingOnSporterSection, 10);
         this.previousBtnInTrendingOnSporterSection.click();
     }
-    public void clickOnPreviousButtonInTopSellersSection(){
-        DataHelperAndWait.isDisplayed(previousButtonInTopSellerSection,10);
+
+    public void clickOnPreviousButtonInTopSellersSection() {
+        DataHelperAndWait.isDisplayed(previousButtonInTopSellerSection, 10);
         this.previousButtonInTopSellerSection.click();
     }
-    public void clickOnNextButtonInTopSellersSection(){
-        DataHelperAndWait.isDisplayed(nextButtonInTopSellerSection,10);
+
+    public void clickOnNextButtonInTopSellersSection() {
+        DataHelperAndWait.isDisplayed(nextButtonInTopSellerSection, 10);
         this.nextButtonInTopSellerSection.click();
     }
-    public void clickOnAllLinkInNewArrivalsSection(){
-        DataHelperAndWait.isDisplayed(newArrivalsAllLink,10);
+
+    public void clickOnAllLinkInNewArrivalsSection() {
+        DataHelperAndWait.isDisplayed(newArrivalsAllLink, 10);
         this.newArrivalsAllLink.click();
     }
-    public void clickOnSportSupplementsLinkInNewArrivalsSection(){
-        DataHelperAndWait.isDisplayed(newArrivalsSpportSupplementsLink,10);
+
+    public void clickOnSportSupplementsLinkInNewArrivalsSection() {
+        DataHelperAndWait.isDisplayed(newArrivalsSpportSupplementsLink, 10);
         this.newArrivalsSpportSupplementsLink.click();
     }
-    public void clickOnHealthyFoodLinkInNewArrivalsSection(){
-        DataHelperAndWait.isDisplayed(newArrivalsHealthyFoodLink,10);
+
+    public void clickOnHealthyFoodLinkInNewArrivalsSection() {
+        DataHelperAndWait.isDisplayed(newArrivalsHealthyFoodLink, 10);
         this.newArrivalsHealthyFoodLink.click();
     }
-    public void clickOnVitaminsAndHealthLinkInNewArrivalsSection(){
-        DataHelperAndWait.waitToBeVisible(newArrivalsVitaminsAndHealthLink,10);
+
+    public void clickOnVitaminsAndHealthLinkInNewArrivalsSection() {
+        DataHelperAndWait.waitToBeVisible(newArrivalsVitaminsAndHealthLink, 10);
         this.newArrivalsVitaminsAndHealthLink.click();
     }
-    public void clickOnSportswearAndAccessoriesLinkInNewArrivalsSection(){
-        DataHelperAndWait.isDisplayed(newArrivalsSportwearAndAccessoriesLink,10);
+
+    public void clickOnSportswearAndAccessoriesLinkInNewArrivalsSection() {
+        DataHelperAndWait.isDisplayed(newArrivalsSportwearAndAccessoriesLink, 10);
         this.newArrivalsSportwearAndAccessoriesLink.click();
     }
-    public void clickOnPreviousButtonInNewArrivalSection(){
-        DataHelperAndWait.isDisplayed(previousBtnInNewArrivalsSection,10);
+
+    public void clickOnPreviousButtonInNewArrivalSection() {
+        DataHelperAndWait.isDisplayed(previousBtnInNewArrivalsSection, 10);
         this.previousBtnInNewArrivalsSection.click();
     }
-    public void clickOnNextButtonInNewArrivalSection(){
-        DataHelperAndWait.isDisplayed(nextBtnInNewArrivalsSection,10);
+
+    public void clickOnNextButtonInNewArrivalSection() {
+        DataHelperAndWait.isDisplayed(nextBtnInNewArrivalsSection, 10);
         this.nextBtnInNewArrivalsSection.click();
     }
-    public void clickOnPhoneBtn(){
-        DataHelperAndWait.isDisplayed(phoneBtn,10);
+
+    public void clickOnPhoneBtn() {
+        DataHelperAndWait.isDisplayed(phoneBtn, 10);
         this.phoneBtn.click();
     }
-    public void clickOnEmailBtn(){
-        DataHelperAndWait.isDisplayed(emailBtn,10);
+
+    public void clickOnEmailBtn() {
+        DataHelperAndWait.isDisplayed(emailBtn, 10);
         this.emailBtn.click();
     }
-    public void clickOnHomePageHorizontalBanner(){
-        DataHelperAndWait.isDisplayed(homePageHorizontalBanner,10);
+
+    public void clickOnHomePageHorizontalBanner() {
+        DataHelperAndWait.isDisplayed(homePageHorizontalBanner, 10);
         this.homePageHorizontalBanner.click();
     }
-    public void clickOnSportsSupplementsCategory(){
-        DataHelperAndWait.isDisplayed(sportsSupplementsCategory,10);
+
+    public void clickOnSportsSupplementsCategory() {
+        DataHelperAndWait.isDisplayed(sportsSupplementsCategory, 10);
         this.sportsSupplementsCategory.click();
     }
-    public void clickOnHealthyFoodCategory(){
-        DataHelperAndWait.isDisplayed(healthyFoodCategory,10);
+
+    public void clickOnHealthyFoodCategory() {
+        DataHelperAndWait.isDisplayed(healthyFoodCategory, 10);
         this.healthyFoodCategory.click();
     }
-    public void clickOnVitaminsAndHealthCategory(){
-        DataHelperAndWait.isDisplayed(vitaminsAndHealthCategory,10);
+
+    public void clickOnVitaminsAndHealthCategory() {
+        DataHelperAndWait.isDisplayed(vitaminsAndHealthCategory, 10);
         this.vitaminsAndHealthCategory.click();
     }
-    public void clickOnSportswearAndAccessoriesCategory(){
-        DataHelperAndWait.isDisplayed(sportswearAndAccessoriesCategory,10);
+
+    public void clickOnSportswearAndAccessoriesCategory() {
+        DataHelperAndWait.isDisplayed(sportswearAndAccessoriesCategory, 10);
         this.sportswearAndAccessoriesCategory.click();
     }
 }
-
-

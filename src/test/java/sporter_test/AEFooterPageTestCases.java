@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import sporter_pages.AEFooterPage;
 
 import static org.testng.Assert.assertFalse;
+
 public class AEFooterPageTestCases extends BaseTest {
     String trackOrderUrl = "https://www.sporter.com/en-ae/track/";
     String shippingAndDeliveryUrl = "https://www.sporter.com/en-ae/orders-delivery/";
@@ -210,7 +211,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getRefundAndReturnsOption().click();
         DataHelperAndWait.implicitWait(5);
-        Assert.assertEquals(webDriver.getCurrentUrl(), refundAndReturnUrl);
+        Assert.assertEquals(webDriver.getCurrentUrl(), refundAndReturnUrl," The Refund and return page is not opened");
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -239,7 +240,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getWowCustomerServiceOption().click();
         DataHelperAndWait.implicitWait(5);
-        Assert.assertEquals(webDriver.getCurrentUrl(), customerServiceUrl);
+        Assert.assertEquals(webDriver.getCurrentUrl(), customerServiceUrl," The Customer Service URL is not opened");
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -259,7 +260,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getFAQsOption().click();
         DataHelperAndWait.implicitWait(5);
-        Assert.assertEquals(webDriver.getCurrentUrl(), fAQsUrl);
+        Assert.assertEquals(webDriver.getCurrentUrl(), fAQsUrl,"The current URL is not matched with the FAQs URL");
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -291,7 +292,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getGrenadeReloadProteinOatBarOption().click();
         DataHelperAndWait.implicitWait(5);
-        Assert.assertEquals(webDriver.getCurrentUrl(), grenadeReloadProteinOatBar);
+        Assert.assertEquals(webDriver.getCurrentUrl(), grenadeReloadProteinOatBar,"The Current URL is not matched with the grenadeReloadProteinOatBar product URL ");
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -311,7 +312,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getDymatizeISO100ProteinOption().click();
         DataHelperAndWait.implicitWait(5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(dramatizeIso100Protein));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(dramatizeIso100Protein),"The Current URL is not matched with the dramatizeIso100Protein product URL");
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -331,7 +332,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getGrenadeCarbKillaProteinBarOption().click();
         DataHelperAndWait.implicitWait(5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(grenadeCrabKillaProteinBar));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(grenadeCrabKillaProteinBar)," The Current URL is not matched with the grenadeCrabKillaProteinBar product URL");
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -351,7 +352,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getGrenadeCarbKillaProteinBarBoxOf12Option().click();
         DataHelperAndWait.implicitWait(5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(grenadeCrabKillaProteinBarBoxOf12));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(grenadeCrabKillaProteinBarBoxOf12)," The Current URL is not matched with the grenadeCrabKillaProteinBarBoxOf12 product URL");
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -371,7 +372,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getQuestNutritionBarsBox12Option().click();
         DataHelperAndWait.implicitWait(5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(questNutritionBarsBoxOf12));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(questNutritionBarsBoxOf12)," The current URL is not matched with the questNutritionBarsBoxOf12 product URL");
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -404,7 +405,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getAboutSporterOption().click();
         DataHelperAndWait.implicitWait(5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(aboutSporterUrl));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(aboutSporterUrl)," The current URL is not matched with the aboutSporterUrl page");
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -424,7 +425,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getProductQualityOption().click();
         DataHelperAndWait.implicitWait(5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(productQualityUrl));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(productQualityUrl)," The Current URL is not matched with the productQuality Url");
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -444,7 +445,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getProductAuthenticityOption().click();
         DataHelperAndWait.implicitWait(5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(productAuthenticityUrl));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(productAuthenticityUrl)," The current URL is not matched with the productAuthenticity Url");
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -464,7 +465,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getWholesaleOption().click();
         DataHelperAndWait.implicitWait(5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(wholesaleUrl));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(wholesaleUrl),"The Current URL is not matched with the wholesale Url ");
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -486,7 +487,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getCareersOption().click();
         DataHelperAndWait.implicitWait(5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(careersUrl));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(careersUrl)," The Current URL is not matched with the careers Url");
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -500,7 +501,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getSporterBlogOption().click();
         DataHelperAndWait.implicitWait(5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(sporterBlogUrl));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(sporterBlogUrl)," The Current URL is not matched with the sporterBlog Url");
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -534,7 +535,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getContactInfoOption().click();
         DataHelperAndWait.implicitWait(5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(contactUsUrl));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(contactUsUrl)," The Current URL is not matched with the contactUs Url ");
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -578,7 +579,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getTrainingApparelOption().click();
         DataHelperAndWait.implicitWait(5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(trainingApparelUrl));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(trainingApparelUrl)," The Current URL is not matched with the trainingApparel Url");
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -598,7 +599,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getFitnessAccessoriesOption().click();
         DataHelperAndWait.implicitWait(5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(fitnessAccessoriesUrl));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(fitnessAccessoriesUrl)," The Current URL is not matched with the fitnessAccessories Url");
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -618,7 +619,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getShakersOption().click();
         DataHelperAndWait.implicitWait(5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(shakersUrl));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(shakersUrl)," The Current URL is not matched with the shakers Url ");
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -638,7 +639,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getHomeGymEquipmentOption().click();
         DataHelperAndWait.implicitWait(5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(homeGymEquipmentUrl));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(homeGymEquipmentUrl)," The Current URL is not matched with the homeGymEquipment Url");
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -658,7 +659,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getWatchesOption().click();
         DataHelperAndWait.implicitWait(5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(watchesUrl));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(watchesUrl)," The Current URL is not matched with the watches Url");
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -678,7 +679,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getStrapsOption().click();
         DataHelperAndWait.implicitWait(5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(strapsUrl));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(strapsUrl)," The Current URL is not matched with the straps Url");
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -698,7 +699,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getBagsOption().click();
         DataHelperAndWait.implicitWait(5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(bagsUrl));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(bagsUrl)," The Current URL is not matched with the bags Url");
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -755,7 +756,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getWheyProteinIsolateOption().click();
         DataHelperAndWait.implicitWait(5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(wheyProteinIsolateUrl));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(wheyProteinIsolateUrl)," The Current URL is not matched with the wheyProteinIsolate Url");
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -775,7 +776,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getCaseinProteinOption().click();
         DataHelperAndWait.implicitWait(5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(caseinProteinUrl));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(caseinProteinUrl)," The Current URL is not matched with the caseinProtein Url");
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -795,7 +796,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getWeightGainAndMassGainerOption().click();
         DataHelperAndWait.implicitWait(5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(weightGainAndMassGainerUrl));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(weightGainAndMassGainerUrl)," The Current URL is not matched with weightGainAndMassGainer Url");
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -815,7 +816,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getBCAAsAndAminoAcidsOption().click();
         DataHelperAndWait.implicitWait(5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(bCAAsAndAminoAcidsUrl));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(bCAAsAndAminoAcidsUrl)," The Current URL is not matched with the bCAAsAndAminoAcids Url");
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -835,7 +836,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getPreWorkoutAndEnduranceOption().click();
         DataHelperAndWait.implicitWait(5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(preWorkoutAndEnduranceUrl));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(preWorkoutAndEnduranceUrl)," The Current URL is not matched with the preWorkoutAndEnduranceUrl");
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -855,7 +856,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getGlutamineAndRecoveryOption().click();
         DataHelperAndWait.implicitWait(5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(glutamineAndRecoveryUrl));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(glutamineAndRecoveryUrl)," The Current URL is not matched with the glutamineAndRecoveryUrl");
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -875,7 +876,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getFatBurnersOption().click();
         DataHelperAndWait.implicitWait(5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(fatBurnersUrl));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(fatBurnersUrl)," The Current URL is not matched wih the fatBurners Url");
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -895,7 +896,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getProteinBarsOption().click();
         DataHelperAndWait.implicitWait(5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(proteinBarsUrl));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(proteinBarsUrl)," The Current URL is not matched with the proteinBars Url");
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -915,7 +916,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getHealthySnacksOption().click();
         DataHelperAndWait.implicitWait(5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(healthySnacksUrl));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(healthySnacksUrl)," The Current URL is not matched with the healthySnacks Url");
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -954,7 +955,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getMultivitaminsOption().click();
         DataHelperAndWait.implicitWait(5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(multivitaminsUrl));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(multivitaminsUrl)," The Current URL is not matched with the multivitamins Url");
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");

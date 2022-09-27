@@ -38,7 +38,7 @@ public class AEGuestUserTestCases extends BaseTest {
         Assert.assertTrue(aeGuestUserPage.getRegisterAtSporterOption().isDisplayed());
     }
 
-        @Test(description = "Make sure to access the Guest Checkout page from the cart pop up correctly", priority = 2)
+    @Test(description = "Make sure to access the Guest Checkout page from the cart pop up correctly", priority = 2)
     public void verifyAbilityToAccessTheGuestCheckoutPagefromTheCartPopUpCorrectly() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
         aeGuestUserPage.switchToAECountry();
@@ -63,15 +63,16 @@ public class AEGuestUserTestCases extends BaseTest {
         DataHelperAndWait.implicitWait(10);
         Assert.assertTrue(aeGuestUserPage.getShippingMethodSection().isDisplayed());
     }
+
     @Test(description = "Make sure the system displays the store country by default in country field", priority = 4)
-    public void verifyTheCountryRetrievedInCountryFieldBasedOnStoreCountry(){
+    public void verifyTheCountryRetrievedInCountryFieldBasedOnStoreCountry() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
         this.verifyAbilityToAccessTheGuestCheckoutPagefromTheCartPageCorrectly();
-        Assert.assertEquals(aeGuestUserPage.getCountryField().getText(),"United Arab Emirates");
+        Assert.assertEquals(aeGuestUserPage.getCountryField().getText(), "United Arab Emirates");
     }
 
     @Test(description = "Make sure the Guest user can filling the shipping information correctly", priority = 5)
-        public void verifyTheGuestUserCanFillTheShippingInformationWhenSwitchingToArabicCorrectly() {
+    public void verifyTheGuestUserCanFillTheShippingInformationWhenSwitchingToArabicCorrectly() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
         aeGuestUserPage.switchToArabicVersion();
         aeGuestUserPage.switchToAECountry();
@@ -99,7 +100,7 @@ public class AEGuestUserTestCases extends BaseTest {
         cityOption.click();
         aeGuestUserPage.clickOnContinueBtn();
         DataHelperAndWait.implicitWait(15);
-            Assert.assertEquals(aeGuestUserPage.getFirstnameRequiredFieldMsg().getText(), "This is a required field.");
+        Assert.assertEquals(aeGuestUserPage.getFirstnameRequiredFieldMsg().getText(), "This is a required field.");
         Assert.assertEquals(aeGuestUserPage.getLastNameRequiredFieldMsg().getText(), "This is a required field.");
         Assert.assertEquals(aeGuestUserPage.getemailRequiredFieldMsg().getText(), "This is a required field.");
         Assert.assertEquals(aeGuestUserPage.getPhoneRequiredFieldMsg().getText(), "Text length does not satisfy specified text range.");
@@ -243,6 +244,7 @@ public class AEGuestUserTestCases extends BaseTest {
         aeGuestUserPage.clickOnReturnToCartIcon();
         Assert.assertEquals(webDriver.getCurrentUrl(), "https://www.sporter.com/en-ae/checkout/cart/");
     }
+
     @Test(description = "Make sure ability to navigate to the home page by clicking on the sporter logo ", priority = 16)
     public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogo() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
@@ -250,31 +252,13 @@ public class AEGuestUserTestCases extends BaseTest {
         aeGuestUserPage.clickOnSporterLogo();
         Assert.assertEquals(webDriver.getCurrentUrl(), "https://www.sporter.com/en-ae/");
     }
+
     @Test(description = "Make sure inability to navigate to the shipping information  directly from the URL without adding any item to the Cart ", priority = 17)
-    public void verifyInabilityToNavigateToShippingInformationViaUrlWithoutAddingProductToCart(){
+    public void verifyInabilityToNavigateToShippingInformationViaUrlWithoutAddingProductToCart() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
         aeGuestUserPage.switchToAECountry();
         webDriver.navigate().to("https://www.sporter.com/en-ae/checkout/cart/#shipping");
-        DataHelperAndWait.waitToBeVisible(aeGuestUserPage.getNoItemInCartLabel(),15);
+        DataHelperAndWait.waitToBeVisible(aeGuestUserPage.getNoItemInCartLabel(), 15);
         Assert.assertTrue(aeGuestUserPage.getNoItemInCartLabel().isDisplayed());
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

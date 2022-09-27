@@ -15,9 +15,9 @@ import static org.testng.Assert.*;
 
 public class ProductDetailsPageTestCases extends BaseTest {
     private ProductDetailsPage productDetailsPage;
-    AEMegaMenuTestCases aeMegaMenuTestCases ;
+    AEMegaMenuTestCases aeMegaMenuTestCases;
     AEGuestUserPage aeGuestUserPage;
-    String productUrl="https://www.sporter.com/en-ae/dymatize-iso-100-6350";
+    String productUrl = "https://www.sporter.com/en-ae/dymatize-iso-100-6350";
 
     @Test(description = "Make sure the shopper is able to keep the shopping after adding the product to the cart ", priority = 1)
     public void keepShoppingAfterAddingToTheCart() {
@@ -250,33 +250,39 @@ public class ProductDetailsPageTestCases extends BaseTest {
         assertTrue(productDetailsPage.getSupplementFactsTabel().isDisplayed());
         assertEquals(productDetailsPage.getSupplementFactsTitle().getText(), "Supplement Facts");
     }
-//      The following Test Cases handle displaying the Mega Menu from Product Page
-@Test(description = "Verify that the ShopBy Menu Is Displayed When Hovering On It From Product Details Page", priority = 21)
-public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
-aeMegaMenuTestCases=new AEMegaMenuTestCases();
-aeMegaMenuTestCases.verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductPage();
-}
+
+    //      The following Test Cases handle displaying the Mega Menu from Product Page
+    @Test(description = "Verify that the ShopBy Menu Is Displayed When Hovering On It From Product Details Page", priority = 21)
+    public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
+        aeMegaMenuTestCases = new AEMegaMenuTestCases();
+        aeMegaMenuTestCases.verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductPage();
+    }
+
     @Test(description = "Verify that the Sport Supplements Menu Is Displayed When Hovering On It From Product Details Page", priority = 22)
     public void verifySportSupplementsMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
-        aeMegaMenuTestCases=new AEMegaMenuTestCases();
+        aeMegaMenuTestCases = new AEMegaMenuTestCases();
 
         aeMegaMenuTestCases.verifySportsSupplementsMainMenuDisplayTheCorrectCategoriesAndSubCategories();
     }
+
     @Test(description = "Verify that the Vitamins And Health Menu Is Displayed When Hovering On It From Product Details Page", priority = 23)
     public void verifyVitaminsAndHealthMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
-        aeMegaMenuTestCases=new AEMegaMenuTestCases();
+        aeMegaMenuTestCases = new AEMegaMenuTestCases();
         aeMegaMenuTestCases.verifyVitaminsAndHealthMenuIsDisplayedWhenHoveringOnItFromProductPage();
     }
+
     @Test(description = "Verify that the Healthy Food Menu Is Displayed When Hovering On It From Product Details Page", priority = 24)
     public void verifyHealthyFoodMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
-        aeMegaMenuTestCases=new AEMegaMenuTestCases();
+        aeMegaMenuTestCases = new AEMegaMenuTestCases();
         aeMegaMenuTestCases.verifyHealthyFoodMenuIsDisplayedWhenHoveringOnItFromProductPage();
     }
+
     @Test(description = "Verify that the Sports Menu Is Displayed When Hovering On It From Product Details Page", priority = 25)
     public void verifySportsMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
-        aeMegaMenuTestCases=new AEMegaMenuTestCases();
+        aeMegaMenuTestCases = new AEMegaMenuTestCases();
         aeMegaMenuTestCases.verifySportsMenuIsDisplayedWhenHoveringOnItFromProductPage();
     }
+
     @Test(description = "Verify that the account Profile icon works correctly in PDP", priority = 26)
     public void verifyAccountProfileIconWorksCorrectlyInProductDetailsPage() {
         productDetailsPage = new ProductDetailsPage(webDriver);
@@ -285,6 +291,7 @@ aeMegaMenuTestCases.verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductPage()
         productDetailsPage.clickOnAccountProfileIcon();
         assertTrue(productDetailsPage.getAccountProfileOptions().isDisplayed());
     }
+
     @Test(description = "Verify that the Direction Of Use section displays correctly in the PDP", priority = 27)
     public void verifyDirectionOfUseSectionDisplaysCorrectlyInProductDetailsPage() {
         productDetailsPage = new ProductDetailsPage(webDriver);
@@ -293,6 +300,7 @@ aeMegaMenuTestCases.verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductPage()
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getDirectionsOfUseSection(), 10);
         assertTrue(productDetailsPage.getDirectionsOfUseSection().isDisplayed());
     }
+
     @Test(description = "Verify that the About Brand section displays correctly in the PDP", priority = 28)
     public void verifyAboutBrandSectionDisplaysCorrectlyInProductDetailsPage() {
         productDetailsPage = new ProductDetailsPage(webDriver);
@@ -301,6 +309,7 @@ aeMegaMenuTestCases.verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductPage()
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getAboutBrandSection(), 10);
         assertTrue(productDetailsPage.getAboutBrandSection().isDisplayed());
     }
+
     @Test(description = "Verify that the header Bar in the PDP appears correctly when scrolling down", priority = 29)
     public void verifyAddToCartBtnInHeaderBarWorksCorrectly() {
         productDetailsPage = new ProductDetailsPage(webDriver);
@@ -311,6 +320,7 @@ aeMegaMenuTestCases.verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductPage()
         productDetailsPage.clickOnAddToCartBtnInProductHeaderBar();
         assertTrue(productDetailsPage.getProductHeaderBar().isDisplayed());
     }
+
     @Test(description = "Verify that the Add to Cart Button appears in the header Bar in the PDP works correctly ", priority = 30)
     public void verifyHeaderBarDisplaysCorrectlyInProductDetailsPageWhenScrollingThePage() {
         productDetailsPage = new ProductDetailsPage(webDriver);
@@ -321,21 +331,24 @@ aeMegaMenuTestCases.verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductPage()
         productDetailsPage.clickOnAddToCartBtnInProductHeaderBar();
         assertTrue(productDetailsPage.getKeepShippingBtn().isDisplayed());
     }
+
     @Test(description = "Verify clicking on the By Brand Link appears in Product Name section will redirect the user to correct page ", priority = 31)
     public void verifyClickingOnByBrandLinkAppearsInProductNameSectionRedirectUserToCorrectPage() {
         productDetailsPage = new ProductDetailsPage(webDriver);
-        aeMegaMenuTestCases= new AEMegaMenuTestCases();
+        aeMegaMenuTestCases = new AEMegaMenuTestCases();
         productDetailsPage.switchToAeCountry();
-      aeMegaMenuTestCases.verifyClickingOnWheyProteinOptionOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL();
-      productDetailsPage.clickOnFirstProductInWheyProtienPage();
-        String productUrl= webDriver.getCurrentUrl();
+        aeMegaMenuTestCases.verifyClickingOnWheyProteinOptionOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL();
+        productDetailsPage.clickOnFirstProductInWheyProtienPage();
+        String productUrl = webDriver.getCurrentUrl();
         productDetailsPage.clickOnProductBrandLink();
-        String brandUrl= webDriver.getCurrentUrl();
-        Assert.assertNotEquals(productUrl,brandUrl);
+        String brandUrl = webDriver.getCurrentUrl();
+        Assert.assertNotEquals(productUrl, brandUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is empty");    }
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+
     @Test(description = "Verify that Expected Delivery Date Label and its value displayed correctly", priority = 32)
     public void verifyExpectedDeliveryDateAppearsCorrectlyAndRetrieveDateInPdp() {
         productDetailsPage = new ProductDetailsPage(webDriver);
@@ -345,6 +358,7 @@ aeMegaMenuTestCases.verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductPage()
         assertTrue(productDetailsPage.getExpectedDeliveryDateLable().isDisplayed());
         assertTrue(productDetailsPage.getExpectedDeliveryDateValue().isDisplayed());
     }
+
     @Test(description = "Verify that the search button works correctly from the PDP", priority = 33)
     public void verifySearchBtnWorksCorrectlyFromPdp() {
         productDetailsPage = new ProductDetailsPage(webDriver);
@@ -358,6 +372,7 @@ aeMegaMenuTestCases.verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductPage()
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
+
     @Test(description = "Make sure that the next review page button appears in Reviews section works correctly ", priority = 34)
     public void verifyNextReviewPageBtnAppearsInReviewsSectionWorksCorrectly() {
         productDetailsPage = new ProductDetailsPage(webDriver);
@@ -368,6 +383,7 @@ aeMegaMenuTestCases.verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductPage()
         DataHelperAndWait.implicitWait(5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
+
     @Test(description = "Make sure that the Previous review page button appears in Reviews section works correctly ", priority = 35)
     public void verifyPreviousReviewPageBtnAppearsInReviewsSectionWorksCorrectly() {
         productDetailsPage = new ProductDetailsPage(webDriver);
@@ -380,6 +396,7 @@ aeMegaMenuTestCases.verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductPage()
         DataHelperAndWait.implicitWait(5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=1"));
     }
+
     @Test(description = "Make sure that the pagination control appears in Reviews section works correctly ", priority = 36)
     public void verifyPaginationControlAppearsInReviewsSectionWorksCorrectly() {
         productDetailsPage = new ProductDetailsPage(webDriver);
@@ -390,6 +407,7 @@ aeMegaMenuTestCases.verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductPage()
         DataHelperAndWait.implicitWait(5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
+
     @Test(description = "Make sure that the simple price changes when navigation between sizes for the config ", priority = 37)
     public void verifySimplePriceChangesWhenNavigationBetweenSizesForTheConfig() {
         productDetailsPage = new ProductDetailsPage(webDriver);
@@ -397,17 +415,18 @@ aeMegaMenuTestCases.verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductPage()
         productDetailsPage.clickOnShopeByMenu();
         productDetailsPage.clickOnSportsSupplementsMenu();
         productDetailsPage.DisplayProductInTheList(4);
-        String firstPrice= productDetailsPage.getFinalProductPrice().getText();
+        String firstPrice = productDetailsPage.getFinalProductPrice().getText();
         productDetailsPage.clickOnFirstProductSize();
         DataHelperAndWait.implicitWait(3);
-        String secondPrice= productDetailsPage.getFinalProductPrice().getText();
-        System.out.println(firstPrice );
-        System.out.println(secondPrice );
-        Assert.assertNotEquals(firstPrice,secondPrice);
+        String secondPrice = productDetailsPage.getFinalProductPrice().getText();
+        System.out.println(firstPrice);
+        System.out.println(secondPrice);
+        Assert.assertNotEquals(firstPrice, secondPrice);
     }
+
     @Test(description = "Make sure ability to navigate to the home page by clicking on the sporter logo from the product Details Page  ", priority = 38)
     public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromPdp() {
-        aeGuestUserPage= new AEGuestUserPage(webDriver);
+        aeGuestUserPage = new AEGuestUserPage(webDriver);
         productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.switchToAeCountry();
         productDetailsPage.clickOnProductInHomePage();

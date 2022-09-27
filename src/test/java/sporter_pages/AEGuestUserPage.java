@@ -103,9 +103,9 @@ public class AEGuestUserPage {
     private WebElement returnToCartLink;
     @FindBy(xpath = "//a[@href='https://www.sporter.com/en-ae/']")
     private WebElement sporterLogo;
-    @FindBy(xpath="//p[text()='You have no items in your shopping cart.']")
+    @FindBy(xpath = "//p[text()='You have no items in your shopping cart.']")
     private WebElement noItemInCartLabel;
-    @FindBy(xpath="//select[@name='country_id']")
+    @FindBy(xpath = "//select[@name='country_id']")
     private WebElement countryField;
 
     //Getter Methods
@@ -196,24 +196,33 @@ public class AEGuestUserPage {
     public WebElement getStreetLineTwoField() {
         return streetLineTwoField;
     }
-    public WebElement getNoItemInCartLabel(){return noItemInCartLabel;}
-    public WebElement getCountryField(){return countryField;}
-    public WebElement getEmailValidationFormateMsg(){return emailValidationFormateMsg;}
 
+    public WebElement getNoItemInCartLabel() {
+        return noItemInCartLabel;
+    }
+
+    public WebElement getCountryField() {
+        return countryField;
+    }
+
+    public WebElement getEmailValidationFormateMsg() {
+        return emailValidationFormateMsg;
+    }
 
 
     //Define the main actions we need to execute our TCs
-    public void switchToAECountry() {try{
-        DataHelperAndWait.isDisplayed(countryList, 15);
-        this.countryList.click();
-        DataHelperAndWait.implicitWait(6);
-        this.aeCountry.click();}
-    catch(Exception e){
-        DataHelperAndWait.isDisplayed(countryList, 15);
-        this.countryList.click();
-        DataHelperAndWait.implicitWait(6);
-        this.aeCountry.click();
-    }
+    public void switchToAECountry() {
+        try {
+            DataHelperAndWait.isDisplayed(countryList, 15);
+            this.countryList.click();
+            DataHelperAndWait.implicitWait(6);
+            this.aeCountry.click();
+        } catch (Exception e) {
+            DataHelperAndWait.isDisplayed(countryList, 15);
+            this.countryList.click();
+            DataHelperAndWait.implicitWait(6);
+            this.aeCountry.click();
+        }
     }
 
     public void clickOnCartIcon() {
@@ -249,13 +258,14 @@ public class AEGuestUserPage {
         this.viewCartBtn.click();
     }
 
-    public void clickOnGuestCheckoutBtn() {try{
-        DataHelperAndWait.waitToBeClickable(guestCheckoutBtn, 15);
-        this.guestCheckoutBtn.click();}
-    catch(Exception e){
-        DataHelperAndWait.waitToBeClickable(guestCheckoutBtn, 15);
-        this.guestCheckoutBtn.click();
-    }
+    public void clickOnGuestCheckoutBtn() {
+        try {
+            DataHelperAndWait.waitToBeClickable(guestCheckoutBtn, 15);
+            this.guestCheckoutBtn.click();
+        } catch (Exception e) {
+            DataHelperAndWait.waitToBeClickable(guestCheckoutBtn, 15);
+            this.guestCheckoutBtn.click();
+        }
     }
 
     public void clickOnProceedCheckoutBtn() {
