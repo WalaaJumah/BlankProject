@@ -59,7 +59,10 @@ public class BaseTest {
     // The Below Method to run the TCs on Onc Browser like Chrome
     @BeforeMethod
     public void setupBrowser( ) throws Exception {
-    System.setProperty("webdriver.chrome.driver","C:\\Users\\w.jumaa\\chromedriver.exe");
+        //This ChromeDriver 104
+//    System.setProperty("webdriver.chrome.driver","C:\\Users\\w.jumaa\\chromedriver.exe");
+        //This ChromeWebDriver 106
+    System.setProperty("webdriver.chrome.driver","C:\\Users\\w.jumaa\\Desktop\\Walaa Documents\\Chrome Driver 106\\chromedriver.exe");
     webDriver = new ChromeDriver();
     webDriver.manage().window().maximize();
     webDriver.navigate().to(siteURL);
