@@ -11,491 +11,491 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.AEGuestUserPage;
 import sporter_pages.AEMegaMenuPage;
-import sporter_pages.CartPage;
-import sporter_pages.ProductDetailsPage;
+import sporter_pages.AeCartPage;
+import sporter_pages.AeProductDetailsPage;
 import java.text.DecimalFormat;
 import java.util.List;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 public class AeCartTestCases extends BaseTest {
-    private ProductDetailsPageTestCases productDetailsPageTestCases;
-    private ProductDetailsPage productDetailsPage;
+    private AeProductDetailsPageTestCases aeProductDetailsPageTestCases;
+    private AeProductDetailsPage aeProductDetailsPage;
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     AEGuestUserPage aeGuestUserPage;
     Actions action;
-    private CartPage cartPage;
+    private AeCartPage aeCartPage;
     @Test(description = "Make sure to view the cart from PDP after adding  product to it", priority = 1)
     public void viewCartFromPDP() {
-        productDetailsPageTestCases = new ProductDetailsPageTestCases();
-        productDetailsPageTestCases.viewCartAfterAddingTheProductToIt();
+        aeProductDetailsPageTestCases = new AeProductDetailsPageTestCases();
+        aeProductDetailsPageTestCases.viewCartAfterAddingTheProductToIt();
     }
 
     @Test(description = "Make sure to view the cart after adding more than quantity for the same product", priority = 2)
     public void verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct() {
-        productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPageTestCases = new ProductDetailsPageTestCases();
-        productDetailsPageTestCases.verifyIncreaseQuantityButtonWorkingFine();
-        productDetailsPage.addToCart();
-        productDetailsPage.viewCart();
+        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        aeProductDetailsPageTestCases = new AeProductDetailsPageTestCases();
+        aeProductDetailsPageTestCases.verifyIncreaseQuantityButtonWorkingFine();
+        aeProductDetailsPage.addToCart();
+        aeProductDetailsPage.viewCart();
         Assert.assertEquals(webDriver.getCurrentUrl(), cartURL, "The current URL is not matched with the Cart URL");
     }
 
     @Test(description = "Make sure to view the cart after adding more than products to it", priority = 3)
     public void verifyAbilityToViewTheCartAfterAddingMoreThanProducts() {
-        productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.switchToAeCountry();
-        productDetailsPage.clickOnShopeByMenu();
-        productDetailsPage.clickOnSalesAndOffersMenu();
-        productDetailsPage.clickOnBuy1Get1Card();
-        DataHelperAndWait.waitToBeVisible(productDetailsPage.getFirstProductInTheCategoryList(), 10);
-        productDetailsPage.DisplayProductInTheList(3);
-        productDetailsPage.addToCart();
-        productDetailsPage.keepShopping();
-        productDetailsPage.clickOnShopeByMenu();
-        productDetailsPage.clickOnSalesAndOffersMenu();
-        productDetailsPage.clickOnBuy1Get1Card();
-        productDetailsPage.DisplayProductInTheList(4);
-        productDetailsPage.addToCart();
-        productDetailsPage.viewCart();
+        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        aeProductDetailsPage.switchToAeCountry();
+        aeProductDetailsPage.clickOnShopeByMenu();
+        aeProductDetailsPage.clickOnSalesAndOffersMenu();
+        aeProductDetailsPage.clickOnBuy1Get1Card();
+        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getFirstProductInTheCategoryList(), 10);
+        aeProductDetailsPage.DisplayProductInTheList(3);
+        aeProductDetailsPage.addToCart();
+        aeProductDetailsPage.keepShopping();
+        aeProductDetailsPage.clickOnShopeByMenu();
+        aeProductDetailsPage.clickOnSalesAndOffersMenu();
+        aeProductDetailsPage.clickOnBuy1Get1Card();
+        aeProductDetailsPage.DisplayProductInTheList(4);
+        aeProductDetailsPage.addToCart();
+        aeProductDetailsPage.viewCart();
         Assert.assertEquals(webDriver.getCurrentUrl(), cartURL, "The Current URL is not matched with the cart URL");
     }
 
     @Test(description = "Adding a config to the cart more than one with different simple in each time", priority = 4)
     public void verifyAbilityToViewTheCartAfterAddingMoreThanSimpleOfTheSameConfig() {
-        productDetailsPage = new ProductDetailsPage(webDriver);
-        cartPage = new CartPage(webDriver);
-        productDetailsPage.switchToAeCountry();
-        productDetailsPage.clickOnShopeByMenu();
-        productDetailsPage.clickOnSportsSupplementsMenu();
-        productDetailsPage.DisplayProductInTheList(0);
-        productDetailsPage.clickOnFirstProductFlavor();
-        productDetailsPage.addToCart();
-        productDetailsPage.keepShopping();
-        productDetailsPage.clickOnSecondProductFlavor();
-        productDetailsPage.addToCart();
-        productDetailsPage.viewCart();
+        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        aeCartPage = new AeCartPage(webDriver);
+        aeProductDetailsPage.switchToAeCountry();
+        aeProductDetailsPage.clickOnShopeByMenu();
+        aeProductDetailsPage.clickOnSportsSupplementsMenu();
+        aeProductDetailsPage.DisplayProductInTheList(0);
+        aeProductDetailsPage.clickOnFirstProductFlavor();
+        aeProductDetailsPage.addToCart();
+        aeProductDetailsPage.keepShopping();
+        aeProductDetailsPage.clickOnSecondProductFlavor();
+        aeProductDetailsPage.addToCart();
+        aeProductDetailsPage.viewCart();
         String itemsCounter = "(3 Items)";
-        DataHelperAndWait.waitToBeVisible(cartPage.getItemsCounterInCartPage(), 15);
-        Assert.assertEquals(cartPage.getItemsCounterInCartPage().getText(), itemsCounter);
+        DataHelperAndWait.waitToBeVisible(aeCartPage.getItemsCounterInCartPage(), 15);
+        Assert.assertEquals(aeCartPage.getItemsCounterInCartPage().getText(), itemsCounter);
     }
 
     @Test(description = "Make sure ability to add bundle to the Cart", priority = 5)
     public void verifyAbilityToAddBundleToCart() {
-        productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.switchToAeCountry();
-        productDetailsPage.searchForBundle();
-        productDetailsPage.clickOnSearchBtn();
-        productDetailsPage.clickOnTheProductCard();
-        DataHelperAndWait.waitToBeVisible(productDetailsPage.getBundleMenu(), 20);
-        productDetailsPage.addToCart();
-        productDetailsPage.viewCart();
+        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        aeProductDetailsPage.switchToAeCountry();
+        aeProductDetailsPage.searchForBundle();
+        aeProductDetailsPage.clickOnSearchBtn();
+        aeProductDetailsPage.clickOnTheProductCard();
+        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getBundleMenu(), 20);
+        aeProductDetailsPage.addToCart();
+        aeProductDetailsPage.viewCart();
         Assert.assertEquals(webDriver.getCurrentUrl(), cartURL," The current URL is not matched with the Cart URL");
     }
 
     @Test(description = "Make sure ability to add a bundle to the cart with all bundle options", priority = 6)
     public void verifyAbilityToAddBundleWithAllItsOptionsToCart() {
-        productDetailsPage = new ProductDetailsPage(webDriver);
-        cartPage = new CartPage(webDriver);
-        productDetailsPage.switchToAeCountry();
-        productDetailsPage.searchForBundle();
-        productDetailsPage.clickOnSearchBtn();
-        DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductCard(), 20);
-        productDetailsPage.clickOnTheProductCard();
-        DataHelperAndWait.waitToBeVisible(productDetailsPage.getBundleMenu(), 20);
-        Select select = new Select(productDetailsPage.getBundleMenu());
+        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        aeCartPage = new AeCartPage(webDriver);
+        aeProductDetailsPage.switchToAeCountry();
+        aeProductDetailsPage.searchForBundle();
+        aeProductDetailsPage.clickOnSearchBtn();
+        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getProductCard(), 20);
+        aeProductDetailsPage.clickOnTheProductCard();
+        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getBundleMenu(), 20);
+        Select select = new Select(aeProductDetailsPage.getBundleMenu());
         List<WebElement> elementCount = select.getOptions();
         int menuSize = elementCount.size();
         for (int i = 0; i < menuSize; i++) {
             try {
                 select.selectByIndex(i);
-                productDetailsPage.addToCart();
-                productDetailsPage.keepShopping();
+                aeProductDetailsPage.addToCart();
+                aeProductDetailsPage.keepShopping();
             } catch (Exception e) {
-                cartPage.clickOnTheContinueShoppingBtn();
+                aeCartPage.clickOnTheContinueShoppingBtn();
             }
         }
-        cartPage.clickOnCartIcon();
-        cartPage.clickOnViewCartInCartPopUp();
+        aeCartPage.clickOnCartIcon();
+        aeCartPage.clickOnViewCartInCartPopUp();
         Assert.assertEquals(webDriver.getCurrentUrl(), cartURL, "The current URL is not matched with the Cart URL");
     }
 
     @Test(description = "Verify that the The requested qty is not available message appear when the product becomes OOS", priority = 7)
     public void verifyToDisplayRequestedQtyIsNotAvailableMsg() {
-        productDetailsPage = new ProductDetailsPage(webDriver);
-        cartPage = new CartPage(webDriver);
-        productDetailsPage.switchToAeCountry();
-        productDetailsPage.clickOnProductInHomePage();
-        productDetailsPage.fillInQtyField("500");
-        productDetailsPage.addToCart();
-        DataHelperAndWait.waitToBeVisible(cartPage.getContinueShoppingBtn(), 10);
-        Assert.assertTrue(cartPage.getContinueShoppingBtn().isDisplayed());
+        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        aeCartPage = new AeCartPage(webDriver);
+        aeProductDetailsPage.switchToAeCountry();
+        aeProductDetailsPage.clickOnProductInHomePage();
+        aeProductDetailsPage.fillInQtyField("500");
+        aeProductDetailsPage.addToCart();
+        DataHelperAndWait.waitToBeVisible(aeCartPage.getContinueShoppingBtn(), 10);
+        Assert.assertTrue(aeCartPage.getContinueShoppingBtn().isDisplayed());
     }
 
     @Test(description = "Verify that the ContinueShoppingBtn works correctly when displaying The requested qty is not available message", priority = 8)
     public void verifyContinueShoppingBtnWorksCorrectlyWhenTheProductBecomeOOS() {
-        productDetailsPage = new ProductDetailsPage(webDriver);
-        cartPage = new CartPage(webDriver);
-        productDetailsPage.switchToAeCountry();
-        productDetailsPage.clickOnProductInHomePage();
-        productDetailsPage.fillInQtyField("500");
+        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        aeCartPage = new AeCartPage(webDriver);
+        aeProductDetailsPage.switchToAeCountry();
+        aeProductDetailsPage.clickOnProductInHomePage();
+        aeProductDetailsPage.fillInQtyField("500");
         String currentURL = webDriver.getCurrentUrl();
-        productDetailsPage.addToCart();
-        cartPage.clickOnTheContinueShoppingBtn();
+        aeProductDetailsPage.addToCart();
+        aeCartPage.clickOnTheContinueShoppingBtn();
         Assert.assertEquals(webDriver.getCurrentUrl(), currentURL,"The Current URL is not matched with the Cart URL");
     }
 
     @Test(description = "Verify ability to remove the product from the cart successfully", priority = 9)
     public void verifyAbilityToRemoveProductFromCart() {
-        productDetailsPageTestCases = new ProductDetailsPageTestCases();
-        cartPage = new CartPage(webDriver);
-        productDetailsPageTestCases.viewCartAfterAddingTheProductToIt();
-        cartPage.clickOnRemoveItem();
-        DataHelperAndWait.isDisplayed(cartPage.getNoItemInCartLabel(), 10);
-        Assert.assertTrue(cartPage.getNoItemInCartLabel().isDisplayed());
+        aeProductDetailsPageTestCases = new AeProductDetailsPageTestCases();
+        aeCartPage = new AeCartPage(webDriver);
+        aeProductDetailsPageTestCases.viewCartAfterAddingTheProductToIt();
+        aeCartPage.clickOnRemoveItem();
+        DataHelperAndWait.isDisplayed(aeCartPage.getNoItemInCartLabel(), 10);
+        Assert.assertTrue(aeCartPage.getNoItemInCartLabel().isDisplayed());
     }
 
     @Test(description = "Verify that Here Link appear after clearing the items from the Cart works successfully", priority = 10)
     public void verifyHereLinkInCartPageWorking() {
-        cartPage = new CartPage(webDriver);
+        aeCartPage = new AeCartPage(webDriver);
         this.verifyAbilityToRemoveProductFromCart();
-        DataHelperAndWait.isDisplayed(cartPage.getHereLink(), 10);
-        cartPage.clickOnHereLink();
+        DataHelperAndWait.isDisplayed(aeCartPage.getHereLink(), 10);
+        aeCartPage.clickOnHereLink();
         Assert.assertEquals(webDriver.getCurrentUrl(), aeSiteURL, "The Current URL is not matched with the AE Site URL");
     }
 
     @Test(description = "Verify ability to increase the product quantity from Cart page from the Cart Page works successfully", priority = 11)
     public void verifyIncreaseQtyBtnInCartPageWorking() {
-        cartPage = new CartPage(webDriver);
+        aeCartPage = new AeCartPage(webDriver);
         this.viewCartFromPDP();
-        DataHelperAndWait.waitToBeClickable(cartPage.getIncreaseQtyBtn(), 10);
-        cartPage.clickOnIncreaseQtyBtn();
-        Assert.assertEquals(cartPage.getQtyField().getAttribute("value"), "2");
+        DataHelperAndWait.waitToBeClickable(aeCartPage.getIncreaseQtyBtn(), 10);
+        aeCartPage.clickOnIncreaseQtyBtn();
+        Assert.assertEquals(aeCartPage.getQtyField().getAttribute("value"), "2");
     }
 
     @Test(description = "Verify ability to Decrease the product quantity from Cart page from the Cart Page works successfully", priority = 12)
     public void verifyDecreaseQtyBtnInCartPageWorking() {
-        cartPage = new CartPage(webDriver);
+        aeCartPage = new AeCartPage(webDriver);
         this.viewCartFromPDP();
-        DataHelperAndWait.waitToBeClickable(cartPage.getIncreaseQtyBtn(), 10);
-        cartPage.clickOnIncreaseQtyBtn();
-        DataHelperAndWait.waitToBeClickable(cartPage.getDecreaseQtyBtn(), 10);
-        cartPage.clickOnDecreaseQtyBtn();
-        Assert.assertEquals(cartPage.getQtyField().getAttribute("value"), "1");
+        DataHelperAndWait.waitToBeClickable(aeCartPage.getIncreaseQtyBtn(), 10);
+        aeCartPage.clickOnIncreaseQtyBtn();
+        DataHelperAndWait.waitToBeClickable(aeCartPage.getDecreaseQtyBtn(), 10);
+        aeCartPage.clickOnDecreaseQtyBtn();
+        Assert.assertEquals(aeCartPage.getQtyField().getAttribute("value"), "1");
     }
 
     @Test(description = "Verify that The requested qty is not available message appear when the product becomes OOS in Cart Page successfully", priority = 13)
     public void verifyToDisplayRequestedQtyIsNotAvailableMsgWhenProductOOSinCartPage() {
-        cartPage = new CartPage(webDriver);
+        aeCartPage = new AeCartPage(webDriver);
         this.verifyAbilityToAddBundleToCart();
-        cartPage.FillInQtyField("500");
-        cartPage.clickOnIncreaseQtyBtn();
-        DataHelperAndWait.waitToBeVisible(cartPage.getQtyUnavailableMsgInCartPage(), 10);
-        Assert.assertTrue(cartPage.getQtyUnavailableMsgInCartPage().isDisplayed());
+        aeCartPage.FillInQtyField("500");
+        aeCartPage.clickOnIncreaseQtyBtn();
+        DataHelperAndWait.waitToBeVisible(aeCartPage.getQtyUnavailableMsgInCartPage(), 10);
+        Assert.assertTrue(aeCartPage.getQtyUnavailableMsgInCartPage().isDisplayed());
     }
 
     @Test(description = "Verify ability to display the product from the Cart Page works successfully", priority = 14)
     public void verifyAbilityToDisplayTheProductFromTheCartPage() {
-        cartPage = new CartPage(webDriver);
+        aeCartPage = new AeCartPage(webDriver);
         this.viewCartFromPDP();
-        cartPage.clickOnProductCartInCartPage();
+        aeCartPage.clickOnProductCartInCartPage();
         Assert.assertNotEquals(webDriver.getCurrentUrl(), aeSiteURL, "The Current URL is not matched with the AE Site URL");
     }
 
     @Test(description = "Make sure that the product price is changed when you change the quantity from the Cart Page", priority = 15)
     public void verifyProductPriceChangesWhenChangingTheProductQtyFromTheCartPage() {
-        cartPage = new CartPage(webDriver);
+        aeCartPage = new AeCartPage(webDriver);
         this.viewCartFromPDP();
-        String currentProductPrice = cartPage.getPriceInCartPage().getText();
-        cartPage.clickOnIncreaseQtyBtn();
+        String currentProductPrice = aeCartPage.getPriceInCartPage().getText();
+        aeCartPage.clickOnIncreaseQtyBtn();
         DataHelperAndWait.refreshPage();
-        String newProductPrice = cartPage.getPriceInCartPage().getText();
+        String newProductPrice = aeCartPage.getPriceInCartPage().getText();
         Assert.assertNotEquals(currentProductPrice, newProductPrice);
     }
 
     @Test(description = "Make sure that the customer can't add more than 2 Qty of the same product when switching to Jordan Store from Cart Page", priority = 16)
     public void verifyInabilityToAddMoreThan2QtyOfSameProductFromTheCartPageForJordanStore() {
-        productDetailsPage = new ProductDetailsPage(webDriver);
+        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         WebDriverWait wait = new WebDriverWait(webDriver, 30);
-        cartPage = new CartPage(webDriver);
-        productDetailsPage.switchToJOCountry();
-        productDetailsPage.clickOnShopeByMenu();
-        productDetailsPage.clickOnSportsSupplementsMenu();
-        productDetailsPage.DisplayProductInTheList(0);
-        productDetailsPage.clickOnFirstProductFlavor();
-        productDetailsPage.addToCart();
-        productDetailsPage.viewCart();
-        cartPage.clickOnIncreaseQtyBtn();
+        aeCartPage = new AeCartPage(webDriver);
+        aeProductDetailsPage.switchToJOCountry();
+        aeProductDetailsPage.clickOnShopeByMenu();
+        aeProductDetailsPage.clickOnSportsSupplementsMenu();
+        aeProductDetailsPage.DisplayProductInTheList(0);
+        aeProductDetailsPage.clickOnFirstProductFlavor();
+        aeProductDetailsPage.addToCart();
+        aeProductDetailsPage.viewCart();
+        aeCartPage.clickOnIncreaseQtyBtn();
         if (wait.until(ExpectedConditions.alertIsPresent()) != null)
             webDriver.switchTo().alert().dismiss();
     }
 
     @Test(description = "Make sure that the Free Gift is added correctly to the Cart", priority = 17)
     public void verifyTheFreeGiftIsAddedCorrectlyToTheCart() {
-        productDetailsPage = new ProductDetailsPage(webDriver);
-        cartPage = new CartPage(webDriver);
-        productDetailsPage.switchToAeCountry();
-        productDetailsPage.clickOnShopeByMenu();
-        productDetailsPage.clickOnSalesAndOffersMenu();
-        productDetailsPage.clickOnBuy1Get1Card();
-        productDetailsPage.DisplayProductInTheList(3);
-        productDetailsPage.addToCart();
-        productDetailsPage.viewCart();
-        Assert.assertTrue(cartPage.getFreeFromSporterSection().isDisplayed());
+        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        aeCartPage = new AeCartPage(webDriver);
+        aeProductDetailsPage.switchToAeCountry();
+        aeProductDetailsPage.clickOnShopeByMenu();
+        aeProductDetailsPage.clickOnSalesAndOffersMenu();
+        aeProductDetailsPage.clickOnBuy1Get1Card();
+        aeProductDetailsPage.DisplayProductInTheList(3);
+        aeProductDetailsPage.addToCart();
+        aeProductDetailsPage.viewCart();
+        Assert.assertTrue(aeCartPage.getFreeFromSporterSection().isDisplayed());
     }
 
     @Test(description = "Make sure that the Free Gift does not have a price", priority = 18)
     public void verifyTheFreeGiftIsDoesnotHavePrice() {
-        productDetailsPage = new ProductDetailsPage(webDriver);
-        cartPage = new CartPage(webDriver);
-        productDetailsPage.switchToAeCountry();
-        productDetailsPage.clickOnShopeByMenu();
-        productDetailsPage.clickOnSalesAndOffersMenu();
-        productDetailsPage.clickOnBuy1Get1Card();
-        productDetailsPage.DisplayProductInTheList(3);
-        productDetailsPage.addToCart();
-        productDetailsPage.viewCart();
-        Assert.assertTrue(cartPage.getFreePrice().isDisplayed());
+        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        aeCartPage = new AeCartPage(webDriver);
+        aeProductDetailsPage.switchToAeCountry();
+        aeProductDetailsPage.clickOnShopeByMenu();
+        aeProductDetailsPage.clickOnSalesAndOffersMenu();
+        aeProductDetailsPage.clickOnBuy1Get1Card();
+        aeProductDetailsPage.DisplayProductInTheList(3);
+        aeProductDetailsPage.addToCart();
+        aeProductDetailsPage.viewCart();
+        Assert.assertTrue(aeCartPage.getFreePrice().isDisplayed());
     }
 
     @Test(description = "Make sure that the Free Gift is removed from the cart when you remove the product", priority = 19)
     public void verifyTheFreeGiftIsRemovedWhenRemovingTheProduct() {
-        productDetailsPage = new ProductDetailsPage(webDriver);
-        cartPage = new CartPage(webDriver);
-        productDetailsPage.switchToAeCountry();
-        productDetailsPage.clickOnShopeByMenu();
-        productDetailsPage.clickOnSalesAndOffersMenu();
-        productDetailsPage.clickOnBuy1Get1Card();
-        DataHelperAndWait.waitToBeVisible(productDetailsPage.getFirstProductInTheCategoryList(), 10);
-        productDetailsPage.DisplayProductInTheList(3);
-        productDetailsPage.addToCart();
-        productDetailsPage.viewCart();
-        Assert.assertTrue(cartPage.getFreePrice().isDisplayed());
-        cartPage.clickOnRemoveItem();
-        DataHelperAndWait.isDisplayed(cartPage.getNoItemInCartLabel(), 10);
-        Assert.assertTrue(cartPage.getNoItemInCartLabel().isDisplayed());
+        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        aeCartPage = new AeCartPage(webDriver);
+        aeProductDetailsPage.switchToAeCountry();
+        aeProductDetailsPage.clickOnShopeByMenu();
+        aeProductDetailsPage.clickOnSalesAndOffersMenu();
+        aeProductDetailsPage.clickOnBuy1Get1Card();
+        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getFirstProductInTheCategoryList(), 10);
+        aeProductDetailsPage.DisplayProductInTheList(3);
+        aeProductDetailsPage.addToCart();
+        aeProductDetailsPage.viewCart();
+        Assert.assertTrue(aeCartPage.getFreePrice().isDisplayed());
+        aeCartPage.clickOnRemoveItem();
+        DataHelperAndWait.isDisplayed(aeCartPage.getNoItemInCartLabel(), 10);
+        Assert.assertTrue(aeCartPage.getNoItemInCartLabel().isDisplayed());
     }
 
     @Test(description = "Make sure that all payment methods are appear correctly in the Cart page", priority = 20)
     public void verifyAllPaymentMethodAppearingTheCartPage() {
-        cartPage = new CartPage(webDriver);
+        aeCartPage = new AeCartPage(webDriver);
         this.viewCartFromPDP();
-        Assert.assertTrue(cartPage.getWeAcceptLabel().isDisplayed());
-        Assert.assertTrue(cartPage.getCodOption().isDisplayed());
-        Assert.assertTrue(cartPage.getCreditCardOption().isDisplayed());
+        Assert.assertTrue(aeCartPage.getWeAcceptLabel().isDisplayed());
+        Assert.assertTrue(aeCartPage.getCodOption().isDisplayed());
+        Assert.assertTrue(aeCartPage.getCreditCardOption().isDisplayed());
     }
 
     @Test(description = "Make sure that Make sure that complete your order, to get 100% GENUINE PRODUCTS and SUPER DELIVERY WITHIN 2 WORKING DAYS label appears in the Cart Page", priority = 21)
     public void verifytheFreeShippingLabelAppearCorrectlyInTheCartPage() {
-        cartPage = new CartPage(webDriver);
+        aeCartPage = new AeCartPage(webDriver);
         this.viewCartFromPDP();
-        Assert.assertTrue(cartPage.getFreeShippingLabel().isDisplayed());
+        Assert.assertTrue(aeCartPage.getFreeShippingLabel().isDisplayed());
     }
 
     @Test(description = "Make sure that the product counter that appears in the cart page works correctly", priority = 22)
     public void verifyProductCounterAppearsInTheCartPageWorksCorrectly() {
-        productDetailsPage = new ProductDetailsPage(webDriver);
-        cartPage = new CartPage(webDriver);
-        productDetailsPage.switchToAeCountry();
-        productDetailsPage.clickOnShopeByMenu();
-        productDetailsPage.clickOnSportsSupplementsMenu();
-        DataHelperAndWait.waitToBeVisible(productDetailsPage.getFirstProductInTheCategoryList(), 10);
-        productDetailsPage.DisplayProductInTheList(0);
-        productDetailsPage.addToCart();
-        productDetailsPage.keepShopping();
-        productDetailsPage.clickOnShopeByMenu();
-        productDetailsPage.clickOnSportsSupplementsMenu();
-        DataHelperAndWait.waitToBeVisible(productDetailsPage.getFirstProductInTheCategoryList(), 10);
-        productDetailsPage.DisplayProductInTheList(4);
-        productDetailsPage.addToCart();
-        productDetailsPage.viewCart();
+        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        aeCartPage = new AeCartPage(webDriver);
+        aeProductDetailsPage.switchToAeCountry();
+        aeProductDetailsPage.clickOnShopeByMenu();
+        aeProductDetailsPage.clickOnSportsSupplementsMenu();
+        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getFirstProductInTheCategoryList(), 10);
+        aeProductDetailsPage.DisplayProductInTheList(0);
+        aeProductDetailsPage.addToCart();
+        aeProductDetailsPage.keepShopping();
+        aeProductDetailsPage.clickOnShopeByMenu();
+        aeProductDetailsPage.clickOnSportsSupplementsMenu();
+        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getFirstProductInTheCategoryList(), 10);
+        aeProductDetailsPage.DisplayProductInTheList(4);
+        aeProductDetailsPage.addToCart();
+        aeProductDetailsPage.viewCart();
         String itemsCounter = "(2 Items)";
-        DataHelperAndWait.waitToBeVisible(cartPage.getItemsCounterInCartPage(), 15);
-        Assert.assertEquals(cartPage.getItemsCounterInCartPage().getText(), itemsCounter);
+        DataHelperAndWait.waitToBeVisible(aeCartPage.getItemsCounterInCartPage(), 15);
+        Assert.assertEquals(aeCartPage.getItemsCounterInCartPage().getText(), itemsCounter);
     }
 
     @Test(description = "Make sure that the product counter that appears in the cart page counts the free gift correctly", priority = 23)
     public void verifyProductCounterAppearsInTheCartPageCountsFreeGifts() {
-        productDetailsPage = new ProductDetailsPage(webDriver);
-        cartPage = new CartPage(webDriver);
-        productDetailsPage.switchToAeCountry();
-        productDetailsPage.clickOnShopeByMenu();
-        productDetailsPage.clickOnSalesAndOffersMenu();
-        productDetailsPage.clickOnBuy1Get1Card();
-        DataHelperAndWait.waitToBeVisible(productDetailsPage.getFirstProductInTheCategoryList(), 10);
-        productDetailsPage.DisplayProductInTheList(3);
-        productDetailsPage.addToCart();
-        productDetailsPage.keepShopping();
-        productDetailsPage.clickOnShopeByMenu();
-        productDetailsPage.clickOnSalesAndOffersMenu();
-        productDetailsPage.clickOnBuy1Get1Card();
-        DataHelperAndWait.waitToBeVisible(productDetailsPage.getFirstProductInTheCategoryList(), 10);
-        productDetailsPage.DisplayProductInTheList(3);
-        productDetailsPage.addToCart();
-        productDetailsPage.viewCart();
+        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        aeCartPage = new AeCartPage(webDriver);
+        aeProductDetailsPage.switchToAeCountry();
+        aeProductDetailsPage.clickOnShopeByMenu();
+        aeProductDetailsPage.clickOnSalesAndOffersMenu();
+        aeProductDetailsPage.clickOnBuy1Get1Card();
+        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getFirstProductInTheCategoryList(), 10);
+        aeProductDetailsPage.DisplayProductInTheList(3);
+        aeProductDetailsPage.addToCart();
+        aeProductDetailsPage.keepShopping();
+        aeProductDetailsPage.clickOnShopeByMenu();
+        aeProductDetailsPage.clickOnSalesAndOffersMenu();
+        aeProductDetailsPage.clickOnBuy1Get1Card();
+        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getFirstProductInTheCategoryList(), 10);
+        aeProductDetailsPage.DisplayProductInTheList(3);
+        aeProductDetailsPage.addToCart();
+        aeProductDetailsPage.viewCart();
         String itemsCounter = "(4 Items)";
-        DataHelperAndWait.waitToBeVisible(cartPage.getItemsCounterInCartPage(), 15);
-        Assert.assertEquals(cartPage.getItemsCounterInCartPage().getText(), itemsCounter);
+        DataHelperAndWait.waitToBeVisible(aeCartPage.getItemsCounterInCartPage(), 15);
+        Assert.assertEquals(aeCartPage.getItemsCounterInCartPage().getText(), itemsCounter);
     }
 
     @Test(description = "Make sure that the Expected delivery date field in the cart page retrieves data", priority = 24)
     public void verifyExpectedDeliveryDateRetrievesData() {
-        productDetailsPageTestCases = new ProductDetailsPageTestCases();
-        cartPage = new CartPage(webDriver);
-        productDetailsPageTestCases.viewCartAfterAddingTheProductToIt();
-        Assert.assertTrue(cartPage.getExpectedDeliveryDateLabel().isDisplayed());
-        String expectedDeliveryDate = cartPage.getExpectedDeliveryDateValue().getText();
+        aeProductDetailsPageTestCases = new AeProductDetailsPageTestCases();
+        aeCartPage = new AeCartPage(webDriver);
+        aeProductDetailsPageTestCases.viewCartAfterAddingTheProductToIt();
+        Assert.assertTrue(aeCartPage.getExpectedDeliveryDateLabel().isDisplayed());
+        String expectedDeliveryDate = aeCartPage.getExpectedDeliveryDateValue().getText();
         Assert.assertNotNull(expectedDeliveryDate);
     }
 
     @Test(description = "Make sure that theProceed to checkout button appears in the cart page works correctly", priority = 25)
     public void verifyProceedCheckoutBtnAppearsCorrectlyInCartPage() {
-        productDetailsPageTestCases = new ProductDetailsPageTestCases();
-        cartPage = new CartPage(webDriver);
-        productDetailsPageTestCases.viewCartAfterAddingTheProductToIt();
-        Assert.assertTrue(cartPage.getProceedCheckoutBtn().isDisplayed());
+        aeProductDetailsPageTestCases = new AeProductDetailsPageTestCases();
+        aeCartPage = new AeCartPage(webDriver);
+        aeProductDetailsPageTestCases.viewCartAfterAddingTheProductToIt();
+        Assert.assertTrue(aeCartPage.getProceedCheckoutBtn().isDisplayed());
     }
 
     @Test(description = "Make sure that the system will empty the cart after switching the country", priority = 26)
     public void verifyTheCartWillRemoveAllProductsAfterSwitchingTheCountry() {
-        productDetailsPageTestCases = new ProductDetailsPageTestCases();
-        productDetailsPage = new ProductDetailsPage(webDriver);
-        cartPage = new CartPage(webDriver);
-        productDetailsPageTestCases.viewCartAfterAddingTheProductToIt();
-        productDetailsPage.switchToJOCountry();
-        Assert.assertTrue(cartPage.getNoItemInCartLabel().isDisplayed());
+        aeProductDetailsPageTestCases = new AeProductDetailsPageTestCases();
+        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        aeCartPage = new AeCartPage(webDriver);
+        aeProductDetailsPageTestCases.viewCartAfterAddingTheProductToIt();
+        aeProductDetailsPage.switchToJOCountry();
+        Assert.assertTrue(aeCartPage.getNoItemInCartLabel().isDisplayed());
     }
 
     @Test(description = "Make sure that the ability to switch to Arabic version from the cart page correctly", priority = 27)
     public void verifyAbilityToSwitchToArabicVersionFromCartPage() {
-        productDetailsPageTestCases = new ProductDetailsPageTestCases();
-        productDetailsPage = new ProductDetailsPage(webDriver);
-        cartPage = new CartPage(webDriver);
-        productDetailsPageTestCases.viewCartAfterAddingTheProductToIt();
-        DataHelperAndWait.waitToBeVisible(productDetailsPage.getLanguageSwitcher(), 10);
-        productDetailsPage.switchToArabicVersion();
-        DataHelperAndWait.waitToBeVisible(productDetailsPage.getEnglishLangBtn(), 5);
-        Assert.assertTrue(productDetailsPage.getEnglishLangBtn().isDisplayed());
+        aeProductDetailsPageTestCases = new AeProductDetailsPageTestCases();
+        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        aeCartPage = new AeCartPage(webDriver);
+        aeProductDetailsPageTestCases.viewCartAfterAddingTheProductToIt();
+        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getLanguageSwitcher(), 10);
+        aeProductDetailsPage.switchToArabicVersion();
+        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getEnglishLangBtn(), 5);
+        Assert.assertTrue(aeProductDetailsPage.getEnglishLangBtn().isDisplayed());
     }
 
     @Test(description = "Make sure that the order total calculation in the cart page works correctly", priority = 28)
     public void verifyOrderTotalCalculationInCartPageWorksCorrectly() {
-        productDetailsPageTestCases = new ProductDetailsPageTestCases();
-        productDetailsPage = new ProductDetailsPage(webDriver);
-        cartPage = new CartPage(webDriver);
-        productDetailsPageTestCases.viewCartAfterAddingTheProductToIt();
-        float subTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue());
-        float tax = DataHelperAndWait.convertTheStringToFloat(cartPage.getTaxValue());
-        float orderTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue());
+        aeProductDetailsPageTestCases = new AeProductDetailsPageTestCases();
+        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        aeCartPage = new AeCartPage(webDriver);
+        aeProductDetailsPageTestCases.viewCartAfterAddingTheProductToIt();
+        float subTotal = DataHelperAndWait.convertTheStringToFloat(aeCartPage.getSubTotalValue());
+        float tax = DataHelperAndWait.convertTheStringToFloat(aeCartPage.getTaxValue());
+        float orderTotal = DataHelperAndWait.convertTheStringToFloat(aeCartPage.getOrderTotalValue());
         float cartTotal = subTotal + tax;
         Assert.assertEquals(orderTotal, cartTotal);
     }
 
     @Test(description = "Make sure that the customer can view the cart using Cart Icon", priority = 29)
     public void verifyAbilityToViewCartFromCartIcon() {
-        productDetailsPageTestCases = new ProductDetailsPageTestCases();
-        cartPage = new CartPage(webDriver);
-        productDetailsPageTestCases.keepShoppingAfterAddingToTheCart();
-        cartPage.clickOnCartIcon();
-        cartPage.clickOnViewCartInCartPopUp();
+        aeProductDetailsPageTestCases = new AeProductDetailsPageTestCases();
+        aeCartPage = new AeCartPage(webDriver);
+        aeProductDetailsPageTestCases.keepShoppingAfterAddingToTheCart();
+        aeCartPage.clickOnCartIcon();
+        aeCartPage.clickOnViewCartInCartPopUp();
         Assert.assertEquals(webDriver.getCurrentUrl(), cartURL,"The Current URL is not matched with the Cart URL");
     }
 
     @Test(description = "Make sure that the counter-number appears in the cart pop up works correctly", priority = 30)
     public void verifyTheCounterInCartIconWorksCorrectly() {
-        cartPage = new CartPage(webDriver);
+        aeCartPage = new AeCartPage(webDriver);
         this.verifyTheFreeGiftIsAddedCorrectlyToTheCart();
-        Assert.assertEquals(cartPage.getCartCounter().getText(), "2");
+        Assert.assertEquals(aeCartPage.getCartCounter().getText(), "2");
     }
 
     @Test(description = "Make sure that the item-count appears in the cart pop up works correctly", priority = 31)
     public void verifyTheItemsCounterInCartPopupWorksCorrectly() {
-        cartPage = new CartPage(webDriver);
+        aeCartPage = new AeCartPage(webDriver);
         this.verifyTheFreeGiftIsAddedCorrectlyToTheCart();
-        cartPage.clickOnCartIcon();
-        Assert.assertEquals(cartPage.getItemCounterInCartPopUp().getText(), "(2 of 2 Items )");
+        aeCartPage.clickOnCartIcon();
+        Assert.assertEquals(aeCartPage.getItemCounterInCartPopUp().getText(), "(2 of 2 Items )");
     }
 
     @Test(description = "Make sure that the item-count appears in the cart pop up works correctly", priority = 32)
     public void verifyTheProceedCheckoutBtnInCartPopupWorksCorrectlyForGuestUser() {
-        cartPage = new CartPage(webDriver);
+        aeCartPage = new AeCartPage(webDriver);
         this.verifyTheItemsCounterInCartPopupWorksCorrectly();
-        cartPage.clickOnProceedCheckoutBtnInCartPopup();
+        aeCartPage.clickOnProceedCheckoutBtnInCartPopup();
         Assert.assertEquals(webDriver.getCurrentUrl(), checkoutLoginStepURL," The current URL is not matched with the Checkout Login setup URL");
     }
 
     @Test(description = "Make sure that the  close icon appears in the cart pop-up works correctly", priority = 33)
     public void verifyTheCloseIconInCartPopupWorksCorrectly() {
-        cartPage = new CartPage(webDriver);
+        aeCartPage = new AeCartPage(webDriver);
         this.verifyTheFreeGiftIsAddedCorrectlyToTheCart();
-        cartPage.clickOnCartIcon();
-        cartPage.clickOnCartCloseIcon();
-        Assert.assertFalse(cartPage.getCloseIconInCartPopup().isDisplayed());
+        aeCartPage.clickOnCartIcon();
+        aeCartPage.clickOnCartCloseIcon();
+        Assert.assertFalse(aeCartPage.getCloseIconInCartPopup().isDisplayed());
     }
 
     @Test(description = "Make sure that the free coupone code working fine", priority = 34)
     public void verifyFreeCoupopneCodeFunctionWorksCorrectly() {
-        cartPage = new CartPage(webDriver);
+        aeCartPage = new AeCartPage(webDriver);
         this.viewCartFromPDP();
-        cartPage.FillInCouponCode(freeCouponeCode);
-        DataHelperAndWait.waitToBeVisible(cartPage.getUsedFreeCouponMsg(), 15);
-        Assert.assertTrue(cartPage.getFreeFromSporterSection().isDisplayed());
+        aeCartPage.FillInCouponCode(freeCouponeCode);
+        DataHelperAndWait.waitToBeVisible(aeCartPage.getUsedFreeCouponMsg(), 15);
+        Assert.assertTrue(aeCartPage.getFreeFromSporterSection().isDisplayed());
     }
 
     @Test(description = "Make sure that the system does not apply invalid coupon code", priority = 35)
     public void verifyInabilityToApplyInvalidCouponCode() {
-        cartPage = new CartPage(webDriver);
+        aeCartPage = new AeCartPage(webDriver);
         this.viewCartFromPDP();
-        cartPage.FillInCouponCode("test");
-        DataHelperAndWait.waitToBeVisible(cartPage.getNotExistCouponMsg(), 15);
-        Assert.assertTrue(cartPage.getNotExistCouponMsg().isDisplayed());
+        aeCartPage.FillInCouponCode("test");
+        DataHelperAndWait.waitToBeVisible(aeCartPage.getNotExistCouponMsg(), 15);
+        Assert.assertTrue(aeCartPage.getNotExistCouponMsg().isDisplayed());
     }
 
     @Test(description = "Make sure that the system cancel the coupon code correctly", priority = 36)
     public void verifyAbilityToCancelTheCouponCode() {
-        cartPage = new CartPage(webDriver);
+        aeCartPage = new AeCartPage(webDriver);
         this.viewCartFromPDP();
-        cartPage.FillInCouponCode(freeCouponeCode);
-        DataHelperAndWait.waitToBeVisible(cartPage.getUsedFreeCouponMsg(), 15);
-        cartPage.clickOnCancelCouponCodeBtn();
-        Assert.assertFalse(cartPage.getFreeFromSporterSection().isDisplayed());
-        Assert.assertTrue(cartPage.getApplyCouponCode().isDisplayed());
+        aeCartPage.FillInCouponCode(freeCouponeCode);
+        DataHelperAndWait.waitToBeVisible(aeCartPage.getUsedFreeCouponMsg(), 15);
+        aeCartPage.clickOnCancelCouponCodeBtn();
+        Assert.assertFalse(aeCartPage.getFreeFromSporterSection().isDisplayed());
+        Assert.assertTrue(aeCartPage.getApplyCouponCode().isDisplayed());
     }
 
     @Test(description = "Make sure inability to apply coupon code without filling the code", priority = 37)
     public void verifyInabilityToApplyCouponCodeWithoutFillingTheCode() {
-        cartPage = new CartPage(webDriver);
+        aeCartPage = new AeCartPage(webDriver);
         this.viewCartFromPDP();
-        cartPage.FillInCouponCode(" ");
-        DataHelperAndWait.waitToBeVisible(cartPage.getRequiredCouponMsg(), 15);
-        Assert.assertTrue(cartPage.getRequiredCouponMsg().isDisplayed());
+        aeCartPage.FillInCouponCode(" ");
+        DataHelperAndWait.waitToBeVisible(aeCartPage.getRequiredCouponMsg(), 15);
+        Assert.assertTrue(aeCartPage.getRequiredCouponMsg().isDisplayed());
     }
 
     @Test(description = "Make sure that My Shopping Cart title appears in the Cart Page", priority = 38)
     public void verifyMyShoppingCartTitleAppearCorrectlyInTheCartPage() {
-        cartPage = new CartPage(webDriver);
+        aeCartPage = new AeCartPage(webDriver);
         this.viewCartFromPDP();
-        Assert.assertTrue(cartPage.getMyShoppingCartMsg().getText().contains("My Shopping Cart"));
+        Assert.assertTrue(aeCartPage.getMyShoppingCartMsg().getText().contains("My Shopping Cart"));
     }
 
     @Test(description = "Make sure that the free gift is not calculated in the cart price", priority = 39)
     public void verifyTheFreeGiftIsNotCalculatedInTheCartPrice() {
-        cartPage = new CartPage(webDriver);
+        aeCartPage = new AeCartPage(webDriver);
         this.verifyTheFreeGiftIsAddedCorrectlyToTheCart();
-        Assert.assertEquals(cartPage.getPriceInCartPage().getText(), cartPage.getSubTotalValue().getText());
+        Assert.assertEquals(aeCartPage.getPriceInCartPage().getText(), aeCartPage.getSubTotalValue().getText());
     }
 
     @Test(description = "Make sure the tax calculate correctly", priority = 40)
     public void verifyTheTaxCalculatedCorrectly() {
         DecimalFormat df = new DecimalFormat("0.00");
-        productDetailsPageTestCases = new ProductDetailsPageTestCases();
-        productDetailsPage = new ProductDetailsPage(webDriver);
-        cartPage = new CartPage(webDriver);
-        productDetailsPageTestCases.viewCartAfterAddingTheProductToIt();
-        float subTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue());
+        aeProductDetailsPageTestCases = new AeProductDetailsPageTestCases();
+        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        aeCartPage = new AeCartPage(webDriver);
+        aeProductDetailsPageTestCases.viewCartAfterAddingTheProductToIt();
+        float subTotal = DataHelperAndWait.convertTheStringToFloat(aeCartPage.getSubTotalValue());
         float tax = subTotal * (float) (0.05);
         float expectedCartTotal = subTotal + tax;
-        float actualCartTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue());
+        float actualCartTotal = DataHelperAndWait.convertTheStringToFloat(aeCartPage.getOrderTotalValue());
         Assert.assertEquals(df.format(actualCartTotal), df.format(expectedCartTotal));
     }
 
@@ -547,11 +547,11 @@ public class AeCartTestCases extends BaseTest {
 
     @Test(description = "Verify that the account Profile icon works correctly in the Cart Page", priority = 46)
     public void verifyAccountProfileIconWorksCorrectlyInCartPage() {
-        productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.switchToAeCountry();
-        productDetailsPage.clickOnProductInHomePage();
-        productDetailsPage.clickOnAccountProfileIcon();
-        assertTrue(productDetailsPage.getAccountProfileOptions().isDisplayed());
+        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        aeProductDetailsPage.switchToAeCountry();
+        aeProductDetailsPage.clickOnProductInHomePage();
+        aeProductDetailsPage.clickOnAccountProfileIcon();
+        assertTrue(aeProductDetailsPage.getAccountProfileOptions().isDisplayed());
     }
 
     @Test(description = "Make sure ability to navigate to the home page by clicking on the sporter logo from the Cart Page ", priority = 47)
@@ -565,10 +565,10 @@ public class AeCartTestCases extends BaseTest {
     @Test(description = "Verify that the search button works correctly from the Cart Page", priority = 48)
     public void verifySearchBtnWorksCorrectlyFromCartPage() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
-        productDetailsPage = new ProductDetailsPage(webDriver);
+        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         this.viewCartFromPDP();
-        productDetailsPage.searchForBundle();
-        productDetailsPage.getSearchBtn().click();
+        aeProductDetailsPage.searchForBundle();
+        aeProductDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");

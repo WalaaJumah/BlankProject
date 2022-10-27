@@ -5,8 +5,8 @@
 
 
         <classes>
-            <class name="sporter_test.AeCartTestCases"/>
-<!--            <class name="sporter_test.ProductDetailsPageTestCases"/>-->
+            <class name="sporter_test.AeSportSupplementsCategoryTestCases"/>
+<!--            <class name="sporter_test.AeProductDetailsPageTestCaseses"/>-->
 
 <!--                        <class name="sporter_test.AEMegaMenuTestCases">-->
 <!--                <methods>-->

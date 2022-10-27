@@ -7,8 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 
-public class CartPage {
-    public CartPage(WebDriver webDriver) {
+public class AeCartPage {
+    public AeCartPage(WebDriver webDriver) {
         PageFactory.initElements(webDriver, this);
     }
 

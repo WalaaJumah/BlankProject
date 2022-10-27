@@ -6,11 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import javax.swing.text.html.CSS;
-import javax.xml.xpath.XPath;
-
-public class RecommendedProductsPage {
-    public RecommendedProductsPage(WebDriver webDriver) {
+public class AeRecommendedProductsPage {
+    public AeRecommendedProductsPage(WebDriver webDriver) {
         PageFactory.initElements(webDriver, this);
     }
 

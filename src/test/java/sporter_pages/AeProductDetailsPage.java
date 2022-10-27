@@ -8,10 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class ProductDetailsPage {
+public class AeProductDetailsPage {
     private final DataHelperAndWait dataHelperAndWait = new DataHelperAndWait();
 
-    public ProductDetailsPage(WebDriver webDriver) {
+    public AeProductDetailsPage(WebDriver webDriver) {
         PageFactory.initElements(webDriver, this);
     }
 
@@ -332,7 +332,6 @@ public class ProductDetailsPage {
         DataHelperAndWait.waitToBeClickable(searchBtn, 10);
         this.searchBtn.click();
     }
-
     public void searchForBundle() {
         DataHelperAndWait.waitToBeClickable(searchField, 10);
         this.searchField.sendKeys("Box");
