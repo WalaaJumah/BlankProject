@@ -3,23 +3,19 @@
 <suite name=" Test" thread-count="1" parallel="tests">
     <test name=" Test" preserve-order="true">
 
-
         <classes>
-            <class name="sporter_test.AeSportSupplementsCategoryTestCases"/>
-<!--            <class name="sporter_test.AeProductDetailsPageTestCaseses"/>-->
 
-<!--                        <class name="sporter_test.AEMegaMenuTestCases">-->
-<!--                <methods>-->
-<!--                    <include name="test"></include>-->
-<!--&lt;!&ndash;                    <include name="verifyClickingOnSportswearAndAccessoriesCategoryDoeNotRedirectTheUserTo404PageOrNoContentFoundPage"></include>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <include name="verifyClickingOnVitaminsAndHealthCategoryDoeNotRedirectTheUserTo404PageOrNoContentFoundPage"></include>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <include name="verifyClickingOnHealthyFoodCategoryDoeNotRedirectTheUserTo404PageOrNoContentFoundPage"></include>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <include name="verifyClickingOnSportsSupplementsCategoryDoeNotRedirectTheUserTo404PageOrNoContentFoundPage"></include>&ndash;&gt;-->
+        <class name="sporter_test.AeSportSupplementsCategoryTestCases">
+            <methods>
+                <include name="test" />
+<!--                <include name="m2" />-->
+            </methods>
+        </class>
+
+<!--        <class name="test.Test2" />-->
+
+    </classes>
 
 
-<!--                </methods>-->
-<!--            </class>-->
-        </classes>
-
-    </test><!-- test -->
+</test><!-- test -->
 </suite> <!-- Suite -->

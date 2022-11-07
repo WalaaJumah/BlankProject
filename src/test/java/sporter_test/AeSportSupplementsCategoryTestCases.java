@@ -18,6 +18,7 @@ import static org.testng.Assert.assertFalse;
 public class AeSportSupplementsCategoryTestCases extends BaseTest {
     private AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage;
     private AEMegaMenuTestCases aeMegaMenuTestCases;
+    private AeProductDetailsPage aeProductDetailsPage;
 
 
     @Test(description = "Make sure clicking on the Sports Supplements Category Appears In MegaMenu Redirect User To CorrectURL", priority = 1)
@@ -210,6 +211,79 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
                 "\n" + "In order to make your workout count, there are two key ingredients: mental motivation and physical drive. You bring the focus and we provide the fuel your body needs to perform at its best. Our wide range of sport supplements including powders, tablets and drinks, have all been formulated to nourish your body with the essential ingredients to achieve your true strength.\n" +
                 "Sporter puts between your hands the best sport supplements from the best brands around the world. Shop your favorite at best price and reach your fitness goals faster than ever before.");
     }
+    @Test(description = "Verify that the search button works correctly from the Sport Supplements category page", priority = 21)
+    public void verifySearchBtnWorksCorrectlyFromSportSupplementsCategoryPage(){
+        aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+        aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeProductDetailsPage.searchForBundle();
+        aeProductDetailsPage.getSearchBtn().click();
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
+        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed");
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty");
+    }
+    @Test(description = "Verify that the previous page button is disable when the current page is page 1 ", priority = 22)
+    public void verifyThePreviousBtnIsDisableWhenDisplayPage1(){
+        aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+    Assert.assertTrue(aeSportSupplementsCategoryPage.getDisabledPreviousPageBtn().isDisplayed());
+    }
+    @Test(description = "Make Sure the Pagination control works correctly", priority = 23)
+    public void verifyThePagenationControlWorksCorrectly() throws InterruptedException {
+        aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeSportSupplementsCategoryPage.navigateToPage2();
+        Thread.sleep(3000);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
+        aeSportSupplementsCategoryPage.navigateToPage3();
+        Thread.sleep(3000);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
+    }
+   @Test(description = "Make Sure the previous page button works correctly", priority = 24)
+   public void verifyPreviousPageBtnWorksCorrectly() throws InterruptedException {
+       aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+       this.verifyThePagenationControlWorksCorrectly();
+       aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
+       Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
+   }
+    @Test(description = "Make Sure the next page button works correctly", priority = 25)
+    public void verifyNextPageBtnWorksCorrectly() throws InterruptedException {
+        aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyThePagenationControlWorksCorrectly();
+        aeSportSupplementsCategoryPage.clickOnNextPageBtn();
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
+    }
+    @Test(description = "Make Sure All Search Fields Inside Form Filtration Section Appears Correctly", priority = 26)
+    public void verifyAllSearchFieldsInsideFormFiltrationSectionAppearsCorrectly(){
+        aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeSportSupplementsCategoryPage.clickOnSeeAllBtnInFormSection();
+        ArrayList<String> expectedFiltration = new ArrayList<String>() {{
+            add("Liquid Capsules");
+            add("Bars");
+            add("Caplets");
+            add("Capsules");
+            add("Cream");
+            add("Effervescent");
+            add("Gel");
+            add("Granulated");
+            add("Gummies");
+            add("Liquid");
+            add("Powders");
+            add("Sachet");
+            add("Softgel");
+            add("Tablets");
+            add("Pods");
+        }};
+        for(int i = 0; i<aeSportSupplementsCategoryPage.getFormFiltrationSection().size(); i++){
+            Assert.assertEquals(aeSportSupplementsCategoryPage.getFormFiltrationSection().get(i).getText(), expectedFiltration.get(i));
+        }
+    }
+
+
+
 
 
 

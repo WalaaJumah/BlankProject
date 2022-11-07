@@ -3,12 +3,9 @@ package sporter_pages;
 import core.DataHelperAndWait;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.WrapsDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 
-import javax.xml.crypto.Data;
 import java.util.List;
 
 public class AeSportSupplementsCategoryPage {
@@ -70,6 +67,28 @@ public class AeSportSupplementsCategoryPage {
     @FindBy(xpath = "//input[@id='search']")
     private WebElement searchField;
 
+    @FindBy(xpath="(//li[@class='item pages-item-previous'])[2]")
+    private WebElement previousPageBtn;
+    @FindBy(xpath="(//li[@class='item pages-item-next'])[2]")
+    private WebElement NextPageBtn;
+    @FindBy (xpath = "(//ul[@class='items pages-items']//li[3])[2]")
+    private WebElement pageTwoBtn;
+    @FindBy (xpath = "(//ul[@class='items pages-items']//li[4])[2]")
+    private WebElement pageThreeBtn;
+
+
+
+    @FindBy(xpath="(//a[@class='action  previous arrow-disable'])[2]")
+    private WebElement disabledPreviousPageBtn;
+
+
+    @FindBy(xpath="(//form[@class='am-ranges'])[1]/ol/li/a/span[1]")
+    private List<WebElement> formFiltrationSection;
+
+
+
+    @FindBy(xpath="(//a[@title='See All'])[1]")
+    private WebElement seeAllBtnInFormSection;
 
 
 
@@ -118,9 +137,31 @@ public class AeSportSupplementsCategoryPage {
         return sportSupplementsFooterSection;
     }
 
+    public WebElement getDisabledPreviousPageBtn() {
+        return disabledPreviousPageBtn;
+    }
+    public WebElement getCountryList() {
+        return countryList;
+    }
 
+    public WebElement getPreviousPageBtn() {
+        return previousPageBtn;
+    }
 
+    public WebElement getNextPageBtn() {
+        return NextPageBtn;
+    }
 
+    public WebElement getPageTwoBtn() {
+        return pageTwoBtn;
+    }
+
+    public WebElement getPageThreeBtn() {
+        return pageThreeBtn;
+    }
+    public List<WebElement> getFormFiltrationSection() {
+        return formFiltrationSection;
+    }
 
 
 
@@ -154,5 +195,25 @@ public class AeSportSupplementsCategoryPage {
     public void fillInSearchField(String text) {
         DataHelperAndWait.waitToBeVisible(searchField, 5);
         searchField.sendKeys(text);
+    }
+    public void navigateToPage2(){
+        DataHelperAndWait.waitToBeClickable(pageTwoBtn,5);
+        pageTwoBtn.click();
+    }
+    public void navigateToPage3(){
+        DataHelperAndWait.waitToBeClickable(pageThreeBtn,5);
+        pageThreeBtn.click();
+    }
+    public void clickOnPreviousPageBtn(){
+        DataHelperAndWait.waitToBeClickable(previousPageBtn,5);
+        previousPageBtn.click();
+    }
+    public void clickOnNextPageBtn(){
+        DataHelperAndWait.waitToBeClickable(NextPageBtn,5);
+        NextPageBtn.click();
+    }
+    public void clickOnSeeAllBtnInFormSection(){
+        DataHelperAndWait.waitToBeClickable(seeAllBtnInFormSection,5);
+        seeAllBtnInFormSection.click();
     }
 }
