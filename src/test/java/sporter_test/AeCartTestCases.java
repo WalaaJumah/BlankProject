@@ -38,7 +38,7 @@ public class AeCartTestCases extends BaseTest {
         aeProductDetailsPageTestCases.verifyIncreaseQuantityButtonWorkingFine();
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
-        Assert.assertEquals(webDriver.getCurrentUrl(), cartURL, "The current URL is not matched with the Cart URL");
+        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL+cartURL, "The current URL is not matched with the Cart URL");
     }
 
     @Test(description = "Make sure to view the cart after adding more than products to it", priority = 3)
@@ -58,7 +58,7 @@ public class AeCartTestCases extends BaseTest {
         aeProductDetailsPage.DisplayProductInTheList(4);
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
-        Assert.assertEquals(webDriver.getCurrentUrl(), cartURL, "The Current URL is not matched with the cart URL");
+        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL+cartURL, "The Current URL is not matched with the cart URL");
     }
 
     @Test(description = "Adding a config to the cart more than one with different simple in each time", priority = 4)
@@ -90,7 +90,7 @@ public class AeCartTestCases extends BaseTest {
         DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getBundleMenu(), 20);
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
-        Assert.assertEquals(webDriver.getCurrentUrl(), cartURL," The current URL is not matched with the Cart URL");
+        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL+cartURL," The current URL is not matched with the Cart URL");
     }
 
     @Test(description = "Make sure ability to add a bundle to the cart with all bundle options", priority = 6)
@@ -117,7 +117,7 @@ public class AeCartTestCases extends BaseTest {
         }
         aeCartPage.clickOnCartIcon();
         aeCartPage.clickOnViewCartInCartPopUp();
-        Assert.assertEquals(webDriver.getCurrentUrl(), cartURL, "The current URL is not matched with the Cart URL");
+        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL+cartURL, "The current URL is not matched with the Cart URL");
     }
 
     @Test(description = "Verify that the The requested qty is not available message appear when the product becomes OOS", priority = 7)
@@ -161,7 +161,7 @@ public class AeCartTestCases extends BaseTest {
         this.verifyAbilityToRemoveProductFromCart();
         DataHelperAndWait.isDisplayed(aeCartPage.getHereLink(), 10);
         aeCartPage.clickOnHereLink();
-        Assert.assertEquals(webDriver.getCurrentUrl(), aeSiteURL, "The Current URL is not matched with the AE Site URL");
+        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL+aeSiteURL, "The Current URL is not matched with the AE Site URL");
     }
 
     @Test(description = "Verify ability to increase the product quantity from Cart page from the Cart Page works successfully", priority = 11)
@@ -199,7 +199,7 @@ public class AeCartTestCases extends BaseTest {
         aeCartPage = new AeCartPage(webDriver);
         this.viewCartFromPDP();
         aeCartPage.clickOnProductCartInCartPage();
-        Assert.assertNotEquals(webDriver.getCurrentUrl(), aeSiteURL, "The Current URL is not matched with the AE Site URL");
+        Assert.assertNotEquals(webDriver.getCurrentUrl(), siteURL+aeSiteURL, "The Current URL is not matched with the AE Site URL");
     }
 
     @Test(description = "Make sure that the product price is changed when you change the quantity from the Cart Page", priority = 15)
@@ -398,7 +398,7 @@ public class AeCartTestCases extends BaseTest {
         aeProductDetailsPageTestCases.keepShoppingAfterAddingToTheCart();
         aeCartPage.clickOnCartIcon();
         aeCartPage.clickOnViewCartInCartPopUp();
-        Assert.assertEquals(webDriver.getCurrentUrl(), cartURL,"The Current URL is not matched with the Cart URL");
+        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL+cartURL,"The Current URL is not matched with the Cart URL");
     }
 
     @Test(description = "Make sure that the counter-number appears in the cart pop up works correctly", priority = 30)
@@ -421,7 +421,7 @@ public class AeCartTestCases extends BaseTest {
         aeCartPage = new AeCartPage(webDriver);
         this.verifyTheItemsCounterInCartPopupWorksCorrectly();
         aeCartPage.clickOnProceedCheckoutBtnInCartPopup();
-        Assert.assertEquals(webDriver.getCurrentUrl(), checkoutLoginStepURL," The current URL is not matched with the Checkout Login setup URL");
+        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL+checkoutLoginStepURL," The current URL is not matched with the Checkout Login setup URL");
     }
 
     @Test(description = "Make sure that the  close icon appears in the cart pop-up works correctly", priority = 33)
@@ -559,7 +559,7 @@ public class AeCartTestCases extends BaseTest {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
         this.viewCartFromPDP();
         aeGuestUserPage.clickOnSporterLogo();
-        Assert.assertEquals(webDriver.getCurrentUrl(), aeSiteURL," The Current URL is not matched with the Cart URL" );
+        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL+aeSiteURL," The Current URL is not matched with the Cart URL" );
     }
 
     @Test(description = "Verify that the search button works correctly from the Cart Page", priority = 48)

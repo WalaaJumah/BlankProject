@@ -17,7 +17,7 @@ public class KsaHomePageTestCases extends BaseTest {
     public void switchToKsaStore() {
         ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.switchToKsaCountry();
-        Assert.assertEquals(webDriver.getCurrentUrl(), ksaSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL+ksaSiteURL);
     }
 
     @Test(description = "Make sure the HomePage rotating slider section is displayed in Home Page", priority = 2)

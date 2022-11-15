@@ -25,17 +25,17 @@ public class AEFooterPage {
     private List<WebElement> pageBottomBlocksList;
     @FindBy(xpath = "//div[@class='block-footer-top']")
     private WebElement pageBottomSection;
-    @FindBy(xpath = "//em[@class='fas fa-unlock']/following-sibling::h3")
+    @FindBy(xpath = "(//li[@class='secure-listing']//h3[1])[1]")
     private WebElement securePaymentTitle;
     @FindBy(xpath = "//em[@class='fas fa-unlock']/following-sibling::span")
     private WebElement securePaymentDescription;
-    @FindBy(xpath = "//em[@class='fas fa-truck']/following-sibling::span")
+    @FindBy(xpath = "(//a[@title='100% Secure payments']//span)[3]")
     private WebElement fastDeliveryDescription;
-    @FindBy(xpath = "//em[@class='fas fa-truck']/following-sibling::h3")
+    @FindBy(xpath = "(//li[@class='secure-listing']//h3[1])[3]")
     private WebElement fastDeliveryTitle;
-    @FindBy(xpath = "//div[2]/div/div/div/ul/li[2]/*/h3")
+    @FindBy(xpath = "(//li[@class='secure-listing']//h3[1])[2]")
     private WebElement authenticProductsTitle;
-    @FindBy(xpath = "//div[2]/div/div/div/ul/li[2]/*/span")
+    @FindBy(xpath = "(//a[@title='100% Secure payments']//span)[2]")
     private WebElement authenticProductsDescription;
     @FindBy(xpath = "//div[@class='block newsletter']")
     private WebElement newsletterBlock;

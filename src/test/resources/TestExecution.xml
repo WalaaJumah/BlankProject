@@ -5,11 +5,11 @@
 
         <classes>
 
-        <class name="sporter_test.AeSportSupplementsCategoryTestCases">
-            <methods>
-                <include name="test" />
-<!--                <include name="m2" />-->
-            </methods>
+        <class name="sporter_test.AEMegaMenuTestCases">
+<!--            <methods>-->
+<!--                <include name="verifyClickingOnByGoalOptionInsideShopByMenuRedirectUserToCorrectURL" />-->
+<!--&lt;!&ndash;                <include name="m2" />&ndash;&gt;-->
+<!--            </methods>-->
         </class>
 
 <!--        <class name="test.Test2" />-->

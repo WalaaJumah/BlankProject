@@ -10,20 +10,20 @@ import org.testng.annotations.*;
 import org.testng.annotations.Parameters;
 
 public class BaseTest {
-    public String siteURL = "http://www.sporter.com";
-    public String stgSiteURL = "https://stg.sporter.com/en-ae";
-    public String cartURL= "https://www.sporter.com/en-ae/checkout/cart/";
-    public String aeSiteURL = "https://www.sporter.com/en-ae/";
-    public String ksaSiteURL = "https://www.sporter.com/en-sa/";
-    public String qaterSiteURL = "https://www.sporter.com/en-qa/";
+    public String siteURL = "https://www.sporter.com";
+    public String stgSiteURL = "https://stg.sporter.com";
+    public String cartURL= "/en-ae/checkout/cart/";
+    public String aeSiteURL = "/en-ae/";
+    public String ksaSiteURL = "/en-sa/";
+    public String qaterSiteURL = "/en-qa/";
 
-    public String checkoutLoginStepURL = "https://www.sporter.com/en-ae/checkout/#checkout-login-step";
+    public String checkoutLoginStepURL = "/en-ae/checkout/#checkout-login-step";
     public String freeCouponeCode= "spo15";
     public String discaountCouponeCode= "";
 
 
-    public String outOfStockProduct = "https://www.sporter.com/en-ae/healthy-food/snacks-drinks/spreads/gymqueen-smooth-peanut-butter-spread";
-    public String product = "https://www.sporter.com/en-ae/optimum-gold-standard-100-whey";
+    public String outOfStockProduct = "/en-ae/healthy-food/snacks-drinks/spreads/gymqueen-smooth-peanut-butter-spread";
+    public String product = "/en-ae/optimum-gold-standard-100-whey";
     public static WebDriver webDriver;
 //    The Below Methods we need to run the TCs across the broswers
 //    @BeforeMethod
@@ -65,7 +65,8 @@ public class BaseTest {
     System.setProperty("webdriver.chrome.driver","C:\\Users\\w.jumaa\\Desktop\\Walaa Documents\\Chrome Driver 106\\chromedriver.exe");
     webDriver = new ChromeDriver();
     webDriver.manage().window().maximize();
-    webDriver.navigate().to(siteURL);
+//    webDriver.navigate().to(siteURL);
+    webDriver.navigate().to(stgSiteURL);
     }
 
     @AfterMethod(alwaysRun = true)

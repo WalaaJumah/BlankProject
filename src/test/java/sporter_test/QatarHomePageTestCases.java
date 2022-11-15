@@ -20,7 +20,7 @@ public class QatarHomePageTestCases extends BaseTest {
     public void switchToQatarStore() {
         qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.switchToQatarCountry();
-        Assert.assertEquals(webDriver.getCurrentUrl(), qaterSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL+qaterSiteURL);
     }
 
     @Test(description = "Make sure the HomePage rotating slider section is displayed in Home Page", priority = 2)

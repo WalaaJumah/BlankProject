@@ -145,7 +145,7 @@ public class AeProductDetailsPageTestCases extends BaseTest {
         aeProductDetailsPage.clickOnProductInHomePage();
         DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getHomeBreadcrumbs(), 5);
         aeProductDetailsPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL+aeSiteURL);
     }
 
     @Test(description = "Make sure that the customer can switch to Arabic Language from PDP ", priority = 13)
