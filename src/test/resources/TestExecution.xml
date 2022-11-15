@@ -2,6 +2,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name=" Test" thread-count="1" parallel="tests">
     <test name=" Test" preserve-order="true">
+        <parameter name="environment" value="staging2" />
+
 
         <classes>
 

@@ -12,6 +12,8 @@ import org.testng.annotations.Parameters;
 public class BaseTest {
     public String siteURL = "https://www.sporter.com";
     public String stgSiteURL = "https://stg.sporter.com";
+    public String stgTestSiteURL = "https://stg-test.sporter.com";
+    public String staging2SiteURL = "https://staging2.sporter.com";
     public String cartURL= "/en-ae/checkout/cart/";
     public String aeSiteURL = "/en-ae/";
     public String ksaSiteURL = "/en-sa/";
@@ -58,15 +60,38 @@ public class BaseTest {
 
     // The Below Method to run the TCs on Onc Browser like Chrome
     @BeforeMethod
-    public void setupBrowser( ) throws Exception {
-        //This ChromeDriver 104
-//    System.setProperty("webdriver.chrome.driver","C:\\Users\\w.jumaa\\chromedriver.exe");
+    @Parameters("environment")
+    public void setupBrowser( String environment ) throws Exception {
         //This ChromeWebDriver 106
-    System.setProperty("webdriver.chrome.driver","C:\\Users\\w.jumaa\\Desktop\\Walaa Documents\\Chrome Driver 106\\chromedriver.exe");
-    webDriver = new ChromeDriver();
-    webDriver.manage().window().maximize();
-//    webDriver.navigate().to(siteURL);
-    webDriver.navigate().to(stgSiteURL);
+        switch (environment){
+            case "production":
+             System.setProperty("webdriver.chrome.driver","C:\\Users\\w.jumaa\\Desktop\\Walaa Documents\\Chrome Driver 106\\chromedriver.exe");
+             webDriver = new ChromeDriver();
+             webDriver.manage().window().maximize();
+             webDriver.navigate().to(siteURL);
+                break;
+              case "stg":
+                System.setProperty("webdriver.chrome.driver","C:\\Users\\w.jumaa\\Desktop\\Walaa Documents\\Chrome Driver 106\\chromedriver.exe");
+                webDriver = new ChromeDriver();
+                webDriver.manage().window().maximize();
+                webDriver.navigate().to(stgSiteURL);
+                break;
+              case "stgTest":
+                System.setProperty("webdriver.chrome.driver","C:\\Users\\w.jumaa\\Desktop\\Walaa Documents\\Chrome Driver 106\\chromedriver.exe");
+                webDriver = new ChromeDriver();
+                webDriver.manage().window().maximize();
+                webDriver.navigate().to(stgTestSiteURL);
+                break;
+                case "staging2":
+                System.setProperty("webdriver.chrome.driver","C:\\Users\\w.jumaa\\Desktop\\Walaa Documents\\Chrome Driver 106\\chromedriver.exe");
+                webDriver = new ChromeDriver();
+                webDriver.manage().window().maximize();
+                webDriver.navigate().to(staging2SiteURL);
+                break;
+              default:
+                  throw new Exception("environment is not correct");
+
+        }
     }
 
     @AfterMethod(alwaysRun = true)
@@ -74,4 +99,16 @@ public class BaseTest {
         webDriver.quit();
 //        webDriver.close();
     }
+
+
+//    @BeforeMethod
+//    @Parameters("environment")
+//    public void setupBrowser( String environment ) throws Exception {
+//        //This ChromeWebDriver 106
+//        switch (browser)
+//        System.setProperty("webdriver.chrome.driver","C:\\Users\\w.jumaa\\Desktop\\Walaa Documents\\Chrome Driver 106\\chromedriver.exe");
+//        webDriver = new ChromeDriver();
+//        webDriver.manage().window().maximize();
+//        webDriver.navigate().to(siteURL);
+//    }
 }
