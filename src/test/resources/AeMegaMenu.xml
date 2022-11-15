@@ -3,6 +3,13 @@
 <suite name="AEMegaMenuTestCases" thread-count="1" parallel="tests">
 
     <test name="General Test Cases on MegaMenu Section" preserve-order="true">
+        <!-- Guidelines:
+ 1. To test on Production Env, change the value to "production".
+ 2. To test on Stg-Test Env, change the value to "stgTest".
+ 3. To test on Stg Env, change the value to "stg".
+ 4. To test on Staging2 Env, change the value to "staging2".
+   -->
+        <parameter name="environment" value="stgTest" />
         <classes>
             <class name="sporter_test.AEMegaMenuTestCases">
                 <methods>
