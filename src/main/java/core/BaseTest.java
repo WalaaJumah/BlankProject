@@ -103,16 +103,4 @@ public class BaseTest {
         webDriver.quit();
 //        webDriver.close();
     }
-
-
-//    @BeforeMethod
-//    @Parameters("environment")
-//    public void setupBrowser( String environment ) throws Exception {
-//        //This ChromeWebDriver 106
-//        switch (browser)
-//        System.setProperty("webdriver.chrome.driver","C:\\Users\\w.jumaa\\Desktop\\Walaa Documents\\Chrome Driver 106\\chromedriver.exe");
-//        webDriver = new ChromeDriver();
-//        webDriver.manage().window().maximize();
-//        webDriver.navigate().to(siteURL);
-//    }
 }

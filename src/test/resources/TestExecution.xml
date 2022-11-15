@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name=" Test" thread-count="1" parallel="tests">
+    <listeners>
+        <listener class-name="extent_report_listner.ExtentReportListener" />
+    </listeners>
+
+
     <test name=" Test" preserve-order="true">
        <!-- Guidelines:
         1. To test on Production Env, change the value to "production".
@@ -16,6 +21,9 @@
         <class name="sporter_test.AEMegaMenuTestCases">
             <methods>
                 <include name="verifyClickingOnByGoalOptionInsideShopByMenuRedirectUserToCorrectURL" />
+                <include name="verifyShopByMenuDisplayTheCorrectOptions" />
+                <include name="verifyTheHamburgerMenuIconAppearsCorrectlyInShopByMenu" />
+                <include name="verifyClickingOnByBrandOptionInsideShopByMenuRedirectUserToCorrectURL" />
 <!--                <include name="m2" />-->
             </methods>
         </class>

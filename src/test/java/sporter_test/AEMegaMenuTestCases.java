@@ -8632,7 +8632,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
         aeMegamenuPage.switchToAECountry();
-        webDriver.navigate().to(outOfStockProduct);
+        webDriver.navigate().to(siteURL+outOfStockProduct);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
     }
@@ -8642,7 +8642,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
         aeMegamenuPage.switchToAECountry();
-        webDriver.navigate().to(outOfStockProduct);
+        webDriver.navigate().to(siteURL+outOfStockProduct);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getSportsSupplementsSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
     }
