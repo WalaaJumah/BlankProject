@@ -10,7 +10,7 @@ import org.testng.annotations.*;
 import org.testng.annotations.Parameters;
 
 public class BaseTest {
-    public String siteURL = "https://www.sporter.com";
+    public static String siteURL = "https://www.sporter.com";
     public String stgSiteURL = "https://stg.sporter.com";
     public String stgTestSiteURL = "https://stg-test.sporter.com";
     public String staging2SiteURL = "https://staging2.sporter.com";
@@ -67,25 +67,28 @@ public class BaseTest {
             case "production":
              System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
                 siteURL = "https://www.sporter.com";
-            webDriver = new ChromeDriver();
+                webDriver = new ChromeDriver();
              webDriver.manage().window().maximize();
              webDriver.navigate().to(siteURL);
                 break;
               case "stg":
-                  System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");                  siteURL = "https://stg.sporter.com";
+                  System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
+                  siteURL = "https://stg.sporter.com";
                   webDriver = new ChromeDriver();
                 webDriver.manage().window().maximize();
                 webDriver.navigate().to(siteURL);
                 break;
               case "stgTest":
-                  System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");                  siteURL ="https://stg-test.sporter.com";
+                  System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
+                  siteURL ="https://stg-test.sporter.com";
                   webDriver = new ChromeDriver();
                 webDriver.manage().window().maximize();
                 webDriver.navigate().to(siteURL);
                 break;
                 case "staging2":
-                    System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");                    siteURL ="https://staging2.sporter.com";
-                webDriver = new ChromeDriver();
+                    System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
+                    siteURL ="https://staging2.sporter.com";
+                    webDriver = new ChromeDriver();
                 webDriver.manage().window().maximize();
                 webDriver.navigate().to(siteURL);
                 break;
