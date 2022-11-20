@@ -22,6 +22,23 @@ public class AeVitaminsAndHealthCategoryPage {
 
 
 
+    @FindBy(xpath = "//div[@class='category-description']")
+    private WebElement fishOilAndOmegasFooterSection;
+    @FindBy(xpath = "//div[@class='category-description']/p[1]")
+    private WebElement fishOilAndOmegasFooterParagraph1;
+    @FindBy(xpath = "//div[@class='category-description']/p[2]")
+    private WebElement fishOilAndOmegasFooterParagraph2;
+    @FindBy(xpath = "//div[@class='category-description']/p[3]")
+    private WebElement fishOilAndOmegasFooterParagraph3;
+
+
+    @FindBy(xpath = "//ul[@class='swiper-wrapper clearfix']/li/div/a[1]")
+    private List<WebElement> shopByCategoryList;
+
+
+
+
+
     @FindBy(xpath = "(//div[@class='nutritious-right'])/a[1]")
     private WebElement firstSideBanner;
     @FindBy(xpath="(//div[@class='nutritious-right'])/a[1]")
@@ -46,5 +63,24 @@ public class AeVitaminsAndHealthCategoryPage {
     public WebElement getSecondSideBanner() {
         return secondSideBanner;
     }
+    public List<WebElement> getShopByCategoryList() {
+        return shopByCategoryList;
+    }
+    public WebElement getFishOilAndOmegasFooterSection() {
+        return fishOilAndOmegasFooterSection;
+    }
+
+    public WebElement getFishOilAndOmegasFooterParagraph1() {
+        return fishOilAndOmegasFooterParagraph1;
+    }
+
+    public WebElement getFishOilAndOmegasFooterParagraph2() {
+        return fishOilAndOmegasFooterParagraph2;
+    }
+
+    public WebElement getFishOilAndOmegasFooterParagraph3() {
+        return fishOilAndOmegasFooterParagraph3;
+    }
+
     //Define the main actions we need to execute our TCs
 }

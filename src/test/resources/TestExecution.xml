@@ -20,7 +20,7 @@
 
         <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases">
             <methods>
-                <include name="verifyAbilityToNavigateToHomePageUsingTheBreadCrumb" />
+                <include name="verifyThePreviousBtnInMelatoninCategoryPageIsDisableWhenDisplayPage1" />
 <!--                <include name="m2" />-->
             </methods>
         </class>
