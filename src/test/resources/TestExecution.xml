@@ -10,7 +10,7 @@
        <!-- Guidelines:
         1. To test on production Env, change the value to "production".
         2. To test on stgTest Env, change the value to "stgTest".
-        3. To test on Stg Env, change the value to "stg".
+        3. To test on stg Env, change the value to "stg".
         4. To test on Staging2 Env, change the value to "staging2".
           -->
         <parameter name="environment" value="production" />
@@ -20,7 +20,7 @@
 
         <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases">
             <methods>
-                <include name="verifyThePreviousBtnInMelatoninCategoryPageIsDisableWhenDisplayPage1" />
+                <include name="verifyClickingOnHeartHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly" />
 <!--                <include name="m2" />-->
             </methods>
         </class>

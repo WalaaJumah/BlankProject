@@ -51,9 +51,9 @@ public class AeSportSupplementsCategoryPage {
     private WebElement searchBtn;
     @FindBy(xpath = "//input[@id='search']")
     private WebElement searchField;
-    @FindBy(xpath = "(//li[@class='item pages-item-previous'])[2]")
+    @FindBy(xpath = "(//li[@class='item pages-item-previous']/a)[2]")
     private WebElement previousPageBtn;
-    @FindBy(xpath = "(//li[@class='item pages-item-next'])[2]")
+    @FindBy(xpath = "(//li[@class='item pages-item-next']/a)[2]")
     private WebElement NextPageBtn;
     @FindBy(xpath = "(//ul[@class='items pages-items']//li[3])[2]")
     private WebElement pageTwoBtn;
