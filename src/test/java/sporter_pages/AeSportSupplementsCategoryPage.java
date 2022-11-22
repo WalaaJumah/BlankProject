@@ -167,13 +167,19 @@ public class AeSportSupplementsCategoryPage {
     }
 
     public void clickOnPreviousPageBtn() {
+        try{
         DataHelperAndWait.waitToBeClickable(previousPageBtn, 5);
-        previousPageBtn.click();
+        previousPageBtn.click();}
+        catch(Exception e){        DataHelperAndWait.waitToBeClickable(previousPageBtn, 5);
+            previousPageBtn.click();}
     }
 
     public void clickOnNextPageBtn() {
+        try{
         DataHelperAndWait.waitToBeClickable(NextPageBtn, 5);
-        NextPageBtn.click();
+        NextPageBtn.click();}
+        catch(Exception e){        DataHelperAndWait.waitToBeClickable(NextPageBtn, 5);
+            NextPageBtn.click();}
     }
 
     public void clickOnSeeAllBtnInFormSection() {

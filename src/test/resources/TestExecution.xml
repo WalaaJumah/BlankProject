@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name=" Test" thread-count="1" parallel="tests">
+<suite name=" Test" thread-count="4" parallel="tests">
 <!--    <listeners>-->
 <!--        <listener class-name="extent_report_listner.ExtentReportListener" />-->
 <!--    </listeners>-->
@@ -13,6 +13,7 @@
         3. To test on stg Env, change the value to "stg".
         4. To test on Staging2 Env, change the value to "staging2".
           -->
+
         <parameter name="environment" value="production" />
 
 
@@ -20,7 +21,7 @@
 
         <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases">
             <methods>
-                <include name="verifyClickingOnHeartHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly" />
+                <include name="verifyFooterSectionAppearsCorrectlyInVitaminsAndHealthCategoryPage" />
 <!--                <include name="m2" />-->
             </methods>
         </class>
