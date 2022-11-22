@@ -4105,6 +4105,6 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
     public void verifyFooterSectionAppearsCorrectlyInVitaminsAndHealthCategoryPage(){
         aeFooterPage= new AEFooterPage(webDriver);
         this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-        Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
+        Assert.assertFalse(aeFooterPage.getFooterSection().isDisplayed());
     }
     }
