@@ -6,6 +6,7 @@ package extent_report_listner;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -37,6 +38,10 @@ public class ExtentReportListener implements IReporter {
             extent = new ExtentReports("C:\\Users\\w.jumaa\\Desktop\\Automation Reports" + File.separator
                     + "Automation_Test_Cases_Report.html", true);
             extent.addSystemInfo("Environment", BaseTest.siteURL);
+            extent.addSystemInfo("Author","Wala'a Mohammad");
+
+
+
         //loading the external xml file
         extent.loadConfig(new File(System.getProperty("user.dir")+"extent-config.xml"));
 
@@ -104,6 +109,7 @@ public class ExtentReportListener implements IReporter {
 //        //Returns the captured file path
 //        return destination;
 //    }
+
 
 
 }

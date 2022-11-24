@@ -70,7 +70,7 @@ public class AeVitaminsAndHealthCategoryPage {
     private List<WebElement> shopByCategoryList;
     @FindBy(xpath = "(//div[@class='nutritious-right'])/a[1]")
     private WebElement firstSideBanner;
-    @FindBy(xpath = "(//div[@class='nutritious-right'])/a[1]")
+    @FindBy(xpath = "(//div[@class='nutritious-right'])/a[2]")
     private WebElement secondSideBanner;
     @FindBy(xpath = "(//div[@data-swiper-slide-index='0']//a)[1]")
     private WebElement beautyCategory;

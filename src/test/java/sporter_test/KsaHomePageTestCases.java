@@ -11,7 +11,7 @@ import static org.testng.Assert.assertFalse;
 public class KsaHomePageTestCases extends BaseTest {
     private KsaHomePage ksaHomePage;
     String allProductsInTopSellingStacksSectionURL = "https://www.sporter.com/en-sa/";
-    String contactUsUrl = "https://www.sporter.com/en-sa/contacts-us/#contact-form";
+    String contactUsUrl = "/en-sa/contacts-us/#contact-form";
 
     @Test(description = "Make sure to switch to the KSA Store correctly", priority = 1)
     public void switchToKsaStore() {
@@ -351,7 +351,7 @@ public class KsaHomePageTestCases extends BaseTest {
         ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.switchToKsaCountry();
         ksaHomePage.clickOnEmailBtn();
-        Assert.assertEquals(webDriver.getCurrentUrl(), contactUsUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("contacts-us"));
         Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
