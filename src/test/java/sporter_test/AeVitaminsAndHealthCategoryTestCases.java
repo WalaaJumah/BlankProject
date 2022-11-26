@@ -3236,7 +3236,7 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnSexualHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         Assert.assertTrue(aeSportSupplementsCategoryPage.getDisabledPreviousPageBtn().isDisplayed());}
-    @Test(description = "Make Sure the Pagination control in the Sexual Health category page works correctly", priority = 326)
+        @Test(description = "Make Sure the Pagination control in the Sexual Health category page works correctly", priority = 326)
     public void verifyThePaginationControlInSexualHealthCategoryPageWorksCorrectly() throws InterruptedException{
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -3455,7 +3455,7 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
         }
     }
     //There's a bug here due to the Best Selling option is missing
-    @Test(description = "Make sure that the Best Selling option is selected by default in the Sort By menu for Diet Weight Management Category Page ", priority = 349)
+        @Test(description = "Make sure that the Best Selling option is selected by default in the Sort By menu for Diet Weight Management Category Page ", priority = 349)
     public void verifyBestSellingOptionIsSelectedByDefaultInSortByMenuForDietWeightManagementCategoryPage(){
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnDietWeightManagementCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
@@ -3708,7 +3708,7 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFishOilAndOmegasSectionPositionAfterClickingOnNextIcon().isDisplayed());
     }
     @Test(description = "Make sure clicking on Previous Button in the Fish Oil And Omegas section works correctly", priority = 379)
-    public void verifyClickingOnPreviousIconInFishOilAndOmegasSectionWorksCorrectly() {
+        public void verifyClickingOnPreviousIconInFishOilAndOmegasSectionWorksCorrectly() {
         aeVitaminsAndHealthCategoryPage=new AeVitaminsAndHealthCategoryPage(webDriver);
         this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeVitaminsAndHealthCategoryPage.getNextIconInFishOilAndOmegasSection().click();

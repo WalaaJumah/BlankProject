@@ -48,7 +48,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
     }
 
     @Test(description = "Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Sports category page", priority = 4)
-    public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInSportsCategoryPage() {
+        public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInSportsCategoryPage() {
         aeFooterPageTestCases = new AEFooterPageTestCases();
         this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeFooterPageTestCases.verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectly();
@@ -105,7 +105,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Assert.assertTrue(ksaHomePage.getNextArrowInHomePageRotatingSlider().isDisplayed());
     }
-    @Test(description = "Make sure the previous arrow of the rotating slider section is displayed in the Sports Category Page ", priority = 11)
+        @Test(description = "Make sure the previous arrow of the rotating slider section is displayed in the Sports Category Page ", priority = 11)
     public void verifyPreviousArrowOfRotatingSliderIsDisplayedInTheVitaminsAndHealthCategoryPage() {
         ksaHomePage = new KsaHomePage(webDriver);
         this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
