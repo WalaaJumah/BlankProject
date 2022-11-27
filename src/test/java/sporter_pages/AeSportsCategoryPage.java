@@ -11,7 +11,7 @@ public class AeSportsCategoryPage {
     }
     private AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage;
 
-    //declare all locators related to the AeVitaminsAndHealthCategoryPage
+    //declare all locators related to the AeSportsCategoryPage
     @FindBy(xpath="(//div[@class='trending-title']/h2)[1]")
     private WebElement trendingInSportsSectionTitle;
     @FindBy(xpath="//div[@class='swiper-container swiper-container-horizontal trending']")

@@ -23,7 +23,6 @@ public class AeSportsCategoryTestCases extends BaseTest {
     private AeProductDetailsPage aeProductDetailsPage;
     private AEFooterPageTestCases aeFooterPageTestCases;
     private KsaHomePage ksaHomePage;
-    private KsaHomePageTestCases KsaHomePageTestCases;
     private AEFooterPage aeFooterPage;
     private AeSportsCategoryPage aeSportsCategoryPage;
     private AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage;
@@ -35,7 +34,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
     }
 
     @Test(description = "Make sure clicking on the Sports Category from ShopBy Menu Redirect User To CorrectURL", priority = 2)
-    public void verifyClickingOnVitaminsAndHealthCategoryFromShopByMenuRedirectUserToCorrectURL() {
+    public void verifyClickingOnSportsCategoryFromShopByMenuRedirectUserToCorrectURL() {
         aeMegaMenuTestCases = new AEMegaMenuTestCases();
         aeMegaMenuTestCases.verifyClickingOnSportsOptionInsideShopByMenuRedirectUserToCorrectURL();
     }
@@ -91,7 +90,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         Assert.assertEquals(webDriver.getCurrentUrl(), siteURL+aeSiteURL);
     }
     @Test(description = "Make sure the rotating slider section is displayed in Sports Category page correctly ", priority = 9)
-    public void verifyRotatingSliderIsDisplayedInTheVitaminsAndHealthCategoryPage() {
+    public void verifyRotatingSliderIsDisplayedInTheSportsCategoryPage() {
         ksaHomePage = new KsaHomePage(webDriver);
         this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Assert.assertTrue(ksaHomePage.getHomePageRotatingSlider().isDisplayed());
@@ -100,13 +99,13 @@ public class AeSportsCategoryTestCases extends BaseTest {
         }
     }
     @Test(description = "Make sure the next arrow of the rotating slider section is displayed in the Sports Category Page", priority = 10)
-    public void verifyNextArrowOfRotatingSliderIsDisplayedInTheVitaminsAndHealthCategoryPage() {
+    public void verifyNextArrowOfRotatingSliderIsDisplayedInTheSportsCategoryPage() {
         ksaHomePage = new KsaHomePage(webDriver);
         this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Assert.assertTrue(ksaHomePage.getNextArrowInHomePageRotatingSlider().isDisplayed());
     }
         @Test(description = "Make sure the previous arrow of the rotating slider section is displayed in the Sports Category Page ", priority = 11)
-    public void verifyPreviousArrowOfRotatingSliderIsDisplayedInTheVitaminsAndHealthCategoryPage() {
+    public void verifyPreviousArrowOfRotatingSliderIsDisplayedInTheSportsCategoryPage() {
         ksaHomePage = new KsaHomePage(webDriver);
         this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Assert.assertTrue(ksaHomePage.getPreviousArrowInHomePageRotatingSlider().isDisplayed());
@@ -127,7 +126,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         Assert.assertTrue(ksaHomePage.getHomePageSideBanner().isDisplayed());
     }
     @Test(description = "Make sure the pagination control of rotating slider section works correctly in Sports Category Page", priority = 14)
-    public void verifyPaginationControlOfRotatingSliderSectionWorksCorrectlyInTheVitaminsAndHealthCategoryPage() {
+    public void verifyPaginationControlOfRotatingSliderSectionWorksCorrectlyInTheSportsCategoryPage() {
         aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         for (int i = 0; i < aeVitaminsAndHealthCategoryPage.getPagerOfRotatingSlider().size(); i++) {

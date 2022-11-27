@@ -23,9 +23,9 @@
 
         <classes>
 
-        <class name="sporter_test.AeSportsCategoryTestCases">
+        <class name="sporter_test.AeWomenOnlyCategoryTestCases">
             <methods>
-                <include name="verifyClickingOnProductCardInsideRecommendedProductsSectionWorksCorrectly" />
+                <include name="verifyClickingOnMakeupForActiveLifestylesCategoryInsideTheShopByCategorySectionWorksCorrectly" />
 <!--                <include name="m2" />-->
             </methods>
         </class>
