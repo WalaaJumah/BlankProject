@@ -25,7 +25,7 @@
 
         <class name="sporter_test.AeWomenOnlyCategoryTestCases">
             <methods>
-                <include name="verifyClickingOnMakeupForActiveLifestylesCategoryInsideTheShopByCategorySectionWorksCorrectly" />
+                <include name="verifyClickingOnMuscleAndWeightGainCategoryInsideTheShopByCategorySectionWorksCorrectly" />
 <!--                <include name="m2" />-->
             </methods>
         </class>
