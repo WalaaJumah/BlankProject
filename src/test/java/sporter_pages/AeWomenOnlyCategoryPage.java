@@ -174,6 +174,4 @@ public class AeWomenOnlyCategoryPage {
     public WebElement getSecondYouTubeVideo() {
         return secondYouTubeVideo;
     }
-        //Define the main actions we need to execute our TCs
-
 }

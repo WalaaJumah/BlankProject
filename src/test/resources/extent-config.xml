@@ -4,6 +4,7 @@
         <!-- report theme -->
         <!-- standard, dark -->
         <theme>dark</theme>
+<!--        <theme>standard</theme>-->
 
         <!-- document encoding -->
         <!-- defaults to UTF-8 -->
@@ -17,10 +18,14 @@
         <documentTitle>Sporter Web Automation Report</documentTitle>
 
         <!-- report name - displayed at top-nav -->
-        <reportName></reportName>
+        <reportName>Sporter Web Automation</reportName>
+<!--            <![CDATA[-->
+<!--                <img src='C:\Users\w.jumaa\Desktop\Logo.jpg' />-->
+<!--            ]]>-->
+
 
         <!-- report headline - displayed at top-nav, after reportHeadline -->
-        <reportHeadline>Automation Report</reportHeadline>
+        <reportHeadline>Report</reportHeadline>
 
         <!-- global date format override -->
         <!-- defaults to yyyy-MM-dd -->
@@ -29,6 +34,8 @@
         <!-- global time format override -->
         <!-- defaults to HH:mm:ss -->
         <timeFormat>HH:mm:ss</timeFormat>
+
+
 
         <!-- custom javascript -->
         <scripts>
@@ -40,10 +47,14 @@
         </scripts>
 
         <!-- custom styles -->
+<!--        <styles>-->
+<!--            <![CDATA[-->
+
+<!--      ]]>-->
+<!--        </styles>-->
         <styles>
             <![CDATA[
-
-      ]]>
+        ]]>
         </styles>
     </configuration>
 </extentreports>

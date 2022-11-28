@@ -10,9 +10,11 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+import com.aventstack.extentreports.reporter.configuration.ViewName;
 import core.BaseTest;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
+import org.jsoup.Connection;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -22,30 +24,41 @@ import org.testng.ISuite;
 import org.testng.ISuiteResult;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
+import org.testng.annotations.Parameters;
 import org.testng.xml.XmlSuite;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 public class ExtentReportListener implements IReporter {
 
 
         private ExtentReports extent;
+       private ExtentSparkReporter spark;
+
+    String pattern = "yyyy-MM-dd";
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+    String date = simpleDateFormat.format(new Date());
 
 
     public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites,
-                                   String outputDirectory) {
+                                   String outputDirectory ) {
+
+        //The date will include with the file name
             extent = new ExtentReports("C:\\Users\\w.jumaa\\Desktop\\Automation Reports" + File.separator
-                    + "Automation_Test_Cases_Report.html", true);
+                    + "Magento-Sporter-Automation_Report "+date+".html", true);
+
+//            spark=new ExtentSparkReporter(File.separator + "Magento-Sporter-Automation_Report "+date+".html");
+//            spark.viewConfigurer().viewOrder().as(new ViewName[]{ViewName.DASHBOARD, ViewName.TEST}).apply();
+
             extent.addSystemInfo("Environment", BaseTest.siteURL);
             extent.addSystemInfo("Author","Wala'a Mohammad");
 
 
 
         //loading the external xml file
-        extent.loadConfig(new File(System.getProperty("user.dir")+"extent-config.xml"));
-
-
+        extent.loadConfig(new File(System.getProperty("user.dir")+"./src/test/resources/extent-config.xml"));
 
 
             for (ISuite suite : suites) {
@@ -109,7 +122,6 @@ public class ExtentReportListener implements IReporter {
 //        //Returns the captured file path
 //        return destination;
 //    }
-
 
 
 }
