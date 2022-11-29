@@ -10,6 +10,7 @@ import org.testng.asserts.SoftAssert;
 import sporter_pages.AeHealthyFoodCategoryPage;
 import sporter_pages.AeProductDetailsPage;
 import sporter_pages.AeSportSupplementsCategoryPage;
+import sporter_pages.AeVitaminsAndHealthCategoryPage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -292,4 +293,11 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeFooterPageTestCases.verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectly();
     }
+    //Pagination control for all pages in the Healthy Food Category Pages
+    @Test(description = "Make Sure the ability to access all pages inside Healthy Food Category Page  ", priority = 27)
+    public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPage(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());}
 }

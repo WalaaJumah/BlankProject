@@ -1,6 +1,7 @@
 package core;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.*;
+import org.testng.Assert;
 
 import javax.xml.crypto.Data;
 import java.time.Duration;
@@ -8,8 +9,12 @@ import java.util.*;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
+
+import static org.testng.Assert.assertFalse;
+
 public class DataHelperAndWait extends BaseTest {
     public static WebDriverWait wait;
+
 
     public static void waitForElement(WebElement element, int Time) {
         wait = new WebDriverWait(webDriver, Time);
@@ -148,4 +153,27 @@ public class DataHelperAndWait extends BaseTest {
             element.sendKeys(Keys.BACK_SPACE);
         }
     }
+
+    public static void accessAllPagesInsideTheProductsListPage( String numberOfProductInTheList, WebElement element ){
+        double numberOfProductInTheListInInt=Double.parseDouble(numberOfProductInTheList.substring(10,numberOfProductInTheList.length()-7));
+        double numberOfThePagesInList=Math.ceil(numberOfProductInTheListInInt/24);
+        if(numberOfThePagesInList>1){
+            int i = 2;
+            do {
+                String pageNumber = Integer.toString(i);
+                element.click();
+                DataHelperAndWait.waitForTime(6000);
+                Assert.assertTrue(webDriver.getCurrentUrl().endsWith(pageNumber),"The URL is wrong");
+                boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+                assertFalse(verifyTitle, "Page Not Found Is Displayed");
+                boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+                assertFalse(isTheElementPresent, "The page is empty");
+                boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
+                assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page "+pageNumber);
+                i++;
+            }
+            while (i <= numberOfThePagesInList);}
+        else System.out.println("There's only a page in the list");
+    }
+
 }

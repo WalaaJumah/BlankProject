@@ -25,6 +25,7 @@ public class BaseTest {
     public String discaountCouponeCode= "";
     public String outOfStockProduct = "/en-ae/healthy-food/snacks-drinks/spreads/gymqueen-smooth-peanut-butter-spread";
     public String product = "/en-ae/optimum-gold-standard-100-whey";
+    public static String environmentName;
     public static WebDriver webDriver;
 //    The Below Methods we need to run the TCs across the broswers
 //    @BeforeMethod
@@ -61,6 +62,7 @@ public class BaseTest {
     @BeforeMethod
     @Parameters("environment")
     public void setupBrowser( String environment ) throws Exception {
+        environmentName=environment;
         //This ChromeWebDriver 106
         switch (environment){
             case "production":

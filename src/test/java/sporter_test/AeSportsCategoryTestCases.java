@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import sporter_pages.*;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -2190,4 +2191,102 @@ public class AeSportsCategoryTestCases extends BaseTest {
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
     }
+    //Pagination control for all pages in the Sports Category Pages
+    @Test(description = "Make Sure the ability to access all pages inside Mens Apparel Category Page ", priority = 227)
+    public void verifyAbilityToAccessAllPagesInsideMensApparelCategoryPageCorrectly(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnMensApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+    }
+    @Test(description = "Make Sure the ability to access all pages inside Women's Apparel Category Page ", priority = 228)
+    public void verifyAbilityToAccessAllPagesInsideWomensApparelCategoryPageCorrectly(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnWomensApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());}
+    @Test(description = "Make Sure the ability to access all pages inside Yoga Apparel Category Page ", priority = 229)
+    public void verifyAbilityToAccessAllPagesInsideYogaApparelCategoryPageCorrectly(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnYogaApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
+            String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+            DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());}
+    @Test(description = "Make Sure the ability to access all pages inside Swimming Category Page ", priority = 230)
+    public void verifyAbilityToAccessAllPagesInsideSwimmingCategoryPageCorrectly(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnSwimmingApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());}
+    @Test(description = "Make Sure the ability to access all pages inside Mma Category Page ", priority = 231)
+    public void verifyAbilityToAccessAllPagesInsideMmaCategoryPageCorrectly(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnMmaApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());}
+    @Test(description = "Make Sure the ability to access all pages inside Cricket Category Page ", priority = 232)
+    public void verifyAbilityToAccessAllPagesInsideCricketCategoryPageCorrectly(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnCricketApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());}
+    @Test(description = "Make Sure the ability to access all pages inside Toys And Games Category Page ", priority = 233)
+    public void verifyAbilityToAccessAllPagesInsideToysAndGamesCategoryPageCorrectly(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnToysAndGamesCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());}
+    @Test(description = "Make Sure the ability to access all pages inside Wearable Tech Category Page ", priority = 234)
+    public void verifyAbilityToAccessAllPagesInsideWearableTechCategoryPageCorrectly(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnWearableTechCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());}
+    @Test(description = "Make Sure the ability to access all pages inside Personal Care Category Page ", priority = 235)
+    public void verifyAbilityToAccessAllPagesInsidePersonalCareCategoryPageCorrectly(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnPersonalCareCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());}
+    @Test(description = "Make Sure the ability to access all pages inside Men Category From Sports Category Page  ", priority = 236)
+    public void verifyAbilityToAccessAllPagesInsideMenCategoryFromSportsCategoryPageWorksCorrectly(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnMenCategoryFromSportsCategoryPageWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());}
+    @Test(description = "Make Sure the ability to access all pages inside Women Category From Sports Category Page  ", priority = 237)
+    public void verifyAbilityToAccessAllPagesInsideWomenCategoryFromSportsCategoryPageWorksCorrectly(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnWomenCategoryFromSportsCategoryPageWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());}
+    @Test(description = "Make Sure the ability to access all pages inside Sports Tech Category From Sports Category Page  ", priority = 238)
+    public void verifyAbilityToAccessAllPagesInsideSportsTechCategoryFromSportsCategoryPageWorksCorrectly(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnSportsTechCategoryFromSportsCategoryPageWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());}
+
+    @Test(description = "Make Sure the ability to access all pages inside Kids Category From Sports Category Page  ", priority = 239)
+    public void verifyAbilityToAccessAllPagesInsideKidsCategoryFromSportsCategoryPageWorksCorrectly(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnKidsCategoryFromSportsCategoryPageWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

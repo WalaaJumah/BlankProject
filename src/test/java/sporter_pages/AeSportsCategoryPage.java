@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class AeSportsCategoryPage {
     public AeSportsCategoryPage(WebDriver webDriver) {
         PageFactory.initElements(webDriver, this);
@@ -56,6 +58,8 @@ public class AeSportsCategoryPage {
     private WebElement lastProductInRecommendedProductsSection;
     @FindBy(xpath="(//a[@class='product-link'])[2]")
     private WebElement productCardInRecommendedProductsSection;
+    @FindBy(xpath="(//ul[@class='items pages-items'])[2]/li/a")
+    private List<WebElement> pagerButtons;
 
     //Getter Methods
     public WebElement getTrendingInSportsSectionTitle(){return trendingInSportsSectionTitle;}
@@ -131,6 +135,9 @@ public class AeSportsCategoryPage {
     }
     public WebElement getLastProductInRecommendedProductsSection() {
         return lastProductInRecommendedProductsSection;
+    }
+    public List<WebElement> getPagerButtons() {
+        return pagerButtons;
     }
 
     //Define the main actions we need to execute our TCs

@@ -314,4 +314,11 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeFooterPageTestCases.verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectly();
     }
+    //Pagination control for all pages in the Sport Supplements Category Pages
+    @Test(description = "Make Sure the ability to access all pages inside Sport Supplements Category Page  ", priority = 28)
+    public void verifyAbilityToAccessAllPagesInsideSportSupplementsCategoryPage(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());}
 }

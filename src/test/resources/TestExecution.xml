@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name=" Test" thread-count="4" parallel="tests">
-    <listeners>
-        <listener class-name="extent_report_listner.ExtentReportListener" />
-    </listeners>
-
 <!--    <listeners>-->
-<!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
+<!--        <listener class-name="extent_report_listner.ExtentReportListener" />-->
 <!--    </listeners>-->
+
+    <listeners>
+        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>
+    </listeners>
 
 
     <test name=" Test" preserve-order="true">
@@ -23,9 +23,11 @@
 
         <classes>
 
-        <class name="sporter_test.AeWomenOnlyCategoryTestCases">
+        <class name="sporter_test.AeSportSupplementsCategoryTestCases">
             <methods>
-                <include name="verifyThePaginationControlInWomenDailyVitaminsCategoryPageWorksCorrectly" />
+                <include name="verifyAbilityToAccessAllPagesInsideSportSupplementsCategoryPage" />
+<!--                <include name="verifyAbilityToAccessAllPagesInsideWomensApparelCategoryPageCorrectly" />-->
+<!--                <include name="verifyAbilityToAccessAllPagesInsideMensApparelCategoryPageCorrectly" />-->
 <!--                <include name="m2" />-->
             </methods>
         </class>
