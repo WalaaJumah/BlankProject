@@ -342,10 +342,10 @@ public class AeSportsCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnMensApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     @Test(description = "Make Sure the previous page button In Men's Apparel Category Page works correctly", priority = 31)
@@ -476,10 +476,10 @@ public class AeSportsCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnWomensApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     @Test(description = "Make Sure the previous page button In Women's Apparel Category Page works correctly", priority = 45)
@@ -609,10 +609,10 @@ public class AeSportsCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnYogaApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     @Test(description = "Make Sure the previous page button In Yoga Apparel Category Page works correctly", priority = 59)
@@ -742,10 +742,10 @@ public class AeSportsCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnSwimmingApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     @Test(description = "Make Sure the previous page button In Swimming Apparel Category Page works correctly", priority = 73)
@@ -875,10 +875,10 @@ public class AeSportsCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnMmaApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     @Test(description = "Make Sure the previous page button In Mma Apparel Category Page works correctly", priority = 87)
@@ -1008,10 +1008,10 @@ public class AeSportsCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnCricketApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     @Test(description = "Make Sure the previous page button In Cricket Category Page works correctly", priority = 101)
@@ -1141,10 +1141,10 @@ public class AeSportsCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnToysAndGamesCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     @Test(description = "Make Sure the previous page button In Toys And Games Category Page works correctly", priority = 115)
@@ -1274,10 +1274,10 @@ public class AeSportsCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnWearableTechCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     @Test(description = "Make Sure the previous page button In Wearable Tech Category Page works correctly", priority = 129)
@@ -1407,10 +1407,10 @@ public class AeSportsCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnPersonalCareCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     @Test(description = "Make Sure the previous page button In Personal Care Category Page works correctly", priority = 143)
@@ -1549,10 +1549,10 @@ public class AeSportsCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnMenCategoryFromSportsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     @Test(description = "Make Sure the previous page button In Men Category Page works correctly", priority = 158)
@@ -1691,10 +1691,10 @@ public class AeSportsCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnWomenCategoryFromSportsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     @Test(description = "Make Sure the previous page button In Women Category Page works correctly", priority = 173)
@@ -1832,10 +1832,10 @@ public class AeSportsCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnSportsTechCategoryFromSportsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     @Test(description = "Make Sure the previous page button In Sports Tech Category Page works correctly", priority = 188)
@@ -1974,10 +1974,10 @@ public class AeSportsCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnKidsCategoryFromSportsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     @Test(description = "Make Sure the previous page button In Kids Category Page works correctly", priority = 203)
@@ -2117,10 +2117,10 @@ public class AeSportsCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnSportsCategoryFromSportsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     @Test(description = "Make Sure the previous page button In Sports Category Page works correctly", priority = 218)

@@ -25,7 +25,7 @@
 
         <class name="sporter_test.AeWomenOnlyCategoryTestCases">
             <methods>
-                <include name="verifyLadyFemaleGalleryWidgetIsDisplayedInTheWomenOnlySection" />
+                <include name="verifyThePaginationControlInWomenDailyVitaminsCategoryPageWorksCorrectly" />
 <!--                <include name="m2" />-->
             </methods>
         </class>

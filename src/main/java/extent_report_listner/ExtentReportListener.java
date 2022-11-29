@@ -31,6 +31,7 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
+
 public class ExtentReportListener implements IReporter {
 
 
@@ -54,6 +55,7 @@ public class ExtentReportListener implements IReporter {
 
             extent.addSystemInfo("Environment", BaseTest.siteURL);
             extent.addSystemInfo("Author","Wala'a Mohammad");
+
 
 
 
@@ -96,7 +98,6 @@ public class ExtentReportListener implements IReporter {
                         test.log(status, "Test " + status.toString().toLowerCase()
                                 + "ed");
                     }
-
                     extent.endTest(test);
                 }
             }

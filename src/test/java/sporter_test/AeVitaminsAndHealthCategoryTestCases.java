@@ -267,10 +267,10 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnFishOilAndOmegasCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     @Test(description = "Make Sure the previous page button In Fish Oil And Omegas Category Page works correctly", priority = 27)
@@ -401,10 +401,10 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnMultivitaminsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     //There's a performance issue when clicking on the previous button
@@ -537,10 +537,10 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnVitaminsA_ZCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     @Test(description = "Make Sure the previous page button In VitaminsA_Z Category Page works correctly", priority = 55)
@@ -672,10 +672,10 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnMineralsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     //There's a performance issue when clicking on the previous button
@@ -809,10 +809,10 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnAntioxidantsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     //There's a performance issue when clicking on the previous button
@@ -949,10 +949,10 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnSuperfoodsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     @Test(description = "Make Sure the previous page button In Superfoods Category Page works correctly", priority = 96)
@@ -1085,10 +1085,10 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnCollagenCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     //There's a performance issue here
@@ -1224,10 +1224,10 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnMelatoninCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     //There's a performance issue here
@@ -1689,10 +1689,10 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnBeautyCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     //There's a performance issue when clicking on the previous button
@@ -1831,10 +1831,10 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnBoneAndJointCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     //There's a performance issue when clicking on the previous button
@@ -1974,10 +1974,10 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnBrainSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     //There's a performance issue when clicking on the previous button
@@ -2117,10 +2117,10 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnDetoxAndLiverSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     //There's a performance issue when clicking on the previous button
@@ -2259,10 +2259,10 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnDigestiveSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     //There's a performance issue when clicking on the previous button
@@ -2402,10 +2402,10 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnEnergyFormulasCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     //There's a performance issue when clicking on the previous button
@@ -2546,10 +2546,10 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnHairAndSkinAndNailsCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     //There's a performance issue when clicking on the previous button

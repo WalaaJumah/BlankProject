@@ -145,7 +145,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         select.selectByVisibleText("Name");
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage(), 5);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
         DataHelperAndWait.implicitWait(6);
@@ -159,7 +159,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         select.selectByVisibleText("Newly added items");
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
     }
 
@@ -169,7 +169,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         select.selectByVisibleText("Relevance");
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
     }
 
@@ -179,7 +179,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         select.selectByVisibleText("Name");
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
     }
 
@@ -189,7 +189,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         select.selectByVisibleText("Best Selling");
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
     }
 
@@ -199,7 +199,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         select.selectByVisibleText("Price Min-Max");
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
     }
 
@@ -209,7 +209,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         select.selectByVisibleText("Price Max-Min");
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
     }
 
@@ -258,10 +258,10 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
 

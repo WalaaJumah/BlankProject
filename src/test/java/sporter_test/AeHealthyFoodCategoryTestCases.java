@@ -133,10 +133,10 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         select.selectByVisibleText("Relevance");
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage(), 5);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsSection().isDisplayed());
     }
     //There's a bug here
@@ -146,7 +146,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         select.selectByVisibleText("Relevance");
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
     }
     @Test(description = "Make sure Sort By Menu appears correctly in the page after sorting By Name  ", priority = 14)
@@ -155,7 +155,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         select.selectByVisibleText("Name");
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
     }
     @Test(description = "Make sure Sort By Menu appears correctly in the page after sorting By Best Selling  ", priority = 15)
@@ -164,7 +164,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         select.selectByVisibleText("Best Selling");
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
     }
     @Test(description = "Make sure Sort By Menu appears correctly in the page after sorting By Price Min-Max  ", priority = 16)
@@ -173,7 +173,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         select.selectByVisibleText("Price Min-Max");
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
     }
     @Test(description = "Make sure Sort By Menu appears correctly in the page after sorting By Price Max-Min  ", priority = 17)
@@ -182,7 +182,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         select.selectByVisibleText("Price Max-Min");
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
     }
     @Test(description = "Make sure  the Healthy Food footer appears correctly  ", priority = 18)
@@ -228,7 +228,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        Thread.sleep(3000);
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(description = "Make Sure the previous page button works correctly", priority = 23)

@@ -4,10 +4,8 @@ import org.openqa.selenium.support.ui.*;
 
 import javax.xml.crypto.Data;
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.NoSuchElementException;
-import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 public class DataHelperAndWait extends BaseTest {
@@ -18,7 +16,7 @@ public class DataHelperAndWait extends BaseTest {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    public void waitForTime(int milis) {
+    public static void waitForTime(int milis) {
         try {
             Thread.sleep(milis);
         } catch (InterruptedException e) {
@@ -105,5 +103,49 @@ public class DataHelperAndWait extends BaseTest {
         int randomInt = randomGenerator.nextInt(1000);
         return "username"+ randomInt +"@gmail.com";
     }
-
+    public static void selectFromDropDownList(String element, List<WebElement> list) {
+        for (WebElement option : list) {
+            if (option.getText().equalsIgnoreCase(element)) {
+                option.click();
+                break;
+            }
+        }
     }
+    public static boolean isWebElementPresent(WebElement webElement) {
+        try {
+            webElement.isDisplayed();
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+    public static void uploadImage(WebElement element, String imageName) {
+        String path;
+        path = System.getProperty("user.dir") + "/src/test/resources/Images/" + imageName;
+        element.sendKeys(path);
+    }
+    public static void scrollTo(WebElement element) {
+        ((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView(false);", element);
+    }
+
+    public static void scrollBy() {
+        ((JavascriptExecutor) webDriver).executeScript("window.scrollBy(0,2000)", "");
+    }
+    public static void HandlingWindowMethods() {
+        String mainWindowHandle = webDriver.getWindowHandle();
+        Set<String> allWindowHandles = webDriver.getWindowHandles();
+        Iterator<String> iterator = allWindowHandles.iterator();
+        while (iterator.hasNext()) {
+            String ChildWindow = iterator.next();
+            if (!mainWindowHandle.equalsIgnoreCase(ChildWindow)) {
+                webDriver.switchTo().window(ChildWindow);
+            }
+        }
+    }
+
+    public static void clearWebField(WebElement element) {
+        while (!element.getAttribute("value").equals("")) {
+            element.sendKeys(Keys.BACK_SPACE);
+        }
+    }
+}

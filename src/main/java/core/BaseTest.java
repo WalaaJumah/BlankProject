@@ -1,3 +1,4 @@
+
 package core;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,12 +20,9 @@ public class BaseTest {
     public String aeSiteURL = "/en-ae/";
     public String ksaSiteURL = "/en-sa/";
     public String qaterSiteURL = "/en-qa/";
-
     public String checkoutLoginStepURL = "/en-ae/checkout/#checkout-login-step";
     public String freeCouponeCode= "spo15";
     public String discaountCouponeCode= "";
-
-
     public String outOfStockProduct = "/en-ae/healthy-food/snacks-drinks/spreads/gymqueen-smooth-peanut-butter-spread";
     public String product = "/en-ae/optimum-gold-standard-100-whey";
     public static WebDriver webDriver;
@@ -102,6 +100,5 @@ public class BaseTest {
     @AfterMethod(alwaysRun = true)
     public void tearDown()  {
         webDriver.quit();
-//        webDriver.close();
     }
 }
