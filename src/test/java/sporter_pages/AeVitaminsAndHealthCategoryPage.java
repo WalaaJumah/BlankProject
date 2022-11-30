@@ -567,6 +567,7 @@ public class AeVitaminsAndHealthCategoryPage {
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
+        this.clickOnNextIconInShopByHealthNeedSection();
         this.sleepSupportCategory.click();
     }
 

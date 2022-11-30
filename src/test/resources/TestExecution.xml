@@ -5,9 +5,9 @@
 <!--        <listener class-name="extent_report_listner.ExtentReportListener" />-->
 <!--    </listeners>-->
 
-    <listeners>
-        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>
-    </listeners>
+<!--    <listeners>-->
+<!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
+<!--    </listeners>-->
 
 
     <test name=" Test" preserve-order="true">
@@ -23,9 +23,9 @@
 
         <classes>
 
-        <class name="sporter_test.AeSportSupplementsCategoryTestCases">
+        <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases">
             <methods>
-                <include name="verifyAbilityToAccessAllPagesInsideSportSupplementsCategoryPage" />
+                <include name="verifyAbilityToAccessAllPagesInsideSleepSupportCategoryInsideTheShopByHealthNeed" />
 <!--                <include name="verifyAbilityToAccessAllPagesInsideWomensApparelCategoryPageCorrectly" />-->
 <!--                <include name="verifyAbilityToAccessAllPagesInsideMensApparelCategoryPageCorrectly" />-->
 <!--                <include name="m2" />-->

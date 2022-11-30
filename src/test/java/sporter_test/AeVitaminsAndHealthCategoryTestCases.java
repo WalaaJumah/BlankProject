@@ -4107,4 +4107,172 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
         this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
+    //Pagination control for all pages in the Vitamins And Health category page
+
+    @Test(description = "Make Sure the ability to access all pages inside Fish Oil And Omegas Category From Vitamins And Health Category Page  ", priority = 426)
+    public void verifyAbilityToAccessAllPagesInsideFishOilAndOmegasCategoryFromVitaminsAndHealthCategoryPage(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnFishOilAndOmegasCategoryInsideTheShopByCategorySectionWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+    }
+    //There's a bug here
+    @Test(description = "Make Sure the ability to access all pages inside Multivitamins Category From Vitamins And Health Category Page  ", priority = 427)
+    public void verifyAbilityToAccessAllPagesInsideMultivitaminsCategoryFromVitaminsAndHealthCategoryPage(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnMultivitaminsCategoryInsideTheShopByCategorySectionWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+    }
+    @Test(description = "Make Sure the ability to access all pages inside VitaminsA_Z Category From Vitamins And Health Category Page  ", priority = 428)
+    public void verifyAbilityToAccessAllPagesInsideVitaminsA_ZCategoryFromVitaminsAndHealthCategoryPage(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnVitaminsA_ZCategoryInsideTheShopByCategorySectionWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+    }
+    @Test(description = "Make Sure the ability to access all pages inside Minerals Category From Vitamins And Health Category Page  ", priority = 429)
+    public void verifyAbilityToAccessAllPagesInsideMineralsCategoryFromVitaminsAndHealthCategoryPage(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnMineralsCategoryInsideTheShopByCategorySectionWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+    }
+    @Test(description = "Make Sure the ability to access all pages inside Antioxidants Category From Vitamins And Health Category Page  ", priority = 430)
+    public void verifyAbilityToAccessAllPagesInsideAntioxidantsCategoryFromVitaminsAndHealthCategoryPage(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnAntioxidantsCategoryInsideTheShopByCategorySectionWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+    }
+    @Test(description = "Make Sure the ability to access all pages inside Superfoods Category From Vitamins And Health Category Page  ", priority = 431)
+    public void verifyAbilityToAccessAllPagesInsideSuperfoodsCategoryFromVitaminsAndHealthCategoryPage(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnSuperfoodsCategoryInsideTheShopByCategorySectionWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+    }
+    //There's a bug here
+   @Test(description = "Make Sure the ability to access all pages inside Collagen Category From Vitamins And Health Category Page  ", priority = 432)
+    public void verifyAbilityToAccessAllPagesInsideCollagenCategoryFromVitaminsAndHealthCategoryPage(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnCollagenCategoryInsideTheShopByCategorySectionWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+    }
+   @Test(description = "Make Sure the ability to access all pages inside Melatonin Category From Vitamins And Health Category Page  ", priority = 433)
+    public void verifyAbilityToAccessAllPagesInsideMelatoninCategoryFromVitaminsAndHealthCategoryPage(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnMelatoninCategoryInsideTheShopByCategorySectionWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+    }
+    //There's a bug here
+   @Test(description = "Make Sure the ability to access all pages inside Beauty Category Inside The Shop By Health Need  ", priority = 434)
+    public void verifyAbilityToAccessAllPagesInsideBeautyCategoryInsideTheShopByHealthNeed(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnBeautyCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+    }
+   @Test(description = "Make Sure the ability to access all pages inside Bone And Joint Category Inside The Shop By Health Need  ", priority = 435)
+    public void verifyAbilityToAccessAllPagesInsideBoneAndJointCategoryInsideTheShopByHealthNeed(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnBoneAndJointCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+    }
+   @Test(description = "Make Sure the ability to access all pages inside Brain Support Category Inside The Shop By Health Need  ", priority = 436)
+    public void verifyAbilityToAccessAllPagesInsideBrainSupportCategoryInsideTheShopByHealthNeed(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnBrainSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+    }
+   @Test(description = "Make Sure the ability to access all pages inside Detox And Liver Support Inside The Shop By Health Need  ", priority = 437)
+    public void verifyAbilityToAccessAllPagesInsideDetoxAndLiverSupportCategoryInsideTheShopByHealthNeed(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnDetoxAndLiverSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+    }
+   @Test(description = "Make Sure the ability to access all pages inside Digestive Support Inside The Shop By Health Need  ", priority = 438)
+    public void verifyAbilityToAccessAllPagesInsideDigestiveSupportCategoryInsideTheShopByHealthNeed(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnDigestiveSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+    }
+    //There's a bug here
+   @Test(description = "Make Sure the ability to access all pages inside Energy Formulas Inside The Shop By Health Need  ", priority = 439)
+    public void verifyAbilityToAccessAllPagesInsideEnergyFormulasCategoryInsideTheShopByHealthNeed(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnEnergyFormulasCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+    }
+   @Test(description = "Make Sure the ability to access all pages inside Hair And Skin And Nails Inside The Shop By Health Need  ", priority = 440)
+    public void verifyAbilityToAccessAllPagesInsideHairAndSkinAndNailsCategoryInsideTheShopByHealthNeed(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnHairAndSkinAndNailsCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+    }
+   @Test(description = "Make Sure the ability to access all pages inside Heart Health Inside The Shop By Health Need  ", priority = 441)
+    public void verifyAbilityToAccessAllPagesInsideHeartHealthCategoryInsideTheShopByHealthNeed(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnHeartHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+    }
+   @Test(description = "Make Sure the ability to access all pages inside Immunity Support Inside The Shop By Health Need  ", priority = 442)
+    public void verifyAbilityToAccessAllPagesInsideImmunitySupportCategoryInsideTheShopByHealthNeed(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnImmunitySupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+    }
+   @Test(description = "Make Sure the ability to access all pages inside Kid's Health Inside The Shop By Health Need  ", priority = 443)
+    public void verifyAbilityToAccessAllPagesInsideKidsHealthCategoryInsideTheShopByHealthNeed(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnKidsHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+    }
+   @Test(description = "Make Sure the ability to access all pages inside Men's Health Inside The Shop By Health Need  ", priority = 444)
+    public void verifyAbilityToAccessAllPagesInsideMensHealthCategoryInsideTheShopByHealthNeed(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnMensHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+    }
+   @Test(description = "Make Sure the ability to access all pages inside Sexual Health Inside The Shop By Health Need  ", priority = 445)
+    public void verifyAbilityToAccessAllPagesInsideSexualHealthCategoryInsideTheShopByHealthNeed(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnSexualHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+    }
+   @Test(description = "Make Sure the ability to access all pages inside Sleep Support The Shop By Health Need  ", priority = 446)
+    public void verifyAbilityToAccessAllPagesInsideSleepSupportCategoryInsideTheShopByHealthNeed(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnSleepSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+    }
+
+   @Test(description = "Make Sure the ability to access all pages inside Diet Weight Management The Shop By Health Need  ", priority = 447)
+    public void verifyAbilityToAccessAllPagesInsideDietWeightManagementCategoryInsideTheShopByHealthNeed(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnDietWeightManagementCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+    }
+   @Test(description = "Make Sure the ability to access all pages inside Women Health The Shop By Health Need  ", priority = 448)
+    public void verifyAbilityToAccessAllPagesInsideWomenHealthCategoryInsideTheShopByHealthNeed(){
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnWomenHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+    }
     }
