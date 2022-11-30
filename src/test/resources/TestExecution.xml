@@ -23,9 +23,9 @@
 
         <classes>
 
-        <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases">
+        <class name="sporter_test.AeSearchPageTestCases">
             <methods>
-                <include name="verifyAbilityToAccessAllPagesInsideSleepSupportCategoryInsideTheShopByHealthNeed" />
+                <include name="verifySportsMenuIsDisplayedWhenHoveringOnItFromSearchPage" />
 <!--                <include name="verifyAbilityToAccessAllPagesInsideWomensApparelCategoryPageCorrectly" />-->
 <!--                <include name="verifyAbilityToAccessAllPagesInsideMensApparelCategoryPageCorrectly" />-->
 <!--                <include name="m2" />-->

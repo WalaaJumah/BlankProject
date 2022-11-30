@@ -60,7 +60,7 @@ public class BaseTest {
 
     // The Below Method to run the TCs on Onc Browser like Chrome
     @BeforeMethod
-    @Parameters("environment")
+    @Parameters({"environment"})
     public void setupBrowser( String environment ) throws Exception {
         environmentName=environment;
         //This ChromeWebDriver 106
