@@ -480,7 +480,7 @@ public class AEFooterPageTestCases extends BaseTest {
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    //Bug: The system does not redirect the user to the Sporter Linkedin page directly
+    //Bug: The system does not redirect the user to the Sporter LinkedIn page directly
     @Test(description = "Make sure the Careers appears in the footer works correctly", priority = 40)
     public void verifyCareersLinkAppearsInFooterWorksCorrectly() {
         aeFooterPage = new AEFooterPage(webDriver);
@@ -1281,8 +1281,8 @@ public class AEFooterPageTestCases extends BaseTest {
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
     }
 
-    @Test(description = "Make sure the copyright statment appears correctly in the footer section", priority = 116)
-    public void verifyTheCopyRightStatmentAppearsInTheFooter() {
+    @Test(description = "Make sure the copyright statement appears correctly in the footer section", priority = 116)
+    public void verifyTheCopyRightStatementAppearsInTheFooter() {
         aeFooterPage = new AEFooterPage(webDriver);
         Assert.assertTrue(aeFooterPage.getCopyright().isDisplayed());
     }

@@ -70,7 +70,7 @@ public class AeRecommendedProductsTestCases extends BaseTest {
         //Make sure the products prices are displayed
         Assert.assertTrue(aeRecommendedProductspage.getProductPrice().isDisplayed());
         //Make sure the add to cart buttons are displayed
-        Assert.assertTrue(aeRecommendedProductspage.getAddToCartBtns().isDisplayed());
+        Assert.assertTrue(aeRecommendedProductspage.getAddToCartBtn().isDisplayed());
         //Make sure the keep shopping button is displayed
         Assert.assertTrue(aeProductDetailsPage.getKeepShippingBtn().isDisplayed());
         //Make sure the view cart button is displayed

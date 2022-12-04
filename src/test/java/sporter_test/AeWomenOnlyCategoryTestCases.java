@@ -31,7 +31,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure clicking on the Women's Only Category Appears In MegaMenu Redirect User To CorrectURL", priority = 1)
     public void verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL() {
         aeMegaMenuTestCases = new AEMegaMenuTestCases();
-        aeMegaMenuTestCases.verifyClickingOnWomensOnlyMainMenuRedirectUserToCorrectURL();
+        aeMegaMenuTestCases.verifyClickingOnWomenOnlyMainMenuRedirectUserToCorrectURL();
     }
 
     @Test(description = "Make sure clicking on the Women's Only Category from ShopBy Menu Redirect User To CorrectURL", priority = 2)
@@ -196,7 +196,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnSupplementsForHerCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
-        ArrayList<String> expectedOption = new ArrayList<String>() {{
+        ArrayList<String> expectedOption = new ArrayList<>() {{
             add("Featured");
             add("Newly added items");
             add("Name");
@@ -272,7 +272,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     //There's a performance issue in the Navigation
     @Test(description = "Make Sure the Pagination control in the Supplements For Her category page works correctly", priority = 25)
-    public void verifyThePaginationControlInSupplementsForHerCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyThePaginationControlInSupplementsForHerCategoryPageWorksCorrectly() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnSupplementsForHerCategoryInsideTheShopByCategorySectionWorksCorrectly();
@@ -285,7 +285,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     @Test(description = "Make Sure the previous page button In Supplements For Her Category Page works correctly", priority = 26)
-    public void verifyPreviousPageBtnInSupplementsForHerCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyPreviousPageBtnInSupplementsForHerCategoryPageWorksCorrectly(){
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInSupplementsForHerCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
@@ -293,7 +293,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     @Test(description = "Make Sure the next page button In Supplements For Her Category Page works correctly", priority = 27)
-    public void verifyNextPageBtnInSupplementsForHerCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyNextPageBtnInSupplementsForHerCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInSupplementsForHerCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
@@ -344,7 +344,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnWomenDailyVitaminsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
-        ArrayList<String> expectedOption = new ArrayList<String>() {{
+        ArrayList<String> expectedOption = new ArrayList<>() {{
             add("Featured");
             add("Name");
             add("Best Selling");
@@ -420,7 +420,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     //There's a performance issue in the Navigation
     @Test(description = "Make Sure the Pagination control in the Women's Daily Vitamins category page works correctly", priority = 39)
-    public void verifyThePaginationControlInWomenDailyVitaminsCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyThePaginationControlInWomenDailyVitaminsCategoryPageWorksCorrectly() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnWomenDailyVitaminsCategoryInsideTheShopByCategorySectionWorksCorrectly();
@@ -433,7 +433,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     @Test(description = "Make Sure the previous page button In Women's Daily Vitamins Category Page works correctly", priority = 40)
-    public void verifyPreviousPageBtnInWomenDailyVitaminsCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyPreviousPageBtnInWomenDailyVitaminsCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInWomenDailyVitaminsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
@@ -441,7 +441,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     @Test(description = "Make Sure the next page button In Women's Daily Vitamins Category Page works correctly", priority = 41)
-    public void verifyNextPageBtnInWomenDailyVitaminsCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyNextPageBtnInWomenDailyVitaminsCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInWomenDailyVitaminsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
@@ -492,7 +492,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnLadyFriendlySnacksAndFoodCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
-        ArrayList<String> expectedOption = new ArrayList<String>() {{
+        ArrayList<String> expectedOption = new ArrayList<>() {{
             add("Featured");
             add("Name");
             add("Best Selling");
@@ -568,7 +568,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     //There's a performance issue in the Navigation
     @Test(description = "Make Sure the Pagination control in the Lady-Friendly Snacks & Food category page works correctly", priority = 53)
-    public void verifyThePaginationControlInLadyFriendlySnacksAndFoodCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyThePaginationControlInLadyFriendlySnacksAndFoodCategoryPageWorksCorrectly() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnLadyFriendlySnacksAndFoodCategoryInsideTheShopByCategorySectionWorksCorrectly();
@@ -581,7 +581,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     @Test(description = "Make Sure the previous page button In Lady-Friendly Snacks & Food Category Page works correctly", priority = 54)
-    public void verifyPreviousPageBtnInLadyFriendlySnacksAndFoodCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyPreviousPageBtnInLadyFriendlySnacksAndFoodCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInLadyFriendlySnacksAndFoodCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
@@ -589,7 +589,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     @Test(description = "Make Sure the next page button In Lady-Friendly Snacks & Food Category Page works correctly", priority = 55)
-    public void verifyNextPageBtnInLadyFriendlySnacksAndFoodCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyNextPageBtnInLadyFriendlySnacksAndFoodCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInLadyFriendlySnacksAndFoodCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
@@ -640,7 +640,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnMakeupForActiveLifestylesCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
-        ArrayList<String> expectedOption = new ArrayList<String>() {{
+        ArrayList<String> expectedOption = new ArrayList<>() {{
             add("Featured");
             add("Name");
             add("Best Selling");
@@ -717,7 +717,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     //There's a performance issue in the Navigation
     @Test(description = "Make Sure the Pagination control in the Makeup for Active Lifestyles category page works correctly", priority = 67)
-    public void verifyThePaginationControlInMakeupForActiveLifestylesCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyThePaginationControlInMakeupForActiveLifestylesCategoryPageWorksCorrectly() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnMakeupForActiveLifestylesCategoryInsideTheShopByCategorySectionWorksCorrectly();
@@ -730,7 +730,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     @Test(description = "Make Sure the previous page button In Makeup for Active Lifestyles Category Page works correctly", priority = 68)
-    public void verifyPreviousPageBtnInMakeupForActiveLifestylesCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyPreviousPageBtnInMakeupForActiveLifestylesCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInMakeupForActiveLifestylesCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
@@ -738,7 +738,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     @Test(description = "Make Sure the next page button In Makeup for Active Lifestyles Category Page works correctly", priority = 69)
-    public void verifyNextPageBtnInMakeupForActiveLifestylesCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyNextPageBtnInMakeupForActiveLifestylesCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInMakeupForActiveLifestylesCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
@@ -765,7 +765,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Assert.assertEquals(aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideTitle().getText(), "Shop By Goal");
-        ArrayList<String> expectedOptions = new ArrayList<String>() {{
+        ArrayList<String> expectedOptions = new ArrayList<>() {{
             add("Hair, Skin & Nails");
             add("Weight Loss");
             add("Mood Support");
@@ -813,7 +813,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnHairSkinAndNailsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
-        ArrayList<String> expectedOption = new ArrayList<String>() {{
+        ArrayList<String> expectedOption = new ArrayList<>() {{
             add("Featured");
             add("Name");
             add("Best Selling");
@@ -889,7 +889,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     //There's a performance issue in the Navigation
     @Test(description = "Make Sure the Pagination control in the Hair, Skin & Nails Category page works correctly", priority = 82)
-    public void verifyThePaginationControlInHairSkinAndNailsCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyThePaginationControlInHairSkinAndNailsCategoryPageWorksCorrectly() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnHairSkinAndNailsCategoryInsideTheShopByCategorySectionWorksCorrectly();
@@ -902,7 +902,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     @Test(description = "Make Sure the previous page button In Hair, Skin & Nails Category Page works correctly", priority = 83)
-    public void verifyPreviousPageBtnInHairSkinAndNailsCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyPreviousPageBtnInHairSkinAndNailsCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInHairSkinAndNailsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
@@ -910,7 +910,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     @Test(description = "Make Sure the next page button In Hair, Skin & Nails Category Page works correctly", priority = 84)
-    public void verifyNextPageBtnInHairSkinAndNailsCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyNextPageBtnInHairSkinAndNailsCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInHairSkinAndNailsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
@@ -962,7 +962,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnWeightLossCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
-        ArrayList<String> expectedOption = new ArrayList<String>() {{
+        ArrayList<String> expectedOption = new ArrayList<>() {{
             add("Featured");
             add("Name");
             add("Best Selling");
@@ -1038,7 +1038,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     //There's a performance issue in the Navigation
     @Test(description = "Make Sure the Pagination control in the Weight Loss Category page works correctly", priority = 96)
-    public void verifyThePaginationControlInWeightLossCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyThePaginationControlInWeightLossCategoryPageWorksCorrectly() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnWeightLossCategoryInsideTheShopByCategorySectionWorksCorrectly();
@@ -1051,7 +1051,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     @Test(description = "Make Sure the previous page button In Weight Loss Category Page works correctly", priority = 97)
-    public void verifyPreviousPageBtnInWeightLossCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyPreviousPageBtnInWeightLossCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInWeightLossCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
@@ -1059,7 +1059,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     @Test(description = "Make Sure the next page button In Weight Loss Category Page works correctly", priority = 98)
-    public void verifyNextPageBtnInWeightLossCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyNextPageBtnInWeightLossCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInWeightLossCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
@@ -1110,7 +1110,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnMoodSupportCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
-        ArrayList<String> expectedOption = new ArrayList<String>() {{
+        ArrayList<String> expectedOption = new ArrayList<>() {{
             add("Featured");
             add("Name");
             add("Best Selling");
@@ -1186,7 +1186,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     //There's a performance issue in the Navigation
     @Test(description = "Make Sure the Pagination control in the Mood Support Category page works correctly", priority = 110)
-    public void verifyThePaginationControlInMoodSupportCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyThePaginationControlInMoodSupportCategoryPageWorksCorrectly() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnMoodSupportCategoryInsideTheShopByCategorySectionWorksCorrectly();
@@ -1199,7 +1199,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     @Test(description = "Make Sure the previous page button In Mood Support Category Page works correctly", priority = 111)
-    public void verifyPreviousPageBtnInMoodSupportCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyPreviousPageBtnInMoodSupportCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInMoodSupportCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
@@ -1207,7 +1207,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     @Test(description = "Make Sure the next page button In Mood Support Category Page works correctly", priority = 112)
-    public void verifyNextPageBtnInMoodSupportCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyNextPageBtnInMoodSupportCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInMoodSupportCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
@@ -1258,7 +1258,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnDetoxAndCleanseCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
-        ArrayList<String> expectedOption = new ArrayList<String>() {{
+        ArrayList<String> expectedOption = new ArrayList<>() {{
             add("Featured");
             add("Name");
             add("Best Selling");
@@ -1334,7 +1334,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     //There's a performance issue in the Navigation
     @Test(description = "Make Sure the Pagination control in the Detox & Cleanse Category page works correctly", priority = 124)
-    public void verifyThePaginationControlInDetoxAndCleanseCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyThePaginationControlInDetoxAndCleanseCategoryPageWorksCorrectly() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnDetoxAndCleanseCategoryInsideTheShopByCategorySectionWorksCorrectly();
@@ -1347,7 +1347,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     @Test(description = "Make Sure the previous page button In Detox & Cleanse Category Page works correctly", priority = 125)
-    public void verifyPreviousPageBtnInDetoxAndCleanseCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyPreviousPageBtnInDetoxAndCleanseCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInDetoxAndCleanseCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
@@ -1355,7 +1355,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     @Test(description = "Make Sure the next page button In Detox & Cleanse Category Page works correctly", priority = 126)
-    public void verifyNextPageBtnInDetoxAndCleanseCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyNextPageBtnInDetoxAndCleanseCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInDetoxAndCleanseCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
@@ -1406,7 +1406,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnPMSReliefCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
-        ArrayList<String> expectedOption = new ArrayList<String>() {{
+        ArrayList<String> expectedOption = new ArrayList<>() {{
             add("Featured");
             add("Name");
             add("Best Selling");
@@ -1482,7 +1482,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     //There's a performance issue in the Navigation
     @Test(description = "Make Sure the Pagination control in the PMS Relief Category page works correctly", priority = 138)
-    public void verifyThePaginationControlInPMSReliefCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyThePaginationControlInPMSReliefCategoryPageWorksCorrectly() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnPMSReliefCategoryInsideTheShopByCategorySectionWorksCorrectly();
@@ -1495,7 +1495,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     @Test(description = "Make Sure the previous page button In PMS Relief Category Page works correctly", priority = 139)
-    public void verifyPreviousPageBtnInPMSReliefCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyPreviousPageBtnInPMSReliefCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInPMSReliefCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
@@ -1503,7 +1503,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     @Test(description = "Make Sure the next page button In PMS Relief Category Page works correctly", priority = 140)
-    public void verifyNextPageBtnInPMSReliefCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyNextPageBtnInPMSReliefCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInPMSReliefCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
@@ -1554,7 +1554,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnEnergyAndEnduranceCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
-        ArrayList<String> expectedOption = new ArrayList<String>() {{
+        ArrayList<String> expectedOption = new ArrayList<>() {{
             add("Featured");
             add("Name");
             add("Best Selling");
@@ -1631,7 +1631,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     //There's a performance issue in the Navigation
     @Test(description = "Make Sure the Pagination control in the Energy & Endurance Category page works correctly", priority = 152)
-    public void verifyThePaginationControlInEnergyAndEnduranceCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyThePaginationControlInEnergyAndEnduranceCategoryPageWorksCorrectly() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnEnergyAndEnduranceCategoryInsideTheShopByCategorySectionWorksCorrectly();
@@ -1644,7 +1644,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     @Test(description = "Make Sure the previous page button In Energy & Endurance Category Page works correctly", priority = 153)
-    public void verifyPreviousPageBtnInEnergyAndEnduranceCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyPreviousPageBtnInEnergyAndEnduranceCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInEnergyAndEnduranceCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
@@ -1652,7 +1652,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     @Test(description = "Make Sure the next page button In Energy & Endurance Category Page works correctly", priority = 154)
-    public void verifyNextPageBtnInEnergyAndEnduranceCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyNextPageBtnInEnergyAndEnduranceCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInEnergyAndEnduranceCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
@@ -1704,7 +1704,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnPrenatalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
-        ArrayList<String> expectedOption = new ArrayList<String>() {{
+        ArrayList<String> expectedOption = new ArrayList<>() {{
             add("Featured");
             add("Name");
             add("Best Selling");
@@ -1781,7 +1781,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     //There's a performance issue in the Navigation
     @Test(description = "Make Sure the Pagination control in the Prenatal Care Category page works correctly", priority = 166)
-    public void verifyThePaginationControlInPrenatalCareCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyThePaginationControlInPrenatalCareCategoryPageWorksCorrectly() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnPrenatalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
@@ -1794,7 +1794,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     @Test(description = "Make Sure the previous page button In Prenatal Care Category Page works correctly", priority = 167)
-    public void verifyPreviousPageBtnInPrenatalCareCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyPreviousPageBtnInPrenatalCareCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInPrenatalCareCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
@@ -1802,7 +1802,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     @Test(description = "Make Sure the next page button In Prenatal Care Category Page works correctly", priority = 168)
-    public void verifyNextPageBtnInPrenatalCareCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyNextPageBtnInPrenatalCareCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInPrenatalCareCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
@@ -1854,7 +1854,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnMuscleAndWeightGainCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
-        ArrayList<String> expectedOption = new ArrayList<String>() {{
+        ArrayList<String> expectedOption = new ArrayList<>() {{
             add("Featured");
             add("Name");
             add("Best Selling");
@@ -1931,7 +1931,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     //There's a performance issue in the Navigation
     @Test(description = "Make Sure the Pagination control in the Muscle & Weight Gain Category page works correctly", priority = 166)
-    public void verifyThePaginationControlInMuscleAndWeightGainCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyThePaginationControlInMuscleAndWeightGainCategoryPageWorksCorrectly() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnMuscleAndWeightGainCategoryInsideTheShopByCategorySectionWorksCorrectly();
@@ -1944,7 +1944,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     @Test(description = "Make Sure the previous page button In Muscle & Weight Gain Category Page works correctly", priority = 167)
-    public void verifyPreviousPageBtnInMuscleAndWeightGainCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyPreviousPageBtnInMuscleAndWeightGainCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInMuscleAndWeightGainCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
@@ -1952,7 +1952,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     @Test(description = "Make Sure the next page button In Muscle & Weight Gain Category Page works correctly", priority = 168)
-    public void verifyNextPageBtnInMuscleAndWeightGainCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyNextPageBtnInMuscleAndWeightGainCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInMuscleAndWeightGainCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
@@ -2004,7 +2004,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnFashionAndStyleCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
-        ArrayList<String> expectedOption = new ArrayList<String>() {{
+        ArrayList<String> expectedOption = new ArrayList<>() {{
             add("Featured");
             add("Name");
             add("Best Selling");
@@ -2080,7 +2080,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     //There's a performance issue in the Navigation
     @Test(description = "Make Sure the Pagination control in the Fashion & Style Category page works correctly", priority = 180)
-    public void verifyThePaginationControlInFashionAndStyleCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyThePaginationControlInFashionAndStyleCategoryPageWorksCorrectly() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnFashionAndStyleCategoryInsideTheShopByCategorySectionWorksCorrectly();
@@ -2093,7 +2093,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     @Test(description = "Make Sure the previous page button In Fashion & Style Category Page works correctly", priority = 181)
-    public void verifyPreviousPageBtnInFashionAndStyleCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyPreviousPageBtnInFashionAndStyleCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInFashionAndStyleCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
@@ -2101,7 +2101,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     @Test(description = "Make Sure the next page button In Fashion & Style Category Page works correctly", priority = 182)
-    public void verifyNextPageBtnInFashionAndStyleCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyNextPageBtnInFashionAndStyleCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInFashionAndStyleCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
@@ -2152,7 +2152,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnPersonalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
-        ArrayList<String> expectedOption = new ArrayList<String>() {{
+        ArrayList<String> expectedOption = new ArrayList<>() {{
             add("Featured");
             add("Name");
             add("Best Selling");
@@ -2229,7 +2229,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     //There's a performance issue in the Navigation
     @Test(description = "Make Sure the Pagination control in the Personal Care Category page works correctly", priority = 194)
-    public void verifyThePaginationControlInPersonalCareCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyThePaginationControlInPersonalCareCategoryPageWorksCorrectly() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnPersonalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
@@ -2242,7 +2242,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     @Test(description = "Make Sure the previous page button In Personal Care Category Page works correctly", priority = 195)
-    public void verifyPreviousPageBtnInPersonalCareCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyPreviousPageBtnInPersonalCareCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInPersonalCareCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
@@ -2250,7 +2250,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     @Test(description = "Make Sure the next page button In Personal Care Category Page works correctly", priority = 196)
-    public void verifyNextPageBtnInPersonalCareCategoryPageWorksCorrectly() throws InterruptedException {
+    public void verifyNextPageBtnInPersonalCareCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInPersonalCareCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
@@ -2491,7 +2491,6 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     public void verifyClickingOnViewAllBtnInsideLadyFriendlySnacksAndFoodWidgetWorksCorrectly() {
         aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-        String expectedCategoryUrl = aeWomenOnlyCategoryPage.getViewAllInLadyFriendlySnacksFoodSection().getAttribute("href");
         aeWomenOnlyCategoryPage.getViewAllInLadyFriendlySnacksFoodSection().click();
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");

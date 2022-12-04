@@ -2,13 +2,9 @@ package sporter_test;
 
 import core.BaseTest;
 import core.DataHelperAndWait;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import sporter_pages.KsaHomePage;
 import sporter_pages.QatarHomePage;
-
 import static org.testng.Assert.assertFalse;
 
 public class QatarHomePageTestCases extends BaseTest {
@@ -28,8 +24,8 @@ public class QatarHomePageTestCases extends BaseTest {
         qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.switchToQatarCountry();
         Assert.assertTrue(qatarHomePage.getHomePageRotatingSlider().isDisplayed());
-        for (int i = 0; i < qatarHomePage.getHomePageRotatingSliderlist().size(); i++) {
-            Assert.assertTrue(qatarHomePage.getHomePageRotatingSliderlist().get(i).isDisplayed());
+        for (int i = 0; i < qatarHomePage.getHomePageRotatingSliderList().size(); i++) {
+            Assert.assertTrue(qatarHomePage.getHomePageRotatingSliderList().get(i).isDisplayed());
         }
     }
 
@@ -48,12 +44,12 @@ public class QatarHomePageTestCases extends BaseTest {
     }
 
     @Test(description = "Make sure the pagination control appears on the HomePage rotating slider is displayed", priority = 5)
-    public void verifyPagenationControlOnHomePageRotatingSliderIsDisplayed() {
+    public void verifyPaginationControlOnHomePageRotatingSliderIsDisplayed() {
         qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.switchToQatarCountry();
         Assert.assertTrue(qatarHomePage.getHomePageRotatingSliderPagingControl().isDisplayed());
-        for (int i = 0; i < qatarHomePage.getHomePageRotatingSliderPaginglist().size(); i++) {
-            Assert.assertTrue(qatarHomePage.getHomePageRotatingSliderPaginglist().get(i).isDisplayed());
+        for (int i = 0; i < qatarHomePage.getHomePageRotatingSliderPagingList().size(); i++) {
+            Assert.assertTrue(qatarHomePage.getHomePageRotatingSliderPagingList().get(i).isDisplayed());
         }
     }
 
@@ -80,10 +76,10 @@ public class QatarHomePageTestCases extends BaseTest {
     }
 
     @Test(description = "Make sure the main options in the Mega Menu are retrieved correctly", priority = 9)
-    public void verifyMainOptionsInTheMegaMenyAreDisplayed() {
+    public void verifyMainOptionsInTheMegaMenuAreDisplayed() {
         qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.switchToQatarCountry();
-        Assert.assertEquals(qatarHomePage.getShopeByOption().getText(), "Shop By");
+        Assert.assertEquals(qatarHomePage.getShopByOption().getText(), "Shop By");
         Assert.assertEquals(qatarHomePage.getSportSupplementsOption().getText(), "Sport Supplements");
         Assert.assertEquals(qatarHomePage.getVitaminsAndHealthOption().getText(), "Vitamins & Health");
         Assert.assertEquals(qatarHomePage.getHealthyFoodOption().getText(), "Healthy Food");
@@ -95,8 +91,8 @@ public class QatarHomePageTestCases extends BaseTest {
     public void verifyHomePageUnderShopByCategoryBannersAreDisplayed() {
         qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.switchToQatarCountry();
-        for (int i = 0; i < qatarHomePage.getHomePageUnderShopbyCategoryBanners().size(); i++) {
-            Assert.assertTrue(qatarHomePage.getHomePageUnderShopbyCategoryBanners().get(i).isDisplayed());
+        for (int i = 0; i < qatarHomePage.getHomePageUnderShopByCategoryBanners().size(); i++) {
+            Assert.assertTrue(qatarHomePage.getHomePageUnderShopByCategoryBanners().get(i).isDisplayed());
         }
     }
 
@@ -112,7 +108,7 @@ public class QatarHomePageTestCases extends BaseTest {
     public void verifyViewAllBtnInTopSellingStacksSectionWorking() {
         qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.switchToQatarCountry();
-        qatarHomePage.clickOnviewAllBtnInTopSellingStacksSection();
+        qatarHomePage.clickOnViewAllBtnInTopSellingStacksSection();
         Assert.assertEquals(webDriver.getCurrentUrl(), allProductsInTopSellingStacksSectionURL);
     }
 
@@ -140,7 +136,7 @@ public class QatarHomePageTestCases extends BaseTest {
         qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.switchToQatarCountry();
         qatarHomePage.clickOnAllLinkInTopSellerSection();
-        Assert.assertTrue(qatarHomePage.getAllLActiveink().isDisplayed());
+        Assert.assertTrue(qatarHomePage.getAllLActiveLink().isDisplayed());
     }
 
     @Test(description = "Make sure ability to click on the Sport Supplements link that appear in the Top Seller Section ", priority = 16)
@@ -148,11 +144,11 @@ public class QatarHomePageTestCases extends BaseTest {
         qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.switchToQatarCountry();
         qatarHomePage.clickOnSportSupplementsLinkInTopSellerSection();
-        DataHelperAndWait.waitToBeVisible(qatarHomePage.getSpportSupplementsActiveLink(), 10);
-        Assert.assertTrue(qatarHomePage.getSpportSupplementsActiveLink().isDisplayed());
+        DataHelperAndWait.waitToBeVisible(qatarHomePage.getSportSupplementsActiveLink(), 10);
+        Assert.assertTrue(qatarHomePage.getSportSupplementsActiveLink().isDisplayed());
     }
 
-    @Test(description = "Make sure ability to click on the Heathy Food link that appear in the Top Seller Section ", priority = 17)
+    @Test(description = "Make sure ability to click on the Healthy Food link that appear in the Top Seller Section ", priority = 17)
     public void verifyAbilityToClickOnTheHealthyFoodLinkInTopSellersSection() {
         qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.switchToQatarCountry();
@@ -179,7 +175,7 @@ public class QatarHomePageTestCases extends BaseTest {
         Assert.assertTrue(qatarHomePage.getSportswearAndAccessoriesActiveLink().isDisplayed());
     }
 
-    @Test(description = "Make sure that previous button will Appers in the Top Seller Section when clicking on the next button ", priority = 20)
+    @Test(description = "Make sure that previous button will Appears in the Top Seller Section when clicking on the next button ", priority = 20)
     public void verifyPreviousBtnWillAppearInTopSellersSectionOnceClickingOnNextBtn() {
         qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.switchToQatarCountry();
@@ -193,7 +189,7 @@ public class QatarHomePageTestCases extends BaseTest {
         qatarHomePage.switchToQatarCountry();
         qatarHomePage.clickOnNextButtonInTopSellersSection();
         DataHelperAndWait.implicitWait(6);
-        Assert.assertTrue(qatarHomePage.getTopSellerSectionpositionAfterClickingOnNext().isDisplayed());
+        Assert.assertTrue(qatarHomePage.getTopSellerSectionPositionAfterClickingOnNext().isDisplayed());
     }
 
     @Test(description = "Make sure the previous button appearing in the Top Seller section works Correctly ", priority = 22)
@@ -203,7 +199,7 @@ public class QatarHomePageTestCases extends BaseTest {
         qatarHomePage.clickOnNextButtonInTopSellersSection();
         qatarHomePage.clickOnPreviousButtonInTopSellersSection();
         DataHelperAndWait.implicitWait(6);
-        Assert.assertTrue(qatarHomePage.getTopSellerSectionpositionAfterClickingOnPrevious().isDisplayed());
+        Assert.assertTrue(qatarHomePage.getTopSellerSectionPositionAfterClickingOnPrevious().isDisplayed());
     }
 
     @Test(description = "Make sure the Trending On Sporter sections are displayed ", priority = 23)
@@ -220,7 +216,7 @@ public class QatarHomePageTestCases extends BaseTest {
         qatarHomePage.switchToQatarCountry();
         qatarHomePage.clickOnNextButtonInTrendingOnSporterSection();
         DataHelperAndWait.implicitWait(6);
-        Assert.assertTrue(qatarHomePage.getTrendingOnSporterSectionpositionAfterClickingOnNext().isDisplayed());
+        Assert.assertTrue(qatarHomePage.getTrendingOnSporterSectionPositionAfterClickingOnNext().isDisplayed());
     }
 
     @Test(description = "Make sure the previous button appearing in the Trending On Sporter section works Correctly ", priority = 25)
@@ -230,7 +226,7 @@ public class QatarHomePageTestCases extends BaseTest {
         qatarHomePage.clickOnNextButtonInTrendingOnSporterSection();
         qatarHomePage.clickOnPreviousButtonInTrendingOnSporterSection();
         DataHelperAndWait.implicitWait(6);
-        Assert.assertTrue(qatarHomePage.getTrendingOnSporterSectionpositionAfterClickingOnPrevious().isDisplayed());
+        Assert.assertTrue(qatarHomePage.getTrendingOnSporterSectionPositionAfterClickingOnPrevious().isDisplayed());
     }
 
     @Test(description = "Make sure the New Arrivals sections are displayed ", priority = 26)
@@ -247,10 +243,10 @@ public class QatarHomePageTestCases extends BaseTest {
         qatarHomePage.switchToQatarCountry();
         DataHelperAndWait.implicitWait(6);
         Assert.assertTrue(qatarHomePage.getNewArrivalsAllLink().isDisplayed());
-        Assert.assertTrue(qatarHomePage.getNewArrivalsSpportSupplementsLink().isDisplayed());
+        Assert.assertTrue(qatarHomePage.getNewArrivalsSportSupplementsLink().isDisplayed());
         Assert.assertTrue(qatarHomePage.getNewArrivalsHealthyFoodLinkLink().isDisplayed());
         Assert.assertTrue(qatarHomePage.getNewArrivalsVitaminsAndHealthLink().isDisplayed());
-        Assert.assertTrue(qatarHomePage.getNewArrivalsSportwearAndAccessoriesLink().isDisplayed());
+        Assert.assertTrue(qatarHomePage.getNewArrivalsSportWearAndAccessoriesLink().isDisplayed());
     }
 
     @Test(description = "Make sure ability to click on the all link that appear in the New Arrivals Section ", priority = 28)
@@ -267,11 +263,11 @@ public class QatarHomePageTestCases extends BaseTest {
         qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.switchToQatarCountry();
         qatarHomePage.clickOnSportSupplementsLinkInNewArrivalsSection();
-        DataHelperAndWait.waitToBeVisible(qatarHomePage.getNewArrivalsSpportSupplementsActiveLink(), 10);
-        Assert.assertTrue(qatarHomePage.getNewArrivalsSpportSupplementsActiveLink().isDisplayed());
+        DataHelperAndWait.waitToBeVisible(qatarHomePage.getNewArrivalsSportSupplementsActiveLink(), 10);
+        Assert.assertTrue(qatarHomePage.getNewArrivalsSportSupplementsActiveLink().isDisplayed());
     }
 
-    @Test(description = "Make sure ability to click on the Heathy Food link that appear in the New Arrivals Section ", priority = 30)
+    @Test(description = "Make sure ability to click on the Healthy Food link that appear in the New Arrivals Section ", priority = 30)
     public void verifyAbilityToClickOnTheHealthyFoodLinkInNewArrivalsSection() {
         qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.switchToQatarCountry();
@@ -293,8 +289,8 @@ public class QatarHomePageTestCases extends BaseTest {
         qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.switchToQatarCountry();
         qatarHomePage.clickOnSportswearAndAccessoriesLinkInNewArrivalsSection();
-        DataHelperAndWait.waitToBeVisible(qatarHomePage.getNewArrivalsSportwearAndAccessoriesActiveLink(), 10);
-        Assert.assertTrue(qatarHomePage.getNewArrivalsSportwearAndAccessoriesActiveLink().isDisplayed());
+        DataHelperAndWait.waitToBeVisible(qatarHomePage.getNewArrivalsSportWearAndAccessoriesActiveLink(), 10);
+        Assert.assertTrue(qatarHomePage.getNewArrivalsSportWearAndAccessoriesActiveLink().isDisplayed());
     }
 
     @Test(description = "Make sure that previous button will appear in the New Arrivals Section when clicking on the next button ", priority = 33)
@@ -347,8 +343,8 @@ public class QatarHomePageTestCases extends BaseTest {
         qatarHomePage.switchToQatarCountry();
         qatarHomePage.clickOnPhoneBtn();
         // store window handles in Set
-        String currentwindow = webDriver.getWindowHandle();
-        webDriver.switchTo().window(currentwindow);
+        String currentWindow = webDriver.getWindowHandle();
+        webDriver.switchTo().window(currentWindow);
     }
 
     @Test(description = "Make sure clicking on the Sports Supplements category does not redirect the user to 404 page or No Content Found Page ", priority = 39)
@@ -356,7 +352,7 @@ public class QatarHomePageTestCases extends BaseTest {
         qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.switchToQatarCountry();
         qatarHomePage.clickOnSportsSupplementsCategory();
-        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
@@ -367,7 +363,7 @@ public class QatarHomePageTestCases extends BaseTest {
         qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.switchToQatarCountry();
         qatarHomePage.clickOnHealthyFoodCategory();
-        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
@@ -378,7 +374,7 @@ public class QatarHomePageTestCases extends BaseTest {
         qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.switchToQatarCountry();
         qatarHomePage.clickOnVitaminsAndHealthCategory();
-        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
@@ -389,7 +385,7 @@ public class QatarHomePageTestCases extends BaseTest {
         qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.switchToQatarCountry();
         qatarHomePage.clickOnSportswearAndAccessoriesCategory();
-        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");
@@ -401,7 +397,7 @@ public class QatarHomePageTestCases extends BaseTest {
         qatarHomePage.switchToQatarCountry();
         Assert.assertTrue(qatarHomePage.getHorizontalBanner().isDisplayed(), "The HomePage Horizontal Banner is missing");
         qatarHomePage.clickOnHomePageHorizontalBanner();
-        Boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
         assertFalse(isTheElementPresent, "The page is empty");

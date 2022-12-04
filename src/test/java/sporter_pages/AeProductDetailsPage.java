@@ -33,7 +33,7 @@ public class AeProductDetailsPage {
     @FindBy(xpath = "//*[@id=\"popup-block\"]/div[2]/a[2]")
     private WebElement viewCartBtn;
     @FindBy(id = "option-label-size-165-item-10037")
-    private WebElement productAttrubuit;
+    private WebElement productAttribute;
     @FindBy(id = "option-label-flavor-164-item-6939")
     private WebElement productFlavor;
     @FindBy(xpath = "//*[@id=\"algolia-searchbox\"]/button")
@@ -63,7 +63,7 @@ public class AeProductDetailsPage {
     @FindBy(id = "summary_field")
     private WebElement reviewSummaryField;
     @FindBy(id = "nickname_field")
-    private WebElement nickeNameField;
+    private WebElement nickNameField;
     @FindBy(xpath = "//*[text()='Submit Review']")
     private WebElement submitReviewButton;
     @FindBy(id = "ratings[2]-error")
@@ -81,9 +81,9 @@ public class AeProductDetailsPage {
     @FindBy(xpath = "//span[contains(text(),\"We're sorry for not being able to provide you with\")]")
     private WebElement OOSMsg;
     @FindBy(xpath = "//div[@class='error-content-outer offer-not-available']/div[@class='block-content-wrapper search-outer']")
-    private WebElement productUnavialableForCountry;
+    private WebElement productUnavailableForCountry;
     @FindBy(linkText = "Shop By")
-    private WebElement shopByMenyu;
+    private WebElement shopByMenu;
     @FindBy(css = "div[class='product-column--side'] span[data-price-type='finalPrice'] span")
     private WebElement FinalProductPrice;
     @FindBy(css = "div[class='product-column--side'] span[class='price']")
@@ -109,11 +109,11 @@ public class AeProductDetailsPage {
     @FindBy(xpath = "//ol[@class='products list items product-items']//li")
     private List<WebElement> megaMenuList;
     @FindBy(xpath = "//div[@class='swatch-attribute flavor']/div/div[@tabindex=0 and @index='0']")
-    private WebElement firtProdutFlavor;
+    private WebElement firstProductFlavor;
     @FindBy(xpath = "//div[@class='swatch-option text' and @index='0']")
-    private WebElement firstProdutsize;
+    private WebElement firstProductSize;
     @FindBy(xpath = "//div[@class='swatch-option text' and @index='1']")
-    private WebElement secondProdutsize;
+    private WebElement secondProductSize;
     @FindBy(xpath = "//div[@class='swatch-attribute flavor']/div/div[@tabindex=0 and @index='2']")
     private WebElement secondProductFlavor;
     @FindBy(xpath = "//div[@class='product attribute description']")
@@ -125,7 +125,7 @@ public class AeProductDetailsPage {
     @FindBy(xpath = "//div[@class='product attribute description']/h3")
     private WebElement aboutThisProductTitle;
     @FindBy(id = "product-attribute-specs-table")
-    private WebElement supplementFactsTabel;
+    private WebElement supplementFactsTable;
     @FindBy(id = "//div[@class='product attribute supplement_facts']/h2")
     private WebElement supplementFactsTitle;
     @FindBy(xpath = "//a[@class='user-account']")
@@ -141,9 +141,9 @@ public class AeProductDetailsPage {
     @FindBy(xpath = "//div[@class='ratings brands-label']/a")
     private WebElement productBrandLink;
     @FindBy(xpath = "(//a[@title='View Details'])[1]")
-    private WebElement firstProductInWheyProtienPage;
+    private WebElement firstProductInWheyProteinPage;
     @FindBy(xpath = "//div[@class='expected-delivery mobile-add-cart']")
-    private WebElement expectedDeliveryDateLable;
+    private WebElement expectedDeliveryDateLabel;
     @FindBy(xpath = "//div[@class='expected-delivery mobile-add-cart']/label")
     private WebElement expectedDeliveryDateValue;
     @FindBy(xpath = "(//a[@class='page'])[1]")
@@ -186,8 +186,8 @@ public class AeProductDetailsPage {
         return viewCartBtn;
     }
 
-    public WebElement getProductAttrubuit() {
-        return productAttrubuit;
+    public WebElement getProductAttribute() {
+        return productAttribute;
     }
 
     public WebElement getProductFlavor() {
@@ -214,8 +214,8 @@ public class AeProductDetailsPage {
         return addReviewButton;
     }
 
-    public WebElement getProductUnavialableForCountry() {
-        return productUnavialableForCountry;
+    public WebElement getProductUnavailableForCountry() {
+        return productUnavailableForCountry;
     }
 
     public WebElement getReviewErrorMsg() {
@@ -266,8 +266,8 @@ public class AeProductDetailsPage {
         return aboutThisProductTitle;
     }
 
-    public WebElement getSupplementFactsTabel() {
-        return supplementFactsTabel;
+    public WebElement getSupplementFactsTable() {
+        return supplementFactsTable;
     }
 
     public WebElement getSupplementFactsTitle() {
@@ -298,8 +298,8 @@ public class AeProductDetailsPage {
         return ProductHeaderBar;
     }
 
-    public WebElement getExpectedDeliveryDateLable() {
-        return expectedDeliveryDateLable;
+    public WebElement getExpectedDeliveryDateLabel() {
+        return expectedDeliveryDateLabel;
     }
 
     public WebElement getExpectedDeliveryDateValue() {
@@ -308,9 +308,9 @@ public class AeProductDetailsPage {
 
 
     //Define the main actions we need to execute our TCs
-    public void clickOnTheProductAttrubuits() {
-        DataHelperAndWait.isDisplayed(productAttrubuit, 5);
-        this.productAttrubuit.click();
+    public void clickOnTheProductAttributes() {
+        DataHelperAndWait.isDisplayed(productAttribute, 5);
+        this.productAttribute.click();
         this.productFlavor.click();
     }
 
@@ -343,8 +343,8 @@ public class AeProductDetailsPage {
     }
 
     public void clickOnFirstProductFlavor() {
-        DataHelperAndWait.waitToBeClickable(firtProdutFlavor, 10);
-        this.firtProdutFlavor.click();
+        DataHelperAndWait.waitToBeClickable(firstProductFlavor, 10);
+        this.firstProductFlavor.click();
     }
 
     public void clickOnSecondProductFlavor() {
@@ -427,11 +427,11 @@ public class AeProductDetailsPage {
         this.SportsSupplementsMenu.click();
     }
 
-    public void submitProductReview(String reviewDesc, String reviewSummary, String nickeName) {
+    public void submitProductReview(String reviewDesc, String reviewSummary, String nickName) {
         this.addReviewButton.click();
         this.reviewDescField.sendKeys(reviewDesc);
         this.reviewSummaryField.sendKeys(reviewSummary);
-        this.nickeNameField.sendKeys(nickeName);
+        this.nickNameField.sendKeys(nickName);
         DataHelperAndWait.waitToBeClickable(submitReviewButton, 20);
         this.submitReviewButton.click();
     }
@@ -499,9 +499,9 @@ public class AeProductDetailsPage {
         this.productBrandLink.click();
     }
 
-    public void clickOnFirstProductInWheyProtienPage() {
-        DataHelperAndWait.isDisplayed(firstProductInWheyProtienPage, 10);
-        this.firstProductInWheyProtienPage.click();
+    public void clickOnFirstProductInWheyProteinPage() {
+        DataHelperAndWait.isDisplayed(firstProductInWheyProteinPage, 10);
+        this.firstProductInWheyProteinPage.click();
     }
 
     public void clickOnPageBtnInReviewSection() {
@@ -520,13 +520,13 @@ public class AeProductDetailsPage {
     }
 
     public void clickOnFirstProductSize() {
-        DataHelperAndWait.isDisplayed(firstProdutsize, 10);
-        this.firstProdutsize.click();
+        DataHelperAndWait.isDisplayed(firstProductSize, 10);
+        this.firstProductSize.click();
     }
 
     public void clickOnSecondProductSize() {
-        DataHelperAndWait.isDisplayed(secondProdutsize, 10);
-        this.secondProdutsize.click();
+        DataHelperAndWait.isDisplayed(secondProductSize, 10);
+        this.secondProductSize.click();
     }
 
 }

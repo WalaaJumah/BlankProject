@@ -93,7 +93,6 @@ public class AEMegaMenuTestCases extends BaseTest {
     String antioxidantOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/healthy-lifestyle/antioxidant/";
     String bloodSugarSupportOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/healthy-lifestyle/blood-sugar-support/";
     String brainSupportOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/healthy-lifestyle/brain-support/";
-    String heartHealthOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/healthy-lifestyle/heart-health/";
     String detoxCleanseOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/healthy-lifestyle/detox-cleanse/";
     String energyFormulasOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/healthy-lifestyle/energy-formulas/";
     String eyeHealthOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/healthy-lifestyle/eye-health/";
@@ -160,7 +159,6 @@ public class AEMegaMenuTestCases extends BaseTest {
     String proteinCoffeeInHealthyFoodUrl = "/en-ae/healthy-food//featured/protein-coffee";
     String candiesInHealthyFoodUrl = "/en-ae/healthy-food//featured/candies";
     String flavoringAgentsInHealthyFoodUrl = "/en-ae/healthy-food//featured/flavoring-agents";
-    String ketoDietInHealthyFoodUrl = "/en-ae/healthy-food//featured/keto-diet";
     String ketoSnacksInHealthyFoodUrl = "/en-ae/healthy-food//featured/keto-diet";
     String manukaHoneyInHealthyFoodUrl = "/en-ae/healthy-food//featured/manuka-honey";
     String meatSnacksInHealthyFoodUrl = "/en-ae/healthy-food//featured/meat-snacks";
@@ -368,7 +366,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertEquals(aeMegamenuPage.getVitaminsAndHealthOption().getAttribute("textContent"), " Vitamins & Health\n\n");
         Assert.assertEquals(aeMegamenuPage.getHealthFoodOption().getAttribute("textContent"), " Healthy Food\n\n");
         Assert.assertEquals(aeMegamenuPage.getSportsOption().getAttribute("textContent"), " SPORTS\n\n");
-        Assert.assertEquals(aeMegamenuPage.getWomensOnlyOption().getAttribute("textContent"), " Women's Only\n\n");
+        Assert.assertEquals(aeMegamenuPage.getWomenOnlyOption().getAttribute("textContent"), " Women's Only\n\n");
         Assert.assertEquals(aeMegamenuPage.getByBrandOption().getAttribute("textContent"), " By Brand\n\n");
         Assert.assertEquals(aeMegamenuPage.getByGoalOption().getAttribute("textContent"), " By Goal\n\n");
         Assert.assertEquals(aeMegamenuPage.getSalesAndOffersOption().getAttribute("textContent"), " Sales & Offers\n\n");
@@ -497,8 +495,8 @@ public class AEMegaMenuTestCases extends BaseTest {
         action = new Actions(webDriver);
         aeMegamenuPage.switchToAECountry();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
-        action.moveToElement(aeMegamenuPage.getWomensOnlyOption()).perform();
-        aeMegamenuPage.getWomensOnlyOption().click();
+        action.moveToElement(aeMegamenuPage.getWomenOnlyOption()).perform();
+        aeMegamenuPage.getWomenOnlyOption().click();
         Assert.assertEquals(webDriver.getCurrentUrl(),siteURL+womenOnlyUrl);
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(womenOnlyUrl));
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
@@ -3436,7 +3434,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    //Theres A Bug Here Due To Water Bottles Option Appearing Duplicated ut I added this test case to save the qoption position
+    //There's A Bug Here Due To Water Bottles Option Appearing Duplicated ut I added this test case to save the qoption position
     @Test(description = "Theres A Bug Here Due To Water Bottles Option Appearing Duplicated", priority = 185)
     public void theresABugHereDueToWaterBottlesOptionAppearingDuplicated() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -8211,7 +8209,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     }
 
     @Test(description = "Make sure clicking on the APPAREL Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 491)
-    public void verifyClickingOnApperalOptionInSportsMainMenuRedirectUserToCorrectURL() {
+    public void verifyClickingOnApparelOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
         aeMegamenuPage.switchToAECountry();
@@ -8612,7 +8610,7 @@ public class AEMegaMenuTestCases extends BaseTest {
 
     //Women's Only Test Cases
     @Test(description = "Make sure clicking on the Women's Only main menu will redirect the User to the correct URL", priority = 516)
-    public void verifyClickingOnWomensOnlyMainMenuRedirectUserToCorrectURL() {
+    public void verifyClickingOnWomenOnlyMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
         aeMegamenuPage.switchToAECountry();

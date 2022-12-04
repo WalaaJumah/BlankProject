@@ -6,17 +6,27 @@
   <component name="ChangeListManager">
     <list default="true" id="1543f19a-355a-420f-8233-95e332a91e4b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/extent_report_listner/ExtentReportListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/extent_report_listner/ExtentReportListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AeSearchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/AeSearchPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AeSportSupplementsCategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/AeSportSupplementsCategoryPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/retry_failed_test_cases/RetryFailedTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/retry_failed_test_cases/RetryFailedTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AEMegaMenuPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/AEMegaMenuPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AeProductDetailsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/AeProductDetailsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AeRecommendedProductsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/AeRecommendedProductsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AeVitaminsAndHealthCategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/AeVitaminsAndHealthCategoryPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/KsaHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/KsaHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/QatarHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/QatarHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AEFooterPageTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AEFooterPageTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AEGuestUserTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AEGuestUserTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AEMegaMenuTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AEMegaMenuTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeCartTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AeCartTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeHealthyFoodCategoryTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AeHealthyFoodCategoryTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeSearchPageTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AeSearchPageTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeProductDetailsPageTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AeProductDetailsPageTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeRecommendedProductsTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AeRecommendedProductsTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeSportSupplementsCategoryTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AeSportSupplementsCategoryTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeSportsCategoryTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AeSportsCategoryTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeVitaminsAndHealthCategoryTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AeVitaminsAndHealthCategoryTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeWomenOnlyCategoryTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AeWomenOnlyCategoryTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/KsaHomePageTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/KsaHomePageTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/QatarHomePageTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/QatarHomePageTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +87,7 @@
     </option>
   </component>
   <component name="RunManager" selected="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/TestExecution.xml">
-    <configuration name="AeSportSupplementsCategoryTestCases.verifySearchBtnWorksCorrectlyFromSportSupplementsCategoryPage" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="AeSportSupplementsCategoryTestCases.verifyThePaginationControlWorksCorrectly" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
       <extension name="coverage">
         <pattern>
@@ -87,7 +97,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="sporter_test" />
       <option name="MAIN_CLASS_NAME" value="sporter_test.AeSportSupplementsCategoryTestCases" />
-      <option name="METHOD_NAME" value="verifySearchBtnWorksCorrectlyFromSportSupplementsCategoryPage" />
+      <option name="METHOD_NAME" value="verifyThePaginationControlWorksCorrectly" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -95,7 +105,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AeSportSupplementsCategoryTestCases.verifyThePagenationControlWorksCorrectly" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="AeSportsCategoryTestCases.verifyThePaginationControlInSportsTechCategoryPageWorksCorrectly" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
       <extension name="coverage">
         <pattern>
@@ -104,8 +114,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="sporter_test" />
-      <option name="MAIN_CLASS_NAME" value="sporter_test.AeSportSupplementsCategoryTestCases" />
-      <option name="METHOD_NAME" value="verifyThePagenationControlWorksCorrectly" />
+      <option name="MAIN_CLASS_NAME" value="sporter_test.AeSportsCategoryTestCases" />
+      <option name="METHOD_NAME" value="verifyThePaginationControlInSportsTechCategoryPageWorksCorrectly" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -167,8 +177,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="TestNG.AeSportSupplementsCategoryTestCases.verifySearchBtnWorksCorrectlyFromSportSupplementsCategoryPage" />
-      <item itemvalue="TestNG.AeSportSupplementsCategoryTestCases.verifyThePagenationControlWorksCorrectly" />
+      <item itemvalue="TestNG.AeSportSupplementsCategoryTestCases.verifyThePaginationControlWorksCorrectly" />
+      <item itemvalue="TestNG.AeSportsCategoryTestCases.verifyThePaginationControlInSportsTechCategoryPageWorksCorrectly" />
       <item itemvalue="TestNG.AeVitaminsAndHealthCategoryTestCases.verifyClickingOnMineralsCategoryInsideTheShopByCategorySectionWorksCorrectly" />
       <item itemvalue="TestNG.C:/Users/w.jumaa/Downloads/automation-framework-enhanced-master/sporter-web-automation/src/test/resources/AeMegaMenu.xml" />
       <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/TestExecution.xml" />
@@ -176,10 +186,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/TestExecution.xml" />
+        <item itemvalue="TestNG.AeSportsCategoryTestCases.verifyThePaginationControlInSportsTechCategoryPageWorksCorrectly" />
         <item itemvalue="TestNG.AeVitaminsAndHealthCategoryTestCases.verifyClickingOnMineralsCategoryInsideTheShopByCategorySectionWorksCorrectly" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/Downloads/automation-framework-enhanced-master/sporter-web-automation/src/test/resources/AeMegaMenu.xml" />
-        <item itemvalue="TestNG.AeSportSupplementsCategoryTestCases.verifyThePagenationControlWorksCorrectly" />
-        <item itemvalue="TestNG.AeSportSupplementsCategoryTestCases.verifySearchBtnWorksCorrectlyFromSportSupplementsCategoryPage" />
+        <item itemvalue="TestNG.AeSportSupplementsCategoryTestCases.verifyThePaginationControlWorksCorrectly" />
       </list>
     </recent_temporary>
   </component>
@@ -214,8 +224,17 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/sporter_test/AEMegaMenuTestCases.java</url>
-          <line>5236</line>
+          <line>5234</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/sporter_test/AeWomenOnlyCategoryTestCases.java</url>
+          <line>1393</line>
+          <properties class="sporter_test.AeWomenOnlyCategoryTestCases" method="verifyResultFieldAndItsVaLueAppearInThePMSReliefCategoryPage">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

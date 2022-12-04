@@ -34,10 +34,7 @@ public class DataHelperAndWait extends BaseTest {
         return wait.until(ExpectedConditions.visibilityOf(element)).isDisplayed();
     }
     public static boolean isPresent(WebElement webElement) {
-        if (webElement.isDisplayed())
-            return true;
-        else
-            return false;
+        return webElement.isDisplayed();
     }
 
     public static void implicitWait(int timeSecond) {
@@ -96,8 +93,7 @@ public class DataHelperAndWait extends BaseTest {
         String elementValue = element.getText();
         String elementValueWithoutCurrency = elementValue.replaceAll("AED", "");
         String elementValueWithoutSpace = elementValueWithoutCurrency.replaceAll(" ", "");
-        float elemetdouble = Float.parseFloat(elementValueWithoutSpace);
-        return elemetdouble;
+        return Float.parseFloat(elementValueWithoutSpace);
     }
     public static void switchToTabBrowser(int tabIndex) {
         ArrayList<String> numberOfTabsTwo = new ArrayList<String>(webDriver.getWindowHandles());

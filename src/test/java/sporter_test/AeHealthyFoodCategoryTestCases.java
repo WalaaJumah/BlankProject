@@ -108,7 +108,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
-        ArrayList<String> expectedOption = new ArrayList<String>() {{
+        ArrayList<String> expectedOption = new ArrayList<>() {{
             add("Relevance");
             add("Name");
             add("Best Selling");
@@ -130,7 +130,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
     }
     //There's a bug here
     @Test(description = "Make sure each of the Healthy Food category image and Horizontal Banners appearing after sorting the products  ", priority = 12)
-    public void verifyHealthyFoodCategoryImageAndHorizontalBannersAppearingAfterSortingTheProducts() throws InterruptedException {
+    public void verifyHealthyFoodCategoryImageAndHorizontalBannersAppearingAfterSortingTheProducts()  {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
@@ -143,7 +143,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
     }
     //There's a bug here
     @Test(description = "Make sure Sort By Menu appears correctly in the page after sorting By Relevance  ", priority = 13)
-    public void verifySortByMenuAppearingAfterSortingByRelevance() throws InterruptedException {
+    public void verifySortByMenuAppearingAfterSortingByRelevance() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
@@ -152,7 +152,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
     }
     @Test(description = "Make sure Sort By Menu appears correctly in the page after sorting By Name  ", priority = 14)
-    public void verifySortByMenuAppearingAfterSortingByName() throws InterruptedException {
+    public void verifySortByMenuAppearingAfterSortingByName() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
@@ -161,7 +161,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
     }
     @Test(description = "Make sure Sort By Menu appears correctly in the page after sorting By Best Selling  ", priority = 15)
-    public void verifySortByMenuAppearingAfterSortingByBestSelling() throws InterruptedException {
+    public void verifySortByMenuAppearingAfterSortingByBestSelling(){
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
@@ -170,7 +170,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
     }
     @Test(description = "Make sure Sort By Menu appears correctly in the page after sorting By Price Min-Max  ", priority = 16)
-    public void verifySortByMenuAppearingAfterSortingByPriceMinMax() throws InterruptedException {
+    public void verifySortByMenuAppearingAfterSortingByPriceMinMax() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
@@ -179,7 +179,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
     }
     @Test(description = "Make sure Sort By Menu appears correctly in the page after sorting By Price Max-Min  ", priority = 17)
-    public void verifySortByMenuAppearingAfterSortingByPriceMaxMin() throws InterruptedException {
+    public void verifySortByMenuAppearingAfterSortingByPriceMaxMin(){
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
@@ -200,7 +200,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         aeHealthyFoodCategoryPage= new AeHealthyFoodCategoryPage(webDriver);
         this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSportSupplementsTitleInFooterSection().getText(), "Healthy Food");
-        Assert.assertEquals(aeHealthyFoodCategoryPage.getHealthyFoodDescriptionP1InFooterSection().getText()+aeHealthyFoodCategoryPage.getHealthyFoodDescriptionP2InFooterSection().getText()+aeHealthyFoodCategoryPage.getHealthyFoodDescriptionP3InFooterSection().getText()+aeHealthyFoodCategoryPage.getHealthyFoodDescriptionP4InFooterSection().getText(), "If you spend a lot of time researching, trying to eat healthy foods, have a dedicated diet or food restrictions, or consistently buy organic or non-GMO foods online, you probably know how hard it is to find what you need or at least to find it in one place.Although it has become much easier to find healthy foods in regular grocery stores, the options are still limited, particularly if you want to buy 100 percent healthy foods and organic products for your entire home. Even if there is a dedicated healthy food store in your area, Sporter can fill the gaps that your local store doesn’t, or if you were looking for a certain brand that you like the most.\n" +
+        Assert.assertEquals(aeHealthyFoodCategoryPage.getHealthyFoodDescriptionP1InFooterSection().getText()+aeHealthyFoodCategoryPage.getHealthyFoodDescriptionP2InFooterSection().getText()+aeHealthyFoodCategoryPage.getHealthyFoodDescriptionP3InFooterSection().getText()+aeHealthyFoodCategoryPage.getHealthyFoodDescriptionP4InFooterSection().getText(), "If you spend a lot of time researching, trying to eat healthy foods, have a dedicated diet or food restrictions, or consistently buy organic or non-GMO foods online, you probably know how hard it is to find what you need or at least to find it in one place.Although it has become much easier to find healthy foods in regular grocery stores, the options are still limited, particularly if you want to buy 100 percent healthy foods and organic products for your entire home. Even if there is a dedicated healthy food store in your area, Sporter can fill the gaps that your local store does not, or if you were looking for a certain brand that you like the most.\n" +
                 "\n" +
                 "Eating right and finding healthy foods online can be tough too, so we are here to help and make it easy with our high-quality collection of delicious, healthy food products. We offer responsible and nutrient-rich choices, including rice, oats, milk, natural food and sports snacks, detox teas, spices, gluten free baking products and more, so you can get the most out of your diet every day. Sporter is also great when you need dairy-free, soy-free, vegan, vegetarian, or gluten-free foods. No need to stand in an aisle to read the list of ingredients on your breakfast cereal, since you can click a button to see all the items that fit your criteria.You can shop healthy foods online any time of the day that works best for you, instead of fighting the crowds or trying to get to the grocery store before it closes.\n" +
                 "Our products make your meals tastier and healthier in simple preparations. Our healthy products are loved by children and adults alike, which helps you prepare the best meal for the whole family. So buy branded and packaged food from our online store from the comfort of your homes and enjoy great recipes at a great price.");
@@ -226,7 +226,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         Assert.assertTrue(aeSportSupplementsCategoryPage.getDisabledPreviousPageBtn().isDisplayed());
     }
     @Test(description = "Make Sure the Pagination control works correctly", priority = 22)
-    public void verifyThePagenationControlWorksCorrectly() throws InterruptedException {
+    public void verifyThePaginationControlWorksCorrectly(){
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeSportSupplementsCategoryPage.navigateToPage2();
@@ -234,16 +234,16 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(description = "Make Sure the previous page button works correctly", priority = 23)
-    public void verifyPreviousPageBtnWorksCorrectly() throws InterruptedException {
+    public void verifyPreviousPageBtnWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyThePagenationControlWorksCorrectly();
+        this.verifyThePaginationControlWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(description = "Make Sure the next page button works correctly", priority = 24)
-    public void verifyNextPageBtnWorksCorrectly() throws InterruptedException {
+    public void verifyNextPageBtnWorksCorrectly(){
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyThePagenationControlWorksCorrectly();
+        this.verifyThePaginationControlWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
@@ -252,7 +252,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeSportSupplementsCategoryPage.clickOnSeeAllBtnInFormSection();
-        ArrayList<String> expectedFiltration = new ArrayList<String>() {{
+        ArrayList<String> expectedFiltration = new ArrayList<>() {{
             add("Multi");
             add("Stew");
             add("Bars");

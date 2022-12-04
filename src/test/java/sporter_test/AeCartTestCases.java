@@ -245,7 +245,7 @@ public class AeCartTestCases extends BaseTest {
     }
 
     @Test(description = "Make sure that the Free Gift does not have a price", priority = 18)
-    public void verifyTheFreeGiftIsDoesnotHavePrice() {
+    public void verifyTheFreeGiftIsDoesNotHavePrice() {
         aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         aeCartPage = new AeCartPage(webDriver);
         aeProductDetailsPage.switchToAeCountry();
@@ -286,7 +286,7 @@ public class AeCartTestCases extends BaseTest {
     }
 
     @Test(description = "Make sure that Make sure that complete your order, to get 100% GENUINE PRODUCTS and SUPER DELIVERY WITHIN 2 WORKING DAYS label appears in the Cart Page", priority = 21)
-    public void verifytheFreeShippingLabelAppearCorrectlyInTheCartPage() {
+    public void verifyTheFreeShippingLabelAppearCorrectlyInTheCartPage() {
         aeCartPage = new AeCartPage(webDriver);
         this.viewCartFromPDP();
         Assert.assertTrue(aeCartPage.getFreeShippingLabel().isDisplayed());
@@ -433,8 +433,8 @@ public class AeCartTestCases extends BaseTest {
         Assert.assertFalse(aeCartPage.getCloseIconInCartPopup().isDisplayed());
     }
 
-    @Test(description = "Make sure that the free coupone code working fine", priority = 34)
-    public void verifyFreeCoupopneCodeFunctionWorksCorrectly() {
+    @Test(description = "Make sure that the free coupon code working fine", priority = 34)
+    public void verifyFreeCouponCodeFunctionWorksCorrectly() {
         aeCartPage = new AeCartPage(webDriver);
         this.viewCartFromPDP();
         aeCartPage.FillInCouponCode(freeCouponeCode);
@@ -554,7 +554,7 @@ public class AeCartTestCases extends BaseTest {
         assertTrue(aeProductDetailsPage.getAccountProfileOptions().isDisplayed());
     }
 
-    @Test(description = "Make sure ability to navigate to the home page by clicking on the sporter logo from the Cart Page ", priority = 47)
+    @Test(description = "Make sure ability to navigate to the home page by clicking on the Sporter logo from the Cart Page ", priority = 47)
     public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromCartPage() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
         this.viewCartFromPDP();

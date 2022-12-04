@@ -31,13 +31,13 @@ public class AeRecommendedProductsPage {
     @FindBy(css = "div[id='popup-block'] h2:nth-child(1)")
     private WebElement recommendedProductsTitle;
     @FindBy(xpath = "//div[@class='cart-button']")
-    private WebElement addToCartBtns;
+    private WebElement addToCartBtn;
     @FindBy(xpath = "//div[3]/div/div/div[2]/div[2]/button")
     private WebElement addToCart;
     @FindBy(xpath = "(//div[@class='inner-seller-prod'])[1]")
     private WebElement firstProductCard;
     @FindBy(xpath = "(//a[@class='rcmd-product-name'])[1]")
-    private WebElement firstProductname;
+    private WebElement firstProductName;
 
     //Getter Methods
     public WebElement getCircleIcon() {
@@ -64,8 +64,8 @@ public class AeRecommendedProductsPage {
         return productImages;
     }
 
-    public WebElement getAddToCartBtns() {
-        return addToCartBtns;
+    public WebElement getAddToCartBtn() {
+        return addToCartBtn;
     }
 
     public WebElement getProductPriceForFirstProduct() {
@@ -73,7 +73,7 @@ public class AeRecommendedProductsPage {
     }
 
     public WebElement getFirstProductName() {
-        return firstProductname;
+        return firstProductName;
     }
 
     //Define the main actions we need to execute our TCs

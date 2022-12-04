@@ -26,9 +26,9 @@
 
         <classes>
 
-        <class name="sporter_test.AeCartTestCases">
+        <class name="sporter_test.KsaHomePageTestCases">
             <methods>
-                <include name="verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromCartPage" />
+                <include name="verifyClickingOnSportswearAndAccessoriesCategoryDoeNotRedirectTheUserTo404PageOrNoContentFoundPage" />
 <!--                <include name="verifyAbilityToAccessAllPagesInsideWomensApparelCategoryPageCorrectly" />-->
 <!--                <include name="verifyAbilityToAccessAllPagesInsideMensApparelCategoryPageCorrectly" />-->
 <!--                <include name="m2" />-->

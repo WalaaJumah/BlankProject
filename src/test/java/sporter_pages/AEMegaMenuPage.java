@@ -78,7 +78,7 @@ public class AEMegaMenuPage {
     @FindBy(xpath = "//nav[@id='nav']/ul/li/nav/ul/li[4]/a/i")
     private WebElement sportsArrowIcon;
     @FindBy(xpath = "//ul[@class='cd-dropdown-content']/li[5]/a")
-    private WebElement womensOnlyOption;
+    private WebElement womenOnlyOption;
     @FindBy(xpath = "//ul[@class='cd-dropdown-content']/li[6]/a")
     private WebElement byBrandOption;
     @FindBy(xpath = "//nav[@id='nav']/ul/li/nav/ul/li[6]/a/i")
@@ -1082,8 +1082,8 @@ public class AEMegaMenuPage {
         return sportsOption;
     }
 
-    public WebElement getWomensOnlyOption() {
-        return womensOnlyOption;
+    public WebElement getWomenOnlyOption() {
+        return womenOnlyOption;
     }
 
     public WebElement getByBrandOption() {

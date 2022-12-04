@@ -23,7 +23,7 @@ public class KsaHomePage {
     @FindBy(xpath = "//a[contains(text(),'Previous')]")
     private WebElement previousArrowInHomePageRotatingSlider;
     @FindBy(css = "ul.slides li.flex-active-slide:nth-child(2)")
-    private List<WebElement> homePageRotatingSliderlist;
+    private List<WebElement> homePageRotatingSliderList;
     @FindBy(css = "ul.slides li.flex-active-slide:nth-child(2)")
     private WebElement homePageRotatingSlider;
     @FindBy(xpath = "//*[@class='flex-control-nav flex-control-paging']")
@@ -43,7 +43,7 @@ public class KsaHomePage {
     @FindBy(xpath = "//ul[@class='nav-primary']/li[6]")
     private WebElement womenOnlyOption;
     @FindBy(xpath = "//ul[@class='nav-primary']")
-    private WebElement megaMenuMaincomponent;
+    private WebElement megaMenuMainComponent;
     @FindBy(xpath = "//*[@class='flex-control-nav flex-control-paging']")
     private WebElement homePageRotatingSliderPagingControl;
     @FindBy(xpath = "//div[@class='nutritious-right']")
@@ -57,7 +57,7 @@ public class KsaHomePage {
     @FindBy(xpath = "//h2[text()='Top Selling Stacks']")
     private WebElement topSellerHeader;
     @FindBy(xpath = "//div[@class='shop-category-slider swiper-container swiper-container-horizontal']")
-    private WebElement shopByCategorysections;
+    private WebElement shopByCategorySections;
     @FindBy(xpath = "//*[@class='tab_content tab_content39']")
     private WebElement topSellingStacksSections;
     @FindBy(id = "tab-67-all67")
@@ -187,7 +187,7 @@ public class KsaHomePage {
     }
 
     public WebElement getShopByCategorySections() {
-        return shopByCategorysections;
+        return shopByCategorySections;
     }
 
     public WebElement getTopSellerSections() {
@@ -199,7 +199,7 @@ public class KsaHomePage {
     }
 
     public WebElement getMegaMenuMainComponent() {
-        return megaMenuMaincomponent;
+        return megaMenuMainComponent;
     }
 
     public WebElement getHorizontalBanner() {
@@ -207,7 +207,7 @@ public class KsaHomePage {
     }
 
     public List<WebElement> getHomePageRotatingSliderList() {
-        return homePageRotatingSliderlist;
+        return homePageRotatingSliderList;
     }
 
     public WebElement getShopByOption() {
@@ -362,7 +362,7 @@ public class KsaHomePage {
         return newArrivalsHealthyFoodActiveLink;
     }
 
-    public WebElement getNewArrivalsSportwearAndAccessoriesActiveLink() {
+    public WebElement getNewArrivalsSportWearAndAccessoriesActiveLink() {
         return newArrivalsSportswearAndAccessoriesActiveLink;
     }
 

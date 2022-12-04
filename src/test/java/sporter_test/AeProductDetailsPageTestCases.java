@@ -51,7 +51,7 @@ public class AeProductDetailsPageTestCases extends BaseTest {
     }
 
     @Test(description = "Make sure the shopper is unable to add out of stock product to the cart", priority = 4)
-    public void verifyUnabilityToAddOosProductToTheCart() {
+    public void verifyInabilityToAddOosProductToTheCart() {
         aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.switchToAeCountry();
         webDriver.navigate().to(outOfStockProduct);
@@ -71,13 +71,12 @@ public class AeProductDetailsPageTestCases extends BaseTest {
     }
 
     @Test(description = "Make sure the system will display a message when the offer is not available in the selected country", priority = 6)
-    public void verifyUnabilityToDisplayUnAvailableOffer() {
+    public void verifyInabilityToDisplayUnAvailableOffer() {
         aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.switchToAeCountry();
         aeProductDetailsPage.clickOnProductInHomePage();
         aeProductDetailsPage.switchToLebanonCountry();
-        assertTrue(aeProductDetailsPage.getProductUnavialableForCountry().isDisplayed());
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertTrue(aeProductDetailsPage.getProductUnavailableForCountry().isDisplayed());
 //        assertTrue(verifyTitle, "Page Not Found Is Displayed");
     }
 
@@ -110,7 +109,7 @@ public class AeProductDetailsPageTestCases extends BaseTest {
         aeProductDetailsPage.clickOnProductInHomePage();
         DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getAddReviewButton(), 10);
         aeProductDetailsPage.selectStarInReview();
-        aeProductDetailsPage.submitProductReview("Review Description", "Review Summary", "Wala'a Mohammad");
+        aeProductDetailsPage.submitProductReview("Review Description", "Review Summary", "Walaa Mohammad");
         DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getReviewToastMsg(), 10);
         assertTrue(aeProductDetailsPage.getReviewToastMsg().isDisplayed());
     }
@@ -133,13 +132,13 @@ public class AeProductDetailsPageTestCases extends BaseTest {
         aeProductDetailsPage.clickOnProductInHomePage();
         DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getAddReviewButton(), 10);
         aeProductDetailsPage.selectStarInReview();
-        aeProductDetailsPage.submitProductReview("Review Description With Long Length Review Description With Long LengthReReview Description With Long Length Review Description With Long Lengthview Description With Long Length ", "Review Summary WIth Long Length Review Summary WIth Long Length Review Summary WIth Long Length Review Summary WIth Long Length Review Summary WIth Long Length ", "Abd-Alrahman Abd Alazez Abdullah Mohammad Khair");
+        aeProductDetailsPage.submitProductReview("Review Description With Long Length Review Description With Long LengthReReview Description With Long Length Review Description With Long Length view Description With Long Length ", "Review Summary WIth Long Length Review Summary WIth Long Length Review Summary WIth Long Length Review Summary WIth Long Length Review Summary WIth Long Length ", "Abd-Alrahman Abd Alazez Abdullah Mohammad Khair");
         DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getReviewToastMsg(), 5);
         assertTrue(aeProductDetailsPage.getReviewToastMsg().isDisplayed());
     }
 
     @Test(description = "Make sure that the customer can navigate to the home page using the BreadCrumb ", priority = 12)
-    public void verifyAbilityToNavigatetToHomePageUsingTheBreadCrumb() {
+    public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumb() {
         aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.switchToAeCountry();
         aeProductDetailsPage.clickOnProductInHomePage();
@@ -179,14 +178,14 @@ public class AeProductDetailsPageTestCases extends BaseTest {
         aeProductDetailsPage.switchToAeCountry();
         aeProductDetailsPage.clickOnProductInHomePage();
         DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getAddToCartBtn(), 10);
-        String currectProductPrice = aeProductDetailsPage.getProductPrice().getText();
+        String currentProductPrice = aeProductDetailsPage.getProductPrice().getText();
         aeProductDetailsPage.increaseTheQuantity();
         String newProductPrice = aeProductDetailsPage.getProductPrice().getText();
-        Assert.assertNotEquals(currectProductPrice, newProductPrice);
+        Assert.assertNotEquals(currentProductPrice, newProductPrice);
     }
 
     @Test(description = "Make sure that the customer cannot add more than 2 Qty for the same product when switching to Jordan Store", priority = 16)
-    public void verifyUnabilityToAddMoreThan2QtyForJOStore() {
+    public void verifyInabilityToAddMoreThan2QtyForJOStore() {
         aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.switchToJOCountry();
         aeProductDetailsPage.clickOnJOProductInHomePage();
@@ -232,7 +231,7 @@ public class AeProductDetailsPageTestCases extends BaseTest {
     }
 
     @Test(description = "Verify that the About This product section displays correctly in the PDP", priority = 19)
-    public void verifyAboutThisProductSecttionDisplaysCorrectlyInProductDetailsPage() {
+    public void verifyAboutThisProductSectionDisplaysCorrectlyInProductDetailsPage() {
         aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.switchToAeCountry();
         aeProductDetailsPage.clickOnProductInHomePage();
@@ -246,8 +245,8 @@ public class AeProductDetailsPageTestCases extends BaseTest {
         aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.switchToAeCountry();
         aeProductDetailsPage.clickOnProductInHomePage();
-        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getSupplementFactsTabel(), 10);
-        assertTrue(aeProductDetailsPage.getSupplementFactsTabel().isDisplayed());
+        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getSupplementFactsTable(), 10);
+        assertTrue(aeProductDetailsPage.getSupplementFactsTable().isDisplayed());
         assertEquals(aeProductDetailsPage.getSupplementFactsTitle().getText(), "Supplement Facts");
     }
 
@@ -338,7 +337,7 @@ public class AeProductDetailsPageTestCases extends BaseTest {
         aeMegaMenuTestCases = new AEMegaMenuTestCases();
         aeProductDetailsPage.switchToAeCountry();
         aeMegaMenuTestCases.verifyClickingOnWheyProteinOptionOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL();
-        aeProductDetailsPage.clickOnFirstProductInWheyProtienPage();
+        aeProductDetailsPage.clickOnFirstProductInWheyProteinPage();
         String productUrl = webDriver.getCurrentUrl();
         aeProductDetailsPage.clickOnProductBrandLink();
         String brandUrl = webDriver.getCurrentUrl();
@@ -354,8 +353,8 @@ public class AeProductDetailsPageTestCases extends BaseTest {
         aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.switchToAeCountry();
         aeProductDetailsPage.clickOnProductInHomePage();
-        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getExpectedDeliveryDateLable(), 10);
-        assertTrue(aeProductDetailsPage.getExpectedDeliveryDateLable().isDisplayed());
+        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getExpectedDeliveryDateLabel(), 10);
+        assertTrue(aeProductDetailsPage.getExpectedDeliveryDateLabel().isDisplayed());
         assertTrue(aeProductDetailsPage.getExpectedDeliveryDateValue().isDisplayed());
     }
 

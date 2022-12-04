@@ -27,7 +27,7 @@ public class AEGuestUserTestCases extends BaseTest {
     String longLengthText = "Test with Long Length Test with Long Length Test with Long Length Test with Long Length Test with Long Length Test with Long Length Test with Long Length Test with Long Length Test with Long Length Test with Long Length Test with Long Length Test with Long Length 10";
 
     @Test(description = "Make sure to access the Guest Checkout page from the cart page correctly", priority = 1)
-    public void verifyAbilityToAccessTheGuestCheckoutPagefromTheCartPageCorrectly() {
+    public void verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPageCorrectly() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
         aeGuestUserPage.switchToAECountry();
         aeGuestUserPage.clickOnProductInHomePage();
@@ -39,7 +39,7 @@ public class AEGuestUserTestCases extends BaseTest {
     }
 
     @Test(description = "Make sure to access the Guest Checkout page from the cart pop up correctly", priority = 2)
-    public void verifyAbilityToAccessTheGuestCheckoutPagefromTheCartPopUpCorrectly() {
+    public void verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPopUpCorrectly() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
         aeGuestUserPage.switchToAECountry();
         aeGuestUserPage.clickOnProductInHomePage();
@@ -54,7 +54,7 @@ public class AEGuestUserTestCases extends BaseTest {
     @Test(description = "Make sure the Guest user can filling the shipping information correctly", priority = 3)
     public void verifyTheGuestUserCanFillTheShippingInformationCorrectly() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
-        this.verifyAbilityToAccessTheGuestCheckoutPagefromTheCartPageCorrectly();
+        this.verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPageCorrectly();
         aeGuestUserPage.fillInShippingInformationInputField(firstName, lastName, email, phone, address, streetLineOne, streetLineTwo);
         Select select = new Select(aeGuestUserPage.getCityMenu());
         WebElement cityOption = select.getOptions().get(2);
@@ -67,7 +67,7 @@ public class AEGuestUserTestCases extends BaseTest {
     @Test(description = "Make sure the system displays the store country by default in country field", priority = 4)
     public void verifyTheCountryRetrievedInCountryFieldBasedOnStoreCountry() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
-        this.verifyAbilityToAccessTheGuestCheckoutPagefromTheCartPageCorrectly();
+        this.verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPageCorrectly();
         Assert.assertEquals(aeGuestUserPage.getCountryField().getText(), "United Arab Emirates");
     }
 
@@ -93,7 +93,7 @@ public class AEGuestUserTestCases extends BaseTest {
     @Test(description = "Make sure the Guest user cannot submit the shipping information when keeping the required fields empty", priority = 6)
     public void verifyTheGuestUserCannotSubmitTheShippingInformationWithoutFillingTheRequiredFields() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
-        this.verifyAbilityToAccessTheGuestCheckoutPagefromTheCartPageCorrectly();
+        this.verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPageCorrectly();
         aeGuestUserPage.fillInShippingInformationInputField(" ", " ", " ", " ", " ", " ", streetLineTwo);
         Select select = new Select(aeGuestUserPage.getCityMenu());
         WebElement cityOption = select.getOptions().get(0);
@@ -149,7 +149,7 @@ public class AEGuestUserTestCases extends BaseTest {
     @Test(description = "Make sure the city Search field works correctly and retrieved the matched result ", priority = 9)
     public void verifyCitySearchWorksFineAndRetrievedTheMatchedResult() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
-        this.verifyAbilityToAccessTheGuestCheckoutPagefromTheCartPageCorrectly();
+        this.verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPageCorrectly();
         aeGuestUserPage.getCityListField().click();
         aeGuestUserPage.getCitySearchField().sendKeys("D");
         for (WebElement webElement : aeGuestUserPage.getSearchMenu()) {
@@ -161,7 +161,7 @@ public class AEGuestUserTestCases extends BaseTest {
     @Test(description = "Make sure the city Search field works correctly when searching for option does not exist in the list ", priority = 10)
     public void verifyCitySearchWorksFineWhenSearchingForOptionDoesNotExist() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
-        this.verifyAbilityToAccessTheGuestCheckoutPagefromTheCartPageCorrectly();
+        this.verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPageCorrectly();
         aeGuestUserPage.getCityListField().click();
         aeGuestUserPage.getCitySearchField().sendKeys("test");
         for (WebElement webElement : aeGuestUserPage.getSearchMenu()) {
@@ -173,7 +173,7 @@ public class AEGuestUserTestCases extends BaseTest {
     @Test(description = "Make sure the city Search list will retrieve all city options when searching using Space", priority = 11)
     public void verifyCitySearchListRetrieveAllOptionWhenEnteringSpace() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
-        this.verifyAbilityToAccessTheGuestCheckoutPagefromTheCartPageCorrectly();
+        this.verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPageCorrectly();
         aeGuestUserPage.getCityListField().click();
         aeGuestUserPage.getCitySearchField().sendKeys(" ");
         for (WebElement webElement : aeGuestUserPage.getSearchMenu()) {
@@ -185,7 +185,7 @@ public class AEGuestUserTestCases extends BaseTest {
     public void verifyAbilityToFillAndNavigateBetweenTheShippingInformationFormUsingTabKeyAndKeyboardShortCut() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
         Actions act = new Actions(webDriver);
-        this.verifyAbilityToAccessTheGuestCheckoutPagefromTheCartPageCorrectly();
+        this.verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPageCorrectly();
         aeGuestUserPage.clickOnFirstNameField();
         aeGuestUserPage.getFirstNameField().sendKeys(firstName);
         act.sendKeys(Keys.TAB).build().perform();
@@ -213,10 +213,10 @@ public class AEGuestUserTestCases extends BaseTest {
 
     /////////////////////
     @Test(description = "Make sure inability to submit the shipping information when filling " +
-            "streetLine 1&2 & First Name & LastNamefields with the text length>=255 symbols & the validation message appears correctly", priority = 13)
+            "streetLine 1&2 & First Name & Last Name fields with the text length>=255 symbols & the validation message appears correctly", priority = 13)
     public void verifyInabilityToSubmitTheShippingInformationFormWhenFillingFieldsWithTextLengthGreaterThan255Symbols() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
-        this.verifyAbilityToAccessTheGuestCheckoutPagefromTheCartPageCorrectly();
+        this.verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPageCorrectly();
         aeGuestUserPage.fillInShippingInformationInputField(longLengthText, longLengthText, email, phone, address, longLengthText, longLengthText);
         Select select = new Select(aeGuestUserPage.getCityMenu());
         WebElement cityOption = select.getOptions().get(0);
@@ -232,7 +232,7 @@ public class AEGuestUserTestCases extends BaseTest {
     @Test(description = "Make sure the Select a billing address from your address book or enter a new address header appears correctly ", priority = 14)
     public void verifyTheHeaderOfShippingInformationFormIsDisplayed() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
-        this.verifyAbilityToAccessTheGuestCheckoutPagefromTheCartPageCorrectly();
+        this.verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPageCorrectly();
         DataHelperAndWait.waitToBeVisible(aeGuestUserPage.getTitleOfGuectUserShippingInformationScreen(), 10);
         Assert.assertTrue(aeGuestUserPage.getTitleOfGuectUserShippingInformationScreen().isDisplayed());
     }
@@ -240,7 +240,7 @@ public class AEGuestUserTestCases extends BaseTest {
     @Test(description = "Make sure the return to the cart link works correctly  ", priority = 15)
     public void verifyBackToCartLinkWorksCorrectly() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
-        this.verifyAbilityToAccessTheGuestCheckoutPagefromTheCartPageCorrectly();
+        this.verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPageCorrectly();
         aeGuestUserPage.clickOnReturnToCartIcon();
         Assert.assertEquals(webDriver.getCurrentUrl(), "https://www.sporter.com/en-ae/checkout/cart/");
     }
@@ -248,7 +248,7 @@ public class AEGuestUserTestCases extends BaseTest {
     @Test(description = "Make sure ability to navigate to the home page by clicking on the sporter logo ", priority = 16)
     public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogo() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
-        this.verifyAbilityToAccessTheGuestCheckoutPagefromTheCartPageCorrectly();
+        this.verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPageCorrectly();
         aeGuestUserPage.clickOnSporterLogo();
         Assert.assertEquals(webDriver.getCurrentUrl(), "https://www.sporter.com/en-ae/");
     }

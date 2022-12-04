@@ -89,7 +89,7 @@ public class AeVitaminsAndHealthCategoryPage {
     @FindBy(xpath = "(//div[@data-swiper-slide-index='7']//a)[1]")
     private WebElement heartHealthCategory;
     @FindBy(xpath = "(//div[@data-swiper-slide-index='8']//a)[1]")
-    private WebElement immunitySupporCategory;
+    private WebElement immunitySupportCategory;
     @FindBy(xpath = "(//div[@data-swiper-slide-index='9']//a)[1]")
     private WebElement kidsHealthCategory;
     @FindBy(xpath = "(//div[@data-swiper-slide-index='10']//a)[2]")
@@ -380,8 +380,8 @@ public class AeVitaminsAndHealthCategoryPage {
         return heartHealthCategory;
     }
 
-    public WebElement getImmunitySupporCategory() {
-        return immunitySupporCategory;
+    public WebElement getImmunitySupportCategory() {
+        return immunitySupportCategory;
     }
 
     public WebElement getKidsHealthCategory() {
@@ -508,7 +508,7 @@ public class AeVitaminsAndHealthCategoryPage {
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
-        this.immunitySupporCategory.click();
+        this.immunitySupportCategory.click();
     }
 
     public void clickOnKidsHealthCategory() {

@@ -17,19 +17,19 @@ public class QatarHomePage {
     @FindBy(id = "switcher-store-trigger")
     private WebElement countryList;
     @FindBy(xpath = "//li[@class='country_switch']/span[@class='QA']")
-    private WebElement qaterCountry;
+    private WebElement qatarCountry;
     @FindBy(xpath = "//a[contains(text(),'Next')]")
     private WebElement nextArrowInHomePageRotatingSlider;
     @FindBy(xpath = "//a[contains(text(),'Previous')]")
     private WebElement previousArrowInHomePageRotatingSlider;
     @FindBy(css = "ul.slides li.flex-active-slide:nth-child(2)")
-    private List<WebElement> homePageRotatingSliderlist;
+    private List<WebElement> homePageRotatingSliderList;
     @FindBy(css = "ul.slides li.flex-active-slide:nth-child(2)")
     private WebElement homePageRotatingSlider;
     @FindBy(xpath = "//*[@class='flex-control-nav flex-control-paging']")
-    private List<WebElement> homePageRotatingSliderPaginglist;
+    private List<WebElement> homePageRotatingSliderPagingList;
     @FindBy(css = "#maincontent > div.columns > div > div.advertise-banner-3.imagewidgetclass > ul")
-    private List<WebElement> homePageUnderShopbyCategoryBanners;
+    private List<WebElement> homePageUnderShopByCategoryBanners;
     @FindBy(xpath = "//ul[@class='nav-primary']/li[1]")
     private WebElement shopByOption;
     @FindBy(xpath = "//ul[@class='nav-primary']/li[2]")
@@ -43,7 +43,7 @@ public class QatarHomePage {
     @FindBy(xpath = "//ul[@class='nav-primary']/li[6]")
     private WebElement womenOnlyOption;
     @FindBy(xpath = "//ul[@class='nav-primary']")
-    private WebElement megaMenuMaincomponent;
+    private WebElement megaMenuMainComponent;
     @FindBy(xpath = "//*[@class='flex-control-nav flex-control-paging']")
     private WebElement homePageRotatingSliderPagingControl;
     @FindBy(xpath = "//div[@class='nutritious-right']")
@@ -57,7 +57,7 @@ public class QatarHomePage {
     @FindBy(xpath = "//h2[text()='Top Selling Stacks']")
     private WebElement topSellerHeader;
     @FindBy(xpath = "//div[@class='shop-category-slider swiper-container swiper-container-horizontal']")
-    private WebElement shopByCategorysections;
+    private WebElement shopByCategorySections;
     @FindBy(xpath = "//*[@class='tab_content tab_content41']")
     private WebElement topSellingStacksSections;
     @FindBy(id = "tab-75-all75")
@@ -75,7 +75,7 @@ public class QatarHomePage {
     @FindBy(xpath = "//li[@class='tabli-75-736']")
     private WebElement sportswearAndAccessoriesLink;
     @FindBy(xpath = "//li[@class='tabli-75-583 active']")
-    private WebElement spportSupplementsActiveLink;
+    private WebElement sportSupplementsActiveLink;
     @FindBy(xpath = "//ul[@class='tabs tabs75']/li[@class='active']")
     private WebElement allActiveLink;
     @FindBy(xpath = "//li[@class='tabli-75-618 active']")
@@ -99,13 +99,13 @@ public class QatarHomePage {
     @FindBy(xpath = "//*[@id=\"maincontent\"]/div[3]/div/div[8]/div[4]")
     private WebElement previousBtnInTrendingOnSporterSection;
     @FindBy(xpath = "//div[@style='transform: translate3d(-1482px, 0px, 0px); transition-duration: 0ms;']")
-    private WebElement trendingOnSporterSectionPostitionAfterClickingOnNext;
+    private WebElement trendingOnSporterSectionPositionAfterClickingOnNext;
     @FindBy(xpath = "//div[@style='transform: translate3d(-1235px, 0px, 0px); transition-duration: 0ms;']")
-    private WebElement trendingOnSporterSectionPostitionAfterClickingOnPrevious;
+    private WebElement trendingOnSporterSectionPositionAfterClickingOnPrevious;
     @FindBy(xpath = "//div[@style='transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;']")
-    private WebElement topSellerSectionPostitionAfterClickingOnPrevious;
+    private WebElement topSellerSectionPositionAfterClickingOnPrevious;
     @FindBy(xpath = "//div[@style='transform: translate3d(-249px, 0px, 0px); transition-duration: 0ms;']")
-    private WebElement topSellerSectionPostitionAfterClickingOnNext;
+    private WebElement topSellerSectionPositionAfterClickingOnNext;
     @FindBy(xpath = "//div[@style='transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;']")
     private WebElement NewArrivalSectionPositionAfterClickingOnPrevious;
     @FindBy(xpath = "//div[@style='transform: translate3d(-249px, 0px, 0px); transition-duration: 0ms;']")
@@ -117,15 +117,15 @@ public class QatarHomePage {
     @FindBy(xpath = "//li/a[@href='#tab-6-all6']")
     private WebElement newArrivalsAllLink;
     @FindBy(xpath = "//li[@class='tabli-6-583']")
-    private WebElement newArrivalsSpportSupplementsLink;
+    private WebElement newArrivalsSportSupplementsLink;
     @FindBy(xpath = "//li[@class='tabli-6-618']")
     private WebElement newArrivalsHealthyFoodLink;
     @FindBy(xpath = "//li[@class='tabli-6-686']")
     private WebElement newArrivalsVitaminsAndHealthLink;
     @FindBy(xpath = "//li[@class='tabli-6-736']")
-    private WebElement newArrivalsSportwearAndAccessoriesLink;
+    private WebElement newArrivalsSportWearAndAccessoriesLink;
     @FindBy(xpath = "//li[@class='tabli-6-583 active']")
-    private WebElement newArrivalsSpportSupplementsActiveLink;
+    private WebElement newArrivalsSportSupplementsActiveLink;
     @FindBy(xpath = "//ul[@class='tabs tabs6']/li[@class='active']")
     private WebElement newArrivalsAllActiveLink;
     @FindBy(xpath = "//li[@class='tabli-6-618 active']")
@@ -187,7 +187,7 @@ public class QatarHomePage {
     }
 
     public WebElement getShopByCategorySections() {
-        return shopByCategorysections;
+        return shopByCategorySections;
     }
 
     public WebElement getTopSellerSections() {
@@ -198,19 +198,19 @@ public class QatarHomePage {
         return topSellingStacksSections;
     }
 
-    public WebElement getMegaMenuMaincomponent() {
-        return megaMenuMaincomponent;
+    public WebElement getMegaMenuMainComponent() {
+        return megaMenuMainComponent;
     }
 
     public WebElement getHorizontalBanner() {
         return homePageHorizontalBanner;
     }
 
-    public List<WebElement> getHomePageRotatingSliderlist() {
-        return homePageRotatingSliderlist;
+    public List<WebElement> getHomePageRotatingSliderList() {
+        return homePageRotatingSliderList;
     }
 
-    public WebElement getShopeByOption() {
+    public WebElement getShopByOption() {
         return shopByOption;
     }
 
@@ -234,12 +234,12 @@ public class QatarHomePage {
         return womenOnlyOption;
     }
 
-    public List<WebElement> getHomePageRotatingSliderPaginglist() {
-        return homePageRotatingSliderPaginglist;
+    public List<WebElement> getHomePageRotatingSliderPagingList() {
+        return homePageRotatingSliderPagingList;
     }
 
-    public List<WebElement> getHomePageUnderShopbyCategoryBanners() {
-        return homePageUnderShopbyCategoryBanners;
+    public List<WebElement> getHomePageUnderShopByCategoryBanners() {
+        return homePageUnderShopByCategoryBanners;
     }
 
     public WebElement getSportSupplementsLink() {
@@ -262,11 +262,11 @@ public class QatarHomePage {
         return sportswearAndAccessoriesLink;
     }
 
-    public WebElement getSpportSupplementsActiveLink() {
-        return spportSupplementsActiveLink;
+    public WebElement getSportSupplementsActiveLink() {
+        return sportSupplementsActiveLink;
     }
 
-    public WebElement getAllLActiveink() {
+    public WebElement getAllLActiveLink() {
         return allActiveLink;
     }
 
@@ -302,20 +302,20 @@ public class QatarHomePage {
         return trendingOnSporterSection;
     }
 
-    public WebElement getTrendingOnSporterSectionpositionAfterClickingOnNext() {
-        return trendingOnSporterSectionPostitionAfterClickingOnNext;
+    public WebElement getTrendingOnSporterSectionPositionAfterClickingOnNext() {
+        return trendingOnSporterSectionPositionAfterClickingOnNext;
     }
 
-    public WebElement getTrendingOnSporterSectionpositionAfterClickingOnPrevious() {
-        return trendingOnSporterSectionPostitionAfterClickingOnPrevious;
+    public WebElement getTrendingOnSporterSectionPositionAfterClickingOnPrevious() {
+        return trendingOnSporterSectionPositionAfterClickingOnPrevious;
     }
 
-    public WebElement getTopSellerSectionpositionAfterClickingOnPrevious() {
-        return topSellerSectionPostitionAfterClickingOnPrevious;
+    public WebElement getTopSellerSectionPositionAfterClickingOnPrevious() {
+        return topSellerSectionPositionAfterClickingOnPrevious;
     }
 
-    public WebElement getTopSellerSectionpositionAfterClickingOnNext() {
-        return topSellerSectionPostitionAfterClickingOnNext;
+    public WebElement getTopSellerSectionPositionAfterClickingOnNext() {
+        return topSellerSectionPositionAfterClickingOnNext;
     }
 
     public WebElement getNewArrivalsHeader() {
@@ -330,8 +330,8 @@ public class QatarHomePage {
         return newArrivalsAllLink;
     }
 
-    public WebElement getNewArrivalsSpportSupplementsLink() {
-        return newArrivalsSpportSupplementsLink;
+    public WebElement getNewArrivalsSportSupplementsLink() {
+        return newArrivalsSportSupplementsLink;
     }
 
     public WebElement getNewArrivalsHealthyFoodLinkLink() {
@@ -342,23 +342,23 @@ public class QatarHomePage {
         return newArrivalsVitaminsAndHealthLink;
     }
 
-    public WebElement getNewArrivalsSportwearAndAccessoriesLink() {
-        return newArrivalsSportwearAndAccessoriesLink;
+    public WebElement getNewArrivalsSportWearAndAccessoriesLink() {
+        return newArrivalsSportWearAndAccessoriesLink;
     }
 
     public WebElement getNewArrivalsAllActiveLink() {
         return newArrivalsAllActiveLink;
     }
 
-    public WebElement getNewArrivalsSpportSupplementsActiveLink() {
-        return newArrivalsSpportSupplementsActiveLink;
+    public WebElement getNewArrivalsSportSupplementsActiveLink() {
+        return newArrivalsSportSupplementsActiveLink;
     }
 
     public WebElement getNewArrivalsHealthyFoodActiveLink() {
         return newArrivalsHealthyFoodActiveLink;
     }
 
-    public WebElement getNewArrivalsSportwearAndAccessoriesActiveLink() {
+    public WebElement getNewArrivalsSportWearAndAccessoriesActiveLink() {
         return newArrivalsSportswearAndAccessoriesActiveLink;
     }
 
@@ -392,16 +392,16 @@ public class QatarHomePage {
             DataHelperAndWait.isDisplayed(countryList, 15);
             this.countryList.click();
             DataHelperAndWait.implicitWait(6);
-            this.qaterCountry.click();
+            this.qatarCountry.click();
         } catch (Exception e) {
             DataHelperAndWait.isDisplayed(countryList, 15);
             this.countryList.click();
             DataHelperAndWait.implicitWait(6);
-            this.qaterCountry.click();
+            this.qatarCountry.click();
         }
     }
 
-    public void clickOnviewAllBtnInTopSellingStacksSection() {
+    public void clickOnViewAllBtnInTopSellingStacksSection() {
         DataHelperAndWait.isDisplayed(viewAllBtnInTopSellingStacksSection, 10);
         this.viewAllBtnInTopSellingStacksSection.click();
     }
@@ -462,8 +462,8 @@ public class QatarHomePage {
     }
 
     public void clickOnSportSupplementsLinkInNewArrivalsSection() {
-        DataHelperAndWait.isDisplayed(newArrivalsSpportSupplementsLink, 10);
-        this.newArrivalsSpportSupplementsLink.click();
+        DataHelperAndWait.isDisplayed(newArrivalsSportSupplementsLink, 10);
+        this.newArrivalsSportSupplementsLink.click();
     }
 
     public void clickOnHealthyFoodLinkInNewArrivalsSection() {
@@ -477,8 +477,8 @@ public class QatarHomePage {
     }
 
     public void clickOnSportswearAndAccessoriesLinkInNewArrivalsSection() {
-        DataHelperAndWait.isDisplayed(newArrivalsSportwearAndAccessoriesLink, 10);
-        this.newArrivalsSportwearAndAccessoriesLink.click();
+        DataHelperAndWait.isDisplayed(newArrivalsSportWearAndAccessoriesLink, 10);
+        this.newArrivalsSportWearAndAccessoriesLink.click();
     }
 
     public void clickOnPreviousButtonInNewArrivalSection() {
