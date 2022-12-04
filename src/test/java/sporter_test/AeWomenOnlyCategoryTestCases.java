@@ -25,6 +25,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     private AeSportsCategoryPage aeSportsCategoryPage;
     private AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage;
     private AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage;
+    private AEGuestUserPage aeGuestUserPage;
 
 
     @Test(description = "Make sure clicking on the Women's Only Category Appears In MegaMenu Redirect User To CorrectURL", priority = 1)
@@ -2621,5 +2622,12 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         this.verifyClickingOnPersonalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
         String numberOfProductInTheList = aeSportSupplementsCategoryPage.getSearchResultValue().getText();
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList, aeSportSupplementsCategoryPage.getNextPageBtn());
+    }
+    @Test(description = "Make sure ability to navigate to the home page by clicking on the sporter logo  ", priority = 238)
+    public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromCartPage() {
+        aeGuestUserPage = new AEGuestUserPage(webDriver);
+        this.verifyClickingOnWomenOnlyCategoryFromShopByMenuRedirectUserToCorrectURL();
+        aeGuestUserPage.clickOnSporterLogo();
+        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL+aeSiteURL," The Current URL is not matched with the Cart URL" );
     }
 }

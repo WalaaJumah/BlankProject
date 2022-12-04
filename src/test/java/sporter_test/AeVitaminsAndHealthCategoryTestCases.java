@@ -24,6 +24,7 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
     private KsaHomePage ksaHomePage;
     private AEFooterPage aeFooterPage;
     private AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage;
+    private AEGuestUserPage aeGuestUserPage;
 
     @Test(description = "Make sure clicking on the Vitamins And Health Category Appears In MegaMenu Redirect User To CorrectURL", priority = 1)
     public void verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL() {
@@ -4274,5 +4275,12 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
         this.verifyClickingOnWomenHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+    }
+    @Test(description = "Make sure ability to navigate to the home page by clicking on the sporter logo  ", priority = 449)
+    public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromCartPage() {
+        aeGuestUserPage = new AEGuestUserPage(webDriver);
+        this.verifyClickingOnVitaminsAndHealthCategoryFromHomePageRedirectUserToCorrectURL();
+        aeGuestUserPage.clickOnSporterLogo();
+        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL+aeSiteURL," The Current URL is not matched with the Cart URL" );
     }
     }

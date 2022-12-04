@@ -5,10 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1543f19a-355a-420f-8233-95e332a91e4b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/AeSearchPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AeSearchPageTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/extent_report_listner/ExtentReportListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/extent_report_listner/ExtentReportListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AeSearchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/AeSearchPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AeSportSupplementsCategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/AeSportSupplementsCategoryPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AEMegaMenuTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AEMegaMenuTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeHealthyFoodCategoryTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AeHealthyFoodCategoryTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeSearchPageTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AeSearchPageTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeSportSupplementsCategoryTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AeSportSupplementsCategoryTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeSportsCategoryTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AeSportsCategoryTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeVitaminsAndHealthCategoryTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AeVitaminsAndHealthCategoryTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeWomenOnlyCategoryTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AeWomenOnlyCategoryTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,17 +51,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_directory_selection": "C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/java",
-    "last_opened_file_path": "C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\w.jumaa\IdeaProjects\sporter-web-automation\src\test\resources" />
@@ -68,7 +76,7 @@
       <command value="ProductDetailsPageTestCases.verifyAbilityToDisplayBundleAndSelectAllOptions" />
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.C:/Users/w.jumaa/Downloads/automation-framework-enhanced-master/sporter-web-automation/src/test/resources/TestExecution.xml">
+  <component name="RunManager" selected="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/TestExecution.xml">
     <configuration name="AeSportSupplementsCategoryTestCases.verifySearchBtnWorksCorrectlyFromSportSupplementsCategoryPage" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
       <extension name="coverage">
@@ -133,19 +141,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="C:/Users/w.jumaa/Downloads/automation-framework-enhanced-master/sporter-web-automation/src/test/resources/TestExecution.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/TestExecution.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sporter_pages.AeCartPage" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/TestExecution.xml" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="SUITE" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="PROPERTIES_FILE" value="" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="TestNG.AeSportSupplementsCategoryTestCases.verifySearchBtnWorksCorrectlyFromSportSupplementsCategoryPage" />
+      <item itemvalue="TestNG.AeSportSupplementsCategoryTestCases.verifyThePagenationControlWorksCorrectly" />
+      <item itemvalue="TestNG.AeVitaminsAndHealthCategoryTestCases.verifyClickingOnMineralsCategoryInsideTheShopByCategorySectionWorksCorrectly" />
+      <item itemvalue="TestNG.C:/Users/w.jumaa/Downloads/automation-framework-enhanced-master/sporter-web-automation/src/test/resources/AeMegaMenu.xml" />
+      <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/TestExecution.xml" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.C:/Users/w.jumaa/Downloads/automation-framework-enhanced-master/sporter-web-automation/src/test/resources/TestExecution.xml" />
+        <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/TestExecution.xml" />
         <item itemvalue="TestNG.AeVitaminsAndHealthCategoryTestCases.verifyClickingOnMineralsCategoryInsideTheShopByCategorySectionWorksCorrectly" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/Downloads/automation-framework-enhanced-master/sporter-web-automation/src/test/resources/AeMegaMenu.xml" />
         <item itemvalue="TestNG.AeSportSupplementsCategoryTestCases.verifyThePagenationControlWorksCorrectly" />
@@ -184,7 +214,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/sporter_test/AEMegaMenuTestCases.java</url>
-          <line>5235</line>
+          <line>5236</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
@@ -196,6 +226,9 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/sporter_web_automation$C__Users_w_jumaa_IdeaProjects_sporter_web_automation_src_test_resources_SmokeTest_xml.ic" NAME="$PROJECT_DIR$/src/test/resources/SmokeTest.xml Coverage Results" MODIFIED="1657796388803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/sporter_web_automation$C__Users_w_jumaa_IdeaProjects_sporter_web_automation_src_test_resources_TestExecution_xml.ic" NAME="$PROJECT_DIR$/src/test/resources/TestExecution.xml Coverage Results" MODIFIED="1670149804951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>sporter_pages.AeCartPage</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/sporter_web_automation$AeSportSupplementsCategoryTestCases_verifySportSupplementsCategoryImageAndHorizontalBannersAppearingAfterSortingTheProducts.ic" NAME="AeSportSupplementsCategoryTestCases.verifySportSupplementsCategoryImageAndHorizontalBannersAppearingAfterSortingTheProducts Coverage Results" MODIFIED="1666869381864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>sporter_test.*</FILTER>
     </SUITE>

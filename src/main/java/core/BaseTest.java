@@ -13,6 +13,11 @@ import org.testng.annotations.Parameters;
 public class BaseTest {
     public static String siteURL = "https://www.sporter.com";
     public static String aeDomain = "/en-ae";
+    public static String websiteEnglishLanguage = "/en";
+    public static String websiteArabicLanguage = "/ar";
+    public static String websiteLanguage ;
+
+    public static String uaeWebsite = "-ae/";
     public String stgSiteURL = "https://stg.sporter.com";
     public String stgTestSiteURL = "https://stg-test.sporter.com";
     public String staging2SiteURL = "https://staging2.sporter.com";
@@ -61,9 +66,10 @@ public class BaseTest {
     // The Below Method to run the TCs on Onc Browser like Chrome
     @BeforeMethod
     @Parameters({"environment"})
-    public void setupBrowser( String environment ) throws Exception {
+    public void setupBrowser( String environment) throws Exception {
         environmentName=environment;
         //This ChromeWebDriver 106
+
         switch (environment){
             case "production":
              System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");

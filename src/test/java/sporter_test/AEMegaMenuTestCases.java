@@ -288,6 +288,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     String sportInSportsMainMenuUrl = "/en-ae/sports/men/sport/";
     String footballInSportsMainMenuUrl = "/en-ae/sports/men/sport/football/";
     String basketballInSportsMainMenuUrl = "/en-ae/sports/men/sport/basketball/";
+//    String basketballInSportsMainMenuUrl = "/en-ae/sports/men/sport/basketball/";
     String baseballInSportsMainMenuUrl = "/en-ae/sports/men/sport/baseball/";
     String runningInSportsMainMenuUrl = "/en-ae/sports/men/sport/running/";
     String swimmingInSportsMainMenuUrl = "/en-ae/sports/men/sport/swimming/";

@@ -1,6 +1,7 @@
 package sporter_test;
 
 import core.BaseTest;
+import core.DataHelperAndWait;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -9,7 +10,7 @@ import sporter_pages.AeProductDetailsPage;
 import sporter_pages.AeSearchPage;
 import sporter_pages.AeSportSupplementsCategoryPage;
 
-import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.*;
 
 public class AeSearchPageTestCases extends BaseTest {
     private AeSearchPage aeSearchPage;
@@ -92,6 +93,33 @@ public class AeSearchPageTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getMegaMenuSection().isDisplayed());
     }
+    //All Tab
+    @Test(description = "Make sure clicking on the All tab will redirect the user to the correct page", priority = 9)
+    public void verifyClickingOnAllTabRedirectUserToCorrectPage(){
+        aeSearchPage=new AeSearchPage(webDriver);
+        this.verifyClickingOnSearchIconWillRedirectUserTOTheSearchScreen();
+        aeSearchPage.getAllTab().click();
+        assertTrue(aeSearchPage.getProductsSectionInAllPage().isDisplayed(),"Products Section in All tab is missing");
+        assertTrue(aeSearchPage.getBrandsSectionInAllPage().isDisplayed(),"Brands Section in All tab is missing");
+        assertTrue(aeSearchPage.getArticlesSectionInAllPage().isDisplayed(),"Articles Section in All tab is missing");
+    }
+    //There's a bug here due to the products list is not appear after visit the PDP then go to All search page
+    @Test(description = "Make sure the ability to access all products appearing below the products section in the All Page", priority = 10)
+    public void verifyAbilityToAccessAllProductsListedBelowTheProductsSectionInTheAllTabCorrectly(){
+        aeSearchPage=new AeSearchPage(webDriver);
+        aeProductDetailsPage=new AeProductDetailsPage(webDriver);
+        String expectedProductURL;
+        this.verifyClickingOnSearchIconWillRedirectUserTOTheSearchScreen();
+        aeSearchPage.getAllTab().click();
+        for(int i=0; i<aeSearchPage.getProductCardInProductsSection().size();i++){
+            expectedProductURL=aeSearchPage.getProductCardInProductsSection().get(i).getAttribute("href");
+            aeSearchPage.getProductCardInProductsSection().get(i).click();
+            Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedProductURL));
+            aeProductDetailsPage.getSearchBtn().click();
+            aeSearchPage.getAllTab().click();
+            DataHelperAndWait.waitToBeVisible(aeSearchPage.getProductsListInAllTab(),5);
 
+        }
+    }
 
 }

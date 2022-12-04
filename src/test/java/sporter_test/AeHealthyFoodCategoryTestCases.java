@@ -7,10 +7,10 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+import sporter_pages.AEGuestUserPage;
 import sporter_pages.AeHealthyFoodCategoryPage;
 import sporter_pages.AeProductDetailsPage;
 import sporter_pages.AeSportSupplementsCategoryPage;
-import sporter_pages.AeVitaminsAndHealthCategoryPage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +23,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
     private AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage;
     private AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage;
     private AEFooterPageTestCases aeFooterPageTestCases;
+    private AEGuestUserPage aeGuestUserPage;
 
     @Test(description = "Make sure clicking on the Healthy Food Category Appears In MegaMenu Redirect User To CorrectURL", priority = 1)
     public void verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL() {
@@ -300,4 +301,21 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());}
+    //There's a bug here due to the BreadCrumb is missing after sorting the products
+    @Test(description = "Make sure that the BreadCrumb correctly after sorting the product ", priority = 28)
+    public void verifyTheBreadCrumbAppearingCorrectlyAfterSortingTheProducts() {
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
+        select.selectByIndex(1);
+        DataHelperAndWait.waitForTime(3000);
+        Assert.assertTrue(aeSportSupplementsCategoryPage.getHomeBreadcrumbs().isDisplayed());
+    }
+    @Test(description = "Make sure ability to navigate to the home page by clicking on the sporter logo  ", priority = 29)
+    public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromCartPage() {
+        aeGuestUserPage = new AEGuestUserPage(webDriver);
+        this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeGuestUserPage.clickOnSporterLogo();
+        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL+aeSiteURL," The Current URL is not matched with the Cart URL" );
+    }
 }

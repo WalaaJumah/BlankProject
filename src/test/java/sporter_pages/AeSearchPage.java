@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class AeSearchPage {
     public AeSearchPage(WebDriver webDriver) {
         PageFactory.initElements(webDriver, this);
@@ -59,6 +61,16 @@ public class AeSearchPage {
     private WebElement articlesSectionInAllPage;
     @FindBy(xpath="//div[@id='algolia-left-container']")
     private WebElement filtrationColumn;
+    @FindBy(id="all-section-products")
+    private WebElement productsListInAllTab;
+    @FindBy(id="all-section-brands")
+    private WebElement brandsListInAllTab;
+    @FindBy(id="all-section-articles")
+    private WebElement articlesListInAllTab;
+    @FindBy(xpath="//*[@id='all-section-products']/li/div/div/a")
+    private List<WebElement> productCardInProductsSection;
+   @FindBy(xpath="//*[@id='all-section-brands']/li/a")
+    private List<WebElement> brandCardInProductsSection;
 
 
     //Getter Methods
@@ -145,6 +157,22 @@ public class AeSearchPage {
     }
     public WebElement getFiltrationColumn() {
         return filtrationColumn;
+    }
+    public WebElement getProductsListInAllTab() {
+        return productsListInAllTab;
+    }
+    public WebElement getBrandsListInAllTab() {
+        return brandsListInAllTab;
+    }
+    public WebElement getArticlesListInAllTab() {
+        return articlesListInAllTab;
+    }
+    public List<WebElement> getProductCardInProductsSection() {
+        return productCardInProductsSection;
+    }
+
+    public List<WebElement> getBrandCardInProductsSection() {
+        return brandCardInProductsSection;
     }
     //Define the main actions we need to execute our TCs
 

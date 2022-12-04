@@ -186,4 +186,7 @@ public class AeSportSupplementsCategoryPage {
         DataHelperAndWait.waitToBeClickable(seeAllBtnInFormSection, 5);
         seeAllBtnInFormSection.click();
     }
+    public WebElement getHomeBreadcrumbs() {
+        return homeBreadcrumbs;
+    }
 }

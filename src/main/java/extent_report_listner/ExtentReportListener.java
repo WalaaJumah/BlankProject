@@ -38,6 +38,7 @@ public class ExtentReportListener implements IReporter {
         private ExtentReports extent;
        private ExtentSparkReporter spark;
 
+
     String pattern = "yyyy-MM-dd";
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
     String date = simpleDateFormat.format(new Date());
@@ -52,7 +53,6 @@ public class ExtentReportListener implements IReporter {
 
 //            spark=new ExtentSparkReporter(File.separator + "Magento-Sporter-Automation_Report "+date+".html");
 //            spark.viewConfigurer().viewOrder().as(new ViewName[]{ViewName.DASHBOARD, ViewName.TEST}).apply();
-
             extent.addSystemInfo("Environment", BaseTest.siteURL);
             extent.addSystemInfo("Author","Wala'a Mohammad");
 
@@ -72,6 +72,7 @@ public class ExtentReportListener implements IReporter {
                     buildTestNodes(context.getPassedTests(), LogStatus.PASS);
                     buildTestNodes(context.getFailedTests(), LogStatus.FAIL);
                     buildTestNodes(context.getSkippedTests(), LogStatus.SKIP);
+
                 }
             }
 
