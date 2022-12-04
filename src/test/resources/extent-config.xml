@@ -18,10 +18,11 @@
         <documentTitle>Sporter Web Automation Report</documentTitle>
 
         <!-- report name - displayed at top-nav -->
-        <reportName>Sporter Web Automation</reportName>
-<!--            <![CDATA[-->
-<!--                <img src='C:\Users\w.jumaa\Desktop\Logo.jpg' />-->
-<!--            ]]>-->
+        <reportName>Sporter Web Automation
+            <![CDATA[
+                <img src='C:\Users\w.jumaa\Desktop\Logo.jpg' />
+            ]]>
+        </reportName>
 
 
         <!-- report headline - displayed at top-nav, after reportHeadline -->
@@ -42,6 +43,8 @@
             <![CDATA[
         $(document).ready(function() {
 
+        $('.logo-container.blue.darken-2').css('display','none');
+
         });
       ]]>
         </scripts>
@@ -54,6 +57,11 @@
 <!--        </styles>-->
         <styles>
             <![CDATA[
+
+           .report-name { padding-left: 100px;width: auto;display: revert } .report-name > img { float: left;height: 90%;margin-left: 30px;margin-top: 2px;width: auto; }
+
+
+
         ]]>
         </styles>
     </configuration>
