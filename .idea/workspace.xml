@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1543f19a-355a-420f-8233-95e332a91e4b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/AeAllPagesInsideCategoriesInMegaMenuPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AeAllPagesInsideCategoriesInMegaMenuTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/extent_report_listner/ExtentReportListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/extent_report_listner/ExtentReportListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/retry_failed_test_cases/RetryFailedTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/retry_failed_test_cases/RetryFailedTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AEMegaMenuPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/AEMegaMenuPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AEMegaMenuTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AEMegaMenuTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/AeMegaMenu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/AeMegaMenu.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -14,6 +20,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExportTestResults" outputFolder="$USER_HOME$/Desktop/Automation Reports/MegaMenu" userTempatePath="" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -166,9 +173,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/TestExecution.xml" />
+        <item itemvalue="TestNG.C:/Users/w.jumaa/Downloads/automation-framework-enhanced-master/sporter-web-automation/src/test/resources/AeMegaMenu.xml" />
         <item itemvalue="TestNG.AeSportsCategoryTestCases.verifyThePaginationControlInSportsTechCategoryPageWorksCorrectly" />
         <item itemvalue="TestNG.AeVitaminsAndHealthCategoryTestCases.verifyClickingOnMineralsCategoryInsideTheShopByCategorySectionWorksCorrectly" />
-        <item itemvalue="TestNG.C:/Users/w.jumaa/Downloads/automation-framework-enhanced-master/sporter-web-automation/src/test/resources/AeMegaMenu.xml" />
         <item itemvalue="TestNG.AeSportSupplementsCategoryTestCases.verifyThePaginationControlWorksCorrectly" />
       </list>
     </recent_temporary>
@@ -202,11 +209,6 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/sporter_test/AEMegaMenuTestCases.java</url>
-          <line>5234</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/sporter_test/AeWomenOnlyCategoryTestCases.java</url>
           <line>1393</line>

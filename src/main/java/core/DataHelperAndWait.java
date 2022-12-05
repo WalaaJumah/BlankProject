@@ -161,11 +161,12 @@ public class DataHelperAndWait extends BaseTest {
                 DataHelperAndWait.waitForTime(6000);
                 Assert.assertTrue(webDriver.getCurrentUrl().endsWith(pageNumber),"The URL is wrong");
                 boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-                assertFalse(verifyTitle, "Page Not Found Is Displayed");
+                assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
                 boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-                assertFalse(isTheElementPresent, "The page is empty");
+                assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
                 boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
-                assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page "+pageNumber);
+                assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
+                assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page "+pageNumber+ "The URL is"+webDriver.getCurrentUrl());
                 i++;
             }
             while (i <= numberOfThePagesInList);}

@@ -41,13 +41,13 @@ public class AEMegaMenuPage {
     private WebElement aeCountry;
     @FindBy(xpath = ".//*[@class='nav-primary']/li[1]")
     private WebElement shopeByMenu;
-    @FindBy(xpath = ".//*[@class='nav-primary']/li[2]")
+    @FindBy(xpath = ".//*[@class='nav-primary']/li[2]/a")
     private WebElement sportSupplementsMainMenu;
-    @FindBy(xpath = ".//*[@class='nav-primary']/li[3]")
+    @FindBy(xpath = ".//*[@class='nav-primary']/li[3]/a")
     private WebElement vitaminsAndHealthMainMenu;
-    @FindBy(xpath = ".//*[@class='nav-primary']/li[4]")
+    @FindBy(xpath = ".//*[@class='nav-primary']/li[4]/a")
     private WebElement healthyFoodMainMenu;
-    @FindBy(xpath = ".//*[@class='nav-primary']/li[5]")
+    @FindBy(xpath = ".//*[@class='nav-primary']/li[5]/a")
     private WebElement sportsMainMenu;
     @FindBy(xpath = ".//*[@class='nav-primary']/li[6]/a")
     private WebElement womenOnlyMainMenu;

@@ -10,7 +10,7 @@
 <!--    </listeners>-->
 
 
-    <test name=" Test" preserve-order="true">
+    <test name=" MegaMenu" preserve-order="true">
        <!-- Guidelines:
         1. To test on production Env, change the value to "production".
         2. To test on stgTest Env, change the value to "stgTest".
@@ -26,12 +26,52 @@
 
         <classes>
 
-        <class name="sporter_test.AeSearchPageTestCases">
+        <class name="sporter_test.AEMegaMenuTestCases">
             <methods>
-                <include name="verifyAbilityToAccessAllProductsListedBelowTheProductsSectionInTheAllTabCorrectly" />
-<!--              <include name="verifyAbilityToAccessAllProductsListedBelowTheProductsSectionInTheAllTabCorrectly" />-->
-<!--              <include name="verifyAbilityToAccessAllPagesInsideMensApparelCategoryPageCorrectly" />-->
-<!--               <include name="m2" />-->
+                <include name="verifyTheDownArrowIconAppearsCorrectlyNextToTheHealthyFoodMainMenu"></include>
+                <include name="verifyTheSubMenuWillAppearsCorrectlyOnceHoveringOnHealthyFoodMainMenu"></include>
+                <include name="verifyHealthFoodMainMenuDisplayTheCorrectCategoriesAndSubCategories"></include>
+                <include name="verifyClickingOnHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnGroceryOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnBakingAndCookingOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnCannedOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnCoffeeOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnCondimentsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnMilkAndCreamOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnNutsAndOatsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnOilsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnPastaOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnRiceAndGrainsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnSeasoningsAndSpicesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnSugarSweetenersOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnSyrupsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnTeaAndHerbsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnSuperfoodsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnReadyMixesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnBreakfastAndCerealOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnReadyToDrinkOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnAminoAndBcaasOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnEnergyDrinksOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnProteinShakesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnElectrolytesAndHydrationOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnHealthySnacksOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnProteinBarsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnCookiesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnChipsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnBrowniesAndPancakesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnSnackBarsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnSpreadsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnOtherHealthySnacksOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnReadyToEatOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnHealthyMealsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnFeaturedOptionInHealthyFoodMianMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnHealthyMealReplacementOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnProteinCoffeeOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnCandiesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnFlavoringAgentsOptionOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnKetoSnacksOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnManukaHoneyOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnMeatSnacksOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
             </methods>
         </class>
 
