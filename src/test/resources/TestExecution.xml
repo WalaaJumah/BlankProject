@@ -5,9 +5,9 @@
         <listener class-name="extent_report_listner.ExtentReportListener" />
     </listeners>
 
-<!--    <listeners>-->
-<!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
-<!--    </listeners>-->
+    <listeners>
+        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>
+    </listeners>
 
 
     <test name=" MegaMenu" preserve-order="true">
@@ -72,6 +72,70 @@
                 <include name="verifyClickingOnKetoSnacksOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
                 <include name="verifyClickingOnManukaHoneyOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
                 <include name="verifyClickingOnMeatSnacksOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyTheDownArrowIconAppearsCorrectlyNextToTheSportsMainMenu"></include>
+                <include name="verifyTheSubMenuWillAppearsCorrectlyOnceHoveringOnSportsMainMenu"></include>
+                <include name="verifySportsMainMenuDisplayTheCorrectCategoriesAndSubCategories"></include>
+                <include name="verifyClickingOnSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnMenOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnSportOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnFootballOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnBasketballOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnBaseballOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnRunningOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnSwimmingOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnYogaOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnFitnessAndTrainingOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnMmaOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnJiuJitsuOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnBoardGamesOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnSportsTechOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnWearableTechOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnCamerasOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnPhoneAccessoriesOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnPersonalCareOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnShoweringOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnShavingOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnSkinCareOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnBodyCareOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnOralCareOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnTherapyOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnMasksOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnFitnessAndTrainingCategoryOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnFitnessEquipmentOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnSkippingRopesOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnWeightBeltsOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnScootersOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnTrainingAccessoriesOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnShakersAndBottlesOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnBagsOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnGlovesOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnBracesAndSleevesOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnMouthguardOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnApperalOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnSportswearOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnPantsOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnShortsOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnHoodiesOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnTShirtsOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnTanksOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnFootwearOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnSneakersOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnTrainingShoesOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnRunningShoesOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnWomenOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnWomenSportsTechOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnWomenWearableTechOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnWomenCamerasOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnWomenPhoneAccessoriesOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnWomenPersonalCareOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnWomenShoweringOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnWomenSkinCareOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnWomenBodyCareOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnWomenOralCareOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnWomenTherapyOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnWomenMasksOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnWomenFitnessAndTrainingOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyClickingOnWomenTrainingAccessoriesOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
             </methods>
         </class>
 
