@@ -20,7 +20,7 @@
         <!-- report name - displayed at top-nav -->
         <reportName>Sporter Web Automation
             <![CDATA[
-                <img src='C:\Users\w.jumaa\Desktop\Logo.jpg' />
+                <img src='C:\Users\w.jumaa\Desktop\Logo1.PNG' />
             ]]>
         </reportName>
 
@@ -58,7 +58,10 @@
         <styles>
             <![CDATA[
 
-           .report-name { padding-left: 100px;width: auto;display: revert } .report-name > img { float: left;height: 90%;margin-left: 30px;margin-top: 2px;width: auto; }
+           .report-name { padding-left: 20px;width: auto;display: revert; font-size:20px } .report-name > img { float: left;height: 90%;margin-left: 2px;margin-top: 2px;width: auto; }
+           .report-headline {font-size:20px}
+
+
 
 
 

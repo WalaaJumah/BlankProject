@@ -38,6 +38,8 @@ public class ExtentReportListener implements IReporter {
 
         private ExtentReports extent;
        private ExtentSparkReporter spark;
+       private ExtentTest test;
+
 
 
     String pattern = "yyyy-MM-dd";
@@ -50,7 +52,7 @@ public class ExtentReportListener implements IReporter {
 
         //The date will include with the file name
             extent = new ExtentReports("C:\\Users\\w.jumaa\\Desktop\\Automation Reports" + File.separator
-                    + "Magento-Sporter-Automation_Report "+"["+BaseTest.environmentName+" ]"+date+".html", true);
+                    + "Magento-Sporter-Automation_Report "+"["+BaseTest.environmentName+"]"+date+".html", true);
 
 //            spark=new ExtentSparkReporter(File.separator + "Magento-Sporter-Automation_Report "+date+".html");
 //            spark.viewConfigurer().viewOrder().as(new ViewName[]{ViewName.DASHBOARD, ViewName.TEST,ViewName.CATEGORY}).apply();
@@ -88,7 +90,8 @@ public class ExtentReportListener implements IReporter {
 
             if (tests.size() > 0) {
                 for (ITestResult result : tests.getAllResults()) {
-                    test = extent.startTest(result.getMethod().getMethodName());
+                    test = extent.startTest(result.getMethod().getDescription());
+//                    test = extent.startTest(result.getMethod().getMethodName());
 
                     test.setStartedTime(getTime(result.getStartMillis()));
                     test.setEndedTime(getTime(result.getEndMillis()));

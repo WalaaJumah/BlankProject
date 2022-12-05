@@ -26,12 +26,12 @@
 
         <classes>
 
-        <class name="sporter_test.KsaHomePageTestCases">
+        <class name="sporter_test.AeSearchPageTestCases">
             <methods>
-                <include name="verifyClickingOnSportswearAndAccessoriesCategoryDoeNotRedirectTheUserTo404PageOrNoContentFoundPage" />
-<!--                <include name="verifyAbilityToAccessAllPagesInsideWomensApparelCategoryPageCorrectly" />-->
-<!--                <include name="verifyAbilityToAccessAllPagesInsideMensApparelCategoryPageCorrectly" />-->
-<!--                <include name="m2" />-->
+                <include name="verifyClickingOnSearchIconWillRedirectUserTOTheSearchScreen" />
+              <include name="verifyAbilityToAccessAllProductsListedBelowTheProductsSectionInTheAllTabCorrectly" />
+<!--              <include name="verifyAbilityToAccessAllPagesInsideMensApparelCategoryPageCorrectly" />-->
+<!--               <include name="m2" />-->
             </methods>
         </class>
 
