@@ -530,7 +530,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         String expectedUrl=aeMegamenuPage.getByBrandOption().getAttribute("href");
         action.moveToElement(aeMegamenuPage.getByBrandOption()).click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),sexpectedUrl);
+        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(byBrandUrl));
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
