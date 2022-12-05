@@ -28,8 +28,8 @@
 
         <class name="sporter_test.AeSearchPageTestCases">
             <methods>
-                <include name="verifyClickingOnSearchIconWillRedirectUserTOTheSearchScreen" />
-              <include name="verifyAbilityToAccessAllProductsListedBelowTheProductsSectionInTheAllTabCorrectly" />
+                <include name="verifyAbilityToAccessAllProductsListedBelowTheProductsSectionInTheAllTabCorrectly" />
+<!--              <include name="verifyAbilityToAccessAllProductsListedBelowTheProductsSectionInTheAllTabCorrectly" />-->
 <!--              <include name="verifyAbilityToAccessAllPagesInsideMensApparelCategoryPageCorrectly" />-->
 <!--               <include name="m2" />-->
             </methods>
