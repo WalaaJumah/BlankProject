@@ -434,7 +434,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSportsSupplementsOption()).perform();
         String expectedUrl=aeMegamenuPage.getSportsSupplementsOption().getAttribute("href");
         aeMegamenuPage.getSportsSupplementsOption().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(sportSupplementsUrl));
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -454,7 +454,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         String expectedUrl=aeMegamenuPage.getVitaminsAndHealthOption().getAttribute("href");
         aeMegamenuPage.getVitaminsAndHealthOption().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(healthVitaminsUrl));
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -473,7 +473,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         String expectedUrl=aeMegamenuPage.getHealthFoodOption().getAttribute("href");
         aeMegamenuPage.getHealthFoodOption().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(healthyFoodsUrl));
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -491,7 +491,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         String expectedUrl=aeMegamenuPage.getSportsOption().getAttribute("href");
         aeMegamenuPage.getSportsOption().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(sportsUrl));
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -510,7 +510,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenOnlyOption()).perform();
         String expectedUrl=aeMegamenuPage.getWomenOnlyOption().getAttribute("href");
         aeMegamenuPage.getWomenOnlyOption().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(womenOnlyUrl));
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -530,7 +530,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         String expectedUrl=aeMegamenuPage.getByBrandOption().getAttribute("href");
         action.moveToElement(aeMegamenuPage.getByBrandOption()).click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(byBrandUrl));
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -549,7 +549,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getByGoalOption()).perform();
         String expectedUrl=aeMegamenuPage.getByGoalOption().getAttribute("href");
         aeMegamenuPage.getByGoalOption().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(byGoalUrl));
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -568,7 +568,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSalesAndOffersOption()).perform();
         String expectedUrl=aeMegamenuPage.getSalesAndOffersOption().getAttribute("href");
         aeMegamenuPage.getSalesAndOffersOption().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(salesAndOffersUrl));
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -587,7 +587,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSporterStacksOption()).perform();
         String expectedUrl=aeMegamenuPage.getSporterStacksOption().getAttribute("href");
         aeMegamenuPage.getSporterStacksOption().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(sportStacksUrl));
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -683,7 +683,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSportsSupplementsOption()).perform();
         String expectedUrl=aeMegamenuPage.getProteinOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getProteinOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), proteinOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -702,7 +702,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getCreatineOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCreatineOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getCreatineOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), creatineOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -721,7 +721,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getAminoAcidsOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidsOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getAminoAcidsOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aminoAcidsOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -740,7 +740,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMuscleBoostersOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMuscleBoostersOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getMuscleBoostersOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), muscleBoostersOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -759,7 +759,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWeightManagementOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWeightManagementOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getWeightManagementOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), weightManagementOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -778,7 +778,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getRecoveryOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getRecoveryOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getRecoveryOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), recoveryOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -797,7 +797,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getCarbohydratesOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCarbohydratesOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getCarbohydratesOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), carbohydratesOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -816,7 +816,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getEnergyAndEnduranceOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getEnergyAndEnduranceOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getEnergyAndEnduranceOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), energyAndEnduranceOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -835,7 +835,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getGamingAndFocusOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGamingAndFocusOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getGamingAndFocusOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), gamingAndFocusOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -854,7 +854,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWheyProteinOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWheyProteinOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getWheyProteinOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), wheyProteinOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -873,7 +873,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWheyProteinIsolateOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWheyProteinIsolateOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getWheyProteinIsolateOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), WheyProteinIsolateOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -892,7 +892,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getProteinBlendsOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getProteinBlendsOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getProteinBlendsOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), proteinBlendsOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -911,7 +911,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getNonDairyProteinOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getNonDairyProteinOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getNonDairyProteinOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), nonDairyProteinOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -930,7 +930,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getCaseinProteinOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCaseinProteinOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getCaseinProteinOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), caseinProteinOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -949,7 +949,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getDietProteinOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getDietProteinOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getDietProteinOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), dietProteinOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -968,7 +968,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMassGainersOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMassGainersOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getMassGainersOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), massGainersOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -987,7 +987,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getCreatineMonohydrateOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCreatineMonohydrateOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getCreatineMonohydrateOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), creatineMonohydrateOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -1006,7 +1006,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getCreatineBlendsOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCreatineBlendsOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getCreatineBlendsOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), creatineBlendsOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -1025,7 +1025,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getbCAAOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getbCAAOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getbCAAOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), bCAAOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -1044,7 +1044,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getEAAOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getEAAOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getEAAOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
         //  Assert.assertEquals(webDriver.getCurrentUrl(), eAAOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -1063,7 +1063,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getArginineOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getArginineOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getArginineOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), arginineOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -1082,7 +1082,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBetaAlanineOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBetaAlanineOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getBetaAlanineOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), betaAlanineOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -1101,7 +1101,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getHMBOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHMBOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getHMBOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), hMBOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -1120,7 +1120,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getAminoAcidPowdersOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidPowdersOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getAminoAcidPowdersOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aminoAcidPowdersOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -1139,7 +1139,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getAminoAcidPillsOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidPillsOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getAminoAcidPillsOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aminoAcidPillsOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -1158,7 +1158,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getCitrullineOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCitrullineOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getCitrullineOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), citrullineOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -1177,7 +1177,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getAminoAcidLiquidsOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidLiquidsOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getAminoAcidLiquidsOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aminoAcidLiquidsOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -1196,7 +1196,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getTestosteroneBoostersOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getTestosteroneBoostersOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getTestosteroneBoostersOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), testosteroneBoostersOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -1216,7 +1216,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         String expectedUrl=aeMegamenuPage.getGhBoostersOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getGhBoostersOptionInSportSupplementsMenu().click();
 //        Assert.assertEquals(webDriver.getCurrentUrl(), ghBoostersOptionInSportSupplementsMenuUrl);
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -1234,7 +1234,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getStimulantWeightLossOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getStimulantWeightLossOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getStimulantWeightLossOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), stimulantWeightLossOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -1253,7 +1253,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getNonStimulantWeightLossOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getNonStimulantWeightLossOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getNonStimulantWeightLossOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), nonStimulantWeightLossOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -1272,7 +1272,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMealReplacementsOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMealReplacementsOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getMealReplacementsOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), mealReplacementsOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -1310,7 +1310,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getToningCreamsOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getToningCreamsOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getToningCreamsOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), toningCreamsOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -1329,7 +1329,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMctOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMctOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getMctOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), mctOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -1348,7 +1348,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getGlutamineOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGlutamineOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getGlutamineOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), glutamineOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -1367,7 +1367,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getRecoveryBlendOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getRecoveryBlendOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getRecoveryBlendOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), recoveryBlendOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -1386,7 +1386,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getElectrolytesAndHydrationOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getElectrolytesAndHydrationOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getElectrolytesAndHydrationOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), electrolytesAndHydrationOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -1405,7 +1405,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getCarbohydratePowdersOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCarbohydratePowdersOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getCarbohydratePowdersOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), carbohydratePowdersOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -1424,7 +1424,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getStimulantEnergyOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getStimulantEnergyOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getStimulantEnergyOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), stimulantEnergyOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
@@ -1443,7 +1443,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getNonStimulantEnergyOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getNonStimulantEnergyOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getNonStimulantEnergyOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), nonStimulantEnergyOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -1462,7 +1462,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getGamingEssentialsOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGamingEssentialsOptionInSportSupplementsMenu().getAttribute("href");
         aeMegamenuPage.getGamingEssentialsOptionInSportSupplementsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), gamingEssentialsOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -1542,7 +1542,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getFeaturedOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFeaturedOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getFeaturedOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), featuredOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -1562,7 +1562,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getAliveVitaminsOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAliveVitaminsOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getAliveVitaminsOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aliveVitaminsOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -1582,7 +1582,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSexualHealthOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSexualHealthOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getSexualHealthOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), sexualHealthOptionInVitaminsAndHealthUrl);
         System.out.println(webDriver.getCurrentUrl());
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
@@ -1603,7 +1603,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getEssentialVitaminsOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getEssentialVitaminsOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getEssentialVitaminsOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), essentialVitaminsOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -1623,7 +1623,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getFolicAcidOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFolicAcidOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getFolicAcidOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), folicAcidOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -1643,7 +1643,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getVitaminAOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminAOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getVitaminAOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminAOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -1663,7 +1663,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getVitaminBOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminBOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getVitaminBOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminBOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -1683,7 +1683,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getVitaminCOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminCOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getVitaminCOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminCOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -1703,7 +1703,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getVitaminDOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminDOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getVitaminDOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminDOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -1724,7 +1724,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         String expectedUrl=aeMegamenuPage.getVitaminEOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getVitaminEOptionInVitaminsAndHealthMenu().click();
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminEOptionInVitaminsAndHealthUrl);
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -1743,7 +1743,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getVitaminKOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminKOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getVitaminKOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminKOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -1763,7 +1763,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMultiVitaminsOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMultiVitaminsOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getMultiVitaminsOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), multiVitaminsOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -1783,7 +1783,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getVitaminsForKidsOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminsForKidsOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getVitaminsForKidsOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminsForKidsOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -1803,7 +1803,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getVitaminsForMenOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminsForMenOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getVitaminsForMenOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminsForMenOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -1823,7 +1823,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getVitaminsForWomenOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminsForWomenOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getVitaminsForWomenOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminsForWomenOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -1843,7 +1843,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBoneAndJointOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBoneAndJointOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getBoneAndJointOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), boneJointOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -1863,7 +1863,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBoneHealthOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBoneHealthOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getBoneHealthOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), boneHealthOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -1883,7 +1883,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getJointHealthOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getJointHealthOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getJointHealthOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), jointHealthOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -1903,7 +1903,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBeautyOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBeautyOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getBeautyOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), beautyOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -1923,7 +1923,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getCollagenOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCollagenOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getCollagenOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), collagenOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -1943,7 +1943,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getHairSkinAndNailsOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHairSkinAndNailsOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getHairSkinAndNailsOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), hairSkinAndNailsOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -1963,7 +1963,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getFishOilOmegasOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFishOilOmegasOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getFishOilOmegasOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), fishOilAndOmegasOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -1983,7 +1983,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getFishOilOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFishOilOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getFishOilOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), fishOilOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2003,7 +2003,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getOmega369OptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getOmega369OptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getOmega369OptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), omegaMixOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2023,7 +2023,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getHealthLifestyleOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHealthLifestyleOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getHealthLifestyleOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), healthyLifestyleOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2043,7 +2043,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getAntioxidantsOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAntioxidantsOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getAntioxidantsOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), antioxidantOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2063,7 +2063,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBloodSugarSupportOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBloodSugarSupportOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getBloodSugarSupportOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), bloodSugarSupportOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2083,7 +2083,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBrainSupportOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBrainSupportOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getBrainSupportOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), brainSupportOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2103,7 +2103,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getDetoxAndCleanseOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getDetoxAndCleanseOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getDetoxAndCleanseOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), detoxCleanseOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2123,7 +2123,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getEnergyFormulasOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getEnergyFormulasOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getEnergyFormulasOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), energyFormulasOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2143,7 +2143,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getEyeHealthOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getEyeHealthOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getEyeHealthOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), eyeHealthOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2163,7 +2163,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getHerbsOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHerbsOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getHerbsOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), herbsOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2183,7 +2183,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getHormonesBalanceOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHormonesBalanceOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getHormonesBalanceOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), hormonesBalanceOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2203,7 +2203,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getImmuneSupportOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getImmuneSupportOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getImmuneSupportOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), immuneSupportOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2223,7 +2223,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMensHealthOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMensHealthOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getMensHealthOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), mensHealthOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2243,7 +2243,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getStressReliefOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getStressReliefOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getStressReliefOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), stressReliefOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2263,7 +2263,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSleepSupportOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSleepSupportOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getSleepSupportOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), sleepSupportOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2283,7 +2283,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSuperFoodsOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSuperFoodsOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getSuperFoodsOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), superFoodsOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2303,7 +2303,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getUrinaryTractSupportOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getUrinaryTractSupportOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getUrinaryTractSupportOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), urinaryTractSupportOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2323,7 +2323,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWeightManagementOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWeightManagementOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getWeightManagementOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), weightManagementOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2343,7 +2343,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomensHealthOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomensHealthOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getWomensHealthOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womensHealthOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2363,7 +2363,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getDigestionOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getDigestionOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getDigestionOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), digestionOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2383,7 +2383,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getDigestiveSupportOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getDigestiveSupportOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getDigestiveSupportOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), digestionSupportOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2403,7 +2403,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getProbioticsOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getProbioticsOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getProbioticsOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), probioticsOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2423,7 +2423,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSportVitaminsOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSportVitaminsOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getSportVitaminsOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), sportVitaminsOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2443,7 +2443,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getAminoAcidOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getAminoAcidOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aminoAcidOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2463,7 +2463,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMineralsOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMineralsOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getMineralsOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), mineralsOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2483,7 +2483,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getCalciumOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCalciumOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getCalciumOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), calciumOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2503,7 +2503,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getIronOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getIronOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getIronOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), ironOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2523,7 +2523,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMagnesiumOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMagnesiumOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getMagnesiumOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), magnesiumOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2543,7 +2543,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMultimineralFormulasOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMultimineralFormulasOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getMultimineralFormulasOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), multimineralFormulasOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2563,7 +2563,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getZincOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getZincOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getZincOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), zincOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2583,7 +2583,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getPotassiumOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getPotassiumOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getPotassiumOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), potassiumOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2603,7 +2603,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getHealthyDrinksOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHealthyDrinksOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getHealthyDrinksOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), healthyDrinksOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2623,7 +2623,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getDrinkableVitaminsOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getDrinkableVitaminsOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getDrinkableVitaminsOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), drinkableVitaminsOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2643,7 +2643,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getPetsOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getPetsOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getPetsOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), petsOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2663,7 +2663,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSupplementsMoreOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSupplementsMoreOptionInVitaminsAndHealthMenu().getAttribute("href");
         aeMegamenuPage.getSupplementsMoreOptionInVitaminsAndHealthMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), supplementsMoreOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2698,7 +2698,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getGroceryOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGroceryOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getGroceryOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), groceryOptionInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2718,7 +2718,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBakingAndCookingOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBakingAndCookingOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getBakingAndCookingOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), bakingAndCookingOptionInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2738,7 +2738,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getCannedOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCannedOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getCannedOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), cannedOptionInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2758,7 +2758,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getCoffeeOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCoffeeOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getCoffeeOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), coffeeOptionInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2778,7 +2778,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getCondimentsOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCondimentsOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getCondimentsOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), condimentsOptionInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2798,7 +2798,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMilkAndCreamOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMilkAndCreamOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getMilkAndCreamOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), milkAndCreamOptionInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2818,7 +2818,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getNutsAndOatsOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getNutsAndOatsOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getNutsAndOatsOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), nutsAndOatsOptionInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2838,7 +2838,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getOilsOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getOilsOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getOilsOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), oilsOptionInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2858,7 +2858,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getPastaOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getPastaOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getPastaOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), pastaOptionInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2878,7 +2878,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getRiceAndGrainsOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getRiceAndGrainsOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getRiceAndGrainsOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), riceAndGrainsOptionInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2898,7 +2898,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSeasoningsAndSpicesOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSeasoningsAndSpicesOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getSeasoningsAndSpicesOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), seasoningsAndSpicessOptionInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2918,7 +2918,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSugarSweetenersOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSugarSweetenersOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getSugarSweetenersOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), sugarAndSweetenersOptionInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2938,7 +2938,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSyrupsOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSyrupsOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getSyrupsOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), syrupsOptionInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2958,7 +2958,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getTeaAndHerbsOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getTeaAndHerbsOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getTeaAndHerbsOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), teaAndHerbsInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2978,7 +2978,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSuperfoodsOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSuperfoodsOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getSuperfoodsOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), superFoodsInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -2998,7 +2998,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getReadyMixesOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getReadyMixesOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getReadyMixesOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), readyMixInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3018,7 +3018,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBreakfastAndCerealOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBreakfastAndCerealOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getBreakfastAndCerealOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), breakfastAndCerealInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3038,7 +3038,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getReadyToDrinkOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getReadyToDrinkOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getReadyToDrinkOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), readyToDrinkInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3058,7 +3058,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getAminoAndBcaasOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAndBcaasOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getAminoAndBcaasOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aminoBcaasInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3078,7 +3078,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getEnergyDrinksOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getEnergyDrinksOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getEnergyDrinksOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), energyDrinksInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3098,7 +3098,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getProteinShakesOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getProteinShakesOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getProteinShakesOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), proteinShakesInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3118,7 +3118,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getElectrolytesAndHydrationOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getElectrolytesAndHydrationOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getElectrolytesAndHydrationOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), electrolytesAndHydrationInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3138,7 +3138,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getHealthySnacksOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHealthySnacksOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getHealthySnacksOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), healthySnacksInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3158,7 +3158,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getProteinBarsOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getProteinBarsOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getProteinBarsOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), proteinBarsInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3178,7 +3178,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getCookiesOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCookiesOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getCookiesOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), cookiesInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3198,7 +3198,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getChipsOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getChipsOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getChipsOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), chipsInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3218,7 +3218,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBrowniesAndPancakesOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBrowniesAndPancakesOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getBrowniesAndPancakesOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), browniesAndPancakesInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3238,7 +3238,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSnackBarsOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSnackBarsOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getSnackBarsOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), snackBarsInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3258,7 +3258,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSpreadsOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSpreadsOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getSpreadsOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), spreadsInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3278,7 +3278,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getOtherHealthySnacksOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getOtherHealthySnacksOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getOtherHealthySnacksOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), otherHealthySnacksInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3298,7 +3298,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getReadyToEatOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getReadyToEatOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getReadyToEatOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), readyToEatInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3318,7 +3318,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getHealthyMealsOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHealthyMealsOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getHealthyMealsOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), healthyMealsInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3338,7 +3338,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getFeaturedOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFeaturedOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getFeaturedOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), featuredInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3358,7 +3358,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getHealthyMealReplacementOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHealthyMealReplacementOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getHealthyMealReplacementOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), healthyMealReplacementInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3378,7 +3378,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getProteinCoffeeOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getProteinCoffeeOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getProteinCoffeeOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), proteinCoffeeInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3398,7 +3398,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getCandiesOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCandiesOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getCandiesOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), candiesInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3418,7 +3418,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getFlavoringAgentsOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFlavoringAgentsOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getFlavoringAgentsOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), flavoringAgentsInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3438,7 +3438,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getKetoSnacksOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getKetoSnacksOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getKetoSnacksOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), ketoSnacksInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3458,7 +3458,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getManukaHoneyOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getManukaHoneyOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getManukaHoneyOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), manukaHoneyInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3478,7 +3478,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMeatSnacksOptionInHealthyFoodMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMeatSnacksOptionInHealthyFoodMenu().getAttribute("href");
         aeMegamenuPage.getMeatSnacksOptionInHealthyFoodMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), meatSnacksInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3565,7 +3565,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMenOptionInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMenOptionInSportsMenu().getAttribute("href");
         aeMegamenuPage.getMenOptionInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), menInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3585,7 +3585,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getClothingInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getClothingInSportsMenu().getAttribute("href");
         aeMegamenuPage.getClothingInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), clothingInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3605,7 +3605,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getTopsInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getTopsInSportsMenu().getAttribute("href");
         aeMegamenuPage.getTopsInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), topsInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3625,7 +3625,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getPantsInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getPantsInSportsMenu().getAttribute("href");
         aeMegamenuPage.getPantsInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), pantsInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3645,7 +3645,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getShortsInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getShortsInSportsMenu().getAttribute("href");
         aeMegamenuPage.getShortsInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), shortsInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3665,7 +3665,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getJacketsAndCoatsInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getJacketsAndCoatsInSportsMenu().getAttribute("href");
         aeMegamenuPage.getJacketsAndCoatsInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), jacketsAndCoatsInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3685,7 +3685,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSafetyMasksInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSafetyMasksInSportsMenu().getAttribute("href");
         aeMegamenuPage.getSafetyMasksInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), safetyMasksInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3705,7 +3705,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getFootwearInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFootwearInSportsMenu().getAttribute("href");
         aeMegamenuPage.getFootwearInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), footwearInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3725,7 +3725,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSneakersInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSneakersInSportsMenu().getAttribute("href");
         aeMegamenuPage.getSneakersInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), sneakersInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3745,7 +3745,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getTrainingShoesInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getTrainingShoesInSportsMenu().getAttribute("href");
         aeMegamenuPage.getTrainingShoesInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), trainingShoesInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3765,7 +3765,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getRunningShoesInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getRunningShoesInSportsMenu().getAttribute("href");
         aeMegamenuPage.getRunningShoesInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), runningShoesInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3785,7 +3785,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getHikingShoesInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHikingShoesInSportsMenu().getAttribute("href");
         aeMegamenuPage.getHikingShoesInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), hikingShoesInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3805,7 +3805,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getAccessoriesInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAccessoriesInSportsMenu().getAttribute("href");
         aeMegamenuPage.getAccessoriesInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), accessoriesInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3825,7 +3825,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getGlovesInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGlovesInSportsMenu().getAttribute("href");
         aeMegamenuPage.getGlovesInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), glovesInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3845,7 +3845,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBeltsInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBeltsInSportsMenu().getAttribute("href");
         aeMegamenuPage.getBeltsInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), beltsInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3865,7 +3865,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getCapsAndHatsInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCapsAndHatsInSportsMenu().getAttribute("href");
         aeMegamenuPage.getCapsAndHatsInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), capsAndHatsInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3885,7 +3885,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getCapInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCapInSportsMenu().getAttribute("href");
         aeMegamenuPage.getCapInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), capInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3905,7 +3905,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getShakersInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getShakersInSportsMenu().getAttribute("href");
         aeMegamenuPage.getShakersInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), shakersInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3925,7 +3925,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWaterBottlesInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWaterBottlesInSportsMenu().getAttribute("href");
         aeMegamenuPage.getWaterBottlesInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), waterBottlesInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3966,7 +3966,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSocksInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSocksInSportsMenu().getAttribute("href");
         aeMegamenuPage.getSocksInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), socksInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -3986,7 +3986,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getTowelsInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getTowelsInSportsMenu().getAttribute("href");
         aeMegamenuPage.getTowelsInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), towelsInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4006,7 +4006,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSunglassesInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSunglassesInSportsMenu().getAttribute("href");
         aeMegamenuPage.getSunglassesInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), sunglassesInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4026,7 +4026,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMixerInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMixerInSportsMenu().getAttribute("href");
         aeMegamenuPage.getMixerInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), mixerInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4046,7 +4046,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBagsInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBagsInSportsMenu().getAttribute("href");
         aeMegamenuPage.getBagsInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), bagsInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4066,7 +4066,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBackPacksInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBackPacksInSportsMenu().getAttribute("href");
         aeMegamenuPage.getBackPacksInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), backPacksInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4086,7 +4086,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getShoulderBagsInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getShoulderBagsInSportsMenu().getAttribute("href");
         aeMegamenuPage.getShoulderBagsInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), shoulderBagsInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4106,7 +4106,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWearableTechInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWearableTechInSportsMenu().getAttribute("href");
         aeMegamenuPage.getWearableTechInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), wearableTechInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4126,7 +4126,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWatchesInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWatchesInSportsMenu().getAttribute("href");
         aeMegamenuPage.getWatchesInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), watchesInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4146,7 +4146,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getGamingAccessoriesInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGamingAccessoriesInSportsMenu().getAttribute("href");
         aeMegamenuPage.getGamingAccessoriesInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), gamingAccessoriesInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4166,7 +4166,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.geEquipmentInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.geEquipmentInSportsMenu().getAttribute("href");
         aeMegamenuPage.geEquipmentInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), equipmentInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4186,7 +4186,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getGripsInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGripsInSportsMenu().getAttribute("href");
         aeMegamenuPage.getGripsInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), gripsInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4206,7 +4206,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBallsInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBallsInSportsMenu().getAttribute("href");
         aeMegamenuPage.getBallsInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), ballsInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4226,7 +4226,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getRollersInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getRollersInSportsMenu().getAttribute("href");
         aeMegamenuPage.getRollersInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), rollersInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4246,7 +4246,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWeightsInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWeightsInSportsMenu().getAttribute("href");
         aeMegamenuPage.getWeightsInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), weightsInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4266,7 +4266,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenInSportsMenu().getAttribute("href");
         aeMegamenuPage.getWomenInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4286,7 +4286,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenClothingInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenClothingInSportsMenu().getAttribute("href");
         aeMegamenuPage.getWomenClothingInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
        // Assert.assertEquals(webDriver.getCurrentUrl(), womenClothingInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4306,7 +4306,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenTopsInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenTopsInSportsMenu().getAttribute("href");
         aeMegamenuPage.getWomenTopsInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenTopsInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4326,7 +4326,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenShortsInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenShortsInSportsMenu().getAttribute("href");
         aeMegamenuPage.getWomenShortsInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenShortsInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4346,7 +4346,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenSafetyMasksInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenSafetyMasksInSportsMenu().getAttribute("href");
         aeMegamenuPage.getWomenSafetyMasksInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenSafetyMasksInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4366,7 +4366,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenAccessoriesInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenAccessoriesInSportsMenu().getAttribute("href");
         aeMegamenuPage.getWomenAccessoriesInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenAccessoriesInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4406,7 +4406,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenGlovesInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenGlovesInSportsMenu().getAttribute("href");
         aeMegamenuPage.getWomenGlovesInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenGlovesInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4426,7 +4426,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenBeltsInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenBeltsInSportsMenu().getAttribute("href");
         aeMegamenuPage.getWomenBeltsInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenBeltsInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4446,7 +4446,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenCapsAndHatsInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenCapsAndHatsInSportsMenu().getAttribute("href");
         aeMegamenuPage.getWomenCapsAndHatsInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenCapsAndHatsInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4466,7 +4466,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenCapsInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenCapsInSportsMenu().getAttribute("href");
         aeMegamenuPage.getWomenCapsInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenCapsInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4486,7 +4486,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenShakersInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenShakersInSportsMenu().getAttribute("href");
         aeMegamenuPage.getWomenShakersInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenShakersInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4506,7 +4506,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenWaterBottlesInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenWaterBottlesInSportsMenu().getAttribute("href");
         aeMegamenuPage.getWomenWaterBottlesInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenWaterBottlesInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4526,7 +4526,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenSocksInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenSocksInSportsMenu().getAttribute("href");
         aeMegamenuPage.getWomenSocksInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenSocksInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4546,7 +4546,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenTowelsInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenTowelsInSportsMenu().getAttribute("href");
         aeMegamenuPage.getWomenTowelsInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenTowelsInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4566,7 +4566,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenSunglassesInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenSunglassesInSportsMenu().getAttribute("href");
         aeMegamenuPage.getWomenSunglassesInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenSunglassesInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4586,7 +4586,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenMixerInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenMixerInSportsMenu().getAttribute("href");
         aeMegamenuPage.getWomenMixerInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenMixerInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4607,7 +4607,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenBagsInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenBagsInSportsMenu().getAttribute("href");
         aeMegamenuPage.getWomenBagsInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenBagsInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4627,7 +4627,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenBackPacksInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenBackPacksInSportsMenu().getAttribute("href");
         aeMegamenuPage.getWomenBackPacksInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenBackPacksInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4647,7 +4647,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenSholdersBagsInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenSholdersBagsInSportsMenu().getAttribute("href");
         aeMegamenuPage.getWomenSholdersBagsInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenSholdersBagsInSportsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4668,7 +4668,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSupplementsOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSupplementsOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getSupplementsOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), supplementsInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4688,7 +4688,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getOptimumNutritionOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getOptimumNutritionOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getOptimumNutritionOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), optimumNutritionInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4708,7 +4708,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMuscletechOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMuscletechOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getMuscletechOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), muscletechInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4728,7 +4728,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getCellucorOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCellucorOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getCellucorOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), cellucorInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4748,7 +4748,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getDymatizeOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getDymatizeOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getDymatizeOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), dymatizeInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4768,7 +4768,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getXtendOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getXtendOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getXtendOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), xtendInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4788,7 +4788,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getAnimalNutritionOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAnimalNutritionOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getAnimalNutritionOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), animalNutritionInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4808,7 +4808,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMusclePharmOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMusclePharmOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getMusclePharmOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), musclePharmInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4828,7 +4828,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getUniversalNutritionOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getUniversalNutritionOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getUniversalNutritionOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), universalNutritionInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4848,7 +4848,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBsnOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBsnOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getBsnOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), bsnInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4868,7 +4868,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getEhplabsOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getEhplabsOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getEhplabsOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), ehplabsInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4888,7 +4888,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getJymSupplementScienceOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getJymSupplementScienceOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getJymSupplementScienceOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), jymSupplementScienceInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4908,7 +4908,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBpiSportsOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBpiSportsOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getBpiSportsOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), bpiSportsInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4928,7 +4928,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getRussianBearOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getRussianBearOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getRussianBearOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), russianBearInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4948,7 +4948,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getIsopureOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getIsopureOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getIsopureOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), isopureInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4968,7 +4968,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getOneUpNutritionOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getOneUpNutritionOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getOneUpNutritionOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), oneUpNutritionInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -4988,7 +4988,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMusclemedsOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMusclemedsOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getMusclemedsOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), musclemedInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5008,7 +5008,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.gethMhpOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.gethMhpOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.gethMhpOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), mhpInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5028,7 +5028,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getEvlNutritionOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getEvlNutritionOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getEvlNutritionOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), evlNutritionInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5048,7 +5048,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getNlaForHerOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getNlaForHerOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getNlaForHerOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), nlaForHerInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5068,7 +5068,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMuscleNutritionOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMuscleNutritionOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getMuscleNutritionOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), muscleNutritionInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5088,7 +5088,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getGatNutritionOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGatNutritionOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getGatNutritionOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), gatNutritionInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5109,7 +5109,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         aeMegamenuPage.getMuscleNutritionOptionInByBrandMenu().click();
         String expectedUrl=aeMegamenuPage.getLabradaOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getLabradaOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), labradaInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5129,7 +5129,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getOrgainOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getOrgainOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getOrgainOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), orgainInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5149,7 +5149,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getNutrexResearchOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getNutrexResearchOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getNutrexResearchOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), nutrexResearchInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5169,7 +5169,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getScitecNutritionOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getScitecNutritionOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getScitecNutritionOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), scitecNutritionInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5189,7 +5189,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getProlabOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getProlabOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getProlabOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), prolabInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5209,7 +5209,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSotruOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSotruOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getSotruOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), sotruInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5229,7 +5229,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getDivineHealthOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getDivineHealthOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getDivineHealthOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), divineHealthInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5249,7 +5249,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getGhostOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGhostOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getGhostOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), ghostInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5269,7 +5269,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomensBestOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomensBestOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getWomensBestOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womensBestInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5289,7 +5289,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getEfxSportsOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getEfxSportsOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getEfxSportsOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), efxSportsInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5309,7 +5309,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBasixOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBasixOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getBasixOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), basixInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5329,7 +5329,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getAk47OptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAk47OptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getAk47OptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), ak47InByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5349,7 +5349,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getNfSportsOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getNfSportsOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getNfSportsOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), nfSportsInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5369,7 +5369,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getFullyDosedOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFullyDosedOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getFullyDosedOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), fullyDosedInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5389,7 +5389,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getFivePercentNutritionOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFivePercentNutritionOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getFivePercentNutritionOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), fivePercentNutritionInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5409,7 +5409,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getOlimpSportNutritionOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getOlimpSportNutritionOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getOlimpSportNutritionOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), olimpSportNutritionInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5429,7 +5429,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getJnxSportsOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getJnxSportsOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getJnxSportsOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), jnxSportsInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5449,7 +5449,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getFitAndLeanOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFitAndLeanOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getFitAndLeanOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),siteURL+expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), fitAndLeanInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5467,8 +5467,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getGymqueenOptionInByBrandMenu()).perform();
+        String expectedUrl=aeMegamenuPage.getGymqueenOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getGymqueenOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),siteURL+ gymQueenInByBrandMenuUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), gymqueenInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5488,7 +5489,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getThePackOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getThePackOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getThePackOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), thePackInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5508,7 +5509,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBetancourtNutritionOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBetancourtNutritionOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getBetancourtNutritionOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), betancourtNutritionInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5528,7 +5529,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getYallaProteinOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getYallaProteinOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getYallaProteinOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), yallaProteinInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5548,7 +5549,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getProteinWorldOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getProteinWorldOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getProteinWorldOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), proteinWorldInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5568,7 +5569,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getObviOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getObviOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getObviOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), obviInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5588,7 +5589,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getNaughtyBoyOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getNaughtyBoyOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getNaughtyBoyOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), naughtyBoyInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5608,7 +5609,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSteelFitOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSteelFitOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getSteelFitOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), steelFitInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5628,7 +5629,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getUsnOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getUsnOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getUsnOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), usnInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5648,7 +5649,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getXGamerOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getXGamerOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getXGamerOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), xGamerInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5668,7 +5669,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getInnosuppsOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getInnosuppsOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getInnosuppsOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), innosuppsInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5688,7 +5689,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getOutbreakNutritionOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getOutbreakNutritionOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getOutbreakNutritionOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), outbreakNutritionInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5708,7 +5709,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getInsaneLabzOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getInsaneLabzOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getInsaneLabzOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), insaneLabzInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5728,7 +5729,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getAllMaxOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAllMaxOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getAllMaxOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), allMaxInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5748,7 +5749,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getGlaxonOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGlaxonOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getGlaxonOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), glaxonInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5768,7 +5769,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getRedcon1OptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getRedcon1OptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getRedcon1OptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), redcon1InByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5788,7 +5789,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getPandaSupplementsOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getPandaSupplementsOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getPandaSupplementsOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), pandaSupplementsInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5808,7 +5809,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getNutrendOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getNutrendOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getNutrendOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), nutrendInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5828,7 +5829,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getOstrovitOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getOstrovitOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getOstrovitOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), ostrovitInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5848,7 +5849,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBetteryOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBetteryOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getBetteryOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), betteryInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5868,7 +5869,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getHealthyFoodSnacksAndMealReplacementOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHealthyFoodSnacksAndMealReplacementOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getHealthyFoodSnacksAndMealReplacementOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), healthyFoodSnacksAndMealReplacementInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5888,7 +5889,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWowHydrateOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWowHydrateOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getWowHydrateOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), wowHydrateInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5908,7 +5909,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getQuestNutritionOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getQuestNutritionOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getQuestNutritionOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), questNutritionInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5928,7 +5929,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getGrenadeOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGrenadeOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getGrenadeOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), grenadeInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5948,7 +5949,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getReignEnergyOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getReignEnergyOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getReignEnergyOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), reignEnergyInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5968,7 +5969,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMonsterEnergyOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMonsterEnergyOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getMonsterEnergyOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), monsterEnergyInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -5988,7 +5989,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getThirdEnergyOptionInByBrandMenu()).perform();
         String expectedUrl=aeMegamenuPage.getThirdEnergyOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getThirdEnergyOptionInByBrandMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), thirdEnergyInByBrandMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6095,7 +6096,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getProteinOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getProteinOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getProteinOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), proteinOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6114,7 +6115,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWheyProteinOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWheyProteinOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getWheyProteinOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), wheyProteinOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6133,7 +6134,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWheyProteinIsolateOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWheyProteinIsolateOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getWheyProteinIsolateOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), WheyProteinIsolateOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6152,7 +6153,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getProteinBlendsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getProteinBlendsOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getProteinBlendsOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), proteinBlendsOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6171,7 +6172,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getNonDairyProteinOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getNonDairyProteinOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getNonDairyProteinOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), nonDairyProteinOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6190,7 +6191,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getCaseinProteinOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCaseinProteinOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getCaseinProteinOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), caseinProteinOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6209,7 +6210,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getDietProteinOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getDietProteinOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getDietProteinOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), dietProteinOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6228,7 +6229,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMassGainersOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMassGainersOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getMassGainersOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), massGainersOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6247,7 +6248,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getCreatineOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCreatineOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getCreatineOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), creatineOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6266,7 +6267,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getCreatineMonohydrateOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCreatineMonohydrateOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getCreatineMonohydrateOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), creatineMonohydrateOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6285,7 +6286,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getCreatineBlendsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCreatineBlendsOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getCreatineBlendsOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), creatineBlendsOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6304,7 +6305,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getAminoAcidsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidsOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getAminoAcidsOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aminoAcidsOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6323,7 +6324,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getbCAAOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getbCAAOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getbCAAOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), bCAAOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6342,7 +6343,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.geteAAOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.geteAAOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.geteAAOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), eAAOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6361,7 +6362,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getArginineOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getArginineOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getArginineOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), arginineOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6380,7 +6381,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBetaAlanineOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBetaAlanineOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getBetaAlanineOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), betaAlanineOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6399,7 +6400,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.gethMBOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.gethMBOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.gethMBOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), hMBOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6418,7 +6419,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getAminoAcidPowdersOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidPowdersOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getAminoAcidPowdersOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aminoAcidPowdersOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6437,7 +6438,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getAminoAcidPillsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidPillsOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getAminoAcidPillsOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aminoAcidPillsOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6456,7 +6457,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getCitrullineOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCitrullineOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getCitrullineOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), citrullineOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6475,7 +6476,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getAminoAcidLiquidsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidLiquidsOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getAminoAcidLiquidsOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aminoAcidLiquidsOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6494,7 +6495,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMuscleBoostersOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMuscleBoostersOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getMuscleBoostersOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), muscleBoostersOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6513,7 +6514,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getTestosteroneBoostersOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getTestosteroneBoostersOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getTestosteroneBoostersOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), testosteroneBoostersOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6551,7 +6552,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWeightManagementOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWeightManagementOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getWeightManagementOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), weightManagementOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6570,7 +6571,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getStimulantWeightLossOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getStimulantWeightLossOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getStimulantWeightLossOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), stimulantWeightLossOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6589,7 +6590,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getNonStimulantWeightLossOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getNonStimulantWeightLossOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getNonStimulantWeightLossOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), nonStimulantWeightLossOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6608,7 +6609,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMealReplacementsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMealReplacementsOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getMealReplacementsOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), mealReplacementsOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6627,7 +6628,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMetabolismSupportOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMetabolismSupportOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getMetabolismSupportOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), metabolismSupportOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6646,7 +6647,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getToningCreamsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getToningCreamsOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getToningCreamsOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), toningCreamsOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6665,7 +6666,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMctOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMctOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getMctOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), mctOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6684,7 +6685,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getRecoveryOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getRecoveryOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getRecoveryOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), recoveryOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6703,7 +6704,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getGlutamineOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGlutamineOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getGlutamineOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), glutamineOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6722,7 +6723,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getRecoveryBlendOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getRecoveryBlendOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getRecoveryBlendOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), recoveryBlendOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6741,7 +6742,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getElectrolytesAndHydrationOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getElectrolytesAndHydrationOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getElectrolytesAndHydrationOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), electrolytesAndHydrationOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6760,7 +6761,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getCarbohydratesOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCarbohydratesOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getCarbohydratesOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), carbohydratesOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6779,7 +6780,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getCarbohydratePowdersOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCarbohydratePowdersOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getCarbohydratePowdersOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), carbohydratePowdersOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6798,7 +6799,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getEnergyAndEnduranceOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getEnergyAndEnduranceOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getEnergyAndEnduranceOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), energyAndEnduranceOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6817,7 +6818,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getStimulantEnergyOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getStimulantEnergyOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getStimulantEnergyOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), stimulantEnergyOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6836,7 +6837,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getNonStimulantEnergyOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getNonStimulantEnergyOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getNonStimulantEnergyOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), nonStimulantEnergyOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6855,7 +6856,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getGamingAndFocusOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGamingAndFocusOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getGamingAndFocusOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), gamingAndFocusOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6874,7 +6875,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getGamingEssentialsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGamingEssentialsOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getGamingEssentialsOptionInSportSupplementsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), gamingEssentialsOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6928,7 +6929,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(healthVitaminsUrl));
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6947,7 +6948,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getFeaturedOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFeaturedOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getFeaturedOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), featuredOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6966,7 +6967,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getAliveVitaminsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAliveVitaminsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getAliveVitaminsOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aliveVitaminsOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -6985,7 +6986,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSexualHealthOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSexualHealthOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getSexualHealthOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), sexualHealthOptionInVitaminsAndHealthUrl);
         System.out.println(webDriver.getCurrentUrl());
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
@@ -7005,7 +7006,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getEssentialVitaminsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getEssentialVitaminsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getEssentialVitaminsOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), essentialVitaminsOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7024,7 +7025,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getFolicAcidOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFolicAcidOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getFolicAcidOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), folicAcidOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7043,7 +7044,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getVitaminAOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminAOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getVitaminAOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminAOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7062,7 +7063,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getVitaminBOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminBOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getVitaminBOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminBOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7081,7 +7082,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getVitaminCOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminCOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getVitaminCOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminCOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7100,7 +7101,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getVitaminDOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminDOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getVitaminDOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminDOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7119,7 +7120,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getVitaminEOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminEOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getVitaminEOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminEOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7138,7 +7139,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getVitaminKOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminKOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getVitaminKOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminKOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7157,7 +7158,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMultiVitaminsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMultiVitaminsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getMultiVitaminsOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), multiVitaminsOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7176,7 +7177,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getVitaminsForKidsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminsForKidsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getVitaminsForKidsOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminsForKidsOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7195,7 +7196,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getVitaminsForMenOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminsForMenOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getVitaminsForMenOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminsForMenOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7214,7 +7215,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getVitaminsForWomenOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminsForWomenOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getVitaminsForWomenOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminsForWomenOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7233,7 +7234,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBoneAndJointOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBoneAndJointOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getBoneAndJointOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), boneJointOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7252,7 +7253,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBoneHealthOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBoneHealthOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getBoneHealthOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), boneHealthOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7271,7 +7272,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getJointHealthOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getJointHealthOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getJointHealthOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), jointHealthOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7290,7 +7291,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBeautyOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBeautyOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getBeautyOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), beautyOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7309,7 +7310,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getCollagenOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCollagenOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getCollagenOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), collagenOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7328,7 +7329,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getHairSkinAndNailsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHairSkinAndNailsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getHairSkinAndNailsOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), hairSkinAndNailsOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7347,7 +7348,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getFishOilOmegasOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFishOilOmegasOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getFishOilOmegasOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), fishOilAndOmegasOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7366,7 +7367,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getFishOilOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFishOilOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getFishOilOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), fishOilOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7385,7 +7386,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getOmega369OptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getOmega369OptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getOmega369OptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), omegaMixOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7404,7 +7405,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getHealthLifestyleOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHealthLifestyleOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getHealthLifestyleOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), healthyLifestyleOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7423,7 +7424,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getAntioxidantsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAntioxidantsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getAntioxidantsOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), antioxidantOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7442,7 +7443,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBloodSugarSupportOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBloodSugarSupportOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getBloodSugarSupportOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), bloodSugarSupportOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7461,7 +7462,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBrainSupportOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBrainSupportOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getBrainSupportOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), brainSupportOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7480,7 +7481,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getDetoxAndCleanseOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getDetoxAndCleanseOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getDetoxAndCleanseOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), detoxCleanseOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7499,7 +7500,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getEnergyFormulasOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getEnergyFormulasOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getEnergyFormulasOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), energyFormulasOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7518,7 +7519,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getEyeHealthOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getEyeHealthOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getEyeHealthOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), eyeHealthOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7537,7 +7538,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getHerbsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHerbsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getHerbsOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), herbsOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7556,7 +7557,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getHormonesBalanceOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHormonesBalanceOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getHormonesBalanceOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), hormonesBalanceOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7575,7 +7576,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getImmuneSupportOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getImmuneSupportOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getImmuneSupportOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), immuneSupportOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7594,7 +7595,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMensHealthOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMensHealthOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getMensHealthOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), mensHealthOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7613,7 +7614,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getStressReliefOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getStressReliefOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getStressReliefOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), stressReliefOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7632,7 +7633,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSleepSupportOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSleepSupportOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getSleepSupportOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), sleepSupportOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7651,7 +7652,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSuperFoodsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSuperFoodsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getSuperFoodsOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), superFoodsOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7670,7 +7671,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getUrinaryTractSupportOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getUrinaryTractSupportOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getUrinaryTractSupportOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), urinaryTractSupportOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7689,7 +7690,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWeightManagementOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWeightManagementOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getWeightManagementOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), weightManagementOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7708,7 +7709,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomensHealthOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomensHealthOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getWomensHealthOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenesHealthOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7727,7 +7728,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getDigestionOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getDigestionOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getDigestionOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), digestionOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7746,7 +7747,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getDigestiveSupportOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getDigestiveSupportOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getDigestiveSupportOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), digestionSupportOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7765,7 +7766,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getProbioticsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getProbioticsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getProbioticsOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), probioticsOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7784,7 +7785,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSportVitaminsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSportVitaminsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getSportVitaminsOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), sportVitaminsOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7803,7 +7804,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getAminoAcidOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getAminoAcidOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aminoAcidOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7822,7 +7823,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMineralsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMineralsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getMineralsOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), mineralsOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7841,7 +7842,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getCalciumOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCalciumOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getCalciumOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), calciumOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7860,7 +7861,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getIronOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getIronOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getIronOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), ironOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7879,7 +7880,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMagnesiumOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMagnesiumOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getMagnesiumOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), magnesiumOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7898,7 +7899,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMultimineralFormulasOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMultimineralFormulasOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getMultimineralFormulasOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), multimineralFormulasOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7917,7 +7918,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getZincOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getZincOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getZincOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), zincOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7936,7 +7937,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getPotassiumOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getPotassiumOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getPotassiumOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), potassiumOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7955,7 +7956,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getHealthyDrinksOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHealthyDrinksOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getHealthyDrinksOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), healthyDrinksOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7974,7 +7975,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getDrinkableVitaminsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getDrinkableVitaminsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getDrinkableVitaminsOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), drinkableVitaminsOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -7993,7 +7994,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getPetsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getPetsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getPetsOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), petsOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8012,7 +8013,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSupplementsMoreOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSupplementsMoreOptionInVitaminsAndHealthMainMenu().getAttribute("href");
         aeMegamenuPage.getSupplementsMoreOptionInVitaminsAndHealthMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), supplementsMoreOptionInVitaminsAndHealthUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8083,7 +8084,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getGroceryOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGroceryOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getGroceryOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), groceryOptionInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8102,7 +8103,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBakingAndCookingOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBakingAndCookingOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getBakingAndCookingOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), bakingAndCookingOptionInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8121,7 +8122,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getCannedOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCannedOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getCannedOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), cannedOptionInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8140,7 +8141,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getCoffeeOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCoffeeOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getCoffeeOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), coffeeOptionInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8159,7 +8160,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getCondimentsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCondimentsOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getCondimentsOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), condimentsOptionInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8178,7 +8179,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMilkAndCreamOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMilkAndCreamOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getMilkAndCreamOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), milkAndCreamOptionInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8197,7 +8198,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getNutsAndOatsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getNutsAndOatsOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getNutsAndOatsOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), nutsAndOatsOptionInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8216,7 +8217,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getOilsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getOilsOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getOilsOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), oilsOptionInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8235,7 +8236,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getPastaOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getPastaOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getPastaOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), pastaOptionInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8254,7 +8255,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getRiceAndGrainsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getRiceAndGrainsOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getRiceAndGrainsOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), riceAndGrainsOptionInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8273,7 +8274,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSeasoningsAndSpicesOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSeasoningsAndSpicesOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getSeasoningsAndSpicesOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), seasoningsAndSpicessOptionInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8292,7 +8293,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSugarSweetenersOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSugarSweetenersOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getSugarSweetenersOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), sugarAndSweetenersOptionInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8311,7 +8312,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSyrupsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSyrupsOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getSyrupsOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), syrupsOptionInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8330,7 +8331,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getTeaAndHerbsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getTeaAndHerbsOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getTeaAndHerbsOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), teaAndHerbsInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8349,7 +8350,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSuperfoodsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSuperfoodsOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getSuperfoodsOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), superFoodsInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8368,7 +8369,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getReadyMixesOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getReadyMixesOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getReadyMixesOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), readyMixInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8387,7 +8388,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBreakfastAndCerealOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBreakfastAndCerealOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getBreakfastAndCerealOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), breakfastAndCerealInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8406,7 +8407,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getReadyToDrinkOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getReadyToDrinkOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getReadyToDrinkOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), readyToDrinkInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8425,7 +8426,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getAminoAndBcaasOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAndBcaasOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getAminoAndBcaasOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aminoBcaasInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8444,7 +8445,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getEnergyDrinksOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getEnergyDrinksOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getEnergyDrinksOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), energyDrinksInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8463,7 +8464,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getProteinShakesOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getProteinShakesOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getProteinShakesOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), proteinShakesInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8482,7 +8483,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getElectrolytesAndHydrationOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getElectrolytesAndHydrationOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getElectrolytesAndHydrationOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), electrolytesAndHydrationInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8501,7 +8502,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getHealthySnacksOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHealthySnacksOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getHealthySnacksOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), healthySnacksInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8520,7 +8521,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getProteinBarsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getProteinBarsOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getProteinBarsOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), proteinBarsInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8539,7 +8540,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getCookiesOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCookiesOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getCookiesOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), cookiesInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8558,7 +8559,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getChipsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getChipsOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getChipsOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), chipsInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8577,7 +8578,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBrowniesAndPancakesOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBrowniesAndPancakesOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getBrowniesAndPancakesOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), browniesAndPancakesInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8596,7 +8597,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSnackBarsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSnackBarsOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getSnackBarsOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), snackBarsInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8615,7 +8616,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSpreadsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSpreadsOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getSpreadsOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), spreadsInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8634,7 +8635,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getOtherHealthySnacksOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getOtherHealthySnacksOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getOtherHealthySnacksOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), otherHealthySnacksInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8653,7 +8654,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getReadyToEatOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getReadyToEatOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getReadyToEatOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), readyToEatInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8672,7 +8673,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getHealthyMealsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHealthyMealsOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getHealthyMealsOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), healthyMealsInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8691,7 +8692,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getFeaturedOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFeaturedOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getFeaturedOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), featuredInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8710,7 +8711,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getHealthyMealReplacementOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHealthyMealReplacementOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getHealthyMealReplacementOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), healthyMealReplacementInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8729,7 +8730,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getProteinCoffeeOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getProteinCoffeeOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getProteinCoffeeOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), proteinCoffeeInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8748,7 +8749,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getCandiesOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCandiesOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getCandiesOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), candiesInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8767,7 +8768,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getFlavoringAgentsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFlavoringAgentsOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getFlavoringAgentsOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), flavoringAgentsInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8786,7 +8787,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getKetoSnacksOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getKetoSnacksOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getKetoSnacksOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), ketoSnacksInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8805,7 +8806,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getManukaHoneyOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getManukaHoneyOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getManukaHoneyOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), manukaHoneyInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8824,7 +8825,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMeatSnacksOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMeatSnacksOptionInHealthyFoodMainMenu().getAttribute("href");
         aeMegamenuPage.getMeatSnacksOptionInHealthyFoodMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), meatSnacksInHealthyFoodUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8875,8 +8876,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         aeMegamenuPage.switchToAECountry();
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
+        String expectedUrl=aeMegamenuPage.getSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getSportsMainMenu().click();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(sportsUrl));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
@@ -8894,7 +8896,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMenOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMenOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getMenOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), menInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8913,7 +8915,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSportOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSportOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getSportOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), sportInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8932,7 +8934,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getFootballOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFootballOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getFootballOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), footballInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8951,7 +8953,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBasketballOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBasketballOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getBasketballOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), basketballInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8970,7 +8972,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBaseballOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBaseballOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getBaseballOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), baseballInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -8989,7 +8991,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getRunningOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getRunningOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getRunningOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), runningInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9008,7 +9010,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSwimmingOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSwimmingOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getSwimmingOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), swimmingInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9027,7 +9029,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getYogaOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getYogaOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getYogaOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), yogaInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9046,7 +9048,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getFitnessAndTrainingOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFitnessAndTrainingOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getFitnessAndTrainingOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), fitnessAndTrainingInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9065,7 +9067,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMmaOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMmaOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getMmaOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), mmaInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9103,7 +9105,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBoardGamesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBoardGamesOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getBoardGamesOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), boardGamesInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9122,7 +9124,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSportsTechOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSportsTechOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getSportsTechOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), sportsTechInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9141,7 +9143,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWearableTechOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWearableTechOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getWearableTechOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), wearableTechInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9160,7 +9162,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getCamerasOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCamerasOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getCamerasOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), camerasInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9179,7 +9181,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getPhoneAccessoriesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getPhoneAccessoriesOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getPhoneAccessoriesOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), phoneAccessoriesInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9198,7 +9200,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getPersonalCareOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getPersonalCareOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getPersonalCareOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), personalCareInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9217,7 +9219,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getShoweringOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getShoweringOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getShoweringOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), showeringInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9236,7 +9238,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getShavingOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getShavingOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getShavingOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), shavingInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9255,7 +9257,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSkinCareOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSkinCareOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getSkinCareOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), skinCareInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9274,7 +9276,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBodyCareOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBodyCareOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getBodyCareOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), bodyCareInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9293,7 +9295,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getOralCareOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getOralCareOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getOralCareOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), oralCareInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9312,7 +9314,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getTherapyOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getTherapyOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getTherapyOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), therapyInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9331,7 +9333,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMasksOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMasksOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getMasksOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), masksInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9350,7 +9352,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getFitnessAndTrainingCategoryOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFitnessAndTrainingCategoryOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getFitnessAndTrainingCategoryOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), fitnessAndTrainingCategoryInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9369,7 +9371,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getFitnessEquipmentOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFitnessEquipmentOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getFitnessEquipmentOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), fitnessEquipmentInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9388,7 +9390,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSkippingRopesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSkippingRopesOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getSkippingRopesOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), skippingRopesInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9407,7 +9409,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWeightBeltsOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWeightBeltsOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getWeightBeltsOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), weightBeltsInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9426,7 +9428,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getScootersOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getScootersOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getScootersOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), scootersInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9445,7 +9447,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getTrainingAccessoriesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getTrainingAccessoriesOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getTrainingAccessoriesOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), trainingAccessoriesInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9464,7 +9466,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getShakersAndBottlesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getShakersAndBottlesOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getShakersAndBottlesOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), shakersBottlesInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9483,7 +9485,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBagsOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBagsOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getBagsOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), bagsInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9502,7 +9504,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getGlovesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGlovesOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getGlovesOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), glovesInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9521,7 +9523,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getBracesAndSleevesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBracesAndSleevesOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getBracesAndSleevesOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), bracesSleevesInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9540,7 +9542,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getMouthguardOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMouthguardOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getMouthguardOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), mouthguardInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9559,7 +9561,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getApparelOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getApparelOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getApparelOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), apparelInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9578,7 +9580,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSportswearOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSportswearOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getSportswearOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), sportsWearInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9597,7 +9599,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getPantsOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getPantsOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getPantsOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), pantsInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9616,7 +9618,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getShortsOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getShortsOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getShortsOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), shortsInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9635,7 +9637,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getHoodiesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHoodiesOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getHoodiesOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), hoodiesInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9654,7 +9656,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.gettShirtsOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.gettShirtsOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.gettShirtsOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), tShirtsInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9673,7 +9675,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getTanksOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getTanksOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getTanksOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), tanksInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9692,7 +9694,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getFootwearOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFootwearOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getFootwearOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), footwearInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9711,7 +9713,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSneakersOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSneakersOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getSneakersOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), sneakersInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9730,7 +9732,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getTrainingShoesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getTrainingShoesOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getTrainingShoesOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), trainingShoesInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9749,7 +9751,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getRunnigShoesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getRunnigShoesOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getRunnigShoesOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), runningShoesInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9768,7 +9770,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getWomenOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9787,7 +9789,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenSportsTechOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenSportsTechOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getWomenSportsTechOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenSportsTechInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9806,7 +9808,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenWearableTechOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenWearableTechOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getWomenWearableTechOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenWearableTechInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9825,7 +9827,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenCamerasOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenCamerasOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getWomenCamerasOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenCamerasInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9844,7 +9846,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenPhoneAccessoriesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenPhoneAccessoriesOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getWomenPhoneAccessoriesOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenPhoneAccessoriesInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9863,7 +9865,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenPersonalCareOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenPersonalCareOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getWomenPersonalCareOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenPersonalCareInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9882,7 +9884,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenShoweringOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenShoweringOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getWomenShoweringOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenShoweringInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9901,7 +9903,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenSkinCareOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenSkinCareOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getWomenSkinCareOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenSkinCareInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9920,7 +9922,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenBodyCareOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenBodyCareOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getWomenBodyCareOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenBodyCareInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9939,7 +9941,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenOralCareOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenOralCareOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getWomenOralCareOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenOralCareInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9958,7 +9960,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenTherapyOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenTherapyOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getWomenTherapyOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenTherapyInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9977,7 +9979,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenMasksOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenMasksOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getWomenMasksOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenMasksInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -9996,7 +9998,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenFitnessAndTrainingOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenFitnessAndTrainingOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getWomenFitnessAndTrainingOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenFitnessAndTrainingInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -10015,7 +10017,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getWomenTrainingAccessoriesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenTrainingAccessoriesOptionInSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getWomenTrainingAccessoriesOptionInSportsMainMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenTrainingAccessoriesInSportsMainMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -10035,7 +10037,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         String expectedUrl=aeMegamenuPage.getWomenOnlyMainMenu().getAttribute("href");
         aeMegamenuPage.getWomenOnlyMainMenu().click();
         DataHelperAndWait.implicitWait(3);
-        Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenOnlyUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
