@@ -5,9 +5,9 @@
         <listener class-name="extent_report_listner.ExtentReportListener" />
     </listeners>
 
-    <listeners>
-        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>
-    </listeners>
+<!--    <listeners>-->
+<!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
+<!--    </listeners>-->
 
 
     <test name=" MegaMenu" preserve-order="true">
@@ -16,7 +16,7 @@
         2. To test on stgTest Env, change the value to "stgTest".
         3. To test on stg Env, change the value to "stg".
         4. To test on Staging2 Env, change the value to "staging2". -->
-        <parameter name="environment" value="production" />
+        <parameter name="environment" value="stgTest" />
 
         <!-- Guidelines:
     1. To test on Arabic version, change the value to "ar".
@@ -27,116 +27,13 @@
         <classes>
 
         <class name="sporter_test.AEMegaMenuTestCases">
-            <methods>
-                <include name="verifyTheDownArrowIconAppearsCorrectlyNextToTheHealthyFoodMainMenu"></include>
-                <include name="verifyTheSubMenuWillAppearsCorrectlyOnceHoveringOnHealthyFoodMainMenu"></include>
-                <include name="verifyHealthFoodMainMenuDisplayTheCorrectCategoriesAndSubCategories"></include>
-                <include name="verifyClickingOnHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnGroceryOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnBakingAndCookingOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnCannedOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnCoffeeOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnCondimentsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnMilkAndCreamOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnNutsAndOatsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnOilsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnPastaOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnRiceAndGrainsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnSeasoningsAndSpicesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnSugarSweetenersOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnSyrupsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnTeaAndHerbsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnSuperfoodsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnReadyMixesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnBreakfastAndCerealOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnReadyToDrinkOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnAminoAndBcaasOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnEnergyDrinksOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnProteinShakesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnElectrolytesAndHydrationOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnHealthySnacksOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnProteinBarsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnCookiesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnChipsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnBrowniesAndPancakesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnSnackBarsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnSpreadsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnOtherHealthySnacksOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnReadyToEatOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnHealthyMealsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnFeaturedOptionInHealthyFoodMianMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnHealthyMealReplacementOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnProteinCoffeeOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnCandiesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnFlavoringAgentsOptionOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnKetoSnacksOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnManukaHoneyOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnMeatSnacksOptionInHealthyFoodMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyTheDownArrowIconAppearsCorrectlyNextToTheSportsMainMenu"></include>
-                <include name="verifyTheSubMenuWillAppearsCorrectlyOnceHoveringOnSportsMainMenu"></include>
-                <include name="verifySportsMainMenuDisplayTheCorrectCategoriesAndSubCategories"></include>
-                <include name="verifyClickingOnSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnMenOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnSportOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnFootballOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnBasketballOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnBaseballOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnRunningOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnSwimmingOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnYogaOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnFitnessAndTrainingOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnMmaOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnJiuJitsuOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnBoardGamesOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnSportsTechOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnWearableTechOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnCamerasOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnPhoneAccessoriesOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnPersonalCareOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnShoweringOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnShavingOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnSkinCareOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnBodyCareOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnOralCareOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnTherapyOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnMasksOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnFitnessAndTrainingCategoryOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnFitnessEquipmentOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnSkippingRopesOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnWeightBeltsOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnScootersOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnTrainingAccessoriesOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnShakersAndBottlesOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnBagsOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnGlovesOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnBracesAndSleevesOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnMouthguardOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnApperalOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnSportswearOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnPantsOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnShortsOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnHoodiesOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnTShirtsOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnTanksOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnFootwearOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnSneakersOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnTrainingShoesOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnRunningShoesOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnWomenOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnWomenSportsTechOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnWomenWearableTechOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnWomenCamerasOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnWomenPhoneAccessoriesOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnWomenPersonalCareOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnWomenShoweringOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnWomenSkinCareOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnWomenBodyCareOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnWomenOralCareOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnWomenTherapyOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnWomenMasksOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnWomenFitnessAndTrainingOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyClickingOnWomenTrainingAccessoriesOptionInSportsMainMenuRedirectUserToCorrectURL"></include>
-            </methods>
+<!--            <methods>-->
+<!--               -->
+<!--             -->
+<!--                <include name="verifyClickingOnGlovesOptionInSportsMainMenuRedirectUserToCorrectURL"></include>-->
+<!--                <include name="verifyClickingOnBracesAndSleevesOptionInSportsMainMenuRedirectUserToCorrectURL"></include>-->
+
+<!--            </methods>-->
         </class>
 
 <!--        <class name="test.Test2" />-->

@@ -1,4 +1,3 @@
-
 package core;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -68,39 +67,39 @@ public class BaseTest {
     @Parameters({"environment"})
     public void setupBrowser( String environment) throws Exception {
         environmentName=environment;
-        //This ChromeWebDriver 106
+        //This ChromeWebDriver 108
 
         switch (environment){
             case "production":
-             System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
                 siteURL = "https://www.sporter.com";
                 webDriver = new ChromeDriver();
-             webDriver.manage().window().maximize();
-             webDriver.navigate().to(siteURL);
-                break;
-              case "stg":
-                  System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
-                  siteURL = "https://stg.sporter.com";
-                  webDriver = new ChromeDriver();
                 webDriver.manage().window().maximize();
                 webDriver.navigate().to(siteURL);
                 break;
-              case "stgTest":
-                  System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
-                  siteURL ="https://stg-test.sporter.com";
-                  webDriver = new ChromeDriver();
+            case "stg":
+                System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
+                siteURL = "https://stg.sporter.com";
+                webDriver = new ChromeDriver();
                 webDriver.manage().window().maximize();
                 webDriver.navigate().to(siteURL);
                 break;
-                case "staging2":
-                    System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
-                    siteURL ="https://staging2.sporter.com";
-                    webDriver = new ChromeDriver();
+            case "stgTest":
+                System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
+                siteURL ="https://stg-test.sporter.com";
+                webDriver = new ChromeDriver();
                 webDriver.manage().window().maximize();
                 webDriver.navigate().to(siteURL);
                 break;
-              default:
-                  throw new Exception("environment is not correct");
+            case "staging2":
+                System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
+                siteURL ="https://staging2.sporter.com";
+                webDriver = new ChromeDriver();
+                webDriver.manage().window().maximize();
+                webDriver.navigate().to(siteURL);
+                break;
+            default:
+                throw new Exception("environment is not correct");
 
         }
     }
