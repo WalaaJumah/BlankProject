@@ -7700,7 +7700,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
 
-    @Test(description = "Make sure clicking on the Womens Health Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 389)
+    @Test(description = "Make sure clicking on the Women Health Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 389)
     public void verifyClickingOnWomensHealthOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
