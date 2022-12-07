@@ -149,6 +149,11 @@ public class DataHelperAndWait extends BaseTest {
             element.sendKeys(Keys.BACK_SPACE);
         }
     }
+    public static void waitForUrlContains(String expectedString, WebDriver driver, int specifiedTimeout) {
+        WebDriverWait wait = new WebDriverWait(driver, specifiedTimeout);
+        ExpectedCondition<Boolean> urlIsCorrect = arg0 ->    driver.getCurrentUrl().contains(expectedString);
+        wait.until(urlIsCorrect);
+    }
 
     public static void accessAllPagesInsideTheProductsListPage( String numberOfProductInTheList, WebElement element ){
         double numberOfProductInTheListInInt=Double.parseDouble(numberOfProductInTheList.substring(10,numberOfProductInTheList.length()-7));
@@ -158,19 +163,22 @@ public class DataHelperAndWait extends BaseTest {
             do {
                 String pageNumber = Integer.toString(i);
                 element.click();
-                DataHelperAndWait.waitForTime(6000);
-                Assert.assertTrue(webDriver.getCurrentUrl().endsWith(pageNumber),"The URL is wrong");
+//                DataHelperAndWait.waitForTime(6000);
+                DataHelperAndWait.waitForUrlContains(pageNumber,webDriver,6);
+                Assert.assertTrue(webDriver.getCurrentUrl().endsWith(pageNumber),"The URL is wrong in page"+pageNumber);
                 boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
                 assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
                 boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
                 assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
                 boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
-                assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
                 assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page "+pageNumber+ "The URL is"+webDriver.getCurrentUrl());
                 i++;
             }
-            while (i <= numberOfThePagesInList);}
+            while (i <= numberOfThePagesInList);
+            System.out.println("The number of pages in the list is "+i);
+        }
         else System.out.println("There's only a page in the list");
     }
+
 
 }

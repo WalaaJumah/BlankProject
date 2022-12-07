@@ -6,343 +6,19 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.AEMegaMenuPage;
+import sporter_pages.AeAllPagesInsideCategoriesInMegaMenuPage;
 
 import static org.testng.Assert.assertFalse;
 
 public class AEMegaMenuTestCases extends BaseTest {
     Actions action;
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
-
+    AeAllPagesInsideCategoriesInMegaMenuPage aeAllPagesInsideCategoriesInMegaMenuPage;
     String sportSupplementsUrl = "/en-ae/sport-supplements/";
     String healthVitaminsUrl = "/en-ae/health-vitamins/";
     String sportsUrl = "/en-ae/sports/";
-//    String healthyFoodsUrl = "https://www.sporter.com/en-ae/healthy-food/";
      String healthyFoodsUrl = "/en-ae/healthy-food/";
     String womenOnlyUrl = "/en-ae/female/";
-    String salesAndOffersUrl = "/en-ae/salesoffers/";
-    String byGoalUrl = "/en-ae/goal/";
-    String sportStacksUrl = "/en-ae/sporter-stacks/";
-    String byBrandUrl = "/en-ae/brands";
-    String proteinOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/protein/";
-    String creatineOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/creatine/";
-    String aminoAcidsOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/amino-acids/";
-    String muscleBoostersOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/muscles-boosters/";
-    String weightManagementOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/weight-management/";
-    String recoveryOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/recovery/";
-    String carbohydratesOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/carbohydrates/";
-    String energyAndEnduranceOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/energy-endurance/";
-    String gamingAndFocusOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements//gaming-focus";
-    String wheyProteinOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/protein/whey-protein/";
-    String WheyProteinIsolateOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/protein/whey-protein-isolate/";
-    String proteinBlendsOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/protein/protein-blends/";
-    String nonDairyProteinOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/protein/non-dairy-protein/";
-    String caseinProteinOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/protein/casein-protein/";
-    String dietProteinOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/protein/diet-protein/";
-    String massGainersOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/protein/mass-gainer/";
-    String creatineMonohydrateOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/creatine/creatine-monohydrate/";
-    String creatineBlendsOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/creatine/creatine-blends/";
-    String bCAAOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/amino-acids/bcaa/";
-    String eAAOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/amino-acids//eaa";
-    String arginineOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/amino-acids/arginine/";
-    String betaAlanineOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/amino-acids/beta-alanine/";
-    String hMBOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/amino-acids/hmb/";
-    String aminoAcidPowdersOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/amino-acids/powders/";
-    String aminoAcidPillsOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/amino-acids/capsules/";
-    String citrullineOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/amino-acids/citrulline/";
-    String aminoAcidLiquidsOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/amino-acids/liquids/";
-    String testosteroneBoostersOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/muscles-boosters/testosterone-booster/";
-    String ghBoostersOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/muscles-boosters/gh-booster/";
-    String stimulantWeightLossOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/weight-management/stimulant-weight-loss/";
-    String nonStimulantWeightLossOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/weight-management/non-stimulant-weight-loss/";
-    String mealReplacementsOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/weight-management/meal-replacement/";
-    String metabolismSupportOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/weight-management/metabolism-support/";
-    String toningCreamsOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/weight-management/toning-cream/";
-    String mctOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/weight-management/mct/";
-    String glutamineOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/recovery/glutamine/";
-    String recoveryBlendOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/recovery/recovery-blend/";
-    String electrolytesAndHydrationOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/recovery//electrolytes";
-    String carbohydratePowdersOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/carbohydrates/carbohydrates-powders/";
-    String stimulantEnergyOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/energy-endurance/stimulant-energy/";
-    String nonStimulantEnergyOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements/energy-endurance/non-stimulant-energy/";
-    String gamingEssentialsOptionInSportSupplementsMenuUrl = "/en-ae/sport-supplements//gaming-focus/gaming-supplements";
-    String featuredOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/featured/";
-    String bestSellersOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/featured//best-sellers";
-    String sexualHealthOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/featured//sexual-health-new";
-    String essentialVitaminsOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/essential-vitamins/";
-    String folicAcidOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/essential-vitamins/folic-acid/";
-    String vitaminAOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/essential-vitamins/vitamin-a/";
-    String vitaminBOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/essential-vitamins/vitamin-b/";
-    String vitaminCOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/essential-vitamins/vitamin-c/";
-    String vitaminDOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/essential-vitamins/vitamin-d/";
-    String vitaminEOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/essential-vitamins/vitamin-e/";
-    String vitaminKOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/essential-vitamins/vitamin-k/";
-    String multiVitaminsOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/multivitamins/";
-    String vitaminsForKidsOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/multivitamins/multivitamins-for-kids/";
-    String vitaminsForMenOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/multivitamins/multivitamins-for-men/";
-    String vitaminsForWomenOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/multivitamins/multivitamins-for-women/";
-    String boneJointOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/bone-joint/";
-    String boneHealthOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/bone-joint/bone-health/";
-    String jointHealthOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/bone-joint/joint-health/";
-    String beautyOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/beauty/";
-    String collagenOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/beauty/collagen/";
-    String hairSkinAndNailsOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/beauty/hair-skin-nails/";
-    String fishOilAndOmegasOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/fish-oil-omegas/";
-    String fishOilOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/fish-oil-omegas/fish-oil/";
-    String omegaMixOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/fish-oil-omegas/omega-mix/";
-    String healthyLifestyleOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/healthy-lifestyle/";
-    String antioxidantOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/healthy-lifestyle/antioxidant/";
-    String bloodSugarSupportOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/healthy-lifestyle/blood-sugar-support/";
-    String brainSupportOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/healthy-lifestyle/brain-support/";
-    String detoxCleanseOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/healthy-lifestyle/detox-cleanse/";
-    String energyFormulasOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/healthy-lifestyle/energy-formulas/";
-    String eyeHealthOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/healthy-lifestyle/eye-health/";
-    String herbsOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/healthy-lifestyle/herbs/";
-    String hormonesBalanceOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/healthy-lifestyle/hormones-balance/";
-    String immuneSupportOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/healthy-lifestyle/immune-support/";
-    String mensHealthOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/healthy-lifestyle/men-s-health/";
-    String stressReliefOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/healthy-lifestyle/stress-relief/";
-    String sleepSupportOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/healthy-lifestyle/sleep-support/";
-    String superFoodsOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/healthy-lifestyle/superfoods/";
-    String urinaryTractSupportOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/healthy-lifestyle/urinary-tract-support/";
-    String weightManagementOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/healthy-lifestyle/weight-management/";
-    String womenesHealthOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/healthy-lifestyle/women-s-health/";
-    String digestionOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/digestion/";
-    String digestionSupportOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/digestion/digestive-support/";
-    String probioticsOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/digestion/probiotics/";
-    String sportVitaminsOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/sport-vitamins/";
-    String aminoAcidOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/sport-vitamins/amino-acids/";
-    String mineralsOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/minerals/";
-    String calciumOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/minerals/calcium/";
-    String ironOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/minerals/iron/";
-    String magnesiumOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/minerals/magnesium/";
-    String multimineralFormulasOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/minerals/multimineral-formulas/";
-    String zincOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/minerals/zinc/";
-    String potassiumOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/minerals/potassium/";
-    String healthyDrinksOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/healthy-drinks/";
-    String drinkableVitaminsOptionInVitaminsAndHealthUrl = "/en-ae/vitamins/healthy-drinks/drinkable-vitamins/";
-    String petsOptionInVitaminsAndHealthUrl = "/en-ae/vitamins//animal-health";
-    String supplementsMoreOptionInVitaminsAndHealthUrl = "/en-ae/vitamins//animal-health/supplements-more";
-    String groceryOptionInHealthyFoodUrl = "/en-ae/healthy-food/grocery/";
-    String bakingAndCookingOptionInHealthyFoodUrl = "/en-ae/healthy-food/grocery/baking/";
-    String cannedOptionInHealthyFoodUrl = "/en-ae/healthy-food/grocery/canned/";
-    String coffeeOptionInHealthyFoodUrl = "/en-ae/healthy-food/grocery/coffee/";
-    String condimentsOptionInHealthyFoodUrl = "/en-ae/healthy-food/grocery/condiments/";
-    String milkAndCreamOptionInHealthyFoodUrl = "/en-ae/healthy-food/grocery/milk/";
-    String nutsAndOatsOptionInHealthyFoodUrl = "/en-ae/healthy-food/grocery/oats/";
-    String oilsOptionInHealthyFoodUrl = "/en-ae/healthy-food/grocery/oils/";
-    String pastaOptionInHealthyFoodUrl = "/en-ae/healthy-food/grocery/pasta/";
-    String riceAndGrainsOptionInHealthyFoodUrl = "/en-ae/healthy-food/grocery/rice-grains/";
-    String seasoningsAndSpicessOptionInHealthyFoodUrl = "/en-ae/healthy-food/grocery/seasonings-spices/";
-    String sugarAndSweetenersOptionInHealthyFoodUrl = "/en-ae/healthy-food/grocery/sweeteners/";
-    String syrupsOptionInHealthyFoodUrl = "/en-ae/healthy-food/grocery/syrups/";
-    String teaAndHerbsInHealthyFoodUrl = "/en-ae/healthy-food/grocery/tea/";
-    String superFoodsInHealthyFoodUrl = "/en-ae/healthy-food/grocery/super-foods/";
-    String readyMixInHealthyFoodUrl = "/en-ae/healthy-food/grocery/ready-mix/";
-    String breakfastAndCerealInHealthyFoodUrl = "/en-ae/healthy-food/grocery/cereal/";
-    String readyToDrinkInHealthyFoodUrl = "/en-ae/healthy-food/ready-to-drink/";
-    String aminoBcaasInHealthyFoodUrl = "/en-ae/healthy-food/ready-to-drink/amino-bcaas/";
-    String energyDrinksInHealthyFoodUrl = "/en-ae/healthy-food/ready-to-drink/energy-drinks/";
-    String proteinShakesInHealthyFoodUrl = "/en-ae/healthy-food/ready-to-drink/protein-shakes/";
-    String electrolytesAndHydrationInHealthyFoodUrl = "/en-ae/healthy-food/ready-to-drink/electrolytes-hydration/";
-    String healthySnacksInHealthyFoodUrl = "/en-ae/healthy-food/snacks-drinks/";
-    String proteinBarsInHealthyFoodUrl = "/en-ae/healthy-food/snacks-drinks/protein-bars/";
-    String cookiesInHealthyFoodUrl = "/en-ae/healthy-food/snacks-drinks/cookies/";
-    String chipsInHealthyFoodUrl = "/en-ae/healthy-food/snacks-drinks/chips/";
-    String browniesAndPancakesInHealthyFoodUrl = "/en-ae/healthy-food/snacks-drinks/brownies/";
-    String snackBarsInHealthyFoodUrl = "/en-ae/healthy-food/snacks-drinks/snack-bars/";
-    String spreadsInHealthyFoodUrl = "/en-ae/healthy-food/snacks-drinks/spreads/";
-    String otherHealthySnacksInHealthyFoodUrl = "/en-ae/healthy-food/snacks-drinks/other-healthy-snacks/";
-    String readyToEatInHealthyFoodUrl = "/en-ae/healthy-food/ready-to-eat/";
-    String healthyMealsInHealthyFoodUrl = "/en-ae/healthy-food/ready-to-eat/healthy-meals/";
-    String featuredInHealthyFoodUrl = "/en-ae/healthy-food//featured";
-    String healthyMealReplacementInHealthyFoodUrl = "/en-ae/healthy-food//featured/healthy-meal-replacement";
-    String proteinCoffeeInHealthyFoodUrl = "/en-ae/healthy-food//featured/protein-coffee";
-    String candiesInHealthyFoodUrl = "/en-ae/healthy-food//featured/candies";
-    String flavoringAgentsInHealthyFoodUrl = "/en-ae/healthy-food//featured/flavoring-agents";
-    String ketoSnacksInHealthyFoodUrl = "/en-ae/healthy-food//featured/keto-diet";
-    String manukaHoneyInHealthyFoodUrl = "/en-ae/healthy-food//featured/manuka-honey";
-    String meatSnacksInHealthyFoodUrl = "/en-ae/healthy-food//featured/meat-snacks";
-    String menInSportsMenuUrl = "/en-ae/sportswear-accessories/men/";
-    String clothingInSportsMenuUrl = "/en-ae/sportswear-accessories/men/clothing/";
-    String topsInSportsMenuUrl = "/en-ae/sportswear-accessories/men/clothing/tops/";
-    String pantsInSportsMenuUrl = "/en-ae/sportswear-accessories/men/clothing/pants/";
-    String shortsInSportsMenuUrl = "/en-ae/sportswear-accessories/men/clothing/shorts/";
-    String jacketsAndCoatsInSportsMenuUrl = "/en-ae/sportswear-accessories/men/clothing/jackets-and-coats/";
-    String safetyMasksInSportsMenuUrl = "/en-ae/sportswear-accessories/men/safety-masks/";
-    String footwearInSportsMenuUrl = "/en-ae/sportswear-accessories/men/footwear/";
-    String sneakersInSportsMenuUrl = "/en-ae/sportswear-accessories/men/footwear/sneakers/";
-    String trainingShoesInSportsMenuUrl = "/en-ae/sportswear-accessories/men/footwear/training-shoes/";
-    String runningShoesInSportsMenuUrl = "/en-ae/sportswear-accessories/men/footwear/running-shoes/";
-    String hikingShoesInSportsMenuUrl = "/en-ae/sportswear-accessories/men/footwear/hiking-shoes/";
-    String accessoriesInSportsMenuUrl = "/en-ae/sportswear-accessories/men/accessories/";
-    String glovesInSportsMenuUrl = "/en-ae/sportswear-accessories/men/accessories/gloves/";
-    String beltsInSportsMenuUrl = "/en-ae/sportswear-accessories/men/accessories/belts/";
-    String capsAndHatsInSportsMenuUrl = "/en-ae/sportswear-accessories/men/accessories/caps-hats/";
-    String capInSportsMenuUrl = "/en-ae/sportswear-accessories/men/accessories/caps-hats/cap/";
-    String shakersInSportsMenuUrl = "/en-ae/sportswear-accessories/men/accessories/shakers/";
-    String waterBottlesInSportsMenuUrl = "/en-ae/sportswear-accessories/men/accessories/shakers/water-bottles/";
-    String socksInSportsMenuUrl = "/en-ae/sportswear-accessories/men/accessories/socks/";
-    String towelsInSportsMenuUrl = "/en-ae/sportswear-accessories/men/accessories/towels/";
-    String sunglassesInSportsMenuUrl = "/en-ae/sportswear-accessories/men/accessories/sunglasses/";
-    String mixerInSportsMenuUrl = "/en-ae/sportswear-accessories/men/accessories/mixer/";
-    String bagsInSportsMenuUrl = "/en-ae/sportswear-accessories/men/accessories/bags/";
-    String backPacksInSportsMenuUrl = "/en-ae/sportswear-accessories/men/accessories/bags/backpacks/";
-    String shoulderBagsInSportsMenuUrl = "/en-ae/sportswear-accessories/men/accessories/bags/shoulder-bags/";
-    String wearableTechInSportsMenuUrl = "/en-ae/sportswear-accessories/men/accessories/wearable-tech/";
-    String watchesInSportsMenuUrl = "/en-ae/sportswear-accessories/men/accessories/wearable-tech/watches/";
-    String gamingAccessoriesInSportsMenuUrl = "/en-ae/sportswear-accessories/men/accessories//gaming-accessories";
-    String equipmentInSportsMenuUrl = "/en-ae/sportswear-accessories/men/equipment/";
-    String gripsInSportsMenuUrl = "/en-ae/sportswear-accessories/men/equipment/grips/";
-    String ballsInSportsMenuUrl = "/en-ae/sportswear-accessories/men/equipment/balls/";
-    String rollersInSportsMenuUrl = "/en-ae/sportswear-accessories/men/equipment/rollers/";
-    String weightsInSportsMenuUrl = "/en-ae/sportswear-accessories/men/equipment/weights/";
-    String womenInSportsMenuUrl = "/en-ae/sportswear-accessories/women/";
-    String womenClothingInSportsMenuUrl = "/en-ae/sportswear-accessories/women/clothing/";
-    String womenTopsInSportsMenuUrl = "/en-ae/sportswear-accessories/women/clothing/tops/";
-    String womenShortsInSportsMenuUrl = "/en-ae/sportswear-accessories/women/clothing/shorts/";
-    String womenSafetyMasksInSportsMenuUrl = "/en-ae/sportswear-accessories/women/safety-masks/";
-    String womenAccessoriesInSportsMenuUrl = "/en-ae/sportswear-accessories/women/accessories/";
-    String womenGlovesInSportsMenuUrl = "/en-ae/sportswear-accessories/women/accessories/gloves/";
-    String womenCapsAndHatsInSportsMenuUrl = "/en-ae/sportswear-accessories/women/accessories/caps-hats/";
-    String womenCapsInSportsMenuUrl = "/en-ae/sportswear-accessories/women/accessories/caps-hats/cap/";
-    String womenShakersInSportsMenuUrl = "/en-ae/sportswear-accessories/women/accessories/shakers/";
-    String womenWaterBottlesInSportsMenuUrl = "/en-ae/sportswear-accessories/women/accessories/shakers/water-bottles/";
-    String womenSocksInSportsMenuUrl = "/en-ae/sportswear-accessories/women/accessories/socks/";
-    String womenTowelsInSportsMenuUrl = "/en-ae/sportswear-accessories/women/accessories/towels/";
-    String womenSunglassesInSportsMenuUrl = "/en-ae/sportswear-accessories/women/accessories/sunglasses/";
-    String womenMixerInSportsMenuUrl = "/en-ae/sportswear-accessories/women/accessories/mixer/";
-    String womenBagsInSportsMenuUrl = "/en-ae/sportswear-accessories/women/accessories/bags/";
-    String womenBackPacksInSportsMenuUrl = "/en-ae/sportswear-accessories/women/accessories/bags/backpacks/";
-    String womenSholdersBagsInSportsMenuUrl = "/en-ae/sportswear-accessories/women/accessories/bags/shoulder-bags/";
-    String womenBeltsInSportsMenuUrl = "/en-ae/sportswear-accessories/women/accessories/belts/";
-    String supplementsInByBrandMenuUrl = "/en-ae/brands/supplements/";
-    String optimumNutritionInByBrandMenuUrl = "/en-ae/brands/supplements/optimum-nutrition/";
-    String muscletechInByBrandMenuUrl = "/en-ae/brands/supplements/muscle-tech/";
-    String cellucorInByBrandMenuUrl = "/en-ae/brands/supplements/cellucor/";
-    String dymatizeInByBrandMenuUrl = "/en-ae/brands/supplements/dymatize/";
-    String xtendInByBrandMenuUrl = "/en-ae/brands/supplements/xtend/";
-    String animalNutritionInByBrandMenuUrl = "/en-ae/brands/supplements/universal-animal-nutrition/";
-    String musclePharmInByBrandMenuUrl = "/en-ae/brands/supplements/muscle-pharm/";
-    String universalNutritionInByBrandMenuUrl = "/en-ae/brands/supplements/universal-nutrition/";
-    String bsnInByBrandMenuUrl = "/en-ae/brands/supplements/bsn/";
-    String ehplabsInByBrandMenuUrl = "/en-ae/brands/supplements/ehplabs/";
-    String jymSupplementScienceInByBrandMenuUrl = "/en-ae/brands/supplements/jym-supplement-science/";
-    String bpiSportsInByBrandMenuUrl = "/en-ae/brands/supplements/bpi/";
-    String russianBearInByBrandMenuUrl = "/en-ae/brands/supplements/russian-bear/";
-    String isoPureInByBrandMenuUrl = "/en-ae/brands/supplements/natures-best/";
-    String oneUpNutritionInByBrandMenuUrl = "/en-ae/brands/supplements/1-up-nutrition/";
-    String musclemedInByBrandMenuUrl = "/en-ae/brands/supplements/muscle-med/";
-    String mhpInByBrandMenuUrl = "/en-ae/brands/supplements/mhp/";
-    String evlNutritionInByBrandMenuUrl = "/en-ae/brands/supplements/evl-nutrition/";
-    String nlaForHerInByBrandMenuUrl = "/en-ae/brands/supplements/nla-for-her/";
-    String muscleNutritionInByBrandMenuUrl = "/en-ae/brands/supplements/muscle-nutrition/";
-    String gatNutritionInByBrandMenuUrl = "/en-ae/brands/supplements/gat-nutrition/";
-    String labradorInByBrandMenuUrl = "/en-ae/brands/supplements/labrada/";
-    String orgainInByBrandMenuUrl = "/en-ae/brands/supplements/orgain/";
-    String nutrexResearchInByBrandMenuUrl = "/en-ae/brands/supplements/nutrex-research/";
-    String scitecNutritionInByBrandMenuUrl = "/en-ae/brands/supplements/scitec-nutrition/";
-    String prolabInByBrandMenuUrl = "/en-ae/brands/supplements/prolab/";
-    String sotruInByBrandMenuUrl = "/en-ae/brands/supplements/sotru/";
-    String divineHealthInByBrandMenuUrl = "/en-ae/brands/supplements/divine-health/";
-    String ghostInByBrandMenuUrl = "/en-ae/brands/supplements/ghost/";
-    String womensBestInByBrandMenuUrl = "/en-ae/brands/supplements/women-s-best/";
-    String efxSportsInByBrandMenuUrl = "/en-ae/brands/supplements/efx-sports/";
-    String basixInByBrandMenuUrl = "/en-ae/brands/supplements/basix/";
-    String ak47InByBrandMenuUrl = "/en-ae/brands/supplements/ak-47/";
-    String nfSportsInByBrandMenuUrl = "/en-ae/brands/supplements/nf-sports/";
-    String fullyDosedInByBrandMenuUrl = "/en-ae/brands/supplements/fully-dosed/";
-    String fivePercentNutritionInByBrandMenuUrl = "/en-ae/brands/supplements/5-nutrition/";
-    String olimpSportNutritionInByBrandMenuUrl = "/en-ae/brands/supplements/olimp/";
-    String jnxSportsInByBrandMenuUrl = "/en-ae/brands/supplements/jnx-sports/";
-    String fitAndLeanInByBrandMenuUrl = "/en-ae/brands/supplements/fit-lean/";
-    String gymQueenInByBrandMenuUrl = "/en-ae/brands/supplements/gymqueen/";
-    String thePackInByBrandMenuUrl = "/en-ae/brands/supplements/the-pack/";
-    String betancourtNutritionInByBrandMenuUrl = "/en-ae/brands/supplements/betancourt-nutrition/";
-    String yallaProteinInByBrandMenuUrl = "/en-ae/brands/supplements/yalla-protein/";
-    String proteinWorldInByBrandMenuUrl = "/en-ae/brands/supplements/protein-world/";
-    String obviInByBrandMenuUrl = "/en-ae/brands/supplements/obvi/";
-    String naughtyBoyInByBrandMenuUrl = "/en-ae/brands/supplements/naughty-boy/";
-    String steelFitInByBrandMenuUrl = "/en-ae/brands/supplements/steel-fit/";
-    String usnInByBrandMenuUrl = "/en-ae/brands/supplements/usn/";
-    String xGamerInByBrandMenuUrl = "/en-ae/brands/supplements/x-gamer/";
-    String innosuppsInByBrandMenuUrl = "/en-ae/brands/supplements/innosupps/";
-    String outbreakNutritionInByBrandMenuUrl = "/en-ae/brands/supplements/outbreak-nutrition/";
-    String insaneLabzInByBrandMenuUrl = "/en-ae/brands/supplements//insane-labz";
-    String allMaxInByBrandMenuUrl = "/en-ae/brands/supplements//all-max";
-    String glaxonInByBrandMenuUrl = "/en-ae/brands/supplements//glaxon";
-    String redcon1InByBrandMenuUrl = "/en-ae/brands/supplements//redcon1";
-    String pandaSupplementsInByBrandMenuUrl = "/en-ae/brands/supplements//panda-supplements";
-    String nutrendInByBrandMenuUrl = "/en-ae/brands/supplements//nutrend";
-    String ostrovitInByBrandMenuUrl = "/en-ae/brands/supplements//ostrovit";
-    String betteryInByBrandMenuUrl = "/en-ae/brands/supplements//bettery";
-    String healthyFoodSnacksAndMealReplacementInByBrandMenuUrl = "/en-ae/brands/snacks-more/";
-    String wowHydrateInByBrandMenuUrl = "/en-ae/brands/snacks-more/wow-hydrate/";
-    String questNutritionInByBrandMenuUrl = "/en-ae/brands/snacks-more/quest-nutrition/";
-    String grenadeInByBrandMenuUrl = "/en-ae/brands/snacks-more/grenade/";
-    String reignEnergyInByBrandMenuUrl = "/en-ae/brands/snacks-more/reign/";
-    String monsterEnergyInByBrandMenuUrl = "/en-ae/brands/snacks-more/monster-energy/";
-    String thirdEnergyInByBrandMenuUrl = "/en-ae/brands/snacks-more/3d-energy/";
-    String menInSportsMainMenuUrl = "/en-ae/sports/men/";
-    String sportInSportsMainMenuUrl = "/en-ae/sports/men/sport/";
-    String footballInSportsMainMenuUrl = "/en-ae/sports/men/sport/football/";
-    String basketballInSportsMainMenuUrl = "/en-ae/sports/men/sport/basketball/";
-//    String basketballInSportsMainMenuUrl = "/en-ae/sports/men/sport/basketball/";
-    String baseballInSportsMainMenuUrl = "/en-ae/sports/men/sport/baseball/";
-    String runningInSportsMainMenuUrl = "/en-ae/sports/men/sport/running/";
-    String swimmingInSportsMainMenuUrl = "/en-ae/sports/men/sport/swimming/";
-    String yogaInSportsMainMenuUrl = "/en-ae/sports/men/sport/yoga/";
-    String fitnessAndTrainingInSportsMainMenuUrl = "/en-ae/sports/men/sport/fitness-and-training/";
-    String mmaInSportsMainMenuUrl = "/en-ae/sports/men/sport/mma/";
-    String jiuJitsuInSportsMainMenuUrl = "/en-ae/sports/men/sport/jiu-jitsu/";
-    String boardGamesInSportsMainMenuUrl = "/en-ae/sports/men/sport/board-games/";
-    String sportsTechInSportsMainMenuUrl = "/en-ae/sports/men/sports-tech/";
-    String wearableTechInSportsMainMenuUrl = "/en-ae/sports/men/sports-tech/wearable-tech/";
-    String camerasInSportsMainMenuUrl = "/en-ae/sports/men/sports-tech/cameras/";
-    String phoneAccessoriesInSportsMainMenuUrl = "/en-ae/sports/men/sports-tech/phone-accessories/";
-    String personalCareInSportsMainMenuUrl = "/en-ae/sports/men/personal-care/";
-    String showeringInSportsMainMenuUrl = "/en-ae/sports/men/personal-care/showering/";
-    String shavingInSportsMainMenuUrl = "/en-ae/sports/men/personal-care/shaving/";
-    String skinCareInSportsMainMenuUrl = "/en-ae/sports/men/personal-care/skin-care/";
-    String bodyCareInSportsMainMenuUrl = "/en-ae/sports/men/personal-care/body-care/";
-    String oralCareInSportsMainMenuUrl = "/en-ae/sports/men/personal-care/oral-care/";
-    String therapyInSportsMainMenuUrl = "/en-ae/sports/men/personal-care/therapy/";
-    String masksInSportsMainMenuUrl = "/en-ae/sports/men/personal-care/masks/";
-    String fitnessAndTrainingCategoryInSportsMainMenuUrl = "/en-ae/sports/men/fitness-and-training/";
-    String fitnessEquipmentInSportsMainMenuUrl = "/en-ae/sports/men/fitness-and-training/fitness-equipment/";
-    String skippingRopesInSportsMainMenuUrl = "/en-ae/sports/men/fitness-and-training/fitness-equipment/skipping-ropes/";
-    String weightBeltsInSportsMainMenuUrl = "/en-ae/sports/men/fitness-and-training/fitness-equipment/weight-belts/";
-    String scootersInSportsMainMenuUrl = "/en-ae/sports/men/fitness-and-training/fitness-equipment/scooters/";
-    String trainingAccessoriesInSportsMainMenuUrl = "/en-ae/sports/men/fitness-and-training/training-accessories/";
-    String shakersBottlesInSportsMainMenuUrl = "/en-ae/sports/men/fitness-and-training/training-accessories/shakers-bottles/";
-    String bagsInSportsMainMenuUrl = "/en-ae/sports/men/fitness-and-training/training-accessories/bags/";
-    String glovesInSportsMainMenuUrl = "/en-ae/sports/men/fitness-and-training/training-accessories/gloves/";
-    String bracesSleevesInSportsMainMenuUrl = "/en-ae/sports/men/fitness-and-training/training-accessories/braces-sleeves/";
-    String mouthguardInSportsMainMenuUrl = "/en-ae/sports/men/fitness-and-training/training-accessories/mouthguard/";
-    String apparelInSportsMainMenuUrl = "/en-ae/sports/men/apparel/";
-    String sportsWearInSportsMainMenuUrl = "/en-ae/sports/men/apparel/sportswear/";
-    String pantsInSportsMainMenuUrl = "/en-ae/sports/men/apparel/sportswear/pants/";
-    String shortsInSportsMainMenuUrl = "/en-ae/sports/men/apparel/sportswear/shorts/";
-    String hoodiesInSportsMainMenuUrl = "/en-ae/sports/men/apparel/sportswear/hoodies/";
-    String tShirtsInSportsMainMenuUrl = "/en-ae/sports/men/apparel/sportswear/t-shirts/";
-    String tanksInSportsMainMenuUrl = "/en-ae/sports/men/apparel/sportswear/tanks/";
-    String footwearInSportsMainMenuUrl = "/en-ae/sports/men/apparel/footwear/";
-    String sneakersInSportsMainMenuUrl = "/en-ae/sports/men/apparel/footwear/sneakers/";
-    String trainingShoesInSportsMainMenuUrl = "/en-ae/sports/men/apparel/footwear/training-shoes/";
-    String runningShoesInSportsMainMenuUrl = "/en-ae/sports/men/apparel/footwear/running-shoes/";
-    String womenInSportsMainMenuUrl = "/en-ae/sports/women/";
-    String womenSportsTechInSportsMainMenuUrl = "/en-ae/sports/women/sports-tech/";
-    String womenWearableTechInSportsMainMenuUrl = "/en-ae/sports/women/sports-tech/wearable-tech/";
-    String womenCamerasInSportsMainMenuUrl = "/en-ae/sports/women/sports-tech/cameras/";
-    String womenPhoneAccessoriesInSportsMainMenuUrl = "/en-ae/sports/women/sports-tech/phone-accessories/";
-    String womenPersonalCareInSportsMainMenuUrl = "/en-ae/sports/women/personal-care/";
-    String womenShoweringInSportsMainMenuUrl = "/en-ae/sports/women/personal-care/showering/";
-    String womenSkinCareInSportsMainMenuUrl = "/en-ae/sports/women/personal-care/skin-care/";
-    String womenBodyCareInSportsMainMenuUrl = "/en-ae/sports/women/personal-care/body-care/";
-    String womenOralCareInSportsMainMenuUrl = "/en-ae/sports/women/personal-care/oral-care/";
-    String womenTherapyInSportsMainMenuUrl = "/en-ae/sports/women/personal-care/therapy/";
-    String womenMasksInSportsMainMenuUrl = "/en-ae/sports/women/personal-care/masks/";
-    String womenFitnessAndTrainingInSportsMainMenuUrl = "/en-ae/sports/women/fitness-and-training/";
-    String womenTrainingAccessoriesInSportsMainMenuUrl = "/en-ae/sports/women/fitness-and-training/training-accessories/";
 
     @Test(description = "Make sure the MegaMenu Section display correctly with all main columns", priority = 1)
     public void verifyMegaMenuSectionAppearsCorrectlyWithAllMainColumns() {
@@ -437,9 +113,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(sportSupplementsUrl));
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -456,9 +132,9 @@ public class AEMegaMenuTestCases extends BaseTest {
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(healthVitaminsUrl));
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -475,9 +151,9 @@ public class AEMegaMenuTestCases extends BaseTest {
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(healthyFoodsUrl));
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -494,9 +170,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(sportsUrl));
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -513,9 +189,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(womenOnlyUrl));
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -533,9 +209,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(byBrandUrl));
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -552,9 +228,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(byGoalUrl));
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -571,9 +247,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(salesAndOffersUrl));
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -590,9 +266,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(sportStacksUrl));
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -686,9 +362,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), proteinOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -705,9 +381,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), creatineOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -724,9 +400,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aminoAcidsOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -743,9 +419,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), muscleBoostersOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -762,9 +438,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), weightManagementOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -781,9 +457,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), recoveryOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -800,9 +476,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), carbohydratesOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -819,9 +495,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), energyAndEnduranceOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -838,9 +514,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), gamingAndFocusOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -857,9 +533,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), wheyProteinOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -876,9 +552,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), WheyProteinIsolateOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -895,9 +571,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), proteinBlendsOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -914,9 +590,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), nonDairyProteinOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -933,9 +609,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), caseinProteinOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -952,9 +628,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), dietProteinOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -971,9 +647,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), massGainersOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -990,9 +666,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), creatineMonohydrateOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1009,9 +685,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), creatineBlendsOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1028,9 +704,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), bCAAOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1047,9 +723,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
         //  Assert.assertEquals(webDriver.getCurrentUrl(), eAAOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1066,9 +742,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), arginineOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1085,9 +761,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), betaAlanineOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1104,9 +780,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), hMBOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1123,9 +799,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aminoAcidPowdersOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1142,9 +818,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aminoAcidPillsOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1161,9 +837,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), citrullineOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1180,9 +856,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aminoAcidLiquidsOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1199,9 +875,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), testosteroneBoostersOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1218,9 +894,9 @@ public class AEMegaMenuTestCases extends BaseTest {
 //        Assert.assertEquals(webDriver.getCurrentUrl(), ghBoostersOptionInSportSupplementsMenuUrl);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1237,9 +913,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), stimulantWeightLossOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1256,9 +932,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), nonStimulantWeightLossOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1275,9 +951,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), mealReplacementsOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1294,9 +970,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
 //        Assert.assertEquals(webDriver.getCurrentUrl(), metabolismSupportOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1313,9 +989,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), toningCreamsOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1332,9 +1008,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), mctOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1353,7 +1029,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1372,7 +1048,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1391,7 +1067,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1410,7 +1086,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1427,9 +1103,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), stimulantEnergyOptionInSportSupplementsMenuUrl);
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayedand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1448,7 +1124,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1467,7 +1143,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1547,7 +1223,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1567,7 +1243,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1588,7 +1264,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1608,7 +1284,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1628,7 +1304,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1648,7 +1324,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1668,7 +1344,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1688,7 +1364,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1708,7 +1384,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1728,7 +1404,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1748,7 +1424,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1768,7 +1444,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1788,7 +1464,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1808,7 +1484,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1828,7 +1504,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1848,7 +1524,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1868,7 +1544,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1888,7 +1564,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1908,7 +1584,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1928,7 +1604,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1948,7 +1624,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1968,7 +1644,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -1988,7 +1664,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -2008,7 +1684,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -2028,7 +1704,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -2048,7 +1724,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -2068,7 +1744,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -2088,7 +1764,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -2108,7 +1784,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -2128,7 +1804,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -2148,7 +1824,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -2168,7 +1844,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -2188,7 +1864,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -2208,7 +1884,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -2228,7 +1904,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -2248,7 +1924,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -2268,7 +1944,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -2288,7 +1964,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -2308,7 +1984,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -2328,7 +2004,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -2348,7 +2024,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -2368,7 +2044,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -2388,7 +2064,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -2408,7 +2084,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -2428,7 +2104,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -2448,7 +2124,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -2468,7 +2144,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -2488,7 +2164,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -2508,7 +2184,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -2528,7 +2204,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -2548,7 +2224,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -2568,7 +2244,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is emptyand the URL is "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
@@ -10148,7 +9824,133 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getSportsSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
     }
-
-
-
+//Banners inside the MegaMenu lists
+@Test(description = "Make sure clicking on the first banner that appears inside the sport supplements menu works correctly ", priority = 527)
+public void verifyClickingOnFirstBannerInTheSportSupplementsMenuWorksCorrectly() {
+    aeMegamenuPage = new AEMegaMenuPage(webDriver);
+    aeAllPagesInsideCategoriesInMegaMenuPage= new AeAllPagesInsideCategoriesInMegaMenuPage(webDriver);
+    action = new Actions(webDriver);
+    aeMegamenuPage.switchToAECountry();
+    action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+    action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheSportSupplementsMenu()).perform();
+    aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheSportSupplementsMenu().click();
+    boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+    assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
+    boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+    assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
+    boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
+    assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
+}
+@Test(description = "Make sure clicking on the second banner that appears inside the sport supplements menu works correctly ", priority = 528)
+public void verifyClickingOnSecondBannerInTheSportSupplementsMenuWorksCorrectly() {
+    aeMegamenuPage = new AEMegaMenuPage(webDriver);
+    aeAllPagesInsideCategoriesInMegaMenuPage= new AeAllPagesInsideCategoriesInMegaMenuPage(webDriver);
+    action = new Actions(webDriver);
+    aeMegamenuPage.switchToAECountry();
+    action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+    action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheSportSupplementsMenu()).perform();
+    aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheSportSupplementsMenu().click();
+    boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+    assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
+    boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+    assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
+    boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
+    assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
+}
+@Test(description = "Make sure clicking on the first banner that appears inside the Vitamins And Health menu works correctly ", priority = 529)
+public void verifyClickingOnFirstBannerInTheVitaminsAndHealthMenuWorksCorrectly() {
+    aeMegamenuPage = new AEMegaMenuPage(webDriver);
+    aeAllPagesInsideCategoriesInMegaMenuPage= new AeAllPagesInsideCategoriesInMegaMenuPage(webDriver);
+    action = new Actions(webDriver);
+    aeMegamenuPage.switchToAECountry();
+    action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
+    action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheVitaminsAndHealthMenu()).perform();
+    aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheVitaminsAndHealthMenu().click();
+    boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+    assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
+    boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+    assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
+    boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
+    assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
+}
+@Test(description = "Make sure clicking on the second banner that appears inside the Vitamins And Health menu works correctly ", priority = 530)
+public void verifyClickingOnSecondBannerInTheVitaminsAndHealthMenuWorksCorrectly() {
+    aeMegamenuPage = new AEMegaMenuPage(webDriver);
+    aeAllPagesInsideCategoriesInMegaMenuPage= new AeAllPagesInsideCategoriesInMegaMenuPage(webDriver);
+    action = new Actions(webDriver);
+    aeMegamenuPage.switchToAECountry();
+    action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
+    action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheVitaminsAndHealthMenu()).perform();
+    aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheVitaminsAndHealthMenu().click();
+    boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+    assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
+    boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+    assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
+    boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
+    assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
+}
+@Test(description = "Make sure clicking on the first banner that appears inside the Healthy Food menu works correctly ", priority = 531)
+public void verifyClickingOnFirstBannerInTheHealthyFoodMenuWorksCorrectly() {
+    aeMegamenuPage = new AEMegaMenuPage(webDriver);
+    aeAllPagesInsideCategoriesInMegaMenuPage= new AeAllPagesInsideCategoriesInMegaMenuPage(webDriver);
+    action = new Actions(webDriver);
+    aeMegamenuPage.switchToAECountry();
+    action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
+    action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheHealthyFoodMenu()).perform();
+    aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheHealthyFoodMenu().click();
+    boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+    assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
+    boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+    assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
+    boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
+    assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
+}
+@Test(description = "Make sure clicking on the second banner that appears inside the Healthy Food menu works correctly ", priority = 532)
+public void verifyClickingOnSecondBannerInTheHealthyFoodMenuWorksCorrectly() {
+    aeMegamenuPage = new AEMegaMenuPage(webDriver);
+    aeAllPagesInsideCategoriesInMegaMenuPage= new AeAllPagesInsideCategoriesInMegaMenuPage(webDriver);
+    action = new Actions(webDriver);
+    aeMegamenuPage.switchToAECountry();
+    action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
+    action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheHealthyFoodMenu()).perform();
+    aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheHealthyFoodMenu().click();
+    boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+    assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
+    boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+    assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
+    boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
+    assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
+}
+@Test(description = "Make sure clicking on the first banner that appears inside the Sports menu works correctly ", priority = 533)
+public void verifyClickingOnFirstBannerInTheSportsMenuWorksCorrectly() {
+    aeMegamenuPage = new AEMegaMenuPage(webDriver);
+    aeAllPagesInsideCategoriesInMegaMenuPage= new AeAllPagesInsideCategoriesInMegaMenuPage(webDriver);
+    action = new Actions(webDriver);
+    aeMegamenuPage.switchToAECountry();
+    action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
+    action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheSportsMenu()).perform();
+    aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheSportsMenu().click();
+    boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+    assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
+    boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+    assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
+    boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
+    assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
+}
+@Test(description = "Make sure clicking on the second banner that appears inside the Sports menu works correctly ", priority = 534)
+public void verifyClickingOnSecondBannerInTheSportsMenuWorksCorrectly() {
+    aeMegamenuPage = new AEMegaMenuPage(webDriver);
+    aeAllPagesInsideCategoriesInMegaMenuPage= new AeAllPagesInsideCategoriesInMegaMenuPage(webDriver);
+    action = new Actions(webDriver);
+    aeMegamenuPage.switchToAECountry();
+    action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
+    action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheSportsMenu()).perform();
+    aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheSportsMenu().click();
+    boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+    assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
+    boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+    assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
+    boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
+    assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
+}
 }

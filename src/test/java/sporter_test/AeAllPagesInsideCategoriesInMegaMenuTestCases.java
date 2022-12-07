@@ -1,5 +1,7 @@
 /**
  * @author w.jumaa
+ * @projectName sporter-web-automation
+ * @classDescription This class contains all test cases that verifying ability to access all pages inside all categories listed in the MegaMenu
  */
 
 package sporter_test;
@@ -7,9 +9,7 @@ package sporter_test;
 import core.BaseTest;
 import core.DataHelperAndWait;
 import org.testng.annotations.Test;
-import sporter_pages.AEMegaMenuPage;
 import sporter_pages.AeSportSupplementsCategoryPage;
-import sporter_pages.AeSportsCategoryPage;
 
 
 public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
@@ -1156,144 +1156,144 @@ public void verifyAbilityToAccessAllPagesInsideMenOptionCategoryRelatedToSportsC
     String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
     DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Clothing Option Sub-Category related to the Sports Category ", priority = 144)
-public void verifyAbilityToAccessAllPagesInsideClothingOptionCategoryRelatedToSportsCategoryPage(){
+ @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Sport Option Sub-Category related to the Sports Category ", priority = 144)
+public void verifyAbilityToAccessAllPagesInsideSportOptionCategoryRelatedToSportsCategoryPage(){
     aeMegaMenuTestCases=new AEMegaMenuTestCases();
     aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     aeMegaMenuTestCases.verifyClickingOnSportOptionInSportsMainMenuRedirectUserToCorrectURL();
     String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
     DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Tops Option Sub-Category related to the Sports Category ", priority = 145)
-public void verifyAbilityToAccessAllPagesInsideTopsOptionCategoryRelatedToSportsCategoryPage(){
+ @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Football Option Sub-Category related to the Sports Category ", priority = 145)
+public void verifyAbilityToAccessAllPagesInsideFootballOptionCategoryRelatedToSportsCategoryPage(){
     aeMegaMenuTestCases=new AEMegaMenuTestCases();
     aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     aeMegaMenuTestCases.verifyClickingOnFootballOptionInSportsMainMenuRedirectUserToCorrectURL();
     String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
     DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Pants Option Sub-Category related to the Sports Category ", priority = 146)
-public void verifyAbilityToAccessAllPagesInsidePantsOptionCategoryRelatedToSportsCategoryPage(){
+ @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Basketball Option Sub-Category related to the Sports Category ", priority = 146)
+public void verifyAbilityToAccessAllPagesInsideBasketballOptionCategoryRelatedToSportsCategoryPage(){
     aeMegaMenuTestCases=new AEMegaMenuTestCases();
     aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     aeMegaMenuTestCases.verifyClickingOnBasketballOptionInSportsMainMenuRedirectUserToCorrectURL();
     String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
     DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Shorts Option Sub-Category related to the Sports Category ", priority = 147)
-public void verifyAbilityToAccessAllPagesInsideShortsOptionCategoryRelatedToSportsCategoryPage(){
+ @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Baseball Option Sub-Category related to the Sports Category ", priority = 147)
+public void verifyAbilityToAccessAllPagesInsideBaseballOptionCategoryRelatedToSportsCategoryPage(){
     aeMegaMenuTestCases=new AEMegaMenuTestCases();
     aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     aeMegaMenuTestCases.verifyClickingOnBaseballOptionInSportsMainMenuRedirectUserToCorrectURL();
     String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
     DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Jackets And Coats Option Sub-Category related to the Sports Category ", priority = 148)
-public void verifyAbilityToAccessAllPagesInsideJacketsAndCoatsOptionCategoryRelatedToSportsCategoryPage(){
+ @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Running Option Sub-Category related to the Sports Category ", priority = 148)
+public void verifyAbilityToAccessAllPagesInsideRunningOptionCategoryRelatedToSportsCategoryPage(){
     aeMegaMenuTestCases=new AEMegaMenuTestCases();
     aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     aeMegaMenuTestCases.verifyClickingOnRunningOptionInSportsMainMenuRedirectUserToCorrectURL();
     String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
     DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Safety Masks Option Sub-Category related to the Sports Category ", priority = 149)
-public void verifyAbilityToAccessAllPagesInsideSafetyMasksOptionCategoryRelatedToSportsCategoryPage(){
+ @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Safety Swimming Option Sub-Category related to the Sports Category ", priority = 149)
+public void verifyAbilityToAccessAllPagesInsideSafetySwimmingOptionCategoryRelatedToSportsCategoryPage(){
     aeMegaMenuTestCases=new AEMegaMenuTestCases();
     aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     aeMegaMenuTestCases.verifyClickingOnSwimmingOptionInSportsMainMenuRedirectUserToCorrectURL();
     String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
     DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Footwear Option Sub-Category related to the Sports Category ", priority = 150)
-public void verifyAbilityToAccessAllPagesInsideFootwearOptionCategoryRelatedToSportsCategoryPage(){
+ @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Yoga Option Sub-Category related to the Sports Category ", priority = 150)
+public void verifyAbilityToAccessAllPagesInsideYogaOptionCategoryRelatedToSportsCategoryPage(){
     aeMegaMenuTestCases=new AEMegaMenuTestCases();
     aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     aeMegaMenuTestCases.verifyClickingOnYogaOptionInSportsMainMenuRedirectUserToCorrectURL();
     String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
     DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Sneakers Option Sub-Category related to the Sports Category ", priority = 151)
-public void verifyAbilityToAccessAllPagesInsideSneakersOptionCategoryRelatedToSportsCategoryPage(){
+ @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Fitness And Training1 Option related to the Sports Category ", priority = 151)
+public void verifyAbilityToAccessAllPagesInsideFitnessAndTraining1OptionCategoryRelatedToSportsCategoryPage(){
     aeMegaMenuTestCases=new AEMegaMenuTestCases();
     aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     aeMegaMenuTestCases.verifyClickingOnFitnessAndTrainingOptionInSportsMainMenuRedirectUserToCorrectURL();
     String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
     DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Training Shoes Option Sub-Category related to the Sports Category ", priority = 152)
-public void verifyAbilityToAccessAllPagesInsideTrainingShoesOptionCategoryRelatedToSportsCategoryPage(){
+ @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Mma Option Sub-Category related to the Sports Category ", priority = 152)
+public void verifyAbilityToAccessAllPagesInsideMmaOptionCategoryRelatedToSportsCategoryPage(){
     aeMegaMenuTestCases=new AEMegaMenuTestCases();
     aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     aeMegaMenuTestCases.verifyClickingOnMmaOptionInSportsMainMenuRedirectUserToCorrectURL();
     String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
     DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Running Shoes Option Sub-Category related to the Sports Category ", priority = 153)
-public void verifyAbilityToAccessAllPagesInsideRunningShoesOptionCategoryRelatedToSportsCategoryPage(){
+ @Test(description = "MegaMenu- Make Sure the ability to access all pages inside JiuJitsu Option Sub-Category related to the Sports Category ", priority = 153)
+public void verifyAbilityToAccessAllPagesInsideJiuJitsuOptionCategoryRelatedToSportsCategoryPage(){
     aeMegaMenuTestCases=new AEMegaMenuTestCases();
     aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     aeMegaMenuTestCases.verifyClickingOnJiuJitsuOptionInSportsMainMenuRedirectUserToCorrectURL();
     String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
     DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Hiking Shoes Option Sub-Category related to the Sports Category ", priority = 154)
-public void verifyAbilityToAccessAllPagesInsideHikingShoesOptionCategoryRelatedToSportsCategoryPage(){
+ @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Board Games Option Sub-Category related to the Sports Category ", priority = 154)
+public void verifyAbilityToAccessAllPagesInsideBoardGamesOptionCategoryRelatedToSportsCategoryPage(){
     aeMegaMenuTestCases=new AEMegaMenuTestCases();
     aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     aeMegaMenuTestCases.verifyClickingOnBoardGamesOptionInSportsMainMenuRedirectUserToCorrectURL();
     String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
     DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Accessories Option Sub-Category related to the Sports Category ", priority = 155)
-public void verifyAbilityToAccessAllPagesInsideAccessoriesOptionCategoryRelatedToSportsCategoryPage(){
+ @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Sports Tech Option Sub-Category related to the Sports Category ", priority = 155)
+public void verifyAbilityToAccessAllPagesInsideSportsTechOptionCategoryRelatedToSportsCategoryPage(){
     aeMegaMenuTestCases=new AEMegaMenuTestCases();
     aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     aeMegaMenuTestCases.verifyClickingOnSportsTechOptionInSportsMainMenuRedirectUserToCorrectURL();
     String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
     DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Gloves Option Sub-Category related to the Sports Category ", priority = 156)
-public void verifyAbilityToAccessAllPagesInsideGlovesOptionCategoryRelatedToSportsCategoryPage(){
+ @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Wearable Tech Option Sub-Category related to the Sports Category ", priority = 156)
+public void verifyAbilityToAccessAllPagesInsideWearableTechOptionCategoryRelatedToSportsCategoryPage(){
     aeMegaMenuTestCases=new AEMegaMenuTestCases();
     aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     aeMegaMenuTestCases.verifyClickingOnWearableTechOptionInSportsMainMenuRedirectUserToCorrectURL();
     String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
     DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Belts Option Sub-Category related to the Sports Category ", priority = 157)
-public void verifyAbilityToAccessAllPagesInsideBeltsOptionCategoryRelatedToSportsCategoryPage(){
+ @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Cameras Option Sub-Category related to the Sports Category ", priority = 157)
+public void verifyAbilityToAccessAllPagesInsideCamerasOptionCategoryRelatedToSportsCategoryPage(){
     aeMegaMenuTestCases=new AEMegaMenuTestCases();
     aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     aeMegaMenuTestCases.verifyClickingOnCamerasOptionInSportsMainMenuRedirectUserToCorrectURL();
     String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
     DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Caps & Hats Option Sub-Category related to the Sports Category ", priority = 158)
-public void verifyAbilityToAccessAllPagesInsideCapsAndHatsOptionCategoryRelatedToSportsCategoryPage(){
+ @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Phone Accessories Option Sub-Category related to the Sports Category ", priority = 158)
+public void verifyAbilityToAccessAllPagesInsidePhoneAccessoriesOptionCategoryRelatedToSportsCategoryPage(){
     aeMegaMenuTestCases=new AEMegaMenuTestCases();
     aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     aeMegaMenuTestCases.verifyClickingOnPhoneAccessoriesOptionInSportsMainMenuRedirectUserToCorrectURL();
     String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
     DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Cap Option Sub-Category related to the Sports Category ", priority = 159)
-public void verifyAbilityToAccessAllPagesInsideCapOptionCategoryRelatedToSportsCategoryPage(){
+ @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Personal Care Option Sub-Category related to the Sports Category ", priority = 159)
+public void verifyAbilityToAccessAllPagesInsidePersonalCareOptionCategoryRelatedToSportsCategoryPage(){
     aeMegaMenuTestCases=new AEMegaMenuTestCases();
     aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     aeMegaMenuTestCases.verifyClickingOnPersonalCareOptionInSportsMainMenuRedirectUserToCorrectURL();
     String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
     DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Shakers Option Sub-Category related to the Sports Category ", priority = 160)
-public void verifyAbilityToAccessAllPagesInsideShakersOptionCategoryRelatedToSportsCategoryPage(){
+ @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Showering Option Sub-Category related to the Sports Category ", priority = 160)
+public void verifyAbilityToAccessAllPagesInsideShoweringOptionCategoryRelatedToSportsCategoryPage(){
     aeMegaMenuTestCases=new AEMegaMenuTestCases();
     aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     aeMegaMenuTestCases.verifyClickingOnShoweringOptionInSportsMainMenuRedirectUserToCorrectURL();
     String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
     DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Water Bottles Option Sub-Category related to the Sports Category ", priority = 161)
-public void verifyAbilityToAccessAllPagesInsideWaterBottlesOptionCategoryRelatedToSportsCategoryPage(){
+ @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Shaving Option Sub-Category related to the Sports Category ", priority = 161)
+public void verifyAbilityToAccessAllPagesInsideShavingOptionCategoryRelatedToSportsCategoryPage(){
     aeMegaMenuTestCases=new AEMegaMenuTestCases();
     aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     aeMegaMenuTestCases.verifyClickingOnShavingOptionInSportsMainMenuRedirectUserToCorrectURL();
@@ -1301,88 +1301,89 @@ public void verifyAbilityToAccessAllPagesInsideWaterBottlesOptionCategoryRelated
     DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
     }
     //There's a bug here due to the option is duplicated
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Water Bottles Option Sub-Category related to the Sports Category ", priority = 162)
-public void verifyAbilityToAccessAllPagesInsideWaterBottles1OptionCategoryRelatedToSportsCategoryPage(){
+ @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Skin Care Option Sub-Category related to the Sports Category ", priority = 162)
+public void verifyAbilityToAccessAllPagesInsideSkinCareOptionCategoryRelatedToSportsCategoryPage(){
     aeMegaMenuTestCases=new AEMegaMenuTestCases();
     aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     aeMegaMenuTestCases.verifyClickingOnSkinCareOptionInSportsMainMenuRedirectUserToCorrectURL();
     String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
     DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Socks Option Sub-Category related to the Sports Category ", priority = 163)
-public void verifyAbilityToAccessAllPagesInsideSocksOptionCategoryRelatedToSportsCategoryPage(){
+ @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Body Care Option Sub-Category related to the Sports Category ", priority = 163)
+public void verifyAbilityToAccessAllPagesInsideBodyCareOptionCategoryRelatedToSportsCategoryPage(){
     aeMegaMenuTestCases=new AEMegaMenuTestCases();
     aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     aeMegaMenuTestCases.verifyClickingOnBodyCareOptionInSportsMainMenuRedirectUserToCorrectURL();
     String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
     DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Towels Option Sub-Category related to the Sports Category ", priority = 164)
-public void verifyAbilityToAccessAllPagesInsideTowelsOptionCategoryRelatedToSportsCategoryPage(){
+ @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Oral Care Option Sub-Category related to the Sports Category ", priority = 164)
+public void verifyAbilityToAccessAllPagesInsideOralCareOptionCategoryRelatedToSportsCategoryPage(){
     aeMegaMenuTestCases=new AEMegaMenuTestCases();
     aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     aeMegaMenuTestCases.verifyClickingOnOralCareOptionInSportsMainMenuRedirectUserToCorrectURL();
     String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
     DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Sunglasses Option Sub-Category related to the Sports Category ", priority = 165)
-public void verifyAbilityToAccessAllPagesInsideSunglassesOptionCategoryRelatedToSportsCategoryPage(){
+ @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Therapy Option Sub-Category related to the Sports Category ", priority = 165)
+public void verifyAbilityToAccessAllPagesInsideTherapyOptionCategoryRelatedToSportsCategoryPage(){
     aeMegaMenuTestCases=new AEMegaMenuTestCases();
     aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     aeMegaMenuTestCases.verifyClickingOnTherapyOptionInSportsMainMenuRedirectUserToCorrectURL();
     String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
     DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Mixer Option Sub-Category related to the Sports Category ", priority = 166)
-public void verifyAbilityToAccessAllPagesInsideMixerOptionCategoryRelatedToSportsCategoryPage(){
+ @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Masks Option Sub-Category related to the Sports Category ", priority = 166)
+public void verifyAbilityToAccessAllPagesInsideMasksOptionCategoryRelatedToSportsCategoryPage(){
     aeMegaMenuTestCases=new AEMegaMenuTestCases();
     aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     aeMegaMenuTestCases.verifyClickingOnMasksOptionInSportsMainMenuRedirectUserToCorrectURL();
     String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
     DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Bags Option Sub-Category related to the Sports Category ", priority = 167)
-public void verifyAbilityToAccessAllPagesInsideBagsOptionCategoryRelatedToSportsCategoryPage(){
+ @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Fitness And Training Option Sub-Category related to the Sports Category ", priority = 167)
+public void verifyAbilityToAccessAllPagesInsideFitnessAndTrainingOptionCategoryRelatedToSportsCategoryPage(){
     aeMegaMenuTestCases=new AEMegaMenuTestCases();
     aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     aeMegaMenuTestCases.verifyClickingOnFitnessAndTrainingCategoryOptionInSportsMainMenuRedirectUserToCorrectURL();
     String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
     DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Backpacks Option Sub-Category related to the Sports Category ", priority = 168)
-public void verifyAbilityToAccessAllPagesInsideBackpacksOptionCategoryRelatedToSportsCategoryPage(){
+ @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Fitness Equipment Option Sub-Category related to the Sports Category ", priority = 168)
+public void verifyAbilityToAccessAllPagesInsideFitnessEquipmentOptionCategoryRelatedToSportsCategoryPage(){
     aeMegaMenuTestCases=new AEMegaMenuTestCases();
     aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     aeMegaMenuTestCases.verifyClickingOnFitnessEquipmentOptionInSportsMainMenuRedirectUserToCorrectURL();
     String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
     DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Shoulder Bags Option Sub-Category related to the Sports Category ", priority = 169)
-public void verifyAbilityToAccessAllPagesInsideShoulderBagsOptionCategoryRelatedToSportsCategoryPage(){
+ @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Skipping Ropes Option Sub-Category related to the Sports Category ", priority = 169)
+public void verifyAbilityToAccessAllPagesInsideSkippingRopesOptionCategoryRelatedToSportsCategoryPage(){
     aeMegaMenuTestCases=new AEMegaMenuTestCases();
     aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     aeMegaMenuTestCases.verifyClickingOnSkippingRopesOptionInSportsMainMenuRedirectUserToCorrectURL();
     String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
     DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Shoulder Wearable Tech Option Sub-Category related to the Sports Category ", priority = 170)
-public void verifyAbilityToAccessAllPagesInsideShoulderWearableTechOptionCategoryRelatedToSportsCategoryPage(){
+ @Test(description = "MegaMenu- Make Sure the " +
+         "ability to access all pages inside Weigh tBelts Tech Option Sub-Category related to the Sports Category ", priority = 170)
+public void verifyAbilityToAccessAllPagesInsideWeightBeltsOptionCategoryRelatedToSportsCategoryPage(){
     aeMegaMenuTestCases=new AEMegaMenuTestCases();
     aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     aeMegaMenuTestCases.verifyClickingOnWeightBeltsOptionInSportsMainMenuRedirectUserToCorrectURL();
     String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
     DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Shoulder Watches Option Sub-Category related to the Sports Category ", priority = 171)
-public void verifyAbilityToAccessAllPagesInsideShoulderWatchesOptionCategoryRelatedToSportsCategoryPage(){
+ @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Scooters Option Sub-Category related to the Sports Category ", priority = 171)
+public void verifyAbilityToAccessAllPagesInsideScootersOptionCategoryRelatedToSportsCategoryPage(){
     aeMegaMenuTestCases=new AEMegaMenuTestCases();
     aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     aeMegaMenuTestCases.verifyClickingOnScootersOptionInSportsMainMenuRedirectUserToCorrectURL();
     String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
     DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Shoulder Gaming Accessories Option Sub-Category related to the Sports Category ", priority = 172)
-public void verifyAbilityToAccessAllPagesInsideGamingAccessoriesOptionCategoryRelatedToSportsCategoryPage(){
+ @Test(description = "MegaMenu- Make Sure the ability to access all pages inside  Training Accessories Option Sub-Category related to the Sports Category ", priority = 172)
+public void verifyAbilityToAccessAllPagesInsideTrainingAccessoriesOptionCategoryRelatedToSportsCategoryPage(){
     aeMegaMenuTestCases=new AEMegaMenuTestCases();
     aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     aeMegaMenuTestCases.verifyClickingOnTrainingAccessoriesOptionInSportsMainMenuRedirectUserToCorrectURL();
@@ -1390,6 +1391,247 @@ public void verifyAbilityToAccessAllPagesInsideGamingAccessoriesOptionCategoryRe
     DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
     }
 
-//Here
+@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Shakers And Bottles Option Sub-Category related to the Sports Category ", priority = 173)
+public void verifyAbilityToAccessAllPagesInsideShakersAndBottlesOptionCategoryRelatedToSportsCategoryPage(){
+    aeMegaMenuTestCases=new AEMegaMenuTestCases();
+    aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+    aeMegaMenuTestCases.verifyClickingOnShakersAndBottlesOptionInSportsMainMenuRedirectUserToCorrectURL();
+    String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+    DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+}
+@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Bags Option Sub-Category related to the Sports Category ", priority = 174)
+public void verifyAbilityToAccessAllPagesInsideBagsOptionCategoryRelatedToSportsCategoryPage(){
+    aeMegaMenuTestCases=new AEMegaMenuTestCases();
+    aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+    aeMegaMenuTestCases.verifyClickingOnBagsOptionInSportsMainMenuRedirectUserToCorrectURL();
+    String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+    DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+}
+@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Gloves Option Sub-Category related to the Sports Category ", priority = 175)
+public void verifyAbilityToAccessAllPagesInsideGlovesOptionCategoryRelatedToSportsCategoryPage(){
+    aeMegaMenuTestCases=new AEMegaMenuTestCases();
+    aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+    aeMegaMenuTestCases.verifyClickingOnGlovesOptionInSportsMainMenuRedirectUserToCorrectURL();
+    String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+    DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+}
+@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Braces And Sleeves Option Sub-Category related to the Sports Category ", priority = 176)
+public void verifyAbilityToAccessAllPagesInsideBracesAndSleevesOptionCategoryRelatedToSportsCategoryPage(){
+    aeMegaMenuTestCases=new AEMegaMenuTestCases();
+    aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+    aeMegaMenuTestCases.verifyClickingOnBracesAndSleevesOptionInSportsMainMenuRedirectUserToCorrectURL();
+    String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+    DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+}
+@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Mouthguard Option Sub-Category related to the Sports Category ", priority = 177)
+public void verifyAbilityToAccessAllPagesInsideMouthguardOptionCategoryRelatedToSportsCategoryPage(){
+    aeMegaMenuTestCases=new AEMegaMenuTestCases();
+    aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+    aeMegaMenuTestCases.verifyClickingOnMouthguardOptionInSportsMainMenuRedirectUserToCorrectURL();
+    String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+    DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+}
+@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Appeal Option Sub-Category related to the Sports Category ", priority = 178)
+public void verifyAbilityToAccessAllPagesInsideAppealOptionCategoryRelatedToSportsCategoryPage(){
+    aeMegaMenuTestCases=new AEMegaMenuTestCases();
+    aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+    aeMegaMenuTestCases.verifyClickingOnApparelOptionInSportsMainMenuRedirectUserToCorrectURL();
+    String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+    DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+}
+@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Sportswear Option Sub-Category related to the Sports Category ", priority = 179)
+public void verifyAbilityToAccessAllPagesInsideSportswearOptionCategoryRelatedToSportsCategoryPage(){
+    aeMegaMenuTestCases=new AEMegaMenuTestCases();
+    aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+    aeMegaMenuTestCases.verifyClickingOnSportswearOptionInSportsMainMenuRedirectUserToCorrectURL();
+    String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+    DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+}
+@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Pants Option Sub-Category related to the Sports Category ", priority = 180)
+public void verifyAbilityToAccessAllPagesInsidePantsOptionCategoryRelatedToSportsCategoryPage(){
+    aeMegaMenuTestCases=new AEMegaMenuTestCases();
+    aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+    aeMegaMenuTestCases.verifyClickingOnPantsOptionInSportsMainMenuRedirectUserToCorrectURL();
+    String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+    DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+}
+@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Shorts Option Sub-Category related to the Sports Category ", priority = 181)
+public void verifyAbilityToAccessAllPagesInsideShortsOptionCategoryRelatedToSportsCategoryPage(){
+    aeMegaMenuTestCases=new AEMegaMenuTestCases();
+    aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+    aeMegaMenuTestCases.verifyClickingOnShortsOptionInSportsMainMenuRedirectUserToCorrectURL();
+    String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+    DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+}
+@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Hoodies Option Sub-Category related to the Sports Category ", priority = 182)
+public void verifyAbilityToAccessAllPagesInsideHoodiesOptionCategoryRelatedToSportsCategoryPage(){
+    aeMegaMenuTestCases=new AEMegaMenuTestCases();
+    aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+    aeMegaMenuTestCases.verifyClickingOnHoodiesOptionInSportsMainMenuRedirectUserToCorrectURL();
+    String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+    DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+}
+@Test(description = "MegaMenu- Make Sure the ability to access all pages inside TShirts Option Sub-Category related to the Sports Category ", priority = 183)
+public void verifyAbilityToAccessAllPagesInsideTShirtsOptionCategoryRelatedToSportsCategoryPage(){
+    aeMegaMenuTestCases=new AEMegaMenuTestCases();
+    aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+    aeMegaMenuTestCases.verifyClickingOnTShirtsOptionInSportsMainMenuRedirectUserToCorrectURL();
+    String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+    DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+}
+@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Tanks Option Sub-Category related to the Sports Category ", priority = 184)
+public void verifyAbilityToAccessAllPagesInsideTanksOptionCategoryRelatedToSportsCategoryPage(){
+    aeMegaMenuTestCases=new AEMegaMenuTestCases();
+    aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+    aeMegaMenuTestCases.verifyClickingOnTanksOptionInSportsMainMenuRedirectUserToCorrectURL();
+    String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+    DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+}
+@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Footwear Option Sub-Category related to the Sports Category ", priority = 185)
+public void verifyAbilityToAccessAllPagesInsideFootwearOptionCategoryRelatedToSportsCategoryPage(){
+    aeMegaMenuTestCases=new AEMegaMenuTestCases();
+    aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+    aeMegaMenuTestCases.verifyClickingOnFootwearOptionInSportsMainMenuRedirectUserToCorrectURL();
+    String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+    DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+}
+@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Sneakers Option Sub-Category related to the Sports Category ", priority = 186)
+public void verifyAbilityToAccessAllPagesInsideSneakersOptionCategoryRelatedToSportsCategoryPage(){
+    aeMegaMenuTestCases=new AEMegaMenuTestCases();
+    aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+    aeMegaMenuTestCases.verifyClickingOnSneakersOptionInSportsMainMenuRedirectUserToCorrectURL();
+    String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+    DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+}
+@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Training Shoes Option Sub-Category related to the Sports Category ", priority = 187)
+public void verifyAbilityToAccessAllPagesInsideTrainingShoesOptionCategoryRelatedToSportsCategoryPage(){
+    aeMegaMenuTestCases=new AEMegaMenuTestCases();
+    aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+    aeMegaMenuTestCases.verifyClickingOnTrainingShoesOptionInSportsMainMenuRedirectUserToCorrectURL();
+    String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+    DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+}
+@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Running Shoes Option Sub-Category related to the Sports Category ", priority = 188)
+public void verifyAbilityToAccessAllPagesInsideRunningShoesOptionCategoryRelatedToSportsCategoryPage(){
+    aeMegaMenuTestCases=new AEMegaMenuTestCases();
+    aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+    aeMegaMenuTestCases.verifyClickingOnRunningShoesOptionInSportsMainMenuRedirectUserToCorrectURL();
+    String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+    DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+}
+@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Women Option Sub-Category related to the Sports Category ", priority = 189)
+public void verifyAbilityToAccessAllPagesInsideWomenOptionCategoryRelatedToSportsCategoryPage(){
+    aeMegaMenuTestCases=new AEMegaMenuTestCases();
+    aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+    aeMegaMenuTestCases.verifyClickingOnWomenOptionInSportsMainMenuRedirectUserToCorrectURL();
+    String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+    DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+}
+@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Women Sports Tech Option Sub-Category related to the Sports Category ", priority = 190)
+public void verifyAbilityToAccessAllPagesInsideWomenSportsTechOptionCategoryRelatedToSportsCategoryPage(){
+    aeMegaMenuTestCases=new AEMegaMenuTestCases();
+    aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+    aeMegaMenuTestCases.verifyClickingOnWomenSportsTechOptionInSportsMainMenuRedirectUserToCorrectURL();
+    String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+    DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+}
+@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Women Wearable Tech Option Sub-Category related to the Sports Category ", priority = 191)
+public void verifyAbilityToAccessAllPagesInsideWomenWearableTechOptionCategoryRelatedToSportsCategoryPage(){
+    aeMegaMenuTestCases=new AEMegaMenuTestCases();
+    aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+    aeMegaMenuTestCases.verifyClickingOnWomenWearableTechOptionInSportsMainMenuRedirectUserToCorrectURL();
+    String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+    DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+}
+@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Women Cameras Option Sub-Category related to the Sports Category ", priority = 192)
+public void verifyAbilityToAccessAllPagesInsideWomenCamerasOptionCategoryRelatedToSportsCategoryPage(){
+    aeMegaMenuTestCases=new AEMegaMenuTestCases();
+    aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+    aeMegaMenuTestCases.verifyClickingOnWomenCamerasOptionInSportsMainMenuRedirectUserToCorrectURL();
+    String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+    DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+}
+@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Women Phone Accessories Option Sub-Category related to the Sports Category ", priority = 193)
+public void verifyAbilityToAccessAllPagesInsideWomenPhoneAccessoriesOptionCategoryRelatedToSportsCategoryPage(){
+    aeMegaMenuTestCases=new AEMegaMenuTestCases();
+    aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+    aeMegaMenuTestCases.verifyClickingOnWomenPhoneAccessoriesOptionInSportsMainMenuRedirectUserToCorrectURL();
+    String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+    DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+}
+@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Women Personal Care Option Sub-Category related to the Sports Category ", priority = 194)
+public void verifyAbilityToAccessAllPagesInsideWomenPersonalCareOptionCategoryRelatedToSportsCategoryPage(){
+    aeMegaMenuTestCases=new AEMegaMenuTestCases();
+    aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+    aeMegaMenuTestCases.verifyClickingOnWomenPersonalCareOptionInSportsMainMenuRedirectUserToCorrectURL();
+    String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+    DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+}
+@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Women Showering Option Sub-Category related to the Sports Category ", priority = 195)
+public void verifyAbilityToAccessAllPagesInsideWomenShoweringOptionCategoryRelatedToSportsCategoryPage(){
+    aeMegaMenuTestCases=new AEMegaMenuTestCases();
+    aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+    aeMegaMenuTestCases.verifyClickingOnWomenShoweringOptionInSportsMainMenuRedirectUserToCorrectURL();
+    String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+    DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+}
+@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Women Skin Care Option Sub-Category related to the Sports Category ", priority = 196)
+public void verifyAbilityToAccessAllPagesInsideWomenSkinCareOptionCategoryRelatedToSportsCategoryPage(){
+    aeMegaMenuTestCases=new AEMegaMenuTestCases();
+    aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+    aeMegaMenuTestCases.verifyClickingOnWomenSkinCareOptionInSportsMainMenuRedirectUserToCorrectURL();
+    String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+    DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+}
+@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Women Body Care Option Sub-Category related to the Sports Category ", priority = 197)
+public void verifyAbilityToAccessAllPagesInsideWomenBodyCareOptionCategoryRelatedToSportsCategoryPage(){
+    aeMegaMenuTestCases=new AEMegaMenuTestCases();
+    aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+    aeMegaMenuTestCases.verifyClickingOnWomenBodyCareOptionInSportsMainMenuRedirectUserToCorrectURL();
+    String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+    DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+}
+@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Women Oral Care Option Sub-Category related to the Sports Category ", priority = 198)
+public void verifyAbilityToAccessAllPagesInsideWomenOralCareOptionCategoryRelatedToSportsCategoryPage(){
+    aeMegaMenuTestCases=new AEMegaMenuTestCases();
+    aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+    aeMegaMenuTestCases.verifyClickingOnWomenOralCareOptionInSportsMainMenuRedirectUserToCorrectURL();
+    String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+    DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+}
+@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Women Therapy Option Sub-Category related to the Sports Category ", priority = 199)
+public void verifyAbilityToAccessAllPagesInsideWomenTherapyOptionCategoryRelatedToSportsCategoryPage(){
+    aeMegaMenuTestCases=new AEMegaMenuTestCases();
+    aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+    aeMegaMenuTestCases.verifyClickingOnWomenTherapyOptionInSportsMainMenuRedirectUserToCorrectURL();
+    String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+    DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+}
+@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Women Masks Option Sub-Category related to the Sports Category ", priority = 200)
+public void verifyAbilityToAccessAllPagesInsideWomenMasksOptionCategoryRelatedToSportsCategoryPage(){
+    aeMegaMenuTestCases=new AEMegaMenuTestCases();
+    aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+    aeMegaMenuTestCases.verifyClickingOnWomenMasksOptionInSportsMainMenuRedirectUserToCorrectURL();
+    String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+    DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+}
+@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Women Fitness And Training Option Sub-Category related to the Sports Category ", priority = 201)
+public void verifyAbilityToAccessAllPagesInsideWomenFitnessAndTrainingOptionCategoryRelatedToSportsCategoryPage(){
+    aeMegaMenuTestCases=new AEMegaMenuTestCases();
+    aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+    aeMegaMenuTestCases.verifyClickingOnWomenFitnessAndTrainingOptionInSportsMainMenuRedirectUserToCorrectURL();
+    String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+    DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+}
+@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Women Training Accessories Option Sub-Category related to the Sports Category ", priority = 202)
+public void verifyAbilityToAccessAllPagesInsideWomenTrainingAccessoriesOptionCategoryRelatedToSportsCategoryPage(){
+    aeMegaMenuTestCases=new AEMegaMenuTestCases();
+    aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
+    aeMegaMenuTestCases.verifyClickingOnWomenTrainingAccessoriesOptionInSportsMainMenuRedirectUserToCorrectURL();
+    String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+    DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
+}
+//Banners inside the MegaMenu lists
+
 
 }

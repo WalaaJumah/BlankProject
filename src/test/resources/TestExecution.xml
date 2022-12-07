@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name=" Test" thread-count="4" parallel="tests">
-    <listeners>
-        <listener class-name="extent_report_listner.ExtentReportListener" />
-    </listeners>
+<!--    <listeners>-->
+<!--        <listener class-name="extent_report_listner.ExtentReportListener" />-->
+<!--    </listeners>-->
 
 <!--    <listeners>-->
 <!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
@@ -27,11 +27,11 @@
         <classes>
 
         <class name="sporter_test.AeAllPagesInsideCategoriesInMegaMenuTestCases">
-            <methods>
-                <include name="verifyAbilityToAccessAllPagesInsideFeaturedCategoryRelatedTVitaminsAndHealthCategoryPage"></include>
+<!--            <methods>-->
+<!--                <include name="verifyAbilityToAccessAllPagesInsideProteinCategoryRelatedToSportSupplementsCategoryPage"></include>-->
 <!--                <include name="verifyClickingOnBracesAndSleevesOptionInSportsMainMenuRedirectUserToCorrectURL"></include>-->
 
-            </methods>
+<!--            </methods>-->
         </class>
 
 <!--        <class name="test.Test2" />-->
