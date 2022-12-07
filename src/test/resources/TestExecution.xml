@@ -28,8 +28,8 @@
 
         <class name="sporter_test.AeAllPagesInsideCategoriesInMegaMenuTestCases">
 <!--            <methods>-->
-<!--                <include name="verifyAbilityToAccessAllPagesInsideProteinCategoryRelatedToSportSupplementsCategoryPage"></include>-->
-<!--                <include name="verifyClickingOnBracesAndSleevesOptionInSportsMainMenuRedirectUserToCorrectURL"></include>-->
+<!--                <include name="verifyAbilityToAccessAllPagesInsideHealthyMealsOptionCategoryRelatedToHealthyFoodCategoryPage"></include>-->
+
 
 <!--            </methods>-->
         </class>

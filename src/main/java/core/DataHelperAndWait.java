@@ -156,7 +156,12 @@ public class DataHelperAndWait extends BaseTest {
     }
 
     public static void accessAllPagesInsideTheProductsListPage( String numberOfProductInTheList, WebElement element ){
-        double numberOfProductInTheListInInt=Double.parseDouble(numberOfProductInTheList.substring(10,numberOfProductInTheList.length()-7));
+        ///New
+        String numberOfProductWithOutItemLabel= numberOfProductInTheList.replace(") Items","");
+        String numberOfProductWithOutResultLabel= numberOfProductWithOutItemLabel.substring(10);
+        double numberOfProductInTheListInInt=Double.parseDouble(numberOfProductWithOutResultLabel);
+        //End of new code
+//        double numberOfProductInTheListInInt=Double.parseDouble(numberOfProductInTheList.substring(10,numberOfProductInTheList.length()-7));
         double numberOfThePagesInList=Math.ceil(numberOfProductInTheListInInt/24);
         if(numberOfThePagesInList>1){
             int i = 2;

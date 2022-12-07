@@ -1081,6 +1081,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeMegaMenuTestCases.verifyClickingOnHealthyMealsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL();
         String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        System.out.println(numberOfProductInTheList);
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
     }
    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Featured Option Sub-Category related to the Healthy Food Category ", priority = 135)
