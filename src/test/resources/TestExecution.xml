@@ -28,7 +28,7 @@
 
             <class name="sporter_test.KsaHomePageTestCases">
                             <methods>
-                                <include name="verifyClickingOnTheSecondSideBannersWorksCorrectlyInTheVitaminsAndHealthCategoryPage"></include>
+                                <include name="verifyAbilityToClickOnTheFirstProductAppearingInTheTopSellingStacksSectionCorrectly"></include>
 
                             </methods>
             </class>
