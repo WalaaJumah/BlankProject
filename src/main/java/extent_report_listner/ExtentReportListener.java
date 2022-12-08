@@ -73,7 +73,6 @@ public class ExtentReportListener implements IReporter {
                 buildTestNodes(context.getPassedTests(), LogStatus.PASS);
                 buildTestNodes(context.getFailedTests(), LogStatus.FAIL);
                 buildTestNodes(context.getSkippedTests(), LogStatus.SKIP);
-
             }
         }
 
@@ -131,4 +130,10 @@ public class ExtentReportListener implements IReporter {
         return destination;
 
     }
-}
+    public void onTestFailure(ITestResult result) throws Exception {
+        ITestContext context = result.getTestContext();
+        WebDriver driver = (WebDriver)context.getAttribute("driver");
+        ExtentReportListener.getScreenshot(driver,result.getParameters().toString().trim(),result);
+}}
+
+

@@ -26,7 +26,7 @@ public class KsaHomePage {
     private List<WebElement> homePageRotatingSliderList;
     @FindBy(css = "ul.slides li.flex-active-slide:nth-child(2)")
     private WebElement homePageRotatingSlider;
-    @FindBy(xpath = "//*[@class='flex-control-nav flex-control-paging']")
+    @FindBy(xpath = "//*[@class='flex-control-nav flex-control-paging']/li/a")
     private List<WebElement> homePageRotatingSliderPagingList;
     @FindBy(css = "#maincontent > div.columns > div > div.advertise-banner-3.imagewidgetclass > ul")
     private List<WebElement> homePageUnderShopByCategoryBanners;
@@ -48,7 +48,7 @@ public class KsaHomePage {
     private WebElement homePageRotatingSliderPagingControl;
     @FindBy(xpath = "//div[@class='nutritious-right']")
     private WebElement homePageSideBanner;
-    @FindBy(xpath = "//div[@class='advertise-banner-1 imagewidgetclass']")
+    @FindBy(xpath = "//div[@class='advertise-banner-1 imagewidgetclass']/ul/li/a")
     private WebElement homePageHorizontalBanner;
     @FindBy(xpath = "//h2[text()='Shop By Category']")
     private WebElement shopByCategoryHeader;
@@ -152,6 +152,12 @@ public class KsaHomePage {
     private WebElement vitaminsAndHealthCategory;
     @FindBy(xpath = "(//a[@title='Start Shopping'])[4]")
     private WebElement sportswearAndAccessoriesCategory;
+    @FindBy(xpath = "//div[@class='flex-viewport']")
+    private WebElement bannerInRotatingSliderSection;
+    @FindBy(xpath = "(//div[@class='nutritious-right'])/a[1]")
+    private WebElement firstSideBanner;
+    @FindBy(xpath = "(//div[@class='nutritious-right'])/a[2]")
+    private WebElement secondSideBanner;
 
     //Getter Methods
     public WebElement getNextArrowInHomePageRotatingSlider() {
@@ -172,6 +178,13 @@ public class KsaHomePage {
 
     public WebElement getHomePageSideBanner() {
         return homePageSideBanner;
+    }
+    public WebElement getFirstSideBanner() {
+        return firstSideBanner;
+    }
+
+    public WebElement getSecondSideBanner() {
+        return secondSideBanner;
     }
 
     public WebElement getShopByCategoryHeader() {
@@ -204,6 +217,9 @@ public class KsaHomePage {
 
     public WebElement getHorizontalBanner() {
         return homePageHorizontalBanner;
+    }
+    public WebElement getBannerInRotatingSliderSection() {
+        return bannerInRotatingSliderSection;
     }
 
     public List<WebElement> getHomePageRotatingSliderList() {
@@ -406,8 +422,15 @@ public class KsaHomePage {
     }
 
     public void clickOnViewAllBtnInTopSellingStacksSection() {
-        DataHelperAndWait.isDisplayed(viewAllBtnInTopSellingStacksSection, 10);
-        this.viewAllBtnInTopSellingStacksSection.click();
+        try {
+            DataHelperAndWait.isDisplayed(viewAllBtnInTopSellingStacksSection, 3);
+            this.viewAllBtnInTopSellingStacksSection.click();
+        }
+        catch (Exception e){
+            DataHelperAndWait.isDisplayed(viewAllBtnInTopSellingStacksSection, 3);
+            this.viewAllBtnInTopSellingStacksSection.click();
+        }
+
     }
 
     public void clickOnAllLinkInTopSellerSection() {
@@ -506,8 +529,12 @@ public class KsaHomePage {
     }
 
     public void clickOnHomePageHorizontalBanner() {
-        DataHelperAndWait.isDisplayed(homePageHorizontalBanner, 10);
-        this.homePageHorizontalBanner.click();
+        try{DataHelperAndWait.isDisplayed(homePageHorizontalBanner, 5);
+        this.homePageHorizontalBanner.click();}
+        catch(Exception e){
+            DataHelperAndWait.isDisplayed(homePageHorizontalBanner, 5);
+            this.homePageHorizontalBanner.click();
+        }
     }
 
     public void clickOnSportsSupplementsCategory() {

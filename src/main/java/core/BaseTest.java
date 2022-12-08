@@ -72,7 +72,6 @@ public class BaseTest {
         switch (environment){
             case "production":
                 System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
-//                System.setProperty("webdriver.chrome.driver","G:\\My Drive\\Walaa Documents\\Chrome Driver 108\\chromedriver.exe");
                 siteURL = "https://www.sporter.com";
                 webDriver = new ChromeDriver();
                 webDriver.manage().window().maximize();
@@ -80,8 +79,6 @@ public class BaseTest {
                 break;
             case "stg":
                 System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
-//                System.setProperty("webdriver.chrome.driver","G:\\My Drive\\Walaa Documents\\Chrome Driver 108\\chromedriver.exe");
-
                 siteURL = "https://stg.sporter.com";
                 webDriver = new ChromeDriver();
                 webDriver.manage().window().maximize();
@@ -89,8 +86,6 @@ public class BaseTest {
                 break;
             case "stgTest":
                 System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
-//                System.setProperty("webdriver.chrome.driver","G:\\My Drive\\Walaa Documents\\Chrome Driver 108\\chromedriver.exe");
-
                 siteURL ="https://stg-test.sporter.com";
                 webDriver = new ChromeDriver();
                 webDriver.manage().window().maximize();
@@ -98,8 +93,6 @@ public class BaseTest {
                 break;
             case "staging2":
                 System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
-//                System.setProperty("webdriver.chrome.driver","G:\\My Drive\\Walaa Documents\\Chrome Driver 108\\chromedriver.exe");
-
                 siteURL ="https://staging2.sporter.com";
                 webDriver = new ChromeDriver();
                 webDriver.manage().window().maximize();
@@ -112,7 +105,5 @@ public class BaseTest {
     }
 
     @AfterMethod(alwaysRun = true)
-    public void tearDown()  {
-        webDriver.quit();
-    }
+    public void tearDown()  {webDriver.quit();}
 }

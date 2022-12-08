@@ -26,7 +26,7 @@ public class QatarHomePage {
     private List<WebElement> homePageRotatingSliderList;
     @FindBy(css = "ul.slides li.flex-active-slide:nth-child(2)")
     private WebElement homePageRotatingSlider;
-    @FindBy(xpath = "//*[@class='flex-control-nav flex-control-paging']")
+    @FindBy(xpath = "//*[@class='flex-control-nav flex-control-paging']/li/a")
     private List<WebElement> homePageRotatingSliderPagingList;
     @FindBy(css = "#maincontent > div.columns > div > div.advertise-banner-3.imagewidgetclass > ul")
     private List<WebElement> homePageUnderShopByCategoryBanners;
@@ -48,7 +48,7 @@ public class QatarHomePage {
     private WebElement homePageRotatingSliderPagingControl;
     @FindBy(xpath = "//div[@class='nutritious-right']")
     private WebElement homePageSideBanner;
-    @FindBy(xpath = "//div[@class='advertise-banner-1 imagewidgetclass']")
+    @FindBy(xpath = "//div[@class='advertise-banner-1 imagewidgetclass']/ul/li/a")
     private WebElement homePageHorizontalBanner;
     @FindBy(xpath = "//h2[text()='Shop By Category']")
     private WebElement shopByCategoryHeader;
@@ -152,6 +152,8 @@ public class QatarHomePage {
     private WebElement vitaminsAndHealthCategory;
     @FindBy(xpath = "(//a[@title='Start Shopping'])[4]")
     private WebElement sportswearAndAccessoriesCategory;
+    @FindBy(xpath = "//div[@class='flex-viewport']")
+    private WebElement bannerInRotatingSliderSection;
 
     //Getter Methods
     public WebElement getNextArrowInHomePageRotatingSlider() {
@@ -212,6 +214,9 @@ public class QatarHomePage {
 
     public WebElement getShopByOption() {
         return shopByOption;
+    }
+    public WebElement getBannerInRotatingSliderSection() {
+        return bannerInRotatingSliderSection;
     }
 
     public WebElement getSportSupplementsOption() {
