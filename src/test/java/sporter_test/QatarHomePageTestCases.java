@@ -10,8 +10,6 @@ import static org.testng.Assert.assertFalse;
 
 public class QatarHomePageTestCases extends BaseTest {
     private QatarHomePage qatarHomePage;
-    private AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage;
-    String allProductsInTopSellingStacksSectionURL = "https://www.sporter.com/en-qa/";
     String contactUsUrl = "contact-form";
 
     @Test(description = "Make sure the next and previous arrow at the HomePage rotating slider section are displayed ", priority = 1)
@@ -191,7 +189,6 @@ public class QatarHomePageTestCases extends BaseTest {
         qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.switchToQatarCountry();
         qatarHomePage.clickOnNextButtonInTopSellersSection();
-        DataHelperAndWait.implicitWait(6);
         Assert.assertTrue(qatarHomePage.getTopSellerSectionPositionAfterClickingOnNext().isDisplayed());
     }
     @Test(description = "Make sure the previous button appearing in the Top Seller section works Correctly ", priority = 18)
@@ -200,7 +197,6 @@ public class QatarHomePageTestCases extends BaseTest {
         qatarHomePage.switchToQatarCountry();
         qatarHomePage.clickOnNextButtonInTopSellersSection();
         qatarHomePage.clickOnPreviousButtonInTopSellersSection();
-        DataHelperAndWait.implicitWait(6);
         Assert.assertTrue(qatarHomePage.getTopSellerSectionPositionAfterClickingOnPrevious().isDisplayed());
     }
     @Test(description = "Make sure the Trending On Sporter sections are displayed ", priority = 19)
@@ -215,7 +211,6 @@ public class QatarHomePageTestCases extends BaseTest {
         qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.switchToQatarCountry();
         qatarHomePage.clickOnNextButtonInTrendingOnSporterSection();
-        DataHelperAndWait.implicitWait(6);
         Assert.assertTrue(qatarHomePage.getTrendingOnSporterSectionPositionAfterClickingOnNext().isDisplayed());
     }
     @Test(description = "Make sure the previous button appearing in the Trending On Sporter section works Correctly ", priority = 21)
@@ -224,7 +219,6 @@ public class QatarHomePageTestCases extends BaseTest {
         qatarHomePage.switchToQatarCountry();
         qatarHomePage.clickOnNextButtonInTrendingOnSporterSection();
         qatarHomePage.clickOnPreviousButtonInTrendingOnSporterSection();
-        DataHelperAndWait.implicitWait(6);
         Assert.assertTrue(qatarHomePage.getTrendingOnSporterSectionPositionAfterClickingOnPrevious().isDisplayed());
     }
     @Test(description = "Make sure the New Arrivals sections are displayed ", priority = 22)
@@ -238,7 +232,6 @@ public class QatarHomePageTestCases extends BaseTest {
     public void verifyAllLinksInNewArrivalsSectionAreDisplayed() {
         qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.switchToQatarCountry();
-        DataHelperAndWait.implicitWait(6);
         Assert.assertTrue(qatarHomePage.getNewArrivalsAllLink().isDisplayed());
         Assert.assertTrue(qatarHomePage.getNewArrivalsSportSupplementsLink().isDisplayed());
         Assert.assertTrue(qatarHomePage.getNewArrivalsHealthyFoodLinkLink().isDisplayed());

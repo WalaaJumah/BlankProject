@@ -411,18 +411,22 @@ public class QatarHomePage {
     }
 
     public WebElement getTrendingOnSporterSectionPositionAfterClickingOnNext() {
+        DataHelperAndWait.waitToBeVisible(trendingOnSporterSectionPositionAfterClickingOnNext,3);
         return trendingOnSporterSectionPositionAfterClickingOnNext;
     }
 
     public WebElement getTrendingOnSporterSectionPositionAfterClickingOnPrevious() {
+        DataHelperAndWait.waitToBeVisible(trendingOnSporterSectionPositionAfterClickingOnPrevious,3);
         return trendingOnSporterSectionPositionAfterClickingOnPrevious;
     }
 
     public WebElement getTopSellerSectionPositionAfterClickingOnPrevious() {
+        DataHelperAndWait.waitToBeVisible(topSellerSectionPositionAfterClickingOnPrevious,3);
         return topSellerSectionPositionAfterClickingOnPrevious;
     }
 
     public WebElement getTopSellerSectionPositionAfterClickingOnNext() {
+        DataHelperAndWait.waitToBeVisible(topSellerSectionPositionAfterClickingOnNext,3);
         return topSellerSectionPositionAfterClickingOnNext;
     }
 
@@ -435,6 +439,7 @@ public class QatarHomePage {
     }
 
     public WebElement getNewArrivalsAllLink() {
+        DataHelperAndWait.waitToBeVisible(newArrivalsAllLink,3);
         return newArrivalsAllLink;
     }
 
