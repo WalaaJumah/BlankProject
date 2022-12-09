@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import javax.xml.crypto.Data;
 import java.util.List;
 
 public class QatarHomePage {
@@ -452,10 +453,12 @@ public class QatarHomePage {
     }
 
     public WebElement getNewArrivalsVitaminsAndHealthLink() {
+        DataHelperAndWait.waitToBeVisible(newArrivalsVitaminsAndHealthLink,2);
         return newArrivalsVitaminsAndHealthLink;
     }
 
     public WebElement getNewArrivalsSportWearAndAccessoriesLink() {
+        DataHelperAndWait.waitToBeVisible(newArrivalsSportWearAndAccessoriesLink,2);
         return newArrivalsSportWearAndAccessoriesLink;
     }
 
@@ -515,7 +518,7 @@ public class QatarHomePage {
     }
 
     public void clickOnViewAllBtnInTopSellingStacksSection() {
-        DataHelperAndWait.isDisplayed(viewAllBtnInTopSellingStacksSection, 10);
+        DataHelperAndWait.isDisplayed(viewAllBtnInTopSellingStacksSection, 3);
         this.viewAllBtnInTopSellingStacksSection.click();
     }
 

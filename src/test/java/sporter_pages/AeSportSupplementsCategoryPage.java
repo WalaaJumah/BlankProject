@@ -86,6 +86,7 @@ public class AeSportSupplementsCategoryPage {
         return resultLabel;
     }
     public WebElement getSearchResultValue() {
+        DataHelperAndWait.waitToBeVisible(searchResultValue,2);
         return searchResultValue;
     }
     public WebElement getSortByLabel() {

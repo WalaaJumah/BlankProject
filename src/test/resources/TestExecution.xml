@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<!--<suite name=" Test" thread-count="5" parallel="true">-->
+<!--<suite name=" Test" thread-count="3" parallel="true">-->
 <suite name=" Test" thread-count="4" >
 <!--        <listeners>-->
 <!--            <listener class-name="extent_report_listner.ExtentReportListener" />-->
@@ -47,11 +47,11 @@
 
             <class name="sporter_test.QatarHomePageTestCases">
                             <methods>
-                                <include name="verifyClickOnTheProductsAppearingInTheTopSellingStacksSectionRedirectTheUserToCorrectUrl"></include>
-                                <include name="verifyAbilityToClickOnTheFourthProductAppearingInTheNewArrivalsSectionCorrectly"></include>
-                                <include name="verifyClickOnTheProductsAppearingInTheTopSellersSectionRedirectTheUserToCorrectUrl"></include>
-                                <include name="verifyClickingOnHomePageHorizontalBannerDoeNotRedirectTheUserTo404PageOrNoContentFoundPage"></include>
-                                <include name="verifyPreviousBtnInNewArrivalsSectionWorks"></include>
+                                <include name="verifyNewArrivalsSectionAreDisplayed"></include>
+                                <include name="verifyAllLinksInNewArrivalsSectionAreDisplayed"></include>
+                                <include name="verifyAbilityToClickOnTheAllLinkInNewArrivalsSection"></include>
+<!--                                <include name="verifyClickingOnHomePageHorizontalBannerDoeNotRedirectTheUserTo404PageOrNoContentFoundPage"></include>-->
+<!--                                <include name="verifyPreviousBtnInNewArrivalsSectionWorks"></include>-->
 
                             </methods>
             </class>

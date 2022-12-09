@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import sporter_pages.AeSportSupplementsCategoryPage;
 import sporter_pages.AeVitaminsAndHealthCategoryPage;
 import sporter_pages.KsaHomePage;
+import sporter_pages.QatarHomePage;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
@@ -243,7 +244,7 @@ public class KsaHomePageTestCases extends BaseTest {
         ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.switchToKsaCountry();
         ksaHomePage.clickOnSportswearAndAccessoriesLinkInTopSellerSection();
-        DataHelperAndWait.waitToBeVisible(ksaHomePage.getSportswearAndAccessoriesActiveLink(), 10);
+        DataHelperAndWait.waitToBeVisible(ksaHomePage.getSportswearAndAccessoriesActiveLink(), 3);
         Assert.assertTrue(ksaHomePage.getSportswearAndAccessoriesActiveLink().isDisplayed());
     }
 
@@ -260,7 +261,6 @@ public class KsaHomePageTestCases extends BaseTest {
         ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.switchToKsaCountry();
         ksaHomePage.clickOnNextButtonInTopSellersSection();
-        DataHelperAndWait.implicitWait(6);
         Assert.assertTrue(ksaHomePage.getTopSellerSectionPositionAfterClickingOnNext().isDisplayed());
     }
 
@@ -270,7 +270,6 @@ public class KsaHomePageTestCases extends BaseTest {
         ksaHomePage.switchToKsaCountry();
         ksaHomePage.clickOnNextButtonInTopSellersSection();
         ksaHomePage.clickOnPreviousButtonInTopSellersSection();
-        DataHelperAndWait.implicitWait(6);
         Assert.assertTrue(ksaHomePage.getTopSellerSectionPositionAfterClickingOnPrevious().isDisplayed());
     }
 
@@ -287,7 +286,6 @@ public class KsaHomePageTestCases extends BaseTest {
         ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.switchToKsaCountry();
         ksaHomePage.clickOnNextButtonInTrendingOnSporterSection();
-        DataHelperAndWait.implicitWait(6);
         Assert.assertTrue(ksaHomePage.getTrendingOnSporterSectionPositionAfterClickingOnNext().isDisplayed());
     }
 
@@ -297,7 +295,6 @@ public class KsaHomePageTestCases extends BaseTest {
         ksaHomePage.switchToKsaCountry();
         ksaHomePage.clickOnNextButtonInTrendingOnSporterSection();
         ksaHomePage.clickOnPreviousButtonInTrendingOnSporterSection();
-        DataHelperAndWait.implicitWait(6);
         Assert.assertTrue(ksaHomePage.getTrendingOnSporterSectionPositionAfterClickingOnPrevious().isDisplayed());
     }
 
@@ -313,7 +310,6 @@ public class KsaHomePageTestCases extends BaseTest {
     public void verifyAllLinksInNewArrivalsSectionAreDisplayed() {
         ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.switchToKsaCountry();
-        DataHelperAndWait.implicitWait(6);
         Assert.assertTrue(ksaHomePage.getNewArrivalsAllLink().isDisplayed());
         Assert.assertTrue(ksaHomePage.getNewArrivalsSportSupplementsLink().isDisplayed());
         Assert.assertTrue(ksaHomePage.getNewArrivalsHealthyFoodLinkLink().isDisplayed());
@@ -378,7 +374,6 @@ public class KsaHomePageTestCases extends BaseTest {
         ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.switchToKsaCountry();
         ksaHomePage.clickOnNextButtonInNewArrivalSection();
-        DataHelperAndWait.implicitWait(6);
         Assert.assertTrue(ksaHomePage.getNewArrivalsSectionPositionAfterClickingOnNext().isDisplayed());
     }
 
@@ -388,7 +383,6 @@ public class KsaHomePageTestCases extends BaseTest {
         ksaHomePage.switchToKsaCountry();
         ksaHomePage.clickOnNextButtonInNewArrivalSection();
         ksaHomePage.clickOnPreviousButtonInNewArrivalSection();
-        DataHelperAndWait.implicitWait(6);
         Assert.assertTrue(ksaHomePage.getNewArrivalsSectionPositionAfterClickingOnPrevious().isDisplayed());
     }
 
@@ -476,215 +470,165 @@ public class KsaHomePageTestCases extends BaseTest {
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
     }
-    @Test(description ="Make sure the customer is able to click on the first product appearing in the Top Selling Stacks section correctly", priority = 43)
-    public void verifyAbilityToClickOnTheFirstProductAppearingInTheTopSellingStacksSectionCorrectly() {
+    @Test(description ="Make sure clicking on the products appearing in the Top Selling Stacks section redirect the user to the correct URL", priority = 39)
+    public void verifyClickOnTheProductsAppearingInTheTopSellingStacksSectionRedirectTheUserToCorrectUrl() {
         ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.switchToKsaCountry();
         String expectedUrl=ksaHomePage.getFirstProductInTopSellingStacksSection().getAttribute("href");
         ksaHomePage.clickOnFirstProductInTheTopSellingStacksSection();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl),"Incorrect URL is displayed "+webDriver.getCurrentUrl());
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
+        Assert.assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
+        Assert.assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
-        assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
-    }
-    @Test(description ="Make sure the customer is able to click on the second product appearing in the Top Selling Stacks section correctly", priority = 43)
-    public void verifyAbilityToClickOnTheSecondProductAppearingInTheTopSellingStacksSectionCorrectly() {
-        ksaHomePage = new KsaHomePage(webDriver);
-        ksaHomePage.switchToKsaCountry();
-        String expectedUrl=ksaHomePage.getSecondProductInTopSellingStacksSection().getAttribute("href");
+        Assert.assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
+        webDriver.navigate().to(siteURL);
+        expectedUrl=ksaHomePage.getSecondProductInTopSellingStacksSection().getAttribute("href");
         ksaHomePage.clickOnSecondProductInTheTopSellingStacksSection();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl),"Incorrect URL is displayed "+webDriver.getCurrentUrl());
-        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
-        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
-        boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
-        assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
-    }
-    @Test(description ="Make sure the customer is able to click on the third product appearing in the Top Selling Stacks section correctly", priority = 43)
-    public void verifyAbilityToClickOnTheThirdProductAppearingInTheTopSellingStacksSectionCorrectly() {
-        ksaHomePage = new KsaHomePage(webDriver);
-        ksaHomePage.switchToKsaCountry();
-        String expectedUrl=ksaHomePage.getThirdProductInTopSellingStacksSection().getAttribute("href");
+        verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        Assert.assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
+        isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        Assert.assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
+        isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
+        Assert.assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
+        webDriver.navigate().to(siteURL);
+        expectedUrl=ksaHomePage.getThirdProductInTopSellingStacksSection().getAttribute("href");
         ksaHomePage.clickOnThirdProductInTheTopSellingStacksSection();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl),"Incorrect URL is displayed "+webDriver.getCurrentUrl());
-        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
-        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
-        boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
-        assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
-    }
-    @Test(description ="Make sure the customer is able to click on the fourth product appearing in the Top Selling Stacks section correctly", priority = 43)
-    public void verifyAbilityToClickOnTheFourthProductAppearingInTheTopSellingStacksSectionCorrectly() {
-        ksaHomePage = new KsaHomePage(webDriver);
-        ksaHomePage.switchToKsaCountry();
-        String expectedUrl=ksaHomePage.getFourthProductInTopSellingStacksSection().getAttribute("href");
+        verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        Assert.assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
+        isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        Assert.assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
+        isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
+        Assert.assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
+        webDriver.navigate().to(siteURL);
+        expectedUrl=ksaHomePage.getFourthProductInTopSellingStacksSection().getAttribute("href");
         ksaHomePage.clickOnFourthProductInTheTopSellingStacksSection();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl),"Incorrect URL is displayed "+webDriver.getCurrentUrl());
-        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
-        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
-        boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
-        assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
-    }
-    @Test(description ="Make sure the customer is able to click on the fifth product appearing in the Top Selling Stacks section correctly", priority = 43)
-    public void verifyAbilityToClickOnTheFifthProductAppearingInTheTopSellingStacksSectionCorrectly() {
-        ksaHomePage = new KsaHomePage(webDriver);
-        ksaHomePage.switchToKsaCountry();
-        String expectedUrl=ksaHomePage.getFiveProductInTopSellingStacksSection().getAttribute("href");
+        verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        Assert.assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
+        isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        Assert.assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
+        isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
+        Assert.assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
+        webDriver.navigate().to(siteURL);
+        expectedUrl=ksaHomePage.getFiveProductInTopSellingStacksSection().getAttribute("href");
         ksaHomePage.clickOnFifthProductInTheTopSellingStacksSection();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl),"Incorrect URL is displayed "+webDriver.getCurrentUrl());
-        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
-        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
-        boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
-        assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
+        verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        Assert.assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
+        isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        Assert.assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
+        isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
+        Assert.assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
     }
-    @Test(description ="Make sure the customer is able to click on the first product appearing in the Top Sellers section correctly", priority = 43)
-    public void verifyAbilityToClickOnTheFirstProductAppearingInTheTopSellersSectionCorrectly() {
+    @Test(description ="Make sure clicking on the products appearing in the Top Sellers section redirect the user to the correct URL", priority = 40)
+    public void verifyClickOnTheProductsAppearingInTheTopSellersSectionRedirectTheUserToCorrectUrl() {
         ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.switchToKsaCountry();
         String expectedUrl=ksaHomePage.getFirstProductInTopSellersSection().getAttribute("href");
         ksaHomePage.clickOnFirstProductInTheTopSellersSection();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl),"Incorrect URL is displayed "+webDriver.getCurrentUrl());
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
+        Assert.assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
+        Assert.assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
-        assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
-    }
-    @Test(description ="Make sure the customer is able to click on the second product appearing in the Top Sellers section correctly", priority = 43)
-    public void verifyAbilityToClickOnTheSecondProductAppearingInTheTopSellersSectionCorrectly() {
-        ksaHomePage = new KsaHomePage(webDriver);
-        ksaHomePage.switchToKsaCountry();
-        String expectedUrl=ksaHomePage.getSecondProductInTopSellersSection().getAttribute("href");
+        Assert.assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
+        webDriver.navigate().to(siteURL);
+        expectedUrl=ksaHomePage.getSecondProductInTopSellersSection().getAttribute("href");
         ksaHomePage.clickOnSecondProductInTheTopSellersSection();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl),"Incorrect URL is displayed "+webDriver.getCurrentUrl());
-        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
-        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
-        boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
-        assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
-    }
-    @Test(description ="Make sure the customer is able to click on the third product appearing in the Top Sellers section correctly", priority = 43)
-    public void verifyAbilityToClickOnTheThirdProductAppearingInTheTopSellersSectionCorrectly() {
-        ksaHomePage = new KsaHomePage(webDriver);
-        ksaHomePage.switchToKsaCountry();
-        String expectedUrl=ksaHomePage.getThirdProductInTopSellersSection().getAttribute("href");
+        verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        Assert.assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
+        isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        Assert.assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
+        isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
+        Assert.assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
+        webDriver.navigate().to(siteURL);
+        expectedUrl=ksaHomePage.getThirdProductInTopSellersSection().getAttribute("href");
         ksaHomePage.clickOnThirdProductInTheTopSellersSection();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl),"Incorrect URL is displayed "+webDriver.getCurrentUrl());
-        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
-        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
-        boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
-        assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
-    }
-    @Test(description ="Make sure the customer is able to click on the fourth product appearing in the Top Sellers section correctly", priority = 43)
-    public void verifyAbilityToClickOnTheFourthProductAppearingInTheTopSellersSectionCorrectly() {
-        ksaHomePage = new KsaHomePage(webDriver);
-        ksaHomePage.switchToKsaCountry();
-        String expectedUrl=ksaHomePage.getFourthProductInTopSellersSection().getAttribute("href");
+        verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        Assert.assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
+        isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        Assert.assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
+        isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
+        Assert.assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
+        webDriver.navigate().to(siteURL);
+        expectedUrl=ksaHomePage.getFourthProductInTopSellersSection().getAttribute("href");
         ksaHomePage.clickOnFourthProductInTheTopSellersSection();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl),"Incorrect URL is displayed "+webDriver.getCurrentUrl());
-        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
-        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
-        boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
-        assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
-    }
-    @Test(description ="Make sure the customer is able to click on the fifth product appearing in the Top Sellers section correctly", priority = 43)
-    public void verifyAbilityToClickOnTheFifthProductAppearingInTheTopSellersSectionCorrectly() {
-        ksaHomePage = new KsaHomePage(webDriver);
-        ksaHomePage.switchToKsaCountry();
-        String expectedUrl=ksaHomePage.getFiveProductInTopSellersSection().getAttribute("href");
+        verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        Assert.assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
+        isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        Assert.assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
+        isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
+        Assert.assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
+        webDriver.navigate().to(siteURL);
+        expectedUrl=ksaHomePage.getFiveProductInTopSellersSection().getAttribute("href");
         ksaHomePage.clickOnFifthProductInTheTopSellersSection();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl),"Incorrect URL is displayed "+webDriver.getCurrentUrl());
-        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
-        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
-        boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
-        assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
+        verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        Assert.assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
+        isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        Assert.assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
+        isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
+        Assert.assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
     }
-    @Test(description ="Make sure the customer is able to click on the first product appearing in the New Arrivals section correctly", priority = 43)
-    public void verifyAbilityToClickOnTheFirstProductAppearingInTheNewArrivalsSectionCorrectly() {
+    @Test(description ="Make sure clicking on the products appearing in the New Arrivals section redirect the user to the correct URL", priority = 41)
+    public void verifyClickOnTheProductsAppearingInTheNewArrivalsSectionRedirectTheUserToCorrectUrl() {
         ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.switchToKsaCountry();
         String expectedUrl=ksaHomePage.getFirstProductInNewArrivalsSection().getAttribute("href");
         ksaHomePage.clickOnFirstProductInTheNewArrivalsSection();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl),"Incorrect URL is displayed "+webDriver.getCurrentUrl());
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
+        Assert.assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
         boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
+        Assert.assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
-        assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
-    }
-    @Test(description ="Make sure the customer is able to click on the second product appearing in the New Arrivals section correctly", priority = 43)
-    public void verifyAbilityToClickOnTheSecondProductAppearingInTheNewArrivalsSectionCorrectly() {
-        ksaHomePage = new KsaHomePage(webDriver);
-        ksaHomePage.switchToKsaCountry();
-        String expectedUrl=ksaHomePage.getSecondProductInNewArrivalsSection().getAttribute("href");
+        Assert.assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
+        webDriver.navigate().to(siteURL);
+        expectedUrl=ksaHomePage.getSecondProductInNewArrivalsSection().getAttribute("href");
         ksaHomePage.clickOnSecondProductInTheNewArrivalsSection();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl),"Incorrect URL is displayed "+webDriver.getCurrentUrl());
-        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
-        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
-        boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
-        assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
-    }
-    @Test(description ="Make sure the customer is able to click on the third product appearing in the New Arrivals section correctly", priority = 43)
-    public void verifyAbilityToClickOnTheThirdProductAppearingInTheNewArrivalsSectionCorrectly() {
-        ksaHomePage = new KsaHomePage(webDriver);
-        ksaHomePage.switchToKsaCountry();
-        String expectedUrl=ksaHomePage.getThirdProductInNewArrivalsSection().getAttribute("href");
+        verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        Assert.assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
+        isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        Assert.assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
+        isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
+        Assert.assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
+        webDriver.navigate().to(siteURL);
+        expectedUrl=ksaHomePage.getThirdProductInNewArrivalsSection().getAttribute("href");
         ksaHomePage.clickOnThirdProductInTheNewArrivalsSection();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl),"Incorrect URL is displayed "+webDriver.getCurrentUrl());
-        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
-        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
-        boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
-        assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
-    }
-    @Test(description ="Make sure the customer is able to click on the fourth product appearing in the New Arrivals section correctly", priority = 43)
-    public void verifyAbilityToClickOnTheFourthProductAppearingInTheNewArrivalsSectionCorrectly() {
-        ksaHomePage = new KsaHomePage(webDriver);
-        ksaHomePage.switchToKsaCountry();
-        String expectedUrl=ksaHomePage.getFourthProductInNewArrivalsSection().getAttribute("href");
+        verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        Assert.assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
+        isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        Assert.assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
+        isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
+        Assert.assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
+        webDriver.navigate().to(siteURL);
+        expectedUrl=ksaHomePage.getFourthProductInNewArrivalsSection().getAttribute("href");
         ksaHomePage.clickOnFourthProductInTheNewArrivalsSection();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl),"Incorrect URL is displayed "+webDriver.getCurrentUrl());
-        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
-        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
-        boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
-        assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
-    }
-    @Test(description ="Make sure the customer is able to click on the fifth product appearing in the New Arrivals section correctly", priority = 43)
-    public void verifyAbilityToClickOnTheFifthProductAppearingInTheNewArrivalsSectionCorrectly() {
-        ksaHomePage = new KsaHomePage(webDriver);
-        ksaHomePage.switchToKsaCountry();
-        String expectedUrl=ksaHomePage.getFiveProductInNewArrivalsSection().getAttribute("href");
+        verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        Assert.assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
+        isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        Assert.assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
+        isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
+        Assert.assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
+        webDriver.navigate().to(siteURL);
+        expectedUrl=ksaHomePage.getFiveProductInNewArrivalsSection().getAttribute("href");
         ksaHomePage.clickOnFifthProductInTheNewArrivalsSection();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl),"Incorrect URL is displayed "+webDriver.getCurrentUrl());
-        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
-        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
-        boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
-        assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
+        verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        Assert.assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
+        isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        Assert.assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
+        isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
+        Assert.assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
     }
 
 
