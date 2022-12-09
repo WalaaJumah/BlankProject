@@ -28,7 +28,7 @@ public class QatarHomePage {
     private WebElement homePageRotatingSlider;
     @FindBy(xpath = "//*[@class='flex-control-nav flex-control-paging']/li/a")
     private List<WebElement> homePageRotatingSliderPagingList;
-    @FindBy(css = "#maincontent > div.columns > div > div.advertise-banner-3.imagewidgetclass > ul")
+    @FindBy(xpath = "(//ul[@class='clearfix'])[2]/li/a")
     private List<WebElement> homePageUnderShopByCategoryBanners;
     @FindBy(xpath = "//ul[@class='nav-primary']/li[1]")
     private WebElement shopByOption;
@@ -158,35 +158,35 @@ public class QatarHomePage {
     private WebElement firstSideBanner;
     @FindBy(xpath = "(//div[@class='nutritious-right'])/a[2]")
     private WebElement secondSideBanner;
-    @FindBy(xpath = "(//a[@class='product-link'])[1]")
+    @FindBy(xpath = "(//div[@id='tab-41-all41']/div/div/div/div/a)[1]")
     private WebElement firstProductInTopSellingStacksSection;
-    @FindBy(xpath = "(//a[@class='product-link'])[2]")
+    @FindBy(xpath = "(//div[@id='tab-41-all41']/div/div/div/div/a)[2]")
     private WebElement secondProductInTopSellingStacksSection;
-    @FindBy(xpath = "(//a[@class='product-link'])[3]")
+    @FindBy(xpath = "(//div[@id='tab-41-all41']/div/div/div/div/a)[3]")
     private WebElement thirdProductInTopSellingStacksSection;
-    @FindBy(xpath = "(//a[@class='product-link'])[4]")
+    @FindBy(xpath = "(//div[@id='tab-41-all41']/div/div/div/div/a)[4]")
     private WebElement fourthProductInTopSellingStacksSection;
-    @FindBy(xpath = "(//a[@class='product-link'])[5]")
+    @FindBy(xpath = "(//div[@id='tab-41-all41']/div/div/div/div/a)[5]")
     private WebElement fiveProductInTopSellingStacksSection;
-    @FindBy(xpath = "(//a[@class='product-link'])[6]")
+    @FindBy(xpath = "(//div[@id='tab-75-all75']/div/div/div/div/a)[1]")
     private WebElement firstProductInTopSellersSection;
-    @FindBy(xpath = "(//a[@class='product-link'])[7]")
+    @FindBy(xpath = "(//div[@id='tab-75-all75']/div/div/div/div/a)[2]")
     private WebElement secondProductInTopSellersSection;
-    @FindBy(xpath = "(//a[@class='product-link'])[8]")
+    @FindBy(xpath = "(//div[@id='tab-75-all75']/div/div/div/div/a)[3]")
     private WebElement thirdProductInTopSellersSection;
-    @FindBy(xpath = "(//a[@class='product-link'])[9]")
+    @FindBy(xpath = "(//div[@id='tab-75-all75']/div/div/div/div/a)[4]")
     private WebElement fourthProductInTopSellersSection;
-    @FindBy(xpath = "(//a[@class='product-link'])[10]")
+    @FindBy(xpath = "(//div[@id='tab-75-all75']/div/div/div/div/a)[5]")
     private WebElement fiveProductInTopSellersSection;
-    @FindBy(xpath = "(//a[@class='product-link'])[110]")
+    @FindBy(xpath = "//div[@id='tab-6-all6']/div/div/div/div/a")
     private WebElement firstProductInNewArrivalsSection;
-    @FindBy(xpath = "(//a[@class='product-link'])[111]")
+    @FindBy(xpath = "(//div[@id='tab-6-all6']/div/div/div/div/a)[2]")
     private WebElement secondProductInNewArrivalsSection;
-    @FindBy(xpath = "(//a[@class='product-link'])[112]")
+    @FindBy(xpath = "(//div[@id='tab-6-all6']/div/div/div/div/a)[3]")
     private WebElement thirdProductInNewArrivalsSection;
-    @FindBy(xpath = "(//a[@class='product-link'])[113]")
+    @FindBy(xpath = "(//div[@id='tab-6-all6']/div/div/div/div/a)[4]")
     private WebElement fourthProductInNewArrivalsSection;
-    @FindBy(xpath = "(//a[@class='product-link'])[114]")
+    @FindBy(xpath = "(//div[@id='tab-6-all6']/div/div/div/div/a)[5]")
     private WebElement fiveProductInNewArrivalsSection;
 
     //Getter Methods
@@ -307,6 +307,7 @@ public class QatarHomePage {
     }
 
     public WebElement getHorizontalBanner() {
+        DataHelperAndWait.waitToBeVisible(homePageHorizontalBanner,2);
         return homePageHorizontalBanner;
     }
 
@@ -470,10 +471,12 @@ public class QatarHomePage {
     }
 
     public WebElement getNewArrivalsSectionPositionAfterClickingOnPrevious() {
+        DataHelperAndWait.waitToBeVisible(NewArrivalSectionPositionAfterClickingOnPrevious,2);
         return NewArrivalSectionPositionAfterClickingOnPrevious;
     }
 
     public WebElement getNewArrivalsSectionPositionAfterClickingOnNext() {
+        DataHelperAndWait.waitToBeVisible(NewArrivalSectionPositionAfterClickingOnNext,2);
         return NewArrivalSectionPositionAfterClickingOnNext;
     }
 
@@ -496,14 +499,12 @@ public class QatarHomePage {
     //Define the main actions we need to execute our TCs
     public void switchToQatarCountry() {
         try {
-            DataHelperAndWait.isDisplayed(countryList, 15);
+            DataHelperAndWait.isDisplayed(countryList, 1);
             this.countryList.click();
-            DataHelperAndWait.implicitWait(6);
             this.qatarCountry.click();
         } catch (Exception e) {
-            DataHelperAndWait.isDisplayed(countryList, 15);
+            DataHelperAndWait.isDisplayed(countryList, 2);
             this.countryList.click();
-            DataHelperAndWait.implicitWait(6);
             this.qatarCountry.click();
         }
     }
@@ -514,274 +515,408 @@ public class QatarHomePage {
     }
 
     public void clickOnAllLinkInTopSellerSection() {
-        DataHelperAndWait.isDisplayed(allLink, 10);
-        this.allLink.click();
+        try {
+        DataHelperAndWait.isDisplayed(allLink, 2);
+        this.allLink.click();}
+        catch (Exception e){
+            DataHelperAndWait.isDisplayed(allLink, 1);
+            this.allLink.click();
+        }
     }
 
     public void clickOnSportSupplementsLinkInTopSellerSection() {
-        DataHelperAndWait.isDisplayed(sportSupplementsLink, 10);
-        this.sportSupplementsLink.click();
+        try{
+        DataHelperAndWait.isDisplayed(sportSupplementsLink, 2);
+        this.sportSupplementsLink.click();}
+        catch (Exception e){
+            DataHelperAndWait.isDisplayed(sportSupplementsLink, 1);
+            this.sportSupplementsLink.click();}
     }
 
     public void clickOnHealthyFoodLinkInTopSellerSection() {
-        DataHelperAndWait.isDisplayed(healthyFoodLink, 10);
-        this.healthyFoodLink.click();
+        try{
+            DataHelperAndWait.isDisplayed(healthyFoodLink, 2);
+            this.healthyFoodLink.click();
+        }
+        catch (Exception e){
+            DataHelperAndWait.isDisplayed(healthyFoodLink, 1);
+            this.healthyFoodLink.click();
+        }
     }
 
     public void clickOnVitaminsAndHealthLinkInTopSellerSection() {
-        DataHelperAndWait.waitToBeVisible(vitaminsAndHealthLink, 10);
+        try {
+            DataHelperAndWait.waitToBeVisible(vitaminsAndHealthLink, 2);
+            this.vitaminsAndHealthLink.click();
+        }
+        catch (Exception e){
+        DataHelperAndWait.waitToBeVisible(vitaminsAndHealthLink, 1);
         this.vitaminsAndHealthLink.click();
-    }
+    }}
 
     public void clickOnSportswearAndAccessoriesLinkInTopSellerSection() {
-        DataHelperAndWait.isDisplayed(sportswearAndAccessoriesLink, 10);
-        this.sportswearAndAccessoriesLink.click();
+        try {
+            DataHelperAndWait.isDisplayed(sportswearAndAccessoriesLink, 2);
+            this.sportswearAndAccessoriesLink.click();
+        }
+        catch (Exception e){
+            DataHelperAndWait.isDisplayed(sportswearAndAccessoriesLink, 1);
+            this.sportswearAndAccessoriesLink.click();
+        }
     }
 
     public void clickOnNextButtonInTopSellerSectionInTopSellerSection() {
-        DataHelperAndWait.isDisplayed(nextButtonInTopSellerSection, 10);
+        try{
+        DataHelperAndWait.isDisplayed(nextButtonInTopSellerSection, 2);
         this.nextButtonInTopSellerSection.click();
-    }
+    }catch (Exception e){
+            DataHelperAndWait.isDisplayed(nextButtonInTopSellerSection, 1);
+            this.nextButtonInTopSellerSection.click();
+        }}
 
     public void clickOnNextButtonInTrendingOnSporterSection() {
-        DataHelperAndWait.isDisplayed(nextBtnInTrendingOnSporterSection, 10);
-        this.nextBtnInTrendingOnSporterSection.click();
+        try {
+            DataHelperAndWait.isDisplayed(nextBtnInTrendingOnSporterSection, 2);
+            this.nextBtnInTrendingOnSporterSection.click();
+        }
+        catch (Exception e){
+            DataHelperAndWait.isDisplayed(nextBtnInTrendingOnSporterSection, 1);
+            this.nextBtnInTrendingOnSporterSection.click();
+        }
     }
 
     public void clickOnPreviousButtonInTrendingOnSporterSection() {
-        DataHelperAndWait.isDisplayed(previousBtnInTrendingOnSporterSection, 10);
-        this.previousBtnInTrendingOnSporterSection.click();
+        try {
+            DataHelperAndWait.isDisplayed(previousBtnInTrendingOnSporterSection, 2);
+            this.previousBtnInTrendingOnSporterSection.click();
+        }
+        catch (Exception e){
+            DataHelperAndWait.isDisplayed(previousBtnInTrendingOnSporterSection, 1);
+            this.previousBtnInTrendingOnSporterSection.click();
+        }
     }
 
     public void clickOnPreviousButtonInTopSellersSection() {
-        DataHelperAndWait.isDisplayed(previousButtonInTopSellerSection, 10);
-        this.previousButtonInTopSellerSection.click();
+        try {
+            DataHelperAndWait.isDisplayed(previousButtonInTopSellerSection, 2);
+            this.previousButtonInTopSellerSection.click();
+        }
+        catch (Exception e){
+            DataHelperAndWait.isDisplayed(previousButtonInTopSellerSection, 1);
+            this.previousButtonInTopSellerSection.click();
+        }
     }
-
     public void clickOnNextButtonInTopSellersSection() {
-        DataHelperAndWait.isDisplayed(nextButtonInTopSellerSection, 10);
-        this.nextButtonInTopSellerSection.click();
+        try {
+            DataHelperAndWait.isDisplayed(nextButtonInTopSellerSection, 2);
+            this.nextButtonInTopSellerSection.click();
+        }
+        catch (Exception e){
+            DataHelperAndWait.isDisplayed(nextButtonInTopSellerSection, 1);
+            this.nextButtonInTopSellerSection.click();
+        }
     }
 
     public void clickOnAllLinkInNewArrivalsSection() {
-        DataHelperAndWait.isDisplayed(newArrivalsAllLink, 10);
-        this.newArrivalsAllLink.click();
+        try {
+            DataHelperAndWait.isDisplayed(newArrivalsAllLink, 2);
+            this.newArrivalsAllLink.click();
+        }
+        catch (Exception e){
+            DataHelperAndWait.isDisplayed(newArrivalsAllLink, 1);
+            this.newArrivalsAllLink.click();
+        }
     }
-
     public void clickOnSportSupplementsLinkInNewArrivalsSection() {
-        DataHelperAndWait.isDisplayed(newArrivalsSportSupplementsLink, 10);
-        this.newArrivalsSportSupplementsLink.click();
+        try {
+            DataHelperAndWait.isDisplayed(newArrivalsSportSupplementsLink, 2);
+            this.newArrivalsSportSupplementsLink.click();
+        }
+        catch (Exception e){
+            DataHelperAndWait.isDisplayed(newArrivalsSportSupplementsLink, 1);
+            this.newArrivalsSportSupplementsLink.click();
+        }
     }
 
     public void clickOnHealthyFoodLinkInNewArrivalsSection() {
-        DataHelperAndWait.isDisplayed(newArrivalsHealthyFoodLink, 10);
-        this.newArrivalsHealthyFoodLink.click();
+        try {
+            DataHelperAndWait.isDisplayed(newArrivalsHealthyFoodLink, 2);
+            this.newArrivalsHealthyFoodLink.click();
+        }
+        catch (Exception e){
+            DataHelperAndWait.isDisplayed(newArrivalsHealthyFoodLink, 1);
+            this.newArrivalsHealthyFoodLink.click();
+        }
     }
 
     public void clickOnVitaminsAndHealthLinkInNewArrivalsSection() {
-        DataHelperAndWait.waitToBeVisible(newArrivalsVitaminsAndHealthLink, 10);
-        this.newArrivalsVitaminsAndHealthLink.click();
+        try {
+            DataHelperAndWait.isDisplayed(newArrivalsVitaminsAndHealthLink, 2);
+            this.newArrivalsVitaminsAndHealthLink.click();
+        }
+        catch (Exception e){
+            DataHelperAndWait.isDisplayed(newArrivalsVitaminsAndHealthLink, 1);
+            this.newArrivalsVitaminsAndHealthLink.click();
+        }
     }
-
     public void clickOnSportswearAndAccessoriesLinkInNewArrivalsSection() {
-        DataHelperAndWait.isDisplayed(newArrivalsSportWearAndAccessoriesLink, 10);
-        this.newArrivalsSportWearAndAccessoriesLink.click();
+        try {
+            DataHelperAndWait.isDisplayed(newArrivalsSportWearAndAccessoriesLink, 2);
+            this.newArrivalsSportWearAndAccessoriesLink.click();
+        }
+        catch (Exception e){
+            DataHelperAndWait.isDisplayed(newArrivalsSportWearAndAccessoriesLink, 1);
+            this.newArrivalsSportWearAndAccessoriesLink.click();
+        }
     }
 
     public void clickOnPreviousButtonInNewArrivalSection() {
-        DataHelperAndWait.isDisplayed(previousBtnInNewArrivalsSection, 10);
-        this.previousBtnInNewArrivalsSection.click();
+        try {
+            DataHelperAndWait.isDisplayed(previousBtnInNewArrivalsSection, 2);
+            this.previousBtnInNewArrivalsSection.click();
+        }
+        catch (Exception e){
+            DataHelperAndWait.isDisplayed(previousBtnInNewArrivalsSection, 1);
+            this.previousBtnInNewArrivalsSection.click();
+        }
     }
 
     public void clickOnNextButtonInNewArrivalSection() {
-        DataHelperAndWait.isDisplayed(nextBtnInNewArrivalsSection, 10);
-        this.nextBtnInNewArrivalsSection.click();
+        try {
+            DataHelperAndWait.isDisplayed(nextBtnInNewArrivalsSection, 2);
+            this.nextBtnInNewArrivalsSection.click();
+        }
+        catch (Exception e){
+            DataHelperAndWait.isDisplayed(nextBtnInNewArrivalsSection, 1);
+            this.nextBtnInNewArrivalsSection.click();
+        }
     }
 
     public void clickOnPhoneBtn() {
-        DataHelperAndWait.isDisplayed(phoneBtn, 10);
-        this.phoneBtn.click();
+        try {
+            DataHelperAndWait.isDisplayed(phoneBtn, 2);
+            this.phoneBtn.click();
+        }
+        catch (Exception e){
+            DataHelperAndWait.isDisplayed(phoneBtn, 1);
+            this.phoneBtn.click();
+        }
     }
-
     public void clickOnEmailBtn() {
-        DataHelperAndWait.isDisplayed(emailBtn, 10);
-        this.emailBtn.click();
+        try {
+            DataHelperAndWait.isDisplayed(emailBtn, 2);
+            this.emailBtn.click();
+        }
+        catch (Exception e){
+            DataHelperAndWait.isDisplayed(emailBtn, 1);
+            this.emailBtn.click();
+        }
     }
 
     public void clickOnHomePageHorizontalBanner() {
-        DataHelperAndWait.isDisplayed(homePageHorizontalBanner, 10);
-        this.homePageHorizontalBanner.click();
+        try {
+            DataHelperAndWait.isDisplayed(homePageHorizontalBanner, 2);
+            this.homePageHorizontalBanner.click();
+        }
+        catch (Exception e){
+            DataHelperAndWait.isDisplayed(homePageHorizontalBanner, 1);
+            this.homePageHorizontalBanner.click();
+        }
     }
 
     public void clickOnSportsSupplementsCategory() {
-        DataHelperAndWait.isDisplayed(sportsSupplementsCategory, 10);
-        this.sportsSupplementsCategory.click();
+        try {
+            DataHelperAndWait.isDisplayed(sportsSupplementsCategory, 2);
+            this.sportsSupplementsCategory.click();
+        }
+        catch (Exception e){
+            DataHelperAndWait.isDisplayed(sportsSupplementsCategory, 1);
+            this.sportsSupplementsCategory.click();
+        }
     }
 
     public void clickOnHealthyFoodCategory() {
-        DataHelperAndWait.isDisplayed(healthyFoodCategory, 10);
-        this.healthyFoodCategory.click();
+        try {
+            DataHelperAndWait.isDisplayed(healthyFoodCategory, 2);
+            this.healthyFoodCategory.click();
+        }
+        catch (Exception e){
+            DataHelperAndWait.isDisplayed(healthyFoodCategory, 1);
+            this.healthyFoodCategory.click();
+        }
     }
 
     public void clickOnVitaminsAndHealthCategory() {
-        DataHelperAndWait.isDisplayed(vitaminsAndHealthCategory, 10);
-        this.vitaminsAndHealthCategory.click();
+        try {
+            DataHelperAndWait.isDisplayed(vitaminsAndHealthCategory, 2);
+            this.vitaminsAndHealthCategory.click();
+        }
+        catch (Exception e){
+            DataHelperAndWait.isDisplayed(vitaminsAndHealthCategory, 1);
+            this.vitaminsAndHealthCategory.click();
+        }
     }
 
     public void clickOnSportswearAndAccessoriesCategory() {
-        DataHelperAndWait.isDisplayed(sportswearAndAccessoriesCategory, 10);
-        this.sportswearAndAccessoriesCategory.click();
+        try {
+            DataHelperAndWait.isDisplayed(sportswearAndAccessoriesCategory, 2);
+            this.sportswearAndAccessoriesCategory.click();
+        }
+        catch (Exception e){
+            DataHelperAndWait.isDisplayed(sportswearAndAccessoriesCategory, 1);
+            this.sportswearAndAccessoriesCategory.click();
+        }
     }
     public void clickOnFirstProductInTheTopSellingStacksSection(){
         try{
-            DataHelperAndWait.waitToBeVisible(this.firstProductInTopSellingStacksSection,3);
+            DataHelperAndWait.waitToBeVisible(this.firstProductInTopSellingStacksSection,2);
             this.firstProductInTopSellingStacksSection.click();
         }
         catch (Exception e){
-            DataHelperAndWait.waitToBeVisible(this.firstProductInTopSellingStacksSection,3);
+            DataHelperAndWait.waitToBeVisible(this.firstProductInTopSellingStacksSection,1);
             this.firstProductInTopSellingStacksSection.click();
         }
     }
 
     public void clickOnSecondProductInTheTopSellingStacksSection(){
         try{
-            DataHelperAndWait.waitToBeVisible(this.secondProductInTopSellingStacksSection,3);
+            DataHelperAndWait.waitToBeVisible(this.secondProductInTopSellingStacksSection,2);
             this.secondProductInTopSellingStacksSection.click();
         }
         catch (Exception e){
-            DataHelperAndWait.waitToBeVisible(this.secondProductInTopSellingStacksSection,3);
+            DataHelperAndWait.waitToBeVisible(this.secondProductInTopSellingStacksSection,1);
             this.secondProductInTopSellingStacksSection.click();
         }
     }
     public void clickOnThirdProductInTheTopSellingStacksSection(){
         try{
-            DataHelperAndWait.waitToBeVisible(this.thirdProductInTopSellingStacksSection,3);
+            DataHelperAndWait.waitToBeVisible(this.thirdProductInTopSellingStacksSection,2);
             this.thirdProductInTopSellingStacksSection.click();
         }
         catch (Exception e){
-            DataHelperAndWait.waitToBeVisible(this.thirdProductInTopSellingStacksSection,3);
+            DataHelperAndWait.waitToBeVisible(this.thirdProductInTopSellingStacksSection,1);
             this.thirdProductInTopSellingStacksSection.click();
         }
     }
     public void clickOnFourthProductInTheTopSellingStacksSection(){
         try{
-            DataHelperAndWait.waitToBeVisible(this.fourthProductInTopSellingStacksSection,3);
+            DataHelperAndWait.waitToBeVisible(this.fourthProductInTopSellingStacksSection,2);
             this.fourthProductInTopSellingStacksSection.click();
         }
         catch (Exception e){
-            DataHelperAndWait.waitToBeVisible(this.fourthProductInTopSellingStacksSection,3);
+            DataHelperAndWait.waitToBeVisible(this.fourthProductInTopSellingStacksSection,1);
             this.fourthProductInTopSellingStacksSection.click();
         }
     }
     public void clickOnFifthProductInTheTopSellingStacksSection(){
         try{
-            DataHelperAndWait.waitToBeVisible(this.fiveProductInTopSellingStacksSection,3);
+            DataHelperAndWait.waitToBeVisible(this.fiveProductInTopSellingStacksSection,2);
             this.fiveProductInTopSellingStacksSection.click();
         }
         catch (Exception e){
-            DataHelperAndWait.waitToBeVisible(this.fiveProductInTopSellingStacksSection,3);
+            DataHelperAndWait.waitToBeVisible(this.fiveProductInTopSellingStacksSection,1);
             this.fiveProductInTopSellingStacksSection.click();
         }
     }
     public void clickOnFirstProductInTheTopSellersSection(){
         try{
-            DataHelperAndWait.waitToBeVisible(this.firstProductInTopSellersSection,3);
+            DataHelperAndWait.waitToBeVisible(this.firstProductInTopSellersSection,2);
             this.firstProductInTopSellersSection.click();
         }
         catch (Exception e){
-            DataHelperAndWait.waitToBeVisible(this.firstProductInTopSellersSection,3);
+            DataHelperAndWait.waitToBeVisible(this.firstProductInTopSellersSection,1);
             this.firstProductInTopSellersSection.click();
         }
     }
 
     public void clickOnSecondProductInTheTopSellersSection(){
         try{
-            DataHelperAndWait.waitToBeVisible(this.secondProductInTopSellersSection,3);
+            DataHelperAndWait.waitToBeVisible(this.secondProductInTopSellersSection,2);
             this.secondProductInTopSellersSection.click();
         }
         catch (Exception e){
-            DataHelperAndWait.waitToBeVisible(this.secondProductInTopSellersSection,3);
+            DataHelperAndWait.waitToBeVisible(this.secondProductInTopSellersSection,1);
             this.secondProductInTopSellersSection.click();
         }
     }
     public void clickOnThirdProductInTheTopSellersSection(){
         try{
-            DataHelperAndWait.waitToBeVisible(this.thirdProductInTopSellersSection,3);
+            DataHelperAndWait.waitToBeVisible(this.thirdProductInTopSellersSection,2);
             this.thirdProductInTopSellersSection.click();
         }
         catch (Exception e){
-            DataHelperAndWait.waitToBeVisible(this.thirdProductInTopSellersSection,3);
+            DataHelperAndWait.waitToBeVisible(this.thirdProductInTopSellersSection,1);
             this.thirdProductInTopSellersSection.click();
         }
     }
     public void clickOnFourthProductInTheTopSellersSection(){
         try{
-            DataHelperAndWait.waitToBeVisible(this.fourthProductInTopSellersSection,3);
+            DataHelperAndWait.waitToBeVisible(this.fourthProductInTopSellersSection,2);
             this.fourthProductInTopSellersSection.click();
         }
         catch (Exception e){
-            DataHelperAndWait.waitToBeVisible(this.fourthProductInTopSellersSection,3);
+            DataHelperAndWait.waitToBeVisible(this.fourthProductInTopSellersSection,1);
             this.fourthProductInTopSellersSection.click();
         }
     }
     public void clickOnFifthProductInTheTopSellersSection(){
         try{
-            DataHelperAndWait.waitToBeVisible(this.fiveProductInTopSellersSection,3);
+            DataHelperAndWait.waitToBeVisible(this.fiveProductInTopSellersSection,2);
             this.fiveProductInTopSellersSection.click();
         }
         catch (Exception e){
-            DataHelperAndWait.waitToBeVisible(this.fiveProductInTopSellersSection,3);
+            DataHelperAndWait.waitToBeVisible(this.fiveProductInTopSellersSection,1);
             this.fiveProductInTopSellersSection.click();
         }
     }
     public void clickOnFirstProductInTheNewArrivalsSection(){
         try{
-            DataHelperAndWait.waitToBeVisible(this.firstProductInNewArrivalsSection,3);
+            DataHelperAndWait.waitToBeVisible(this.firstProductInNewArrivalsSection,2);
             this.firstProductInNewArrivalsSection.click();
         }
         catch (Exception e){
-            DataHelperAndWait.waitToBeVisible(this.firstProductInNewArrivalsSection,3);
+            DataHelperAndWait.waitToBeVisible(this.firstProductInNewArrivalsSection,1);
             this.firstProductInNewArrivalsSection.click();
         }
     }
 
     public void clickOnSecondProductInTheNewArrivalsSection(){
         try{
-            DataHelperAndWait.waitToBeVisible(this.secondProductInNewArrivalsSection,3);
+            DataHelperAndWait.waitToBeVisible(this.secondProductInNewArrivalsSection,2);
             this.secondProductInNewArrivalsSection.click();
         }
         catch (Exception e){
-            DataHelperAndWait.waitToBeVisible(this.secondProductInNewArrivalsSection,3);
+            DataHelperAndWait.waitToBeVisible(this.secondProductInNewArrivalsSection,1);
             this.secondProductInNewArrivalsSection.click();
         }
     }
     public void clickOnThirdProductInTheNewArrivalsSection(){
         try{
-            DataHelperAndWait.waitToBeVisible(this.thirdProductInNewArrivalsSection,3);
+            DataHelperAndWait.waitToBeVisible(this.thirdProductInNewArrivalsSection,2);
             this.thirdProductInNewArrivalsSection.click();
         }
         catch (Exception e){
-            DataHelperAndWait.waitToBeVisible(this.thirdProductInNewArrivalsSection,3);
+            DataHelperAndWait.waitToBeVisible(this.thirdProductInNewArrivalsSection,1);
             this.thirdProductInNewArrivalsSection.click();
         }
     }
     public void clickOnFourthProductInTheNewArrivalsSection(){
         try{
-            DataHelperAndWait.waitToBeVisible(this.fourthProductInNewArrivalsSection,3);
+            DataHelperAndWait.waitToBeVisible(this.fourthProductInNewArrivalsSection,2);
             this.fourthProductInNewArrivalsSection.click();
         }
         catch (Exception e){
-            DataHelperAndWait.waitToBeVisible(this.fourthProductInNewArrivalsSection,3);
+            DataHelperAndWait.waitToBeVisible(this.fourthProductInNewArrivalsSection,1);
             this.fourthProductInNewArrivalsSection.click();
         }
     }
     public void clickOnFifthProductInTheNewArrivalsSection(){
         try{
-            DataHelperAndWait.waitToBeVisible(this.fiveProductInNewArrivalsSection,3);
+            DataHelperAndWait.waitToBeVisible(this.fiveProductInNewArrivalsSection,2);
             this.fiveProductInNewArrivalsSection.click();
         }
         catch (Exception e){
-            DataHelperAndWait.waitToBeVisible(this.fiveProductInNewArrivalsSection,3);
+            DataHelperAndWait.waitToBeVisible(this.fiveProductInNewArrivalsSection,1);
             this.fiveProductInNewArrivalsSection.click();
         }
     }
