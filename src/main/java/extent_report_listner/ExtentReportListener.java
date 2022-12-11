@@ -11,7 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 import com.aventstack.extentreports.markuputils.ExtentColor;
-import com.aventstack.extentreports.reporter.configuration.ViewName;
+//import com.aventstack.extentreports.reporter.configuration.ViewName;
 import core.BaseTest;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
@@ -30,14 +30,16 @@ import org.testng.xml.XmlSuite;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+//import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
 
 
 public class ExtentReportListener implements IReporter {
 
 
     private ExtentReports extent;
-    private ExtentSparkReporter spark;
+//    private ExtentSparkReporter spark;
     private ExtentTest test;
 
 
@@ -51,7 +53,7 @@ public class ExtentReportListener implements IReporter {
 
         //The date will include with the file name
         extent = new ExtentReports("C:\\Users\\w.jumaa\\Desktop\\Automation Reports" + File.separator
-                + "Magento-Sporter-Automation_Report " + "[" + BaseTest.environmentName + "]" + date + ".html", true);
+                + "Magento-Sporter-Automation_Report " + "[" + BaseTest.environmentName + "]" + date +" "+System.currentTimeMillis()+ ".html", true);
 
 //            spark=new ExtentSparkReporter(File.separator + "Magento-Sporter-Automation_Report "+date+".html");
 //            spark.viewConfigurer().viewOrder().as(new ViewName[]{ViewName.DASHBOARD, ViewName.TEST,ViewName.CATEGORY}).apply();

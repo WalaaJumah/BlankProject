@@ -10,6 +10,8 @@ import org.testng.annotations.*;
 import org.testng.annotations.Parameters;
 
 public class BaseTest {
+//    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+
     public static String siteURL = "https://www.sporter.com";
     public static String aeDomain = "/en-ae";
     public static String websiteEnglishLanguage = "/en";

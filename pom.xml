@@ -73,6 +73,12 @@
             <version>5.0.9</version>
         </dependency>
 
+        <!--Test reporting library - extent 3.X , I added it recently-->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>3.1.5</version>
+        </dependency>
 
 
 

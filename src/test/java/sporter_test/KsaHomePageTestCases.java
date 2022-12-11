@@ -270,7 +270,7 @@ public class KsaHomePageTestCases extends BaseTest {
         ksaHomePage.switchToKsaCountry();
         ksaHomePage.clickOnNextButtonInTopSellersSection();
         ksaHomePage.clickOnPreviousButtonInTopSellersSection();
-        Assert.assertTrue(ksaHomePage.getTopSellerSectionPositionAfterClickingOnPrevious().isDisplayed());
+        Assert.assertTrue(ksaHomePage.getTopSellerSectionPositionAfterClickingOnPrevious().getAttribute("style").contains("transform: translate3d(0px, 0px, 0px); transition-duration: 300ms;"));
     }
 
     @Test(description = "Make sure the Trending On Sporter sections are displayed ", priority = 24)

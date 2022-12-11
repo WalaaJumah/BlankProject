@@ -16,8 +16,10 @@ public class KsaHomePage {
     //declare all locators related to the Cart Page
     @FindBy(id = "switcher-store-trigger")
     private WebElement countryList;
-    @FindBy(xpath = "//li[@class='country_switch']/span[@class='SA']")
+    @FindBy(xpath = "//ul[@class='dropdown switcher-dropdown']/li[2]")
     private WebElement saCountry;
+//    @FindBy(xpath = "//li[@class='country_switch']/span[@class='SA']")
+//    private WebElement saCountry;
     @FindBy(xpath = "//a[contains(text(),'Next')]")
     private WebElement nextArrowInHomePageRotatingSlider;
     @FindBy(xpath = "//a[contains(text(),'Previous')]")
@@ -102,7 +104,9 @@ public class KsaHomePage {
     private WebElement trendingOnSporterSectionPositionAfterClickingOnNext;
     @FindBy(xpath = "//div[@style='transform: translate3d(-1235px, 0px, 0px); transition-duration: 0ms;']")
     private WebElement trendingOnSporterSectionPositionAfterClickingOnPrevious;
-    @FindBy(xpath = "//div[@style='transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;']")
+//    @FindBy(xpath = "//div[@style='transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;']")
+//    private WebElement topSellerSectionPositionAfterClickingOnPrevious;//
+    @FindBy(xpath = "(//div[@class='swiper-wrapper'])[2]")
     private WebElement topSellerSectionPositionAfterClickingOnPrevious;
     @FindBy(xpath = "//div[@style='transform: translate3d(-249px, 0px, 0px); transition-duration: 0ms;']")
     private WebElement topSellerSectionPositionAfterClickingOnNext;
@@ -508,11 +512,11 @@ public class KsaHomePage {
     //Define the main actions we need to execute our TCs
     public void switchToKsaCountry() {
         try {
-            DataHelperAndWait.isDisplayed(countryList, 2);
+            DataHelperAndWait.isDisplayed(countryList, 1);
             this.countryList.click();
             this.saCountry.click();
         } catch (Exception e) {
-            DataHelperAndWait.isDisplayed(countryList, 1);
+            DataHelperAndWait.isDisplayed(countryList, 2);
             this.countryList.click();
             this.saCountry.click();
         }
