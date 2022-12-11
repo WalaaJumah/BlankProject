@@ -102,6 +102,7 @@ public class AeSportSupplementsCategoryPage {
         return sportSupplementsTitleInFooterSection;
     }
     public WebElement getSportSupplementsDescriptionInFooterSection() {
+        DataHelperAndWait.waitToBeVisible(sportSupplementsDescriptionInFooterSection,3);
         return sportSupplementsDescriptionInFooterSection;
     }
     public WebElement getSportSupplementsFooterSection() {
@@ -188,6 +189,7 @@ public class AeSportSupplementsCategoryPage {
         seeAllBtnInFormSection.click();
     }
     public WebElement getHomeBreadcrumbs() {
+        DataHelperAndWait.waitToBeVisible(homeBreadcrumbs,3);
         return homeBreadcrumbs;
     }
 }

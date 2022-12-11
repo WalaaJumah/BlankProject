@@ -101,7 +101,7 @@ public class QatarHomePage {
     private WebElement previousBtnInTrendingOnSporterSection;
     @FindBy(xpath = "//div[@style='transform: translate3d(-1482px, 0px, 0px); transition-duration: 0ms;']")
     private WebElement trendingOnSporterSectionPositionAfterClickingOnNext;
-    @FindBy(xpath = "//div[@style='transform: translate3d(-1235px, 0px, 0px); transition-duration: 0ms;']")
+    @FindBy(xpath = "(//div[@class='swiper-wrapper'])[7]")
     private WebElement trendingOnSporterSectionPositionAfterClickingOnPrevious;
     @FindBy(xpath = "//div[@style='transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;']")
     private WebElement topSellerSectionPositionAfterClickingOnPrevious;
@@ -237,14 +237,17 @@ public class QatarHomePage {
         return firstSideBanner;
     }
     public WebElement getFirstProductInTopSellingStacksSection() {
+        DataHelperAndWait.waitToBeVisible(firstProductInTopSellingStacksSection,3);
         return firstProductInTopSellingStacksSection;
     }
 
     public WebElement getSecondProductInTopSellingStacksSection() {
+        DataHelperAndWait.waitToBeVisible(secondProductInTopSellingStacksSection,3);
         return secondProductInTopSellingStacksSection;
     }
 
     public WebElement getThirdProductInTopSellingStacksSection() {
+        DataHelperAndWait.waitToBeVisible(thirdProductInTopSellingStacksSection,3);
         return thirdProductInTopSellingStacksSection;
     }
 
@@ -637,7 +640,8 @@ public class QatarHomePage {
     }
     public void clickOnSportSupplementsLinkInNewArrivalsSection() {
         try {
-            DataHelperAndWait.isDisplayed(newArrivalsSportSupplementsLink, 2);
+//            DataHelperAndWait.isDisplayed(newArrivalsSportSupplementsLink, 3);
+            DataHelperAndWait.fluentWait(this.newArrivalsSportSupplementsLink,2,3);
             this.newArrivalsSportSupplementsLink.click();
         }
         catch (Exception e){
@@ -648,7 +652,9 @@ public class QatarHomePage {
 
     public void clickOnHealthyFoodLinkInNewArrivalsSection() {
         try {
-            DataHelperAndWait.isDisplayed(newArrivalsHealthyFoodLink, 2);
+//            DataHelperAndWait.isDisplayed(newArrivalsHealthyFoodLink, 2);
+            DataHelperAndWait.fluentWait(this.newArrivalsHealthyFoodLink,2,3);
+
             this.newArrivalsHealthyFoodLink.click();
         }
         catch (Exception e){
@@ -659,7 +665,9 @@ public class QatarHomePage {
 
     public void clickOnVitaminsAndHealthLinkInNewArrivalsSection() {
         try {
-            DataHelperAndWait.isDisplayed(newArrivalsVitaminsAndHealthLink, 2);
+//            DataHelperAndWait.isDisplayed(newArrivalsVitaminsAndHealthLink, 2);
+            DataHelperAndWait.fluentWait(this.newArrivalsVitaminsAndHealthLink,2,3);
+
             this.newArrivalsVitaminsAndHealthLink.click();
         }
         catch (Exception e){
@@ -669,7 +677,9 @@ public class QatarHomePage {
     }
     public void clickOnSportswearAndAccessoriesLinkInNewArrivalsSection() {
         try {
-            DataHelperAndWait.isDisplayed(newArrivalsSportWearAndAccessoriesLink, 2);
+//            DataHelperAndWait.isDisplayed(newArrivalsSportWearAndAccessoriesLink, 2);
+            DataHelperAndWait.fluentWait(this.newArrivalsSportWearAndAccessoriesLink,2,3);
+
             this.newArrivalsSportWearAndAccessoriesLink.click();
         }
         catch (Exception e){
@@ -691,7 +701,9 @@ public class QatarHomePage {
 
     public void clickOnNextButtonInNewArrivalSection() {
         try {
-            DataHelperAndWait.isDisplayed(nextBtnInNewArrivalsSection, 2);
+//            DataHelperAndWait.isDisplayed(nextBtnInNewArrivalsSection, 2);
+            DataHelperAndWait.fluentWait(this.nextBtnInNewArrivalsSection,2,3);
+
             this.nextBtnInNewArrivalsSection.click();
         }
         catch (Exception e){

@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <!--<suite name=" Test" thread-count="3" parallel="true">-->
-<suite name=" Test" parallel="classes" thread-count="2" >
+<!--<suite name=" Test" parallel="classes" thread-count="2" >-->
 <!--<suite name=" Test" parallel="tests" thread-count="2" >-->
-<!--<suite name=" Test" thread-count="2" >-->
+<suite name=" Test" thread-count="2" >
 
-        <listeners>
-            <listener class-name="extent_report_listner.ExtentReportListener" />
-        </listeners>
+<!--        <listeners>-->
+<!--            <listener class-name="extent_report_listner.ExtentReportListener" />-->
+<!--        </listeners>-->
 
-    <!--    <listeners>-->
-    <!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/
-    >-->
-    <!--    </listeners>-->
+<!--        <listeners>-->
+<!--            <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
+<!--        </listeners>-->
 
     <test name=" MegaMenu" preserve-order="true">
 <!--        Guidelines:-->
@@ -47,10 +46,14 @@
 <!--            <class name="sporter_test.AeAllPagesInsideCategoriesInMegaMenuTestCases"></class>-->
 
 
-            <class name="sporter_test.AeAllPagesInsideCategoriesInMegaMenuTestCases"> </class>
-            <class name="sporter_test.AeBrandsTestCases">
+<!--            <class name="sporter_test.QatarHomePageTestCases"> </class>-->
+<!--            <class name="sporter_test.KsaHomePageTestCases"> </class>-->
+            <class name="sporter_test.AeSportSupplementsCategoryTestCases">
 <!--                            <methods>-->
-<!--                                <include name="verifyAbilityToAccessAllPagesInsideProteinCategoryRelatedToSportSupplementsCategoryPage"></include>-->
+<!--                                <include name="verifyNextArrowAtHomePageRotatingSliderIsDisplayed"></include>-->
+<!--                                <include name="verifyPreviousBtnInTrendingOnSporterSectionWorks"></include>-->
+<!--                                <include name="verifyClickOnTheProductsAppearingInTheTopSellingStacksSectionRedirectTheUserToCorrectUrl"></include>-->
+<!--                                <include name="verifyClickOnTheProductsAppearingInTheTopSellersSectionRedirectTheUserToCorrectUrl"></include>-->
 
 <!--                            </methods>-->
             </class>

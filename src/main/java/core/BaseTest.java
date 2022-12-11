@@ -65,7 +65,7 @@ public class BaseTest {
 //    }
 
     // The Below Method to run the TCs on Onc Browser like Chrome
-    @BeforeMethod
+    @BeforeClass
     @Parameters({"environment"})
     public void setupBrowser( String environment) throws Exception {
         environmentName=environment;
@@ -107,6 +107,6 @@ public class BaseTest {
         }
     }
 
-    @AfterMethod(alwaysRun = true)
+    @AfterClass(alwaysRun = true)
     public void tearDown()  {webDriver.quit();}
 }

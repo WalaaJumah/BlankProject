@@ -201,14 +201,17 @@ public class KsaHomePage {
     }
 
     public WebElement getPreviousArrowInHomePageRotatingSlider() {
+        DataHelperAndWait.waitToBeVisible(previousArrowInHomePageRotatingSlider,3);
         return previousArrowInHomePageRotatingSlider;
     }
 
     public WebElement getHomePageRotatingSliderPagingControl() {
+        DataHelperAndWait.waitToBeVisible(homePageRotatingSliderPagingControl,3);
         return homePageRotatingSliderPagingControl;
     }
 
     public WebElement getHomePageRotatingSlider() {
+        DataHelperAndWait.waitToBeVisible(homePageRotatingSlider,3);
         return homePageRotatingSlider;
     }
 
@@ -512,11 +515,11 @@ public class KsaHomePage {
     //Define the main actions we need to execute our TCs
     public void switchToKsaCountry() {
         try {
-            DataHelperAndWait.isDisplayed(countryList, 1);
+            DataHelperAndWait.isDisplayed(countryList, 3);
             this.countryList.click();
             this.saCountry.click();
         } catch (Exception e) {
-            DataHelperAndWait.isDisplayed(countryList, 2);
+            DataHelperAndWait.isDisplayed(countryList, 1);
             this.countryList.click();
             this.saCountry.click();
         }

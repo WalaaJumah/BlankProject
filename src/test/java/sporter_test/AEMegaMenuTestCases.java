@@ -36,7 +36,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     @Test(description = "Make sure the Shop By menu display the correct options ", priority = 2)
     public void verifyShopByMenuDisplayTheCorrectOptions() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         Assert.assertEquals(aeMegamenuPage.getShopeByMenu().getText(), "Shop By");
         Assert.assertEquals(aeMegamenuPage.getSportsSupplementsOption().getAttribute("textContent"), " Sports Supplements\n\n");
         Assert.assertEquals(aeMegamenuPage.getVitaminsAndHealthOption().getAttribute("textContent"), " Vitamins & Health\n\n");
@@ -52,14 +52,14 @@ public class AEMegaMenuTestCases extends BaseTest {
     @Test(description = "Make sure the Hamburger Menu Icon display correctly in the ShopBy menu ", priority = 3)
     public void verifyTheHamburgerMenuIconAppearsCorrectlyInShopByMenu() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         Assert.assertTrue(aeMegamenuPage.getHamburgerMenuIcon().isDisplayed());
     }
 
     @Test(description = "Make sure the arrow Icon display correctly next to the options appearing in the ShopBy menu ", priority = 4)
     public void verifyTheArrowIconAppearsCorrectlyNextToTheOptionInTheInShopByMenu() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getSportsSupplementsArrowIcon().isDisplayed());
@@ -72,7 +72,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     @Test(description = "Make sure the background color of the ShopBy menu is Gray", priority = 5)
     public void verifyTheBackgroundColorOfTheShopByMenuInGrayColor() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         Assert.assertEquals(aeMegamenuPage.getShopByList().getCssValue("background-color"), "rgba(236, 236, 236, 1)", "The ShopBy Menu does not appears in the gray color");
@@ -81,7 +81,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     @Test(description = "Make sure the Category sub menu will appear once hovering on any option appearing in the ShopBy Menu", priority = 6)
     public void verifyTheCategorySubMenuAppearsWhenHoveringOnAnyOptionInsideShopByMenu() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsSupplementsOption()).perform();
@@ -105,7 +105,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSportsSupplementsOptionInShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsSupplementsOption()).perform();
         String expectedUrl=aeMegamenuPage.getSportsSupplementsOption().getAttribute("href");
@@ -124,7 +124,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnVitaminsAndHealthOptionInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminsAndHealthOption().getAttribute("href");
@@ -143,7 +143,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnHealthyFoodOptionInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthFoodOption()).perform();
         String expectedUrl=aeMegamenuPage.getHealthFoodOption().getAttribute("href");
@@ -162,7 +162,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSportsOptionInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         String expectedUrl=aeMegamenuPage.getSportsOption().getAttribute("href");
@@ -181,7 +181,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomanOnlyOptionInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWomenOnlyOption()).perform();
         String expectedUrl=aeMegamenuPage.getWomenOnlyOption().getAttribute("href");
@@ -201,7 +201,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnByBrandOptionInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         String expectedUrl=aeMegamenuPage.getByBrandOption().getAttribute("href");
@@ -220,7 +220,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnByGoalOptionInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByGoalOption()).perform();
         String expectedUrl=aeMegamenuPage.getByGoalOption().getAttribute("href");
@@ -239,7 +239,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSalesAndOffersOptionInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSalesAndOffersOption()).perform();
         String expectedUrl=aeMegamenuPage.getSalesAndOffersOption().getAttribute("href");
@@ -258,7 +258,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSportsStacksOptionInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSporterStacksOption()).perform();
         String expectedUrl=aeMegamenuPage.getSporterStacksOption().getAttribute("href");
@@ -300,7 +300,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifySportsSupplementsMenuInsideShopByMenuDisplayTheCorrectCategoriesAndSubCategories() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsSupplementsOption()).perform();
         DataHelperAndWait.implicitWait(5);
@@ -318,7 +318,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyTheMainCategoriesInTheSportsSupplementsMenuInsideShopByMenuAppearingInBoldFont() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsSupplementsOption()).perform();
         Assert.assertTrue(aeMegamenuPage.getProteinOptionInSportSupplementsMenu().getCssValue("font-weight").contains("700"));
@@ -336,7 +336,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyTheMainCategoriesInTheSportsSupplementsMenuInsideShopByMenuAppearingInUppercase() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsSupplementsOption()).perform();
         Assert.assertEquals(aeMegamenuPage.getProteinOptionInSportSupplementsMenu().getCssValue("text-transform"), "uppercase");
@@ -354,7 +354,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnProteinOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsSupplementsOption()).perform();
         String expectedUrl=aeMegamenuPage.getProteinOptionInSportSupplementsMenu().getAttribute("href");
@@ -373,7 +373,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCreatineOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCreatineOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCreatineOptionInSportSupplementsMenu().getAttribute("href");
@@ -392,7 +392,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnAminoAcidsOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getAminoAcidsOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidsOptionInSportSupplementsMenu().getAttribute("href");
@@ -411,7 +411,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMuscleBoostersOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMuscleBoostersOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMuscleBoostersOptionInSportSupplementsMenu().getAttribute("href");
@@ -430,7 +430,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWeightManagementOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWeightManagementOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWeightManagementOptionInSportSupplementsMenu().getAttribute("href");
@@ -449,7 +449,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnRecoveryOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getRecoveryOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getRecoveryOptionInSportSupplementsMenu().getAttribute("href");
@@ -468,7 +468,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCarbohydratesOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCarbohydratesOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCarbohydratesOptionInSportSupplementsMenu().getAttribute("href");
@@ -487,7 +487,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnEnergyAndEnduranceOptionOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getEnergyAndEnduranceOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getEnergyAndEnduranceOptionInSportSupplementsMenu().getAttribute("href");
@@ -506,7 +506,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnGamingAndFocusOptionOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getGamingAndFocusOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGamingAndFocusOptionInSportSupplementsMenu().getAttribute("href");
@@ -525,7 +525,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWheyProteinOptionOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWheyProteinOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWheyProteinOptionInSportSupplementsMenu().getAttribute("href");
@@ -544,7 +544,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWheyProteinIsolateOptionOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWheyProteinIsolateOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWheyProteinIsolateOptionInSportSupplementsMenu().getAttribute("href");
@@ -563,7 +563,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnProteinBlendsOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getProteinBlendsOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getProteinBlendsOptionInSportSupplementsMenu().getAttribute("href");
@@ -582,7 +582,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnNonDairyProteinOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getNonDairyProteinOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getNonDairyProteinOptionInSportSupplementsMenu().getAttribute("href");
@@ -601,7 +601,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCaseinProteinOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCaseinProteinOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCaseinProteinOptionInSportSupplementsMenu().getAttribute("href");
@@ -620,7 +620,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnDietProteinOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getDietProteinOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getDietProteinOptionInSportSupplementsMenu().getAttribute("href");
@@ -639,7 +639,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMassGainersOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMassGainersOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMassGainersOptionInSportSupplementsMenu().getAttribute("href");
@@ -658,7 +658,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCreatineMonohydrateOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCreatineMonohydrateOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCreatineMonohydrateOptionInSportSupplementsMenu().getAttribute("href");
@@ -677,7 +677,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCreatineBlendsOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCreatineBlendsOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCreatineBlendsOptionInSportSupplementsMenu().getAttribute("href");
@@ -696,7 +696,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBCAAOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getbCAAOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getbCAAOptionInSportSupplementsMenu().getAttribute("href");
@@ -715,7 +715,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnEAAOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getEAAOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getEAAOptionInSportSupplementsMenu().getAttribute("href");
@@ -734,7 +734,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnArginineOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getArginineOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getArginineOptionInSportSupplementsMenu().getAttribute("href");
@@ -753,7 +753,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBetaAlanineOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBetaAlanineOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBetaAlanineOptionInSportSupplementsMenu().getAttribute("href");
@@ -772,7 +772,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnHMbOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHMBOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHMBOptionInSportSupplementsMenu().getAttribute("href");
@@ -791,7 +791,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnAminoAcidPowdersOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getAminoAcidPowdersOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidPowdersOptionInSportSupplementsMenu().getAttribute("href");
@@ -810,7 +810,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnAminoAcidPillsOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getAminoAcidPillsOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidPillsOptionInSportSupplementsMenu().getAttribute("href");
@@ -829,7 +829,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCitrullineOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCitrullineOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCitrullineOptionInSportSupplementsMenu().getAttribute("href");
@@ -848,7 +848,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnAminoAcidLiquidsOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getAminoAcidLiquidsOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidLiquidsOptionInSportSupplementsMenu().getAttribute("href");
@@ -867,7 +867,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnTestosteroneBoostersOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getTestosteroneBoostersOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getTestosteroneBoostersOptionInSportSupplementsMenu().getAttribute("href");
@@ -886,7 +886,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnGhBoostersOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getGhBoostersOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGhBoostersOptionInSportSupplementsMenu().getAttribute("href");
@@ -905,7 +905,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnStimulantWeightLossOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getStimulantWeightLossOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getStimulantWeightLossOptionInSportSupplementsMenu().getAttribute("href");
@@ -924,7 +924,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnNonStimulantWeightLossOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getNonStimulantWeightLossOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getNonStimulantWeightLossOptionInSportSupplementsMenu().getAttribute("href");
@@ -943,7 +943,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMealReplacementsOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMealReplacementsOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMealReplacementsOptionInSportSupplementsMenu().getAttribute("href");
@@ -962,7 +962,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMetabolismSupportOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMetabolismSupportOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMetabolismSupportOptionInSportSupplementsMenu().getAttribute("href");
@@ -981,7 +981,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnToningCreamsOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getToningCreamsOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getToningCreamsOptionInSportSupplementsMenu().getAttribute("href");
@@ -1000,7 +1000,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMctOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMctOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMctOptionInSportSupplementsMenu().getAttribute("href");
@@ -1019,7 +1019,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnGlutamineOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getGlutamineOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGlutamineOptionInSportSupplementsMenu().getAttribute("href");
@@ -1038,7 +1038,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnRecoveryBlendOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getRecoveryBlendOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getRecoveryBlendOptionInSportSupplementsMenu().getAttribute("href");
@@ -1057,7 +1057,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnElectrolytesAndHydrationOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getElectrolytesAndHydrationOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getElectrolytesAndHydrationOptionInSportSupplementsMenu().getAttribute("href");
@@ -1076,7 +1076,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCarbohydratePowdersOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCarbohydratePowdersOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCarbohydratePowdersOptionInSportSupplementsMenu().getAttribute("href");
@@ -1095,7 +1095,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnStimulantEnergyOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getStimulantEnergyOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getStimulantEnergyOptionInSportSupplementsMenu().getAttribute("href");
@@ -1114,7 +1114,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnNonStimulantEnergyOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getNonStimulantEnergyOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getNonStimulantEnergyOptionInSportSupplementsMenu().getAttribute("href");
@@ -1133,7 +1133,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnGamingEssentialsOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getGamingEssentialsOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGamingEssentialsOptionInSportSupplementsMenu().getAttribute("href");
@@ -1152,7 +1152,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyVitaminsAndHealthMenuInsideShopByMenuDisplayTheCorrectCategoriesAndSubCategories() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         DataHelperAndWait.implicitWait(5);
@@ -1170,7 +1170,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyTheMainCategoriesInTheVitaminsAndHealthMenuInsideShopByMenuAppearingInBoldFont() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         Assert.assertTrue(aeMegamenuPage.getFeaturedOptionInVitaminsAndHealthMenu().getCssValue("font-weight").contains("700"));
@@ -1191,7 +1191,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyTheMainCategoriesInTheVitaminsAndHealthMenuInsideShopByMenuAppearingInUppercase() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         Assert.assertEquals(aeMegamenuPage.getFeaturedOptionInVitaminsAndHealthMenu().getCssValue("text-transform"), "uppercase");
@@ -1212,7 +1212,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnFeaturedOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getFeaturedOptionInVitaminsAndHealthMenu()).perform();
@@ -1232,7 +1232,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnAliveVitaminsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getAliveVitaminsOptionInVitaminsAndHealthMenu()).perform();
@@ -1252,7 +1252,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSexualHealthOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getSexualHealthOptionInVitaminsAndHealthMenu()).perform();
@@ -1273,7 +1273,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnEssentialVitaminsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getEssentialVitaminsOptionInVitaminsAndHealthMenu()).perform();
@@ -1293,7 +1293,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnFolicAcidOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getFolicAcidOptionInVitaminsAndHealthMenu()).perform();
@@ -1313,7 +1313,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnVitaminAOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminAOptionInVitaminsAndHealthMenu()).perform();
@@ -1333,7 +1333,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnVitaminBOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminBOptionInVitaminsAndHealthMenu()).perform();
@@ -1353,7 +1353,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnVitaminCOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminCOptionInVitaminsAndHealthMenu()).perform();
@@ -1373,7 +1373,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnVitaminDOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminDOptionInVitaminsAndHealthMenu()).perform();
@@ -1393,7 +1393,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnVitaminEOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminEOptionInVitaminsAndHealthMenu()).perform();
@@ -1413,7 +1413,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnVitaminKOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminKOptionInVitaminsAndHealthMenu()).perform();
@@ -1433,7 +1433,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMultiVitaminsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getMultiVitaminsOptionInVitaminsAndHealthMenu()).perform();
@@ -1453,7 +1453,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnVitaminsForKidsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsForKidsOptionInVitaminsAndHealthMenu()).perform();
@@ -1473,7 +1473,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnVitaminsForMenOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsForMenOptionInVitaminsAndHealthMenu()).perform();
@@ -1493,7 +1493,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnVitaminsForWomenOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsForWomenOptionInVitaminsAndHealthMenu()).perform();
@@ -1513,7 +1513,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBoneAndJointOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getBoneAndJointOptionInVitaminsAndHealthMenu()).perform();
@@ -1533,7 +1533,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBoneHealthOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getBoneHealthOptionInVitaminsAndHealthMenu()).perform();
@@ -1553,7 +1553,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnJointHealthOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getJointHealthOptionInVitaminsAndHealthMenu()).perform();
@@ -1573,7 +1573,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBeautyOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getBeautyOptionInVitaminsAndHealthMenu()).perform();
@@ -1593,7 +1593,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCollagenOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getCollagenOptionInVitaminsAndHealthMenu()).perform();
@@ -1613,7 +1613,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnHairSkinAndNailsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getHairSkinAndNailsOptionInVitaminsAndHealthMenu()).perform();
@@ -1633,7 +1633,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnFishOilOmegasOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getFishOilOmegasOptionInVitaminsAndHealthMenu()).perform();
@@ -1653,7 +1653,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnFishOilOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getFishOilOptionInVitaminsAndHealthMenu()).perform();
@@ -1673,7 +1673,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnOmega369OptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getOmega369OptionInVitaminsAndHealthMenu()).perform();
@@ -1693,7 +1693,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnHealthLifestyleOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getHealthLifestyleOptionInVitaminsAndHealthMenu()).perform();
@@ -1713,7 +1713,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnAntioxidantsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getAntioxidantsOptionInVitaminsAndHealthMenu()).perform();
@@ -1733,7 +1733,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBloodSugarSupportOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getBloodSugarSupportOptionInVitaminsAndHealthMenu()).perform();
@@ -1753,7 +1753,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBrainSupportOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getBrainSupportOptionInVitaminsAndHealthMenu()).perform();
@@ -1773,7 +1773,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnDetoxAndCleanseOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getDetoxAndCleanseOptionInVitaminsAndHealthMenu()).perform();
@@ -1793,7 +1793,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnEnergyFormulasOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getEnergyFormulasOptionInVitaminsAndHealthMenu()).perform();
@@ -1813,7 +1813,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnEyeHealthOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getEyeHealthOptionInVitaminsAndHealthMenu()).perform();
@@ -1833,7 +1833,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnHerbsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getHerbsOptionInVitaminsAndHealthMenu()).perform();
@@ -1853,7 +1853,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnHormonesBalanceOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getHormonesBalanceOptionInVitaminsAndHealthMenu()).perform();
@@ -1873,7 +1873,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnImmuneSupportOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getImmuneSupportOptionInVitaminsAndHealthMenu()).perform();
@@ -1893,7 +1893,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMensHealthOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getMensHealthOptionInVitaminsAndHealthMenu()).perform();
@@ -1913,7 +1913,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnStressReliefOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getStressReliefOptionInVitaminsAndHealthMenu()).perform();
@@ -1933,7 +1933,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSleepSupportOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getSleepSupportOptionInVitaminsAndHealthMenu()).perform();
@@ -1953,7 +1953,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSuperFoodsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getSuperFoodsOptionInVitaminsAndHealthMenu()).perform();
@@ -1973,7 +1973,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnUrinaryTractSupportOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getUrinaryTractSupportOptionInVitaminsAndHealthMenu()).perform();
@@ -1993,7 +1993,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWeightManagementOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getWeightManagementOptionInVitaminsAndHealthMenu()).perform();
@@ -2013,7 +2013,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomensHealthOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomensHealthOptionInVitaminsAndHealthMenu()).perform();
@@ -2033,7 +2033,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnDigestionOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getDigestionOptionInVitaminsAndHealthMenu()).perform();
@@ -2053,7 +2053,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnDigestionSupportOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getDigestiveSupportOptionInVitaminsAndHealthMenu()).perform();
@@ -2073,7 +2073,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnProbioticsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getProbioticsOptionInVitaminsAndHealthMenu()).perform();
@@ -2093,7 +2093,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSportVitaminsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getSportVitaminsOptionInVitaminsAndHealthMenu()).perform();
@@ -2113,7 +2113,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnAminoAcidOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getAminoAcidOptionInVitaminsAndHealthMenu()).perform();
@@ -2133,7 +2133,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMineralsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getMineralsOptionInVitaminsAndHealthMenu()).perform();
@@ -2153,7 +2153,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCalciumOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getCalciumOptionInVitaminsAndHealthMenu()).perform();
@@ -2173,7 +2173,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnIronOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getIronOptionInVitaminsAndHealthMenu()).perform();
@@ -2193,7 +2193,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMagnesiumOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getMagnesiumOptionInVitaminsAndHealthMenu()).perform();
@@ -2213,7 +2213,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMultimineralFormulasOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getMultimineralFormulasOptionInVitaminsAndHealthMenu()).perform();
@@ -2233,7 +2233,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnZincOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getZincOptionInVitaminsAndHealthMenu()).perform();
@@ -2253,7 +2253,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnPotassiumOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getPotassiumOptionInVitaminsAndHealthMenu()).perform();
@@ -2273,7 +2273,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnHealthyDrinksOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyDrinksOptionInVitaminsAndHealthMenu()).perform();
@@ -2293,7 +2293,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnDrinkableVitaminsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getDrinkableVitaminsOptionInVitaminsAndHealthMenu()).perform();
@@ -2313,7 +2313,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnPetsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getPetsOptionInVitaminsAndHealthMenu()).perform();
@@ -2333,7 +2333,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSupplementsMoreOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getSupplementsMoreOptionInVitaminsAndHealthMenu()).perform();
@@ -2353,7 +2353,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyHealthyFoodMenuInsideShopByMenuDisplayTheCorrectCategoriesAndSubCategories() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         DataHelperAndWait.implicitWait(5);
@@ -2368,7 +2368,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnGroceryOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getGroceryOptionInHealthyFoodMenu()).perform();
@@ -2388,7 +2388,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBakingAndCookingOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getBakingAndCookingOptionInHealthyFoodMenu()).perform();
@@ -2408,7 +2408,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCannedOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getCannedOptionInHealthyFoodMenu()).perform();
@@ -2428,7 +2428,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCoffeeOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getCoffeeOptionInHealthyFoodMenu()).perform();
@@ -2448,7 +2448,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCondimentsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getCondimentsOptionInHealthyFoodMenu()).perform();
@@ -2468,7 +2468,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMilkAndCreamOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getMilkAndCreamOptionInHealthyFoodMenu()).perform();
@@ -2488,7 +2488,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnNutsAndOatsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getNutsAndOatsOptionInHealthyFoodMenu()).perform();
@@ -2508,7 +2508,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnOilsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getOilsOptionInHealthyFoodMenu()).perform();
@@ -2528,7 +2528,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnPastaOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getPastaOptionInHealthyFoodMenu()).perform();
@@ -2548,7 +2548,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnRiceAndGrainsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getRiceAndGrainsOptionInHealthyFoodMenu()).perform();
@@ -2568,7 +2568,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSeasoningsAndSpicesOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getSeasoningsAndSpicesOptionInHealthyFoodMenu()).perform();
@@ -2588,7 +2588,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSugarSweetenersOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getSugarSweetenersOptionInHealthyFoodMenu()).perform();
@@ -2608,7 +2608,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSyrupsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getSyrupsOptionInHealthyFoodMenu()).perform();
@@ -2628,7 +2628,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnTeaAndHerbsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getTeaAndHerbsOptionInHealthyFoodMenu()).perform();
@@ -2648,7 +2648,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSuperfoodsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getSuperfoodsOptionInHealthyFoodMenu()).perform();
@@ -2668,7 +2668,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnReadyMixesOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getReadyMixesOptionInHealthyFoodMenu()).perform();
@@ -2688,7 +2688,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBreakfastAndCerealOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getBreakfastAndCerealOptionInHealthyFoodMenu()).perform();
@@ -2708,7 +2708,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnReadyToDrinkOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getReadyToDrinkOptionInHealthyFoodMenu()).perform();
@@ -2728,7 +2728,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnAminoAndBcaasOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getAminoAndBcaasOptionInHealthyFoodMenu()).perform();
@@ -2748,7 +2748,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnEnergyDrinksOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getEnergyDrinksOptionInHealthyFoodMenu()).perform();
@@ -2768,7 +2768,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnProteinShakesOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getProteinShakesOptionInHealthyFoodMenu()).perform();
@@ -2788,7 +2788,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnElectrolytesAndHydrationOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getElectrolytesAndHydrationOptionInHealthyFoodMenu()).perform();
@@ -2808,7 +2808,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnHealthySnacksOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getHealthySnacksOptionInHealthyFoodMenu()).perform();
@@ -2828,7 +2828,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnProteinBarsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getProteinBarsOptionInHealthyFoodMenu()).perform();
@@ -2848,7 +2848,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCookiesOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getCookiesOptionInHealthyFoodMenu()).perform();
@@ -2868,7 +2868,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnChipsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getChipsOptionInHealthyFoodMenu()).perform();
@@ -2888,7 +2888,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBrowniesAndPancakesOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getBrowniesAndPancakesOptionInHealthyFoodMenu()).perform();
@@ -2908,7 +2908,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSnackBarsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getSnackBarsOptionInHealthyFoodMenu()).perform();
@@ -2928,7 +2928,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSpreadsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getSpreadsOptionInHealthyFoodMenu()).perform();
@@ -2948,7 +2948,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnOtherHealthySnacksOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getOtherHealthySnacksOptionInHealthyFoodMenu()).perform();
@@ -2968,7 +2968,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnReadyToEatOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getReadyToEatOptionInHealthyFoodMenu()).perform();
@@ -2988,7 +2988,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnHealthyMealsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyMealsOptionInHealthyFoodMenu()).perform();
@@ -3008,7 +3008,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnFeaturedOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getFeaturedOptionInHealthyFoodMenu()).perform();
@@ -3028,7 +3028,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnHealthyMealReplacementOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyMealReplacementOptionInHealthyFoodMenu()).perform();
@@ -3048,7 +3048,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnProteinCoffeeOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getProteinCoffeeOptionInHealthyFoodMenu()).perform();
@@ -3068,7 +3068,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCandiesOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getCandiesOptionInHealthyFoodMenu()).perform();
@@ -3088,7 +3088,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnFlavoringAgentsOptionOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getFlavoringAgentsOptionInHealthyFoodMenu()).perform();
@@ -3108,7 +3108,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnKetoSnacksOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getKetoSnacksOptionInHealthyFoodMenu()).perform();
@@ -3128,7 +3128,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnManukaHoneyOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getManukaHoneyOptionInHealthyFoodMenu()).perform();
@@ -3148,7 +3148,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMeatSnacksOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getMeatSnacksOptionInHealthyFoodMenu()).perform();
@@ -3168,7 +3168,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifySportsMenuInsideShopByMenuDisplayTheCorrectCategoriesAndSubCategories() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         DataHelperAndWait.implicitWait(5);
@@ -3184,7 +3184,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyTheMainCategoriesInTheSportsMenuInsideShopByMenuAppearingInBoldFont() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         Assert.assertTrue(aeMegamenuPage.getMenOptionInSportsMenu().getCssValue("font-weight").contains("700"));
@@ -3210,7 +3210,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyTheMainCategoriesInTheSportsMenuInsideShopByMenuAppearingInUppercase() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         Assert.assertEquals(aeMegamenuPage.getMenOptionInSportsMenu().getCssValue("text-transform"), "uppercase");
@@ -3235,7 +3235,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMenOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getMenOptionInSportsMenu()).perform();
@@ -3255,7 +3255,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnClothingOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getClothingInSportsMenu()).perform();
@@ -3275,7 +3275,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnTopsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getTopsInSportsMenu()).perform();
@@ -3295,7 +3295,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnPantsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getPantsInSportsMenu()).perform();
@@ -3315,7 +3315,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnShortsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getShortsInSportsMenu()).perform();
@@ -3335,7 +3335,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnJacketsAndCoatsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getJacketsAndCoatsInSportsMenu()).perform();
@@ -3355,7 +3355,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSafetyMasksOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getSafetyMasksInSportsMenu()).perform();
@@ -3375,7 +3375,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnFootwearOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getFootwearInSportsMenu()).perform();
@@ -3395,7 +3395,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSneakersOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getSneakersInSportsMenu()).perform();
@@ -3415,7 +3415,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnTrainingShoesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getTrainingShoesInSportsMenu()).perform();
@@ -3435,7 +3435,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnRunningShoesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getRunningShoesInSportsMenu()).perform();
@@ -3455,7 +3455,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnHikingShoesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getHikingShoesInSportsMenu()).perform();
@@ -3475,7 +3475,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnAccessoriesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getAccessoriesInSportsMenu()).perform();
@@ -3495,7 +3495,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnGlovesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getGlovesInSportsMenu()).perform();
@@ -3515,7 +3515,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBeltsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getBeltsInSportsMenu()).perform();
@@ -3535,7 +3535,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCapsAndHatsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getCapsAndHatsInSportsMenu()).perform();
@@ -3555,7 +3555,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCapsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getCapInSportsMenu()).perform();
@@ -3575,7 +3575,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnShakersOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getShakersInSportsMenu()).perform();
@@ -3595,7 +3595,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWaterBottlesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWaterBottlesInSportsMenu()).perform();
@@ -3616,7 +3616,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void theresABugHereDueToWaterBottlesOptionAppearingDuplicated() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getBugHereInSportsMenu()).perform();
@@ -3636,7 +3636,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSocksOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getSocksInSportsMenu()).perform();
@@ -3656,7 +3656,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnTowelsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getTowelsInSportsMenu()).perform();
@@ -3676,7 +3676,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSunglassesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getSunglassesInSportsMenu()).perform();
@@ -3696,7 +3696,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMixterOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getMixerInSportsMenu()).perform();
@@ -3716,7 +3716,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBagsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getBagsInSportsMenu()).perform();
@@ -3736,7 +3736,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBackPacksOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getBackPacksInSportsMenu()).perform();
@@ -3756,7 +3756,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnShoulderBagsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getShoulderBagsInSportsMenu()).perform();
@@ -3776,7 +3776,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWearableTechOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWearableTechInSportsMenu()).perform();
@@ -3796,7 +3796,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWatchesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWatchesInSportsMenu()).perform();
@@ -3816,7 +3816,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnGamingAccessoriesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getGamingAccessoriesInSportsMenu()).perform();
@@ -3836,7 +3836,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnEquipmentOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.geEquipmentInSportsMenu()).perform();
@@ -3856,7 +3856,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnGripstOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getGripsInSportsMenu()).perform();
@@ -3876,7 +3876,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBallstOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getBallsInSportsMenu()).perform();
@@ -3896,7 +3896,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnRollerstOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getRollersInSportsMenu()).perform();
@@ -3916,7 +3916,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWeightsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWeightsInSportsMenu()).perform();
@@ -3936,7 +3936,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenInSportsMenu()).perform();
@@ -3956,7 +3956,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenClothingOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenClothingInSportsMenu()).perform();
@@ -3976,7 +3976,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenTopsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenTopsInSportsMenu()).perform();
@@ -3996,7 +3996,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenShortsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenShortsInSportsMenu()).perform();
@@ -4016,7 +4016,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenSafetyMasksOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenSafetyMasksInSportsMenu()).perform();
@@ -4036,7 +4036,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenAccessoriesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenAccessoriesInSportsMenu()).perform();
@@ -4056,7 +4056,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void theresABugHereDueToGlovesOptionAppearingDuplicated() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getBugGlovesInSportsMenu()).perform();
@@ -4076,7 +4076,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenGlovesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenGlovesInSportsMenu()).perform();
@@ -4096,7 +4096,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenBeltsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenBeltsInSportsMenu()).perform();
@@ -4116,7 +4116,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenCapsAndHatsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenCapsAndHatsInSportsMenu()).perform();
@@ -4136,7 +4136,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenCapsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenCapsInSportsMenu()).perform();
@@ -4156,7 +4156,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenShakersOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenShakersInSportsMenu()).perform();
@@ -4176,7 +4176,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenWaterBottlesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenWaterBottlesInSportsMenu()).perform();
@@ -4196,7 +4196,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenSocksOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenSocksInSportsMenu()).perform();
@@ -4216,7 +4216,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenTowelsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenTowelsInSportsMenu()).perform();
@@ -4236,7 +4236,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenSunglassesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenSunglassesInSportsMenu()).perform();
@@ -4256,7 +4256,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenMixerOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenMixerInSportsMenu()).perform();
@@ -4277,7 +4277,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenBagsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenBagsInSportsMenu()).perform();
@@ -4297,7 +4297,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenBackPacksOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenBackPacksInSportsMenu()).perform();
@@ -4317,7 +4317,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenSholdersBagsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenSholdersBagsInSportsMenu()).perform();
@@ -4338,7 +4338,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSupplementsOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getSupplementsOptionInByBrandMenu()).perform();
@@ -4358,7 +4358,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnOptimumNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getOptimumNutritionOptionInByBrandMenu()).perform();
@@ -4378,7 +4378,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMuscletechOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getMuscletechOptionInByBrandMenu()).perform();
@@ -4398,7 +4398,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCellucorOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getCellucorOptionInByBrandMenu()).perform();
@@ -4418,7 +4418,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnDymatizeOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getDymatizeOptionInByBrandMenu()).perform();
@@ -4438,7 +4438,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnXtendOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getXtendOptionInByBrandMenu()).perform();
@@ -4458,7 +4458,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnAnimalNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getAnimalNutritionOptionInByBrandMenu()).perform();
@@ -4478,7 +4478,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMusclePharmOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getMusclePharmOptionInByBrandMenu()).perform();
@@ -4498,7 +4498,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnUniversalNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getUniversalNutritionOptionInByBrandMenu()).perform();
@@ -4518,7 +4518,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBSNOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getBsnOptionInByBrandMenu()).perform();
@@ -4538,7 +4538,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnEhplabsOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getEhplabsOptionInByBrandMenu()).perform();
@@ -4558,7 +4558,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnJymSupplementScienceOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getJymSupplementScienceOptionInByBrandMenu()).perform();
@@ -4578,7 +4578,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBpiSportsOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getBpiSportsOptionInByBrandMenu()).perform();
@@ -4598,7 +4598,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnRussianBearOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getRussianBearOptionInByBrandMenu()).perform();
@@ -4618,7 +4618,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnIsopureOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getIsopureOptionInByBrandMenu()).perform();
@@ -4638,7 +4638,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnOneUpNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getOneUpNutritionOptionInByBrandMenu()).perform();
@@ -4658,7 +4658,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMusclemedsOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getMusclemedsOptionInByBrandMenu()).perform();
@@ -4678,7 +4678,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMhpOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.gethMhpOptionInByBrandMenu()).perform();
@@ -4698,7 +4698,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnEvlNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getEvlNutritionOptionInByBrandMenu()).perform();
@@ -4718,7 +4718,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnNlaForHerOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getNlaForHerOptionInByBrandMenu()).perform();
@@ -4738,7 +4738,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMuscleNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getMuscleNutritionOptionInByBrandMenu()).perform();
@@ -4758,7 +4758,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnGatNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getGatNutritionOptionInByBrandMenu()).perform();
@@ -4778,7 +4778,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnLabradorOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getLabradaOptionInByBrandMenu()).perform();
@@ -4799,7 +4799,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnOrgainOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getOrgainOptionInByBrandMenu()).perform();
@@ -4819,7 +4819,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnNutrexResearchOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getNutrexResearchOptionInByBrandMenu()).perform();
@@ -4839,7 +4839,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnScitecNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getScitecNutritionOptionInByBrandMenu()).perform();
@@ -4859,7 +4859,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnProlabOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getProlabOptionInByBrandMenu()).perform();
@@ -4879,7 +4879,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSotruOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getSotruOptionInByBrandMenu()).perform();
@@ -4899,7 +4899,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnDivineHealthOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getDivineHealthOptionInByBrandMenu()).perform();
@@ -4919,7 +4919,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnGhostOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getGhostOptionInByBrandMenu()).perform();
@@ -4939,7 +4939,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomensBestOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomensBestOptionInByBrandMenu()).perform();
@@ -4959,7 +4959,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnEfxSportsOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getEfxSportsOptionInByBrandMenu()).perform();
@@ -4979,7 +4979,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBasixOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getBasixOptionInByBrandMenu()).perform();
@@ -4999,7 +4999,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnAK47OptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getAk47OptionInByBrandMenu()).perform();
@@ -5019,7 +5019,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnNfSportsOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getNfSportsOptionInByBrandMenu()).perform();
@@ -5039,7 +5039,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnFullyDosedOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getFullyDosedOptionInByBrandMenu()).perform();
@@ -5059,7 +5059,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnFivePercentNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getFivePercentNutritionOptionInByBrandMenu()).perform();
@@ -5079,7 +5079,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnOlimpSportNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getOlimpSportNutritionOptionInByBrandMenu()).perform();
@@ -5099,7 +5099,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnJnxSportsOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getJnxSportsOptionInByBrandMenu()).perform();
@@ -5119,7 +5119,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnFitAndLeanOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getFitAndLeanOptionInByBrandMenu()).perform();
@@ -5139,7 +5139,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnGymQueenOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getGymqueenOptionInByBrandMenu()).perform();
@@ -5159,7 +5159,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnThePackOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getThePackOptionInByBrandMenu()).perform();
@@ -5179,7 +5179,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBetancourtNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getBetancourtNutritionOptionInByBrandMenu()).perform();
@@ -5199,7 +5199,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnYallaProteinOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getYallaProteinOptionInByBrandMenu()).perform();
@@ -5219,7 +5219,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnProteinWorldOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getProteinWorldOptionInByBrandMenu()).perform();
@@ -5239,7 +5239,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnObviOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getObviOptionInByBrandMenu()).perform();
@@ -5259,7 +5259,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnNaughtyBoyOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getNaughtyBoyOptionInByBrandMenu()).perform();
@@ -5279,7 +5279,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSteelFitOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getSteelFitOptionInByBrandMenu()).perform();
@@ -5299,7 +5299,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnUsnOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getUsnOptionInByBrandMenu()).perform();
@@ -5319,7 +5319,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnXGamerOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getXGamerOptionInByBrandMenu()).perform();
@@ -5339,7 +5339,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnInnosuppsOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getInnosuppsOptionInByBrandMenu()).perform();
@@ -5359,7 +5359,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnOutbreakNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getOutbreakNutritionOptionInByBrandMenu()).perform();
@@ -5379,7 +5379,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnInsaneLabzOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getInsaneLabzOptionInByBrandMenu()).perform();
@@ -5399,7 +5399,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnAllMaxOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getAllMaxOptionInByBrandMenu()).perform();
@@ -5419,7 +5419,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnGlaxonOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getGlaxonOptionInByBrandMenu()).perform();
@@ -5439,7 +5439,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnRedconOneOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getRedcon1OptionInByBrandMenu()).perform();
@@ -5459,7 +5459,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnPandaSupplementsOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getPandaSupplementsOptionInByBrandMenu()).perform();
@@ -5479,7 +5479,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnNutrendOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getNutrendOptionInByBrandMenu()).perform();
@@ -5499,7 +5499,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnOstrovitOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getOstrovitOptionInByBrandMenu()).perform();
@@ -5519,7 +5519,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBetteryOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getBetteryOptionInByBrandMenu()).perform();
@@ -5539,7 +5539,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnHealthyFoodSnacksAndMealReplacementOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodSnacksAndMealReplacementOptionInByBrandMenu()).perform();
@@ -5559,7 +5559,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWowHydrateOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getWowHydrateOptionInByBrandMenu()).perform();
@@ -5579,7 +5579,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnQuestNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getQuestNutritionOptionInByBrandMenu()).perform();
@@ -5599,7 +5599,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnGrenadeOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getGrenadeOptionInByBrandMenu()).perform();
@@ -5619,7 +5619,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnReignEnergyOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getReignEnergyOptionInByBrandMenu()).perform();
@@ -5639,7 +5639,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMonsterEnergyOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getMonsterEnergyOptionInByBrandMenu()).perform();
@@ -5659,7 +5659,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnThirdEnergyOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getThirdEnergyOptionInByBrandMenu()).perform();
@@ -5679,7 +5679,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     @Test(description = "Make sure the Down-arrow Icon display correctly next to the Sport Supplements main menu", priority = 288)
     public void verifyTheDownArrowIconAppearsCorrectlyNextToTheSportSupplementsMainMenu() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getDownArrowKeyInSportSupplementsMenu().isDisplayed());
@@ -5688,7 +5688,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     @Test(description = "Make sure the system will display the sub Menu once hovering on the Sport Supplements main menu", priority = 289)
     public void verifyTheSubMenuWillAppearsCorrectlyOnceHoveringOnSportSupplementsMainMenu() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getMegaMenuSection().isDisplayed());
@@ -5698,7 +5698,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifySportsSupplementsMainMenuDisplayTheCorrectCategoriesAndSubCategories() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         DataHelperAndWait.implicitWait(5);
         Assert.assertEquals(aeMegamenuPage.getSportsSupplementMainMenuList().get(0).getText(), "PROTEIN\n" + "Whey Protein\n" + "Whey Protein Isolate\n" +
@@ -5714,7 +5714,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     @Test(description = "Make sure clicking on the Sports Supplements main menu will redirect the User to the correct URL", priority = 291)
     public void verifyClickingOnSportsSupplementsManiMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSportSupplementsMainMenu().getAttribute("href");
@@ -5733,7 +5733,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyTheMainCategoriesInTheSportsSupplementsMainMenuAppearingInBoldFont() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getProteinOptionInSportSupplementsMenu().getCssValue("font-weight").contains("700"));
         Assert.assertTrue(aeMegamenuPage.getCreatineOptionInSportSupplementsMenu().getCssValue("font-weight").contains("700"));
@@ -5750,7 +5750,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyTheMainCategoriesInTheSportsSupplementsMainMenuAppearingInUppercase() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         Assert.assertEquals(aeMegamenuPage.getProteinOptionInSportSupplementsMainMenu().getCssValue("text-transform"), "uppercase");
         Assert.assertEquals(aeMegamenuPage.getCreatineOptionInSportSupplementsMainMenu().getCssValue("text-transform"), "uppercase");
@@ -5767,7 +5767,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnProteinOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getProteinOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getProteinOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -5786,7 +5786,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWheyProteinOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWheyProteinOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWheyProteinOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -5805,7 +5805,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWheyProteinIsolateOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWheyProteinIsolateOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWheyProteinIsolateOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -5824,7 +5824,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnProteinBlendsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getProteinBlendsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getProteinBlendsOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -5843,7 +5843,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnNonDairyProteinOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getNonDairyProteinOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getNonDairyProteinOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -5862,7 +5862,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCaseinProteinOptionInSportsSupplementsMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCaseinProteinOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCaseinProteinOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -5881,7 +5881,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnDietProteinOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getDietProteinOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getDietProteinOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -5900,7 +5900,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMassGainersOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMassGainersOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMassGainersOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -5919,7 +5919,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCreatineOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCreatineOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCreatineOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -5938,7 +5938,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCreatineMonohydrateOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCreatineMonohydrateOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCreatineMonohydrateOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -5957,7 +5957,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCreatineBlendsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCreatineBlendsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCreatineBlendsOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -5976,7 +5976,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnAminoAcidsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getAminoAcidsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidsOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -5995,7 +5995,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBCAAOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getbCAAOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getbCAAOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -6014,7 +6014,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnEAAOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.geteAAOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.geteAAOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -6033,7 +6033,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnArginineOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getArginineOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getArginineOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -6052,7 +6052,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBetaAlanineOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBetaAlanineOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBetaAlanineOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -6071,7 +6071,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnHMbOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.gethMBOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.gethMBOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -6090,7 +6090,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnAminoAcidPowdersOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getAminoAcidPowdersOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidPowdersOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -6109,7 +6109,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnAminoAcidPillsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getAminoAcidPillsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidPillsOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -6128,7 +6128,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCitrullineOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCitrullineOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCitrullineOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -6147,7 +6147,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnAminoAcidLiquidsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getAminoAcidLiquidsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidLiquidsOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -6166,7 +6166,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMuscleBoostersOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMuscleBoostersOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMuscleBoostersOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -6185,7 +6185,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnTestosteroneBoostersOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getTestosteroneBoostersOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getTestosteroneBoostersOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -6204,7 +6204,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnGhBoostersOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getGhBoostersOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGhBoostersOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -6223,7 +6223,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWeightManagementOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWeightManagementOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWeightManagementOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -6242,7 +6242,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnStimulantWeightLossOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getStimulantWeightLossOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getStimulantWeightLossOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -6261,7 +6261,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnNonStimulantWeightLossOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getNonStimulantWeightLossOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getNonStimulantWeightLossOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -6280,7 +6280,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMealReplacementsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMealReplacementsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMealReplacementsOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -6299,7 +6299,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMetabolismSupportOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMetabolismSupportOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMetabolismSupportOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -6318,7 +6318,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnToningCreamsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getToningCreamsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getToningCreamsOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -6337,7 +6337,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMctOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMctOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMctOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -6356,7 +6356,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnRecoveryOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getRecoveryOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getRecoveryOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -6375,7 +6375,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnGlutamineOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getGlutamineOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGlutamineOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -6394,7 +6394,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnRecoveryBlendOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getRecoveryBlendOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getRecoveryBlendOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -6413,7 +6413,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnElectrolytesAndHydrationOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getElectrolytesAndHydrationOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getElectrolytesAndHydrationOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -6432,7 +6432,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCarbohydratesOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCarbohydratesOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCarbohydratesOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -6451,7 +6451,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCarbohydratePowdersOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCarbohydratePowdersOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCarbohydratePowdersOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -6470,7 +6470,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnEnergyAndEnduranceOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getEnergyAndEnduranceOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getEnergyAndEnduranceOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -6489,7 +6489,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnStimulantEnergyOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getStimulantEnergyOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getStimulantEnergyOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -6508,7 +6508,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnNonStimulantEnergyOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getNonStimulantEnergyOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getNonStimulantEnergyOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -6527,7 +6527,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnGamingAndFocusOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getGamingAndFocusOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGamingAndFocusOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -6546,7 +6546,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnGamingEssentialsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getGamingEssentialsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGamingEssentialsOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -6565,7 +6565,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     @Test(description = "Make sure the Down-arrow Icon display correctly next to the Vitamins & Health main menu", priority = 337)
     public void verifyTheDownArrowIconAppearsCorrectlyNextToTheVitaminsAndHealthMainMenu() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getDownArrowKeyInVitaminsAndHealthMenu().isDisplayed());
@@ -6574,7 +6574,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     @Test(description = "Make sure the system will display the sub Menu once hovering on the Vitamins & Health main menu", priority = 338)
     public void verifyTheSubMenuWillAppearsCorrectlyOnceHoveringOnVitaminsAndHealthMainMenu() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getMegaMenuSection().isDisplayed());
@@ -6584,7 +6584,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyVitaminsAndHealthMainMenuDisplayTheCorrectCategoriesAndSubCategories() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         DataHelperAndWait.implicitWait(5);
         Assert.assertEquals(aeMegamenuPage.getVitaminsAndHealthMainMenuList().get(0).getText(), "FEATURED\n" + "Alive! Vitamins\n" + "Sexual Health\n" + "ESSENTIAL VITAMINS\n" +
@@ -6600,7 +6600,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     @Test(description = "Make sure clicking on the Vitamins & Health main menu will redirect the User to the correct URL", priority = 340)
     public void verifyClickingOnVitaminsAndHealthManiMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminsAndHealthMainMenu().getAttribute("href");
@@ -6619,7 +6619,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnFeaturedOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getFeaturedOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFeaturedOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -6638,7 +6638,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnAliveVitaminsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getAliveVitaminsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAliveVitaminsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -6657,7 +6657,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSexualHealthOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSexualHealthOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSexualHealthOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -6677,7 +6677,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnEssentialVitaminsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getEssentialVitaminsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getEssentialVitaminsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -6696,7 +6696,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnFolicAcidOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getFolicAcidOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFolicAcidOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -6715,7 +6715,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnVitaminAOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminAOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminAOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -6734,7 +6734,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnVitaminBOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminBOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminBOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -6753,7 +6753,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnVitaminCOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminCOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminCOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -6772,7 +6772,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnVitaminDOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminDOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminDOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -6791,7 +6791,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnVitaminEOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminEOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminEOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -6810,7 +6810,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnVitaminKOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminKOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminKOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -6829,7 +6829,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMultiVitaminsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMultiVitaminsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMultiVitaminsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -6848,7 +6848,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnVitaminsForKidsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsForKidsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminsForKidsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -6867,7 +6867,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnVitaminsForMenOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsForMenOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminsForMenOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -6886,7 +6886,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnVitaminsForWomenOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsForWomenOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminsForWomenOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -6905,7 +6905,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBoneAndJointOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBoneAndJointOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBoneAndJointOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -6924,7 +6924,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBoneHealthOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBoneHealthOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBoneHealthOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -6943,7 +6943,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnJointHealthOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getJointHealthOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getJointHealthOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -6962,7 +6962,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBeautyOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBeautyOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBeautyOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -6981,7 +6981,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCollagenOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCollagenOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCollagenOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7000,7 +7000,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnHairSkinAndNailsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHairSkinAndNailsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHairSkinAndNailsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7019,7 +7019,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnFishOilOmegasOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getFishOilOmegasOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFishOilOmegasOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7038,7 +7038,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnFishOilOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getFishOilOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFishOilOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7057,7 +7057,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnOmega369OptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getOmega369OptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getOmega369OptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7076,7 +7076,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnHealthLifestyleOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthLifestyleOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHealthLifestyleOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7095,7 +7095,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnAntioxidantsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getAntioxidantsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAntioxidantsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7114,7 +7114,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBloodSugarSupportOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBloodSugarSupportOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBloodSugarSupportOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7133,7 +7133,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBrainSupportOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBrainSupportOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBrainSupportOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7152,7 +7152,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnDetoxAndCleanseOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getDetoxAndCleanseOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getDetoxAndCleanseOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7171,7 +7171,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnEnergyFormulasOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getEnergyFormulasOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getEnergyFormulasOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7190,7 +7190,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnEyeHealthOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getEyeHealthOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getEyeHealthOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7209,7 +7209,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnHerbsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHerbsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHerbsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7228,7 +7228,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnHormonesBalanceOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHormonesBalanceOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHormonesBalanceOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7247,7 +7247,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnImmuneSupportOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getImmuneSupportOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getImmuneSupportOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7266,7 +7266,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMensHealthOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMensHealthOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMensHealthOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7285,7 +7285,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnStressReliefOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getStressReliefOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getStressReliefOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7304,7 +7304,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSleepSupportOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSleepSupportOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSleepSupportOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7323,7 +7323,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSuperFoodsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSuperFoodsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSuperFoodsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7342,7 +7342,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnUrinaryTractSupportOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getUrinaryTractSupportOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getUrinaryTractSupportOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7361,7 +7361,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWeightManagementOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWeightManagementOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWeightManagementOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7380,7 +7380,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomensHealthOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWomensHealthOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomensHealthOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7399,7 +7399,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnDigestionOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getDigestionOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getDigestionOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7418,7 +7418,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnDigestionSupportOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getDigestiveSupportOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getDigestiveSupportOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7437,7 +7437,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnProbioticsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getProbioticsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getProbioticsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7456,7 +7456,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSportVitaminsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportVitaminsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSportVitaminsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7475,7 +7475,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnAminoAcidOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getAminoAcidOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7494,7 +7494,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMineralsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMineralsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMineralsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7513,7 +7513,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCalciumOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCalciumOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCalciumOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7532,7 +7532,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnIronOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getIronOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getIronOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7551,7 +7551,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMagnesiumOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMagnesiumOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMagnesiumOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7570,7 +7570,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMultimineralFormulasOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMultimineralFormulasOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMultimineralFormulasOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7589,7 +7589,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnZincOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getZincOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getZincOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7608,7 +7608,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnPotassiumOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getPotassiumOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getPotassiumOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7627,7 +7627,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnHealthyDrinksOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyDrinksOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHealthyDrinksOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7646,7 +7646,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnDrinkableVitaminsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getDrinkableVitaminsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getDrinkableVitaminsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7665,7 +7665,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnPetsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getPetsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getPetsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7684,7 +7684,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSupplementsMoreOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSupplementsMoreOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSupplementsMoreOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -7703,7 +7703,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     @Test(description = "Make sure the Down-arrow Icon display correctly next to the Healthy Food main menu", priority = 406)
     public void verifyTheDownArrowIconAppearsCorrectlyNextToTheHealthyFoodMainMenu() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getDownArrowKeyInHealthyFoodMenu().isDisplayed());
@@ -7712,7 +7712,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     @Test(description = "Make sure the system will display the sub Menu once hovering on the Healthy Food main menu", priority = 407)
     public void verifyTheSubMenuWillAppearsCorrectlyOnceHoveringOnHealthyFoodMainMenu() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getMegaMenuSection().isDisplayed());
@@ -7722,7 +7722,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyHealthFoodMainMenuDisplayTheCorrectCategoriesAndSubCategories() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         DataHelperAndWait.implicitWait(5);
         Assert.assertEquals(aeMegamenuPage.getHealthyFoodMainMenuList().get(0).getText(), "GROCERY\n" + "Baking & Cooking\n" + "Canned\n" + "Coffee\n" + "Condiments\n" +
@@ -7736,7 +7736,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     @Test(description = "Make sure clicking on the Healthy Food main menu will redirect the User to the correct URL", priority = 409)
     public void verifyClickingOnHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHealthyFoodMainMenu().getAttribute("href");
@@ -7755,7 +7755,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnGroceryOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getGroceryOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGroceryOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -7774,7 +7774,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBakingAndCookingOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBakingAndCookingOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBakingAndCookingOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -7793,7 +7793,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCannedOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCannedOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCannedOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -7812,7 +7812,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCoffeeOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCoffeeOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCoffeeOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -7831,7 +7831,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCondimentsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCondimentsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCondimentsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -7850,7 +7850,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMilkAndCreamOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMilkAndCreamOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMilkAndCreamOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -7869,7 +7869,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnNutsAndOatsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getNutsAndOatsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getNutsAndOatsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -7888,7 +7888,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnOilsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getOilsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getOilsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -7907,7 +7907,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnPastaOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getPastaOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getPastaOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -7926,7 +7926,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnRiceAndGrainsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getRiceAndGrainsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getRiceAndGrainsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -7945,7 +7945,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSeasoningsAndSpicesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSeasoningsAndSpicesOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSeasoningsAndSpicesOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -7964,7 +7964,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSugarSweetenersOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSugarSweetenersOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSugarSweetenersOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -7983,7 +7983,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSyrupsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSyrupsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSyrupsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -8002,7 +8002,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnTeaAndHerbsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getTeaAndHerbsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getTeaAndHerbsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -8021,7 +8021,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSuperfoodsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSuperfoodsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSuperfoodsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -8040,7 +8040,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnReadyMixesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getReadyMixesOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getReadyMixesOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -8059,7 +8059,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBreakfastAndCerealOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBreakfastAndCerealOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBreakfastAndCerealOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -8078,7 +8078,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnReadyToDrinkOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getReadyToDrinkOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getReadyToDrinkOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -8097,7 +8097,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnAminoAndBcaasOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getAminoAndBcaasOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAndBcaasOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -8116,7 +8116,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnEnergyDrinksOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getEnergyDrinksOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getEnergyDrinksOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -8135,7 +8135,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnProteinShakesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getProteinShakesOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getProteinShakesOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -8154,7 +8154,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnElectrolytesAndHydrationOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getElectrolytesAndHydrationOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getElectrolytesAndHydrationOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -8173,7 +8173,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnHealthySnacksOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthySnacksOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHealthySnacksOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -8192,7 +8192,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnProteinBarsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getProteinBarsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getProteinBarsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -8211,7 +8211,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCookiesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCookiesOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCookiesOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -8230,7 +8230,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnChipsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getChipsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getChipsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -8249,7 +8249,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBrowniesAndPancakesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBrowniesAndPancakesOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBrowniesAndPancakesOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -8268,7 +8268,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSnackBarsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSnackBarsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSnackBarsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -8287,7 +8287,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSpreadsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSpreadsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSpreadsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -8306,7 +8306,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnOtherHealthySnacksOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getOtherHealthySnacksOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getOtherHealthySnacksOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -8325,7 +8325,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnReadyToEatOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getReadyToEatOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getReadyToEatOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -8344,7 +8344,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnHealthyMealsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyMealsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHealthyMealsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -8363,7 +8363,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnFeaturedOptionInHealthyFoodMianMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getFeaturedOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFeaturedOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -8382,7 +8382,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnHealthyMealReplacementOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyMealReplacementOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHealthyMealReplacementOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -8401,7 +8401,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnProteinCoffeeOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getProteinCoffeeOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getProteinCoffeeOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -8420,7 +8420,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCandiesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCandiesOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCandiesOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -8439,7 +8439,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnFlavoringAgentsOptionOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getFlavoringAgentsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFlavoringAgentsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -8458,7 +8458,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnKetoSnacksOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getKetoSnacksOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getKetoSnacksOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -8477,7 +8477,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnManukaHoneyOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getManukaHoneyOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getManukaHoneyOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -8496,7 +8496,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMeatSnacksOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMeatSnacksOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMeatSnacksOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -8515,7 +8515,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     @Test(description = "Make sure the Down-arrow Icon display correctly next to the Sports main menu", priority = 450)
     public void verifyTheDownArrowIconAppearsCorrectlyNextToTheSportsMainMenu() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getDownArrowKeyInSportsMenu().isDisplayed());
@@ -8524,7 +8524,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     @Test(description = "Make sure the system will display the sub Menu once hovering on the Sports main menu", priority = 451)
     public void verifyTheSubMenuWillAppearsCorrectlyOnceHoveringOnSportsMainMenu() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getMegaMenuSection().isDisplayed());
@@ -8534,7 +8534,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifySportsMainMenuDisplayTheCorrectCategoriesAndSubCategories() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         DataHelperAndWait.implicitWait(5);
         Assert.assertEquals(aeMegamenuPage.getSportsMainMenuList().get(0).getText(), "MEN\n" + "SPORT\n" + "Football\n" + "Basketball\n" + "Baseball\n" + "Running\n" +
@@ -8549,7 +8549,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     @Test(description = "Make sure clicking on the Sports main menu will redirect the User to the correct URL", priority = 453)
     public void verifyClickingOnSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSportsMainMenu().getAttribute("href");
@@ -8567,7 +8567,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMenOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMenOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMenOptionInSportsMainMenu().getAttribute("href");
@@ -8586,7 +8586,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSportOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSportOptionInSportsMainMenu().getAttribute("href");
@@ -8605,7 +8605,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnFootballOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getFootballOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFootballOptionInSportsMainMenu().getAttribute("href");
@@ -8624,7 +8624,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBasketballOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBasketballOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBasketballOptionInSportsMainMenu().getAttribute("href");
@@ -8643,7 +8643,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBaseballOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBaseballOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBaseballOptionInSportsMainMenu().getAttribute("href");
@@ -8662,7 +8662,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnRunningOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getRunningOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getRunningOptionInSportsMainMenu().getAttribute("href");
@@ -8681,7 +8681,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSwimmingOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSwimmingOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSwimmingOptionInSportsMainMenu().getAttribute("href");
@@ -8700,7 +8700,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnYogaOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getYogaOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getYogaOptionInSportsMainMenu().getAttribute("href");
@@ -8719,7 +8719,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnFitnessAndTrainingOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getFitnessAndTrainingOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFitnessAndTrainingOptionInSportsMainMenu().getAttribute("href");
@@ -8738,7 +8738,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMmaOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMmaOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMmaOptionInSportsMainMenu().getAttribute("href");
@@ -8757,7 +8757,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnJiuJitsuOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getJiuJitsuOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getJiuJitsuOptionInSportsMainMenu().getAttribute("href");
@@ -8776,7 +8776,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBoardGamesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBoardGamesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBoardGamesOptionInSportsMainMenu().getAttribute("href");
@@ -8795,7 +8795,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSportsTechOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsTechOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSportsTechOptionInSportsMainMenu().getAttribute("href");
@@ -8814,7 +8814,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWearableTechOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWearableTechOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWearableTechOptionInSportsMainMenu().getAttribute("href");
@@ -8833,7 +8833,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCamerasOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCamerasOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCamerasOptionInSportsMainMenu().getAttribute("href");
@@ -8852,7 +8852,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnPhoneAccessoriesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getPhoneAccessoriesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getPhoneAccessoriesOptionInSportsMainMenu().getAttribute("href");
@@ -8871,7 +8871,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnPersonalCareOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getPersonalCareOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getPersonalCareOptionInSportsMainMenu().getAttribute("href");
@@ -8890,7 +8890,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnShoweringOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getShoweringOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getShoweringOptionInSportsMainMenu().getAttribute("href");
@@ -8909,7 +8909,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnShavingOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getShavingOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getShavingOptionInSportsMainMenu().getAttribute("href");
@@ -8928,7 +8928,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSkinCareOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSkinCareOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSkinCareOptionInSportsMainMenu().getAttribute("href");
@@ -8947,7 +8947,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBodyCareOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBodyCareOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBodyCareOptionInSportsMainMenu().getAttribute("href");
@@ -8966,7 +8966,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnOralCareOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getOralCareOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getOralCareOptionInSportsMainMenu().getAttribute("href");
@@ -8985,7 +8985,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnTherapyOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getTherapyOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getTherapyOptionInSportsMainMenu().getAttribute("href");
@@ -9004,7 +9004,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMasksOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMasksOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMasksOptionInSportsMainMenu().getAttribute("href");
@@ -9023,7 +9023,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnFitnessAndTrainingCategoryOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getFitnessAndTrainingCategoryOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFitnessAndTrainingCategoryOptionInSportsMainMenu().getAttribute("href");
@@ -9042,7 +9042,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnFitnessEquipmentOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getFitnessEquipmentOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFitnessEquipmentOptionInSportsMainMenu().getAttribute("href");
@@ -9061,7 +9061,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSkippingRopesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSkippingRopesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSkippingRopesOptionInSportsMainMenu().getAttribute("href");
@@ -9080,7 +9080,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWeightBeltsOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWeightBeltsOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWeightBeltsOptionInSportsMainMenu().getAttribute("href");
@@ -9099,7 +9099,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnScootersOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getScootersOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getScootersOptionInSportsMainMenu().getAttribute("href");
@@ -9118,7 +9118,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnTrainingAccessoriesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getTrainingAccessoriesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getTrainingAccessoriesOptionInSportsMainMenu().getAttribute("href");
@@ -9137,7 +9137,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnShakersAndBottlesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getShakersAndBottlesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getShakersAndBottlesOptionInSportsMainMenu().getAttribute("href");
@@ -9156,7 +9156,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBagsOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBagsOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBagsOptionInSportsMainMenu().getAttribute("href");
@@ -9175,7 +9175,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnGlovesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getGlovesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGlovesOptionInSportsMainMenu().getAttribute("href");
@@ -9194,7 +9194,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBracesAndSleevesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBracesAndSleevesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBracesAndSleevesOptionInSportsMainMenu().getAttribute("href");
@@ -9213,7 +9213,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMouthguardOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMouthguardOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMouthguardOptionInSportsMainMenu().getAttribute("href");
@@ -9232,7 +9232,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnApparelOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getApparelOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getApparelOptionInSportsMainMenu().getAttribute("href");
@@ -9251,7 +9251,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSportswearOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportswearOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSportswearOptionInSportsMainMenu().getAttribute("href");
@@ -9270,7 +9270,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnPantsOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getPantsOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getPantsOptionInSportsMainMenu().getAttribute("href");
@@ -9289,7 +9289,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnShortsOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getShortsOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getShortsOptionInSportsMainMenu().getAttribute("href");
@@ -9308,7 +9308,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnHoodiesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHoodiesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHoodiesOptionInSportsMainMenu().getAttribute("href");
@@ -9327,7 +9327,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnTShirtsOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.gettShirtsOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.gettShirtsOptionInSportsMainMenu().getAttribute("href");
@@ -9346,7 +9346,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnTanksOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getTanksOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getTanksOptionInSportsMainMenu().getAttribute("href");
@@ -9365,7 +9365,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnFootwearOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getFootwearOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFootwearOptionInSportsMainMenu().getAttribute("href");
@@ -9384,7 +9384,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSneakersOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSneakersOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSneakersOptionInSportsMainMenu().getAttribute("href");
@@ -9403,7 +9403,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnTrainingShoesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getTrainingShoesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getTrainingShoesOptionInSportsMainMenu().getAttribute("href");
@@ -9422,7 +9422,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnRunningShoesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getRunnigShoesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getRunnigShoesOptionInSportsMainMenu().getAttribute("href");
@@ -9441,7 +9441,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWomenOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenOptionInSportsMainMenu().getAttribute("href");
@@ -9460,7 +9460,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenSportsTechOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWomenSportsTechOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenSportsTechOptionInSportsMainMenu().getAttribute("href");
@@ -9479,7 +9479,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenWearableTechOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWomenWearableTechOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenWearableTechOptionInSportsMainMenu().getAttribute("href");
@@ -9498,7 +9498,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenCamerasOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWomenCamerasOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenCamerasOptionInSportsMainMenu().getAttribute("href");
@@ -9517,7 +9517,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenPhoneAccessoriesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWomenPhoneAccessoriesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenPhoneAccessoriesOptionInSportsMainMenu().getAttribute("href");
@@ -9536,7 +9536,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenPersonalCareOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWomenPersonalCareOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenPersonalCareOptionInSportsMainMenu().getAttribute("href");
@@ -9555,7 +9555,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenShoweringOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWomenShoweringOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenShoweringOptionInSportsMainMenu().getAttribute("href");
@@ -9574,7 +9574,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenSkinCareOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWomenSkinCareOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenSkinCareOptionInSportsMainMenu().getAttribute("href");
@@ -9593,7 +9593,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenBodyCareOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWomenBodyCareOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenBodyCareOptionInSportsMainMenu().getAttribute("href");
@@ -9612,7 +9612,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenOralCareOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWomenOralCareOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenOralCareOptionInSportsMainMenu().getAttribute("href");
@@ -9631,7 +9631,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenTherapyOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWomenTherapyOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenTherapyOptionInSportsMainMenu().getAttribute("href");
@@ -9650,7 +9650,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenMasksOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWomenMasksOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenMasksOptionInSportsMainMenu().getAttribute("href");
@@ -9669,7 +9669,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenFitnessAndTrainingOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWomenFitnessAndTrainingOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenFitnessAndTrainingOptionInSportsMainMenu().getAttribute("href");
@@ -9688,7 +9688,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenTrainingAccessoriesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWomenTrainingAccessoriesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenTrainingAccessoriesOptionInSportsMainMenu().getAttribute("href");
@@ -9708,7 +9708,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomenOnlyMainMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         action.moveToElement(aeMegamenuPage.getWomenOnlyMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenOnlyMainMenu().getAttribute("href");
         aeMegamenuPage.getWomenOnlyMainMenu().click();
@@ -9728,7 +9728,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromOosProductPage() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         webDriver.navigate().to(siteURL+outOfStockProduct);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
@@ -9738,7 +9738,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifySportSupplementsMenuIsDisplayedWhenHoveringOnItFromOosProductPage() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         webDriver.navigate().to(siteURL+outOfStockProduct);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getSportsSupplementsSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
@@ -9748,7 +9748,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyVitaminsAndHealthMenuIsDisplayedWhenHoveringOnItFromOosProductPage() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         webDriver.navigate().to(siteURL+outOfStockProduct);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getVitaminsAndHealthSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
@@ -9758,7 +9758,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyHealthyFoodMenuIsDisplayedWhenHoveringOnItFromOosProductPage() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         webDriver.navigate().to(siteURL+outOfStockProduct);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getHealthyFoodSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
@@ -9768,7 +9768,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifySportsMenuIsDisplayedWhenHoveringOnItFromOosProductPage() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         webDriver.navigate().to(siteURL+outOfStockProduct);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getSportsSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
@@ -9779,7 +9779,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductPage() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         webDriver.navigate().to(siteURL+product);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from Product Page");
@@ -9789,7 +9789,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifySportSupplementsMenuIsDisplayedWhenHoveringOnItFromProductPage() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         webDriver.navigate().to(siteURL+product);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getSportsSupplementsSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from Product Page");
@@ -9799,7 +9799,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyVitaminsAndHealthMenuIsDisplayedWhenHoveringOnItFromProductPage() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         webDriver.navigate().to(siteURL+product);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getVitaminsAndHealthSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
@@ -9809,7 +9809,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyHealthyFoodMenuIsDisplayedWhenHoveringOnItFromProductPage() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         webDriver.navigate().to(siteURL+product);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getHealthyFoodSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
@@ -9819,7 +9819,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifySportsMenuIsDisplayedWhenHoveringOnItFromProductPage() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.switchToAECountry();
+        webDriver.navigate().to(siteURL);
         webDriver.navigate().to(siteURL+product);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getSportsSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
@@ -9830,7 +9830,7 @@ public void verifyClickingOnFirstBannerInTheSportSupplementsMenuWorksCorrectly()
     aeMegamenuPage = new AEMegaMenuPage(webDriver);
     aeAllPagesInsideCategoriesInMegaMenuPage= new AeAllPagesInsideCategoriesInMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-    aeMegamenuPage.switchToAECountry();
+    webDriver.navigate().to(siteURL);
     action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
     action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheSportSupplementsMenu()).perform();
     aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheSportSupplementsMenu().click();
@@ -9846,7 +9846,7 @@ public void verifyClickingOnSecondBannerInTheSportSupplementsMenuWorksCorrectly(
     aeMegamenuPage = new AEMegaMenuPage(webDriver);
     aeAllPagesInsideCategoriesInMegaMenuPage= new AeAllPagesInsideCategoriesInMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-    aeMegamenuPage.switchToAECountry();
+    webDriver.navigate().to(siteURL);
     action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
     action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheSportSupplementsMenu()).perform();
     aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheSportSupplementsMenu().click();
@@ -9862,7 +9862,7 @@ public void verifyClickingOnFirstBannerInTheVitaminsAndHealthMenuWorksCorrectly(
     aeMegamenuPage = new AEMegaMenuPage(webDriver);
     aeAllPagesInsideCategoriesInMegaMenuPage= new AeAllPagesInsideCategoriesInMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-    aeMegamenuPage.switchToAECountry();
+    webDriver.navigate().to(siteURL);
     action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
     action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheVitaminsAndHealthMenu()).perform();
     aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheVitaminsAndHealthMenu().click();
@@ -9878,7 +9878,7 @@ public void verifyClickingOnSecondBannerInTheVitaminsAndHealthMenuWorksCorrectly
     aeMegamenuPage = new AEMegaMenuPage(webDriver);
     aeAllPagesInsideCategoriesInMegaMenuPage= new AeAllPagesInsideCategoriesInMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-    aeMegamenuPage.switchToAECountry();
+    webDriver.navigate().to(siteURL);
     action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
     action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheVitaminsAndHealthMenu()).perform();
     aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheVitaminsAndHealthMenu().click();
@@ -9894,7 +9894,7 @@ public void verifyClickingOnFirstBannerInTheHealthyFoodMenuWorksCorrectly() {
     aeMegamenuPage = new AEMegaMenuPage(webDriver);
     aeAllPagesInsideCategoriesInMegaMenuPage= new AeAllPagesInsideCategoriesInMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-    aeMegamenuPage.switchToAECountry();
+    webDriver.navigate().to(siteURL);
     action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
     action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheHealthyFoodMenu()).perform();
     aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheHealthyFoodMenu().click();
@@ -9910,7 +9910,7 @@ public void verifyClickingOnSecondBannerInTheHealthyFoodMenuWorksCorrectly() {
     aeMegamenuPage = new AEMegaMenuPage(webDriver);
     aeAllPagesInsideCategoriesInMegaMenuPage= new AeAllPagesInsideCategoriesInMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-    aeMegamenuPage.switchToAECountry();
+    webDriver.navigate().to(siteURL);
     action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
     action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheHealthyFoodMenu()).perform();
     aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheHealthyFoodMenu().click();
@@ -9926,7 +9926,7 @@ public void verifyClickingOnFirstBannerInTheSportsMenuWorksCorrectly() {
     aeMegamenuPage = new AEMegaMenuPage(webDriver);
     aeAllPagesInsideCategoriesInMegaMenuPage= new AeAllPagesInsideCategoriesInMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-    aeMegamenuPage.switchToAECountry();
+    webDriver.navigate().to(siteURL);
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheSportsMenu()).perform();
     aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheSportsMenu().click();
@@ -9942,7 +9942,7 @@ public void verifyClickingOnSecondBannerInTheSportsMenuWorksCorrectly() {
     aeMegamenuPage = new AEMegaMenuPage(webDriver);
     aeAllPagesInsideCategoriesInMegaMenuPage= new AeAllPagesInsideCategoriesInMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-    aeMegamenuPage.switchToAECountry();
+    webDriver.navigate().to(siteURL);
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheSportsMenu()).perform();
     aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheSportsMenu().click();
