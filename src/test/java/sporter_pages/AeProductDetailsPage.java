@@ -528,5 +528,8 @@ public class AeProductDetailsPage {
         DataHelperAndWait.isDisplayed(secondProductSize, 10);
         this.secondProductSize.click();
     }
+    public WebElement getSearchField() {
+        return searchField;
+    }
 
 }

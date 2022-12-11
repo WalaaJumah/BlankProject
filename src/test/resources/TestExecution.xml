@@ -2,7 +2,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <!--<suite name=" Test" thread-count="3" parallel="true">-->
 <!--<suite name=" Test" parallel="classes" thread-count="3" >-->
-<suite name=" Test" thread-count="4" >
+<!--<suite name=" Test" parallel="tests" thread-count="2" >-->
+<suite name=" Test" thread-count="2" >
 
         <listeners>
             <listener class-name="extent_report_listner.ExtentReportListener" />
@@ -12,7 +13,6 @@
     <!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/
     >-->
     <!--    </listeners>-->
-
 
     <test name=" MegaMenu" preserve-order="true">
 <!--        Guidelines:-->
@@ -47,9 +47,9 @@
 <!--            <class name="sporter_test.AeAllPagesInsideCategoriesInMegaMenuTestCases"></class>-->
 
 
-            <class name="sporter_test.KsaHomePageTestCases">
+            <class name="sporter_test.AeSearchPageTestCases">
                             <methods>
-                                <include name="verifyPreviousBtnInTopSellerSectionWorks"></include>
+                                <include name="verifyTheSearchResultMatchedWithWhatTheUserSearch"></include>
 
                             </methods>
             </class>
@@ -61,4 +61,16 @@
 
 
     </test><!-- test -->
+
+<!--    <test name=" test" preserve-order="true">-->
+<!--        <parameter name="environment" value="stg" />-->
+<!--    <classes>-->
+<!--        <class name="sporter_test.AeSearchPageTestCases">-->
+<!--            <methods>-->
+<!--                <include name="verifyAbilityToAccessAllBrandsListedInBrandsPageCorrectly"></include>-->
+
+<!--            </methods>-->
+<!--        </class>-->
+<!--    </classes>-->
+<!--    </test>-->
 </suite> <!-- Suite -->

@@ -71,6 +71,12 @@ public class AeSearchPage {
     private List<WebElement> productCardInProductsSection;
    @FindBy(xpath="//*[@id='all-section-brands']/li/a")
     private List<WebElement> brandCardInProductsSection;
+    @FindBy(xpath="//ul[@id='full-brand-list']/li/a")
+   private List<WebElement> brandsListInBrandPage;
+    @FindBy(xpath="//ol[@class='ais-Hits-list']/li")
+   private List<WebElement> productsResult;
+    @FindBy(xpath = "//h1[@class='page-title']/span")
+    private WebElement productNameInThePDP;
 
 
     //Getter Methods
@@ -83,6 +89,15 @@ public class AeSearchPage {
     public WebElement getAllTab() {
         return allTab;
     }
+    public List<WebElement> getBrandsListInBrandPage() {
+        return brandsListInBrandPage;
+    }
+    public WebElement getProductNameInThePDP() {
+        return productNameInThePDP;
+    }    public List<WebElement> getProductsResult() {
+        return productsResult;
+    }
+
 
     public WebElement getProductsTab() {
         return productsTab;
