@@ -73,7 +73,8 @@ public class BaseTest {
 
         switch (environment){
             case "production":
-                System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
+//                System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver","src/test/resources/drivers/chromedriver.exe");
                 siteURL = "https://www.sporter.com";
                 webDriver = new ChromeDriver();
                 webDriver.manage().window().maximize();
