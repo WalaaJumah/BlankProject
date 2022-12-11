@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
 import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
 
 public class DataHelperAndWait extends BaseTest {
     public static WebDriverWait wait;
@@ -176,6 +177,8 @@ public class DataHelperAndWait extends BaseTest {
                 boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
                 assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
                 boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
+                boolean isTheElementPresent2 = webDriver.getPageSource().contains("this offer is not available in your country");
+                assertFalse(isTheElementPresent2, "The  offer is not available in your country page is displayed "+webDriver.getCurrentUrl());
                 assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page "+pageNumber+ "The URL is"+webDriver.getCurrentUrl());
                 i++;
             }

@@ -76,7 +76,9 @@ public class AeProductDetailsPageTestCases extends BaseTest {
         aeProductDetailsPage.switchToAeCountry();
         aeProductDetailsPage.clickOnProductInHomePage();
         aeProductDetailsPage.switchToLebanonCountry();
-        assertTrue(aeProductDetailsPage.getProductUnavailableForCountry().isDisplayed());
+        boolean isTheElementPresent2 = webDriver.getPageSource().contains("this offer is not available in your country");
+        assertTrue(isTheElementPresent2, "The  offer is not available in your country page is displayed "+webDriver.getCurrentUrl());
+//        assertTrue(aeProductDetailsPage.getProductUnavailableForCountry().isDisplayed());
 //        assertTrue(verifyTitle, "Page Not Found Is Displayed");
     }
 

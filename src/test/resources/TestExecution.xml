@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <!--<suite name=" Test" thread-count="3" parallel="true">-->
-<!--<suite name=" Test" parallel="classes" thread-count="3" >-->
+<suite name=" Test" parallel="classes" thread-count="2" >
 <!--<suite name=" Test" parallel="tests" thread-count="2" >-->
-<suite name=" Test" thread-count="2" >
+<!--<suite name=" Test" thread-count="2" >-->
 
         <listeners>
             <listener class-name="extent_report_listner.ExtentReportListener" />
@@ -47,11 +47,12 @@
 <!--            <class name="sporter_test.AeAllPagesInsideCategoriesInMegaMenuTestCases"></class>-->
 
 
-            <class name="sporter_test.AeSearchPageTestCases">
-                            <methods>
-                                <include name="verifyTheSearchResultMatchedWithWhatTheUserSearch"></include>
+            <class name="sporter_test.AeAllPagesInsideCategoriesInMegaMenuTestCases"> </class>
+            <class name="sporter_test.AeBrandsTestCases">
+<!--                            <methods>-->
+<!--                                <include name="verifyAbilityToAccessAllPagesInsideProteinCategoryRelatedToSportSupplementsCategoryPage"></include>-->
 
-                            </methods>
+<!--                            </methods>-->
             </class>
 
 

@@ -156,12 +156,11 @@ public class AeSearchPageTestCases extends BaseTest {
             boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
             assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
             boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
+            boolean isTheElementPresent2 = webDriver.getPageSource().contains("this offer is not available in your country");
+            assertTrue(isTheElementPresent2, "The  offer is not available in your country page is displayed "+webDriver.getCurrentUrl());
+            assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page "+ "The URL is"+webDriver.getCurrentUrl());
             aeProductDetailsPage.getSearchField().sendKeys("Basixs ");
             aeProductDetailsPage.getSearchBtn().click();
         }
-
-
-
-
     }
 }
