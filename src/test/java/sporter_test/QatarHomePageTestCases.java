@@ -11,15 +11,19 @@ import static org.testng.Assert.assertFalse;
 public class QatarHomePageTestCases extends BaseTest {
     private QatarHomePage qatarHomePage;
     String contactUsUrl = "contact-form";
-
-    @Test(description = "Make sure the next and previous arrow at the HomePage rotating slider section are displayed ", priority = 1)
+@Test(description = "Switching to the Qatar Store", priority = 1)
+public void switchToQatarStore(){
+    qatarHomePage = new QatarHomePage(webDriver);
+    qatarHomePage.switchToQatarCountry();
+}
+    @Test(description = "Make sure the next and previous arrow at the HomePage rotating slider section are displayed ", priority = 2)
     public void verifyNextArrowAtHomePageRotatingSliderIsDisplayed() {
-        qatarHomePage = new QatarHomePage(webDriver);
-        qatarHomePage.switchToQatarCountry();
+//        qatarHomePage = new QatarHomePage(webDriver);
+//        qatarHomePage.switchToQatarCountry();
         Assert.assertTrue(qatarHomePage.getNextArrowInHomePageRotatingSlider().isDisplayed());
         Assert.assertTrue(qatarHomePage.getPreviousArrowInHomePageRotatingSlider().isDisplayed());
     }
-    @Test(description = "Make sure clicking on the banners inside the HomePage rotating slider section will redirect the user to correct page", priority = 2)
+    @Test(description = "Make sure clicking on the banners inside the HomePage rotating slider section will redirect the user to correct page", priority = 3)
     public void verifyClickingOnTheBannersInsideTheHomePageRotatingSliderWillRedirectTheUserToCorrectPage(){
         qatarHomePage = new QatarHomePage(webDriver);
          webDriver.navigate().to(siteURL);
@@ -35,7 +39,7 @@ public class QatarHomePageTestCases extends BaseTest {
             webDriver.navigate().to(siteURL);
         }
     }
-    @Test(description = "Make sure the clicking on the first and second side banners works correctly in Qatar HomePage", priority = 3)
+    @Test(description = "Make sure the clicking on the first and second side banners works correctly in Qatar HomePage", priority = 4)
     public void verifyClickingOnTheFirstAndSecondSideBannersWorksCorrectlyInTheVitaminsAndHealthCategoryPage() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
@@ -60,7 +64,7 @@ public class QatarHomePageTestCases extends BaseTest {
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
 
     }
-    @Test(description = "Make sure clicking on the HomePage Horizontal Banner redirect the user to the correct URL ", priority = 4)
+    @Test(description = "Make sure clicking on the HomePage Horizontal Banner redirect the user to the correct URL ", priority = 5)
     public void verifyClickingOnHomePageHorizontalBannerDoeNotRedirectTheUserTo404PageOrNoContentFoundPage() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
@@ -76,7 +80,7 @@ public class QatarHomePageTestCases extends BaseTest {
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
     }
 
-    @Test(description = "Make sure the Shop By Category section is displayed ", priority = 5)
+    @Test(description = "Make sure the Shop By Category section is displayed ", priority = 6)
     public void verifyShopByCategoryIsDisplayed() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
@@ -84,7 +88,7 @@ public class QatarHomePageTestCases extends BaseTest {
         Assert.assertTrue(qatarHomePage.getShopByCategorySections().isDisplayed());
     }
 
-    @Test(description = "Make sure the main options in the Mega Menu are retrieved correctly", priority = 6)
+    @Test(description = "Make sure the main options in the Mega Menu are retrieved correctly", priority = 7)
     public void verifyMainOptionsInTheMegaMenuAreDisplayed() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
@@ -96,7 +100,7 @@ public class QatarHomePageTestCases extends BaseTest {
         Assert.assertEquals(qatarHomePage.getWomenOnlyOption().getText(), "Women's Only");
     }
 
-    @Test(description = "Make sure the clicking on the banners appearing under shop by category banners works correctly and redirect the user to correct URL", priority = 7)
+    @Test(description = "Make sure the clicking on the banners appearing under shop by category banners works correctly and redirect the user to correct URL", priority = 8)
     public void verifyClickingOnTheBannersUnderShopByCategoryBannersRedirectTheUserToCorrectUrl() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
@@ -114,21 +118,21 @@ public class QatarHomePageTestCases extends BaseTest {
         }
     }
 
-    @Test(description = "Make sure the Top Selling Stacks sections are displayed ", priority = 8)
+    @Test(description = "Make sure the Top Selling Stacks sections are displayed ", priority = 9)
     public void verifyTopSellingStacksSectionAreDisplayed() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
         Assert.assertTrue(qatarHomePage.getTopSellingStacksHeader().isDisplayed());
         Assert.assertTrue(qatarHomePage.getTopSellingStacksSections().isDisplayed());
     }
-    @Test(description = "Make sure the Top Sellers sections are displayed ", priority = 9)
+    @Test(description = "Make sure the Top Sellers sections are displayed ", priority = 10)
     public void verifyTopSellersSectionAreDisplayed() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
         Assert.assertTrue(qatarHomePage.getTopSellerHeader().isDisplayed());
         Assert.assertTrue(qatarHomePage.getTopSellerSections().isDisplayed());
     }
-    @Test(description = "Make sure that all links appear correctly in the Top Sellers section ", priority = 10)
+    @Test(description = "Make sure that all links appear correctly in the Top Sellers section ", priority = 11)
     public void verifyAllLinksInTopSellersSectionAreDisplayed() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
@@ -138,14 +142,14 @@ public class QatarHomePageTestCases extends BaseTest {
         Assert.assertTrue(qatarHomePage.getVitaminsAndHealthLink().isDisplayed());
         Assert.assertTrue(qatarHomePage.getSportswearAndAccessoriesLink().isDisplayed());
     }
-    @Test(description = "Make sure ability to click on the all link that appear in the Top Seller Section ", priority = 11)
+    @Test(description = "Make sure ability to click on the all link that appear in the Top Seller Section ", priority = 12)
     public void verifyAbilityToClickOnTheAllLinkInTopSellersSection() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
         qatarHomePage.clickOnAllLinkInTopSellerSection();
         Assert.assertTrue(qatarHomePage.getAllLActiveLink().isDisplayed());
     }
-    @Test(description = "Make sure ability to click on the Sport Supplements link that appear in the Top Seller Section ", priority = 12)
+    @Test(description = "Make sure ability to click on the Sport Supplements link that appear in the Top Seller Section ", priority = 13)
     public void verifyAbilityToClickOnTheSportSupplementsLinkInTopSellersSection() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
@@ -153,7 +157,7 @@ public class QatarHomePageTestCases extends BaseTest {
         DataHelperAndWait.waitToBeVisible(qatarHomePage.getSportSupplementsActiveLink(), 10);
         Assert.assertTrue(qatarHomePage.getSportSupplementsActiveLink().isDisplayed());
     }
-    @Test(description = "Make sure ability to click on the Healthy Food link that appear in the Top Seller Section ", priority = 13)
+    @Test(description = "Make sure ability to click on the Healthy Food link that appear in the Top Seller Section ", priority = 14)
     public void verifyAbilityToClickOnTheHealthyFoodLinkInTopSellersSection() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
@@ -161,7 +165,7 @@ public class QatarHomePageTestCases extends BaseTest {
         DataHelperAndWait.waitToBeVisible(qatarHomePage.getHealthyFoodActiveLink(), 10);
         Assert.assertTrue(qatarHomePage.getHealthyFoodActiveLink().isDisplayed());
     }
-    @Test(description = "Make sure ability to click on the Vitamins And Health link that appear in the Top Seller Section ", priority = 14)
+    @Test(description = "Make sure ability to click on the Vitamins And Health link that appear in the Top Seller Section ", priority = 15)
     public void verifyAbilityToClickOnTheVitaminsAndHealthLinkInTopSellersSection() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
@@ -169,7 +173,7 @@ public class QatarHomePageTestCases extends BaseTest {
         DataHelperAndWait.waitToBeVisible(qatarHomePage.getVitaminsAndHealthActiveLink(), 10);
         Assert.assertTrue(qatarHomePage.getVitaminsAndHealthActiveLink().isDisplayed());
     }
-    @Test(description = "Make sure ability to click on the Sportswear And Accessories link that appear in the Top Seller Section ", priority = 15)
+    @Test(description = "Make sure ability to click on the Sportswear And Accessories link that appear in the Top Seller Section ", priority = 16)
     public void verifyAbilityToClickOnTheSportswearAndAccessoriesLinkInTopSellersSection() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
@@ -177,21 +181,21 @@ public class QatarHomePageTestCases extends BaseTest {
         DataHelperAndWait.waitToBeVisible(qatarHomePage.getSportswearAndAccessoriesActiveLink(), 10);
         Assert.assertTrue(qatarHomePage.getSportswearAndAccessoriesActiveLink().isDisplayed());
     }
-    @Test(description = "Make sure that previous button will Appears in the Top Seller Section when clicking on the next button ", priority = 16)
+    @Test(description = "Make sure that previous button will Appears in the Top Seller Section when clicking on the next button ", priority = 17)
     public void verifyPreviousBtnWillAppearInTopSellersSectionOnceClickingOnNextBtn() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
         qatarHomePage.clickOnNextButtonInTopSellerSectionInTopSellerSection();
         Assert.assertTrue(qatarHomePage.getPreviousButtonInTopSellerSection().isDisplayed());
     }
-    @Test(description = "Make sure the next button appearing in the Top Seller section works Correctly ", priority = 17)
+    @Test(description = "Make sure the next button appearing in the Top Seller section works Correctly ", priority = 18)
     public void verifyNextBtnInTopSellerSectionWorks() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
         qatarHomePage.clickOnNextButtonInTopSellersSection();
         Assert.assertTrue(qatarHomePage.getTopSellerSectionPositionAfterClickingOnNext().isDisplayed());
     }
-    @Test(description = "Make sure the previous button appearing in the Top Seller section works Correctly ", priority = 18)
+    @Test(description = "Make sure the previous button appearing in the Top Seller section works Correctly ", priority = 19)
     public void verifyPreviousBtnInTopSellerSectionWorks() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
@@ -199,21 +203,21 @@ public class QatarHomePageTestCases extends BaseTest {
         qatarHomePage.clickOnPreviousButtonInTopSellersSection();
         Assert.assertTrue(qatarHomePage.getTopSellerSectionPositionAfterClickingOnPrevious().isDisplayed());
     }
-    @Test(description = "Make sure the Trending On Sporter sections are displayed ", priority = 19)
+    @Test(description = "Make sure the Trending On Sporter sections are displayed ", priority = 20)
     public void verifyTrendingOnSporterSectionAreDisplayed() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
         Assert.assertTrue(qatarHomePage.getTrendingOnSporterHeader().isDisplayed());
         Assert.assertTrue(qatarHomePage.getTrendingOnSporterSection().isDisplayed());
     }
-    @Test(description = "Make sure the next button appearing in the Trending On Sporter section works Correctly ", priority = 20)
+    @Test(description = "Make sure the next button appearing in the Trending On Sporter section works Correctly ", priority = 21)
     public void verifyNextBtnInTrendingOnSporterSectionWorks() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
         qatarHomePage.clickOnNextButtonInTrendingOnSporterSection();
         Assert.assertTrue(qatarHomePage.getTrendingOnSporterSectionPositionAfterClickingOnNext().isDisplayed());
     }
-    @Test(description = "Make sure the previous button appearing in the Trending On Sporter section works Correctly ", priority = 21)
+    @Test(description = "Make sure the previous button appearing in the Trending On Sporter section works Correctly ", priority = 22)
     public void verifyPreviousBtnInTrendingOnSporterSectionWorks() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
@@ -222,14 +226,14 @@ public class QatarHomePageTestCases extends BaseTest {
         qatarHomePage.clickOnPreviousButtonInTrendingOnSporterSection();
         DataHelperAndWait.waitToBeVisible(qatarHomePage.getTrendingOnSporterSectionPositionAfterClickingOnPrevious(),3);
     }
-    @Test(description = "Make sure the New Arrivals sections are displayed ", priority = 22)
+    @Test(description = "Make sure the New Arrivals sections are displayed ", priority = 23)
     public void verifyNewArrivalsSectionAreDisplayed() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
         Assert.assertTrue(qatarHomePage.getNewArrivalsHeader().isDisplayed());
         Assert.assertTrue(qatarHomePage.getNewArrivalsSection().isDisplayed());
     }
-    @Test(description = "Make sure that all links appear correctly in the New Arrivals section ", priority = 23)
+    @Test(description = "Make sure that all links appear correctly in the New Arrivals section ", priority = 24)
     public void verifyAllLinksInNewArrivalsSectionAreDisplayed() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
@@ -239,7 +243,7 @@ public class QatarHomePageTestCases extends BaseTest {
         Assert.assertTrue(qatarHomePage.getNewArrivalsVitaminsAndHealthLink().isDisplayed());
         Assert.assertTrue(qatarHomePage.getNewArrivalsSportWearAndAccessoriesLink().isDisplayed());
     }
-    @Test(description = "Make sure ability to click on the all link that appear in the New Arrivals Section ", priority = 24)
+    @Test(description = "Make sure ability to click on the all link that appear in the New Arrivals Section ", priority = 25)
     public void verifyAbilityToClickOnTheAllLinkInNewArrivalsSection() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
@@ -247,7 +251,7 @@ public class QatarHomePageTestCases extends BaseTest {
         DataHelperAndWait.waitToBeVisible(qatarHomePage.getNewArrivalsAllActiveLink(), 4);
         Assert.assertTrue(qatarHomePage.getNewArrivalsAllActiveLink().isDisplayed());
     }
-    @Test(description = "Make sure ability to click on the Sport Supplements link that appear in the New Arrivals Section ", priority = 25)
+    @Test(description = "Make sure ability to click on the Sport Supplements link that appear in the New Arrivals Section ", priority = 26)
     public void verifyAbilityToClickOnTheSportSupplementsLinkInNewArrivalsSection() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
@@ -255,7 +259,7 @@ public class QatarHomePageTestCases extends BaseTest {
         DataHelperAndWait.waitToBeVisible(qatarHomePage.getNewArrivalsSportSupplementsActiveLink(), 4);
         Assert.assertTrue(qatarHomePage.getNewArrivalsSportSupplementsActiveLink().isDisplayed());
     }
-    @Test(description = "Make sure ability to click on the Healthy Food link that appear in the New Arrivals Section ", priority = 26)
+    @Test(description = "Make sure ability to click on the Healthy Food link that appear in the New Arrivals Section ", priority = 27)
     public void verifyAbilityToClickOnTheHealthyFoodLinkInNewArrivalsSection() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
@@ -264,7 +268,7 @@ public class QatarHomePageTestCases extends BaseTest {
         Assert.assertTrue(qatarHomePage.getNewArrivalsHealthyFoodActiveLink().isDisplayed());
     }
 
-    @Test(description = "Make sure ability to click on the Vitamins And Health link that appear in the New Arrivals Section ", priority = 27)
+    @Test(description = "Make sure ability to click on the Vitamins And Health link that appear in the New Arrivals Section ", priority = 28)
     public void verifyAbilityToClickOnTheVitaminsAndHealthLinkInNewArrivalsSection() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
@@ -272,7 +276,7 @@ public class QatarHomePageTestCases extends BaseTest {
         Assert.assertTrue(qatarHomePage.getNewArrivalVitaminsAndHealthActiveLink().isDisplayed());
     }
 
-    @Test(description = "Make sure ability to click on the Sportswear And Accessories link that appear in the New Arrivals Section ", priority = 28)
+    @Test(description = "Make sure ability to click on the Sportswear And Accessories link that appear in the New Arrivals Section ", priority = 29)
     public void verifyAbilityToClickOnTheSportswearAndAccessoriesLinkInNewArrivalsSection() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
@@ -281,7 +285,7 @@ public class QatarHomePageTestCases extends BaseTest {
         Assert.assertTrue(qatarHomePage.getNewArrivalsSportWearAndAccessoriesActiveLink().isDisplayed());
     }
 
-    @Test(description = "Make sure that previous button will appear in the New Arrivals Section when clicking on the next button ", priority = 29)
+    @Test(description = "Make sure that previous button will appear in the New Arrivals Section when clicking on the next button ", priority = 30)
     public void verifyPreviousBtnWillAppearInNewArrivalsSectionOnceClickingOnNextBtn() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
@@ -289,7 +293,7 @@ public class QatarHomePageTestCases extends BaseTest {
         Assert.assertTrue(qatarHomePage.getPreviousBtnInNewArrivalsSection().isDisplayed());
     }
 
-    @Test(description = "Make sure the next button appearing in the New Arrivals section works Correctly ", priority = 30)
+    @Test(description = "Make sure the next button appearing in the New Arrivals section works Correctly ", priority = 31)
     public void verifyNextBtnInNewArrivalsSectionWorks() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
@@ -297,7 +301,7 @@ public class QatarHomePageTestCases extends BaseTest {
         Assert.assertTrue(qatarHomePage.getNewArrivalsSectionPositionAfterClickingOnNext().isDisplayed());
     }
 
-    @Test(description = "Make sure the previous button appearing in the New Arrivals section works Correctly ", priority = 31)
+    @Test(description = "Make sure the previous button appearing in the New Arrivals section works Correctly ", priority = 32)
     public void verifyPreviousBtnInNewArrivalsSectionWorks() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
@@ -306,7 +310,7 @@ public class QatarHomePageTestCases extends BaseTest {
         Assert.assertTrue(qatarHomePage.getNewArrivalsSectionPositionAfterClickingOnPrevious().isDisplayed());
     }
 
-    @Test(description = "Make sure the Got A Question section is displayed ", priority = 32)
+    @Test(description = "Make sure the Got A Question section is displayed ", priority = 33)
     public void verifyGotQuestionSectionIsDisplayed() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
@@ -315,7 +319,7 @@ public class QatarHomePageTestCases extends BaseTest {
         Assert.assertTrue(qatarHomePage.getEmailBtn().isDisplayed());
     }
 
-    @Test(description = "Make sure the Ability to click on email button that appears in the Got A Question section correctly ", priority = 33)
+    @Test(description = "Make sure the Ability to click on email button that appears in the Got A Question section correctly ", priority = 34)
     public void verifyAbilityToClickOnEmailBtnInGotQuestionSectionCorrectly() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
@@ -323,7 +327,7 @@ public class QatarHomePageTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains( contactUsUrl),"The system redirect the user to wrong URL "+webDriver.getCurrentUrl());
     }
 
-    @Test(description = "Make sure clicking on the Sports Supplements category redirect the user to the correct URL ", priority = 34)
+    @Test(description = "Make sure clicking on the Sports Supplements category redirect the user to the correct URL ", priority = 35)
     public void verifyClickingOnSportsSupplementsCategoryRedirectTheUserToCorrectPage() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
@@ -336,7 +340,7 @@ public class QatarHomePageTestCases extends BaseTest {
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
     }
 
-    @Test(description = "Make sure clicking on the Healthy Food category redirect the user to the correct URL ", priority = 35)
+    @Test(description = "Make sure clicking on the Healthy Food category redirect the user to the correct URL ", priority = 36)
     public void verifyClickingOnHealthyFoodCategoryDoeNotRedirectTheUserToCorrectPage() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
@@ -349,7 +353,7 @@ public class QatarHomePageTestCases extends BaseTest {
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
     }
 
-    @Test(description = "Make sure clicking on the Vitamins And Health category redirect the user to the correct URL ", priority = 36)
+    @Test(description = "Make sure clicking on the Vitamins And Health category redirect the user to the correct URL ", priority = 37)
     public void verifyClickingOnVitaminsAndHealthCategoryDoeNotRedirectTheUserToCorrectPage() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
@@ -362,7 +366,7 @@ public class QatarHomePageTestCases extends BaseTest {
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
     }
 
-    @Test(description = "Make sure clicking on the Sportswear & Accessories category redirect the user to the correct URL ", priority = 37)
+    @Test(description = "Make sure clicking on the Sportswear & Accessories category redirect the user to the correct URL ", priority = 38)
     public void verifyClickingOnSportswearAndAccessoriesCategoryDoeNotRedirectTheUserToCorrectPage() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
@@ -374,7 +378,7 @@ public class QatarHomePageTestCases extends BaseTest {
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
     }
-    @Test(description ="Make sure clicking on the products appearing in the Top Selling Stacks section redirect the user to the correct URL", priority = 38)
+    @Test(description ="Make sure clicking on the products appearing in the Top Selling Stacks section redirect the user to the correct URL", priority = 39)
     public void verifyClickOnTheProductsAppearingInTheTopSellingStacksSectionRedirectTheUserToCorrectUrl() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
@@ -427,7 +431,7 @@ public class QatarHomePageTestCases extends BaseTest {
         isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         Assert.assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
     }
-    @Test(description ="Make sure clicking on the products appearing in the Top Sellers section redirect the user to the correct URL", priority = 39)
+    @Test(description ="Make sure clicking on the products appearing in the Top Sellers section redirect the user to the correct URL", priority = 40)
     public void verifyClickOnTheProductsAppearingInTheTopSellersSectionRedirectTheUserToCorrectUrl() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
@@ -480,7 +484,7 @@ public class QatarHomePageTestCases extends BaseTest {
         isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         Assert.assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
     }
-    @Test(description ="Make sure clicking on the products appearing in the New Arrivals section redirect the user to the correct URL", priority = 40)
+    @Test(description ="Make sure clicking on the products appearing in the New Arrivals section redirect the user to the correct URL", priority = 41)
     public void verifyClickOnTheProductsAppearingInTheNewArrivalsSectionRedirectTheUserToCorrectUrl() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);
@@ -534,7 +538,7 @@ public class QatarHomePageTestCases extends BaseTest {
         isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         Assert.assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is"+webDriver.getCurrentUrl());
     }
-    @Test(description = "Make sure the Ability to click on phone button that appears in the Got A Question section correctly ", priority = 41)
+    @Test(description = "Make sure the Ability to click on phone button that appears in the Got A Question section correctly ", priority = 42)
     public void verifyAbilityToClickOnPhoneBtnInGotQuestionSectionCorrectly() {
         qatarHomePage = new QatarHomePage(webDriver);
         webDriver.navigate().to(siteURL);

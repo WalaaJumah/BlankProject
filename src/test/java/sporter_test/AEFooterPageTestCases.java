@@ -5,6 +5,7 @@ import core.DataHelperAndWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.AEFooterPage;
+import sporter_pages.AEMegaMenuPage;
 
 import static org.testng.Assert.assertFalse;
 
@@ -63,11 +64,16 @@ public class AEFooterPageTestCases extends BaseTest {
     String youtubeURL = "https://www.youtube.com/user/SporterVideos";
 
     AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
+    @Test(description = "Switching to UAE store", priority = 1)
+    public void switchToUaeStore(){
+        aeFooterPage = new AEFooterPage(webDriver);
+        aeFooterPage.switchToAECountry();
+    }
 
     @Test(description = "Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks ", priority = 1)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectly() {
         aeFooterPage = new AEFooterPage(webDriver);
-        aeFooterPage.switchToAECountry();
+//        aeFooterPage.switchToAECountry();
         Assert.assertTrue(aeFooterPage.getPageBottomSection().isDisplayed());
         for (int i = 0; i < aeFooterPage.getPageBottomBlocksList().size(); i++) {
             Assert.assertTrue(aeFooterPage.getPageBottomBlocksList().get(i).isDisplayed());

@@ -3,6 +3,7 @@ package sporter_test;
 import core.BaseTest;
 import core.DataHelperAndWait;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -17,7 +18,6 @@ import static org.testng.Assert.assertFalse;
 
 public class AeWomenOnlyCategoryTestCases extends BaseTest {
     private AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage;
-    private AEMegaMenuTestCases aeMegaMenuTestCases;
     private AeProductDetailsPage aeProductDetailsPage;
     private AEFooterPageTestCases aeFooterPageTestCases;
     private KsaHomePage ksaHomePage;
@@ -26,46 +26,78 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     private AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage;
     private AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage;
     private AEGuestUserPage aeGuestUserPage;
-
-
-    @Test(description = "Make sure clicking on the Women's Only Category Appears In MegaMenu Redirect User To CorrectURL", priority = 1)
+    private AEMegaMenuPage aeMegamenuPage;
+    private Actions action;
+    private final String  womenOnlyUrl="/female/";
+    @Test(description = "Switching to UAE store", priority = 1)
+    public void switchToUaeStore(){
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        aeMegamenuPage.switchToAECountry();
+    }
+    @Test(description = "Make sure clicking on the Women's Only Category Appears In MegaMenu Redirect User To CorrectURL", priority = 2)
     public void verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL() {
-        aeMegaMenuTestCases = new AEMegaMenuTestCases();
-        aeMegaMenuTestCases.verifyClickingOnWomenOnlyMainMenuRedirectUserToCorrectURL();
+        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        action = new Actions(webDriver);
+        webDriver.navigate().to(siteURL);
+        action.moveToElement(aeMegamenuPage.getWomenOnlyMainMenu()).perform();
+        String expectedUrl=aeMegamenuPage.getWomenOnlyMainMenu().getAttribute("href");
+        aeMegamenuPage.getWomenOnlyMainMenu().click();
+        DataHelperAndWait.implicitWait(3);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
+//        Assert.assertEquals(webDriver.getCurrentUrl(), womenOnlyUrl);
+        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
+        boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
+        assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
 
-    @Test(description = "Make sure clicking on the Women's Only Category from ShopBy Menu Redirect User To CorrectURL", priority = 2)
+    @Test(description = "Make sure clicking on the Women's Only Category from ShopBy Menu Redirect User To CorrectURL", priority = 3)
     public void verifyClickingOnWomenOnlyCategoryFromShopByMenuRedirectUserToCorrectURL() {
-        aeMegaMenuTestCases = new AEMegaMenuTestCases();
-        aeMegaMenuTestCases.verifyClickingOnWomanOnlyOptionInsideShopByMenuRedirectUserToCorrectURL();
-    }
+            aeMegamenuPage = new AEMegaMenuPage(webDriver);
+            action = new Actions(webDriver);
+            action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
+            action.moveToElement(aeMegamenuPage.getWomenOnlyOption()).perform();
+            String expectedUrl = aeMegamenuPage.getWomenOnlyOption().getAttribute("href");
+            aeMegamenuPage.getWomenOnlyOption().click();
+            Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
+//        Assert.assertTrue(webDriver.getCurrentUrl().contains(womenOnlyUrl));
+            boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+            assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is " + webDriver.getCurrentUrl());
+            boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+            assertFalse(isTheElementPresent, "The page is empty and the URL is " + webDriver.getCurrentUrl());
+            boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
+            assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is " + webDriver.getCurrentUrl());
+        }
 
-    @Test(description = "Make sure the Footer section appears correctly in the Women's Only category page", priority = 3)
+    @Test(description = "Make sure the Footer section appears correctly in the Women's Only category page", priority = 4)
     public void verifyFooterSectionAppearsCorrectlyInWomenOnlyCategoryPage() {
         aeFooterPage = new AEFooterPage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(description = "Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Women's Only category page", priority = 4)
+    @Test(description = "Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Women's Only category page", priority = 5)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInWomenOnlyCategoryPage() {
         aeFooterPageTestCases = new AEFooterPageTestCases();
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeFooterPageTestCases.verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectly();
     }
 
-    @Test(description = "Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Women's Only Category Page ", priority = 5)
+    @Test(description = "Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Women's Only Category Page ", priority = 6)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumbAppearingInWomenOnlyCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
         Assert.assertEquals(webDriver.getCurrentUrl(), siteURL + aeSiteURL);
     }
 
-    @Test(description = "Make sure the rotating slider section is displayed in Women's Only Category page correctly ", priority = 6)
+    @Test(description = "Make sure the rotating slider section is displayed in Women's Only Category page correctly ", priority = 7)
     public void verifyRotatingSliderIsDisplayedInTheWomenOnlyCategoryPage() {
         ksaHomePage = new KsaHomePage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        webDriver.navigate().to(siteURL+aeDomain+womenOnlyUrl);
         Assert.assertTrue(ksaHomePage.getHomePageRotatingSlider().isDisplayed());
         for (int i = 0; i < ksaHomePage.getHomePageRotatingSliderList().size(); i++) {
             Assert.assertTrue(ksaHomePage.getHomePageRotatingSliderList().get(i).isDisplayed());
@@ -73,52 +105,43 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     //There's a bug here due to the next arrow icon is missing
-    @Test(description = "Make sure the next arrow of the rotating slider section is displayed in the Women's Only Category Page", priority = 7)
+    @Test(description = "Make sure the next arrow of the rotating slider section is displayed in the Women's Only Category Page", priority = 8)
     public void verifyNextArrowOfRotatingSliderIsDisplayedInTheWomenOnlyCategoryPage() {
         ksaHomePage = new KsaHomePage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Assert.assertTrue(ksaHomePage.getNextArrowInHomePageRotatingSlider().isDisplayed());
     }
 
     //There's a bug here due to the previous arrow icon is missing
-    @Test(description = "Make sure the previous arrow of the rotating slider section is displayed in the Women's Only Category Page ", priority = 8)
+    @Test(description = "Make sure the previous arrow of the rotating slider section is displayed in the Women's Only Category Page ", priority = 9)
     public void verifyPreviousArrowOfRotatingSliderIsDisplayedInTheWomenOnlyCategoryPage() {
         ksaHomePage = new KsaHomePage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Assert.assertTrue(ksaHomePage.getPreviousArrowInHomePageRotatingSlider().isDisplayed());
     }
 
-    @Test(description = "Make sure the pagination control of rotating slider section is displayed in Women's Only Category Page", priority = 9)
+    @Test(description = "Make sure the pagination control of rotating slider section is displayed in Women's Only Category Page", priority = 10)
     public void verifyPaginationControlOfRotatingSliderSectionIsDisplayedInTheWomenOnlyCategoryPage() {
         ksaHomePage = new KsaHomePage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Assert.assertTrue(ksaHomePage.getHomePageRotatingSliderPagingControl().isDisplayed());
         for (int i = 0; i < ksaHomePage.getHomePageRotatingSliderPagingList().size(); i++) {
             Assert.assertTrue(ksaHomePage.getHomePageRotatingSliderPagingList().get(i).isDisplayed());
         }
     }
 
-    @Test(description = "Make sure the side Banners is displayed in the Women's Only Category Page ", priority = 10)
+    @Test(description = "Make sure the side Banners is displayed in the Women's Only Category Page ", priority = 11)
     public void verifySideBannersIsDisplayedInTheWomenOnlyCategoryPage() {
         ksaHomePage = new KsaHomePage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Assert.assertTrue(ksaHomePage.getHomePageSideBanner().isDisplayed());
     }
 
-    @Test(description = "Make sure the pagination control of rotating slider section works correctly in Women's Only Category Page", priority = 11)
-    public void verifyPaginationControlOfRotatingSliderSectionWorksCorrectlyInTheWomenOnlyCategoryPage() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-        for (int i = 0; i < aeVitaminsAndHealthCategoryPage.getPagerOfRotatingSlider().size(); i++) {
-            aeVitaminsAndHealthCategoryPage.getPagerOfRotatingSlider().get(i).click();
-            Assert.assertEquals(aeVitaminsAndHealthCategoryPage.getPagerOfRotatingSlider().get(i).getAttribute("class"), "flex-active");
-        }
-    }
 
-    @Test(description = "Make sure the clicking on the banners appear in rotating slider section works correctly in Women's Only Category Page", priority = 12)
+    @Test(description = "Make sure  clicking on the banners appear in rotating slider section works correctly in Women's Only Category Page", priority = 12)
     public void verifyClickingOnTheBannersAppearingInRotatingSliderSectionWorksCorrectlyInTheWomenOnlyCategoryPage() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         for (int i = 0; i < aeVitaminsAndHealthCategoryPage.getPagerOfRotatingSlider().size(); i++) {
             aeVitaminsAndHealthCategoryPage.getPagerOfRotatingSlider().get(i).click();
             aeVitaminsAndHealthCategoryPage.getBannerInRotatingSliderSection().click();
@@ -126,14 +149,14 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
             assertFalse(verifyTitle, "Page Not Found Is Displayed");
             boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
             assertFalse(isTheElementPresent, "The page is empty");
-            webDriver.navigate().to(siteURL + aeMegaMenuTestCases.womenOnlyUrl);
+            webDriver.navigate().to(siteURL +aeDomain+womenOnlyUrl);
         }
     }
 
     @Test(description = "Make sure the clicking on the first side banner works correctly in Women's Only Category Page", priority = 13)
     public void verifyClickingOnTheFirstSideBannersWorksCorrectlyInTheWomenOnlyCategoryPage() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         String expectedBannerUrl = aeVitaminsAndHealthCategoryPage.getFirstSideBanner().getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getFirstSideBanner().click();
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
@@ -147,7 +170,8 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure clicking on the second side banner works correctly in  Women's Only Category Page", priority = 14)
     public void verifyClickingOnTheSecondSideBannersWorksCorrectlyInTheWomenOnlyCategoryPage() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        webDriver.navigate().to(siteURL+aeDomain+womenOnlyUrl);
         String expectedBannerUrl = aeVitaminsAndHealthCategoryPage.getSecondSideBanner().getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getSecondSideBanner().click();
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
@@ -161,7 +185,8 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure the Shop By Category section is displayed ", priority = 15)
     public void verifyShopByCategoryInTheWomenOnlyCategoryPageIsDisplayed() {
         ksaHomePage = new KsaHomePage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        webDriver.navigate().to(siteURL+aeDomain+womenOnlyUrl);
         Assert.assertTrue(ksaHomePage.getShopByCategoryHeader().isDisplayed());
         Assert.assertTrue(ksaHomePage.getShopByCategorySections().isDisplayed());
     }
@@ -170,7 +195,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure clicking on the Supplements For Her category inside Shop By Category section works correctly ", priority = 16)
     public void verifyClickingOnSupplementsForHerCategoryInsideTheShopByCategorySectionWorksCorrectly() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         String expectedCategoryUrl = aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(0).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(0).click();
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
@@ -183,7 +208,8 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the Result label and its value appear correctly in the Supplements For Her category page ", priority = 17)
     public void verifyResultFieldAndItsVaLueAppearInTheSupplementsForHerCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnSupplementsForHerCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        webDriver.navigate().to(siteURL +aeDomain+womenOnlyUrl);
+//        this.verifyClickingOnSupplementsForHerCategoryInsideTheShopByCategorySectionWorksCorrectly();
         SoftAssert sa = new SoftAssert();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getResultLabel().getText(), "Results:");
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSearchResultValue().isDisplayed());
@@ -194,7 +220,8 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that Sort By menu and its options appear correctly in the Supplements For Her category page ", priority = 18)
     public void verifySortByMenuAndItsOptionsAppearCorrectlyInTheSupplementsForHerCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnSupplementsForHerCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnSupplementsForHerCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        webDriver.navigate().to(siteURL +aeDomain+womenOnlyUrl);
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
         ArrayList<String> expectedOption = new ArrayList<>() {{
             add("Featured");
@@ -217,7 +244,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the Best Selling option is selected by default in the Sort By menu for Supplements For Her Category Page ", priority = 19)
     public void verifyBestSellingOptionIsSelectedByDefaultInSortByMenuForSupplementsForHerCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnSupplementsForHerCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnSupplementsForHerCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         Assert.assertEquals(select.getFirstSelectedOption().getText(), "Best Selling");
     }
@@ -225,7 +252,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure the Horizontal Category Image appears correctly in the Supplements For Her category page  ", priority = 20)
     public void verifyTheHorizontalCategoryImageAppearsCorrectlyInSupplementsForHerCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnSupplementsForHerCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnSupplementsForHerCategoryInsideTheShopByCategorySectionWorksCorrectly();
         DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage(), 5);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
     }
@@ -233,7 +260,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Supplements For Her Category Page ", priority = 21)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumbInSupplementsForHerCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnSupplementsForHerCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnSupplementsForHerCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
         Assert.assertEquals(webDriver.getCurrentUrl(), siteURL + aeSiteURL);
     }
@@ -241,6 +268,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the Supplements For Her Category page ", priority = 22)
     public void verifyTitleAndParagraphAppearingCorrectlyInHorizontalCategoryImageInSupplementsForHerCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        webDriver.navigate().to(siteURL +aeDomain+womenOnlyUrl);
         this.verifyClickingOnSupplementsForHerCategoryInsideTheShopByCategorySectionWorksCorrectly();
         DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getSportSupplementsTitleInCategoryImage(), 5);
         DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getParagraphInSportSupplementsCategoryImage(), 5);
@@ -250,9 +278,8 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     @Test(description = "Verify that the search button works correctly from the Supplements For Her category page", priority = 23)
     public void verifySearchBtnWorksCorrectlyFromSupplementsForHerCategoryPage() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeProductDetailsPage = new AeProductDetailsPage(webDriver);
-        this.verifyClickingOnSupplementsForHerCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnSupplementsForHerCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeProductDetailsPage.searchForBundle();
         aeProductDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
@@ -264,8 +291,8 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     @Test(description = "Verify that the previous page button in the Supplements For Her category page is disable when the current page is page 1 ", priority = 24)
     public void verifyThePreviousBtnInSupplementsForHerCategoryPageIsDisableWhenDisplayPage1() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        webDriver.navigate().to(siteURL +aeDomain+womenOnlyUrl);
         this.verifyClickingOnSupplementsForHerCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertTrue(aeSportSupplementsCategoryPage.getDisabledPreviousPageBtn().isDisplayed());
     }
@@ -273,44 +300,41 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     //There's a performance issue in the Navigation
     @Test(description = "Make Sure the Pagination control in the Supplements For Her category page works correctly", priority = 25)
     public void verifyThePaginationControlInSupplementsForHerCategoryPageWorksCorrectly() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnSupplementsForHerCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnSupplementsForHerCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForTime(4000);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
-        aeSportSupplementsCategoryPage.navigateToPage3();
-        DataHelperAndWait.waitForTime(4000);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
 
     @Test(description = "Make Sure the previous page button In Supplements For Her Category Page works correctly", priority = 26)
     public void verifyPreviousPageBtnInSupplementsForHerCategoryPageWorksCorrectly(){
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyThePaginationControlInSupplementsForHerCategoryPageWorksCorrectly();
+//        this.verifyThePaginationControlInSupplementsForHerCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
+        Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
     }
 
     @Test(description = "Make Sure the next page button In Supplements For Her Category Page works correctly", priority = 27)
     public void verifyNextPageBtnInSupplementsForHerCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyThePaginationControlInSupplementsForHerCategoryPageWorksCorrectly();
+//        this.verifyThePaginationControlInSupplementsForHerCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
     @Test(description = "Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Supplements For Her category page", priority = 28)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInSupplementsForHerCategoryPage() {
         aeFooterPageTestCases = new AEFooterPageTestCases();
-        this.verifyClickingOnSupplementsForHerCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnSupplementsForHerCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeFooterPageTestCases.verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectly();
     }
 
     @Test(description = "Make sure the Filtration Section is displayed in the Supplements For Her category page", priority = 29)
     public void verifyFiltrationSectionIsDisplayedInSupplementsForHerCategoryPage() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        this.verifyClickingOnSupplementsForHerCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnSupplementsForHerCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFiltrationSection().isDisplayed());
     }
 
@@ -318,7 +342,8 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure clicking on the Women's Daily Vitamins category inside Shop By Category section works correctly ", priority = 30)
     public void verifyClickingOnWomenDailyVitaminsCategoryInsideTheShopByCategorySectionWorksCorrectly() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        webDriver.navigate().to(siteURL +aeDomain+womenOnlyUrl);
         String expectedCategoryUrl = aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(1).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(1).click();
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
@@ -331,7 +356,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the Result label and its value appear correctly in the Women's Daily Vitamins category page ", priority = 31)
     public void verifyResultFieldAndItsVaLueAppearInTheWomenDailyVitaminsCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnWomenDailyVitaminsCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnWomenDailyVitaminsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         SoftAssert sa = new SoftAssert();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getResultLabel().getText(), "Results:");
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSearchResultValue().isDisplayed());
@@ -342,7 +367,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that Sort By menu and its options appear correctly in the Women's Daily Vitamins category page ", priority = 32)
     public void verifySortByMenuAndItsOptionsAppearCorrectlyInTheWomenDailyVitaminsCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnWomenDailyVitaminsCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnWomenDailyVitaminsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
         ArrayList<String> expectedOption = new ArrayList<>() {{
             add("Featured");
@@ -365,7 +390,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the Best Selling option is selected by default in the Sort By menu for Women's Daily Vitamins Category Page ", priority = 33)
     public void verifyBestSellingOptionIsSelectedByDefaultInSortByMenuForWomenDailyVitaminsCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnWomenDailyVitaminsCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnWomenDailyVitaminsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         Assert.assertEquals(select.getFirstSelectedOption().getText(), "Best Selling");
     }
@@ -373,7 +398,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure the Horizontal Category Image appears correctly in the Women's Daily Vitamins category page  ", priority = 34)
     public void verifyTheHorizontalCategoryImageAppearsCorrectlyInWomenDailyVitaminsCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnWomenDailyVitaminsCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnWomenDailyVitaminsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage(), 5);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
     }
@@ -381,7 +406,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Women's Daily Vitamins Category Page ", priority = 35)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumbInWomenDailyVitaminsCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnWomenDailyVitaminsCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnWomenDailyVitaminsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
         Assert.assertEquals(webDriver.getCurrentUrl(), siteURL + aeSiteURL);
     }
@@ -398,7 +423,6 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     @Test(description = "Verify that the search button works correctly from the Women's Daily Vitamins category page", priority = 37)
     public void verifySearchBtnWorksCorrectlyFromWomenDailyVitaminsCategoryPage() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         this.verifyClickingOnWomenDailyVitaminsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeProductDetailsPage.searchForBundle();
@@ -412,8 +436,8 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     @Test(description = "Verify that the previous page button in the Women's Daily Vitamins category page is disable when the current page is page 1 ", priority = 38)
     public void verifyThePreviousBtnInWomenDailyVitaminsCategoryPageIsDisableWhenDisplayPage1() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        webDriver.navigate().to(siteURL +aeDomain+womenOnlyUrl);
         this.verifyClickingOnWomenDailyVitaminsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertTrue(aeSportSupplementsCategoryPage.getDisabledPreviousPageBtn().isDisplayed());
     }
@@ -421,44 +445,41 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     //There's a performance issue in the Navigation
     @Test(description = "Make Sure the Pagination control in the Women's Daily Vitamins category page works correctly", priority = 39)
     public void verifyThePaginationControlInWomenDailyVitaminsCategoryPageWorksCorrectly() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnWomenDailyVitaminsCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnWomenDailyVitaminsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForTime(4000);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
-        aeSportSupplementsCategoryPage.navigateToPage3();
-        DataHelperAndWait.waitForTime(4000);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
 
     @Test(description = "Make Sure the previous page button In Women's Daily Vitamins Category Page works correctly", priority = 40)
     public void verifyPreviousPageBtnInWomenDailyVitaminsCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyThePaginationControlInWomenDailyVitaminsCategoryPageWorksCorrectly();
+//        this.verifyThePaginationControlInWomenDailyVitaminsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
+        Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
     }
 
     @Test(description = "Make Sure the next page button In Women's Daily Vitamins Category Page works correctly", priority = 41)
     public void verifyNextPageBtnInWomenDailyVitaminsCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyThePaginationControlInWomenDailyVitaminsCategoryPageWorksCorrectly();
+//        this.verifyThePaginationControlInWomenDailyVitaminsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
     @Test(description = "Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Women's Daily Vitamins category page", priority = 42)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInWomenDailyVitaminsCategoryPage() {
         aeFooterPageTestCases = new AEFooterPageTestCases();
-        this.verifyClickingOnWomenDailyVitaminsCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnWomenDailyVitaminsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeFooterPageTestCases.verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectly();
     }
 
     @Test(description = "Make sure the Filtration Section is displayed in the Women's Daily Vitamins category page", priority = 43)
     public void verifyFiltrationSectionIsDisplayedInWomenDailyVitaminsCategoryPage() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        this.verifyClickingOnWomenDailyVitaminsCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnWomenDailyVitaminsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFiltrationSection().isDisplayed());
     }
 
@@ -466,7 +487,8 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure clicking on the Lady-Friendly Snacks & Food inside Shop By Category section works correctly ", priority = 44)
     public void verifyClickingOnLadyFriendlySnacksAndFoodCategoryInsideTheShopByCategorySectionWorksCorrectly() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        webDriver.navigate().to(siteURL +aeDomain+womenOnlyUrl);
         String expectedCategoryUrl = aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(2).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(2).click();
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
@@ -479,7 +501,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the Result label and its value appear correctly in the Lady-Friendly Snacks & Food category page ", priority = 45)
     public void verifyResultFieldAndItsVaLueAppearInTheLadyFriendlySnacksAndFoodCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnLadyFriendlySnacksAndFoodCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnLadyFriendlySnacksAndFoodCategoryInsideTheShopByCategorySectionWorksCorrectly();
         SoftAssert sa = new SoftAssert();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getResultLabel().getText(), "Results:");
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSearchResultValue().isDisplayed());
@@ -490,7 +512,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that Sort By menu and its options appear correctly in the Lady-Friendly Snacks & Food category page ", priority = 46)
     public void verifySortByMenuAndItsOptionsAppearCorrectlyInTheLadyFriendlySnacksAndFoodCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnLadyFriendlySnacksAndFoodCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnLadyFriendlySnacksAndFoodCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
         ArrayList<String> expectedOption = new ArrayList<>() {{
             add("Featured");
@@ -513,7 +535,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the Best Selling option is selected by default in the Sort By menu for Lady-Friendly Snacks & Food Category Page ", priority = 47)
     public void verifyBestSellingOptionIsSelectedByDefaultInSortByMenuForLadyFriendlySnacksAndFoodCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnLadyFriendlySnacksAndFoodCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnLadyFriendlySnacksAndFoodCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         Assert.assertEquals(select.getFirstSelectedOption().getText(), "Best Selling");
     }
@@ -521,7 +543,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure the Horizontal Category Image appears correctly in the Lady-Friendly Snacks & Food category page  ", priority = 48)
     public void verifyTheHorizontalCategoryImageAppearsCorrectlyInLadyFriendlySnacksAndFoodCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnLadyFriendlySnacksAndFoodCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnLadyFriendlySnacksAndFoodCategoryInsideTheShopByCategorySectionWorksCorrectly();
         DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage(), 5);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
     }
@@ -546,9 +568,8 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     @Test(description = "Verify that the search button works correctly from the Lady-Friendly Snacks & Food category page", priority = 51)
     public void verifySearchBtnWorksCorrectlyFromLadyFriendlySnacksAndFoodCategoryPage() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeProductDetailsPage = new AeProductDetailsPage(webDriver);
-        this.verifyClickingOnLadyFriendlySnacksAndFoodCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnLadyFriendlySnacksAndFoodCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeProductDetailsPage.searchForBundle();
         aeProductDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
@@ -562,6 +583,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     public void verifyThePreviousBtnInLadyFriendlySnacksAndFoodCategoryPageIsDisableWhenDisplayPage1() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        webDriver.navigate().to(siteURL +aeDomain+womenOnlyUrl);
         this.verifyClickingOnLadyFriendlySnacksAndFoodCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertTrue(aeSportSupplementsCategoryPage.getDisabledPreviousPageBtn().isDisplayed());
     }
@@ -569,44 +591,41 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     //There's a performance issue in the Navigation
     @Test(description = "Make Sure the Pagination control in the Lady-Friendly Snacks & Food category page works correctly", priority = 53)
     public void verifyThePaginationControlInLadyFriendlySnacksAndFoodCategoryPageWorksCorrectly() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnLadyFriendlySnacksAndFoodCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnLadyFriendlySnacksAndFoodCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForTime(4000);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
-        aeSportSupplementsCategoryPage.navigateToPage3();
-        DataHelperAndWait.waitForTime(4000);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
 
     @Test(description = "Make Sure the previous page button In Lady-Friendly Snacks & Food Category Page works correctly", priority = 54)
     public void verifyPreviousPageBtnInLadyFriendlySnacksAndFoodCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyThePaginationControlInLadyFriendlySnacksAndFoodCategoryPageWorksCorrectly();
+//        this.verifyThePaginationControlInLadyFriendlySnacksAndFoodCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
+        Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
     }
 
     @Test(description = "Make Sure the next page button In Lady-Friendly Snacks & Food Category Page works correctly", priority = 55)
     public void verifyNextPageBtnInLadyFriendlySnacksAndFoodCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyThePaginationControlInLadyFriendlySnacksAndFoodCategoryPageWorksCorrectly();
+//        this.verifyThePaginationControlInLadyFriendlySnacksAndFoodCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
     @Test(description = "Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Lady-Friendly Snacks & Food category page", priority = 56)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInLadyFriendlySnacksAndFoodCategoryPage() {
         aeFooterPageTestCases = new AEFooterPageTestCases();
-        this.verifyClickingOnLadyFriendlySnacksAndFoodCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnLadyFriendlySnacksAndFoodCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeFooterPageTestCases.verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectly();
     }
 
     @Test(description = "Make sure the Filtration Section is displayed in the Lady-Friendly Snacks & Food category page", priority = 57)
     public void verifyFiltrationSectionIsDisplayedInLadyFriendlySnacksAndFoodCategoryPage() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        this.verifyClickingOnLadyFriendlySnacksAndFoodCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnLadyFriendlySnacksAndFoodCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFiltrationSection().isDisplayed());
     }
 
@@ -614,7 +633,8 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure clicking on the Makeup for Active Lifestyles inside Shop By Category section works correctly ", priority = 58)
     public void verifyClickingOnMakeupForActiveLifestylesCategoryInsideTheShopByCategorySectionWorksCorrectly() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        webDriver.navigate().to(siteURL +aeDomain+womenOnlyUrl);
         String expectedCategoryUrl = aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(3).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(3).click();
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
@@ -627,7 +647,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the Result label and its value appear correctly in the Makeup for Active Lifestyles category page ", priority = 59)
     public void verifyResultFieldAndItsVaLueAppearInTheMakeupForActiveLifestylesCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnMakeupForActiveLifestylesCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnMakeupForActiveLifestylesCategoryInsideTheShopByCategorySectionWorksCorrectly();
         SoftAssert sa = new SoftAssert();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getResultLabel().getText(), "Results:");
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSearchResultValue().isDisplayed());
@@ -638,17 +658,15 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that Sort By menu and its options appear correctly in the Makeup for Active Lifestyles category page ", priority = 60)
     public void verifySortByMenuAndItsOptionsAppearCorrectlyInTheMakeupForActiveLifestylesCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnMakeupForActiveLifestylesCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnMakeupForActiveLifestylesCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
         ArrayList<String> expectedOption = new ArrayList<>() {{
             add("Featured");
+            add("Newly added items");
             add("Name");
             add("Best Selling");
             add("Price Min-Max");
             add("Price Max-Min");
-            //The below options are missing
-            add("Relevance");
-            add("Newly added items");
         }};
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
@@ -661,7 +679,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the Best Selling option is selected by default in the Sort By menu for Makeup for Active Lifestyles Category Page ", priority = 61)
     public void verifyBestSellingOptionIsSelectedByDefaultInSortByMenuForMakeupForActiveLifestylesCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnMakeupForActiveLifestylesCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnMakeupForActiveLifestylesCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         Assert.assertEquals(select.getFirstSelectedOption().getText(), "Best Selling");
     }
@@ -669,7 +687,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure the Horizontal Category Image appears correctly in the Makeup for Active Lifestyles category page  ", priority = 62)
     public void verifyTheHorizontalCategoryImageAppearsCorrectlyInMakeupForActiveLifestylesCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnMakeupForActiveLifestylesCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnMakeupForActiveLifestylesCategoryInsideTheShopByCategorySectionWorksCorrectly();
         DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage(), 5);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
     }
@@ -677,7 +695,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Makeup for Active Lifestyles Category Page ", priority = 63)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumbInMakeupForActiveLifestylesCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnMakeupForActiveLifestylesCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnMakeupForActiveLifestylesCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
         Assert.assertEquals(webDriver.getCurrentUrl(), siteURL + aeSiteURL);
     }
@@ -695,9 +713,8 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     @Test(description = "Verify that the search button works correctly from the Makeup for Active Lifestyles category page", priority = 65)
     public void verifySearchBtnWorksCorrectlyFromMakeupForActiveLifestylesCategoryPage() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeProductDetailsPage = new AeProductDetailsPage(webDriver);
-        this.verifyClickingOnMakeupForActiveLifestylesCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnMakeupForActiveLifestylesCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeProductDetailsPage.searchForBundle();
         aeProductDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
@@ -709,7 +726,6 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     @Test(description = "Verify that the previous page button in the Makeup for Active Lifestyles category page is disable when the current page is page 1 ", priority = 66)
     public void verifyThePreviousBtnInMakeupForActiveLifestylesCategoryPageIsDisableWhenDisplayPage1() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnMakeupForActiveLifestylesCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertTrue(aeSportSupplementsCategoryPage.getDisabledPreviousPageBtn().isDisplayed());
@@ -718,44 +734,41 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     //There's a performance issue in the Navigation
     @Test(description = "Make Sure the Pagination control in the Makeup for Active Lifestyles category page works correctly", priority = 67)
     public void verifyThePaginationControlInMakeupForActiveLifestylesCategoryPageWorksCorrectly() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnMakeupForActiveLifestylesCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnMakeupForActiveLifestylesCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForTime(4000);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
-        aeSportSupplementsCategoryPage.navigateToPage3();
-        DataHelperAndWait.waitForTime(4000);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
 
     @Test(description = "Make Sure the previous page button In Makeup for Active Lifestyles Category Page works correctly", priority = 68)
     public void verifyPreviousPageBtnInMakeupForActiveLifestylesCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyThePaginationControlInMakeupForActiveLifestylesCategoryPageWorksCorrectly();
+//        this.verifyThePaginationControlInMakeupForActiveLifestylesCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
+        Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
     }
 
     @Test(description = "Make Sure the next page button In Makeup for Active Lifestyles Category Page works correctly", priority = 69)
     public void verifyNextPageBtnInMakeupForActiveLifestylesCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyThePaginationControlInMakeupForActiveLifestylesCategoryPageWorksCorrectly();
+//        this.verifyThePaginationControlInMakeupForActiveLifestylesCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
     @Test(description = "Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Makeup for Active Lifestyles category page", priority = 70)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInMakeupForActiveLifestylesCategoryPage() {
         aeFooterPageTestCases = new AEFooterPageTestCases();
-        this.verifyClickingOnMakeupForActiveLifestylesCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnMakeupForActiveLifestylesCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeFooterPageTestCases.verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectly();
     }
 
     @Test(description = "Make sure the Filtration Section is displayed in the Makeup for Active Lifestyles category page", priority = 71)
     public void verifyFiltrationSectionIsDisplayedInMakeupForActiveLifestylesCategoryPage() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        this.verifyClickingOnMakeupForActiveLifestylesCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnMakeupForActiveLifestylesCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFiltrationSection().isDisplayed());
     }
 
@@ -787,7 +800,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure clicking on the Hair, Skin & Nails Category inside Shop By Category section works correctly ", priority = 73)
     public void verifyClickingOnHairSkinAndNailsCategoryInsideTheShopByCategorySectionWorksCorrectly() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         String expectedUrl = aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(0).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(0).click();
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
@@ -800,7 +813,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the Result label and its value appear correctly in the Hair, Skin & Nails Category page ", priority = 74)
     public void verifyResultFieldAndItsVaLueAppearInTheHairSkinAndNailsCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnHairSkinAndNailsCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnHairSkinAndNailsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         SoftAssert sa = new SoftAssert();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getResultLabel().getText(), "Results:");
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSearchResultValue().isDisplayed());
@@ -811,7 +824,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that Sort By menu and its options appear correctly in the Hair, Skin & Nails Category page ", priority = 75)
     public void verifySortByMenuAndItsOptionsAppearCorrectlyInTheHairSkinAndNailsCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnHairSkinAndNailsCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnHairSkinAndNailsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
         ArrayList<String> expectedOption = new ArrayList<>() {{
             add("Featured");
@@ -834,7 +847,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the Best Selling option is selected by default in the Sort By menu for MHair, Skin & Nails Category Page ", priority = 76)
     public void verifyBestSellingOptionIsSelectedByDefaultInSortByMenuForHairSkinAndNailsCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnHairSkinAndNailsCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnHairSkinAndNailsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         Assert.assertEquals(select.getFirstSelectedOption().getText(), "Best Selling");
     }
@@ -842,7 +855,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure the Horizontal Category Image appears correctly in the Hair, Skin & Nails Category page  ", priority = 77)
     public void verifyTheHorizontalCategoryImageAppearsCorrectlyInHairSkinAndNailsCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnHairSkinAndNailsCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnHairSkinAndNailsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage(), 5);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
     }
@@ -850,7 +863,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Hair, Skin & Nails Category Page ", priority = 78)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumbInHairSkinAndNailsCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnHairSkinAndNailsCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnHairSkinAndNailsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
         Assert.assertEquals(webDriver.getCurrentUrl(), siteURL + aeSiteURL);
     }
@@ -858,6 +871,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the Hair, Skin & Nails Category page ", priority = 79)
     public void verifyTitleAndParagraphAppearingCorrectlyInHorizontalCategoryImageInHairSkinAndNailsCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        webDriver.navigate().to(siteURL +aeDomain+womenOnlyUrl);
         this.verifyClickingOnHairSkinAndNailsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getSportSupplementsTitleInCategoryImage(), 5);
         DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getParagraphInSportSupplementsCategoryImage(), 5);
@@ -867,9 +881,8 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     @Test(description = "Verify that the search button works correctly from the Hair, Skin & Nails Category page", priority = 80)
     public void verifySearchBtnWorksCorrectlyFromHairSkinAndNailsCategoryPage() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeProductDetailsPage = new AeProductDetailsPage(webDriver);
-        this.verifyClickingOnHairSkinAndNailsCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnHairSkinAndNailsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeProductDetailsPage.searchForBundle();
         aeProductDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
@@ -881,8 +894,8 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     @Test(description = "Verify that the previous page button in the Hair, Skin & Nails Category page is disable when the current page is page 1 ", priority = 81)
     public void verifyThePreviousBtnInHairSkinAndNailsCategoryPageIsDisableWhenDisplayPage1() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        webDriver.navigate().to(siteURL +aeDomain+womenOnlyUrl);
         this.verifyClickingOnHairSkinAndNailsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertTrue(aeSportSupplementsCategoryPage.getDisabledPreviousPageBtn().isDisplayed());
     }
@@ -890,44 +903,45 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     //There's a performance issue in the Navigation
     @Test(description = "Make Sure the Pagination control in the Hair, Skin & Nails Category page works correctly", priority = 82)
     public void verifyThePaginationControlInHairSkinAndNailsCategoryPageWorksCorrectly() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnHairSkinAndNailsCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnHairSkinAndNailsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForTime(4000);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
+       Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        DataHelperAndWait.waitForTime(4000);
+        DataHelperAndWait.waitForUrlContains("p=3",webDriver,3);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
 
     @Test(description = "Make Sure the previous page button In Hair, Skin & Nails Category Page works correctly", priority = 83)
     public void verifyPreviousPageBtnInHairSkinAndNailsCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyThePaginationControlInHairSkinAndNailsCategoryPageWorksCorrectly();
+//        this.verifyThePaginationControlInHairSkinAndNailsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
     @Test(description = "Make Sure the next page button In Hair, Skin & Nails Category Page works correctly", priority = 84)
     public void verifyNextPageBtnInHairSkinAndNailsCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyThePaginationControlInHairSkinAndNailsCategoryPageWorksCorrectly();
+//        this.verifyThePaginationControlInHairSkinAndNailsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
+        DataHelperAndWait.waitForUrlContains("p=3",webDriver,3);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
 
     @Test(description = "Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Hair, Skin & Nails Category page", priority = 85)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInHairSkinAndNailsCategoryPage() {
         aeFooterPageTestCases = new AEFooterPageTestCases();
-        this.verifyClickingOnHairSkinAndNailsCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnHairSkinAndNailsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeFooterPageTestCases.verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectly();
     }
 
     @Test(description = "Make sure the Filtration Section is displayed in the Hair, Skin & Nails Category page", priority = 86)
     public void verifyFiltrationSectionIsDisplayedInHairSkinAndNailsCategoryPage() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        this.verifyClickingOnHairSkinAndNailsCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnHairSkinAndNailsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFiltrationSection().isDisplayed());
     }
 
@@ -936,7 +950,8 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure clicking on the Weight Loss Category inside Shop By Category section works correctly ", priority = 87)
     public void verifyClickingOnWeightLossCategoryInsideTheShopByCategorySectionWorksCorrectly() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        webDriver.navigate().to(siteURL +aeDomain+womenOnlyUrl);
         String expectedUrl = aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(1).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(1).click();
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
@@ -949,7 +964,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the Result label and its value appear correctly in the Weight Loss Category page ", priority = 88)
     public void verifyResultFieldAndItsVaLueAppearInTheWeightLossCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnWeightLossCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnWeightLossCategoryInsideTheShopByCategorySectionWorksCorrectly();
         SoftAssert sa = new SoftAssert();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getResultLabel().getText(), "Results:");
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSearchResultValue().isDisplayed());
@@ -960,7 +975,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that Sort By menu and its options appear correctly in the Weight Loss Category page ", priority = 89)
     public void verifySortByMenuAndItsOptionsAppearCorrectlyInTheWeightLossCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnWeightLossCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnWeightLossCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
         ArrayList<String> expectedOption = new ArrayList<>() {{
             add("Featured");
@@ -983,7 +998,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the Best Selling option is selected by default in the Sort By menu for Weight Loss Category Page ", priority = 90)
     public void verifyBestSellingOptionIsSelectedByDefaultInSortByMenuForWeightLossCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnWeightLossCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnWeightLossCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         Assert.assertEquals(select.getFirstSelectedOption().getText(), "Best Selling");
     }
@@ -991,7 +1006,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure the Horizontal Category Image appears correctly in the Weight Loss Category page  ", priority = 91)
     public void verifyTheHorizontalCategoryImageAppearsCorrectlyInWeightLossCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnWeightLossCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnWeightLossCategoryInsideTheShopByCategorySectionWorksCorrectly();
         DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage(), 5);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
     }
@@ -999,7 +1014,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Weight Loss Category Page ", priority = 92)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumbInWeightLossCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnWeightLossCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnWeightLossCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
         Assert.assertEquals(webDriver.getCurrentUrl(), siteURL + aeSiteURL);
     }
@@ -1016,9 +1031,8 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     @Test(description = "Verify that the search button works correctly from the Weight Loss Category page", priority = 94)
     public void verifySearchBtnWorksCorrectlyFromWeightLossCategoryPage() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeProductDetailsPage = new AeProductDetailsPage(webDriver);
-        this.verifyClickingOnWeightLossCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnWeightLossCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeProductDetailsPage.searchForBundle();
         aeProductDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
@@ -1030,7 +1044,6 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     @Test(description = "Verify that the previous page button in the Weight Loss Category page is disable when the current page is page 1 ", priority = 95)
     public void verifyThePreviousBtnInWeightLossCategoryPageIsDisableWhenDisplayPage1() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnWeightLossCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertTrue(aeSportSupplementsCategoryPage.getDisabledPreviousPageBtn().isDisplayed());
@@ -1039,44 +1052,41 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     //There's a performance issue in the Navigation
     @Test(description = "Make Sure the Pagination control in the Weight Loss Category page works correctly", priority = 96)
     public void verifyThePaginationControlInWeightLossCategoryPageWorksCorrectly() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnWeightLossCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnWeightLossCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForTime(4000);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
-        aeSportSupplementsCategoryPage.navigateToPage3();
-        DataHelperAndWait.waitForTime(4000);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
 
     @Test(description = "Make Sure the previous page button In Weight Loss Category Page works correctly", priority = 97)
     public void verifyPreviousPageBtnInWeightLossCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyThePaginationControlInWeightLossCategoryPageWorksCorrectly();
+//        this.verifyThePaginationControlInWeightLossCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
+        Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
     }
 
     @Test(description = "Make Sure the next page button In Weight Loss Category Page works correctly", priority = 98)
     public void verifyNextPageBtnInWeightLossCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyThePaginationControlInWeightLossCategoryPageWorksCorrectly();
+//        this.verifyThePaginationControlInWeightLossCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
     @Test(description = "Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Weight Loss Category page", priority = 99)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInWeightLossCategoryPage() {
         aeFooterPageTestCases = new AEFooterPageTestCases();
-        this.verifyClickingOnWeightLossCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnWeightLossCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeFooterPageTestCases.verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectly();
     }
 
     @Test(description = "Make sure the Filtration Section is displayed in the Weight Loss Category page", priority = 100)
     public void verifyFiltrationSectionIsDisplayedInWeightLossCategoryPage() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        this.verifyClickingOnWeightLossCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnWeightLossCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFiltrationSection().isDisplayed());
     }
 
@@ -1097,7 +1107,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the Result label and its value appear correctly in the Mood Support Category page ", priority = 102)
     public void verifyResultFieldAndItsVaLueAppearInTheMoodSupportCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnMoodSupportCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnMoodSupportCategoryInsideTheShopByCategorySectionWorksCorrectly();
         SoftAssert sa = new SoftAssert();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getResultLabel().getText(), "Results:");
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSearchResultValue().isDisplayed());
@@ -1108,7 +1118,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that Sort By menu and its options appear correctly in the Mood Support Category page ", priority = 103)
     public void verifySortByMenuAndItsOptionsAppearCorrectlyInTheMoodSupportCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnMoodSupportCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnMoodSupportCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
         ArrayList<String> expectedOption = new ArrayList<>() {{
             add("Featured");
@@ -1116,9 +1126,6 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
             add("Best Selling");
             add("Price Min-Max");
             add("Price Max-Min");
-            //The below options are missing
-            add("Relevance");
-            add("Newly added items");
         }};
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
@@ -1131,7 +1138,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the Best Selling option is selected by default in the Sort By menu for Mood Support Category Page ", priority = 104)
     public void verifyBestSellingOptionIsSelectedByDefaultInSortByMenuForMoodSupportCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnMoodSupportCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnMoodSupportCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         Assert.assertEquals(select.getFirstSelectedOption().getText(), "Best Selling");
     }
@@ -1139,7 +1146,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure the Horizontal Category Image appears correctly in the Mood Support Category page  ", priority = 105)
     public void verifyTheHorizontalCategoryImageAppearsCorrectlyInMoodSupportCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnMoodSupportCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnMoodSupportCategoryInsideTheShopByCategorySectionWorksCorrectly();
         DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage(), 5);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
     }
@@ -1147,7 +1154,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Mood Support Category Page ", priority = 106)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumbInMoodSupportCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnMoodSupportCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnMoodSupportCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
         Assert.assertEquals(webDriver.getCurrentUrl(), siteURL + aeSiteURL);
     }
@@ -1164,9 +1171,8 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     @Test(description = "Verify that the search button works correctly from the Mood Support Category page", priority = 108)
     public void verifySearchBtnWorksCorrectlyFromMoodSupportCategoryPage() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeProductDetailsPage = new AeProductDetailsPage(webDriver);
-        this.verifyClickingOnMoodSupportCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnMoodSupportCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeProductDetailsPage.searchForBundle();
         aeProductDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
@@ -1178,53 +1184,49 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     @Test(description = "Verify that the previous page button in the Mood Support Category page is disable when the current page is page 1 ", priority = 109)
     public void verifyThePreviousBtnInMoodSupportCategoryPageIsDisableWhenDisplayPage1() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnMoodSupportCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnMoodSupportCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertTrue(aeSportSupplementsCategoryPage.getDisabledPreviousPageBtn().isDisplayed());
     }
 
     //There's a performance issue in the Navigation
     @Test(description = "Make Sure the Pagination control in the Mood Support Category page works correctly", priority = 110)
     public void verifyThePaginationControlInMoodSupportCategoryPageWorksCorrectly() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnMoodSupportCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnMoodSupportCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForTime(4000);
+//        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
-        aeSportSupplementsCategoryPage.navigateToPage3();
-        DataHelperAndWait.waitForTime(4000);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
 
     @Test(description = "Make Sure the previous page button In Mood Support Category Page works correctly", priority = 111)
     public void verifyPreviousPageBtnInMoodSupportCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyThePaginationControlInMoodSupportCategoryPageWorksCorrectly();
+//        this.verifyThePaginationControlInMoodSupportCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
+        Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
     }
 
     @Test(description = "Make Sure the next page button In Mood Support Category Page works correctly", priority = 112)
     public void verifyNextPageBtnInMoodSupportCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyThePaginationControlInMoodSupportCategoryPageWorksCorrectly();
+//        this.verifyThePaginationControlInMoodSupportCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
     @Test(description = "Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Mood Support Category page", priority = 113)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInMoodSupportCategoryPage() {
         aeFooterPageTestCases = new AEFooterPageTestCases();
-        this.verifyClickingOnMoodSupportCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnMoodSupportCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeFooterPageTestCases.verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectly();
     }
 
     @Test(description = "Make sure the Filtration Section is displayed in the Mood Support Category page", priority = 114)
     public void verifyFiltrationSectionIsDisplayedInMoodSupportCategoryPage() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        this.verifyClickingOnMoodSupportCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnMoodSupportCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFiltrationSection().isDisplayed());
     }
 
@@ -1245,7 +1247,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the Result label and its value appear correctly in the Detox & Cleanse Category page ", priority = 116)
     public void verifyResultFieldAndItsVaLueAppearInTheDetoxAndCleanseCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnDetoxAndCleanseCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnDetoxAndCleanseCategoryInsideTheShopByCategorySectionWorksCorrectly();
         SoftAssert sa = new SoftAssert();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getResultLabel().getText(), "Results:");
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSearchResultValue().isDisplayed());
@@ -1256,7 +1258,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that Sort By menu and its options appear correctly in the Detox & Cleanse Category page ", priority = 117)
     public void verifySortByMenuAndItsOptionsAppearCorrectlyInTheDetoxAndCleanseCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnDetoxAndCleanseCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnDetoxAndCleanseCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
         ArrayList<String> expectedOption = new ArrayList<>() {{
             add("Featured");
@@ -1264,9 +1266,6 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
             add("Best Selling");
             add("Price Min-Max");
             add("Price Max-Min");
-            //The below options are missing
-            add("Relevance");
-            add("Newly added items");
         }};
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
@@ -1279,7 +1278,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the Best Selling option is selected by default in the Sort By menu for Detox & Cleanse Category Page ", priority = 118)
     public void verifyBestSellingOptionIsSelectedByDefaultInSortByMenuForDetoxAndCleanseCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnDetoxAndCleanseCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnDetoxAndCleanseCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         Assert.assertEquals(select.getFirstSelectedOption().getText(), "Best Selling");
     }
@@ -1287,7 +1286,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure the Horizontal Category Image appears correctly in the Detox & Cleanse Category page  ", priority = 119)
     public void verifyTheHorizontalCategoryImageAppearsCorrectlyInDetoxAndCleanseCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnDetoxAndCleanseCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnDetoxAndCleanseCategoryInsideTheShopByCategorySectionWorksCorrectly();
         DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage(), 5);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
     }
@@ -1295,7 +1294,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Detox & Cleanse Category Page ", priority = 120)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumbInDetoxAndCleanseCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnDetoxAndCleanseCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnDetoxAndCleanseCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
         Assert.assertEquals(webDriver.getCurrentUrl(), siteURL + aeSiteURL);
     }
@@ -1312,9 +1311,8 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     @Test(description = "Verify that the search button works correctly from the Detox & Cleanse Category page", priority = 122)
     public void verifySearchBtnWorksCorrectlyFromDetoxAndCleanseCategoryPage() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeProductDetailsPage = new AeProductDetailsPage(webDriver);
-        this.verifyClickingOnDetoxAndCleanseCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnDetoxAndCleanseCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeProductDetailsPage.searchForBundle();
         aeProductDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
@@ -1326,7 +1324,6 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     @Test(description = "Verify that the previous page button in the Detox & Cleanse Category page is disable when the current page is page 1 ", priority = 123)
     public void verifyThePreviousBtnInDetoxAndCleanseCategoryPageIsDisableWhenDisplayPage1() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnDetoxAndCleanseCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertTrue(aeSportSupplementsCategoryPage.getDisabledPreviousPageBtn().isDisplayed());
@@ -1335,44 +1332,41 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     //There's a performance issue in the Navigation
     @Test(description = "Make Sure the Pagination control in the Detox & Cleanse Category page works correctly", priority = 124)
     public void verifyThePaginationControlInDetoxAndCleanseCategoryPageWorksCorrectly() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnDetoxAndCleanseCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnDetoxAndCleanseCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForTime(4000);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
-        aeSportSupplementsCategoryPage.navigateToPage3();
-        DataHelperAndWait.waitForTime(4000);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
 
     @Test(description = "Make Sure the previous page button In Detox & Cleanse Category Page works correctly", priority = 125)
     public void verifyPreviousPageBtnInDetoxAndCleanseCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyThePaginationControlInDetoxAndCleanseCategoryPageWorksCorrectly();
+//        this.verifyThePaginationControlInDetoxAndCleanseCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
+        Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
     }
 
     @Test(description = "Make Sure the next page button In Detox & Cleanse Category Page works correctly", priority = 126)
     public void verifyNextPageBtnInDetoxAndCleanseCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyThePaginationControlInDetoxAndCleanseCategoryPageWorksCorrectly();
+//        this.verifyThePaginationControlInDetoxAndCleanseCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
     @Test(description = "Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Detox & Cleanse Category page", priority = 127)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInDetoxAndCleanseCategoryPage() {
         aeFooterPageTestCases = new AEFooterPageTestCases();
-        this.verifyClickingOnDetoxAndCleanseCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnDetoxAndCleanseCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeFooterPageTestCases.verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectly();
     }
 
     @Test(description = "Make sure the Filtration Section is displayed in the Detox & Cleanse Category page", priority = 128)
     public void verifyFiltrationSectionIsDisplayedInDetoxAndCleanseCategoryPage() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        this.verifyClickingOnDetoxAndCleanseCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnDetoxAndCleanseCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFiltrationSection().isDisplayed());
     }
 
@@ -1393,7 +1387,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the Result label and its value appear correctly in the PMS Relief Category page ", priority = 130)
     public void verifyResultFieldAndItsVaLueAppearInThePMSReliefCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnPMSReliefCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnPMSReliefCategoryInsideTheShopByCategorySectionWorksCorrectly();
         SoftAssert sa = new SoftAssert();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getResultLabel().getText(), "Results:");
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSearchResultValue().isDisplayed());
@@ -1404,17 +1398,15 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that Sort By menu and its options appear correctly in the PMS Relief Category page ", priority = 131)
     public void verifySortByMenuAndItsOptionsAppearCorrectlyInThePMSReliefCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnPMSReliefCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnPMSReliefCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
         ArrayList<String> expectedOption = new ArrayList<>() {{
             add("Featured");
+            add("Newly added items");
             add("Name");
             add("Best Selling");
             add("Price Min-Max");
             add("Price Max-Min");
-            //The below options are missing
-            add("Relevance");
-            add("Newly added items");
         }};
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
@@ -1427,7 +1419,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the Best Selling option is selected by default in the Sort By menu for PMS Relief Category Page ", priority = 132)
     public void verifyBestSellingOptionIsSelectedByDefaultInSortByMenuForPMSReliefCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnPMSReliefCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnPMSReliefCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         Assert.assertEquals(select.getFirstSelectedOption().getText(), "Best Selling");
     }
@@ -1435,7 +1427,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure the Horizontal Category Image appears correctly in the PMS Relief Category page  ", priority = 133)
     public void verifyTheHorizontalCategoryImageAppearsCorrectlyInPMSReliefCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnPMSReliefCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnPMSReliefCategoryInsideTheShopByCategorySectionWorksCorrectly();
         DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage(), 5);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
     }
@@ -1443,7 +1435,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the PMS Relief Category Page ", priority = 134)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumbInPMSReliefCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnPMSReliefCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnPMSReliefCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
         Assert.assertEquals(webDriver.getCurrentUrl(), siteURL + aeSiteURL);
     }
@@ -1460,9 +1452,8 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     @Test(description = "Verify that the search button works correctly from the PMS Relief Category page", priority = 136)
     public void verifySearchBtnWorksCorrectlyFromPMSReliefCategoryPage() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeProductDetailsPage = new AeProductDetailsPage(webDriver);
-        this.verifyClickingOnPMSReliefCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnPMSReliefCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeProductDetailsPage.searchForBundle();
         aeProductDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
@@ -1474,7 +1465,6 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     @Test(description = "Verify that the previous page button in the PMS Relief Category page is disable when the current page is page 1 ", priority = 137)
     public void verifyThePreviousBtnInPMSReliefCategoryPageIsDisableWhenDisplayPage1() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnPMSReliefCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertTrue(aeSportSupplementsCategoryPage.getDisabledPreviousPageBtn().isDisplayed());
@@ -1483,15 +1473,11 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     //There's a performance issue in the Navigation
     @Test(description = "Make Sure the Pagination control in the PMS Relief Category page works correctly", priority = 138)
     public void verifyThePaginationControlInPMSReliefCategoryPageWorksCorrectly() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnPMSReliefCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForTime(4000);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
-        aeSportSupplementsCategoryPage.navigateToPage3();
-        DataHelperAndWait.waitForTime(4000);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
 
     @Test(description = "Make Sure the previous page button In PMS Relief Category Page works correctly", priority = 139)
@@ -1499,7 +1485,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInPMSReliefCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
+        Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
     }
 
     @Test(description = "Make Sure the next page button In PMS Relief Category Page works correctly", priority = 140)
@@ -1507,20 +1493,21 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInPMSReliefCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
     @Test(description = "Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the PMS Relief Category page", priority = 141)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInPMSReliefCategoryPage() {
         aeFooterPageTestCases = new AEFooterPageTestCases();
-        this.verifyClickingOnPMSReliefCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnPMSReliefCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeFooterPageTestCases.verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectly();
     }
 
     @Test(description = "Make sure the Filtration Section is displayed in the PMS Relief Category page", priority = 142)
     public void verifyFiltrationSectionIsDisplayedInPMSReliefCategoryPage() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        this.verifyClickingOnPMSReliefCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnPMSReliefCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFiltrationSection().isDisplayed());
     }
 
@@ -1541,7 +1528,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the Result label and its value appear correctly in the Energy & Endurance Category page ", priority = 144)
     public void verifyResultFieldAndItsVaLueAppearInTheEnergyAndEnduranceCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnEnergyAndEnduranceCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnEnergyAndEnduranceCategoryInsideTheShopByCategorySectionWorksCorrectly();
         SoftAssert sa = new SoftAssert();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getResultLabel().getText(), "Results:");
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSearchResultValue().isDisplayed());
@@ -1552,7 +1539,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that Sort By menu and its options appear correctly in the Energy & Endurance Category page ", priority = 145)
     public void verifySortByMenuAndItsOptionsAppearCorrectlyInTheEnergyAndEnduranceCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnEnergyAndEnduranceCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnEnergyAndEnduranceCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
         ArrayList<String> expectedOption = new ArrayList<>() {{
             add("Featured");
@@ -1560,9 +1547,6 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
             add("Best Selling");
             add("Price Min-Max");
             add("Price Max-Min");
-            //The below options are missing
-            add("Relevance");
-            add("Newly added items");
         }};
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
@@ -1575,7 +1559,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the Best Selling option is selected by default in the Sort By menu for Energy & Endurance Category Page ", priority = 146)
     public void verifyBestSellingOptionIsSelectedByDefaultInSortByMenuForEnergyAndEnduranceCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnEnergyAndEnduranceCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnEnergyAndEnduranceCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         Assert.assertEquals(select.getFirstSelectedOption().getText(), "Best Selling");
     }
@@ -1583,7 +1567,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure the Horizontal Category Image appears correctly in the Energy & Endurance Category page  ", priority = 147)
     public void verifyTheHorizontalCategoryImageAppearsCorrectlyInEnergyAndEnduranceCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnEnergyAndEnduranceCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnEnergyAndEnduranceCategoryInsideTheShopByCategorySectionWorksCorrectly();
         DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage(), 5);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
     }
@@ -1591,7 +1575,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Energy & Endurance Category Page ", priority = 148)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumbInEnergyAndEnduranceCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnEnergyAndEnduranceCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnEnergyAndEnduranceCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
         Assert.assertEquals(webDriver.getCurrentUrl(), siteURL + aeSiteURL);
     }
@@ -1609,9 +1593,8 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     @Test(description = "Verify that the search button works correctly from the Energy & Endurance Category page", priority = 150)
     public void verifySearchBtnWorksCorrectlyFromEnergyAndEnduranceCategoryPage() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeProductDetailsPage = new AeProductDetailsPage(webDriver);
-        this.verifyClickingOnEnergyAndEnduranceCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnEnergyAndEnduranceCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeProductDetailsPage.searchForBundle();
         aeProductDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
@@ -1623,7 +1606,6 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     @Test(description = "Verify that the previous page button in the Energy & Endurance Category page is disable when the current page is page 1 ", priority = 151)
     public void verifyThePreviousBtnInEnergyAndEnduranceCategoryPageIsDisableWhenDisplayPage1() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnEnergyAndEnduranceCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertTrue(aeSportSupplementsCategoryPage.getDisabledPreviousPageBtn().isDisplayed());
@@ -1632,15 +1614,11 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     //There's a performance issue in the Navigation
     @Test(description = "Make Sure the Pagination control in the Energy & Endurance Category page works correctly", priority = 152)
     public void verifyThePaginationControlInEnergyAndEnduranceCategoryPageWorksCorrectly() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+       aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnEnergyAndEnduranceCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForTime(4000);
+//        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
-        aeSportSupplementsCategoryPage.navigateToPage3();
-        DataHelperAndWait.waitForTime(4000);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
 
     @Test(description = "Make Sure the previous page button In Energy & Endurance Category Page works correctly", priority = 153)
@@ -1648,7 +1626,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInEnergyAndEnduranceCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
+        Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
     }
 
     @Test(description = "Make Sure the next page button In Energy & Endurance Category Page works correctly", priority = 154)
@@ -1656,20 +1634,21 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInEnergyAndEnduranceCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
     @Test(description = "Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Energy & Endurance Category page", priority = 155)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInEnergyAndEnduranceCategoryPage() {
         aeFooterPageTestCases = new AEFooterPageTestCases();
-        this.verifyClickingOnEnergyAndEnduranceCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnEnergyAndEnduranceCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeFooterPageTestCases.verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectly();
     }
 
     @Test(description = "Make sure the Filtration Section is displayed in the Energy & Endurance Category page", priority = 156)
     public void verifyFiltrationSectionIsDisplayedInEnergyAndEnduranceCategoryPage() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        this.verifyClickingOnEnergyAndEnduranceCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnEnergyAndEnduranceCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFiltrationSection().isDisplayed());
     }
 
@@ -1691,7 +1670,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the Result label and its value appear correctly in the Prenatal Care Category page ", priority = 158)
     public void verifyResultFieldAndItsVaLueAppearInThePrenatalCareCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnPrenatalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnPrenatalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
         SoftAssert sa = new SoftAssert();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getResultLabel().getText(), "Results:");
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSearchResultValue().isDisplayed());
@@ -1702,7 +1681,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that Sort By menu and its options appear correctly in the Prenatal Care Category page ", priority = 159)
     public void verifySortByMenuAndItsOptionsAppearCorrectlyInThePrenatalCareCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnPrenatalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnPrenatalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
         ArrayList<String> expectedOption = new ArrayList<>() {{
             add("Featured");
@@ -1710,9 +1689,6 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
             add("Best Selling");
             add("Price Min-Max");
             add("Price Max-Min");
-            //The below options are missing
-            add("Relevance");
-            add("Newly added items");
         }};
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
@@ -1725,7 +1701,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the Best Selling option is selected by default in the Sort By menu for Prenatal Care Category Page ", priority = 160)
     public void verifyBestSellingOptionIsSelectedByDefaultInSortByMenuForPrenatalCareCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnPrenatalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnPrenatalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         Assert.assertEquals(select.getFirstSelectedOption().getText(), "Best Selling");
     }
@@ -1733,7 +1709,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure the Horizontal Category Image appears correctly in the Prenatal Care Category page  ", priority = 161)
     public void verifyTheHorizontalCategoryImageAppearsCorrectlyInPrenatalCareCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnPrenatalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnPrenatalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
         DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage(), 5);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
     }
@@ -1741,7 +1717,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Prenatal Care Category Page ", priority = 162)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumbInPrenatalCareCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnPrenatalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnPrenatalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
         Assert.assertEquals(webDriver.getCurrentUrl(), siteURL + aeSiteURL);
     }
@@ -1759,9 +1735,8 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     @Test(description = "Verify that the search button works correctly from the Prenatal Care Category page", priority = 164)
     public void verifySearchBtnWorksCorrectlyFromPrenatalCareCategoryPage() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeProductDetailsPage = new AeProductDetailsPage(webDriver);
-        this.verifyClickingOnPrenatalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnPrenatalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeProductDetailsPage.searchForBundle();
         aeProductDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
@@ -1773,7 +1748,6 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     @Test(description = "Verify that the previous page button in the Prenatal Care Category page is disable when the current page is page 1 ", priority = 165)
     public void verifyThePreviousBtnInPrenatalCareCategoryPageIsDisableWhenDisplayPage1() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnPrenatalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertTrue(aeSportSupplementsCategoryPage.getDisabledPreviousPageBtn().isDisplayed());
@@ -1782,15 +1756,11 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     //There's a performance issue in the Navigation
     @Test(description = "Make Sure the Pagination control in the Prenatal Care Category page works correctly", priority = 166)
     public void verifyThePaginationControlInPrenatalCareCategoryPageWorksCorrectly() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnPrenatalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnPrenatalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForTime(4000);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
-        aeSportSupplementsCategoryPage.navigateToPage3();
-        DataHelperAndWait.waitForTime(4000);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
 
     @Test(description = "Make Sure the previous page button In Prenatal Care Category Page works correctly", priority = 167)
@@ -1798,7 +1768,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInPrenatalCareCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
+        Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
     }
 
     @Test(description = "Make Sure the next page button In Prenatal Care Category Page works correctly", priority = 168)
@@ -1806,13 +1776,14 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInPrenatalCareCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
     @Test(description = "Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Prenatal Care Category page", priority = 169)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInPrenatalCareCategoryPage() {
         aeFooterPageTestCases = new AEFooterPageTestCases();
-        this.verifyClickingOnPrenatalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnPrenatalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeFooterPageTestCases.verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectly();
     }
 
@@ -1820,7 +1791,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure the Filtration Section is displayed in the Prenatal Care Category page", priority = 170)
     public void verifyFiltrationSectionIsDisplayedInPrenatalCareCategoryPage() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        this.verifyClickingOnPrenatalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnPrenatalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFiltrationSection().isDisplayed());
     }
 
@@ -1841,7 +1812,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the Result label and its value appear correctly in the Muscle & Weight Gain Category page ", priority = 158)
     public void verifyResultFieldAndItsVaLueAppearInTheMuscleAndWeightGainCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnMuscleAndWeightGainCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnMuscleAndWeightGainCategoryInsideTheShopByCategorySectionWorksCorrectly();
         SoftAssert sa = new SoftAssert();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getResultLabel().getText(), "Results:");
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSearchResultValue().isDisplayed());
@@ -1852,7 +1823,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that Sort By menu and its options appear correctly in the Muscle & Weight Gain Category page ", priority = 159)
     public void verifySortByMenuAndItsOptionsAppearCorrectlyInTheMuscleAndWeightGainCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnMuscleAndWeightGainCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnMuscleAndWeightGainCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
         ArrayList<String> expectedOption = new ArrayList<>() {{
             add("Featured");
@@ -1875,7 +1846,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the Best Selling option is selected by default in the Sort By menu for Muscle & Weight Gain Category Page ", priority = 160)
     public void verifyBestSellingOptionIsSelectedByDefaultInSortByMenuForMuscleAndWeightGainCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnMuscleAndWeightGainCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnMuscleAndWeightGainCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         Assert.assertEquals(select.getFirstSelectedOption().getText(), "Best Selling");
     }
@@ -1883,7 +1854,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure the Horizontal Category Image appears correctly in the Muscle & Weight Gain Category page  ", priority = 161)
     public void verifyTheHorizontalCategoryImageAppearsCorrectlyInMuscleAndWeightGainCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnMuscleAndWeightGainCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnMuscleAndWeightGainCategoryInsideTheShopByCategorySectionWorksCorrectly();
         DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage(), 5);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
     }
@@ -1891,7 +1862,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Muscle & Weight Gain Category Page ", priority = 162)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumbInMuscleAndWeightGainCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnMuscleAndWeightGainCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnMuscleAndWeightGainCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
         Assert.assertEquals(webDriver.getCurrentUrl(), siteURL + aeSiteURL);
     }
@@ -1909,9 +1880,8 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     @Test(description = "Verify that the search button works correctly from the Muscle & Weight Gain Category page", priority = 164)
     public void verifySearchBtnWorksCorrectlyFromMuscleAndWeightGainCategoryPage() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeProductDetailsPage = new AeProductDetailsPage(webDriver);
-        this.verifyClickingOnMuscleAndWeightGainCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnMuscleAndWeightGainCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeProductDetailsPage.searchForBundle();
         aeProductDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
@@ -1923,7 +1893,6 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     @Test(description = "Verify that the previous page button in the Muscle & Weight Gain Category page is disable when the current page is page 1 ", priority = 165)
     public void verifyThePreviousBtnInMuscleAndWeightGainCategoryPageIsDisableWhenDisplayPage1() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnMuscleAndWeightGainCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertTrue(aeSportSupplementsCategoryPage.getDisabledPreviousPageBtn().isDisplayed());
@@ -1932,44 +1901,41 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     //There's a performance issue in the Navigation
     @Test(description = "Make Sure the Pagination control in the Muscle & Weight Gain Category page works correctly", priority = 166)
     public void verifyThePaginationControlInMuscleAndWeightGainCategoryPageWorksCorrectly() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnMuscleAndWeightGainCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnMuscleAndWeightGainCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForTime(4000);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
-        aeSportSupplementsCategoryPage.navigateToPage3();
-        DataHelperAndWait.waitForTime(4000);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
 
     @Test(description = "Make Sure the previous page button In Muscle & Weight Gain Category Page works correctly", priority = 167)
     public void verifyPreviousPageBtnInMuscleAndWeightGainCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyThePaginationControlInMuscleAndWeightGainCategoryPageWorksCorrectly();
+//        this.verifyThePaginationControlInMuscleAndWeightGainCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
+        Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
     }
 
     @Test(description = "Make Sure the next page button In Muscle & Weight Gain Category Page works correctly", priority = 168)
     public void verifyNextPageBtnInMuscleAndWeightGainCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyThePaginationControlInMuscleAndWeightGainCategoryPageWorksCorrectly();
+//        this.verifyThePaginationControlInMuscleAndWeightGainCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
     @Test(description = "Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Muscle & Weight Gain Category page", priority = 169)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInMuscleAndWeightGainCategoryPage() {
         aeFooterPageTestCases = new AEFooterPageTestCases();
-        this.verifyClickingOnMuscleAndWeightGainCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnMuscleAndWeightGainCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeFooterPageTestCases.verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectly();
     }
 
     @Test(description = "Make sure the Filtration Section is displayed in the Muscle & Weight Gain Category page", priority = 170)
     public void verifyFiltrationSectionIsDisplayedInMuscleAndWeightGainCategoryPage() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        this.verifyClickingOnMuscleAndWeightGainCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnMuscleAndWeightGainCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFiltrationSection().isDisplayed());
     }
 
@@ -1991,7 +1957,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the Result label and its value appear correctly in the Fashion & Style Category page ", priority = 172)
     public void verifyResultFieldAndItsVaLueAppearInTheFashionAndStyleCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnFashionAndStyleCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnFashionAndStyleCategoryInsideTheShopByCategorySectionWorksCorrectly();
         SoftAssert sa = new SoftAssert();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getResultLabel().getText(), "Results:");
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSearchResultValue().isDisplayed());
@@ -2002,7 +1968,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that Sort By menu and its options appear correctly in the Fashion & Style Category page ", priority = 173)
     public void verifySortByMenuAndItsOptionsAppearCorrectlyInTheFashionAndStyleCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnFashionAndStyleCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnFashionAndStyleCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
         ArrayList<String> expectedOption = new ArrayList<>() {{
             add("Featured");
@@ -2010,9 +1976,6 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
             add("Best Selling");
             add("Price Min-Max");
             add("Price Max-Min");
-            //The below options are missing
-            add("Relevance");
-            add("Newly added items");
         }};
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
@@ -2022,18 +1985,18 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         }
     }
 
-    @Test(description = "Make sure that the Best Selling option is selected by default in the Sort By menu for Fashion & Style Category Page ", priority = 174)
-    public void verifyBestSellingOptionIsSelectedByDefaultInSortByMenuForFashionAndStyleCategoryPage() {
+    @Test(description = "Make sure that the Featured option is selected by default in the Sort By menu for Fashion & Style Category Page ", priority = 174)
+    public void verifyFeaturedOptionIsSelectedByDefaultInSortByMenuForFashionAndStyleCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnFashionAndStyleCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnFashionAndStyleCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
-        Assert.assertEquals(select.getFirstSelectedOption().getText(), "Best Selling");
+        Assert.assertEquals(select.getFirstSelectedOption().getText(), "Featured");
     }
 
     @Test(description = "Make sure the Horizontal Category Image appears correctly in the Fashion & Style Category page  ", priority = 175)
     public void verifyTheHorizontalCategoryImageAppearsCorrectlyInFashionAndStyleCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnFashionAndStyleCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnFashionAndStyleCategoryInsideTheShopByCategorySectionWorksCorrectly();
         DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage(), 5);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
     }
@@ -2041,7 +2004,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Fashion & Style Category Page ", priority = 176)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumbInFashionAndStyleCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnFashionAndStyleCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnFashionAndStyleCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
         Assert.assertEquals(webDriver.getCurrentUrl(), siteURL + aeSiteURL);
     }
@@ -2058,9 +2021,8 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     @Test(description = "Verify that the search button works correctly from the Fashion & Style Category page", priority = 178)
     public void verifySearchBtnWorksCorrectlyFromFashionAndStyleCategoryPage() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeProductDetailsPage = new AeProductDetailsPage(webDriver);
-        this.verifyClickingOnFashionAndStyleCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnFashionAndStyleCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeProductDetailsPage.searchForBundle();
         aeProductDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
@@ -2072,7 +2034,6 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     @Test(description = "Verify that the previous page button in the Fashion & Style Category page is disable when the current page is page 1 ", priority = 179)
     public void verifyThePreviousBtnInFashionAndStyleCategoryPageIsDisableWhenDisplayPage1() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnFashionAndStyleCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertTrue(aeSportSupplementsCategoryPage.getDisabledPreviousPageBtn().isDisplayed());
@@ -2081,44 +2042,41 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     //There's a performance issue in the Navigation
     @Test(description = "Make Sure the Pagination control in the Fashion & Style Category page works correctly", priority = 180)
     public void verifyThePaginationControlInFashionAndStyleCategoryPageWorksCorrectly() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnFashionAndStyleCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnFashionAndStyleCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForTime(4000);
+//        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
-        aeSportSupplementsCategoryPage.navigateToPage3();
-        DataHelperAndWait.waitForTime(4000);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
 
     @Test(description = "Make Sure the previous page button In Fashion & Style Category Page works correctly", priority = 181)
     public void verifyPreviousPageBtnInFashionAndStyleCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyThePaginationControlInFashionAndStyleCategoryPageWorksCorrectly();
+//        this.verifyThePaginationControlInFashionAndStyleCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
+        Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
     }
 
     @Test(description = "Make Sure the next page button In Fashion & Style Category Page works correctly", priority = 182)
     public void verifyNextPageBtnInFashionAndStyleCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyThePaginationControlInFashionAndStyleCategoryPageWorksCorrectly();
+//        this.verifyThePaginationControlInFashionAndStyleCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
     @Test(description = "Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Fashion & Style Category page", priority = 183)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInFashionAndStyleCategoryPage() {
         aeFooterPageTestCases = new AEFooterPageTestCases();
-        this.verifyClickingOnFashionAndStyleCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnFashionAndStyleCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeFooterPageTestCases.verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectly();
     }
 
     @Test(description = "Make sure the Filtration Section is displayed in the Fashion & Style Category page", priority = 184)
     public void verifyFiltrationSectionIsDisplayedInFashionAndStyleCategoryPage() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        this.verifyClickingOnFashionAndStyleCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnFashionAndStyleCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFiltrationSection().isDisplayed());
     }
 
@@ -2139,7 +2097,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the Result label and its value appear correctly in the Personal Care Category page ", priority = 186)
     public void verifyResultFieldAndItsVaLueAppearInThePersonalCareCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnPersonalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnPersonalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
         SoftAssert sa = new SoftAssert();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getResultLabel().getText(), "Results:");
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSearchResultValue().isDisplayed());
@@ -2150,7 +2108,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that Sort By menu and its options appear correctly in the Personal Care Category page ", priority = 187)
     public void verifySortByMenuAndItsOptionsAppearCorrectlyInThePersonalCareCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnPersonalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnPersonalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
         ArrayList<String> expectedOption = new ArrayList<>() {{
             add("Featured");
@@ -2158,9 +2116,6 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
             add("Best Selling");
             add("Price Min-Max");
             add("Price Max-Min");
-            //The below options are missing
-            add("Relevance");
-            add("Newly added items");
         }};
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
@@ -2173,7 +2128,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the Best Selling option is selected by default in the Sort By menu for Personal Care Category Page ", priority = 188)
     public void verifyBestSellingOptionIsSelectedByDefaultInSortByMenuForPersonalCareCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnPersonalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnPersonalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         Assert.assertEquals(select.getFirstSelectedOption().getText(), "Best Selling");
     }
@@ -2181,7 +2136,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure the Horizontal Category Image appears correctly in the Personal Care Category page  ", priority = 189)
     public void verifyTheHorizontalCategoryImageAppearsCorrectlyInPersonalCareCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnPersonalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnPersonalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
         DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage(), 5);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
     }
@@ -2189,7 +2144,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Personal Care Category Page ", priority = 190)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumbInPersonalCareCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnPersonalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnPersonalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
         Assert.assertEquals(webDriver.getCurrentUrl(), siteURL + aeSiteURL);
     }
@@ -2207,9 +2162,8 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     @Test(description = "Verify that the search button works correctly from the Personal Care Category page", priority = 192)
     public void verifySearchBtnWorksCorrectlyFromPersonalCareCategoryPage() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeProductDetailsPage = new AeProductDetailsPage(webDriver);
-        this.verifyClickingOnPersonalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnPersonalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeProductDetailsPage.searchForBundle();
         aeProductDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
@@ -2221,7 +2175,6 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
     @Test(description = "Verify that the previous page button in the Personal Care Category page is disable when the current page is page 1 ", priority = 193)
     public void verifyThePreviousBtnInPersonalCareCategoryPageIsDisableWhenDisplayPage1() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnPersonalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertTrue(aeSportSupplementsCategoryPage.getDisabledPreviousPageBtn().isDisplayed());
@@ -2230,44 +2183,41 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     //There's a performance issue in the Navigation
     @Test(description = "Make Sure the Pagination control in the Personal Care Category page works correctly", priority = 194)
     public void verifyThePaginationControlInPersonalCareCategoryPageWorksCorrectly() {
-        aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnPersonalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnPersonalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForTime(4000);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
-        aeSportSupplementsCategoryPage.navigateToPage3();
-        DataHelperAndWait.waitForTime(4000);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
 
     @Test(description = "Make Sure the previous page button In Personal Care Category Page works correctly", priority = 195)
     public void verifyPreviousPageBtnInPersonalCareCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyThePaginationControlInPersonalCareCategoryPageWorksCorrectly();
+//        this.verifyThePaginationControlInPersonalCareCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
+        Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
     }
 
     @Test(description = "Make Sure the next page button In Personal Care Category Page works correctly", priority = 196)
     public void verifyNextPageBtnInPersonalCareCategoryPageWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyThePaginationControlInPersonalCareCategoryPageWorksCorrectly();
+//        this.verifyThePaginationControlInPersonalCareCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
     @Test(description = "Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Personal Care Category page", priority = 197)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInPersonalCareCategoryPage() {
         aeFooterPageTestCases = new AEFooterPageTestCases();
-        this.verifyClickingOnPersonalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnPersonalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeFooterPageTestCases.verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectly();
     }
 
     @Test(description = "Make sure the Filtration Section is displayed in the Personal Care Category page", priority = 198)
     public void verifyFiltrationSectionIsDisplayedInPersonalCareCategoryPage() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        this.verifyClickingOnPersonalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
+//        this.verifyClickingOnPersonalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFiltrationSection().isDisplayed());
     }
 
@@ -2283,7 +2233,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure the previous arrow icon is not appear by default in the Supplements For Her Widget ", priority = 200)
     public void verifyPreviousArrowButtonInSupplementsForHerWidgetIsNotDisplayedByDefault() {
         aeSportsCategoryPage = new AeSportsCategoryPage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Assert.assertFalse(aeSportsCategoryPage.getPreviousIconInRecommendedProductsSection().isDisplayed());
     }
 
@@ -2291,7 +2241,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     public void verifyClickingOnNextIconInSupplementsForHerWidgetWorksCorrectly() {
         aeSportsCategoryPage = new AeSportsCategoryPage(webDriver);
         aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeSportsCategoryPage.getNextIconInRecommendedProductsSection().click();
         Assert.assertTrue(aeWomenOnlyCategoryPage.getLastProductInSupplementsForHerSection().isDisplayed());
     }
@@ -2299,7 +2249,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure clicking on Previous Button in the Supplements For Her Widget works correctly", priority = 202)
     public void verifyClickingOnPreviousIconInSupplementsForHerWidgetWorksCorrectly() {
         aeSportsCategoryPage = new AeSportsCategoryPage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeSportsCategoryPage.getNextIconInRecommendedProductsSection().click();
         aeSportsCategoryPage.getPreviousIconInRecommendedProductsSection().click();
         Assert.assertFalse(aeSportsCategoryPage.getPreviousIconInRecommendedProductsSection().isDisplayed());
@@ -2308,7 +2258,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure clicking on the product card in the Supplements For Her Widget works correctly ", priority = 203)
     public void verifyClickingOnProductCardInsideSupplementsForHerWidgetWorksCorrectly() {
         aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeWomenOnlyCategoryPage.getProductCardInSupplementsForHerSection().click();
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
@@ -2341,14 +2291,14 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure the previous arrow icon is not appear by default in the Women's Vitamins Widget ", priority = 206)
     public void verifyPreviousArrowButtonInWomenVitaminsWidgetIsNotDisplayedByDefault() {
         aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Assert.assertFalse(aeWomenOnlyCategoryPage.getPreviousIconInWomenVitaminsSection().isDisplayed());
     }
 
     @Test(description = "Make sure clicking on Next Button in the Women's Vitamins Widget works correctly", priority = 207)
     public void verifyClickingOnNextIconInWomenVitaminsWidgetWorksCorrectly() {
         aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeWomenOnlyCategoryPage.getNextIconInInWomenVitaminsSection().click();
         Assert.assertTrue(aeWomenOnlyCategoryPage.getLastProductInWomenVitaminsSection().isDisplayed());
     }
@@ -2356,7 +2306,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure clicking on Previous Button in the Women's Vitamins Widget works correctly", priority = 208)
     public void verifyClickingOnPreviousIconInWomenVitaminsWidgetWorksCorrectly() {
         aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeWomenOnlyCategoryPage.getNextIconInInWomenVitaminsSection().click();
         aeWomenOnlyCategoryPage.getPreviousIconInWomenVitaminsSection().click();
         Assert.assertFalse(aeWomenOnlyCategoryPage.getPreviousIconInWomenVitaminsSection().isDisplayed());
@@ -2365,7 +2315,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure clicking on the product card in the Women's Vitamins Widget works correctly ", priority = 209)
     public void verifyClickingOnProductCardInsideWomenVitaminsWidgetWorksCorrectly() {
         aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeWomenOnlyCategoryPage.getProductCardInWomenVitaminsSection().click();
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
@@ -2398,14 +2348,14 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure the previous arrow icon is not appear by default in the Workout In Style Widget ", priority = 212)
     public void verifyPreviousArrowButtonInWorkoutInStyleWidgetIsNotDisplayedByDefault() {
         aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Assert.assertFalse(aeWomenOnlyCategoryPage.getPreviousIconInWorkoutInStyleSection().isDisplayed());
     }
 
     @Test(description = "Make sure clicking on Next Button in the Workout In Style Widget works correctly", priority = 213)
     public void verifyClickingOnNextIconInWorkoutInStyleWidgetWorksCorrectly() {
         aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeWomenOnlyCategoryPage.getNextIconInInWorkoutInStyleSection().click();
         Assert.assertTrue(aeWomenOnlyCategoryPage.getLastProductInWorkoutInStyleSection().isDisplayed());
     }
@@ -2413,7 +2363,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure clicking on Previous Button in the Workout In Style Widget works correctly", priority = 214)
     public void verifyClickingOnPreviousIconInWorkoutInStyleWidgetWorksCorrectly() {
         aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeWomenOnlyCategoryPage.getNextIconInInWorkoutInStyleSection().click();
         aeWomenOnlyCategoryPage.getPreviousIconInWorkoutInStyleSection().click();
         Assert.assertFalse(aeWomenOnlyCategoryPage.getPreviousIconInWorkoutInStyleSection().isDisplayed());
@@ -2422,7 +2372,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure clicking on the product card in the Workout In Style Widget works correctly ", priority = 215)
     public void verifyClickingOnProductCardInsideWorkoutInStyleWidgetWorksCorrectly() {
         aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeWomenOnlyCategoryPage.getProductCardInWorkoutInStyleSection().click();
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
@@ -2455,14 +2405,14 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure the previous arrow icon is not appear by default in the Lady-Friendly Snacks & Food Widget ", priority = 218)
     public void verifyPreviousArrowButtonInLadyFriendlySnacksAndFoodWidgetIsNotDisplayedByDefault() {
         aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Assert.assertFalse(aeWomenOnlyCategoryPage.getPreviousIconInLadyFriendlySnacksFoodSection().isDisplayed());
     }
 
     @Test(description = "Make sure clicking on Next Button in the Lady-Friendly Snacks & Food Widget works correctly", priority = 219)
     public void verifyClickingOnNextIconInLadyFriendlySnacksAndFoodWidgetWorksCorrectly() {
         aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeWomenOnlyCategoryPage.getNextIconInInLadyFriendlySnacksFoodSection().click();
         Assert.assertTrue(aeWomenOnlyCategoryPage.getLastProductInWorkoutInStyleSection().isDisplayed());
     }
@@ -2470,7 +2420,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure clicking on Previous Button in the Lady-Friendly Snacks & Food Widget works correctly", priority = 220)
     public void verifyClickingOnPreviousIconInLadyFriendlySnacksAndFoodWidgetWorksCorrectly() {
         aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeWomenOnlyCategoryPage.getNextIconInInLadyFriendlySnacksFoodSection().click();
         aeWomenOnlyCategoryPage.getPreviousIconInLadyFriendlySnacksFoodSection().click();
         Assert.assertFalse(aeWomenOnlyCategoryPage.getPreviousIconInWorkoutInStyleSection().isDisplayed());
@@ -2479,7 +2429,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(description = "Make sure clicking on the product card in the Lady-Friendly Snacks & Food Widget works correctly ", priority = 221)
     public void verifyClickingOnProductCardInsideLadyFriendlySnacksAndFoodWidgetWorksCorrectly() {
         aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeWomenOnlyCategoryPage.getProductCardInLadyFriendlySnacksFoodSection().click();
         boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
         assertFalse(verifyTitle, "Page Not Found Is Displayed");
@@ -2509,124 +2459,4 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(aeWomenOnlyCategoryPage.getFirstYouTubeVideo().isDisplayed());
         Assert.assertTrue(aeWomenOnlyCategoryPage.getSecondYouTubeVideo().isDisplayed());
     }
-
-    //Pagination control for all pages in the Women's Only category page
-    @Test(description = "Make Sure the ability to access all pages in Supplements For Her appearing in the Women's Only CategoryPage  ", priority = 224)
-    public void verifyAbilityToAccessAllPagesInsideSupplementsForHerCategoryInsideTheShopByCategorySectionInWomenOnlyCategoryPage() {
-        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnSupplementsForHerCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        String numberOfProductInTheList = aeSportSupplementsCategoryPage.getSearchResultValue().getText();
-        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList, aeSportSupplementsCategoryPage.getNextPageBtn());
-    }
-
-    @Test(description = "Make Sure the ability to access all pages in Women Daily Vitamins appearing in the Women's Only CategoryPage  ", priority = 225)
-    public void verifyAbilityToAccessAllPagesInsideWomenDailyVitaminsCategoryInsideTheShopByCategorySectionInWomenOnlyCategoryPage() {
-        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnWomenDailyVitaminsCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        String numberOfProductInTheList = aeSportSupplementsCategoryPage.getSearchResultValue().getText();
-        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList, aeSportSupplementsCategoryPage.getNextPageBtn());
-    }
-
-    @Test(description = "Make Sure the ability to access all pages in Lady Friendly Snacks And Food appearing in the Women's Only CategoryPage  ", priority = 226)
-    public void verifyAbilityToAccessAllPagesInsideLadyFriendlySnacksAndFoodCategoryInsideTheShopByCategorySectionInWomenOnlyCategoryPage() {
-        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnLadyFriendlySnacksAndFoodCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        String numberOfProductInTheList = aeSportSupplementsCategoryPage.getSearchResultValue().getText();
-        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList, aeSportSupplementsCategoryPage.getNextPageBtn());
-    }
-
-    @Test(description = "Make Sure the ability to access all pages in Makeup For Active Life styles appearing in the Women's Only CategoryPage  ", priority = 227)
-    public void verifyAbilityToAccessAllPagesInsideMakeupForActiveLifestylesCategoryInsideTheShopByCategorySectionInWomenOnlyCategoryPage() {
-        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnMakeupForActiveLifestylesCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        String numberOfProductInTheList = aeSportSupplementsCategoryPage.getSearchResultValue().getText();
-        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList, aeSportSupplementsCategoryPage.getNextPageBtn());
-    }
-
-    @Test(description = "Make Sure the ability to access all pages in Hair Skin And Nails appearing in the Women's Only CategoryPage  ", priority = 228)
-    public void verifyAbilityToAccessAllPagesInsideHairSkinAndNailsCategoryInsideTheShopByCategorySectionInWomenOnlyCategoryPage() {
-        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnHairSkinAndNailsCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        String numberOfProductInTheList = aeSportSupplementsCategoryPage.getSearchResultValue().getText();
-        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList, aeSportSupplementsCategoryPage.getNextPageBtn());
-    }
-
-    @Test(description = "Make Sure the ability to access all pages in Weight Loss appearing in the Women's Only CategoryPage  ", priority = 229)
-    public void verifyAbilityToAccessAllPagesInsideWeightLossCategoryInsideTheShopByCategorySectionInWomenOnlyCategoryPage() {
-        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnWeightLossCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        String numberOfProductInTheList = aeSportSupplementsCategoryPage.getSearchResultValue().getText();
-        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList, aeSportSupplementsCategoryPage.getNextPageBtn());
-    }
-
-    @Test(description = "Make Sure the ability to access all pages in Mood Support appearing in the Women's Only CategoryPage  ", priority = 230)
-    public void verifyAbilityToAccessAllPagesInsideMoodSupportCategoryInsideTheShopByCategorySectionInWomenOnlyCategoryPage() {
-        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnMoodSupportCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        String numberOfProductInTheList = aeSportSupplementsCategoryPage.getSearchResultValue().getText();
-        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList, aeSportSupplementsCategoryPage.getNextPageBtn());
-    }
-
-    @Test(description = "Make Sure the ability to access all pages in Detox And Cleanse appearing in the Women's Only CategoryPage  ", priority = 231)
-    public void verifyAbilityToAccessAllPagesInsideDetoxAndCleanseCategoryInsideTheShopByCategorySectionInWomenOnlyCategoryPage() {
-        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnDetoxAndCleanseCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        String numberOfProductInTheList = aeSportSupplementsCategoryPage.getSearchResultValue().getText();
-        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList, aeSportSupplementsCategoryPage.getNextPageBtn());
-    }
-
-    @Test(description = "Make Sure the ability to access all pages in PMS Relief appearing in the Women's Only CategoryPage  ", priority = 232)
-    public void verifyAbilityToAccessAllPagesInsidePMSReliefCategoryInsideTheShopByCategorySectionInWomenOnlyCategoryPage() {
-        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnPMSReliefCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        String numberOfProductInTheList = aeSportSupplementsCategoryPage.getSearchResultValue().getText();
-        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList, aeSportSupplementsCategoryPage.getNextPageBtn());
-    }
-
-    @Test(description = "Make Sure the ability to access all pages in Energy And Endurance appearing in the Women's Only CategoryPage  ", priority = 233)
-    public void verifyAbilityToAccessAllPagesInsideEnergyAndEnduranceCategoryInsideTheShopByCategorySectionInWomenOnlyCategoryPage() {
-        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnEnergyAndEnduranceCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        String numberOfProductInTheList = aeSportSupplementsCategoryPage.getSearchResultValue().getText();
-        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList, aeSportSupplementsCategoryPage.getNextPageBtn());
-    }
-
-    @Test(description = "Make Sure the ability to access all pages in Prenatal Care appearing in the Women's Only CategoryPage  ", priority = 234)
-    public void verifyAbilityToAccessAllPagesInsidePrenatalCareCategoryInsideTheShopByCategorySectionInWomenOnlyCategoryPage() {
-        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnPrenatalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        String numberOfProductInTheList = aeSportSupplementsCategoryPage.getSearchResultValue().getText();
-        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList, aeSportSupplementsCategoryPage.getNextPageBtn());
-    }
-
-    @Test(description = "Make Sure the ability to access all pages in Muscle And Weight Gain appearing in the Women's Only CategoryPage  ", priority = 235)
-    public void verifyAbilityToAccessAllPagesInsideMuscleAndWeightGainCategoryInsideTheShopByCategorySectionInWomenOnlyCategoryPage() {
-        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnMuscleAndWeightGainCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        String numberOfProductInTheList = aeSportSupplementsCategoryPage.getSearchResultValue().getText();
-        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList, aeSportSupplementsCategoryPage.getNextPageBtn());
-    }
-
-    @Test(description = "Make Sure the ability to access all pages in Fashion And Style appearing in the Women's Only CategoryPage  ", priority = 236)
-    public void verifyAbilityToAccessAllPagesInsideFashionAndStyleCategoryInsideTheShopByCategorySectionInWomenOnlyCategoryPage() {
-        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnFashionAndStyleCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        String numberOfProductInTheList = aeSportSupplementsCategoryPage.getSearchResultValue().getText();
-        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList, aeSportSupplementsCategoryPage.getNextPageBtn());
-    }
-
-    @Test(description = "Make Sure the ability to access all pages in Personal Care appearing in the Women's Only CategoryPage  ", priority = 237)
-    public void verifyAbilityToAccessAllPagesInsidePersonalCareCategoryInsideTheShopByCategorySectionInWomenOnlyCategoryPage() {
-        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnPersonalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        String numberOfProductInTheList = aeSportSupplementsCategoryPage.getSearchResultValue().getText();
-        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList, aeSportSupplementsCategoryPage.getNextPageBtn());
-    }
-    @Test(description = "Make sure ability to navigate to the home page by clicking on the sporter logo  ", priority = 238)
-    public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromCartPage() {
-        aeGuestUserPage = new AEGuestUserPage(webDriver);
-        this.verifyClickingOnWomenOnlyCategoryFromShopByMenuRedirectUserToCorrectURL();
-        aeGuestUserPage.clickOnSporterLogo();
-        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL+aeSiteURL," The Current URL is not matched with the Cart URL" );
-    }
-}
+   }

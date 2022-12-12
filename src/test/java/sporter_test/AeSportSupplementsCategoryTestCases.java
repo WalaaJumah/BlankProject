@@ -28,11 +28,15 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
     private Actions action;
     private final String  sportSupplementsUrl="/sport-supplements/";
 
-
-    @Test(description = "Make sure clicking on the Sports Supplements Category Appears In MegaMenu Redirect User To CorrectURL", priority = 1)
+@Test(description = "Switching to UAE store", priority = 1)
+public void switchToUaeStore(){
+    aeMegamenuPage = new AEMegaMenuPage(webDriver);
+    aeMegamenuPage.switchToAECountry();
+}
+    @Test(description = "Make sure clicking on the Sports Supplements Category Appears In MegaMenu Redirect User To CorrectURL", priority = 2)
     public void verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL() {
-        aeMegamenuPage = new AEMegaMenuPage(webDriver);
-        aeMegamenuPage.switchToAECountry();
+//        aeMegamenuPage = new AEMegaMenuPage(webDriver);
+//        aeMegamenuPage.switchToAECountry();
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSportSupplementsMainMenu().getAttribute("href");
@@ -46,7 +50,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
 
-    @Test(description = "Make sure clicking on the Sports Supplements Category from ShopBy Menu Redirect User To CorrectURL", priority = 2)
+    @Test(description = "Make sure clicking on the Sports Supplements Category from ShopBy Menu Redirect User To CorrectURL", priority = 3)
     public void verifyClickingOnSportsSupplementsCategoryFromShopByMenuRedirectUserToCorrectURL() {
         aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -65,7 +69,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
     }
 
-    @Test(description = "Make sure clicking on the Sports Supplements Category from HomePage Redirect User To CorrectURL", priority = 3)
+    @Test(description = "Make sure clicking on the Sports Supplements Category from HomePage Redirect User To CorrectURL", priority = 4)
     public void verifyClickingOnSportsSupplementsCategoryFromHomePageRedirectUserToCorrectURL() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         aeMegaMenuTestCases = new AEMegaMenuTestCases();
@@ -79,7 +83,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Make sure the Horizontal Category Image appears correctly in the sport Supplements landing page ", priority = 4)
+    @Test(description = "Make sure the Horizontal Category Image appears correctly in the sport Supplements landing page ", priority = 5)
     public void verifyTheHorizontalCategoryImageAppearsCorrectlyInSportSupplementsLandingPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -87,7 +91,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
     }
 
-    @Test(description = "Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the sport Supplements landing page ", priority = 5)
+    @Test(description = "Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the sport Supplements landing page ", priority = 6)
     public void verifyTitleAndParagraphAppearingCorrectlyInHorizontalCategoryImageInSportSupplementsLandingPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -98,7 +102,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         Assert.assertEquals(aeSportSupplementsCategoryPage.getParagraphInSportSupplementsCategoryImage().getText(), "For Every Training Goal & Body Type", "Wrong Paragraph appears in the sport Supplements category image");
     }
 
-    @Test(description = "Make sure the Horizontal Banners appear correctly in the sport Supplements landing page ", priority = 6)
+    @Test(description = "Make sure the Horizontal Banners appear correctly in the sport Supplements landing page ", priority = 7)
     public void verifyTheHorizontalBannersAppearCorrectlyInSportSupplementsLandingPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -109,7 +113,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         }
     }
 
-    @Test(description = "Make sure clicking on the Horizontal Banners appearing in the sport Supplements landing page opens correctly ", priority = 7)
+    @Test(description = "Make sure clicking on the Horizontal Banners appearing in the sport Supplements landing page opens correctly ", priority = 8)
     public void verifyClickingOnHorizontalBannersAppearingInSportSupplementsLandingPageOpensCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -125,7 +129,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         }
     }
 
-    @Test(description = "Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the sport Supplements landing page ", priority = 8)
+    @Test(description = "Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the sport Supplements landing page ", priority = 9)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumb() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -134,7 +138,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         Assert.assertEquals(webDriver.getCurrentUrl(), siteURL+aeSiteURL);
     }
 
-    @Test(description = "Make sure that the Result label and its value appear correctly in the sport Supplements Category page ", priority = 9)
+    @Test(description = "Make sure that the Result label and its value appear correctly in the sport Supplements Category page ", priority = 10)
     public void verifyResultFieldAndItsVaLueAppearInTheSportSupplementsCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -145,7 +149,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         sa.assertNotEquals(aeSportSupplementsCategoryPage.getSearchResultValue().getText(), "0", "The number of result is Zero");
     }
 
-    @Test(description = "Make sure that Sort By menu and its options appear correctly ", priority = 10)
+    @Test(description = "Make sure that Sort By menu and its options appear correctly ", priority = 11)
     public void verifySortByMenuAndItsOptionsAppearCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -163,7 +167,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         }
     }
 
-    @Test(description = "Make sure that the Featured option is selected by default in the Sort By menu ", priority = 11)
+    @Test(description = "Make sure that the Featured option is selected by default in the Sort By menu ", priority = 12)
     public void verifyFeaturedOptionIsSelectedByDefaultInSortByMenu() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -173,7 +177,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
     }
 
     //There's a bug here when sorting the products then the Horizontal Banners are hidden
-    @Test(description = "Make sure each of the Sport Supplements category image and Horizontal Banners appearing after sorting the products  ", priority = 12)
+    @Test(description = "Make sure each of the Sport Supplements category image and Horizontal Banners appearing after sorting the products  ", priority = 13)
     public void verifySportSupplementsCategoryImageAndHorizontalBannersAppearingAfterSortingTheProducts() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -186,7 +190,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         DataHelperAndWait.implicitWait(6);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsSection().isDisplayed());
     }
-    @Test(description = "Make sure Sort By Menu appears correctly in the page after sorting By Featured  ", priority = 13)
+    @Test(description = "Make sure Sort By Menu appears correctly in the page after sorting By Featured  ", priority = 14)
     public void verifySortByMenuAppearingAfterSortingByBestSelling() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -197,7 +201,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
     }
 
-    @Test(description = "Make sure Sort By Menu appears correctly in the page after sorting By Price Min-Max  ", priority = 14)
+    @Test(description = "Make sure Sort By Menu appears correctly in the page after sorting By Price Min-Max  ", priority = 15)
     public void verifySortByMenuAppearingAfterSortingByPriceMinMax() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -208,7 +212,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
     }
 
-    @Test(description = "Make sure Sort By Menu appears correctly in the page after sorting By Price Max-Min  ", priority = 15)
+    @Test(description = "Make sure Sort By Menu appears correctly in the page after sorting By Price Max-Min  ", priority = 16)
     public void verifySortByMenuAppearingAfterSortingByPriceMaxMin() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -219,7 +223,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
     }
 
-    @Test(description = "Make sure  the Sport Supplements footer appears correctly  ", priority = 16)
+    @Test(description = "Make sure  the Sport Supplements footer appears correctly  ", priority = 17)
     public void verifySportSupplementsFooterSectionAppearsCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -228,7 +232,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSportSupplementsFooterSection().getCssValue("background"), "rgb(242, 242, 242) none repeat scroll 0% 0% / auto padding-box border-box");
     }
 
-    @Test(description = "Make sure the text appears in the Sport Supplements footer appears correctly  ", priority = 17)
+    @Test(description = "Make sure the text appears in the Sport Supplements footer appears correctly  ", priority = 18)
     public void verifyTheTextAppearInTheSportSupplementsFooterSectionAppearsCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -237,7 +241,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsDescriptionInFooterSection().isDisplayed());
     }
 
-    @Test(description = "Verify that the search button works correctly from the Sport Supplements category page", priority = 18)
+    @Test(description = "Verify that the search button works correctly from the Sport Supplements category page", priority = 19)
     public void verifySearchBtnWorksCorrectlyFromSportSupplementsCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage = new AeProductDetailsPage(webDriver);
@@ -252,7 +256,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         assertFalse(isTheElementPresent, "The page is empty");
     }
 
-    @Test(description = "Verify that the previous page button is disable when the current page is page 1 ", priority = 19)
+    @Test(description = "Verify that the previous page button is disable when the current page is page 1 ", priority = 20)
     public void verifyThePreviousBtnIsDisableWhenDisplayPage1() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -260,7 +264,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         Assert.assertTrue(aeSportSupplementsCategoryPage.getDisabledPreviousPageBtn().isDisplayed());
     }
 
-    @Test(description = "Make Sure the Pagination control works correctly", priority = 20)
+    @Test(description = "Make Sure the Pagination control works correctly", priority = 21)
     public void verifyThePaginationControlWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -273,7 +277,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
 
-    @Test(description = "Make Sure the previous page button works correctly", priority = 21)
+    @Test(description = "Make Sure the previous page button works correctly", priority = 22)
     public void verifyPreviousPageBtnWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlWorksCorrectly();
@@ -282,7 +286,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
   }
 
-    @Test(description = "Make Sure the next page button works correctly", priority = 22)
+    @Test(description = "Make Sure the next page button works correctly", priority = 23)
     public void verifyNextPageBtnWorksCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlWorksCorrectly();
@@ -291,7 +295,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
 
-    @Test(description = "Make Sure All Search Fields Inside Form Filtration Section Appears Correctly", priority = 23)
+    @Test(description = "Make Sure All Search Fields Inside Form Filtration Section Appears Correctly", priority = 24)
     public void verifyAllSearchFieldsInsideFormFiltrationSectionAppearsCorrectly() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -321,7 +325,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
             DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getFormFiltrationSection().get(i),2);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getFormFiltrationSection().get(i).isDisplayed());}
     }
-    @Test(description = "Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Sport Supplements category page", priority = 24)
+    @Test(description = "Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Sport Supplements category page", priority = 25)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInSportSupplementsCategoryPage(){
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         aeFooterPageTestCases= new AEFooterPageTestCases();
@@ -330,7 +334,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         aeFooterPageTestCases.verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectly();
     }
     //Pagination control for all pages in the Sport Supplements Category Pages
-    @Test(description = "Make Sure the ability to access all pages inside Sport Supplements Category Page  ", priority = 25)
+    @Test(description = "Make Sure the ability to access all pages inside Sport Supplements Category Page  ", priority = 26)
     public void verifyAbilityToAccessAllPagesInsideSportSupplementsCategoryPage(){
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -338,7 +342,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());}
     //There's a bug here due to the BreadCrumb is missing after sorting the products
-    @Test(description = "Make sure that the BreadCrumb correctly after sorting the product ", priority = 26)
+    @Test(description = "Make sure that the BreadCrumb correctly after sorting the product ", priority = 27)
     public void verifyTheBreadCrumbAppearingCorrectlyAfterSortingTheProducts() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -348,7 +352,7 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
         DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getHomeBreadcrumbs(),2);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getHomeBreadcrumbs().isDisplayed());
     }
-    @Test(description = "Make sure ability to navigate to the home page by clicking on the sporter logo  ", priority = 27)
+    @Test(description = "Make sure ability to navigate to the home page by clicking on the sporter logo  ", priority = 28)
     public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromCartPage() {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();

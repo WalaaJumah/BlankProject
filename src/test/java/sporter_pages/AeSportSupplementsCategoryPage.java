@@ -159,33 +159,33 @@ public class AeSportSupplementsCategoryPage {
     }
 
     public void navigateToPage2() {
-        DataHelperAndWait.waitToBeClickable(pageTwoBtn, 5);
+        DataHelperAndWait.waitToBeVisible(pageTwoBtn, 5);
         pageTwoBtn.click();
     }
 
     public void navigateToPage3() {
-        DataHelperAndWait.waitToBeClickable(pageThreeBtn, 5);
+        DataHelperAndWait.waitToBeVisible(pageThreeBtn, 5);
         pageThreeBtn.click();
     }
 
     public void clickOnPreviousPageBtn() {
         try{
-        DataHelperAndWait.waitToBeClickable(previousPageBtn, 5);
+        DataHelperAndWait.waitToBeVisible(previousPageBtn, 5);
         previousPageBtn.click();}
-        catch(Exception e){        DataHelperAndWait.waitToBeClickable(previousPageBtn, 5);
+        catch(Exception e){        DataHelperAndWait.waitToBeVisible(previousPageBtn, 5);
             previousPageBtn.click();}
     }
 
     public void clickOnNextPageBtn() {
         try{
-        DataHelperAndWait.waitToBeClickable(NextPageBtn, 5);
+        DataHelperAndWait.waitToBeVisible(NextPageBtn, 5);
         NextPageBtn.click();}
-        catch(Exception e){        DataHelperAndWait.waitToBeClickable(NextPageBtn, 5);
+        catch(Exception e){        DataHelperAndWait.waitToBeVisible(NextPageBtn, 5);
             NextPageBtn.click();}
     }
 
     public void clickOnSeeAllBtnInFormSection() {
-        DataHelperAndWait.waitToBeClickable(seeAllBtnInFormSection, 5);
+        DataHelperAndWait.waitToBeVisible(seeAllBtnInFormSection, 5);
         seeAllBtnInFormSection.click();
     }
     public WebElement getHomeBreadcrumbs() {

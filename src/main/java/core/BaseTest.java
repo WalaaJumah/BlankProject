@@ -27,10 +27,10 @@ public class BaseTest {
     public String ksaSiteURL = "/en-sa/";
     public String qaterSiteURL = "/en-qa/";
     public String checkoutLoginStepURL = "/en-ae/checkout/#checkout-login-step";
-    public String freeCouponeCode= "spo15";
-    public String discaountCouponeCode= "";
-    public String outOfStockProduct = "/en-ae/healthy-food/snacks-drinks/spreads/gymqueen-smooth-peanut-butter-spread";
-    public String product = "/en-ae/optimum-gold-standard-100-whey";
+    public final String freeCouponeCode= "spo15";
+    public final String discaountCouponeCode= "";
+    public final String outOfStockProduct = "/en-ae/healthy-food/snacks-drinks/spreads/gymqueen-smooth-peanut-butter-spread";
+    public final String product = "/en-ae/optimum-gold-standard-100-whey";
     public static String environmentName;
     public static WebDriver webDriver;
 //    The Below Methods we need to run the TCs across the broswers

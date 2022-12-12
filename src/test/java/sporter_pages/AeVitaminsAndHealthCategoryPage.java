@@ -227,6 +227,7 @@ public class AeVitaminsAndHealthCategoryPage {
     }
 
     public WebElement getFirstSideBanner() {
+        DataHelperAndWait.waitToBeVisible(firstSideBanner,3);
         return firstSideBanner;
     }
     public WebElement getMineralsSectionTitle() {
@@ -424,6 +425,7 @@ public class AeVitaminsAndHealthCategoryPage {
     }
 
     public WebElement getFiltrationSection() {
+        DataHelperAndWait.waitToBeVisible(filtrationSection,3);
         return filtrationSection;
     }
 

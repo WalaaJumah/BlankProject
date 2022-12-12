@@ -1,5 +1,6 @@
 package sporter_pages;
 
+import core.DataHelperAndWait;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -29,10 +30,10 @@ public class AeWomenOnlyCategoryPage {
     private WebElement LadyFriendlySnacksAndFoodSection;
    @FindBy(xpath = "(//div[@class='inner-seller-prod wp-id-38301'])[1]")
    private WebElement lastProductInSupplementsForHerSection;
-   @FindBy(xpath = "//div[@class='inner-seller-prod wp-id-47311']")
+   @FindBy(xpath = "//div[@class='inner-seller-prod wp-id-53071']")
    private WebElement lastProductInWomenVitaminsSection;
 
-    @FindBy(xpath = "//div[@class='inner-seller-prod wp-id-17670']")
+    @FindBy(xpath = "//div[@class='inner-seller-prod wp-id-33705']")
    private WebElement lastProductInWorkoutInStyleSection;
    @FindBy(xpath = "//div[@class='inner-seller-prod wp-id-37630']")
    private WebElement productCardInSupplementsForHerSection;
@@ -128,6 +129,7 @@ public class AeWomenOnlyCategoryPage {
     }
 
     public WebElement getPreviousIconInWorkoutInStyleSection() {
+        DataHelperAndWait.waitToBeVisible(previousIconInWorkoutInStyleSection,2);
         return previousIconInWorkoutInStyleSection;
     }
     public WebElement getLastProductInWorkoutInStyleSection() {

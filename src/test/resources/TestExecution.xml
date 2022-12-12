@@ -47,13 +47,21 @@
 
 
 <!--            <class name="sporter_test.QatarHomePageTestCases"> </class>-->
-<!--            <class name="sporter_test.KsaHomePageTestCases"> </class>-->
-            <class name="sporter_test.AeSportSupplementsCategoryTestCases">
+<!--            <class name="sporter_test.KsaHomePageTestCases">-->
+<!--            <methods>-->
+<!--                <include name=""></include>-->
+<!--                                                <include name="switchToKsaStore"></include>-->
+<!--                                                <include name="verifyAbilityToAccessAllPagesInsideTheTopSellingStacksCategoryCorrectly"></include>-->
+<!--                &lt;!&ndash;                                <include name="verifyClickOnTheProductsAppearingInTheTopSellingStacksSectionRedirectTheUserToCorrectUrl"></include>&ndash;&gt;-->
+<!--                &lt;!&ndash;                                <include name="verifyClickOnTheProductsAppearingInTheTopSellersSectionRedirectTheUserToCorrectUrl"></include>&ndash;&gt;-->
+
+<!--            </methods></class>-->
+                <class name="sporter_test.AeWomenOnlyCategoryTestCases">
 <!--                            <methods>-->
-<!--                                <include name="verifyNextArrowAtHomePageRotatingSliderIsDisplayed"></include>-->
-<!--                                <include name="verifyPreviousBtnInTrendingOnSporterSectionWorks"></include>-->
-<!--                                <include name="verifyClickOnTheProductsAppearingInTheTopSellingStacksSectionRedirectTheUserToCorrectUrl"></include>-->
-<!--                                <include name="verifyClickOnTheProductsAppearingInTheTopSellersSectionRedirectTheUserToCorrectUrl"></include>-->
+<!--                                <include name="switchToUaeStore"></include>-->
+<!--                                <include name="verifyAbilityToAccessAllPagesInsideSportSupplementsCategoryPage"></include>-->
+<!--&lt;!&ndash;                                <include name="verifyClickOnTheProductsAppearingInTheTopSellingStacksSectionRedirectTheUserToCorrectUrl"></include>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <include name="verifyClickOnTheProductsAppearingInTheTopSellersSectionRedirectTheUserToCorrectUrl"></include>&ndash;&gt;-->
 
 <!--                            </methods>-->
             </class>
