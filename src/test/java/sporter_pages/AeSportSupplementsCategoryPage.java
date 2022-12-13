@@ -109,6 +109,7 @@ public class AeSportSupplementsCategoryPage {
         return sportSupplementsFooterSection;
     }
     public WebElement getDisabledPreviousPageBtn() {
+        DataHelperAndWait.waitToBeVisible(disabledPreviousPageBtn,3);
         return disabledPreviousPageBtn;
     }
     public WebElement getCountryList() {
@@ -170,9 +171,9 @@ public class AeSportSupplementsCategoryPage {
 
     public void clickOnPreviousPageBtn() {
         try{
-        DataHelperAndWait.waitToBeVisible(previousPageBtn, 5);
+        DataHelperAndWait.waitToBeVisible(previousPageBtn, 3);
         previousPageBtn.click();}
-        catch(Exception e){        DataHelperAndWait.waitToBeVisible(previousPageBtn, 5);
+        catch(Exception e){        DataHelperAndWait.waitToBeVisible(previousPageBtn, 2);
             previousPageBtn.click();}
     }
 

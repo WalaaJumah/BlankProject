@@ -188,7 +188,7 @@ public void switchToUaeStore(){
         DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage(), 5);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
         DataHelperAndWait.implicitWait(6);
-        Assert.assertTrue(aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsSection().isDisplayed());
+        Assert.assertTrue(aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsSection().isDisplayed(),"The Horizontal Banners is missing after sorting the products ");
     }
     @Test(description = "Make sure Sort By Menu appears correctly in the page after sorting By Featured  ", priority = 14)
     public void verifySortByMenuAppearingAfterSortingByBestSelling() {

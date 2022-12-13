@@ -47,8 +47,10 @@
 
 
 <!--            <class name="sporter_test.QatarHomePageTestCases"> </class>-->
-<!--            <class name="sporter_test.KsaHomePageTestCases">-->
-<!--            <methods>-->
+<!--            <class name="sporter_test.KsaHomePageTestCases"></class>-->
+<!--                        <class name="sporter_test.AeSportSupplementsCategoryTestCases"></class>-->
+
+            <!--            <methods>-->
 <!--                <include name=""></include>-->
 <!--                                                <include name="switchToKsaStore"></include>-->
 <!--                                                <include name="verifyAbilityToAccessAllPagesInsideTheTopSellingStacksCategoryCorrectly"></include>-->

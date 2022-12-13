@@ -6,16 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1543f19a-355a-420f-8233-95e332a91e4b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AeSportSupplementsCategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/AeSportSupplementsCategoryPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AeVitaminsAndHealthCategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/AeVitaminsAndHealthCategoryPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AeWomenOnlyCategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/AeWomenOnlyCategoryPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AEFooterPageTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AEFooterPageTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeSportSupplementsCategoryTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AeSportSupplementsCategoryTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeWomenOnlyCategoryTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AeWomenOnlyCategoryTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/KsaHomePageTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/KsaHomePageTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/QatarHomePageTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/QatarHomePageTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
