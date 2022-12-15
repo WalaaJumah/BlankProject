@@ -8,7 +8,7 @@ package core;
 
 import org.openqa.selenium.WebDriver;
 
-public class BaseClass {
+public class BasePage {
 
     public  String siteURL = "https://www.sporter.com";
     public final String aeDomain = "/en-ae";
@@ -29,4 +29,10 @@ public class BaseClass {
     public final String product = "/en-ae/optimum-gold-standard-100-whey";
     public static String environmentName;
     public WebDriver webDriver;
+    //Need to check
+    public BasePage(WebDriver webDriver){
+        this.webDriver = webDriver;
+    }
+    public String getTitle(){return webDriver.getTitle();}
+    public String getSourcePage(){return webDriver.getPageSource();}
 }

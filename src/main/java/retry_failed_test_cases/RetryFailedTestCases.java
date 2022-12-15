@@ -1,9 +1,10 @@
 package retry_failed_test_cases;
 
+import core.BasePage;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
 
-public class RetryFailedTestCases implements IRetryAnalyzer {
+public class RetryFailedTestCases  implements IRetryAnalyzer {
 
     private int retryCnt = 0;
     // If any failed testcases then it runs two times

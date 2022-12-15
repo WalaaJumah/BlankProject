@@ -4,14 +4,13 @@
 <!--<suite name=" Test" parallel="classes" thread-count="2" >-->
 <!--<suite name=" Test" parallel="tests" thread-count="2" >-->
 <suite name=" Test" thread-count="2" >
+            <listeners>
+                <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>
+            </listeners>
+        <listeners>
+            <listener class-name="extent_report_listner.ExtentReportListener" />
+        </listeners>
 
-<!--        <listeners>-->
-<!--            <listener class-name="extent_report_listner.ExtentReportListener" />-->
-<!--        </listeners>-->
-
-<!--        <listeners>-->
-<!--            <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
-<!--        </listeners>-->
 
     <test name=" MegaMenu" preserve-order="true">
 <!--        Guidelines:-->
@@ -28,26 +27,12 @@
         <!--        <parameter name="language" value="ar" />-->
 
         <classes>
-<!--            <class name="sporter_test.KsaHomePageTestCases"></class>-->
-<!--            <class name="sporter_test.QatarHomePageTestCases"></class>-->
-<!--            <class name="sporter_test.AEGuestUserTestCases"></class>-->
+            <class name="sporter_test.QatarHomePageTestCases"></class>
+            <class name="sporter_test.KsaHomePageTestCases"></class>
 <!--            <class name="sporter_test.AeWomenOnlyCategoryTestCases"></class>-->
-<!--            <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases"></class>-->
-<!--            <class name="sporter_test.AeSportSupplementsCategoryTestCases"></class>-->
-<!--            <class name="sporter_test.AeSportsCategoryTestCases"></class>-->
-<!--            <class name="sporter_test.AeSearchPageTestCases"></class>-->
-<!--            <class name="sporter_test.AeRecommendedProductsTestCases"></class>-->
-<!--            <class name="sporter_test.AeProductDetailsPageTestCases"></class>-->
-<!--            <class name="sporter_test.AEMegaMenuTestCases"></class>-->
-<!--            <class name="sporter_test.AeHealthyFoodCategoryTestCases"></class>-->
-<!--            <class name="sporter_test.AEGuestUserTestCases"></class>-->
-<!--            <class name="sporter_test.AEFooterPageTestCases"></class>-->
-<!--            <class name="sporter_test.AeCartTestCases"></class>-->
-<!--            <class name="sporter_test.AeAllPagesInsideCategoriesInMegaMenuTestCases"></class>-->
 
 
-<!--            <class name="sporter_test.QatarHomePageTestCases"> </class>-->
-<!--            <class name="sporter_test.KsaHomePageTestCases"></class>-->
+
 <!--                        <class name="sporter_test.AeSportSupplementsCategoryTestCases"></class>-->
 
             <!--            <methods>-->
@@ -58,7 +43,7 @@
 <!--                &lt;!&ndash;                                <include name="verifyClickOnTheProductsAppearingInTheTopSellersSectionRedirectTheUserToCorrectUrl"></include>&ndash;&gt;-->
 
 <!--            </methods></class>-->
-                <class name="sporter_test.AeWomenOnlyCategoryTestCases">
+<!--                <class name="sporter_test.AeWomenOnlyCategoryTestCases">-->
 <!--                            <methods>-->
 <!--                                <include name="switchToUaeStore"></include>-->
 <!--                                <include name="verifyAbilityToAccessAllPagesInsideSportSupplementsCategoryPage"></include>-->
@@ -66,7 +51,7 @@
 <!--&lt;!&ndash;                                <include name="verifyClickOnTheProductsAppearingInTheTopSellersSectionRedirectTheUserToCorrectUrl"></include>&ndash;&gt;-->
 
 <!--                            </methods>-->
-            </class>
+<!--            </class>-->
 
 
             <!--        <class name="test.Test2" />-->

@@ -12,27 +12,25 @@ import org.testng.annotations.Parameters;
 public class BaseTest {
 //    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
-    public static String siteURL = "https://www.sporter.com";
-    public static String aeDomain = "/en-ae";
-    public static String websiteEnglishLanguage = "/en";
-    public static String websiteArabicLanguage = "/ar";
-    public static String websiteLanguage ;
-
-    public static String uaeWebsite = "-ae/";
-    public String stgSiteURL = "https://stg.sporter.com";
-    public String stgTestSiteURL = "https://stg-test.sporter.com";
-    public String staging2SiteURL = "https://staging2.sporter.com";
-    public String cartURL= "/en-ae/checkout/cart/";
-    public String aeSiteURL = "/en-ae/";
-    public String ksaSiteURL = "/en-sa/";
-    public String qaterSiteURL = "/en-qa/";
-    public String checkoutLoginStepURL = "/en-ae/checkout/#checkout-login-step";
+    public  String siteURL = "https://www.sporter.com";
+    public final String aeDomain = "/en-ae";
+    public final String websiteEnglishLanguage = "/en";
+    public  final String websiteArabicLanguage = "/ar";
+    public final String uaeWebsite = "-ae/";
+    public final String stgSiteURL = "https://stg.sporter.com";
+    public final String stgTestSiteURL = "https://stg-test.sporter.com";
+    public final String staging2SiteURL = "https://staging2.sporter.com";
+    public final String cartURL= "/en-ae/checkout/cart/";
+    public final String aeSiteURL = "/en-ae/";
+    public final String ksaSiteURL = "/en-sa/";
+    public final String qaterSiteURL = "/en-qa/";
+    public final String checkoutLoginStepURL = "/en-ae/checkout/#checkout-login-step";
     public final String freeCouponeCode= "spo15";
     public final String discaountCouponeCode= "";
     public final String outOfStockProduct = "/en-ae/healthy-food/snacks-drinks/spreads/gymqueen-smooth-peanut-butter-spread";
     public final String product = "/en-ae/optimum-gold-standard-100-whey";
     public static String environmentName;
-    public static WebDriver webDriver;
+    public  WebDriver webDriver;
 //    The Below Methods we need to run the TCs across the broswers
 //    @BeforeMethod
 //    @Parameters("browser")

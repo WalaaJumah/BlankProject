@@ -1,9 +1,9 @@
 package core;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
 
-import javax.xml.crypto.Data;
 import java.time.Duration;
 import java.util.*;
 import java.util.NoSuchElementException;
@@ -13,16 +13,15 @@ import java.util.function.Function;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
-public class DataHelperAndWait extends BaseTest {
-    public static WebDriverWait wait;
+public  class DataHelperAndWait  {
 
-
-    public static void waitForElement(WebElement element, int Time) {
+    public static   void waitForElement(WebElement element, int Time, WebDriver webDriver) {
+        WebDriverWait wait;
         wait = new WebDriverWait(webDriver, Time);
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    public static void waitForTime(int milis) {
+    public static  void waitForTime(int milis) {
         try {
             Thread.sleep(milis);
         } catch (InterruptedException e) {
@@ -30,38 +29,42 @@ public class DataHelperAndWait extends BaseTest {
         }
     }
 
-    public static boolean isDisplayed(WebElement element, int Time) {
+    public static  boolean isDisplayed(WebElement element, int Time, WebDriver webDriver) {
+        WebDriverWait wait;
         wait = new WebDriverWait(webDriver, Time);
         return wait.until(ExpectedConditions.visibilityOf(element)).isDisplayed();
     }
-    public static boolean isPresent(WebElement webElement) {
+    public static  boolean isPresent(WebElement webElement) {
         return webElement.isDisplayed();
     }
 
-    public static void implicitWait(int timeSecond) {
+    public static  void implicitWait(int timeSecond,WebDriver webDriver) {
         webDriver.manage().timeouts().implicitlyWait(timeSecond, TimeUnit.SECONDS);
     }
 
-    public static void waitToBeClickable(WebElement element, int Time) {
+    public static  void waitToBeClickable(WebElement element, int Time, WebDriver webDriver) {
+        WebDriverWait wait;
         wait = new WebDriverWait(webDriver, Time);
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    public static void waitToBePresent(String Xpath, int Time) {
+    public static  void waitToBePresent(String Xpath, int Time, WebDriver webDriver) {
+        WebDriverWait wait;
         wait = new WebDriverWait(webDriver, Time);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Xpath)));
     }
 
-    public static void waitToBeVisible(WebElement element, int Time) {
+    public static  void waitToBeVisible(WebElement element, int Time, WebDriver webDriver) {
+        WebDriverWait wait;
         wait = new WebDriverWait(webDriver, Time);
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    public static void refreshPage() {
+    public static  void refreshPage(WebDriver webDriver) {
         webDriver.navigate().refresh();
     }
 
-    public static void selectAllDropDownListOptions(Select select) {
+    public static  void selectAllDropDownListOptions(Select select) {
         List<WebElement> elementCount = select.getOptions();
         int menuSize = elementCount.size();
         for (int i = 0; i < menuSize; i++) {
@@ -69,13 +72,13 @@ public class DataHelperAndWait extends BaseTest {
         }
     }
 
-    public static void fluentWait(WebElement element, int timeOut, int pollingEveryTime) {
+    public static  void fluentWait(WebElement element, int timeOut, int pollingEveryTime, WebDriver webDriver) {
         Wait<WebDriver> Fwait = new FluentWait<WebDriver>(webDriver)
                 .withTimeout(Duration.ofSeconds(timeOut))
                 .pollingEvery(Duration.ofSeconds(pollingEveryTime))
                 .ignoring(NoSuchElementException.class);
         WebElement waitElement = Fwait.until(new Function<WebDriver, WebElement>() {
-            public WebElement apply(WebDriver driver) {
+            public  WebElement apply(WebDriver driver) {
                 if (element.isDisplayed()) {
                 }
                 return element;
@@ -84,28 +87,28 @@ public class DataHelperAndWait extends BaseTest {
     }
 
     //JS Executor
-    public static void JsExecutorToClickOnElement(WebElement element) {
+    public static  void JsExecutorToClickOnElement(WebElement element,WebDriver webDriver) {
         JavascriptExecutor jse = (JavascriptExecutor) webDriver;
         //Find The element
         jse.executeScript("arguments[0].click()", element);
     }
 
-    public static float convertTheStringToFloat(WebElement element) {
+    public static  float convertTheStringToFloat(WebElement element) {
         String elementValue = element.getText();
         String elementValueWithoutCurrency = elementValue.replaceAll("AED", "");
         String elementValueWithoutSpace = elementValueWithoutCurrency.replaceAll(" ", "");
         return Float.parseFloat(elementValueWithoutSpace);
     }
-    public static void switchToTabBrowser(int tabIndex) {
+    public static  void switchToTabBrowser(int tabIndex,WebDriver webDriver) {
         ArrayList<String> numberOfTabsTwo = new ArrayList<String>(webDriver.getWindowHandles());
         webDriver.switchTo().window(numberOfTabsTwo.get(tabIndex));
     }
-    public String generateRandomEmail(){
+    public static String generateRandomEmail(){
         Random randomGenerator = new Random();
         int randomInt = randomGenerator.nextInt(1000);
         return "username"+ randomInt +"@gmail.com";
     }
-    public static void selectFromDropDownList(String element, List<WebElement> list) {
+    public static  void selectFromDropDownList(String element, List<WebElement> list) {
         for (WebElement option : list) {
             if (option.getText().equalsIgnoreCase(element)) {
                 option.click();
@@ -113,7 +116,7 @@ public class DataHelperAndWait extends BaseTest {
             }
         }
     }
-    public static boolean isWebElementPresent(WebElement webElement) {
+    public static  boolean isWebElementPresent(WebElement webElement) {
         try {
             webElement.isDisplayed();
             return true;
@@ -121,19 +124,19 @@ public class DataHelperAndWait extends BaseTest {
             return false;
         }
     }
-    public static void uploadImage(WebElement element, String imageName) {
+    public static  void uploadImage(WebElement element, String imageName) {
         String path;
         path = System.getProperty("user.dir") + "/src/test/resources/Images/" + imageName;
         element.sendKeys(path);
     }
-    public static void scrollTo(WebElement element) {
+    public static  void scrollTo(WebElement element,WebDriver webDriver) {
         ((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView(false);", element);
     }
 
-    public static void scrollBy() {
+    public static  void scrollBy(WebDriver webDriver) {
         ((JavascriptExecutor) webDriver).executeScript("window.scrollBy(0,2000)", "");
     }
-    public static void HandlingWindowMethods() {
+    public static  void HandlingWindowMethods(WebDriver webDriver) {
         String mainWindowHandle = webDriver.getWindowHandle();
         Set<String> allWindowHandles = webDriver.getWindowHandles();
         Iterator<String> iterator = allWindowHandles.iterator();
@@ -145,18 +148,18 @@ public class DataHelperAndWait extends BaseTest {
         }
     }
 
-    public static void clearWebField(WebElement element) {
+    public static  void clearWebField(WebElement element,WebDriver webDriver) {
         while (!element.getAttribute("value").equals("")) {
             element.sendKeys(Keys.BACK_SPACE);
         }
     }
-    public static void waitForUrlContains(String expectedString, WebDriver driver, int specifiedTimeout) {
+    public static  void waitForUrlContains(String expectedString, WebDriver driver, int specifiedTimeout) {
         WebDriverWait wait = new WebDriverWait(driver, specifiedTimeout);
         ExpectedCondition<Boolean> urlIsCorrect = arg0 ->    driver.getCurrentUrl().contains(expectedString);
         wait.until(urlIsCorrect);
     }
 
-    public static void accessAllPagesInsideTheProductsListPage( String numberOfProductInTheList, WebElement element ){
+    public static  void accessAllPagesInsideTheProductsListPage( String numberOfProductInTheList, WebElement element,WebDriver webDriver ){
         ///New
         String numberOfProductWithOutItemLabel= numberOfProductInTheList.replace(") Items","");
         String numberOfProductWithOutResultLabel= numberOfProductWithOutItemLabel.substring(10);
@@ -170,7 +173,7 @@ public class DataHelperAndWait extends BaseTest {
                 String pageNumber = Integer.toString(i);
                 element.click();
 //                DataHelperAndWait.waitForTime(6000);
-                DataHelperAndWait.waitForUrlContains(pageNumber,webDriver,5);
+                DataHelperAndWait.waitForUrlContains(pageNumber,webDriver,6);
                 Assert.assertTrue(webDriver.getCurrentUrl().endsWith(pageNumber),"The URL is wrong in page"+pageNumber);
                 boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
                 assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
