@@ -10,6 +10,7 @@ import java.util.*;
 
 //import com.aventstack.extentreports.reporter.configuration.ViewName;
 import core.BasePage;
+import core.BaseTest;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -44,7 +45,7 @@ public class ExtentReportListener  implements IReporter {
 
         //The date will include with the file name
         extent = new ExtentReports("C:\\Users\\w.jumaa\\Desktop\\Automation Reports" + File.separator
-                + "Magento-Sporter-Automation_Report " + "[" + BasePage.environmentName + "]" + date +" "+System.currentTimeMillis()+ ".html", true);
+                + "Magento-Sporter-Automation_Report " + "[" + BaseTest.environmentName + "]" + date +" "+System.currentTimeMillis()+ ".html", true);
 
 //            spark=new ExtentSparkReporter(File.separator + "Magento-Sporter-Automation_Report "+date+".html");
 //            spark.viewConfigurer().viewOrder().as(new ViewName[]{ViewName.DASHBOARD, ViewName.TEST,ViewName.CATEGORY}).apply();

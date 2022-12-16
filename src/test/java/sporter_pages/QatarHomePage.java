@@ -14,6 +14,7 @@ public class QatarHomePage extends BasePage {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
     }
+    public String contactUsUrl = "contact-form";
 
     //declare all locators related to the Cart Page
     @FindBy(id = "switcher-store-trigger")
@@ -236,6 +237,7 @@ public class QatarHomePage extends BasePage {
         return viewAllBtnInTopSellingStacksSection;
     }
     public WebElement getFirstSideBanner() {
+        DataHelperAndWait.waitToBeVisible(firstSideBanner,3,webDriver);
         return firstSideBanner;
     }
     public WebElement getFirstProductInTopSellingStacksSection(  ) {
@@ -302,6 +304,7 @@ public class QatarHomePage extends BasePage {
     }
 
     public WebElement getSecondSideBanner() {
+        DataHelperAndWait.waitToBeVisible(secondSideBanner,2,webDriver);
         return secondSideBanner;
     }
     public WebElement getTopSellingStacksSections() {
@@ -517,7 +520,7 @@ public class QatarHomePage extends BasePage {
             this.countryList.click();
             this.qatarCountry.click();
         } catch (Exception e) {
-            DataHelperAndWait.isDisplayed(countryList, 2,webDriver);
+            DataHelperAndWait.isDisplayed(countryList, 3,webDriver);
             this.countryList.click();
             this.qatarCountry.click();
         }

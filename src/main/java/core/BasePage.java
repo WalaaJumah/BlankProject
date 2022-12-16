@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 
 public class BasePage {
 
-    public  String siteURL = "https://www.sporter.com";
+    public  static String siteURL = "https://www.sporter.com";
     public final String aeDomain = "/en-ae";
     public final String websiteEnglishLanguage = "/en";
     public  final String websiteArabicLanguage = "/ar";
@@ -27,7 +27,6 @@ public class BasePage {
     public final String discaountCouponeCode= "";
     public final String outOfStockProduct = "/en-ae/healthy-food/snacks-drinks/spreads/gymqueen-smooth-peanut-butter-spread";
     public final String product = "/en-ae/optimum-gold-standard-100-whey";
-    public static String environmentName;
     public WebDriver webDriver;
     //Need to check
     public BasePage(WebDriver webDriver){

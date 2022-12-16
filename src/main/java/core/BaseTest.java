@@ -12,7 +12,7 @@ import org.testng.annotations.Parameters;
 public class BaseTest {
 //    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
-    public  String siteURL = "https://www.sporter.com";
+//    public  String siteURL = "https://www.sporter.com";
     public final String aeDomain = "/en-ae";
     public final String websiteEnglishLanguage = "/en";
     public  final String websiteArabicLanguage = "/ar";
@@ -73,31 +73,31 @@ public class BaseTest {
             case "production":
 //                System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
                 System.setProperty("webdriver.chrome.driver","src/test/resources/drivers/chromedriver.exe");
-                siteURL = "https://www.sporter.com";
+                BasePage.siteURL = "https://www.sporter.com";
                 webDriver = new ChromeDriver();
                 webDriver.manage().window().maximize();
-                webDriver.navigate().to(siteURL);
+                webDriver.navigate().to(BasePage.siteURL);
                 break;
             case "stg":
-                System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
-                siteURL = "https://stg.sporter.com";
+                System.setProperty("webdriver.chrome.driver","src/test/resources/drivers/chromedriver.exe");
+                BasePage.siteURL = "https://stg.sporter.com";
                 webDriver = new ChromeDriver();
                 webDriver.manage().window().maximize();
-                webDriver.navigate().to(siteURL);
+                webDriver.navigate().to(BasePage.siteURL);
                 break;
             case "stgTest":
-                System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
-                siteURL ="https://stg-test.sporter.com";
+                System.setProperty("webdriver.chrome.driver","src/test/resources/drivers/chromedriver.exe");
+                BasePage.siteURL ="https://stg-test.sporter.com";
                 webDriver = new ChromeDriver();
                 webDriver.manage().window().maximize();
-                webDriver.navigate().to(siteURL);
+                webDriver.navigate().to(BasePage.siteURL);
                 break;
             case "staging2":
-                System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
-                siteURL ="https://staging2.sporter.com";
+                System.setProperty("webdriver.chrome.driver","src/test/resources/drivers/chromedriver.exe");
+                BasePage.siteURL ="https://staging2.sporter.com";
                 webDriver = new ChromeDriver();
                 webDriver.manage().window().maximize();
-                webDriver.navigate().to(siteURL);
+                webDriver.navigate().to(BasePage.siteURL);
                 break;
             default:
                 throw new Exception("environment is not correct");
