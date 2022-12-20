@@ -2,20 +2,12 @@ package sporter_test;
 
 import core.BaseTest;
 import core.DataHelperAndWait;
-import error_helper.SporterErrorPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.KsaHomePage;
 
 public class KsaHomePageTestCases extends BaseTest {
     //    private KsaHomePage ksaHomePage;
-//    private AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage;
-    private void verifyTheDisplayedPageDoesNotHaveErrors() {
-        KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
-        Assert.assertFalse(ksaHomePage.getTitle().equalsIgnoreCase(SporterErrorPage.pageNotFoundTitle), "Page Not Found Is Displayed and the URL is " + webDriver.getCurrentUrl());
-        Assert.assertFalse(ksaHomePage.getSourcePage().contains(SporterErrorPage.productsCannotFindMsg), "The page is empty and the URL is " + webDriver.getCurrentUrl());
-        Assert.assertFalse(ksaHomePage.getSourcePage().contains(SporterErrorPage.exceptionPageMsg), "An error has happened during application run. See exception log for details in page and the URL is " + webDriver.getCurrentUrl());
-    }
 
     @Test(description = "Switching to the KSA Store", priority = 1)
     public void switchToKsaStore() {
@@ -23,30 +15,30 @@ public class KsaHomePageTestCases extends BaseTest {
         ksaHomePage.switchToKsaCountry();
     }
 
-    @Test(description = "Make sure the HomePage rotating slider section is displayed correctly in Home Page", priority = 2)
+    @Test(description = "KSA HomePage- Make sure the Banners appear correctly in the HomePage rotating slider section ", priority = 2)
     public void verifyHomePageRotatingSliderIsDisplayed() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
-        Assert.assertTrue(ksaHomePage.getHomePageRotatingSlider().isDisplayed());
+//        Assert.assertTrue(ksaHomePage.getHomePageRotatingSlider().isDisplayed());
         for (int i = 0; i < ksaHomePage.getHomePageRotatingSliderList().size(); i++) {
             Assert.assertTrue(ksaHomePage.getHomePageRotatingSliderList().get(i).isDisplayed());
         }
     }
 
-    @Test(description = "Make sure the next arrow at the HomePage rotating slider section is displayed ", priority = 3)
+    @Test(description = "KSA HomePage- Make sure the next button at the HomePage rotating slider section is displayed ", priority = 3)
     public void verifyNextArrowAtHomePageRotatingSliderIsDisplayed() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
         Assert.assertTrue(ksaHomePage.getNextArrowInHomePageRotatingSlider().isDisplayed());
     }
 
-    @Test(description = "Make sure the previous arrow at the HomePage rotating slider section is displayed ", priority = 4)
+    @Test(description = "KSA HomePage- Make sure the previous button at the HomePage rotating slider section is displayed ", priority = 4)
     public void verifyPreviousArrowAtHomePageRotatingSliderIsDisplayed() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
         Assert.assertTrue(ksaHomePage.getPreviousArrowInHomePageRotatingSlider().isDisplayed());
     }
 
-    @Test(description = "Make sure the pagination control appears on the HomePage rotating slider is displayed", priority = 5)
+    @Test(description = "KSA HomePage- Make sure the pagination control appears on the HomePage rotating slider is displayed", priority = 5)
     public void verifyPaginationControlOnHomePageRotatingSliderIsDisplayed() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
@@ -56,55 +48,55 @@ public class KsaHomePageTestCases extends BaseTest {
         }
     }
 
-    @Test(description = "Make sure clicking on the banners inside the HomePage rotating slider section will redirect the user to correct page", priority = 6)
+    @Test(description = "KSA HomePage- Make sure clicking on the banners inside the rotating slider section works correctly", priority = 6)
     public void verifyClickingOnTheBannersInsideTheHomePageRotatingSliderWillRedirectTheUserToCorrectPage() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
         for (int i = 0; i < ksaHomePage.getHomePageRotatingSliderPagingList().size(); i++) {
             ksaHomePage.getHomePageRotatingSliderPagingList().get(i).click();
             ksaHomePage.getBannerInRotatingSliderSection().click();
-            this.verifyTheDisplayedPageDoesNotHaveErrors();
+            ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
             ksaHomePage.navigate();
         }
     }
 
-    @Test(description = "Make sure the HomePage side Banner is displayed ", priority = 7)
+    @Test(description = "KSA HomePage- Make sure the HomePage side Banner is displayed ", priority = 7)
     public void verifyHomePageSideBannerIsDisplayed() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.navigate();
         Assert.assertTrue(ksaHomePage.getHomePageSideBanner().isDisplayed());
     }
 
-    @Test(description = "Make sure the HomePage Horizontal Banner is displayed ", priority = 8)
+    @Test(description = "KSA HomePage- Make sure the HomePage Horizontal Banner is displayed ", priority = 8)
     public void verifyHomePageHorizontalBannerIsDisplayed() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
         Assert.assertTrue(ksaHomePage.getHorizontalBanner().isDisplayed(), "The HomePage Horizontal Banner is missing");
     }
 
-    @Test(description = "Make sure the clicking on the first side banner works correctly in KSA HomePage", priority = 9)
+    @Test(description = "KSA HomePage- Make sure clicking on the first side banner works correctly", priority = 9)
     public void verifyClickingOnTheFirstSideBannersWorksCorrectlyInTheVitaminsAndHealthCategoryPage() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
         String expectedUrl = ksaHomePage.getFirstSideBanner().getAttribute("href");
         ksaHomePage.getFirstSideBanner().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
-        this.verifyTheDisplayedPageDoesNotHaveErrors();
+        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
 
     }
 
-    @Test(description = "Make sure the clicking on the second side banner works correctly in KSA HomePage", priority = 10)
+    @Test(description = "KSA HomePage- Make sure clicking on the second side banner works correctly", priority = 10)
     public void verifyClickingOnTheSecondSideBannersWorksCorrectlyInTheVitaminsAndHealthCategoryPage() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.navigate();
         String expectedUrl = ksaHomePage.getSecondSideBanner().getAttribute("href");
         ksaHomePage.getSecondSideBanner().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
-        this.verifyTheDisplayedPageDoesNotHaveErrors();
+        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
 
     }
 
-    @Test(description = "Make sure clicking on the HomePage Horizontal Banner redirect the user to the correct URL ", priority = 11)
+    @Test(description = "KSA HomePage- Make sure clicking on the HomePage Horizontal Banner works correctly", priority = 11)
     public void verifyClickingOnHomePageHorizontalBannerDoeNotRedirectTheUserTo404PageOrNoContentFoundPage() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.navigate();
@@ -112,11 +104,11 @@ public class KsaHomePageTestCases extends BaseTest {
         String expectedUrl = ksaHomePage.getHorizontalBanner().getAttribute("href");
         ksaHomePage.clickOnHomePageHorizontalBanner();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
-        this.verifyTheDisplayedPageDoesNotHaveErrors();
+        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
 
     }
 
-    @Test(description = "Make sure the Shop By Category section is displayed ", priority = 12)
+    @Test(description = "KSA HomePage- Make sure the Shop By Category section is displayed ", priority = 12)
     public void verifyShopByCategoryIsDisplayed() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.navigate();
@@ -124,7 +116,7 @@ public class KsaHomePageTestCases extends BaseTest {
         Assert.assertTrue(ksaHomePage.getShopByCategorySections().isDisplayed());
     }
 
-    @Test(description = "Make sure the main options in the Mega Menu are retrieved correctly", priority = 13)
+    @Test(description = "KSA HomePage- Make sure the main options in the Mega Menu are retrieved correctly", priority = 13)
     public void verifyMainOptionsInTheMegaMenuAreDisplayed() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
@@ -136,7 +128,7 @@ public class KsaHomePageTestCases extends BaseTest {
         Assert.assertEquals(ksaHomePage.getWomenOnlyOption().getText(), "Women's Only");
     }
 
-    @Test(description = "Make sure the HomePage under shop by category banners are displayed", priority = 14)
+    @Test(description = "KSA HomePage- Make sure the Banners appearing under shop by category are displayed", priority = 14)
     public void verifyHomePageUnderShopByCategoryBannersAreDisplayed() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
@@ -145,7 +137,7 @@ public class KsaHomePageTestCases extends BaseTest {
         }
     }
 
-    @Test(description = "Make sure the Top Selling Stacks sections are displayed ", priority = 15)
+    @Test(description = "KSA HomePage- Make sure the Top Selling Stacks section is displayed ", priority = 15)
     public void verifyTopSellingStacksSectionAreDisplayed() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
@@ -153,18 +145,18 @@ public class KsaHomePageTestCases extends BaseTest {
         Assert.assertTrue(ksaHomePage.getTopSellingStacksSections().isDisplayed());
     }
 
-    @Test(description = "Make sure the view all button appearing in the Top Selling Stacks section works correctly ", priority = 16)
+    @Test(description = "KSA HomePage- Make sure clicking on the view all button from the Top Selling Stacks section works correctly ", priority = 16)
     public void verifyViewAllBtnInTopSellingStacksSectionWorking() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
         String expectedUrl = ksaHomePage.getViewAllBtnInTopSellingStacksSection().getAttribute("href");
         ksaHomePage.clickOnViewAllBtnInTopSellingStacksSection();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
-        this.verifyTheDisplayedPageDoesNotHaveErrors();
+        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
 
     }
 
-    @Test(description = "Make sure the Top Sellers sections are displayed ", priority = 17)
+    @Test(description = "KSA HomePage- Make sure the Top Sellers sections are displayed ", priority = 17)
     public void verifyTopSellersSectionAreDisplayed() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.navigate();
@@ -172,7 +164,7 @@ public class KsaHomePageTestCases extends BaseTest {
         Assert.assertTrue(ksaHomePage.getTopSellerSections().isDisplayed());
     }
 
-    @Test(description = "Make sure that all links appear correctly in the Top Sellers section ", priority = 18)
+    @Test(description = "KSA HomePage- Make sure that all links appear correctly in the Top Sellers section ", priority = 18)
     public void verifyAllLinksInTopSellersSectionAreDisplayed() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
@@ -183,7 +175,7 @@ public class KsaHomePageTestCases extends BaseTest {
         Assert.assertTrue(ksaHomePage.getSportswearAndAccessoriesLink().isDisplayed());
     }
 
-    @Test(description = "Make sure ability to click on the all link that appear in the Top Seller Section ", priority = 19)
+    @Test(description = "KSA HomePage- Make sure clicking on the All tab from the Top Seller Section works correctly ", priority = 19)
     public void verifyAbilityToClickOnTheAllLinkInTopSellersSection() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
@@ -191,7 +183,7 @@ public class KsaHomePageTestCases extends BaseTest {
         Assert.assertTrue(ksaHomePage.getAllLActiveLink().isDisplayed());
     }
 
-    @Test(description = "Make sure ability to click on the Sport Supplements link that appear in the Top Seller Section ", priority = 20)
+    @Test(description = "KSA HomePage- Make sure clicking on the Sport Supplements tab from the Top Seller Section works correctly", priority = 20)
     public void verifyAbilityToClickOnTheSportSupplementsLinkInTopSellersSection() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
@@ -200,7 +192,7 @@ public class KsaHomePageTestCases extends BaseTest {
         Assert.assertTrue(ksaHomePage.getSportSupplementsActiveLink().isDisplayed());
     }
 
-    @Test(description = "Make sure ability to click on the Healthy Food link that appear in the Top Seller Section ", priority = 21)
+    @Test(description = "KSA HomePage- Make sure clicking on the Healthy Food tab from the Top Seller Section works correctly ", priority = 21)
     public void verifyAbilityToClickOnTheHealthyFoodLinkInTopSellersSection() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
@@ -209,7 +201,7 @@ public class KsaHomePageTestCases extends BaseTest {
         Assert.assertTrue(ksaHomePage.getHealthyFoodActiveLink().isDisplayed());
     }
 
-    @Test(description = "Make sure ability to click on the Vitamins And Health link that appear in the Top Seller Section ", priority = 22)
+    @Test(description = "KSA HomePage- Make sure clicking on the Vitamins And Health tab from the Top Seller Section works correctly ", priority = 22)
     public void verifyAbilityToClickOnTheVitaminsAndHealthLinkInTopSellersSection() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
@@ -218,7 +210,7 @@ public class KsaHomePageTestCases extends BaseTest {
         Assert.assertTrue(ksaHomePage.getVitaminsAndHealthActiveLinkInTopSellersSection().isDisplayed());
     }
 
-    @Test(description = "Make sure ability to click on the Sportswear And Accessories link that appear in the Top Seller Section ", priority = 23)
+    @Test(description = "KSA HomePage- Make sure clicking on the Sportswear And Accessories tab from the Top Seller Section works correctly ", priority = 23)
     public void verifyAbilityToClickOnTheSportswearAndAccessoriesLinkInTopSellersSection() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
@@ -227,7 +219,7 @@ public class KsaHomePageTestCases extends BaseTest {
         Assert.assertTrue(ksaHomePage.getSportswearAndAccessoriesActiveLink().isDisplayed());
     }
 
-    @Test(description = "Make sure that previous button in the Top Seller Section works correctly ", priority = 24)
+    @Test(description = "KSA HomePage- Make sure that previous button in the Top Seller Section works correctly ", priority = 24)
     public void verifyPreviousBtnWillAppearInTopSellersSectionOnceClickingOnNextBtn() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
@@ -235,7 +227,7 @@ public class KsaHomePageTestCases extends BaseTest {
         Assert.assertTrue(ksaHomePage.getPreviousButtonInTopSellerSection().isDisplayed());
     }
 
-    @Test(description = "Make sure the next button appearing in the Top Seller section works Correctly ", priority = 25)
+    @Test(description = "KSA HomePage- Make sure the next button appearing in the Top Seller section works Correctly ", priority = 25)
     public void verifyNextBtnInTopSellerSectionWorks() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
@@ -245,7 +237,7 @@ public class KsaHomePageTestCases extends BaseTest {
     }
 
 
-    @Test(description = "Make sure the Trending On Sporter sections are displayed ", priority = 26)
+    @Test(description = "KSA HomePage- Make sure the Trending On Sporter sections are displayed ", priority = 26)
     public void verifyTrendingOnSporterSectionAreDisplayed() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
@@ -253,7 +245,7 @@ public class KsaHomePageTestCases extends BaseTest {
         Assert.assertTrue(ksaHomePage.getTrendingOnSporterSection().isDisplayed());
     }
 
-    @Test(description = "Make sure the next button appearing in the Trending On Sporter section works Correctly ", priority = 27)
+    @Test(description = "KSA HomePage- Make sure the next button appearing in the Trending On Sporter section works Correctly ", priority = 27)
     public void verifyNextBtnInTrendingOnSporterSectionWorks() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
@@ -261,7 +253,7 @@ public class KsaHomePageTestCases extends BaseTest {
         Assert.assertTrue(ksaHomePage.getTrendingOnSporterSectionPositionAfterClickingOnNext().isDisplayed());
     }
 
-    @Test(description = "Make sure the previous button appearing in the Trending On Sporter section works Correctly ", priority = 28)
+    @Test(description = "KSA HomePage- Make sure the previous button appearing in the Trending On Sporter section works Correctly ", priority = 28)
     public void verifyPreviousBtnInTrendingOnSporterSectionWorks() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
@@ -269,7 +261,7 @@ public class KsaHomePageTestCases extends BaseTest {
         ksaHomePage.clickOnPreviousButtonInTrendingOnSporterSection();
     }
 
-    @Test(description = "Make sure the New Arrivals sections are displayed ", priority = 29)
+    @Test(description = "KSA HomePage- Make sure the New Arrivals sections are displayed ", priority = 29)
     public void verifyNewArrivalsSectionAreDisplayed() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
@@ -277,7 +269,7 @@ public class KsaHomePageTestCases extends BaseTest {
         Assert.assertTrue(ksaHomePage.getNewArrivalsSection().isDisplayed());
     }
 
-    @Test(description = "Make sure that all links appear correctly in the New Arrivals section ", priority = 30)
+    @Test(description = "KSA HomePage- Make sure that all links appearing correctly in the New Arrivals section ", priority = 30)
     public void verifyAllLinksInNewArrivalsSectionAreDisplayed() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
@@ -288,7 +280,7 @@ public class KsaHomePageTestCases extends BaseTest {
         Assert.assertTrue(ksaHomePage.getNewArrivalsSportWearAndAccessoriesLink().isDisplayed());
     }
 
-    @Test(description = "Make sure ability to click on the all link that appear in the New Arrivals Section ", priority = 31)
+    @Test(description = "KSA HomePage- Make sure clicking on the all tab from the New Arrivals Section works correctly", priority = 31)
     public void verifyAbilityToClickOnTheAllLinkInNewArrivalsSection() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
@@ -297,7 +289,7 @@ public class KsaHomePageTestCases extends BaseTest {
         Assert.assertTrue(ksaHomePage.getNewArrivalsAllActiveLink().isDisplayed());
     }
 
-    @Test(description = "Make sure ability to click on the Sport Supplements link that appear in the New Arrivals Section ", priority = 32)
+    @Test(description = "KSA HomePage- Make sure clicking on the Sport Supplements tab from the New Arrivals Section works correctly ", priority = 32)
     public void verifyAbilityToClickOnTheSportSupplementsLinkInNewArrivalsSection() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
@@ -306,7 +298,7 @@ public class KsaHomePageTestCases extends BaseTest {
         Assert.assertTrue(ksaHomePage.getNewArrivalsSportSupplementsActiveLink().isDisplayed());
     }
 
-    @Test(description = "Make sure ability to click on the Healthy Food link that appear in the New Arrivals Section ", priority = 33)
+    @Test(description = "KSA HomePage- Make sure clicking on the Healthy Food tab that appear in the New Arrivals Section works correctly ", priority = 33)
     public void verifyAbilityToClickOnTheHealthyFoodLinkInNewArrivalsSection() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
@@ -315,7 +307,7 @@ public class KsaHomePageTestCases extends BaseTest {
         Assert.assertTrue(ksaHomePage.getNewArrivalsHealthyFoodActiveLink().isDisplayed());
     }
 
-    @Test(description = "Make sure ability to click on the Vitamins And Health link that appear in the New Arrivals Section ", priority = 34)
+    @Test(description = "KSA HomePage- Make sure clicking on the Vitamins And Health tab from the New Arrivals Section works correctly", priority = 34)
     public void verifyAbilityToClickOnTheVitaminsAndHealthLinkInNewArrivalsSection() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
@@ -323,7 +315,7 @@ public class KsaHomePageTestCases extends BaseTest {
         Assert.assertTrue(ksaHomePage.getVitaminsAndHealthActiveLink().isDisplayed());
     }
 
-    @Test(description = "Make sure ability to click on the Sportswear And Accessories link that appear in the New Arrivals Section ", priority = 35)
+    @Test(description = "KSA HomePage- Make sure clicking on the Sportswear And Accessories tab from the New Arrivals Section works correctly ", priority = 35)
     public void verifyAbilityToClickOnTheSportswearAndAccessoriesLinkInNewArrivalsSection() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
@@ -332,7 +324,7 @@ public class KsaHomePageTestCases extends BaseTest {
         Assert.assertTrue(ksaHomePage.getNewArrivalsSportWearAndAccessoriesActiveLink().isDisplayed());
     }
 
-    @Test(description = "Make sure that previous and next button  in the New Arrivals Section works correctly", priority = 36)
+    @Test(description = "KSA HomePage- Make sure that previous and next button in the New Arrivals Section works correctly", priority = 36)
     public void verifyPreviousBtnWillAppearInNewArrivalsSectionOnceClickingOnNextBtn() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
@@ -341,7 +333,7 @@ public class KsaHomePageTestCases extends BaseTest {
     }
 
 
-    @Test(description = "Make sure the Got A Question section is displayed ", priority = 37)
+    @Test(description = "KSA HomePage- Make sure the Got A Question section is displayed ", priority = 37)
     public void verifyGotQuestionSectionIsDisplayed() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
@@ -350,118 +342,117 @@ public class KsaHomePageTestCases extends BaseTest {
         Assert.assertTrue(ksaHomePage.getEmailBtn().isDisplayed());
     }
 
-    @Test(description = "Make sure the Ability to click on email button that appears in the Got A Question section correctly ", priority = 38)
+    @Test(description = "KSA HomePage- Make sure the clicking on email button from the Got A Question section works correctly ", priority = 38)
     public void verifyAbilityToClickOnEmailBtnInGotQuestionSectionCorrectly() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
         ksaHomePage.clickOnEmailBtn();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("contacts-us"));
-        this.verifyTheDisplayedPageDoesNotHaveErrors();
+        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
 
     }
 
-    @Test(description = "Make sure clicking on the Sports Supplements category redirect the user to correct URL ", priority = 39)
+    @Test(description = "KSA HomePage- Make sure clicking on the Sports Supplements category from the HomePage works correctly ", priority = 39)
     public void verifyClickingOnSportsSupplementsCategoryRedirectTheUserToCorrectPage() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.navigate();
         ksaHomePage.clickOnSportsSupplementsCategory();
-        this.verifyTheDisplayedPageDoesNotHaveErrors();
+        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "Make sure clicking on the Healthy Food category redirect the user to correct URL ", priority = 40)
+    @Test(description = "KSA HomePage- Make sure clicking on the Healthy Food category from the HomePage works correctly ", priority = 40)
     public void verifyClickingOnHealthyFoodCategoryDoeNotRedirectTheUserToCorrectPage() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.navigate();
         ksaHomePage.clickOnHealthyFoodCategory();
-        this.verifyTheDisplayedPageDoesNotHaveErrors();
+        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "Make sure clicking on the Vitamins And Health category  redirect the user to correct URL ", priority = 41)
+    @Test(description = "KSA HomePage- Make sure clicking on the Vitamins And Health category from the HomePage works correctly ", priority = 41)
     public void verifyClickingOnVitaminsAndHealthCategoryDoeNotRedirectTheUserToCorrectPage() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.navigate();
         ksaHomePage.clickOnVitaminsAndHealthCategory();
-        this.verifyTheDisplayedPageDoesNotHaveErrors();
+        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "Make sure clicking on the Sportswear & Accessories category redirect the user to correct URL ", priority = 42)
+    @Test(description = "KSA HomePage- Make sure clicking on the Sportswear & Accessories category from the HomePage works correctly ", priority = 42)
     public void verifyClickingOnSportswearAndAccessoriesCategoryDoeNotRedirectTheUserToCorrectPage() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.navigate();
         ksaHomePage.clickOnSportswearAndAccessoriesCategory();
-        this.verifyTheDisplayedPageDoesNotHaveErrors();
+        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "Make sure clicking on the products appearing in the Top Selling Stacks section redirect the user to the correct URL", priority = 43)
+    @Test(description = "KSA HomePage- Make sure clicking on the products appearing in the Top Selling Stacks section works correctly", priority = 43)
     public void verifyClickOnTheProductsAppearingInTheTopSellingStacksSectionRedirectTheUserToCorrectUrl() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.navigate();
         String expectedUrl = ksaHomePage.getFirstProductInTopSellingStacksSection().getAttribute("href");
         ksaHomePage.clickOnFirstProductInTheTopSellingStacksSection();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
-        this.verifyTheDisplayedPageDoesNotHaveErrors();
+        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
         ksaHomePage.navigate();
         expectedUrl = ksaHomePage.getSecondProductInTopSellingStacksSection().getAttribute("href");
         ksaHomePage.clickOnSecondProductInTheTopSellingStacksSection();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
-        this.verifyTheDisplayedPageDoesNotHaveErrors();
+        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
         ksaHomePage.navigate();
-        expectedUrl = ksaHomePage.getThirdProductInTopSellingStacksSection().getAttribute("href");
         ksaHomePage.clickOnThirdProductInTheTopSellingStacksSection();
-        this.verifyTheDisplayedPageDoesNotHaveErrors();
+        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
         ksaHomePage.navigate();
         expectedUrl = ksaHomePage.getFourthProductInTopSellingStacksSection().getAttribute("href");
         ksaHomePage.clickOnFourthProductInTheTopSellingStacksSection();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
-        this.verifyTheDisplayedPageDoesNotHaveErrors();
+        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
         ksaHomePage.navigate();
         expectedUrl = ksaHomePage.getFiveProductInTopSellingStacksSection().getAttribute("href");
         ksaHomePage.clickOnFifthProductInTheTopSellingStacksSection();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
-        this.verifyTheDisplayedPageDoesNotHaveErrors();
+        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "Make sure clicking on the products appearing in the Top Sellers section redirect the user to the correct URL", priority = 44)
+    @Test(description = "KSA HomePage- Make sure clicking on the products appearing in the Top Sellers section works correctly", priority = 44)
     public void verifyClickOnTheProductsAppearingInTheTopSellersSectionRedirectTheUserToCorrectUrl() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.navigate();
         ksaHomePage.clickOnFirstProductInTheTopSellersSection();
-        this.verifyTheDisplayedPageDoesNotHaveErrors();
+        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
         ksaHomePage.navigate();
         ksaHomePage.clickOnSecondProductInTheTopSellersSection();
-        this.verifyTheDisplayedPageDoesNotHaveErrors();
+        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
         ksaHomePage.navigate();
         ksaHomePage.clickOnThirdProductInTheTopSellersSection();
-        this.verifyTheDisplayedPageDoesNotHaveErrors();
+        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
         ksaHomePage.navigate();
         ksaHomePage.clickOnFourthProductInTheTopSellersSection();
-        this.verifyTheDisplayedPageDoesNotHaveErrors();
+        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
         ksaHomePage.navigate();
         ksaHomePage.clickOnFifthProductInTheTopSellersSection();
-        this.verifyTheDisplayedPageDoesNotHaveErrors();
+        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "Make sure clicking on the products appearing in the New Arrivals section redirect the user to the correct URL", priority = 45)
+    @Test(description = "KSA HomePage- Make sure clicking on the products appearing in the New Arrivals section works correctly", priority = 45)
     public void verifyClickOnTheProductsAppearingInTheNewArrivalsSectionRedirectTheUserToCorrectUrl() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.navigate();
         ksaHomePage.clickOnFirstProductInTheNewArrivalsSection();
-        this.verifyTheDisplayedPageDoesNotHaveErrors();
+        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
         ksaHomePage.navigate();
         ksaHomePage.clickOnSecondProductInTheNewArrivalsSection();
-        this.verifyTheDisplayedPageDoesNotHaveErrors();
+        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
         ksaHomePage.navigate();
         ksaHomePage.clickOnThirdProductInTheNewArrivalsSection();
-        this.verifyTheDisplayedPageDoesNotHaveErrors();
+        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
         ksaHomePage.navigate();
         ksaHomePage.clickOnFourthProductInTheNewArrivalsSection();
-        this.verifyTheDisplayedPageDoesNotHaveErrors();
+        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
         ksaHomePage.navigate();
         ksaHomePage.clickOnFifthProductInTheNewArrivalsSection();
-        this.verifyTheDisplayedPageDoesNotHaveErrors();
+        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "Make sure the Ability to click on phone button that appears in the Got A Question section correctly ", priority = 46)
+    @Test(description = "KSA HomePage- Make sure clicking on phone button from the Got A Question section works correctly ", priority = 46)
     public void verifyAbilityToClickOnPhoneBtnInGotQuestionSectionCorrectly() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.navigate();
@@ -470,13 +461,15 @@ public class KsaHomePageTestCases extends BaseTest {
         String myWindowHandle = webDriver.getWindowHandle();
         webDriver.switchTo().window(myWindowHandle);
     }
-//    @Test(description = "Make sure ability to access all pages inside the Top Selling Stacks category correctly ", priority = 17)
-//    public void verifyAbilityToAccessAllPagesInsideTheTopSellingStacksCategoryCorrectly(){
-//        KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
-//        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage();
-//        this.verifyViewAllBtnInTopSellingStacksSectionWorking();
-//        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
-//        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());
-//    }
-
+    @Test(description = "KSA HomePage- Make sure ability to access all pages inside the Top Selling Stacks category correctly ", priority = 47)
+    public void verifyAbilityToAccessAllPagesInsideTheTopSellingStacksCategoryCorrectly(){
+        KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
+        ksaHomePage.navigate();
+        String expectedUrl = ksaHomePage.getViewAllBtnInTopSellingStacksSection().getAttribute("href");
+        ksaHomePage.clickOnViewAllBtnInTopSellingStacksSection();
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
+        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
+        String numberOfProductInTheList=ksaHomePage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,ksaHomePage.getNextPageBtn(),webDriver);
+    }
 }

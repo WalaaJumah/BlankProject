@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class AeWomenOnlyCategoryPage extends BasePage {
     public AeWomenOnlyCategoryPage(WebDriver webDriver){
         super(webDriver);
@@ -83,9 +85,62 @@ public class AeWomenOnlyCategoryPage extends BasePage {
     private WebElement shopeByMenu;
     @FindBy(xpath = "//ul[@class='cd-dropdown-content']/li[5]/a")
     private WebElement womenOnlyOption;
+    @FindBy(xpath = "//div[@class='block-footer-top']")
+    private WebElement pageBottomSection;
+    @FindBy(xpath = "//div[@class='container']/ul[@class='clearfix']")
+    private List<WebElement> pageBottomBlocksList;
+    @FindBy(xpath = "(//li[@class='secure-listing']//h3[1])[1]")
+    private WebElement securePaymentTitle;
+    @FindBy(xpath = "//em[@class='fas fa-unlock']/following-sibling::span")
+    private WebElement securePaymentDescription;
+    @FindBy(xpath = "(//li[@class='secure-listing']//h3[1])[2]")
+    private WebElement authenticProductsTitle;
+    @FindBy(xpath = "(//a[@title='100% Secure payments']//span)[2]")
+    private WebElement authenticProductsDescription;
+    @FindBy(xpath = "(//li[@class='secure-listing']//h3[1])[3]")
+    private WebElement fastDeliveryTitle;
+    @FindBy(xpath = "(//a[@title='100% Secure payments']//span)[3]")
+    private WebElement fastDeliveryDescription;
+    @FindBy(xpath = "//div[@class='category-details']/h1")
+    private WebElement sportSupplementsTitleInSportSupplementsCategoryImage;
+    @FindBy(xpath = "//div[@class='category-details']/p")
+    private WebElement paragraphInInSportSupplementsCategoryImage;
+
+    public WebElement getSecurePaymentDescription() {
+        return securePaymentDescription;
+    }
+    public WebElement getAuthenticProductsTitle() {
+        return authenticProductsTitle;
+    }
+    public WebElement getSportSupplementsTitleInCategoryImage() {
+        return sportSupplementsTitleInSportSupplementsCategoryImage;
+    }
+    public WebElement getParagraphInSportSupplementsCategoryImage() {
+        return paragraphInInSportSupplementsCategoryImage;
+    }
+    public WebElement getAuthenticProductsDescription() {
+        return authenticProductsDescription;
+    }
+    public WebElement getFastDeliveryTitle() {
+        return fastDeliveryTitle;
+    }
+    public WebElement getFastDeliveryDescription() {
+        return fastDeliveryDescription;
+    }
+
+
 
 
     //Getter Methods
+    public WebElement getPageBottomSection() {
+        return pageBottomSection;
+    }
+    public WebElement getSecurePaymentTitle() {
+        return securePaymentTitle;
+    }
+    public List<WebElement> getPageBottomBlocksList() {
+        return pageBottomBlocksList;
+    }
     public WebElement getShopeByMenu() {
         return shopeByMenu;
     }
@@ -194,15 +249,15 @@ public class AeWomenOnlyCategoryPage extends BasePage {
     public WebElement getSecondYouTubeVideo() {
         return secondYouTubeVideo;
     }
-    public void navigate(){webDriver.navigate().to(siteURL);}
+    public void navigate(){webDriver.navigate().to(siteURL +aeDomain+womenOnlyUrl);}
     public void switchToAECountry() {
         try {
             this.countryList.click();
-            DataHelperAndWait.isDisplayed(countryList, 1,webDriver);
+            DataHelperAndWait.isDisplayed(countryList, 3,webDriver);
             this.aeCountry.click();
         } catch (Exception e) {
             this.countryList.click();
-            DataHelperAndWait.isDisplayed(countryList, 1,webDriver);
+            DataHelperAndWait.isDisplayed(countryList, 5,webDriver);
             this.aeCountry.click();
         }
     }

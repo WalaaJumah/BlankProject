@@ -67,12 +67,65 @@ public class AeSportSupplementsCategoryPage extends BasePage {
     private List<WebElement> formFiltrationSection;
     @FindBy(xpath = "(//a[@title='See All'])[1]")
     private WebElement seeAllBtnInFormSection;
+    @FindBy(xpath = ".//*[@class='nav-primary']/li[2]/a")
+    private WebElement sportSupplementsMainMenu;
+    @FindBy(xpath = ".//*[@class='nav-primary']/li[1]")
+    private WebElement shopeByMenu;
+    @FindBy(xpath = "//ul[@class='cd-dropdown-content']/li[1]/a")
+    private WebElement sportsSupplementsOption;
+    @FindBy(xpath = "//div[@class='block-footer-top']")
+    private WebElement pageBottomSection;
+    @FindBy(xpath = "//div[@class='container']/ul[@class='clearfix']")
+    private List<WebElement> pageBottomBlocksList;
+    @FindBy(xpath = "(//li[@class='secure-listing']//h3[1])[1]")
+    private WebElement securePaymentTitle;
+    @FindBy(xpath = "//em[@class='fas fa-unlock']/following-sibling::span")
+    private WebElement securePaymentDescription;
+    @FindBy(xpath = "(//li[@class='secure-listing']//h3[1])[2]")
+    private WebElement authenticProductsTitle;
+    @FindBy(xpath = "(//a[@title='100% Secure payments']//span)[2]")
+    private WebElement authenticProductsDescription;
+    @FindBy(xpath = "(//li[@class='secure-listing']//h3[1])[3]")
+    private WebElement fastDeliveryTitle;
+    @FindBy(xpath = "(//a[@title='100% Secure payments']//span)[3]")
+    private WebElement fastDeliveryDescription;
+
     //Getter Methods
+    public WebElement getSecurePaymentDescription() {
+        return securePaymentDescription;
+    }
+    public WebElement getAuthenticProductsTitle() {
+        return authenticProductsTitle;
+    }
+    public WebElement getAuthenticProductsDescription() {
+        return authenticProductsDescription;
+    }
+    public WebElement getFastDeliveryTitle() {
+        return fastDeliveryTitle;
+    }
+    public WebElement getFastDeliveryDescription() {
+        return fastDeliveryDescription;
+    }
+    public WebElement getPageBottomSection() {
+        return pageBottomSection;
+    }
+    public WebElement getSecurePaymentTitle() {
+        return securePaymentTitle;
+    }
+    public List<WebElement> getPageBottomBlocksList() {
+        return pageBottomBlocksList;
+    }
     public WebElement getSportSupplementsCategoryImage() {
         return sportSupplementsCategoryImage;
     }
     public WebElement getSportSupplementsTitleInCategoryImage() {
         return sportSupplementsTitleInSportSupplementsCategoryImage;
+    }
+    public WebElement getShopeByMenu() {
+        return shopeByMenu;
+    }
+    public WebElement getSportsSupplementsOption() {
+        return sportsSupplementsOption;
     }
 
     public WebElement getParagraphInSportSupplementsCategoryImage() {
@@ -98,13 +151,15 @@ public class AeSportSupplementsCategoryPage extends BasePage {
         return sortByMenu;
     }
     public WebElement getMainBannersInTheSportSupplementsSection() {
+        DataHelperAndWait.waitToBeVisible(mainBannersInTheSportSupplementsSection,5,webDriver);
         return mainBannersInTheSportSupplementsSection;
     }
     public WebElement getSportSupplementsTitleInFooterSection() {
+        DataHelperAndWait.waitToBeVisible(sportSupplementsTitleInFooterSection,5,webDriver);
         return sportSupplementsTitleInFooterSection;
     }
     public WebElement getSportSupplementsDescriptionInFooterSection() {
-        DataHelperAndWait.waitToBeVisible(sportSupplementsDescriptionInFooterSection,3,webDriver);
+        DataHelperAndWait.waitToBeVisible(sportSupplementsDescriptionInFooterSection,5,webDriver);
         return sportSupplementsDescriptionInFooterSection;
     }
     public WebElement getSportSupplementsFooterSection() {
@@ -121,6 +176,7 @@ public class AeSportSupplementsCategoryPage extends BasePage {
         return previousPageBtn;
     }
     public WebElement getNextPageBtn() {
+        DataHelperAndWait.waitToBeVisible(NextPageBtn,5,webDriver);
         return NextPageBtn;
     }
     public WebElement getPageTwoBtn() {
@@ -132,20 +188,23 @@ public class AeSportSupplementsCategoryPage extends BasePage {
     public List<WebElement> getFormFiltrationSection() {
         return formFiltrationSection;
     }
+    public WebElement getSportSupplementsMainMenu() {
+        return sportSupplementsMainMenu;
+    }
     //Define the main actions we need to execute our TCs
     public void switchToAECountry() {
         try {
             this.countryList.click();
-            DataHelperAndWait.isDisplayed(countryList, 1,webDriver);
+            DataHelperAndWait.isDisplayed(countryList, 3,webDriver);
             this.aeCountry.click();
         } catch (Exception e) {
             this.countryList.click();
-            DataHelperAndWait.isDisplayed(countryList, 1,webDriver);
+            DataHelperAndWait.isDisplayed(countryList, 5,webDriver);
             this.aeCountry.click();
         }
     }
     public void clickOnBreadcrumbHomePage() {
-        DataHelperAndWait.waitToBeVisible(homeBreadcrumbs, 5,webDriver);
+        DataHelperAndWait.waitToBeVisible(homeBreadcrumbs, 6,webDriver);
         this.homeBreadcrumbs.click();
     }
 
@@ -160,7 +219,7 @@ public class AeSportSupplementsCategoryPage extends BasePage {
     }
 
     public void navigateToPage2() {
-        DataHelperAndWait.waitToBeVisible(pageTwoBtn, 3,webDriver);
+        DataHelperAndWait.waitToBeVisible(pageTwoBtn, 5,webDriver);
         pageTwoBtn.click();
     }
 
@@ -171,7 +230,7 @@ public class AeSportSupplementsCategoryPage extends BasePage {
 
     public void clickOnPreviousPageBtn() {
         try{
-        DataHelperAndWait.waitToBeVisible(previousPageBtn, 3,webDriver);
+        DataHelperAndWait.waitToBeVisible(previousPageBtn, 5,webDriver);
         previousPageBtn.click();}
         catch(Exception e){        DataHelperAndWait.waitToBeVisible(previousPageBtn, 2,webDriver);
             previousPageBtn.click();}
@@ -193,4 +252,6 @@ public class AeSportSupplementsCategoryPage extends BasePage {
         DataHelperAndWait.waitToBeVisible(homeBreadcrumbs,3,webDriver);
         return homeBreadcrumbs;
     }
+    public void navigate(){webDriver.navigate().to(siteURL +aeDomain+sportSupplementsUrl);}
+
 }

@@ -173,7 +173,7 @@ public  class DataHelperAndWait  {
                 String pageNumber = Integer.toString(i);
                 element.click();
 //                DataHelperAndWait.waitForTime(6000);
-                DataHelperAndWait.waitForUrlContains(pageNumber,webDriver,6);
+                DataHelperAndWait.waitForUrlContains(pageNumber,webDriver,9);
                 Assert.assertTrue(webDriver.getCurrentUrl().endsWith(pageNumber),"The URL is wrong in page"+pageNumber);
                 boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
                 assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -190,6 +190,10 @@ public  class DataHelperAndWait  {
         }
         else System.out.println("There's only a page in the list");
     }
-
+    public static void clearWebField(WebElement element) {
+        while (!element.getAttribute("value").equals("")) {
+            element.sendKeys(Keys.BACK_SPACE);
+        }
+    }
 
 }

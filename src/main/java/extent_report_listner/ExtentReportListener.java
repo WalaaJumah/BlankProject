@@ -5,6 +5,7 @@
 package extent_report_listner;
 
 import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -21,6 +22,7 @@ import org.testng.ISuite;
 import org.testng.ISuiteResult;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.xml.XmlSuite;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -33,16 +35,11 @@ public class ExtentReportListener  implements IReporter {
     private ExtentReports extent;
 //    private ExtentSparkReporter spark;
     private ExtentTest test;
-
-
     String pattern = "yyyy-MM-dd";
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
     String date = simpleDateFormat.format(new Date());
-
-
     public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites,
                                String outputDirectory) {
-
         //The date will include with the file name
         extent = new ExtentReports("C:\\Users\\w.jumaa\\Desktop\\Automation Reports" + File.separator
                 + "Magento-Sporter-Automation_Report " + "[" + BaseTest.environmentName + "]" + date +" "+System.currentTimeMillis()+ ".html", true);
@@ -66,14 +63,14 @@ public class ExtentReportListener  implements IReporter {
 
                 buildTestNodes(context.getPassedTests(), LogStatus.PASS);
                 buildTestNodes(context.getFailedTests(), LogStatus.FAIL);
-                buildTestNodes(context.getSkippedTests(), LogStatus.SKIP);
+//                buildTestNodes(context.getSkippedTests(), LogStatus.SKIP);
+
             }
         }
 
         extent.flush();
         extent.close();
     }
-
 
     private void buildTestNodes(IResultMap tests, LogStatus status) {
         ExtentTest test;
@@ -128,6 +125,8 @@ public class ExtentReportListener  implements IReporter {
         ITestContext context = result.getTestContext();
         WebDriver driver = (WebDriver)context.getAttribute("driver");
         ExtentReportListener.getScreenshot(driver,result.getParameters().toString().trim(),result);
-}}
+}
+
+}
 
 

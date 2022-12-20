@@ -2,6 +2,7 @@
 //
 //import core.BaseTest;
 //import core.DataHelperAndWait;
+//import error_helper.SporterErrorPage;
 //import org.openqa.selenium.WebElement;
 //import org.openqa.selenium.support.ui.Select;
 //import org.testng.Assert;
@@ -24,6 +25,17 @@
 //    private AEFooterPage aeFooterPage;
 //    private AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage;
 //    private AEGuestUserPage aeGuestUserPage;
+//    private void verifyTheDisplayedPageDoesNotHaveErrors() {
+//        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
+//        Assert.assertFalse(aeWomenOnlyCategoryPage.getTitle().equalsIgnoreCase(SporterErrorPage.pageNotFoundTitle), "Page Not Found Is Displayed and the URL is " + webDriver.getCurrentUrl());
+//        Assert.assertFalse(aeWomenOnlyCategoryPage.getSourcePage().contains(SporterErrorPage.productsCannotFindMsg), "The page is empty and the URL is " + webDriver.getCurrentUrl());
+//        Assert.assertFalse(aeWomenOnlyCategoryPage.getSourcePage().contains(SporterErrorPage.exceptionPageMsg), "An error has happened during application run. See exception log for details in page and the URL is " + webDriver.getCurrentUrl());
+//    }
+//    @Test(description = "Switching to UAE store", priority = 1)
+//    public void switchToUaeStore(){
+//        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
+//        aeWomenOnlyCategoryPage.switchToAECountry();
+//    }
 //
 //    @Test(description = "Make sure clicking on the Vitamins And Health Category Appears In MegaMenu Redirect User To CorrectURL", priority = 1)
 //    public void verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL() {
@@ -44,10 +56,7 @@
 //        DataHelperAndWait.waitToBeClickable(aeVitaminsAndHealthCategoryPage.getVitaminsAndHealthCategoryInHomePage(), 5);
 //        aeVitaminsAndHealthCategoryPage.getVitaminsAndHealthCategoryInHomePage().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(aeMegaMenuTestCases.healthVitaminsUrl));
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    @Test(description = "Make sure the rotating slider section is displayed in vitamins And Health Category ", priority = 4)
 //    public void verifyRotatingSliderIsDisplayedInTheVitaminsAndHealthCategoryPage() {
@@ -103,10 +112,7 @@
 //        for (int i = 0; i < aeVitaminsAndHealthCategoryPage.getPagerOfRotatingSlider().size(); i++) {
 //            aeVitaminsAndHealthCategoryPage.getPagerOfRotatingSlider().get(i).click();
 //            aeVitaminsAndHealthCategoryPage.getBannerInRotatingSliderSection().click();
-//            boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//            assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//            boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//            assertFalse(isTheElementPresent, "The page is empty");
+//            this.verifyTheDisplayedPageDoesNotHaveErrors();
 //            webDriver.navigate().to(siteURL+aeMegaMenuTestCases.healthVitaminsUrl);
 //        }
 //    }
@@ -116,10 +122,7 @@
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        String expectedBannerUrl=aeVitaminsAndHealthCategoryPage.getFirstSideBanner().getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.getFirstSideBanner().click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        assertEquals(webDriver.getCurrentUrl(),expectedBannerUrl);
 //    }
 //    @Test(description = "Make sure clicking on the second side banner works correctly in Vitamins And Health Category Page", priority = 12)
@@ -128,10 +131,7 @@
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        String expectedBannerUrl=aeVitaminsAndHealthCategoryPage.getSecondSideBanner().getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.getSecondSideBanner().click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        assertEquals(webDriver.getCurrentUrl(),expectedBannerUrl);
 //    }
 //    @Test(description = "Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Vitamins AndHealth Category Page ", priority = 13)
@@ -155,10 +155,7 @@
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(0).getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(0).click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
 //    }
 //    @Test(description = "Make sure that the Result label and its value appear correctly in the Fish Oil & Omegas category page ", priority = 16)
@@ -249,10 +246,7 @@
 //        aeProductDetailsPage.searchForBundle();
 //        aeProductDetailsPage.getSearchBtn().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    @Test(description = "Verify that the previous page button in the Fish Oil & Omegas category page is disable when the current page is page 1 ", priority = 25)
 //    public void verifyThePreviousBtnInFishOilAndOmegasCategoryPageIsDisableWhenDisplayPage1(){
@@ -300,10 +294,7 @@
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(1).getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(1).click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
 //    }
 //    @Test(description = "Make sure that the Result label and its value appear correctly in the Multivitamins category page ", priority = 31)
@@ -384,10 +375,7 @@
 //        aeProductDetailsPage.searchForBundle();
 //        aeProductDetailsPage.getSearchBtn().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    @Test(description = "Verify that the previous page button in the Multivitamins category page is disable when the current page is page 1 ", priority = 39)
 //    public void verifyThePreviousBtnInMultivitaminsCategoryPageIsDisableWhenDisplayPage1(){
@@ -435,10 +423,7 @@
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(2).getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(2).click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
 //    }
 //    @Test(description = "Make sure that the Result label and its value appear correctly in the Vitamins A_Z category page ", priority = 45)
@@ -519,10 +504,7 @@
 //        aeProductDetailsPage.searchForBundle();
 //        aeProductDetailsPage.getSearchBtn().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    @Test(description = "Verify that the previous page button in the VitaminsA_Z category page is disable when the current page is page 1 ", priority = 53)
 //    public void verifyThePreviousBtnInVitaminsA_ZCategoryPageIsDisableWhenDisplayPage1(){
@@ -570,10 +552,7 @@
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(3).getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(3).click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
 //    }
 //    @Test(description = "Make sure that the Result label and its value appear correctly in the Minerals category page ", priority = 59)
@@ -653,11 +632,7 @@
 //        this.verifyClickingOnMineralsCategoryInsideTheShopByCategorySectionWorksCorrectly();
 //        aeProductDetailsPage.searchForBundle();
 //        aeProductDetailsPage.getSearchBtn().click();
-//        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    @Test(description = "Verify that the previous page button in the Minerals category page is disable when the current page is page 1 ", priority = 67)
 //    public void verifyThePreviousBtnInMineralsCategoryPageIsDisableWhenDisplayPage1(){
@@ -707,10 +682,7 @@
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(4).getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(4).click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
 //    }
 //    @Test(description = "Make sure that the Result label and its value appear correctly in the Antioxidants category page ", priority = 73)
@@ -791,10 +763,7 @@
 //        aeProductDetailsPage.searchForBundle();
 //        aeProductDetailsPage.getSearchBtn().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    @Test(description = "Verify that the previous page button in the Antioxidants category page is disable when the current page is page 1 ", priority = 81)
 //    public void verifyThePreviousBtnInAntioxidantsCategoryPageIsDisableWhenDisplayPage1(){
@@ -844,10 +813,7 @@
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(5).getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(5).click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
 //    }
 //    @Test(description = "Make sure that the Result label and its value appear correctly in the Superfoods category page ", priority = 86)
@@ -930,10 +896,7 @@
 //        aeProductDetailsPage.searchForBundle();
 //        aeProductDetailsPage.getSearchBtn().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    @Test(description = "Verify that the previous page button in the Superfoods category page is disable when the current page is page 1 ", priority = 94)
 //    public void verifyThePreviousBtnInSuperfoodsCategoryPageIsDisableWhenDisplayPage1(){
@@ -983,10 +946,7 @@
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(6).getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(6).click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
 //    }
 //    @Test(description = "Make sure that the Result label and its value appear correctly in the Collagen category page ", priority = 100)
@@ -1068,10 +1028,7 @@
 //        aeProductDetailsPage.searchForBundle();
 //        aeProductDetailsPage.getSearchBtn().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    @Test(description = "Verify that the previous page button in the Collagen category page is disable when the current page is page 1 ", priority = 108)
 //    public void verifyThePreviousBtnInCollagenCategoryPageIsDisableWhenDisplayPage1(){
@@ -1119,10 +1076,7 @@
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 ////        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(7).getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(7).click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        assertEquals(webDriver.getCurrentUrl(),siteURL+"/en-ae/vitamin-health/vitamins-sleep-mood-solutions/melatonin/");
 //        //There's a bug here in the DOM because the URL appears incorrectly
 ////        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
@@ -1207,10 +1161,7 @@
 //        aeProductDetailsPage.searchForBundle();
 //        aeProductDetailsPage.getSearchBtn().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    @Test(description = "Verify that the previous page button in the Melatonin category page is disable when the current page is page 1 ", priority = 122)
 //    public void verifyThePreviousBtnInMelatoninCategoryPageIsDisableWhenDisplayPage1(){
@@ -1278,10 +1229,7 @@
 //        String expectedUrl=aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(0).getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(0).click();
 //        Assert.assertEquals(webDriver.getCurrentUrl().replace(aeDomain,""),expectedUrl);
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    //There's a bug here
 //    @Test(description = "Make sure clicking on the Dandelion Redirect User To CorrectURL", priority = 129)
@@ -1291,10 +1239,7 @@
 //        String expectedUrl=aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(1).getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(1).click();
 //        Assert.assertEquals(webDriver.getCurrentUrl().replace(aeDomain,""),expectedUrl);
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    //There's a bug here
 //    @Test(description = "Make sure clicking on the Ginseng Redirect User To CorrectURL", priority = 130)
@@ -1304,10 +1249,7 @@
 //        String expectedUrl=aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(2).getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(2).click();
 //        Assert.assertEquals(webDriver.getCurrentUrl().replace(aeDomain,""),expectedUrl);
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    //There's a bug here
 //    @Test(description = "Make sure clicking on the Milk Thistle Redirect User To CorrectURL", priority = 131)
@@ -1317,10 +1259,7 @@
 //        String expectedUrl=aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(3).getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(3).click();
 //        Assert.assertEquals(webDriver.getCurrentUrl().replace(aeDomain,""),expectedUrl);
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    //There's a bug here
 //    @Test(description = "Make sure clicking on the Alfalfa Redirect User To CorrectURL", priority = 132)
@@ -1330,10 +1269,7 @@
 //        String expectedUrl=aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(4).getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(4).click();
 //        Assert.assertEquals(webDriver.getCurrentUrl().replace(aeDomain,""),expectedUrl);
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    //There's a bug here because the page is not opened correctly
 //    @Test(description = "Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Tumeric Page ", priority = 133)
@@ -1418,10 +1354,7 @@
 //        aeProductDetailsPage.searchForBundle();
 //        aeProductDetailsPage.getSearchBtn().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    //There's a bug here because the page is not opened correctly
 //    @Test(description = "Verify that the search button works correctly from the Dandelion  page", priority = 144)
@@ -1431,10 +1364,7 @@
 //        aeProductDetailsPage.searchForBundle();
 //        aeProductDetailsPage.getSearchBtn().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    //There's a bug here because the page is not opened correctly
 //    @Test(description = "Verify that the search button works correctly from the Ginseng  page", priority = 145)
@@ -1444,10 +1374,7 @@
 //        aeProductDetailsPage.searchForBundle();
 //        aeProductDetailsPage.getSearchBtn().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    //There's a bug here because the page is not opened correctly
 //    @Test(description = "Verify that the search button works correctly from the Milk Thistle  page", priority = 146)
@@ -1457,10 +1384,7 @@
 //        aeProductDetailsPage.searchForBundle();
 //        aeProductDetailsPage.getSearchBtn().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    //There's a bug here because the page is not opened correctly
 //    @Test(description = "Verify that the search button works correctly from the Alfalfa  page", priority = 147)
@@ -1470,10 +1394,7 @@
 //        aeProductDetailsPage.searchForBundle();
 //        aeProductDetailsPage.getSearchBtn().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    //Shop By Health Need Test Cases
 //    @Test(description = "Make sure the Shop By Health Need section is displayed ", priority = 148)
@@ -1588,10 +1509,7 @@
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getBeautyCategory().getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.getBeautyCategory().click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
 //    }
 //    @Test(description = "Make sure that the Result label and its value appear correctly in the Beauty category page ", priority = 152)
@@ -1672,10 +1590,7 @@
 //        aeProductDetailsPage.searchForBundle();
 //        aeProductDetailsPage.getSearchBtn().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    @Test(description = "Verify that the previous page button in the Beauty category page is disable when the current page is page 1 ", priority = 160)
 //    public void verifyThePreviousBtnInBeautyCategoryPageIsDisableWhenDisplayPage1(){
@@ -1730,10 +1645,7 @@
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getBoneAndJointCategory().getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.getBoneAndJointCategory().click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
 //    }
 //    @Test(description = "Make sure that the Result label and its value appear correctly in the Bone And Joint category page ", priority = 167)
@@ -1814,10 +1726,7 @@
 //        aeProductDetailsPage.searchForBundle();
 //        aeProductDetailsPage.getSearchBtn().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    @Test(description = "Verify that the previous page button in the Bone And Joint category page is disable when the current page is page 1 ", priority = 175)
 //    public void verifyThePreviousBtnInBoneAndJointCategoryPageIsDisableWhenDisplayPage1(){
@@ -1872,10 +1781,7 @@
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getBrainSupportCategory().getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.getBrainSupportCategory().click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
 //    }
 //    @Test(description = "Make sure that the Result label and its value appear correctly in the Brain Support category page ", priority = 182)
@@ -1957,10 +1863,7 @@
 //        aeProductDetailsPage.searchForBundle();
 //        aeProductDetailsPage.getSearchBtn().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    @Test(description = "Verify that the previous page button in the BrainSupport category page is disable when the current page is page 1 ", priority = 190)
 //    public void verifyThePreviousBtnInBrainSupportCategoryPageIsDisableWhenDisplayPage1(){
@@ -2015,10 +1918,7 @@
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getDetoxAndLiverSupportCategory().getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.getDetoxAndLiverSupportCategory().click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
 //    }
 //    @Test(description = "Make sure that the Result label and its value appear correctly in the Detox & Liver Support category page ", priority = 197)
@@ -2100,10 +2000,7 @@
 //        aeProductDetailsPage.searchForBundle();
 //        aeProductDetailsPage.getSearchBtn().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    @Test(description = "Verify that the previous page button in the Detox & Liver Support category page is disable when the current page is page 1 ", priority = 205)
 //    public void verifyThePreviousBtnInDetoxAndLiverSupportCategoryPageIsDisableWhenDisplayPage1(){
@@ -2157,10 +2054,7 @@
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getDigestiveSupportCategory().getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.getDigestiveSupportCategory().click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
 //    }
 //    @Test(description = "Make sure that the Result label and its value appear correctly in the Digestive Support category page ", priority = 212)
@@ -2242,10 +2136,7 @@
 //        aeProductDetailsPage.searchForBundle();
 //        aeProductDetailsPage.getSearchBtn().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    @Test(description = "Verify that the previous page button in the Digestive Support category page is disable when the current page is page 1 ", priority = 220)
 //    public void verifyThePreviousBtnInDigestiveSupportCategoryPageIsDisableWhenDisplayPage1(){
@@ -2300,10 +2191,7 @@
 //        aeVitaminsAndHealthCategoryPage.getNextIconInShopByHealthNeedSection().click();
 //        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getEnergyFormulasCategory().getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.getEnergyFormulasCategory().click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
 //    }
 //    @Test(description = "Make sure that the Result label and its value appear correctly in the Energy Formulas category page ", priority = 227)
@@ -2385,10 +2273,7 @@
 //        aeProductDetailsPage.searchForBundle();
 //        aeProductDetailsPage.getSearchBtn().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    @Test(description = "Verify that the previous page button in the Energy Formulas category page is disable when the current page is page 1 ", priority = 235)
 //    public void verifyThePreviousBtnInEnergyFormulasCategoryPageIsDisableWhenDisplayPage1(){
@@ -2444,10 +2329,7 @@
 //        aeVitaminsAndHealthCategoryPage.getNextIconInShopByHealthNeedSection().click();
 //        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getHairAndSkinAndNailsCategory().getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.getHairAndSkinAndNailsCategory().click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
 //    }
 //    @Test(description = "Make sure that the Result label and its value appear correctly in the Hair, Skin & Nails, Beauty category page ", priority = 242)
@@ -2529,10 +2411,7 @@
 //        aeProductDetailsPage.searchForBundle();
 //        aeProductDetailsPage.getSearchBtn().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    @Test(description = "Verify that the previous page button in the Hair, Skin & Nails, Beauty category page is disable when the current page is page 1 ", priority = 250)
 //    public void verifyThePreviousBtnInHairAndSkinAndNailsCategoryPageIsDisableWhenDisplayPage1(){
@@ -2590,10 +2469,7 @@
 //        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getHeartHealthCategory().getAttribute("href");
 //        DataHelperAndWait.waitToBeClickable(aeVitaminsAndHealthCategoryPage.getHeartHealthCategory(),5);
 //        aeVitaminsAndHealthCategoryPage.getHeartHealthCategory().click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
 //    }
 //    @Test(description = "Make sure that the Result label and its value appear correctly in the Heart Health category page ", priority = 257)
@@ -2675,10 +2551,7 @@
 //        aeProductDetailsPage.searchForBundle();
 //        aeProductDetailsPage.getSearchBtn().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    @Test(description = "Verify that the previous page button in the Heart Health category page is disable when the current page is page 1 ", priority = 265)
 //    public void verifyThePreviousBtnInHeartHealthCategoryPageIsDisableWhenDisplayPage1(){
@@ -2727,10 +2600,7 @@
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getImmunitySupportCategory().getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.clickOnImmunitySupportCategory();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
 //    }
 //    @Test(description = "Make sure that the Result label and its value appear correctly in the Immunity Support category page ", priority = 272)
@@ -2812,10 +2682,7 @@
 //        aeProductDetailsPage.searchForBundle();
 //        aeProductDetailsPage.getSearchBtn().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    @Test(description = "Verify that the previous page button in the Immunity Support category page is disable when the current page is page 1 ", priority = 280)
 //    public void verifyThePreviousBtnInImmunitySupportCategoryPageIsDisableWhenDisplayPage1(){
@@ -2865,10 +2732,7 @@
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getKidsHealthCategory().getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.clickOnKidsHealthCategory();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
 //    }
 //    @Test(description = "Make sure that the Result label and its value appear correctly in the Kids Health category page ", priority = 287)
@@ -2950,10 +2814,7 @@
 //        aeProductDetailsPage.searchForBundle();
 //        aeProductDetailsPage.getSearchBtn().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    @Test(description = "Verify that the previous page button in the Kids Health category page is disable when the current page is page 1 ", priority = 295)
 //    public void verifyThePreviousBtnInKidsHealthCategoryPageIsDisableWhenDisplayPage1(){
@@ -3003,10 +2864,7 @@
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getMensHealthCategory().getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.clickOnMensHealthCategory();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
 //    }
 //    @Test(description = "Make sure that the Result label and its value appear correctly in the Mens Health category page ", priority = 302)
@@ -3088,10 +2946,7 @@
 //        aeProductDetailsPage.searchForBundle();
 //        aeProductDetailsPage.getSearchBtn().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    @Test(description = "Verify that the previous page button in the Mens Health category page is disable when the current page is page 1 ", priority = 310)
 //    public void verifyThePreviousBtnInMensHealthCategoryPageIsDisableWhenDisplayPage1(){
@@ -3140,10 +2995,7 @@
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 ////        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getSexualHealthCategory().getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.clickOnSexualHealthCategory();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains("sexual-health"));
 //    }
 //    @Test(description = "Make sure that the Result label and its value appear correctly in the Sexual Health category page ", priority = 317)
@@ -3225,10 +3077,7 @@
 //        aeProductDetailsPage.searchForBundle();
 //        aeProductDetailsPage.getSearchBtn().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    @Test(description = "Verify that the previous page button in the Sexual Health category page is disable when the current page is page 1 ", priority = 325)
 //    public void verifyThePreviousBtnInSexualHealthCategoryPageIsDisableWhenDisplayPage1(){
@@ -3278,10 +3127,7 @@
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 ////        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getSexualHealthCategory().getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.clickOnSleepSupportCategory();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains("sleep-support"));
 //    }
 //    @Test(description = "Make sure that the Result label and its value appear correctly in the Sleep Support category page ", priority = 332)
@@ -3363,10 +3209,7 @@
 //        aeProductDetailsPage.searchForBundle();
 //        aeProductDetailsPage.getSearchBtn().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    @Test(description = "Verify that the previous page button in the Sleep Support category page is disable when the current page is page 1 ", priority = 340)
 //    public void verifyThePreviousBtnInSleepSupportCategoryPageIsDisableWhenDisplayPage1(){
@@ -3416,10 +3259,7 @@
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 ////        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getSexualHealthCategory().getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.clickOnDietWeightManagementCategory();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains("weight-management"));
 //    }
 //    @Test(description = "Make sure that the Result label and its value appear correctly in the Diet Weight Management category page ", priority = 347)
@@ -3501,10 +3341,7 @@
 //        aeProductDetailsPage.searchForBundle();
 //        aeProductDetailsPage.getSearchBtn().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    @Test(description = "Verify that the previous page button in the Diet Weight Management category page is disable when the current page is page 1 ", priority = 355)
 //    public void verifyThePreviousBtnInDietWeightManagementCategoryPageIsDisableWhenDisplayPage1(){
@@ -3554,10 +3391,7 @@
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 ////        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getSexualHealthCategory().getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.clickOnWomenHealthCategory();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains("women-s-health/"));
 //    }
 //    @Test(description = "Make sure that the Result label and its value appear correctly in the Women Health category page ", priority = 362)
@@ -3639,10 +3473,7 @@
 //        aeProductDetailsPage.searchForBundle();
 //        aeProductDetailsPage.getSearchBtn().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    @Test(description = "Verify that the previous page button in the Women Health category page is disable when the current page is page 1 ", priority = 370)
 //    public void verifyThePreviousBtnInWomenHealthCategoryPageIsDisableWhenDisplayPage1(){
@@ -3721,10 +3552,7 @@
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getViewAllInFishOilAndOmegasSection().getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.getViewAllInFishOilAndOmegasSection().click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
 //    }
 //    @Test(description = "Make sure clicking on the product card in the Fish Oil And Omegas section works correctly ", priority = 381)
@@ -3732,10 +3560,7 @@
 //        aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        aeVitaminsAndHealthCategoryPage.getProductCardInFishOilAndOmegasSection().click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    //Multi Vitamins Section Test Cases
 //    @Test(description = "Make sure the MultiVitamins section is displayed ", priority = 382)
@@ -3772,10 +3597,7 @@
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getViewAllInMultiVitaminsSection().getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.getViewAllInMultiVitaminsSection().click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
 //    }
 //    @Test(description = "Make sure clicking on the product card in the MultiVitamins section works correctly ", priority = 387)
@@ -3783,10 +3605,7 @@
 //        aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        aeVitaminsAndHealthCategoryPage.getProductCardInMultiVitaminsSection().click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    //Vitamins A-Z Section Test Cases
 //    @Test(description = "Make sure the Vitamins A-Z section is displayed ", priority = 388)
@@ -3823,10 +3642,7 @@
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getViewAllInVitaminsAZSection().getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.getViewAllInVitaminsAZSection().click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
 //    }
 //    @Test(description = "Make sure clicking on the product card in the Vitamins A-Z section works correctly ", priority = 393)
@@ -3834,10 +3650,7 @@
 //        aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        aeVitaminsAndHealthCategoryPage.getProductCardIVitaminsAZSection().click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    //Minerals Section Test Cases
 //    @Test(description = "Make sure the Minerals section is displayed ", priority = 394)
@@ -3874,10 +3687,7 @@
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getViewAllInMineralsSection().getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.getViewAllInMineralsSection().click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
 //    }
 //    @Test(description = "Make sure clicking on the product card in the Minerals section works correctly ", priority = 399)
@@ -3885,10 +3695,7 @@
 //        aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        aeVitaminsAndHealthCategoryPage.getProductCardInMineralsSection().click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    //Antioxidants Section Test Cases
 //    @Test(description = "Make sure the Antioxidants section is displayed ", priority = 400)
@@ -3925,10 +3732,7 @@
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getViewAllInAntioxidantsSection().getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.getViewAllInAntioxidantsSection().click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
 //    }
 //    @Test(description = "Make sure clicking on the product card in the Antioxidants section works correctly ", priority = 405)
@@ -3936,10 +3740,7 @@
 //        aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        aeVitaminsAndHealthCategoryPage.getProductCardInAntioxidantsSection().click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    //Superfoods Section Test Cases
 //    @Test(description = "Make sure the Superfoods section is displayed ", priority = 406)
@@ -3976,10 +3777,7 @@
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getViewAllInSuperFoodSection().getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.getViewAllInSuperFoodSection().click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
 //    }
 //    @Test(description = "Make sure clicking on the product card in the Superfoods section works correctly ", priority = 411)
@@ -3987,10 +3785,7 @@
 //        aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        aeVitaminsAndHealthCategoryPage.getProductCardInSuperFoodSection().click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    //Melatonin Section Test Cases
 //    @Test(description = "Make sure the Melatonin section is displayed ", priority = 412)
@@ -4027,10 +3822,7 @@
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getViewAllInMelatoninSection().getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.getViewAllInMelatoninSection().click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
 //    }
 //    @Test(description = "Make sure clicking on the product card in the Melatonin section works correctly ", priority = 417)
@@ -4038,10 +3830,7 @@
 //        aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        aeVitaminsAndHealthCategoryPage.getProductCardInMelatoninSection().click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    //Collagen Section Test Cases
 //    @Test(description = "Make sure the Collagen section is displayed ", priority = 418)
@@ -4078,10 +3867,7 @@
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getViewAllInCollagenSection().getAttribute("href");
 //        aeVitaminsAndHealthCategoryPage.getViewAllInCollagenSection().click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
 //    }
 //    @Test(description = "Make sure clicking on the product card in the Collagen section works correctly ", priority = 423)
@@ -4089,10 +3875,7 @@
 //        aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        aeVitaminsAndHealthCategoryPage.getProductCardInCollagenSection().click();
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
+//this.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //    @Test(description = "Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Vitamins And Health category page", priority = 424)
 //    public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInVitaminsAndHealthCategoryPage(){

@@ -144,7 +144,7 @@ public class KsaHomePage extends BasePage {
     private WebElement newArrivalsSportswearAndAccessoriesActiveLink;
     @FindBy(xpath = "(//div[@class='swiper-button-next top-sellers-swiper-button-next']/i)[8]")
     private WebElement nextBtnInNewArrivalsSection;
-    @FindBy(xpath = "((//div[@class='swiper-button-prev top-sellers-swiper-button-prev']/i))[2]")
+    @FindBy(xpath = "((//div[@class='swiper-button-prev top-sellers-swiper-button-prev']/i))[1]")
     private WebElement previousBtnInNewArrivalsSection;
     @FindBy(xpath = "//div[@class='left-quetion-block quetion-inner']")
     private WebElement getQuestionBlock;
@@ -196,8 +196,12 @@ public class KsaHomePage extends BasePage {
     private WebElement fourthProductInNewArrivalsSection;
   @FindBy(xpath = "(//div[@id='tab-6-all6']/div/div/div/div/a)[5]")
     private WebElement fiveProductInNewArrivalsSection;
-
-
+    @FindBy(xpath = "(//p[@class='count-container-item amount amount--has-pages'])[1]/span")
+    private WebElement resultLabel;
+    @FindBy(xpath = "(//p[@class='count-container-item amount amount--has-pages'])[1]")
+    private WebElement searchResultValue;
+    @FindBy(xpath = "(//li[@class='item pages-item-next']/a)[2]")
+    private WebElement NextPageBtn;
 
     //Getter Methods
     public WebElement getNextArrowInHomePageRotatingSlider() {
@@ -208,6 +212,13 @@ public class KsaHomePage extends BasePage {
                 dataHelperAndWait= new DataHelperAndWait();
 dataHelperAndWait.waitToBeVisible(previousArrowInHomePageRotatingSlider,3,webDriver);
         return previousArrowInHomePageRotatingSlider;
+    }
+    public WebElement getNextPageBtn() {
+        return NextPageBtn;
+    }
+    public WebElement getSearchResultValue() {
+        DataHelperAndWait.waitToBeVisible(searchResultValue,2,webDriver);
+        return searchResultValue;
     }
 
     public WebElement getHomePageRotatingSliderPagingControl() {
@@ -512,6 +523,7 @@ dataHelperAndWait.waitToBeVisible(NewArrivalSectionPositionAfterClickingOnNext,3
     }
 
     public WebElement getPreviousBtnInNewArrivalsSection() {
+        DataHelperAndWait.waitToBeVisible(previousBtnInNewArrivalsSection,5,webDriver);
         return previousBtnInNewArrivalsSection;
     }
 

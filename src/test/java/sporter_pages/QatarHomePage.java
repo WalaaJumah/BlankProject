@@ -409,6 +409,7 @@ public class QatarHomePage extends BasePage {
     }
 
     public WebElement getPreviousButtonInTopSellerSection() {
+        DataHelperAndWait.waitToBeVisible(previousButtonInTopSellerSection,3,webDriver);
         return previousButtonInTopSellerSection;
     }
 
@@ -421,12 +422,12 @@ public class QatarHomePage extends BasePage {
     }
 
     public WebElement getTrendingOnSporterSectionPositionAfterClickingOnNext(  ) {
-        DataHelperAndWait.waitToBeVisible(trendingOnSporterSectionPositionAfterClickingOnNext,3,webDriver);
+        DataHelperAndWait.waitToBeVisible(trendingOnSporterSectionPositionAfterClickingOnNext,5,webDriver);
         return trendingOnSporterSectionPositionAfterClickingOnNext;
     }
 
     public WebElement getTrendingOnSporterSectionPositionAfterClickingOnPrevious(  ) {
-        DataHelperAndWait.waitToBeVisible(trendingOnSporterSectionPositionAfterClickingOnPrevious,3,webDriver);
+        DataHelperAndWait.waitToBeVisible(trendingOnSporterSectionPositionAfterClickingOnPrevious,5,webDriver);
         return trendingOnSporterSectionPositionAfterClickingOnPrevious;
     }
 
@@ -498,6 +499,7 @@ public class QatarHomePage extends BasePage {
     }
 
     public WebElement getPreviousBtnInNewArrivalsSection() {
+        DataHelperAndWait.waitToBeVisible(previousBtnInNewArrivalsSection,5,webDriver);
         return previousBtnInNewArrivalsSection;
     }
 
@@ -707,7 +709,6 @@ public class QatarHomePage extends BasePage {
 
     public void clickOnNextButtonInNewArrivalSection(  ) {
         try {
-//            DataHelperAndWait.isDisplayed(nextBtnInNewArrivalsSection, 2);
             DataHelperAndWait.fluentWait(this.nextBtnInNewArrivalsSection,2,3,webDriver);
 
             this.nextBtnInNewArrivalsSection.click();

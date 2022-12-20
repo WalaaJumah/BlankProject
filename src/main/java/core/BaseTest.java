@@ -12,6 +12,14 @@ import org.testng.annotations.Parameters;
 public class BaseTest {
 //    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
+//    @Parameters({"environment"})
+//
+//    public BaseTest(@Optional("production") String environment) throws Exception {
+//      this.setupBrowser(environment);
+//        }
+
+
+
 //    public  String siteURL = "https://www.sporter.com";
     public final String aeDomain = "/en-ae";
     public final String websiteEnglishLanguage = "/en";
