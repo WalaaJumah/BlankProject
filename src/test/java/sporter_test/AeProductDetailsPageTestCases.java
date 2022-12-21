@@ -37,7 +37,7 @@
 //        aeProductDetailsPage.clickOnProductInHomePage();
 //        aeProductDetailsPage.addToCart();
 //        aeProductDetailsPage.viewCart();
-//        Assert.assertEquals(webDriver.getCurrentUrl(), "https://www.sporter.com/en-ae/checkout/cart/");
+//        Assert.assertEquals(webDriver.getCurrentUrl(),aeProductDetailsPage.siteUrl+aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL );
 //    }
 //
 //    @Test(description = "Make sure the out of stock message appears when displaying out of stock product ", priority = 3)

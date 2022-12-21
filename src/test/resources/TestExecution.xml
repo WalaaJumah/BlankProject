@@ -18,14 +18,14 @@
     <!--        Guidelines:-->
 <!--    1. To test on Arabic version, change the value to "ar".-->
 <!--    2. To test on English version, change the value to "en"-->
-<!--    3. Commit it if you want to keep the default version( English) -->
+<!--    3. Commit it if you want to keep the default version( English) -->`
         <!--        <parameter name="language" value="ar" />-->
     <classes>
-        <class name="sporter_test.AEMegaMenuTestCases">
+        <class name="sporter_test.AeRecommendedProductsTestCases">
             <methods>
-                <include name="switchToUaeStore"></include>
-                <include name="verifyClickingOnSportsSupplementsOptionInShopByMenuRedirectUserToCorrectURL"></include>
-                <include name="verifyMegaMenuSectionAppearsCorrectlyInThSportsSupplementsPage"></include>
+                <include name="switchToAeStore"></include>
+                <include name="verifyTheProductPriceInTheRecommendedPopupMatchesWithThePriceDisplaysInPdp"></include>
+                <include name="verifyClickingOnProductCardInTheRecommendedPopupWillDisplayThePdp"></include>
 
             </methods>
         </class>

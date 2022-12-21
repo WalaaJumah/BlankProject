@@ -21,7 +21,7 @@ public class BasePage {
     public final String stgSiteURL = "https://stg.sporter.com";
     public final String stgTestSiteURL = "https://stg-test.sporter.com";
     public final String staging2SiteURL = "https://staging2.sporter.com";
-    public final String cartURL= "/en-ae/checkout/cart/";
+    public final String cartURL= "/checkout/cart/";
     public final String aeSiteURL = "/en-ae/";
     public final String ksaSiteURL = "/en-sa/";
     public final String qaterSiteURL = "/en-qa/";

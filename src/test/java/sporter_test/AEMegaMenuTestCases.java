@@ -7471,12 +7471,7 @@ public void verifyClickingOnFirstBannerInTheSportSupplementsMenuWorksCorrectly()
     action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
     action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheSportSupplementsMenu()).perform();
     aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheSportSupplementsMenu().click();
-    boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-    assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
-    boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-    assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
-    boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
-    assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
+aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 }
 @Test(description = "MegaMenu- Make sure clicking on the second banner that appears inside the sport supplements menu works correctly ", priority = 525)
 public void verifyClickingOnSecondBannerInTheSportSupplementsMenuWorksCorrectly() {
@@ -7487,12 +7482,7 @@ public void verifyClickingOnSecondBannerInTheSportSupplementsMenuWorksCorrectly(
     action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
     action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheSportSupplementsMenu()).perform();
     aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheSportSupplementsMenu().click();
-    boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-    assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
-    boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-    assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
-    boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
-    assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
+aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 }
 @Test(description = "MegaMenu- Make sure clicking on the first banner that appears inside the Vitamins And Health menu works correctly ", priority = 526)
 public void verifyClickingOnFirstBannerInTheVitaminsAndHealthMenuWorksCorrectly() {
@@ -7503,12 +7493,7 @@ public void verifyClickingOnFirstBannerInTheVitaminsAndHealthMenuWorksCorrectly(
     action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
     action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheVitaminsAndHealthMenu()).perform();
     aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheVitaminsAndHealthMenu().click();
-    boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-    assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
-    boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-    assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
-    boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
-    assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
+aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 }
 @Test(description = "MegaMenu- Make sure clicking on the second banner that appears inside the Vitamins And Health menu works correctly ", priority = 527)
 public void verifyClickingOnSecondBannerInTheVitaminsAndHealthMenuWorksCorrectly() {
@@ -7519,12 +7504,7 @@ public void verifyClickingOnSecondBannerInTheVitaminsAndHealthMenuWorksCorrectly
     action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
     action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheVitaminsAndHealthMenu()).perform();
     aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheVitaminsAndHealthMenu().click();
-    boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-    assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
-    boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-    assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
-    boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
-    assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
+aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 }
 @Test(description = "MegaMenu- Make sure clicking on the first banner that appears inside the Healthy Food menu works correctly ", priority = 528)
 public void verifyClickingOnFirstBannerInTheHealthyFoodMenuWorksCorrectly() {
@@ -7535,12 +7515,7 @@ public void verifyClickingOnFirstBannerInTheHealthyFoodMenuWorksCorrectly() {
     action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
     action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheHealthyFoodMenu()).perform();
     aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheHealthyFoodMenu().click();
-    boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-    assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
-    boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-    assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
-    boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
-    assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
+aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 }
 @Test(description = "MegaMenu- Make sure clicking on the second banner that appears inside the Healthy Food menu works correctly ", priority = 529)
 public void verifyClickingOnSecondBannerInTheHealthyFoodMenuWorksCorrectly() {
@@ -7551,12 +7526,7 @@ public void verifyClickingOnSecondBannerInTheHealthyFoodMenuWorksCorrectly() {
     action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
     action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheHealthyFoodMenu()).perform();
     aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheHealthyFoodMenu().click();
-    boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-    assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
-    boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-    assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
-    boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
-    assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
+aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 }
 @Test(description = "MegaMenu- Make sure clicking on the first banner that appears inside the Sports menu works correctly ", priority = 530)
 public void verifyClickingOnFirstBannerInTheSportsMenuWorksCorrectly() {
@@ -7567,12 +7537,7 @@ public void verifyClickingOnFirstBannerInTheSportsMenuWorksCorrectly() {
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheSportsMenu()).perform();
     aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheSportsMenu().click();
-    boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-    assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
-    boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-    assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
-    boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
-    assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
+aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 }
 @Test(description = "MegaMenu- Make sure clicking on the second banner that appears inside the Sports menu works correctly ", priority = 531)
 public void verifyClickingOnSecondBannerInTheSportsMenuWorksCorrectly() {
@@ -7583,11 +7548,6 @@ public void verifyClickingOnSecondBannerInTheSportsMenuWorksCorrectly() {
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheSportsMenu()).perform();
     aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheSportsMenu().click();
-    boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-    assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
-    boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-    assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
-    boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
-    assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page and the URL is "+webDriver.getCurrentUrl());
+aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 }
 }

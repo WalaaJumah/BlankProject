@@ -51,7 +51,7 @@ public class AeProductDetailsPage extends BasePage {
     private WebElement joCountry;
     @FindBy(xpath = "//*[@id=\"maincontent\"]/div[3]/div/div[2]/div[2]/a[1]/picture/img")
     private WebElement firstProductInHomePage;
-    @FindBy(xpath = "//*[@id=\"tab-38-all38\"]/div[1]/div/div[2]/div/a")
+    @FindBy(xpath = "(//div[@class='inner-seller-prod wp-id-6527']/a)[1]")
     private WebElement productInHomePage;
     @FindBy(xpath = "//*[@id=\"tab-67-all67\"]/div[1]/div/div[1]/div/a")
     private WebElement joProductInHomePage;
@@ -85,7 +85,7 @@ public class AeProductDetailsPage extends BasePage {
     private WebElement productUnavailableForCountry;
     @FindBy(linkText = "Shop By")
     private WebElement shopByMenu;
-    @FindBy(css = "div[class='product-column--side'] span[data-price-type='finalPrice'] span")
+    @FindBy(xpath = "(//span[@class='price'])[5]")
     private WebElement FinalProductPrice;
     @FindBy(css = "div[class='product-column--side'] span[class='price']")
     private WebElement productPrice;
@@ -172,6 +172,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public WebElement getAddToCartBtn() {
+        DataHelperAndWait.waitToBeVisible(addToCartBtn,6,webDriver);
         return addToCartBtn;
     }
 
@@ -180,10 +181,12 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public WebElement getKeepShippingBtn() {
+        DataHelperAndWait.waitToBeVisible(keepShippingBtn,5,webDriver);
         return keepShippingBtn;
     }
 
     public WebElement getViewCartBtn() {
+        DataHelperAndWait.waitToBeVisible(viewCartBtn,5,webDriver);
         return viewCartBtn;
     }
 
@@ -244,6 +247,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public WebElement getFinalProductPrice() {
+        DataHelperAndWait.waitToBeVisible(FinalProductPrice,10,webDriver);
         return FinalProductPrice;
     }
 
@@ -284,6 +288,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public WebElement getProductName() {
+        DataHelperAndWait.waitToBeVisible(productName,5,webDriver);
         return productName;
     }
 
@@ -321,6 +326,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void keepShopping() {
+        DataHelperAndWait.waitToBeVisible(keepShippingBtn, 5,webDriver);
         this.keepShippingBtn.click();
     }
 
@@ -356,11 +362,11 @@ public class AeProductDetailsPage extends BasePage {
     public void switchToAECountry() {
         try {
             this.countryList.click();
-            DataHelperAndWait.isDisplayed(countryList, 1,webDriver);
+            DataHelperAndWait.isDisplayed(countryList, 5,webDriver);
             this.aeCountry.click();
         } catch (Exception e) {
             this.countryList.click();
-            DataHelperAndWait.isDisplayed(countryList, 1,webDriver);
+            DataHelperAndWait.isDisplayed(countryList, 6,webDriver);
             this.aeCountry.click();
         }
     }
@@ -404,7 +410,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void clickOnProductInHomePage() {
-        DataHelperAndWait.waitToBeClickable(this.productInHomePage, 3,webDriver);
+        DataHelperAndWait.waitToBeClickable(this.productInHomePage, 5,webDriver);
         this.productInHomePage.click();
     }
 
