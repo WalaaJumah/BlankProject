@@ -33,6 +33,7 @@ public class BasePage {
     public final String  womenOnlyUrl="/female/";
     public final String  sportSupplementsUrl="/sport-supplements/";
     public final String healthyFoodsUrl = "/healthy-food/";
+
     public WebDriver webDriver;
     //Need to check
     public BasePage(WebDriver webDriver){

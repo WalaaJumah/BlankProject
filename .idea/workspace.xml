@@ -7,11 +7,9 @@
     <list default="true" id="1543f19a-355a-420f-8233-95e332a91e4b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AEGuestUserPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/AEGuestUserPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AeHealthyFoodCategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/AeHealthyFoodCategoryPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AeSportSupplementsCategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/AeSportSupplementsCategoryPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AEGuestUserTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AEGuestUserTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeHealthyFoodCategoryTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AeHealthyFoodCategoryTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AEMegaMenuPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/AEMegaMenuPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AEMegaMenuTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AEMegaMenuTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

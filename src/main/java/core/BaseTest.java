@@ -35,7 +35,6 @@ public class BaseTest {
     public final String checkoutLoginStepURL = "/en-ae/checkout/#checkout-login-step";
     public final String freeCouponeCode= "spo15";
     public final String discaountCouponeCode= "";
-    public final String outOfStockProduct = "/en-ae/healthy-food/snacks-drinks/spreads/gymqueen-smooth-peanut-butter-spread";
     public final String product = "/en-ae/optimum-gold-standard-100-whey";
     public static String environmentName;
     public  WebDriver webDriver;

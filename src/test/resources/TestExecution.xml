@@ -21,12 +21,13 @@
 <!--    3. Commit it if you want to keep the default version( English) -->
         <!--        <parameter name="language" value="ar" />-->
     <classes>
-        <class name="sporter_test.AeHealthyFoodCategoryTestCases">
-<!--            <methods>-->
-<!--                <include name="switchToUaeStore"></include>-->
-<!--                <include name="verifyAbilityToAccessAllPagesInsideSportSupplementsCategoryPage"></include>-->
+        <class name="sporter_test.AEMegaMenuTestCases">
+            <methods>
+                <include name="switchToUaeStore"></include>
+                <include name="verifyClickingOnSportsSupplementsOptionInShopByMenuRedirectUserToCorrectURL"></include>
+                <include name="verifyMegaMenuSectionAppearsCorrectlyInThSportsSupplementsPage"></include>
 
-<!--            </methods>-->
+            </methods>
         </class>
     </classes>
 </test>
