@@ -7,20 +7,11 @@
     <list default="true" id="1543f19a-355a-420f-8233-95e332a91e4b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/extent_report_listner/ExtentReportListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/extent_report_listner/ExtentReportListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AEGuestUserPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/AEGuestUserPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AeHealthyFoodCategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/AeHealthyFoodCategoryPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AeSportSupplementsCategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/AeSportSupplementsCategoryPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AeWomenOnlyCategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/AeWomenOnlyCategoryPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/KsaHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/KsaHomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/QatarHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/QatarHomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AEGuestUserTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AEGuestUserTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeSportSupplementsCategoryTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AeSportSupplementsCategoryTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeVitaminsAndHealthCategoryTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AeVitaminsAndHealthCategoryTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeWomenOnlyCategoryTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AeWomenOnlyCategoryTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/KsaHomePageTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/KsaHomePageTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/QatarHomePageTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/QatarHomePageTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeHealthyFoodCategoryTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AeHealthyFoodCategoryTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,6 +78,24 @@
     </option>
   </component>
   <component name="RunManager" selected="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/TestExecution.xml">
+    <configuration name="AEGuestUserTestCases.verifyTheGuestUserCannotSubmitTheShippingInformationWhenPhoneFieldHaveSmallTextLength" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="sporter-web-automation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sporter_test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sporter_test" />
+      <option name="MAIN_CLASS_NAME" value="sporter_test.AEGuestUserTestCases" />
+      <option name="METHOD_NAME" value="verifyTheGuestUserCannotSubmitTheShippingInformationWhenPhoneFieldHaveSmallTextLength" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AeSportsCategoryTestCases.verifyThePaginationControlInSportsTechCategoryPageWorksCorrectly" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
       <extension name="coverage">
@@ -98,24 +107,6 @@
       <option name="PACKAGE_NAME" value="sporter_test" />
       <option name="MAIN_CLASS_NAME" value="sporter_test.AeSportsCategoryTestCases" />
       <option name="METHOD_NAME" value="verifyThePaginationControlInSportsTechCategoryPageWorksCorrectly" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AeVitaminsAndHealthCategoryTestCases.verifyClickingOnMineralsCategoryInsideTheShopByCategorySectionWorksCorrectly" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="sporter-web-automation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sporter_test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="sporter_test" />
-      <option name="MAIN_CLASS_NAME" value="sporter_test.AeVitaminsAndHealthCategoryTestCases" />
-      <option name="METHOD_NAME" value="verifyClickingOnMineralsCategoryInsideTheShopByCategorySectionWorksCorrectly" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -169,8 +160,8 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="TestNG.AEGuestUserTestCases.verifyTheGuestUserCannotSubmitTheShippingInformationWhenPhoneFieldHaveSmallTextLength" />
       <item itemvalue="TestNG.AeSportsCategoryTestCases.verifyThePaginationControlInSportsTechCategoryPageWorksCorrectly" />
-      <item itemvalue="TestNG.AeVitaminsAndHealthCategoryTestCases.verifyClickingOnMineralsCategoryInsideTheShopByCategorySectionWorksCorrectly" />
       <item itemvalue="TestNG.C:/Users/w.jumaa/Downloads/automation-framework-enhanced-master/sporter-web-automation/src/test/resources/AeMegaMenu.xml" />
       <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/TestExecution.xml" />
       <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/walmkk.xml" />
@@ -178,10 +169,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/TestExecution.xml" />
+        <item itemvalue="TestNG.AEGuestUserTestCases.verifyTheGuestUserCannotSubmitTheShippingInformationWhenPhoneFieldHaveSmallTextLength" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/walmkk.xml" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/Downloads/automation-framework-enhanced-master/sporter-web-automation/src/test/resources/AeMegaMenu.xml" />
         <item itemvalue="TestNG.AeSportsCategoryTestCases.verifyThePaginationControlInSportsTechCategoryPageWorksCorrectly" />
-        <item itemvalue="TestNG.AeVitaminsAndHealthCategoryTestCases.verifyClickingOnMineralsCategoryInsideTheShopByCategorySectionWorksCorrectly" />
       </list>
     </recent_temporary>
   </component>
@@ -239,7 +230,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/sporter_web_automation$C__Users_w_jumaa_IdeaProjects_sporter_web_automation_src_test_resources_SmokeTest_xml.ic" NAME="$PROJECT_DIR$/src/test/resources/SmokeTest.xml Coverage Results" MODIFIED="1657796388803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/sporter_web_automation$C__Users_w_jumaa_IdeaProjects_sporter_web_automation_src_test_resources_TestExecution_xml.ic" NAME="$PROJECT_DIR$/src/test/resources/TestExecution.xml Coverage Results" MODIFIED="1670149804951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/sporter_web_automation$C__Users_w_jumaa_IdeaProjects_sporter_web_automation_src_test_resources_TestExecution_xml.ic" NAME="$PROJECT_DIR$/src/test/resources/TestExecution.xml Coverage Results" MODIFIED="1671601245197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>sporter_pages.AeCartPage</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/sporter_web_automation$AeSportSupplementsCategoryTestCases_verifySportSupplementsCategoryImageAndHorizontalBannersAppearingAfterSortingTheProducts.ic" NAME="AeSportSupplementsCategoryTestCases.verifySportSupplementsCategoryImageAndHorizontalBannersAppearingAfterSortingTheProducts Coverage Results" MODIFIED="1666869381864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

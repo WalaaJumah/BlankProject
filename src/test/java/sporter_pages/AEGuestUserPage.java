@@ -74,7 +74,7 @@ public class AEGuestUserPage extends BasePage {
     private WebElement streetLineOneField;
     @FindBy(xpath = "//input[@name='street[1]']")
     private WebElement streetLineTwoField;
-    @FindBy(xpath = "//*[@id=\"shipping\"]/button")
+    @FindBy(xpath = "(//button[@data-role='opc-continue'])[2]")
     private WebElement continueBtn;
     @FindBy(xpath = "//select[@class='select select2-hidden-accessible']")
     private WebElement cityMenu;
@@ -135,7 +135,7 @@ public class AEGuestUserPage extends BasePage {
     }
 
     public WebElement getShippingMethodSection() {
-        DataHelperAndWait.waitToBeVisible(shippingMethodSection,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(shippingMethodSection,10,webDriver);
         return shippingMethodSection;
     }
 
@@ -265,6 +265,7 @@ public class AEGuestUserPage extends BasePage {
     }
 
     public void clickOnProductInHomePage() {
+        DataHelperAndWait.waitToBeVisible(productInHomePage,10,webDriver);
         this.productInHomePage.click();
     }
 
@@ -325,7 +326,7 @@ public class AEGuestUserPage extends BasePage {
     }
 
     public void clickOnContinueBtn() {
-        DataHelperAndWait.waitToBeVisible(continueBtn, 7,webDriver);
+        DataHelperAndWait.waitToBeClickable(continueBtn, 10,webDriver);
         this.continueBtn.click();
     }
 

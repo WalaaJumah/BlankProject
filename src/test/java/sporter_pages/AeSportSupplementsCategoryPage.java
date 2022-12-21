@@ -138,13 +138,15 @@ public class AeSportSupplementsCategoryPage extends BasePage {
         return sportSupplementsCategoryInHomePage;
     }
     public WebElement getResultLabel() {
+        DataHelperAndWait.waitToBeVisible(resultLabel,6,webDriver);
         return resultLabel;
     }
     public WebElement getSearchResultValue() {
-        DataHelperAndWait.waitToBeVisible(searchResultValue,2,webDriver);
+        DataHelperAndWait.waitToBeVisible(searchResultValue,5,webDriver);
         return searchResultValue;
     }
     public WebElement getSortByLabel() {
+        DataHelperAndWait.waitToBeVisible(sortByLabel,6,webDriver);
         return sortByLabel;
     }
     public WebElement getSortByMenu() {
@@ -249,7 +251,7 @@ public class AeSportSupplementsCategoryPage extends BasePage {
         seeAllBtnInFormSection.click();
     }
     public WebElement getHomeBreadcrumbs() {
-        DataHelperAndWait.waitToBeVisible(homeBreadcrumbs,3,webDriver);
+        DataHelperAndWait.waitToBeVisible(homeBreadcrumbs,35,webDriver);
         return homeBreadcrumbs;
     }
     public void navigate(){webDriver.navigate().to(siteURL +aeDomain+sportSupplementsUrl);}

@@ -10,6 +10,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.AEGuestUserPage;
 
+import javax.xml.crypto.Data;
+
 import static core.BasePage.siteURL;
 
 public class AEGuestUserTestCases extends BaseTest {
@@ -91,7 +93,6 @@ public class AEGuestUserTestCases extends BaseTest {
     @Test(description = "Make sure the Guest user cannot submit the shipping information with incorrect email format ", priority = 8)
     public void verifyTheGuestUserCannotSubmitTheShippingInformationWithIncorrectEmailFormat() {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
-        aeGuestUserPage.clearShippingInformationFields();
 //        aeGuestUserPage.clickOnProductInHomePage();
 //        aeGuestUserPage.addToCart();
 //        aeGuestUserPage.viewCart();
@@ -174,19 +175,21 @@ public class AEGuestUserTestCases extends BaseTest {
 //        this.verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPageCorrectly();
         aeGuestUserPage.fillInShippingInformationInputField(aeGuestUserPage.longLengthText,aeGuestUserPage.longLengthText, aeGuestUserPage.email, aeGuestUserPage.phone, aeGuestUserPage.address, aeGuestUserPage.longLengthText,aeGuestUserPage.longLengthText);
         Select select = new Select(aeGuestUserPage.getCityMenu());
-        WebElement cityOption = select.getOptions().get(0);
+        WebElement cityOption = select.getOptions().get(2);
         cityOption.click();
         aeGuestUserPage.clickOnContinueBtn();
-        Assert.assertEquals(aeGuestUserPage.getFirstnameRequiredFieldMsg().getText(), "Please enter less or equal than 255 symbols.");
-        Assert.assertEquals(aeGuestUserPage.getLastNameRequiredFieldMsg().getText(), "Please enter less or equal than 255 symbols.");
-        Assert.assertEquals(aeGuestUserPage.getStreetlineOneRequiredFieldMsg().getText(), "Please enter less or equal than 255 symbols.");
-        Assert.assertEquals(aeGuestUserPage.getStreetlineTwoRequiredFieldMsg().getText(), "Please enter less or equal than 255 symbols.");
+        Assert.assertFalse(aeGuestUserPage.getShippingMethodSection().isDisplayed());
+//        Assert.assertEquals(aeGuestUserPage.getFirstnameRequiredFieldMsg().getText(), "Please enter less or equal than 255 symbols.");
+//        Assert.assertEquals(aeGuestUserPage.getLastNameRequiredFieldMsg().getText(), "Please enter less or equal than 255 symbols.");
+//        Assert.assertEquals(aeGuestUserPage.getStreetlineOneRequiredFieldMsg().getText(), "Please enter less or equal than 255 symbols.");
+//        Assert.assertEquals(aeGuestUserPage.getStreetlineTwoRequiredFieldMsg().getText(), "Please enter less or equal than 255 symbols.");
     }
     @Test(description = "Make sure the Guest user can filling the shipping information correctly", priority = 14)
     public void verifyTheGuestUserCanFillTheShippingInformationCorrectly() {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
         aeGuestUserPage.navigateToHomePage();
         this.accessShippingInformationScreen();
+        aeGuestUserPage.clearShippingInformationFields();
 //        this.verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPageCorrectly();
         aeGuestUserPage.fillInShippingInformationInputField(aeGuestUserPage.firstName, aeGuestUserPage.lastName, aeGuestUserPage.email, aeGuestUserPage.phone, aeGuestUserPage.address, aeGuestUserPage.streetLineOne,aeGuestUserPage. streetLineTwo);
         Select select = new Select(aeGuestUserPage.getCityMenu());
@@ -231,7 +234,6 @@ public class AEGuestUserTestCases extends BaseTest {
         WebElement cityOption = select.getOptions().get(2);
         cityOption.click();
         aeGuestUserPage.clickOnContinueBtn();
-        DataHelperAndWait.waitToBeVisible(aeGuestUserPage.getShippingMethodSection(),5,webDriver);
         Assert.assertTrue(aeGuestUserPage.getShippingMethodSection().isDisplayed());
     }
 }
