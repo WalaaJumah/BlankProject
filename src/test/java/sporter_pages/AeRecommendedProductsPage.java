@@ -85,6 +85,7 @@ public class AeRecommendedProductsPage extends BasePage {
     }
 
     public WebElement getFirstProductName() {
+        DataHelperAndWait.waitToBeVisible(firstProductName,3,webDriver);
         return firstProductName;
     }
 

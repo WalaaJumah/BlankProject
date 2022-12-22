@@ -118,7 +118,7 @@ public class AeRecommendedProductsTestCases extends BaseTest {
         String productPriceInRecommendedPopup = aeRecommendedProductspage.getProductPriceForFirstProduct().getText();
         aeRecommendedProductspage.clickOnAddToCartBtnForFirstProduct();
         String productPriceInPdp = aeProductDetailsPage.getFinalProductPrice().getText();
-        Assert.assertEquals(productPriceInPdp, productPriceInRecommendedPopup, "The product Price displayed in the Recommended pop-up is not match with the price in PDP ");
+        Assert.assertEquals(productPriceInPdp, productPriceInRecommendedPopup, "The product Price displayed in the Recommended pop-up is not match with the price in PDP"+ productPriceInPdp +" VS."+ productPriceInRecommendedPopup);
     }
 
     @Test(description = "Recommended Products Pop-up- Make sure the clicking on the product card appears in the Recommended product pop-up will display the Product Details Page correctly", priority = 10)

@@ -116,9 +116,11 @@ public class AeSportSupplementsCategoryPage extends BasePage {
         return pageBottomBlocksList;
     }
     public WebElement getSportSupplementsCategoryImage() {
+        DataHelperAndWait.waitToBeVisible(sportSupplementsCategoryImage,3,webDriver);
         return sportSupplementsCategoryImage;
     }
     public WebElement getSportSupplementsTitleInCategoryImage() {
+        DataHelperAndWait.waitToBeVisible(sportSupplementsTitleInSportSupplementsCategoryImage,3,webDriver);
         return sportSupplementsTitleInSportSupplementsCategoryImage;
     }
     public WebElement getShopeByMenu() {
@@ -129,6 +131,7 @@ public class AeSportSupplementsCategoryPage extends BasePage {
     }
 
     public WebElement getParagraphInSportSupplementsCategoryImage() {
+        DataHelperAndWait.waitToBeVisible(paragraphInInSportSupplementsCategoryImage,3,webDriver);
         return paragraphInInSportSupplementsCategoryImage;
     }
     public List<WebElement> getMainBannersInTheSportSupplementsScreen() {
@@ -232,7 +235,7 @@ public class AeSportSupplementsCategoryPage extends BasePage {
 
     public void clickOnPreviousPageBtn() {
         try{
-        DataHelperAndWait.waitToBeVisible(previousPageBtn, 5,webDriver);
+        DataHelperAndWait.waitToBeVisible(previousPageBtn, 3,webDriver);
         previousPageBtn.click();}
         catch(Exception e){        DataHelperAndWait.waitToBeVisible(previousPageBtn, 2,webDriver);
             previousPageBtn.click();}

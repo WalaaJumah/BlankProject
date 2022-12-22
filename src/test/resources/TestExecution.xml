@@ -6,7 +6,7 @@
 <suite name=" Test" thread-count="2" >
     <listeners>
         <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>
-        <listener class-name="extent_report_listner.ExtentReportListener" />
+<!--        <listener class-name="extent_report_listner.ExtentReportListener" />-->
     </listeners>
     <test name=" test" preserve-order="true">
         <!--        Guidelines:-->
@@ -21,13 +21,14 @@
 <!--    3. Commit it if you want to keep the default version( English) -->`
         <!--        <parameter name="language" value="ar" />-->
     <classes>
-        <class name="sporter_test.AeRecommendedProductsTestCases">
-            <methods>
-                <include name="switchToAeStore"></include>
-                <include name="verifyTheProductPriceInTheRecommendedPopupMatchesWithThePriceDisplaysInPdp"></include>
-                <include name="verifyClickingOnProductCardInTheRecommendedPopupWillDisplayThePdp"></include>
+<!--        <class name="sporter_test.AeRecommendedProductsTestCases">-->
+        <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases">
+<!--            <methods>-->
+<!--                <include name="switchToAeStore"></include>-->
+<!--                <include name="verifyTheProductPriceInTheRecommendedPopupMatchesWithThePriceDisplaysInPdp"></include>-->
+<!--                <include name="verifyClickingOnProductCardInTheRecommendedPopupWillDisplayThePdp"></include>-->
 
-            </methods>
+<!--            </methods>-->
         </class>
     </classes>
 </test>

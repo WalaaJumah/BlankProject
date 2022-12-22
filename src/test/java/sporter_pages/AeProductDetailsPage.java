@@ -85,7 +85,7 @@ public class AeProductDetailsPage extends BasePage {
     private WebElement productUnavailableForCountry;
     @FindBy(linkText = "Shop By")
     private WebElement shopByMenu;
-    @FindBy(xpath = "(//span[@class='price'])[5]")
+    @FindBy(xpath = "(//span[@class='price'])[4]")
     private WebElement FinalProductPrice;
     @FindBy(css = "div[class='product-column--side'] span[class='price']")
     private WebElement productPrice;
@@ -247,7 +247,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public WebElement getFinalProductPrice() {
-        DataHelperAndWait.waitToBeVisible(FinalProductPrice,10,webDriver);
+        DataHelperAndWait.waitToBeVisible(FinalProductPrice,5,webDriver);
         return FinalProductPrice;
     }
 

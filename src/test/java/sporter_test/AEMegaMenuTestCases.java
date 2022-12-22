@@ -2,13 +2,11 @@ package sporter_test;
 
 import core.BaseTest;
 import core.DataHelperAndWait;
-import error_helper.SporterErrorPage;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.AEMegaMenuPage;
 import sporter_pages.AeAllPagesInsideCategoriesInMegaMenuPage;
-import sporter_pages.QatarHomePage;
 
 import static org.testng.Assert.assertFalse;
 
@@ -16,12 +14,11 @@ public class AEMegaMenuTestCases extends BaseTest {
     Actions action;
     AeAllPagesInsideCategoriesInMegaMenuPage aeAllPagesInsideCategoriesInMegaMenuPage;
     String sportSupplementsUrl = "/en-ae/sport-supplements/";
-    String healthVitaminsUrl = "/en-ae/health-vitamins/";
     String sportsUrl = "/en-ae/sports/";
      String healthyFoodsUrl = "/en-ae/healthy-food/";
     String womenOnlyUrl = "/en-ae/female/";
     @Test(groups = "Smoke Testing Report",description = "MegaMenu- Switching to the UAE Store", priority = 1)
-    public void switchToQatarStore() {
+    public void switchToUaeStore() {
 //        qatarHomePage.webDriver=this.webDriver;
          AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         aeMegamenuPage.switchToAECountry();
@@ -42,8 +39,9 @@ public class AEMegaMenuTestCases extends BaseTest {
     @Test(description = "MegaMenu- Make sure the Shop By menu display the correct options ", priority = 3)
     public void verifyShopByMenuDisplayTheCorrectOptions() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
-        Assert.assertEquals(aeMegamenuPage.getShopeByMenu().getText(), "Shop By");
-        Assert.assertEquals(aeMegamenuPage.getSportsSupplementsOption().getAttribute("textContent"), " Sports Supplements\n\n");
+        action = new Actions(webDriver);
+        action.moveToElement(aeMegamenuPage.getShopeByOption()).perform();
+        Assert.assertEquals(aeMegamenuPage.getSportsSupplementsOption().getText(), "Sports Supplements");
         Assert.assertEquals(aeMegamenuPage.getVitaminsAndHealthOption().getAttribute("textContent"), " Vitamins & Health\n\n");
         Assert.assertEquals(aeMegamenuPage.getHealthFoodOption().getAttribute("textContent"), " Healthy Food\n\n");
         Assert.assertEquals(aeMegamenuPage.getSportsOption().getAttribute("textContent"), " SPORTS\n\n");
@@ -909,7 +907,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getOptionList().get(0),5,webDriver);
-        Assert.assertEquals(aeMegamenuPage.getOptionList().get(0).getText(), "FEATURED\n" + "Alive! Vitamins\n" + "Sexual Health\n" + "ESSENTIAL VITAMINS\n" +
+        Assert.assertEquals(aeMegamenuPage.getOptionList().get(0).getText(), "FEATURED\n" + "Best Sellers\n" + "Sexual Health\n" + "ESSENTIAL VITAMINS\n" +
                 "Folic Acid\n" + "Vitamin A\n" + "Vitamin B\n" + "Vitamin C\n" + "Vitamin D\n" + "Vitamin E\n" + "Vitamin K\n" + "MULTIVITAMINS\n" + "Vitamins For Kids\n" +
                 "Multivitamins For Men\n" + "Multivitamins For Women\n" + "BONE & JOINT\n" + "Bone Health\n" + "Joint Health\n" + "BEAUTY\n" + "Collagen\n" + "Hair, Skin & Nails\n" +
                 "FISH OIL & OMEGAS\n" + "Fish Oil\n" + "Omega 3 6 9\n" + "HEALTHY LIFESTYLE\n" + "Antioxidants\n" + "Blood Sugar Support\n" + "Brain Support\n" + "Heart Health\n" +
@@ -1826,7 +1824,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getOptionList().get(0),5,webDriver);
         Assert.assertEquals(aeMegamenuPage.getOptionList().get(0).getText(), "GROCERY\n" + "Baking & Cooking\n" + "Canned\n" + "Coffee\n" + "Condiments\n" +
-                "Milk & Cream\n" + "Nuts & Oats\n" + "Oils\n" + "Pasta\n" + "Rice & Grains\n" + "Seasonings & Spices\n" + "Sugar & Sweeteners\n" + "Syrups\n" + "Tea & Herbs\n" +
+                "Milk & Cream\n" + "Oats & Granola\n" + "Oils\n" + "Pasta\n" + "Rice & Grains\n" + "Seasonings & Spices\n" + "Sugar & Sweeteners\n" + "Syrups\n" + "Tea & Herbs\n" +
                 "Superfoods\n" + "Ready Mixes\n" + "Breakfast & Cereal\n" + "READY TO DRINK\n" + "Amino & Bcaas\n" + "Energy Drinks\n" + "Protein Shakes\n" + "Electrolytes & Hydration\n" + "HEALTHY SNACKS\n" + "Protein Bars\n" +
                 "Cookies\n" + "Chips\n" + "Brownies & Pancakes\n" + "Snack Bars\n" + "Spreads\n" + "Other Healthy Snacks\n" + "READY TO EAT\n" + "Healthy Meals\n" + "FEATURED\n" +
                 "Healthy Meal Replacement\n" + "Protein Coffee\n" + "Candies\n" + "Flavoring Agents\n" + "Keto Snacks\n" + "Manuka Honey\n" + "Meat Snacks");
@@ -3665,7 +3663,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getLabradaOptionInByBrandMenu()).perform();
-        aeMegamenuPage.getMuscleNutritionOptionInByBrandMenu().click();
+        aeMegamenuPage.getLabradaOptionInByBrandMenu().click();
+//        aeMegamenuPage.getMuscleNutritionOptionInByBrandMenu().click();
         String expectedUrl=aeMegamenuPage.getLabradaOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getLabradaOptionInByBrandMenu().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
@@ -5030,7 +5029,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
                 aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getVitaminsAndHealthMainMenuList().get(0),5,webDriver);
-        Assert.assertEquals(aeMegamenuPage.getVitaminsAndHealthMainMenuList().get(0).getText(), "FEATURED\n" + "Alive! Vitamins\n" + "Sexual Health\n" + "ESSENTIAL VITAMINS\n" +
+        Assert.assertEquals(aeMegamenuPage.getVitaminsAndHealthMainMenuList().get(0).getText(), "FEATURED\n" + "Best Sellers\n" + "Sexual Health\n" + "ESSENTIAL VITAMINS\n" +
                 "Folic Acid\n" + "Vitamin A\n" + "Vitamin B\n" + "Vitamin C\n" + "Vitamin D\n" + "Vitamin E\n" + "Vitamin K\n" + "MULTIVITAMINS\n" + "Vitamins For Kids\n" +
                 "Multivitamins For Men\n" + "Multivitamins For Women\n" + "BONE & JOINT\n" + "Bone Health\n" + "Joint Health\n" + "BEAUTY\n" + "Collagen\n" + "Hair, Skin & Nails\n" +
                 "FISH OIL & OMEGAS\n" + "Fish Oil\n" + "Omega 3 6 9\n" + "HEALTHY LIFESTYLE\n" + "Antioxidants\n" + "Blood Sugar Support\n" + "Brain Support\n" + "Heart Health\n" +
@@ -5879,7 +5878,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getHealthyFoodMainMenuList().get(0),5,webDriver);
         Assert.assertEquals(aeMegamenuPage.getHealthyFoodMainMenuList().get(0).getText(), "GROCERY\n" + "Baking & Cooking\n" + "Canned\n" + "Coffee\n" + "Condiments\n" +
-                "Milk & Cream\n" + "Nuts & Oats\n" + "Oils\n" + "Pasta\n" + "Rice & Grains\n" + "Seasonings & Spices\n" + "Sugar & Sweeteners\n" + "Syrups\n" + "Tea & Herbs\n" +
+                "Milk & Cream\n" + "Oats & Granola\n" + "Oils\n" + "Pasta\n" + "Rice & Grains\n" + "Seasonings & Spices\n" + "Sugar & Sweeteners\n" + "Syrups\n" + "Tea & Herbs\n" +
                 "Superfoods\n" + "Ready Mixes\n" + "Breakfast & Cereal\n" + "READY TO DRINK\n" + "Amino & Bcaas\n" + "Energy Drinks\n" + "Protein Shakes\n" + "Electrolytes & Hydration\n" +
                 "HEALTHY SNACKS\n" + "Protein Bars\n" + "Cookies\n" + "Chips\n" + "Brownies & Pancakes\n" + "Snack Bars\n" + "Spreads\n" + "Other Healthy Snacks\n" + "READY TO EAT\n" +
                 "Healthy Meals\n" + "FEATURED\n" + "Healthy Meal Replacement\n" + "Protein Coffee\n" + "Candies\n" + "Flavoring Agents\n" + "Keto Snacks\n" + "Manuka Honey\n" +
@@ -6502,7 +6501,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getSportsMainMenu().click();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "The expected URL "+expectedUrl+" does not matched with the actual URL "+webDriver.getCurrentUrl() );
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
