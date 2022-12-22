@@ -70,9 +70,11 @@ public class BaseTest {
 //    }
 
     // The Below Method to run the TCs on Onc Browser like Chrome
-    @BeforeClass
+
+    @BeforeClass(alwaysRun = true)
     @Parameters({"environment"})
     public void setupBrowser( String environment) throws Exception {
+        System.out.println("SetUp Browser method");
         environmentName=environment;
         //This ChromeWebDriver 108
 
@@ -111,7 +113,15 @@ public class BaseTest {
 
         }
     }
+//    @BeforeGroups(groups = "Smoke Testing Report")
+//    @Parameters({"environment"})
+//
+//    public void setupBrowserForGroup(String environment) throws Exception {
+//        this.setupBrowser( environment);}
 
     @AfterClass(alwaysRun = true)
-    public void tearDown()  {webDriver.quit();}
+    public void tearDown()  {
+        if(webDriver != null)
+        webDriver.quit();
+    }
 }

@@ -47,6 +47,12 @@
 
         });
       ]]>
+
+            <![CDATA[
+            $(document).ready(function() {
+                $("/html/body/nav/ul[1]/li[3]").click();
+            });
+        ]]>
         </scripts>
 
         <!-- custom styles -->
@@ -54,6 +60,8 @@
 <!--            <![CDATA[-->
 
 <!--      ]]>-->
+        <!-- To display the Dashboard as a landing page-->
+
 <!--        </styles>-->
         <styles>
             <![CDATA[

@@ -6,7 +6,7 @@
 <suite name=" Test" thread-count="2" >
     <listeners>
         <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>
-<!--        <listener class-name="extent_report_listner.ExtentReportListener" />-->
+        <listener class-name="extent_report_listner.ExtentReportListener" />
     </listeners>
     <test name=" test" preserve-order="true">
         <!--        Guidelines:-->
@@ -21,30 +21,48 @@
 <!--    3. Commit it if you want to keep the default version( English) -->`
         <!--        <parameter name="language" value="ar" />-->
     <classes>
-<!--        <class name="sporter_test.AeRecommendedProductsTestCases">-->
         <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases">
-<!--            <methods>-->
-<!--                <include name="switchToAeStore"></include>-->
-<!--                <include name="verifyTheProductPriceInTheRecommendedPopupMatchesWithThePriceDisplaysInPdp"></include>-->
-<!--                <include name="verifyClickingOnProductCardInTheRecommendedPopupWillDisplayThePdp"></include>-->
+<!--        <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases">-->
+<!--&lt;!&ndash;            <methods>&ndash;&gt;-->
+<!--&lt;!&ndash;                <include name="switchToAeStore"></include>&ndash;&gt;-->
+<!--&lt;!&ndash;                <include name="verifyTheProductPriceInTheRecommendedPopupMatchesWithThePriceDisplaysInPdp"></include>&ndash;&gt;-->
+<!--&lt;!&ndash;                <include name="verifyClickingOnProductCardInTheRecommendedPopupWillDisplayThePdp"></include>&ndash;&gt;-->
 
-<!--            </methods>-->
+<!--&lt;!&ndash;            </methods>&ndash;&gt;-->
         </class>
     </classes>
 </test>
 
 
 
-        <!--    <parameter name="environment" value="production" />-->
-<!--    <test name="Test1">-->
+
+<!--    <test name="Test-production">-->
+<!--        <parameter name="environment" value="production" />-->
 <!--        <groups>-->
 <!--            <run>-->
 <!--                <include name="Smoke Testing Report"/>-->
 <!--            </run>-->
 <!--        </groups>-->
 <!--        <classes>-->
+<!--            <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+
+<!--    <test name="Test-stg">-->
+<!--        <parameter name="environment" value="stg" />-->
+
+<!--        <groups>-->
+<!--            <run>-->
+<!--                <include name="Regression Testing Report"/>-->
+<!--            </run>-->
+<!--        </groups>-->
+<!--        <classes>-->
 <!--            <class name="sporter_test.QatarHomePageTestCases"/>-->
 <!--        </classes>-->
 <!--    </test>-->
+
+
+
 
 </suite> <!-- Suite -->

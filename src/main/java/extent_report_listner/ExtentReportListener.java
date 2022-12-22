@@ -35,14 +35,18 @@ public class ExtentReportListener  implements IReporter {
     private ExtentReports extent;
 //    private ExtentSparkReporter spark;
     private ExtentTest test;
-    String pattern = "yyyy-MM-dd";
+    String pattern = "yyyy-MM-dd-hh-mm-ss";
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
     String date = simpleDateFormat.format(new Date());
     public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites,
                                String outputDirectory) {
+        for (ISuite suite : suites) {
+            Map<String, ISuiteResult> result = suite.getResults();
+
+            for (ISuiteResult r : result.values()) {
         //The date will include with the file name
         extent = new ExtentReports("C:\\Users\\w.jumaa\\Desktop\\Automation Reports" + File.separator
-                + "Magento-Sporter-Automation_Report " + "[" + BaseTest.environmentName + "]" + date +" "+System.currentTimeMillis()+ ".html", true);
+                + "Magento-Sporter-Automation_Report " + "[" + r.getTestContext().getName() + "]" + date + ".html", true);
 
 //            spark=new ExtentSparkReporter(File.separator + "Magento-Sporter-Automation_Report "+date+".html");
 //            spark.viewConfigurer().viewOrder().as(new ViewName[]{ViewName.DASHBOARD, ViewName.TEST,ViewName.CATEGORY}).apply();
@@ -55,21 +59,20 @@ public class ExtentReportListener  implements IReporter {
         extent.loadConfig(new File(System.getProperty("user.dir") + "./src/test/resources/extent-config.xml"));
 
 
-        for (ISuite suite : suites) {
-            Map<String, ISuiteResult> result = suite.getResults();
 
-            for (ISuiteResult r : result.values()) {
+
                 ITestContext context = r.getTestContext();
 
                 buildTestNodes(context.getPassedTests(), LogStatus.PASS);
                 buildTestNodes(context.getFailedTests(), LogStatus.FAIL);
 //                buildTestNodes(context.getSkippedTests(), LogStatus.SKIP);
+                extent.flush();
+                extent.close();
+
 
             }
         }
 
-        extent.flush();
-        extent.close();
     }
 
     private void buildTestNodes(IResultMap tests, LogStatus status) {
