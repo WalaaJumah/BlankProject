@@ -156,6 +156,7 @@ public class AeProductDetailsPage extends BasePage {
 
     //Getter Methods
     public WebElement getBundleMenu() {
+        DataHelperAndWait.waitToBeVisible(bundleMenu,5,webDriver);
         return bundleMenu;
     }
 
@@ -172,7 +173,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public WebElement getAddToCartBtn() {
-        DataHelperAndWait.waitToBeVisible(addToCartBtn,6,webDriver);
+        DataHelperAndWait.waitToBeVisible(addToCartBtn,5,webDriver);
         return addToCartBtn;
     }
 
@@ -199,6 +200,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public WebElement getSearchBtn() {
+        DataHelperAndWait.waitToBeClickable(searchBtn,5,webDriver);
         return searchBtn;
     }
 
@@ -207,10 +209,12 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public WebElement getInconvenienceWarningMsg() {
+        DataHelperAndWait.waitToBeVisible(inconvenienceWarningMsg,5,webDriver);
         return inconvenienceWarningMsg;
     }
 
     public WebElement getOOSMsg() {
+        DataHelperAndWait.waitToBeVisible(OOSMsg,5,webDriver);
         return OOSMsg;
     }
 
@@ -223,10 +227,12 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public WebElement getReviewErrorMsg() {
+        DataHelperAndWait.waitToBeVisible(reviewErrorMsg,5,webDriver);
         return reviewErrorMsg;
     }
 
     public WebElement getReviewToastMsg() {
+        DataHelperAndWait.waitToBeVisible(reviewToastMsg,5,webDriver);
         return reviewToastMsg;
     }
 
@@ -243,6 +249,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public WebElement getEnglishLangBtn() {
+        DataHelperAndWait.waitToBeVisible(englishLangBtn,5,webDriver);
         return englishLangBtn;
     }
 
@@ -252,10 +259,12 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public WebElement getProductPrice() {
+        DataHelperAndWait.waitToBeVisible(productPrice,5,webDriver);
         return productPrice;
     }
 
     public WebElement getFreeProductLabel() {
+        DataHelperAndWait.waitToBeVisible(freeProductLabel,5,webDriver);
         return freeProductLabel;
     }
 
@@ -264,18 +273,22 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public WebElement getAboutThisProductSection() {
+        DataHelperAndWait.waitToBeVisible(aboutThisProductSection,5,webDriver);
         return aboutThisProductSection;
     }
 
     public WebElement getAboutThisProductTitle() {
+        DataHelperAndWait.waitToBeVisible(aboutThisProductTitle,5,webDriver);
         return aboutThisProductTitle;
     }
 
     public WebElement getSupplementFactsTable() {
+        DataHelperAndWait.waitToBeVisible(supplementFactsTable,5,webDriver);
         return supplementFactsTable;
     }
 
     public WebElement getSupplementFactsTitle() {
+        DataHelperAndWait.waitToBeVisible(supplementFactsTitle,5,webDriver);
         return supplementFactsTitle;
     }
 
@@ -284,6 +297,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public WebElement getAccountProfileOptions() {
+        DataHelperAndWait.waitToBeVisible(accountProfileOptions,5,webDriver);
         return accountProfileOptions;
     }
 
@@ -293,22 +307,27 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public WebElement getDirectionsOfUseSection() {
+        DataHelperAndWait.waitToBeVisible(directionsOfUseSection,5,webDriver);
         return directionsOfUseSection;
     }
 
     public WebElement getAboutBrandSection() {
+        DataHelperAndWait.waitToBeVisible(aboutBrandSection,5,webDriver);
         return aboutBrandSection;
     }
 
     public WebElement getProductHeaderBar() {
+        DataHelperAndWait.waitToBeVisible(ProductHeaderBar,5,webDriver);
         return ProductHeaderBar;
     }
 
     public WebElement getExpectedDeliveryDateLabel() {
+        DataHelperAndWait.waitToBeVisible(expectedDeliveryDateLabel,5,webDriver);
         return expectedDeliveryDateLabel;
     }
 
     public WebElement getExpectedDeliveryDateValue() {
+        DataHelperAndWait.waitToBeVisible(expectedDeliveryDateValue,5,webDriver);
         return expectedDeliveryDateValue;
     }
 
@@ -340,12 +359,12 @@ public class AeProductDetailsPage extends BasePage {
         this.searchBtn.click();
     }
     public void searchForBundle() {
-        DataHelperAndWait.waitToBeClickable(searchField, 3,webDriver);
+        DataHelperAndWait.waitToBeClickable(searchField, 5,webDriver);
         this.searchField.sendKeys("Box");
     }
 
     public void clickOnTheProductCard() {
-        DataHelperAndWait.waitToBeClickable(productCard, 3,webDriver);
+        DataHelperAndWait.waitToBeClickable(productCard, 5,webDriver);
         this.productCard.click();
     }
 
@@ -378,7 +397,7 @@ public class AeProductDetailsPage extends BasePage {
             this.lebanonCountry.click();
         } catch (Exception e) {
             this.countryList.click();
-            DataHelperAndWait.isDisplayed(countryList, 1,webDriver);
+            DataHelperAndWait.isDisplayed(countryList, 5,webDriver);
             this.lebanonCountry.click();
         }
     }
@@ -386,11 +405,11 @@ public class AeProductDetailsPage extends BasePage {
     public void switchToJOCountry() {
         try {
             this.countryList.click();
-            DataHelperAndWait.isDisplayed(countryList, 1,webDriver);
+            DataHelperAndWait.isDisplayed(countryList, 3,webDriver);
             this.joCountry.click();
         } catch (Exception e) {
             this.countryList.click();
-            DataHelperAndWait.isDisplayed(countryList, 1,webDriver);
+            DataHelperAndWait.isDisplayed(countryList, 2,webDriver);
             this.joCountry.click();
         }
     }
@@ -400,12 +419,16 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void increaseTheQuantity() {
+        DataHelperAndWait.waitToBeVisible(quantityField,5,webDriver);
         this.quantityField.click();
+        DataHelperAndWait.waitToBeVisible(qtyPlusButton,5,webDriver);
         this.qtyPlusButton.click();
     }
 
     public void decreaseTheQuantity() {
+        DataHelperAndWait.waitToBeVisible(quantityField,5,webDriver);
         this.quantityField.click();
+        DataHelperAndWait.waitToBeVisible(qtyMinusButton,5,webDriver);
         this.qtyMinusButton.click();
     }
 
@@ -419,6 +442,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void selectStarInReview() {
+        DataHelperAndWait.waitToBeVisible(oneStarReview,5,webDriver);
         this.oneStarReview.click();
     }
 
@@ -433,20 +457,25 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void submitProductReview(String reviewDesc, String reviewSummary, String nickName) {
+        DataHelperAndWait.waitToBeVisible(addReviewButton,5,webDriver);
         this.addReviewButton.click();
+        DataHelperAndWait.waitToBeVisible(reviewDescField,5,webDriver);
         this.reviewDescField.sendKeys(reviewDesc);
+        DataHelperAndWait.waitToBeVisible(reviewSummaryField,5,webDriver);
         this.reviewSummaryField.sendKeys(reviewSummary);
+        DataHelperAndWait.waitToBeVisible(nickNameField,5,webDriver);
         this.nickNameField.sendKeys(nickName);
         DataHelperAndWait.waitToBeClickable(submitReviewButton, 3,webDriver);
         this.submitReviewButton.click();
     }
 
     public void clickOnBreadcrumbHomePage() {
+        DataHelperAndWait.waitToBeVisible(HomeBreadcrumbs,5,webDriver);
         this.HomeBreadcrumbs.click();
     }
 
     public void switchToArabicVersion() {
-        DataHelperAndWait.isDisplayed(arabicLangBtn, 3,webDriver);
+        DataHelperAndWait.isDisplayed(arabicLangBtn, 5,webDriver);
         this.arabicLangBtn.click();
     }
 
@@ -489,7 +518,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void clickOnAccountProfileIcon() {
-        DataHelperAndWait.isDisplayed(accountProfileIcon, 3,webDriver);
+        DataHelperAndWait.isDisplayed(accountProfileIcon, 5,webDriver);
         this.accountProfileIcon.click();
     }
 
@@ -509,7 +538,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void clickOnPageBtnInReviewSection() {
-        DataHelperAndWait.isDisplayed(pageBtnInReviewSection, 3,webDriver);
+        DataHelperAndWait.isDisplayed(pageBtnInReviewSection, 5,webDriver);
         this.pageBtnInReviewSection.click();
     }
 
@@ -519,7 +548,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void clickOnNextReviewPageBtn() {
-        DataHelperAndWait.isDisplayed(nextReviewPageBtn, 3,webDriver);
+        DataHelperAndWait.isDisplayed(nextReviewPageBtn, 5,webDriver);
         this.nextReviewPageBtn.click();
     }
 
@@ -535,5 +564,8 @@ public class AeProductDetailsPage extends BasePage {
     public WebElement getSearchField() {
         return searchField;
     }
+    public void displayTheProduct(){webDriver.navigate().to(siteURL+aeDomain+productUrl);}
+    public void displayOOSProduct(){webDriver.navigate().to(siteURL+aeDomain+oOSProductUrl);}
+    public void navigateToHomePage(){webDriver.navigate().to(siteURL);}
 
 }

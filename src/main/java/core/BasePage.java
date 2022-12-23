@@ -87,6 +87,9 @@ public class BasePage {
     public final  String facebookURL = "https://www.facebook.com/sportercom";
     public final  String twitterURL = "https://twitter.com/sportercom?lang=en";
     public final  String youtubeURL = "https://www.youtube.com/user/SporterVideos";
+    public final String searchUrl="catalogsearch/result/?q=";
+    public final String productUrl = "/optimum-gold-standard-100-whey-6202";
+    public final String oOSProductUrl = "/healthy-food/ready-to-eat/healthy-meals/performance-meals-pack-of-6";
 
     public WebDriver webDriver;
     //Need to check

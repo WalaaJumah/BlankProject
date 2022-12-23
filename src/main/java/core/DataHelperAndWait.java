@@ -195,5 +195,16 @@ public  class DataHelperAndWait  {
             element.sendKeys(Keys.BACK_SPACE);
         }
     }
+    public  static Boolean isTheresNoPages(String numberOfProductInTheList){
+        String numberOfProductWithOutItemLabel;
+        if(numberOfProductInTheList.contains("Items"))
+         numberOfProductWithOutItemLabel= numberOfProductInTheList.replace(") Items","");
+        else
+            numberOfProductWithOutItemLabel= numberOfProductInTheList.replace(") Item","");
+        String numberOfProductWithOutResultLabel= numberOfProductWithOutItemLabel.replace("Results: (","");
+        double numberOfProductInTheListInInt=Double.parseDouble(numberOfProductWithOutResultLabel);
+        return numberOfProductInTheListInInt<=24;
+
+    }
 
 }

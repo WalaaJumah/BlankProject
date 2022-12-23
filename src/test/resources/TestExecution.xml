@@ -21,13 +21,14 @@
 <!--    3. Commit it if you want to keep the default version( English) -->`
         <!--        <parameter name="language" value="ar" />-->
     <classes>
-        <class name="sporter_test.AEFooterPageTestCases">
+        <class name="sporter_test.AeAllPagesInsideCategoriesInMegaMenuTestCases">
 <!--        <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases">-->
 <!--            <methods>-->
-<!--                <include name="verifyAbilityToClickOnInstagramIconCorrectly"></include>-->
-<!--                <include name="verifyAbilityToClickOnFacebookIconCorrectly"></include>-->
-<!--                <include name="verifyAbilityToClickOnTwitterIconCorrectly"></include>-->
-<!--                <include name="verifyAbilityToClickOnYouTubeIconCorrectly"></include>-->
+<!--                <include name="switchToUaeStore"></include>-->
+<!--                <include name="verifyAbilityToAccessAllPagesInsideReadyToEatOptionCategoryRelatedToHealthyFoodCategoryPage"></include>-->
+<!--                <include name="verifyAbilityToAccessAllPagesInsideHealthyMealsOptionCategoryRelatedToHealthyFoodCategoryPage"></include>-->
+<!--                <include name="verifyAbilityToAccessAllPagesInsideFeaturedOptionCategoryRelatedToHealthyFoodCategoryPage"></include>-->
+<!--&lt;!&ndash;                <include name="verifyAbilityToClickOnYouTubeIconCorrectly"></include>&ndash;&gt;-->
 
 <!--            </methods>-->
         </class>
