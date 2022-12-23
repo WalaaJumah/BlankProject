@@ -228,34 +228,42 @@ public class AEFooterPage extends BasePage {
     }
 
     public WebElement getNewsletterBlock() {
+        DataHelperAndWait.waitToBeVisible(newsletterBlock,5,webDriver);
         return newsletterBlock;
     }
 
     public WebElement getEmailFieldInNewsletterBlock() {
+        DataHelperAndWait.waitToBeVisible(emailFieldInNewsletterBlock,5,webDriver);
         return emailFieldInNewsletterBlock;
     }
 
     public WebElement getFemaleOptionInNewsletterBlock() {
+        DataHelperAndWait.waitToBeVisible(femaleOptionInNewsletterBlock,5,webDriver);
         return femaleOptionInNewsletterBlock;
     }
 
     public WebElement getMaleOptionInNewsletterBlock() {
+        DataHelperAndWait.waitToBeVisible(maleOptionInNewsletterBlock,5,webDriver);
         return maleOptionInNewsletterBlock;
     }
 
     public WebElement getWheyProteinOption() {
+        DataHelperAndWait.waitToBeVisible(wheyProteinOption,5,webDriver);
         return wheyProteinOption;
     }
 
     public WebElement getJoinBtnInNewsletterBlock() {
+        DataHelperAndWait.waitToBeVisible(joinBtnInNewsletterBlock,5,webDriver);
         return joinBtnInNewsletterBlock;
     }
 
     public WebElement getEmailRequiredMsgInNewsletterSection() {
+        DataHelperAndWait.waitToBeVisible(emailRequiredMsgInNewsletterSection,5,webDriver);
         return emailRequiredMsgInNewsletterSection;
     }
 
     public WebElement getSubscriptionSuccessfulMsg() {
+        DataHelperAndWait.waitToBeVisible(subscriptionSuccessfulMsg,5,webDriver);
         return subscriptionSuccessfulMsg;
     }
 
@@ -268,6 +276,7 @@ public class AEFooterPage extends BasePage {
     }
 
     public WebElement getWowCustomerServiceOption() {
+        DataHelperAndWait.waitToBeVisible(wowCustomerServiceOption,5,webDriver);
         return wowCustomerServiceOption;
     }
 
@@ -276,78 +285,97 @@ public class AEFooterPage extends BasePage {
     }
 
     public WebElement getTrackYourOrderOption() {
+        DataHelperAndWait.waitToBeVisible(trackYourOrderOption,5,webDriver);
         return trackYourOrderOption;
     }
 
     public WebElement getShippingAndDeliveryOption() {
+        DataHelperAndWait.waitToBeVisible(shippingAndDeliveryOption,5,webDriver);
         return shippingAndDeliveryOption;
     }
 
     public WebElement getRefundAndReturnsOption() {
+        DataHelperAndWait.waitToBeVisible(refundAndReturns,5,webDriver);
         return refundAndReturns;
     }
 
     public WebElement getFooterSection() {
+        DataHelperAndWait.waitToBeVisible(footerSection,5,webDriver);
         return footerSection;
     }
 
     public WebElement getFAQsOption() {
+        DataHelperAndWait.waitToBeVisible(fAQsOption,5,webDriver);
         return fAQsOption;
     }
 
     public WebElement getMostSellingProductsHeader() {
+        DataHelperAndWait.waitToBeVisible(mostSellingProductsHeader,5,webDriver);
         return mostSellingProductsHeader;
     }
 
     public WebElement getProteinAndFitnessHeader() {
+        DataHelperAndWait.waitToBeVisible(proteinAndFitnessHeader,5,webDriver);
         return proteinAndFitnessHeader;
     }
 
     public WebElement getGrenadeReloadProteinOatBarOption() {
+        DataHelperAndWait.waitToBeVisible(grenadeReloadProteinOatBarOption,5,webDriver);
         return grenadeReloadProteinOatBarOption;
     }
 
     public WebElement getDymatizeISO100ProteinOption() {
+        DataHelperAndWait.waitToBeVisible(dymatizeISO100ProteinOption,5,webDriver);
         return dymatizeISO100ProteinOption;
     }
 
     public WebElement getGrenadeCarbKillaProteinBarOption() {
+        DataHelperAndWait.waitToBeVisible(grenadeCarbKillaProteinBarOption,5,webDriver);
         return grenadeCarbKillaProteinBarOption;
     }
 
     public WebElement getGrenadeCarbKillaProteinBarBoxOf12Option() {
+        DataHelperAndWait.waitToBeVisible(grenadeCarbKillaProteinBarBoxOf12Option,5,webDriver);
         return grenadeCarbKillaProteinBarBoxOf12Option;
     }
 
     public WebElement getQuestNutritionBarsBox12Option() {
+        DataHelperAndWait.waitToBeVisible(questNutritionBarsBox12Option,5,webDriver);
         return questNutritionBarsBox12Option;
     }
 
     public WebElement getGetToKnowUsHeader() {
+        DataHelperAndWait.waitToBeVisible(getToKnowUsHeader,5,webDriver);
         return getToKnowUsHeader;
     }
 
     public WebElement getAboutSporterOption() {
+        DataHelperAndWait.waitToBeVisible(aboutSporterOption,5,webDriver);
         return aboutSporterOption;
     }
 
     public WebElement getProductQualityOption() {
+        DataHelperAndWait.waitToBeVisible(productQualityOption,5,webDriver);
         return productQualityOption;
     }
 
     public WebElement getProductAuthenticityOption() {
+        DataHelperAndWait.waitToBeVisible(productAuthenticityOption,5,webDriver);
         return productAuthenticityOption;
     }
 
     public WebElement getWholesaleOption() {
+        DataHelperAndWait.waitToBeVisible(wholesaleOption,5,webDriver);
         return wholesaleOption;
     }
 
     public WebElement getCareersOption() {
+        DataHelperAndWait.waitToBeVisible(careersOption,5,webDriver);
         return careersOption;
     }
 
     public WebElement getSporterBlogOption() {
+        DataHelperAndWait.waitToBeVisible(sporterBlogOption,5,webDriver);
         return sporterBlogOption;
     }
 
@@ -356,174 +384,217 @@ public class AEFooterPage extends BasePage {
     }
 
     public WebElement getContactUsHeader() {
+        DataHelperAndWait.waitToBeVisible(contactUsHeader,5,webDriver);
         return contactUsHeader;
     }
 
     public WebElement getContactInfoOption() {
+        DataHelperAndWait.waitToBeVisible(contactInfoOption,5,webDriver);
         return contactInfoOption;
     }
 
     public WebElement getPhoneNumberLabelOption() {
+        DataHelperAndWait.waitToBeVisible(phoneNumberLabelOption,5,webDriver);
         return phoneNumberLabelOption;
     }
 
     public WebElement getPhoneNumber() {
+        DataHelperAndWait.waitToBeVisible(phoneNumber,5,webDriver);
         return phoneNumber;
     }
 
     public WebElement getAddressLabel() {
+        DataHelperAndWait.waitToBeVisible(addressLabel,5,webDriver);
         return addressLabel;
     }
 
     public WebElement getAddressValue() {
+        DataHelperAndWait.waitToBeVisible(addressValue,5,webDriver);
         return addressValue;
     }
 
     public WebElement getAccessoriesAndApparelHeader() {
+        DataHelperAndWait.waitToBeVisible(accessoriesAndApparelHeader,5,webDriver);
         return accessoriesAndApparelHeader;
     }
 
     public WebElement getTrainingApparelOption() {
+        DataHelperAndWait.waitToBeVisible(trainingApparelOption,5,webDriver);
         return trainingApparelOption;
     }
 
     public WebElement getFitnessAccessoriesOption() {
+        DataHelperAndWait.waitToBeVisible(fitnessAccessoriesOption,5,webDriver);
         return fitnessAccessoriesOption;
     }
 
     public WebElement getShakersOption() {
+        DataHelperAndWait.waitToBeVisible(shakersOption,5,webDriver);
         return shakersOption;
     }
 
     public WebElement getHomeGymEquipmentOption() {
+        DataHelperAndWait.waitToBeVisible(homeGymEquipmentOption,5,webDriver);
         return homeGymEquipmentOption;
     }
 
     public WebElement getWatchesOption() {
+        DataHelperAndWait.waitToBeVisible(watchesOption,5,webDriver);
         return watchesOption;
     }
 
     public WebElement getStrapsOption() {
+        DataHelperAndWait.waitToBeVisible(strapsOption,5,webDriver);
         return strapsOption;
     }
 
     public WebElement getBagsOption() {
+        DataHelperAndWait.waitToBeVisible(bagsOption,5,webDriver);
         return bagsOption;
     }
 
     public WebElement getWheyProteinIsolateOption() {
+        DataHelperAndWait.waitToBeVisible(wheyProteinIsolateOption,5,webDriver);
         return wheyProteinIsolateOption;
     }
 
     public WebElement getCaseinProteinOption() {
+        DataHelperAndWait.waitToBeVisible(caseinProteinOption,5,webDriver);
         return caseinProteinOption;
     }
 
     public WebElement getWeightGainAndMassGainerOption() {
+        DataHelperAndWait.waitToBeVisible(weightGainAndMassGainerOption,5,webDriver);
         return weightGainAndMassGainerOption;
     }
 
     public WebElement getBCAAsAndAminoAcidsOption() {
+        DataHelperAndWait.waitToBeVisible(bCAAsAndAminoAcidsOption,5,webDriver);
         return bCAAsAndAminoAcidsOption;
     }
 
     public WebElement getPreWorkoutAndEnduranceOption() {
+        DataHelperAndWait.waitToBeVisible(preWorkoutAndEnduranceOption,5,webDriver);
         return preWorkoutAndEnduranceOption;
     }
 
     public WebElement getGlutamineAndRecoveryOption() {
+        DataHelperAndWait.waitToBeVisible(glutamineAndRecoveryOption,5,webDriver);
         return glutamineAndRecoveryOption;
     }
 
     public WebElement getFatBurnersOption() {
+        DataHelperAndWait.waitToBeVisible(fatBurnersOption,5,webDriver);
         return fatBurnersOption;
     }
 
     public WebElement getProteinBarsOption() {
+        DataHelperAndWait.waitToBeVisible(proteinBarsOption,5,webDriver);
         return proteinBarsOption;
     }
 
     public WebElement getHealthySnacksOption() {
+        DataHelperAndWait.waitToBeVisible(healthySnacksOption,5,webDriver);
         return healthySnacksOption;
     }
 
     public WebElement getVitaminsAndHealthHeader() {
+        DataHelperAndWait.waitToBeVisible(vitaminsAndHealthHeader,5,webDriver);
         return vitaminsAndHealthHeader;
     }
 
     public WebElement getMultivitaminsOption() {
+        DataHelperAndWait.waitToBeVisible(multivitaminsOption,5,webDriver);
         return multivitaminsOption;
     }
 
     public WebElement getVitaminsdOption() {
+        DataHelperAndWait.waitToBeVisible(vitaminsdOption,5,webDriver);
         return vitaminsdOption;
     }
 
     public WebElement getVitaminscOption() {
+        DataHelperAndWait.waitToBeVisible(vitaminscOption,5,webDriver);
         return vitaminscOption;
     }
 
     public WebElement getVitaminseOption() {
+        DataHelperAndWait.waitToBeVisible(vitaminseOption,5,webDriver);
         return vitaminseOption;
     }
 
     public WebElement getFishOilAndOmega3Option() {
+        DataHelperAndWait.waitToBeVisible(fishOilAndOmega3Option,5,webDriver);
         return fishOilAndOmega3Option;
     }
 
     public WebElement getFolicAcidOption() {
+        DataHelperAndWait.waitToBeVisible(folicAcidOption,5,webDriver);
         return folicAcidOption;
     }
 
     public WebElement getBoneAndJointSupportOption() {
+        DataHelperAndWait.waitToBeVisible(boneAndJointSupportOption,5,webDriver);
         return boneAndJointSupportOption;
     }
 
     public WebElement getCollagenOption() {
+        DataHelperAndWait.waitToBeVisible(collagenOption,5,webDriver);
         return collagenOption;
     }
 
     public WebElement getHairSkinAndNailsOption() {
+        DataHelperAndWait.waitToBeVisible(hairSkinAndNailsOption,5,webDriver);
         return hairSkinAndNailsOption;
     }
 
     public WebElement getTestosteroneBoosterOption() {
+        DataHelperAndWait.waitToBeVisible(testosteroneBoosterOption,5,webDriver);
         return testosteroneBoosterOption;
     }
 
     public WebElement getMelatoninAndSleepSupportOption() {
+        DataHelperAndWait.waitToBeVisible(melatoninAndSleepSupportOption,5,webDriver);
         return melatoninAndSleepSupportOption;
     }
 
     public WebElement getDigestiveSupportOption() {
+        DataHelperAndWait.waitToBeVisible(digestiveSupportOption,5,webDriver);
         return digestiveSupportOption;
     }
 
     public WebElement getPrivacyPolicyOption() {
+        DataHelperAndWait.waitToBeVisible(privacyPolicyOption,5,webDriver);
         return privacyPolicyOption;
     }
 
     public WebElement getTermsAndServiceOption() {
+        DataHelperAndWait.waitToBeVisible(termsAndServiceOption,5,webDriver);
         return termsAndServiceOption;
     }
 
     public WebElement getInstagramIcon() {
+        DataHelperAndWait.waitToBeVisible(instagramIcon,5,webDriver);
         return instagramIcon;
     }
 
     public WebElement getFacebookIcon() {
+        DataHelperAndWait.waitToBeVisible(facebookIcon,5,webDriver);
         return facebookIcon;
     }
 
     public WebElement getTwitterIcon() {
+        DataHelperAndWait.waitToBeVisible(twitterIcon,5,webDriver);
         return twitterIcon;
     }
 
     public WebElement getYoutubeIcon() {
+        DataHelperAndWait.waitToBeVisible(youtubeIcon,5,webDriver);
         return youtubeIcon;
     }
 
     public WebElement getCopyright() {
+        DataHelperAndWait.waitToBeVisible(copyright,5,webDriver);
         return copyright;
     }
 
@@ -565,4 +636,10 @@ public class AEFooterPage extends BasePage {
         int randomInt = randomGenerator.nextInt(1000);
         return "username" + randomInt + "@gmail.com";
     }
+    public void navigateToHomePage(){webDriver.navigate().to(siteURL);}
+    public void clearEmailField(){
+        DataHelperAndWait.waitToBeVisible(emailFieldInNewsletterBlock,5,webDriver);
+        DataHelperAndWait.clearWebField(emailFieldInNewsletterBlock);
+    }
+
 }

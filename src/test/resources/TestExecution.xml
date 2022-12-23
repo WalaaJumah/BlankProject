@@ -21,14 +21,15 @@
 <!--    3. Commit it if you want to keep the default version( English) -->`
         <!--        <parameter name="language" value="ar" />-->
     <classes>
-        <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases">
+        <class name="sporter_test.AEFooterPageTestCases">
 <!--        <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases">-->
-<!--&lt;!&ndash;            <methods>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="switchToAeStore"></include>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="verifyTheProductPriceInTheRecommendedPopupMatchesWithThePriceDisplaysInPdp"></include>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="verifyClickingOnProductCardInTheRecommendedPopupWillDisplayThePdp"></include>&ndash;&gt;-->
+<!--            <methods>-->
+<!--                <include name="verifyAbilityToClickOnInstagramIconCorrectly"></include>-->
+<!--                <include name="verifyAbilityToClickOnFacebookIconCorrectly"></include>-->
+<!--                <include name="verifyAbilityToClickOnTwitterIconCorrectly"></include>-->
+<!--                <include name="verifyAbilityToClickOnYouTubeIconCorrectly"></include>-->
 
-<!--&lt;!&ndash;            </methods>&ndash;&gt;-->
+<!--            </methods>-->
         </class>
     </classes>
 </test>
