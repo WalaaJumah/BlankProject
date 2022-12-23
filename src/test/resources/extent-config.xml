@@ -3,7 +3,7 @@
     <configuration>
         <!-- report theme -->
         <!-- standard, dark -->
-        <theme>dark</theme>
+        <theme>standard</theme>
 <!--        <theme>standard</theme>-->
 
         <!-- document encoding -->
@@ -44,15 +44,21 @@
         $(document).ready(function() {
 
         $('.logo-container.blue.darken-2').css('display','none');
+                        $("/html/body/nav/ul[1]/li[3]").click();
+                        $('#enableDashboard').click();
+                        $('.total-steps').parent().hide();
+
+
+
 
         });
       ]]>
 
-            <![CDATA[
-            $(document).ready(function() {
-                $("/html/body/nav/ul[1]/li[3]").click();
-            });
-        ]]>
+<!--            <![CDATA[-->
+<!--            $(document).ready(function() {-->
+<!--                $("/html/body/nav/ul[1]/li[3]").click();-->
+<!--            });-->
+<!--        ]]>-->
         </scripts>
 
         <!-- custom styles -->
