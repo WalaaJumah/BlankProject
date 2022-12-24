@@ -47,14 +47,39 @@
 <!--    3. Commit it if you want to keep the default version( English) -->`
         <!--        <parameter name="language" value="ar" />-->
     <classes>
-        <class name="sporter_test.AeSportsCategoryTestCases">
+        <class name="sporter_test.AeCartTestCases">
 <!--        <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases">-->
 <!--            <methods>-->
 <!--                <include name="switchToUaeStore"></include>-->
-<!--                <include name="verifyAbilityToAccessAllPagesInsideReadyToEatOptionCategoryRelatedToHealthyFoodCategoryPage"></include>-->
-<!--                <include name="verifyAbilityToAccessAllPagesInsideHealthyMealsOptionCategoryRelatedToHealthyFoodCategoryPage"></include>-->
-<!--                <include name="verifyAbilityToAccessAllPagesInsideFeaturedOptionCategoryRelatedToHealthyFoodCategoryPage"></include>-->
-<!--&lt;!&ndash;                <include name="verifyAbilityToClickOnYouTubeIconCorrectly"></include>&ndash;&gt;-->
+<!--                <include name="viewCartFromPDP"></include>-->
+<!--                <include name="verifyProductCounterAppearsInTheCartPageWorksCorrectly"></include>-->
+<!--                <include name="verifyTheFreeGiftIsRemovedWhenRemovingTheProduct"></include>-->
+<!--                <include name="verifyAbilityToRemoveProductFromCart"></include>-->
+<!--                <include name="verifyHereLinkInCartPageWorking"></include>-->
+<!--                <include name="verifyProductCounterAppearsInTheCartPageCountsFreeGifts"></include>-->
+<!--                <include name="verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct"></include>-->
+<!--                <include name="verifyAbilityToViewTheCartAfterAddingMoreThanProducts"></include>-->
+<!--                <include name="verifyAbilityToViewTheCartAfterAddingMoreThanSimpleOfTheSameConfig"></include>-->
+<!--                <include name="verifyAbilityToAddBundleToCart"></include>-->
+<!--                <include name="verifyToDisplayRequestedQtyIsNotAvailableMsg"></include>-->
+<!--                <include name="verifyContinueShoppingBtnWorksCorrectlyWhenTheProductBecomeOOS"></include>-->
+<!--                <include name="verifyIncreaseQtyBtnInCartPageWorking"></include>-->
+<!--                <include name="verifyDecreaseQtyBtnInCartPageWorking"></include>-->
+<!--                <include name="verifyAbilityToDisplayTheProductFromTheCartPage"></include>-->
+<!--                <include name="verifyTheFreeGiftIsAddedCorrectlyToTheCart"></include>-->
+<!--                <include name="verifyTheFreeGiftIsDoesNotHavePrice"></include>-->
+<!--                <include name="verifyAllPaymentMethodAppearingTheCartPage"></include>-->
+<!--                <include name="verifyProceedCheckoutBtnAppearsCorrectlyInCartPage"></include>-->
+<!--                <include name="verifyOrderTotalCalculationInCartPageWorksCorrectly"></include>-->
+<!--                <include name="verifyAbilityToViewCartFromCartIcon"></include>-->
+<!--                <include name="verifyTheCounterInCartIconWorksCorrectly"></include>-->
+<!--                <include name="verifyTheCloseIconInCartPopupWorksCorrectly"></include>-->
+<!--                <include name="verifyInabilityToApplyInvalidCouponCode"></include>-->
+<!--                <include name="verifyInabilityToApplyCouponCodeWithoutFillingTheCode"></include>-->
+<!--                <include name="verifyTheFreeGiftIsNotCalculatedInTheCartPrice"></include>-->
+<!--                <include name="verifyTheTaxCalculatedCorrectly"></include>-->
+<!--                <include name="verifySearchBtnWorksCorrectlyFromCartPage"></include>-->
+<!--                <include name="verifyInabilityToApplyCouponCodeWithoutFillingTheCode"></include>-->
 
 <!--            </methods>-->
         </class>

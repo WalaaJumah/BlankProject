@@ -2,6 +2,7 @@ package sporter_pages;
 
 import core.BasePage;
 import core.DataHelperAndWait;
+import org.jsoup.Connection;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,21 +22,21 @@ public class AeCartPage extends BasePage {
     private WebElement requestedQtyUnAvailableMsg;
     @FindBy(xpath = "//button[text()='CONTINUE SHOPPING']")
     private WebElement continueShoppingBtn;
-    @FindBy(xpath = "//*[@id=\"shopping-cart-table\"]/tbody[1]/tr/td[1]/div/a/span[2]")
+    @FindBy(xpath = "//a[@title='Remove item']")
     private WebElement removeItem;
     @FindBy(xpath = "//p[text()='You have no items in your shopping cart.']")
     private WebElement noItemInCartLabel;
     @FindBy(xpath = "//a[text()='here']")
     private WebElement hereLink;
-    @FindBy(xpath = "//a[@class='decreaseQty btn-qty-control btn-qty-control--minus']")
+    @FindBy(xpath = "(//a[@class='decreaseQty btn-qty-control btn-qty-control--minus'])[1]")
     private WebElement decreaseQtyBtn;
-    @FindBy(xpath = "//a[@class='increaseQty btn-qty-control btn-qty-control--plus']")
+    @FindBy(xpath = "(//a[@class='increaseQty btn-qty-control btn-qty-control--plus'])[1]")
     private WebElement increaseQtyBtn;
-    @FindBy(css = "div[class='input-box input-with-value input-active']:nth-child(n) input")
+    @FindBy(xpath = "(//input[@title='Qty'])[1]")
     private WebElement qtyField;
-    @FindBy(xpath = "//div[text()='The requested qty is not available']")
+    @FindBy(xpath = "(//div[text()='The requested qty is not available'])[1]")
     private WebElement qtyUnavailableMsgInCartPage;
-    @FindBy(css = "tr[class='item-info']:nth-child(1) td[data-th='Item']")
+    @FindBy(xpath = "(//tr[@class='item-info']//a)[1]")
     private WebElement productCartInCartPage;
     @FindBy(xpath = "//*[@id=\"shopping-cart-table\"]/tbody[1]/tr/td[4]/span/span/span")
     private WebElement priceInCartPage;
@@ -305,6 +306,10 @@ public class AeCartPage extends BasePage {
     public void clickOnCancelCouponCodeBtn() {
         DataHelperAndWait.waitToBeClickable(cancelCouponCodeBtn, 3,webDriver);
         this.cancelCouponCodeBtn.click();
+    }
+    public void removeProductFromCart(){
+        webDriver.navigate().to(BasePage.siteURL+aeDomain+cartURL);
+        this.clickOnRemoveItem();
     }
 
 

@@ -363,7 +363,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void clickOnSearchBtn() {
-        DataHelperAndWait.waitToBeClickable(searchBtn, 3, webDriver);
+        DataHelperAndWait.waitToBeClickable(searchBtn, 5, webDriver);
         this.searchBtn.click();
     }
 
@@ -496,7 +496,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void clickOnShopeByMenu() {
-        DataHelperAndWait.isDisplayed(shopeByMenu, 3, webDriver);
+        DataHelperAndWait.isDisplayed(shopeByMenu, 5, webDriver);
         this.shopeByMenu.click();
     }
 
