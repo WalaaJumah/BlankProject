@@ -1,6 +1,7 @@
 package sporter_pages;
 
 import core.BasePage;
+import core.DataHelperAndWait;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -152,6 +153,7 @@ public class AeSportsCategoryPage  extends BasePage {
         aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
         aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
+        DataHelperAndWait.waitToBeVisible(toysAndGamesCategory,5,webDriver);
         this.toysAndGamesCategory.click();
     }
     public void clickOnWearableTechApparelCategory(WebDriver webDriver){
@@ -159,6 +161,7 @@ public class AeSportsCategoryPage  extends BasePage {
         aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
         aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
         aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
+        DataHelperAndWait.waitToBeVisible(wearableTechApparelCategory,5,webDriver);
         this.wearableTechApparelCategory.click();
     }
     public void clickOnPersonalCareCategory(WebDriver webDriver){
@@ -170,9 +173,11 @@ public class AeSportsCategoryPage  extends BasePage {
         aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
         aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
         aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
+        DataHelperAndWait.waitToBeVisible(personalCareApparelCategory,5,webDriver);
         this.personalCareApparelCategory.click();
     }
     public WebElement getNextIconInRecommendedProductsSection() {
+        DataHelperAndWait.waitToBeVisible(nextIconInRecommendedProductsSection,5,webDriver);
         return nextIconInRecommendedProductsSection;
     }
 

@@ -665,8 +665,8 @@ public class AeBrandsTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
         aeProductDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
         String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
-                    if(DataHelperAndWait.isTheresNoPages(numberOfProductInTheList))
-            System.out.println("There's no pages");
+         if(DataHelperAndWait.isTheresNoPages(numberOfProductInTheList))
+             System.out.println("There's no pages");
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }

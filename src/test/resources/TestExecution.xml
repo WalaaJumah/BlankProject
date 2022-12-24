@@ -34,7 +34,7 @@
 <!--        </class>-->
 <!--    </classes>-->
 <!--</test>-->
-    <test name=" AeBrandsTestCases" preserve-order="true">
+    <test name=" AeSportsCategoryTestCases" preserve-order="true">
         <!--        Guidelines:-->
         <!--         1. To test on production Env, change the value to "production".-->
         <!--         2. To test on stgTest Env, change the value to "stgTest".-->
@@ -47,7 +47,7 @@
 <!--    3. Commit it if you want to keep the default version( English) -->`
         <!--        <parameter name="language" value="ar" />-->
     <classes>
-        <class name="sporter_test.AeBrandsTestCases">
+        <class name="sporter_test.AeSportsCategoryTestCases">
 <!--        <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases">-->
 <!--            <methods>-->
 <!--                <include name="switchToUaeStore"></include>-->

@@ -2805,6 +2805,7 @@ public class AEMegaMenuPage extends BasePage {
 
     //Sports Main Menu
     public WebElement getSportsMainMenu() {
+        DataHelperAndWait.waitToBeVisible(sportsMainMenu,5,webDriver);
         return sportsMainMenu;
     }
 

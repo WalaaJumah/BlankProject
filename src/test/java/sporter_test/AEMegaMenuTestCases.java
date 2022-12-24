@@ -14,7 +14,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     Actions action;
     AeAllPagesInsideCategoriesInMegaMenuPage aeAllPagesInsideCategoriesInMegaMenuPage;
     String sportSupplementsUrl = "/en-ae/sport-supplements/";
-    String sportsUrl = "/en-ae/sports/";
+
      String healthyFoodsUrl = "/en-ae/healthy-food/";
     String womenOnlyUrl = "/en-ae/female/";
     @Test(groups = "Smoke Testing Report",description = "MegaMenu- Switching to the UAE Store", priority = 1)
