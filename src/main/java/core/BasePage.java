@@ -90,6 +90,7 @@ public class BasePage {
     public final String searchUrl="catalogsearch/result/?q=";
     public final String productUrl = "/optimum-gold-standard-100-whey-6202";
     public final String oOSProductUrl = "/healthy-food/ready-to-eat/healthy-meals/performance-meals-pack-of-6";
+    public final String notAvailableOfferProduct = "/catalog/product/view/id/44012/s/olimp-chitosan-chromium-43840/";
 
     public WebDriver webDriver;
     //Need to check
@@ -102,6 +103,7 @@ public class BasePage {
         Assert.assertFalse(this.getTitle().equalsIgnoreCase(SporterErrorPage.pageNotFoundTitle), "Page Not Found Is Displayed and the URL is " + webDriver.getCurrentUrl());
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.productsCannotFindMsg), "The page is empty and the URL is " + webDriver.getCurrentUrl());
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.exceptionPageMsg), "An error has happened during application run. See exception log for details in page and the URL is " + webDriver.getCurrentUrl());
+        Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.offerNotAvailableMsg), "The  offer is not available in your country page is displayed" + webDriver.getCurrentUrl());
     }
 
 }

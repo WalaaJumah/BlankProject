@@ -34,8 +34,14 @@ public  class DataHelperAndWait  {
         wait = new WebDriverWait(webDriver, Time);
         return wait.until(ExpectedConditions.visibilityOf(element)).isDisplayed();
     }
-    public static  boolean isPresent(WebElement webElement) {
-        return webElement.isDisplayed();
+    public static  boolean isPresent(WebElement webElement,WebDriver webDriver) {
+        try{
+            return webElement.isDisplayed();
+        }
+        catch (NoSuchElementException exception){
+            return false;
+        }
+
     }
 
     public static  void implicitWait(int timeSecond,WebDriver webDriver) {

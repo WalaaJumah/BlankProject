@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.AEGuestUserPage;
+import sporter_pages.AeProductDetailsPage;
 
 import javax.xml.crypto.Data;
 
@@ -30,7 +31,8 @@ public class AEGuestUserTestCases extends BaseTest {
     @Test(description = "Make sure to access the Guest Checkout page from the cart page correctly", priority = 2)
     public void verifyAbilityToAccessTheGuestCheckoutPageFromTheCartPageCorrectly() {
          AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
-        aeGuestUserPage.clickOnProductInHomePage();
+        AeProductDetailsPage aeProductDetailsPage=new AeProductDetailsPage(webDriver);
+         aeProductDetailsPage.displayTheProduct();
         aeGuestUserPage.addToCart();
         aeGuestUserPage.viewCart();
         aeGuestUserPage.clickOnProceedCheckoutBtn();
@@ -78,7 +80,8 @@ public class AEGuestUserTestCases extends BaseTest {
     public void verifyTheGuestUserCannotSubmitTheShippingInformationWhenPhoneFieldHaveSmallTextLength() {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
         aeGuestUserPage.clearShippingInformationFields();
-//        aeGuestUserPage.clickOnProductInHomePage();
+//                aeProductDetailsPage.displayTheProduct();
+
 //        aeGuestUserPage.addToCart();
 //        aeGuestUserPage.viewCart();
 //        aeGuestUserPage.clickOnProceedCheckoutBtn();
@@ -93,7 +96,8 @@ public class AEGuestUserTestCases extends BaseTest {
     @Test(description = "Make sure the Guest user cannot submit the shipping information with incorrect email format ", priority = 8)
     public void verifyTheGuestUserCannotSubmitTheShippingInformationWithIncorrectEmailFormat() {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
-//        aeGuestUserPage.clickOnProductInHomePage();
+//                aeProductDetailsPage.displayTheProduct();
+
 //        aeGuestUserPage.addToCart();
 //        aeGuestUserPage.viewCart();
 //        aeGuestUserPage.clickOnProceedCheckoutBtn();

@@ -94,6 +94,7 @@ public class AeSearchPageTestCases extends BaseTest {
         this.verifyClickingOnSearchIconWillRedirectUserTOTheSearchScreen();
         aeSearchPage.getAllTab().click();
         for(int i=0; i<aeSearchPage.getProductCardInProductsSection().size();i++){
+            DataHelperAndWait.waitToBeVisible(aeSearchPage.getProductCardInProductsSection().get(i),5,webDriver);
             expectedProductURL=aeSearchPage.getProductCardInProductsSection().get(i).getAttribute("href");
             aeSearchPage.getProductCardInProductsSection().get(i).click();
             Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedProductURL));
@@ -113,6 +114,7 @@ public class AeSearchPageTestCases extends BaseTest {
         this.verifyClickingOnSearchIconWillRedirectUserTOTheSearchScreen();
         aeSearchPage.getBrandsTab().click();
         for(int i=0; i<aeSearchPage.getBrandsListInBrandPage().size();i++){
+            DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(i),5,webDriver);
             expectedProductURL=aeSearchPage.getBrandsListInBrandPage().get(i).getAttribute("href");
             aeSearchPage.getBrandsListInBrandPage().get(i).click();
             Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedProductURL));
@@ -142,6 +144,7 @@ public class AeSearchPageTestCases extends BaseTest {
         this.verifyClickingOnSearchIconWillRedirectUserTOTheSearchScreen();
         aeSearchPage.getAllTab().click();
         for(int i=0; i<aeSearchPage.getBrandCardInProductsSection().size();i++){
+            DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandCardInProductsSection().get(i),5,webDriver);
             expectedProductURL=aeSearchPage.getBrandCardInProductsSection().get(i).getAttribute("href");
             aeSearchPage.getBrandCardInProductsSection().get(i).click();
             Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedProductURL));

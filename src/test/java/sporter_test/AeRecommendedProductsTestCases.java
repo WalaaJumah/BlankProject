@@ -19,7 +19,7 @@ public class AeRecommendedProductsTestCases extends BaseTest {
     @Test(description = "Recommended Products Pop-up- Make sure the keep shopping button appearing the Recommended products works correctly ", priority = 2)
     public void verifyKeepShoppingBtnWorksCorrectly() {
         AeProductDetailsPage  aeProductDetailsPage = new AeProductDetailsPage(webDriver);
-        aeProductDetailsPage.clickOnProductInHomePage();
+        aeProductDetailsPage.displayTheProduct();
         String currentURL = webDriver.getCurrentUrl() + "#";
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.keepShopping();
@@ -30,8 +30,7 @@ public class AeRecommendedProductsTestCases extends BaseTest {
     public void verifyViewCartWorksBtnCorrectly() {
         AeRecommendedProductsPage  aeRecommendedProductspage = new AeRecommendedProductsPage(webDriver);
         AeProductDetailsPage  aeProductDetailsPage = new AeProductDetailsPage(webDriver);
-        aeRecommendedProductspage.navigateToHomePage();
-        aeProductDetailsPage.clickOnProductInHomePage();
+        aeProductDetailsPage.displayTheProduct();
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
         Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL +aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL );
@@ -41,8 +40,7 @@ public class AeRecommendedProductsTestCases extends BaseTest {
     public void verifyCloseRecommendedPopupCorrectly() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AeRecommendedProductsPage  aeRecommendedProductspage = new AeRecommendedProductsPage(webDriver);
-        aeRecommendedProductspage.navigateToHomePage();
-        aeProductDetailsPage.clickOnProductInHomePage();
+        aeProductDetailsPage.displayTheProduct();
         aeProductDetailsPage.addToCart();
         aeRecommendedProductspage.clickOnRecommendedProductsCloseIcon();
         Assert.assertTrue(aeProductDetailsPage.getAddToCartBtn().isDisplayed());
@@ -53,8 +51,7 @@ public class AeRecommendedProductsTestCases extends BaseTest {
     public void verifyCloseRecommendedPopupCorrectlyWhenClickingOutsideThePopup() {
         AeProductDetailsPage  aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AeRecommendedProductsPage  aeRecommendedProductspage = new AeRecommendedProductsPage(webDriver);
-        aeRecommendedProductspage.navigateToHomePage();
-        aeProductDetailsPage.clickOnProductInHomePage();
+        aeProductDetailsPage.displayTheProduct();
         aeProductDetailsPage.addToCart();
         Actions act = new Actions(webDriver);
         act.moveByOffset(913, 477).contextClick().build().perform();
@@ -65,8 +62,7 @@ public class AeRecommendedProductsTestCases extends BaseTest {
     public void verifyAllRecommendedPopupComponentsIsExist() {
         AeRecommendedProductsPage aeRecommendedProductspage = new AeRecommendedProductsPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
-        aeRecommendedProductspage.navigateToHomePage();
-        aeProductDetailsPage.clickOnProductInHomePage();
+        aeProductDetailsPage.displayTheProduct();
         aeProductDetailsPage.addToCart();
         //Make sure the check circle icon is displayed
         Assert.assertTrue(aeRecommendedProductspage.getCircleIcon().isDisplayed());
@@ -92,8 +88,7 @@ public class AeRecommendedProductsTestCases extends BaseTest {
     public void verifyAbilityToAddRecommendedProductToCart() {
         AeRecommendedProductsPage aeRecommendedProductspage = new AeRecommendedProductsPage(webDriver);
         AeProductDetailsPage  aeProductDetailsPage = new AeProductDetailsPage(webDriver);
-        aeRecommendedProductspage.navigateToHomePage();
-        aeProductDetailsPage.clickOnProductInHomePage();
+        aeProductDetailsPage.displayTheProduct();
         aeProductDetailsPage.addToCart();
         aeRecommendedProductspage.clickOnAddToCart();
     }
@@ -102,8 +97,7 @@ public class AeRecommendedProductsTestCases extends BaseTest {
     public void verifyTheNameOfProductAddedToCatDisplayedInTheRecommendedPopup() {
         AeRecommendedProductsPage aeRecommendedProductspage = new AeRecommendedProductsPage(webDriver);
         AeProductDetailsPage  aeProductDetailsPage = new AeProductDetailsPage(webDriver);
-        aeRecommendedProductspage.navigateToHomePage();
-        aeProductDetailsPage.clickOnProductInHomePage();
+        aeProductDetailsPage.displayTheProduct();
         aeProductDetailsPage.addToCart();
         Assert.assertTrue(aeRecommendedProductspage.getAddedProductToCartMsg().getText().contains(aeProductDetailsPage.getProductName().getText()));
     }
@@ -112,8 +106,7 @@ public class AeRecommendedProductsTestCases extends BaseTest {
     public void verifyTheProductPriceInTheRecommendedPopupMatchesWithThePriceDisplaysInPdp() {
         AeRecommendedProductsPage  aeRecommendedProductspage = new AeRecommendedProductsPage(webDriver);
         AeProductDetailsPage  aeProductDetailsPage = new AeProductDetailsPage(webDriver);
-        aeRecommendedProductspage.navigateToHomePage();
-        aeProductDetailsPage.clickOnProductInHomePage();
+        aeProductDetailsPage.displayTheProduct();
         aeProductDetailsPage.addToCart();
         String productPriceInRecommendedPopup = aeRecommendedProductspage.getProductPriceForFirstProduct().getText();
         aeRecommendedProductspage.clickOnAddToCartBtnForFirstProduct();
@@ -125,8 +118,7 @@ public class AeRecommendedProductsTestCases extends BaseTest {
     public void verifyClickingOnProductCardInTheRecommendedPopupWillDisplayThePdp() {
         AeRecommendedProductsPage aeRecommendedProductspage = new AeRecommendedProductsPage(webDriver);
         AeProductDetailsPage  aeProductDetailsPage = new AeProductDetailsPage(webDriver);
-        aeRecommendedProductspage.navigateToHomePage();
-        aeProductDetailsPage.clickOnProductInHomePage();
+        aeProductDetailsPage.displayTheProduct();
         aeProductDetailsPage.addToCart();
         String productNameInRecommendedPopup = aeRecommendedProductspage.getFirstProductName().getText();
         aeRecommendedProductspage.clickOnFirstProductCard();
