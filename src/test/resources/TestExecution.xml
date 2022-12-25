@@ -8,46 +8,65 @@
         <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>
         <listener class-name="extent_report_listner.ExtentReportListener" />
     </listeners>
-<!--    <test name=" AeAllPagesInsideCategoriesInMegaMenuTestCases" preserve-order="true">-->
+    <test name=" AeAllPagesInsideCategoriesInMegaMenuTestCases" preserve-order="true">
 <!--        &lt;!&ndash;        Guidelines:&ndash;&gt;-->
 <!--        &lt;!&ndash;         1. To test on production Env, change the value to "production".&ndash;&gt;-->
 <!--        &lt;!&ndash;         2. To test on stgTest Env, change the value to "stgTest".&ndash;&gt;-->
 <!--        &lt;!&ndash;         3. To test on stg Env, change the value to "stg".&ndash;&gt;-->
 <!--        &lt;!&ndash;         4. To test on Staging2 Env, change the value to "staging2". &ndash;&gt;-->
-<!--        <parameter name="environment" value="production" />-->
+        <parameter name="environment" value="production" />
 <!--    &lt;!&ndash;        Guidelines:&ndash;&gt;-->
 <!--&lt;!&ndash;    1. To test on Arabic version, change the value to "ar".&ndash;&gt;-->
 <!--&lt;!&ndash;    2. To test on English version, change the value to "en"&ndash;&gt;-->
 <!--&lt;!&ndash;    3. Commit it if you want to keep the default version( English) &ndash;&gt;`-->
 <!--        &lt;!&ndash;        <parameter name="language" value="ar" />&ndash;&gt;-->
-<!--    <classes>-->
+    <classes>
 <!--        <class name="sporter_test.AeAllPagesInsideCategoriesInMegaMenuTestCases">-->
-<!--&lt;!&ndash;        <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases">&ndash;&gt;-->
-<!--&lt;!&ndash;            <methods>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="switchToUaeStore"></include>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="verifyAbilityToAccessAllPagesInsideReadyToEatOptionCategoryRelatedToHealthyFoodCategoryPage"></include>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="verifyAbilityToAccessAllPagesInsideHealthyMealsOptionCategoryRelatedToHealthyFoodCategoryPage"></include>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="verifyAbilityToAccessAllPagesInsideFeaturedOptionCategoryRelatedToHealthyFoodCategoryPage"></include>&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;                <include name="verifyAbilityToClickOnYouTubeIconCorrectly"></include>&ndash;&gt;&ndash;&gt;-->
+        <class name="sporter_test.AccessAllStoresCountriesTestCases">
+<!--            <methods>-->
+<!--                <include name="switchToUaeStore"></include>-->
+<!--&lt;!&ndash;&lt;!&ndash;                <include name="verifyAbilityToAccessAllPagesInsideReadyToEatOptionCategoryRelatedToHealthyFoodCategoryPage"></include>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                <include name="verifyAbilityToAccessAllPagesInsideHealthyMealsOptionCategoryRelatedToHealthyFoodCategoryPage"></include>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                <include name="verifyAbilityToAccessAllPagesInsideFeaturedOptionCategoryRelatedToHealthyFoodCategoryPage"></include>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                <include name="verifyAbilityToClickOnYouTubeIconCorrectly"></include>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
 
-<!--&lt;!&ndash;            </methods>&ndash;&gt;-->
-<!--        </class>-->
-<!--    </classes>-->
+<!--            </methods>-->
+        </class>
+    </classes>
 <!--</test>-->
-    <test name=" AeSportsCategoryTestCases" preserve-order="true">
+<!--    <test name=" System Testing Report- Production" preserve-order="true">-->
         <!--        Guidelines:-->
         <!--         1. To test on production Env, change the value to "production".-->
         <!--         2. To test on stgTest Env, change the value to "stgTest".-->
         <!--         3. To test on stg Env, change the value to "stg".-->
         <!--         4. To test on Staging2 Env, change the value to "staging2". -->
-        <parameter name="environment" value="production" />
+<!--        <parameter name="environment" value="production" />-->
     <!--        Guidelines:-->
 <!--    1. To test on Arabic version, change the value to "ar".-->
 <!--    2. To test on English version, change the value to "en"-->
 <!--    3. Commit it if you want to keep the default version( English) -->`
         <!--        <parameter name="language" value="ar" />-->
-    <classes>
-        <class name="sporter_test.AeCartTestCases">
+<!--    <classes>-->
+<!--        <class name="sporter_test.QatarHomePageTestCases"> </class>-->
+<!--        <class name="sporter_test.KsaHomePageTestCases"> </class>-->
+<!--        <class name="sporter_test.AeWomenOnlyCategoryTestCases"> </class>-->
+<!--        <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases"> </class>-->
+<!--        <class name="sporter_test.AeSportSupplementsCategoryTestCases"> </class>-->
+<!--        <class name="sporter_test.AeSportsCategoryTestCases"> </class>-->
+<!--        <class name="sporter_test.AeSearchPageTestCases"> </class>-->
+<!--        <class name="sporter_test.AeRecommendedProductsTestCases"> </class>-->
+<!--        <class name="sporter_test.AeProductDetailsPageTestCases"> </class>-->
+<!--        <class name="sporter_test.AEMegaMenuTestCases"> </class>-->
+<!--        <class name="sporter_test.AeHealthyFoodCategoryTestCases"> </class>-->
+<!--        <class name="sporter_test.AEGuestUserTestCases"> </class>-->
+<!--        <class name="sporter_test.AEFooterPageTestCases"> </class>-->
+<!--        <class name="sporter_test.AeCartTestCases"> </class>-->
+<!--        <class name="sporter_test.AeBrandsTestCases"> </class>-->
+<!--        <class name="sporter_test.AeAllPagesInsideCategoriesInMegaMenuTestCases"> </class>-->
+
+
+
+
 <!--        <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases">-->
 <!--            <methods>-->
 <!--                <include name="switchToUaeStore"></include>-->
@@ -82,142 +101,37 @@
 <!--                <include name="verifyInabilityToApplyCouponCodeWithoutFillingTheCode"></include>-->
 
 <!--            </methods>-->
-        </class>
-    </classes>
-</test>
-<!--    <test name=" search" preserve-order="true">-->
-<!--        &lt;!&ndash;        Guidelines:&ndash;&gt;-->
-<!--        &lt;!&ndash;         1. To test on production Env, change the value to "production".&ndash;&gt;-->
-<!--        &lt;!&ndash;         2. To test on stgTest Env, change the value to "stgTest".&ndash;&gt;-->
-<!--        &lt;!&ndash;         3. To test on stg Env, change the value to "stg".&ndash;&gt;-->
-<!--        &lt;!&ndash;         4. To test on Staging2 Env, change the value to "staging2". &ndash;&gt;-->
-<!--        <parameter name="environment" value="production" />-->
-<!--    &lt;!&ndash;        Guidelines:&ndash;&gt;-->
-<!--&lt;!&ndash;    1. To test on Arabic version, change the value to "ar".&ndash;&gt;-->
-<!--&lt;!&ndash;    2. To test on English version, change the value to "en"&ndash;&gt;-->
-<!--&lt;!&ndash;    3. Commit it if you want to keep the default version( English) &ndash;&gt;`-->
-<!--        &lt;!&ndash;        <parameter name="language" value="ar" />&ndash;&gt;-->
-<!--    <classes>-->
-<!--        <class name="sporter_test.AeSearchPageTestCases">-->
-<!--&lt;!&ndash;        <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases">&ndash;&gt;-->
-<!--&lt;!&ndash;            <methods>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="switchToUaeStore"></include>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="verifyAbilityToAccessAllPagesInsideReadyToEatOptionCategoryRelatedToHealthyFoodCategoryPage"></include>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="verifyAbilityToAccessAllPagesInsideHealthyMealsOptionCategoryRelatedToHealthyFoodCategoryPage"></include>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="verifyAbilityToAccessAllPagesInsideFeaturedOptionCategoryRelatedToHealthyFoodCategoryPage"></include>&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;                <include name="verifyAbilityToClickOnYouTubeIconCorrectly"></include>&ndash;&gt;&ndash;&gt;-->
-
-<!--&lt;!&ndash;            </methods>&ndash;&gt;-->
-<!--        </class>-->
-<!--    </classes>-->
-<!--</test>-->
-<!--    <test name=" Guest User" preserve-order="true">-->
-<!--        &lt;!&ndash;        Guidelines:&ndash;&gt;-->
-<!--        &lt;!&ndash;         1. To test on production Env, change the value to "production".&ndash;&gt;-->
-<!--        &lt;!&ndash;         2. To test on stgTest Env, change the value to "stgTest".&ndash;&gt;-->
-<!--        &lt;!&ndash;         3. To test on stg Env, change the value to "stg".&ndash;&gt;-->
-<!--        &lt;!&ndash;         4. To test on Staging2 Env, change the value to "staging2". &ndash;&gt;-->
-<!--        <parameter name="environment" value="production" />-->
-<!--    &lt;!&ndash;        Guidelines:&ndash;&gt;-->
-<!--&lt;!&ndash;    1. To test on Arabic version, change the value to "ar".&ndash;&gt;-->
-<!--&lt;!&ndash;    2. To test on English version, change the value to "en"&ndash;&gt;-->
-<!--&lt;!&ndash;    3. Commit it if you want to keep the default version( English) &ndash;&gt;`-->
-<!--        &lt;!&ndash;        <parameter name="language" value="ar" />&ndash;&gt;-->
-<!--    <classes>-->
-<!--        <class name="sporter_test.AEGuestUserTestCases">-->
-<!--&lt;!&ndash;        <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases">&ndash;&gt;-->
-<!--&lt;!&ndash;            <methods>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="switchToUaeStore"></include>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="verifyAbilityToAccessAllPagesInsideReadyToEatOptionCategoryRelatedToHealthyFoodCategoryPage"></include>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="verifyAbilityToAccessAllPagesInsideHealthyMealsOptionCategoryRelatedToHealthyFoodCategoryPage"></include>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="verifyAbilityToAccessAllPagesInsideFeaturedOptionCategoryRelatedToHealthyFoodCategoryPage"></include>&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;                <include name="verifyAbilityToClickOnYouTubeIconCorrectly"></include>&ndash;&gt;&ndash;&gt;-->
-
-<!--&lt;!&ndash;            </methods>&ndash;&gt;-->
-<!--        </class>-->
-<!--    </classes>-->
-<!--</test>-->
-<!--    <test name=" Recommended Products" preserve-order="true">-->
-<!--        &lt;!&ndash;        Guidelines:&ndash;&gt;-->
-<!--        &lt;!&ndash;         1. To test on production Env, change the value to "production".&ndash;&gt;-->
-<!--        &lt;!&ndash;         2. To test on stgTest Env, change the value to "stgTest".&ndash;&gt;-->
-<!--        &lt;!&ndash;         3. To test on stg Env, change the value to "stg".&ndash;&gt;-->
-<!--        &lt;!&ndash;         4. To test on Staging2 Env, change the value to "staging2". &ndash;&gt;-->
-<!--        <parameter name="environment" value="production" />-->
-<!--    &lt;!&ndash;        Guidelines:&ndash;&gt;-->
-<!--&lt;!&ndash;    1. To test on Arabic version, change the value to "ar".&ndash;&gt;-->
-<!--&lt;!&ndash;    2. To test on English version, change the value to "en"&ndash;&gt;-->
-<!--&lt;!&ndash;    3. Commit it if you want to keep the default version( English) &ndash;&gt;`-->
-<!--        &lt;!&ndash;        <parameter name="language" value="ar" />&ndash;&gt;-->
-<!--    <classes>-->
-<!--        <class name="sporter_test.AeRecommendedProductsTestCases">-->
-<!--&lt;!&ndash;        <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases">&ndash;&gt;-->
-<!--&lt;!&ndash;            <methods>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="switchToUaeStore"></include>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="verifyAbilityToAccessAllPagesInsideReadyToEatOptionCategoryRelatedToHealthyFoodCategoryPage"></include>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="verifyAbilityToAccessAllPagesInsideHealthyMealsOptionCategoryRelatedToHealthyFoodCategoryPage"></include>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="verifyAbilityToAccessAllPagesInsideFeaturedOptionCategoryRelatedToHealthyFoodCategoryPage"></include>&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;                <include name="verifyAbilityToClickOnYouTubeIconCorrectly"></include>&ndash;&gt;&ndash;&gt;-->
-
-<!--&lt;!&ndash;            </methods>&ndash;&gt;-->
-<!--        </class>-->
-<!--    </classes>-->
-<!--</test>-->
-<!--    <test name=" Vitamins And Health" preserve-order="true">-->
-<!--        &lt;!&ndash;        Guidelines:&ndash;&gt;-->
-<!--        &lt;!&ndash;         1. To test on production Env, change the value to "production".&ndash;&gt;-->
-<!--        &lt;!&ndash;         2. To test on stgTest Env, change the value to "stgTest".&ndash;&gt;-->
-<!--        &lt;!&ndash;         3. To test on stg Env, change the value to "stg".&ndash;&gt;-->
-<!--        &lt;!&ndash;         4. To test on Staging2 Env, change the value to "staging2". &ndash;&gt;-->
-<!--        <parameter name="environment" value="production" />-->
-<!--    &lt;!&ndash;        Guidelines:&ndash;&gt;-->
-<!--&lt;!&ndash;    1. To test on Arabic version, change the value to "ar".&ndash;&gt;-->
-<!--&lt;!&ndash;    2. To test on English version, change the value to "en"&ndash;&gt;-->
-<!--&lt;!&ndash;    3. Commit it if you want to keep the default version( English) &ndash;&gt;`-->
-<!--        &lt;!&ndash;        <parameter name="language" value="ar" />&ndash;&gt;-->
-<!--    <classes>-->
-<!--        <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases">-->
-<!--&lt;!&ndash;        <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases">&ndash;&gt;-->
-<!--&lt;!&ndash;            <methods>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="switchToUaeStore"></include>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="verifyAbilityToAccessAllPagesInsideReadyToEatOptionCategoryRelatedToHealthyFoodCategoryPage"></include>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="verifyAbilityToAccessAllPagesInsideHealthyMealsOptionCategoryRelatedToHealthyFoodCategoryPage"></include>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="verifyAbilityToAccessAllPagesInsideFeaturedOptionCategoryRelatedToHealthyFoodCategoryPage"></include>&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;                <include name="verifyAbilityToClickOnYouTubeIconCorrectly"></include>&ndash;&gt;&ndash;&gt;-->
-
-<!--&lt;!&ndash;            </methods>&ndash;&gt;-->
 <!--        </class>-->
 <!--    </classes>-->
 <!--</test>-->
 
 
 
+<!--    <test name="Smoke Testing Report- Production">-->
+<!--        <parameter name="environment" value="production" />-->
+<!--        <groups>-->
+<!--            <run>-->
+<!--                <include name="Smoke Testing Report"/>-->
+<!--            </run>-->
+<!--        </groups>-->
+<!--        <classes>-->
+<!--            <class name="sporter_test.AeCartTestCases"/>-->
+<!--            <class name="sporter_test.QatarHomePageTestCases"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 
-<!--&lt;!&ndash;    <test name="Test-production">&ndash;&gt;-->
-<!--&lt;!&ndash;        <parameter name="environment" value="production" />&ndash;&gt;-->
-<!--&lt;!&ndash;        <groups>&ndash;&gt;-->
-<!--&lt;!&ndash;            <run>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="Smoke Testing Report"/>&ndash;&gt;-->
-<!--&lt;!&ndash;            </run>&ndash;&gt;-->
-<!--&lt;!&ndash;        </groups>&ndash;&gt;-->
-<!--&lt;!&ndash;        <classes>&ndash;&gt;-->
-<!--&lt;!&ndash;            <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases"/>&ndash;&gt;-->
-<!--&lt;!&ndash;        </classes>&ndash;&gt;-->
-<!--&lt;!&ndash;    </test>&ndash;&gt;-->
-
-
-<!--&lt;!&ndash;    <test name="Test-stg">&ndash;&gt;-->
-<!--&lt;!&ndash;        <parameter name="environment" value="stg" />&ndash;&gt;-->
-
-<!--&lt;!&ndash;        <groups>&ndash;&gt;-->
-<!--&lt;!&ndash;            <run>&ndash;&gt;-->
-<!--&lt;!&ndash;                <include name="Regression Testing Report"/>&ndash;&gt;-->
-<!--&lt;!&ndash;            </run>&ndash;&gt;-->
-<!--&lt;!&ndash;        </groups>&ndash;&gt;-->
-<!--&lt;!&ndash;        <classes>&ndash;&gt;-->
-<!--&lt;!&ndash;            <class name="sporter_test.QatarHomePageTestCases"/>&ndash;&gt;-->
-<!--&lt;!&ndash;        </classes>&ndash;&gt;-->
-<!--&lt;!&ndash;    </test>&ndash;&gt;-->
+<!--    <test name="Smoke Testing Report- stg">-->
+<!--        <parameter name="environment" value="stg" />-->
+<!--        <groups>-->
+<!--            <run>-->
+<!--                <include name="Smoke Testing Report"/>-->
+<!--            </run>-->
+<!--        </groups>-->
+<!--        <classes>-->
+<!--            <class name="sporter_test.AeCartTestCases"/>-->
+<!--            <class name="sporter_test.QatarHomePageTestCases"/>-->
+<!--        </classes>-->
+    </test>
 
 
 

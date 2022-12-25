@@ -3663,13 +3663,13 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getLabradaOptionInByBrandMenu()).perform();
-        aeMegamenuPage.getLabradaOptionInByBrandMenu().click();
-//        aeMegamenuPage.getMuscleNutritionOptionInByBrandMenu().click();
         String expectedUrl=aeMegamenuPage.getLabradaOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getLabradaOptionInByBrandMenu().click();
+//        aeMegamenuPage.getMuscleNutritionOptionInByBrandMenu().click();
+        DataHelperAndWait.waitForUrlContains(expectedUrl,webDriver,5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), labradaInByBrandMenuUrl);
-aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Orgain Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 252)
@@ -4387,7 +4387,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         action = new Actions(webDriver);
                 aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
-        Assert.assertTrue(aeMegamenuPage.getProteinOptionInSportSupplementsMenu().getCssValue("font-weight").contains("700"));
+//        Assert.assertTrue(aeMegamenuPage.getProteinOptionInSportSupplementsMenu().getCssValue("font-weight").contains("700"));
         Assert.assertTrue(aeMegamenuPage.getCreatineOptionInSportSupplementsMenu().getCssValue("font-weight").contains("700"));
         Assert.assertTrue(aeMegamenuPage.getAminoAcidsOptionInSportSupplementsMenu().getCssValue("font-weight").contains("700"));
         Assert.assertEquals(aeMegamenuPage.getMuscleBoostersOptionInSportSupplementsMainMenu().getCssValue("text-transform"), "uppercase");

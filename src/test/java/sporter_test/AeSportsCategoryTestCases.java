@@ -31,6 +31,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         aeMegamenuPage.getSportsMainMenu().click();
+        DataHelperAndWait.waitForUrlContains(aeMegamenuPage.sportsUrl,webDriver,5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeMegamenuPage.sportsUrl));
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -2478,7 +2479,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
         this.verifyClickingOnSportsCategoryFromShopByMenuRedirectUserToCorrectURL();
         aeGuestUserPage.clickOnSporterLogo();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSportSupplementsCategoryPage.aeDomain," The Current URL is not matched with the Cart URL" );
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSportSupplementsCategoryPage.aeDomain+"/"," The Current URL is not matched with the Cart URL" );
     }
     @Test(description = "Sports Category- Make sure the Ability to click on phone button that appears in the Got A Question section correctly from Sports Category Page ", priority = 241)
     public void verifyAbilityToClickOnPhoneBtnInGotQuestionSectionFromSportsCategoryPage() {

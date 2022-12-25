@@ -147,7 +147,7 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
     private WebElement productCardIVitaminsAZSection;
     @FindBy(xpath = "(//div[@class='swiper-slide'])[25]")
     private WebElement productCardInMineralsSection;
-    @FindBy(xpath = "(//div[@class='inner-seller-prod wp-id-23713']//a)[1]")
+    @FindBy(xpath = "(//div[@class='inner-seller-prod wp-id-23637']//a)[1]")
     private WebElement productCardInAntioxidantsSection;
     @FindBy(xpath = "(//div[@class='inner-seller-prod wp-id-20305'])[1]")
     private WebElement productCardInSuperFoodSection;

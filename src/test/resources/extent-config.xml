@@ -43,31 +43,23 @@
             <![CDATA[
         $(document).ready(function() {
 
-        $('.logo-container.blue.darken-2').css('display','none');
-                        $("/html/body/nav/ul[1]/li[3]").click();
-                        $('#enableDashboard').click();
-                        $('.total-steps').parent().hide();
+            $('.logo-container.blue.darken-2').css('display','none');
+            $('.charts > div:nth-child(2)').hide();
+            $('.total-steps').parent().hide();
 
-
-
+<!--            $('//a[@class='dashboard-view']').click();-->
 
         });
+
       ]]>
 
-<!--            <![CDATA[-->
-<!--            $(document).ready(function() {-->
-<!--                $("/html/body/nav/ul[1]/li[3]").click();-->
-<!--            });-->
-<!--        ]]>-->
-        </scripts>
 
+        </scripts>
         <!-- custom styles -->
 <!--        <styles>-->
 <!--            <![CDATA[-->
 
 <!--      ]]>-->
-        <!-- To display the Dashboard as a landing page-->
-
 <!--        </styles>-->
         <styles>
             <![CDATA[

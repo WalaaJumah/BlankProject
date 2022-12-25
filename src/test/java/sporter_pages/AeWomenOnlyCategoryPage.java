@@ -47,7 +47,7 @@ public class AeWomenOnlyCategoryPage extends BasePage {
    private WebElement productCardInWomenVitaminsSection;
     @FindBy(xpath = "//div[@class='inner-seller-prod wp-id-17316']")
    private WebElement productCardInWorkoutInStyleSection;
-    @FindBy(xpath = "//div[@class='inner-seller-prod wp-id-55257']/div/a")
+    @FindBy(xpath = "//div[@class='inner-seller-prod wp-id-55256']/div/a")
    private WebElement productCardInLadyFriendlySnacksFoodSection;
     @FindBy(xpath = "//div[@class='brand-video-header']/h3")
    private WebElement femaleGallerySectionTitle;
@@ -202,7 +202,7 @@ public class AeWomenOnlyCategoryPage extends BasePage {
     }
 
     public WebElement getPreviousIconInWorkoutInStyleSection() {
-        DataHelperAndWait.waitToBeVisible(previousIconInWorkoutInStyleSection,2,webDriver);
+        DataHelperAndWait.waitToBeVisible(previousIconInWorkoutInStyleSection,5,webDriver);
         return previousIconInWorkoutInStyleSection;
     }
     public WebElement getLastProductInWorkoutInStyleSection() {
@@ -227,9 +227,11 @@ public class AeWomenOnlyCategoryPage extends BasePage {
         return viewAllInLadyFriendlySnacksFoodSection;
     }
     public WebElement getPreviousIconInLadyFriendlySnacksFoodSection() {
+        DataHelperAndWait.waitToBeVisible(previousIconInLadyFriendlySnacksFoodSection,5,webDriver);
         return previousIconInLadyFriendlySnacksFoodSection;
     }
     public WebElement getNextIconInInLadyFriendlySnacksFoodSection() {
+        DataHelperAndWait.waitToBeVisible(nextIconInInLadyFriendlySnacksFoodSection,5,webDriver);
         return nextIconInInLadyFriendlySnacksFoodSection;
     }
     public WebElement getProductCardInLadyFriendlySnacksFoodSection() {

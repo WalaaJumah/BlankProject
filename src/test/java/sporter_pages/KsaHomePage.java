@@ -543,12 +543,12 @@ dataHelperAndWait.waitToBeVisible(NewArrivalSectionPositionAfterClickingOnNext,3
     public void switchToKsaCountry() {
         try {
                     dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.isDisplayed(countryList, 3,webDriver);
+dataHelperAndWait.isDisplayed(countryList, 5,webDriver);
             this.countryList.click();
             this.saCountry.click();
         } catch (Exception e) {
                     dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.isDisplayed(countryList, 3,webDriver);
+dataHelperAndWait.isDisplayed(countryList, 5,webDriver);
             this.countryList.click();
             this.saCountry.click();
         }

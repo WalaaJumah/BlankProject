@@ -15,6 +15,14 @@ public class BasePage {
 
     public  static String siteURL = "https://www.sporter.com";
     public final String aeDomain = "/en-ae";
+    public final String omanDomain = "/en-om";
+    public final String bahrainDomain = "/en-bh";
+    public final String kuwaitDomain = "/en-kw";
+    public final String egyptDomain = "/en-eg";
+    public final String jordanDomain = "/en-jo";
+    public final String qatarDomain = "/en-qa";
+    public final String saudiDomain = "/en-sa";
+    public final String lebanonDomain = "/en-lb";
     public final String websiteEnglishLanguage = "/en";
     public  final String websiteArabicLanguage = "/ar";
     public final String uaeWebsite = "-ae/";

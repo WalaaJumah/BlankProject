@@ -139,7 +139,7 @@ public class QatarHomePage extends BasePage {
     private WebElement newArrivalsSportswearAndAccessoriesActiveLink;
     @FindBy(xpath = "(//div[@class='swiper-button-next top-sellers-swiper-button-next']/i)[8]")
     private WebElement nextBtnInNewArrivalsSection;
-    @FindBy(xpath = "((//div[@class='swiper-button-prev top-sellers-swiper-button-prev']/i))[2]")
+    @FindBy(xpath = "((//div[@class='swiper-button-prev top-sellers-swiper-button-prev']/i))[1]")
     private WebElement previousBtnInNewArrivalsSection;
     @FindBy(xpath = "//div[@class='left-quetion-block quetion-inner']")
     private WebElement getQuestionBlock;
@@ -518,11 +518,11 @@ public class QatarHomePage extends BasePage {
     //Define the main actions we need to execute our TCs
     public void switchToQatarCountry(  ) {
         try {
-            DataHelperAndWait.isDisplayed(countryList, 1,webDriver);
+            DataHelperAndWait.isDisplayed(countryList, 5,webDriver);
             this.countryList.click();
             this.qatarCountry.click();
         } catch (Exception e) {
-            DataHelperAndWait.isDisplayed(countryList, 3,webDriver);
+            DataHelperAndWait.isDisplayed(countryList, 5,webDriver);
             this.countryList.click();
             this.qatarCountry.click();
         }

@@ -192,7 +192,7 @@ public class AeCartTestCases extends BaseTest {
         Assert.assertEquals(aeCartPage.getQtyField().getAttribute("value"), "2");
     }
 
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Verify ability to Decrease the product quantity from Cart page from the Cart Page works successfully", priority = 14)
+    @Test(groups = "Smoke Testing Report",description = " Cart Page- Verify ability to Decrease the product quantity from Cart page from the Cart Page works successfully", priority = 15)
     public void verifyDecreaseQtyBtnInCartPageWorking() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
 //        this.viewCartFromPDP();
@@ -486,6 +486,7 @@ public class AeCartTestCases extends BaseTest {
     public void verifyAbilityToAddBundleWithAllItsOptionsToCart() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AeCartPage aeCartPage = new AeCartPage(webDriver);
+        aeProductDetailsPage.navigateToHomePage();
         aeProductDetailsPage.searchForBundle();
         aeProductDetailsPage.clickOnSearchBtn();
         DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getProductCard(), 5,webDriver);

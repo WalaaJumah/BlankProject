@@ -217,7 +217,7 @@ public class AEGuestUserTestCases extends BaseTest {
         this.accessShippingInformationScreen();
         aeGuestUserPage.clickOnSporterLogo();
         DataHelperAndWait.waitForUrlContains(siteURL,webDriver,10);
-        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL+aeDomain);
+        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL+aeDomain+"/");
     }
 
     @Test(description = "Guest Checkout- Make sure ability to navigate to the shipping information directly from the URL", priority = 17)

@@ -117,6 +117,7 @@ public class AeSearchPageTestCases extends BaseTest {
             DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(i),5,webDriver);
             expectedProductURL=aeSearchPage.getBrandsListInBrandPage().get(i).getAttribute("href");
             aeSearchPage.getBrandsListInBrandPage().get(i).click();
+            DataHelperAndWait.waitForUrlContains(expectedProductURL,webDriver,5);
             Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedProductURL));
             aeProductDetailsPage.getSearchBtn().click();
             aeSearchPage.getBrandsTab().click();

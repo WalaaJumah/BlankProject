@@ -224,7 +224,7 @@ public class AeSportSupplementsCategoryPage extends BasePage {
     }
 
     public void navigateToPage2() {
-        DataHelperAndWait.waitToBeVisible(pageTwoBtn, 5,webDriver);
+        DataHelperAndWait.waitToBeVisible(pageTwoBtn, 6,webDriver);
         pageTwoBtn.click();
     }
 
@@ -235,9 +235,9 @@ public class AeSportSupplementsCategoryPage extends BasePage {
 
     public void clickOnPreviousPageBtn() {
         try{
-        DataHelperAndWait.waitToBeVisible(previousPageBtn, 3,webDriver);
+        DataHelperAndWait.waitToBeVisible(previousPageBtn, 5,webDriver);
         previousPageBtn.click();}
-        catch(Exception e){        DataHelperAndWait.waitToBeVisible(previousPageBtn, 2,webDriver);
+        catch(Exception e){        DataHelperAndWait.waitToBeVisible(previousPageBtn, 3,webDriver);
             previousPageBtn.click();}
     }
 

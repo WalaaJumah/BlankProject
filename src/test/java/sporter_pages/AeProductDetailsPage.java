@@ -86,7 +86,7 @@ public class AeProductDetailsPage extends BasePage {
     private WebElement productUnavailableForCountry;
     @FindBy(linkText = "Shop By")
     private WebElement shopByMenu;
-    @FindBy(xpath = "(//span[@class='price'])[8]")
+    @FindBy(xpath = "//span[@data-price-type='finalPrice']/span")
     private WebElement FinalProductPrice;
     @FindBy(css = "div[class='product-column--side'] span[class='price']")
     private WebElement productPrice;
@@ -262,7 +262,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public WebElement getFinalProductPrice() {
-        DataHelperAndWait.waitToBeVisible(FinalProductPrice, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(FinalProductPrice, 6, webDriver);
         return FinalProductPrice;
     }
 
@@ -402,7 +402,7 @@ public class AeProductDetailsPage extends BasePage {
     public void switchToLebanonCountry() {
         try {
             this.countryList.click();
-            DataHelperAndWait.isDisplayed(countryList, 1, webDriver);
+            DataHelperAndWait.isDisplayed(countryList, 5, webDriver);
             this.lebanonCountry.click();
         } catch (Exception e) {
             this.countryList.click();
@@ -414,11 +414,11 @@ public class AeProductDetailsPage extends BasePage {
     public void switchToJOCountry() {
         try {
             this.countryList.click();
-            DataHelperAndWait.isDisplayed(countryList, 3, webDriver);
+            DataHelperAndWait.isDisplayed(countryList, 5, webDriver);
             this.joCountry.click();
         } catch (Exception e) {
             this.countryList.click();
-            DataHelperAndWait.isDisplayed(countryList, 2, webDriver);
+            DataHelperAndWait.isDisplayed(countryList, 5, webDriver);
             this.joCountry.click();
         }
     }

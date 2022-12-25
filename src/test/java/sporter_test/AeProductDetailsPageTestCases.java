@@ -16,6 +16,8 @@ import sporter_pages.AeWomenOnlyCategoryPage;
 
 import javax.xml.crypto.Data;
 
+import java.util.NoSuchElementException;
+
 import static org.testng.Assert.*;
 
 public class AeProductDetailsPageTestCases extends BaseTest {
@@ -55,7 +57,11 @@ public class AeProductDetailsPageTestCases extends BaseTest {
     @Test(description = "Make sure the shopper is unable to add out of stock product to the cart", priority = 5)
     public void verifyInabilityToAddOosProductToTheCart() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
-        assertFalse(aeProductDetailsPage.isAddToCartBtnDisplayed());
+        try{        
+        assertFalse(aeProductDetailsPage.isAddToCartBtnDisplayed());}
+        catch (NoSuchElementException exception){
+            System.out.println("The Add to cart Button is hidden");
+        }
     }
 
     @Test(description = "Make sure to display the product from search screen", priority = 6)
@@ -356,8 +362,14 @@ public class AeProductDetailsPageTestCases extends BaseTest {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.displayNotAvailableOfferProduct();
         aeProductDetailsPage.switchToJOCountry();
+        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+        assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
+        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+        assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
+        boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
+        assertFalse(isExceptionPagePresent, "The exception page is displayed "+webDriver.getCurrentUrl());
         boolean isTheElementPresent2 = webDriver.getPageSource().contains("this offer is not available in your country");
-        assertTrue(isTheElementPresent2, "The  offer is not available in your country page is displayed "+webDriver.getCurrentUrl());
+        assertFalse(isTheElementPresent2, "The  offer is not available in your country page is displayed "+webDriver.getCurrentUrl());
         aeProductDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 //    @Test(description = "Make sure that the customer cannot add more than 2 Qty for the same product when switching to Jordan Store", priority = 38)

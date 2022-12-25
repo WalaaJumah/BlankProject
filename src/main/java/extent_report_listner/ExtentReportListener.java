@@ -52,7 +52,9 @@ public class ExtentReportListener  implements IReporter {
 //            spark.viewConfigurer().viewOrder().as(new ViewName[]{ViewName.DASHBOARD, ViewName.TEST,ViewName.CATEGORY}).apply();
 
 //        extent.addSystemInfo("Environment", siteURL);
-        extent.addSystemInfo("Author", "Wala'a Mohammad");
+//        extent.addSystemInfo("Author", "Wala'a Mohammad");
+
+
 
 
         //loading the external xml file
@@ -62,6 +64,7 @@ public class ExtentReportListener  implements IReporter {
 
 
                 ITestContext context = r.getTestContext();
+
 
                 buildTestNodes(context.getPassedTests(), LogStatus.PASS);
                 buildTestNodes(context.getFailedTests(), LogStatus.FAIL);

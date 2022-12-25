@@ -133,6 +133,8 @@ public void switchToUaeStore(){
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
         ArrayList<String> expectedOption = new ArrayList<>() {{
             add("Featured");
+            add("Name");
+            add("Best Selling");
             add("Price Min-Max");
             add("Price Max-Min");
         }};
@@ -143,13 +145,13 @@ public void switchToUaeStore(){
         }
     }
 
-    @Test(description = "Sports Supplements Category- Make sure that the Featured option is selected by default in the Sort By menu ", priority = 12)
-    public void verifyFeaturedOptionIsSelectedByDefaultInSortByMenu() {
+    @Test(description = "Sports Supplements Category- Make sure that the Best Selling option is selected by default in the Sort By menu ", priority = 12)
+    public void verifyBestSellingOptionIsSelectedByDefaultInSortByMenu() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        aeSportSupplementsCategoryPage.navigate();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
-        Assert.assertEquals(select.getFirstSelectedOption().getText(), "Featured");
+        Assert.assertEquals(select.getFirstSelectedOption().getText(), "Best Selling");
     }
 
     //There's a bug here when sorting the products then the Horizontal Banners are hidden
