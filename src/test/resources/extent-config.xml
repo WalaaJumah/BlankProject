@@ -44,10 +44,19 @@
         $(document).ready(function() {
 
             $('.logo-container.blue.darken-2').css('display','none');
-            $('.charts > div:nth-child(2)').hide();
-            $('.total-steps').parent().hide();
+<!--            $('.charts > div:nth-child(2)').hide();-->
+<!--            $('.total-steps').parent().hide();-->
 
-<!--            $('//a[@class='dashboard-view']').click();-->
+
+
+              $('#dashboard-view > div.time-totals > div:nth-child(2) > div > span.panel-name').html("Total Scenarios");
+              $('#dashboard-view > div.charts > div:nth-child(2) > div > div:nth-child(1) > span').html("Scenarios View");
+
+            $('#slide-out > li.analysis.waves-effect.active > a').click();
+
+
+
+
 
         });
 

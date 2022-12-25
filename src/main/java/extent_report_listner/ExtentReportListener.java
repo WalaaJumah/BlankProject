@@ -51,7 +51,6 @@ public class ExtentReportListener  implements IReporter {
 //            spark=new ExtentSparkReporter(File.separator + "Magento-Sporter-Automation_Report "+date+".html");
 //            spark.viewConfigurer().viewOrder().as(new ViewName[]{ViewName.DASHBOARD, ViewName.TEST,ViewName.CATEGORY}).apply();
 
-//        extent.addSystemInfo("Environment", siteURL);
 //        extent.addSystemInfo("Author", "Wala'a Mohammad");
 
 

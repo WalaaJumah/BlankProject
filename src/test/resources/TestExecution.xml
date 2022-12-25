@@ -23,14 +23,14 @@
     <classes>
 <!--        <class name="sporter_test.AeAllPagesInsideCategoriesInMegaMenuTestCases">-->
         <class name="sporter_test.AccessAllStoresCountriesTestCases">
-<!--            <methods>-->
-<!--                <include name="switchToUaeStore"></include>-->
+            <methods>
+                <include name="switchToLebanonlStore"></include>
 <!--&lt;!&ndash;&lt;!&ndash;                <include name="verifyAbilityToAccessAllPagesInsideReadyToEatOptionCategoryRelatedToHealthyFoodCategoryPage"></include>&ndash;&gt;&ndash;&gt;-->
 <!--&lt;!&ndash;&lt;!&ndash;                <include name="verifyAbilityToAccessAllPagesInsideHealthyMealsOptionCategoryRelatedToHealthyFoodCategoryPage"></include>&ndash;&gt;&ndash;&gt;-->
 <!--&lt;!&ndash;&lt;!&ndash;                <include name="verifyAbilityToAccessAllPagesInsideFeaturedOptionCategoryRelatedToHealthyFoodCategoryPage"></include>&ndash;&gt;&ndash;&gt;-->
 <!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                <include name="verifyAbilityToClickOnYouTubeIconCorrectly"></include>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
 
-<!--            </methods>-->
+            </methods>
         </class>
     </classes>
 <!--</test>-->
