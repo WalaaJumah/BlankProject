@@ -3,7 +3,7 @@
     <configuration>
         <!-- report theme -->
         <!-- standard, dark -->
-        <theme>standard</theme>
+        <theme>dark</theme>
 <!--        <theme>standard</theme>-->
 
         <!-- document encoding -->
@@ -51,6 +51,9 @@
 
               $('#dashboard-view > div.time-totals > div:nth-child(2) > div > span.panel-name').html("Total Scenarios");
               $('#dashboard-view > div.charts > div:nth-child(2) > div > div:nth-child(1) > span').html("Scenarios View");
+
+
+              $('#test-details-wrapper > div > div > div.step-filters.right').hide();
 
             $('#slide-out > li.analysis.waves-effect.active > a').click();
 
