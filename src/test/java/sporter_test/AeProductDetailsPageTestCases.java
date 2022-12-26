@@ -341,9 +341,9 @@ public class AeProductDetailsPageTestCases extends BaseTest {
     public void verifySimplePriceChangesWhenNavigationBetweenSizesForTheConfig() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.displayTheProduct();
-        aeProductDetailsPage.clickOnFirstProductSize();
+        aeProductDetailsPage.clickOnFirstsimple();
         String firstPrice = aeProductDetailsPage.getFinalProductPrice().getText();
-        aeProductDetailsPage.clickOnSecondProductSize();
+        aeProductDetailsPage.clickOnSecondimple();
         String secondPrice = aeProductDetailsPage.getFinalProductPrice().getText();
         Assert.assertNotEquals(firstPrice, secondPrice,"The simple price is not changes");
     }
@@ -369,7 +369,7 @@ public class AeProductDetailsPageTestCases extends BaseTest {
         boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
         assertFalse(isExceptionPagePresent, "The exception page is displayed "+webDriver.getCurrentUrl());
         boolean isTheElementPresent2 = webDriver.getPageSource().contains("this offer is not available in your country");
-        assertFalse(isTheElementPresent2, "The  offer is not available in your country page is displayed "+webDriver.getCurrentUrl());
+        assertTrue(isTheElementPresent2, "The  offer is not available in your country page is displayed "+webDriver.getCurrentUrl());
         aeProductDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 //    @Test(description = "Make sure that the customer cannot add more than 2 Qty for the same product when switching to Jordan Store", priority = 38)

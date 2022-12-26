@@ -47,7 +47,7 @@ public class AeWomenOnlyCategoryPage extends BasePage {
    private WebElement productCardInWomenVitaminsSection;
     @FindBy(xpath = "//div[@class='inner-seller-prod wp-id-17316']")
    private WebElement productCardInWorkoutInStyleSection;
-    @FindBy(xpath = "//div[@class='inner-seller-prod wp-id-35422']/div/a")
+    @FindBy(xpath = "//div[@class='inner-seller-prod wp-id-35422']")
    private WebElement productCardInLadyFriendlySnacksFoodSection;
     @FindBy(xpath = "//div[@class='brand-video-header']/h3")
    private WebElement femaleGallerySectionTitle;

@@ -132,16 +132,14 @@ public class AeCartTestCases extends BaseTest {
     public void verifyAbilityToViewTheCartAfterAddingMoreThanSimpleOfTheSameConfig() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AeCartPage aeCartPage = new AeCartPage(webDriver);
-        aeProductDetailsPage.clickOnShopeByMenu();
-        aeProductDetailsPage.clickOnSportsSupplementsMenu();
-        aeProductDetailsPage.DisplayProductInTheList(0);
-        aeProductDetailsPage.clickOnFirstProductFlavor();
+        aeProductDetailsPage.displayTheProduct();
+        aeProductDetailsPage.clickOnFirstsimple();
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.keepShopping();
-        aeProductDetailsPage.clickOnSecondProductFlavor();
+        aeProductDetailsPage.clickOnSecondimple();
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
-        String itemsCounter = "(3 Items)";
+        String itemsCounter = "(2 Items)";
         DataHelperAndWait.waitForUrlContains(aeProductDetailsPage.cartURL,webDriver,5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeProductDetailsPage.cartURL) );
         aeCartPage.clickOnRemoveItem();
@@ -200,7 +198,7 @@ public class AeCartTestCases extends BaseTest {
 //        aeCartPage.clickOnIncreaseQtyBtn();
         DataHelperAndWait.waitToBeClickable(aeCartPage.getDecreaseQtyBtn(), 5,webDriver);
         aeCartPage.clickOnDecreaseQtyBtn();
-        Assert.assertEquals(aeCartPage.getQtyField().getAttribute("value"), "1");
+        Assert.assertEquals(aeCartPage.getQtyField().getAttribute("value"), "2");
     }
     @Test(groups = "Smoke Testing Report",description = " Cart Page- Verify ability to display the product from the Cart Page works successfully", priority = 16)
     public void verifyAbilityToDisplayTheProductFromTheCartPage() {

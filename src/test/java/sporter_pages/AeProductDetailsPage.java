@@ -114,6 +114,11 @@ public class AeProductDetailsPage extends BasePage {
     private WebElement firstProductFlavor;
     @FindBy(xpath = "(//div[@index='5'])[1]")
     private WebElement firstProductSize;
+    @FindBy(xpath = "//div[@id='option-label-size-165-item-10243']")
+    private WebElement firstsimple;
+    @FindBy(xpath = "//div[@id='option-label-size-165-item-10042']")
+    private WebElement secondsimple;
+
     @FindBy(xpath = "//div[@class='swatch-option text' and @index='1']")
     private WebElement secondProductSize;
     @FindBy(xpath = "//div[@class='swatch-attribute flavor']/div/div[@tabindex=0 and @index='2']")
@@ -383,7 +388,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void clickOnSecondProductFlavor() {
-        DataHelperAndWait.waitToBeClickable(secondProductFlavor, 3, webDriver);
+        DataHelperAndWait.waitToBeClickable(secondProductFlavor, 5, webDriver);
         this.secondProductFlavor.click();
     }
 
@@ -514,7 +519,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void DisplayProductInTheList(int listIndex) {
-        DataHelperAndWait.isDisplayed(firstProductInTheCategoryList, 3, webDriver);
+        DataHelperAndWait.waitToBeVisible(firstProductInTheCategoryList, 3, webDriver);
         for (int i = 1; i < megaMenuList.size(); i++) {
             WebElement productIndex = megaMenuList.get(listIndex);
             productIndex.click();
@@ -564,6 +569,14 @@ public class AeProductDetailsPage extends BasePage {
     public void clickOnFirstProductSize() {
         DataHelperAndWait.isDisplayed(firstProductSize, 3, webDriver);
         this.firstProductSize.click();
+    }
+    public void clickOnFirstsimple() {
+        DataHelperAndWait.isDisplayed(firstsimple, 3, webDriver);
+        this.firstsimple.click();
+    }
+    public void clickOnSecondimple() {
+        DataHelperAndWait.isDisplayed(secondsimple, 3, webDriver);
+        this.secondsimple.click();
     }
 
     public void clickOnSecondProductSize() {

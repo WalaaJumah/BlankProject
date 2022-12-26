@@ -305,9 +305,9 @@ public class QatarHomePageTestCases extends BaseTest {
     @Test(groups = "Smoke Testing Report",description = "Qatar HomePage- Make sure clicking on email button from the Got A Question section works correctly ", priority = 30)
     public void verifyAbilityToClickOnEmailBtnInGotQuestionSectionCorrectly() {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
-//        qatarHomePage.navigate();
         qatarHomePage.clickOnEmailBtn();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(qatarHomePage.contactUsUrl), "The system redirect the user to wrong URL " + webDriver.getCurrentUrl());
+        DataHelperAndWait.waitForUrlContains(qatarHomePage.contactUsUrl,webDriver,5);
+//        Assert.assertTrue(webDriver.getCurrentUrl().contains(qatarHomePage.contactUsUrl), "The system redirect the user to wrong URL " + webDriver.getCurrentUrl());
     }
 
     @Test(description = "Qatar HomePage- Make sure clicking on the Sports Supplements category from HomePage works correctly ", priority = 31)

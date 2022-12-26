@@ -42,7 +42,7 @@ public class AeCartPage extends BasePage {
     private WebElement priceInCartPage;
     @FindBy(xpath = "//td[text()='FREE from SPORTER']")
     private WebElement freeFromSporter;
-    @FindBy(xpath = "//span[text()='Free']")
+    @FindBy(xpath = "(//span[text()='Free'])[1]")
     private WebElement freePrice;
     @FindBy(xpath = "//td[text()='We accept']")
     private WebElement weAcceptLabel;

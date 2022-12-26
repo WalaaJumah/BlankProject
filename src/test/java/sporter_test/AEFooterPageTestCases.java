@@ -307,8 +307,6 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getGrenadeCarbKillaProteinBarBoxOf12Option().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.questNutritionBarsBoxOf12,webDriver,5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.questNutritionBarsBoxOf12)," The Current URL is not matched with the grenadeCrabKillaProteinBarBoxOf12 product URL");
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 

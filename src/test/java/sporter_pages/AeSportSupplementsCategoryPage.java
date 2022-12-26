@@ -59,6 +59,10 @@ public class AeSportSupplementsCategoryPage extends BasePage {
     private WebElement NextPageBtn;
     @FindBy(xpath = "(//ul[@class='items pages-items']//li[3])[2]")
     private WebElement pageTwoBtn;
+
+    @FindBy(xpath = "(//ul[@class='items pages-items']//li[3])[2]/a")
+    private WebElement pageTwoBtnInPersonalCare;
+
     @FindBy(xpath = "(//ul[@class='items pages-items']//li[4])[2]")
     private WebElement pageThreeBtn;
     @FindBy(xpath = "(//a[@class='action  previous arrow-disable'])[2]")
@@ -196,6 +200,9 @@ public class AeSportSupplementsCategoryPage extends BasePage {
     public WebElement getSportSupplementsMainMenu() {
         return sportSupplementsMainMenu;
     }
+    public WebElement getPageTwoBtnInPersonalCare() {
+        return pageTwoBtnInPersonalCare;
+    }
     //Define the main actions we need to execute our TCs
     public void switchToAECountry() {
         try {
@@ -226,6 +233,10 @@ public class AeSportSupplementsCategoryPage extends BasePage {
     public void navigateToPage2() {
         DataHelperAndWait.waitToBeVisible(pageTwoBtn, 6,webDriver);
         pageTwoBtn.click();
+    }
+    public void navigateToPage2InPersonalCarePage() {
+        DataHelperAndWait.waitToBeVisible(pageTwoBtnInPersonalCare, 6,webDriver);
+        pageTwoBtnInPersonalCare.click();
     }
 
     public void navigateToPage3() {

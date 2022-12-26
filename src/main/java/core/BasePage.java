@@ -97,7 +97,7 @@ public class BasePage {
     public final  String youtubeURL = "https://www.youtube.com/user/SporterVideos";
     public final String searchUrl="catalogsearch/result/?q=";
     public final String productUrl = "/optimum-gold-standard-100-whey-6202";
-    public final String oOSProductUrl = "/healthy-food/ready-to-eat/healthy-meals/performance-meals-pack-of-6";
+    public final String oOSProductUrl = "/healthy-food/snacks-drinks/spreads/healthyco-peanut-butter";
     public final String notAvailableOfferProduct = "/catalog/product/view/id/44012/s/olimp-chitosan-chromium-43840/";
     public final String sportsUrl = "/en-ae/sports/";
     public final String toysAndGamesUrl = "/toys-and-games";

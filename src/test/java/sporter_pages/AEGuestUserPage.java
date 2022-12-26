@@ -327,10 +327,10 @@ public class AEGuestUserPage extends BasePage {
 
     public void clickOnContinueBtn() {
         try{
-        DataHelperAndWait.waitToBeVisible(continueBtn, 5,webDriver);
+        DataHelperAndWait.waitToBeVisible(continueBtn, 6,webDriver);
         this.continueBtn.click();}
         catch (Exception e){
-            DataHelperAndWait.waitToBeVisible(continueBtn, 3,webDriver);
+            DataHelperAndWait.waitToBeVisible(continueBtn, 6,webDriver);
             this.continueBtn.click();
         }
     }

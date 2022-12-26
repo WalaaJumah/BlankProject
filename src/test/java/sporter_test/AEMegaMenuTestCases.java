@@ -4381,7 +4381,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "MegaMenu- Make sure the main categories in the Sports Supplements main menu appearing in Bold Font", priority = 300)
+    @Test(description = "MegaMenu- Make sure the main categories in the Sports Supplements main menu appearing in Bold Font", priority = 300,enabled = false)
     public void verifyTheMainCategoriesInTheSportsSupplementsMainMenuAppearingInBoldFont() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
