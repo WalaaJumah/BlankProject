@@ -73,8 +73,6 @@ public class AEGuestUserTestCases extends BaseTest {
         Assert.assertEquals(aeGuestUserPage.getPhoneRequiredFieldMsg().getText(), "Text length does not satisfy specified text range.");
         Assert.assertEquals(aeGuestUserPage.getAddressRequiredFieldMsg().getText(), "This is a required field.");
         Assert.assertEquals(aeGuestUserPage.getStreetlineOneRequiredFieldMsg().getText(), "This is a required field.");
-        //There's a bug in the following statement
-        Assert.assertEquals(aeGuestUserPage.getCityRequiredFieldMsg().getText(), "This is a required field.");
     }
     @Test(groups = "Smoke Testing Report",description = "Make sure the Guest user cannot submit the shipping information when the phone number length is small ", priority = 7)
     public void verifyTheGuestUserCannotSubmitTheShippingInformationWhenPhoneFieldHaveSmallTextLength() {
@@ -86,10 +84,9 @@ public class AEGuestUserTestCases extends BaseTest {
 //        aeGuestUserPage.viewCart();
 //        aeGuestUserPage.clickOnProceedCheckoutBtn();
 //        aeGuestUserPage.clickOnGuestCheckoutBtn();
-        aeGuestUserPage.fillInShippingInformationInputField(aeGuestUserPage.firstName,aeGuestUserPage.lastName,aeGuestUserPage.email, "2222", aeGuestUserPage.address, aeGuestUserPage.streetLineOne, aeGuestUserPage.streetLineTwo);
         Select select = new Select(aeGuestUserPage.getCityMenu());
-//        WebElement cityOption = select.getOptions().get(2);
-        select.getOptions().get(2).click();
+        select.getOptions().get(0).click();
+        aeGuestUserPage.fillInShippingInformationInputField(aeGuestUserPage.firstName,aeGuestUserPage.lastName,aeGuestUserPage.email, "2222", aeGuestUserPage.address, aeGuestUserPage.streetLineOne, aeGuestUserPage.streetLineTwo);
         aeGuestUserPage.clickOnContinueBtn();
         Assert.assertEquals(aeGuestUserPage.getPhoneRequiredFieldMsg().getText(), "Text length does not satisfy specified text range.");
     }
@@ -146,6 +143,7 @@ public class AEGuestUserTestCases extends BaseTest {
     public void verifyAbilityToFillAndNavigateBetweenTheShippingInformationFormUsingTabKeyAndKeyboardShortCut() {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
         Actions act = new Actions(webDriver);
+        aeGuestUserPage.clearShippingInformationFields();
 //        this.verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPageCorrectly();
         aeGuestUserPage.clickOnFirstNameField();
         aeGuestUserPage.getFirstNameField().sendKeys(aeGuestUserPage.firstName);
@@ -239,5 +237,24 @@ public class AEGuestUserTestCases extends BaseTest {
         cityOption.click();
         aeGuestUserPage.clickOnContinueBtn();
         Assert.assertTrue(aeGuestUserPage.getShippingMethodSection().isDisplayed());
+    }
+    //There's a bug here
+    @Test( description = "Guest User- Make sure the validation message appears when submiting tGhe shipping information without filling the city field", priority = 19)
+    public void verifyTheValidationMsgAppearingWhenSubmittingTheShippingFormWithoutFillingTheCityField() {
+        AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
+//        this.verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPageCorrectly();
+        aeGuestUserPage.fillInShippingInformationInputField(" ", " ", " ", " ", " ", " ", aeGuestUserPage.streetLineTwo);
+        Select select = new Select(aeGuestUserPage.getCityMenu());
+//        WebElement cityOption = select.getOptions().get(0);
+        select.getOptions().get(0).click();
+        aeGuestUserPage.clickOnContinueBtn();
+        Assert.assertEquals(aeGuestUserPage.getFirstnameRequiredFieldMsg().getText(), "This is a required field.");
+        Assert.assertEquals(aeGuestUserPage.getLastNameRequiredFieldMsg().getText(), "This is a required field.");
+        Assert.assertEquals(aeGuestUserPage.getemailRequiredFieldMsg().getText(), "This is a required field.");
+        Assert.assertEquals(aeGuestUserPage.getPhoneRequiredFieldMsg().getText(), "Text length does not satisfy specified text range.");
+        Assert.assertEquals(aeGuestUserPage.getAddressRequiredFieldMsg().getText(), "This is a required field.");
+        Assert.assertEquals(aeGuestUserPage.getStreetlineOneRequiredFieldMsg().getText(), "This is a required field.");
+        //There's a bug in the following statement
+        Assert.assertEquals(aeGuestUserPage.getCityRequiredFieldMsg().getText(), "This is a required field.");
     }
 }

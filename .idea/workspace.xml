@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1543f19a-355a-420f-8233-95e332a91e4b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/GenerateReport.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/Logo1.PNG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/extent_report_listner/ExtentReportListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/extent_report_listner/ExtentReportListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AEGuestUserPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/AEGuestUserPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AeWomenOnlyCategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/AeWomenOnlyCategoryPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AEGuestUserTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AEGuestUserTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeRecommendedProductsTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AeRecommendedProductsTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/extent-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/extent-config.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,8 +69,8 @@
       <recent name="C:\Users\w.jumaa\IdeaProjects\sporter-web-automation\src\main\java\sporter-pages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\w.jumaa\IdeaProjects\sporter-web-automation\src\test\resources\drivers" />
       <recent name="C:\Users\w.jumaa\IdeaProjects\sporter-web-automation\src\test\resources" />
+      <recent name="C:\Users\w.jumaa\IdeaProjects\sporter-web-automation\src\test\resources\drivers" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -92,27 +97,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AeSportsCategoryTestCases.verifyThePaginationControlInSportsTechCategoryPageWorksCorrectly" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="C:/Users/w.jumaa/Downloads/automation-framework-enhanced-master/sporter-web-automation/src/test/resources/AeMegaMenu.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sporter_test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="sporter_test" />
-      <option name="MAIN_CLASS_NAME" value="sporter_test.AeSportsCategoryTestCases" />
-      <option name="METHOD_NAME" value="verifyThePaginationControlInSportsTechCategoryPageWorksCorrectly" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/AeMegaMenu.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="C:/Users/w.jumaa/Downloads/automation-framework-enhanced-master/sporter-web-automation/src/test/resources/AeMegaMenu.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/GenerateReport.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/AeMegaMenu.xml" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/GenerateReport.xml" />
       <option name="TEST_OBJECT" value="SUITE" />
       <properties />
       <listeners />
@@ -156,8 +153,8 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/GenerateReport.xml" />
       <item itemvalue="TestNG.AEGuestUserTestCases.verifyTheGuestUserCannotSubmitTheShippingInformationWhenPhoneFieldHaveSmallTextLength" />
-      <item itemvalue="TestNG.AeSportsCategoryTestCases.verifyThePaginationControlInSportsTechCategoryPageWorksCorrectly" />
       <item itemvalue="TestNG.C:/Users/w.jumaa/Downloads/automation-framework-enhanced-master/sporter-web-automation/src/test/resources/AeMegaMenu.xml" />
       <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/TestExecution.xml" />
       <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/walmkk.xml" />
@@ -165,10 +162,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/TestExecution.xml" />
+        <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/GenerateReport.xml" />
         <item itemvalue="TestNG.AEGuestUserTestCases.verifyTheGuestUserCannotSubmitTheShippingInformationWhenPhoneFieldHaveSmallTextLength" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/walmkk.xml" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/Downloads/automation-framework-enhanced-master/sporter-web-automation/src/test/resources/AeMegaMenu.xml" />
-        <item itemvalue="TestNG.AeSportsCategoryTestCases.verifyThePaginationControlInSportsTechCategoryPageWorksCorrectly" />
       </list>
     </recent_temporary>
   </component>

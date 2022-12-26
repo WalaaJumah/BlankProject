@@ -19,7 +19,7 @@ public class AEGuestUserPage extends BasePage {
     public final String firstNameAr = "محمد";
     public final String lastName = "User";
     public final String lastNameAr = "احمد";
-    public final  String phone = "2222222";
+    public final  String phone = "+9712222222";
     public final  String email = "SporterTesta@gmail.com";
     public final  String address = "Automation Address";
     public final String addressAr = "عنوان البيت";
@@ -155,7 +155,7 @@ public class AEGuestUserPage extends BasePage {
     }
 
     public WebElement getPhoneRequiredFieldMsg() {
-        DataHelperAndWait.waitToBeVisible(phoneRequiredFieldMsg,7,webDriver);
+        DataHelperAndWait.waitToBeVisible(phoneRequiredFieldMsg,5,webDriver);
         return phoneRequiredFieldMsg;
     }
 
@@ -326,8 +326,13 @@ public class AEGuestUserPage extends BasePage {
     }
 
     public void clickOnContinueBtn() {
-        DataHelperAndWait.waitToBeClickable(continueBtn, 10,webDriver);
-        this.continueBtn.click();
+        try{
+        DataHelperAndWait.waitToBeVisible(continueBtn, 5,webDriver);
+        this.continueBtn.click();}
+        catch (Exception e){
+            DataHelperAndWait.waitToBeVisible(continueBtn, 3,webDriver);
+            this.continueBtn.click();
+        }
     }
 
     public void switchToArabicVersion() {
