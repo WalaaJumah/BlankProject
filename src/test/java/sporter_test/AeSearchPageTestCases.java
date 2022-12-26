@@ -12,13 +12,13 @@ import static org.testng.Assert.*;
 public class AeSearchPageTestCases extends BaseTest {
     Actions action;
     
-    @Test(description = "Switching to UAE store", priority = 1)
+    @Test(groups = "Smoke Testing Report",description = "Search Page- Switching to UAE store", priority = 1)
     public void switchToUaeStore(){
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeWomenOnlyCategoryPage.switchToAECountry();
     }
 
-    @Test(description = "Verify clicking on the search icon will redirect the user to the search screen", priority = 1)
+    @Test(groups = "Smoke Testing Report",description = "Verify clicking on the search icon will redirect the user to the search screen", priority = 1)
     public void verifyClickingOnSearchIconWillRedirectUserTOTheSearchScreen() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -39,7 +39,7 @@ public class AeSearchPageTestCases extends BaseTest {
        Assert.assertTrue(aeSearchPage.getBrandsTab().isDisplayed(),"Brands tab is missing");
        Assert.assertEquals(aeSearchPage.getBrandsTab().getText(), "BRANDS ","Brands tab have incorrect name");
     }
-    @Test(description = "Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Search Page", priority = 3)
+    @Test(description = "Search Page-Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Search Page", priority = 3)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInSearchPage(){
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         Assert.assertTrue(aeFooterPage.getPageBottomSection().isDisplayed());
@@ -59,7 +59,7 @@ public class AeSearchPageTestCases extends BaseTest {
         }
     }
     //      The following Test Cases handle displaying the Mega Menu from search Page
-    @Test(description = "Make sure all menus appearing in the Mega Menu are displayed correctly when hovering on them from Search page", priority = 4)
+    @Test(groups = "Smoke Testing Report",description = "Search Page- Make sure all menus appearing in the Mega Menu are displayed correctly when hovering on them from Search page", priority = 4)
     public void verifyAllMenusInMegaMenuAreDisplayedCorrectlyWhenHoveringOnItFromSearchPage() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -76,7 +76,7 @@ public class AeSearchPageTestCases extends BaseTest {
         Assert.assertTrue(aeMegamenuPage.getMegaMenuSection().isDisplayed());
     }
     //All Tab
-    @Test(description = "Make sure clicking on the All tab will redirect the user to the correct page", priority = 5)
+    @Test(description = "Search Page- Make sure clicking on the All tab will redirect the user to the correct page", priority = 5)
     public void verifyClickingOnAllTabRedirectUserToCorrectPage(){
         AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         this.verifyClickingOnSearchIconWillRedirectUserTOTheSearchScreen();
@@ -86,7 +86,7 @@ public class AeSearchPageTestCases extends BaseTest {
         assertTrue(aeSearchPage.getArticlesSectionInAllPage().isDisplayed(),"Articles Section in All tab is missing");
     }
     //There's a bug here due to the products list is not appear after visit the PDP then go to All search page
-    @Test(description = "Make sure the ability to access all products appearing below the products section in the All Page", priority = 6)
+    @Test(groups = "Search Page- Smoke Testing Report",description = "Make sure the ability to access all products appearing below the products section in the All Page", priority = 6)
     public void verifyAbilityToAccessAllProductsListedBelowTheProductsSectionInTheAllTabCorrectly(){
         AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage=new AeProductDetailsPage(webDriver);
@@ -106,7 +106,7 @@ public class AeSearchPageTestCases extends BaseTest {
     }
     //Brands Tab
 
-    @Test(description = "Make sure the ability to access all brands appearing in the Brands Page", priority = 7)
+    @Test(description = "Search Page- Make sure the ability to access all brands appearing in the Brands Page", priority = 7)
     public void verifyAbilityToAccessAllBrandsListedInBrandsPageCorrectly(){
         AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage=new AeProductDetailsPage(webDriver);
@@ -125,7 +125,7 @@ public class AeSearchPageTestCases extends BaseTest {
 
         }
     }
-    @Test(description = "Make sure the the number of Brands Result retrieve a correct number", priority = 8)
+    @Test(description = "Search Page- Make sure the the number of Brands Result retrieve a correct number", priority = 8)
     public void verifyAbilityNumberOfBrandsResultRetrieveCorrectValue(){
         AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage=new AeProductDetailsPage(webDriver);
@@ -137,7 +137,7 @@ public class AeSearchPageTestCases extends BaseTest {
         int numberOfProductInTheListInInt=Integer.parseInt(numberOfProductWithOutResultLabel);
         Assert.assertEquals(numberOfProductInTheListInInt, aeSearchPage.getBrandsListInBrandPage().size(),"The number of Brands Result retrieve incorrect number");
     }
-    @Test(description = "Make sure the ability to access all brands appearing below the Brands section in the All Page", priority = 9)
+    @Test(description = "Search Page- Make sure the ability to access all brands appearing below the Brands section in the All Page", priority = 9)
     public void verifyAbilityToAccessAllBrandsListedBelowTheBrandsSectionInTheAllTabCorrectly(){
         AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage=new AeProductDetailsPage(webDriver);
@@ -156,7 +156,7 @@ public class AeSearchPageTestCases extends BaseTest {
         }
     }
 // Search Result
-    @Test(description = "Make sure the search result matched with what the user search for", priority = 10)
+    @Test(description = "Search Page- Make sure the search result matched with what the user search for", priority = 10)
     public void verifyTheSearchResultMatchedWithWhatTheUserSearch(){
         AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage=new AeProductDetailsPage(webDriver);

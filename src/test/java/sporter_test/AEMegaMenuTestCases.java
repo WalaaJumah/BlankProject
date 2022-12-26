@@ -80,7 +80,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertEquals(aeMegamenuPage.getShopByList().getCssValue("background-color"), "rgba(236, 236, 236, 1)", "The ShopBy Menu does not appears in the gray color");
     }
 
-    @Test(description = "MegaMenu- Make sure the Category sub menu will appear once hovering on any option appearing in the ShopBy Menu", priority = 7)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure the Category sub menu will appear once hovering on any option appearing in the ShopBy Menu", priority = 7)
     public void verifyTheCategorySubMenuAppearsWhenHoveringOnAnyOptionInsideShopByMenu() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
 //                aeMegamenuPage.navigateToHomePage();
@@ -194,7 +194,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     }
 
     //There's a bug here, clicking on the By Brand Menu wil redirect the user to the homePage
-    @Test(description = "MegaMenu- Make sure clicking on the By Brand menu appearing in the ShopBy Menu will redirect the User to the correct URL", priority = 18)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the By Brand menu appearing in the ShopBy Menu will redirect the User to the correct URL", priority = 18)
     public void verifyClickingOnByBrandOptionInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -207,7 +207,7 @@ public class AEMegaMenuTestCases extends BaseTest {
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(byBrandUrl));
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-    @Test(description = "MegaMenu- Make sure clicking on the By Goal menu appearing in the ShopBy Menu will redirect the User to the correct URL", priority = 19)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the By Goal menu appearing in the ShopBy Menu will redirect the User to the correct URL", priority = 19)
     public void verifyClickingOnByGoalOptionInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -225,7 +225,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     {        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         aeMegamenuPage.verifyTheMegaMenuExistsInThePage();
     }
-    @Test(description = "MegaMenu- Make sure clicking on the Sales And Offers menu appearing in the ShopBy Menu will redirect the User to the correct URL", priority = 21)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Sales And Offers menu appearing in the ShopBy Menu will redirect the User to the correct URL", priority = 21)
     public void verifyClickingOnSalesAndOffersOptionInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -243,7 +243,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     {        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         aeMegamenuPage.verifyTheMegaMenuExistsInThePage();
     }
-    @Test(description = "MegaMenu- Make sure clicking on the Sport Stacks menu appearing in the ShopBy Menu will redirect the User to the correct URL", priority = 23)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Sport Stacks menu appearing in the ShopBy Menu will redirect the User to the correct URL", priority = 23)
     public void verifyClickingOnSportsStacksOptionInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -312,7 +312,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertEquals(aeMegamenuPage.getEnergyAndEnduranceOptionInSportSupplementsMenu().getCssValue("text-transform"), "uppercase");
         Assert.assertEquals(aeMegamenuPage.getGamingAndFocusOptionInSportSupplementsMenu().getCssValue("text-transform"), "uppercase");
     }
-    @Test(description = "MegaMenu- Make sure clicking on the Protein option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 28)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Protein option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 28)
     public void verifyClickingOnProteinOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -326,7 +326,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "MegaMenu- Make sure clicking on the Creatine option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 29)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Creatine option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 29)
     public void verifyClickingOnCreatineOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -339,7 +339,7 @@ public class AEMegaMenuTestCases extends BaseTest {
 //        Assert.assertEquals(webDriver.getCurrentUrl(), creatineOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-    @Test(description = "MegaMenu- Make sure clicking on the Amino Acids appearing in the Sports Supplements inside menu ShopBy Menu will redirect the User to the correct URL", priority = 30)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Amino Acids appearing in the Sports Supplements inside menu ShopBy Menu will redirect the User to the correct URL", priority = 30)
     public void verifyClickingOnAminoAcidsOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -352,7 +352,7 @@ public class AEMegaMenuTestCases extends BaseTest {
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aminoAcidsOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-    @Test(description = "MegaMenu- Make sure clicking on the Muscle Boosters option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 31)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Muscle Boosters option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 31)
     public void verifyClickingOnMuscleBoostersOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -619,7 +619,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "MegaMenu- Make sure clicking on the HMB Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 50)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the HMB Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 50)
     public void verifyClickingOnHMbOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -959,7 +959,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertEquals(aeMegamenuPage.getPetsOptionInVitaminsAndHealthMenu().getCssValue("text-transform"), "uppercase");
     }
 
-    @Test(description = "MegaMenu- Make sure clicking on the Featured Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 73)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Featured Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 73)
     public void verifyClickingOnFeaturedOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -974,7 +974,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "MegaMenu- Make sure clicking on the Alive Vitamins Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 74)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Alive Vitamins Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 74)
     public void verifyClickingOnAliveVitaminsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -989,7 +989,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "MegaMenu- Make sure clicking on the Sexual Health Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 75)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Sexual Health Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 75)
     public void verifyClickingOnSexualHealthOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1005,7 +1005,7 @@ public class AEMegaMenuTestCases extends BaseTest {
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "MegaMenu- Make sure clicking on the Essential Vitamins Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 76)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Essential Vitamins Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 76)
     public void verifyClickingOnEssentialVitaminsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1020,7 +1020,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "MegaMenu- Make sure clicking on the Folic Acid Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 77)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Folic Acid Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 77)
     public void verifyClickingOnFolicAcidOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1035,7 +1035,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "MegaMenu- Make sure clicking on the Vitamin A Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 78)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Vitamin A Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 78)
     public void verifyClickingOnVitaminAOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1050,7 +1050,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "MegaMenu- Make sure clicking on the Vitamin B Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 79)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Vitamin B Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 79)
     public void verifyClickingOnVitaminBOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1065,7 +1065,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "MegaMenu- Make sure clicking on the Vitamin C Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 80)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Vitamin C Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 80)
     public void verifyClickingOnVitaminCOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1080,7 +1080,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "MegaMenu- Make sure clicking on the Vitamin D Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 81)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Vitamin D Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 81)
     public void verifyClickingOnVitaminDOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1095,7 +1095,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "MegaMenu- Make sure clicking on the Vitamin E Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 82)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Vitamin E Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 82)
     public void verifyClickingOnVitaminEOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1110,7 +1110,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "MegaMenu- Make sure clicking on the Vitamin K Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 83)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Vitamin K Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 83)
     public void verifyClickingOnVitaminKOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1125,7 +1125,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "MegaMenu- Make sure clicking on the Multi Vitamins Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 84)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Multi Vitamins Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 84)
     public void verifyClickingOnMultiVitaminsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1140,7 +1140,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "MegaMenu- Make sure clicking on the Vitamins For Kids Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 85)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Vitamins For Kids Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 85)
     public void verifyClickingOnVitaminsForKidsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1155,7 +1155,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "MegaMenu- Make sure clicking on the Vitamins For Men Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 86)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Vitamins For Men Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 86)
     public void verifyClickingOnVitaminsForMenOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1170,7 +1170,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "MegaMenu- Make sure clicking on the Vitamins For Women Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 87)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Vitamins For Women Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 87)
     public void verifyClickingOnVitaminsForWomenOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1890,7 +1890,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "MegaMenu- Make sure clicking on the Condiments Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 135)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Condiments Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 135)
     public void verifyClickingOnCondimentsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2040,7 +2040,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "MegaMenu- Make sure clicking on the Superfoods Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 145)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Superfoods Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 145)
     public void verifyClickingOnSuperfoodsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2055,7 +2055,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "MegaMenu- Make sure clicking on the Ready Mixes Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 146)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Ready Mixes Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 146)
     public void verifyClickingOnReadyMixesOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2542,7 +2542,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "MegaMenu- Make sure clicking on the Pants Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 177)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Pants Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 177)
     public void verifyClickingOnPantsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2557,7 +2557,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "MegaMenu- Make sure clicking on the Shorts Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 178)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Shorts Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 178)
     public void verifyClickingOnShortsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2587,7 +2587,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "MegaMenu- Make sure clicking on the Safety Masks Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 180)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Safety Masks Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 180)
     public void verifyClickingOnSafetyMasksOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2602,7 +2602,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "MegaMenu- Make sure clicking on the Footwear Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 181)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Footwear Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 181)
     public void verifyClickingOnFootwearOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -2903,7 +2903,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "MegaMenu- Make sure clicking on the Wearable Tech Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 201)
+    @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Wearable Tech Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 201)
     public void verifyClickingOnWearableTechOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);

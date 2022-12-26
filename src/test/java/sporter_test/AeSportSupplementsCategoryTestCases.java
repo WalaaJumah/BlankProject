@@ -21,12 +21,12 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
     private Actions action;
     private final String  sportSupplementsUrl="/sport-supplements/";
 
-@Test(description = "Sports Supplements Category- Switching to UAE store", priority = 1)
+@Test(groups = "Smoke Testing Report",description = "Sports Supplements Category- Switching to UAE store", priority = 1)
 public void switchToUaeStore(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
     aeSportSupplementsCategoryPage.switchToAECountry();
 }
-    @Test(description = "Sports Supplements Category- Make sure clicking on the Sports Supplements Category Appears In MegaMenu Redirect User To CorrectURL", priority = 2)
+    @Test(groups = "Smoke Testing Report",description = "Sports Supplements Category- Make sure clicking on the Sports Supplements Category Appears In MegaMenu Redirect User To CorrectURL", priority = 2)
     public void verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL() {     
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         action = new Actions(webDriver);
@@ -38,7 +38,7 @@ public void switchToUaeStore(){
 
     }
 
-    @Test(description = "Sports Supplements Category- Make sure clicking on the Sports Supplements Category from ShopBy Menu Redirect User To CorrectURL", priority = 3)
+    @Test(groups = "Smoke Testing Report",description = "Sports Supplements Category- Make sure clicking on the Sports Supplements Category from ShopBy Menu Redirect User To CorrectURL", priority = 3)
     public void verifyClickingOnSportsSupplementsCategoryFromShopByMenuRedirectUserToCorrectURL() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         action = new Actions(webDriver);
@@ -52,7 +52,7 @@ public void switchToUaeStore(){
 
     }
 
-    @Test(description = "Sports Supplements Category- Make sure clicking on the Sports Supplements Category from HomePage Redirect User To CorrectURL", priority = 4)
+    @Test(groups = "Smoke Testing Report",description = "Sports Supplements Category- Make sure clicking on the Sports Supplements Category from HomePage Redirect User To CorrectURL", priority = 4)
     public void verifyClickingOnSportsSupplementsCategoryFromHomePageRedirectUserToCorrectURL() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         webDriver.navigate().to("https://www.sporter.com");
@@ -92,7 +92,7 @@ public void switchToUaeStore(){
         }
     }
 
-    @Test(description = "Sports Supplements Category- Make sure clicking on the Horizontal Banners works correctly ", priority = 8)
+    @Test(groups = "Smoke Testing Report",description = "Sports Supplements Category- Make sure clicking on the Horizontal Banners works correctly ", priority = 8)
     public void verifyClickingOnHorizontalBannersAppearingInSportSupplementsLandingPageOpensCorrectly() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -105,7 +105,7 @@ public void switchToUaeStore(){
         }
     }
 
-    @Test(description = "Sports Supplements Category- Make sure that the customer can navigate to the home page using the BreadCrumb ", priority = 9)
+    @Test(groups = "Smoke Testing Report",description = "Sports Supplements Category- Make sure that the customer can navigate to the home page using the BreadCrumb ", priority = 9)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumb() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -316,13 +316,17 @@ public void switchToUaeStore(){
         }
     }
     //Pagination control for all pages in the Sport Supplements Category Pages
-    @Test(description = "Sports Supplements Category- Make Sure the ability to access all pages inside Sport Supplements Category Page  ", priority = 26)
+    @Test(groups = "Smoke Testing Report",description = "Sports Supplements Category- Make Sure the ability to access all pages inside Sport Supplements Category Page  ", priority = 26)
     public void verifyAbilityToAccessAllPagesInsideSportSupplementsCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeSportSupplementsCategoryPage.navigate();
         String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
-        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);}
+        if(DataHelperAndWait.isTheresNoPages(numberOfProductInTheList))
+            System.out.println("There's no pages");
+        else {
+            DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList, aeSportSupplementsCategoryPage.getNextPageBtn(), webDriver);
+        }}
     //There's a bug here due to the BreadCrumb is missing after sorting the products
     @Test(description = "Sports Supplements Category- Make sure that the BreadCrumb appears correctly after sorting the product ", priority = 27)
     public void verifyTheBreadCrumbAppearingCorrectlyAfterSortingTheProducts() {

@@ -16,7 +16,7 @@ public class AeRecommendedProductsTestCases extends BaseTest {
         aeProductDetailsPage.switchToAECountry();
     }
 
-    @Test(description = "Recommended Products Pop-up- Make sure the keep shopping button appearing the Recommended products works correctly ", priority = 2)
+    @Test(groups = "Smoke Testing Report",description = "Recommended Products Pop-up- Make sure the keep shopping button appearing the Recommended products works correctly ", priority = 2)
     public void verifyKeepShoppingBtnWorksCorrectly() {
         AeProductDetailsPage  aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.displayTheProduct();
@@ -26,7 +26,7 @@ public class AeRecommendedProductsTestCases extends BaseTest {
         Assert.assertEquals(webDriver.getCurrentUrl(), currentURL);
     }
 
-    @Test(description = "Recommended Products Pop-up- Make sure the view Cart button appearing the Recommended products works correctly ", priority =3)
+    @Test(groups = "Smoke Testing Report",description = "Recommended Products Pop-up- Make sure the view Cart button appearing the Recommended products works correctly ", priority =3)
     public void verifyViewCartWorksBtnCorrectly() {
         AeRecommendedProductsPage  aeRecommendedProductspage = new AeRecommendedProductsPage(webDriver);
         AeProductDetailsPage  aeProductDetailsPage = new AeProductDetailsPage(webDriver);
@@ -84,7 +84,7 @@ public class AeRecommendedProductsTestCases extends BaseTest {
         Assert.assertTrue(aeProductDetailsPage.getViewCartBtn().isDisplayed());
     }
 
-    @Test(description = "Recommended Products Pop-up- Make sure ability to add Recommended product to the cart", priority = 7)
+    @Test(groups = "Smoke Testing Report",description = "Recommended Products Pop-up- Make sure ability to add Recommended product to the cart", priority = 7)
     public void verifyAbilityToAddRecommendedProductToCart() {
         AeRecommendedProductsPage aeRecommendedProductspage = new AeRecommendedProductsPage(webDriver);
         AeProductDetailsPage  aeProductDetailsPage = new AeProductDetailsPage(webDriver);
