@@ -451,17 +451,7 @@ public class KsaHomePageTestCases extends BaseTest {
         ksaHomePage.clickOnFifthProductInTheNewArrivalsSection();
         ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-
-    @Test(description = "KSA HomePage- Make sure clicking on phone button from the Got A Question section works correctly ", priority = 46)
-    public void verifyAbilityToClickOnPhoneBtnInGotQuestionSectionCorrectly() {
-        KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
-        ksaHomePage.navigate();
-        ksaHomePage.clickOnPhoneBtn();
-        // store window handles in Set
-        String myWindowHandle = webDriver.getWindowHandle();
-        webDriver.switchTo().window(myWindowHandle);
-    }
-    @Test(description = "KSA HomePage- Make sure ability to access all pages inside the Top Selling Stacks category correctly ", priority = 47)
+    @Test(description = "KSA HomePage- Make sure ability to access all pages inside the Top Selling Stacks category correctly ", priority = 46)
     public void verifyAbilityToAccessAllPagesInsideTheTopSellingStacksCategoryCorrectly(){
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.navigate();
@@ -472,5 +462,14 @@ public class KsaHomePageTestCases extends BaseTest {
         ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
         String numberOfProductInTheList=ksaHomePage.getSearchResultValue().getText();
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,ksaHomePage.getNextPageBtn(),webDriver);
+    }
+    @Test(description = "KSA HomePage- Make sure clicking on phone button from the Got A Question section works correctly ", priority = 47)
+    public void verifyAbilityToClickOnPhoneBtnInGotQuestionSectionCorrectly() {
+        KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
+        ksaHomePage.navigate();
+        ksaHomePage.clickOnPhoneBtn();
+        // store window handles in Set
+        String myWindowHandle = webDriver.getWindowHandle();
+        webDriver.switchTo().window(myWindowHandle);
     }
 }

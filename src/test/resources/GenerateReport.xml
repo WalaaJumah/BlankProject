@@ -20,7 +20,8 @@
         <!--        <parameter name="language" value="ar" />-->
         <classes>
                         <class name="sporter_test.QatarHomePageTestCases"/>
-                        <class name="sporter_test.KsaHomePageTestCases"/>
+            <class name="sporter_test.KsaHomePageTestCases"/>
+            <class name="sporter_test.AEFooterPageTestCases"/>
                         <class name="sporter_test.AeWomenOnlyCategoryTestCases"/>
                         <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases"/>
                         <class name="sporter_test.AeSportSupplementsCategoryTestCases"/>
@@ -31,7 +32,6 @@
                         <class name="sporter_test.AEMegaMenuTestCases"/>
                         <class name="sporter_test.AeHealthyFoodCategoryTestCases"/>
                         <class name="sporter_test.AEGuestUserTestCases"/>
-                        <class name="sporter_test.AEFooterPageTestCases"/>
                         <class name="sporter_test.AeCartTestCases"/>
                         <class name="sporter_test.AeBrandsTestCases"/>
                         <class name="sporter_test.AeAllPagesInsideCategoriesInMegaMenuTestCases"/>

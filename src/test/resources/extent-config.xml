@@ -21,7 +21,7 @@
         <reportName>Sporter Web Automation
             <![CDATA[
 <!--                <img src='C:\Users\w.jumaa\Desktop\Logo1.PNG' />-->
-                <img src='https://www.sporter.com/static/version1672030940/frontend/sporter/sporter2020/en_US/images/logo.svg' />
+<!--                <img src='https://www.sporter.com/static/version1672030940/frontend/sporter/sporter2020/en_US/images/logo.svg' />-->
             ]]>
         </reportName>
 
@@ -52,12 +52,21 @@
               $('#test-details-wrapper > div > div > div.step-filters.right').hide();
               $('#tests-toggle > li.skip').hide();
               $('body > nav > ul.right.hide-on-med-and-down.nav-right > li:nth-child(3) > span').hide();
-            $('#slide-out > li.analysis.waves-effect.active > a').click();
-            $('#enableDashboard').click();
+<!--            $('#slide-out > li.analysis.waves-effect.active > a').click();-->
+<!--            $('#enableDashboard').click();-->
               $('#test-view > div.col._addedCell1 > div > div.card-panel.heading > h5').html("Test Cases");
            $('body > nav > ul.right.hide-on-med-and-down.nav-right > li.theme-selector > i').text(" Dark/Light Theme");
-           $('#slide-out > li:nth-child(3) > a').click();
               $('#dashboard-view > div.system-view > div').hide();
+
+
+
+              $('#dashboard-view > div.category-summary-view > div').hide();
+
+
+
+
+           $('#slide-out > li:nth-child(4)').click();
+
 
 
 

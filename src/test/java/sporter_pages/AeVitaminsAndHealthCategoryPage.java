@@ -414,8 +414,6 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
         DataHelperAndWait.waitToBeVisible(immunitySupportCategory,5,webDriver);
         return immunitySupportCategory;
     }
@@ -578,8 +576,6 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
     }
 
     public void clickOnImmunitySupportCategory() {
-
-        this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
@@ -589,10 +585,6 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
     }
 
     public void clickOnKidsHealthCategory() {
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
@@ -607,15 +599,11 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
         DataHelperAndWait.waitToBeVisible(mensHealthCategory,5,webDriver);
         this.mensHealthCategory.click();
     }
 
     public void clickOnSexualHealthCategory() {
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
@@ -645,8 +633,6 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
         DataHelperAndWait.waitToBeVisible(sleepSupportCategory,5,webDriver);
         this.sleepSupportCategory.click();
     }
@@ -655,16 +641,12 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
         this.clickOnPreviousIconInShopByHealthNeedSection();
         this.clickOnPreviousIconInShopByHealthNeedSection();
         this.clickOnPreviousIconInShopByHealthNeedSection();
+        this.clickOnPreviousIconInShopByHealthNeedSection();
         DataHelperAndWait.waitToBeVisible(dietWeightManagementCategory,4,webDriver);
         this.dietWeightManagementCategory.click();
     }
 
     public void clickOnWomenHealthCategory() {
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();

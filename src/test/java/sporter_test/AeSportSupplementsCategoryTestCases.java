@@ -245,25 +245,21 @@ public void switchToUaeStore(){
         aeSportSupplementsCategoryPage.navigateToPage2();
         DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
-        aeSportSupplementsCategoryPage.navigateToPage3();
-        DataHelperAndWait.waitForUrlContains("p=3",webDriver,5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
 
     @Test(description = "Sports Supplements Category- Make Sure the previous page button works correctly", priority = 22)
     public void verifyPreviousPageBtnWorksCorrectly() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
+        Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
   }
 
     @Test(description = "Sports Supplements Category- Make Sure the next page button works correctly", priority = 23)
     public void verifyNextPageBtnWorksCorrectly() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=3",webDriver,3);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
     @Test(description = "Sports Supplements Category- Make Sure All Search Fields Inside Form Filtration Section Appears Correctly", priority = 24)

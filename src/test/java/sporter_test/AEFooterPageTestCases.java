@@ -252,7 +252,6 @@ public class AEFooterPageTestCases extends BaseTest {
         Assert.assertEquals(aeFooterPage.getGrenadeReloadProteinOatBarOption().getText(), "Dymatize ISO 100 Protein");
         Assert.assertEquals(aeFooterPage.getDymatizeISO100ProteinOption().getText(), "Grenade Carb Killa Protein Bar");
         Assert.assertEquals(aeFooterPage.getGrenadeCarbKillaProteinBarOption().getText(), "Quest Nutrition - Bars - Box of 12");
-        Assert.assertEquals(aeFooterPage.getQuestNutritionBarsBox12Option().getText(), "Quest Nutrition Bars");
         Assert.assertEquals(aeFooterPage.getQuestNutritionBarsBox12Option().getText(), "Optimum Nutrition Gold Standard 100% Whey Protein ");
     }
 

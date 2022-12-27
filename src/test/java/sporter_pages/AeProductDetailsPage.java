@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import javax.xml.crypto.Data;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -26,6 +27,9 @@ public class AeProductDetailsPage extends BasePage {
     private WebElement qtyMinusButton;
     @FindBy(id = "product-addtocart-button")
     private WebElement addToCartBtn;
+
+    @FindBy(id = "//div[@class='product-options-bottom']")
+    private WebElement addToCartSectionForOOSProduct;
     @FindBy(id = "popup-block")
     private WebElement cartPopUp;
     @FindBy(xpath = "//*[@id=\"popup-block\"]/div[2]/a[1]")
@@ -260,7 +264,10 @@ public class AeProductDetailsPage extends BasePage {
     public WebElement getHomeBreadcrumbs() {
         return HomeBreadcrumbs;
     }
-
+    public WebElement getAddToCartSectionForOOSProduct() {
+        DataHelperAndWait.waitToBeVisible(addToCartSectionForOOSProduct,3,webDriver);
+        return addToCartSectionForOOSProduct;
+    }
     public WebElement getEnglishLangBtn() {
         DataHelperAndWait.waitToBeVisible(englishLangBtn, 5, webDriver);
         return englishLangBtn;

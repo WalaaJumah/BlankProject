@@ -86,7 +86,7 @@ public class AeSearchPageTestCases extends BaseTest {
         assertTrue(aeSearchPage.getArticlesSectionInAllPage().isDisplayed(),"Articles Section in All tab is missing");
     }
     //There's a bug here due to the products list is not appear after visit the PDP then go to All search page
-    @Test(groups = "Search Page- Smoke Testing Report",description = "Make sure the ability to access all products appearing below the products section in the All Page", priority = 6)
+    @Test(groups = "Smoke Testing Report",description = "Search Page- Make sure the ability to access all products appearing below the products section in the All Page", priority = 6)
     public void verifyAbilityToAccessAllProductsListedBelowTheProductsSectionInTheAllTabCorrectly(){
         AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage=new AeProductDetailsPage(webDriver);

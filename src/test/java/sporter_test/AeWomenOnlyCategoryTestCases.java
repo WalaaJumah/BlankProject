@@ -750,7 +750,11 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnMakeupForActiveLifestylesCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        Assert.assertTrue(aeSportSupplementsCategoryPage.getDisabledPreviousPageBtn().isDisplayed());
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        if(DataHelperAndWait.isTheresNoPages(numberOfProductInTheList))
+            System.out.println("There's no pages");
+        else{
+        Assert.assertTrue(aeSportSupplementsCategoryPage.getDisabledPreviousPageBtn().isDisplayed());}
     }
 
     //There's a performance issue in the Navigation
@@ -759,9 +763,13 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnMakeupForActiveLifestylesCategoryInsideTheShopByCategorySectionWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        if(DataHelperAndWait.isTheresNoPages(numberOfProductInTheList))
+            System.out.println("There's no pages");
+        else{
         aeSportSupplementsCategoryPage.navigateToPage2();
         DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));}
     }
 
     @Test(description = "Women's Only Category- Make Sure the previous page button In Makeup for Active Lifestyles Category Page works correctly", priority = 67)
@@ -769,8 +777,12 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyThePaginationControlInMakeupForActiveLifestylesCategoryPageWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        if(DataHelperAndWait.isTheresNoPages(numberOfProductInTheList))
+            System.out.println("There's no pages");
+        else{
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
-        Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
+        Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));}
     }
 
     @Test(description = "Women's Only Category- Make Sure the next page button In Makeup for Active Lifestyles Category Page works correctly", priority = 68)
@@ -778,9 +790,13 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyThePaginationControlInMakeupForActiveLifestylesCategoryPageWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        if(DataHelperAndWait.isTheresNoPages(numberOfProductInTheList))
+            System.out.println("There's no pages");
+        else{
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
         DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));}
     }
 
     @Test(description = "Women's Only Category- Make sure all secure tabs appears correctly in the Makeup For Active Life styles category page(100% Secure Payments & Authentic Products & Fast Delivery Service blocks)", priority = 69)
@@ -2361,7 +2377,11 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnPersonalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        Assert.assertTrue(aeSportSupplementsCategoryPage.getDisabledPreviousPageBtn().isDisplayed());
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        if(DataHelperAndWait.isTheresNoPages(numberOfProductInTheList))
+            System.out.println("There's no pages");
+        else{
+        Assert.assertTrue(aeSportSupplementsCategoryPage.getDisabledPreviousPageBtn().isDisplayed());}
     }
 
     //There's a performance issue in the Navigation
@@ -2371,8 +2391,12 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnPersonalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2InPersonalCarePage();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        if(DataHelperAndWait.isTheresNoPages(numberOfProductInTheList))
+            System.out.println("There's no pages");
+        else{
         DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));}
     }
 
     @Test(description = "Women's Only Category- Make Sure the previous page button In Personal Care Category Page works correctly", priority = 204)
@@ -2380,8 +2404,12 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyThePaginationControlInPersonalCareCategoryPageWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        if(DataHelperAndWait.isTheresNoPages(numberOfProductInTheList))
+            System.out.println("There's no pages");
+        else{
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
-        Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
+        Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));}
     }
 
     @Test(description = "Women's Only Category- Make Sure the next page button In Personal Care Category Page works correctly", priority = 205)
@@ -2389,9 +2417,13 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyThePaginationControlInPersonalCareCategoryPageWorksCorrectly();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        if(DataHelperAndWait.isTheresNoPages(numberOfProductInTheList))
+            System.out.println("There's no pages");
+        else{
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
         DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));}
     }
 
     @Test(description = "Women's Only Category- Make sure all secure tabs appears correctly in the Personal Care category page(100% Secure Payments & Authentic Products & Fast Delivery Service blocks)", priority = 206)

@@ -57,12 +57,13 @@ public class AeProductDetailsPageTestCases extends BaseTest {
     @Test(description = "Make sure the shopper is unable to add out of stock product to the cart", priority = 5)
     public void verifyInabilityToAddOosProductToTheCart() throws Exception{
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
-        try{        
-        assertFalse(aeProductDetailsPage.isAddToCartBtnDisplayed());}
-        catch (AssertionError  exception){
-            System.out.println("The Add to cart Button is hidden  "+ exception.getMessage());
-
-        }
+        Assert.assertTrue(aeProductDetailsPage.getAddToCartSectionForOOSProduct().isDisplayed());
+//        try{
+//        assertFalse(aeProductDetailsPage.isAddToCartBtnDisplayed());}
+//        catch (AssertionError  exception){
+//            System.out.println("The Add to cart Button is hidden  "+ exception.getMessage());
+//
+//        }
     }
 
     @Test(groups = "Smoke Testing Report",description = "Make sure to display the product from search screen", priority = 6)

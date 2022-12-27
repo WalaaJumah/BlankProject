@@ -69,21 +69,26 @@ public class AeSportsCategoryPage  extends BasePage {
     public WebElement getTrendingInSportsSection(){return trendingInSportsSection;}
 
     public WebElement getMensApparelCategory() {
+        DataHelperAndWait.waitToBeVisible(mensApparelCategory,5,webDriver);
         return mensApparelCategory;
     }
     public WebElement getProductCardInRecommendedProductsSection() {
+        DataHelperAndWait.waitToBeVisible(productCardInRecommendedProductsSection,5,webDriver);
         return productCardInRecommendedProductsSection;
     }
 
     public WebElement getWomenApparelCategory() {
+        DataHelperAndWait.waitToBeVisible(womenApparelCategory,5,webDriver);
         return womenApparelCategory;
     }
 
     public WebElement getYogaApparelCategory() {
+        DataHelperAndWait.waitToBeVisible(yogaApparelCategory,5,webDriver);
         return yogaApparelCategory;
     }
 
     public WebElement getSwimmingApparelCategory() {
+        DataHelperAndWait.waitToBeVisible(swimmingApparelCategory,5,webDriver);
         return swimmingApparelCategory;
     }
 
@@ -147,6 +152,7 @@ public class AeSportsCategoryPage  extends BasePage {
     public void clickOnCricketCategory(WebDriver webDriver){
         aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
+        DataHelperAndWait.waitToBeVisible(cricketApparelCategory,5,webDriver);
         this.cricketApparelCategory.click();
     }
     public void clickOnToysAndGamesCategory(WebDriver webDriver){

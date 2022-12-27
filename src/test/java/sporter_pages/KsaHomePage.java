@@ -556,13 +556,11 @@ dataHelperAndWait.waitToBeVisible(NewArrivalSectionPositionAfterClickingOnNext,3
 
     public void clickOnViewAllBtnInTopSellingStacksSection() {
         try {
-                    dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.isDisplayed(viewAllBtnInTopSellingStacksSection, 5,webDriver);
+            DataHelperAndWait.waitToBeVisible(viewAllBtnInTopSellingStacksSection, 5,webDriver);
             this.viewAllBtnInTopSellingStacksSection.click();
         }
         catch (Exception e){
-                    dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.isDisplayed(viewAllBtnInTopSellingStacksSection, 3,webDriver);
+            DataHelperAndWait.waitToBeVisible(viewAllBtnInTopSellingStacksSection, 3,webDriver);
             this.viewAllBtnInTopSellingStacksSection.click();
         }
 
