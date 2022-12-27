@@ -255,15 +255,16 @@ public class AeWomenOnlyCategoryPage extends BasePage {
     public void navigate(){webDriver.navigate().to(siteURL +aeDomain+womenOnlyUrl);}
     public void switchToAECountry() {
         try {
+            DataHelperAndWait.waitToBeVisible(countryList, 5,webDriver);
             this.countryList.click();
-            DataHelperAndWait.isDisplayed(countryList, 3,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeCountry, 5,webDriver);
             this.aeCountry.click();
         } catch (Exception e) {
+            DataHelperAndWait.waitToBeVisible(countryList, 5,webDriver);
             this.countryList.click();
-            DataHelperAndWait.isDisplayed(countryList, 5,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeCountry, 5,webDriver);
             this.aeCountry.click();
-        }
-    }
+        }}
     public WebElement getWomenOnlyMainMenu() {
         return womenOnlyMainMenu;
     }

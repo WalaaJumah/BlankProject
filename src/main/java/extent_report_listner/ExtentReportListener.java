@@ -90,7 +90,7 @@ public class ExtentReportListener  implements IReporter {
                 test.setEndedTime(getTime(result.getEndMillis()));
 
                 for (String group : result.getMethod().getGroups())
-//                    test.assignCategory(group);
+                    test.assignCategory(group);
 
                 if (result.getThrowable() != null) {
                     test.log(status, result.getThrowable());

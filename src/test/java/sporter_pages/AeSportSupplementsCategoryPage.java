@@ -69,7 +69,7 @@ public class AeSportSupplementsCategoryPage extends BasePage {
     private WebElement disabledPreviousPageBtn;
     @FindBy(xpath = "(//form[@class='am-ranges'])[1]/ol/li/a/span[1]")
     private List<WebElement> formFiltrationSection;
-    @FindBy(xpath = "(//a[@title='See All'])[1]")
+    @FindBy(xpath = "((//a[@title='See All'])//span[1])[1]")
     private WebElement seeAllBtnInFormSection;
     @FindBy(xpath = ".//*[@class='nav-primary']/li[2]/a")
     private WebElement sportSupplementsMainMenu;
@@ -206,15 +206,16 @@ public class AeSportSupplementsCategoryPage extends BasePage {
     //Define the main actions we need to execute our TCs
     public void switchToAECountry() {
         try {
+            DataHelperAndWait.waitToBeVisible(countryList, 5,webDriver);
             this.countryList.click();
-            DataHelperAndWait.isDisplayed(countryList, 3,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeCountry, 5,webDriver);
             this.aeCountry.click();
         } catch (Exception e) {
+            DataHelperAndWait.waitToBeVisible(countryList, 5,webDriver);
             this.countryList.click();
-            DataHelperAndWait.isDisplayed(countryList, 5,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeCountry, 5,webDriver);
             this.aeCountry.click();
-        }
-    }
+    }}
     public void clickOnBreadcrumbHomePage() {
         DataHelperAndWait.waitToBeVisible(homeBreadcrumbs, 6,webDriver);
         this.homeBreadcrumbs.click();
@@ -261,8 +262,12 @@ public class AeSportSupplementsCategoryPage extends BasePage {
     }
 
     public void clickOnSeeAllBtnInFormSection() {
+        try{
         DataHelperAndWait.waitToBeVisible(seeAllBtnInFormSection, 5,webDriver);
-        seeAllBtnInFormSection.click();
+        seeAllBtnInFormSection.click();}
+        catch (Exception e){
+            DataHelperAndWait.waitToBeVisible(seeAllBtnInFormSection, 5,webDriver);
+            seeAllBtnInFormSection.click();}
     }
     public WebElement getHomeBreadcrumbs() {
         DataHelperAndWait.waitToBeVisible(homeBreadcrumbs,35,webDriver);

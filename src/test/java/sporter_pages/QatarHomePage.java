@@ -518,12 +518,14 @@ public class QatarHomePage extends BasePage {
     //Define the main actions we need to execute our TCs
     public void switchToQatarCountry(  ) {
         try {
-            DataHelperAndWait.isDisplayed(countryList, 5,webDriver);
+            DataHelperAndWait.isDisplayed(countryList, 7,webDriver);
             this.countryList.click();
+            DataHelperAndWait.waitToBeVisible(qatarCountry, 5,webDriver);
             this.qatarCountry.click();
         } catch (Exception e) {
             DataHelperAndWait.isDisplayed(countryList, 5,webDriver);
             this.countryList.click();
+            DataHelperAndWait.waitToBeVisible(qatarCountry, 5,webDriver);
             this.qatarCountry.click();
         }
     }

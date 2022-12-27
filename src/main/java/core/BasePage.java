@@ -99,7 +99,7 @@ public class BasePage {
     public final String productUrl = "/optimum-gold-standard-100-whey-6202";
     public final String oOSProductUrl = "/healthy-food/snacks-drinks/spreads/healthyco-peanut-butter";
     public final String notAvailableOfferProduct = "/catalog/product/view/id/44012/s/olimp-chitosan-chromium-43840/";
-    public final String sportsUrl = "/en-ae/sports/";
+    public final String sportsUrl = "/sports/";
     public final String toysAndGamesUrl = "/toys-and-games";
     public final String wearableTechUrl = "/wearable-tech";
 

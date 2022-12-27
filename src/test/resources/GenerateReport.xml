@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name=" Test" thread-count="2" >
+<!--<suite name=" Test" thread-count="1" >-->
+<suite name=" Test"  >
     <listeners>
         <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>
         <listener class-name="extent_report_listner.ExtentReportListener" />
@@ -40,31 +41,31 @@
     </test>
 
 
-    <test name="Smoke Testing Report- Production" preserve-order="true">
-        <parameter name="environment" value="production" />
-        <groups>
-            <run>
-                <include name="Smoke Testing Report"/>
-            </run>
-        </groups>
-        <classes>
-            <class name="sporter_test.QatarHomePageTestCases"/>
-            <class name="sporter_test.KsaHomePageTestCases"/>
-            <class name="sporter_test.AeWomenOnlyCategoryTestCases"/>
-            <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases"/>
-            <class name="sporter_test.AeSportSupplementsCategoryTestCases"/>
-            <class name="sporter_test.AeSportsCategoryTestCases"/>
-            <class name="sporter_test.AeSearchPageTestCases"/>
-            <class name="sporter_test.AeRecommendedProductsTestCases"/>
-            <class name="sporter_test.AeProductDetailsPageTestCases"/>
-            <class name="sporter_test.AEMegaMenuTestCases"/>
-            <class name="sporter_test.AeHealthyFoodCategoryTestCases"/>
-            <class name="sporter_test.AEGuestUserTestCases"/>
-            <class name="sporter_test.AEFooterPageTestCases"/>
-            <class name="sporter_test.AeCartTestCases"/>
-            <class name="sporter_test.AeBrandsTestCases"/>
-            <class name="sporter_test.AeAllPagesInsideCategoriesInMegaMenuTestCases"/>
-            <class name="sporter_test.AccessAllStoresCountriesTestCases"/>
-        </classes>
-    </test>
+<!--    <test name="Smoke Testing Report- Production" preserve-order="true">-->
+<!--        <parameter name="environment" value="production" />-->
+<!--        <groups>-->
+<!--            <run>-->
+<!--                <include name="Smoke Testing Report"/>-->
+<!--            </run>-->
+<!--        </groups>-->
+<!--        <classes>-->
+<!--            <class name="sporter_test.QatarHomePageTestCases"/>-->
+<!--            <class name="sporter_test.KsaHomePageTestCases"/>-->
+<!--            <class name="sporter_test.AeWomenOnlyCategoryTestCases"/>-->
+<!--            <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases"/>-->
+<!--            <class name="sporter_test.AeSportSupplementsCategoryTestCases"/>-->
+<!--            <class name="sporter_test.AeSportsCategoryTestCases"/>-->
+<!--            <class name="sporter_test.AeSearchPageTestCases"/>-->
+<!--            <class name="sporter_test.AeRecommendedProductsTestCases"/>-->
+<!--            <class name="sporter_test.AeProductDetailsPageTestCases"/>-->
+<!--            <class name="sporter_test.AEMegaMenuTestCases"/>-->
+<!--            <class name="sporter_test.AeHealthyFoodCategoryTestCases"/>-->
+<!--            <class name="sporter_test.AEGuestUserTestCases"/>-->
+<!--            <class name="sporter_test.AEFooterPageTestCases"/>-->
+<!--            <class name="sporter_test.AeCartTestCases"/>-->
+<!--            <class name="sporter_test.AeBrandsTestCases"/>-->
+<!--            <class name="sporter_test.AeAllPagesInsideCategoriesInMegaMenuTestCases"/>-->
+<!--            <class name="sporter_test.AccessAllStoresCountriesTestCases"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>

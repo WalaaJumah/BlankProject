@@ -147,7 +147,7 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
     private WebElement productCardIVitaminsAZSection;
     @FindBy(xpath = "(//div[@class='swiper-slide'])[25]")
     private WebElement productCardInMineralsSection;
-    @FindBy(xpath = "(//div[@class='inner-seller-prod wp-id-23637']//a)[1]")
+    @FindBy(xpath = "(//div[@class='inner-seller-prod wp-id-23637']//a)[2]")
     private WebElement productCardInAntioxidantsSection;
     @FindBy(xpath = "(//div[@class='inner-seller-prod wp-id-20305'])[1]")
     private WebElement productCardInSuperFoodSection;
@@ -415,12 +415,13 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
-        DataHelperAndWait.waitToBeVisible(immunitySupportCategory,3,webDriver);
-        DataHelperAndWait.waitToBeVisible(immunitySupportCategory,3,webDriver);
+        this.clickOnNextIconInShopByHealthNeedSection();
+        DataHelperAndWait.waitToBeVisible(immunitySupportCategory,5,webDriver);
         return immunitySupportCategory;
     }
 
     public WebElement getKidsHealthCategory() {
+        this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
@@ -437,6 +438,8 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
     }
 
     public WebElement getMensHealthCategory() {
+        this.clickOnNextIconInShopByHealthNeedSection();
+        this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
@@ -504,8 +507,13 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
     }
 
     public WebElement getNextIconInFishOilAndOmegasSection() {
+        try{
         DataHelperAndWait.waitToBeVisible(nextIconInFishOilAndOmegasSection,5,webDriver);
-        return nextIconInFishOilAndOmegasSection;
+        return nextIconInFishOilAndOmegasSection;}
+        catch(Exception e){
+            DataHelperAndWait.waitToBeVisible(nextIconInFishOilAndOmegasSection,5,webDriver);
+            return nextIconInFishOilAndOmegasSection;
+        }
     }
 
     public WebElement getPreviousIconInFishOilAndOmegasSection() {
@@ -570,6 +578,7 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
     }
 
     public void clickOnImmunitySupportCategory() {
+
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
@@ -587,13 +596,11 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
         DataHelperAndWait.waitToBeVisible(kidsHealthCategory,5,webDriver);
         this.kidsHealthCategory.click();
     }
 
     public void clickOnMensHealthCategory() {
-        this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
@@ -619,11 +626,13 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
+        this.clickOnNextIconInShopByHealthNeedSection();
         DataHelperAndWait.waitToBeVisible(sexualHealthCategory,5,webDriver);
         this.sexualHealthCategory.click();
     }
 
     public void clickOnSleepSupportCategory() {
+        this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();

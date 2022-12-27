@@ -1097,7 +1097,7 @@ public class AEMegaMenuPage extends BasePage {
     }
 
     public WebElement getByBrandOption() {
-        DataHelperAndWait.waitToBeVisible(byBrandOption,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(byBrandOption,6,webDriver);
         return byBrandOption;
     }
 
@@ -2086,6 +2086,7 @@ public class AEMegaMenuPage extends BasePage {
     }
 
     public WebElement getOlimpSportNutritionOptionInByBrandMenu() {
+        DataHelperAndWait.waitToBeVisible(olimpSportNutritionOptionInByBrandMenu,5,webDriver);
         return olimpSportNutritionOptionInByBrandMenu;
     }
 
@@ -3118,12 +3119,14 @@ public class AEMegaMenuPage extends BasePage {
     //Define the main actions we need to execute our TCs
     public void switchToAECountry() {
         try {
+            DataHelperAndWait.waitToBeVisible(countryList, 5,webDriver);
             this.countryList.click();
-            DataHelperAndWait.isDisplayed(countryList, 3,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeCountry, 5,webDriver);
             this.aeCountry.click();
         } catch (Exception e) {
+            DataHelperAndWait.waitToBeVisible(countryList, 5,webDriver);
             this.countryList.click();
-            DataHelperAndWait.isDisplayed(countryList, 3,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeCountry, 5,webDriver);
             this.aeCountry.click();
         }
     }

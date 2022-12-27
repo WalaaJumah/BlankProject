@@ -541,23 +541,23 @@ dataHelperAndWait.waitToBeVisible(NewArrivalSectionPositionAfterClickingOnNext,3
 
     //Define the main actions we need to execute our TCs
     public void switchToKsaCountry() {
-        try {
-                    dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.isDisplayed(countryList, 5,webDriver);
-            this.countryList.click();
-            this.saCountry.click();
-        } catch (Exception e) {
-                    dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.isDisplayed(countryList, 5,webDriver);
-            this.countryList.click();
-            this.saCountry.click();
-        }
-    }
+
+            try {
+                DataHelperAndWait.waitToBeVisible(countryList, 5,webDriver);
+                this.countryList.click();
+                DataHelperAndWait.waitToBeVisible(saCountry, 5,webDriver);
+                this.saCountry.click();
+            } catch (Exception e) {
+                DataHelperAndWait.waitToBeVisible(countryList, 5,webDriver);
+                this.countryList.click();
+                DataHelperAndWait.waitToBeVisible(saCountry, 5,webDriver);
+                this.saCountry.click();
+            }}
 
     public void clickOnViewAllBtnInTopSellingStacksSection() {
         try {
                     dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.isDisplayed(viewAllBtnInTopSellingStacksSection, 3,webDriver);
+dataHelperAndWait.isDisplayed(viewAllBtnInTopSellingStacksSection, 5,webDriver);
             this.viewAllBtnInTopSellingStacksSection.click();
         }
         catch (Exception e){
