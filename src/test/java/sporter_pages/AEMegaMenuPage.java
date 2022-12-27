@@ -2251,6 +2251,7 @@ public class AEMegaMenuPage extends BasePage {
     }
 
     public WebElement getEnergyAndEnduranceOptionInSportSupplementsMainMenu() {
+        DataHelperAndWait.waitToBeVisible(energyAndEnduranceOptionInSportSupplementsMainMenu,3,webDriver);
         return energyAndEnduranceOptionInSportSupplementsMainMenu;
     }
 
@@ -2749,6 +2750,7 @@ public class AEMegaMenuPage extends BasePage {
     }
 
     public WebElement getSnackBarsOptionInHealthyFoodMainMenu() {
+        DataHelperAndWait.waitToBeVisible(snackBarsOptionInHealthyFoodMainMenu,5,webDriver);
         return snackBarsOptionInHealthyFoodMainMenu;
     }
 

@@ -185,8 +185,12 @@ public class AeSportSupplementsCategoryPage extends BasePage {
         return previousPageBtn;
     }
     public WebElement getNextPageBtn() {
+        try{
         DataHelperAndWait.waitToBeVisible(NextPageBtn,5,webDriver);
-        return NextPageBtn;
+        return NextPageBtn;}
+        catch (Exception e){
+            DataHelperAndWait.waitToBeVisible(NextPageBtn,5,webDriver);
+            return NextPageBtn;}
     }
     public WebElement getPageTwoBtn() {
         return pageTwoBtn;

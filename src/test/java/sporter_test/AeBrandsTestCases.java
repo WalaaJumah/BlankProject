@@ -82,6 +82,7 @@ public class AeBrandsTestCases extends BaseTest {
         DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(3),5,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(3).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(3).click();
+        aeSearchPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
         String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
                     if(DataHelperAndWait.isTheresNoPages(numberOfProductInTheList))
