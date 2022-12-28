@@ -9,6 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import sporter_pages.AEGuestUserPage;
 import sporter_pages.AEMegaMenuPage;
 import sporter_pages.AeProductDetailsPage;
@@ -16,6 +17,7 @@ import sporter_pages.AeWomenOnlyCategoryPage;
 
 import javax.xml.crypto.Data;
 
+import java.io.IOException;
 import java.util.NoSuchElementException;
 
 import static org.testng.Assert.*;
@@ -60,16 +62,10 @@ public class AeProductDetailsPageTestCases extends BaseTest {
         assertTrue(aeProductDetailsPage.getOOSMsg().isDisplayed());
     }
 
-    @Test(description = "Make sure the shopper is unable to add out of stock product to the cart", priority = 5)
+    @Test(description = "Make sure the shopper is unable to add out of stock product to the cart", priority = 5,expectedExceptions = { org.openqa.selenium.NoSuchElementException.class })
     public void verifyInabilityToAddOosProductToTheCart() throws Exception{
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
-        Assert.assertTrue(aeProductDetailsPage.getAddToCartSectionForOOSProduct().isDisplayed());
-//        try{
-//        assertFalse(aeProductDetailsPage.isAddToCartBtnDisplayed());}
-//        catch (AssertionError  exception){
-//            System.out.println("The Add to cart Button is hidden  "+ exception.getMessage());
-//
-//        }
+        Assert.assertFalse(aeProductDetailsPage.getAddToCartSectionForOOSProduct().isDisplayed());
     }
 
     @Test(groups = "Smoke Testing Report",description = "Make sure to display the product from search screen", priority = 6)

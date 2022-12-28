@@ -265,8 +265,7 @@ public class AeProductDetailsPage extends BasePage {
         return HomeBreadcrumbs;
     }
     public WebElement getAddToCartSectionForOOSProduct() {
-        DataHelperAndWait.waitToBeVisible(addToCartSectionForOOSProduct,3,webDriver);
-        return addToCartSectionForOOSProduct;
+        return addToCartBtn;
     }
     public WebElement getEnglishLangBtn() {
         DataHelperAndWait.waitToBeVisible(englishLangBtn, 5, webDriver);

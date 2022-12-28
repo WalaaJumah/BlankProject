@@ -74,7 +74,6 @@ public class BaseTest {
     @BeforeClass(alwaysRun = true)
     @Parameters({"environment"})
     public void setupBrowser( String environment) throws Exception {
-        System.out.println("SetUp Browser method");
         environmentName=environment;
         //This ChromeWebDriver 108
 

@@ -25,12 +25,13 @@
 <!--            &lt;!&ndash;            <class name="sporter_test.AeSportSupplementsCategoryTestCases"/>&ndash;&gt;-->
 <!--            &lt;!&ndash;            <class name="sporter_test.AeSportsCategoryTestCases"/>&ndash;&gt;-->
 <!--            &lt;!&ndash;            <class name="sporter_test.AeSearchPageTestCases"/>&ndash;&gt;-->
-                        <class name="sporter_test.QatarHomePageTestCases"></class>
+                        <class name="sporter_test.AeProductDetailsPageTestCases">
 <!--                        <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases">-->
-<!--            <methods>-->
-<!--                <include name="verifyClickingOnSexualHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly"/>-->
-<!--            </methods>-->
-<!--                        </class>-->
+            <methods>
+                <include name="switchToUaeStore"/>
+                <include name="verifyInabilityToAddOosProductToTheCart"/>
+            </methods>
+                        </class>
 <!--            &lt;!&ndash;            <class name="sporter_test.AeProductDetailsPageTestCases"/>&ndash;&gt;-->
 <!--            &lt;!&ndash;            <class name="sporter_test.AEMegaMenuTestCases"/>&ndash;&gt;-->
 <!--            &lt;!&ndash;            <class name="sporter_test.AeHealthyFoodCategoryTestCases"/>&ndash;&gt;-->
