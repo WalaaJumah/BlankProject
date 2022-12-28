@@ -34,8 +34,14 @@ public  class DataHelperAndWait  {
         wait = new WebDriverWait(webDriver, Time);
         return wait.until(ExpectedConditions.visibilityOf(element)).isDisplayed();
     }
-    public static  boolean isPresent(WebElement webElement) {
-        return webElement.isDisplayed();
+    public static  boolean isPresent(WebElement webElement,WebDriver webDriver) {
+        try{
+            return webElement.isDisplayed();
+        }
+        catch (NoSuchElementException exception){
+            return false;
+        }
+
     }
 
     public static  void implicitWait(int timeSecond,WebDriver webDriver) {
@@ -173,7 +179,7 @@ public  class DataHelperAndWait  {
                 String pageNumber = Integer.toString(i);
                 element.click();
 //                DataHelperAndWait.waitForTime(6000);
-                DataHelperAndWait.waitForUrlContains(pageNumber,webDriver,6);
+                DataHelperAndWait.waitForUrlContains(pageNumber,webDriver,9);
                 Assert.assertTrue(webDriver.getCurrentUrl().endsWith(pageNumber),"The URL is wrong in page"+pageNumber);
                 boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
                 assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -190,6 +196,23 @@ public  class DataHelperAndWait  {
         }
         else System.out.println("There's only a page in the list");
     }
+    public static void clearWebField(WebElement element) {
+        while (!element.getAttribute("value").equals("")) {
+            element.sendKeys(Keys.BACK_SPACE);
+        }
+    }
+    public  static Boolean isTheresNoPages(String numberOfProductInTheList){
+        String numberOfProductWithOutItemLabel;
+        if(numberOfProductInTheList.contains("Items"))
+         numberOfProductWithOutItemLabel= numberOfProductInTheList.replace(") Items","");
+        else
+            numberOfProductWithOutItemLabel= numberOfProductInTheList.replace(") Item","");
+        String numberOfProductWithOutResultLabel= numberOfProductWithOutItemLabel.replace("Results: (","");
+        double numberOfProductInTheListInInt=Double.parseDouble(numberOfProductWithOutResultLabel);
+        return numberOfProductInTheListInInt<=24;
 
-
+    }
+    public static void updateAllText(WebElement element, String newText) {
+        element.sendKeys(Keys.chord(Keys.CONTROL, "a"), newText);
+    }
 }

@@ -1,6 +1,7 @@
 package sporter_pages;
 
 import core.BasePage;
+import core.DataHelperAndWait;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -68,21 +69,26 @@ public class AeSportsCategoryPage  extends BasePage {
     public WebElement getTrendingInSportsSection(){return trendingInSportsSection;}
 
     public WebElement getMensApparelCategory() {
+        DataHelperAndWait.waitToBeVisible(mensApparelCategory,5,webDriver);
         return mensApparelCategory;
     }
     public WebElement getProductCardInRecommendedProductsSection() {
+        DataHelperAndWait.waitToBeVisible(productCardInRecommendedProductsSection,5,webDriver);
         return productCardInRecommendedProductsSection;
     }
 
     public WebElement getWomenApparelCategory() {
+        DataHelperAndWait.waitToBeVisible(womenApparelCategory,5,webDriver);
         return womenApparelCategory;
     }
 
     public WebElement getYogaApparelCategory() {
+        DataHelperAndWait.waitToBeVisible(yogaApparelCategory,5,webDriver);
         return yogaApparelCategory;
     }
 
     public WebElement getSwimmingApparelCategory() {
+        DataHelperAndWait.waitToBeVisible(swimmingApparelCategory,5,webDriver);
         return swimmingApparelCategory;
     }
 
@@ -145,35 +151,73 @@ public class AeSportsCategoryPage  extends BasePage {
     //Define the main actions we need to execute our TCs
     public void clickOnCricketCategory(WebDriver webDriver){
         aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
+        do{
+            aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();        }
+        while(!cricketApparelCategory.isDisplayed());
+        DataHelperAndWait.waitToBeVisible(cricketApparelCategory,5,webDriver);
         this.cricketApparelCategory.click();
     }
+
+//        aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
+//        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
+//        DataHelperAndWait.waitToBeVisible(cricketApparelCategory,5,webDriver);
+//        this.cricketApparelCategory.click();
+//    }
     public void clickOnToysAndGamesCategory(WebDriver webDriver){
         aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
-        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
+        do{
+            aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();        }
+        while(!toysAndGamesCategory.isDisplayed());
+        DataHelperAndWait.waitToBeVisible(toysAndGamesCategory,5,webDriver);
         this.toysAndGamesCategory.click();
     }
+
+//        aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
+//        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
+//        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
+//        DataHelperAndWait.waitToBeVisible(toysAndGamesCategory,5,webDriver);
+//        this.toysAndGamesCategory.click();
+//    }
     public void clickOnWearableTechApparelCategory(WebDriver webDriver){
         aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
-        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
-        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
+        do{
+            aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();        }
+        while(!wearableTechApparelCategory.isDisplayed());
+        DataHelperAndWait.waitToBeVisible(wearableTechApparelCategory,5,webDriver);
         this.wearableTechApparelCategory.click();
     }
+
+//        aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
+//        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
+//        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
+//        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
+//        DataHelperAndWait.waitToBeVisible(wearableTechApparelCategory,5,webDriver);
+//        this.wearableTechApparelCategory.click();
+//    }
     public void clickOnPersonalCareCategory(WebDriver webDriver){
         aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
-        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
-        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
-        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
-        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
-        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
-        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
+        do{
+            aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();        }
+        while(!personalCareApparelCategory.isDisplayed());
+        DataHelperAndWait.waitToBeVisible(personalCareApparelCategory,5,webDriver);
         this.personalCareApparelCategory.click();
     }
+//        aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
+//        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
+//        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
+//        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
+//        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
+//        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
+//        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
+//        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
+//        DataHelperAndWait.waitToBeVisible(personalCareApparelCategory,5,webDriver);
+//        this.personalCareApparelCategory.click();
+//    }
     public WebElement getNextIconInRecommendedProductsSection() {
+        DataHelperAndWait.waitToBeVisible(nextIconInRecommendedProductsSection,5,webDriver);
         return nextIconInRecommendedProductsSection;
     }
+    public void navigateToSportsPage(){webDriver.navigate().to(siteURL+aeDomain+sportsUrl);}
+
 
 }

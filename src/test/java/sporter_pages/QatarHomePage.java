@@ -139,7 +139,7 @@ public class QatarHomePage extends BasePage {
     private WebElement newArrivalsSportswearAndAccessoriesActiveLink;
     @FindBy(xpath = "(//div[@class='swiper-button-next top-sellers-swiper-button-next']/i)[8]")
     private WebElement nextBtnInNewArrivalsSection;
-    @FindBy(xpath = "((//div[@class='swiper-button-prev top-sellers-swiper-button-prev']/i))[2]")
+    @FindBy(xpath = "((//div[@class='swiper-button-prev top-sellers-swiper-button-prev']/i))[1]")
     private WebElement previousBtnInNewArrivalsSection;
     @FindBy(xpath = "//div[@class='left-quetion-block quetion-inner']")
     private WebElement getQuestionBlock;
@@ -409,6 +409,7 @@ public class QatarHomePage extends BasePage {
     }
 
     public WebElement getPreviousButtonInTopSellerSection() {
+        DataHelperAndWait.waitToBeVisible(previousButtonInTopSellerSection,3,webDriver);
         return previousButtonInTopSellerSection;
     }
 
@@ -421,12 +422,12 @@ public class QatarHomePage extends BasePage {
     }
 
     public WebElement getTrendingOnSporterSectionPositionAfterClickingOnNext(  ) {
-        DataHelperAndWait.waitToBeVisible(trendingOnSporterSectionPositionAfterClickingOnNext,3,webDriver);
+        DataHelperAndWait.waitToBeVisible(trendingOnSporterSectionPositionAfterClickingOnNext,5,webDriver);
         return trendingOnSporterSectionPositionAfterClickingOnNext;
     }
 
     public WebElement getTrendingOnSporterSectionPositionAfterClickingOnPrevious(  ) {
-        DataHelperAndWait.waitToBeVisible(trendingOnSporterSectionPositionAfterClickingOnPrevious,3,webDriver);
+        DataHelperAndWait.waitToBeVisible(trendingOnSporterSectionPositionAfterClickingOnPrevious,5,webDriver);
         return trendingOnSporterSectionPositionAfterClickingOnPrevious;
     }
 
@@ -498,6 +499,7 @@ public class QatarHomePage extends BasePage {
     }
 
     public WebElement getPreviousBtnInNewArrivalsSection() {
+        DataHelperAndWait.waitToBeVisible(previousBtnInNewArrivalsSection,5,webDriver);
         return previousBtnInNewArrivalsSection;
     }
 
@@ -516,12 +518,14 @@ public class QatarHomePage extends BasePage {
     //Define the main actions we need to execute our TCs
     public void switchToQatarCountry(  ) {
         try {
-            DataHelperAndWait.isDisplayed(countryList, 1,webDriver);
+            DataHelperAndWait.isDisplayed(countryList, 7,webDriver);
             this.countryList.click();
+            DataHelperAndWait.waitToBeVisible(qatarCountry, 5,webDriver);
             this.qatarCountry.click();
         } catch (Exception e) {
-            DataHelperAndWait.isDisplayed(countryList, 3,webDriver);
+            DataHelperAndWait.isDisplayed(countryList, 5,webDriver);
             this.countryList.click();
+            DataHelperAndWait.waitToBeVisible(qatarCountry, 5,webDriver);
             this.qatarCountry.click();
         }
     }
@@ -707,7 +711,6 @@ public class QatarHomePage extends BasePage {
 
     public void clickOnNextButtonInNewArrivalSection(  ) {
         try {
-//            DataHelperAndWait.isDisplayed(nextBtnInNewArrivalsSection, 2);
             DataHelperAndWait.fluentWait(this.nextBtnInNewArrivalsSection,2,3,webDriver);
 
             this.nextBtnInNewArrivalsSection.click();

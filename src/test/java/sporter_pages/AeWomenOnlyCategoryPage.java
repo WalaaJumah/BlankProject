@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class AeWomenOnlyCategoryPage extends BasePage {
     public AeWomenOnlyCategoryPage(WebDriver webDriver){
         super(webDriver);
@@ -45,7 +47,7 @@ public class AeWomenOnlyCategoryPage extends BasePage {
    private WebElement productCardInWomenVitaminsSection;
     @FindBy(xpath = "//div[@class='inner-seller-prod wp-id-17316']")
    private WebElement productCardInWorkoutInStyleSection;
-    @FindBy(xpath = "//div[@class='inner-seller-prod wp-id-55257']")
+    @FindBy(xpath = "//div[@class='inner-seller-prod wp-id-35422']")
    private WebElement productCardInLadyFriendlySnacksFoodSection;
     @FindBy(xpath = "//div[@class='brand-video-header']/h3")
    private WebElement femaleGallerySectionTitle;
@@ -83,9 +85,62 @@ public class AeWomenOnlyCategoryPage extends BasePage {
     private WebElement shopeByMenu;
     @FindBy(xpath = "//ul[@class='cd-dropdown-content']/li[5]/a")
     private WebElement womenOnlyOption;
+    @FindBy(xpath = "//div[@class='block-footer-top']")
+    private WebElement pageBottomSection;
+    @FindBy(xpath = "//div[@class='container']/ul[@class='clearfix']")
+    private List<WebElement> pageBottomBlocksList;
+    @FindBy(xpath = "(//li[@class='secure-listing']//h3[1])[1]")
+    private WebElement securePaymentTitle;
+    @FindBy(xpath = "//em[@class='fas fa-unlock']/following-sibling::span")
+    private WebElement securePaymentDescription;
+    @FindBy(xpath = "(//li[@class='secure-listing']//h3[1])[2]")
+    private WebElement authenticProductsTitle;
+    @FindBy(xpath = "(//a[@title='100% Secure payments']//span)[2]")
+    private WebElement authenticProductsDescription;
+    @FindBy(xpath = "(//li[@class='secure-listing']//h3[1])[3]")
+    private WebElement fastDeliveryTitle;
+    @FindBy(xpath = "(//a[@title='100% Secure payments']//span)[3]")
+    private WebElement fastDeliveryDescription;
+    @FindBy(xpath = "//div[@class='category-details']/h1")
+    private WebElement sportSupplementsTitleInSportSupplementsCategoryImage;
+    @FindBy(xpath = "//div[@class='category-details']/p")
+    private WebElement paragraphInInSportSupplementsCategoryImage;
+
+    public WebElement getSecurePaymentDescription() {
+        return securePaymentDescription;
+    }
+    public WebElement getAuthenticProductsTitle() {
+        return authenticProductsTitle;
+    }
+    public WebElement getSportSupplementsTitleInCategoryImage() {
+        return sportSupplementsTitleInSportSupplementsCategoryImage;
+    }
+    public WebElement getParagraphInSportSupplementsCategoryImage() {
+        return paragraphInInSportSupplementsCategoryImage;
+    }
+    public WebElement getAuthenticProductsDescription() {
+        return authenticProductsDescription;
+    }
+    public WebElement getFastDeliveryTitle() {
+        return fastDeliveryTitle;
+    }
+    public WebElement getFastDeliveryDescription() {
+        return fastDeliveryDescription;
+    }
+
+
 
 
     //Getter Methods
+    public WebElement getPageBottomSection() {
+        return pageBottomSection;
+    }
+    public WebElement getSecurePaymentTitle() {
+        return securePaymentTitle;
+    }
+    public List<WebElement> getPageBottomBlocksList() {
+        return pageBottomBlocksList;
+    }
     public WebElement getShopeByMenu() {
         return shopeByMenu;
     }
@@ -147,7 +202,7 @@ public class AeWomenOnlyCategoryPage extends BasePage {
     }
 
     public WebElement getPreviousIconInWorkoutInStyleSection() {
-        DataHelperAndWait.waitToBeVisible(previousIconInWorkoutInStyleSection,2,webDriver);
+        DataHelperAndWait.waitToBeVisible(previousIconInWorkoutInStyleSection,5,webDriver);
         return previousIconInWorkoutInStyleSection;
     }
     public WebElement getLastProductInWorkoutInStyleSection() {
@@ -172,12 +227,15 @@ public class AeWomenOnlyCategoryPage extends BasePage {
         return viewAllInLadyFriendlySnacksFoodSection;
     }
     public WebElement getPreviousIconInLadyFriendlySnacksFoodSection() {
+        DataHelperAndWait.waitToBeVisible(previousIconInLadyFriendlySnacksFoodSection,5,webDriver);
         return previousIconInLadyFriendlySnacksFoodSection;
     }
     public WebElement getNextIconInInLadyFriendlySnacksFoodSection() {
+        DataHelperAndWait.waitToBeVisible(nextIconInInLadyFriendlySnacksFoodSection,5,webDriver);
         return nextIconInInLadyFriendlySnacksFoodSection;
     }
     public WebElement getProductCardInLadyFriendlySnacksFoodSection() {
+        DataHelperAndWait.waitToBeVisible(productCardInLadyFriendlySnacksFoodSection,6,webDriver);
         return productCardInLadyFriendlySnacksFoodSection;
     }
     public WebElement getFemaleGallerySectionTitle() {
@@ -194,18 +252,19 @@ public class AeWomenOnlyCategoryPage extends BasePage {
     public WebElement getSecondYouTubeVideo() {
         return secondYouTubeVideo;
     }
-    public void navigate(){webDriver.navigate().to(siteURL);}
+    public void navigateToWomenOnlyPage(){webDriver.navigate().to(siteURL +aeDomain+womenOnlyUrl);}
     public void switchToAECountry() {
         try {
+            DataHelperAndWait.waitToBeVisible(countryList, 5,webDriver);
             this.countryList.click();
-            DataHelperAndWait.isDisplayed(countryList, 1,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeCountry, 5,webDriver);
             this.aeCountry.click();
         } catch (Exception e) {
+            DataHelperAndWait.waitToBeVisible(countryList, 5,webDriver);
             this.countryList.click();
-            DataHelperAndWait.isDisplayed(countryList, 1,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeCountry, 5,webDriver);
             this.aeCountry.click();
-        }
-    }
+        }}
     public WebElement getWomenOnlyMainMenu() {
         return womenOnlyMainMenu;
     }

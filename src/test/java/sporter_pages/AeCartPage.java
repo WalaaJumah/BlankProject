@@ -2,6 +2,7 @@ package sporter_pages;
 
 import core.BasePage;
 import core.DataHelperAndWait;
+import org.jsoup.Connection;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,27 +22,27 @@ public class AeCartPage extends BasePage {
     private WebElement requestedQtyUnAvailableMsg;
     @FindBy(xpath = "//button[text()='CONTINUE SHOPPING']")
     private WebElement continueShoppingBtn;
-    @FindBy(xpath = "//*[@id=\"shopping-cart-table\"]/tbody[1]/tr/td[1]/div/a/span[2]")
+    @FindBy(xpath = "//a[@title='Remove item']")
     private WebElement removeItem;
     @FindBy(xpath = "//p[text()='You have no items in your shopping cart.']")
     private WebElement noItemInCartLabel;
     @FindBy(xpath = "//a[text()='here']")
     private WebElement hereLink;
-    @FindBy(xpath = "//a[@class='decreaseQty btn-qty-control btn-qty-control--minus']")
+    @FindBy(xpath = "(//a[@class='decreaseQty btn-qty-control btn-qty-control--minus'])[1]")
     private WebElement decreaseQtyBtn;
-    @FindBy(xpath = "//a[@class='increaseQty btn-qty-control btn-qty-control--plus']")
+    @FindBy(xpath = "(//a[@class='increaseQty btn-qty-control btn-qty-control--plus'])[1]")
     private WebElement increaseQtyBtn;
-    @FindBy(css = "div[class='input-box input-with-value input-active']:nth-child(n) input")
+    @FindBy(xpath = "(//input[@title='Qty'])[1]")
     private WebElement qtyField;
-    @FindBy(xpath = "//div[text()='The requested qty is not available']")
+    @FindBy(xpath = "(//div[text()='The requested qty is not available'])[1]")
     private WebElement qtyUnavailableMsgInCartPage;
-    @FindBy(css = "tr[class='item-info']:nth-child(1) td[data-th='Item']")
+    @FindBy(xpath = "(//tr[@class='item-info']//a)[1]")
     private WebElement productCartInCartPage;
     @FindBy(xpath = "//*[@id=\"shopping-cart-table\"]/tbody[1]/tr/td[4]/span/span/span")
     private WebElement priceInCartPage;
     @FindBy(xpath = "//td[text()='FREE from SPORTER']")
     private WebElement freeFromSporter;
-    @FindBy(xpath = "//span[text()='Free']")
+    @FindBy(xpath = "(//span[text()='Free'])[1]")
     private WebElement freePrice;
     @FindBy(xpath = "//td[text()='We accept']")
     private WebElement weAcceptLabel;
@@ -92,6 +93,7 @@ public class AeCartPage extends BasePage {
 
     //Getter Methods
     public WebElement getItemsCounterInCartPage() {
+        DataHelperAndWait.waitToBeVisible(itemsCounter,5,webDriver);
         return itemsCounter;
     }
 
@@ -100,114 +102,142 @@ public class AeCartPage extends BasePage {
     }
 
     public WebElement getContinueShoppingBtn() {
+        DataHelperAndWait.waitToBeVisible(continueShoppingBtn,5,webDriver);
         return continueShoppingBtn;
     }
 
     public WebElement getNoItemInCartLabel() {
+        DataHelperAndWait.waitToBeVisible(noItemInCartLabel,5,webDriver);
         return noItemInCartLabel;
     }
 
     public WebElement getHereLink() {
+        DataHelperAndWait.waitToBeVisible(hereLink,5,webDriver);
         return hereLink;
     }
 
     public WebElement getDecreaseQtyBtn() {
+        DataHelperAndWait.waitToBeVisible(decreaseQtyBtn,5,webDriver);
         return decreaseQtyBtn;
     }
 
     public WebElement getIncreaseQtyBtn() {
+        DataHelperAndWait.waitToBeVisible(increaseQtyBtn,5,webDriver);
         return increaseQtyBtn;
     }
 
     public WebElement getQtyField() {
+        DataHelperAndWait.waitToBeVisible(qtyField,5,webDriver);
         return qtyField;
     }
 
     public WebElement getQtyUnavailableMsgInCartPage() {
+        DataHelperAndWait.waitToBeVisible(qtyUnavailableMsgInCartPage,5,webDriver);
         return qtyUnavailableMsgInCartPage;
     }
 
     public WebElement getPriceInCartPage() {
+        DataHelperAndWait.waitToBeVisible(priceInCartPage,5,webDriver);
         return priceInCartPage;
     }
 
     public WebElement getFreeFromSporterSection() {
+        DataHelperAndWait.waitToBeVisible(freeFromSporter,5,webDriver);
         return freeFromSporter;
     }
 
     public WebElement getFreePrice() {
+        DataHelperAndWait.waitToBeVisible(freePrice,5,webDriver);
         return freePrice;
     }
 
     public WebElement getCodOption() {
+        DataHelperAndWait.waitToBeVisible(codOption,5,webDriver);
         return codOption;
     }
 
     public WebElement getWeAcceptLabel() {
+        DataHelperAndWait.waitToBeVisible(weAcceptLabel,5,webDriver);
         return weAcceptLabel;
     }
 
     public WebElement getCreditCardOption() {
+        DataHelperAndWait.waitToBeVisible(creditCardOption,5,webDriver);
         return creditCardOption;
     }
 
     public WebElement getFreeShippingLabel() {
+        DataHelperAndWait.waitToBeVisible(freeShippingLabel,5,webDriver);
         return freeShippingLabel;
     }
 
     public WebElement getExpectedDeliveryDateLabel() {
+        DataHelperAndWait.waitToBeVisible(expectedDeliveryDateLabel,5,webDriver);
         return expectedDeliveryDateLabel;
     }
 
     public WebElement getExpectedDeliveryDateValue() {
+        DataHelperAndWait.waitToBeVisible(expectedDeliveryDateValue,5,webDriver);
         return expectedDeliveryDateValue;
     }
 
     public WebElement getProceedCheckoutBtn() {
+        DataHelperAndWait.waitToBeVisible(proceedCheckoutBtn,5,webDriver);
         return proceedCheckoutBtn;
     }
 
     public WebElement getSubTotalValue() {
+        DataHelperAndWait.waitToBeVisible(subTotalValue,5,webDriver);
         return subTotalValue;
     }
 
     public WebElement getTaxValue() {
+        DataHelperAndWait.waitToBeVisible(taxValue,5,webDriver);
         return taxValue;
     }
 
     public WebElement getOrderTotalValue() {
+        DataHelperAndWait.waitToBeVisible(orderTotalValue,5,webDriver);
         return orderTotalValue;
     }
 
     public WebElement getCartCounter() {
+        DataHelperAndWait.waitToBeVisible(cartCounter,5,webDriver);
         return cartCounter;
     }
 
     public WebElement getItemCounterInCartPopUp() {
+        DataHelperAndWait.waitToBeVisible(itemCounterInCartPopUp,5,webDriver);
         return itemCounterInCartPopUp;
     }
 
     public WebElement getCloseIconInCartPopup() {
+        DataHelperAndWait.waitToBeVisible(cartCloseIcon,5,webDriver);
         return cartCloseIcon;
     }
 
     public WebElement getUsedFreeCouponMsg() {
+        DataHelperAndWait.waitToBeVisible(usedFreeCouponMsg,5,webDriver);
         return usedFreeCouponMsg;
     }
 
     public WebElement getApplyCouponCode() {
+        DataHelperAndWait.waitToBeVisible(applyCouponCodeBtn,5,webDriver);
         return applyCouponCodeBtn;
     }
 
     public WebElement getNotExistCouponMsg() {
+        DataHelperAndWait.waitToBeVisible(notExistCouponMsg,5,webDriver);
         return notExistCouponMsg;
     }
 
     public WebElement getRequiredCouponMsg() {
+        DataHelperAndWait.waitToBeVisible(requiredCouponMsg,5,webDriver);
         return requiredCouponMsg;
     }
 
     public WebElement getMyShoppingCartMsg() {
+        DataHelperAndWait.waitToBeVisible(myShoppingCartMsg,5,webDriver);
         return myShoppingCartMsg;
     }
 
@@ -276,6 +306,10 @@ public class AeCartPage extends BasePage {
     public void clickOnCancelCouponCodeBtn() {
         DataHelperAndWait.waitToBeClickable(cancelCouponCodeBtn, 3,webDriver);
         this.cancelCouponCodeBtn.click();
+    }
+    public void removeProductFromCart(){
+        webDriver.navigate().to(BasePage.siteURL+aeDomain+cartURL);
+        this.clickOnRemoveItem();
     }
 
 

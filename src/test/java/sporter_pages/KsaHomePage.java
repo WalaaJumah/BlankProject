@@ -144,7 +144,7 @@ public class KsaHomePage extends BasePage {
     private WebElement newArrivalsSportswearAndAccessoriesActiveLink;
     @FindBy(xpath = "(//div[@class='swiper-button-next top-sellers-swiper-button-next']/i)[8]")
     private WebElement nextBtnInNewArrivalsSection;
-    @FindBy(xpath = "((//div[@class='swiper-button-prev top-sellers-swiper-button-prev']/i))[2]")
+    @FindBy(xpath = "((//div[@class='swiper-button-prev top-sellers-swiper-button-prev']/i))[1]")
     private WebElement previousBtnInNewArrivalsSection;
     @FindBy(xpath = "//div[@class='left-quetion-block quetion-inner']")
     private WebElement getQuestionBlock;
@@ -196,8 +196,12 @@ public class KsaHomePage extends BasePage {
     private WebElement fourthProductInNewArrivalsSection;
   @FindBy(xpath = "(//div[@id='tab-6-all6']/div/div/div/div/a)[5]")
     private WebElement fiveProductInNewArrivalsSection;
-
-
+    @FindBy(xpath = "(//p[@class='count-container-item amount amount--has-pages'])[1]/span")
+    private WebElement resultLabel;
+    @FindBy(xpath = "(//p[@class='count-container-item amount amount--has-pages'])[1]")
+    private WebElement searchResultValue;
+    @FindBy(xpath = "(//li[@class='item pages-item-next']/a)[2]")
+    private WebElement NextPageBtn;
 
     //Getter Methods
     public WebElement getNextArrowInHomePageRotatingSlider() {
@@ -209,6 +213,13 @@ public class KsaHomePage extends BasePage {
 dataHelperAndWait.waitToBeVisible(previousArrowInHomePageRotatingSlider,3,webDriver);
         return previousArrowInHomePageRotatingSlider;
     }
+    public WebElement getNextPageBtn() {
+        return NextPageBtn;
+    }
+    public WebElement getSearchResultValue() {
+        DataHelperAndWait.waitToBeVisible(searchResultValue,2,webDriver);
+        return searchResultValue;
+    }
 
     public WebElement getHomePageRotatingSliderPagingControl() {
                 dataHelperAndWait= new DataHelperAndWait();
@@ -218,7 +229,7 @@ dataHelperAndWait.waitToBeVisible(homePageRotatingSliderPagingControl,3,webDrive
 
     public WebElement getHomePageRotatingSlider() {
                 dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.waitToBeVisible(homePageRotatingSlider,3,webDriver);
+dataHelperAndWait.waitToBeVisible(homePageRotatingSlider,5,webDriver);
         return homePageRotatingSlider;
     }
 
@@ -308,7 +319,7 @@ dataHelperAndWait.waitToBeVisible(homePageRotatingSlider,3,webDriver);
 
     public WebElement getShopByCategorySections() {
         dataHelperAndWait= new DataHelperAndWait();
-        dataHelperAndWait.waitToBeVisible(shopByCategorySections,3,webDriver);
+        dataHelperAndWait.waitToBeVisible(shopByCategorySections,5,webDriver);
         return shopByCategorySections;
     }
 
@@ -512,6 +523,7 @@ dataHelperAndWait.waitToBeVisible(NewArrivalSectionPositionAfterClickingOnNext,3
     }
 
     public WebElement getPreviousBtnInNewArrivalsSection() {
+        DataHelperAndWait.waitToBeVisible(previousBtnInNewArrivalsSection,5,webDriver);
         return previousBtnInNewArrivalsSection;
     }
 
@@ -529,28 +541,26 @@ dataHelperAndWait.waitToBeVisible(NewArrivalSectionPositionAfterClickingOnNext,3
 
     //Define the main actions we need to execute our TCs
     public void switchToKsaCountry() {
-        try {
-                    dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.isDisplayed(countryList, 3,webDriver);
-            this.countryList.click();
-            this.saCountry.click();
-        } catch (Exception e) {
-                    dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.isDisplayed(countryList, 3,webDriver);
-            this.countryList.click();
-            this.saCountry.click();
-        }
-    }
+
+            try {
+                DataHelperAndWait.waitToBeVisible(countryList, 5,webDriver);
+                this.countryList.click();
+                DataHelperAndWait.waitToBeVisible(saCountry, 5,webDriver);
+                this.saCountry.click();
+            } catch (Exception e) {
+                DataHelperAndWait.waitToBeVisible(countryList, 5,webDriver);
+                this.countryList.click();
+                DataHelperAndWait.waitToBeVisible(saCountry, 5,webDriver);
+                this.saCountry.click();
+            }}
 
     public void clickOnViewAllBtnInTopSellingStacksSection() {
         try {
-                    dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.isDisplayed(viewAllBtnInTopSellingStacksSection, 3,webDriver);
+            DataHelperAndWait.waitToBeVisible(viewAllBtnInTopSellingStacksSection, 5,webDriver);
             this.viewAllBtnInTopSellingStacksSection.click();
         }
         catch (Exception e){
-                    dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.isDisplayed(viewAllBtnInTopSellingStacksSection, 3,webDriver);
+            DataHelperAndWait.waitToBeVisible(viewAllBtnInTopSellingStacksSection, 3,webDriver);
             this.viewAllBtnInTopSellingStacksSection.click();
         }
 

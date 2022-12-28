@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import javax.xml.crypto.Data;
+
 public class AeRecommendedProductsPage extends BasePage {
     public AeRecommendedProductsPage(WebDriver webDriver) {
         super(webDriver);
@@ -43,38 +45,47 @@ public class AeRecommendedProductsPage extends BasePage {
 
     //Getter Methods
     public WebElement getCircleIcon() {
+        DataHelperAndWait.waitToBeVisible(circleIcon,6,webDriver);
         return circleIcon;
     }
 
     public WebElement getThumbsUpTitle() {
+        DataHelperAndWait.waitToBeVisible(thumbsUpTitle,5,webDriver);
         return thumbsUpTitle;
     }
 
     public WebElement getAddedProductToCartMsg() {
+        DataHelperAndWait.waitToBeVisible(addedProductToCartMsg,5,webDriver);
         return addedProductToCartMsg;
     }
 
     public WebElement getRecommendedProductsTitle() {
+        DataHelperAndWait.waitToBeVisible(recommendedProductsTitle,5,webDriver);
         return recommendedProductsTitle;
     }
 
     public WebElement getProductPrice() {
+        DataHelperAndWait.waitToBeVisible(productPrice,5,webDriver);
         return productPrice;
     }
 
     public WebElement getProductImages() {
+        DataHelperAndWait.waitToBeVisible(productImages,5,webDriver);
         return productImages;
     }
 
     public WebElement getAddToCartBtn() {
+        DataHelperAndWait.waitToBeVisible(addToCartBtn,5,webDriver);
         return addToCartBtn;
     }
 
     public WebElement getProductPriceForFirstProduct() {
+        DataHelperAndWait.waitToBeVisible(productPriceForFirstProduct,5,webDriver);
         return productPriceForFirstProduct;
     }
 
     public WebElement getFirstProductName() {
+        DataHelperAndWait.waitToBeVisible(firstProductName,3,webDriver);
         return firstProductName;
     }
 
@@ -85,7 +96,7 @@ public class AeRecommendedProductsPage extends BasePage {
     }
 
     public void clickOnAddToCart() {
-        DataHelperAndWait.waitToBeVisible(addToCart, 3,webDriver);
+        DataHelperAndWait.waitToBeVisible(addToCart, 4,webDriver);
         this.addToCart.click();
     }
 
@@ -98,4 +109,5 @@ public class AeRecommendedProductsPage extends BasePage {
         DataHelperAndWait.waitToBeVisible(firstProductCard, 3,webDriver);
         this.firstProductCard.click();
     }
+    public void navigateToHomePage(){webDriver.navigate().to(siteURL);}
 }

@@ -1,321 +1,341 @@
-//package sporter_test;
-//
-//import core.BaseTest;
-//import core.DataHelperAndWait;
-//import org.openqa.selenium.WebElement;
-//import org.openqa.selenium.support.ui.Select;
-//import org.testng.Assert;
-//import org.testng.annotations.Test;
-//import org.testng.asserts.SoftAssert;
-//import sporter_pages.AEGuestUserPage;
-//import sporter_pages.AeHealthyFoodCategoryPage;
-//import sporter_pages.AeProductDetailsPage;
-//import sporter_pages.AeSportSupplementsCategoryPage;
-//
-//import java.util.ArrayList;
-//import java.util.List;
-//
-//import static org.testng.Assert.assertFalse;
-//
-//public class AeHealthyFoodCategoryTestCases extends BaseTest {
-//    private AEMegaMenuTestCases aeMegaMenuTestCases;
-//    private AeProductDetailsPage aeProductDetailsPage;
-//    private AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage;
-//    private AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage;
-//    private AEFooterPageTestCases aeFooterPageTestCases;
-//    private AEGuestUserPage aeGuestUserPage;
-//
-//    @Test(description = "Make sure clicking on the Healthy Food Category Appears In MegaMenu Redirect User To CorrectURL", priority = 1)
-//    public void verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL() {
-//        aeMegaMenuTestCases = new AEMegaMenuTestCases();
-//        aeMegaMenuTestCases.verifyClickingOnHealthyFoodMainMenuRedirectUserToCorrectURL();
-//    }
-//    @Test(description = "Make sure clicking on the Healthy Food Category from ShopBy Menu Redirect User To CorrectURL", priority = 2)
-//    public void verifyClickingOnHealthyFoodCategoryFromShopByMenuRedirectUserToCorrectURL() {
-//        aeMegaMenuTestCases = new AEMegaMenuTestCases();
-//        aeMegaMenuTestCases.verifyClickingOnHealthyFoodOptionInsideShopByMenuRedirectUserToCorrectURL();
-//    }
-//    @Test(description = "Make sure clicking on the Healthy Food Category from HomePage Redirect User To CorrectURL", priority = 3)
-//    public void verifyClickingOnHealthyFoodCategoryFromHomePageRedirectUserToCorrectURL() {
-//        aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
-//        aeMegaMenuTestCases = new AEMegaMenuTestCases();
-//        aeHealthyFoodCategoryPage.switchToAeCountry();
-//        DataHelperAndWait.waitToBeClickable(aeHealthyFoodCategoryPage.getHealthyFoodCategoryInHomePage(), 5);
-//        aeHealthyFoodCategoryPage.getHealthyFoodCategoryInHomePage().click();
-//        Assert.assertEquals(webDriver.getCurrentUrl(),siteURL+aeMegaMenuTestCases.healthyFoodsUrl);
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
-//    }
-//    @Test(description = "Make sure the Horizontal Category Image appears correctly in the Healthy Food landing page ", priority = 4)
-//    public void verifyTheHorizontalCategoryImageAppearsCorrectlyInHealthyFoodLandingPage() {
-//        aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
-//        this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-//        DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage(), 5);
-//        Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
-//    }
-//    @Test(description = "Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the Healthy Food landing page ", priority = 5)
-//    public void verifyTitleAndParagraphAppearingCorrectlyInHorizontalCategoryImageInHealthyFoodLandingPage() {
-//        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-//        this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-//        DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getSportSupplementsTitleInCategoryImage(), 5);
-//        DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getParagraphInSportSupplementsCategoryImage(), 5);
-//        Assert.assertEquals(aeSportSupplementsCategoryPage.getSportSupplementsTitleInCategoryImage().getText(), "Healthy Food", "Wrong title appears in the Healthy Food category image");
-//        Assert.assertEquals(aeSportSupplementsCategoryPage.getParagraphInSportSupplementsCategoryImage().getText(), "For Every Training Goal & Body Type", "Wrong Paragraph appears in the Healthy Food category image");
-//    }
-//    @Test(description = "Make sure the Horizontal Banners appear correctly in the Healthy Food landing page ", priority = 6)
-//    public void verifyTheHorizontalBannersAppearCorrectlyInHealthyFoodLandingPage() {
-//        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-//        this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-//        DataHelperAndWait.implicitWait(5);
-//        for (int i = 0; i < aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().size(); i++) {
-//            Assert.assertTrue(aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().get(i).isDisplayed());
-//        }
-//    }
-//    @Test(description = "Make sure clicking on the Horizontal Banners appearing in the Healthy Food landing page opens correctly ", priority = 7)
-//    public void verifyClickingOnHorizontalBannersAppearingInHealthyFoodLandingPageOpensCorrectly() {
-//        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-//        this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-//        DataHelperAndWait.implicitWait(5);
-//        for (int i = 0; i < aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().size(); i++) {
-//            aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().get(i).click();
-//            boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//            assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//            boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//            assertFalse(isTheElementPresent, "The page is empty");
-//            webDriver.navigate().back();
-//        }
-//    }
-//    @Test(description = "Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Healthy Food landing page ", priority = 8)
-//    public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumb() {
-//        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-//        this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-//        aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-//        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL+aeSiteURL);
-//    }
-//    @Test(description = "Make sure that the Result label and its value appear correctly in the Healthy Food Category page ", priority = 9)
-//    public void verifyResultFieldAndItsVaLueAppearInTheHealthyFoodCategoryPage() {
-//        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-//        this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-//        SoftAssert sa = new SoftAssert();
-//        Assert.assertEquals(aeSportSupplementsCategoryPage.getResultLabel().getText(), "Results:");
-//        Assert.assertTrue(aeSportSupplementsCategoryPage.getSearchResultValue().isDisplayed());
-//        sa.assertNotEquals(aeSportSupplementsCategoryPage.getSearchResultValue().getText(), "0", "The number of result is Zero");
-//    }
-//    @Test(description = "Make sure that Sort By menu and its options appear correctly ", priority = 10)
-//    public void verifySortByMenuAndItsOptionsAppearCorrectly() {
-//        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-//        this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-//        Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
-//        ArrayList<String> expectedOption = new ArrayList<>() {{
-//            add("Relevance");
-//            add("Name");
-//            add("Best Selling");
-//            add("Price Min-Max");
-//            add("Price Max-Min");
-//        }};
-//        Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
-//        List<WebElement> options = select.getOptions();
-//        for (int i = 0; i < options.size(); i++) {
-//            Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
-//        }
-//    }
-//    @Test(description = "Make sure that the Best Selling option is selected by default in the Sort By menu ", priority = 11)
-//    public void verifyBestSellingOptionIsSelectedByDefaultInSortByMenu() {
-//        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-//        this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-//        Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
-//        Assert.assertEquals(select.getFirstSelectedOption().getText(), "Best Selling");
-//    }
+package sporter_test;
+
+import core.BaseTest;
+import core.DataHelperAndWait;
+import error_helper.SporterErrorPage;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+import sporter_pages.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.testng.Assert.assertFalse;
+
+public class AeHealthyFoodCategoryTestCases extends BaseTest {
+    private AeProductDetailsPage aeProductDetailsPage;
+    private AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage;
+    private AEGuestUserPage aeGuestUserPage;
+    private Actions action;
+
+
+    @Test(groups = "Smoke Testing Report",description = "Healthy Food Category- Switching to UAE store", priority = 1)
+    public void switchToUaeStore(){
+        AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
+        aeHealthyFoodCategoryPage.switchToAECountry();
+        if(webDriver.getCurrentUrl().contains(aeHealthyFoodCategoryPage.aeDomain)){
+            System.out.println("You are in UAE Store");
+        }
+        else {
+            aeHealthyFoodCategoryPage.switchToAECountry();
+        }
+    }
+
+    @Test(groups = "Smoke Testing Report",description = "Healthy Food Category- Make sure clicking on the Healthy Food Category Appears In MegaMenu Redirect User To CorrectURL", priority = 2)
+    public void verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL() {
+        AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
+        action = new Actions(webDriver);
+        action.moveToElement(aeHealthyFoodCategoryPage.getHealthyFoodMainMenu()).perform();
+        String expectedUrl=aeHealthyFoodCategoryPage.getHealthyFoodMainMenu().getAttribute("href");
+        aeHealthyFoodCategoryPage.getHealthyFoodMainMenu().click();
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
+        aeHealthyFoodCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
+    }
+    @Test(groups = "Smoke Testing Report",description = "Healthy Food Category- Make sure clicking on the Healthy Food Category from ShopBy Menu Redirect User To CorrectURL", priority = 3)
+    public void verifyClickingOnHealthyFoodCategoryFromShopByMenuRedirectUserToCorrectURL() {
+        AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
+        action = new Actions(webDriver);
+        action.moveToElement(aeHealthyFoodCategoryPage.getShopeByMenu()).perform();
+        action.moveToElement(aeHealthyFoodCategoryPage.getHealthFoodOption()).perform();
+        String expectedUrl=aeHealthyFoodCategoryPage.getHealthFoodOption().getAttribute("href");
+        aeHealthyFoodCategoryPage.getHealthFoodOption().click();
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
+        aeHealthyFoodCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
+    }
+    @Test(groups = "Smoke Testing Report",description = "Healthy Food Category- Make sure clicking on the Healthy Food Category from HomePage Redirect User To CorrectURL", priority =4)
+    public void verifyClickingOnHealthyFoodCategoryFromHomePageRedirectUserToCorrectURL() {
+        AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
+        aeHealthyFoodCategoryPage.navigateToHomePage();
+        aeHealthyFoodCategoryPage.getHealthyFoodCategoryInHomePage().click();
+        Assert.assertEquals(webDriver.getCurrentUrl(),aeHealthyFoodCategoryPage.siteURL+aeHealthyFoodCategoryPage.aeDomain+aeHealthyFoodCategoryPage.healthyFoodsUrl);
+        aeHealthyFoodCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
+    }
+    @Test(description = "Healthy Food Category- Make sure the Horizontal Category Image appears correctly in the Healthy Food landing page ", priority = 5)
+    public void verifyTheHorizontalCategoryImageAppearsCorrectlyInHealthyFoodLandingPage() {
+        AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
+        Assert.assertTrue(aeHealthyFoodCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
+    }
+    @Test(description = "Healthy Food Category- Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the Healthy Food landing page ", priority = 6)
+    public void verifyTitleAndParagraphAppearingCorrectlyInHorizontalCategoryImageInHealthyFoodLandingPage() {
+        AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
+        Assert.assertEquals(aeHealthyFoodCategoryPage.getSportSupplementsTitleInCategoryImage().getText(), "Healthy Food", "Wrong title appears in the Healthy Food category image");
+        Assert.assertEquals(aeHealthyFoodCategoryPage.getParagraphInSportSupplementsCategoryImage().getText(), "For Every Training Goal & Body Type", "Wrong Paragraph appears in the Healthy Food category image");
+    }
+    @Test(description = "Healthy Food Category- Make sure the Horizontal Banners appear correctly in the Healthy Food landing page ", priority = 7)
+    public void verifyTheHorizontalBannersAppearCorrectlyInHealthyFoodLandingPage() {
+        AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        for (int i = 0; i < aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().size(); i++) {
+            DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().get(i),6,webDriver);
+            Assert.assertTrue(aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().get(i).isDisplayed());
+        }
+    }
+    @Test(description = "Healthy Food Category- Make sure clicking on the Horizontal Banners appearing in the Healthy Food landing page opens correctly ", priority = 8)
+    public void verifyClickingOnHorizontalBannersAppearingInHealthyFoodLandingPageOpensCorrectly() {
+        AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        for (int i = 0; i < aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().size(); i++) {
+            DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().get(i),6,webDriver);
+            aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().get(i).click();
+            aeHealthyFoodCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
+            webDriver.navigate().back();
+        }
+    }
+    @Test(description = "Healthy Food Category- Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Healthy Food landing page ", priority = 9)
+    public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumb() {
+        AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
+        Assert.assertEquals(webDriver.getCurrentUrl(), aeHealthyFoodCategoryPage.siteURL+aeHealthyFoodCategoryPage.aeSiteURL);
+    }
+    @Test(description = "Healthy Food Category- Make sure that the Result label and its value appear correctly in the Healthy Food Category page ", priority = 10)
+    public void verifyResultFieldAndItsVaLueAppearInTheHealthyFoodCategoryPage() {
+        AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        aeHealthyFoodCategoryPage.navigate();
+        SoftAssert sa = new SoftAssert();
+        Assert.assertEquals(aeSportSupplementsCategoryPage.getResultLabel().getText(), "Results:");
+        Assert.assertTrue(aeSportSupplementsCategoryPage.getSearchResultValue().isDisplayed());
+        sa.assertNotEquals(aeSportSupplementsCategoryPage.getSearchResultValue().getText(), "0", "The number of result is Zero");
+    }
+    @Test(description = "Healthy Food Category- Make sure that Sort By menu and its options appear correctly ", priority = 11)
+    public void verifySortByMenuAndItsOptionsAppearCorrectly() {
+        AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
+        ArrayList<String> expectedOption = new ArrayList<>() {{
+            add("Featured");
+            add("Name");
+            add("Best Selling");
+            add("Newly added items");
+            add("Price Min-Max");
+            add("Price Max-Min");
+        }};
+        Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
+        List<WebElement> options = select.getOptions();
+        for (int i = 0; i < options.size(); i++) {
+            Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
+        }
+    }
+    @Test(description = "Healthy Food Category- Make sure that the Best Selling option is selected by default in the Sort By menu ", priority = 12)
+    public void verifyBestSellingOptionIsSelectedByDefaultInSortByMenu() {
+        AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
+        Assert.assertEquals(select.getFirstSelectedOption().getText(), "Best Selling");
+    }
 //    //There's a bug here
-//    @Test(description = "Make sure each of the Healthy Food category image and Horizontal Banners appearing after sorting the products  ", priority = 12)
-//    public void verifyHealthyFoodCategoryImageAndHorizontalBannersAppearingAfterSortingTheProducts()  {
-//        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-//        this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-//        Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
-//        select.selectByVisibleText("Relevance");
-//        DataHelperAndWait.waitForTime(3000);
-//        DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage(), 5);
-//        Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
-//        DataHelperAndWait.waitForTime(3000);
-//        Assert.assertTrue(aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsSection().isDisplayed());
-//    }
+    @Test(description = "Healthy Food Category- Make sure each of the Healthy Food category image and Horizontal Banners appearing after sorting the products  ", priority = 13)
+    public void verifyHealthyFoodCategoryImageAndHorizontalBannersAppearingAfterSortingTheProducts()  {
+        AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
+        this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
+        select.selectByVisibleText("Price Min-Max");
+        DataHelperAndWait.waitForTime(3000);
+        Assert.assertTrue(aeHealthyFoodCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
+        DataHelperAndWait.waitForTime(3000);
+        Assert.assertTrue(aeHealthyFoodCategoryPage.getMainBannersInTheSportSupplementsSection().isDisplayed());
+    }
 //    //There's a bug here
-//    @Test(description = "Make sure Sort By Menu appears correctly in the page after sorting By Relevance  ", priority = 13)
-//    public void verifySortByMenuAppearingAfterSortingByRelevance() {
-//        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-//        this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-//        Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
-//        select.selectByVisibleText("Relevance");
-//        DataHelperAndWait.waitForTime(3000);
-//        Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
-//    }
-//    @Test(description = "Make sure Sort By Menu appears correctly in the page after sorting By Name  ", priority = 14)
-//    public void verifySortByMenuAppearingAfterSortingByName() {
-//        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-//        this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-//        Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
-//        select.selectByVisibleText("Name");
-//        DataHelperAndWait.waitForTime(3000);
-//        Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
-//    }
-//    @Test(description = "Make sure Sort By Menu appears correctly in the page after sorting By Best Selling  ", priority = 15)
-//    public void verifySortByMenuAppearingAfterSortingByBestSelling(){
-//        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-//        this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-//        Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
-//        select.selectByVisibleText("Best Selling");
-//        DataHelperAndWait.waitForTime(3000);
-//        Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
-//    }
-//    @Test(description = "Make sure Sort By Menu appears correctly in the page after sorting By Price Min-Max  ", priority = 16)
-//    public void verifySortByMenuAppearingAfterSortingByPriceMinMax() {
-//        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-//        this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-//        Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
-//        select.selectByVisibleText("Price Min-Max");
-//        DataHelperAndWait.waitForTime(3000);
-//        Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
-//    }
-//    @Test(description = "Make sure Sort By Menu appears correctly in the page after sorting By Price Max-Min  ", priority = 17)
-//    public void verifySortByMenuAppearingAfterSortingByPriceMaxMin(){
-//        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-//        this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-//        Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
-//        select.selectByVisibleText("Price Max-Min");
-//        DataHelperAndWait.waitForTime(3000);
-//        Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
-//    }
-//    @Test(description = "Make sure  the Healthy Food footer appears correctly  ", priority = 18)
-//    public void verifySportSupplementsFooterSectionAppearsCorrectly() {
-//        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-//        this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-//        Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsFooterSection().isDisplayed());
-//        Assert.assertEquals(aeSportSupplementsCategoryPage.getSportSupplementsFooterSection().getCssValue("background"), "rgb(242, 242, 242) none repeat scroll 0% 0% / auto padding-box border-box");
-//    }
-//    @Test(description = "Make sure the text appears in the Healthy Food footer appears correctly  ", priority = 19)
-//    public void verifyTheTextAppearInTheHealthyFoodFooterSectionAppearsCorrectly() {
-//        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-//        aeHealthyFoodCategoryPage= new AeHealthyFoodCategoryPage(webDriver);
-//        this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-//        Assert.assertEquals(aeSportSupplementsCategoryPage.getSportSupplementsTitleInFooterSection().getText(), "Healthy Food");
-//        Assert.assertEquals(aeHealthyFoodCategoryPage.getHealthyFoodDescriptionP1InFooterSection().getText()+aeHealthyFoodCategoryPage.getHealthyFoodDescriptionP2InFooterSection().getText()+aeHealthyFoodCategoryPage.getHealthyFoodDescriptionP3InFooterSection().getText()+aeHealthyFoodCategoryPage.getHealthyFoodDescriptionP4InFooterSection().getText(), "If you spend a lot of time researching, trying to eat healthy foods, have a dedicated diet or food restrictions, or consistently buy organic or non-GMO foods online, you probably know how hard it is to find what you need or at least to find it in one place.Although it has become much easier to find healthy foods in regular grocery stores, the options are still limited, particularly if you want to buy 100 percent healthy foods and organic products for your entire home. Even if there is a dedicated healthy food store in your area, Sporter can fill the gaps that your local store does not, or if you were looking for a certain brand that you like the most.\n" +
-//                "\n" +
-//                "Eating right and finding healthy foods online can be tough too, so we are here to help and make it easy with our high-quality collection of delicious, healthy food products. We offer responsible and nutrient-rich choices, including rice, oats, milk, natural food and sports snacks, detox teas, spices, gluten free baking products and more, so you can get the most out of your diet every day. Sporter is also great when you need dairy-free, soy-free, vegan, vegetarian, or gluten-free foods. No need to stand in an aisle to read the list of ingredients on your breakfast cereal, since you can click a button to see all the items that fit your criteria.You can shop healthy foods online any time of the day that works best for you, instead of fighting the crowds or trying to get to the grocery store before it closes.\n" +
-//                "Our products make your meals tastier and healthier in simple preparations. Our healthy products are loved by children and adults alike, which helps you prepare the best meal for the whole family. So buy branded and packaged food from our online store from the comfort of your homes and enjoy great recipes at a great price.");
-//    }
-//    @Test(description = "Verify that the search button works correctly from the Healthy Food category page", priority = 20)
-//    public void verifySearchBtnWorksCorrectlyFromHealthyFoodCategoryPage() {
-//        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-//        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
-//        this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-//        aeProductDetailsPage.searchForBundle();
-//        aeProductDetailsPage.getSearchBtn().click();
-//        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
-//        boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
-//        assertFalse(verifyTitle, "Page Not Found Is Displayed");
-//        boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
-//        assertFalse(isTheElementPresent, "The page is empty");
-//    }
-//
-//    @Test(description = "Verify that the previous page button is disable when the current page is page 1 ", priority = 21)
-//    public void verifyThePreviousBtnIsDisableWhenDisplayPage1() {
-//        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-//        this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-//        Assert.assertTrue(aeSportSupplementsCategoryPage.getDisabledPreviousPageBtn().isDisplayed());
-//    }
-//    @Test(description = "Make Sure the Pagination control works correctly", priority = 22)
-//    public void verifyThePaginationControlWorksCorrectly(){
-//        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-//        this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-//        aeSportSupplementsCategoryPage.navigateToPage2();
-//        DataHelperAndWait.waitForTime(3000);
-//        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
-//    }
-//    @Test(description = "Make Sure the previous page button works correctly", priority = 23)
-//    public void verifyPreviousPageBtnWorksCorrectly() {
-//        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-//        this.verifyThePaginationControlWorksCorrectly();
-//        aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
-//        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
-//    }
-//    @Test(description = "Make Sure the next page button works correctly", priority = 24)
-//    public void verifyNextPageBtnWorksCorrectly(){
-//        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-//        this.verifyThePaginationControlWorksCorrectly();
-//        aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-//        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
-//    }
-//    @Test(description = "Make Sure All Search Fields Inside Form Filtration Section Appears Correctly", priority = 25)
-//    public void verifyAllSearchFieldsInsideFormFiltrationSectionAppearsCorrectly() {
-//        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-//        this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-//        aeSportSupplementsCategoryPage.clickOnSeeAllBtnInFormSection();
-//        ArrayList<String> expectedFiltration = new ArrayList<>() {{
-//            add("Multi");
-//            add("Stew");
-//            add("Bars");
-//            add("Bites");
-//            add("Cakes & Brownies");
-//            add("Candies");
-//            add("Canned");
-//            add("Cereal");
-//            add("Cookies & Biscuits");
-//            add("Crisps");
-//            add("Dried");
-//            add("Effervescent");
-//            add("Fruit & Veg");
-//            add("Granulated");
-//            add("Gummies");
-//            add("Liquid");
-//            add("Nibs");
-//            add("Nuts");
-//            add("Popcorn");
-//            add("Powders");
-//            add("Sachet");
-//            add("Semi-Solid");
-//            add("Spray");
-//            add("Spread");
-//            add("Stick");
-//            add("Tablets");
-//            add("Tea Bags");
-//            add("Pods");
-//        }};
-//        for (int i = 0; i < aeSportSupplementsCategoryPage.getFormFiltrationSection().size(); i++) {
-//            System.out.println(aeSportSupplementsCategoryPage.getFormFiltrationSection().get(i).getText());
-//            Assert.assertEquals(aeSportSupplementsCategoryPage.getFormFiltrationSection().get(i).getText(), expectedFiltration.get(i));
-//        }
-//    }
-//    @Test(description = "Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Healthy Food category page", priority = 26)
-//    public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInHealthyFoodCategoryPage(){
-//        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-//        aeFooterPageTestCases= new AEFooterPageTestCases();
-//        this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-//        aeFooterPageTestCases.verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectly();
-//    }
-//    //Pagination control for all pages in the Healthy Food Category Pages
-//    @Test(description = "Make Sure the ability to access all pages inside Healthy Food Category Page  ", priority = 27)
-//    public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPage(){
-//        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-//        this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-//        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
-//        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn());}
-//    //There's a bug here due to the BreadCrumb is missing after sorting the products
-//    @Test(description = "Make sure that the BreadCrumb correctly after sorting the product ", priority = 28)
-//    public void verifyTheBreadCrumbAppearingCorrectlyAfterSortingTheProducts() {
-//        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-//        this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-//        Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
-//        select.selectByIndex(1);
-//        DataHelperAndWait.waitForTime(3000);
-//        Assert.assertTrue(aeSportSupplementsCategoryPage.getHomeBreadcrumbs().isDisplayed());
-//    }
-//    @Test(description = "Make sure ability to navigate to the home page by clicking on the sporter logo  ", priority = 29)
-//    public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromCartPage() {
-//        aeGuestUserPage = new AEGuestUserPage(webDriver);
-//        this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-//        aeGuestUserPage.clickOnSporterLogo();
-//        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL+aeSiteURL," The Current URL is not matched with the Cart URL" );
-//    }
-//}
+    @Test(description = "Healthy Food Category- Make sure Sort By Menu appears correctly in the page after sorting By Featured  ", priority = 14)
+    public void verifySortByMenuAppearingAfterSortingByRelevance() {
+        AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        aeHealthyFoodCategoryPage.navigate();
+        Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
+        select.selectByVisibleText("Featured");
+        DataHelperAndWait.waitForTime(3000);
+        Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
+    }
+    @Test(description = "Healthy Food Category- Make sure Sort By Menu appears correctly in the page after sorting By Product Name  ", priority = 15)
+    public void verifySortByMenuAppearingAfterSortingByName() {
+        AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        aeHealthyFoodCategoryPage.navigate();
+        Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
+        select.selectByVisibleText("Name");
+        DataHelperAndWait.waitForTime(3000);
+        Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
+    }
+    @Test(description = "Healthy Food Category- Make sure Sort By Menu appears correctly in the page after sorting By Best Selling  ", priority = 16)
+    public void verifySortByMenuAppearingAfterSortingByBestSelling(){
+        AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        aeHealthyFoodCategoryPage.navigate();
+        Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
+        select.selectByVisibleText("Best Selling");
+        DataHelperAndWait.waitForTime(3000);
+        Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
+    }
+    @Test(description = "Healthy Food Category- Make sure Sort By Menu appears correctly in the page after sorting By Price Min-Max  ", priority = 17)
+    public void verifySortByMenuAppearingAfterSortingByPriceMinMax() {
+        AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        aeHealthyFoodCategoryPage.navigate();
+        Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
+        select.selectByVisibleText("Price Min-Max");
+        DataHelperAndWait.waitForTime(3000);
+        Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
+    }
+    @Test(description = "Healthy Food Category- Make sure Sort By Menu appears correctly in the page after sorting By Price Max-Min  ", priority = 18)
+    public void verifySortByMenuAppearingAfterSortingByPriceMaxMin(){
+        AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        aeHealthyFoodCategoryPage.navigate();
+        Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
+        select.selectByVisibleText("Price Max-Min");
+        DataHelperAndWait.waitForTime(3000);
+        Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
+    }
+    @Test(description = "Healthy Food Category- Make sure that the BreadCrumb correctly after sorting the product ", priority = 19)
+    public void verifyTheBreadCrumbAppearingCorrectlyAfterSortingTheProducts() {
+        AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
+        aeHealthyFoodCategoryPage.navigate();
+        Assert.assertTrue(aeSportSupplementsCategoryPage.getHomeBreadcrumbs().isDisplayed());
+    }
+    @Test(description = "Healthy Food Category- Make sure  the Healthy Food footer appears correctly  ", priority = 20)
+    public void verifySportSupplementsFooterSectionAppearsCorrectly() {
+        AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
+        Assert.assertTrue(aeHealthyFoodCategoryPage.getSportSupplementsFooterSection().isDisplayed());
+        Assert.assertEquals(aeHealthyFoodCategoryPage.getSportSupplementsFooterSection().getCssValue("background"), "rgb(242, 242, 242) none repeat scroll 0% 0% / auto padding-box border-box");
+    }
+    @Test(description = "Healthy Food Category- Make sure the text appears in the Healthy Food footer appears correctly  ", priority = 21)
+    public void verifyTheTextAppearInTheHealthyFoodFooterSectionAppearsCorrectly() {
+        AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
+        aeHealthyFoodCategoryPage.navigate();
+        Assert.assertEquals(aeHealthyFoodCategoryPage.getSportSupplementsTitleInFooterSection().getText(), "Healthy Food");
+        Assert.assertTrue(aeHealthyFoodCategoryPage.getHealthyFoodDescriptionP1InFooterSection().getText().contains( "If you spend a lot of time researching, trying to eat healthy foods, have a dedicated diet or food restrictions, or consistently buy organic or non-GMO foods online, you probably" ));
+    }
+    @Test(description = "Healthy Food Category- Verify that the search button works correctly from the Healthy Food category page", priority = 22)
+    public void verifySearchBtnWorksCorrectlyFromHealthyFoodCategoryPage() {
+        AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        aeProductDetailsPage.searchForBundle();
+        aeProductDetailsPage.getSearchBtn().click();
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
+        aeHealthyFoodCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
+    }
+
+    @Test(description = "Healthy Food Category- Verify that the previous page button is disable when the current page is page 1 ", priority = 23)
+    public void verifyThePreviousBtnIsDisableWhenDisplayPage1() {
+        AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        aeHealthyFoodCategoryPage.navigate();
+        Assert.assertTrue(aeSportSupplementsCategoryPage.getDisabledPreviousPageBtn().isDisplayed());
+    }
+    @Test(description = "Healthy Food Category- Make Sure the Pagination control works correctly", priority = 24)
+    public void verifyThePaginationControlWorksCorrectly(){
+        AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        aeSportSupplementsCategoryPage.navigateToPage2();
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,7);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
+    }
+    @Test(description = "Healthy Food Category- Make Sure the previous page button works correctly", priority = 25)
+    public void verifyPreviousPageBtnWorksCorrectly() {
+        AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
+        Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
+    }
+    @Test(description = "Healthy Food Category- Make Sure the next page button works correctly", priority = 26)
+    public void verifyNextPageBtnWorksCorrectly(){
+        AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        aeSportSupplementsCategoryPage.clickOnNextPageBtn();
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,7);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
+    }
+    @Test(description = "Healthy Food Category- Make Sure the Filtration Section Appears Correctly", priority = 27)
+    public void verifyAllSearchFieldsInsideFormFiltrationSectionAppearsCorrectly() {
+        AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        aeSportSupplementsCategoryPage.clickOnSeeAllBtnInFormSection();
+        ArrayList<String> expectedFiltration = new ArrayList<>() {{
+            add("Multi");
+            add("Stew");
+            add("Bars");
+            add("Bites");
+            add("Cakes & Brownies");
+            add("Candies");
+            add("Canned");
+            add("Cereal");
+            add("Cookies & Biscuits");
+            add("Crisps");
+            add("Dried");
+            add("Effervescent");
+            add("Fruit & Veg");
+            add("Granulated");
+            add("Gummies");
+            add("Liquid");
+            add("Nibs");
+            add("Nuts");
+            add("Popcorn");
+            add("Powders");
+            add("Sachet");
+            add("Semi-Solid");
+            add("Spray");
+            add("Spread");
+            add("Stick");
+            add("Tablets");
+            add("Tea Bags");
+            add("Pods");
+        }};
+        for (int i = 0; i < aeSportSupplementsCategoryPage.getFormFiltrationSection().size(); i++) {
+            DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getFormFiltrationSection().get(i),5,webDriver);
+            Assert.assertTrue(aeSportSupplementsCategoryPage.getFormFiltrationSection().get(i).isDisplayed());
+        }
+    }
+    @Test(description = "Healthy Food Category- Make sure all secure tabs appears correctly(100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks)", priority = 28)
+    public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInHealthyFoodCategoryPage(){
+        AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
+        Assert.assertTrue(aeHealthyFoodCategoryPage.getPageBottomSection().isDisplayed());
+        for (int i = 0; i < aeHealthyFoodCategoryPage.getPageBottomBlocksList().size(); i++) {
+            Assert.assertTrue(aeHealthyFoodCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
+            switch (i) {
+                case 0:
+                    Assert.assertEquals(aeHealthyFoodCategoryPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
+                    Assert.assertEquals(aeHealthyFoodCategoryPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                case 1:
+                    Assert.assertEquals(aeHealthyFoodCategoryPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
+                    Assert.assertEquals(aeHealthyFoodCategoryPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                case 2:
+                    Assert.assertEquals(aeHealthyFoodCategoryPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
+                    Assert.assertEquals(aeHealthyFoodCategoryPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
+            }
+        }
+    }
+    //Pagination control for all pages in the Healthy Food Category Pages
+    @Test(groups = "Smoke Testing Report",description = "Healthy Food Category- Make Sure the ability to access all pages inside Healthy Food Category Page  ", priority = 29)
+    public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPage(){
+        AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
+        aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        aeHealthyFoodCategoryPage.navigate();
+        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);}
+    //There's a bug here due to the BreadCrumb is missing after sorting the products
+
+    @Test(description = "Healthy Food Category- Make sure ability to navigate to the home page by clicking on the sporter logo  ", priority = 30)
+    public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromCartPage() {
+        AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
+        aeGuestUserPage = new AEGuestUserPage(webDriver);
+        this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeGuestUserPage.clickOnSporterLogo();
+        Assert.assertEquals(webDriver.getCurrentUrl(), aeHealthyFoodCategoryPage.siteURL+aeHealthyFoodCategoryPage.aeSiteURL," The Current URL is not matched with the Cart URL" );
+    }
+}

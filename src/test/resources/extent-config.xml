@@ -20,7 +20,8 @@
         <!-- report name - displayed at top-nav -->
         <reportName>Sporter Web Automation
             <![CDATA[
-                <img src='C:\Users\w.jumaa\Desktop\Logo1.PNG' />
+<!--                <img src='C:\Users\w.jumaa\Desktop\Logo1.PNG' />-->
+<!--                <img src='https://www.sporter.com/static/version1672030940/frontend/sporter/sporter2020/en_US/images/logo.svg' />-->
             ]]>
         </reportName>
 
@@ -43,12 +44,39 @@
             <![CDATA[
         $(document).ready(function() {
 
-        $('.logo-container.blue.darken-2').css('display','none');
+            $('.logo-container.blue.darken-2').css('display','none');
+<!--            $('.charts > div:nth-child(2)').hide();-->
+<!--            $('.total-steps').parent().hide();-->
+              $('#dashboard-view > div.time-totals > div:nth-child(2) > div > span.panel-name').html("Total Scenarios");
+              $('#dashboard-view > div.charts > div:nth-child(2) > div > div:nth-child(1) > span').html("Scenarios View");
+              $('#test-details-wrapper > div > div > div.step-filters.right').hide();
+              $('#tests-toggle > li.skip').hide();
+              $('body > nav > ul.right.hide-on-med-and-down.nav-right > li:nth-child(3) > span').hide();
+<!--            $('#slide-out > li.analysis.waves-effect.active > a').click();-->
+<!--            $('#enableDashboard').click();-->
+              $('#test-view > div.col._addedCell1 > div > div.card-panel.heading > h5').html("Test Cases");
+           $('body > nav > ul.right.hide-on-med-and-down.nav-right > li.theme-selector > i').text(" Dark/Light Theme");
+              $('#dashboard-view > div.system-view > div').hide();
+
+
+
+              $('#dashboard-view > div.category-summary-view > div').hide();
+
+
+
+
+           $('#slide-out > li:nth-child(4)').click();
+
+
+
+
 
         });
-      ]]>
-        </scripts>
 
+      ]]>
+
+
+        </scripts>
         <!-- custom styles -->
 <!--        <styles>-->
 <!--            <![CDATA[-->
@@ -60,6 +88,7 @@
 
            .report-name { padding-left: 20px;width: auto;display: revert; font-size:20px } .report-name > img { float: left;height: 90%;margin-left: 2px;margin-top: 2px;width: auto; }
            .report-headline {font-size:20px}
+
 
 
 

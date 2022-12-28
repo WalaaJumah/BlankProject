@@ -12,6 +12,14 @@ import org.testng.annotations.Parameters;
 public class BaseTest {
 //    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
+//    @Parameters({"environment"})
+//
+//    public BaseTest(@Optional("production") String environment) throws Exception {
+//      this.setupBrowser(environment);
+//        }
+
+
+
 //    public  String siteURL = "https://www.sporter.com";
     public final String aeDomain = "/en-ae";
     public final String websiteEnglishLanguage = "/en";
@@ -20,14 +28,13 @@ public class BaseTest {
     public final String stgSiteURL = "https://stg.sporter.com";
     public final String stgTestSiteURL = "https://stg-test.sporter.com";
     public final String staging2SiteURL = "https://staging2.sporter.com";
-    public final String cartURL= "/en-ae/checkout/cart/";
+    public final String cartURL= "/checkout/cart/";
     public final String aeSiteURL = "/en-ae/";
     public final String ksaSiteURL = "/en-sa/";
     public final String qaterSiteURL = "/en-qa/";
     public final String checkoutLoginStepURL = "/en-ae/checkout/#checkout-login-step";
     public final String freeCouponeCode= "spo15";
     public final String discaountCouponeCode= "";
-    public final String outOfStockProduct = "/en-ae/healthy-food/snacks-drinks/spreads/gymqueen-smooth-peanut-butter-spread";
     public final String product = "/en-ae/optimum-gold-standard-100-whey";
     public static String environmentName;
     public  WebDriver webDriver;
@@ -63,9 +70,11 @@ public class BaseTest {
 //    }
 
     // The Below Method to run the TCs on Onc Browser like Chrome
-    @BeforeClass
+
+    @BeforeClass(alwaysRun = true)
     @Parameters({"environment"})
     public void setupBrowser( String environment) throws Exception {
+        System.out.println("SetUp Browser method");
         environmentName=environment;
         //This ChromeWebDriver 108
 
@@ -104,7 +113,15 @@ public class BaseTest {
 
         }
     }
+//    @BeforeGroups(groups = "Smoke Testing Report")
+//    @Parameters({"environment"})
+//
+//    public void setupBrowserForGroup(String environment) throws Exception {
+//        this.setupBrowser( environment);}
 
     @AfterClass(alwaysRun = true)
-    public void tearDown()  {webDriver.quit();}
+    public void tearDown()  {
+        if(webDriver != null)
+        webDriver.quit();
+    }
 }
