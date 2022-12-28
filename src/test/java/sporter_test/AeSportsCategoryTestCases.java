@@ -23,6 +23,12 @@ public class AeSportsCategoryTestCases extends BaseTest {
     public void switchToUaeStore(){
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeWomenOnlyCategoryPage.switchToAECountry();
+        if(webDriver.getCurrentUrl().contains(aeWomenOnlyCategoryPage.aeDomain)){
+            System.out.println("You are in UAE Store");
+        }
+        else {
+            aeWomenOnlyCategoryPage.switchToAECountry();
+        }
     }
     @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure clicking on the Sports Category Appears In MegaMenu Redirect User To CorrectURL", priority = 1)
     public void verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL() {
@@ -52,15 +58,16 @@ public class AeSportsCategoryTestCases extends BaseTest {
     @Test(description = "Sports Category- Make sure the Footer section appears correctly in the Sports category page", priority = 3)
     public void verifyFooterSectionAppearsCorrectlyInSportsCategoryPage() {
          AEFooterPage eFooterPage = new AEFooterPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
+        aeSportsCategoryPage.navigateToSportsPage();
         Assert.assertTrue(eFooterPage.getFooterSection().isDisplayed());
     }
 
     @Test(description = "Sports Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Sports category page", priority = 4)
         public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInSportsCategoryPage() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
+        aeSportsCategoryPage.navigateToSportsPage();
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
         for (int i = 0; i < aeSportSupplementsCategoryPage.getPageBottomBlocksList().size(); i++) {
@@ -82,7 +89,8 @@ public class AeSportsCategoryTestCases extends BaseTest {
     @Test(description = "Sports Category- Make sure the Got A Question blocks appears correctly in the Sports category page", priority = 5)
     public void verifyGotAQuestionSectionAppearsCorrectlyInSportsCategoryPage() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
+        aeSportsCategoryPage.navigateToSportsPage();
         Assert.assertTrue(ksaHomePage.getQuestionBlock().isDisplayed());
         Assert.assertTrue(ksaHomePage.getPhoneBtn().isDisplayed());
         Assert.assertTrue(ksaHomePage.getEmailBtn().isDisplayed());
@@ -91,7 +99,8 @@ public class AeSportsCategoryTestCases extends BaseTest {
     @Test(description = "Sports Category- Make sure the Ability to click on email button that appears in the Got A Question section from Sports Category Page ", priority = 6)
     public void verifyAbilityToClickOnEmailBtnInGotQuestionSectionFromSportsCategoryPage() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
+        aeSportsCategoryPage.navigateToSportsPage();
         ksaHomePage.clickOnEmailBtn();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("contacts-us"));
         ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -99,14 +108,16 @@ public class AeSportsCategoryTestCases extends BaseTest {
     @Test(description = "Sports Category- Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Sports Category Page ", priority = 8)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumbAppearingInSportsCategoryPage() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
+        aeSportsCategoryPage.navigateToSportsPage();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
         Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSportSupplementsCategoryPage.aeDomain+"/");
     }
     @Test(description = "Sports Category- Make sure the rotating slider section is displayed in Sports Category page correctly ", priority = 9)
     public void verifyRotatingSliderIsDisplayedInTheSportsCategoryPage() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
+        aeSportsCategoryPage.navigateToSportsPage();
         Assert.assertTrue(ksaHomePage.getHomePageRotatingSlider().isDisplayed());
         for (int i = 0; i < ksaHomePage.getHomePageRotatingSliderList().size(); i++) {
             Assert.assertTrue(ksaHomePage.getHomePageRotatingSliderList().get(i).isDisplayed());
@@ -115,19 +126,22 @@ public class AeSportsCategoryTestCases extends BaseTest {
     @Test(description = "Sports Category- Make sure the next arrow of the rotating slider section is displayed in the Sports Category Page", priority = 10)
     public void verifyNextArrowOfRotatingSliderIsDisplayedInTheSportsCategoryPage() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
+        aeSportsCategoryPage.navigateToSportsPage();
         Assert.assertTrue(ksaHomePage.getNextArrowInHomePageRotatingSlider().isDisplayed());
     }
         @Test(description = "Sports Category- Make sure the previous arrow of the rotating slider section is displayed in the Sports Category Page ", priority = 11)
     public void verifyPreviousArrowOfRotatingSliderIsDisplayedInTheSportsCategoryPage() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-        Assert.assertTrue(ksaHomePage.getPreviousArrowInHomePageRotatingSlider().isDisplayed());
+            AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
+            aeSportsCategoryPage.navigateToSportsPage();
+            Assert.assertTrue(ksaHomePage.getPreviousArrowInHomePageRotatingSlider().isDisplayed());
     }
     @Test(description = "Sports Category- Make sure the pagination control of rotating slider section is displayed in Sports Category Page", priority = 12)
     public void verifyPaginationControlOfRotatingSliderSectionIsDisplayedInTheSportsCategoryPage() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
+        aeSportsCategoryPage.navigateToSportsPage();
         Assert.assertTrue(ksaHomePage.getHomePageRotatingSliderPagingControl().isDisplayed());
         for (int i = 0; i < ksaHomePage.getHomePageRotatingSliderPagingList().size(); i++) {
             Assert.assertTrue(ksaHomePage.getHomePageRotatingSliderPagingList().get(i).isDisplayed());
@@ -136,13 +150,15 @@ public class AeSportsCategoryTestCases extends BaseTest {
     @Test(description = "Sports Category- Make sure the side Banners is displayed in the Sports Category Page ", priority = 13)
     public void verifySideBannersIsDisplayedInTheSportsCategoryPage() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
+        aeSportsCategoryPage.navigateToSportsPage();
         Assert.assertTrue(ksaHomePage.getHomePageSideBanner().isDisplayed());
     }
     @Test(description = "Sports Category- Make sure the pagination control of rotating slider section works correctly in Sports Category Page", priority = 14)
     public void verifyPaginationControlOfRotatingSliderSectionWorksCorrectlyInTheSportsCategoryPage() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
+        aeSportsCategoryPage.navigateToSportsPage();
         for (int i = 0; i < aeVitaminsAndHealthCategoryPage.getPagerOfRotatingSlider().size(); i++) {
             aeVitaminsAndHealthCategoryPage.getPagerOfRotatingSlider().get(i).click();
             Assert.assertEquals(aeVitaminsAndHealthCategoryPage.getPagerOfRotatingSlider().get(i).getAttribute("class"),"flex-active");
@@ -151,7 +167,8 @@ public class AeSportsCategoryTestCases extends BaseTest {
     @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure the clicking on the banners appear in rotating slider section works correctly in Sports Category Page", priority = 15)
     public void verifyClickingOnTheBannersAppearingInRotatingSliderSectionWorksCorrectlyInTheSportsCategoryPage() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
+        aeSportsCategoryPage.navigateToSportsPage();
         for (int i = 0; i < aeVitaminsAndHealthCategoryPage.getPagerOfRotatingSlider().size(); i++) {
             aeVitaminsAndHealthCategoryPage.getPagerOfRotatingSlider().get(i).click();
             aeVitaminsAndHealthCategoryPage.getBannerInRotatingSliderSection().click();
@@ -162,7 +179,8 @@ public class AeSportsCategoryTestCases extends BaseTest {
     @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure the clicking on the first side banner works correctly in Sports Category Page", priority = 16)
     public void verifyClickingOnTheFirstSideBannersWorksCorrectlyInTheSportsCategoryPage() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
+        aeSportsCategoryPage.navigateToSportsPage();
         String expectedBannerUrl=aeVitaminsAndHealthCategoryPage.getFirstSideBanner().getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getFirstSideBanner().click();
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -172,7 +190,8 @@ public class AeSportsCategoryTestCases extends BaseTest {
     @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure clicking on the second side banner works correctly in Sports Category Page", priority = 17)
     public void verifyClickingOnTheSecondSideBannersWorksCorrectlyInTheSportsCategoryPage() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
+        aeSportsCategoryPage.navigateToSportsPage();
         String expectedBannerUrl=aeVitaminsAndHealthCategoryPage.getSecondSideBanner().getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getSecondSideBanner().click();
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -183,7 +202,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
     public void verifyTrendingInSportsInTheSportsCategoryPageIsDisplayed() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeSportsCategoryPage.navigateToSportsPage();
         Assert.assertTrue(aeSportsCategoryPage.getTrendingInSportsSectionTitle().isDisplayed());
         Assert.assertTrue(aeSportsCategoryPage.getTrendingInSportsSection().isDisplayed());    }
 
@@ -191,7 +210,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
     public void verifyNextButtonAppearsInTheTrendingInSportsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage=new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeSportsCategoryPage.navigateToSportsPage();
         Assert.assertTrue(aeSportsCategoryPage.getMensApparelCategory().isDisplayed());
         Assert.assertTrue(aeSportsCategoryPage.getWomenApparelCategory().isDisplayed());
         Assert.assertTrue(aeSportsCategoryPage.getYogaApparelCategory().isDisplayed());
@@ -213,53 +232,54 @@ public class AeSportsCategoryTestCases extends BaseTest {
     public void verifyPreviousButtonAppearsInTheTrendingInSportsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage=new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeSportsCategoryPage.navigateToSportsPage();
         Assert.assertTrue(aeSportsCategoryPage.getMensApparelCategory().isDisplayed());
         aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
         aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
         aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
         DataHelperAndWait.waitToBeVisible(aeSportsCategoryPage.getPersonalCareApparelCategory(),5,webDriver);
-        Assert.assertTrue(aeSportsCategoryPage.getPersonalCareApparelCategory().isDisplayed());
-        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-        Assert.assertTrue(aeSportsCategoryPage.getWearableTechApparelCategory().isDisplayed());
-        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-        Assert.assertTrue(aeSportsCategoryPage.getToysAndGamesCategory().isDisplayed());
-        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-        Assert.assertTrue(aeSportsCategoryPage.getCricketApparelCategory().isDisplayed());
-        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-        Assert.assertTrue(aeSportsCategoryPage.getMmaApparelCategory().isDisplayed());
-        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-        Assert.assertTrue(aeSportsCategoryPage.getSwimmingApparelCategory().isDisplayed());
-        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-        Assert.assertTrue(aeSportsCategoryPage.getYogaApparelCategory().isDisplayed());
-        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-        Assert.assertTrue(aeSportsCategoryPage.getWomenApparelCategory().isDisplayed());
+//        Assert.assertTrue(aeSportsCategoryPage.getPersonalCareApparelCategory().isDisplayed());
+//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
+//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
+//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
+//        Assert.assertTrue(aeSportsCategoryPage.getWearableTechApparelCategory().isDisplayed());
+//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
+//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
+//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
+//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
+//        Assert.assertTrue(aeSportsCategoryPage.getToysAndGamesCategory().isDisplayed());
+//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
+//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
+//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
+//        Assert.assertTrue(aeSportsCategoryPage.getCricketApparelCategory().isDisplayed());
+//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
+//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
+//        Assert.assertTrue(aeSportsCategoryPage.getMmaApparelCategory().isDisplayed());
+//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
+//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
+//        Assert.assertTrue(aeSportsCategoryPage.getSwimmingApparelCategory().isDisplayed());
+//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
+//        Assert.assertTrue(aeSportsCategoryPage.getYogaApparelCategory().isDisplayed());
+//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
+//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
+//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
+//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
+//        Assert.assertTrue(aeSportsCategoryPage.getWomenApparelCategory().isDisplayed());
     }
     //Men's Apparel section Test Cases
     @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure clicking on the Men's Apparel category inside Trending in Sports section works correctly ", priority = 21)
     public void verifyClickingOnMensApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeSportsCategoryPage.navigateToSportsPage();
     aeSportsCategoryPage.getMensApparelCategory().click();
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     @Test(description = "Sports Category- Make sure that the Result label and its value appear correctly in the Men's Apparel category page ", priority = 22)
     public void verifyResultFieldAndItsVaLueAppearInTheMensApparelCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnMensApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
+        AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
+        aeSportsCategoryPage.navigateToSportsPage();
         SoftAssert sa = new SoftAssert();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getResultLabel().getText(), "Results:");
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSearchResultValue().isDisplayed());
@@ -391,7 +411,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
     public void verifyClickingOnWomenApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeSportsCategoryPage.navigateToSportsPage();
 //        String expectedCategoryUrl=aeSportsCategoryPage.getWomenApparelCategory().getAttribute("href");
         aeSportsCategoryPage.getWomenApparelCategory().click();
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -528,7 +548,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
     public void verifyClickingOnYogaApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeSportsCategoryPage.navigateToSportsPage();
 //        String expectedCategoryUrl=aeSportsCategoryPage.getYogaApparelCategory().getAttribute("href");
         aeSportsCategoryPage.getYogaApparelCategory().click();
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -682,7 +702,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
     public void verifyClickingOnSwimmingApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeSportsCategoryPage.navigateToSportsPage();
 //        String expectedCategoryUrl=aeSportsCategoryPage.getSwimmingApparelCategory().getAttribute("href");
         aeSportsCategoryPage.getSwimmingApparelCategory().click();
         aeSportsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -826,7 +846,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
     public void verifyClickingOnMmaApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeSportsCategoryPage.navigateToSportsPage();
         String expectedCategoryUrl=aeSportsCategoryPage.getMmaApparelCategory().getAttribute("href");
         aeSportsCategoryPage.getMmaApparelCategory().click();
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -982,7 +1002,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
     public void verifyClickingOnCricketApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeSportsCategoryPage.navigateToSportsPage();
 //        String expectedCategoryUrl=aeSportsCategoryPage.getCricketApparelCategory().getAttribute("href");
         aeSportsCategoryPage.clickOnCricketCategory(webDriver);
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -1138,7 +1158,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
     public void verifyClickingOnToysAndGamesCategoryInsideTheTrendingInSportsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeSportsCategoryPage.navigateToSportsPage();
         aeSportsCategoryPage.clickOnToysAndGamesCategory(webDriver);
         aeSportsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         DataHelperAndWait.waitForUrlContains(aeSportsCategoryPage.toysAndGamesUrl,webDriver,5);
@@ -1280,7 +1300,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
     public void verifyClickingOnWearableTechCategoryInsideTheTrendingInSportsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeSportsCategoryPage.navigateToSportsPage();
         aeSportsCategoryPage.clickOnWearableTechApparelCategory(webDriver);
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         DataHelperAndWait.waitForUrlContains(aeSportsCategoryPage.wearableTechUrl,webDriver,5);
@@ -1425,7 +1445,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
     public void verifyClickingOnPersonalCareCategoryInsideTheTrendingInSportsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeSportsCategoryPage.navigateToSportsPage();
         aeSportsCategoryPage.clickOnPersonalCareCategory(webDriver);
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -1565,7 +1585,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
     @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure Men category section is displayed in the Sports Category Page ", priority = 147)
     public void verifyMenCategorySectionIsDisplayedCorrectlyInTheSportsCategoryPage(){
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeSportsCategoryPage.navigateToSportsPage();
         Assert.assertTrue(aeSportsCategoryPage.getMenCategory().isDisplayed());
 
     }
@@ -1573,7 +1593,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
     public void verifyClickingOnMenCategoryFromSportsCategoryPageWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeSportsCategoryPage.navigateToSportsPage();
         String expectedCategoryUrl=aeSportsCategoryPage.getMenCategory().getAttribute("href");
         aeSportsCategoryPage.getMenCategory().click();
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -1715,7 +1735,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
     @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure Women category section is displayed in the Sports Category Page ", priority = 162)
     public void verifyWomenCategorySectionIsDisplayedCorrectlyInTheSportsCategoryPage(){
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeSportsCategoryPage.navigateToSportsPage();
         Assert.assertTrue(aeSportsCategoryPage.getWomenCategory().isDisplayed());
 
     }
@@ -1723,7 +1743,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
     public void verifyClickingOnWomenCategoryFromSportsCategoryPageWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeSportsCategoryPage.navigateToSportsPage();
         String expectedCategoryUrl=aeSportsCategoryPage.getWomenCategory().getAttribute("href");
         aeSportsCategoryPage.getWomenCategory().click();
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -1865,7 +1885,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
     @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure Sports Tech category section is displayed in the Sports Category Page ", priority = 177)
     public void verifySportsTechCategorySectionIsDisplayedCorrectlyInTheSportsCategoryPage(){
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeSportsCategoryPage.navigateToSportsPage();
         Assert.assertTrue(aeSportsCategoryPage.getSportsTechCategory().isDisplayed());
 
     }
@@ -1873,7 +1893,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
     public void verifyClickingOnSportsTechCategoryFromSportsCategoryPageWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeSportsCategoryPage.navigateToSportsPage();
         String expectedCategoryUrl=aeSportsCategoryPage.getSportsTechCategory().getAttribute("href");
         aeSportsCategoryPage.getSportsTechCategory().click();
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -2015,7 +2035,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
     @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure Kids category section is displayed in the Sports Category Page ", priority = 192)
     public void verifyKidsCategorySectionIsDisplayedCorrectlyInTheSportsCategoryPage(){
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeSportsCategoryPage.navigateToSportsPage();
         Assert.assertTrue(aeSportsCategoryPage.getKidsCategory().isDisplayed());
 
     }
@@ -2023,7 +2043,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
     public void verifyClickingOnKidsCategoryFromSportsCategoryPageWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeSportsCategoryPage.navigateToSportsPage();
         String expectedCategoryUrl=aeSportsCategoryPage.getKidsCategory().getAttribute("href");
         aeSportsCategoryPage.getKidsCategory().click();
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -2166,7 +2186,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
     @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure Sports category section is displayed in the Sports Category Page ", priority = 207)
     public void verifySportsCategorySectionIsDisplayedCorrectlyInTheSportsCategoryPage(){
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeSportsCategoryPage.navigateToSportsPage();
         Assert.assertTrue(aeSportsCategoryPage.getSportsCategory().isDisplayed());
 
     }
@@ -2174,7 +2194,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
     public void verifyClickingOnSportsCategoryFromSportsCategoryPageWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeSportsCategoryPage.navigateToSportsPage();
         String expectedCategoryUrl=aeSportsCategoryPage.getSportsCategory().getAttribute("href");
         aeSportsCategoryPage.getSportsCategory().click();
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -2316,27 +2336,27 @@ public class AeSportsCategoryTestCases extends BaseTest {
     @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure the Recommended Products section is displayed in the Sports Category Page ", priority = 222)
     public void verifyRecommendedProductsSectionIsDisplayedInTheSportsSection() {
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeSportsCategoryPage.navigateToSportsPage();
         Assert.assertEquals(aeSportsCategoryPage.getRecommendedProductsTitleSection().getText(),"Recommended Products","The Recommended Products section incorrect title");
         Assert.assertTrue(aeSportsCategoryPage.getRecommendedProductsSection().isDisplayed());
     }
     @Test(description = "Sports Category- Make sure the previous arrow icon is not appear by default in the Recommended Products section ", priority = 223)
     public void verifyPreviousArrowButtonInRecommendedProductsSectionIsNotDisplayedByDefault() {
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeSportsCategoryPage.navigateToSportsPage();
         Assert.assertTrue(aeSportsCategoryPage.getPreviousIconInRecommendedProductsSection().isDisplayed());
     }
     @Test(description = "Sports Category- Make sure clicking on Next Button in the Recommended Products section works correctly", priority = 224,enabled = false)
     public void verifyClickingOnNextIconInRecommendedProductsSectionWorksCorrectly() {
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeSportsCategoryPage.navigateToSportsPage();
         aeSportsCategoryPage.getNextIconInRecommendedProductsSection().click();
         Assert.assertTrue(aeSportsCategoryPage.getLastProductInRecommendedProductsSection().isDisplayed());
     }
     @Test(description = "Sports Category- Make sure clicking on Previous Button in the Recommended Products section works correctly", priority = 225,enabled = false)
     public void verifyClickingOnPreviousIconInRecommendedProductsSectionWorksCorrectly() {
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeSportsCategoryPage.navigateToSportsPage();
         aeSportsCategoryPage.getNextIconInRecommendedProductsSection().click();
         aeSportsCategoryPage.getPreviousIconInRecommendedProductsSection().click();
         Assert.assertFalse(aeSportsCategoryPage.getPreviousIconInRecommendedProductsSection().isDisplayed());
@@ -2345,7 +2365,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
     public void verifyClickingOnProductCardInsideRecommendedProductsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeSportsCategoryPage.navigateToSportsPage();
         aeSportsCategoryPage.getProductCardInRecommendedProductsSection().click();
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -2480,7 +2500,8 @@ public class AeSportsCategoryTestCases extends BaseTest {
     @Test(description = "Sports Category- Make sure the Ability to click on phone button that appears in the Got A Question section correctly from Sports Category Page ", priority = 241)
     public void verifyAbilityToClickOnPhoneBtnInGotQuestionSectionFromSportsCategoryPage() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
-        this.verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
+        aeSportsCategoryPage.navigateToSportsPage();
         ksaHomePage.clickOnPhoneBtn();
         // store window handles in Set
 //        String myWindowHandle = webDriver.getWindowHandle();

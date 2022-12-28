@@ -128,6 +128,9 @@ public class AEGuestUserPage extends BasePage {
         DataHelperAndWait.waitToBeVisible(registerAtSporterOption,5,webDriver);
         return registerAtSporterOption;
     }
+    public WebElement getContinueBtn() {
+        return continueBtn;
+    }
 
     public WebElement getCityMenu() {
         DataHelperAndWait.waitToBeVisible(cityMenu,5,webDriver);
@@ -135,7 +138,7 @@ public class AEGuestUserPage extends BasePage {
     }
 
     public WebElement getShippingMethodSection() {
-        DataHelperAndWait.waitToBeVisible(shippingMethodSection,10,webDriver);
+        DataHelperAndWait.waitToBeVisible(shippingMethodSection,6,webDriver);
         return shippingMethodSection;
     }
 
@@ -244,23 +247,26 @@ public class AEGuestUserPage extends BasePage {
     //Define the main actions we need to execute our TCs
     public void switchToAECountry() {
         try {
-            DataHelperAndWait.isDisplayed(countryList, 3,webDriver);
+            DataHelperAndWait.waitToBeVisible(countryList, 5,webDriver);
             this.countryList.click();
+            DataHelperAndWait.waitToBeVisible(aeCountry, 5,webDriver);
             this.aeCountry.click();
         } catch (Exception e) {
-            DataHelperAndWait.isDisplayed(countryList, 5,webDriver);
+            DataHelperAndWait.waitToBeVisible(countryList, 5,webDriver);
             this.countryList.click();
+            DataHelperAndWait.waitToBeVisible(aeCountry, 5,webDriver);
             this.aeCountry.click();
         }
+
     }
 
     public void clickOnCartIcon() {
-        DataHelperAndWait.waitToBeVisible(carticon, 5,webDriver);
+        DataHelperAndWait.waitToBeVisible(carticon, 6,webDriver);
         this.carticon.click();
     }
 
     public void clickOnProceedCheckoutBtnInCartPopup() {
-        DataHelperAndWait.waitToBeClickable(proceedCheckoutBtnInCartPopup, 3,webDriver);
+        DataHelperAndWait.waitToBeClickable(proceedCheckoutBtnInCartPopup, 6,webDriver);
         this.proceedCheckoutBtnInCartPopup.click();
     }
 
@@ -310,19 +316,26 @@ public class AEGuestUserPage extends BasePage {
 
     public void fillInShippingInformationInputField(String firstName, String lastName, String email, String phone, String address, String streetLineOne, String streetLineTwo) {
         DataHelperAndWait.waitToBeVisible(firstNameField, 5,webDriver);
-        firstNameField.sendKeys(firstName);
+        DataHelperAndWait.updateAllText(firstNameField,firstName);
+//        firstNameField.sendKeys(firstName);
         DataHelperAndWait.waitToBeVisible(lastNameField, 5,webDriver);
-        lastNameField.sendKeys(lastName);
+//        lastNameField.sendKeys(lastName);
+        DataHelperAndWait.updateAllText(lastNameField,lastName);
         DataHelperAndWait.waitToBeVisible(emailField, 5,webDriver);
-        emailField.sendKeys(email);
+//        emailField.sendKeys(email);
+        DataHelperAndWait.updateAllText(emailField,email);
         DataHelperAndWait.waitToBeVisible(phoneField, 5,webDriver);
-        phoneField.sendKeys(phone);
+        DataHelperAndWait.updateAllText(phoneField,phone);
+//        phoneField.sendKeys(phone);
         DataHelperAndWait.waitToBeVisible(addressField, 5,webDriver);
-        addressField.sendKeys(address);
+        DataHelperAndWait.updateAllText(addressField,address);
+//        addressField.sendKeys(address);
         DataHelperAndWait.waitToBeVisible(streetLineOneField, 5,webDriver);
-        streetLineOneField.sendKeys(streetLineOne);
+        DataHelperAndWait.updateAllText(streetLineOneField,streetLineOne);
+//        streetLineOneField.sendKeys(streetLineOne);
         DataHelperAndWait.waitToBeVisible(streetLineTwoField, 5,webDriver);
-        streetLineTwoField.sendKeys(streetLineTwo);
+        DataHelperAndWait.updateAllText(streetLineTwoField,streetLineOne);
+//        streetLineTwoField.sendKeys(streetLineTwo);
     }
 
     public void clickOnContinueBtn() {

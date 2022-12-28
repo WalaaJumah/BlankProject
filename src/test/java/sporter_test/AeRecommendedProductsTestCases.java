@@ -14,6 +14,12 @@ public class AeRecommendedProductsTestCases extends BaseTest {
     public void switchToAeStore() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.switchToAECountry();
+        if(webDriver.getCurrentUrl().contains(aeProductDetailsPage.aeDomain)){
+            System.out.println("You are in UAE Store");
+        }
+        else {
+            aeProductDetailsPage.switchToAECountry();
+        }
     }
 
     @Test(groups = "Smoke Testing Report",description = "Recommended Products Pop-up- Make sure the keep shopping button appearing the Recommended products works correctly ", priority = 2)

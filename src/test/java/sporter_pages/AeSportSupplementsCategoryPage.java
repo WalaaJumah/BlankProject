@@ -145,8 +145,14 @@ public class AeSportSupplementsCategoryPage extends BasePage {
         return sportSupplementsCategoryInHomePage;
     }
     public WebElement getResultLabel() {
-        DataHelperAndWait.waitToBeVisible(resultLabel,6,webDriver);
-        return resultLabel;
+        try{
+        DataHelperAndWait.waitToBeVisible(resultLabel,7,webDriver);
+        return resultLabel;}
+        catch(Exception e) {
+            DataHelperAndWait.waitToBeVisible(resultLabel,7,webDriver);
+            return resultLabel;
+        }
+
     }
     public WebElement getSearchResultValue() {
         DataHelperAndWait.waitToBeVisible(searchResultValue,5,webDriver);

@@ -25,6 +25,12 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
 public void switchToUaeStore(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
     aeSportSupplementsCategoryPage.switchToAECountry();
+    if(webDriver.getCurrentUrl().contains(aeSportSupplementsCategoryPage.aeDomain)){
+        System.out.println("You are in UAE Store");
+    }
+    else {
+        aeSportSupplementsCategoryPage.switchToAECountry();
+    }
 }
     @Test(groups = "Smoke Testing Report",description = "Sports Supplements Category- Make sure clicking on the Sports Supplements Category Appears In MegaMenu Redirect User To CorrectURL", priority = 2)
     public void verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL() {     

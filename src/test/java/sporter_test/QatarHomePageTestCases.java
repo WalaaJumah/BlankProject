@@ -24,6 +24,12 @@ public class QatarHomePageTestCases extends BaseTest {
 //        qatarHomePage.webDriver=this.webDriver;
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.switchToQatarCountry();
+        if(webDriver.getCurrentUrl().contains(qatarHomePage.qatarDomain)){
+            System.out.println("You are in UAE Store");
+        }
+        else {
+            qatarHomePage.switchToQatarCountry();
+        }
     }
 
     @Test( description = "Qatar HomePage- Make sure the next and previous buttons appearing in the HomePage rotating slider section are displayed ", priority = 2)

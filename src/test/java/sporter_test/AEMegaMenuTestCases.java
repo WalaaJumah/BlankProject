@@ -22,6 +22,12 @@ public class AEMegaMenuTestCases extends BaseTest {
 //        qatarHomePage.webDriver=this.webDriver;
          AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         aeMegamenuPage.switchToAECountry();
+        if(webDriver.getCurrentUrl().contains(aeMegamenuPage.aeDomain)){
+            System.out.println("You are in UAE Store");
+        }
+        else {
+            aeMegamenuPage.switchToAECountry();
+        }
     }
     @Test(description = "MegaMenu- Make sure the MegaMenu Section display correctly with all main columns", priority = 2)
     public void verifyMegaMenuSectionAppearsCorrectlyWithAllMainColumns() {

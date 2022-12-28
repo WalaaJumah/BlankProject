@@ -229,7 +229,7 @@ dataHelperAndWait.waitToBeVisible(homePageRotatingSliderPagingControl,3,webDrive
 
     public WebElement getHomePageRotatingSlider() {
                 dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.waitToBeVisible(homePageRotatingSlider,3,webDriver);
+dataHelperAndWait.waitToBeVisible(homePageRotatingSlider,5,webDriver);
         return homePageRotatingSlider;
     }
 
@@ -319,7 +319,7 @@ dataHelperAndWait.waitToBeVisible(homePageRotatingSlider,3,webDriver);
 
     public WebElement getShopByCategorySections() {
         dataHelperAndWait= new DataHelperAndWait();
-        dataHelperAndWait.waitToBeVisible(shopByCategorySections,3,webDriver);
+        dataHelperAndWait.waitToBeVisible(shopByCategorySections,5,webDriver);
         return shopByCategorySections;
     }
 

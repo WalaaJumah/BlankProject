@@ -147,7 +147,7 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
     private WebElement productCardIVitaminsAZSection;
     @FindBy(xpath = "(//div[@class='swiper-slide'])[25]")
     private WebElement productCardInMineralsSection;
-    @FindBy(xpath = "(//div[@class='inner-seller-prod wp-id-23637']//a)[2]")
+    @FindBy(css = "#tab-296-all296 > div.swiper-container.swiper-product-slider.top-seller-slider.swiper-container-horizontal > div > div:nth-child(3) > div > a")
     private WebElement productCardInAntioxidantsSection;
     @FindBy(xpath = "(//div[@class='inner-seller-prod wp-id-20305'])[1]")
     private WebElement productCardInSuperFoodSection;
@@ -410,13 +410,20 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
     }
 
     public WebElement getImmunitySupportCategory() {
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
+        do{
+            this.clickOnNextIconInShopByHealthNeedSection();
+        }
+        while(!immunitySupportCategory.isDisplayed());
         DataHelperAndWait.waitToBeVisible(immunitySupportCategory,5,webDriver);
         return immunitySupportCategory;
     }
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        DataHelperAndWait.waitToBeVisible(immunitySupportCategory,5,webDriver);
+//        return immunitySupportCategory;
+
 
     public WebElement getKidsHealthCategory() {
         this.clickOnNextIconInShopByHealthNeedSection();
@@ -546,13 +553,13 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
 
     //Define the main actions we need to execute our TCs
     public void clickOnNextIconInShopByHealthNeedSection() {
-        try {
+//        try {
             DataHelperAndWait.waitToBeClickable(this.nextIconInShopByHealthNeedSection, 5,webDriver);
             this.nextIconInShopByHealthNeedSection.click();
-        } catch (Exception e) {
-            DataHelperAndWait.waitToBeClickable(this.nextIconInShopByHealthNeedSection, 3,webDriver);
-            this.nextIconInShopByHealthNeedSection.click();
-        }
+//        } catch (Exception e) {
+//            DataHelperAndWait.waitToBeClickable(this.nextIconInShopByHealthNeedSection, 3,webDriver);
+//            this.nextIconInShopByHealthNeedSection.click();
+//        }
     }
 
     public void clickOnPreviousIconInShopByHealthNeedSection() {
@@ -576,94 +583,155 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
     }
 
     public void clickOnImmunitySupportCategory() {
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        DataHelperAndWait.waitToBeVisible(immunitySupportCategory,3,webDriver);
+        do{
+            this.clickOnNextIconInShopByHealthNeedSection();
+        }
+        while(!immunitySupportCategory.isDisplayed());
+        DataHelperAndWait.waitToBeVisible(immunitySupportCategory,5,webDriver);
         this.immunitySupportCategory.click();
     }
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        DataHelperAndWait.waitToBeVisible(immunitySupportCategory,3,webDriver);
+//        this.immunitySupportCategory.click();
 
     public void clickOnKidsHealthCategory() {
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
+        do{
+            this.clickOnNextIconInShopByHealthNeedSection();
+        }
+        while(!kidsHealthCategory.isDisplayed());
         DataHelperAndWait.waitToBeVisible(kidsHealthCategory,5,webDriver);
         this.kidsHealthCategory.click();
     }
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        DataHelperAndWait.waitToBeVisible(kidsHealthCategory,5,webDriver);
+//        this.kidsHealthCategory.click();
+
 
     public void clickOnMensHealthCategory() {
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        DataHelperAndWait.waitToBeVisible(mensHealthCategory,5,webDriver);
+//        this.mensHealthCategory.click();
+//    }
+        do{
+            this.clickOnNextIconInShopByHealthNeedSection();
+        }
+        while(!mensHealthCategory.isDisplayed());
         DataHelperAndWait.waitToBeVisible(mensHealthCategory,5,webDriver);
         this.mensHealthCategory.click();
     }
 
+
     public void clickOnSexualHealthCategory() {
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
+        do{
+            this.clickOnNextIconInShopByHealthNeedSection();
+        }
+        while(!sexualHealthCategory.isDisplayed());
+
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
         DataHelperAndWait.waitToBeVisible(sexualHealthCategory,5,webDriver);
         this.sexualHealthCategory.click();
     }
+    public void clickOnHairSkinAndNails() {
+        do{
+            this.clickOnNextIconInShopByHealthNeedSection();
+        }
+        while(!hairAndSkinAndNailsCategory.isDisplayed());
+        DataHelperAndWait.waitToBeVisible(hairAndSkinAndNailsCategory,5,webDriver);
+        this.hairAndSkinAndNailsCategory.click();
+    }
+    public void clickOnHeartHealthCategory() {
+        do{
+            this.clickOnNextIconInShopByHealthNeedSection();
+        }
+        while(!heartHealthCategory.isDisplayed());
+        DataHelperAndWait.waitToBeVisible(heartHealthCategory,5,webDriver);
+        this.heartHealthCategory.click();
+    }
 
     public void clickOnSleepSupportCategory() {
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        DataHelperAndWait.waitToBeVisible(sleepSupportCategory,5,webDriver);
+//        this.sleepSupportCategory.click();
+//    }
+        do{
+            this.clickOnNextIconInShopByHealthNeedSection();
+        }
+        while(!sleepSupportCategory.isDisplayed());
         DataHelperAndWait.waitToBeVisible(sleepSupportCategory,5,webDriver);
         this.sleepSupportCategory.click();
     }
 
     public void clickOnDietWeightManagementCategory() {
-        this.clickOnPreviousIconInShopByHealthNeedSection();
-        this.clickOnPreviousIconInShopByHealthNeedSection();
-        this.clickOnPreviousIconInShopByHealthNeedSection();
-        this.clickOnPreviousIconInShopByHealthNeedSection();
-        DataHelperAndWait.waitToBeVisible(dietWeightManagementCategory,4,webDriver);
+        do{
+            this.clickOnPreviousIconInShopByHealthNeedSection();        }
+        while(!dietWeightManagementCategory.isDisplayed());
+        DataHelperAndWait.waitToBeVisible(dietWeightManagementCategory,5,webDriver);
         this.dietWeightManagementCategory.click();
     }
 
+//        this.clickOnPreviousIconInShopByHealthNeedSection();
+//        this.clickOnPreviousIconInShopByHealthNeedSection();
+//        this.clickOnPreviousIconInShopByHealthNeedSection();
+//        this.clickOnPreviousIconInShopByHealthNeedSection();
+//        DataHelperAndWait.waitToBeVisible(dietWeightManagementCategory,4,webDriver);
+//        this.dietWeightManagementCategory.click();
+//    }
+
     public void clickOnWomenHealthCategory() {
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
-        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        this.clickOnNextIconInShopByHealthNeedSection();
+//        DataHelperAndWait.waitToBeVisible(womenHealthCategory,5,webDriver);
+//        this.womenHealthCategory.click();
+//    }
+        do{
+            this.clickOnPreviousIconInShopByHealthNeedSection();
+        }
+        while(!womenHealthCategory.isDisplayed());
         DataHelperAndWait.waitToBeVisible(womenHealthCategory,5,webDriver);
         this.womenHealthCategory.click();
     }
-
     public void clickOnNextIconInFishOilAndOmegasSection() {
         try {
             DataHelperAndWait.waitToBeClickable(this.nextIconInFishOilAndOmegasSection, 5,webDriver);

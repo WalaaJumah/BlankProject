@@ -20,6 +20,12 @@ public class AeBrandsTestCases extends BaseTest {
     public void switchToUaeStore(){
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.switchToAECountry();
+        if(webDriver.getCurrentUrl().contains(aeProductDetailsPage.aeDomain)){
+            System.out.println("You are in UAE Store");
+        }
+        else {
+            aeProductDetailsPage.switchToAECountry();
+        }
     }
     @Test(description = "Make sure the ability to access all pages related to the Jym supplementJym supplement brand correctly", priority =2 )
     public void VerifyAbilityToAccessAllPagesRelatedToJymSupplementJymSupplementBrandCorrectly()

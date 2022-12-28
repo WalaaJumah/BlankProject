@@ -252,7 +252,7 @@ public class AeWomenOnlyCategoryPage extends BasePage {
     public WebElement getSecondYouTubeVideo() {
         return secondYouTubeVideo;
     }
-    public void navigate(){webDriver.navigate().to(siteURL +aeDomain+womenOnlyUrl);}
+    public void navigateToWomenOnlyPage(){webDriver.navigate().to(siteURL +aeDomain+womenOnlyUrl);}
     public void switchToAECountry() {
         try {
             DataHelperAndWait.waitToBeVisible(countryList, 5,webDriver);

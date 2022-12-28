@@ -24,6 +24,12 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
     public void switchToUaeStore(){
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeWomenOnlyCategoryPage.switchToAECountry();
+        if(webDriver.getCurrentUrl().contains(aeWomenOnlyCategoryPage.aeDomain)){
+            System.out.println("You are in UAE Store");
+        }
+        else {
+            aeWomenOnlyCategoryPage.switchToAECountry();
+        }
     }
     //Sport Supplements Category Pages
     @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Sport Supplements Category Page", priority = 1)

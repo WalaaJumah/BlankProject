@@ -27,6 +27,12 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
     public void switchToUaeStore(){
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeHealthyFoodCategoryPage.switchToAECountry();
+        if(webDriver.getCurrentUrl().contains(aeHealthyFoodCategoryPage.aeDomain)){
+            System.out.println("You are in UAE Store");
+        }
+        else {
+            aeHealthyFoodCategoryPage.switchToAECountry();
+        }
     }
 
     @Test(groups = "Smoke Testing Report",description = "Healthy Food Category- Make sure clicking on the Healthy Food Category Appears In MegaMenu Redirect User To CorrectURL", priority = 2)

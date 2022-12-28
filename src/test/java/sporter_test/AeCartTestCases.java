@@ -25,6 +25,12 @@ public class AeCartTestCases extends BaseTest {
     public void switchToUaeStore(){
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeWomenOnlyCategoryPage.switchToAECountry();
+        if(webDriver.getCurrentUrl().contains(aeWomenOnlyCategoryPage.aeDomain)){
+            System.out.println("You are in UAE Store");
+        }
+        else {
+            aeWomenOnlyCategoryPage.switchToAECountry();
+        }
     }
     @Test(groups = "Smoke Testing Report",description = " Cart Page- Make sure to view the cart from PDP after adding  product to it", priority = 2)
     public void viewCartFromPDP() {
@@ -198,7 +204,7 @@ public class AeCartTestCases extends BaseTest {
 //        aeCartPage.clickOnIncreaseQtyBtn();
         DataHelperAndWait.waitToBeClickable(aeCartPage.getDecreaseQtyBtn(), 5,webDriver);
         aeCartPage.clickOnDecreaseQtyBtn();
-        Assert.assertEquals(aeCartPage.getQtyField().getAttribute("value"), "2");
+        Assert.assertEquals(aeCartPage.getQtyField().getAttribute("value"), "1");
     }
     @Test(groups = "Smoke Testing Report",description = " Cart Page- Verify ability to display the product from the Cart Page works successfully", priority = 16)
     public void verifyAbilityToDisplayTheProductFromTheCartPage() {

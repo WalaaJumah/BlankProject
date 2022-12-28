@@ -212,5 +212,7 @@ public  class DataHelperAndWait  {
         return numberOfProductInTheListInInt<=24;
 
     }
-
+    public static void updateAllText(WebElement element, String newText) {
+        element.sendKeys(Keys.chord(Keys.CONTROL, "a"), newText);
+    }
 }

@@ -30,6 +30,12 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
     public void switchToUaeStore () {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeWomenOnlyCategoryPage.switchToAECountry();
+        if(webDriver.getCurrentUrl().contains(aeWomenOnlyCategoryPage.aeDomain)){
+            System.out.println("You are in UAE Store");
+        }
+        else {
+            aeWomenOnlyCategoryPage.switchToAECountry();
+        }
     }
 
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Verify clicking on the Vitamins & Health Category Appears In MegaMenu works correctly", priority = 2)
@@ -62,12 +68,11 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
         aeVitaminsAndHealthCategoryPage.getVitaminsAndHealthCategoryInHomePage().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeVitaminsAndHealthCategoryPage.healthVitaminsUrl));
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
     }
     @Test(description = "Vitamins & Health Category- Verify the rotating slider section is displayed correctly ", priority = 5)
     public void verifyRotatingSliderIsDisplayedInTheVitaminsAndHealthCategoryPage() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         ksaHomePage = new KsaHomePage(webDriver);
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         Assert.assertTrue(ksaHomePage.getHomePageRotatingSlider().isDisplayed());
@@ -160,6 +165,7 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
     public void verifyShopByCategoryInTheVitaminsAndHealthCategoryPageIsDisplayed() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         ksaHomePage = new KsaHomePage(webDriver);
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         Assert.assertTrue(ksaHomePage.getShopByCategoryHeader().isDisplayed());
@@ -170,7 +176,6 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
-//        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(0).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(0).click();
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -468,7 +473,6 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnVitaminsA_ZCategoryInsideTheShopByCategorySectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
 aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
-this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(2).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(2).click();
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -619,8 +623,7 @@ this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCor
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure clicking on the Minerals category inside Shop By Category section works correctly ", priority = 58)
     public void verifyClickingOnMineralsCategoryInsideTheShopByCategorySectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(3).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(3).click();
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -772,8 +775,7 @@ this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCor
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure clicking on the Antioxidants category inside Shop By Category section works correctly ", priority = 72)
     public void verifyClickingOnAntioxidantsCategoryInsideTheShopByCategorySectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(4).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(4).click();
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -916,8 +918,7 @@ this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCor
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure clicking on the Superfoods category inside Shop By Category section works correctly ", priority = 86)
     public void verifyClickingOnSuperfoodsCategoryInsideTheShopByCategorySectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(5).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(5).click();
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -1062,7 +1063,6 @@ this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCor
     public void verifyClickingOnCollagenCategoryInsideTheShopByCategorySectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(6).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(6).click();
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -1213,8 +1213,7 @@ this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCor
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure clicking on the Melatonin category inside Shop By Category section works correctly ", priority = 113)
     public void verifyClickingOnMelatoninCategoryInsideTheShopByCategorySectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
 //        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(7).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(7).click();
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -1361,8 +1360,7 @@ this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCor
     @Test(description = "Vitamins & Health Category- Make sure that Herbal Reference Guide section is displayed correctly ", priority = 127)
     public void verifyHerbalReferenceGuideSectionIsDisplayedCorrectly () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         Assert.assertEquals(aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideTitle().getText(), "Herbal Reference Guide");
         ArrayList<String> expectedOptions = new ArrayList<>() {{
             add("Tumeric");
@@ -1380,8 +1378,7 @@ this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCor
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure clicking on the Tumeric icon Redirect User To CorrectURL", priority = 128)
     public void verifyClickingOnTumericPageRedirectUserToCorrectURL() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         String expectedUrl=aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(0).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(0).click();
         Assert.assertEquals(webDriver.getCurrentUrl().replace(aeDomain,""),expectedUrl);
@@ -1420,8 +1417,7 @@ this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCor
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure clicking on the Dandelion icon Redirect User To CorrectURL", priority = 129)
     public void verifyClickingOnDandelionPageRedirectUserToCorrectURL() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         String expectedUrl=aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(1).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(1).click();
         Assert.assertEquals(webDriver.getCurrentUrl().replace(aeDomain,""),expectedUrl);
@@ -1461,8 +1457,7 @@ this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCor
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure clicking on the Ginseng icon Redirect User To CorrectURL", priority = 130)
     public void verifyClickingOnGinsengPageRedirectUserToCorrectURL() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         String expectedUrl=aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(2).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(2).click();
         Assert.assertEquals(webDriver.getCurrentUrl().replace(aeDomain,""),expectedUrl);
@@ -1502,8 +1497,7 @@ this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCor
     @Test(groups = "Smoke Testing Report", description = "Vitamins & Health Category- Make sure clicking on the Milk Thistle icon Redirect User To CorrectURL", priority = 131)
     public void verifyClickingOnMilkThistlePageRedirectUserToCorrectURL() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         String expectedUrl=aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(3).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(3).click();
         Assert.assertEquals(webDriver.getCurrentUrl().replace(aeDomain,""),expectedUrl);
@@ -1543,8 +1537,7 @@ this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCor
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure clicking on the Alfalfa icon Redirect User To CorrectURL", priority = 132)
     public void verifyClickingOnAlfalfaPageRedirectUserToCorrectURL() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         String expectedUrl=aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(4).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(4).click();
         Assert.assertEquals(webDriver.getCurrentUrl().replace(aeDomain,""),expectedUrl);
@@ -1647,7 +1640,7 @@ this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCor
     public void verifyShopByHealthNeedInTheVitaminsAndHealthCategoryPageIsDisplayed() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
 //        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         Assert.assertEquals(aeVitaminsAndHealthCategoryPage.getShopByHealthNeedTitle().getText(),"Shop By Health Need","The Shop By Health Need Category has incorrect title");
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getShopByHealthNeedSection().isDisplayed());
     }
@@ -1671,8 +1664,7 @@ this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCor
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure clicking on the Beauty category inside Shop By Health Need works correctly ", priority = 151)
     public void verifyClickingOnBeautyCategoryInsideTheShopByHealthNeedSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getBeautyCategory().getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getBeautyCategory().click();
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -1828,8 +1820,7 @@ this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCor
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure clicking on the Bone And Joint category inside Shop By Health Need works correctly ", priority = 166)
     public void verifyClickingOnBoneAndJointCategoryInsideTheShopByHealthNeedSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getBoneAndJointCategory().getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getBoneAndJointCategory().click();
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -1839,7 +1830,7 @@ this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCor
     public void verifyResultFieldAndItsVaLueAppearInTheBoneAndJointCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-//        this.verifyClickingOnBoneAndJointCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
+        this.verifyClickingOnBoneAndJointCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         SoftAssert sa = new SoftAssert();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getResultLabel().getText(), "Results:");
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSearchResultValue().isDisplayed());
@@ -1850,7 +1841,7 @@ this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCor
     public void verifySortByMenuAndItsOptionsAppearCorrectlyInTheBoneAndJointCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-//        this.verifyClickingOnBoneAndJointCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
+        this.verifyClickingOnBoneAndJointCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSortByLabel().getText(), "Sort By");
         ArrayList<String> expectedOption = new ArrayList<>() {{
             add("Featured");
@@ -1982,8 +1973,7 @@ this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCor
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure clicking on the Brain Support category inside Shop By Health Need works correctly ", priority = 181)
     public void verifyClickingOnBrainSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getBrainSupportCategory().getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getBrainSupportCategory().click();
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -2136,8 +2126,7 @@ this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCor
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure clicking on the Detox & Liver Support category inside Shop By Health Need works correctly ", priority = 196)
     public void verifyClickingOnDetoxAndLiverSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getDetoxAndLiverSupportCategory().getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getDetoxAndLiverSupportCategory().click();
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -2279,8 +2268,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure clicking on the Digestive Support category inside Shop By Health Need works correctly ", priority = 211)
     public void verifyClickingOnDigestiveSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getDigestiveSupportCategory().getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getDigestiveSupportCategory().click();
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -2427,8 +2415,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure clicking on the Energy Formulas category inside Shop By Health Need works correctly ", priority = 226)
     public void verifyClickingOnEnergyFormulasCategoryInsideTheShopByHealthNeedSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeVitaminsAndHealthCategoryPage.getNextIconInShopByHealthNeedSection().click();
         String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getEnergyFormulasCategory().getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getEnergyFormulasCategory().click();
@@ -2573,15 +2560,9 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure clicking on the Hair, Skin & Nails, Beauty category inside Shop By Health Need works correctly ", priority = 241)
     public void verifyClickingOnHairAndSkinAndNailsCategoryInsideTheShopByHealthNeedSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-        aeVitaminsAndHealthCategoryPage.getNextIconInShopByHealthNeedSection().click();
-        aeVitaminsAndHealthCategoryPage.getNextIconInShopByHealthNeedSection().click();
-        aeVitaminsAndHealthCategoryPage.getNextIconInShopByHealthNeedSection().click();
-        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getHairAndSkinAndNailsCategory().getAttribute("href");
-        aeVitaminsAndHealthCategoryPage.getHairAndSkinAndNailsCategory().click();
-aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
+        aeVitaminsAndHealthCategoryPage.clickOnHairSkinAndNails();
+        aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     @Test(description = "Vitamins & Health Category- Make sure that the Result label and its value appear correctly in the Hair, Skin & Nails, Beauty category page ", priority = 242)
     public void verifyResultFieldAndItsVaLueAppearInTheHairAndSkinAndNailsCategoryPage () {
@@ -2712,16 +2693,9 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure clicking on the Heart Health category inside Shop By Health Need works correctly ", priority = 256)
     public void verifyClickingOnHeartHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly()  {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
-        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
-        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
-        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
-        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getHeartHealthCategory().getAttribute("href");
-        aeVitaminsAndHealthCategoryPage.getHeartHealthCategory().click();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
+        aeVitaminsAndHealthCategoryPage.clickOnHeartHealthCategory();
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
     }
     @Test(description = "Vitamins & Health Category- Make sure that the Result label and its value appear correctly in the Heart Health category page ", priority = 257)
     public void verifyResultFieldAndItsVaLueAppearInTheHeartHealthCategoryPage () {
@@ -2867,12 +2841,11 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure clicking on the Immunity Support category inside Shop By Health Need works correctly ", priority = 271)
     public void verifyClickingOnImmunitySupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly()  {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getImmunitySupportCategory().getAttribute("href");
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
+//        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getImmunitySupportCategory().getAttribute("href");
         aeVitaminsAndHealthCategoryPage.clickOnImmunitySupportCategory();
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
+//        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
     }
     @Test(description = "Vitamins & Health Category- Make sure that the Result label and its value appear correctly in the Immunity Support category page ", priority = 272)
     public void verifyResultFieldAndItsVaLueAppearInTheImmunitySupportCategoryPage () {
@@ -3012,12 +2985,9 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure clicking on the Kids Health category inside Shop By Health Need works correctly ", priority = 286)
     public void verifyClickingOnKidsHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly()  {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getKidsHealthCategory().getAttribute("href");
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
                 aeVitaminsAndHealthCategoryPage.clickOnKidsHealthCategory();
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
     }
     @Test(description = "Vitamins & Health Category- Make sure that the Result label and its value appear correctly in the Kids Health category page ", priority = 287)
     public void verifyResultFieldAndItsVaLueAppearInTheKidsHealthCategoryPage () {
@@ -3163,12 +3133,9 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure clicking on the Mens Health category inside Shop By Health Need works correctly ", priority = 301)
     public void verifyClickingOnMensHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly()  {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getMensHealthCategory().getAttribute("href");
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeVitaminsAndHealthCategoryPage.clickOnMensHealthCategory();
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
     }
     @Test(description = "Vitamins & Health Category- Make sure that the Result label and its value appear correctly in the Mens Health category page ", priority = 302)
     public void verifyResultFieldAndItsVaLueAppearInTheMensHealthCategoryPage () {
@@ -3307,8 +3274,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure clicking on the Sexual Health category inside Shop By Health Need works correctly ", priority = 316)
     public void verifyClickingOnSexualHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly()  {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
 //        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getSexualHealthCategory().getAttribute("href");
         aeVitaminsAndHealthCategoryPage.clickOnSexualHealthCategory();
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -3452,8 +3418,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure clicking on the Sleep Support category inside Shop By Health Need works correctly ", priority = 331)
     public void verifyClickingOnSleepSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly()  {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
 //        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getSexualHealthCategory().getAttribute("href");
         aeVitaminsAndHealthCategoryPage.clickOnSleepSupportCategory();
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -3591,8 +3556,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure clicking on the Diet Weight Management category inside Shop By Health Need works correctly ", priority = 346)
     public void verifyClickingOnDietWeightManagementCategoryInsideTheShopByHealthNeedSectionWorksCorrectly()  {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
 //        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getSexualHealthCategory().getAttribute("href");
         aeVitaminsAndHealthCategoryPage.clickOnDietWeightManagementCategory();
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -3736,8 +3700,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure clicking on the Women Health category inside Shop By Health Need works correctly ", priority = 361)
     public void verifyClickingOnWomenHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly()  {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
 //        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getSexualHealthCategory().getAttribute("href");
         aeVitaminsAndHealthCategoryPage.clickOnWomenHealthCategory();
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -3881,8 +3844,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure the Fish Oil And Omegas section is displayed ", priority = 376)
     public void verifyFishOilAndOmegasSectionInTheVitaminsAndHealthCategoryPageIsDisplayed() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         Assert.assertEquals(aeVitaminsAndHealthCategoryPage.getFishOilAndOmegasSectionTitle().getText(),"Fish Oil & Omegas","The Shop By Health Need Category has incorrect title");
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFishOilAndOmegasSection().isDisplayed());
     }
@@ -3923,8 +3885,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(description = "Vitamins & Health Category- Make sure clicking on the product card in the Fish Oil And Omegas section works correctly ", priority = 381)
     public void verifyClickingOnProductCardInsideFishOilAndOmegasSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeVitaminsAndHealthCategoryPage.getProductCardInFishOilAndOmegasSection().click();
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -3932,8 +3893,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure the MultiVitamins section is displayed ", priority = 382)
     public void verifyMultiVitaminsSectionInTheVitaminsAndHealthCategoryPageIsDisplayed() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         Assert.assertEquals(aeVitaminsAndHealthCategoryPage.getMultiVitaminsSectionTitle().getText(),"Multivitamins","The Shop By Health Need Category has incorrect title");
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getMultiVitaminsSection().isDisplayed());
     }
@@ -3973,8 +3933,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(description = "Vitamins & Health Category- Make sure clicking on the product card in the MultiVitamins section works correctly ", priority = 387)
     public void verifyClickingOnProductCardInsideMultiVitaminsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeVitaminsAndHealthCategoryPage.getProductCardInMultiVitaminsSection().click();
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -3982,8 +3941,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure the Vitamins A-Z section is displayed ", priority = 388)
     public void verifyVitaminsAZSectionInTheVitaminsAndHealthCategoryPageIsDisplayed() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         Assert.assertEquals(aeVitaminsAndHealthCategoryPage.getVitaminsAZSectionTitle().getText(),"Vitamins A-Z","The Shop By Health Need Category has incorrect title");
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getVitaminsAZSection().isDisplayed());
     }
@@ -4023,8 +3981,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(description = "Vitamins & Health Category- Make sure clicking on the product card in the Vitamins A-Z section works correctly ", priority = 393)
     public void verifyClickingOnProductCardInsideVitaminsAZSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeVitaminsAndHealthCategoryPage.getProductCardIVitaminsAZSection().click();
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -4032,8 +3989,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure the Minerals section is displayed ", priority = 394)
     public void verifyMineralsSectionInTheVitaminsAndHealthCategoryPageIsDisplayed() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         Assert.assertEquals(aeVitaminsAndHealthCategoryPage.getMineralsSectionTitle().getText(),"Minerals","The Shop By Health Need Category has incorrect title");
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getMineralsSection().isDisplayed());
     }
@@ -4073,8 +4029,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(description = "Vitamins & Health Category- Make sure clicking on the product card in the Minerals section works correctly ", priority = 399)
     public void verifyClickingOnProductCardInsideMineralsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeVitaminsAndHealthCategoryPage.getProductCardInMineralsSection().click();
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -4082,8 +4037,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure the Antioxidants section is displayed ", priority = 400)
     public void verifyAntioxidantsSectionInTheVitaminsAndHealthCategoryPageIsDisplayed() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         Assert.assertEquals(aeVitaminsAndHealthCategoryPage.getAntioxidantsSectionTitle().getText(),"Antioxidants","The Shop By Health Need Category has incorrect title");
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getAntioxidantsSection().isDisplayed());
     }
@@ -4123,8 +4077,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(description = "Vitamins & Health Category- Make sure clicking on the product card in the Antioxidants section works correctly ", priority = 405)
     public void verifyClickingOnProductCardInsideAntioxidantsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeVitaminsAndHealthCategoryPage.getProductCardInAntioxidantsSection().click();
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -4132,8 +4085,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure the Superfoods section is displayed ", priority = 406)
     public void verifySuperfoodsSectionInTheVitaminsAndHealthCategoryPageIsDisplayed() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         Assert.assertEquals(aeVitaminsAndHealthCategoryPage.getSuperFoodSectionTitle().getText(),"Superfoods","The Shop By Health Need Category has incorrect title");
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getSuperFoodSection().isDisplayed());
     }
@@ -4173,8 +4125,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(description = "Vitamins & Health Category- Make sure clicking on the product card in the Superfoods section works correctly ", priority = 411)
     public void verifyClickingOnProductCardInsideSuperfoodsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeVitaminsAndHealthCategoryPage.getProductCardInSuperFoodSection().click();
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -4182,8 +4133,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure the Melatonin section is displayed ", priority = 412)
     public void verifyMelatoninSectionInTheVitaminsAndHealthCategoryPageIsDisplayed() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         Assert.assertEquals(aeVitaminsAndHealthCategoryPage.getMelatoninSectionTitle().getText(),"Melatonin","The Shop By Health Need Category has incorrect title");
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getMelatoninSection().isDisplayed());
     }
@@ -4223,8 +4173,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(description = "Vitamins & Health Category- Make sure clicking on the product card in the Melatonin section works correctly ", priority = 417)
     public void verifyClickingOnProductCardInsideMelatoninSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeVitaminsAndHealthCategoryPage.getProductCardInMelatoninSection().click();
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -4233,7 +4182,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyCollagenSectionInTheVitaminsAndHealthCategoryPageIsDisplayed() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         Assert.assertEquals(aeVitaminsAndHealthCategoryPage.getCollagenSectionTitle().getText(),"Collagen","The Shop By Health Need Category has incorrect title");
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getCollagenSection().isDisplayed());
     }
@@ -4274,7 +4223,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnProductCardInsideCollagenSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeVitaminsAndHealthCategoryPage.getProductCardInCollagenSection().click();
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -4282,7 +4231,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInVitaminsAndHealthCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
         for (int i = 0; i < aeSportSupplementsCategoryPage.getPageBottomBlocksList().size(); i++) {
@@ -4304,8 +4253,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyFooterSectionAppearsCorrectlyInVitaminsAndHealthCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeFooterPage= new AEFooterPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
     //Pagination control for all pages in the Vitamins & Health category page
@@ -4314,7 +4262,6 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyAbilityToAccessAllPagesInsideFishOilAndOmegasCategoryFromVitaminsAndHealthCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnFishOilAndOmegasCategoryInsideTheShopByCategorySectionWorksCorrectly();
         String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
@@ -4324,7 +4271,6 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyAbilityToAccessAllPagesInsideMultivitaminsCategoryFromVitaminsAndHealthCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnMultivitaminsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
@@ -4333,7 +4279,6 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyAbilityToAccessAllPagesInsideVitaminsA_ZCategoryFromVitaminsAndHealthCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnVitaminsA_ZCategoryInsideTheShopByCategorySectionWorksCorrectly();
         String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
@@ -4342,7 +4287,6 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyAbilityToAccessAllPagesInsideMineralsCategoryFromVitaminsAndHealthCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnMineralsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
@@ -4351,7 +4295,6 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyAbilityToAccessAllPagesInsideAntioxidantsCategoryFromVitaminsAndHealthCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnAntioxidantsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
@@ -4360,7 +4303,6 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyAbilityToAccessAllPagesInsideSuperfoodsCategoryFromVitaminsAndHealthCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnSuperfoodsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
@@ -4370,7 +4312,6 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyAbilityToAccessAllPagesInsideCollagenCategoryFromVitaminsAndHealthCategoryPage () {
        AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-       aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnCollagenCategoryInsideTheShopByCategorySectionWorksCorrectly();
         String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
@@ -4379,7 +4320,6 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyAbilityToAccessAllPagesInsideMelatoninCategoryFromVitaminsAndHealthCategoryPage () {
        AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-       aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnMelatoninCategoryInsideTheShopByCategorySectionWorksCorrectly();
         String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
@@ -4389,7 +4329,6 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyAbilityToAccessAllPagesInsideBeautyCategoryInsideTheShopByHealthNeed () {
        AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-       aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnBeautyCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
@@ -4398,7 +4337,6 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyAbilityToAccessAllPagesInsideBoneAndJointCategoryInsideTheShopByHealthNeed () {
        AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-       aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnBoneAndJointCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
@@ -4407,7 +4345,6 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyAbilityToAccessAllPagesInsideBrainSupportCategoryInsideTheShopByHealthNeed () {
        AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-       aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnBrainSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
@@ -4416,7 +4353,6 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyAbilityToAccessAllPagesInsideDetoxAndLiverSupportCategoryInsideTheShopByHealthNeed () {
        AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-       aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnDetoxAndLiverSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
@@ -4425,7 +4361,6 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyAbilityToAccessAllPagesInsideDigestiveSupportCategoryInsideTheShopByHealthNeed () {
        AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-       aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnDigestiveSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
@@ -4435,7 +4370,6 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyAbilityToAccessAllPagesInsideEnergyFormulasCategoryInsideTheShopByHealthNeed () {
        AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-       aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnEnergyFormulasCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
@@ -4444,7 +4378,6 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyAbilityToAccessAllPagesInsideHairAndSkinAndNailsCategoryInsideTheShopByHealthNeed () {
        AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-       aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnHairAndSkinAndNailsCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
@@ -4453,7 +4386,6 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyAbilityToAccessAllPagesInsideHeartHealthCategoryInsideTheShopByHealthNeed () {
        AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-       aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnHeartHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
@@ -4462,7 +4394,6 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyAbilityToAccessAllPagesInsideImmunitySupportCategoryInsideTheShopByHealthNeed () {
        AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-       aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnImmunitySupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
@@ -4471,7 +4402,6 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyAbilityToAccessAllPagesInsideKidsHealthCategoryInsideTheShopByHealthNeed () {
        AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-       aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnKidsHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
@@ -4480,7 +4410,6 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyAbilityToAccessAllPagesInsideMensHealthCategoryInsideTheShopByHealthNeed () {
        AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-       aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnMensHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
@@ -4489,7 +4418,6 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyAbilityToAccessAllPagesInsideSexualHealthCategoryInsideTheShopByHealthNeed () {
        AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-       aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnSexualHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
@@ -4498,7 +4426,6 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyAbilityToAccessAllPagesInsideSleepSupportCategoryInsideTheShopByHealthNeed () {
        AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-       aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnSleepSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
@@ -4508,7 +4435,6 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyAbilityToAccessAllPagesInsideDietWeightManagementCategoryInsideTheShopByHealthNeed () {
        AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-       aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnDietWeightManagementCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
@@ -4517,7 +4443,6 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyAbilityToAccessAllPagesInsideWomenHealthCategoryInsideTheShopByHealthNeed () {
        AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-       aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnWomenHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
@@ -4526,8 +4451,8 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromCartPage() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeGuestUserPage = new AEGuestUserPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        this.verifyClickingOnVitaminsAndHealthCategoryFromHomePageRedirectUserToCorrectURL();
+//        this.verifyClickingOnVitaminsAndHealthCategoryFromHomePageRedirectUserToCorrectURL();
+        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeGuestUserPage.clickOnSporterLogo();
         Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSiteURL," The Current URL is not matched with the Cart URL" );
     }

@@ -13,6 +13,12 @@ public class KsaHomePageTestCases extends BaseTest {
     public void switchToKsaStore() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.switchToKsaCountry();
+        if(webDriver.getCurrentUrl().contains(ksaHomePage.saudiDomain)){
+            System.out.println("You are in UAE Store");
+        }
+        else {
+            ksaHomePage.switchToKsaCountry();
+        }
     }
 
     @Test(description = "KSA HomePage- Make sure the Banners appear correctly in the HomePage rotating slider section ", priority = 2)

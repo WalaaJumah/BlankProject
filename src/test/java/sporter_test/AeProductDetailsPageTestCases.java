@@ -26,6 +26,12 @@ public class AeProductDetailsPageTestCases extends BaseTest {
     public void switchToUaeStore(){
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.switchToAECountry();
+        if(webDriver.getCurrentUrl().contains(aeProductDetailsPage.aeDomain)){
+            System.out.println("You are in UAE Store");
+        }
+        else {
+            aeProductDetailsPage.switchToAECountry();
+        }
     }
 
     @Test(description = "Make sure the shopper is able to keep the shopping after adding the product to the cart ", priority = 2)

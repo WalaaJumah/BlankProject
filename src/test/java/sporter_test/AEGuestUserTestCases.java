@@ -27,6 +27,12 @@ public class AEGuestUserTestCases extends BaseTest {
     public void switchToUaeStore(){
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
         aeGuestUserPage.switchToAECountry();
+        if(webDriver.getCurrentUrl().contains(aeGuestUserPage.aeDomain)){
+            System.out.println("You are in UAE Store");
+        }
+        else {
+            aeGuestUserPage.switchToAECountry();
+        }
     }
     @Test(groups = "Smoke Testing Report",description = "Make sure to access the Guest Checkout page from the cart page correctly", priority = 2)
     public void verifyAbilityToAccessTheGuestCheckoutPageFromTheCartPageCorrectly() {
@@ -66,7 +72,8 @@ public class AEGuestUserTestCases extends BaseTest {
         Select select = new Select(aeGuestUserPage.getCityMenu());
 //        WebElement cityOption = select.getOptions().get(0);
         select.getOptions().get(0).click();
-        aeGuestUserPage.clickOnContinueBtn();
+        DataHelperAndWait.scrollTo(aeGuestUserPage.getContinueBtn(),webDriver);
+aeGuestUserPage.clickOnContinueBtn();
         Assert.assertEquals(aeGuestUserPage.getFirstnameRequiredFieldMsg().getText(), "This is a required field.");
         Assert.assertEquals(aeGuestUserPage.getLastNameRequiredFieldMsg().getText(), "This is a required field.");
         Assert.assertEquals(aeGuestUserPage.getemailRequiredFieldMsg().getText(), "This is a required field.");
@@ -77,7 +84,7 @@ public class AEGuestUserTestCases extends BaseTest {
     @Test(groups = "Smoke Testing Report",description = "Make sure the Guest user cannot submit the shipping information when the phone number length is small ", priority = 7)
     public void verifyTheGuestUserCannotSubmitTheShippingInformationWhenPhoneFieldHaveSmallTextLength() {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
-        aeGuestUserPage.clearShippingInformationFields();
+        //        aeGuestUserPage.clearShippingInformationFields();
 //                aeProductDetailsPage.displayTheProduct();
 
 //        aeGuestUserPage.addToCart();
@@ -87,7 +94,8 @@ public class AEGuestUserTestCases extends BaseTest {
         Select select = new Select(aeGuestUserPage.getCityMenu());
         select.getOptions().get(0).click();
         aeGuestUserPage.fillInShippingInformationInputField(aeGuestUserPage.firstName,aeGuestUserPage.lastName,aeGuestUserPage.email, "2222", aeGuestUserPage.address, aeGuestUserPage.streetLineOne, aeGuestUserPage.streetLineTwo);
-        aeGuestUserPage.clickOnContinueBtn();
+        DataHelperAndWait.scrollTo(aeGuestUserPage.getContinueBtn(),webDriver);
+aeGuestUserPage.clickOnContinueBtn();
         Assert.assertEquals(aeGuestUserPage.getPhoneRequiredFieldMsg().getText(), "Text length does not satisfy specified text range.");
     }
     @Test(groups = "Smoke Testing Report",description = "Make sure the Guest user cannot submit the shipping information with incorrect email format ", priority = 8)
@@ -99,12 +107,13 @@ public class AEGuestUserTestCases extends BaseTest {
 //        aeGuestUserPage.viewCart();
 //        aeGuestUserPage.clickOnProceedCheckoutBtn();
 //        aeGuestUserPage.clickOnGuestCheckoutBtn();
-        aeGuestUserPage.clearShippingInformationFields();
+        //        aeGuestUserPage.clearShippingInformationFields();
         aeGuestUserPage.fillInShippingInformationInputField(aeGuestUserPage.firstName, aeGuestUserPage.lastName, "email@email", aeGuestUserPage.phone, aeGuestUserPage.address, aeGuestUserPage.streetLineOne, aeGuestUserPage.streetLineTwo);
         Select select = new Select(aeGuestUserPage.getCityMenu());
         WebElement cityOption = select.getOptions().get(2);
         cityOption.click();
-        aeGuestUserPage.clickOnContinueBtn();
+        DataHelperAndWait.scrollTo(aeGuestUserPage.getContinueBtn(),webDriver);
+aeGuestUserPage.clickOnContinueBtn();
         Assert.assertEquals(aeGuestUserPage.getEmailValidationFormateMsg().getText(), "Please enter a valid email address.");
     }
     @Test(groups = "Smoke Testing Report",description = "Guest Checkout- Make sure the city Search field in the shipping information form works correctly and retrieved the matched result ", priority = 9)
@@ -143,7 +152,7 @@ public class AEGuestUserTestCases extends BaseTest {
     public void verifyAbilityToFillAndNavigateBetweenTheShippingInformationFormUsingTabKeyAndKeyboardShortCut() {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
         Actions act = new Actions(webDriver);
-        aeGuestUserPage.clearShippingInformationFields();
+                aeGuestUserPage.clearShippingInformationFields();
 //        this.verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPageCorrectly();
         aeGuestUserPage.clickOnFirstNameField();
         aeGuestUserPage.getFirstNameField().sendKeys(aeGuestUserPage.firstName);
@@ -179,25 +188,25 @@ public class AEGuestUserTestCases extends BaseTest {
         Select select = new Select(aeGuestUserPage.getCityMenu());
         WebElement cityOption = select.getOptions().get(2);
         cityOption.click();
-        aeGuestUserPage.clickOnContinueBtn();
-        Assert.assertFalse(aeGuestUserPage.getShippingMethodSection().isDisplayed());
-//        Assert.assertEquals(aeGuestUserPage.getFirstnameRequiredFieldMsg().getText(), "Please enter less or equal than 255 symbols.");
-//        Assert.assertEquals(aeGuestUserPage.getLastNameRequiredFieldMsg().getText(), "Please enter less or equal than 255 symbols.");
-//        Assert.assertEquals(aeGuestUserPage.getStreetlineOneRequiredFieldMsg().getText(), "Please enter less or equal than 255 symbols.");
-//        Assert.assertEquals(aeGuestUserPage.getStreetlineTwoRequiredFieldMsg().getText(), "Please enter less or equal than 255 symbols.");
+        DataHelperAndWait.scrollTo(aeGuestUserPage.getContinueBtn(),webDriver);
+        Assert.assertEquals(aeGuestUserPage.getFirstnameRequiredFieldMsg().getText(), "Please enter less or equal than 255 symbols.");
+        Assert.assertEquals(aeGuestUserPage.getLastNameRequiredFieldMsg().getText(), "Please enter less or equal than 255 symbols.");
+        Assert.assertEquals(aeGuestUserPage.getStreetlineOneRequiredFieldMsg().getText(), "Please enter less or equal than 255 symbols.");
+        Assert.assertEquals(aeGuestUserPage.getStreetlineTwoRequiredFieldMsg().getText(), "Please enter less or equal than 255 symbols.");
     }
     @Test(groups = "Smoke Testing Report",description = "Make sure the Guest user can filling the shipping information correctly", priority = 14)
     public void verifyTheGuestUserCanFillTheShippingInformationCorrectly() {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
         aeGuestUserPage.navigateToHomePage();
         this.accessShippingInformationScreen();
-        aeGuestUserPage.clearShippingInformationFields();
+        //        aeGuestUserPage.clearShippingInformationFields();
 //        this.verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPageCorrectly();
         aeGuestUserPage.fillInShippingInformationInputField(aeGuestUserPage.firstName, aeGuestUserPage.lastName, aeGuestUserPage.email, aeGuestUserPage.phone, aeGuestUserPage.address, aeGuestUserPage.streetLineOne,aeGuestUserPage. streetLineTwo);
         Select select = new Select(aeGuestUserPage.getCityMenu());
         WebElement cityOption = select.getOptions().get(2);
         cityOption.click();
-        aeGuestUserPage.clickOnContinueBtn();
+        DataHelperAndWait.scrollTo(aeGuestUserPage.getContinueBtn(),webDriver);
+aeGuestUserPage.clickOnContinueBtn();
         Assert.assertTrue(aeGuestUserPage.getShippingMethodSection().isDisplayed());
     }
     @Test(groups = "Smoke Testing Report",description = "Make sure the return to the cart button appearing in the shipping information screen for the Guest User works correctly  ", priority = 15)
@@ -205,6 +214,7 @@ public class AEGuestUserTestCases extends BaseTest {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
 //        this.verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPageCorrectly();
         aeGuestUserPage.clickOnReturnToCartIcon();
+        DataHelperAndWait.waitForUrlContains(aeGuestUserPage.cartURL,webDriver,5);
         Assert.assertEquals(webDriver.getCurrentUrl(), "https://www.sporter.com/en-ae/checkout/cart/");
     }
 
@@ -230,24 +240,27 @@ public class AEGuestUserTestCases extends BaseTest {
         aeGuestUserPage.navigateToHomePage();
         aeGuestUserPage.switchToArabicVersion();
         this.accessShippingInformationScreen();
-        aeGuestUserPage.clearShippingInformationFields();
+        //        aeGuestUserPage.clearShippingInformationFields();
         aeGuestUserPage.fillInShippingInformationInputField(aeGuestUserPage.firstNameAr, aeGuestUserPage.lastNameAr, aeGuestUserPage.email, aeGuestUserPage.phone, aeGuestUserPage.addressAr, aeGuestUserPage.streetLineOneAr, aeGuestUserPage.streetLineTwoAr);
         Select select = new Select(aeGuestUserPage.getCityMenu());
         WebElement cityOption = select.getOptions().get(2);
         cityOption.click();
-        aeGuestUserPage.clickOnContinueBtn();
+        DataHelperAndWait.scrollTo(aeGuestUserPage.getContinueBtn(),webDriver);
+aeGuestUserPage.clickOnContinueBtn();
         Assert.assertTrue(aeGuestUserPage.getShippingMethodSection().isDisplayed());
     }
     //There's a bug here
     @Test( description = "Guest User- Make sure the validation message appears when submiting tGhe shipping information without filling the city field", priority = 19)
     public void verifyTheValidationMsgAppearingWhenSubmittingTheShippingFormWithoutFillingTheCityField() {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
-//        this.verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPageCorrectly();
+        aeGuestUserPage.navigateToHomePage();
+        this.accessShippingInformationScreen();
         aeGuestUserPage.fillInShippingInformationInputField(" ", " ", " ", " ", " ", " ", aeGuestUserPage.streetLineTwo);
-        Select select = new Select(aeGuestUserPage.getCityMenu());
+//        Select select = new Select(aeGuestUserPage.getCityMenu());
 //        WebElement cityOption = select.getOptions().get(0);
-        select.getOptions().get(0).click();
-        aeGuestUserPage.clickOnContinueBtn();
+//        select.getOptions().get(0).click();
+        DataHelperAndWait.scrollTo(aeGuestUserPage.getContinueBtn(),webDriver);
+aeGuestUserPage.clickOnContinueBtn();
         Assert.assertEquals(aeGuestUserPage.getFirstnameRequiredFieldMsg().getText(), "This is a required field.");
         Assert.assertEquals(aeGuestUserPage.getLastNameRequiredFieldMsg().getText(), "This is a required field.");
         Assert.assertEquals(aeGuestUserPage.getemailRequiredFieldMsg().getText(), "This is a required field.");
