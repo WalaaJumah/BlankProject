@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="TestSuite" thread-count="2" >
+<suite name="TestSuite" thread-count="2" parallel="tests" >
     <listeners>
         <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>
         <listener class-name="extent_report_listner.ExtentReportListener" />
     </listeners>
 
-    <test name="ChromeTest">
-        <parameter name="environment" value="https://stg.sporter.com" />
+    <test name="ChromeTest" parallel="methods">
+        <parameter name="environment" value="https://sporter.com" />
 
         <parameter name="browser" value="Edge" />
         <!--        <parameter name="browser" value="chrome" />-->
         <classes>
-            <class name="sporter_test.AeRecommendedProductsTestCases"></class>
+            <class name="sporter_test.QatarHomePageTestCases"></class>
 
         </classes>
     </test>
 
-<!--    <test name="Edge">-->
-<!--        <parameter name="environment" value="https://www.sporter.com" />-->
+    <test name="Edge" parallel="methods">
+        <parameter name="environment" value="https://www.sporter.com" />
 
-<!--        <parameter name="browser" value="Edge" />-->
-<!--        &lt;!&ndash;        <parameter name="browser" value="chrome" />&ndash;&gt;-->
-<!--        <classes>-->
-<!--            <class name="sporter_test.AeProductDetailsPageTestCases"></class>-->
+        <parameter name="browser" value="Edge" />
+        <!--        <parameter name="browser" value="chrome" />-->
+        <classes>
+            <class name="sporter_test.AeProductDetailsPageTestCases"></class>
 
-<!--        </classes>-->
-<!--    </test>-->
+        </classes>
+    </test>
 
 </suite>
 

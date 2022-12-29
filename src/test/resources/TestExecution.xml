@@ -29,7 +29,7 @@
 <!--            &lt;!&ndash;            <class name="sporter_test.AeSportSupplementsCategoryTestCases"/>&ndash;&gt;-->
 <!--            &lt;!&ndash;            <class name="sporter_test.AeSportsCategoryTestCases"/>&ndash;&gt;-->
 <!--            &lt;!&ndash;            <class name="sporter_test.AeSearchPageTestCases"/>&ndash;&gt;-->
-                        <class name="sporter_test.AEMegaMenuTestCases">
+                        <class name="sporter_test.KsaHomePageTestCases">
 <!--                        <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases">-->
 <!--            <methods>-->
 <!--&lt;!&ndash;                <include name="switchToUaeStore"/>&ndash;&gt;-->

@@ -43,7 +43,7 @@ public class BaseTest {
 //    @BeforeClass(alwaysRun = true)
 //    @Parameters({"environment","browser"})
 //    public void setupBrowser( String environment ,String browser) throws Exception {
-//        environmentName=environment;
+//    BasePage.siteURL = environment;
 //        System.out.println(browser);
 ////Check if parameter passed from TestNG is 'firefox'
 //        switch (browser) {
@@ -53,19 +53,19 @@ public class BaseTest {
 //                System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver.exe");
 //                webDriver = new FirefoxDriver();
 //                webDriver.manage().window().maximize();
-//                webDriver.navigate().to(environment);
+//                webDriver.navigate().to(BasePage.siteURL);
 //                break;
 //            case "chrome":
 //                System.setProperty("webdriver.chrome.driver","src/test/resources/drivers/chromedriver.exe");
 //                webDriver = new ChromeDriver();
 //                webDriver.manage().window().maximize();
-//                webDriver.navigate().to(environment);
+//                webDriver.navigate().to(BasePage.siteURL);
 //                break;
 //            case "Edge":
 //                System.setProperty("webdriver.edge.driver", "src/test/resources/drivers/msedgedriver.exe");
 //                webDriver = new EdgeDriver();
 //                webDriver.manage().window().maximize();
-//                webDriver.navigate().to(environment);
+//                webDriver.navigate().to(BasePage.siteURL);
 //                break;
 //            default:
 //////If no browser passed throw exception
@@ -116,11 +116,11 @@ public class BaseTest {
 
         }
     }
-    @BeforeGroups(groups = "Smoke Testing Report")
-    @Parameters({"environment"})
-
-    public void setupBrowserForGroup(String environment) throws Exception {
-        this.setupBrowser( environment);}
+//    @BeforeGroups(groups = "Smoke Testing Report")
+//    @Parameters({"environment"})
+//
+//    public void setupBrowserForGroup(String environment) throws Exception {
+//        this.setupBrowser( environment);}
 
     @AfterClass(alwaysRun = true)
     public void tearDown()  {

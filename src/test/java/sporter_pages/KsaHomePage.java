@@ -142,7 +142,7 @@ public class KsaHomePage extends BasePage {
     private WebElement newArrivalsVitaminsAndHealthActiveLink;
     @FindBy(xpath = "//li[@class='tabli-6-736 active']")
     private WebElement newArrivalsSportswearAndAccessoriesActiveLink;
-    @FindBy(xpath = "(//div[@class='swiper-button-next top-sellers-swiper-button-next']/i)[8]")
+    @FindBy(xpath = "(//div[@class='swiper-button-next top-sellers-swiper-button-next']/i)[5]")
     private WebElement nextBtnInNewArrivalsSection;
     @FindBy(xpath = "((//div[@class='swiper-button-prev top-sellers-swiper-button-prev']/i))[1]")
     private WebElement previousBtnInNewArrivalsSection;

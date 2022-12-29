@@ -137,7 +137,7 @@ public class QatarHomePage extends BasePage {
     private WebElement newArrivalsVitaminsAndHealthActiveLink;
     @FindBy(xpath = "//li[@class='tabli-6-736 active']")
     private WebElement newArrivalsSportswearAndAccessoriesActiveLink;
-    @FindBy(xpath = "(//div[@class='swiper-button-next top-sellers-swiper-button-next']/i)[8]")
+    @FindBy(xpath = "(//div[@class='swiper-button-next top-sellers-swiper-button-next']/i)[5]")
     private WebElement nextBtnInNewArrivalsSection;
     @FindBy(xpath = "((//div[@class='swiper-button-prev top-sellers-swiper-button-prev']/i))[1]")
     private WebElement previousBtnInNewArrivalsSection;
@@ -711,12 +711,13 @@ public class QatarHomePage extends BasePage {
 
     public void clickOnNextButtonInNewArrivalSection(  ) {
         try {
-            DataHelperAndWait.fluentWait(this.nextBtnInNewArrivalsSection,2,3,webDriver);
+            DataHelperAndWait.waitToBeVisible(nextBtnInNewArrivalsSection,5,webDriver);
 
             this.nextBtnInNewArrivalsSection.click();
         }
         catch (Exception e){
-            DataHelperAndWait.isDisplayed(nextBtnInNewArrivalsSection, 1,webDriver);
+            this.navigate();
+            DataHelperAndWait.waitToBeVisible(nextBtnInNewArrivalsSection,2,webDriver);
             this.nextBtnInNewArrivalsSection.click();
         }
     }
