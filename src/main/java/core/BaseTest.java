@@ -37,31 +37,35 @@ public class BaseTest {
     public final String discaountCouponeCode= "";
     public final String product = "/en-ae/optimum-gold-standard-100-whey";
     public static String environmentName;
+    public static String browserName;
     public  WebDriver webDriver;
 //    The Below Methods we need to run the TCs across the broswers
-//    @BeforeMethod
-//    @Parameters("browser")
-//    public void setupBrowser( String browser) throws Exception {
+//    @BeforeClass(alwaysRun = true)
+//    @Parameters({"environment","browser"})
+//    public void setupBrowser( String environment ,String browser) throws Exception {
+//        environmentName=environment;
+//        System.out.println(browser);
 ////Check if parameter passed from TestNG is 'firefox'
 //        switch (browser) {
 ////    Check if parameter passed from TestNG is 'firefox'
+//
 //            case "firefox":
-//                System.setProperty("webdriver.gecko.driver", "src/test/resources/geckodriver.exe");
+//                System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver.exe");
 //                webDriver = new FirefoxDriver();
 //                webDriver.manage().window().maximize();
-//                webDriver.navigate().to(siteURL);
+//                webDriver.navigate().to(environment);
 //                break;
 //            case "chrome":
-//                System.setProperty("webdriver.chrome.driver","C:\\Users\\w.jumaa\\chromedriver.exe");
+//                System.setProperty("webdriver.chrome.driver","src/test/resources/drivers/chromedriver.exe");
 //                webDriver = new ChromeDriver();
 //                webDriver.manage().window().maximize();
-//                webDriver.navigate().to(siteURL);
+//                webDriver.navigate().to(environment);
 //                break;
 //            case "Edge":
-//                System.setProperty("webdriver.edge.driver", "src/test/resources/msedgedriver.exe");
+//                System.setProperty("webdriver.edge.driver", "src/test/resources/drivers/msedgedriver.exe");
 //                webDriver = new EdgeDriver();
 //                webDriver.manage().window().maximize();
-//                webDriver.navigate().to(siteURL);
+//                webDriver.navigate().to(environment);
 //                break;
 //            default:
 //////If no browser passed throw exception
@@ -112,11 +116,11 @@ public class BaseTest {
 
         }
     }
-//    @BeforeGroups(groups = "Smoke Testing Report")
-//    @Parameters({"environment"})
-//
-//    public void setupBrowserForGroup(String environment) throws Exception {
-//        this.setupBrowser( environment);}
+    @BeforeGroups(groups = "Smoke Testing Report")
+    @Parameters({"environment"})
+
+    public void setupBrowserForGroup(String environment) throws Exception {
+        this.setupBrowser( environment);}
 
     @AfterClass(alwaysRun = true)
     public void tearDown()  {

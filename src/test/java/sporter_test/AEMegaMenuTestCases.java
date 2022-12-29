@@ -17,6 +17,7 @@ public class AEMegaMenuTestCases extends BaseTest {
 
      String healthyFoodsUrl = "/en-ae/healthy-food/";
     String womenOnlyUrl = "/en-ae/female/";
+    
     @Test(groups = "Smoke Testing Report",description = "MegaMenu- Switching to the UAE Store", priority = 1)
     public void switchToUaeStore() {
 //        qatarHomePage.webDriver=this.webDriver;

@@ -3,7 +3,7 @@
 <suite name=" Test" thread-count="2" >
     <listeners>
         <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>
-<!--        <listener class-name="extent_report_listner.ExtentReportListener" />-->
+        <listener class-name="extent_report_listner.ExtentReportListener" />
     </listeners>
     <test name=" System Testing Report" preserve-order="true">
 <!--        &lt;!&ndash;        Guidelines:&ndash;&gt;-->
@@ -11,6 +11,10 @@
 <!--        &lt;!&ndash;         2. To test on stgTest Env, change the value to "stgTest".&ndash;&gt;-->
 <!--        &lt;!&ndash;         3. To test on stg Env, change the value to "stg".&ndash;&gt;-->
 <!--        &lt;!&ndash;         4. To test on Staging2 Env, change the value to "staging2". &ndash;&gt;-->
+<!--        <parameter name="environment" value="production" />-->
+
+
+
         <parameter name="environment" value="production" />
 <!--        &lt;!&ndash;        Guidelines:&ndash;&gt;-->
 <!--        &lt;!&ndash;    1. To test on Arabic version, change the value to "ar".&ndash;&gt;-->
@@ -25,7 +29,7 @@
 <!--            &lt;!&ndash;            <class name="sporter_test.AeSportSupplementsCategoryTestCases"/>&ndash;&gt;-->
 <!--            &lt;!&ndash;            <class name="sporter_test.AeSportsCategoryTestCases"/>&ndash;&gt;-->
 <!--            &lt;!&ndash;            <class name="sporter_test.AeSearchPageTestCases"/>&ndash;&gt;-->
-                        <class name="sporter_test.AEGuestUserTestCases">
+                        <class name="sporter_test.AEMegaMenuTestCases">
 <!--                        <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases">-->
 <!--            <methods>-->
 <!--&lt;!&ndash;                <include name="switchToUaeStore"/>&ndash;&gt;-->

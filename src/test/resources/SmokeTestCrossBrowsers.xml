@@ -1,61 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="TestSuite" thread-count="3" parallel="tests" >
+<suite name="TestSuite" thread-count="2" >
+    <listeners>
+        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>
+        <listener class-name="extent_report_listner.ExtentReportListener" />
+    </listeners>
 
-    <test name="EdgeTest">
-        <parameter name="browser" value="Edge" />
-        <classes>
-            <class name="sporter_test.AeRecommendedProductsTestCases">
-                <methods>
-<!--                    <include name="verifyKeepShoppingBtnWorksCorrectly"></include>-->
-<!--                    <include name="verifyViewCartWorksBtnCorrectly"></include>-->
-<!--                    <include name="verifyAbilityToAddRecommendedProductToCart"></include>-->
-                </methods>
-            </class>
-        </classes>
-    </test>
     <test name="ChromeTest">
-        <parameter name="browser" value="chrome"/>
-<!--        <parameter name="browser" value="chrome" />-->
+        <parameter name="environment" value="https://stg.sporter.com" />
+
+        <parameter name="browser" value="Edge" />
+        <!--        <parameter name="browser" value="chrome" />-->
         <classes>
-            <class name="sporter_test.AeRecommendedProductsTestCases">
-                <methods>
-<!--                  <include name="verifySportsSupplementsMenuInTheShopByMenuDisplayTheCorrectCategoriesAndSubCategories"></include>-->
-<!--                  <include name="verifyPrivacyPolicyLinkAppearsInFooterWorksCorrectly"></include>-->
-<!--                    <include name="verifyTheFooterSectionAppearsInTheTermsAndServicePage"></include>-->
-<!--                    <include name="verifyTermsAndServiceLinkAppearsInFooterWorksCorrectly"></include>-->
+            <class name="sporter_test.AeRecommendedProductsTestCases"></class>
 
-
-
-<!--                    <include name="verifyFAQsLinkAppearsInFooterWorksCorrectly"></include>-->
-<!--                    <include name="verifyGrenadeReloadProteinOatBarLinkAppearsInFooterWorksCorrectly"></include>-->
-<!--                    <include name="verifyDramatizeIso100ProteinLinkAppearsInFooterWorksCorrectly"></include>-->
-<!--                    <include name="verifyGrenadeCarbKillaProteinBarLinkAppearsInFooterWorksCorrectly"></include>-->
-<!--                    <include name="verifyGrenadeCarbKillaProteinBarBoxOf12LinkAppearsInFooterWorksCorrectly"></include>-->
-<!--                    <include name="verifyQuestNutritionBarsBoxOf12LinkAppearsInFooterWorksCorrectly"></include>-->
-<!--                    <include name="verifyAboutSporterLinkAppearsInFooterWorksCorrectly"></include>-->
-<!--                    <include name="verifyProductQualityLinkAppearsInFooterWorksCorrectly"></include>-->
-<!--                    <include name="verifyProductAuthenticityLinkAppearsInFooterWorksCorrectly"></include>-->
-<!--                    <include name="verifyWholesaleLinkAppearsInFooterWorksCorrectly"></include>-->
-<!--                    <include name="verifyCareersLinkAppearsInFooterWorksCorrectly"></include>-->
-<!--                    <include name="verifySporterBlogLinkAppearsInFooterWorksCorrectly"></include>-->
-<!--                    <include name="verifyContactInfoLinkAppearsInFooterWorksCorrectly"></include>-->
-
-                </methods>
-            </class>
         </classes>
     </test>
-    <test name="FireFoxTest">
-        <parameter name="browser" value="firefox" />
-        <classes>
-            <class name="sporter_test.AeRecommendedProductsTestCases">
-                <methods>
-<!--                    <include name="viewCartFromPDP"></include>-->
-<!--                    <include name="verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct"></include>-->
-                </methods>
-            </class>
-        </classes>
-    </test>
+
+<!--    <test name="Edge">-->
+<!--        <parameter name="environment" value="https://www.sporter.com" />-->
+
+<!--        <parameter name="browser" value="Edge" />-->
+<!--        &lt;!&ndash;        <parameter name="browser" value="chrome" />&ndash;&gt;-->
+<!--        <classes>-->
+<!--            <class name="sporter_test.AeProductDetailsPageTestCases"></class>-->
+
+<!--        </classes>-->
+<!--    </test>-->
+
 </suite>
 
 
