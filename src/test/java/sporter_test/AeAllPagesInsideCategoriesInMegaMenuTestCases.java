@@ -49,7 +49,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getProteinOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getProteinOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -68,7 +68,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWheyProteinOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWheyProteinOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -87,7 +87,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWheyProteinIsolateOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWheyProteinIsolateOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -106,7 +106,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.navigateToHomePage();
+        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getProteinBlendsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getProteinBlendsOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -125,7 +125,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getNonDairyProteinOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getNonDairyProteinOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -144,7 +144,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCaseinProteinOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCaseinProteinOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -163,7 +163,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getDietProteinOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getDietProteinOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -182,7 +182,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMassGainersOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMassGainersOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -201,7 +201,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCreatineOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCreatineOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -220,7 +220,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage  aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCreatineMonohydrateOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCreatineMonohydrateOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -239,7 +239,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCreatineBlendsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCreatineBlendsOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -258,7 +258,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getAminoAcidsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidsOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -277,7 +277,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getbCAAOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getbCAAOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -296,7 +296,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.geteAAOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.geteAAOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -316,7 +316,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getArginineOptionInSportSupplementsMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getArginineOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -335,7 +335,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getBetaAlanineOptionInSportSupplementsMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getBetaAlanineOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -354,7 +354,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.gethMBOptionInSportSupplementsMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.gethMBOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -373,7 +373,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getAminoAcidPowdersOptionInSportSupplementsMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getAminoAcidPowdersOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -392,7 +392,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getAminoAcidPillsOptionInSportSupplementsMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getAminoAcidPillsOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -411,7 +411,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getCitrullineOptionInSportSupplementsMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getCitrullineOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -430,7 +430,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getAminoAcidLiquidsOptionInSportSupplementsMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getAminoAcidLiquidsOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -449,7 +449,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getMuscleBoostersOptionInSportSupplementsMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getMuscleBoostersOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -468,7 +468,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getTestosteroneBoostersOptionInSportSupplementsMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getTestosteroneBoostersOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -487,7 +487,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
       action = new Actions(webDriver);
-//      aeMegamenuPage.navigateToHomePage();
+//      //aeMegamenuPage.navigateToHomePage();
       action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
       action.moveToElement(aeMegamenuPage.getGhBoostersOptionInSportSupplementsMainMenu()).perform();
       String expectedUrl=aeMegamenuPage.getGhBoostersOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -506,7 +506,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
       action = new Actions(webDriver);
-//      aeMegamenuPage.navigateToHomePage();
+//      //aeMegamenuPage.navigateToHomePage();
       action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
       action.moveToElement(aeMegamenuPage.getWeightManagementOptionInSportSupplementsMainMenu()).perform();
       String expectedUrl=aeMegamenuPage.getWeightManagementOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -525,7 +525,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
       action = new Actions(webDriver);
-//      aeMegamenuPage.navigateToHomePage();
+//      //aeMegamenuPage.navigateToHomePage();
       action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
       action.moveToElement(aeMegamenuPage.getStimulantWeightLossOptionInSportSupplementsMainMenu()).perform();
       String expectedUrl=aeMegamenuPage.getStimulantWeightLossOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -544,7 +544,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
       action = new Actions(webDriver);
-//      aeMegamenuPage.navigateToHomePage();
+//      //aeMegamenuPage.navigateToHomePage();
       action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
       action.moveToElement(aeMegamenuPage.getNonStimulantWeightLossOptionInSportSupplementsMainMenu()).perform();
       String expectedUrl=aeMegamenuPage.getNonStimulantWeightLossOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -563,7 +563,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
       action = new Actions(webDriver);
-//      aeMegamenuPage.navigateToHomePage();
+//      //aeMegamenuPage.navigateToHomePage();
       action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
       action.moveToElement(aeMegamenuPage.getMealReplacementsOptionInSportSupplementsMainMenu()).perform();
       String expectedUrl=aeMegamenuPage.getMealReplacementsOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -582,7 +582,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
       action = new Actions(webDriver);
-//      aeMegamenuPage.navigateToHomePage();
+//      //aeMegamenuPage.navigateToHomePage();
       action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
       action.moveToElement(aeMegamenuPage.getMetabolismSupportOptionInSportSupplementsMainMenu()).perform();
       String expectedUrl=aeMegamenuPage.getMetabolismSupportOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -601,7 +601,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
       action = new Actions(webDriver);
-//      aeMegamenuPage.navigateToHomePage();
+//      //aeMegamenuPage.navigateToHomePage();
       action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
       action.moveToElement(aeMegamenuPage.getToningCreamsOptionInSportSupplementsMainMenu()).perform();
       String expectedUrl=aeMegamenuPage.getToningCreamsOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -620,7 +620,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getMctOptionInSportSupplementsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getMctOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -639,7 +639,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getRecoveryOptionInSportSupplementsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getRecoveryOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -658,7 +658,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getGlutamineOptionInSportSupplementsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getGlutamineOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -677,7 +677,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getRecoveryBlendOptionInSportSupplementsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getRecoveryBlendOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -696,7 +696,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getElectrolytesAndHydrationOptionInSportSupplementsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getElectrolytesAndHydrationOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -715,7 +715,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getCarbohydratesOptionInSportSupplementsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getCarbohydratesOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -734,7 +734,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getCarbohydratePowdersOptionInSportSupplementsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getCarbohydratePowdersOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -753,7 +753,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getEnergyAndEnduranceOptionInSportSupplementsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getEnergyAndEnduranceOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -773,7 +773,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getStimulantEnergyOptionInSportSupplementsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getStimulantEnergyOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -792,7 +792,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getNonStimulantEnergyOptionInSportSupplementsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getNonStimulantEnergyOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -811,7 +811,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getGamingAndFocusOptionInSportSupplementsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getGamingAndFocusOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -830,7 +830,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getGamingEssentialsOptionInSportSupplementsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getGamingEssentialsOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -850,7 +850,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getFeaturedOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFeaturedOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -869,7 +869,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getAliveVitaminsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAliveVitaminsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -888,7 +888,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSexualHealthOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSexualHealthOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -908,7 +908,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getEssentialVitaminsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getEssentialVitaminsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -927,7 +927,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getFolicAcidOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFolicAcidOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -946,7 +946,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminAOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminAOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -965,7 +965,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminBOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminBOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -984,7 +984,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminCOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminCOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1003,7 +1003,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminDOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminDOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1022,7 +1022,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminEOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminEOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1041,7 +1041,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminKOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminKOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1060,7 +1060,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMultiVitaminsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMultiVitaminsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1079,7 +1079,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsForKidsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminsForKidsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1098,7 +1098,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsForMenOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminsForMenOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1117,7 +1117,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsForWomenOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminsForWomenOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1136,7 +1136,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBoneAndJointOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBoneAndJointOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1155,7 +1155,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBoneHealthOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBoneHealthOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1174,7 +1174,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getJointHealthOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getJointHealthOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1193,7 +1193,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBeautyOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBeautyOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1212,7 +1212,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getCollagenOptionInVitaminsAndHealthMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getCollagenOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1231,7 +1231,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getHairSkinAndNailsOptionInVitaminsAndHealthMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getHairSkinAndNailsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1250,7 +1250,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getFishOilOmegasOptionInVitaminsAndHealthMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getFishOilOmegasOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1269,7 +1269,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getFishOilOptionInVitaminsAndHealthMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getFishOilOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1288,7 +1288,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getOmega369OptionInVitaminsAndHealthMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getOmega369OptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1307,7 +1307,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getHealthLifestyleOptionInVitaminsAndHealthMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getHealthLifestyleOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1326,7 +1326,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getAntioxidantsOptionInVitaminsAndHealthMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getAntioxidantsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1345,7 +1345,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getBloodSugarSupportOptionInVitaminsAndHealthMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getBloodSugarSupportOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1364,7 +1364,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getBrainSupportOptionInVitaminsAndHealthMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getBrainSupportOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1383,7 +1383,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getDetoxAndCleanseOptionInVitaminsAndHealthMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getDetoxAndCleanseOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1402,7 +1402,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getEnergyFormulasOptionInVitaminsAndHealthMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getEnergyFormulasOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1421,7 +1421,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getEyeHealthOptionInVitaminsAndHealthMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getEyeHealthOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1440,7 +1440,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getHerbsOptionInVitaminsAndHealthMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getHerbsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1459,7 +1459,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getHormonesBalanceOptionInVitaminsAndHealthMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getHormonesBalanceOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1478,7 +1478,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getImmuneSupportOptionInVitaminsAndHealthMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getImmuneSupportOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1497,7 +1497,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getMensHealthOptionInVitaminsAndHealthMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getMensHealthOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1516,7 +1516,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getStressReliefOptionInVitaminsAndHealthMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getStressReliefOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1535,7 +1535,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getSleepSupportOptionInVitaminsAndHealthMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getSleepSupportOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1554,7 +1554,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
       action = new Actions(webDriver);
-//      aeMegamenuPage.navigateToHomePage();
+//      //aeMegamenuPage.navigateToHomePage();
       action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
       action.moveToElement(aeMegamenuPage.getSuperFoodsOptionInVitaminsAndHealthMainMenu()).perform();
       String expectedUrl=aeMegamenuPage.getSuperFoodsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1573,7 +1573,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
       action = new Actions(webDriver);
-//      aeMegamenuPage.navigateToHomePage();
+//      //aeMegamenuPage.navigateToHomePage();
       action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
       action.moveToElement(aeMegamenuPage.getUrinaryTractSupportOptionInVitaminsAndHealthMainMenu()).perform();
       String expectedUrl=aeMegamenuPage.getUrinaryTractSupportOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1592,7 +1592,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
       action = new Actions(webDriver);
-//      aeMegamenuPage.navigateToHomePage();
+//      //aeMegamenuPage.navigateToHomePage();
       action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
       action.moveToElement(aeMegamenuPage.getWeightManagementOptionInVitaminsAndHealthMainMenu()).perform();
       String expectedUrl=aeMegamenuPage.getWeightManagementOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1611,7 +1611,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
       action = new Actions(webDriver);
-//      aeMegamenuPage.navigateToHomePage();
+//      //aeMegamenuPage.navigateToHomePage();
       action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
       action.moveToElement(aeMegamenuPage.getWomensHealthOptionInVitaminsAndHealthMainMenu()).perform();
       String expectedUrl=aeMegamenuPage.getWomensHealthOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1630,7 +1630,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
       action = new Actions(webDriver);
-//      aeMegamenuPage.navigateToHomePage();
+//      //aeMegamenuPage.navigateToHomePage();
       action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
       action.moveToElement(aeMegamenuPage.getDigestionOptionInVitaminsAndHealthMainMenu()).perform();
       String expectedUrl=aeMegamenuPage.getDigestionOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1649,7 +1649,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
       action = new Actions(webDriver);
-//      aeMegamenuPage.navigateToHomePage();
+//      //aeMegamenuPage.navigateToHomePage();
       action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
       action.moveToElement(aeMegamenuPage.getDigestiveSupportOptionInVitaminsAndHealthMainMenu()).perform();
       String expectedUrl=aeMegamenuPage.getDigestiveSupportOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1668,7 +1668,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
       action = new Actions(webDriver);
-//      aeMegamenuPage.navigateToHomePage();
+//      //aeMegamenuPage.navigateToHomePage();
       action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
       action.moveToElement(aeMegamenuPage.getProbioticsOptionInVitaminsAndHealthMainMenu()).perform();
       String expectedUrl=aeMegamenuPage.getProbioticsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1687,7 +1687,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
       action = new Actions(webDriver);
-//      aeMegamenuPage.navigateToHomePage();
+//      //aeMegamenuPage.navigateToHomePage();
       action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
       action.moveToElement(aeMegamenuPage.getSportVitaminsOptionInVitaminsAndHealthMainMenu()).perform();
       String expectedUrl=aeMegamenuPage.getSportVitaminsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1706,7 +1706,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
       action = new Actions(webDriver);
-//      aeMegamenuPage.navigateToHomePage();
+//      //aeMegamenuPage.navigateToHomePage();
       action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
       action.moveToElement(aeMegamenuPage.getAminoAcidOptionInVitaminsAndHealthMainMenu()).perform();
       String expectedUrl=aeMegamenuPage.getAminoAcidOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1725,7 +1725,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
       action = new Actions(webDriver);
-//      aeMegamenuPage.navigateToHomePage();
+//      //aeMegamenuPage.navigateToHomePage();
       action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
       action.moveToElement(aeMegamenuPage.getMineralsOptionInVitaminsAndHealthMainMenu()).perform();
       String expectedUrl=aeMegamenuPage.getMineralsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1744,7 +1744,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
       action = new Actions(webDriver);
-//      aeMegamenuPage.navigateToHomePage();
+//      //aeMegamenuPage.navigateToHomePage();
       action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
       action.moveToElement(aeMegamenuPage.getCalciumOptionInVitaminsAndHealthMainMenu()).perform();
       String expectedUrl=aeMegamenuPage.getCalciumOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1763,7 +1763,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
       action = new Actions(webDriver);
-//      aeMegamenuPage.navigateToHomePage();
+//      //aeMegamenuPage.navigateToHomePage();
       action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
       action.moveToElement(aeMegamenuPage.getIronOptionInVitaminsAndHealthMainMenu()).perform();
       String expectedUrl=aeMegamenuPage.getIronOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1782,7 +1782,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
       action = new Actions(webDriver);
-//      aeMegamenuPage.navigateToHomePage();
+//      //aeMegamenuPage.navigateToHomePage();
       action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
       action.moveToElement(aeMegamenuPage.getMagnesiumOptionInVitaminsAndHealthMainMenu()).perform();
       String expectedUrl=aeMegamenuPage.getMagnesiumOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1801,7 +1801,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
       action = new Actions(webDriver);
-//      aeMegamenuPage.navigateToHomePage();
+//      //aeMegamenuPage.navigateToHomePage();
       action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
       action.moveToElement(aeMegamenuPage.getMultimineralFormulasOptionInVitaminsAndHealthMainMenu()).perform();
       String expectedUrl=aeMegamenuPage.getMultimineralFormulasOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1820,7 +1820,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
       action = new Actions(webDriver);
-//      aeMegamenuPage.navigateToHomePage();
+//      //aeMegamenuPage.navigateToHomePage();
       action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
       action.moveToElement(aeMegamenuPage.getZincOptionInVitaminsAndHealthMainMenu()).perform();
       String expectedUrl=aeMegamenuPage.getZincOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1839,7 +1839,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
       action = new Actions(webDriver);
-//      aeMegamenuPage.navigateToHomePage();
+//      //aeMegamenuPage.navigateToHomePage();
       action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
       action.moveToElement(aeMegamenuPage.getPotassiumOptionInVitaminsAndHealthMainMenu()).perform();
       String expectedUrl=aeMegamenuPage.getPotassiumOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1858,7 +1858,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
       action = new Actions(webDriver);
-//      aeMegamenuPage.navigateToHomePage();
+//      //aeMegamenuPage.navigateToHomePage();
       action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
       action.moveToElement(aeMegamenuPage.getHealthyDrinksOptionInVitaminsAndHealthMainMenu()).perform();
       String expectedUrl=aeMegamenuPage.getHealthyDrinksOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1877,7 +1877,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
       action = new Actions(webDriver);
-//      aeMegamenuPage.navigateToHomePage();
+//      //aeMegamenuPage.navigateToHomePage();
       action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
       action.moveToElement(aeMegamenuPage.getDrinkableVitaminsOptionInVitaminsAndHealthMainMenu()).perform();
       String expectedUrl=aeMegamenuPage.getDrinkableVitaminsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1896,7 +1896,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
       action = new Actions(webDriver);
-//      aeMegamenuPage.navigateToHomePage();
+//      //aeMegamenuPage.navigateToHomePage();
       action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
       action.moveToElement(aeMegamenuPage.getPetsOptionInVitaminsAndHealthMainMenu()).perform();
       String expectedUrl=aeMegamenuPage.getPetsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1915,7 +1915,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
       action = new Actions(webDriver);
-//      aeMegamenuPage.navigateToHomePage();
+//      //aeMegamenuPage.navigateToHomePage();
       action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
       action.moveToElement(aeMegamenuPage.getSupplementsMoreOptionInVitaminsAndHealthMainMenu()).perform();
       String expectedUrl=aeMegamenuPage.getSupplementsMoreOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -1946,7 +1946,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getGroceryOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGroceryOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -1966,7 +1966,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getBakingAndCookingOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getBakingAndCookingOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -1985,7 +1985,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getCannedOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getCannedOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2004,7 +2004,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getCoffeeOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getCoffeeOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2023,7 +2023,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getCondimentsOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getCondimentsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2042,7 +2042,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getMilkAndCreamOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getMilkAndCreamOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2061,7 +2061,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getNutsAndOatsOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getNutsAndOatsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2080,7 +2080,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getOilsOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getOilsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2099,7 +2099,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getPastaOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getPastaOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2118,7 +2118,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getRiceAndGrainsOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getRiceAndGrainsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2137,7 +2137,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getSeasoningsAndSpicesOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getSeasoningsAndSpicesOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2156,7 +2156,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getSugarSweetenersOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getSugarSweetenersOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2175,7 +2175,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getSyrupsOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getSyrupsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2194,7 +2194,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getTeaAndHerbsOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getTeaAndHerbsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2213,7 +2213,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getSuperfoodsOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getSuperfoodsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2232,7 +2232,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getReadyMixesOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getReadyMixesOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2251,7 +2251,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getBreakfastAndCerealOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getBreakfastAndCerealOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2270,7 +2270,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getReadyToDrinkOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getReadyToDrinkOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2290,7 +2290,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getAminoAndBcaasOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getAminoAndBcaasOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2309,7 +2309,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getEnergyDrinksOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getEnergyDrinksOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2328,7 +2328,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getProteinShakesOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getProteinShakesOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2347,7 +2347,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getElectrolytesAndHydrationOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getElectrolytesAndHydrationOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2366,7 +2366,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getHealthySnacksOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getHealthySnacksOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2385,7 +2385,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getProteinBarsOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getProteinBarsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2404,7 +2404,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getCookiesOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getCookiesOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2423,7 +2423,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getChipsOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getChipsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2442,7 +2442,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getBrowniesAndPancakesOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getBrowniesAndPancakesOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2461,7 +2461,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getSnackBarsOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getSnackBarsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2480,7 +2480,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getSpreadsOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getSpreadsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2499,7 +2499,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getOtherHealthySnacksOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getOtherHealthySnacksOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2518,7 +2518,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getReadyToEatOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getReadyToEatOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2537,7 +2537,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getHealthyMealsOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getHealthyMealsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2557,7 +2557,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getFeaturedOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getFeaturedOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2576,7 +2576,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getHealthyMealReplacementOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getHealthyMealReplacementOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2595,7 +2595,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getProteinCoffeeOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getProteinCoffeeOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2614,7 +2614,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getCandiesOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getCandiesOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2633,7 +2633,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getFlavoringAgentsOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getFlavoringAgentsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2652,7 +2652,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getKetoSnacksOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getKetoSnacksOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2671,7 +2671,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getManukaHoneyOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getManukaHoneyOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2690,7 +2690,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
        action = new Actions(webDriver);
-//       aeMegamenuPage.navigateToHomePage();
+//       //aeMegamenuPage.navigateToHomePage();
        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
        action.moveToElement(aeMegamenuPage.getMeatSnacksOptionInHealthyFoodMainMenu()).perform();
        String expectedUrl=aeMegamenuPage.getMeatSnacksOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -2710,7 +2710,7 @@ public void verifyAbilityToAccessAllPagesInsideMenOptionCategoryRelatedToSportsC
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getMenOptionInSportsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getMenOptionInSportsMainMenu().getAttribute("href");
@@ -2729,7 +2729,7 @@ public void verifyAbilityToAccessAllPagesInsideSportOptionCategoryRelatedToSport
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getSportOptionInSportsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getSportOptionInSportsMainMenu().getAttribute("href");
@@ -2748,7 +2748,7 @@ public void verifyAbilityToAccessAllPagesInsideFootballOptionCategoryRelatedToSp
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getFootballOptionInSportsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getFootballOptionInSportsMainMenu().getAttribute("href");
@@ -2767,7 +2767,7 @@ public void verifyAbilityToAccessAllPagesInsideBasketballOptionCategoryRelatedTo
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getBasketballOptionInSportsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getBasketballOptionInSportsMainMenu().getAttribute("href");
@@ -2786,7 +2786,7 @@ public void verifyAbilityToAccessAllPagesInsideBaseballOptionCategoryRelatedToSp
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getBaseballOptionInSportsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getBaseballOptionInSportsMainMenu().getAttribute("href");
@@ -2805,7 +2805,7 @@ public void verifyAbilityToAccessAllPagesInsideRunningOptionCategoryRelatedToSpo
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getRunningOptionInSportsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getRunningOptionInSportsMainMenu().getAttribute("href");
@@ -2824,7 +2824,7 @@ public void verifyAbilityToAccessAllPagesInsideSafetySwimmingOptionCategoryRelat
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getSwimmingOptionInSportsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getSwimmingOptionInSportsMainMenu().getAttribute("href");
@@ -2843,7 +2843,7 @@ public void verifyAbilityToAccessAllPagesInsideYogaOptionCategoryRelatedToSports
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getYogaOptionInSportsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getYogaOptionInSportsMainMenu().getAttribute("href");
@@ -2862,7 +2862,7 @@ public void verifyAbilityToAccessAllPagesInsideFitnessAndTraining1OptionCategory
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getFitnessAndTrainingOptionInSportsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getFitnessAndTrainingOptionInSportsMainMenu().getAttribute("href");
@@ -2881,7 +2881,7 @@ public void verifyAbilityToAccessAllPagesInsideMmaOptionCategoryRelatedToSportsC
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getMmaOptionInSportsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getMmaOptionInSportsMainMenu().getAttribute("href");
@@ -2900,7 +2900,7 @@ public void verifyAbilityToAccessAllPagesInsideJiuJitsuOptionCategoryRelatedToSp
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getJiuJitsuOptionInSportsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getJiuJitsuOptionInSportsMainMenu().getAttribute("href");
@@ -2919,7 +2919,7 @@ public void verifyAbilityToAccessAllPagesInsideBoardGamesOptionCategoryRelatedTo
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getBoardGamesOptionInSportsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getBoardGamesOptionInSportsMainMenu().getAttribute("href");
@@ -2938,7 +2938,7 @@ public void verifyAbilityToAccessAllPagesInsideSportsTechOptionCategoryRelatedTo
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getSportsTechOptionInSportsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getSportsTechOptionInSportsMainMenu().getAttribute("href");
@@ -2957,7 +2957,7 @@ public void verifyAbilityToAccessAllPagesInsideWearableTechOptionCategoryRelated
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getWearableTechOptionInSportsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getWearableTechOptionInSportsMainMenu().getAttribute("href");
@@ -2976,7 +2976,7 @@ public void verifyAbilityToAccessAllPagesInsideCamerasOptionCategoryRelatedToSpo
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getCamerasOptionInSportsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getCamerasOptionInSportsMainMenu().getAttribute("href");
@@ -2995,7 +2995,7 @@ public void verifyAbilityToAccessAllPagesInsidePhoneAccessoriesOptionCategoryRel
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getPhoneAccessoriesOptionInSportsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getPhoneAccessoriesOptionInSportsMainMenu().getAttribute("href");
@@ -3014,7 +3014,7 @@ public void verifyAbilityToAccessAllPagesInsidePersonalCareOptionCategoryRelated
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getPersonalCareOptionInSportsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getPersonalCareOptionInSportsMainMenu().getAttribute("href");
@@ -3033,7 +3033,7 @@ public void verifyAbilityToAccessAllPagesInsideShoweringOptionCategoryRelatedToS
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getShoweringOptionInSportsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getShoweringOptionInSportsMainMenu().getAttribute("href");
@@ -3052,7 +3052,7 @@ public void verifyAbilityToAccessAllPagesInsideShavingOptionCategoryRelatedToSpo
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getShavingOptionInSportsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getShavingOptionInSportsMainMenu().getAttribute("href");
@@ -3072,7 +3072,7 @@ public void verifyAbilityToAccessAllPagesInsideSkinCareOptionCategoryRelatedToSp
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getSkinCareOptionInSportsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getSkinCareOptionInSportsMainMenu().getAttribute("href");
@@ -3091,7 +3091,7 @@ public void verifyAbilityToAccessAllPagesInsideBodyCareOptionCategoryRelatedToSp
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getBodyCareOptionInSportsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getBodyCareOptionInSportsMainMenu().getAttribute("href");
@@ -3110,7 +3110,7 @@ public void verifyAbilityToAccessAllPagesInsideOralCareOptionCategoryRelatedToSp
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getOralCareOptionInSportsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getOralCareOptionInSportsMainMenu().getAttribute("href");
@@ -3129,7 +3129,7 @@ public void verifyAbilityToAccessAllPagesInsideTherapyOptionCategoryRelatedToSpo
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getTherapyOptionInSportsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getTherapyOptionInSportsMainMenu().getAttribute("href");
@@ -3148,7 +3148,7 @@ public void verifyAbilityToAccessAllPagesInsideMasksOptionCategoryRelatedToSport
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getMasksOptionInSportsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getMasksOptionInSportsMainMenu().getAttribute("href");
@@ -3167,7 +3167,7 @@ public void verifyAbilityToAccessAllPagesInsideFitnessAndTrainingOptionCategoryR
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getFitnessAndTrainingCategoryOptionInSportsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getFitnessAndTrainingCategoryOptionInSportsMainMenu().getAttribute("href");
@@ -3186,7 +3186,7 @@ public void verifyAbilityToAccessAllPagesInsideFitnessEquipmentOptionCategoryRel
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getFitnessEquipmentOptionInSportsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getFitnessEquipmentOptionInSportsMainMenu().getAttribute("href");
@@ -3205,7 +3205,7 @@ public void verifyAbilityToAccessAllPagesInsideSkippingRopesOptionCategoryRelate
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getSkippingRopesOptionInSportsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getSkippingRopesOptionInSportsMainMenu().getAttribute("href");
@@ -3225,7 +3225,7 @@ public void verifyAbilityToAccessAllPagesInsideWeightBeltsOptionCategoryRelatedT
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getWeightBeltsOptionInSportsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getWeightBeltsOptionInSportsMainMenu().getAttribute("href");
@@ -3244,7 +3244,7 @@ public void verifyAbilityToAccessAllPagesInsideScootersOptionCategoryRelatedToSp
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getScootersOptionInSportsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getScootersOptionInSportsMainMenu().getAttribute("href");
@@ -3263,7 +3263,7 @@ public void verifyAbilityToAccessAllPagesInsideTrainingAccessoriesOptionCategory
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
      action = new Actions(webDriver);
-//     aeMegamenuPage.navigateToHomePage();
+//     //aeMegamenuPage.navigateToHomePage();
      action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
      action.moveToElement(aeMegamenuPage.getTrainingAccessoriesOptionInSportsMainMenu()).perform();
      String expectedUrl=aeMegamenuPage.getTrainingAccessoriesOptionInSportsMainMenu().getAttribute("href");
@@ -3283,7 +3283,7 @@ public void verifyAbilityToAccessAllPagesInsideShakersAndBottlesOptionCategoryRe
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getShakersAndBottlesOptionInSportsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getShakersAndBottlesOptionInSportsMainMenu().getAttribute("href");
@@ -3302,7 +3302,7 @@ public void verifyAbilityToAccessAllPagesInsideBagsOptionCategoryRelatedToSports
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getBagsOptionInSportsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getBagsOptionInSportsMainMenu().getAttribute("href");
@@ -3321,7 +3321,7 @@ public void verifyAbilityToAccessAllPagesInsideGlovesOptionCategoryRelatedToSpor
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getGlovesOptionInSportsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getGlovesOptionInSportsMainMenu().getAttribute("href");
@@ -3340,7 +3340,7 @@ public void verifyAbilityToAccessAllPagesInsideBracesAndSleevesOptionCategoryRel
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getBracesAndSleevesOptionInSportsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getBracesAndSleevesOptionInSportsMainMenu().getAttribute("href");
@@ -3359,7 +3359,7 @@ public void verifyAbilityToAccessAllPagesInsideMouthguardOptionCategoryRelatedTo
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getMouthguardOptionInSportsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getMouthguardOptionInSportsMainMenu().getAttribute("href");
@@ -3378,7 +3378,7 @@ public void verifyAbilityToAccessAllPagesInsideAppealOptionCategoryRelatedToSpor
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getApparelOptionInSportsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getApparelOptionInSportsMainMenu().getAttribute("href");
@@ -3397,7 +3397,7 @@ public void verifyAbilityToAccessAllPagesInsideSportswearOptionCategoryRelatedTo
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getSportswearOptionInSportsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getSportswearOptionInSportsMainMenu().getAttribute("href");
@@ -3416,7 +3416,7 @@ public void verifyAbilityToAccessAllPagesInsidePantsOptionCategoryRelatedToSport
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getPantsOptionInSportsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getPantsOptionInSportsMainMenu().getAttribute("href");
@@ -3435,7 +3435,7 @@ public void verifyAbilityToAccessAllPagesInsideShortsOptionCategoryRelatedToSpor
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getShortsOptionInSportsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getShortsOptionInSportsMainMenu().getAttribute("href");
@@ -3454,7 +3454,7 @@ public void verifyAbilityToAccessAllPagesInsideHoodiesOptionCategoryRelatedToSpo
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getHoodiesOptionInSportsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getHoodiesOptionInSportsMainMenu().getAttribute("href");
@@ -3473,7 +3473,7 @@ public void verifyAbilityToAccessAllPagesInsideTShirtsOptionCategoryRelatedToSpo
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.gettShirtsOptionInSportsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.gettShirtsOptionInSportsMainMenu().getAttribute("href");
@@ -3492,7 +3492,7 @@ public void verifyAbilityToAccessAllPagesInsideTanksOptionCategoryRelatedToSport
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getTanksOptionInSportsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getTanksOptionInSportsMainMenu().getAttribute("href");
@@ -3511,7 +3511,7 @@ public void verifyAbilityToAccessAllPagesInsideFootwearOptionCategoryRelatedToSp
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getFootwearOptionInSportsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getFootwearOptionInSportsMainMenu().getAttribute("href");
@@ -3530,7 +3530,7 @@ public void verifyAbilityToAccessAllPagesInsideSneakersOptionCategoryRelatedToSp
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getSneakersOptionInSportsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getSneakersOptionInSportsMainMenu().getAttribute("href");
@@ -3549,7 +3549,7 @@ public void verifyAbilityToAccessAllPagesInsideTrainingShoesOptionCategoryRelate
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getTrainingShoesOptionInSportsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getTrainingShoesOptionInSportsMainMenu().getAttribute("href");
@@ -3568,7 +3568,7 @@ public void verifyAbilityToAccessAllPagesInsideRunningShoesOptionCategoryRelated
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getRunnigShoesOptionInSportsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getRunnigShoesOptionInSportsMainMenu().getAttribute("href");
@@ -3587,7 +3587,7 @@ public void verifyAbilityToAccessAllPagesInsideWomenOptionCategoryRelatedToSport
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getWomenOptionInSportsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getWomenOptionInSportsMainMenu().getAttribute("href");
@@ -3606,7 +3606,7 @@ public void verifyAbilityToAccessAllPagesInsideWomenSportsTechOptionCategoryRela
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getWomenSportsTechOptionInSportsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getWomenSportsTechOptionInSportsMainMenu().getAttribute("href");
@@ -3625,7 +3625,7 @@ public void verifyAbilityToAccessAllPagesInsideWomenWearableTechOptionCategoryRe
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getWomenWearableTechOptionInSportsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getWomenWearableTechOptionInSportsMainMenu().getAttribute("href");
@@ -3644,7 +3644,7 @@ public void verifyAbilityToAccessAllPagesInsideWomenCamerasOptionCategoryRelated
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getWomenCamerasOptionInSportsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getWomenCamerasOptionInSportsMainMenu().getAttribute("href");
@@ -3663,7 +3663,7 @@ public void verifyAbilityToAccessAllPagesInsideWomenPhoneAccessoriesOptionCatego
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getWomenPhoneAccessoriesOptionInSportsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getWomenPhoneAccessoriesOptionInSportsMainMenu().getAttribute("href");
@@ -3682,7 +3682,7 @@ public void verifyAbilityToAccessAllPagesInsideWomenPersonalCareOptionCategoryRe
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getWomenPersonalCareOptionInSportsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getWomenPersonalCareOptionInSportsMainMenu().getAttribute("href");
@@ -3701,7 +3701,7 @@ public void verifyAbilityToAccessAllPagesInsideWomenShoweringOptionCategoryRelat
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getWomenShoweringOptionInSportsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getWomenShoweringOptionInSportsMainMenu().getAttribute("href");
@@ -3720,7 +3720,7 @@ public void verifyAbilityToAccessAllPagesInsideWomenSkinCareOptionCategoryRelate
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getWomenSkinCareOptionInSportsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getWomenSkinCareOptionInSportsMainMenu().getAttribute("href");
@@ -3739,7 +3739,7 @@ public void verifyAbilityToAccessAllPagesInsideWomenBodyCareOptionCategoryRelate
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getWomenBodyCareOptionInSportsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getWomenBodyCareOptionInSportsMainMenu().getAttribute("href");
@@ -3758,7 +3758,7 @@ public void verifyAbilityToAccessAllPagesInsideWomenOralCareOptionCategoryRelate
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getWomenOralCareOptionInSportsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getWomenOralCareOptionInSportsMainMenu().getAttribute("href");
@@ -3777,7 +3777,7 @@ public void verifyAbilityToAccessAllPagesInsideWomenTherapyOptionCategoryRelated
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getWomenTherapyOptionInSportsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getWomenTherapyOptionInSportsMainMenu().getAttribute("href");
@@ -3796,7 +3796,7 @@ public void verifyAbilityToAccessAllPagesInsideWomenMasksOptionCategoryRelatedTo
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getWomenMasksOptionInSportsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getWomenMasksOptionInSportsMainMenu().getAttribute("href");
@@ -3815,7 +3815,7 @@ public void verifyAbilityToAccessAllPagesInsideWomenFitnessAndTrainingOptionCate
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getWomenFitnessAndTrainingOptionInSportsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getWomenFitnessAndTrainingOptionInSportsMainMenu().getAttribute("href");
@@ -3834,7 +3834,7 @@ public void verifyAbilityToAccessAllPagesInsideWomenTrainingAccessoriesOptionCat
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-//    aeMegamenuPage.navigateToHomePage();
+//    //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeMegamenuPage.getWomenTrainingAccessoriesOptionInSportsMainMenu()).perform();
     String expectedUrl=aeMegamenuPage.getWomenTrainingAccessoriesOptionInSportsMainMenu().getAttribute("href");

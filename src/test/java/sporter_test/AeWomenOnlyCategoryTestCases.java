@@ -358,7 +358,6 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     public void verifyClickingOnWomenDailyVitaminsCategoryInsideTheShopByCategorySectionWorksCorrectly() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeWomenOnlyCategoryPage.navigateToWomenOnlyPage();
 //        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeWomenOnlyCategoryPage.navigateToWomenOnlyPage();
         String expectedCategoryUrl = aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(1).getAttribute("href");
@@ -520,7 +519,6 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     public void verifyClickingOnLadyFriendlySnacksAndFoodCategoryInsideTheShopByCategorySectionWorksCorrectly() {
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
-        aeWomenOnlyCategoryPage.navigateToWomenOnlyPage();
 //        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeWomenOnlyCategoryPage.navigateToWomenOnlyPage();
         String expectedCategoryUrl = aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(2).getAttribute("href");
@@ -671,7 +669,6 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     public void verifyClickingOnMakeupForActiveLifestylesCategoryInsideTheShopByCategorySectionWorksCorrectly() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeWomenOnlyCategoryPage.navigateToWomenOnlyPage();
 //        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeWomenOnlyCategoryPage.navigateToWomenOnlyPage();
         String expectedCategoryUrl = aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(3).getAttribute("href");
@@ -1192,7 +1189,6 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeWomenOnlyCategoryPage.navigateToWomenOnlyPage();
-        aeWomenOnlyCategoryPage.navigateToWomenOnlyPage();
         aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(2).click();
         aeWomenOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("mood-support"));
@@ -1353,7 +1349,6 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeWomenOnlyCategoryPage.navigateToWomenOnlyPage();
-        aeWomenOnlyCategoryPage.navigateToWomenOnlyPage();
         String expectedUrl = aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(3).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(3).click();
         aeWomenOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -1512,7 +1507,6 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     public void verifyClickingOnPMSReliefCategoryInsideTheShopByCategorySectionWorksCorrectly() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeWomenOnlyCategoryPage.navigateToWomenOnlyPage();
         aeWomenOnlyCategoryPage.navigateToWomenOnlyPage();
         String expectedUrl = aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(4).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(4).click();
@@ -1690,7 +1684,6 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeWomenOnlyCategoryPage.navigateToWomenOnlyPage();
-        aeWomenOnlyCategoryPage.navigateToWomenOnlyPage();
         String expectedUrl = aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(5).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(5).click();
         aeWomenOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -1838,7 +1831,6 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     public void verifyClickingOnPrenatalCareCategoryInsideTheShopByCategorySectionWorksCorrectly() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeWomenOnlyCategoryPage.navigateToWomenOnlyPage();
         aeWomenOnlyCategoryPage.navigateToWomenOnlyPage();
         String expectedUrl = aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(6).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(6).click();
@@ -1988,7 +1980,6 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     public void verifyClickingOnMuscleAndWeightGainCategoryInsideTheShopByCategorySectionWorksCorrectly() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeWomenOnlyCategoryPage.navigateToWomenOnlyPage();
         aeWomenOnlyCategoryPage.navigateToWomenOnlyPage();
         aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(7).click();
         aeWomenOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -2140,7 +2131,6 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     public void verifyClickingOnFashionAndStyleCategoryInsideTheShopByCategorySectionWorksCorrectly() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeWomenOnlyCategoryPage.navigateToWomenOnlyPage();
         aeWomenOnlyCategoryPage.navigateToWomenOnlyPage();
         String expectedUrl = aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(8).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(8).click();

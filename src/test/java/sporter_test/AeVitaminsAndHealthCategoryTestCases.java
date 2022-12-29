@@ -167,7 +167,6 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
         ksaHomePage = new KsaHomePage(webDriver);
         aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         Assert.assertTrue(ksaHomePage.getShopByCategoryHeader().isDisplayed());
         Assert.assertTrue(ksaHomePage.getShopByCategorySections().isDisplayed());    }
     //Fish Oil & Omegas Category page Test Cases

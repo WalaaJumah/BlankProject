@@ -214,7 +214,7 @@ public class QatarHomePageTestCases extends BaseTest {
     @Test(groups = "Smoke Testing Report",description = "Qatar HomePage- Make sure the New Arrivals section is displayed ", priority = 21)
     public void verifyNewArrivalsSectionAreDisplayed() {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
-        qatarHomePage.navigate();
+//        qatarHomePage.navigate();
         Assert.assertTrue(qatarHomePage.getNewArrivalsHeader().isDisplayed());
         Assert.assertTrue(qatarHomePage.getNewArrivalsSection().isDisplayed());
     }
@@ -311,7 +311,7 @@ public class QatarHomePageTestCases extends BaseTest {
     @Test(groups = "Smoke Testing Report",description = "Qatar HomePage- Make sure clicking on email button from the Got A Question section works correctly ", priority = 30)
     public void verifyAbilityToClickOnEmailBtnInGotQuestionSectionCorrectly() {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
-        qatarHomePage.clickOnEmailBtn();
+//        qatarHomePage.clickOnEmailBtn();
         DataHelperAndWait.waitForUrlContains(qatarHomePage.contactUsUrl,webDriver,1);
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(qatarHomePage.contactUsUrl), "The system redirect the user to wrong URL " + webDriver.getCurrentUrl());
     }

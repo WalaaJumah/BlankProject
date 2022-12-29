@@ -68,7 +68,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     @Test(description = "MegaMenu- Make sure the arrow Icon display correctly next to the options appearing in the ShopBy menu ", priority = 5)
     public void verifyTheArrowIconAppearsCorrectlyNextToTheOptionInTheInShopByMenu() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
-//                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getSportsSupplementsArrowIcon().isDisplayed());
@@ -81,7 +81,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     @Test(description = "MegaMenu- Make sure the background color of the ShopBy menu is Gray", priority = 6)
     public void verifyTheBackgroundColorOfTheShopByMenuInGrayColor() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
-//                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         Assert.assertEquals(aeMegamenuPage.getShopByList().getCssValue("background-color"), "rgba(236, 236, 236, 1)", "The ShopBy Menu does not appears in the gray color");
@@ -90,7 +90,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure the Category sub menu will appear once hovering on any option appearing in the ShopBy Menu", priority = 7)
     public void verifyTheCategorySubMenuAppearsWhenHoveringOnAnyOptionInsideShopByMenu() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
-//                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsSupplementsOption()).perform();
@@ -109,7 +109,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSportsSupplementsOptionInShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsSupplementsOption()).perform();
         String expectedUrl=aeMegamenuPage.getSportsSupplementsOption().getAttribute("href");
@@ -129,7 +129,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnVitaminsAndHealthOptionInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminsAndHealthOption().getAttribute("href");
@@ -147,7 +147,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnHealthyFoodOptionInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthFoodOption()).perform();
         String expectedUrl=aeMegamenuPage.getHealthFoodOption().getAttribute("href");
@@ -167,7 +167,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSportsOptionInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         String expectedUrl=aeMegamenuPage.getSportsOption().getAttribute("href");
@@ -186,7 +186,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWomanOnlyOptionInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWomenOnlyOption()).perform();
         String expectedUrl=aeMegamenuPage.getWomenOnlyOption().getAttribute("href");
@@ -205,7 +205,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnByBrandOptionInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         String expectedUrl=aeMegamenuPage.getByBrandOption().getAttribute("href");
@@ -218,7 +218,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnByGoalOptionInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByGoalOption()).perform();
         String expectedUrl=aeMegamenuPage.getByGoalOption().getAttribute("href");
@@ -236,7 +236,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSalesAndOffersOptionInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSalesAndOffersOption()).perform();
         String expectedUrl=aeMegamenuPage.getSalesAndOffersOption().getAttribute("href");
@@ -254,7 +254,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSportsStacksOptionInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSporterStacksOption()).perform();
         String expectedUrl=aeMegamenuPage.getSporterStacksOption().getAttribute("href");
@@ -273,7 +273,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifySportsSupplementsMenuInsideShopByMenuDisplayTheCorrectCategoriesAndSubCategories() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.navigateToHomePage();
+        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsSupplementsOption()).perform();
         DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getSubMenuList().get(0),5,webDriver);
@@ -323,7 +323,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnProteinOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsSupplementsOption()).perform();
         String expectedUrl=aeMegamenuPage.getProteinOptionInSportSupplementsMenu().getAttribute("href");
@@ -337,7 +337,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCreatineOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCreatineOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCreatineOptionInSportSupplementsMenu().getAttribute("href");
@@ -350,7 +350,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnAminoAcidsOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getAminoAcidsOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidsOptionInSportSupplementsMenu().getAttribute("href");
@@ -363,7 +363,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMuscleBoostersOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMuscleBoostersOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMuscleBoostersOptionInSportSupplementsMenu().getAttribute("href");
@@ -377,7 +377,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWeightManagementOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWeightManagementOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWeightManagementOptionInSportSupplementsMenu().getAttribute("href");
@@ -391,7 +391,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnRecoveryOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getRecoveryOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getRecoveryOptionInSportSupplementsMenu().getAttribute("href");
@@ -405,7 +405,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCarbohydratesOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCarbohydratesOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCarbohydratesOptionInSportSupplementsMenu().getAttribute("href");
@@ -419,7 +419,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnEnergyAndEnduranceOptionOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getEnergyAndEnduranceOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getEnergyAndEnduranceOptionInSportSupplementsMenu().getAttribute("href");
@@ -433,7 +433,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnGamingAndFocusOptionOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getGamingAndFocusOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGamingAndFocusOptionInSportSupplementsMenu().getAttribute("href");
@@ -448,7 +448,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWheyProteinOptionOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWheyProteinOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWheyProteinOptionInSportSupplementsMenu().getAttribute("href");
@@ -462,7 +462,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnWheyProteinIsolateOptionOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWheyProteinIsolateOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWheyProteinIsolateOptionInSportSupplementsMenu().getAttribute("href");
@@ -476,7 +476,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnProteinBlendsOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getProteinBlendsOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getProteinBlendsOptionInSportSupplementsMenu().getAttribute("href");
@@ -490,7 +490,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnNonDairyProteinOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getNonDairyProteinOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getNonDairyProteinOptionInSportSupplementsMenu().getAttribute("href");
@@ -504,7 +504,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCaseinProteinOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCaseinProteinOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCaseinProteinOptionInSportSupplementsMenu().getAttribute("href");
@@ -518,7 +518,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnDietProteinOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getDietProteinOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getDietProteinOptionInSportSupplementsMenu().getAttribute("href");
@@ -532,7 +532,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMassGainersOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMassGainersOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMassGainersOptionInSportSupplementsMenu().getAttribute("href");
@@ -546,7 +546,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCreatineMonohydrateOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCreatineMonohydrateOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCreatineMonohydrateOptionInSportSupplementsMenu().getAttribute("href");
@@ -560,7 +560,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCreatineBlendsOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        aeMegamenuPage.navigateToHomePage();
+//        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCreatineBlendsOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCreatineBlendsOptionInSportSupplementsMenu().getAttribute("href");
@@ -574,7 +574,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBCAAOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getbCAAOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getbCAAOptionInSportSupplementsMenu().getAttribute("href");
@@ -588,7 +588,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnEAAOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getEAAOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getEAAOptionInSportSupplementsMenu().getAttribute("href");
@@ -602,7 +602,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnArginineOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getArginineOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getArginineOptionInSportSupplementsMenu().getAttribute("href");
@@ -616,7 +616,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnBetaAlanineOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBetaAlanineOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBetaAlanineOptionInSportSupplementsMenu().getAttribute("href");
@@ -630,7 +630,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnHMbOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHMBOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHMBOptionInSportSupplementsMenu().getAttribute("href");
@@ -644,7 +644,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnAminoAcidPowdersOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getAminoAcidPowdersOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidPowdersOptionInSportSupplementsMenu().getAttribute("href");
@@ -658,7 +658,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnAminoAcidPillsOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getAminoAcidPillsOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidPillsOptionInSportSupplementsMenu().getAttribute("href");
@@ -672,7 +672,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCitrullineOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCitrullineOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCitrullineOptionInSportSupplementsMenu().getAttribute("href");
@@ -686,7 +686,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnAminoAcidLiquidsOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getAminoAcidLiquidsOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidLiquidsOptionInSportSupplementsMenu().getAttribute("href");
@@ -700,7 +700,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnTestosteroneBoostersOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getTestosteroneBoostersOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getTestosteroneBoostersOptionInSportSupplementsMenu().getAttribute("href");
@@ -714,7 +714,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnGhBoostersOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getGhBoostersOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGhBoostersOptionInSportSupplementsMenu().getAttribute("href");
@@ -728,7 +728,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnStimulantWeightLossOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getStimulantWeightLossOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getStimulantWeightLossOptionInSportSupplementsMenu().getAttribute("href");
@@ -742,7 +742,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnNonStimulantWeightLossOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getNonStimulantWeightLossOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getNonStimulantWeightLossOptionInSportSupplementsMenu().getAttribute("href");
@@ -756,7 +756,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMealReplacementsOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMealReplacementsOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMealReplacementsOptionInSportSupplementsMenu().getAttribute("href");
@@ -770,7 +770,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMetabolismSupportOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMetabolismSupportOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMetabolismSupportOptionInSportSupplementsMenu().getAttribute("href");
@@ -784,7 +784,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnToningCreamsOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getToningCreamsOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getToningCreamsOptionInSportSupplementsMenu().getAttribute("href");
@@ -798,7 +798,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnMctOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMctOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMctOptionInSportSupplementsMenu().getAttribute("href");
@@ -812,7 +812,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnGlutamineOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getGlutamineOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGlutamineOptionInSportSupplementsMenu().getAttribute("href");
@@ -826,7 +826,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnRecoveryBlendOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getRecoveryBlendOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getRecoveryBlendOptionInSportSupplementsMenu().getAttribute("href");
@@ -840,7 +840,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnElectrolytesAndHydrationOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getElectrolytesAndHydrationOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getElectrolytesAndHydrationOptionInSportSupplementsMenu().getAttribute("href");
@@ -854,7 +854,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnCarbohydratePowdersOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCarbohydratePowdersOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCarbohydratePowdersOptionInSportSupplementsMenu().getAttribute("href");
@@ -868,7 +868,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnStimulantEnergyOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getStimulantEnergyOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getStimulantEnergyOptionInSportSupplementsMenu().getAttribute("href");
@@ -882,7 +882,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnNonStimulantEnergyOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getNonStimulantEnergyOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getNonStimulantEnergyOptionInSportSupplementsMenu().getAttribute("href");
@@ -896,7 +896,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnGamingEssentialsOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getGamingEssentialsOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGamingEssentialsOptionInSportSupplementsMenu().getAttribute("href");
@@ -910,7 +910,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyVitaminsAndHealthMenuInsideShopByMenuDisplayTheCorrectCategoriesAndSubCategories() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getOptionList().get(0),5,webDriver);
@@ -928,7 +928,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyTheMainCategoriesInTheVitaminsAndHealthMenuInsideShopByMenuAppearingInBoldFont() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         Assert.assertTrue(aeMegamenuPage.getFeaturedOptionInVitaminsAndHealthMenu().getCssValue("font-weight").contains("700"));
@@ -949,7 +949,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyTheMainCategoriesInTheVitaminsAndHealthMenuInsideShopByMenuAppearingInUppercase() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         Assert.assertEquals(aeMegamenuPage.getFeaturedOptionInVitaminsAndHealthMenu().getCssValue("text-transform"), "uppercase");
@@ -970,7 +970,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnFeaturedOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getFeaturedOptionInVitaminsAndHealthMenu()).perform();
@@ -985,7 +985,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnAliveVitaminsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getAliveVitaminsOptionInVitaminsAndHealthMenu()).perform();
@@ -1000,7 +1000,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnSexualHealthOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getSexualHealthOptionInVitaminsAndHealthMenu()).perform();
@@ -1016,7 +1016,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnEssentialVitaminsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getEssentialVitaminsOptionInVitaminsAndHealthMenu()).perform();
@@ -1031,7 +1031,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnFolicAcidOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getFolicAcidOptionInVitaminsAndHealthMenu()).perform();
@@ -1046,7 +1046,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnVitaminAOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminAOptionInVitaminsAndHealthMenu()).perform();
@@ -1061,7 +1061,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnVitaminBOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminBOptionInVitaminsAndHealthMenu()).perform();
@@ -1076,7 +1076,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnVitaminCOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminCOptionInVitaminsAndHealthMenu()).perform();
@@ -1091,7 +1091,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnVitaminDOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminDOptionInVitaminsAndHealthMenu()).perform();
@@ -1106,7 +1106,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnVitaminEOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminEOptionInVitaminsAndHealthMenu()).perform();
@@ -1121,7 +1121,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnVitaminKOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminKOptionInVitaminsAndHealthMenu()).perform();
@@ -1136,7 +1136,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnMultiVitaminsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getMultiVitaminsOptionInVitaminsAndHealthMenu()).perform();
@@ -1151,7 +1151,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnVitaminsForKidsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsForKidsOptionInVitaminsAndHealthMenu()).perform();
@@ -1166,7 +1166,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnVitaminsForMenOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsForMenOptionInVitaminsAndHealthMenu()).perform();
@@ -1181,7 +1181,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnVitaminsForWomenOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsForWomenOptionInVitaminsAndHealthMenu()).perform();
@@ -1196,7 +1196,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBoneAndJointOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getBoneAndJointOptionInVitaminsAndHealthMenu()).perform();
@@ -1211,7 +1211,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBoneHealthOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getBoneHealthOptionInVitaminsAndHealthMenu()).perform();
@@ -1226,7 +1226,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnJointHealthOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getJointHealthOptionInVitaminsAndHealthMenu()).perform();
@@ -1241,7 +1241,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBeautyOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getBeautyOptionInVitaminsAndHealthMenu()).perform();
@@ -1256,7 +1256,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnCollagenOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getCollagenOptionInVitaminsAndHealthMenu()).perform();
@@ -1271,7 +1271,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnHairSkinAndNailsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getHairSkinAndNailsOptionInVitaminsAndHealthMenu()).perform();
@@ -1286,7 +1286,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnFishOilOmegasOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getFishOilOmegasOptionInVitaminsAndHealthMenu()).perform();
@@ -1301,7 +1301,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnFishOilOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getFishOilOptionInVitaminsAndHealthMenu()).perform();
@@ -1316,7 +1316,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnOmega369OptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getOmega369OptionInVitaminsAndHealthMenu()).perform();
@@ -1331,7 +1331,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnHealthLifestyleOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getHealthLifestyleOptionInVitaminsAndHealthMenu()).perform();
@@ -1346,7 +1346,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnAntioxidantsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getAntioxidantsOptionInVitaminsAndHealthMenu()).perform();
@@ -1361,7 +1361,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBloodSugarSupportOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getBloodSugarSupportOptionInVitaminsAndHealthMenu()).perform();
@@ -1376,7 +1376,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBrainSupportOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getBrainSupportOptionInVitaminsAndHealthMenu()).perform();
@@ -1391,7 +1391,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnDetoxAndCleanseOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getDetoxAndCleanseOptionInVitaminsAndHealthMenu()).perform();
@@ -1406,7 +1406,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnEnergyFormulasOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getEnergyFormulasOptionInVitaminsAndHealthMenu()).perform();
@@ -1421,7 +1421,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnEyeHealthOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getEyeHealthOptionInVitaminsAndHealthMenu()).perform();
@@ -1436,7 +1436,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnHerbsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getHerbsOptionInVitaminsAndHealthMenu()).perform();
@@ -1451,7 +1451,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnHormonesBalanceOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getHormonesBalanceOptionInVitaminsAndHealthMenu()).perform();
@@ -1466,7 +1466,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnImmuneSupportOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getImmuneSupportOptionInVitaminsAndHealthMenu()).perform();
@@ -1481,7 +1481,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnMensHealthOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getMensHealthOptionInVitaminsAndHealthMenu()).perform();
@@ -1496,7 +1496,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnStressReliefOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getStressReliefOptionInVitaminsAndHealthMenu()).perform();
@@ -1511,7 +1511,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSleepSupportOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getSleepSupportOptionInVitaminsAndHealthMenu()).perform();
@@ -1526,7 +1526,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSuperFoodsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getSuperFoodsOptionInVitaminsAndHealthMenu()).perform();
@@ -1541,7 +1541,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnUrinaryTractSupportOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getUrinaryTractSupportOptionInVitaminsAndHealthMenu()).perform();
@@ -1556,7 +1556,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWeightManagementOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getWeightManagementOptionInVitaminsAndHealthMenu()).perform();
@@ -1571,7 +1571,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomensHealthOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomensHealthOptionInVitaminsAndHealthMenu()).perform();
@@ -1586,7 +1586,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnDigestionOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getDigestionOptionInVitaminsAndHealthMenu()).perform();
@@ -1601,7 +1601,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnDigestionSupportOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getDigestiveSupportOptionInVitaminsAndHealthMenu()).perform();
@@ -1616,7 +1616,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnProbioticsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getProbioticsOptionInVitaminsAndHealthMenu()).perform();
@@ -1631,7 +1631,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSportVitaminsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getSportVitaminsOptionInVitaminsAndHealthMenu()).perform();
@@ -1646,7 +1646,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnAminoAcidOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getAminoAcidOptionInVitaminsAndHealthMenu()).perform();
@@ -1661,7 +1661,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnMineralsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getMineralsOptionInVitaminsAndHealthMenu()).perform();
@@ -1676,7 +1676,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnCalciumOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getCalciumOptionInVitaminsAndHealthMenu()).perform();
@@ -1691,7 +1691,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnIronOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getIronOptionInVitaminsAndHealthMenu()).perform();
@@ -1706,7 +1706,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnMagnesiumOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getMagnesiumOptionInVitaminsAndHealthMenu()).perform();
@@ -1721,7 +1721,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnMultimineralFormulasOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getMultimineralFormulasOptionInVitaminsAndHealthMenu()).perform();
@@ -1736,7 +1736,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnZincOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getZincOptionInVitaminsAndHealthMenu()).perform();
@@ -1751,7 +1751,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnPotassiumOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getPotassiumOptionInVitaminsAndHealthMenu()).perform();
@@ -1766,7 +1766,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnHealthyDrinksOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyDrinksOptionInVitaminsAndHealthMenu()).perform();
@@ -1781,7 +1781,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnDrinkableVitaminsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getDrinkableVitaminsOptionInVitaminsAndHealthMenu()).perform();
@@ -1796,7 +1796,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnPetsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getPetsOptionInVitaminsAndHealthMenu()).perform();
@@ -1811,7 +1811,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSupplementsMoreOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+//                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getSupplementsMoreOptionInVitaminsAndHealthMenu()).perform();
@@ -1826,7 +1826,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyHealthyFoodMenuInsideShopByMenuDisplayTheCorrectCategoriesAndSubCategories() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getOptionList().get(0),5,webDriver);
@@ -1841,7 +1841,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnGroceryOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getGroceryOptionInHealthyFoodMenu()).perform();
@@ -1856,7 +1856,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBakingAndCookingOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getBakingAndCookingOptionInHealthyFoodMenu()).perform();
@@ -1871,7 +1871,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnCannedOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getCannedOptionInHealthyFoodMenu()).perform();
@@ -1886,7 +1886,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnCoffeeOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getCoffeeOptionInHealthyFoodMenu()).perform();
@@ -1901,7 +1901,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnCondimentsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getCondimentsOptionInHealthyFoodMenu()).perform();
@@ -1916,7 +1916,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnMilkAndCreamOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getMilkAndCreamOptionInHealthyFoodMenu()).perform();
@@ -1931,7 +1931,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnNutsAndOatsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getNutsAndOatsOptionInHealthyFoodMenu()).perform();
@@ -1946,7 +1946,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnOilsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getOilsOptionInHealthyFoodMenu()).perform();
@@ -1961,7 +1961,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnPastaOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getPastaOptionInHealthyFoodMenu()).perform();
@@ -1976,7 +1976,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnRiceAndGrainsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getRiceAndGrainsOptionInHealthyFoodMenu()).perform();
@@ -1991,7 +1991,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSeasoningsAndSpicesOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getSeasoningsAndSpicesOptionInHealthyFoodMenu()).perform();
@@ -2006,7 +2006,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSugarSweetenersOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getSugarSweetenersOptionInHealthyFoodMenu()).perform();
@@ -2021,7 +2021,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSyrupsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getSyrupsOptionInHealthyFoodMenu()).perform();
@@ -2036,7 +2036,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnTeaAndHerbsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getTeaAndHerbsOptionInHealthyFoodMenu()).perform();
@@ -2051,7 +2051,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSuperfoodsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getSuperfoodsOptionInHealthyFoodMenu()).perform();
@@ -2066,7 +2066,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnReadyMixesOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getReadyMixesOptionInHealthyFoodMenu()).perform();
@@ -2081,7 +2081,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBreakfastAndCerealOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getBreakfastAndCerealOptionInHealthyFoodMenu()).perform();
@@ -2096,7 +2096,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnReadyToDrinkOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getReadyToDrinkOptionInHealthyFoodMenu()).perform();
@@ -2111,7 +2111,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnAminoAndBcaasOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getAminoAndBcaasOptionInHealthyFoodMenu()).perform();
@@ -2126,7 +2126,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnEnergyDrinksOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getEnergyDrinksOptionInHealthyFoodMenu()).perform();
@@ -2141,7 +2141,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnProteinShakesOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getProteinShakesOptionInHealthyFoodMenu()).perform();
@@ -2156,7 +2156,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnElectrolytesAndHydrationOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getElectrolytesAndHydrationOptionInHealthyFoodMenu()).perform();
@@ -2171,7 +2171,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnHealthySnacksOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getHealthySnacksOptionInHealthyFoodMenu()).perform();
@@ -2186,7 +2186,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnProteinBarsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getProteinBarsOptionInHealthyFoodMenu()).perform();
@@ -2201,7 +2201,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnCookiesOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getCookiesOptionInHealthyFoodMenu()).perform();
@@ -2216,7 +2216,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnChipsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getChipsOptionInHealthyFoodMenu()).perform();
@@ -2231,7 +2231,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBrowniesAndPancakesOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getBrowniesAndPancakesOptionInHealthyFoodMenu()).perform();
@@ -2246,7 +2246,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSnackBarsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getSnackBarsOptionInHealthyFoodMenu()).perform();
@@ -2261,7 +2261,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSpreadsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getSpreadsOptionInHealthyFoodMenu()).perform();
@@ -2276,7 +2276,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnOtherHealthySnacksOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getOtherHealthySnacksOptionInHealthyFoodMenu()).perform();
@@ -2291,7 +2291,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnReadyToEatOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getReadyToEatOptionInHealthyFoodMenu()).perform();
@@ -2306,7 +2306,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnHealthyMealsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyMealsOptionInHealthyFoodMenu()).perform();
@@ -2321,7 +2321,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnFeaturedOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getFeaturedOptionInHealthyFoodMenu()).perform();
@@ -2336,7 +2336,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnHealthyMealReplacementOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyMealReplacementOptionInHealthyFoodMenu()).perform();
@@ -2351,7 +2351,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnProteinCoffeeOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getProteinCoffeeOptionInHealthyFoodMenu()).perform();
@@ -2366,7 +2366,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnCandiesOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getCandiesOptionInHealthyFoodMenu()).perform();
@@ -2381,7 +2381,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnFlavoringAgentsOptionOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getFlavoringAgentsOptionInHealthyFoodMenu()).perform();
@@ -2396,7 +2396,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnKetoSnacksOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getKetoSnacksOptionInHealthyFoodMenu()).perform();
@@ -2411,7 +2411,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnManukaHoneyOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getManukaHoneyOptionInHealthyFoodMenu()).perform();
@@ -2426,7 +2426,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnMeatSnacksOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
         action.moveToElement(aeMegamenuPage.getMeatSnacksOptionInHealthyFoodMenu()).perform();
@@ -2441,7 +2441,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifySportsMenuInsideShopByMenuDisplayTheCorrectCategoriesAndSubCategories() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getOptionList().get(0),5,webDriver);
@@ -2457,7 +2457,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyTheMainCategoriesInTheSportsMenuInsideShopByMenuAppearingInBoldFont() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         Assert.assertTrue(aeMegamenuPage.getMenOptionInSportsMenu().getCssValue("font-weight").contains("700"));
@@ -2483,7 +2483,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyTheMainCategoriesInTheSportsMenuInsideShopByMenuAppearingInUppercase() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         Assert.assertEquals(aeMegamenuPage.getMenOptionInSportsMenu().getCssValue("text-transform"), "uppercase");
@@ -2508,7 +2508,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnMenOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getMenOptionInSportsMenu()).perform();
@@ -2523,7 +2523,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnClothingOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getClothingInSportsMenu()).perform();
@@ -2538,7 +2538,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnTopsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getTopsInSportsMenu()).perform();
@@ -2553,7 +2553,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnPantsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getPantsInSportsMenu()).perform();
@@ -2568,7 +2568,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnShortsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getShortsInSportsMenu()).perform();
@@ -2583,7 +2583,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnJacketsAndCoatsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getJacketsAndCoatsInSportsMenu()).perform();
@@ -2598,7 +2598,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSafetyMasksOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getSafetyMasksInSportsMenu()).perform();
@@ -2613,7 +2613,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnFootwearOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getFootwearInSportsMenu()).perform();
@@ -2628,7 +2628,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSneakersOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getSneakersInSportsMenu()).perform();
@@ -2643,7 +2643,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnTrainingShoesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getTrainingShoesInSportsMenu()).perform();
@@ -2658,7 +2658,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnRunningShoesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getRunningShoesInSportsMenu()).perform();
@@ -2673,7 +2673,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnHikingShoesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getHikingShoesInSportsMenu()).perform();
@@ -2688,7 +2688,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnAccessoriesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getAccessoriesInSportsMenu()).perform();
@@ -2703,7 +2703,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnGlovesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getGlovesInSportsMenu()).perform();
@@ -2718,7 +2718,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBeltsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getBeltsInSportsMenu()).perform();
@@ -2733,7 +2733,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnCapsAndHatsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getCapsAndHatsInSportsMenu()).perform();
@@ -2748,7 +2748,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnCapsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getCapInSportsMenu()).perform();
@@ -2763,7 +2763,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnShakersOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getShakersInSportsMenu()).perform();
@@ -2778,7 +2778,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWaterBottlesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWaterBottlesInSportsMenu()).perform();
@@ -2794,7 +2794,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void theresABugHereDueToWaterBottlesOptionAppearingDuplicated() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getBugHereInSportsMenu()).perform();
@@ -2809,7 +2809,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSocksOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getSocksInSportsMenu()).perform();
@@ -2824,7 +2824,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnTowelsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getTowelsInSportsMenu()).perform();
@@ -2839,7 +2839,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSunglassesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getSunglassesInSportsMenu()).perform();
@@ -2854,7 +2854,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnMixterOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getMixerInSportsMenu()).perform();
@@ -2869,7 +2869,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBagsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getBagsInSportsMenu()).perform();
@@ -2884,7 +2884,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBackPacksOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getBackPacksInSportsMenu()).perform();
@@ -2899,7 +2899,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnShoulderBagsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getShoulderBagsInSportsMenu()).perform();
@@ -2914,7 +2914,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWearableTechOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWearableTechInSportsMenu()).perform();
@@ -2929,7 +2929,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWatchesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWatchesInSportsMenu()).perform();
@@ -2944,7 +2944,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnGamingAccessoriesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getGamingAccessoriesInSportsMenu()).perform();
@@ -2959,7 +2959,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnEquipmentOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.geEquipmentInSportsMenu()).perform();
@@ -2974,7 +2974,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnGripstOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getGripsInSportsMenu()).perform();
@@ -2989,7 +2989,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBallstOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getBallsInSportsMenu()).perform();
@@ -3004,7 +3004,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnRollerstOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getRollersInSportsMenu()).perform();
@@ -3019,7 +3019,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWeightsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWeightsInSportsMenu()).perform();
@@ -3034,7 +3034,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenInSportsMenu()).perform();
@@ -3049,7 +3049,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenClothingOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenClothingInSportsMenu()).perform();
@@ -3064,7 +3064,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenTopsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenTopsInSportsMenu()).perform();
@@ -3079,7 +3079,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenShortsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenShortsInSportsMenu()).perform();
@@ -3094,7 +3094,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenSafetyMasksOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenSafetyMasksInSportsMenu()).perform();
@@ -3109,7 +3109,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenAccessoriesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenAccessoriesInSportsMenu()).perform();
@@ -3124,7 +3124,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void theresABugHereDueToGlovesOptionAppearingDuplicated() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getBugGlovesInSportsMenu()).perform();
@@ -3139,7 +3139,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenGlovesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenGlovesInSportsMenu()).perform();
@@ -3154,7 +3154,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenBeltsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenBeltsInSportsMenu()).perform();
@@ -3169,7 +3169,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenCapsAndHatsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenCapsAndHatsInSportsMenu()).perform();
@@ -3184,7 +3184,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenCapsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenCapsInSportsMenu()).perform();
@@ -3199,7 +3199,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenShakersOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenShakersInSportsMenu()).perform();
@@ -3214,7 +3214,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenWaterBottlesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenWaterBottlesInSportsMenu()).perform();
@@ -3229,7 +3229,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenSocksOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenSocksInSportsMenu()).perform();
@@ -3244,7 +3244,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenTowelsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenTowelsInSportsMenu()).perform();
@@ -3259,7 +3259,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenSunglassesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenSunglassesInSportsMenu()).perform();
@@ -3274,7 +3274,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenMixerOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenMixerInSportsMenu()).perform();
@@ -3290,7 +3290,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenBagsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenBagsInSportsMenu()).perform();
@@ -3305,7 +3305,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenBackPacksOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenBackPacksInSportsMenu()).perform();
@@ -3320,7 +3320,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenSholdersBagsOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomenSholdersBagsInSportsMenu()).perform();
@@ -3336,7 +3336,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSupplementsOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getSupplementsOptionInByBrandMenu()).perform();
@@ -3351,7 +3351,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnOptimumNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getOptimumNutritionOptionInByBrandMenu()).perform();
@@ -3366,7 +3366,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnMuscletechOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getMuscletechOptionInByBrandMenu()).perform();
@@ -3381,7 +3381,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnCellucorOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getCellucorOptionInByBrandMenu()).perform();
@@ -3396,7 +3396,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnDymatizeOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getDymatizeOptionInByBrandMenu()).perform();
@@ -3411,7 +3411,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnXtendOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getXtendOptionInByBrandMenu()).perform();
@@ -3426,7 +3426,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnAnimalNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getAnimalNutritionOptionInByBrandMenu()).perform();
@@ -3441,7 +3441,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnMusclePharmOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getMusclePharmOptionInByBrandMenu()).perform();
@@ -3456,7 +3456,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnUniversalNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getUniversalNutritionOptionInByBrandMenu()).perform();
@@ -3471,7 +3471,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBSNOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getBsnOptionInByBrandMenu()).perform();
@@ -3486,7 +3486,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnEhplabsOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getEhplabsOptionInByBrandMenu()).perform();
@@ -3501,7 +3501,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnJymSupplementScienceOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getJymSupplementScienceOptionInByBrandMenu()).perform();
@@ -3516,7 +3516,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBpiSportsOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getBpiSportsOptionInByBrandMenu()).perform();
@@ -3531,7 +3531,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnRussianBearOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getRussianBearOptionInByBrandMenu()).perform();
@@ -3546,7 +3546,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnIsopureOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getIsopureOptionInByBrandMenu()).perform();
@@ -3561,7 +3561,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnOneUpNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getOneUpNutritionOptionInByBrandMenu()).perform();
@@ -3576,7 +3576,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnMusclemedsOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getMusclemedsOptionInByBrandMenu()).perform();
@@ -3591,7 +3591,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnMhpOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.gethMhpOptionInByBrandMenu()).perform();
@@ -3606,7 +3606,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnEvlNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getEvlNutritionOptionInByBrandMenu()).perform();
@@ -3621,7 +3621,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnNlaForHerOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getNlaForHerOptionInByBrandMenu()).perform();
@@ -3636,7 +3636,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnMuscleNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getMuscleNutritionOptionInByBrandMenu()).perform();
@@ -3651,7 +3651,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnGatNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getGatNutritionOptionInByBrandMenu()).perform();
@@ -3666,7 +3666,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnLabradorOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getLabradaOptionInByBrandMenu()).perform();
@@ -3683,7 +3683,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnOrgainOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getOrgainOptionInByBrandMenu()).perform();
@@ -3698,7 +3698,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnNutrexResearchOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getNutrexResearchOptionInByBrandMenu()).perform();
@@ -3713,7 +3713,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnScitecNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getScitecNutritionOptionInByBrandMenu()).perform();
@@ -3728,7 +3728,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnProlabOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getProlabOptionInByBrandMenu()).perform();
@@ -3743,7 +3743,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSotruOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getSotruOptionInByBrandMenu()).perform();
@@ -3758,7 +3758,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnDivineHealthOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getDivineHealthOptionInByBrandMenu()).perform();
@@ -3773,7 +3773,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnGhostOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getGhostOptionInByBrandMenu()).perform();
@@ -3788,7 +3788,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomensBestOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getWomensBestOptionInByBrandMenu()).perform();
@@ -3803,7 +3803,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnEfxSportsOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getEfxSportsOptionInByBrandMenu()).perform();
@@ -3818,7 +3818,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBasixOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getBasixOptionInByBrandMenu()).perform();
@@ -3833,7 +3833,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnAK47OptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getAk47OptionInByBrandMenu()).perform();
@@ -3848,7 +3848,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnNfSportsOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getNfSportsOptionInByBrandMenu()).perform();
@@ -3863,7 +3863,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnFullyDosedOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getFullyDosedOptionInByBrandMenu()).perform();
@@ -3878,7 +3878,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnFivePercentNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getFivePercentNutritionOptionInByBrandMenu()).perform();
@@ -3893,7 +3893,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnOlimpSportNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getOlimpSportNutritionOptionInByBrandMenu()).perform();
@@ -3908,7 +3908,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnJnxSportsOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getJnxSportsOptionInByBrandMenu()).perform();
@@ -3923,7 +3923,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnFitAndLeanOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getFitAndLeanOptionInByBrandMenu()).perform();
@@ -3938,7 +3938,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnGymQueenOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getGymqueenOptionInByBrandMenu()).perform();
@@ -3953,7 +3953,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnThePackOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getThePackOptionInByBrandMenu()).perform();
@@ -3968,7 +3968,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBetancourtNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getBetancourtNutritionOptionInByBrandMenu()).perform();
@@ -3983,7 +3983,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnYallaProteinOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getYallaProteinOptionInByBrandMenu()).perform();
@@ -3998,7 +3998,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnProteinWorldOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getProteinWorldOptionInByBrandMenu()).perform();
@@ -4013,7 +4013,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnObviOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getObviOptionInByBrandMenu()).perform();
@@ -4028,7 +4028,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnNaughtyBoyOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getNaughtyBoyOptionInByBrandMenu()).perform();
@@ -4043,7 +4043,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSteelFitOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getSteelFitOptionInByBrandMenu()).perform();
@@ -4058,7 +4058,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnUsnOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getUsnOptionInByBrandMenu()).perform();
@@ -4073,7 +4073,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnXGamerOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getXGamerOptionInByBrandMenu()).perform();
@@ -4088,7 +4088,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnInnosuppsOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getInnosuppsOptionInByBrandMenu()).perform();
@@ -4103,7 +4103,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnOutbreakNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getOutbreakNutritionOptionInByBrandMenu()).perform();
@@ -4118,7 +4118,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnInsaneLabzOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getInsaneLabzOptionInByBrandMenu()).perform();
@@ -4133,7 +4133,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnAllMaxOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getAllMaxOptionInByBrandMenu()).perform();
@@ -4148,7 +4148,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnGlaxonOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getGlaxonOptionInByBrandMenu()).perform();
@@ -4163,7 +4163,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnRedconOneOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getRedcon1OptionInByBrandMenu()).perform();
@@ -4178,7 +4178,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnPandaSupplementsOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getPandaSupplementsOptionInByBrandMenu()).perform();
@@ -4193,7 +4193,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnNutrendOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getNutrendOptionInByBrandMenu()).perform();
@@ -4208,7 +4208,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnOstrovitOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getOstrovitOptionInByBrandMenu()).perform();
@@ -4223,7 +4223,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBetteryOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getBetteryOptionInByBrandMenu()).perform();
@@ -4238,7 +4238,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnHealthyFoodSnacksAndMealReplacementOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodSnacksAndMealReplacementOptionInByBrandMenu()).perform();
@@ -4253,7 +4253,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWowHydrateOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getWowHydrateOptionInByBrandMenu()).perform();
@@ -4268,7 +4268,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnQuestNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getQuestNutritionOptionInByBrandMenu()).perform();
@@ -4283,7 +4283,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnGrenadeOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getGrenadeOptionInByBrandMenu()).perform();
@@ -4298,7 +4298,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnReignEnergyOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getReignEnergyOptionInByBrandMenu()).perform();
@@ -4313,7 +4313,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnMonsterEnergyOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getMonsterEnergyOptionInByBrandMenu()).perform();
@@ -4328,7 +4328,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnThirdEnergyOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getByBrandOption()).perform();
         action.moveToElement(aeMegamenuPage.getThirdEnergyOptionInByBrandMenu()).perform();
@@ -4343,7 +4343,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(description = "MegaMenu- Make sure the Down-arrow Icon display correctly next to the Sport Supplements main menu", priority = 296)
     public void verifyTheDownArrowIconAppearsCorrectlyNextToTheSportSupplementsMainMenu() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getDownArrowKeyInSportSupplementsMenu().isDisplayed());
@@ -4352,7 +4352,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(description = "MegaMenu- Make sure the system will display the sub Menu once hovering on the Sport Supplements main menu", priority = 297)
     public void verifyTheSubMenuWillAppearsCorrectlyOnceHoveringOnSportSupplementsMainMenu() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getMegaMenuSection().isDisplayed());
@@ -4362,7 +4362,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifySportsSupplementsMainMenuDisplayTheCorrectCategoriesAndSubCategories() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getSportsSupplementMainMenuList().get(0),5,webDriver);
         Assert.assertEquals(aeMegamenuPage.getSportsSupplementMainMenuList().get(0).getText(), "PROTEIN\n" + "Whey Protein\n" + "Whey Protein Isolate\n" +
@@ -4378,7 +4378,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(description = "MegaMenu- Make sure clicking on the Sports Supplements main menu will redirect the User to the correct URL", priority = 299)
     public void verifyClickingOnSportsSupplementsManiMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSportSupplementsMainMenu().getAttribute("href");
@@ -4392,7 +4392,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyTheMainCategoriesInTheSportsSupplementsMainMenuAppearingInBoldFont() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
 //        Assert.assertTrue(aeMegamenuPage.getProteinOptionInSportSupplementsMenu().getCssValue("font-weight").contains("700"));
         Assert.assertTrue(aeMegamenuPage.getCreatineOptionInSportSupplementsMenu().getCssValue("font-weight").contains("700"));
@@ -4409,7 +4409,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyTheMainCategoriesInTheSportsSupplementsMainMenuAppearingInUppercase() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         Assert.assertEquals(aeMegamenuPage.getProteinOptionInSportSupplementsMainMenu().getCssValue("text-transform"), "uppercase");
         Assert.assertEquals(aeMegamenuPage.getCreatineOptionInSportSupplementsMainMenu().getCssValue("text-transform"), "uppercase");
@@ -4426,7 +4426,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnProteinOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getProteinOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getProteinOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4440,7 +4440,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWheyProteinOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWheyProteinOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWheyProteinOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4454,7 +4454,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWheyProteinIsolateOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWheyProteinIsolateOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWheyProteinIsolateOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4468,7 +4468,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnProteinBlendsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getProteinBlendsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getProteinBlendsOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4482,7 +4482,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnNonDairyProteinOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getNonDairyProteinOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getNonDairyProteinOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4496,7 +4496,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnCaseinProteinOptionInSportsSupplementsMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCaseinProteinOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCaseinProteinOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4510,7 +4510,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnDietProteinOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getDietProteinOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getDietProteinOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4524,7 +4524,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnMassGainersOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMassGainersOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMassGainersOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4538,7 +4538,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnCreatineOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCreatineOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCreatineOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4552,7 +4552,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnCreatineMonohydrateOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCreatineMonohydrateOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCreatineMonohydrateOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4566,7 +4566,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnCreatineBlendsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCreatineBlendsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCreatineBlendsOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4580,7 +4580,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnAminoAcidsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getAminoAcidsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidsOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4594,7 +4594,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBCAAOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getbCAAOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getbCAAOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4608,7 +4608,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnEAAOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.geteAAOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.geteAAOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4622,7 +4622,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnArginineOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getArginineOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getArginineOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4636,7 +4636,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBetaAlanineOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBetaAlanineOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBetaAlanineOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4650,7 +4650,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnHMbOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.gethMBOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.gethMBOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4664,7 +4664,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnAminoAcidPowdersOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getAminoAcidPowdersOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidPowdersOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4678,7 +4678,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnAminoAcidPillsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getAminoAcidPillsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidPillsOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4692,7 +4692,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnCitrullineOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCitrullineOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCitrullineOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4706,7 +4706,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnAminoAcidLiquidsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getAminoAcidLiquidsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidLiquidsOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4720,7 +4720,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnMuscleBoostersOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMuscleBoostersOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMuscleBoostersOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4734,7 +4734,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnTestosteroneBoostersOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getTestosteroneBoostersOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getTestosteroneBoostersOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4748,7 +4748,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnGhBoostersOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getGhBoostersOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGhBoostersOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4762,7 +4762,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWeightManagementOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWeightManagementOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWeightManagementOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4776,7 +4776,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnStimulantWeightLossOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getStimulantWeightLossOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getStimulantWeightLossOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4790,7 +4790,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnNonStimulantWeightLossOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getNonStimulantWeightLossOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getNonStimulantWeightLossOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4804,7 +4804,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnMealReplacementsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMealReplacementsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMealReplacementsOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4818,7 +4818,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnMetabolismSupportOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMetabolismSupportOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMetabolismSupportOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4832,7 +4832,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnToningCreamsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getToningCreamsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getToningCreamsOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4846,7 +4846,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnMctOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMctOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMctOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4860,7 +4860,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnRecoveryOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getRecoveryOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getRecoveryOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4874,7 +4874,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnGlutamineOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getGlutamineOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGlutamineOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4888,7 +4888,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnRecoveryBlendOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getRecoveryBlendOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getRecoveryBlendOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4902,7 +4902,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnElectrolytesAndHydrationOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getElectrolytesAndHydrationOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getElectrolytesAndHydrationOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4916,7 +4916,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnCarbohydratesOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCarbohydratesOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCarbohydratesOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4930,7 +4930,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnCarbohydratePowdersOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCarbohydratePowdersOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCarbohydratePowdersOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4944,7 +4944,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnEnergyAndEnduranceOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getEnergyAndEnduranceOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getEnergyAndEnduranceOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4958,7 +4958,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnStimulantEnergyOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getStimulantEnergyOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getStimulantEnergyOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4972,7 +4972,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnNonStimulantEnergyOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getNonStimulantEnergyOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getNonStimulantEnergyOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4986,7 +4986,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnGamingAndFocusOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getGamingAndFocusOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGamingAndFocusOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -5000,7 +5000,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnGamingEssentialsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getGamingEssentialsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGamingEssentialsOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -5014,7 +5014,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(description = "MegaMenu- Make sure the Down-arrow Icon display correctly next to the Vitamins & Health main menu", priority = 344)
     public void verifyTheDownArrowIconAppearsCorrectlyNextToTheVitaminsAndHealthMainMenu() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getDownArrowKeyInVitaminsAndHealthMenu().isDisplayed());
@@ -5023,7 +5023,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(description = "MegaMenu- Make sure the system will display the sub Menu once hovering on the Vitamins & Health main menu", priority = 345)
     public void verifyTheSubMenuWillAppearsCorrectlyOnceHoveringOnVitaminsAndHealthMainMenu() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getMegaMenuSection().isDisplayed());
@@ -5033,7 +5033,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyVitaminsAndHealthMainMenuDisplayTheCorrectCategoriesAndSubCategories() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getVitaminsAndHealthMainMenuList().get(0),5,webDriver);
         Assert.assertEquals(aeMegamenuPage.getVitaminsAndHealthMainMenuList().get(0).getText(), "FEATURED\n" + "Best Sellers\n" + "Sexual Health\n" + "ESSENTIAL VITAMINS\n" +
@@ -5049,7 +5049,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(description = "MegaMenu- Make sure clicking on the Vitamins & Health main menu will redirect the User to the correct URL", priority = 347)
     public void verifyClickingOnVitaminsAndHealthManiMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5063,7 +5063,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnFeaturedOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getFeaturedOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFeaturedOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5077,7 +5077,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnAliveVitaminsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getAliveVitaminsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAliveVitaminsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5091,7 +5091,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSexualHealthOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSexualHealthOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSexualHealthOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5106,7 +5106,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnEssentialVitaminsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getEssentialVitaminsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getEssentialVitaminsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5120,7 +5120,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnFolicAcidOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getFolicAcidOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFolicAcidOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5134,7 +5134,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnVitaminAOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminAOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminAOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5148,7 +5148,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnVitaminBOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminBOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminBOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5162,7 +5162,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnVitaminCOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminCOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminCOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5176,7 +5176,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnVitaminDOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminDOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminDOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5190,7 +5190,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnVitaminEOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminEOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminEOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5204,7 +5204,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnVitaminKOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminKOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminKOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5218,7 +5218,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnMultiVitaminsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMultiVitaminsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMultiVitaminsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5232,7 +5232,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnVitaminsForKidsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsForKidsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminsForKidsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5246,7 +5246,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnVitaminsForMenOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsForMenOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminsForMenOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5260,7 +5260,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnVitaminsForWomenOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsForWomenOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminsForWomenOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5274,7 +5274,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBoneAndJointOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBoneAndJointOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBoneAndJointOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5288,7 +5288,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBoneHealthOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBoneHealthOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBoneHealthOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5302,7 +5302,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnJointHealthOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getJointHealthOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getJointHealthOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5316,7 +5316,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBeautyOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBeautyOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBeautyOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5330,7 +5330,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnCollagenOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCollagenOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCollagenOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5344,7 +5344,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnHairSkinAndNailsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHairSkinAndNailsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHairSkinAndNailsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5358,7 +5358,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnFishOilOmegasOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getFishOilOmegasOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFishOilOmegasOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5372,7 +5372,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnFishOilOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getFishOilOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFishOilOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5386,7 +5386,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnOmega369OptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getOmega369OptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getOmega369OptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5400,7 +5400,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnHealthLifestyleOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthLifestyleOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHealthLifestyleOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5414,7 +5414,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnAntioxidantsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getAntioxidantsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAntioxidantsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5428,7 +5428,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBloodSugarSupportOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBloodSugarSupportOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBloodSugarSupportOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5442,7 +5442,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBrainSupportOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBrainSupportOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBrainSupportOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5456,7 +5456,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnDetoxAndCleanseOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getDetoxAndCleanseOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getDetoxAndCleanseOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5470,7 +5470,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnEnergyFormulasOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getEnergyFormulasOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getEnergyFormulasOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5484,7 +5484,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnEyeHealthOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getEyeHealthOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getEyeHealthOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5498,7 +5498,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnHerbsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHerbsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHerbsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5512,7 +5512,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnHormonesBalanceOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHormonesBalanceOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHormonesBalanceOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5526,7 +5526,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnImmuneSupportOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getImmuneSupportOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getImmuneSupportOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5540,7 +5540,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnMensHealthOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMensHealthOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMensHealthOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5554,7 +5554,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnStressReliefOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getStressReliefOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getStressReliefOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5568,7 +5568,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSleepSupportOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSleepSupportOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSleepSupportOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5582,7 +5582,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSuperFoodsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSuperFoodsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSuperFoodsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5596,7 +5596,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnUrinaryTractSupportOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getUrinaryTractSupportOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getUrinaryTractSupportOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5610,7 +5610,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWeightManagementOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWeightManagementOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWeightManagementOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5624,7 +5624,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomensHealthOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWomensHealthOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomensHealthOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5638,7 +5638,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnDigestionOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getDigestionOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getDigestionOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5652,7 +5652,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnDigestionSupportOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getDigestiveSupportOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getDigestiveSupportOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5666,7 +5666,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnProbioticsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getProbioticsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getProbioticsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5680,7 +5680,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSportVitaminsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportVitaminsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSportVitaminsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5694,7 +5694,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnAminoAcidOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getAminoAcidOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5708,7 +5708,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnMineralsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMineralsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMineralsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5722,7 +5722,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnCalciumOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCalciumOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCalciumOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5736,7 +5736,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnIronOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getIronOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getIronOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5750,7 +5750,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnMagnesiumOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMagnesiumOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMagnesiumOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5764,7 +5764,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnMultimineralFormulasOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMultimineralFormulasOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMultimineralFormulasOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5778,7 +5778,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnZincOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getZincOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getZincOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5792,7 +5792,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnPotassiumOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getPotassiumOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getPotassiumOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5806,7 +5806,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnHealthyDrinksOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyDrinksOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHealthyDrinksOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5820,7 +5820,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnDrinkableVitaminsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getDrinkableVitaminsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getDrinkableVitaminsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5834,7 +5834,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnPetsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getPetsOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getPetsOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5848,7 +5848,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSupplementsMoreOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSupplementsMoreOptionInVitaminsAndHealthMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSupplementsMoreOptionInVitaminsAndHealthMainMenu().getAttribute("href");
@@ -5862,7 +5862,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(description = "MegaMenu- Make sure the Down-arrow Icon display correctly next to the Healthy Food main menu", priority = 405)
     public void verifyTheDownArrowIconAppearsCorrectlyNextToTheHealthyFoodMainMenu() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getDownArrowKeyInHealthyFoodMenu().isDisplayed());
@@ -5871,7 +5871,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(description = "MegaMenu- Make sure the system will display the sub Menu once hovering on the Healthy Food main menu", priority = 406)
     public void verifyTheSubMenuWillAppearsCorrectlyOnceHoveringOnHealthyFoodMainMenu() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getMegaMenuSection().isDisplayed());
@@ -5881,7 +5881,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyHealthFoodMainMenuDisplayTheCorrectCategoriesAndSubCategories() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getHealthyFoodMainMenuList().get(0),5,webDriver);
         Assert.assertEquals(aeMegamenuPage.getHealthyFoodMainMenuList().get(0).getText(), "GROCERY\n" + "Baking & Cooking\n" + "Canned\n" + "Coffee\n" + "Condiments\n" +
@@ -5895,7 +5895,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(description = "MegaMenu- Make sure clicking on the Healthy Food main menu will redirect the User to the correct URL", priority = 408)
     public void verifyClickingOnHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHealthyFoodMainMenu().getAttribute("href");
@@ -5909,7 +5909,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnGroceryOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getGroceryOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGroceryOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -5923,7 +5923,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBakingAndCookingOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBakingAndCookingOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBakingAndCookingOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -5937,7 +5937,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnCannedOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCannedOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCannedOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -5951,7 +5951,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnCoffeeOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCoffeeOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCoffeeOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -5965,7 +5965,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnCondimentsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCondimentsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCondimentsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -5979,7 +5979,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnMilkAndCreamOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMilkAndCreamOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMilkAndCreamOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -5993,7 +5993,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnNutsAndOatsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getNutsAndOatsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getNutsAndOatsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6007,7 +6007,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnOilsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getOilsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getOilsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6021,7 +6021,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnPastaOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getPastaOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getPastaOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6035,7 +6035,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnRiceAndGrainsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getRiceAndGrainsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getRiceAndGrainsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6049,7 +6049,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSeasoningsAndSpicesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSeasoningsAndSpicesOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSeasoningsAndSpicesOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6063,7 +6063,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSugarSweetenersOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSugarSweetenersOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSugarSweetenersOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6077,7 +6077,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSyrupsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSyrupsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSyrupsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6091,7 +6091,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnTeaAndHerbsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getTeaAndHerbsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getTeaAndHerbsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6105,7 +6105,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSuperfoodsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSuperfoodsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSuperfoodsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6119,7 +6119,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnReadyMixesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getReadyMixesOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getReadyMixesOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6133,7 +6133,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBreakfastAndCerealOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBreakfastAndCerealOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBreakfastAndCerealOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6147,7 +6147,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnReadyToDrinkOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getReadyToDrinkOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getReadyToDrinkOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6161,7 +6161,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnAminoAndBcaasOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getAminoAndBcaasOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAndBcaasOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6175,7 +6175,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnEnergyDrinksOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getEnergyDrinksOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getEnergyDrinksOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6189,7 +6189,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnProteinShakesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getProteinShakesOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getProteinShakesOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6203,7 +6203,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnElectrolytesAndHydrationOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getElectrolytesAndHydrationOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getElectrolytesAndHydrationOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6217,7 +6217,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnHealthySnacksOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthySnacksOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHealthySnacksOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6231,7 +6231,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnProteinBarsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getProteinBarsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getProteinBarsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6245,7 +6245,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnCookiesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCookiesOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCookiesOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6259,7 +6259,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnChipsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getChipsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getChipsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6273,7 +6273,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBrowniesAndPancakesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBrowniesAndPancakesOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBrowniesAndPancakesOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6287,7 +6287,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSnackBarsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSnackBarsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSnackBarsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6301,7 +6301,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSpreadsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSpreadsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSpreadsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6315,7 +6315,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnOtherHealthySnacksOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getOtherHealthySnacksOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getOtherHealthySnacksOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6329,7 +6329,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnReadyToEatOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getReadyToEatOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getReadyToEatOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6343,7 +6343,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnHealthyMealsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyMealsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHealthyMealsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6357,7 +6357,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnFeaturedOptionInHealthyFoodMianMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getFeaturedOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFeaturedOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6371,7 +6371,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnHealthyMealReplacementOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyMealReplacementOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHealthyMealReplacementOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6385,7 +6385,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnProteinCoffeeOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getProteinCoffeeOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getProteinCoffeeOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6399,7 +6399,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnCandiesOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCandiesOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCandiesOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6413,7 +6413,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnFlavoringAgentsOptionOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getFlavoringAgentsOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFlavoringAgentsOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6427,7 +6427,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnKetoSnacksOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getKetoSnacksOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getKetoSnacksOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6441,7 +6441,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnManukaHoneyOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getManukaHoneyOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getManukaHoneyOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6455,7 +6455,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnMeatSnacksOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMeatSnacksOptionInHealthyFoodMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMeatSnacksOptionInHealthyFoodMainMenu().getAttribute("href");
@@ -6469,7 +6469,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(description = "MegaMenu- Make sure the Down-arrow Icon display correctly next to the Sports main menu", priority = 459)
     public void verifyTheDownArrowIconAppearsCorrectlyNextToTheSportsMainMenu() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getDownArrowKeyInSportsMenu().isDisplayed());
@@ -6478,7 +6478,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(description = "MegaMenu- Make sure the system will display the sub Menu once hovering on the Sports main menu", priority = 450)
     public void verifyTheSubMenuWillAppearsCorrectlyOnceHoveringOnSportsMainMenu() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getMegaMenuSection().isDisplayed());
@@ -6488,7 +6488,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifySportsMainMenuDisplayTheCorrectCategoriesAndSubCategories() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getSportsMainMenuList().get(0),5,webDriver);
         Assert.assertEquals(aeMegamenuPage.getSportsMainMenuList().get(0).getText(), "MEN\n" + "SPORT\n" + "Football\n" + "Basketball\n" + "Baseball\n" + "Running\n" +
@@ -6503,7 +6503,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(description = "MegaMenu- Make sure clicking on the Sports main menu will redirect the User to the correct URL", priority = 452)
     public void verifyClickingOnSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSportsMainMenu().getAttribute("href");
@@ -6516,7 +6516,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnMenOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMenOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMenOptionInSportsMainMenu().getAttribute("href");
@@ -6530,7 +6530,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSportOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSportOptionInSportsMainMenu().getAttribute("href");
@@ -6544,7 +6544,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnFootballOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getFootballOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFootballOptionInSportsMainMenu().getAttribute("href");
@@ -6558,7 +6558,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBasketballOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBasketballOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBasketballOptionInSportsMainMenu().getAttribute("href");
@@ -6572,7 +6572,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBaseballOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBaseballOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBaseballOptionInSportsMainMenu().getAttribute("href");
@@ -6586,7 +6586,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnRunningOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getRunningOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getRunningOptionInSportsMainMenu().getAttribute("href");
@@ -6600,7 +6600,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSwimmingOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSwimmingOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSwimmingOptionInSportsMainMenu().getAttribute("href");
@@ -6614,7 +6614,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnYogaOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getYogaOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getYogaOptionInSportsMainMenu().getAttribute("href");
@@ -6628,7 +6628,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnFitnessAndTrainingOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getFitnessAndTrainingOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFitnessAndTrainingOptionInSportsMainMenu().getAttribute("href");
@@ -6642,7 +6642,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnMmaOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMmaOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMmaOptionInSportsMainMenu().getAttribute("href");
@@ -6656,7 +6656,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnJiuJitsuOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getJiuJitsuOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getJiuJitsuOptionInSportsMainMenu().getAttribute("href");
@@ -6670,7 +6670,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBoardGamesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBoardGamesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBoardGamesOptionInSportsMainMenu().getAttribute("href");
@@ -6684,7 +6684,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSportsTechOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsTechOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSportsTechOptionInSportsMainMenu().getAttribute("href");
@@ -6698,7 +6698,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWearableTechOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWearableTechOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWearableTechOptionInSportsMainMenu().getAttribute("href");
@@ -6712,7 +6712,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnCamerasOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCamerasOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCamerasOptionInSportsMainMenu().getAttribute("href");
@@ -6726,7 +6726,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnPhoneAccessoriesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getPhoneAccessoriesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getPhoneAccessoriesOptionInSportsMainMenu().getAttribute("href");
@@ -6740,7 +6740,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnPersonalCareOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getPersonalCareOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getPersonalCareOptionInSportsMainMenu().getAttribute("href");
@@ -6754,7 +6754,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnShoweringOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getShoweringOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getShoweringOptionInSportsMainMenu().getAttribute("href");
@@ -6768,7 +6768,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnShavingOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getShavingOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getShavingOptionInSportsMainMenu().getAttribute("href");
@@ -6782,7 +6782,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSkinCareOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSkinCareOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSkinCareOptionInSportsMainMenu().getAttribute("href");
@@ -6796,7 +6796,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBodyCareOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBodyCareOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBodyCareOptionInSportsMainMenu().getAttribute("href");
@@ -6810,7 +6810,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnOralCareOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getOralCareOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getOralCareOptionInSportsMainMenu().getAttribute("href");
@@ -6824,7 +6824,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnTherapyOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getTherapyOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getTherapyOptionInSportsMainMenu().getAttribute("href");
@@ -6838,7 +6838,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnMasksOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMasksOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMasksOptionInSportsMainMenu().getAttribute("href");
@@ -6852,7 +6852,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnFitnessAndTrainingCategoryOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getFitnessAndTrainingCategoryOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFitnessAndTrainingCategoryOptionInSportsMainMenu().getAttribute("href");
@@ -6866,7 +6866,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnFitnessEquipmentOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getFitnessEquipmentOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFitnessEquipmentOptionInSportsMainMenu().getAttribute("href");
@@ -6880,7 +6880,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSkippingRopesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSkippingRopesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSkippingRopesOptionInSportsMainMenu().getAttribute("href");
@@ -6894,7 +6894,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWeightBeltsOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWeightBeltsOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWeightBeltsOptionInSportsMainMenu().getAttribute("href");
@@ -6908,7 +6908,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnScootersOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getScootersOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getScootersOptionInSportsMainMenu().getAttribute("href");
@@ -6922,7 +6922,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnTrainingAccessoriesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getTrainingAccessoriesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getTrainingAccessoriesOptionInSportsMainMenu().getAttribute("href");
@@ -6936,7 +6936,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnShakersAndBottlesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getShakersAndBottlesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getShakersAndBottlesOptionInSportsMainMenu().getAttribute("href");
@@ -6950,7 +6950,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBagsOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBagsOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBagsOptionInSportsMainMenu().getAttribute("href");
@@ -6964,7 +6964,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnGlovesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getGlovesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGlovesOptionInSportsMainMenu().getAttribute("href");
@@ -6978,7 +6978,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnBracesAndSleevesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBracesAndSleevesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBracesAndSleevesOptionInSportsMainMenu().getAttribute("href");
@@ -6992,7 +6992,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnMouthguardOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMouthguardOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMouthguardOptionInSportsMainMenu().getAttribute("href");
@@ -7006,7 +7006,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnApparelOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getApparelOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getApparelOptionInSportsMainMenu().getAttribute("href");
@@ -7020,7 +7020,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSportswearOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportswearOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSportswearOptionInSportsMainMenu().getAttribute("href");
@@ -7034,7 +7034,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnPantsOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getPantsOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getPantsOptionInSportsMainMenu().getAttribute("href");
@@ -7048,7 +7048,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnShortsOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getShortsOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getShortsOptionInSportsMainMenu().getAttribute("href");
@@ -7062,7 +7062,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnHoodiesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHoodiesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getHoodiesOptionInSportsMainMenu().getAttribute("href");
@@ -7076,7 +7076,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnTShirtsOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.gettShirtsOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.gettShirtsOptionInSportsMainMenu().getAttribute("href");
@@ -7090,7 +7090,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnTanksOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getTanksOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getTanksOptionInSportsMainMenu().getAttribute("href");
@@ -7104,7 +7104,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnFootwearOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getFootwearOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getFootwearOptionInSportsMainMenu().getAttribute("href");
@@ -7118,7 +7118,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnSneakersOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSneakersOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getSneakersOptionInSportsMainMenu().getAttribute("href");
@@ -7132,7 +7132,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnTrainingShoesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getTrainingShoesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getTrainingShoesOptionInSportsMainMenu().getAttribute("href");
@@ -7146,7 +7146,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnRunningShoesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getRunnigShoesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getRunnigShoesOptionInSportsMainMenu().getAttribute("href");
@@ -7160,7 +7160,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWomenOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenOptionInSportsMainMenu().getAttribute("href");
@@ -7174,7 +7174,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenSportsTechOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWomenSportsTechOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenSportsTechOptionInSportsMainMenu().getAttribute("href");
@@ -7188,7 +7188,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenWearableTechOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWomenWearableTechOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenWearableTechOptionInSportsMainMenu().getAttribute("href");
@@ -7202,7 +7202,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenCamerasOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWomenCamerasOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenCamerasOptionInSportsMainMenu().getAttribute("href");
@@ -7216,7 +7216,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenPhoneAccessoriesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWomenPhoneAccessoriesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenPhoneAccessoriesOptionInSportsMainMenu().getAttribute("href");
@@ -7230,7 +7230,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenPersonalCareOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWomenPersonalCareOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenPersonalCareOptionInSportsMainMenu().getAttribute("href");
@@ -7244,7 +7244,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenShoweringOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWomenShoweringOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenShoweringOptionInSportsMainMenu().getAttribute("href");
@@ -7258,7 +7258,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenSkinCareOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWomenSkinCareOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenSkinCareOptionInSportsMainMenu().getAttribute("href");
@@ -7272,7 +7272,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenBodyCareOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWomenBodyCareOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenBodyCareOptionInSportsMainMenu().getAttribute("href");
@@ -7286,7 +7286,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenOralCareOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWomenOralCareOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenOralCareOptionInSportsMainMenu().getAttribute("href");
@@ -7300,7 +7300,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenTherapyOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWomenTherapyOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenTherapyOptionInSportsMainMenu().getAttribute("href");
@@ -7314,7 +7314,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenMasksOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWomenMasksOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenMasksOptionInSportsMainMenu().getAttribute("href");
@@ -7328,7 +7328,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenFitnessAndTrainingOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWomenFitnessAndTrainingOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenFitnessAndTrainingOptionInSportsMainMenu().getAttribute("href");
@@ -7342,7 +7342,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenTrainingAccessoriesOptionInSportsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWomenTrainingAccessoriesOptionInSportsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenTrainingAccessoriesOptionInSportsMainMenu().getAttribute("href");
@@ -7357,7 +7357,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnWomenOnlyMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getWomenOnlyMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWomenOnlyMainMenu().getAttribute("href");
         aeMegamenuPage.getWomenOnlyMainMenu().click();
@@ -7371,7 +7371,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromOosProductPage() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         webDriver.navigate().to(aeMegamenuPage.siteURL+aeMegamenuPage.outOfStockProduct);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
@@ -7381,7 +7381,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifySportSupplementsMenuIsDisplayedWhenHoveringOnItFromOosProductPage() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         webDriver.navigate().to(aeMegamenuPage.siteURL+aeMegamenuPage.outOfStockProduct);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getSportsSupplementsSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
@@ -7391,7 +7391,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyVitaminsAndHealthMenuIsDisplayedWhenHoveringOnItFromOosProductPage() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         webDriver.navigate().to(aeMegamenuPage.siteURL+aeMegamenuPage.outOfStockProduct);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getVitaminsAndHealthSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
@@ -7401,7 +7401,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyHealthyFoodMenuIsDisplayedWhenHoveringOnItFromOosProductPage() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         webDriver.navigate().to(aeMegamenuPage.siteURL+aeMegamenuPage.outOfStockProduct);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getHealthyFoodSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
@@ -7411,7 +7411,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifySportsMenuIsDisplayedWhenHoveringOnItFromOosProductPage() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         webDriver.navigate().to(aeMegamenuPage.siteURL+aeMegamenuPage.outOfStockProduct);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getSportsSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
@@ -7422,7 +7422,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductPage() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         webDriver.navigate().to(aeMegamenuPage.siteURL+aeMegamenuPage.product);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from Product Page");
@@ -7432,7 +7432,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifySportSupplementsMenuIsDisplayedWhenHoveringOnItFromProductPage() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         webDriver.navigate().to(aeMegamenuPage.siteURL+product);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getSportsSupplementsSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from Product Page");
@@ -7442,7 +7442,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyVitaminsAndHealthMenuIsDisplayedWhenHoveringOnItFromProductPage() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         webDriver.navigate().to(aeMegamenuPage.siteURL+product);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getVitaminsAndHealthSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
@@ -7452,7 +7452,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyHealthyFoodMenuIsDisplayedWhenHoveringOnItFromProductPage() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         webDriver.navigate().to(aeMegamenuPage.siteURL+product);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getHealthyFoodSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
@@ -7462,7 +7462,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifySportsMenuIsDisplayedWhenHoveringOnItFromProductPage() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                aeMegamenuPage.navigateToHomePage();
+                //aeMegamenuPage.navigateToHomePage();
         webDriver.navigate().to(aeMegamenuPage.siteURL+product);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getSportsSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
@@ -7473,7 +7473,7 @@ public void verifyClickingOnFirstBannerInTheSportSupplementsMenuWorksCorrectly()
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     aeAllPagesInsideCategoriesInMegaMenuPage= new AeAllPagesInsideCategoriesInMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-            aeMegamenuPage.navigateToHomePage();
+            //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
     action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheSportSupplementsMenu()).perform();
     aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheSportSupplementsMenu().click();
@@ -7484,7 +7484,7 @@ public void verifyClickingOnSecondBannerInTheSportSupplementsMenuWorksCorrectly(
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     aeAllPagesInsideCategoriesInMegaMenuPage= new AeAllPagesInsideCategoriesInMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-            aeMegamenuPage.navigateToHomePage();
+            //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
     action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheSportSupplementsMenu()).perform();
     aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheSportSupplementsMenu().click();
@@ -7495,7 +7495,7 @@ public void verifyClickingOnFirstBannerInTheVitaminsAndHealthMenuWorksCorrectly(
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     aeAllPagesInsideCategoriesInMegaMenuPage= new AeAllPagesInsideCategoriesInMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-            aeMegamenuPage.navigateToHomePage();
+            //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
     action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheVitaminsAndHealthMenu()).perform();
     aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheVitaminsAndHealthMenu().click();
@@ -7506,7 +7506,7 @@ public void verifyClickingOnSecondBannerInTheVitaminsAndHealthMenuWorksCorrectly
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     aeAllPagesInsideCategoriesInMegaMenuPage= new AeAllPagesInsideCategoriesInMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-            aeMegamenuPage.navigateToHomePage();
+            //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
     action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheVitaminsAndHealthMenu()).perform();
     aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheVitaminsAndHealthMenu().click();
@@ -7517,7 +7517,7 @@ public void verifyClickingOnFirstBannerInTheHealthyFoodMenuWorksCorrectly() {
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     aeAllPagesInsideCategoriesInMegaMenuPage= new AeAllPagesInsideCategoriesInMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-            aeMegamenuPage.navigateToHomePage();
+            //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
     action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheHealthyFoodMenu()).perform();
     aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheHealthyFoodMenu().click();
@@ -7528,7 +7528,7 @@ public void verifyClickingOnSecondBannerInTheHealthyFoodMenuWorksCorrectly() {
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     aeAllPagesInsideCategoriesInMegaMenuPage= new AeAllPagesInsideCategoriesInMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-            aeMegamenuPage.navigateToHomePage();
+            //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
     action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheHealthyFoodMenu()).perform();
     aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheHealthyFoodMenu().click();
@@ -7539,7 +7539,7 @@ public void verifyClickingOnFirstBannerInTheSportsMenuWorksCorrectly() {
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     aeAllPagesInsideCategoriesInMegaMenuPage= new AeAllPagesInsideCategoriesInMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-            aeMegamenuPage.navigateToHomePage();
+            //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheSportsMenu()).perform();
     aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheSportsMenu().click();
@@ -7550,7 +7550,7 @@ public void verifyClickingOnSecondBannerInTheSportsMenuWorksCorrectly() {
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
     aeAllPagesInsideCategoriesInMegaMenuPage= new AeAllPagesInsideCategoriesInMegaMenuPage(webDriver);
     action = new Actions(webDriver);
-            aeMegamenuPage.navigateToHomePage();
+            //aeMegamenuPage.navigateToHomePage();
     action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
     action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheSportsMenu()).perform();
     aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheSportsMenu().click();
