@@ -198,6 +198,7 @@ public class AeWomenOnlyCategoryPage extends BasePage {
         return nextIconInInWomenVitaminsSection;
     }
     public WebElement getNextIconInInWorkoutInStyleSection() {
+        DataHelperAndWait.waitToBeVisible(nextIconInInWorkoutInStyleSection,5,webDriver);
         return nextIconInInWorkoutInStyleSection;
     }
 
@@ -206,6 +207,7 @@ public class AeWomenOnlyCategoryPage extends BasePage {
         return previousIconInWorkoutInStyleSection;
     }
     public WebElement getLastProductInWorkoutInStyleSection() {
+        DataHelperAndWait.waitToBeVisible(lastProductInWorkoutInStyleSection,5,webDriver);
         return lastProductInWorkoutInStyleSection;
     }
     public WebElement getProductCardInWorkoutInStyleSection() {

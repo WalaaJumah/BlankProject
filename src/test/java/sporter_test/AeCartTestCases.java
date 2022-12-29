@@ -88,8 +88,12 @@ public class AeCartTestCases extends BaseTest {
     public void verifyProductCounterAppearsInTheCartPageCountsFreeGifts() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
-        this.viewCartFromPDP();
-        this.viewCartFromPDP();
+        aeProductDetailsPage.displayTheProduct();
+        aeProductDetailsPage.increaseTheQuantity();
+        aeProductDetailsPage.addToCart();
+        aeProductDetailsPage.viewCart();
+//        this.viewCartFromPDP();
+//        this.viewCartFromPDP();
         String itemsCounter = "(4 Items)";
         DataHelperAndWait.waitToBeVisible(aeCartPage.getItemsCounterInCartPage(), 5,webDriver);
         Assert.assertEquals(aeCartPage.getItemsCounterInCartPage().getText(), itemsCounter);

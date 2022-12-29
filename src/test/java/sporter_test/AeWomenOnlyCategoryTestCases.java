@@ -2580,21 +2580,21 @@ AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(we
         Assert.assertTrue(aeWomenOnlyCategoryPage.getPreviousIconInWorkoutInStyleSection().isDisplayed());
     }
 
-    @Test(description = "Women's Only Category- Make sure clicking on Next Button in the Workout In Style Widget works correctly", priority = 222)
+    @Test(description = "Women's Only Category- Make sure clicking on Next Button in the Workout In Style Widget works correctly", priority = 222,expectedExceptions = { org.openqa.selenium.NoSuchElementException.class })
     public void verifyClickingOnNextIconInWorkoutInStyleWidgetWorksCorrectly() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         //        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeWomenOnlyCategoryPage.getNextIconInInWorkoutInStyleSection().click();
-        Assert.assertFalse(aeWomenOnlyCategoryPage.getLastProductInWorkoutInStyleSection().isDisplayed());
+        aeWomenOnlyCategoryPage.getNextIconInInWorkoutInStyleSection().click();
+        Assert.assertFalse(aeWomenOnlyCategoryPage.getNextIconInInWorkoutInStyleSection().isDisplayed());
     }
 
     @Test(description = "Women's Only Category- Make sure clicking on Previous Button in the Workout In Style Widget works correctly", priority = 223)
     public void verifyClickingOnPreviousIconInWorkoutInStyleWidgetWorksCorrectly() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         //        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-        aeWomenOnlyCategoryPage.getNextIconInInWorkoutInStyleSection().click();
         aeWomenOnlyCategoryPage.getPreviousIconInWorkoutInStyleSection().click();
-        Assert.assertTrue(aeWomenOnlyCategoryPage.getPreviousIconInWorkoutInStyleSection().isDisplayed());
+        Assert.assertFalse(aeWomenOnlyCategoryPage.getNextIconInInWorkoutInStyleSection().isDisplayed());
     }
 
     @Test(groups = "Smoke Testing Report",description = "Women's Only Category- Make sure clicking on the product card in the Workout In Style Widget works correctly ", priority = 224)

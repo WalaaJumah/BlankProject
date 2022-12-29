@@ -25,7 +25,7 @@ public class QatarHomePageTestCases extends BaseTest {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.switchToQatarCountry();
         if(webDriver.getCurrentUrl().contains(qatarHomePage.qatarDomain)){
-            System.out.println("You are in UAE Store");
+            System.out.println("You are in Qatar Store");
         }
         else {
             qatarHomePage.switchToQatarCountry();

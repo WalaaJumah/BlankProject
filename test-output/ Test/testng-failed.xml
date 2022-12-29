@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="methods" name="Failed suite [ Test]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>
+  </listeners>
+  <test thread-count="2" parallel="methods" name=" System Testing Report(failed)">
+    <parameter name="environment" value="production"/>
+    <classes>
+      <class name="sporter_test.AeProductDetailsPageTestCases">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setupBrowser"/>
+          <include name="verifyInabilityToAddOosProductToTheCart"/>
+          <include name="verifyOOSMessageIsDisplayed"/>
+        </methods>
+      </class> <!-- sporter_test.AeProductDetailsPageTestCases -->
+    </classes>
+  </test> <!--  System Testing Report(failed) -->
+</suite> <!-- Failed suite [ Test] -->

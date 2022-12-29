@@ -55,14 +55,14 @@ public class AeProductDetailsPageTestCases extends BaseTest {
         Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL );
     }
 
-    @Test(description = "Make sure the out of stock message appears when displaying out of stock product ", priority = 4)
+    @Test(description = "Make sure the out of stock message appears when displaying out of stock product ", priority =4)
     public void verifyOOSMessageIsDisplayed() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.displayOOSProduct();
         assertTrue(aeProductDetailsPage.getOOSMsg().isDisplayed());
     }
 
-    @Test(description = "Make sure the shopper is unable to add out of stock product to the cart", priority = 5,expectedExceptions = { org.openqa.selenium.NoSuchElementException.class })
+    @Test(dependsOnMethods = "verifyOOSMessageIsDisplayed",description = "Make sure the shopper is unable to add out of stock product to the cart", priority =5,expectedExceptions = { org.openqa.selenium.NoSuchElementException.class })
     public void verifyInabilityToAddOosProductToTheCart() throws Exception{
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         Assert.assertFalse(aeProductDetailsPage.getAddToCartSectionForOOSProduct().isDisplayed());

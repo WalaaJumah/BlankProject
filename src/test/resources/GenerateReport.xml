@@ -20,8 +20,8 @@
         <!--        <parameter name="language" value="ar" />-->
         <classes>
                         <class name="sporter_test.QatarHomePageTestCases"/>
-            <class name="sporter_test.KsaHomePageTestCases"/>
-            <class name="sporter_test.AEFooterPageTestCases"/>
+                          <class name="sporter_test.KsaHomePageTestCases"/>
+                        <class name="sporter_test.AEFooterPageTestCases"/>
                         <class name="sporter_test.AeWomenOnlyCategoryTestCases"/>
                         <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases"/>
                         <class name="sporter_test.AeSportSupplementsCategoryTestCases"/>

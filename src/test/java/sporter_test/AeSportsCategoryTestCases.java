@@ -279,11 +279,9 @@ public class AeSportsCategoryTestCases extends BaseTest {
     public void verifyResultFieldAndItsVaLueAppearInTheMensApparelCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
-        aeSportsCategoryPage.navigateToSportsPage();
-        SoftAssert sa = new SoftAssert();
         Assert.assertEquals(aeSportSupplementsCategoryPage.getResultLabel().getText(), "Results:");
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSearchResultValue().isDisplayed());
-        sa.assertNotEquals(aeSportSupplementsCategoryPage.getSearchResultValue().getText(), "0", "The number of result is Zero");
+        Assert.assertNotEquals(aeSportSupplementsCategoryPage.getSearchResultValue().getText(), "0", "The number of result is Zero");
     }
     //There's a bug here - some filtration options are missing
     @Test(description = "Sports Category- Make sure that Sort By menu and its options appear correctly in the Men's Apparel category page ", priority = 23)
