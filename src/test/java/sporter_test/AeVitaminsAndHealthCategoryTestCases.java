@@ -118,6 +118,7 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         for (int i = 0; i < aeVitaminsAndHealthCategoryPage.getPagerOfRotatingSlider().size(); i++) {
            aeVitaminsAndHealthCategoryPage.getPagerOfRotatingSlider().get(i).click();
+           DataHelperAndWait.waitToBeVisible( aeVitaminsAndHealthCategoryPage.getPagerOfRotatingSlider().get(i),3,webDriver);
            Assert.assertEquals(aeVitaminsAndHealthCategoryPage.getPagerOfRotatingSlider().get(i).getAttribute("class"),"flex-active");
         }
     }

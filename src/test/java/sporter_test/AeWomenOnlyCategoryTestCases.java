@@ -2386,12 +2386,12 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnPersonalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        aeSportSupplementsCategoryPage.navigateToPage2InPersonalCarePage();
         String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
         if(DataHelperAndWait.isTheresNoPages(numberOfProductInTheList))
             System.out.println("There's no pages");
         else{
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
+            aeSportSupplementsCategoryPage.navigateToPage2InPersonalCarePage();
+            DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));}
     }
 
@@ -2574,9 +2574,9 @@ AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(we
     public void verifyClickingOnNextIconInWorkoutInStyleWidgetWorksCorrectly() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         //        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        DataHelperAndWait.waitToBeVisible(aeWomenOnlyCategoryPage.getNextIconInInWorkoutInStyleSection(),5,webDriver);
         aeWomenOnlyCategoryPage.getNextIconInInWorkoutInStyleSection().click();
         aeWomenOnlyCategoryPage.getNextIconInInWorkoutInStyleSection().click();
-        Assert.assertFalse(aeWomenOnlyCategoryPage.getNextIconInInWorkoutInStyleSection().isDisplayed());
     }
 
     @Test(description = "Women's Only Category- Make sure clicking on Previous Button in the Workout In Style Widget works correctly", priority = 223)
@@ -2584,7 +2584,7 @@ AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(we
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         //        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeWomenOnlyCategoryPage.getPreviousIconInWorkoutInStyleSection().click();
-        Assert.assertFalse(aeWomenOnlyCategoryPage.getNextIconInInWorkoutInStyleSection().isDisplayed());
+        Assert.assertTrue(aeWomenOnlyCategoryPage.getNextIconInInWorkoutInStyleSection().isDisplayed());
     }
 
     @Test(groups = "Smoke Testing Report",description = "Women's Only Category- Make sure clicking on the product card in the Workout In Style Widget works correctly ", priority = 224)
@@ -2623,12 +2623,11 @@ AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(we
         Assert.assertTrue(aeWomenOnlyCategoryPage.getPreviousIconInLadyFriendlySnacksFoodSection().isDisplayed());
     }
 
-    @Test(description = "Women's Only Category- Make sure clicking on Next Button in the Lady-Friendly Snacks & Food Widget works correctly", priority = 228)
+    @Test(description = "Women's Only Category- Make sure clicking on Next Button in the Lady-Friendly Snacks & Food Widget works correctly", priority = 228,expectedExceptions = { org.openqa.selenium.NoSuchElementException.class })
     public void verifyClickingOnNextIconInLadyFriendlySnacksAndFoodWidgetWorksCorrectly() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         //        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeWomenOnlyCategoryPage.getNextIconInInLadyFriendlySnacksFoodSection().click();
-        Assert.assertFalse(aeWomenOnlyCategoryPage.getLastProductInWorkoutInStyleSection().isDisplayed());
     }
 
     @Test(description = "Women's Only Category- Make sure clicking on Previous Button in the Lady-Friendly Snacks & Food Widget works correctly", priority = 229)

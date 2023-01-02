@@ -3,7 +3,7 @@
 <suite name=" Test" thread-count="2" >
     <listeners>
         <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>
-        <listener class-name="extent_report_listner.ExtentReportListener" />
+<!--        <listener class-name="extent_report_listner.ExtentReportListener" />-->
     </listeners>
     <test name=" System Testing Report" preserve-order="true">
 <!--        &lt;!&ndash;        Guidelines:&ndash;&gt;-->
@@ -15,7 +15,7 @@
 
 
 
-        <parameter name="environment" value="production" />
+        <parameter name="environment" value="stg" />
 <!--        &lt;!&ndash;        Guidelines:&ndash;&gt;-->
 <!--        &lt;!&ndash;    1. To test on Arabic version, change the value to "ar".&ndash;&gt;-->
 <!--        &lt;!&ndash;    2. To test on English version, change the value to "en"&ndash;&gt;-->
@@ -29,12 +29,12 @@
 <!--            &lt;!&ndash;            <class name="sporter_test.AeSportSupplementsCategoryTestCases"/>&ndash;&gt;-->
 <!--            &lt;!&ndash;            <class name="sporter_test.AeSportsCategoryTestCases"/>&ndash;&gt;-->
 <!--            &lt;!&ndash;            <class name="sporter_test.AeSearchPageTestCases"/>&ndash;&gt;-->
-                        <class name="sporter_test.AEMegaMenuTestCases">
+                        <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases">
 <!--                        <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases">-->
 <!--            <methods>-->
-<!--&lt;!&ndash;                <include name="switchToUaeStore"/>&ndash;&gt;-->
-<!--                <include name="verifyInabilityToAddOosProductToTheCart"/>-->
-<!--                <include name="verifyOOSMessageIsDisplayed"/>-->
+<!--                <include name="switchToUaeStore"/>-->
+<!--                <include name="verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromCartPage"/>-->
+<!--&lt;!&ndash;                <include name="verifyOOSMessageIsDisplayed"/>&ndash;&gt;-->
 <!--            </methods>-->
                         </class>
 <!--            &lt;!&ndash;            <class name="sporter_test.AeProductDetailsPageTestCases"/>&ndash;&gt;-->

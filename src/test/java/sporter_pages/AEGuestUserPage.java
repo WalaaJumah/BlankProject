@@ -116,7 +116,7 @@ public class AEGuestUserPage extends BasePage {
     private List<WebElement> searchMenu;
     @FindBy(xpath = "//a[@href='https://www.sporter.com/en-ae/checkout/cart/']")
     private WebElement returnToCartLink;
-    @FindBy(xpath = "//a[@href='https://www.sporter.com/en-ae/']")
+    @FindBy(xpath = "//a[@class='logo']")
     private WebElement sporterLogo;
     @FindBy(xpath = "//p[text()='You have no items in your shopping cart.']")
     private WebElement noItemInCartLabel;

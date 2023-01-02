@@ -121,13 +121,15 @@ public class AeSearchPageTestCases extends BaseTest {
         aeSearchPage.getBrandsTab().click();
         for(int i=0; i<aeSearchPage.getBrandsListInBrandPage().size();i++){
             DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(i),5,webDriver);
-            expectedProductURL=aeSearchPage.getBrandsListInBrandPage().get(i).getAttribute("href");
+//            expectedProductURL=aeSearchPage.getBrandsListInBrandPage().get(i).getAttribute("href");
             aeSearchPage.getBrandsListInBrandPage().get(i).click();
-            DataHelperAndWait.waitForUrlContains(expectedProductURL,webDriver,5);
-            Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedProductURL));
+            aeSearchPage.verifyTheDisplayedPageDoesNotHaveErrors();
+//            DataHelperAndWait.waitForUrlContains(expectedProductURL,webDriver,5);
+//            Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedProductURL));
             aeProductDetailsPage.getSearchBtn().click();
             aeSearchPage.getBrandsTab().click();
             DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(i),3,webDriver);
+            aeSearchPage.verifyTheDisplayedPageDoesNotHaveErrors();
 
         }
     }

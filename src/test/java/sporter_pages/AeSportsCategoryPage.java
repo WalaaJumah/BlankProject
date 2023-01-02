@@ -136,6 +136,7 @@ public class AeSportsCategoryPage  extends BasePage {
     }
 
     public WebElement getRecommendedProductsSection() {
+        DataHelperAndWait.waitToBeVisible(recommendedProductsSection,5,webDriver);
         return recommendedProductsSection;
     }
     public WebElement getPreviousIconInRecommendedProductsSection() {

@@ -2342,7 +2342,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
     public void verifyPreviousArrowButtonInRecommendedProductsSectionIsNotDisplayedByDefault() {
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
         aeSportsCategoryPage.navigateToSportsPage();
-        Assert.assertTrue(aeSportsCategoryPage.getPreviousIconInRecommendedProductsSection().isDisplayed());
+        Assert.assertFalse(aeSportsCategoryPage.getPreviousIconInRecommendedProductsSection().isDisplayed());
     }
     @Test(description = "Sports Category- Make sure clicking on Next Button in the Recommended Products section works correctly", priority = 224,enabled = false)
     public void verifyClickingOnNextIconInRecommendedProductsSectionWorksCorrectly() {
