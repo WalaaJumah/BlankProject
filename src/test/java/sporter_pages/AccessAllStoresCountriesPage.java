@@ -13,11 +13,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class AccessAllStoresCountriesPage extends BasePage {
     public AccessAllStoresCountriesPage( WebDriver webDriver ){
         super(webDriver);
         PageFactory.initElements(webDriver, this);
     }
+
     @FindBy(id = "switcher-store-trigger")
     private WebElement countryList;
     @FindBy(xpath = "//li[@class='country_switch']/span[@class='BH']")
@@ -35,6 +38,11 @@ public class AccessAllStoresCountriesPage extends BasePage {
     private WebElement arabicLanguageBtn;
     @FindBy(xpath = "//div[@id='form-language']//label[@for='english']")
     private WebElement englishLanguageBtn;
+
+
+
+    @FindBy(xpath = "//ul[@class='dropdown switcher-dropdown']/li")
+    private List<WebElement> listOfCountry;
 
 
 //Getter Methods
@@ -103,8 +111,12 @@ public WebElement getArabicLanguageBtn() {
             this.internationalCountry.click();
         }
     }
-
-
+    public List<WebElement> getListOfCountry() {
+        return listOfCountry;
+    }
+    public WebElement getCountryList() {
+        return countryList;
+    }
 
 
 

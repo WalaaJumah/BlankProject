@@ -4180,7 +4180,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure the Collagen section is displayed ", priority = 418)
     public void verifyCollagenSectionInTheVitaminsAndHealthCategoryPageIsDisplayed() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
+//        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         Assert.assertEquals(aeVitaminsAndHealthCategoryPage.getCollagenSectionTitle().getText(),"Collagen","The Shop By Health Need Category has incorrect title");
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getCollagenSection().isDisplayed());

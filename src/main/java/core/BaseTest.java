@@ -39,6 +39,7 @@ public class BaseTest {
     public final String product = "/en-ae/optimum-gold-standard-100-whey";
     public static String environmentName;
     public static String browserName;
+    public static String countryUrl;
     public  WebDriver webDriver;
     private void CloseInitialDialog()
 
@@ -97,6 +98,7 @@ public class BaseTest {
         environmentName=environment;
         this.browserName = browser;
         BasePage.BaseURL=environment;
+        this.countryUrl=country;
         //This ChromeWebDriver 108
         switch (browser) {
 //    Check if parameter passed from TestNG is 'firefox'
