@@ -7,8 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import javax.xml.crypto.Data;
-
 public class AeRecommendedProductsPage extends BasePage {
     public AeRecommendedProductsPage(WebDriver webDriver) {
         super(webDriver);
@@ -109,5 +107,5 @@ public class AeRecommendedProductsPage extends BasePage {
         DataHelperAndWait.waitToBeVisible(firstProductCard, 3,webDriver);
         this.firstProductCard.click();
     }
-    public void navigateToHomePage(){webDriver.navigate().to(siteURL);}
+    public void navigateToHomePage(){webDriver.navigate().to(BaseURL);}
 }

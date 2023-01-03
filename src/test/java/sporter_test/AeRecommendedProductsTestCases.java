@@ -39,7 +39,7 @@ public class AeRecommendedProductsTestCases extends BaseTest {
         aeProductDetailsPage.displayTheProduct();
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL +aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL );
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL );
     }
 
     @Test(description = "Recommended Products Pop-up- Make sure to close the Recommended products pop up correctly", priority = 4)

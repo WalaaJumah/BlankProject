@@ -9,16 +9,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import sporter_pages.AEGuestUserPage;
 import sporter_pages.AEMegaMenuPage;
 import sporter_pages.AeProductDetailsPage;
-import sporter_pages.AeWomenOnlyCategoryPage;
-
-import javax.xml.crypto.Data;
-
-import java.io.IOException;
-import java.util.NoSuchElementException;
 
 import static org.testng.Assert.*;
 
@@ -52,7 +45,7 @@ public class AeProductDetailsPageTestCases extends BaseTest {
         aeProductDetailsPage.displayTheProduct();
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL );
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL );
     }
 
     @Test(description = "Make sure the out of stock message appears when displaying out of stock product ", priority =4)
@@ -123,7 +116,7 @@ public class AeProductDetailsPageTestCases extends BaseTest {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.displayTheProduct();
         aeProductDetailsPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSiteURL);
     }
     @Test(groups = "Smoke Testing Report",description = "Make sure that the customer can add the same product more than once by clicking on the Add To Product button in each time ", priority = 13)
     public void verifyAbilityToAddProductToCartMultiTimes() {
@@ -227,7 +220,7 @@ public class AeProductDetailsPageTestCases extends BaseTest {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         aeProductDetailsPage.displayTheProduct();
         Actions action = new Actions(webDriver);
-        webDriver.navigate().to(aeMegamenuPage.siteURL+product);
+        webDriver.navigate().to(aeMegamenuPage.BaseURL +product);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getVitaminsAndHealthSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");    }
 
@@ -358,7 +351,7 @@ public class AeProductDetailsPageTestCases extends BaseTest {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.displayTheProduct();
         aeGuestUserPage.clickOnSporterLogo();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeDomain+"/");
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeDomain+"/");
     }
 
     @Test(description = "Make sure the system will display a message when the offer is not available in the selected country", priority = 37)

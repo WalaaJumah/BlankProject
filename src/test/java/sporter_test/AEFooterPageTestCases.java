@@ -8,7 +8,6 @@ import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import sporter_pages.AEFooterPage;
-import sporter_pages.AEMegaMenuPage;
 
 import static org.testng.Assert.assertFalse;
 
@@ -23,31 +22,31 @@ public class AEFooterPageTestCases extends BaseTest {
             case "production":
 //                System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
                 System.setProperty("webdriver.chrome.driver","src/test/resources/drivers/chromedriver.exe");
-                BasePage.siteURL = "https://www.sporter.com";
+                BasePage.BaseURL = "https://www.sporter.com";
                 webDriver = new ChromeDriver();
                 webDriver.manage().window().maximize();
-                webDriver.navigate().to(BasePage.siteURL);
+                webDriver.navigate().to(BasePage.BaseURL);
                 break;
             case "stg":
                 System.setProperty("webdriver.chrome.driver","src/test/resources/drivers/chromedriver.exe");
-                BasePage.siteURL = "https://stg.sporter.com";
+                BasePage.BaseURL = "https://stg.sporter.com";
                 webDriver = new ChromeDriver();
                 webDriver.manage().window().maximize();
-                webDriver.navigate().to(BasePage.siteURL);
+                webDriver.navigate().to(BasePage.BaseURL);
                 break;
             case "stgTest":
                 System.setProperty("webdriver.chrome.driver","src/test/resources/drivers/chromedriver.exe");
-                BasePage.siteURL ="https://stg-test.sporter.com";
+                BasePage.BaseURL ="https://stg-test.sporter.com";
                 webDriver = new ChromeDriver();
                 webDriver.manage().window().maximize();
-                webDriver.navigate().to(BasePage.siteURL);
+                webDriver.navigate().to(BasePage.BaseURL);
                 break;
             case "staging2":
                 System.setProperty("webdriver.chrome.driver","src/test/resources/drivers/chromedriver.exe");
-                BasePage.siteURL ="https://staging2.sporter.com";
+                BasePage.BaseURL ="https://staging2.sporter.com";
                 webDriver = new ChromeDriver();
                 webDriver.manage().window().maximize();
-                webDriver.navigate().to(BasePage.siteURL);
+                webDriver.navigate().to(BasePage.BaseURL);
                 break;
             default:
                 throw new Exception("environment is not correct");

@@ -283,6 +283,6 @@ public class AeSportSupplementsCategoryPage extends BasePage {
         DataHelperAndWait.waitToBeVisible(homeBreadcrumbs,35,webDriver);
         return homeBreadcrumbs;
     }
-    public void navigate(){webDriver.navigate().to(siteURL +aeDomain+sportSupplementsUrl);}
+    public void navigate(){webDriver.navigate().to(BaseURL +aeDomain+sportSupplementsUrl);}
 
 }

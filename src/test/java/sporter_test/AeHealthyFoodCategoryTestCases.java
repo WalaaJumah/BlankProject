@@ -2,7 +2,6 @@ package sporter_test;
 
 import core.BaseTest;
 import core.DataHelperAndWait;
-import error_helper.SporterErrorPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -61,7 +60,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeHealthyFoodCategoryPage.navigateToHomePage();
         aeHealthyFoodCategoryPage.getHealthyFoodCategoryInHomePage().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(),aeHealthyFoodCategoryPage.siteURL+aeHealthyFoodCategoryPage.aeDomain+aeHealthyFoodCategoryPage.healthyFoodsUrl);
+        Assert.assertEquals(webDriver.getCurrentUrl(),aeHealthyFoodCategoryPage.BaseURL +aeHealthyFoodCategoryPage.aeDomain+aeHealthyFoodCategoryPage.healthyFoodsUrl);
         aeHealthyFoodCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     @Test(description = "Healthy Food Category- Make sure the Horizontal Category Image appears correctly in the Healthy Food landing page ", priority = 5)
@@ -100,7 +99,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), aeHealthyFoodCategoryPage.siteURL+aeHealthyFoodCategoryPage.aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), aeHealthyFoodCategoryPage.BaseURL +aeHealthyFoodCategoryPage.aeSiteURL);
     }
     @Test(description = "Healthy Food Category- Make sure that the Result label and its value appear correctly in the Healthy Food Category page ", priority = 10)
     public void verifyResultFieldAndItsVaLueAppearInTheHealthyFoodCategoryPage() {
@@ -336,6 +335,6 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         aeGuestUserPage = new AEGuestUserPage(webDriver);
         this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeGuestUserPage.clickOnSporterLogo();
-        Assert.assertEquals(webDriver.getCurrentUrl(), aeHealthyFoodCategoryPage.siteURL+aeHealthyFoodCategoryPage.aeSiteURL," The Current URL is not matched with the Cart URL" );
+        Assert.assertEquals(webDriver.getCurrentUrl(), aeHealthyFoodCategoryPage.BaseURL +aeHealthyFoodCategoryPage.aeSiteURL," The Current URL is not matched with the Cart URL" );
     }
 }

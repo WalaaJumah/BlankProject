@@ -3,7 +3,6 @@ package sporter_test;
 import core.BasePage;
 import core.BaseTest;
 import core.DataHelperAndWait;
-import error_helper.SporterErrorPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -159,7 +158,7 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
         aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeDomain+"/");
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeDomain+"/");
     }
     //Shop By Category Test Cases
     @Test(description = "Vitamins & Health Category- Verify the Shop By Category section is displayed correctly", priority = 14)
@@ -235,7 +234,7 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnFishOilAndOmegasCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSiteURL);
     }
     @Test(description = "Vitamins & Health Category- Make sure  the Fish Oil & Omegas footer appears correctly  ", priority = 22)
     public void verifyFishOilAndOmegasFooterSectionAppearsCorrectly() {
@@ -382,7 +381,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnMultivitaminsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSiteURL);
     }
     @Test(description = "Vitamins & Health Category- Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the Multivitamins Category page ", priority = 36)
     public void verifyTitleAndParagraphAppearingCorrectlyInHorizontalCategoryImageInMultivitaminsCategoryPage () {
@@ -534,7 +533,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsA_ZCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSiteURL);
     }
     @Test(description = "Vitamins & Health Category- Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the VitaminsA_Z Category page ", priority = 50)
     public void verifyTitleAndParagraphAppearingCorrectlyInHorizontalCategoryImageInVitaminsA_ZCategoryPage () {
@@ -682,7 +681,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnMineralsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSiteURL);
     }
     @Test(description = "Vitamins & Health Category- Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the Minerals Category page ", priority = 64)
     public void verifyTitleAndParagraphAppearingCorrectlyInHorizontalCategoryImageInMineralsCategoryPage () {
@@ -837,7 +836,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnAntioxidantsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSiteURL);
     }
     @Test(description = "Vitamins & Health Category- Make sure  the Antioxidants footer appears correctly  ", priority = 79)
     public void verifyAntioxidantsFooterSectionAppearsCorrectly() {
@@ -980,7 +979,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSuperfoodsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSiteURL);
     }
     //There's a bug here due to the description that should appear in the image is missing
     @Test(description = "Vitamins & Health Category- Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the Superfoods Category page ", priority = 91)
@@ -1122,7 +1121,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnCollagenCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSiteURL);
     }
     //There's a bug here due to the description that should appear in the image is missing
     @Test(description = "Vitamins & Health Category- Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the Collagen Category page ", priority = 105)
@@ -1217,7 +1216,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
 //        String expectedCategoryUrl=aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(7).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(7).click();
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        assertEquals(webDriver.getCurrentUrl(),BasePage.siteURL+"/en-ae/vitamin-health/vitamins-sleep-mood-solutions/melatonin/");
+        assertEquals(webDriver.getCurrentUrl(),BasePage.BaseURL +"/en-ae/vitamin-health/vitamins-sleep-mood-solutions/melatonin/");
         //There's a bug here in the DOM because the URL appears incorrectly
 //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
     }
@@ -1277,7 +1276,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnMelatoninCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSiteURL);
     }
     //There's a bug here due to the description that should appear in the image is missing
     @Test(description = "Vitamins & Health Category- Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the Melatonin Category page ", priority = 119)
@@ -1411,7 +1410,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnTumericPageRedirectUserToCorrectURL();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSiteURL);
     }
     //There's a bug here
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure clicking on the Dandelion icon Redirect User To CorrectURL", priority = 129)
@@ -1451,7 +1450,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnDandelionPageRedirectUserToCorrectURL();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSiteURL);
     }
     //There's a bug here
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure clicking on the Ginseng icon Redirect User To CorrectURL", priority = 130)
@@ -1491,7 +1490,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnGinsengPageRedirectUserToCorrectURL();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSiteURL);
     }
     //There's a bug here
     @Test(groups = "Smoke Testing Report", description = "Vitamins & Health Category- Make sure clicking on the Milk Thistle icon Redirect User To CorrectURL", priority = 131)
@@ -1531,7 +1530,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnMilkThistlePageRedirectUserToCorrectURL();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSiteURL);
     }
     //There's a bug here
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Make sure clicking on the Alfalfa icon Redirect User To CorrectURL", priority = 132)
@@ -1573,7 +1572,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnAlfalfaPageRedirectUserToCorrectURL();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSiteURL);
     }
     //There's a bug here because the page is not opened correctly
     @Test(description = "Vitamins & Health Category- Verify that the search button works correctly from the Tumeric page", priority = 143)
@@ -1726,7 +1725,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnBeautyCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSiteURL);
     }
     @Test(description = "Vitamins & Health Category- Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the Beauty Category page ", priority = 157)
     public void verifyTitleAndParagraphAppearingCorrectlyInHorizontalCategoryImageInBeautyCategoryPage () {
@@ -1879,7 +1878,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnBoneAndJointCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSiteURL);
     }
     @Test(description = "Vitamins & Health Category- Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the Bone And Joint Category page ", priority = 172)
     public void verifyTitleAndParagraphAppearingCorrectlyInHorizontalCategoryImageInBoneAndJointCategoryPage () {
@@ -2032,7 +2031,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnBrainSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSiteURL);
     }
     //There's a bug here due to the description is missing
     @Test(description = "Vitamins & Health Category- Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the Brain Support Category page ", priority = 187)
@@ -2185,7 +2184,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnDetoxAndLiverSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSiteURL);
     }
     @Test(description = "Vitamins & Health Category- Make sure  the Detox & Liver Support  footer appears correctly  ", priority = 203)
     public void verifyDetoxAndLiverSupportFooterSectionAppearsCorrectly() {
@@ -2330,7 +2329,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnDigestiveSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSiteURL);
     }
     //There's a bug here due to the description is missing
     @Test(description = "Vitamins & Health Category- Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the Digestive Support Category page ", priority = 217)
@@ -2475,7 +2474,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnEnergyFormulasCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSiteURL);
     }
     //There's a bug here due to the description is missing
     @Test(description = "Vitamins & Health Category- Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the Energy Formulas Category page ", priority = 232)
@@ -2617,7 +2616,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnHairAndSkinAndNailsCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSiteURL);
     }
     @Test(description = "Vitamins & Health Category- Verify that the search button works correctly from the Hair, Skin & Nails, Beauty category page", priority = 249)
     public void verifySearchBtnWorksCorrectlyFromHairAndSkinAndNailsCategoryPage () {
@@ -2751,7 +2750,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnHeartHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSiteURL);
     }
     //There's a bug here due to the description is missing
     @Test(description = "Vitamins & Health Category- Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the Heart Health Category page ", priority = 262)
@@ -2901,7 +2900,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnImmunitySupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSiteURL);
     }
     //There's a bug here due to the description is missing
     @Test(description = "Vitamins & Health Category- Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the Immunity Support Category page ", priority = 277)
@@ -3042,7 +3041,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnKidsHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSiteURL);
     }
     //There's a bug here due to the description is missing
     @Test(description = "Vitamins & Health Category- Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the Kids Health Category page ", priority = 292)
@@ -3191,7 +3190,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnMensHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSiteURL);
     }
     //There's a bug here due to the description is missing
     @Test(description = "Vitamins & Health Category- Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the Mens Health Category page ", priority = 307)
@@ -3334,7 +3333,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSexualHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSiteURL);
     }
     //There's a bug here due to the description is missing
     @Test(description = "Vitamins & Health Category- Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the Sexual Health Category page ", priority = 322)
@@ -3480,7 +3479,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSleepSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSiteURL);
     }
     @Test(description = "Vitamins & Health Category- Verify that the search button works correctly from the Sleep Support category page", priority = 339)
     public void verifySearchBtnWorksCorrectlyFromSleepSupportCategoryPage () {
@@ -3616,7 +3615,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnDietWeightManagementCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSiteURL);
     }
     //There's a bug here due to the description is missing
     @Test(description = "Vitamins & Health Category- Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the Diet Weight Management Category page ", priority = 352)
@@ -3760,7 +3759,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnWomenHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSiteURL);
     }
     //There's a bug here due to the description is missing
     @Test(description = "Vitamins & Health Category- Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the Women Health Category page ", priority = 367)
@@ -4454,6 +4453,6 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //        this.verifyClickingOnVitaminsAndHealthCategoryFromHomePageRedirectUserToCorrectURL();
         aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeGuestUserPage.clickOnSporterLogo();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSiteURL," The Current URL is not matched with the Cart URL" );
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSiteURL," The Current URL is not matched with the Cart URL" );
     }
     }

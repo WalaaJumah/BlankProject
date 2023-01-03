@@ -3135,5 +3135,5 @@ public class AEMegaMenuPage extends BasePage {
     public void verifyTheMegaMenuExistsInThePage(){
         Assert.assertTrue(this.getMegaMenuSection().isDisplayed());
     }
-    public void navigateToHomePage(){webDriver.navigate().to(siteURL);}
+    public void navigateToHomePage(){webDriver.navigate().to(BaseURL);}
 }

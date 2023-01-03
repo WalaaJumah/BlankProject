@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import javax.xml.crypto.Data;
 import java.util.List;
 
 public class AEGuestUserPage extends BasePage {
@@ -357,7 +356,7 @@ public class AEGuestUserPage extends BasePage {
         DataHelperAndWait.isDisplayed(firstNameField, 3,webDriver);
         this.firstNameField.click();
     }
-    public void navigateToHomePage(){webDriver.navigate().to(siteURL);}
+    public void navigateToHomePage(){webDriver.navigate().to(BaseURL);}
     public void clearShippingInformationFields(){
         DataHelperAndWait.waitToBeVisible(firstNameField, 5,webDriver);
         DataHelperAndWait.clearWebField(firstNameField);

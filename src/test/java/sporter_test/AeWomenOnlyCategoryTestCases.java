@@ -11,7 +11,7 @@ import org.testng.asserts.SoftAssert;
 import sporter_pages.*;
 import java.util.ArrayList;
 import java.util.List;
-import static core.BasePage.siteURL;
+import static core.BasePage.BaseURL;
 import static org.testng.Assert.assertEquals;
 
 public class AeWomenOnlyCategoryTestCases extends BaseTest {
@@ -89,7 +89,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL + aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BaseURL + aeSiteURL);
     }
 
     @Test(description = "Women's Only Category- Make sure the rotating slider section is displayed correctly", priority = 7)
@@ -173,7 +173,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         String expectedBannerUrl = aeVitaminsAndHealthCategoryPage.getSecondSideBanner().getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getSecondSideBanner().click();
         aeWomenOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedBannerUrl.replace(siteURL, siteURL + aeDomain)));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedBannerUrl.replace(BaseURL, BaseURL + aeDomain)));
     }
 
     //Shop By Category Test Cases
@@ -196,7 +196,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         String expectedCategoryUrl = aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(0).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(0).click();
         aeWomenOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedCategoryUrl.replace(siteURL, siteURL + aeDomain)));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedCategoryUrl.replace(BaseURL, BaseURL + aeDomain)));
     }
 
     @Test(description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the Supplements For Her category page ", priority = 17)
@@ -259,7 +259,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSupplementsForHerCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL + aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BaseURL + aeSiteURL);
     }
 
     @Test(description = "Women's Only Category- Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the Supplements For Her Category page ", priority = 22)
@@ -363,7 +363,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         String expectedCategoryUrl = aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(1).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(1).click();
         aeWomenOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedCategoryUrl.replace(siteURL, siteURL + aeDomain)));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedCategoryUrl.replace(BaseURL, BaseURL + aeDomain)));
     }
 
     @Test(description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the Women's Daily Vitamins category page ", priority = 31)
@@ -423,7 +423,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnWomenDailyVitaminsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL + aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BaseURL + aeSiteURL);
     }
 
     @Test(description = "Women's Only Category- Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the Women's Daily Vitamins Category page ", priority = 36)
@@ -524,7 +524,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         String expectedCategoryUrl = aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(2).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(2).click();
         aeWomenOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedCategoryUrl.replace(siteURL, siteURL + aeDomain)));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedCategoryUrl.replace(BaseURL, BaseURL + aeDomain)));
     }
 
     @Test(description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the Lady-Friendly Snacks & Food category page ", priority = 45)
@@ -583,7 +583,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL + aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BaseURL + aeSiteURL);
     }
 
     @Test(description = "Women's Only Category- Verify that the search button works correctly from the Lady-Friendly Snacks & Food category page", priority = 51)
@@ -674,7 +674,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         String expectedCategoryUrl = aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(3).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getShopByCategoryList().get(3).click();
         aeWomenOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedCategoryUrl.replace(siteURL, siteURL + aeDomain)));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedCategoryUrl.replace(BaseURL, BaseURL + aeDomain)));
     }
 
     @Test(description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the Makeup for Active Lifestyles category page ", priority = 59)
@@ -735,7 +735,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnMakeupForActiveLifestylesCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL + aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BaseURL + aeSiteURL);
     }
     @Test(description = "Women's Only Category- Verify that the search button works correctly from the Makeup for Active Lifestyles category page", priority = 64)
     public void verifySearchBtnWorksCorrectlyFromMakeupForActiveLifestylesCategoryPage() {
@@ -863,7 +863,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         String expectedUrl = aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(0).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(0).click();
         aeWomenOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl.replace(siteURL, siteURL + aeDomain)));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl.replace(BaseURL, BaseURL + aeDomain)));
     }
 
     @Test(description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the Hair, Skin & Nails Category page ", priority = 73)
@@ -926,7 +926,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnHairSkinAndNailsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL + aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BaseURL + aeSiteURL);
     }
 
     @Test(description = "Women's Only Category- Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the Hair, Skin & Nails Category page ", priority = 78)
@@ -1030,7 +1030,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         String expectedUrl = aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(1).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(1).click();
         aeWomenOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl.replace(siteURL, siteURL + aeDomain)));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl.replace(BaseURL, BaseURL + aeDomain)));
     }
 
     @Test(description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the Weight Loss Category page ", priority = 87)
@@ -1093,7 +1093,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnWeightLossCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL + aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BaseURL + aeSiteURL);
     }
 
     @Test(description = "Women's Only Category- Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the Weight Loss Category page ", priority = 92)
@@ -1252,7 +1252,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnMoodSupportCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL + aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BaseURL + aeSiteURL);
     }
 
     @Test(description = "Women's Only Category- Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the Mood Support Category page ", priority = 106)
@@ -1352,7 +1352,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         String expectedUrl = aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(3).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(3).click();
         aeWomenOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl.replace(siteURL, siteURL + aeDomain)));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl.replace(BaseURL, BaseURL + aeDomain)));
     }
 
     @Test(description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the Detox & Cleanse Category page ", priority = 115)
@@ -1412,7 +1412,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnDetoxAndCleanseCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL + aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BaseURL + aeSiteURL);
     }
 
     @Test(description = "Women's Only Category- Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the Detox & Cleanse Category page ", priority = 120)
@@ -1511,7 +1511,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         String expectedUrl = aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(4).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(4).click();
         aeWomenOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl.replace(siteURL, siteURL + aeDomain)));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl.replace(BaseURL, BaseURL + aeDomain)));
     }
 
     @Test(description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the PMS Relief Category page ", priority = 129)
@@ -1572,7 +1572,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnPMSReliefCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL + aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BaseURL + aeSiteURL);
     }
 
     @Test(description = "Women's Only Category- Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the PMS Relief Category page ", priority = 134)
@@ -1687,7 +1687,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         String expectedUrl = aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(5).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(5).click();
         aeWomenOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl.replace(siteURL, siteURL + aeDomain)));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl.replace(BaseURL, BaseURL + aeDomain)));
     }
 
     @Test(description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the Energy & Endurance Category page ", priority = 143)
@@ -1747,7 +1747,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnEnergyAndEnduranceCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL + aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BaseURL + aeSiteURL);
     }
     @Test(description = "Women's Only Category- Verify that the search button works correctly from the Energy & Endurance Category page", priority = 148)
     public void verifySearchBtnWorksCorrectlyFromEnergyAndEnduranceCategoryPage() {
@@ -1895,7 +1895,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnPrenatalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL + aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BaseURL + aeSiteURL);
     }
     @Test(description = "Women's Only Category- Verify that the search button works correctly from the Prenatal Care Category page", priority = 161)
     public void verifySearchBtnWorksCorrectlyFromPrenatalCareCategoryPage() {
@@ -2046,7 +2046,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnMuscleAndWeightGainCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL + aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BaseURL + aeSiteURL);
     }
 
     @Test(description = "Women's Only Category- Verify that the search button works correctly from the Muscle & Weight Gain Category page", priority = 174)
@@ -2135,7 +2135,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         String expectedUrl = aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(8).getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getHerbalReferenceGuideList().get(8).click();
         aeWomenOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl.replace(siteURL, siteURL + aeDomain)));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl.replace(BaseURL, BaseURL + aeDomain)));
     }
 
     @Test(description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the Fashion & Style Category page ", priority = 182)
@@ -2195,7 +2195,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnFashionAndStyleCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL + aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BaseURL + aeSiteURL);
     }
 
     @Test(description = "Women's Only Category- Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the Fashion & Style Category page ", priority = 187)
@@ -2355,7 +2355,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnPersonalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), siteURL + aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), BaseURL + aeSiteURL);
     }
     @Test(description = "Women's Only Category- Verify that the search button works correctly from the Personal Care Category page", priority = 201)
     public void verifySearchBtnWorksCorrectlyFromPersonalCareCategoryPage() {

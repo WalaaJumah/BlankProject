@@ -2,7 +2,6 @@ package sporter_pages;
 
 import core.BasePage;
 import core.DataHelperAndWait;
-import org.jsoup.Connection;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -308,7 +307,7 @@ public class AeCartPage extends BasePage {
         this.cancelCouponCodeBtn.click();
     }
     public void removeProductFromCart(){
-        webDriver.navigate().to(BasePage.siteURL+aeDomain+cartURL);
+        webDriver.navigate().to(BasePage.BaseURL +aeDomain+cartURL);
         this.clickOnRemoveItem();
     }
 

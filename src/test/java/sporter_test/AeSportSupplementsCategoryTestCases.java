@@ -117,7 +117,7 @@ public void switchToUaeStore(){
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeSportSupplementsCategoryPage.navigate();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), aeSportSupplementsCategoryPage.siteURL+aeSiteURL);
+        Assert.assertEquals(webDriver.getCurrentUrl(), aeSportSupplementsCategoryPage.BaseURL +aeSiteURL);
     }
 
     @Test(description = "Sports Supplements Category Page- Make sure that the Result label and its value appear correctly ", priority = 10)
@@ -347,6 +347,6 @@ public void switchToUaeStore(){
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeSportSupplementsCategoryPage.navigate();
         aeGuestUserPage.clickOnSporterLogo();
-        Assert.assertEquals(webDriver.getCurrentUrl(), aeSportSupplementsCategoryPage.siteURL+aeSiteURL," The Current URL is not matched with the Cart URL" );
+        Assert.assertEquals(webDriver.getCurrentUrl(), aeSportSupplementsCategoryPage.BaseURL +aeSiteURL," The Current URL is not matched with the Cart URL" );
     }
 }

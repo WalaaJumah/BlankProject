@@ -111,7 +111,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
         aeSportsCategoryPage.navigateToSportsPage();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSportSupplementsCategoryPage.aeDomain+"/");
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSportSupplementsCategoryPage.aeDomain+"/");
     }
     @Test(description = "Sports Category- Make sure the rotating slider section is displayed in Sports Category page correctly ", priority = 9)
     public void verifyRotatingSliderIsDisplayedInTheSportsCategoryPage() {
@@ -173,7 +173,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
             aeVitaminsAndHealthCategoryPage.getPagerOfRotatingSlider().get(i).click();
             aeVitaminsAndHealthCategoryPage.getBannerInRotatingSliderSection().click();
             aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-            webDriver.navigate().to(BasePage.siteURL+aeVitaminsAndHealthCategoryPage.sportsUrl);
+            webDriver.navigate().to(BasePage.BaseURL +aeVitaminsAndHealthCategoryPage.sportsUrl);
         }
     }
     @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure the clicking on the first side banner works correctly in Sports Category Page", priority = 16)
@@ -325,7 +325,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnMensApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSportSupplementsCategoryPage.aeDomain+"/");
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSportSupplementsCategoryPage.aeDomain+"/");
     }
     @Test(description = "Sports Category- Make sure each of the title section appears correctly in the Men's Apparel Category page ", priority = 27)
     public void verifyTitleSectionAppearingCorrectlyInMensApparelCategoryPage(){
@@ -464,7 +464,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnWomenApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSportSupplementsCategoryPage.aeDomain+"/");
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSportSupplementsCategoryPage.aeDomain+"/");
     }
     @Test(description = "Sports Category- Make sure each of the title section appears correctly in the Women's Apparel Category page ", priority = 41)
     public void verifyTitleSectionAppearingCorrectlyInWomenApparelCategoryPage(){
@@ -602,7 +602,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnYogaApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSportSupplementsCategoryPage.aeDomain+"/");
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSportSupplementsCategoryPage.aeDomain+"/");
     }
     @Test(description = "Sports Category- Make sure each of the title section appears correctly in the Yoga Apparel Category page ", priority = 55)
     public void verifyTitleSectionAppearingCorrectlyInYogaApparelCategoryPage(){
@@ -758,7 +758,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnSwimmingApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSportSupplementsCategoryPage.aeDomain+"/");
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSportSupplementsCategoryPage.aeDomain+"/");
     }
     @Test(description = "Sports Category- Make sure each of the title section appears correctly in the Swimming Apparel Category page ", priority = 69)
     public void verifyTitleSectionAppearingCorrectlyInSwimmingApparelCategoryPage(){
@@ -902,7 +902,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnMmaApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSportSupplementsCategoryPage.aeDomain+"/");
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSportSupplementsCategoryPage.aeDomain+"/");
     }
     @Test(description = "Sports Category- Make sure each of the title section appears correctly in the Mma Apparel Category page ", priority = 83)
     public void verifyTitleSectionAppearingCorrectlyInMmaApparelCategoryPage(){
@@ -1058,7 +1058,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnCricketApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSportSupplementsCategoryPage.aeDomain+"/");
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSportSupplementsCategoryPage.aeDomain+"/");
     }
     @Test(description = "Sports Category- Make sure each of the title section appears correctly in the Cricket Category page ", priority = 97)
     public void verifyTitleSectionAppearingCorrectlyInCricketCategoryPage(){
@@ -1215,7 +1215,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnToysAndGamesCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSportSupplementsCategoryPage.aeDomain+"/");
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSportSupplementsCategoryPage.aeDomain+"/");
     }
     @Test(description = "Sports Category- Make sure each of the title section appears correctly in the Toys And Games Category page ", priority = 111)
     public void verifyTitleSectionAppearingCorrectlyInToysAndGamesCategoryPage(){
@@ -1357,7 +1357,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnWearableTechCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSportSupplementsCategoryPage.aeDomain+"/");
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSportSupplementsCategoryPage.aeDomain+"/");
     }
     @Test(description = "Sports Category- Make sure each of the title section appears correctly in the Wearable Tech Category page ", priority = 125)
     public void verifyTitleSectionAppearingCorrectlyInWearableTechCategoryPage(){
@@ -1499,7 +1499,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnPersonalCareCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSportSupplementsCategoryPage.aeDomain+"/");
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSportSupplementsCategoryPage.aeDomain+"/");
     }
     @Test(description = "Sports Category- Make sure each of the title section appears correctly in the Personal Care Category page ", priority = 139)
     public void verifyTitleSectionAppearingCorrectlyInPersonalCareCategoryPage(){
@@ -1649,7 +1649,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnMenCategoryFromSportsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSportSupplementsCategoryPage.aeDomain+"/");
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSportSupplementsCategoryPage.aeDomain+"/");
     }
     @Test(description = "Sports Category- Make sure each of the title section appears correctly in the Men Category page ", priority = 154)
     public void verifyTitleSectionAppearingCorrectlyInMenCategoryPage(){
@@ -1799,7 +1799,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnWomenCategoryFromSportsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSportSupplementsCategoryPage.aeDomain+"/");
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSportSupplementsCategoryPage.aeDomain+"/");
     }
     @Test(description = "Sports Category- Make sure each of the title section appears correctly in the Women Category page ", priority = 169)
     public void verifyTitleSectionAppearingCorrectlyInWomenCategoryPage(){
@@ -1949,7 +1949,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnSportsTechCategoryFromSportsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSportSupplementsCategoryPage.aeDomain+"/");
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSportSupplementsCategoryPage.aeDomain+"/");
     }
     @Test(description = "Sports Category- Make sure each of the title section appears correctly in the Sports Tech Category page ", priority = 184)
     public void verifyTitleSectionAppearingCorrectlyInSportsTechCategoryPage(){
@@ -2099,7 +2099,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnKidsCategoryFromSportsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSportSupplementsCategoryPage.aeDomain+"/");
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSportSupplementsCategoryPage.aeDomain+"/");
     }
     @Test(description = "Sports Category- Make sure each of the title section appears correctly in the Kids Category page ", priority = 199)
     public void verifyTitleSectionAppearingCorrectlyInKidsCategoryPage(){
@@ -2250,7 +2250,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnSportsCategoryFromSportsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSportSupplementsCategoryPage.aeDomain+"/");
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSportSupplementsCategoryPage.aeDomain+"/");
     }
     @Test(description = "Sports Category- Make sure each of the title section appears correctly in the Sports Category page ", priority = 214)
     public void verifyTitleSectionAppearingCorrectlyInSportsCategoryPage(){
@@ -2493,7 +2493,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
         this.verifyClickingOnSportsCategoryFromShopByMenuRedirectUserToCorrectURL();
         aeGuestUserPage.clickOnSporterLogo();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeSportSupplementsCategoryPage.aeDomain+"/"," The Current URL is not matched with the Cart URL" );
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSportSupplementsCategoryPage.aeDomain+"/"," The Current URL is not matched with the Cart URL" );
     }
     @Test(description = "Sports Category- Make sure the Ability to click on phone button that appears in the Got A Question section correctly from Sports Category Page ", priority = 241)
     public void verifyAbilityToClickOnPhoneBtnInGotQuestionSectionFromSportsCategoryPage() {

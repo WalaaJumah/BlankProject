@@ -1,11 +1,12 @@
 package core;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestContext;
 import org.testng.annotations.*;
 import org.testng.annotations.Parameters;
 
@@ -39,6 +40,21 @@ public class BaseTest {
     public static String environmentName;
     public static String browserName;
     public  WebDriver webDriver;
+    private void CloseInitialDialog()
+
+    {
+        try{
+            WebElement btnCloseElement = webDriver.findElement(By.id("btnClose"));
+
+            if (btnCloseElement != null
+                    && btnCloseElement.isDisplayed()) {
+                btnCloseElement.click();
+            }}
+        catch (NoSuchElementException e){
+            System.out.println(e.getMessage());
+
+        }
+    }
 //    The Below Methods we need to run the TCs across the broswers
 //    @BeforeClass(alwaysRun = true)
 //    @Parameters({"environment","browser"})
@@ -76,46 +92,45 @@ public class BaseTest {
     // The Below Method to run the TCs on Onc Browser like Chrome
 
     @BeforeClass(alwaysRun = true)
-    @Parameters({"environment"})
-    public void setupBrowser( String environment) throws Exception {
+    @Parameters({"environment", "browser", "country"})
+    public void setupBrowser( String environment, String browser,@Optional("") String country, ITestContext testContext) throws Exception {
         environmentName=environment;
+        this.browserName = browser;
+        BasePage.BaseURL=environment;
         //This ChromeWebDriver 108
+        switch (browser) {
+//    Check if parameter passed from TestNG is 'firefox'
 
-        switch (environment){
-            case "production":
-//                System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
-                System.setProperty("webdriver.chrome.driver","src/test/resources/drivers/chromedriver.exe");
-                BasePage.siteURL = "https://www.sporter.com";
-                webDriver = new ChromeDriver();
-                webDriver.manage().window().maximize();
-                webDriver.navigate().to(BasePage.siteURL);
+            case "firefox":
+                System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver.exe");
+                webDriver = new FirefoxDriver();
                 break;
-            case "stg":
-                System.setProperty("webdriver.chrome.driver","src/test/resources/drivers/chromedriver.exe");
-                BasePage.siteURL = "https://stg.sporter.com";
+            case "chrome":
+                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
                 webDriver = new ChromeDriver();
-                webDriver.manage().window().maximize();
-                webDriver.navigate().to(BasePage.siteURL);
                 break;
-            case "stgTest":
-                System.setProperty("webdriver.chrome.driver","src/test/resources/drivers/chromedriver.exe");
-                BasePage.siteURL ="https://stg-test.sporter.com";
-                webDriver = new ChromeDriver();
-                webDriver.manage().window().maximize();
-                webDriver.navigate().to(BasePage.siteURL);
-                break;
-            case "staging2":
-                System.setProperty("webdriver.chrome.driver","src/test/resources/drivers/chromedriver.exe");
-                BasePage.siteURL ="https://staging2.sporter.com";
-                webDriver = new ChromeDriver();
-                webDriver.manage().window().maximize();
-                webDriver.navigate().to(BasePage.siteURL);
+            case "edge":
+                System.setProperty("webdriver.edge.driver", "src/test/resources/drivers/msedgedriver.exe");
+                webDriver = new EdgeDriver();
                 break;
             default:
-                throw new Exception("environment is not correct");
-
+////If no browser passed throw exception
+                throw new Exception("Browser is not correct");
         }
+        webDriver.manage().window().maximize();
+//        webDriver.navigate().to(environment);
+        webDriver.navigate().to(environment+"/"+country);
+        this.CloseInitialDialog();
     }
+
+
+
+
+
+
+
+
+
 //    @BeforeGroups(groups = "Smoke Testing Report")
 //    @Parameters({"environment"})
 //

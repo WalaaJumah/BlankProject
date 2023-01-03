@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import javax.xml.crypto.Data;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -597,19 +596,19 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void displayTheProduct() {
-        webDriver.navigate().to(siteURL + aeDomain + productUrl);
+        webDriver.navigate().to(BaseURL + aeDomain + productUrl);
     }
 
     public void displayNotAvailableOfferProduct() {
-        webDriver.navigate().to( siteURL+ aeDomain + notAvailableOfferProduct);
+        webDriver.navigate().to( BaseURL + aeDomain + notAvailableOfferProduct);
     }
 
     public void displayOOSProduct() {
-        webDriver.navigate().to(siteURL + aeDomain + oOSProductUrl);
+        webDriver.navigate().to(BaseURL + aeDomain + oOSProductUrl);
     }
 
     public void navigateToHomePage() {
-        webDriver.navigate().to(siteURL);
+        webDriver.navigate().to(BaseURL);
     }
 
     public boolean isAddToCartBtnDisplayed() {

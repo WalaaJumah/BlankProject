@@ -950,6 +950,6 @@ public class QatarHomePage extends BasePage {
             this.fiveProductInNewArrivalsSection.click();
         }
     }
-    public void navigate(){webDriver.navigate().to(siteURL);}
+    public void navigate(){webDriver.navigate().to(BaseURL);}
 
 }

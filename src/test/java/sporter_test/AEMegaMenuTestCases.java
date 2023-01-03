@@ -7372,7 +7372,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
                 //aeMegamenuPage.navigateToHomePage();
-        webDriver.navigate().to(aeMegamenuPage.siteURL+aeMegamenuPage.outOfStockProduct);
+        webDriver.navigate().to(aeMegamenuPage.BaseURL +aeMegamenuPage.outOfStockProduct);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
     }
@@ -7382,7 +7382,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
                 //aeMegamenuPage.navigateToHomePage();
-        webDriver.navigate().to(aeMegamenuPage.siteURL+aeMegamenuPage.outOfStockProduct);
+        webDriver.navigate().to(aeMegamenuPage.BaseURL +aeMegamenuPage.outOfStockProduct);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getSportsSupplementsSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
     }
@@ -7392,7 +7392,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
                 //aeMegamenuPage.navigateToHomePage();
-        webDriver.navigate().to(aeMegamenuPage.siteURL+aeMegamenuPage.outOfStockProduct);
+        webDriver.navigate().to(aeMegamenuPage.BaseURL +aeMegamenuPage.outOfStockProduct);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getVitaminsAndHealthSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
     }
@@ -7402,7 +7402,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
                 //aeMegamenuPage.navigateToHomePage();
-        webDriver.navigate().to(aeMegamenuPage.siteURL+aeMegamenuPage.outOfStockProduct);
+        webDriver.navigate().to(aeMegamenuPage.BaseURL +aeMegamenuPage.outOfStockProduct);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getHealthyFoodSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
     }
@@ -7412,7 +7412,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
                 //aeMegamenuPage.navigateToHomePage();
-        webDriver.navigate().to(aeMegamenuPage.siteURL+aeMegamenuPage.outOfStockProduct);
+        webDriver.navigate().to(aeMegamenuPage.BaseURL +aeMegamenuPage.outOfStockProduct);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getSportsSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
     }
@@ -7423,7 +7423,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
                 //aeMegamenuPage.navigateToHomePage();
-        webDriver.navigate().to(aeMegamenuPage.siteURL+aeMegamenuPage.product);
+        webDriver.navigate().to(aeMegamenuPage.BaseURL +aeMegamenuPage.product);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from Product Page");
     }
@@ -7433,7 +7433,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
                 //aeMegamenuPage.navigateToHomePage();
-        webDriver.navigate().to(aeMegamenuPage.siteURL+product);
+        webDriver.navigate().to(aeMegamenuPage.BaseURL +product);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getSportsSupplementsSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from Product Page");
     }
@@ -7443,7 +7443,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
                 //aeMegamenuPage.navigateToHomePage();
-        webDriver.navigate().to(aeMegamenuPage.siteURL+product);
+        webDriver.navigate().to(aeMegamenuPage.BaseURL +product);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getVitaminsAndHealthSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
     }
@@ -7453,7 +7453,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
                 //aeMegamenuPage.navigateToHomePage();
-        webDriver.navigate().to(aeMegamenuPage.siteURL+product);
+        webDriver.navigate().to(aeMegamenuPage.BaseURL +product);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getHealthyFoodSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
     }
@@ -7463,7 +7463,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
                 //aeMegamenuPage.navigateToHomePage();
-        webDriver.navigate().to(aeMegamenuPage.siteURL+product);
+        webDriver.navigate().to(aeMegamenuPage.BaseURL +product);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getSportsSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
     }

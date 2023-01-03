@@ -636,7 +636,7 @@ public class AEFooterPage extends BasePage {
         int randomInt = randomGenerator.nextInt(1000);
         return "username" + randomInt + "@gmail.com";
     }
-    public void navigateToHomePage(){webDriver.navigate().to(siteURL);}
+    public void navigateToHomePage(){webDriver.navigate().to(BaseURL);}
     public void clearEmailField(){
         DataHelperAndWait.waitToBeVisible(emailFieldInNewsletterBlock,5,webDriver);
         DataHelperAndWait.clearWebField(emailFieldInNewsletterBlock);

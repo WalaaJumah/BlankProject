@@ -13,7 +13,7 @@ import org.testng.Assert;
 public class BasePage {
 
 
-    public  static String siteURL = "https://www.sporter.com";
+    public  static String BaseURL = "https://www.sporter.com";
     public final String aeDomain = "/en-ae";
     public final String omanDomain = "/en-om";
     public final String bahrainDomain = "/en-bh";

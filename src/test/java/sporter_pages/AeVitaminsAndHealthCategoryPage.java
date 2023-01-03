@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import javax.xml.crypto.Data;
 import java.util.List;
 
 public class AeVitaminsAndHealthCategoryPage extends BasePage {
@@ -751,7 +750,7 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
             this.previousIconInFishOilAndOmegasSection.click();
         }
     }
-    public void navigateToHomePage(){webDriver.navigate().to(siteURL);}
-    public void navigateToVitaminsAndHealthPage(){webDriver.navigate().to(siteURL+aeDomain+healthVitaminsUrl);}
+    public void navigateToHomePage(){webDriver.navigate().to(BaseURL);}
+    public void navigateToVitaminsAndHealthPage(){webDriver.navigate().to(BaseURL +aeDomain+healthVitaminsUrl);}
 
 }

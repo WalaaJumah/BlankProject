@@ -1029,7 +1029,7 @@ dataHelperAndWait.waitToBeVisible(this.fiveProductInNewArrivalsSection,1,webDriv
         }
     }
 
-public void navigate(){webDriver.navigate().to(siteURL);}
+public void navigate(){webDriver.navigate().to(BaseURL);}
 
 
 }

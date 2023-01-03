@@ -4,7 +4,6 @@ import core.BasePage;
 import core.BaseTest;
 import core.DataHelperAndWait;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -81,7 +80,7 @@ public class AeCartTestCases extends BaseTest {
 //        this.verifyAbilityToRemoveProductFromCart();
         DataHelperAndWait.isDisplayed(aeCartPage.getHereLink(), 5,webDriver);
         aeCartPage.clickOnHereLink();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeCartPage.aeDomain+"/", "The Current URL is not matched with the AE Site URL");
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeCartPage.aeDomain+"/", "The Current URL is not matched with the AE Site URL");
     }
 
     @Test(groups = "Smoke Testing Report",description = " Cart Page- Make sure that the product counter that appears in the cart page counts the free gift correctly", priority = 7)
@@ -215,7 +214,7 @@ public class AeCartTestCases extends BaseTest {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
         this.viewCartFromPDP();
         aeCartPage.clickOnProductCartInCartPage();
-        Assert.assertNotEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeCartPage.aeDomain, "The Current URL is not matched with the AE Site URL");
+        Assert.assertNotEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeCartPage.aeDomain, "The Current URL is not matched with the AE Site URL");
         aeCartPage.removeProductFromCart();
     }
     @Test(groups = "Smoke Testing Report",description = " Cart Page- Make sure that the Free Gift is added correctly to the Cart", priority = 17)
@@ -261,7 +260,7 @@ public class AeCartTestCases extends BaseTest {
         aeProductDetailsPage.displayTheProduct();
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL );
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL );
         Assert.assertTrue(aeCartPage.getProceedCheckoutBtn().isDisplayed());
         aeCartPage.removeProductFromCart();
     }
@@ -272,7 +271,7 @@ public class AeCartTestCases extends BaseTest {
         aeProductDetailsPage.displayTheProduct();
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL );
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL );
         float subTotal = DataHelperAndWait.convertTheStringToFloat(aeCartPage.getSubTotalValue());
         float tax = DataHelperAndWait.convertTheStringToFloat(aeCartPage.getTaxValue());
         float orderTotal = DataHelperAndWait.convertTheStringToFloat(aeCartPage.getOrderTotalValue());
@@ -362,7 +361,7 @@ public class AeCartTestCases extends BaseTest {
         aeProductDetailsPage.displayTheProduct();
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL );
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL );
         float subTotal = DataHelperAndWait.convertTheStringToFloat(aeCartPage.getSubTotalValue());
         float tax = subTotal * (float) (0.05);
         float expectedCartTotal = subTotal + tax;
@@ -407,7 +406,7 @@ public class AeCartTestCases extends BaseTest {
         aeProductDetailsPage.displayTheProduct();
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL );
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL );
         Assert.assertTrue(aeCartPage.getExpectedDeliveryDateLabel().isDisplayed());
         String expectedDeliveryDate = aeCartPage.getExpectedDeliveryDateValue().getText();
         Assert.assertNotNull(expectedDeliveryDate);
@@ -478,7 +477,7 @@ public class AeCartTestCases extends BaseTest {
         aeProductDetailsPage.displayTheProduct();
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL );
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL );
         aeProductDetailsPage.switchToJOCountry();
         Assert.assertTrue(aeCartPage.getNoItemInCartLabel().isDisplayed());
     }
@@ -523,7 +522,7 @@ public class AeCartTestCases extends BaseTest {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        webDriver.navigate().to(BasePage.siteURL+aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL);
+        webDriver.navigate().to(BasePage.BaseURL +aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL);
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getShopeByMenu().isDisplayed(), "The Shope By menu is not displayed when Hovering on it from Product Page");
     }
@@ -533,7 +532,7 @@ public class AeCartTestCases extends BaseTest {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        webDriver.navigate().to(BasePage.siteURL+aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL);
+        webDriver.navigate().to(BasePage.BaseURL +aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getSportsSupplementsSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from Product Page");
     }
@@ -543,7 +542,7 @@ public class AeCartTestCases extends BaseTest {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        webDriver.navigate().to(BasePage.siteURL+aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL);
+        webDriver.navigate().to(BasePage.BaseURL +aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getVitaminsAndHealthSubMenuSection().isDisplayed(), "The Vitamins And Health menu is not displayed when Hovering on it from Product Page");
     }
@@ -553,7 +552,7 @@ public class AeCartTestCases extends BaseTest {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        webDriver.navigate().to(BasePage.siteURL+aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL);
+        webDriver.navigate().to(BasePage.BaseURL +aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getHealthyFoodSubMenuSection().isDisplayed(), "The Healthy Food menu is not displayed when Hovering on it from Product Page");
     }
@@ -563,7 +562,7 @@ public class AeCartTestCases extends BaseTest {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-        webDriver.navigate().to(BasePage.siteURL+aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL);
+        webDriver.navigate().to(BasePage.BaseURL +aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         Assert.assertTrue(aeMegamenuPage.getSportsSubMenuSection().isDisplayed(), "The Sport menu is not displayed when Hovering on it from Product Page");
     }
@@ -571,7 +570,7 @@ public class AeCartTestCases extends BaseTest {
     @Test(groups = "Smoke Testing Report",description = " Cart Page- Verify that the account Profile icon works correctly in the Cart Page", priority = 46)
     public void verifyAccountProfileIconWorksCorrectlyInCartPage() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
-        webDriver.navigate().to(BasePage.siteURL+aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL);
+        webDriver.navigate().to(BasePage.BaseURL +aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL);
         aeProductDetailsPage.clickOnAccountProfileIcon();
         assertTrue(aeProductDetailsPage.getAccountProfileOptions().isDisplayed());
     }
@@ -580,9 +579,9 @@ public class AeCartTestCases extends BaseTest {
     public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromCartPage() {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
-        webDriver.navigate().to(BasePage.siteURL+aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL);
+        webDriver.navigate().to(BasePage.BaseURL +aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL);
         aeGuestUserPage.clickOnSporterLogo();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeGuestUserPage.aeDomain+"/"," The Current URL is not matched with the Cart URL" );
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeGuestUserPage.aeDomain+"/"," The Current URL is not matched with the Cart URL" );
     }
     @Test(groups = "Smoke Testing Report",description = " Cart Page- Make sure that the ability to switch to Arabic version from the cart page correctly", priority = 48)
     public void verifyAbilityToSwitchToArabicVersionFromCartPage() {
@@ -591,7 +590,7 @@ public class AeCartTestCases extends BaseTest {
         aeProductDetailsPage.displayTheProduct();
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
-        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.siteURL+aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL );
+        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL );
         DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getLanguageSwitcher(), 5,webDriver);
         aeProductDetailsPage.switchToArabicVersion();
         DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getEnglishLangBtn(), 5,webDriver);
