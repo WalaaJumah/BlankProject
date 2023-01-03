@@ -19,6 +19,8 @@ public class AEFooterPage extends BasePage {
     //declare all locators related to the Cart Page
     @FindBy(id = "switcher-store-trigger")
     private WebElement countryList;
+    @FindBy(xpath = "(//div[@class='footer-column']//ul)[3]/li")
+    private List<WebElement> mostSellingList;
     @FindBy(xpath = "//li[@class='country_switch']/span[@class='AE']")
     private WebElement aeCountry;
     @FindBy(xpath = "//footer[@class='page-footer']")
@@ -596,6 +598,9 @@ public class AEFooterPage extends BasePage {
     public WebElement getCopyright() {
         DataHelperAndWait.waitToBeVisible(copyright,5,webDriver);
         return copyright;
+    }
+    public List<WebElement> getMostSellingList() {
+        return mostSellingList;
     }
 
     //Define the main actions we need to execute our TCs

@@ -597,6 +597,7 @@ public class AeProductDetailsPage extends BasePage {
 
     public void displayTheProduct() {
         webDriver.navigate().to(BaseURL + aeDomain + productUrl);
+        verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
     public void displayNotAvailableOfferProduct() {
@@ -605,10 +606,12 @@ public class AeProductDetailsPage extends BasePage {
 
     public void displayOOSProduct() {
         webDriver.navigate().to(BaseURL + aeDomain + oOSProductUrl);
+        verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
     public void navigateToHomePage() {
         webDriver.navigate().to(BaseURL);
+        verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
     public boolean isAddToCartBtnDisplayed() {

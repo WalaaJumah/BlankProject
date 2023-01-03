@@ -41,7 +41,7 @@ public class BaseTest {
     public static String browserName;
     public static String countryUrl;
     public  WebDriver webDriver;
-    private void CloseInitialDialog()
+    public void CloseInitialDialog()
 
     {
         try{
@@ -94,7 +94,7 @@ public class BaseTest {
 
     @BeforeClass(alwaysRun = true)
     @Parameters({"environment", "browser", "country"})
-    public void setupBrowser( String environment, String browser,@Optional("") String country, ITestContext testContext) throws Exception {
+    public void setupBrowser( String environment, String browser,@Optional("") String country) throws Exception {
         environmentName=environment;
         this.browserName = browser;
         BasePage.BaseURL=environment;

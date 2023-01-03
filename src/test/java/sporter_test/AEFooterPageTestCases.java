@@ -4,7 +4,10 @@ import core.BasePage;
 import core.BaseTest;
 import core.DataHelperAndWait;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import sporter_pages.AEFooterPage;
@@ -12,46 +15,37 @@ import sporter_pages.AEFooterPage;
 import static org.testng.Assert.assertFalse;
 
 public class AEFooterPageTestCases extends BaseTest {
-    @Parameters({"environment"})
-    public void setupBrowserFromTheClass( String environment) throws Exception {
+    @Parameters({"environment", "browser", "country"})
+    public void setupBrowserFromTheClass(String environment, String browser, @Optional("") String country) throws Exception {
         System.out.println("SetUp Browser method");
         environmentName=environment;
         //This ChromeWebDriver 108
+        this.browserName = browser;
+        BasePage.BaseURL=environment;
+        this.countryUrl=country;
+        switch (browser) {
+//    Check if parameter passed from TestNG is 'firefox'
 
-        switch (environment){
-            case "production":
-//                System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
-                System.setProperty("webdriver.chrome.driver","src/test/resources/drivers/chromedriver.exe");
-                BasePage.BaseURL = "https://www.sporter.com";
-                webDriver = new ChromeDriver();
-                webDriver.manage().window().maximize();
-                webDriver.navigate().to(BasePage.BaseURL);
+            case "firefox":
+                System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver.exe");
+                webDriver = new FirefoxDriver();
                 break;
-            case "stg":
-                System.setProperty("webdriver.chrome.driver","src/test/resources/drivers/chromedriver.exe");
-                BasePage.BaseURL = "https://stg.sporter.com";
+            case "chrome":
+                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
                 webDriver = new ChromeDriver();
-                webDriver.manage().window().maximize();
-                webDriver.navigate().to(BasePage.BaseURL);
                 break;
-            case "stgTest":
-                System.setProperty("webdriver.chrome.driver","src/test/resources/drivers/chromedriver.exe");
-                BasePage.BaseURL ="https://stg-test.sporter.com";
-                webDriver = new ChromeDriver();
-                webDriver.manage().window().maximize();
-                webDriver.navigate().to(BasePage.BaseURL);
-                break;
-            case "staging2":
-                System.setProperty("webdriver.chrome.driver","src/test/resources/drivers/chromedriver.exe");
-                BasePage.BaseURL ="https://staging2.sporter.com";
-                webDriver = new ChromeDriver();
-                webDriver.manage().window().maximize();
-                webDriver.navigate().to(BasePage.BaseURL);
+            case "edge":
+                System.setProperty("webdriver.edge.driver", "src/test/resources/drivers/msedgedriver.exe");
+                webDriver = new EdgeDriver();
                 break;
             default:
-                throw new Exception("environment is not correct");
-
+////If no browser passed throw exception
+                throw new Exception("Browser is not correct");
         }
+        webDriver.manage().window().maximize();
+//        webDriver.navigate().to(environment);
+        webDriver.navigate().to(environment+"/"+country);
+        CloseInitialDialog();
     }
 
     @Test(groups = "Smoke Testing Report",description = " Footer Section- Switching to UAE store", priority = 1)
@@ -248,15 +242,23 @@ public class AEFooterPageTestCases extends BaseTest {
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(description = " Footer Section- Make sure the Most Selling Products Section Appears Correctly In Footer", priority = 20)
-    public void verifyMostSellingProductsSectionAppearsCorrectlyInFooter() {
+//    @Test(description = " Footer Section- Make sure the Most Selling Products Section Appears Correctly In Footer", priority = 20)
+//    public void verifyMostSellingProductsSectionAppearsCorrectlyInFooter() {
+//        AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
+//        aeFooterPage.navigateToHomePage();
+//        Assert.assertEquals(aeFooterPage.getMostSellingProductsHeader().getText(), "Most Selling Products");
+//        Assert.assertEquals(aeFooterPage.getGrenadeReloadProteinOatBarOption().getText(), "Dymatize ISO 100 Protein");
+//        Assert.assertEquals(aeFooterPage.getDymatizeISO100ProteinOption().getText(), "Grenade Carb Killa Protein Bar");
+//        Assert.assertEquals(aeFooterPage.getGrenadeCarbKillaProteinBarOption().getText(), "Grenade Carb Killa Protein Bar - Box of 12");
+//    }
+    @Test(description = " Footer Section- Make sure ability to access all products listed in the Most Selling Products Section", priority = 20)
+    public void verifyClickingOnProductsInsideMostSellingProductsSectionWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
-        Assert.assertEquals(aeFooterPage.getMostSellingProductsHeader().getText(), "Most Selling Products");
-        Assert.assertEquals(aeFooterPage.getGrenadeReloadProteinOatBarOption().getText(), "Dymatize ISO 100 Protein");
-        Assert.assertEquals(aeFooterPage.getDymatizeISO100ProteinOption().getText(), "Grenade Carb Killa Protein Bar");
-        Assert.assertEquals(aeFooterPage.getGrenadeCarbKillaProteinBarOption().getText(), "Quest Nutrition - Bars - Box of 12");
-        Assert.assertEquals(aeFooterPage.getQuestNutritionBarsBox12Option().getText(), "Optimum Nutrition Gold Standard 100% Whey Protein ");
+        for(int i=0; i<aeFooterPage.getMostSellingList().size();i++){
+            aeFooterPage.getMostSellingList().get(i).click();
+            aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        }
     }
 
     @Test(description = " Footer Section- Make sure the Grenade Reload Protein Oat Bar Link appears in the footer works correctly", priority = 21)
@@ -1070,7 +1072,7 @@ public class AEFooterPageTestCases extends BaseTest {
     @Test(description = " Footer Section/Social Media- Make sure the ability to click on the instagram icon correctly", priority = 112)
     public void verifyAbilityToClickOnInstagramIconCorrectly() throws Exception {
         tearDown();
-        setupBrowserFromTheClass(environmentName);
+        setupBrowserFromTheClass(environmentName,browserName,countryUrl);
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.switchToAECountry();
         aeFooterPage.getInstagramIcon().click();
@@ -1083,7 +1085,7 @@ public class AEFooterPageTestCases extends BaseTest {
     @Test(description = " Footer Section/Social Media- Make sure the ability to click on the facebook icon correctly", priority = 113)
     public void verifyAbilityToClickOnFacebookIconCorrectly() throws Exception {
         tearDown();
-        setupBrowserFromTheClass(environmentName);
+        setupBrowserFromTheClass(environmentName,browserName,countryUrl);
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.switchToAECountry();
         aeFooterPage.getFacebookIcon().click();
@@ -1098,7 +1100,7 @@ public class AEFooterPageTestCases extends BaseTest {
     @Test(description = " Footer Section/Social Media- Make sure the ability to click on the twitter icon correctly", priority = 114)
     public void verifyAbilityToClickOnTwitterIconCorrectly() throws Exception {
         tearDown();
-        setupBrowserFromTheClass(environmentName);
+        setupBrowserFromTheClass(environmentName,browserName,countryUrl);
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.switchToAECountry();
         aeFooterPage.getTwitterIcon().click();
@@ -1113,7 +1115,7 @@ public class AEFooterPageTestCases extends BaseTest {
     @Test(description = " Footer Section/Social Media- Make sure the ability to click on the youtube icon correctly", priority = 115)
     public void verifyAbilityToClickOnYouTubeIconCorrectly() throws Exception {
         tearDown();
-        setupBrowserFromTheClass(environmentName);
+        setupBrowserFromTheClass(environmentName,browserName,countryUrl);
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.switchToAECountry();
         aeFooterPage.getYoutubeIcon().click();

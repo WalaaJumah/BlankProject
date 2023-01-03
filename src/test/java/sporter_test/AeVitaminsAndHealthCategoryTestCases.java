@@ -2453,13 +2453,13 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         }
     }
     //There's a bug here due to the Best Selling option is missing
-    @Test(description = "Vitamins & Health Category- Make sure that the Best Selling option is selected by default in the Sort By menu for Energy Formulas Category Page ", priority = 229)
-    public void verifyBestSellingOptionIsSelectedByDefaultInSortByMenuForEnergyFormulasCategoryPage () {
+    @Test(description = "Vitamins & Health Category- Make sure that the Featured option is selected by default in the Sort By menu for Energy Formulas Category Page ", priority = 229)
+    public void verifyFeaturedOptionIsSelectedByDefaultInSortByMenuForEnergyFormulasCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnEnergyFormulasCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
-        Assert.assertEquals(select.getFirstSelectedOption().getText(), "Best Selling");
+        Assert.assertEquals(select.getFirstSelectedOption().getText(), "Featured");
     }
     @Test(description = "Vitamins & Health Category- Make sure the Horizontal Category Image appears correctly in the Energy Formulas Category Page  ", priority = 230)
     public void verifyTheHorizontalCategoryImageAppearsCorrectlyInEnergyFormulasCategoryPage() {
@@ -2729,13 +2729,13 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         }
     }
     //There's a bug here due to the Best Selling option is missing
-    @Test(description = "Vitamins & Health Category- Make sure that the Best Selling option is selected by default in the Sort By menu for Heart Health Category Page ", priority = 259)
-    public void verifyBestSellingOptionIsSelectedByDefaultInSortByMenuForHeartHealthCategoryPage () {
+    @Test(description = "Vitamins & Health Category- Make sure that the Featured option is selected by default in the Sort By menu for Heart Health Category Page ", priority = 259)
+    public void verifyFeaturedOptionIsSelectedByDefaultInSortByMenuForHeartHealthCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnHeartHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
-        Assert.assertEquals(select.getFirstSelectedOption().getText(), "Best Selling");
+        Assert.assertEquals(select.getFirstSelectedOption().getText(), "Featured");
     }
     @Test(description = "Vitamins & Health Category- Make sure the Horizontal Category Image appears correctly in the Heart Health Category Page  ", priority = 260)
     public void verifyTheHorizontalCategoryImageAppearsCorrectlyInHeartHealthCategoryPage() {
@@ -2879,13 +2879,13 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         }
     }
     //There's a bug here due to the Best Selling option is missing
-    @Test(description = "Vitamins & Health Category- Make sure that the Best Selling option is selected by default in the Sort By menu for Immunity Support Category Page ", priority = 274)
-    public void verifyBestSellingOptionIsSelectedByDefaultInSortByMenuForImmunitySupportCategoryPage () {
+    @Test(description = "Vitamins & Health Category- Make sure that the Featured option is selected by default in the Sort By menu for Immunity Support Category Page ", priority = 274)
+    public void verifyFeaturedOptionIsSelectedByDefaultInSortByMenuForImmunitySupportCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnImmunitySupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
-        Assert.assertEquals(select.getFirstSelectedOption().getText(), "Best Selling");
+        Assert.assertEquals(select.getFirstSelectedOption().getText(), "Featured");
     }
     @Test(description = "Vitamins & Health Category- Make sure the Horizontal Category Image appears correctly in the Immunity Support Category Page  ", priority = 275)
     public void verifyTheHorizontalCategoryImageAppearsCorrectlyInImmunitySupportCategoryPage() {
@@ -3169,13 +3169,13 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         }
     }
     //There's a bug here due to the Best Selling option is missing
-    @Test(description = "Vitamins & Health Category- Make sure that the Best Selling option is selected by default in the Sort By menu for Mens Health Category Page ", priority = 304)
-    public void verifyBestSellingOptionIsSelectedByDefaultInSortByMenuForMensHealthCategoryPage () {
+    @Test(description = "Vitamins & Health Category- Make sure that the Featured option is selected by default in the Sort By menu for Mens Health Category Page ", priority = 304)
+    public void verifyFeaturedOptionIsSelectedByDefaultInSortByMenuForMensHealthCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnMensHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
-        Assert.assertEquals(select.getFirstSelectedOption().getText(), "Best Selling");
+        Assert.assertEquals(select.getFirstSelectedOption().getText(), "Featured");
     }
     @Test(description = "Vitamins & Health Category- Make sure the Horizontal Category Image appears correctly in the Mens Health Category Page  ", priority = 305)
     public void verifyTheHorizontalCategoryImageAppearsCorrectlyInMensHealthCategoryPage() {

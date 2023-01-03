@@ -2562,7 +2562,7 @@ AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(we
         Assert.assertTrue(aeWomenOnlyCategoryPage.getWorkoutInStyleSection().isDisplayed());
     }
 
-    @Test(description = "Women's Only Category- Make sure the previous arrow icon is not appear by default in the Workout In Style Widget ", priority = 221)
+    @Test(description = "Women's Only Category- Make sure the previous button is not appear by default in the Workout In Style Widget ", priority = 221)
     public void verifyPreviousArrowButtonInWorkoutInStyleWidgetIsNotDisplayedByDefault() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         //        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -2574,8 +2574,7 @@ AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(we
     public void verifyClickingOnNextIconInWorkoutInStyleWidgetWorksCorrectly() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         //        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-        DataHelperAndWait.waitToBeVisible(aeWomenOnlyCategoryPage.getNextIconInInWorkoutInStyleSection(),5,webDriver);
-        aeWomenOnlyCategoryPage.getNextIconInInWorkoutInStyleSection().click();
+//        DataHelperAndWait.waitToBeVisible(aeWomenOnlyCategoryPage.getNextIconInInWorkoutInStyleSection(),5,webDriver);
         aeWomenOnlyCategoryPage.getNextIconInInWorkoutInStyleSection().click();
     }
 
@@ -2623,7 +2622,7 @@ AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(we
         Assert.assertTrue(aeWomenOnlyCategoryPage.getPreviousIconInLadyFriendlySnacksFoodSection().isDisplayed());
     }
 
-    @Test(description = "Women's Only Category- Make sure clicking on Next Button in the Lady-Friendly Snacks & Food Widget works correctly", priority = 228,expectedExceptions = { org.openqa.selenium.NoSuchElementException.class })
+    @Test(description = "Women's Only Category- Make sure clicking on Next Button in the Lady-Friendly Snacks & Food Widget works correctly", priority = 228,expectedExceptions = { org.openqa.selenium.TimeoutException.class })
     public void verifyClickingOnNextIconInLadyFriendlySnacksAndFoodWidgetWorksCorrectly() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         //        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();

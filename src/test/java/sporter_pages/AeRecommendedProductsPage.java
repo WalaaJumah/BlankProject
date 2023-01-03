@@ -34,7 +34,7 @@ public class AeRecommendedProductsPage extends BasePage {
     private WebElement recommendedProductsTitle;
     @FindBy(xpath = "//div[@class='cart-button']")
     private WebElement addToCartBtn;
-    @FindBy(xpath = "//div[3]/div/div/div[2]/div[2]/button")
+    @FindBy(xpath = "(//button[@class='custom-button blue-btn'])[2]")
     private WebElement addToCart;
     @FindBy(xpath = "(//div[@class='inner-seller-prod'])[1]")
     private WebElement firstProductCard;
