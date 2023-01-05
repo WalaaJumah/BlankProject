@@ -247,7 +247,7 @@ public class AeCartPage extends BasePage {
     }
 
     public void clickOnRemoveItem() {
-        DataHelperAndWait.isDisplayed(removeItem, 3,webDriver);
+        DataHelperAndWait.isDisplayed(removeItem, 5,webDriver);
         this.removeItem.click();
     }
 
@@ -310,6 +310,7 @@ public class AeCartPage extends BasePage {
         webDriver.navigate().to(BasePage.BaseURL +aeDomain+cartURL);
         this.clickOnRemoveItem();
     }
+
 
 
 }

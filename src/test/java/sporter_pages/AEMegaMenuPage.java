@@ -2,6 +2,7 @@ package sporter_pages;
 
 import core.BasePage;
 import core.DataHelperAndWait;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -1069,7 +1070,7 @@ public class AEMegaMenuPage extends BasePage {
     }
 
     public WebElement getShopeByMenu() {
-        DataHelperAndWait.waitToBeVisible(shopeByMenu,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(shopeByMenu,6,webDriver);
         return shopeByMenu;
     }
 
@@ -2333,6 +2334,7 @@ public class AEMegaMenuPage extends BasePage {
     }
 
     public WebElement getCitrullineOptionInSportSupplementsMainMenu() {
+        DataHelperAndWait.waitToBeVisible(citrullineOptionInSportSupplementsMainMenu,3,webDriver);
         return citrullineOptionInSportSupplementsMainMenu;
     }
 
@@ -3132,6 +3134,20 @@ public class AEMegaMenuPage extends BasePage {
             DataHelperAndWait.waitToBeVisible(aeCountry, 5,webDriver);
             this.aeCountry.click();
         }
+    }
+    public boolean verifyTheMegaMenuAppearsInThePage(){
+        boolean MegaMenuIsDisplayed= true;
+        try{
+        if(megaMenuSection!= null && megaMenuSection.isDisplayed()){
+            MegaMenuIsDisplayed= true;
+           }
+        }
+        catch (NoSuchElementException e) {
+            e.getMessage();
+            MegaMenuIsDisplayed= false;
+            navigateToHomePage();
+        }
+        return MegaMenuIsDisplayed;
     }
     public void verifyTheMegaMenuExistsInThePage(){
         Assert.assertTrue(this.getMegaMenuSection().isDisplayed());

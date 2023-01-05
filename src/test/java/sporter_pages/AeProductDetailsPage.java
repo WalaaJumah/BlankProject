@@ -37,9 +37,9 @@ public class AeProductDetailsPage extends BasePage {
     private WebElement inconvenienceWarningMsg;
     @FindBy(xpath = "//*[@id=\"popup-block\"]/div[2]/a[2]")
     private WebElement viewCartBtn;
-    @FindBy(id = "option-label-size-165-item-10037")
+    @FindBy(id = "option-label-size-165-item-10057")
     private WebElement productAttribute;
-    @FindBy(id = "option-label-flavor-164-item-6939")
+    @FindBy(id = "option-label-flavor-164-item-6959")
     private WebElement productFlavor;
     @FindBy(xpath = "//*[@id=\"algolia-searchbox\"]/button")
     private WebElement searchBtn;
@@ -53,7 +53,7 @@ public class AeProductDetailsPage extends BasePage {
     private WebElement lebanonCountry;
     @FindBy(xpath = "//li[@class='country_switch']/span[@class='JO']")
     private WebElement joCountry;
-    @FindBy(xpath = "//*[@id=\"maincontent\"]/div[3]/div/div[2]/div[2]/a[1]/picture/img")
+    @FindBy(xpath = "//*[@id=\"maincontent\"]/div[5]/div/div[2]/div[2]/a[1]/picture/img")
     private WebElement firstProductInHomePage;
     @FindBy(xpath = "(//div[@class='inner-seller-prod wp-id-6527']/a)[1]")
     private WebElement productInHomePage;
@@ -103,7 +103,7 @@ public class AeProductDetailsPage extends BasePage {
     private WebElement SportsSupplementsMenu;
     @FindBy(xpath = "//select")
     private WebElement bundleMenu;
-    @FindBy(xpath = ".//*[@class='swiper-wrapper clearfix']/li[3]")
+    @FindBy(xpath = ".//*[@class='swiper-wrapper clearfix']/li[5]")
     private WebElement buy1Get1Card;
     @FindBy(xpath = "//ol[@class='products list items product-items']//li")
     private WebElement firstProductInTheCategoryList;
@@ -117,7 +117,7 @@ public class AeProductDetailsPage extends BasePage {
     private WebElement firstProductFlavor;
     @FindBy(xpath = "(//div[@index='5'])[1]")
     private WebElement firstProductSize;
-    @FindBy(xpath = "//div[@id='option-label-size-165-item-10243']")
+    @FindBy(xpath = "//div[@id='option-label-size-165-item-10245']")
     private WebElement firstsimple;
     @FindBy(xpath = "//div[@id='option-label-size-165-item-10042']")
     private WebElement secondsimple;
@@ -132,7 +132,7 @@ public class AeProductDetailsPage extends BasePage {
     private WebElement directionsOfUseSection;
     @FindBy(xpath = "//div[@class='about-brand']")
     private WebElement aboutBrandSection;
-    @FindBy(xpath = "//div[@class='product attribute description']/h3")
+    @FindBy(xpath = "//div[@class='product attribute description']/h5")
     private WebElement aboutThisProductTitle;
     @FindBy(id = "product-attribute-specs-table")
     private WebElement supplementFactsTable;
@@ -352,7 +352,7 @@ public class AeProductDetailsPage extends BasePage {
 
     //Define the main actions we need to execute our TCs
     public void clickOnTheProductAttributes() {
-        DataHelperAndWait.isDisplayed(productAttribute, 3, webDriver);
+        DataHelperAndWait.isDisplayed(productAttribute, 5, webDriver);
         this.productAttribute.click();
         this.productFlavor.click();
     }
@@ -368,7 +368,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void viewCart() {
-        DataHelperAndWait.waitToBeClickable(viewCartBtn, 3, webDriver);
+        DataHelperAndWait.waitToBeClickable(viewCartBtn, 5, webDriver);
         this.viewCartBtn.click();
     }
 
@@ -388,7 +388,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void clickOnFirstProductFlavor() {
-        DataHelperAndWait.waitToBeClickable(firstProductFlavor, 3, webDriver);
+        DataHelperAndWait.waitToBeClickable(firstProductFlavor, 5, webDriver);
         this.firstProductFlavor.click();
     }
 
@@ -468,12 +468,12 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void clickOnSalesAndOffersMenu() {
-        DataHelperAndWait.isDisplayed(salesAndOffersMenu, 3, webDriver);
+        DataHelperAndWait.isDisplayed(salesAndOffersMenu, 5, webDriver);
         this.salesAndOffersMenu.click();
     }
 
     public void clickOnSportsSupplementsMenu() {
-        DataHelperAndWait.waitToBeClickable(SportsSupplementsMenu, 3, webDriver);
+        DataHelperAndWait.waitToBeClickable(SportsSupplementsMenu, 5, webDriver);
         this.SportsSupplementsMenu.click();
     }
 
@@ -486,7 +486,7 @@ public class AeProductDetailsPage extends BasePage {
         this.reviewSummaryField.sendKeys(reviewSummary);
         DataHelperAndWait.waitToBeVisible(nickNameField, 5, webDriver);
         this.nickNameField.sendKeys(nickName);
-        DataHelperAndWait.waitToBeClickable(submitReviewButton, 3, webDriver);
+        DataHelperAndWait.waitToBeClickable(submitReviewButton, 5, webDriver);
         this.submitReviewButton.click();
     }
 
@@ -502,7 +502,7 @@ public class AeProductDetailsPage extends BasePage {
 
     public void switchCountryThenAddProductToCart() {
         this.switchToAECountry();
-        DataHelperAndWait.waitToBeVisible(productInHomePage, 3, webDriver);
+        DataHelperAndWait.waitToBeVisible(productInHomePage, 5, webDriver);
         this.clickOnProductInHomePage();
         this.addToCart();
     }
@@ -513,12 +513,12 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void clickOnBuy1Get1Card() {
-        DataHelperAndWait.isDisplayed(buy1Get1Card, 3, webDriver);
+        DataHelperAndWait.isDisplayed(buy1Get1Card, 5, webDriver);
         this.buy1Get1Card.click();
     }
 
     public void clickOnFirstProductInTheCategoryList() {
-        DataHelperAndWait.isDisplayed(firstProductInTheCategoryList, 3, webDriver);
+        DataHelperAndWait.isDisplayed(firstProductInTheCategoryList, 5, webDriver);
         for (WebElement webElement : megaMenuList) {
             webElement.click();
             break;
@@ -526,7 +526,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void DisplayProductInTheList(int listIndex) {
-        DataHelperAndWait.waitToBeVisible(firstProductInTheCategoryList, 3, webDriver);
+        DataHelperAndWait.waitToBeVisible(firstProductInTheCategoryList, 5, webDriver);
         for (int i = 1; i < megaMenuList.size(); i++) {
             WebElement productIndex = megaMenuList.get(listIndex);
             productIndex.click();
@@ -534,7 +534,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void fillInQtyField(String qtyNumber) {
-        DataHelperAndWait.isDisplayed(quantityField, 3, webDriver);
+        DataHelperAndWait.isDisplayed(quantityField, 5, webDriver);
         this.quantityField.sendKeys(qtyNumber);
     }
 
@@ -544,7 +544,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void clickOnAddToCartBtnInProductHeaderBar() {
-        DataHelperAndWait.isDisplayed(addToCartBtnInProductHeaderBar, 3, webDriver);
+        DataHelperAndWait.isDisplayed(addToCartBtnInProductHeaderBar, 5, webDriver);
         this.addToCartBtnInProductHeaderBar.click();
     }
 
@@ -554,7 +554,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void clickOnFirstProductInWheyProteinPage() {
-        DataHelperAndWait.isDisplayed(firstProductInWheyProteinPage, 3, webDriver);
+        DataHelperAndWait.isDisplayed(firstProductInWheyProteinPage, 5, webDriver);
         this.firstProductInWheyProteinPage.click();
     }
 
@@ -564,7 +564,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void clickOnPreviousReviewPageBtn() {
-        DataHelperAndWait.isDisplayed(previousReviewPageBtn, 3, webDriver);
+        DataHelperAndWait.isDisplayed(previousReviewPageBtn, 5, webDriver);
         this.previousReviewPageBtn.click();
     }
 
@@ -574,20 +574,20 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void clickOnFirstProductSize() {
-        DataHelperAndWait.isDisplayed(firstProductSize, 3, webDriver);
+        DataHelperAndWait.isDisplayed(firstProductSize, 5, webDriver);
         this.firstProductSize.click();
     }
     public void clickOnFirstsimple() {
-        DataHelperAndWait.isDisplayed(firstsimple, 3, webDriver);
+        DataHelperAndWait.isDisplayed(firstsimple, 5, webDriver);
         this.firstsimple.click();
     }
     public void clickOnSecondimple() {
-        DataHelperAndWait.isDisplayed(secondsimple, 3, webDriver);
+        DataHelperAndWait.isDisplayed(secondsimple, 5, webDriver);
         this.secondsimple.click();
     }
 
     public void clickOnSecondProductSize() {
-        DataHelperAndWait.isDisplayed(secondProductSize, 3, webDriver);
+        DataHelperAndWait.isDisplayed(secondProductSize, 5, webDriver);
         this.secondProductSize.click();
     }
 
@@ -618,7 +618,7 @@ public class AeProductDetailsPage extends BasePage {
         try{
         if(addToCartBtn.isDisplayed());
         return true;}
-        catch (NoSuchElementException exception){
+        catch (Exception exception){
             return false;
         }
     }

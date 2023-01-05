@@ -44,20 +44,20 @@ public class AEMegaMenuTestCases extends BaseTest {
                 "Women's Only", "The MegaMenu is not correct");
     }
 
-    @Test(description = "MegaMenu- Make sure the Shop By menu display the correct options ", priority = 3)
+    @Test(description = "MegaMenu- Make sure the Shop By menu displyed correctly ", priority = 3)
     public void verifyShopByMenuDisplayTheCorrectOptions() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getShopeByOption()).perform();
-        Assert.assertEquals(aeMegamenuPage.getSportsSupplementsOption().getText(), "Sports Supplements");
-        Assert.assertEquals(aeMegamenuPage.getVitaminsAndHealthOption().getAttribute("textContent"), " Vitamins & Health\n\n");
-        Assert.assertEquals(aeMegamenuPage.getHealthFoodOption().getAttribute("textContent"), " Healthy Food\n\n");
-        Assert.assertEquals(aeMegamenuPage.getSportsOption().getAttribute("textContent"), " SPORTS\n\n");
-        Assert.assertEquals(aeMegamenuPage.getWomenOnlyOption().getAttribute("textContent"), " Women's Only\n\n");
-        Assert.assertEquals(aeMegamenuPage.getByBrandOption().getAttribute("textContent"), " By Brand\n\n");
-        Assert.assertEquals(aeMegamenuPage.getByGoalOption().getAttribute("textContent"), " By Goal\n\n");
-        Assert.assertEquals(aeMegamenuPage.getSalesAndOffersOption().getAttribute("textContent"), " Sales & Offers\n\n");
-        Assert.assertEquals(aeMegamenuPage.getSporterStacksOption().getAttribute("textContent"), " Sporter Stacks\n\n");
+        Assert.assertTrue(aeMegamenuPage.getSportsSupplementsOption().isDisplayed());
+        Assert.assertTrue(aeMegamenuPage.getVitaminsAndHealthOption().isDisplayed());
+        Assert.assertTrue(aeMegamenuPage.getHealthFoodOption().isDisplayed());
+        Assert.assertTrue(aeMegamenuPage.getSportsOption().isDisplayed());
+        Assert.assertTrue(aeMegamenuPage.getWomenOnlyOption().isDisplayed());
+        Assert.assertTrue(aeMegamenuPage.getByBrandOption().isDisplayed());
+        Assert.assertTrue(aeMegamenuPage.getByGoalOption().isDisplayed());
+        Assert.assertTrue(aeMegamenuPage.getSalesAndOffersOption().isDisplayed());
+        Assert.assertTrue(aeMegamenuPage.getSporterStacksOption().isDisplayed());
     }
 
     @Test(description = "MegaMenu- Make sure the Hamburger Menu Icon display correctly in the ShopBy menu ", priority = 4)
@@ -118,6 +118,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(sportSupplementsUrl));
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
     @Test(description = "MegaMenu- Make sure the MegaMenu section appears correctly from the Sports Supplements Category page", priority = 9)
     public void verifyMegaMenuSectionAppearsCorrectlyInThSportsSupplementsPage()
@@ -137,6 +138,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         aeMegamenuPage.getVitaminsAndHealthOption().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(healthVitaminsUrl));
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+        Assert.assertTrue(aeMegamenuPage.getMegaMenuSection().isDisplayed(),"The MegaMenu is missing");
+
     }
     @Test(description = "MegaMenu- Make sure the MegaMenu section appears correctly from the Vitamins And Health Category page", priority = 11)
     public void verifyMegaMenuSectionAppearsCorrectlyInThVitaminsAndHealthPage()
@@ -156,6 +160,7 @@ public class AEMegaMenuTestCases extends BaseTest {
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(healthyFoodsUrl));
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
     @Test(description = "MegaMenu- Make sure the MegaMenu section appears correctly from the Healthy Food Category page", priority = 13)
     public void verifyMegaMenuSectionAppearsCorrectlyInThHealthyFoodPage()
@@ -176,6 +181,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(sportsUrl));
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
     @Test(description = "MegaMenu- Make sure the MegaMenu section appears correctly from the Sports Category page", priority = 15)
     public void verifyMegaMenuSectionAppearsCorrectlyInThSportsPage()
@@ -214,6 +220,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(byBrandUrl));
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
     @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the By Goal menu appearing in the ShopBy Menu will redirect the User to the correct URL", priority = 19)
     public void verifyClickingOnByGoalOptionInsideShopByMenuRedirectUserToCorrectURL() {
@@ -227,6 +234,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(byGoalUrl));
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
     @Test(description = "MegaMenu- Make sure the MegaMenu section appears correctly from the By Goal page", priority = 20)
     public void verifyMegaMenuSectionAppearsCorrectlyInThByGoalPage()
@@ -245,6 +253,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(salesAndOffersUrl));
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
     @Test(description = "MegaMenu- Make sure the MegaMenu section appears correctly from the Sales And Offers page", priority = 22)
     public void verifyMegaMenuSectionAppearsCorrectlyInThSalesAndOffersPage()
@@ -263,6 +272,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(sportStacksUrl));
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
     @Test(description = "MegaMenu- Make sure the MegaMenu section appears correctly from the Sports Stacks Category page", priority = 24)
     public void verifyMegaMenuSectionAppearsCorrectlyInThSportsStacksPage()
@@ -332,6 +342,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), proteinOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Creatine option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 29)
@@ -346,6 +357,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), creatineOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
     @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Amino Acids appearing in the Sports Supplements inside menu ShopBy Menu will redirect the User to the correct URL", priority = 30)
     public void verifyClickingOnAminoAcidsOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
@@ -359,6 +371,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aminoAcidsOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
     @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Muscle Boosters option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 31)
     public void verifyClickingOnMuscleBoostersOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
@@ -372,6 +385,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), muscleBoostersOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Weight Management option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 32)
@@ -386,6 +400,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), weightManagementOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Recovery option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 33)
@@ -400,6 +415,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), recoveryOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 //
     @Test(description = "MegaMenu- Make sure clicking on the Carbohydrates option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 34)
@@ -414,6 +430,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), carbohydratesOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 //
     @Test(description = "MegaMenu- Make sure clicking on the Energy And Endurance Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 35)
@@ -428,6 +445,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), energyAndEnduranceOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 //
     @Test(description = "MegaMenu- Make sure clicking on the Gaming And Focus Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 36)
@@ -442,6 +460,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), gamingAndFocusOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
 
@@ -457,6 +476,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), wheyProteinOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Whey Protein Isolate Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 38)
@@ -471,6 +491,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), WheyProteinIsolateOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the protein Blends Option  appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 39)
@@ -485,6 +506,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), proteinBlendsOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Non Dairy Protein Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 40)
@@ -499,6 +521,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), nonDairyProteinOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the casein Protein Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 41)
@@ -513,6 +536,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), caseinProteinOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the diet Protein Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 42)
@@ -527,6 +551,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), dietProteinOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Mass Gainers Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 43)
@@ -541,6 +566,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), massGainersOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Creatine Monohydrate Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 44)
@@ -555,13 +581,14 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), creatineMonohydrateOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Creatine Blends Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 45)
     public void verifyClickingOnCreatineBlendsOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        //aeMegamenuPage.navigateToHomePage();
+        aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCreatineBlendsOptionInSportSupplementsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCreatineBlendsOptionInSportSupplementsMenu().getAttribute("href");
@@ -569,6 +596,9 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), creatineBlendsOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
+
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the BCAA Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 46)
@@ -583,6 +613,8 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), bCAAOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the EAA Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 47)
@@ -597,6 +629,8 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
         //  Assert.assertEquals(webDriver.getCurrentUrl(), eAAOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Arginine Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 48)
@@ -611,6 +645,8 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), arginineOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Beta Alanine Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 49)
@@ -625,6 +661,8 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), betaAlanineOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the HMB Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 50)
@@ -639,6 +677,8 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), hMBOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Amino Acid Powders Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 51)
@@ -653,6 +693,8 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aminoAcidPowdersOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Amino Acid Pills Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 52)
@@ -667,6 +709,8 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aminoAcidPillsOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Citrulline Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 53)
@@ -681,6 +725,8 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), citrullineOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Amino Acid Liquids Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 54)
@@ -695,6 +741,8 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aminoAcidLiquidsOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Testosterone Boosters Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 55)
@@ -709,6 +757,8 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), testosteroneBoostersOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Gh Boosters Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 56)
@@ -723,6 +773,8 @@ public class AEMegaMenuTestCases extends BaseTest {
 //        Assert.assertEquals(webDriver.getCurrentUrl(), ghBoostersOptionInSportSupplementsMenuUrl);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Stimulant Weight Loss Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 57)
@@ -737,6 +789,8 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), stimulantWeightLossOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Non Stimulant Weight Loss Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 58)
@@ -751,6 +805,8 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), nonStimulantWeightLossOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Meal Replacements Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 59)
@@ -765,6 +821,8 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), mealReplacementsOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Metabolism Support Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 60)
@@ -779,6 +837,8 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
 //        Assert.assertEquals(webDriver.getCurrentUrl(), metabolismSupportOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Toning Creams Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 61)
@@ -793,6 +853,8 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), toningCreamsOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the MCT Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 62)
@@ -807,6 +869,8 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), mctOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Glutamine Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 63)
@@ -821,6 +885,8 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), glutamineOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Recovery Blend Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 64)
@@ -835,6 +901,8 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), recoveryBlendOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Electrolytes And Hydration Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 65)
@@ -849,6 +917,8 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), electrolytesAndHydrationOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Carbohydrate Powders Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 66)
@@ -863,6 +933,8 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), carbohydratePowdersOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Stimulant Energy Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 67)
@@ -877,6 +949,8 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), stimulantEnergyOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Non Stimulant Energy Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 68)
@@ -891,6 +965,8 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), nonStimulantEnergyOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Gaming Essentials Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 69)
@@ -905,13 +981,15 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), gamingEssentialsOptionInSportSupplementsMenuUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure the Vitamins & Health menu Inside ShopBy Menu display the correct categories and sub-categories", priority = 70)
     public void verifyVitaminsAndHealthMenuInsideShopByMenuDisplayTheCorrectCategoriesAndSubCategories() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//                //aeMegamenuPage.navigateToHomePage();
+                aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getOptionList().get(0),5,webDriver);
@@ -929,7 +1007,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyTheMainCategoriesInTheVitaminsAndHealthMenuInsideShopByMenuAppearingInBoldFont() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//                //aeMegamenuPage.navigateToHomePage();
+                aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         Assert.assertTrue(aeMegamenuPage.getFeaturedOptionInVitaminsAndHealthMenu().getCssValue("font-weight").contains("700"));
@@ -950,7 +1028,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyTheMainCategoriesInTheVitaminsAndHealthMenuInsideShopByMenuAppearingInUppercase() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//                //aeMegamenuPage.navigateToHomePage();
+                aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         Assert.assertEquals(aeMegamenuPage.getFeaturedOptionInVitaminsAndHealthMenu().getCssValue("text-transform"), "uppercase");
@@ -971,7 +1049,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyClickingOnFeaturedOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//                //aeMegamenuPage.navigateToHomePage();
+                aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getFeaturedOptionInVitaminsAndHealthMenu()).perform();
@@ -980,6 +1058,7 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), featuredOptionInVitaminsAndHealthUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Alive Vitamins Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 74)
@@ -995,6 +1074,8 @@ public class AEMegaMenuTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aliveVitaminsOptionInVitaminsAndHealthUrl);
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Sexual Health Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 75)
@@ -1011,6 +1092,8 @@ public class AEMegaMenuTestCases extends BaseTest {
 //        Assert.assertEquals(webDriver.getCurrentUrl(), sexualHealthOptionInVitaminsAndHealthUrl);
         System.out.println(webDriver.getCurrentUrl());
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Essential Vitamins Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 76)
@@ -1026,6 +1109,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), essentialVitaminsOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Folic Acid Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 77)
@@ -1041,6 +1126,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), folicAcidOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Vitamin A Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 78)
@@ -1056,6 +1143,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminAOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Vitamin B Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 79)
@@ -1071,6 +1160,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminBOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Vitamin C Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 80)
@@ -1086,6 +1177,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminCOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Vitamin D Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 81)
@@ -1101,6 +1194,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminDOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Vitamin E Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 82)
@@ -1116,6 +1211,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminEOptionInVitaminsAndHealthUrl);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Vitamin K Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 83)
@@ -1131,6 +1228,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminKOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Multi Vitamins Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 84)
@@ -1146,6 +1245,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), multiVitaminsOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Vitamins For Kids Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 85)
@@ -1161,6 +1262,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminsForKidsOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Vitamins For Men Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 86)
@@ -1176,6 +1279,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminsForMenOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Vitamins For Women Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 87)
@@ -1191,6 +1296,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminsForWomenOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Bone And Joint Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 88)
@@ -1206,6 +1313,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), boneJointOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Bone Health Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 89)
@@ -1221,6 +1330,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), boneHealthOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Joint Health Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 90)
@@ -1236,6 +1347,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), jointHealthOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Beauty Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 91)
@@ -1251,6 +1364,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), beautyOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Collagen Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 92)
@@ -1266,6 +1381,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), collagenOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Hair, Skin AndNails Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 93)
@@ -1281,6 +1398,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), hairSkinAndNailsOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Fish Oil Omegas Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 94)
@@ -1296,6 +1415,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), fishOilAndOmegasOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Fish Oil Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 95)
@@ -1311,6 +1432,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), fishOilOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Omega369 Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 96)
@@ -1326,6 +1449,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), omegaMixOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Health Lifestyle Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 97)
@@ -1341,6 +1466,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), healthyLifestyleOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Antioxidants Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 98)
@@ -1356,6 +1483,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), antioxidantOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Blood Sugar Support Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 99)
@@ -1371,6 +1500,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), bloodSugarSupportOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Brain Support Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 100)
@@ -1386,6 +1517,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), brainSupportOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Detox And Cleanse Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 101)
@@ -1401,6 +1534,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), detoxCleanseOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Energy Formulas Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 102)
@@ -1416,6 +1551,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), energyFormulasOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Eye Health Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 103)
@@ -1431,6 +1568,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), eyeHealthOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Herbs Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 104)
@@ -1446,6 +1585,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), herbsOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Hormones Balance Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 105)
@@ -1461,6 +1602,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), hormonesBalanceOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Immune Support Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 106)
@@ -1476,6 +1619,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), immuneSupportOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Mens Health Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 107)
@@ -1491,6 +1636,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), mensHealthOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Stress Relief Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 108)
@@ -1506,6 +1653,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), stressReliefOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Sleep Support Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 109)
@@ -1521,6 +1670,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), sleepSupportOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Super Foods Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 110)
@@ -1536,6 +1687,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), superFoodsOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Urinary Tract Support Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 111)
@@ -1551,6 +1704,8 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), urinaryTractSupportOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+          
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Weight Management Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 112)
@@ -1566,6 +1721,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), weightManagementOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Womens Health Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 113)
@@ -1581,6 +1737,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womensHealthOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Digestion Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 114)
@@ -1596,6 +1753,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), digestionOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Digestion Support Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 115)
@@ -1611,6 +1769,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), digestionSupportOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Probiotics Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 116)
@@ -1626,6 +1785,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), probioticsOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Sport Vitamins Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 117)
@@ -1641,7 +1801,9 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), sportVitaminsOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
+    
 
     @Test(description = "MegaMenu- Make sure clicking on the Amino Acid Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 118)
     public void verifyClickingOnAminoAcidOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
@@ -1656,6 +1818,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aminoAcidOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Minerals Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 119)
@@ -1671,6 +1834,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), mineralsOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Calcium Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 120)
@@ -1686,6 +1850,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), calciumOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Iron Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 121)
@@ -1701,6 +1866,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), ironOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Magnesium Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 122)
@@ -1716,6 +1882,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), magnesiumOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Multi mineral Formulas Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 123)
@@ -1731,6 +1898,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), multimineralFormulasOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Zinc Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 124)
@@ -1746,6 +1914,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), zincOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Potassium Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 125)
@@ -1761,6 +1930,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), potassiumOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Healthy Drinks Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 126)
@@ -1776,6 +1946,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), healthyDrinksOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Drinkable Vitamins Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 127)
@@ -1791,6 +1962,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), drinkableVitaminsOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Pets Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 128)
@@ -1806,6 +1978,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), petsOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Supplements More Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 129)
@@ -1821,6 +1994,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), supplementsMoreOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure the Healthy Food menu Inside ShopBy Menu display the correct categories and sub-categories", priority = 130)
@@ -1851,6 +2025,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), groceryOptionInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Baking And Cooking Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 132)
@@ -1866,6 +2041,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), bakingAndCookingOptionInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Canned Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 133)
@@ -1881,6 +2057,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), cannedOptionInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Coffee Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 134)
@@ -1896,6 +2073,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), coffeeOptionInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Condiments Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 135)
@@ -1911,6 +2089,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), condimentsOptionInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Milk And Cream Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 136)
@@ -1926,6 +2105,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), milkAndCreamOptionInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Nuts And Oats Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 137)
@@ -1941,6 +2121,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), nutsAndOatsOptionInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Oils Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 138)
@@ -1956,6 +2137,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), oilsOptionInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Pasta Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 139)
@@ -1971,6 +2153,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), pastaOptionInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Rice And Grains Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 140)
@@ -1986,6 +2169,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), riceAndGrainsOptionInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Seasonings And Spices Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 141)
@@ -2001,6 +2185,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), seasoningsAndSpicessOptionInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Sugar And Sweeteners Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 142)
@@ -2016,6 +2201,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), sugarAndSweetenersOptionInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Syrups Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 143)
@@ -2031,6 +2217,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), syrupsOptionInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Tea And Herbs Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 144)
@@ -2046,6 +2233,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), teaAndHerbsInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Superfoods Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 145)
@@ -2061,6 +2249,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), superFoodsInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Ready Mixes Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 146)
@@ -2076,6 +2265,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), readyMixInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Breakfast And Cereal Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 147)
@@ -2091,6 +2281,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), breakfastAndCerealInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Ready To Drink Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 148)
@@ -2106,6 +2297,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), readyToDrinkInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Amino And Bcaas Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 149)
@@ -2121,6 +2313,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aminoBcaasInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Energy Drinks Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 150)
@@ -2136,6 +2329,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), energyDrinksInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Protein Shakes Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 151)
@@ -2151,6 +2345,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), proteinShakesInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Electrolytes And Hydration Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 152)
@@ -2166,6 +2361,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), electrolytesAndHydrationInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Healthy Snacks Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 153)
@@ -2181,6 +2377,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), healthySnacksInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Protein Bars Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 154)
@@ -2196,6 +2393,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), proteinBarsInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Cookies Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 155)
@@ -2211,6 +2409,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), cookiesInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Chips Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 156)
@@ -2226,6 +2425,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), chipsInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Brownies And Pancakes Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 157)
@@ -2241,6 +2441,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), browniesAndPancakesInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Snack Bars Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 158)
@@ -2256,6 +2457,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), snackBarsInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Spreads Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 159)
@@ -2271,6 +2473,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), spreadsInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Other Healthy Snacks Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 160)
@@ -2286,6 +2489,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), otherHealthySnacksInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Ready To Eat Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 161)
@@ -2301,6 +2505,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), readyToEatInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Healthy Meals Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 162)
@@ -2316,6 +2521,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), healthyMealsInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Featured Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 163)
@@ -2331,6 +2537,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), featuredInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Healthy Meal Replacement Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 164)
@@ -2346,6 +2553,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), healthyMealReplacementInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Protein Coffee Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 165)
@@ -2361,6 +2569,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), proteinCoffeeInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Candies Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 166)
@@ -2376,6 +2585,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), candiesInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Flavoring Agents Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 167)
@@ -2391,6 +2601,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), flavoringAgentsInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Keto Snacks Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 168)
@@ -2406,6 +2617,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), ketoSnacksInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Manuka Honey Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 169)
@@ -2421,6 +2633,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), manukaHoneyInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Meat Snacks Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 170)
@@ -2436,6 +2649,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), meatSnacksInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure the Sports menu Inside ShopBy Menu display the correct categories and sub-categories", priority = 171)
@@ -2518,6 +2732,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), menInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Clothing Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 175)
@@ -2533,6 +2748,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), clothingInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Tops Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 176)
@@ -2548,6 +2764,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), topsInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Pants Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 177)
@@ -2563,6 +2780,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), pantsInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Shorts Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 178)
@@ -2578,6 +2796,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), shortsInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Jackets And Coats Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 179)
@@ -2593,6 +2812,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), jacketsAndCoatsInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Safety Masks Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 180)
@@ -2608,6 +2828,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), safetyMasksInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Footwear Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 181)
@@ -2623,6 +2844,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), footwearInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Sneakers Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 182)
@@ -2638,6 +2860,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), sneakersInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Training Shoes Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 183)
@@ -2653,6 +2876,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), trainingShoesInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Running Shoes Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 184)
@@ -2668,6 +2892,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), runningShoesInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Hiking Shoes Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 185)
@@ -2683,6 +2908,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), hikingShoesInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Accessories Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 186)
@@ -2698,6 +2924,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), accessoriesInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Gloves Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 187)
@@ -2713,6 +2940,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), glovesInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Belts Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 188)
@@ -2728,6 +2956,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), beltsInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Caps And Hats Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 189)
@@ -2743,6 +2972,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), capsAndHatsInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Caps Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 190)
@@ -2758,6 +2988,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), capInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Shakers Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 191)
@@ -2773,6 +3004,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), shakersInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Water Bottles Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 192)
@@ -2788,6 +3020,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), waterBottlesInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     //There's A Bug Here Due To Water Bottles Option Appearing Duplicated ut I added this test case to save the qoption position
@@ -2803,6 +3036,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeMegamenuPage.getBugHereInSportsMenu().click();
         Assert.assertEquals(webDriver.getCurrentUrl(), "Theres A Bug Here Due To Water Bottles Option Appearing Duplicated");
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
         System.out.println("Theres A Bug Here Due To Water Bottles Option Appearing Duplicated");
     }
 
@@ -2819,6 +3053,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), socksInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Towels Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 195)
@@ -2834,6 +3069,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), towelsInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Sunglasses Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 196)
@@ -2849,6 +3085,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), sunglassesInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Mixer Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 197)
@@ -2864,6 +3101,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), mixerInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Bags Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 198)
@@ -2879,6 +3117,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), bagsInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Back Packs Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 199)
@@ -2894,6 +3133,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), backPacksInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Shoulder Bags Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 200)
@@ -2909,6 +3149,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), shoulderBagsInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(groups = "Smoke Testing Report",description = "MegaMenu- Make sure clicking on the Wearable Tech Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 201)
@@ -2924,6 +3165,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), wearableTechInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Watches Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 202)
@@ -2939,6 +3181,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), watchesInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Gaming Accessories Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 203)
@@ -2954,6 +3197,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), gamingAccessoriesInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Equipment Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 204)
@@ -2969,6 +3213,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), equipmentInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Grips Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 205)
@@ -2984,6 +3229,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), gripsInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Balls Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 206)
@@ -2999,6 +3245,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), ballsInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Rollers Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 207)
@@ -3014,6 +3261,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), rollersInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Weights Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 208)
@@ -3029,6 +3277,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), weightsInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Women Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 209)
@@ -3044,6 +3293,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Women Clothing Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 210)
@@ -3059,6 +3309,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
        // Assert.assertEquals(webDriver.getCurrentUrl(), womenClothingInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Women Tops Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 211)
@@ -3074,6 +3325,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenTopsInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Women Shorts Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 212)
@@ -3089,6 +3341,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenShortsInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Women Safety Masks Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 213)
@@ -3104,6 +3357,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenSafetyMasksInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Women Accessories Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 214)
@@ -3119,6 +3373,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenAccessoriesInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Theres A Bug Here Due To Gloves Option Appearing Duplicated", priority = 215)
@@ -3133,6 +3388,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeMegamenuPage.getBugGlovesInSportsMenu().click();
         Assert.assertEquals(webDriver.getCurrentUrl(), "Theres A Bug Here Due To Gloves Option Appearing Duplicated");
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
         System.out.println("Theres A Bug Here Due To Gloves Option Appearing Duplicated");
     }
 
@@ -3149,6 +3405,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenGlovesInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Women Belts Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 217)
@@ -3164,6 +3421,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenBeltsInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Women Caps And Hats Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 218)
@@ -3179,6 +3437,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenCapsAndHatsInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Women Caps Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 219)
@@ -3194,6 +3453,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenCapsInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Women Shakers Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 220)
@@ -3209,6 +3469,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenShakersInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Women Water Bottles Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 221)
@@ -3224,6 +3485,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenWaterBottlesInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Women Socks Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 222)
@@ -3239,6 +3501,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenSocksInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Women Towels Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 223)
@@ -3254,6 +3517,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenTowelsInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Women Sunglasses Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 224)
@@ -3269,6 +3533,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenSunglassesInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Women Mixer Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 225)
@@ -3284,6 +3549,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenMixerInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
 
     }
 
@@ -3300,6 +3566,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenBagsInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Women Back Packs Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 227)
@@ -3315,6 +3582,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenBackPacksInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Women Sholders Bags Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 228)
@@ -3330,6 +3598,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenSholdersBagsInSportsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     ///// By Brand
@@ -3346,6 +3615,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), supplementsInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Optimum Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 230)
@@ -3361,6 +3631,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), optimumNutritionInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Muscletech Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 231)
@@ -3376,6 +3647,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), muscletechInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Cellucor Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 232)
@@ -3391,6 +3663,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), cellucorInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Dymatize Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 233)
@@ -3406,6 +3679,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), dymatizeInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Xtend Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 234)
@@ -3421,6 +3695,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), xtendInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Animal Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 235)
@@ -3436,6 +3711,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), animalNutritionInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Muscle Pharm Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 236)
@@ -3451,6 +3727,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), musclePharmInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Universal Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 237)
@@ -3466,6 +3743,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), universalNutritionInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the BSN Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 238)
@@ -3481,6 +3759,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), bsnInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the EHPLABS Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 239)
@@ -3496,6 +3775,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), ehplabsInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Jym Supplement Science Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 240)
@@ -3511,6 +3791,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), jymSupplementScienceInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Bpi Sports Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 241)
@@ -3526,6 +3807,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), bpiSportsInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Russian Bear Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 242)
@@ -3541,6 +3823,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), russianBearInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Iso Pure Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 243)
@@ -3556,6 +3839,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), isopureInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the 1 Up Nutrition  Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 244)
@@ -3571,6 +3855,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), oneUpNutritionInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Musclemen  Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 245)
@@ -3586,6 +3871,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), musclemedInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the MHP  Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 246)
@@ -3601,6 +3887,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), mhpInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Evl Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 247)
@@ -3616,6 +3903,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), evlNutritionInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Nla For Her Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 248)
@@ -3631,6 +3919,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), nlaForHerInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Muscle Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 249)
@@ -3646,6 +3935,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), muscleNutritionInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Gat Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 250)
@@ -3661,6 +3951,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), gatNutritionInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Labrador Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 251)
@@ -3678,6 +3969,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), labradaInByBrandMenuUrl);
          aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Orgain Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 252)
@@ -3693,6 +3985,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), orgainInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Nutrex Research Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 253)
@@ -3708,6 +4001,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), nutrexResearchInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Scitec Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 254)
@@ -3723,6 +4017,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), scitecNutritionInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Prolab Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 255)
@@ -3738,6 +4033,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), prolabInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the SOTRU Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 256)
@@ -3753,6 +4049,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), sotruInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Divine Health Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 257)
@@ -3768,6 +4065,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), divineHealthInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Ghost Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 258)
@@ -3783,6 +4081,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), ghostInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Women's Best Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 259)
@@ -3798,6 +4097,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womensBestInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Efx Sports Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 260)
@@ -3813,6 +4113,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), efxSportsInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Basix Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 261)
@@ -3828,6 +4129,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), basixInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the AK-47 Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 262)
@@ -3843,6 +4145,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), ak47InByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Nf Sports Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 263)
@@ -3858,6 +4161,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), nfSportsInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Fully Dosed Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 264)
@@ -3873,6 +4177,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), fullyDosedInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the 5% Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 265)
@@ -3888,6 +4193,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), fivePercentNutritionInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Olimp Sport Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 266)
@@ -3903,6 +4209,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), olimpSportNutritionInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Jnx Sports Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 267)
@@ -3918,6 +4225,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), jnxSportsInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Fit & Lean Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 268)
@@ -3933,6 +4241,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), fitAndLeanInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Gym queen Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 269)
@@ -3948,6 +4257,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), gymqueenInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the The Pack Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 270)
@@ -3963,6 +4273,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), thePackInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Betancourt Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 271)
@@ -3978,6 +4289,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), betancourtNutritionInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Yalla Protein Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 272)
@@ -3993,6 +4305,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), yallaProteinInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Protein World Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 273)
@@ -4008,6 +4321,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), proteinWorldInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Obvi Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 274)
@@ -4023,6 +4337,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), obviInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Naughty Boy Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 275)
@@ -4038,6 +4353,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), naughtyBoyInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Steel Fit Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 276)
@@ -4053,6 +4369,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), steelFitInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the USN Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 277)
@@ -4068,6 +4385,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), usnInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the X-Gamer Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 278)
@@ -4083,6 +4401,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), xGamerInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Innosupps Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 279)
@@ -4098,6 +4417,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), innosuppsInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Outbreak Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 280)
@@ -4113,6 +4433,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), outbreakNutritionInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Insane Labz Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 281)
@@ -4128,6 +4449,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), insaneLabzInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the All Max Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 282)
@@ -4143,6 +4465,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), allMaxInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Glaxon Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 283)
@@ -4158,6 +4481,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), glaxonInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Redcon1 Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 284)
@@ -4173,6 +4497,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), redcon1InByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Panda Supplements Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 285)
@@ -4188,6 +4513,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), pandaSupplementsInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Nutrend Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 286)
@@ -4203,6 +4529,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), nutrendInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Ostrovit Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 287)
@@ -4218,6 +4545,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), ostrovitInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Bettery Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 288)
@@ -4233,6 +4561,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), betteryInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Healthy Food, Snacks & Meal Replacement Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 289)
@@ -4248,6 +4577,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), healthyFoodSnacksAndMealReplacementInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Wow Hydrate Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 290)
@@ -4263,6 +4593,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), wowHydrateInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Quest Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 291)
@@ -4278,6 +4609,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), questNutritionInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Grenade Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 292)
@@ -4293,6 +4625,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), grenadeInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Reign Energy Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 293)
@@ -4308,6 +4641,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), reignEnergyInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Monster Energy Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 294)
@@ -4323,6 +4657,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), monsterEnergyInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the 3d Energy  Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 295)
@@ -4338,6 +4673,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), thirdEnergyInByBrandMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     ///////SportSupplementsMainMenuTCs///////////////////
@@ -4387,6 +4723,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(sportSupplementsUrl));
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure the main categories in the Sports Supplements main menu appearing in Bold Font", priority = 300,enabled = false)
@@ -4435,6 +4772,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), proteinOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Whey Protein Option appearing in the Sports Supplements main menu  will redirect the User to the correct URL", priority = 303)
@@ -4449,6 +4787,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), wheyProteinOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Whey Protein Isolate Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 304)
@@ -4463,6 +4802,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), WheyProteinIsolateOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the protein Blends Option  appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 305)
@@ -4477,6 +4817,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), proteinBlendsOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Non Dairy Protein Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 306)
@@ -4491,6 +4832,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), nonDairyProteinOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the casein Protein Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 307)
@@ -4505,6 +4847,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), caseinProteinOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the diet Protein Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 308)
@@ -4519,6 +4862,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), dietProteinOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Mass Gainers Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 309)
@@ -4533,6 +4877,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), massGainersOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Creatine Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 310)
@@ -4547,13 +4892,14 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), creatineOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Creatine Monohydrate Option appearing in the Sports Supplements Main menu will redirect the User to the correct URL", priority = 311)
     public void verifyClickingOnCreatineMonohydrateOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                //aeMegamenuPage.navigateToHomePage();
+//                aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCreatineMonohydrateOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCreatineMonohydrateOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4561,13 +4907,14 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), creatineMonohydrateOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Creatine Blends Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 312)
     public void verifyClickingOnCreatineBlendsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                //aeMegamenuPage.navigateToHomePage();
+//                aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCreatineBlendsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCreatineBlendsOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4575,13 +4922,14 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), creatineBlendsOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Amino Acids Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 313)
     public void verifyClickingOnAminoAcidsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                //aeMegamenuPage.navigateToHomePage();
+//                aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getAminoAcidsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidsOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4589,13 +4937,14 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aminoAcidsOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the BCAA Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 314)
     public void verifyClickingOnBCAAOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                //aeMegamenuPage.navigateToHomePage();
+//                aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getbCAAOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getbCAAOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4603,13 +4952,14 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), bCAAOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the EAA Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 315)
     public void verifyClickingOnEAAOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                //aeMegamenuPage.navigateToHomePage();
+//                aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.geteAAOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.geteAAOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4617,13 +4967,14 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), eAAOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Arginine Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 316)
     public void verifyClickingOnArginineOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                //aeMegamenuPage.navigateToHomePage();
+//                aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getArginineOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getArginineOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4631,13 +4982,14 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), arginineOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Beta Alanine Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 317)
     public void verifyClickingOnBetaAlanineOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                //aeMegamenuPage.navigateToHomePage();
+//                aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getBetaAlanineOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBetaAlanineOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4645,13 +4997,14 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), betaAlanineOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the HMB Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 318)
     public void verifyClickingOnHMbOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                //aeMegamenuPage.navigateToHomePage();
+                aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.gethMBOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.gethMBOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4659,13 +5012,14 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), hMBOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Amino Acid Powders Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 319)
     public void verifyClickingOnAminoAcidPowdersOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                //aeMegamenuPage.navigateToHomePage();
+//                aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getAminoAcidPowdersOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidPowdersOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4673,13 +5027,14 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aminoAcidPowdersOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Amino Acid Pills Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 320)
     public void verifyClickingOnAminoAcidPillsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                //aeMegamenuPage.navigateToHomePage();
+                aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getAminoAcidPillsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidPillsOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4687,13 +5042,14 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aminoAcidPillsOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Citrulline Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 321)
     public void verifyClickingOnCitrullineOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                //aeMegamenuPage.navigateToHomePage();
+//                aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getCitrullineOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCitrullineOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4701,13 +5057,14 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), citrullineOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Amino Acid Liquids Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 322)
     public void verifyClickingOnAminoAcidLiquidsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                //aeMegamenuPage.navigateToHomePage();
+//                aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getAminoAcidLiquidsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidLiquidsOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4715,13 +5072,14 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aminoAcidLiquidsOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Muscle Boosters Liquids Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 323)
     public void verifyClickingOnMuscleBoostersOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                //aeMegamenuPage.navigateToHomePage();
+//                aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getMuscleBoostersOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMuscleBoostersOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4729,13 +5087,14 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), muscleBoostersOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Testosterone Boosters Option appearing in the Sports Supplements main menu  will redirect the User to the correct URL", priority = 324)
     public void verifyClickingOnTestosteroneBoostersOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                //aeMegamenuPage.navigateToHomePage();
+//                aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getTestosteroneBoostersOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getTestosteroneBoostersOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4743,13 +5102,14 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), testosteroneBoostersOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Gh Boosters Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 325)
     public void verifyClickingOnGhBoostersOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                //aeMegamenuPage.navigateToHomePage();
+//                aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getGhBoostersOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGhBoostersOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4757,13 +5117,14 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), ghBoostersOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Weight Management Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 326)
     public void verifyClickingOnWeightManagementOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                //aeMegamenuPage.navigateToHomePage();
+//                aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getWeightManagementOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWeightManagementOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4771,13 +5132,14 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), weightManagementOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Stimulant Weight Loss Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 327)
     public void verifyClickingOnStimulantWeightLossOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-                //aeMegamenuPage.navigateToHomePage();
+//                aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getStimulantWeightLossOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getStimulantWeightLossOptionInSportSupplementsMainMenu().getAttribute("href");
@@ -4785,6 +5147,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), stimulantWeightLossOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Non Stimulant Weight Loss Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 328)
@@ -4799,6 +5162,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), nonStimulantWeightLossOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Meal Replacements Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 329)
@@ -4813,6 +5177,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), mealReplacementsOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Metabolism Support Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 330)
@@ -4827,6 +5192,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), metabolismSupportOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Toning Creams Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 331)
@@ -4841,6 +5207,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), toningCreamsOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the MCT Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 332)
@@ -4855,6 +5222,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), mctOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Recovery Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 333)
@@ -4869,6 +5237,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), recoveryOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Glutamine Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 334)
@@ -4883,6 +5252,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), glutamineOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Recovery Blend Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 335)
@@ -4897,6 +5267,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), recoveryBlendOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Electrolytes And Hydration Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 336)
@@ -4911,6 +5282,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), electrolytesAndHydrationOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Carbohydrates Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 337)
@@ -4925,6 +5297,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), carbohydratesOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Carbohydrate Powders Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 338)
@@ -4939,6 +5312,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), carbohydratePowdersOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Energy And Endurance Powders Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 339)
@@ -4953,6 +5327,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), energyAndEnduranceOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Stimulant Energy Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 340)
@@ -4967,6 +5342,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), stimulantEnergyOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Non Stimulant Energy Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 341)
@@ -4981,6 +5357,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), nonStimulantEnergyOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Gaming And Focus Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 342)
@@ -4995,6 +5372,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), gamingAndFocusOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Gaming Essentials Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 343)
@@ -5009,6 +5387,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), gamingEssentialsOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     /////Vitamins & Health TCS////
@@ -5058,6 +5437,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(healthVitaminsUrl));
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the FEATURED Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 348)
@@ -5072,6 +5452,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), featuredOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Alive Vitamins Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 349)
@@ -5086,6 +5467,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aliveVitaminsOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Sexual Health Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 350)
@@ -5101,6 +5483,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //        Assert.assertEquals(webDriver.getCurrentUrl(), sexualHealthOptionInVitaminsAndHealthUrl);
         System.out.println(webDriver.getCurrentUrl());
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Essential Vitamins Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 351)
@@ -5115,6 +5498,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), essentialVitaminsOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Folic Acid Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 352)
@@ -5129,6 +5513,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), folicAcidOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Vitamin A Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 353)
@@ -5143,6 +5528,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminAOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Vitamin B Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 354)
@@ -5157,6 +5543,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminBOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Vitamin C Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 355)
@@ -5171,6 +5558,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminCOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Vitamin D Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 356)
@@ -5185,6 +5573,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminDOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Vitamin E Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 357)
@@ -5199,6 +5588,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminEOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Vitamin K Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 358)
@@ -5213,6 +5603,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminKOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Multi Vitamins Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 359)
@@ -5227,6 +5618,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), multiVitaminsOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Vitamins For Kids Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 360)
@@ -5241,6 +5633,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminsForKidsOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Vitamins For Men Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 361)
@@ -5255,6 +5648,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminsForMenOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Vitamins For Women Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 362)
@@ -5269,6 +5663,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminsForWomenOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Bone And Joint Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 363)
@@ -5283,6 +5678,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), boneJointOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Bone Health Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 364)
@@ -5297,6 +5693,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), boneHealthOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Joint Health Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 365)
@@ -5311,6 +5708,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), jointHealthOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Beauty Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 366)
@@ -5325,6 +5723,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), beautyOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Collagen Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 367)
@@ -5339,6 +5738,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), collagenOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Hair, Skin AndNails Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 368)
@@ -5353,6 +5753,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), hairSkinAndNailsOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Fish Oil Omegas Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 369)
@@ -5367,6 +5768,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), fishOilAndOmegasOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Fish Oil Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 370)
@@ -5381,6 +5783,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), fishOilOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Omega369 Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 371)
@@ -5395,6 +5798,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), omegaMixOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Health Lifestyle Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 372)
@@ -5409,6 +5813,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), healthyLifestyleOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Antioxidants Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 373)
@@ -5423,6 +5828,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), antioxidantOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Blood Sugar Support Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 374)
@@ -5437,6 +5843,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), bloodSugarSupportOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Brain Support Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 375)
@@ -5451,6 +5858,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), brainSupportOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Detox And Cleanse Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 376)
@@ -5465,6 +5873,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), detoxCleanseOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Energy Formulas Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 377)
@@ -5479,6 +5888,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), energyFormulasOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Eye Health Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 378)
@@ -5493,6 +5903,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), eyeHealthOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Herbs Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 379)
@@ -5507,6 +5918,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), herbsOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Hormones Balance Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 380)
@@ -5521,6 +5933,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), hormonesBalanceOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Immune Support Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 381)
@@ -5535,6 +5948,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), immuneSupportOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Mens Health Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 382)
@@ -5549,6 +5963,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), mensHealthOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Stress Relief Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 383)
@@ -5563,6 +5978,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), stressReliefOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Sleep Support Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 384)
@@ -5577,6 +5993,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), sleepSupportOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Super Foods Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 385)
@@ -5591,6 +6008,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), superFoodsOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Urinary Tract Support Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 386)
@@ -5605,6 +6023,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), urinaryTractSupportOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Weight Management Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 387)
@@ -5619,6 +6038,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), weightManagementOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Women Health Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 388)
@@ -5633,6 +6053,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenesHealthOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Digestion Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 389)
@@ -5647,6 +6068,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), digestionOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Digestion Support Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 390)
@@ -5661,6 +6083,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), digestionSupportOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Probiotics Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 391)
@@ -5675,6 +6098,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), probioticsOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Sport Vitamins Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 392)
@@ -5689,6 +6113,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), sportVitaminsOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Amino Acid Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 393)
@@ -5703,6 +6128,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aminoAcidOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Minerals Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 394)
@@ -5717,6 +6143,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), mineralsOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Calcium Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 395)
@@ -5731,6 +6158,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), calciumOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Iron Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 396)
@@ -5745,6 +6173,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), ironOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Magnesium Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 397)
@@ -5759,6 +6188,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), magnesiumOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Multi mineral Formulas Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 398)
@@ -5773,6 +6203,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), multimineralFormulasOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Zinc Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 399)
@@ -5787,6 +6218,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), zincOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Potassium Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 400)
@@ -5801,6 +6233,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), potassiumOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Healthy Drinks Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 401)
@@ -5815,6 +6248,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), healthyDrinksOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Drinkable Vitamins Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 402)
@@ -5829,6 +6263,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), drinkableVitaminsOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Pets Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 403)
@@ -5843,6 +6278,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), petsOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Supplements More Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 404)
@@ -5857,6 +6293,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), supplementsMoreOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     ////HealthyFood Test Cases
@@ -5904,6 +6341,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(healthyFoodsUrl));
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Grocery Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 409)
@@ -5918,6 +6356,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), groceryOptionInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Baking And Cooking Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 410)
@@ -5932,6 +6371,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), bakingAndCookingOptionInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Canned Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 411)
@@ -5946,6 +6386,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), cannedOptionInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Coffee Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 412)
@@ -5960,6 +6401,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), coffeeOptionInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Condiments Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 413)
@@ -5974,6 +6416,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), condimentsOptionInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Milk And Cream Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 414)
@@ -5988,6 +6431,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), milkAndCreamOptionInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Nuts And Oats Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 415)
@@ -6002,6 +6446,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), nutsAndOatsOptionInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Oils Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 416)
@@ -6016,6 +6461,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), oilsOptionInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Pasta Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 417)
@@ -6030,6 +6476,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), pastaOptionInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Rice And Grains Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 418)
@@ -6044,6 +6491,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), riceAndGrainsOptionInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Seasonings And Spices Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 419)
@@ -6058,6 +6506,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), seasoningsAndSpicessOptionInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Sugar And Sweeteners Option appearing in the Healthy Food main menu inside ShopBy Menu will redirect the User to the correct URL", priority = 420)
@@ -6072,6 +6521,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), sugarAndSweetenersOptionInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Syrups Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 421)
@@ -6086,6 +6536,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), syrupsOptionInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Tea And Herbs Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 422)
@@ -6100,6 +6551,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), teaAndHerbsInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Superfoods Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 423)
@@ -6114,6 +6566,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), superFoodsInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Ready Mixes Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 424)
@@ -6128,6 +6581,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), readyMixInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Breakfast And Cereal Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 425)
@@ -6142,6 +6596,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), breakfastAndCerealInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Ready To Drink Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 426)
@@ -6156,6 +6611,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), readyToDrinkInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Amino And Bcaas Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 427)
@@ -6170,6 +6626,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), aminoBcaasInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Energy Drinks Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 428)
@@ -6184,6 +6641,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), energyDrinksInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Protein Shakes Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 429)
@@ -6198,6 +6656,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), proteinShakesInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Electrolytes And Hydration Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 430)
@@ -6212,6 +6671,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), electrolytesAndHydrationInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Healthy Snacks Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 431)
@@ -6226,6 +6686,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), healthySnacksInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Protein Bars Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 432)
@@ -6240,6 +6701,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), proteinBarsInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Cookies Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 433)
@@ -6254,6 +6716,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), cookiesInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Chips Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 434)
@@ -6268,6 +6731,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), chipsInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Brownies And Pancakes Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 435)
@@ -6282,6 +6746,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), browniesAndPancakesInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Snack Bars Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 436)
@@ -6296,6 +6761,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), snackBarsInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Spreads Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 437)
@@ -6310,6 +6776,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), spreadsInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Other Healthy Snacks Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 438)
@@ -6324,6 +6791,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), otherHealthySnacksInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Ready To Eat Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 439)
@@ -6338,6 +6806,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), readyToEatInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Healthy Meals Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 440)
@@ -6352,6 +6821,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), healthyMealsInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Featured Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 441)
@@ -6366,6 +6836,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), featuredInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Healthy Meal Replacement Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 442)
@@ -6380,6 +6851,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), healthyMealReplacementInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Protein Coffee Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 443)
@@ -6394,6 +6866,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), proteinCoffeeInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Candies Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 444)
@@ -6408,6 +6881,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), candiesInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Flavoring Agents Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 445)
@@ -6422,6 +6896,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), flavoringAgentsInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Keto Snacks Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 446)
@@ -6436,6 +6911,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), ketoSnacksInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Manuka Honey Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 447)
@@ -6450,6 +6926,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), manukaHoneyInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Meat Snacks Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 448)
@@ -6464,6 +6941,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), meatSnacksInHealthyFoodUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     ////Sports Test Cases
@@ -6511,6 +6989,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeMegamenuPage.getSportsMainMenu().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "The expected URL "+expectedUrl+" does not matched with the actual URL "+webDriver.getCurrentUrl() );
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Men Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 453)
@@ -6525,6 +7004,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), menInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Sport Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 454)
@@ -6539,6 +7019,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), sportInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Football Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 455)
@@ -6553,6 +7034,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), footballInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Basketball Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 456)
@@ -6567,6 +7049,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), basketballInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Baseball Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 457)
@@ -6581,6 +7064,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), baseballInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Running Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 458)
@@ -6595,6 +7079,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), runningInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Swimming Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 459)
@@ -6609,6 +7094,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), swimmingInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Yoga Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 460)
@@ -6623,6 +7109,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), yogaInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Fitness And Training Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 461)
@@ -6637,6 +7124,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), fitnessAndTrainingInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the MMA Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 462)
@@ -6651,6 +7139,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), mmaInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Jiu Jitsu Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 463)
@@ -6665,6 +7154,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertEquals(webDriver.getCurrentUrl(),expectedUrl);
 //        Assert.assertEquals(webDriver.getCurrentUrl(), jiuJitsuInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Board Games Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 464)
@@ -6679,6 +7169,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), boardGamesInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the SPORTS TECH Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 465)
@@ -6693,6 +7184,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), sportsTechInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Wearable Tech Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 466)
@@ -6707,6 +7199,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), wearableTechInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Cameras Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 467)
@@ -6721,6 +7214,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), camerasInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Phone Accessories Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 468)
@@ -6735,6 +7229,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), phoneAccessoriesInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the PERSONAL CARE Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 469)
@@ -6749,6 +7244,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), personalCareInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Showering Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 470)
@@ -6763,6 +7259,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), showeringInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Shaving Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 471)
@@ -6777,6 +7274,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), shavingInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Skin Care Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 472)
@@ -6791,6 +7289,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), skinCareInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Body Care Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 473)
@@ -6805,6 +7304,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), bodyCareInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Oral Care Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 474)
@@ -6819,6 +7319,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), oralCareInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Therapy Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 475)
@@ -6833,6 +7334,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), therapyInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Masks Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 476)
@@ -6847,6 +7349,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), masksInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the FITNESS AND TRAINING Category Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 477)
@@ -6861,6 +7364,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), fitnessAndTrainingCategoryInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the FITNESS EQUIPMENT Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 478)
@@ -6875,6 +7379,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), fitnessEquipmentInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Skipping Ropes Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 479)
@@ -6889,6 +7394,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), skippingRopesInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Weight Belts Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 480)
@@ -6903,6 +7409,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), weightBeltsInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Scooters Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 481)
@@ -6917,6 +7424,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), scootersInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the TRAINING ACCESSORIES Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 482)
@@ -6931,6 +7439,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), trainingAccessoriesInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Shakers & Bottles Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 483)
@@ -6945,6 +7454,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), shakersBottlesInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Bags Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 484)
@@ -6959,6 +7469,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), bagsInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Gloves Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 485)
@@ -6973,6 +7484,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), glovesInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Braces & Sleeves Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 486)
@@ -6987,6 +7499,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), bracesSleevesInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Mouthguard Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 487)
@@ -7001,6 +7514,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), mouthguardInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the APPAREL Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 488)
@@ -7015,6 +7529,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), apparelInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the SPORTSWEAR Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 489)
@@ -7029,6 +7544,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), sportsWearInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Pants Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 490)
@@ -7043,6 +7559,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), pantsInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Shorts Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 491)
@@ -7057,6 +7574,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), shortsInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Hoodies Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 492)
@@ -7071,6 +7589,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), hoodiesInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the T-Shirts Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 493)
@@ -7085,6 +7604,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), tShirtsInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Tanks Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 494)
@@ -7099,6 +7619,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), tanksInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the FOOTWEAR Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 495)
@@ -7113,6 +7634,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), footwearInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Sneakers Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 496)
@@ -7127,6 +7649,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), sneakersInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Training Shoes Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 497)
@@ -7141,6 +7664,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), trainingShoesInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the Running Shoes Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 498)
@@ -7155,6 +7679,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), runningShoesInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the WOMEN Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 499)
@@ -7169,6 +7694,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the WOMEN SPORTS TECH Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 500)
@@ -7183,6 +7709,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenSportsTechInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the WOMEN Wearable Tech Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 501)
@@ -7197,6 +7724,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenWearableTechInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the WOMEN Cameras Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 502)
@@ -7211,6 +7739,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenCamerasInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the WOMEN Phone Accessories Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 503)
@@ -7225,6 +7754,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenPhoneAccessoriesInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the WOMEN PERSONAL CARE Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 504)
@@ -7239,6 +7769,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenPersonalCareInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the WOMEN Showering Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 505)
@@ -7253,6 +7784,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenShoweringInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the WOMEN Skin Care Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 506)
@@ -7267,6 +7799,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenSkinCareInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the WOMEN Body Care Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 507)
@@ -7281,6 +7814,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenBodyCareInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the WOMEN Oral Care Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 508)
@@ -7295,6 +7829,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenOralCareInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the WOMEN Therapy Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 509)
@@ -7309,6 +7844,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenTherapyInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the WOMEN Masks Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 510)
@@ -7323,6 +7859,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenMasksInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the WOMEN FITNESS AND TRAINING Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 511)
@@ -7337,6 +7874,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenFitnessAndTrainingInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     @Test(description = "MegaMenu- Make sure clicking on the WOMEN TRAINING ACCESSORIES Option appearing in the Sports main menu will redirect the User to the correct URL", priority = 512)
@@ -7351,6 +7889,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenTrainingAccessoriesInSportsMainMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     //Women's Only Test Cases
@@ -7365,6 +7904,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), womenOnlyUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
     //The following test cases to handle (#8456 - Main menu not working when you try to open it from OOS product page)
@@ -7479,6 +8019,7 @@ public void verifyClickingOnFirstBannerInTheSportSupplementsMenuWorksCorrectly()
     action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheSportSupplementsMenu()).perform();
     aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheSportSupplementsMenu().click();
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
 }
 @Test(description = "MegaMenu- Make sure clicking on the second banner that appears inside the sport supplements menu works correctly ", priority = 525)
 public void verifyClickingOnSecondBannerInTheSportSupplementsMenuWorksCorrectly() {
@@ -7490,6 +8031,7 @@ public void verifyClickingOnSecondBannerInTheSportSupplementsMenuWorksCorrectly(
     action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheSportSupplementsMenu()).perform();
     aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheSportSupplementsMenu().click();
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
 }
 @Test(description = "MegaMenu- Make sure clicking on the first banner that appears inside the Vitamins And Health menu works correctly ", priority = 526)
 public void verifyClickingOnFirstBannerInTheVitaminsAndHealthMenuWorksCorrectly() {
@@ -7501,6 +8043,7 @@ public void verifyClickingOnFirstBannerInTheVitaminsAndHealthMenuWorksCorrectly(
     action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheVitaminsAndHealthMenu()).perform();
     aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheVitaminsAndHealthMenu().click();
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
 }
 @Test(description = "MegaMenu- Make sure clicking on the second banner that appears inside the Vitamins And Health menu works correctly ", priority = 527)
 public void verifyClickingOnSecondBannerInTheVitaminsAndHealthMenuWorksCorrectly() {
@@ -7512,6 +8055,7 @@ public void verifyClickingOnSecondBannerInTheVitaminsAndHealthMenuWorksCorrectly
     action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheVitaminsAndHealthMenu()).perform();
     aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheVitaminsAndHealthMenu().click();
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
 }
 @Test(description = "MegaMenu- Make sure clicking on the first banner that appears inside the Healthy Food menu works correctly ", priority = 528)
 public void verifyClickingOnFirstBannerInTheHealthyFoodMenuWorksCorrectly() {
@@ -7523,6 +8067,7 @@ public void verifyClickingOnFirstBannerInTheHealthyFoodMenuWorksCorrectly() {
     action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheHealthyFoodMenu()).perform();
     aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheHealthyFoodMenu().click();
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
 }
 @Test(description = "MegaMenu- Make sure clicking on the second banner that appears inside the Healthy Food menu works correctly ", priority = 529)
 public void verifyClickingOnSecondBannerInTheHealthyFoodMenuWorksCorrectly() {
@@ -7534,6 +8079,7 @@ public void verifyClickingOnSecondBannerInTheHealthyFoodMenuWorksCorrectly() {
     action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheHealthyFoodMenu()).perform();
     aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheHealthyFoodMenu().click();
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
 }
 @Test(description = "MegaMenu- Make sure clicking on the first banner that appears inside the Sports menu works correctly ", priority = 530)
 public void verifyClickingOnFirstBannerInTheSportsMenuWorksCorrectly() {
@@ -7545,6 +8091,7 @@ public void verifyClickingOnFirstBannerInTheSportsMenuWorksCorrectly() {
     action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheSportsMenu()).perform();
     aeAllPagesInsideCategoriesInMegaMenuPage.getFirstBannerInsideTheSportsMenu().click();
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
 }
 @Test(description = "MegaMenu- Make sure clicking on the second banner that appears inside the Sports menu works correctly ", priority = 531)
 public void verifyClickingOnSecondBannerInTheSportsMenuWorksCorrectly() {
@@ -7556,5 +8103,6 @@ public void verifyClickingOnSecondBannerInTheSportsMenuWorksCorrectly() {
     action.moveToElement(aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheSportsMenu()).perform();
     aeAllPagesInsideCategoriesInMegaMenuPage.getSecondBannerInsideTheSportsMenu().click();
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
 }
 }

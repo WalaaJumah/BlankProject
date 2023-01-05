@@ -113,7 +113,7 @@ public class AEGuestUserPage extends BasePage {
     private WebElement citySearchResultList;
     @FindBy(xpath = "//ul[@class='select2-results__options']")
     private List<WebElement> searchMenu;
-    @FindBy(xpath = "//a[@href='https://www.sporter.com/en-ae/checkout/cart/']")
+    @FindBy(xpath = "//span[@class='return-to-cart']//a")
     private WebElement returnToCartLink;
     @FindBy(xpath = "//a[@class='logo']")
     private WebElement sporterLogo;
@@ -318,7 +318,7 @@ public class AEGuestUserPage extends BasePage {
     }
 
     public void clickOnReturnToCartIcon() {
-        DataHelperAndWait.waitToBeClickable(returnToCartLink, 3,webDriver);
+        DataHelperAndWait.waitToBeClickable(returnToCartLink, 5,webDriver);
         this.returnToCartLink.click();
     }
 

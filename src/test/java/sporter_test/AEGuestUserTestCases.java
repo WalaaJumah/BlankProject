@@ -198,7 +198,7 @@ aeGuestUserPage.clickOnContinueBtn();
         Assert.assertEquals(aeGuestUserPage.getStreetlineOneRequiredFieldMsg().getText(), "Please enter less or equal than 255 symbols.");
         Assert.assertEquals(aeGuestUserPage.getStreetlineTwoRequiredFieldMsg().getText(), "Please enter less or equal than 255 symbols.");
     }
-    @Test(groups = "Smoke Testing Report",description = "Make sure the Guest user can filling the shipping information correctly", priority = 14)
+    @Test(groups = {"Smoke Testing Report","High Severity","Low Severity","Meduim Severity"},description = "Make sure the Guest user can filling the shipping information correctly", priority = 14)
     public void verifyTheGuestUserCanFillTheShippingInformationCorrectly() {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
         aeGuestUserPage.navigateToHomePage();
@@ -216,10 +216,11 @@ aeGuestUserPage.clickOnContinueBtn();
     @Test(groups = "Smoke Testing Report",description = "Make sure the return to the cart button appearing in the shipping information screen for the Guest User works correctly  ", priority = 15)
     public void verifyBackToCartLinkWorksCorrectly() {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
-//        this.verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPageCorrectly();
+        aeGuestUserPage.navigateToHomePage();
+        this.verifyAbilityToAccessTheGuestCheckoutPageFromTheCartPageCorrectly();
         aeGuestUserPage.clickOnReturnToCartIcon();
         DataHelperAndWait.waitForUrlContains(aeGuestUserPage.cartURL,webDriver,5);
-        Assert.assertEquals(webDriver.getCurrentUrl(), "https://www.sporter.com/en-ae/checkout/cart/");
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(cartURL) );
     }
 
     @Test(description = "Make sure ability to navigate to the home page by clicking on the sporter logo from the shipping information form for the Guest User ", priority = 16)

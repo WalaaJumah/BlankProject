@@ -61,12 +61,23 @@
 
 
 
-              $('#dashboard-view > div.category-summary-view > div').hide();
-
-
-
-
+<!--To Hide Category Section-->
+<!--              $('#dashboard-view > div.category-summary-view > div').hide();-->
+<!--To display Dashboard tab by defualt-->
            $('#slide-out > li:nth-child(4)').click();
+
+
+<!--5 Jan, 2023: To Hide Total Time Taken (Overall) widget-->
+              $('#dashboard-view > div.time-totals > div:nth-child(4)').hide();
+
+<!--5 Jan, 2023: To Hide Total Scenarios widget-->
+              $('#dashboard-view > div.time-totals > div:nth-child(2)').hide();
+
+<!--5 Jan, 2023: To Hide Total Scenarios Chart-->
+              $('#dashboard-view > div.charts > div:nth-child(2)').hide();
+
+<!--5 Jan, 2023: To rename Total Time Overall to Duration-->
+              $('#dashboard-view > div.time-totals > div:nth-child(3) > div > span.panel-name').html("Test Duration");
 
 
 
