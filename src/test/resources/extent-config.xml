@@ -4,7 +4,7 @@
         <!-- report theme -->
         <!-- standard, dark -->
         <theme>dark</theme>
-<!--        <theme>standard</theme>-->
+        <!--        <theme>standard</theme>-->
 
         <!-- document encoding -->
         <!-- defaults to UTF-8 -->
@@ -57,9 +57,9 @@
 <!--            $('#enableDashboard').click();-->
               $('#test-view > div.col._addedCell1 > div > div.card-panel.heading > h5').html("Test Cases");
            $('body > nav > ul.right.hide-on-med-and-down.nav-right > li.theme-selector > i').text(" Dark/Light Theme");
-              $('#dashboard-view > div.system-view > div').hide();
 
-
+<!--To hide System Parameters widget-->
+  $('#dashboard-view > div.system-view > div').hide();
 
 <!--To Hide Category Section-->
 <!--              $('#dashboard-view > div.category-summary-view > div').hide();-->
@@ -78,6 +78,9 @@
 
 <!--5 Jan, 2023: To rename Total Time Overall to Duration-->
               $('#dashboard-view > div.time-totals > div:nth-child(3) > div > span.panel-name').html("Test Duration");
+<!--6 Jan, 2023: To relocte the Test Chart wedgit-->
+              $('<div class="row">&nbsp;</div>').insertAfter('#dashboard-view > div.time-totals');
+
 
 
 
@@ -90,11 +93,11 @@
 
         </scripts>
         <!-- custom styles -->
-<!--        <styles>-->
-<!--            <![CDATA[-->
+        <!--        <styles>-->
+        <!--            <![CDATA[-->
 
-<!--      ]]>-->
-<!--        </styles>-->
+        <!--      ]]>-->
+        <!--        </styles>-->
         <styles>
             <![CDATA[
 

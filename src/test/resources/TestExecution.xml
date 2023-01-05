@@ -4,7 +4,7 @@
 <suite name=" Test"  >
     <listeners>
         <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>
-<!--                <listener class-name="extent_report_listner.ExtentReportListener" />-->
+                <listener class-name="extent_report_listner.ExtentReportListener" />
     </listeners>
     <test name=" System Testing Report- Production" preserve-order="true">
         <!--        Guidelines:-->
@@ -29,15 +29,15 @@
 <!--            <class name="sporter_test.AeHealthyFoodCategoryTestCases"/>-->
 <!--            <class name="sporter_test.AEGuestUserTestCases"/>-->
 <!--            <class name="sporter_test.AEGuestUserTestCases"/>-->
-            <class name="sporter_test.AEMegaMenuTestCases">
+            <class name="sporter_test.AeCartTestCases">
 <!--            <class name="sporter_test.AEMegaMenuTestCases"/>-->
             <!--            <class name="sporter_test.AeAllPagesInsideCategoriesInMegaMenuTestCases"/>-->
 <!--            <class name="sporter_test.AccessAllStoresCountriesTestCases"/>-->
 <!--            <class name="sporter_test.AEGuestUserTestCases">-->
-<!--            <methods>-->
-<!--                <include name="verifyClickingOnCreatineBlendsOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL"/>-->
+            <methods>
+                <include name="switchToUaeStore"/>
 
-<!--            </methods>-->
+            </methods>
             </class>
         </classes>
 
