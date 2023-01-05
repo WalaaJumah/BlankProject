@@ -6,6 +6,7 @@
 
 package sporter_test;
 
+import core.BasePage;
 import core.BaseTest;
 import core.DataHelperAndWait;
 import org.testng.Assert;
@@ -24,7 +25,8 @@ public class AeBrandsTestCases extends BaseTest {
             System.out.println("You are in UAE Store");
         }
         else {
-            aeProductDetailsPage.switchToAECountry();
+            webDriver.navigate().to(BasePage.BaseURL+aeDomain);
+            CloseInitialDialog();
         }
     }
     @Test(description = "Make sure the ability to access all pages related to the Jym supplementJym supplement brand correctly", priority =2 )

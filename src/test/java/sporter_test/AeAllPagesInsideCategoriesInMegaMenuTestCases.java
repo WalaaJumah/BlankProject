@@ -6,6 +6,7 @@
 
 package sporter_test;
 
+import core.BasePage;
 import core.BaseTest;
 import core.DataHelperAndWait;
 import org.openqa.selenium.interactions.Actions;
@@ -28,8 +29,8 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
             System.out.println("You are in UAE Store");
         }
         else {
-            aeWomenOnlyCategoryPage.switchToAECountry();
-        }
+            webDriver.navigate().to(BasePage.BaseURL+aeDomain);
+            CloseInitialDialog();        }
     }
     //Sport Supplements Category Pages
     @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Sport Supplements Category Page", priority = 1)

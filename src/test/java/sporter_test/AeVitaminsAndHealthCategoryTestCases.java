@@ -33,8 +33,10 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
             System.out.println("You are in UAE Store");
         }
         else {
-            aeWomenOnlyCategoryPage.switchToAECountry();
+            webDriver.navigate().to(BasePage.BaseURL+aeDomain);
+            CloseInitialDialog();
         }
+
     }
 
     @Test(groups = "Smoke Testing Report",description = "Vitamins & Health Category- Verify clicking on the Vitamins & Health Category Appears In MegaMenu works correctly", priority = 2)

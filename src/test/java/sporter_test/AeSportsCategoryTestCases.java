@@ -27,8 +27,8 @@ public class AeSportsCategoryTestCases extends BaseTest {
             System.out.println("You are in UAE Store");
         }
         else {
-            aeWomenOnlyCategoryPage.switchToAECountry();
-        }
+            webDriver.navigate().to(BasePage.BaseURL+aeDomain);
+            CloseInitialDialog();          }
     }
     @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure clicking on the Sports Category Appears In MegaMenu Redirect User To CorrectURL", priority = 1)
     public void verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL() {

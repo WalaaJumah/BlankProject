@@ -122,11 +122,20 @@ public class AEGuestUserPage extends BasePage {
     @FindBy(xpath = "//select[@name='country_id']")
     private WebElement countryField;
 
+    @FindBy(xpath = "//span[@class='counter qty']")
+    private WebElement counterIconOnCartBtn;
+
+
     //Getter Methods
     public WebElement getRegisterAtSporterOption() {
         DataHelperAndWait.waitToBeVisible(registerAtSporterOption,5,webDriver);
         return registerAtSporterOption;
     }
+    public WebElement getCounterIconOnCartBtn() {
+        DataHelperAndWait.waitToBeVisible(counterIconOnCartBtn,5,webDriver);
+        return counterIconOnCartBtn;
+    }
+
     public WebElement getContinueBtn() {
         return continueBtn;
     }
@@ -260,7 +269,7 @@ public class AEGuestUserPage extends BasePage {
     }
 
     public void clickOnCartIcon() {
-        DataHelperAndWait.waitToBeVisible(carticon, 6,webDriver);
+        DataHelperAndWait.waitToBeVisible(carticon, 7,webDriver);
         this.carticon.click();
     }
 
@@ -350,6 +359,12 @@ public class AEGuestUserPage extends BasePage {
     public void switchToArabicVersion() {
         DataHelperAndWait.waitToBeVisible(arabicLangBtn, 5,webDriver);
         this.arabicLangBtn.click();
+        if(webDriver.getCurrentUrl().contains("/ar")){
+        DataHelperAndWait.waitForUrlContains("/ar",webDriver,7);
+        }
+        else {
+            this.arabicLangBtn.click();
+        }
     }
 
     public void clickOnFirstNameField() {

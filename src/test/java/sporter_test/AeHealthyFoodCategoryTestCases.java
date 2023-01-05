@@ -1,5 +1,6 @@
 package sporter_test;
 
+import core.BasePage;
 import core.BaseTest;
 import core.DataHelperAndWait;
 import org.openqa.selenium.WebElement;
@@ -30,8 +31,8 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
             System.out.println("You are in UAE Store");
         }
         else {
-            aeHealthyFoodCategoryPage.switchToAECountry();
-        }
+            webDriver.navigate().to(BasePage.BaseURL+aeDomain);
+            CloseInitialDialog();          }
     }
 
     @Test(groups = "Smoke Testing Report",description = "Healthy Food Category- Make sure clicking on the Healthy Food Category Appears In MegaMenu Redirect User To CorrectURL", priority = 2)

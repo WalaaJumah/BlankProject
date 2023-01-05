@@ -216,14 +216,14 @@ public class AeSportSupplementsCategoryPage extends BasePage {
     //Define the main actions we need to execute our TCs
     public void switchToAECountry() {
         try {
-            DataHelperAndWait.waitToBeVisible(countryList, 5,webDriver);
+            DataHelperAndWait.waitToBeVisible(countryList, 6,webDriver);
             this.countryList.click();
-            DataHelperAndWait.waitToBeVisible(aeCountry, 5,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeCountry, 6,webDriver);
             this.aeCountry.click();
         } catch (Exception e) {
-            DataHelperAndWait.waitToBeVisible(countryList, 5,webDriver);
+            DataHelperAndWait.waitToBeVisible(countryList, 6,webDriver);
             this.countryList.click();
-            DataHelperAndWait.waitToBeVisible(aeCountry, 5,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeCountry, 6,webDriver);
             this.aeCountry.click();
     }}
     public void clickOnBreadcrumbHomePage() {
@@ -265,9 +265,10 @@ public class AeSportSupplementsCategoryPage extends BasePage {
 
     public void clickOnNextPageBtn() {
         try{
-        DataHelperAndWait.waitToBeVisible(NextPageBtn, 5,webDriver);
+        DataHelperAndWait.waitToBeVisible(NextPageBtn, 6,webDriver);
         NextPageBtn.click();}
-        catch(Exception e){        DataHelperAndWait.waitToBeVisible(NextPageBtn, 5,webDriver);
+        catch(Exception e){
+            DataHelperAndWait.waitToBeVisible(NextPageBtn, 5,webDriver);
             NextPageBtn.click();}
     }
 

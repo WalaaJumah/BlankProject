@@ -32,35 +32,35 @@ public class AeWomenOnlyCategoryPage extends BasePage {
     private WebElement workoutInStyleSection;
     @FindBy(xpath="(//div[@class='trending-title'])[6]")
     private WebElement LadyFriendlySnacksAndFoodSectionTitle;
-   @FindBy(xpath="(//div[@class='swiper-wrapper'])[4]")
+    @FindBy(xpath="(//div[@class='swiper-wrapper'])[4]")
     private WebElement LadyFriendlySnacksAndFoodSection;
-   @FindBy(xpath = "(//div[@class='inner-seller-prod wp-id-38301'])[1]")
-   private WebElement lastProductInSupplementsForHerSection;
-   @FindBy(xpath = "//div[@class='inner-seller-prod wp-id-53071']")
-   private WebElement lastProductInWomenVitaminsSection;
+    @FindBy(xpath = "(//div[@class='inner-seller-prod wp-id-38301'])[1]")
+    private WebElement lastProductInSupplementsForHerSection;
+    @FindBy(xpath = "//div[@class='inner-seller-prod wp-id-53071']")
+    private WebElement lastProductInWomenVitaminsSection;
 
     @FindBy(xpath = "//div[@class='inner-seller-prod wp-id-33705']")
-   private WebElement lastProductInWorkoutInStyleSection;
-   @FindBy(xpath = "//div[@class='inner-seller-prod wp-id-37630']")
-   private WebElement productCardInSupplementsForHerSection;
-   @FindBy(xpath = "//div[@class='inner-seller-prod wp-id-45355']")
-   private WebElement productCardInWomenVitaminsSection;
-    @FindBy(xpath = "//div[@class='inner-seller-prod wp-id-17316']")
-   private WebElement productCardInWorkoutInStyleSection;
-    @FindBy(xpath = "//div[@class='inner-seller-prod wp-id-35422']")
-   private WebElement productCardInLadyFriendlySnacksFoodSection;
+    private WebElement lastProductInWorkoutInStyleSection;
+    @FindBy(xpath = "//div[@class='inner-seller-prod wp-id-37630']")
+    private WebElement productCardInSupplementsForHerSection;
+    @FindBy(xpath = "//div[@class='inner-seller-prod wp-id-20476']")
+    private WebElement productCardInWomenVitaminsSection;
+    @FindBy(xpath = "//div[@class='inner-seller-prod wp-id-17813']")
+    private WebElement productCardInWorkoutInStyleSection;
+    @FindBy(xpath = "//div[@class='inner-seller-prod wp-id-37638']")
+    private WebElement productCardInLadyFriendlySnacksFoodSection;
     @FindBy(xpath = "//div[@class='brand-video-header']/h3")
-   private WebElement femaleGallerySectionTitle;
+    private WebElement femaleGallerySectionTitle;
     @FindBy(xpath = "//div[@class='brand-video-main']")
-   private WebElement femaleGallerySection;
-   @FindBy(xpath="(//i[@class='fas fa-chevron-left'])[3]")
-   private WebElement previousIconInWomenVitaminsSection;
-   @FindBy(xpath="(//i[@class='fas fa-chevron-right'])[3]")
-   private WebElement nextIconInInWomenVitaminsSection;
+    private WebElement femaleGallerySection;
+    @FindBy(xpath="(//i[@class='fas fa-chevron-left'])[3]")
+    private WebElement previousIconInWomenVitaminsSection;
+    @FindBy(xpath="(//i[@class='fas fa-chevron-right'])[3]")
+    private WebElement nextIconInInWomenVitaminsSection;
     @FindBy(xpath="(//i[@class='fas fa-chevron-right'])[4]")
-   private WebElement nextIconInInWorkoutInStyleSection;
+    private WebElement nextIconInInWorkoutInStyleSection;
     @FindBy(xpath="(//i[@class='fas fa-chevron-right'])[5]")
-   private WebElement nextIconInInLadyFriendlySnacksFoodSection;
+    private WebElement nextIconInInLadyFriendlySnacksFoodSection;
     @FindBy(xpath="(//i[@class='fas fa-chevron-left'])[4]")
     private WebElement previousIconInWorkoutInStyleSection;
     @FindBy(xpath="(//i[@class='fas fa-chevron-left'])[5]")
@@ -71,13 +71,13 @@ public class AeWomenOnlyCategoryPage extends BasePage {
     private WebElement viewAllInWomenVitaminsSection;
     @FindBy(xpath = "(//a[@class='view-all'])[3]")
     private WebElement viewAllInWorkoutInStyleSection;
-   @FindBy(xpath = "(//a[@class='view-all'])[4]")
+    @FindBy(xpath = "(//a[@class='view-all'])[4]")
     private WebElement viewAllInLadyFriendlySnacksFoodSection;
     @FindBy(xpath= "(//div[@class='brand-category-video'])[1]")
     private WebElement firstYouTubeVideo;
-   @FindBy(xpath= "(//div[@class='brand-category-video'])[2]")
+    @FindBy(xpath= "(//div[@class='brand-category-video'])[2]")
     private WebElement secondYouTubeVideo;
-   @FindBy(id = "switcher-store-trigger")
+    @FindBy(id = "switcher-store-trigger")
     private WebElement countryList;
     @FindBy(xpath = "//li[@class='country_switch']/span[@class='AE']")
     private WebElement aeCountry;
@@ -185,6 +185,7 @@ public class AeWomenOnlyCategoryPage extends BasePage {
         return productCardInSupplementsForHerSection;
     }
     public WebElement getProductCardInWomenVitaminsSection() {
+        DataHelperAndWait.waitToBeVisible(productCardInWomenVitaminsSection,5,webDriver);
         return productCardInWomenVitaminsSection;
     }
     public WebElement getLastProductInWomenVitaminsSection() {
@@ -209,6 +210,7 @@ public class AeWomenOnlyCategoryPage extends BasePage {
         return lastProductInWorkoutInStyleSection;
     }
     public WebElement getProductCardInWorkoutInStyleSection() {
+        DataHelperAndWait.waitToBeVisible(productCardInWorkoutInStyleSection,5,webDriver);
         return productCardInWorkoutInStyleSection;
     }
     public WebElement getViewAllInSupplementsForHerSection() {

@@ -92,7 +92,7 @@ public class KsaHomePage extends BasePage {
     private WebElement vitaminsAndHealthActiveLinkInTopeSellersSection;
     @FindBy(xpath = "//ul[@class='tabs tabs67']/li[5]/a")
     private WebElement sportswearAndAccessoriesActiveLink;
-    @FindBy(xpath = "(//div[@class='swiper-button-next top-sellers-swiper-button-next'])[4]")
+    @FindBy(xpath = "//div[@id='tab-67-736']/div[2]/i")
     private WebElement nextButtonInTopSellerSection;
     @FindBy(xpath = "(//div[@class='swiper-button-prev top-sellers-swiper-button-prev'])[1]")
     private WebElement previousButtonInTopSellerSection;
@@ -142,10 +142,14 @@ public class KsaHomePage extends BasePage {
     private WebElement newArrivalsVitaminsAndHealthActiveLink;
     @FindBy(xpath = "//li[@class='tabli-6-736 active']")
     private WebElement newArrivalsSportswearAndAccessoriesActiveLink;
-    @FindBy(xpath = "(//div[@class='swiper-button-next top-sellers-swiper-button-next']/i)[5]")
+    @FindBy(xpath = "//div[@id='tab-6-736']/div[2]/i")
     private WebElement nextBtnInNewArrivalsSection;
-    @FindBy(xpath = "((//div[@class='swiper-button-prev top-sellers-swiper-button-prev']/i))[1]")
+//    @FindBy(xpath = "(//div[@class='swiper-button-next top-sellers-swiper-button-next']/i)[5]")
+//    private WebElement nextBtnInNewArrivalsSection;
+    @FindBy(xpath = "//div[@id='tab-6-736']/div[3]/i")
     private WebElement previousBtnInNewArrivalsSection;
+//    @FindBy(xpath = "((//div[@class='swiper-button-prev top-sellers-swiper-button-prev']/i))[1]")
+//    private WebElement previousBtnInNewArrivalsSection;
     @FindBy(xpath = "//div[@class='left-quetion-block quetion-inner']")
     private WebElement getQuestionBlock;
     @FindBy(xpath = "//*[@title='Call']")

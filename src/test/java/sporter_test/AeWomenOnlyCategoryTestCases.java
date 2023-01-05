@@ -1,5 +1,6 @@
 package sporter_test;
 
+import core.BasePage;
 import core.BaseTest;
 import core.DataHelperAndWait;
 import org.openqa.selenium.WebElement;
@@ -32,8 +33,8 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
             System.out.println("You are in UAE Store");
         }
         else {
-            aeWomenOnlyCategoryPage.switchToAECountry();
-        }
+            webDriver.navigate().to(BasePage.BaseURL+aeDomain);
+            CloseInitialDialog();          }
     }
     @Test(groups = "Smoke Testing Report",description = "Women's Only Category- Make sure ability to access the Women's Only Category from the MegaMenu correctly", priority = 2)
     public void verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL( ) {
@@ -483,7 +484,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyThePaginationControlInWomenDailyVitaminsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
@@ -614,7 +615,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnLadyFriendlySnacksAndFoodCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,6);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
@@ -1152,8 +1153,9 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyThePaginationControlInWeightLossCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
+        aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
     }
 
     @Test(description = "Women's Only Category- Make sure all secure tabs appears correctly in the Weight Loss category page(100% Secure Payments & Authentic Products & Fast Delivery Service blocks)", priority = 98)
@@ -1452,7 +1454,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnDetoxAndCleanseCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
@@ -1794,8 +1796,9 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyThePaginationControlInEnergyAndEnduranceCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,6);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
+        aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
     }
 
     @Test(description = "Women's Only Category- Make sure all secure tabs appears correctly in the Energy & Endurance category page(100% Secure Payments & Authentic Products & Fast Delivery Service blocks)", priority = 153)
@@ -2570,11 +2573,13 @@ AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(we
         Assert.assertTrue(aeWomenOnlyCategoryPage.getPreviousIconInWorkoutInStyleSection().isDisplayed());
     }
 
-    @Test(description = "Women's Only Category- Make sure clicking on Next Button in the Workout In Style Widget works correctly", priority = 222,expectedExceptions = { org.openqa.selenium.NoSuchElementException.class })
+    @Test(description = "Women's Only Category- Make sure clicking on Next Button in the Workout In Style Widget works correctly", priority = 222)
     public void verifyClickingOnNextIconInWorkoutInStyleWidgetWorksCorrectly() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         //        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        DataHelperAndWait.waitToBeVisible(aeWomenOnlyCategoryPage.getNextIconInInWorkoutInStyleSection(),5,webDriver);
+        aeWomenOnlyCategoryPage.getPreviousIconInWorkoutInStyleSection().click();
+        DataHelperAndWait.waitToBeVisible(aeWomenOnlyCategoryPage.getNextIconInInWorkoutInStyleSection(),5,webDriver);
         aeWomenOnlyCategoryPage.getNextIconInInWorkoutInStyleSection().click();
     }
 
@@ -2626,6 +2631,7 @@ AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(we
     public void verifyClickingOnNextIconInLadyFriendlySnacksAndFoodWidgetWorksCorrectly() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         //        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        aeWomenOnlyCategoryPage.getNextIconInInLadyFriendlySnacksFoodSection().click();
         aeWomenOnlyCategoryPage.getNextIconInInLadyFriendlySnacksFoodSection().click();
     }
 

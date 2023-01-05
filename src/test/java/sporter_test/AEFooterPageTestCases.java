@@ -56,8 +56,8 @@ public class AEFooterPageTestCases extends BaseTest {
             System.out.println("You are in UAE Store");
         }
         else {
-            aeFooterPage.switchToAECountry();
-        }
+            webDriver.navigate().to(BasePage.BaseURL+aeDomain);
+            CloseInitialDialog();          }
     }
 
     @Test(description = " Footer Section- Verify the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks ", priority = 1)

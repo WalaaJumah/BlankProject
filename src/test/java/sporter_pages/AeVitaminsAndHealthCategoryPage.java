@@ -142,10 +142,15 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
     private WebElement productCardInFishOilAndOmegasSection;
     @FindBy(xpath = "(//div[@class='swiper-slide'])[19]")
     private WebElement productCardInMultiVitaminsSection;
-    @FindBy(xpath = "(//div[@class='swiper-slide'])[30]")
+    @FindBy(css = "div.inner-seller-prod.wp-id-22498 > a.product-link")
     private WebElement productCardIVitaminsAZSection;
-    @FindBy(xpath = "(//div[@class='swiper-slide'])[25]")
+//    @FindBy(xpath = "(//div[@class='swiper-slide'])[30]")
+//    private WebElement productCardIVitaminsAZSection;
+//    @FindBy(xpath = "(//div[@class='swiper-slide'])[25]")
+//    private WebElement productCardInMineralsSection;
+      @FindBy(css = "div.inner-seller-prod.wp-id-35660 > a.product-link")
     private WebElement productCardInMineralsSection;
+
     @FindBy(css = "#tab-296-all296 > div.swiper-container.swiper-product-slider.top-seller-slider.swiper-container-horizontal > div > div:nth-child(3) > div > a")
     private WebElement productCardInAntioxidantsSection;
     @FindBy(xpath = "(//div[@class='inner-seller-prod wp-id-20305'])[1]")

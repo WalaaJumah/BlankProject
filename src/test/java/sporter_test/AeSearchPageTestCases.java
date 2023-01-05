@@ -1,5 +1,6 @@
 package sporter_test;
 
+import core.BasePage;
 import core.BaseTest;
 import core.DataHelperAndWait;
 import org.openqa.selenium.interactions.Actions;
@@ -20,8 +21,8 @@ public class AeSearchPageTestCases extends BaseTest {
             System.out.println("You are in UAE Store");
         }
         else {
-            aeWomenOnlyCategoryPage.switchToAECountry();
-        }
+            webDriver.navigate().to(BasePage.BaseURL+aeDomain);
+            CloseInitialDialog();          }
     }
 
     @Test(groups = "Smoke Testing Report",description = "Verify clicking on the search icon will redirect the user to the search screen", priority = 1)

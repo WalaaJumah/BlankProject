@@ -1,5 +1,6 @@
 package sporter_test;
 
+import core.BasePage;
 import core.BaseTest;
 import core.DataHelperAndWait;
 import org.openqa.selenium.interactions.Actions;
@@ -27,8 +28,8 @@ public class AEMegaMenuTestCases extends BaseTest {
             System.out.println("You are in UAE Store");
         }
         else {
-            aeMegamenuPage.switchToAECountry();
-        }
+            webDriver.navigate().to(BasePage.BaseURL+aeDomain);
+            CloseInitialDialog();          }
     }
     @Test(description = "MegaMenu- Make sure the MegaMenu Section display correctly with all main columns", priority = 2)
     public void verifyMegaMenuSectionAppearsCorrectlyWithAllMainColumns() {

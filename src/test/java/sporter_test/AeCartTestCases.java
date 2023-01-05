@@ -28,8 +28,8 @@ public class AeCartTestCases extends BaseTest {
             System.out.println("You are in UAE Store");
         }
         else {
-            aeWomenOnlyCategoryPage.switchToAECountry();
-        }
+            webDriver.navigate().to(BasePage.BaseURL+aeDomain);
+            CloseInitialDialog();          }
     }
     @Test(groups = "Smoke Testing Report",description = " Cart Page- Make sure to view the cart from PDP after adding  product to it", priority = 2)
     public void viewCartFromPDP() {
@@ -56,7 +56,7 @@ public class AeCartTestCases extends BaseTest {
         aeProductDetailsPage.clickOnSalesAndOffersMenu();
         aeProductDetailsPage.clickOnBuy1Get1Card();
         DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getFirstProductInTheCategoryList(), 5,webDriver);
-        aeProductDetailsPage.DisplayProductInTheList(3);
+        aeProductDetailsPage.DisplayProductInTheList(2);
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
         Assert.assertTrue(aeCartPage.getFreePrice().isDisplayed());
@@ -224,7 +224,7 @@ public class AeCartTestCases extends BaseTest {
         aeProductDetailsPage.clickOnShopeByMenu();
         aeProductDetailsPage.clickOnSalesAndOffersMenu();
         aeProductDetailsPage.clickOnBuy1Get1Card();
-        aeProductDetailsPage.DisplayProductInTheList(3);
+        aeProductDetailsPage.DisplayProductInTheList(2);
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
         Assert.assertTrue(aeCartPage.getFreeFromSporterSection().isDisplayed());
@@ -238,7 +238,7 @@ public class AeCartTestCases extends BaseTest {
         aeProductDetailsPage.clickOnShopeByMenu();
         aeProductDetailsPage.clickOnSalesAndOffersMenu();
         aeProductDetailsPage.clickOnBuy1Get1Card();
-        aeProductDetailsPage.DisplayProductInTheList(3);
+        aeProductDetailsPage.DisplayProductInTheList(2);
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
         Assert.assertTrue(aeCartPage.getFreePrice().isDisplayed());
@@ -300,7 +300,7 @@ public class AeCartTestCases extends BaseTest {
         aeProductDetailsPage.clickOnShopeByMenu();
         aeProductDetailsPage.clickOnSalesAndOffersMenu();
         aeProductDetailsPage.clickOnBuy1Get1Card();
-        aeProductDetailsPage.DisplayProductInTheList(3);
+        aeProductDetailsPage.DisplayProductInTheList(2);
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
         Assert.assertTrue(aeCartPage.getFreeFromSporterSection().isDisplayed());
@@ -345,7 +345,7 @@ public class AeCartTestCases extends BaseTest {
         aeProductDetailsPage.clickOnShopeByMenu();
         aeProductDetailsPage.clickOnSalesAndOffersMenu();
         aeProductDetailsPage.clickOnBuy1Get1Card();
-        aeProductDetailsPage.DisplayProductInTheList(3);
+        aeProductDetailsPage.DisplayProductInTheList(2);
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
         Assert.assertTrue(aeCartPage.getFreeFromSporterSection().isDisplayed());
@@ -419,7 +419,7 @@ public class AeCartTestCases extends BaseTest {
         aeProductDetailsPage.clickOnShopeByMenu();
         aeProductDetailsPage.clickOnSalesAndOffersMenu();
         aeProductDetailsPage.clickOnBuy1Get1Card();
-        aeProductDetailsPage.DisplayProductInTheList(3);
+        aeProductDetailsPage.DisplayProductInTheList(2);
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
         Assert.assertTrue(aeCartPage.getFreeFromSporterSection().isDisplayed());

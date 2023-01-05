@@ -57,7 +57,7 @@ public class BasePage {
     public final  String productQualityUrl = "/products-quality";
     public final  String productAuthenticityUrl = "/official-supplier";
     public final  String wholesaleUrl = "/wholesale-offers";
-    public final  String careersUrl = "https://ae.linkedin.com/company/sporter.com";
+    public final  String careersUrl = "linkedin.com/company/sporter.com";
     public final  String sporterBlogUrl = "/blog/";
     public final  String contactUsUrl = "/contacts-us";
     public final  String trainingApparelUrl = "/training-apparel/";

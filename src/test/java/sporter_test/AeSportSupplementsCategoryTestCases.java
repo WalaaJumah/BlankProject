@@ -1,5 +1,6 @@
 package sporter_test;
 
+import core.BasePage;
 import core.BaseTest;
 import core.DataHelperAndWait;
 import org.openqa.selenium.WebElement;
@@ -29,8 +30,8 @@ public void switchToUaeStore(){
         System.out.println("You are in UAE Store");
     }
     else {
-        aeSportSupplementsCategoryPage.switchToAECountry();
-    }
+        webDriver.navigate().to(BasePage.BaseURL+aeDomain);
+        CloseInitialDialog();      }
 }
     @Test(groups = "Smoke Testing Report",description = "Sports Supplements Category- Make sure clicking on the Sports Supplements Category Appears In MegaMenu Redirect User To CorrectURL", priority = 2)
     public void verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL() {     

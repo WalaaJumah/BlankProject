@@ -1,5 +1,6 @@
 package sporter_test;
 
+import core.BasePage;
 import core.BaseTest;
 import core.DataHelperAndWait;
 import org.openqa.selenium.Keys;
@@ -17,7 +18,12 @@ public class AEGuestUserTestCases extends BaseTest {
 
     public void accessShippingInformationScreen(){
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
-        aeGuestUserPage.clickOnCartIcon();
+
+        try{
+        aeGuestUserPage.clickOnCartIcon();}
+        catch (Exception e){
+            aeGuestUserPage.clickOnCartIcon();
+        }
         aeGuestUserPage.clickOnProceedCheckoutBtnInCartPopup();
         aeGuestUserPage.clickOnGuestCheckoutBtn();
     }
@@ -29,8 +35,8 @@ public class AEGuestUserTestCases extends BaseTest {
             System.out.println("You are in UAE Store");
         }
         else {
-            aeGuestUserPage.switchToAECountry();
-        }
+            webDriver.navigate().to(BasePage.BaseURL+aeDomain);
+            CloseInitialDialog();          }
     }
     @Test(groups = "Smoke Testing Report",description = "Make sure to access the Guest Checkout page from the cart page correctly", priority = 2)
     public void verifyAbilityToAccessTheGuestCheckoutPageFromTheCartPageCorrectly() {
@@ -237,6 +243,7 @@ aeGuestUserPage.clickOnContinueBtn();
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
         aeGuestUserPage.navigateToHomePage();
         aeGuestUserPage.switchToArabicVersion();
+        aeGuestUserPage.getCounterIconOnCartBtn();
         this.accessShippingInformationScreen();
         //        aeGuestUserPage.clearShippingInformationFields();
         aeGuestUserPage.fillInShippingInformationInputField(aeGuestUserPage.firstNameAr, aeGuestUserPage.lastNameAr, aeGuestUserPage.email, aeGuestUserPage.phone, aeGuestUserPage.addressAr, aeGuestUserPage.streetLineOneAr, aeGuestUserPage.streetLineTwoAr);

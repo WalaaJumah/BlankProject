@@ -333,7 +333,7 @@ public class KsaHomePageTestCases extends BaseTest {
     @Test(description = "KSA HomePage- Make sure that previous and next button in the New Arrivals Section works correctly", priority = 36)
     public void verifyPreviousBtnWillAppearInNewArrivalsSectionOnceClickingOnNextBtn() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
-        ksaHomePage.navigate();
+//        ksaHomePage.navigate();
         ksaHomePage.clickOnNextButtonInNewArrivalSection();
         Assert.assertTrue(ksaHomePage.getPreviousBtnInNewArrivalsSection().isDisplayed());
     }

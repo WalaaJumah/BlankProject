@@ -1839,6 +1839,7 @@ public class AEMegaMenuPage extends BasePage {
     }
 
     public WebElement getGripsInSportsMenu() {
+        DataHelperAndWait.waitToBeVisible(gripsInSportsMenu,3,webDriver);
         return gripsInSportsMenu;
     }
 
