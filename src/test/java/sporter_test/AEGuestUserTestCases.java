@@ -27,7 +27,7 @@ public class AEGuestUserTestCases extends BaseTest {
         aeGuestUserPage.clickOnProceedCheckoutBtnInCartPopup();
         aeGuestUserPage.clickOnGuestCheckoutBtn();
     }
-    @Test(groups = "Smoke Testing Report",description = "Guest User- Switching to UAE store", priority = 1)
+    @Test(groups = "Smoke Testing Result",description = "Guest User- Switching to UAE store", priority = 1)
     public void switchToUaeStore(){
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
         aeGuestUserPage.switchToAECountry();
@@ -38,7 +38,7 @@ public class AEGuestUserTestCases extends BaseTest {
             webDriver.navigate().to(BasePage.BaseURL+aeDomain);
             CloseInitialDialog();          }
     }
-    @Test(groups = "Smoke Testing Report",description = "Make sure to access the Guest Checkout page from the cart page correctly", priority = 2)
+    @Test(groups = "Smoke Testing Result",description = "Make sure to access the Guest Checkout page from the cart page correctly", priority = 2)
     public void verifyAbilityToAccessTheGuestCheckoutPageFromTheCartPageCorrectly() {
          AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage=new AeProductDetailsPage(webDriver);
@@ -49,7 +49,7 @@ public class AEGuestUserTestCases extends BaseTest {
         aeGuestUserPage.clickOnGuestCheckoutBtn();
         Assert.assertTrue(aeGuestUserPage.getRegisterAtSporterOption().isDisplayed());
     }
-    @Test(groups = "Smoke Testing Report",description = "Make sure to access the Guest Checkout page from the cart pop up correctly", priority = 3)
+    @Test(groups = "Smoke Testing Result",description = "Make sure to access the Guest Checkout page from the cart pop up correctly", priority = 3)
     public void verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPopUpCorrectly() {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
         aeGuestUserPage.navigateToHomePage();
@@ -62,13 +62,13 @@ public class AEGuestUserTestCases extends BaseTest {
 //        this.verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPageCorrectly();
         Assert.assertTrue(aeGuestUserPage.getTitleOfGuectUserShippingInformationScreen().isDisplayed());
     }
-    @Test(groups = "Smoke Testing Report",description = "Guest Checkout- Make sure the system fills the store country by default in the country field in the shipping information form", priority = 5)
+    @Test(groups = "Smoke Testing Result",description = "Guest Checkout- Make sure the system fills the store country by default in the country field in the shipping information form", priority = 5)
     public void verifyTheCountryRetrievedInCountryFieldBasedOnStoreCountry() {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
         //        this.verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPageCorrectly();
         Assert.assertEquals(aeGuestUserPage.getCountryField().getText(), "United Arab Emirates");
     }
-    @Test(groups = "Smoke Testing Report",description = "Make sure the Guest user cannot submit the shipping information without filling the required fields empty", priority = 6)
+    @Test(groups = "Smoke Testing Result",description = "Make sure the Guest user cannot submit the shipping information without filling the required fields empty", priority = 6)
     public void verifyTheGuestUserCannotSubmitTheShippingInformationWithoutFillingTheRequiredFields() {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
 //        this.verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPageCorrectly();
@@ -85,7 +85,7 @@ aeGuestUserPage.clickOnContinueBtn();
         Assert.assertEquals(aeGuestUserPage.getAddressRequiredFieldMsg().getText(), "This is a required field.");
         Assert.assertEquals(aeGuestUserPage.getStreetlineOneRequiredFieldMsg().getText(), "This is a required field.");
     }
-    @Test(groups = "Smoke Testing Report",description = "Make sure the Guest user cannot submit the shipping information when the phone number length is small ", priority = 7)
+    @Test(groups = "Smoke Testing Result",description = "Make sure the Guest user cannot submit the shipping information when the phone number length is small ", priority = 7)
     public void verifyTheGuestUserCannotSubmitTheShippingInformationWhenPhoneFieldHaveSmallTextLength() {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
         //        aeGuestUserPage.clearShippingInformationFields();
@@ -102,7 +102,7 @@ aeGuestUserPage.clickOnContinueBtn();
 aeGuestUserPage.clickOnContinueBtn();
         Assert.assertEquals(aeGuestUserPage.getPhoneRequiredFieldMsg().getText(), "Text length does not satisfy specified text range.");
     }
-    @Test(groups = "Smoke Testing Report",description = "Make sure the Guest user cannot submit the shipping information with incorrect email format ", priority = 8)
+    @Test(groups = "Smoke Testing Result",description = "Make sure the Guest user cannot submit the shipping information with incorrect email format ", priority = 8)
     public void verifyTheGuestUserCannotSubmitTheShippingInformationWithIncorrectEmailFormat() {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
 //                aeProductDetailsPage.displayTheProduct();
@@ -120,7 +120,7 @@ aeGuestUserPage.clickOnContinueBtn();
 aeGuestUserPage.clickOnContinueBtn();
         Assert.assertEquals(aeGuestUserPage.getEmailValidationFormateMsg().getText(), "Please enter a valid email address.");
     }
-    @Test(groups = "Smoke Testing Report",description = "Guest Checkout- Make sure the city Search field in the shipping information form works correctly and retrieved the matched result ", priority = 9)
+    @Test(groups = "Smoke Testing Result",description = "Guest Checkout- Make sure the city Search field in the shipping information form works correctly and retrieved the matched result ", priority = 9)
     public void verifyCitySearchWorksFineAndRetrievedTheMatchedResult() {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
 //        this.verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPageCorrectly();
@@ -152,7 +152,7 @@ aeGuestUserPage.clickOnContinueBtn();
             Assert.assertEquals(webElement.getText(), "Select city\n" + "Dubai\n" + "Abu Dhabi\n" + "Sharjah\n" + "Ajman\n" + "Al Ain\n" + "Ras Al Khaimah\n" + "Fujairah\n" + "Umm Al Quwain");
         }
     }
-    @Test(groups = "Smoke Testing Report",description = "Guest Checkout- Make sure  ability to fill and navigate between the shipping information form using Tab key and keyboard shortcuts", priority = 12)
+    @Test(groups = "Smoke Testing Result",description = "Guest Checkout- Make sure  ability to fill and navigate between the shipping information form using Tab key and keyboard shortcuts", priority = 12)
     public void verifyAbilityToFillAndNavigateBetweenTheShippingInformationFormUsingTabKeyAndKeyboardShortCut() {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
         Actions act = new Actions(webDriver);
@@ -198,7 +198,7 @@ aeGuestUserPage.clickOnContinueBtn();
         Assert.assertEquals(aeGuestUserPage.getStreetlineOneRequiredFieldMsg().getText(), "Please enter less or equal than 255 symbols.");
         Assert.assertEquals(aeGuestUserPage.getStreetlineTwoRequiredFieldMsg().getText(), "Please enter less or equal than 255 symbols.");
     }
-    @Test(groups = {"Smoke Testing Report","High Severity","Low Severity","Meduim Severity"},description = "Make sure the Guest user can filling the shipping information correctly", priority = 14)
+    @Test(groups = {"Smoke Testing Result","High Severity","Low Severity","Meduim Severity"},description = "Make sure the Guest user can filling the shipping information correctly", priority = 14)
     public void verifyTheGuestUserCanFillTheShippingInformationCorrectly() {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
         aeGuestUserPage.navigateToHomePage();
@@ -213,7 +213,7 @@ aeGuestUserPage.clickOnContinueBtn();
 aeGuestUserPage.clickOnContinueBtn();
         Assert.assertTrue(aeGuestUserPage.getShippingMethodSection().isDisplayed());
     }
-    @Test(groups = "Smoke Testing Report",description = "Make sure the return to the cart button appearing in the shipping information screen for the Guest User works correctly  ", priority = 15)
+    @Test(groups = "Smoke Testing Result",description = "Make sure the return to the cart button appearing in the shipping information screen for the Guest User works correctly  ", priority = 15)
     public void verifyBackToCartLinkWorksCorrectly() {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
         aeGuestUserPage.navigateToHomePage();

@@ -10,18 +10,14 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 //import com.aventstack.extentreports.reporter.configuration.ViewName;
+import com.aventstack.extentreports.ExtentReporter;
 import core.BasePage;
 import core.BaseTest;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.testng.IReporter;
-import org.testng.IResultMap;
-import org.testng.ISuite;
-import org.testng.ISuiteResult;
-import org.testng.ITestContext;
-import org.testng.ITestResult;
+import org.testng.*;
 import org.testng.annotations.AfterMethod;
 import org.testng.xml.XmlSuite;
 import com.relevantcodes.extentreports.ExtentReports;
@@ -53,7 +49,7 @@ public class ExtentReportListener  implements IReporter {
 
 //        extent.addSystemInfo("Author", "Wala'a Mohammad");
 
-
+                
 
 
 

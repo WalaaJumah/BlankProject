@@ -3,7 +3,7 @@
     <configuration>
         <!-- report theme -->
         <!-- standard, dark -->
-        <theme>dark</theme>
+        <theme>standard</theme>
         <!--        <theme>standard</theme>-->
 
         <!-- document encoding -->
@@ -62,7 +62,7 @@
   $('#dashboard-view > div.system-view > div').hide();
 
 <!--To Hide Category Section-->
-<!--              $('#dashboard-view > div.category-summary-view > div').hide();-->
+              $('#dashboard-view > div.category-summary-view > div').hide();
 <!--To display Dashboard tab by defualt-->
            $('#slide-out > li:nth-child(4)').click();
 

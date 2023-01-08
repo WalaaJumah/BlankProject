@@ -23,7 +23,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
     private Actions action;
 
 
-    @Test(groups = "Smoke Testing Report",description = "Healthy Food Category- Switching to UAE store", priority = 1)
+    @Test(groups = "Smoke Testing Result",description = "Healthy Food Category- Switching to UAE store", priority = 1)
     public void switchToUaeStore(){
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeHealthyFoodCategoryPage.switchToAECountry();
@@ -35,7 +35,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
             CloseInitialDialog();          }
     }
 
-    @Test(groups = "Smoke Testing Report",description = "Healthy Food Category- Make sure clicking on the Healthy Food Category Appears In MegaMenu Redirect User To CorrectURL", priority = 2)
+    @Test(groups = "Smoke Testing Result",description = "Healthy Food Category- Make sure clicking on the Healthy Food Category Appears In MegaMenu Redirect User To CorrectURL", priority = 2)
     public void verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL() {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         action = new Actions(webDriver);
@@ -45,7 +45,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
         aeHealthyFoodCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-    @Test(groups = "Smoke Testing Report",description = "Healthy Food Category- Make sure clicking on the Healthy Food Category from ShopBy Menu Redirect User To CorrectURL", priority = 3)
+    @Test(groups = "Smoke Testing Result",description = "Healthy Food Category- Make sure clicking on the Healthy Food Category from ShopBy Menu Redirect User To CorrectURL", priority = 3)
     public void verifyClickingOnHealthyFoodCategoryFromShopByMenuRedirectUserToCorrectURL() {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         action = new Actions(webDriver);
@@ -56,7 +56,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
         aeHealthyFoodCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-    @Test(groups = "Smoke Testing Report",description = "Healthy Food Category- Make sure clicking on the Healthy Food Category from HomePage Redirect User To CorrectURL", priority =4)
+    @Test(groups = "Smoke Testing Result",description = "Healthy Food Category- Make sure clicking on the Healthy Food Category from HomePage Redirect User To CorrectURL", priority =4)
     public void verifyClickingOnHealthyFoodCategoryFromHomePageRedirectUserToCorrectURL() {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeHealthyFoodCategoryPage.navigateToHomePage();
@@ -321,7 +321,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         }
     }
     //Pagination control for all pages in the Healthy Food Category Pages
-    @Test(groups = "Smoke Testing Report",description = "Healthy Food Category- Make Sure the ability to access all pages inside Healthy Food Category Page  ", priority = 29)
+    @Test(groups = "Smoke Testing Result",description = "Healthy Food Category- Make Sure the ability to access all pages inside Healthy Food Category Page  ", priority = 29)
     public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPage(){
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);

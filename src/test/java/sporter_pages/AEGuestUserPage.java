@@ -274,7 +274,7 @@ public class AEGuestUserPage extends BasePage {
     }
 
     public void clickOnProceedCheckoutBtnInCartPopup() {
-        DataHelperAndWait.waitToBeClickable(proceedCheckoutBtnInCartPopup, 6,webDriver);
+        DataHelperAndWait.waitToBeVisible(proceedCheckoutBtnInCartPopup, 6,webDriver);
         this.proceedCheckoutBtnInCartPopup.click();
     }
 

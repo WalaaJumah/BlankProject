@@ -19,7 +19,7 @@ public class QatarHomePageTestCases extends BaseTest {
 //        qatarHomePage= new QatarHomePage(webDriver);
 //    }
 
-    @Test(groups = "Smoke Testing Report",description = "Qatar HomePage- Switching to the Qatar Store", priority = 1)
+    @Test(groups = "Smoke Testing Result",description = "Qatar HomePage- Switching to the Qatar Store", priority = 1)
     public void switchToQatarStore() {
 //        qatarHomePage.webDriver=this.webDriver;
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
@@ -39,7 +39,7 @@ public class QatarHomePageTestCases extends BaseTest {
         Assert.assertTrue(qatarHomePage.getPreviousArrowInHomePageRotatingSlider().isDisplayed());
     }
 
-    @Test(groups = "Smoke Testing Report",description = "Qatar HomePage- Make sure clicking on the banners inside the rotating slider section works correctly", priority = 3)
+    @Test(groups = "Smoke Testing Result",description = "Qatar HomePage- Make sure clicking on the banners inside the rotating slider section works correctly", priority = 3)
     public void verifyClickingOnTheBannersInsideTheRotatingSliderWorksCorrectly() {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
 //        qatarHomePage.navigate();
@@ -51,7 +51,7 @@ public class QatarHomePageTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = "Smoke Testing Report",description = "Qatar HomePage- Make sure clicking on the first and second side banners works correctly", priority = 4)
+    @Test(groups = "Smoke Testing Result",description = "Qatar HomePage- Make sure clicking on the first and second side banners works correctly", priority = 4)
     public void verifyClickingOnTheFirstAndSecondSideBannersWorksCorrectlyInTheVitaminsAndHealthCategoryPage() {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.navigate();
@@ -66,7 +66,7 @@ public class QatarHomePageTestCases extends BaseTest {
         qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = "Smoke Testing Report",description = "Qatar HomePage- Make sure clicking on the HomePage Horizontal Banner works correctly", priority = 5)
+    @Test(groups = "Smoke Testing Result",description = "Qatar HomePage- Make sure clicking on the HomePage Horizontal Banner works correctly", priority = 5)
     public void verifyClickingOnHomePageHorizontalBannerDoeNotRedirectTheUserTo404PageOrNoContentFoundPage() {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.navigate();
@@ -97,7 +97,7 @@ public class QatarHomePageTestCases extends BaseTest {
         Assert.assertEquals(qatarHomePage.getWomenOnlyOption().getText(), "Women's Only");
     }
 
-    @Test(groups = "Smoke Testing Report",description = "Qatar HomePage- Make sure clicking on the banners appearing under shop by category banners works correctly", priority = 8)
+    @Test(groups = "Smoke Testing Result",description = "Qatar HomePage- Make sure clicking on the banners appearing under shop by category banners works correctly", priority = 8)
     public void verifyClickingOnTheBannersUnderShopByCategoryBannersRedirectTheUserToCorrectUrl() {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
 //        qatarHomePage.navigate();
@@ -110,7 +110,7 @@ public class QatarHomePageTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = "Smoke Testing Report",description = "Qatar HomePage- Make sure the Top Selling Stacks section is displayed ", priority = 9)
+    @Test(groups = "Smoke Testing Result",description = "Qatar HomePage- Make sure the Top Selling Stacks section is displayed ", priority = 9)
     public void verifyTopSellingStacksSectionAreDisplayed() {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.navigate();
@@ -118,7 +118,7 @@ public class QatarHomePageTestCases extends BaseTest {
         Assert.assertTrue(qatarHomePage.getTopSellingStacksSections().isDisplayed());
     }
 
-    @Test(groups = "Smoke Testing Report",description = "Qatar HomePage- Make sure the Top Sellers section is displayed ", priority = 10)
+    @Test(groups = "Smoke Testing Result",description = "Qatar HomePage- Make sure the Top Sellers section is displayed ", priority = 10)
     public void verifyTopSellersSectionAreDisplayed() {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
 //        qatarHomePage.navigate();
@@ -126,7 +126,7 @@ public class QatarHomePageTestCases extends BaseTest {
         Assert.assertTrue(qatarHomePage.getTopSellerSections().isDisplayed());
     }
 
-    @Test(groups = "Smoke Testing Report",description = "Qatar HomePage- Make sure that all links appear correctly in the Top Sellers section ", priority = 11)
+    @Test(groups = "Smoke Testing Result",description = "Qatar HomePage- Make sure that all links appear correctly in the Top Sellers section ", priority = 11)
     public void verifyAllLinksInTopSellersSectionAreDisplayed() {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
 //        qatarHomePage.navigate();
@@ -188,7 +188,7 @@ public class QatarHomePageTestCases extends BaseTest {
         Assert.assertTrue(qatarHomePage.getPreviousButtonInTopSellerSection().isDisplayed());
         qatarHomePage.clickOnPreviousButtonInTopSellersSection();
     }
-    @Test(groups = "Smoke Testing Report",description = "Qatar HomePage- Make sure the Trending On Sporter section is displayed ", priority = 18)
+    @Test(groups = "Smoke Testing Result",description = "Qatar HomePage- Make sure the Trending On Sporter section is displayed ", priority = 18)
     public void verifyTrendingOnSporterSectionAreDisplayed() {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
 //        qatarHomePage.navigate();
@@ -211,7 +211,7 @@ public class QatarHomePageTestCases extends BaseTest {
         Assert.assertTrue(qatarHomePage.getTrendingOnSporterSectionPositionAfterClickingOnPrevious().isDisplayed());
     }
 
-    @Test(groups = "Smoke Testing Report",description = "Qatar HomePage- Make sure the New Arrivals section is displayed ", priority = 21)
+    @Test(groups = "Smoke Testing Result",description = "Qatar HomePage- Make sure the New Arrivals section is displayed ", priority = 21)
     public void verifyNewArrivalsSectionAreDisplayed() {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
 //        qatarHomePage.navigate();
@@ -308,7 +308,7 @@ public class QatarHomePageTestCases extends BaseTest {
         Assert.assertTrue(qatarHomePage.getEmailBtn().isDisplayed());
     }
 
-    @Test(groups = "Smoke Testing Report",description = "Qatar HomePage- Make sure clicking on email button from the Got A Question section works correctly ", priority = 30)
+    @Test(groups = "Smoke Testing Result",description = "Qatar HomePage- Make sure clicking on email button from the Got A Question section works correctly ", priority = 30)
     public void verifyAbilityToClickOnEmailBtnInGotQuestionSectionCorrectly() {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
 //        qatarHomePage.clickOnEmailBtn();

@@ -103,7 +103,7 @@ public class AeProductDetailsPage extends BasePage {
     private WebElement SportsSupplementsMenu;
     @FindBy(xpath = "//select")
     private WebElement bundleMenu;
-    @FindBy(xpath = ".//*[@class='swiper-wrapper clearfix']/li[5]")
+    @FindBy(xpath = "(//div[@class='inner-trend'])[3]")
     private WebElement buy1Get1Card;
     @FindBy(xpath = "//ol[@class='products list items product-items']//li")
     private WebElement firstProductInTheCategoryList;
@@ -513,7 +513,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void clickOnBuy1Get1Card() {
-        DataHelperAndWait.isDisplayed(buy1Get1Card, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(buy1Get1Card, 5, webDriver);
         this.buy1Get1Card.click();
     }
 

@@ -48,7 +48,7 @@ public class AEFooterPageTestCases extends BaseTest {
         CloseInitialDialog();
     }
 
-    @Test(groups = "Smoke Testing Report",description = " Footer Section- Switching to UAE store", priority = 1)
+    @Test(groups = "Smoke Testing Result",description = " Footer Section- Switching to UAE store", priority = 1)
     public void switchToUaeStore(){
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.switchToAECountry();
@@ -80,7 +80,7 @@ public class AEFooterPageTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = "Smoke Testing Report",description = " Footer Section- Verify the Join Our NEWSLETTER section that appears in the footer section is displayed correctly", priority = 2)
+    @Test(groups = "Smoke Testing Result",description = " Footer Section- Verify the Join Our NEWSLETTER section that appears in the footer section is displayed correctly", priority = 2)
     public void verifyJoinOurNewsletterSectionIsDisplayedCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         Assert.assertTrue(aeFooterPage.getNewsletterBlock().isDisplayed());
@@ -90,7 +90,7 @@ public class AEFooterPageTestCases extends BaseTest {
         Assert.assertTrue(aeFooterPage.getJoinBtnInNewsletterBlock().isDisplayed());
     }
 
-    @Test(groups = "Smoke Testing Report",description = " Footer Section- Make sure the user(Male) can join sporter NEWSLETTER correctly", priority = 3)
+    @Test(groups = "Smoke Testing Result",description = " Footer Section- Make sure the user(Male) can join sporter NEWSLETTER correctly", priority = 3)
     public void verifyAbilityToJoinSporterNewsletterWithMaleOptionCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.fillInemailFieldInNewsletterBlock(aeFooterPage.generateRandomEmail());
@@ -99,7 +99,7 @@ public class AEFooterPageTestCases extends BaseTest {
         Assert.assertTrue(aeFooterPage.getSubscriptionSuccessfulMsg().isDisplayed());
     }
 
-    @Test(groups = "Smoke Testing Report",description = " Footer Section- Make sure the user(Female) can join sporter NEWSLETTER correctly", priority = 4)
+    @Test(groups = "Smoke Testing Result",description = " Footer Section- Make sure the user(Female) can join sporter NEWSLETTER correctly", priority = 4)
     public void verifyAbilityToJoinSporterNewsletterWithFemaleOptionCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();

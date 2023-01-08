@@ -133,7 +133,7 @@ public class BaseTest {
 
 
 
-//    @BeforeGroups(groups = "Smoke Testing Report")
+//    @BeforeGroups(groups = "Smoke Testing Result")
 //    @Parameters({"environment"})
 //
 //    public void setupBrowserForGroup(String environment) throws Exception {

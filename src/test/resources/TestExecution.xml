@@ -44,13 +44,13 @@
     </test>
 
 
-    <!--    <test name="Smoke Testing Report- Production" preserve-order="true">-->
+    <!--    <test name="Smoke Testing Result- Production" preserve-order="true">-->
     <!--        <parameter name="environment" value="https://www.sporter.com" />-->
     <!--        <parameter name="browser" value="edge" />-->
     <!--        <parameter name="country" value="en-qa" />-->
     <!--        <groups>-->
     <!--            <run>-->
-    <!--                <include name="Smoke Testing Report"/>-->
+    <!--                <include name="Smoke Testing Result"/>-->
     <!--            </run>-->
     <!--        </groups>-->
     <!--        <classes>-->
