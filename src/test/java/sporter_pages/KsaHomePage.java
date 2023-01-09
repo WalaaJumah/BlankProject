@@ -62,9 +62,7 @@ public class KsaHomePage extends BasePage {
     private WebElement topSellingStacksHeader;
     @FindBy(xpath = "//h2[text()='Top Selling Stacks']")
     private WebElement topSellerHeader;
-//    @FindBy(xpath = "//div[@class='shop-category-slider swiper-container swiper-container-horizontal']")
-//    private WebElement shopByCategorySections;
-    @FindBy(xpath = "//ul[@class='swiper-wrapper clearfix']")
+    @FindBy(xpath = "//div[@class='shop-category-slider swiper-container swiper-container-horizontal']")
     private WebElement shopByCategorySections;
     @FindBy(xpath = "//*[@class='tab_content tab_content39']")
     private WebElement topSellingStacksSections;
@@ -325,7 +323,7 @@ dataHelperAndWait.waitToBeVisible(homePageRotatingSlider,5,webDriver);
 
     public WebElement getShopByCategorySections() {
         dataHelperAndWait= new DataHelperAndWait();
-        dataHelperAndWait.waitToBeVisible(shopByCategorySections,6,webDriver);
+        dataHelperAndWait.waitToBeVisible(shopByCategorySections,5,webDriver);
         return shopByCategorySections;
     }
 

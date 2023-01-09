@@ -80,7 +80,7 @@ public class AEFooterPageTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"Footer Section","Smoke Testing Result","Low Severity"},description = " Footer Section- Verify the Join Our NEWSLETTER section that appears in the footer section is displayed correctly", priority = 2)
+    @Test(groups = "Smoke Testing Result",description = " Footer Section- Verify the Join Our NEWSLETTER section that appears in the footer section is displayed correctly", priority = 2)
     public void verifyJoinOurNewsletterSectionIsDisplayedCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         Assert.assertTrue(aeFooterPage.getNewsletterBlock().isDisplayed());
@@ -90,7 +90,7 @@ public class AEFooterPageTestCases extends BaseTest {
         Assert.assertTrue(aeFooterPage.getJoinBtnInNewsletterBlock().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section","Smoke Testing Result","Medium Severity"},description = " Footer Section- Make sure the user(Male) can join sporter NEWSLETTER correctly", priority = 3)
+    @Test(groups = "Smoke Testing Result",description = " Footer Section- Make sure the user(Male) can join sporter NEWSLETTER correctly", priority = 3)
     public void verifyAbilityToJoinSporterNewsletterWithMaleOptionCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.fillInemailFieldInNewsletterBlock(aeFooterPage.generateRandomEmail());
@@ -99,7 +99,7 @@ public class AEFooterPageTestCases extends BaseTest {
         Assert.assertTrue(aeFooterPage.getSubscriptionSuccessfulMsg().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section","Smoke Testing Result","Medium Severity"},description = " Footer Section- Make sure the user(Female) can join sporter NEWSLETTER correctly", priority = 4)
+    @Test(groups = "Smoke Testing Result",description = " Footer Section- Make sure the user(Female) can join sporter NEWSLETTER correctly", priority = 4)
     public void verifyAbilityToJoinSporterNewsletterWithFemaleOptionCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();

@@ -117,14 +117,10 @@ public class AeProductDetailsPage extends BasePage {
     private WebElement firstProductFlavor;
     @FindBy(xpath = "(//div[@index='5'])[1]")
     private WebElement firstProductSize;
-    @FindBy(xpath = "(//form/div/div/div/div/div/div)[1]")
+    @FindBy(xpath = "//div[@id='option-label-size-165-item-10245']")
     private WebElement firstsimple;
-//    @FindBy(xpath = "//div[@id='option-label-size-165-item-10245']")
-//    private WebElement firstsimple;
-    @FindBy(xpath = "(//form/div/div/div/div/div/div)[2]")
+    @FindBy(xpath = "//div[@id='option-label-size-165-item-10042']")
     private WebElement secondsimple;
-//    @FindBy(xpath = "//div[@id='option-label-size-165-item-10042']")
-//    private WebElement secondsimple;
 
     @FindBy(xpath = "//div[@class='swatch-option text' and @index='1']")
     private WebElement secondProductSize;
@@ -252,7 +248,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public WebElement getReviewToastMsg() {
-        DataHelperAndWait.waitToBeVisible(reviewToastMsg, 6, webDriver);
+        DataHelperAndWait.waitToBeVisible(reviewToastMsg, 5, webDriver);
         return reviewToastMsg;
     }
 
@@ -362,33 +358,18 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void addToCart() {
-        try{
         DataHelperAndWait.waitToBeClickable(addToCartBtn, 5, webDriver);
-        this.addToCartBtn.click();}
-        catch(Exception e){
-            DataHelperAndWait.waitToBeClickable(addToCartBtn, 5, webDriver);
-            this.addToCartBtn.click();
-        }
+        this.addToCartBtn.click();
     }
 
     public void keepShopping() {
-        try{
         DataHelperAndWait.waitToBeVisible(keepShippingBtn, 5, webDriver);
-        this.keepShippingBtn.click();}
-        catch (Exception e){
-            DataHelperAndWait.waitToBeVisible(keepShippingBtn, 5, webDriver);
-            this.keepShippingBtn.click();
-        }
+        this.keepShippingBtn.click();
     }
 
     public void viewCart() {
-        try{
-        DataHelperAndWait.waitToBeClickable(viewCartBtn, 6, webDriver);
-        this.viewCartBtn.click();}
-        catch(Exception e){
-            DataHelperAndWait.waitToBeClickable(viewCartBtn, 6, webDriver);
-            this.viewCartBtn.click();
-        }
+        DataHelperAndWait.waitToBeClickable(viewCartBtn, 5, webDriver);
+        this.viewCartBtn.click();
     }
 
     public void clickOnSearchBtn() {
@@ -506,10 +487,7 @@ public class AeProductDetailsPage extends BasePage {
         DataHelperAndWait.waitToBeVisible(nickNameField, 5, webDriver);
         this.nickNameField.sendKeys(nickName);
         DataHelperAndWait.waitToBeClickable(submitReviewButton, 5, webDriver);
-        DataHelperAndWait.waitToBeClickable(submitReviewButton,6,webDriver);
         this.submitReviewButton.click();
-        //Test123456789
-        //Test123456789
     }
 
     public void clickOnBreadcrumbHomePage() {
@@ -600,11 +578,11 @@ public class AeProductDetailsPage extends BasePage {
         this.firstProductSize.click();
     }
     public void clickOnFirstsimple() {
-        DataHelperAndWait.waitToBeVisible(firstsimple, 5, webDriver);
+        DataHelperAndWait.isDisplayed(firstsimple, 5, webDriver);
         this.firstsimple.click();
     }
     public void clickOnSecondimple() {
-        DataHelperAndWait.waitToBeVisible(secondsimple, 5, webDriver);
+        DataHelperAndWait.isDisplayed(secondsimple, 5, webDriver);
         this.secondsimple.click();
     }
 

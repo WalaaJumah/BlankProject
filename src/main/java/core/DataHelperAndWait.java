@@ -177,7 +177,6 @@ public  class DataHelperAndWait  {
             int i = 2;
             do {
                 String pageNumber = Integer.toString(i);
-                DataHelperAndWait.waitToBeClickable(element,5,webDriver);
                 element.click();
 //                DataHelperAndWait.waitForTime(6000);
                 DataHelperAndWait.waitForUrlContains(pageNumber,webDriver,9);

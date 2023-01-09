@@ -34,12 +34,9 @@ public class AEGuestUserPage extends BasePage {
     private WebElement aeCountry;
     @FindBy(css = " div.checkout-total-payment > ul > li:nth-child(1) > button ")
     private WebElement proceedCheckoutBtn;
-
-
-
     @FindBy(xpath = "//a[@class='action showcart']")
-    private WebElement cartIcon;
-    @FindBy(id = "top-cart-btn-checkout")
+    private WebElement carticon;
+    @FindBy(xpath = "//button[@id='top-cart-btn-checkout']")
     private WebElement proceedCheckoutBtnInCartPopup;
     @FindBy(xpath = "//button[@value='Apply']")
     private WebElement applyCopouneCodeBtn;
@@ -253,10 +250,6 @@ public class AEGuestUserPage extends BasePage {
         DataHelperAndWait.waitToBeVisible(emailValidationFormateMsg,6,webDriver);
         return emailValidationFormateMsg;
     }
-    public WebElement getCartIcon() {
-        DataHelperAndWait.waitToBeVisible(cartIcon,5,webDriver);
-        return cartIcon;
-    }
 
 
     //Define the main actions we need to execute our TCs
@@ -276,8 +269,8 @@ public class AEGuestUserPage extends BasePage {
     }
 
     public void clickOnCartIcon() {
-        DataHelperAndWait.waitToBeClickable(cartIcon, 6,webDriver);
-        cartIcon.click();
+        DataHelperAndWait.waitToBeVisible(carticon, 7,webDriver);
+        this.carticon.click();
     }
 
     public void clickOnProceedCheckoutBtnInCartPopup() {
@@ -311,7 +304,7 @@ public class AEGuestUserPage extends BasePage {
 
     public void clickOnGuestCheckoutBtn() {
         try {
-            DataHelperAndWait.waitToBeClickable(guestCheckoutBtn, 5,webDriver);
+            DataHelperAndWait.waitToBeClickable(guestCheckoutBtn, 3,webDriver);
             this.guestCheckoutBtn.click();
         } catch (Exception e) {
             DataHelperAndWait.waitToBeClickable(guestCheckoutBtn, 3,webDriver);

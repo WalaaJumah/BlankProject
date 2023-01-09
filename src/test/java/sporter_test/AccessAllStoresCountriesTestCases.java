@@ -9,7 +9,6 @@ package sporter_test;
 import core.BasePage;
 import core.BaseTest;
 import core.DataHelperAndWait;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.AccessAllStoresCountriesPage;
@@ -20,7 +19,7 @@ import sporter_pages.QatarHomePage;
 import java.util.ArrayList;
 
 public class AccessAllStoresCountriesTestCases extends BaseTest {
-    @Test(groups = {"Smoke Testing Result","Critical Severity"},description = "Ability to access all stores", priority = 1)
+    @Test(groups = "Smoke Testing Result",description = "Ability to access all stores", priority = 1)
     public void accessAllCountries(){
         AccessAllStoresCountriesPage accessAllStoresCountriesPage = new AccessAllStoresCountriesPage(webDriver);
         ArrayList<String> expectedOption = new ArrayList<>() {{
@@ -38,10 +37,9 @@ public class AccessAllStoresCountriesTestCases extends BaseTest {
         for(int i=0; i<accessAllStoresCountriesPage.getListOfCountry().size();i++){
             DataHelperAndWait.waitToBeVisible(accessAllStoresCountriesPage.getCountryList(),5,webDriver);
             accessAllStoresCountriesPage.getCountryList().click();
-            DataHelperAndWait.waitToBeVisible(accessAllStoresCountriesPage.getListOfCountry().get(i),5,webDriver);
             accessAllStoresCountriesPage.getListOfCountry().get(i).click();
-            DataHelperAndWait.waitForUrlContains(expectedOption.get(i),webDriver,6);
-            Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedOption.get(i)),"Incorret URL: "+ webDriver.getCurrentUrl()+" While the Expected URL is: "+BasePage.BaseURL+expectedOption.get(i));
+            DataHelperAndWait.waitForUrlContains(expectedOption.get(i),webDriver,5);
+            Assert.assertTrue(webDriver.getCurrentUrl().contains(BasePage.BaseURL+expectedOption.get(i)));
             System.out.println("The Current URL is: "+webDriver.getCurrentUrl()+"  And the Expected URL is:  "+BasePage.BaseURL+expectedOption.get(i));
         }
 
