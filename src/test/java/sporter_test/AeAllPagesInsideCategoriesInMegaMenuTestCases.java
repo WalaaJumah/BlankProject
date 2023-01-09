@@ -21,7 +21,7 @@ import sporter_pages.AeWomenOnlyCategoryPage;
 public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
     private Actions action;
 
-    @Test(description = "Switching to UAE store", priority = 1)
+    @Test(groups = "Smoke Testing Result",description = "Switching to UAE store", priority = 1)
     public void switchToUaeStore(){
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeWomenOnlyCategoryPage.switchToAECountry();
@@ -3029,7 +3029,7 @@ public void verifyAbilityToAccessAllPagesInsidePersonalCareOptionCategoryRelated
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(groups = "Smoke Testing Result",description = "MegaMenu- Make Sure the ability to access all pages inside Showering Option Sub-Category related to the Sports Category ", priority = 160)
+ @Test(groups = {"Brands Page","Smoke Testing Result","Medium Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Showering Option Sub-Category related to the Sports Category ", priority = 160)
 public void verifyAbilityToAccessAllPagesInsideShoweringOptionCategoryRelatedToSportsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3048,7 +3048,7 @@ public void verifyAbilityToAccessAllPagesInsideShoweringOptionCategoryRelatedToS
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(groups = "Smoke Testing Result",description = "MegaMenu- Make Sure the ability to access all pages inside Shaving Option Sub-Category related to the Sports Category ", priority = 161)
+ @Test(groups = {"Brands Page","Smoke Testing Result","Medium Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Shaving Option Sub-Category related to the Sports Category ", priority = 161)
 public void verifyAbilityToAccessAllPagesInsideShavingOptionCategoryRelatedToSportsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3068,7 +3068,7 @@ public void verifyAbilityToAccessAllPagesInsideShavingOptionCategoryRelatedToSpo
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
     //There's a bug here due to the option is duplicated
- @Test(groups = "Smoke Testing Result",description = "MegaMenu- Make Sure the ability to access all pages inside Skin Care Option Sub-Category related to the Sports Category ", priority = 162)
+ @Test(groups = {"Brands Page","Smoke Testing Result","Medium Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Skin Care Option Sub-Category related to the Sports Category ", priority = 162)
 public void verifyAbilityToAccessAllPagesInsideSkinCareOptionCategoryRelatedToSportsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);

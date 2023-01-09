@@ -22,7 +22,7 @@ public class AeRecommendedProductsTestCases extends BaseTest {
             CloseInitialDialog();          }
     }
 
-    @Test(groups = "Smoke Testing Result",description = "Recommended Products Pop-up- Make sure the keep shopping button appearing the Recommended products works correctly ", priority = 2)
+    @Test(groups = {"Product Page","Smoke Testing Result","Critical Severity"},description = "Recommended Products Pop-up- Make sure the keep shopping button appearing the Recommended products works correctly ", priority = 2)
     public void verifyKeepShoppingBtnWorksCorrectly() {
         AeProductDetailsPage  aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.displayTheProduct();
@@ -32,7 +32,7 @@ public class AeRecommendedProductsTestCases extends BaseTest {
         Assert.assertEquals(webDriver.getCurrentUrl(), currentURL);
     }
 
-    @Test(groups = "Smoke Testing Result",description = "Recommended Products Pop-up- Make sure the view Cart button appearing the Recommended products works correctly ", priority =3)
+    @Test(groups = {"Product Page","Smoke Testing Result","Critical Severity"},description = "Recommended Products Pop-up- Make sure the view Cart button appearing the Recommended products works correctly ", priority =3)
     public void verifyViewCartWorksBtnCorrectly() {
         AeRecommendedProductsPage  aeRecommendedProductspage = new AeRecommendedProductsPage(webDriver);
         AeProductDetailsPage  aeProductDetailsPage = new AeProductDetailsPage(webDriver);
@@ -90,7 +90,7 @@ public class AeRecommendedProductsTestCases extends BaseTest {
         Assert.assertTrue(aeProductDetailsPage.getViewCartBtn().isDisplayed());
     }
 
-    @Test(groups = "Smoke Testing Result",description = "Recommended Products Pop-up- Make sure ability to add Recommended product to the cart", priority = 7)
+    @Test(groups = {"Product Page","Smoke Testing Result","High Severity"},description = "Recommended Products Pop-up- Make sure ability to add Recommended product to the cart", priority = 7)
     public void verifyAbilityToAddRecommendedProductToCart() {
         AeRecommendedProductsPage aeRecommendedProductspage = new AeRecommendedProductsPage(webDriver);
         AeProductDetailsPage  aeProductDetailsPage = new AeProductDetailsPage(webDriver);
