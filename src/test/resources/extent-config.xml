@@ -3,7 +3,7 @@
     <configuration>
         <!-- report theme -->
         <!-- standard, dark -->
-        <theme>dark</theme>
+        <theme>standard</theme>
         <!--        <theme>standard</theme>-->
 
         <!-- document encoding -->
@@ -62,7 +62,7 @@
   $('#dashboard-view > div.system-view > div').hide();
 
 <!--To Hide Category Section-->
-<!--              $('#dashboard-view > div.category-summary-view > div').hide();-->
+              $('#dashboard-view > div.category-summary-view > div').hide();
 <!--To display Dashboard tab by defualt-->
            $('#slide-out > li:nth-child(4)').click();
 
@@ -80,6 +80,19 @@
               $('#dashboard-view > div.time-totals > div:nth-child(3) > div > span.panel-name').html("Test Duration");
 <!--6 Jan, 2023: To relocte the Test Chart wedgit-->
               $('<div class="row">&nbsp;</div>').insertAfter('#dashboard-view > div.time-totals');
+
+
+
+
+
+<!--Display the Critical Severity in Red color-->
+              $('#cat-collection > li:nth-child(3) > div.cat-head > span').css('color', 'red');
+<!--Display the High Severity in Orang color-->
+              $('#cat-collection > li:nth-child(7) > div.cat-head > span').css('color', 'orange');
+<!--Display the Medium Severity in darkblue color-->
+              $('#cat-collection > li:nth-child(10) > div.cat-head > span').css('color', 'darkblue');
+<!--Display the Low Severity in blue color-->
+              $('#cat-collection > li:nth-child(9) > div.cat-head > span').css('color', 'blue');
 
 
 
@@ -104,6 +117,8 @@
            .report-name { padding-left: 20px;width: auto;display: revert; font-size:20px } .report-name > img { float: left;height: 90%;margin-left: 2px;margin-top: 2px;width: auto; }
            .report-headline {font-size:20px}
 
+
+.span.fail.label.dot { font-size: auto!important;width: auto;height: auto;}
 
 
 

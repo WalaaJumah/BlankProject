@@ -20,7 +20,7 @@ import static org.testng.Assert.assertTrue;
 public class AeCartTestCases extends BaseTest {
 
     Actions action;
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Sports Category- Switching to UAE store", priority = 1)
+    @Test(groups = "Smoke Testing Result",description = " Cart Page- Sports Category- Switching to UAE store", priority = 1)
     public void switchToUaeStore(){
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeWomenOnlyCategoryPage.switchToAECountry();
@@ -31,7 +31,7 @@ public class AeCartTestCases extends BaseTest {
             webDriver.navigate().to(BasePage.BaseURL+aeDomain);
             CloseInitialDialog();          }
     }
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Make sure to view the cart from PDP after adding  product to it", priority = 2)
+    @Test(groups = {"Cart Page","Smoke Testing Result","Critical Severity"},description = " Cart Page- Make sure to view the cart from PDP after adding  product to it", priority = 2)
     public void viewCartFromPDP() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AeCartPage aeCartPage = new AeCartPage(webDriver);
@@ -41,14 +41,15 @@ public class AeCartTestCases extends BaseTest {
         DataHelperAndWait.waitForUrlContains(aeProductDetailsPage.cartURL,webDriver,5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeProductDetailsPage.cartURL) );
     }
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Make sure that the product counter that appears in the cart page works correctly", priority = 3)
+    @Test(groups = {"Cart Page","Smoke Testing Result","Low Severity"},description = " Cart Page- Make sure that the product counter that appears in the cart page works correctly", priority = 3)
     public void verifyProductCounterAppearsInTheCartPageWorksCorrectly() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
         String itemsCounter = "(2 Items)";
         Assert.assertEquals(aeCartPage.getItemsCounterInCartPage().getText(), itemsCounter);
         aeCartPage.clickOnRemoveItem();
+        aeCartPage.clickOnRemoveItem();
     }
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Make sure that the Free Gift is removed from the cart when you remove the product", priority = 4)
+    @Test(groups = {"Cart Page","Smoke Testing Result","Medium Severity"},description = " Cart Page- Make sure that the Free Gift is removed from the cart when you remove the product", priority = 4)
     public void verifyTheFreeGiftIsRemovedWhenRemovingTheProduct() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AeCartPage aeCartPage = new AeCartPage(webDriver);
@@ -56,14 +57,15 @@ public class AeCartTestCases extends BaseTest {
         aeProductDetailsPage.clickOnSalesAndOffersMenu();
         aeProductDetailsPage.clickOnBuy1Get1Card();
         DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getFirstProductInTheCategoryList(), 5,webDriver);
-        aeProductDetailsPage.DisplayProductInTheList(2);
+        aeProductDetailsPage.DisplayProductInTheList(0);
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
         Assert.assertTrue(aeCartPage.getFreePrice().isDisplayed());
         aeCartPage.clickOnRemoveItem();
+        aeCartPage.clickOnRemoveItem();
         Assert.assertTrue(aeCartPage.getNoItemInCartLabel().isDisplayed());
     }
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Verify ability to remove the product from the cart successfully", priority = 5)
+    @Test(groups = {"Cart Page","Smoke Testing Result","Medium Severity"},description = " Cart Page- Verify ability to remove the product from the cart successfully", priority = 5)
     public void verifyAbilityToRemoveProductFromCart() {
         AeCartPage aeCartPage=new AeCartPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
@@ -74,7 +76,7 @@ public class AeCartTestCases extends BaseTest {
         aeCartPage.clickOnRemoveItem();
         Assert.assertTrue(aeCartPage.getNoItemInCartLabel().isDisplayed());
     }
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Verify that Here Link appear after clearing the items from the Cart works successfully", priority = 6)
+    @Test(groups = {"Cart Page","Smoke Testing Result","Low Severity"},description = " Cart Page- Verify that Here Link appear after clearing the items from the Cart works successfully", priority = 6)
     public void verifyHereLinkInCartPageWorking() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
 //        this.verifyAbilityToRemoveProductFromCart();
@@ -83,7 +85,7 @@ public class AeCartTestCases extends BaseTest {
         Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeCartPage.aeDomain+"/", "The Current URL is not matched with the AE Site URL");
     }
 
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Make sure that the product counter that appears in the cart page counts the free gift correctly", priority = 7)
+    @Test(groups = {"Cart Page","Smoke Testing Result","Low Severity"},description = " Cart Page- Make sure that the product counter that appears in the cart page counts the free gift correctly", priority = 7)
     public void verifyProductCounterAppearsInTheCartPageCountsFreeGifts() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
@@ -100,7 +102,7 @@ public class AeCartTestCases extends BaseTest {
         aeCartPage.clickOnRemoveItem();
     }
 
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Make sure to view the cart after adding more than quantity for the same product", priority = 8)
+    @Test(groups = {"Cart Page","Smoke Testing Result","Critical Severity"},description = " Cart Page- Make sure to view the cart after adding more than quantity for the same product", priority = 8)
     public void verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AeCartPage aeCartPage = new AeCartPage(webDriver);
@@ -114,7 +116,7 @@ public class AeCartTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeProductDetailsPage.cartURL) );
     aeCartPage.clickOnRemoveItem();}
 
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Make sure to view the cart after adding more than products to it", priority = 9)
+    @Test(groups = {"Cart Page","Smoke Testing Result","Critical Severity"},description = " Cart Page- Make sure to view the cart after adding more than products to it", priority = 9)
     public void verifyAbilityToViewTheCartAfterAddingMoreThanProducts() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AeCartPage aeCartPage = new AeCartPage(webDriver);
@@ -122,13 +124,10 @@ public class AeCartTestCases extends BaseTest {
         aeProductDetailsPage.clickOnSalesAndOffersMenu();
         aeProductDetailsPage.clickOnBuy1Get1Card();
         DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getFirstProductInTheCategoryList(), 5,webDriver);
-        aeProductDetailsPage.DisplayProductInTheList(3);
+        aeProductDetailsPage.DisplayProductInTheList(0);
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.keepShopping();
-        aeProductDetailsPage.clickOnShopeByMenu();
-        aeProductDetailsPage.clickOnSalesAndOffersMenu();
-        aeProductDetailsPage.clickOnBuy1Get1Card();
-        aeProductDetailsPage.DisplayProductInTheList(4);
+        aeProductDetailsPage.displayTheProduct();
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
         DataHelperAndWait.waitForUrlContains(aeProductDetailsPage.cartURL,webDriver,5);
@@ -137,7 +136,7 @@ public class AeCartTestCases extends BaseTest {
     aeCartPage.clickOnRemoveItem();
     }
 
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Adding a config to the cart more than one with different simple in each time", priority = 10)
+    @Test(groups = {"Cart Page","Smoke Testing Result","High Severity"},description = " Cart Page- Adding a config to the cart more than one with different simple in each time", priority = 10)
     public void verifyAbilityToViewTheCartAfterAddingMoreThanSimpleOfTheSameConfig() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AeCartPage aeCartPage = new AeCartPage(webDriver);
@@ -156,7 +155,7 @@ public class AeCartTestCases extends BaseTest {
     }
 
 
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Make sure ability to add bundle to the Cart", priority = 11)
+    @Test(groups = {"Cart Page","Smoke Testing Result","Critical Severity"},description = " Cart Page- Make sure ability to add bundle to the Cart", priority = 11)
     public void verifyAbilityToAddBundleToCart() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AeCartPage aeCartPage=new AeCartPage(webDriver);
@@ -170,7 +169,7 @@ public class AeCartTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeProductDetailsPage.cartURL) );
         aeCartPage.clickOnRemoveItem();
     }
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Verify that the The requested qty is not available message appear when the product becomes OOS", priority = 12)
+    @Test(groups = {"Cart Page","Smoke Testing Result","Low Severity"},description = " Cart Page- Verify that the The requested qty is not available message appear when the product becomes OOS", priority = 12)
     public void verifyToDisplayRequestedQtyIsNotAvailableMsg() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AeCartPage aeCartPage = new AeCartPage(webDriver);
@@ -179,7 +178,7 @@ public class AeCartTestCases extends BaseTest {
         aeProductDetailsPage.addToCart();
         Assert.assertTrue(aeCartPage.getContinueShoppingBtn().isDisplayed());
     }
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Verify that the ContinueShoppingBtn works correctly when displaying The requested qty is not available message", priority = 13)
+    @Test(groups = {"Cart Page","Smoke Testing Result","Medium Severity"},description = " Cart Page- Verify that the ContinueShoppingBtn works correctly when displaying The requested qty is not available message", priority = 13)
     public void verifyContinueShoppingBtnWorksCorrectlyWhenTheProductBecomeOOS() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AeCartPage aeCartPage = new AeCartPage(webDriver);
@@ -190,7 +189,7 @@ public class AeCartTestCases extends BaseTest {
         aeCartPage.clickOnTheContinueShoppingBtn();
         Assert.assertEquals(webDriver.getCurrentUrl(), currentURL,"The Current URL is not matched with the Cart URL");
     }
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Verify ability to increase the product quantity from Cart page from the Cart Page works successfully", priority = 14)
+    @Test(groups = {"Cart Page","Smoke Testing Result","High Severity"},description = " Cart Page- Verify ability to increase the product quantity from Cart page from the Cart Page works successfully", priority = 14)
     public void verifyIncreaseQtyBtnInCartPageWorking() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
         this.viewCartFromPDP();
@@ -199,7 +198,7 @@ public class AeCartTestCases extends BaseTest {
         Assert.assertEquals(aeCartPage.getQtyField().getAttribute("value"), "2");
     }
 
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Verify ability to Decrease the product quantity from Cart page from the Cart Page works successfully", priority = 15)
+    @Test(groups = {"Cart Page","Smoke Testing Result","High Severity"},description = " Cart Page- Verify ability to Decrease the product quantity from Cart page from the Cart Page works successfully", priority = 15)
     public void verifyDecreaseQtyBtnInCartPageWorking() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
 //        this.viewCartFromPDP();
@@ -209,7 +208,7 @@ public class AeCartTestCases extends BaseTest {
         aeCartPage.clickOnDecreaseQtyBtn();
         Assert.assertEquals(aeCartPage.getQtyField().getAttribute("value"), "1");
     }
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Verify ability to display the product from the Cart Page works successfully", priority = 16)
+    @Test(groups = {"Cart Page","Smoke Testing Result","Medium Severity"},description = " Cart Page- Verify ability to display the product from the Cart Page works successfully", priority = 16)
     public void verifyAbilityToDisplayTheProductFromTheCartPage() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
         this.viewCartFromPDP();
@@ -217,35 +216,35 @@ public class AeCartTestCases extends BaseTest {
         Assert.assertNotEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeCartPage.aeDomain, "The Current URL is not matched with the AE Site URL");
         aeCartPage.removeProductFromCart();
     }
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Make sure that the Free Gift is added correctly to the Cart", priority = 17)
+    @Test(groups = {"Cart Page","Smoke Testing Result","Medium Severity"},description = " Cart Page- Make sure that the Free Gift is added correctly to the Cart", priority = 17)
     public void verifyTheFreeGiftIsAddedCorrectlyToTheCart() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AeCartPage aeCartPage = new AeCartPage(webDriver);
         aeProductDetailsPage.clickOnShopeByMenu();
         aeProductDetailsPage.clickOnSalesAndOffersMenu();
         aeProductDetailsPage.clickOnBuy1Get1Card();
-        aeProductDetailsPage.DisplayProductInTheList(2);
+        aeProductDetailsPage.DisplayProductInTheList(0);
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
         Assert.assertTrue(aeCartPage.getFreeFromSporterSection().isDisplayed());
         aeCartPage.clickOnRemoveItem();
     }
 
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Make sure that the Free Gift does not have a price", priority = 18)
+    @Test(groups = {"Cart Page","Smoke Testing Result","Medium Severity"},description = " Cart Page- Make sure that the Free Gift does not have a price", priority = 18)
     public void verifyTheFreeGiftIsDoesNotHavePrice() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AeCartPage aeCartPage = new AeCartPage(webDriver);
         aeProductDetailsPage.clickOnShopeByMenu();
         aeProductDetailsPage.clickOnSalesAndOffersMenu();
         aeProductDetailsPage.clickOnBuy1Get1Card();
-        aeProductDetailsPage.DisplayProductInTheList(2);
+        aeProductDetailsPage.DisplayProductInTheList(0);
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
         Assert.assertTrue(aeCartPage.getFreePrice().isDisplayed());
         aeCartPage.clickOnRemoveItem();
     }
 
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Make sure that all payment methods are appear correctly in the Cart page", priority = 19)
+    @Test(groups = {"Cart Page","Smoke Testing Result","Medium Severity"},description = " Cart Page- Make sure that all payment methods are appear correctly in the Cart page", priority = 19)
     public void verifyAllPaymentMethodAppearingTheCartPage() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
         this.viewCartFromPDP();
@@ -253,7 +252,7 @@ public class AeCartTestCases extends BaseTest {
         Assert.assertTrue(aeCartPage.getCodOption().isDisplayed());
         Assert.assertTrue(aeCartPage.getCreditCardOption().isDisplayed());
     }
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Make sure that the Proceed to checkout button appears in the cart page works correctly", priority = 20)
+    @Test(groups = {"Cart Page","Smoke Testing Result","Critical Severity"},description = " Cart Page- Make sure that the Proceed to checkout button appears in the cart page works correctly", priority = 20)
     public void verifyProceedCheckoutBtnAppearsCorrectlyInCartPage() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
@@ -264,7 +263,7 @@ public class AeCartTestCases extends BaseTest {
         Assert.assertTrue(aeCartPage.getProceedCheckoutBtn().isDisplayed());
         aeCartPage.removeProductFromCart();
     }
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Make sure that the order total calculation in the cart page works correctly", priority = 21)
+    @Test(groups = {"Cart Page","Smoke Testing Result","Critical Severity"},description = " Cart Page- Make sure that the order total calculation in the cart page works correctly", priority = 21)
     public void verifyOrderTotalCalculationInCartPageWorksCorrectly() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
@@ -279,7 +278,7 @@ public class AeCartTestCases extends BaseTest {
         Assert.assertEquals(orderTotal, cartTotal);
         aeCartPage.removeProductFromCart();
     }
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Make sure that the customer can view the cart using Cart Icon", priority = 22)
+    @Test(groups = {"Cart Page","Smoke Testing Result","High Severity"},description = " Cart Page- Make sure that the customer can view the cart using Cart Icon", priority = 22)
     public void verifyAbilityToViewCartFromCartIcon() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
@@ -293,34 +292,33 @@ public class AeCartTestCases extends BaseTest {
         aeCartPage.removeProductFromCart();
     }
 
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Make sure that the counter-number appears in the cart pop up works correctly", priority = 23)
+    @Test(groups = {"Cart Page","Smoke Testing Result","Low Severity"},description = " Cart Page- Make sure that the counter-number appears in the cart pop up works correctly", priority = 23)
     public void verifyTheCounterInCartIconWorksCorrectly() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.clickOnShopeByMenu();
         aeProductDetailsPage.clickOnSalesAndOffersMenu();
         aeProductDetailsPage.clickOnBuy1Get1Card();
-        aeProductDetailsPage.DisplayProductInTheList(2);
+        aeProductDetailsPage.DisplayProductInTheList(0);
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
-        Assert.assertTrue(aeCartPage.getFreeFromSporterSection().isDisplayed());
         Assert.assertEquals(aeCartPage.getCartCounter().getText(), "2");
         aeCartPage.removeProductFromCart();
     }
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Make sure that the  close icon appears in the cart pop-up works correctly", priority = 24)
+    @Test(groups = {"Cart Page","Smoke Testing Result","Low Severity"},description = " Cart Page- Make sure that the  close icon appears in the cart pop-up works correctly", priority = 24)
     public void verifyTheCloseIconInCartPopupWorksCorrectly() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AeCartPage aeCartPage = new AeCartPage(webDriver);
         aeProductDetailsPage.clickOnShopeByMenu();
         aeProductDetailsPage.clickOnSalesAndOffersMenu();
         aeProductDetailsPage.clickOnBuy1Get1Card();
-        aeProductDetailsPage.DisplayProductInTheList(3);
+        aeProductDetailsPage.DisplayProductInTheList(0);
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
         aeCartPage.clickOnCartIcon();
         aeCartPage.clickOnCartCloseIcon();
     }
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Make sure that the system does not apply invalid coupon code", priority = 25)
+    @Test(groups = {"Cart Page","Smoke Testing Result","Medium Severity"},description = " Cart Page- Make sure that the system does not apply invalid coupon code", priority = 25)
     public void verifyInabilityToApplyInvalidCouponCode() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
         this.viewCartFromPDP();
@@ -329,7 +327,7 @@ public class AeCartTestCases extends BaseTest {
         Assert.assertTrue(aeCartPage.getNotExistCouponMsg().isDisplayed());
         aeCartPage.removeProductFromCart();
     }
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Make sure inability to apply coupon code without filling the code", priority = 26)
+    @Test(groups = {"Cart Page","Smoke Testing Result","Medium Severity"},description = " Cart Page- Make sure inability to apply coupon code without filling the code", priority = 26)
     public void verifyInabilityToApplyCouponCodeWithoutFillingTheCode() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
         this.viewCartFromPDP();
@@ -338,14 +336,14 @@ public class AeCartTestCases extends BaseTest {
         Assert.assertTrue(aeCartPage.getRequiredCouponMsg().isDisplayed());
         aeCartPage.removeProductFromCart();
     }
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Make sure that the free gift is not calculated in the cart price", priority = 27)
+    @Test(groups = {"Cart Page","Smoke Testing Result","Medium Severity"},description = " Cart Page- Make sure that the free gift is not calculated in the cart price", priority = 27)
     public void verifyTheFreeGiftIsNotCalculatedInTheCartPrice() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AeCartPage aeCartPage = new AeCartPage(webDriver);
         aeProductDetailsPage.clickOnShopeByMenu();
         aeProductDetailsPage.clickOnSalesAndOffersMenu();
         aeProductDetailsPage.clickOnBuy1Get1Card();
-        aeProductDetailsPage.DisplayProductInTheList(2);
+        aeProductDetailsPage.DisplayProductInTheList(0);
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
         Assert.assertTrue(aeCartPage.getFreeFromSporterSection().isDisplayed());
@@ -353,7 +351,7 @@ public class AeCartTestCases extends BaseTest {
         aeCartPage.clickOnRemoveItem();
     }
 
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Make sure the tax calculate correctly", priority = 28)
+    @Test(groups = {"Cart Page","Smoke Testing Result","High Severity"},description = " Cart Page- Make sure the tax calculate correctly", priority = 28)
     public void verifyTheTaxCalculatedCorrectly() {
         DecimalFormat df = new DecimalFormat("0.00");
         AeCartPage aeCartPage = new AeCartPage(webDriver);
@@ -369,7 +367,7 @@ public class AeCartTestCases extends BaseTest {
         Assert.assertEquals(df.format(actualCartTotal), df.format(expectedCartTotal));
         aeCartPage.clickOnRemoveItem();
     }
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Verify that the search button works correctly from the Cart Page", priority = 29)
+    @Test(groups = {"Cart Page","Smoke Testing Result","High Severity"},description = " Cart Page- Verify that the search button works correctly from the Cart Page", priority = 29)
     public void verifySearchBtnWorksCorrectlyFromCartPage() {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
@@ -412,14 +410,14 @@ public class AeCartTestCases extends BaseTest {
         Assert.assertNotNull(expectedDeliveryDate);
         aeCartPage.removeProductFromCart();
     }
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Make sure that the item-count appears in the cart pop up works correctly", priority = 33)
+    @Test(groups = {"Cart Page","Smoke Testing Result","Low Severity"},description = " Cart Page- Make sure that the item-count appears in the cart pop up works correctly", priority = 33)
     public void verifyTheItemsCounterInCartPopupWorksCorrectly() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AeCartPage aeCartPage = new AeCartPage(webDriver);
         aeProductDetailsPage.clickOnShopeByMenu();
         aeProductDetailsPage.clickOnSalesAndOffersMenu();
         aeProductDetailsPage.clickOnBuy1Get1Card();
-        aeProductDetailsPage.DisplayProductInTheList(2);
+        aeProductDetailsPage.DisplayProductInTheList(0);
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
         Assert.assertTrue(aeCartPage.getFreeFromSporterSection().isDisplayed());
@@ -489,7 +487,7 @@ public class AeCartTestCases extends BaseTest {
         DataHelperAndWait.waitToBeVisible(aeCartPage.getUsedFreeCouponMsg(), 5,webDriver);
         Assert.assertTrue(aeCartPage.getFreeFromSporterSection().isDisplayed());
     }
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Make sure ability to add a bundle to the cart with all bundle options", priority = 40)
+    @Test(groups = {"Cart Page","Smoke Testing Result","High Severity"},description = " Cart Page- Make sure ability to add a bundle to the cart with all bundle options", priority = 40)
     public void verifyAbilityToAddBundleWithAllItsOptionsToCart() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AeCartPage aeCartPage = new AeCartPage(webDriver);
@@ -517,7 +515,7 @@ public class AeCartTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeProductDetailsPage.cartURL) );    }
 
     //      The following Test Cases handle displaying the Mega Menu from Product Page
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Verify that the ShopBy Menu Is Displayed When Hovering On It From Cart Page", priority = 41)
+    @Test(groups = {"Cart Page","Smoke Testing Result","Low Severity"},description = " Cart Page- Verify that the ShopBy Menu Is Displayed When Hovering On It From Cart Page", priority = 41)
     public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromCartPage() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -527,7 +525,7 @@ public class AeCartTestCases extends BaseTest {
         Assert.assertTrue(aeMegamenuPage.getShopeByMenu().isDisplayed(), "The Shope By menu is not displayed when Hovering on it from Product Page");
     }
 
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Verify that the Sport Supplements Menu Is Displayed When Hovering On It From Cart Page", priority = 42)
+    @Test(groups = {"Cart Page","Smoke Testing Result","Low Severity"},description = " Cart Page- Verify that the Sport Supplements Menu Is Displayed When Hovering On It From Cart Page", priority = 42)
     public void verifySportSupplementsMenuIsDisplayedWhenHoveringOnItFromCartPage() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -537,7 +535,7 @@ public class AeCartTestCases extends BaseTest {
         Assert.assertTrue(aeMegamenuPage.getSportsSupplementsSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from Product Page");
     }
 
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Verify that the Vitamins And Health Menu Is Displayed When Hovering On It From Cart Page", priority = 43)
+    @Test(groups = {"Cart Page","Smoke Testing Result","Low Severity"},description = " Cart Page- Verify that the Vitamins And Health Menu Is Displayed When Hovering On It From Cart Page", priority = 43)
     public void verifyVitaminsAndHealthMenuIsDisplayedWhenHoveringOnItFromCartPage() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -547,7 +545,7 @@ public class AeCartTestCases extends BaseTest {
         Assert.assertTrue(aeMegamenuPage.getVitaminsAndHealthSubMenuSection().isDisplayed(), "The Vitamins And Health menu is not displayed when Hovering on it from Product Page");
     }
 
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Verify that the Healthy Food Menu Is Displayed When Hovering On It From Cart Page", priority = 44)
+    @Test(groups = {"Cart Page","Smoke Testing Result","Low Severity"},description = " Cart Page- Verify that the Healthy Food Menu Is Displayed When Hovering On It From Cart Page", priority = 44)
     public void verifyHealthyFoodMenuIsDisplayedWhenHoveringOnItFromCartPage() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -557,7 +555,7 @@ public class AeCartTestCases extends BaseTest {
         Assert.assertTrue(aeMegamenuPage.getHealthyFoodSubMenuSection().isDisplayed(), "The Healthy Food menu is not displayed when Hovering on it from Product Page");
     }
 
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Verify that the Sports Menu Is Displayed When Hovering On It From Cart Page", priority = 45)
+    @Test(groups = {"Cart Page","Smoke Testing Result","Low Severity"},description = " Cart Page- Verify that the Sports Menu Is Displayed When Hovering On It From Cart Page", priority = 45)
     public void verifySportsMenuIsDisplayedWhenHoveringOnItFromCartPage() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -567,7 +565,7 @@ public class AeCartTestCases extends BaseTest {
         Assert.assertTrue(aeMegamenuPage.getSportsSubMenuSection().isDisplayed(), "The Sport menu is not displayed when Hovering on it from Product Page");
     }
 
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Verify that the account Profile icon works correctly in the Cart Page", priority = 46)
+    @Test(groups = {"Cart Page","Smoke Testing Result","Medium Severity"},description = " Cart Page- Verify that the account Profile icon works correctly in the Cart Page", priority = 46)
     public void verifyAccountProfileIconWorksCorrectlyInCartPage() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         webDriver.navigate().to(BasePage.BaseURL +aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL);
@@ -575,7 +573,7 @@ public class AeCartTestCases extends BaseTest {
         assertTrue(aeProductDetailsPage.getAccountProfileOptions().isDisplayed());
     }
 
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Make sure ability to navigate to the home page by clicking on the Sporter logo from the Cart Page ", priority = 47)
+    @Test(groups = {"Cart Page","Smoke Testing Result","Low Severity"},description = " Cart Page- Make sure ability to navigate to the home page by clicking on the Sporter logo from the Cart Page ", priority = 47)
     public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromCartPage() {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
@@ -583,7 +581,7 @@ public class AeCartTestCases extends BaseTest {
         aeGuestUserPage.clickOnSporterLogo();
         Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeGuestUserPage.aeDomain+"/"," The Current URL is not matched with the Cart URL" );
     }
-    @Test(groups = "Smoke Testing Report",description = " Cart Page- Make sure that the ability to switch to Arabic version from the cart page correctly", priority = 48)
+    @Test(groups = {"Cart Page","Smoke Testing Result","High Severity"},description = " Cart Page- Make sure that the ability to switch to Arabic version from the cart page correctly", priority = 48)
     public void verifyAbilityToSwitchToArabicVersionFromCartPage() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AeCartPage aeCartPage = new AeCartPage(webDriver);

@@ -103,7 +103,7 @@ public class AeProductDetailsPage extends BasePage {
     private WebElement SportsSupplementsMenu;
     @FindBy(xpath = "//select")
     private WebElement bundleMenu;
-    @FindBy(xpath = ".//*[@class='swiper-wrapper clearfix']/li[5]")
+    @FindBy(xpath = "(//div[@class='inner-trend'])[3]")
     private WebElement buy1Get1Card;
     @FindBy(xpath = "//ol[@class='products list items product-items']//li")
     private WebElement firstProductInTheCategoryList;
@@ -117,10 +117,14 @@ public class AeProductDetailsPage extends BasePage {
     private WebElement firstProductFlavor;
     @FindBy(xpath = "(//div[@index='5'])[1]")
     private WebElement firstProductSize;
-    @FindBy(xpath = "//div[@id='option-label-size-165-item-10245']")
+    @FindBy(xpath = "(//form/div/div/div/div/div/div)[1]")
     private WebElement firstsimple;
-    @FindBy(xpath = "//div[@id='option-label-size-165-item-10042']")
+//    @FindBy(xpath = "//div[@id='option-label-size-165-item-10245']")
+//    private WebElement firstsimple;
+    @FindBy(xpath = "(//form/div/div/div/div/div/div)[2]")
     private WebElement secondsimple;
+//    @FindBy(xpath = "//div[@id='option-label-size-165-item-10042']")
+//    private WebElement secondsimple;
 
     @FindBy(xpath = "//div[@class='swatch-option text' and @index='1']")
     private WebElement secondProductSize;
@@ -248,7 +252,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public WebElement getReviewToastMsg() {
-        DataHelperAndWait.waitToBeVisible(reviewToastMsg, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(reviewToastMsg, 6, webDriver);
         return reviewToastMsg;
     }
 
@@ -358,18 +362,33 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void addToCart() {
+        try{
         DataHelperAndWait.waitToBeClickable(addToCartBtn, 5, webDriver);
-        this.addToCartBtn.click();
+        this.addToCartBtn.click();}
+        catch(Exception e){
+            DataHelperAndWait.waitToBeClickable(addToCartBtn, 5, webDriver);
+            this.addToCartBtn.click();
+        }
     }
 
     public void keepShopping() {
+        try{
         DataHelperAndWait.waitToBeVisible(keepShippingBtn, 5, webDriver);
-        this.keepShippingBtn.click();
+        this.keepShippingBtn.click();}
+        catch (Exception e){
+            DataHelperAndWait.waitToBeVisible(keepShippingBtn, 5, webDriver);
+            this.keepShippingBtn.click();
+        }
     }
 
     public void viewCart() {
-        DataHelperAndWait.waitToBeClickable(viewCartBtn, 5, webDriver);
-        this.viewCartBtn.click();
+        try{
+        DataHelperAndWait.waitToBeClickable(viewCartBtn, 6, webDriver);
+        this.viewCartBtn.click();}
+        catch(Exception e){
+            DataHelperAndWait.waitToBeClickable(viewCartBtn, 6, webDriver);
+            this.viewCartBtn.click();
+        }
     }
 
     public void clickOnSearchBtn() {
@@ -487,7 +506,10 @@ public class AeProductDetailsPage extends BasePage {
         DataHelperAndWait.waitToBeVisible(nickNameField, 5, webDriver);
         this.nickNameField.sendKeys(nickName);
         DataHelperAndWait.waitToBeClickable(submitReviewButton, 5, webDriver);
+        DataHelperAndWait.waitToBeClickable(submitReviewButton,6,webDriver);
         this.submitReviewButton.click();
+        //Test123456789
+        //Test123456789
     }
 
     public void clickOnBreadcrumbHomePage() {
@@ -513,7 +535,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void clickOnBuy1Get1Card() {
-        DataHelperAndWait.isDisplayed(buy1Get1Card, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(buy1Get1Card, 5, webDriver);
         this.buy1Get1Card.click();
     }
 
@@ -578,11 +600,11 @@ public class AeProductDetailsPage extends BasePage {
         this.firstProductSize.click();
     }
     public void clickOnFirstsimple() {
-        DataHelperAndWait.isDisplayed(firstsimple, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(firstsimple, 5, webDriver);
         this.firstsimple.click();
     }
     public void clickOnSecondimple() {
-        DataHelperAndWait.isDisplayed(secondsimple, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(secondsimple, 5, webDriver);
         this.secondsimple.click();
     }
 

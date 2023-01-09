@@ -13,7 +13,7 @@ import static org.testng.Assert.*;
 public class AeSearchPageTestCases extends BaseTest {
     Actions action;
     
-    @Test(groups = "Smoke Testing Report",description = "Search Page- Switching to UAE store", priority = 1)
+    @Test(groups = "Smoke Testing Result",description = "Search Page- Switching to UAE store", priority = 1)
     public void switchToUaeStore(){
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeWomenOnlyCategoryPage.switchToAECountry();
@@ -25,7 +25,7 @@ public class AeSearchPageTestCases extends BaseTest {
             CloseInitialDialog();          }
     }
 
-    @Test(groups = "Smoke Testing Report",description = "Verify clicking on the search icon will redirect the user to the search screen", priority = 1)
+    @Test(groups = {"Search","Smoke Testing Result","Critical Severity"},description = "Verify clicking on the search button will redirect the user to the search screen", priority = 1)
     public void verifyClickingOnSearchIconWillRedirectUserTOTheSearchScreen() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -66,7 +66,7 @@ public class AeSearchPageTestCases extends BaseTest {
         }
     }
     //      The following Test Cases handle displaying the Mega Menu from search Page
-    @Test(groups = "Smoke Testing Report",description = "Search Page- Make sure all menus appearing in the Mega Menu are displayed correctly when hovering on them from Search page", priority = 4)
+    @Test(groups = {"Search","Smoke Testing Result","Medium Severity"},description = "Search Page- Make sure all menus appearing in the Mega Menu are displayed correctly when hovering on them from Search page", priority = 4)
     public void verifyAllMenusInMegaMenuAreDisplayedCorrectlyWhenHoveringOnItFromSearchPage() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -93,7 +93,7 @@ public class AeSearchPageTestCases extends BaseTest {
         assertTrue(aeSearchPage.getArticlesSectionInAllPage().isDisplayed(),"Articles Section in All tab is missing");
     }
     //There's a bug here due to the products list is not appear after visit the PDP then go to All search page
-    @Test(groups = "Smoke Testing Report",description = "Search Page- Make sure the ability to access all products appearing below the products section in the All Page", priority = 6)
+    @Test(groups = {"Search","Smoke Testing Result","High Severity"},description = "Search Page- Make sure the ability to access all products appearing below the products section in the All Page", priority = 6)
     public void verifyAbilityToAccessAllProductsListedBelowTheProductsSectionInTheAllTabCorrectly(){
         AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage=new AeProductDetailsPage(webDriver);

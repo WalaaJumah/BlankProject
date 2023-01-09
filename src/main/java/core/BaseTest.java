@@ -46,11 +46,13 @@ public class BaseTest {
     {
         try{
             WebElement btnCloseElement = webDriver.findElement(By.id("btnClose"));
+            DataHelperAndWait.waitToBeVisible(btnCloseElement,5,webDriver);
 
             if (btnCloseElement != null
                     && btnCloseElement.isDisplayed()) {
                 btnCloseElement.click();
-            }}
+            }
+        }
         catch (NoSuchElementException e){
             System.out.println(e.getMessage());
 
@@ -133,7 +135,7 @@ public class BaseTest {
 
 
 
-//    @BeforeGroups(groups = "Smoke Testing Report")
+//    @BeforeGroups(groups = "Smoke Testing Result")
 //    @Parameters({"environment"})
 //
 //    public void setupBrowserForGroup(String environment) throws Exception {

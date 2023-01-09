@@ -10,18 +10,14 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 //import com.aventstack.extentreports.reporter.configuration.ViewName;
+import com.aventstack.extentreports.ExtentReporter;
 import core.BasePage;
 import core.BaseTest;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.testng.IReporter;
-import org.testng.IResultMap;
-import org.testng.ISuite;
-import org.testng.ISuiteResult;
-import org.testng.ITestContext;
-import org.testng.ITestResult;
+import org.testng.*;
 import org.testng.annotations.AfterMethod;
 import org.testng.xml.XmlSuite;
 import com.relevantcodes.extentreports.ExtentReports;
@@ -45,13 +41,19 @@ public class ExtentReportListener  implements IReporter {
 
             for (ISuiteResult r : result.values()) {
         //The date will include with the file name
-        extent = new ExtentReports("C:\\Users\\w.jumaa\\Desktop\\Automation Reports" + File.separator
+        extent = new ExtentReports("G:\\My Drive\\Automation Reports" + File.separator
                 + "Magento-Sporter-Automation_Report " + "[" + r.getTestContext().getName() + "]" + date + ".html", true);
+//        extent = new ExtentReports("C:\\Users\\w.jumaa\\Desktop\\Automation Reports" + File.separator
+//                + "Magento-Sporter-Automation_Report " + "[" + r.getTestContext().getName() + "]" + date + ".html", true);
 
 //            spark=new ExtentSparkReporter(File.separator + "Magento-Sporter-Automation_Report "+date+".html");
 //            spark.viewConfigurer().viewOrder().as(new ViewName[]{ViewName.DASHBOARD, ViewName.TEST,ViewName.CATEGORY}).apply();
 
 //        extent.addSystemInfo("Author", "Wala'a Mohammad");
+                
+
+
+
 
 
 

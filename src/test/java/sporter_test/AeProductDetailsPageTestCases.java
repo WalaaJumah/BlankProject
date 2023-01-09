@@ -17,7 +17,7 @@ import static org.testng.Assert.*;
 
 public class AeProductDetailsPageTestCases extends BaseTest {
 
-    @Test(groups = "Smoke Testing Report",description = "Products Details Page- Switching to UAE store", priority = 1)
+    @Test(groups = "Smoke Testing Result",description = "Products Details Page- Switching to UAE store", priority = 1)
     public void switchToUaeStore(){
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.switchToAECountry();
@@ -61,7 +61,7 @@ public class AeProductDetailsPageTestCases extends BaseTest {
         Assert.assertFalse(aeProductDetailsPage.getAddToCartSectionForOOSProduct().isDisplayed());
     }
 
-    @Test(groups = "Smoke Testing Report",description = "Make sure to display the product from search screen", priority = 6)
+    @Test(groups = {"Product Page","Smoke Testing Result","High Severity"},description = "Make sure to display the product from search screen", priority = 6)
     public void verifyAbilityToDisplayTheProductFromSearchScreen() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.clickOnSearchBtn();
@@ -71,7 +71,7 @@ public class AeProductDetailsPageTestCases extends BaseTest {
 
 
 
-    @Test(groups = "Smoke Testing Report",description = "Make sure that the increase quantity function works fine ", priority = 7)
+    @Test(groups = {"Product Page","Smoke Testing Result","High Severity"},description = "Make sure that the increase quantity function works fine ", priority = 7)
     public void verifyIncreaseQuantityButtonWorkingFine() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.displayTheProduct();
@@ -79,14 +79,14 @@ public class AeProductDetailsPageTestCases extends BaseTest {
         Assert.assertEquals(aeProductDetailsPage.getQuantityField().getAttribute("value"), "2");
     }
 
-    @Test(groups = "Smoke Testing Report",description = "Make sure that the Decrease quantity function works fine ", priority = 8)
+    @Test(groups = {"Product Page","Smoke Testing Result","High Severity"},description = "Make sure that the Decrease quantity function works fine ", priority = 8)
     public void verifyDecreaseQuantityButtonWorkingFine() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.decreaseTheQuantity();
         Assert.assertEquals(aeProductDetailsPage.getQuantityField().getAttribute("value"), "1");
     }
 
-    @Test(groups = "Smoke Testing Report",description = "Make sure that the customer can submit his review successfully ", priority = 9)
+    @Test(groups = {"Product Page","Smoke Testing Result","Medium Severity"},description = "Make sure that the customer can submit his review successfully ", priority = 9)
     public void verifyAbilityToSubmitTheProductReview() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.selectStarInReview();
@@ -118,7 +118,7 @@ public class AeProductDetailsPageTestCases extends BaseTest {
         aeProductDetailsPage.clickOnBreadcrumbHomePage();
         Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeSiteURL);
     }
-    @Test(groups = "Smoke Testing Report",description = "Make sure that the customer can add the same product more than once by clicking on the Add To Product button in each time ", priority = 13)
+    @Test(groups = {"Product Page","Smoke Testing Result","High Severity"},description = "Make sure that the customer can add the same product more than once by clicking on the Add To Product button in each time ", priority = 13)
     public void verifyAbilityToAddProductToCartMultiTimes() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.displayTheProduct();
@@ -186,7 +186,7 @@ public class AeProductDetailsPageTestCases extends BaseTest {
     }
 
     //      The following Test Cases handle displaying the Mega Menu from Product Page
-    @Test(groups = "Smoke Testing Report",description = "Verify that the ShopBy Menu Is Displayed When Hovering On It From Product Details Page", priority = 19)
+    @Test(groups = {"Product Page","Smoke Testing Result","Low Severity"},description = "Verify that the ShopBy Menu Is Displayed When Hovering On It From Product Details Page", priority = 19)
     public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);

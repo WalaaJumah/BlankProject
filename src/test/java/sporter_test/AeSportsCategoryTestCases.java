@@ -19,7 +19,7 @@ import static org.testng.Assert.assertFalse;
 public class AeSportsCategoryTestCases extends BaseTest {
     Actions action;
 
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Switching to UAE store", priority = 1)
+    @Test(groups = "Smoke Testing Result",description = "Sports Category- Switching to UAE store", priority = 1)
     public void switchToUaeStore(){
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeWomenOnlyCategoryPage.switchToAECountry();
@@ -30,7 +30,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
             webDriver.navigate().to(BasePage.BaseURL+aeDomain);
             CloseInitialDialog();          }
     }
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure clicking on the Sports Category Appears In MegaMenu Redirect User To CorrectURL", priority = 1)
+    @Test(groups = {"Sports Category","Smoke Testing Result","Critical Severity"},description = "Sports Category- Make sure clicking on the Sports Category Appears In MegaMenu Redirect User To CorrectURL", priority = 1)
     public void verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         aeMegamenuPage.navigateToHomePage();
@@ -42,7 +42,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure clicking on the Sports Category from ShopBy Menu Redirect User To CorrectURL", priority = 2)
+    @Test(groups = {"Sports Category","Smoke Testing Result","Critical Severity"},description = "Sports Category- Make sure clicking on the Sports Category from ShopBy Menu Redirect User To CorrectURL", priority = 2)
     public void verifyClickingOnSportsCategoryFromShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -164,7 +164,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
             Assert.assertEquals(aeVitaminsAndHealthCategoryPage.getPagerOfRotatingSlider().get(i).getAttribute("class"),"flex-active");
         }
     }
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure the clicking on the banners appear in rotating slider section works correctly in Sports Category Page", priority = 15)
+    @Test(groups = {"Sports Category","Smoke Testing Result","High Severity"},description = "Sports Category- Make sure the clicking on the banners appear in rotating slider section works correctly in Sports Category Page", priority = 15)
     public void verifyClickingOnTheBannersAppearingInRotatingSliderSectionWorksCorrectlyInTheSportsCategoryPage() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
@@ -176,7 +176,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
             webDriver.navigate().to(BasePage.BaseURL +aeVitaminsAndHealthCategoryPage.sportsUrl);
         }
     }
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure the clicking on the first side banner works correctly in Sports Category Page", priority = 16)
+    @Test(groups = {"Sports Category","Smoke Testing Result","High Severity"},description = "Sports Category- Make sure the clicking on the first side banner works correctly in Sports Category Page", priority = 16)
     public void verifyClickingOnTheFirstSideBannersWorksCorrectlyInTheSportsCategoryPage() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
@@ -187,7 +187,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
 //        assertEquals(webDriver.getCurrentUrl(),expectedBannerUrl.substring(0,expectedBannerUrl.length()-1));
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedBannerUrl.substring(0,expectedBannerUrl.length()-1)));
     }
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure clicking on the second side banner works correctly in Sports Category Page", priority = 17)
+    @Test(groups = {"Sports Category","Smoke Testing Result","High Severity"},description = "Sports Category- Make sure clicking on the second side banner works correctly in Sports Category Page", priority = 17)
     public void verifyClickingOnTheSecondSideBannersWorksCorrectlyInTheSportsCategoryPage() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
@@ -198,7 +198,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedBannerUrl.substring(0,expectedBannerUrl.length()-1)));
     }
     //Trending in Sports section Test Cases
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure the Trending in Sports section is displayed ", priority = 18)
+    @Test(groups = {"Sports Category","Smoke Testing Result","Medium Severity"},description = "Sports Category- Make sure the Trending in Sports section is displayed ", priority = 18)
     public void verifyTrendingInSportsInTheSportsCategoryPageIsDisplayed() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
@@ -267,7 +267,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
 //        Assert.assertTrue(aeSportsCategoryPage.getWomenApparelCategory().isDisplayed());
     }
     //Men's Apparel section Test Cases
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure clicking on the Men's Apparel category inside Trending in Sports section works correctly ", priority = 21)
+    @Test(groups = {"Sports Category","Smoke Testing Result","Medium Severity"},description = "Sports Category- Make sure clicking on the Men's Apparel category inside Trending in Sports section works correctly ", priority = 21)
     public void verifyClickingOnMensApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
@@ -405,7 +405,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFiltrationSection().isDisplayed());}
 
     //Women's Apparel section Test Cases
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure clicking on the Women's Apparel category inside Trending in Sports section works correctly ", priority = 35)
+    @Test(groups = {"Sports Category","Smoke Testing Result","Medium Severity"},description = "Sports Category- Make sure clicking on the Women's Apparel category inside Trending in Sports section works correctly ", priority = 35)
     public void verifyClickingOnWomenApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
@@ -542,7 +542,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         this.verifyClickingOnWomenApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFiltrationSection().isDisplayed());}
     //Yoga section Test Cases
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure clicking on the Yoga Apparel category inside Trending in Sports section works correctly ", priority = 49)
+    @Test(groups = {"Sports Category","Smoke Testing Result","Medium Severity"},description = "Sports Category- Make sure clicking on the Yoga Apparel category inside Trending in Sports section works correctly ", priority = 49)
     public void verifyClickingOnYogaApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
@@ -696,7 +696,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         this.verifyClickingOnYogaApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFiltrationSection().isDisplayed());}
     //Swimming section Test Cases
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure clicking on the Swimming Apparel category inside Trending in Sports section works correctly ", priority = 63)
+    @Test(groups = {"Sports Category","Smoke Testing Result","Medium Severity"},description = "Sports Category- Make sure clicking on the Swimming Apparel category inside Trending in Sports section works correctly ", priority = 63)
     public void verifyClickingOnSwimmingApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
@@ -840,7 +840,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         this.verifyClickingOnSwimmingApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFiltrationSection().isDisplayed());}
     //Mma section Test Cases
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure clicking on the Mma Apparel category inside Trending in Sports section works correctly ", priority = 77)
+    @Test(groups = {"Sports Category","Smoke Testing Result","Medium Severity"},description = "Sports Category- Make sure clicking on the Mma Apparel category inside Trending in Sports section works correctly ", priority = 77)
     public void verifyClickingOnMmaApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
@@ -996,7 +996,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         this.verifyClickingOnMmaApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFiltrationSection().isDisplayed());}
     //Cricket section Test Cases
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure clicking on the Cricket category inside Trending in Sports section works correctly ", priority = 91)
+    @Test(groups = {"Sports Category","Smoke Testing Result","Medium Severity"},description = "Sports Category- Make sure clicking on the Cricket category inside Trending in Sports section works correctly ", priority = 91)
     public void verifyClickingOnCricketApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
@@ -1152,7 +1152,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         this.verifyClickingOnCricketApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFiltrationSection().isDisplayed());}
     //Toys And Games section Test Cases
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure clicking on the Toys And Games category inside Trending in Sports section works correctly ", priority = 105)
+    @Test(groups = {"Sports Category","Smoke Testing Result","Medium Severity"},description = "Sports Category- Make sure clicking on the Toys And Games category inside Trending in Sports section works correctly ", priority = 105)
     public void verifyClickingOnToysAndGamesCategoryInsideTheTrendingInSportsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
@@ -1294,7 +1294,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         this.verifyClickingOnToysAndGamesCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFiltrationSection().isDisplayed());}
     // Wearable Tech section test  cases
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure clicking on the Wearable Tech category inside Trending in Sports section works correctly ", priority = 119)
+    @Test(groups = {"Sports Category","Smoke Testing Result","Medium Severity"},description = "Sports Category- Make sure clicking on the Wearable Tech category inside Trending in Sports section works correctly ", priority = 119)
     public void verifyClickingOnWearableTechCategoryInsideTheTrendingInSportsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
@@ -1439,7 +1439,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         this.verifyClickingOnWearableTechCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFiltrationSection().isDisplayed());}
     // Personal Care section test  cases
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure clicking on the Personal Care category inside Trending in Sports section works correctly ", priority = 133)
+    @Test(groups = {"Sports Category","Smoke Testing Result","Medium Severity"},description = "Sports Category- Make sure clicking on the Personal Care category inside Trending in Sports section works correctly ", priority = 133)
     public void verifyClickingOnPersonalCareCategoryInsideTheTrendingInSportsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
@@ -1580,7 +1580,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
 
     //Men Category Test Cases
 
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure Men category section is displayed in the Sports Category Page ", priority = 147)
+    @Test(groups = {"Sports Category","Smoke Testing Result","Medium Severity"},description = "Sports Category- Make sure Men category section is displayed in the Sports Category Page ", priority = 147)
     public void verifyMenCategorySectionIsDisplayedCorrectlyInTheSportsCategoryPage(){
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
         aeSportsCategoryPage.navigateToSportsPage();
@@ -1730,7 +1730,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
 
     //Women Category Test Cases
 
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure Women category section is displayed in the Sports Category Page ", priority = 162)
+    @Test(groups = {"Sports Category","Smoke Testing Result","Medium Severity"},description = "Sports Category- Make sure Women category section is displayed in the Sports Category Page ", priority = 162)
     public void verifyWomenCategorySectionIsDisplayedCorrectlyInTheSportsCategoryPage(){
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
         aeSportsCategoryPage.navigateToSportsPage();
@@ -1880,7 +1880,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFiltrationSection().isDisplayed());}
 //Sports Tech Category Test Cases
 
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure Sports Tech category section is displayed in the Sports Category Page ", priority = 177)
+    @Test(groups = {"Sports Category","Smoke Testing Result","Medium Severity"},description = "Sports Category- Make sure Sports Tech category section is displayed in the Sports Category Page ", priority = 177)
     public void verifySportsTechCategorySectionIsDisplayedCorrectlyInTheSportsCategoryPage(){
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
         aeSportsCategoryPage.navigateToSportsPage();
@@ -2030,7 +2030,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
 
     //Kids Category Test Cases
 
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure Kids category section is displayed in the Sports Category Page ", priority = 192)
+    @Test(groups = {"Sports Category","Smoke Testing Result","Medium Severity"},description = "Sports Category- Make sure Kids category section is displayed in the Sports Category Page ", priority = 192)
     public void verifyKidsCategorySectionIsDisplayedCorrectlyInTheSportsCategoryPage(){
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
         aeSportsCategoryPage.navigateToSportsPage();
@@ -2181,7 +2181,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
 
     //Sports Category Test Cases
 
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure Sports category section is displayed in the Sports Category Page ", priority = 207)
+    @Test(groups = {"Sports Category","Smoke Testing Result","Medium Severity"},description = "Sports Category- Make sure Sports category section is displayed in the Sports Category Page ", priority = 207)
     public void verifySportsCategorySectionIsDisplayedCorrectlyInTheSportsCategoryPage(){
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
         aeSportsCategoryPage.navigateToSportsPage();
@@ -2331,7 +2331,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
 
     //Recommended Products Test Cases section
 
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make sure the Recommended Products section is displayed in the Sports Category Page ", priority = 222)
+    @Test(groups = {"Sports Category","Smoke Testing Result","Medium Severity"},description = "Sports Category- Make sure the Recommended Products section is displayed in the Sports Category Page ", priority = 222)
     public void verifyRecommendedProductsSectionIsDisplayedInTheSportsSection() {
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
         aeSportsCategoryPage.navigateToSportsPage();
@@ -2368,7 +2368,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     //Pagination control for all pages in the Sports Category Pages
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make Sure the ability to access all pages inside Mens Apparel Category Page ", priority = 227)
+    @Test(groups = {"Sports Category","Smoke Testing Result","Medium Severity"},description = "Sports Category- Make Sure the ability to access all pages inside Mens Apparel Category Page ", priority = 227)
     public void verifyAbilityToAccessAllPagesInsideMensApparelCategoryPageCorrectly(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnMensApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
@@ -2378,7 +2378,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make Sure the ability to access all pages inside Women's Apparel Category Page ", priority = 228)
+    @Test(groups = {"Sports Category","Smoke Testing Result","Medium Severity"},description = "Sports Category- Make Sure the ability to access all pages inside Women's Apparel Category Page ", priority = 228)
     public void verifyAbilityToAccessAllPagesInsideWomenApparelCategoryPageCorrectly(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnWomenApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
@@ -2387,7 +2387,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
              System.out.println("There's no pages");
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);}
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make Sure the ability to access all pages inside Yoga Apparel Category Page ", priority = 229)
+    @Test(groups = {"Sports Category","Smoke Testing Result","Medium Severity"},description = "Sports Category- Make Sure the ability to access all pages inside Yoga Apparel Category Page ", priority = 229)
     public void verifyAbilityToAccessAllPagesInsideYogaApparelCategoryPageCorrectly(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnYogaApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
@@ -2396,7 +2396,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
              System.out.println("There's no pages");
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);}
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make Sure the ability to access all pages inside Swimming Category Page ", priority = 230)
+    @Test(groups = {"Sports Category","Smoke Testing Result","Medium Severity"},description = "Sports Category- Make Sure the ability to access all pages inside Swimming Category Page ", priority = 230)
     public void verifyAbilityToAccessAllPagesInsideSwimmingCategoryPageCorrectly(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnSwimmingApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
@@ -2405,7 +2405,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
              System.out.println("There's no pages");
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);}
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make Sure the ability to access all pages inside Mma Category Page ", priority = 231)
+    @Test(groups = {"Sports Category","Smoke Testing Result","Medium Severity"},description = "Sports Category- Make Sure the ability to access all pages inside Mma Category Page ", priority = 231)
     public void verifyAbilityToAccessAllPagesInsideMmaCategoryPageCorrectly(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnMmaApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
@@ -2414,7 +2414,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
              System.out.println("There's no pages");
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);}
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make Sure the ability to access all pages inside Cricket Category Page ", priority = 232)
+    @Test(groups = {"Sports Category","Smoke Testing Result","Medium Severity"},description = "Sports Category- Make Sure the ability to access all pages inside Cricket Category Page ", priority = 232)
     public void verifyAbilityToAccessAllPagesInsideCricketCategoryPageCorrectly(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnCricketApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
@@ -2423,7 +2423,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
              System.out.println("There's no pages");
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);}
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make Sure the ability to access all pages inside Toys And Games Category Page ", priority = 233)
+    @Test(groups = {"Sports Category","Smoke Testing Result","Medium Severity"},description = "Sports Category- Make Sure the ability to access all pages inside Toys And Games Category Page ", priority = 233)
     public void verifyAbilityToAccessAllPagesInsideToysAndGamesCategoryPageCorrectly(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnToysAndGamesCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
@@ -2432,7 +2432,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
              System.out.println("There's no pages");
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);}
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make Sure the ability to access all pages inside Wearable Tech Category Page ", priority = 234)
+    @Test(groups = {"Sports Category","Smoke Testing Result","Medium Severity"},description = "Sports Category- Make Sure the ability to access all pages inside Wearable Tech Category Page ", priority = 234)
     public void verifyAbilityToAccessAllPagesInsideWearableTechCategoryPageCorrectly(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnWearableTechCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
@@ -2441,7 +2441,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
              System.out.println("There's no pages");
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);}
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make Sure the ability to access all pages inside Personal Care Category Page ", priority = 235)
+    @Test(groups = {"Sports Category","Smoke Testing Result","Medium Severity"},description = "Sports Category- Make Sure the ability to access all pages inside Personal Care Category Page ", priority = 235)
     public void verifyAbilityToAccessAllPagesInsidePersonalCareCategoryPageCorrectly(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnPersonalCareCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
@@ -2450,7 +2450,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
              System.out.println("There's no pages");
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);}
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make Sure the ability to access all pages inside Men Category From Sports Category Page  ", priority = 236)
+    @Test(groups = {"Sports Category","Smoke Testing Result","Medium Severity"},description = "Sports Category- Make Sure the ability to access all pages inside Men Category From Sports Category Page  ", priority = 236)
     public void verifyAbilityToAccessAllPagesInsideMenCategoryFromSportsCategoryPageWorksCorrectly(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnMenCategoryFromSportsCategoryPageWorksCorrectly();
@@ -2459,7 +2459,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
              System.out.println("There's no pages");
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);}
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make Sure the ability to access all pages inside Women Category From Sports Category Page  ", priority = 237)
+    @Test(groups = {"Sports Category","Smoke Testing Result","Medium Severity"},description = "Sports Category- Make Sure the ability to access all pages inside Women Category From Sports Category Page  ", priority = 237)
     public void verifyAbilityToAccessAllPagesInsideWomenCategoryFromSportsCategoryPageWorksCorrectly(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnWomenCategoryFromSportsCategoryPageWorksCorrectly();
@@ -2468,7 +2468,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
              System.out.println("There's no pages");
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);}
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make Sure the ability to access all pages inside Sports Tech Category From Sports Category Page  ", priority = 238)
+    @Test(groups = {"Sports Category","Smoke Testing Result","Medium Severity"},description = "Sports Category- Make Sure the ability to access all pages inside Sports Tech Category From Sports Category Page  ", priority = 238)
     public void verifyAbilityToAccessAllPagesInsideSportsTechCategoryFromSportsCategoryPageWorksCorrectly(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnSportsTechCategoryFromSportsCategoryPageWorksCorrectly();
@@ -2478,7 +2478,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);}
 
-    @Test(groups = "Smoke Testing Report",description = "Sports Category- Make Sure the ability to access all pages inside Kids Category From Sports Category Page  ", priority = 239)
+    @Test(groups = {"Sports Category","Smoke Testing Result","Medium Severity"},description = "Sports Category- Make Sure the ability to access all pages inside Kids Category From Sports Category Page  ", priority = 239)
     public void verifyAbilityToAccessAllPagesInsideKidsCategoryFromSportsCategoryPageWorksCorrectly(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnKidsCategoryFromSportsCategoryPageWorksCorrectly();
