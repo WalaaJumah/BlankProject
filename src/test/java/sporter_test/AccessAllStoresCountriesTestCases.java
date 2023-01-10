@@ -20,7 +20,7 @@ import sporter_pages.QatarHomePage;
 import java.util.ArrayList;
 
 public class AccessAllStoresCountriesTestCases extends BaseTest {
-    @Test(groups = {"Smoke Testing Result","Critical Severity"},description = "Ability to access all stores", priority = 1)
+    @Test(groups = {"Smoke Testing Result","1. Critical Severity"},description = "Ability to access all stores", priority = 1)
     public void accessAllCountries(){
         AccessAllStoresCountriesPage accessAllStoresCountriesPage = new AccessAllStoresCountriesPage(webDriver);
         ArrayList<String> expectedOption = new ArrayList<>() {{

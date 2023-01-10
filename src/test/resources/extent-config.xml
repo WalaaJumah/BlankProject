@@ -83,32 +83,28 @@
 
 
 
-
-<!--For Smoke Report-->
-<!--&lt;!&ndash;Display the Critical Severity in Red color&ndash;&gt;-->
-<!--              $('#cat-collection > li:nth-child(3) > div.cat-head > span').css('color', 'red');-->
-<!--&lt;!&ndash;Display the High Severity in Orang color&ndash;&gt;-->
-<!--              $('#cat-collection > li:nth-child(7) > div.cat-head > span').css('color', 'orange');-->
-<!--&lt;!&ndash;Display the Medium Severity in darkblue color&ndash;&gt;-->
-<!--              $('#cat-collection > li:nth-child(10) > div.cat-head > span').css('color', 'darkblue');-->
-<!--&lt;!&ndash;Display the Low Severity in blue color&ndash;&gt;-->
-<!--              $('#cat-collection > li:nth-child(9) > div.cat-head > span').css('color', 'blue');-->
-
-<!--**************************************************************************************************************************-->
-
-<!--For System Report-->
-<!--&lt;!&ndash;Display the Critical Severity in Red color&ndash;&gt;-->
-<!--              $('#cat-collection > li:nth-child(3) > div.cat-head > span').css('color', 'red');-->
-<!--&lt;!&ndash;Display the High Severity in Orang color&ndash;&gt;-->
-<!--              $('#cat-collection > li:nth-child(7) > div.cat-head > span').css('color', 'orange');-->
-<!--&lt;!&ndash;Display the Medium Severity in darkblue color&ndash;&gt;-->
-<!--              $('#cat-collection > li:nth-child(10) > div.cat-head > span').css('color', 'darkblue');-->
-<!--&lt;!&ndash;Display the Low Severity in blue color&ndash;&gt;-->
-<!--              $('#cat-collection > li:nth-child(9) > div.cat-head > span').css('color', 'blue');-->
+<!--Display the 1. Critical Severity in Red color-->
+              $('#cat-collection > li:nth-child(1) > div.cat-head > span').css('color', 'red');
+<!--Display the 2. High Severity in Orang color-->
+              $('#cat-collection > li:nth-child(2) > div.cat-head > span').css('color', 'orange');
+<!--Display the 3. Medium Severity in darkblue color-->
+              $('#cat-collection > li:nth-child(3) > div.cat-head > span').css('color', 'blue');
+<!--Display the 4. Low Severity in blue color-->
+              $('#cat-collection > li:nth-child(4) > div.cat-head > span').css('color', 'mediumseagreen');
 
 
 
+<!--This to add list item after 4. Low Severity row-->
+ $('<div class="category-item displayed" style="background: lightblue; font-weight: 600; height:30px;border:1px solid darkgray;text-align=center;"><div class="cat-head"> <span class="category-name"style="color: black;">      Test Cases Per Module</span> </div>').insertAfter('#cat-collection > li:nth-child(4)');
 
+<!--This to add list item before 1. Critical Severity row-->
+ $('<div class="category-item displayed" style="background: lightblue; font-weight: 600; height:30px;border:1px solid darkgray;text-align=center;"><div class="cat-head"> <span class="category-name"style="color: black;">      Test Cases Per Severity</span> </div>').insertAfter('#categories-view > div.col._addedCell1 > div > div.card-panel.filters');
+
+
+<!-- To Hide Other Status Icon-->
+<!--              $('#cat-details-wrapper > div > div > div > div > div.category-status-counts > div > a.other.label.filter').css('display','none');-->
+              $('a.other.label.filter').css('display','none');
+              $('a.other.label.filter').hide();
         });
 
       ]]>
