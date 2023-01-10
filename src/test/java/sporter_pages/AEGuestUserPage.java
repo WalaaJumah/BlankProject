@@ -294,9 +294,12 @@ public class AEGuestUserPage extends BasePage {
         this.productInHomePageAr.click();
     }
 
-    public void addToCart() {
-        DataHelperAndWait.isDisplayed(addToCartBtn, 3,webDriver);
-        this.addToCartBtn.click();
+    public void addToCart() {try{
+        DataHelperAndWait.waitToBeClickable(addToCartBtn, 6,webDriver);
+        this.addToCartBtn.click();}
+    catch(Exception e){
+        DataHelperAndWait.waitToBeClickable(addToCartBtn, 6,webDriver);
+        this.addToCartBtn.click();}
     }
 
     public void clickOnSporterLogo() {

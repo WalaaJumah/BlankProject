@@ -118,8 +118,8 @@
            .report-headline {font-size:20px}
 
 
-.span.fail.label.dot { font-size: auto!important;width: auto;height: auto;}
 
+.label.dot {font-size: 10 px;width: auto;height: auto;}
 
 
 

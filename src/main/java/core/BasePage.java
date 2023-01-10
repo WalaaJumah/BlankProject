@@ -103,6 +103,7 @@ public class BasePage {
     public final String toysAndGamesUrl = "/toys-and-games";
     public final String wearableTechUrl = "/wearable-tech";
     public final String shippingInformationUrl = "/checkout";
+    public String productWithFreeGiift="";
 
     public WebDriver webDriver;
     //Need to check
