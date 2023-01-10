@@ -13,7 +13,7 @@ import org.testng.Assert;
 public class BasePage {
 
 
-    public  static String BaseURL = "https://www.sporter.com";
+    public  static String BaseURL = "https://sporter.com";
     public final String aeDomain = "/en-ae";
     public final String omanDomain = "/en-om";
     public final String bahrainDomain = "/en-bh";
@@ -96,14 +96,14 @@ public class BasePage {
     public final  String twitterURL = "https://twitter.com/sportercom?lang=en";
     public final  String youtubeURL = "https://www.youtube.com/user/SporterVideos";
     public final String searchUrl="catalogsearch/result/?q=";
-    public final String productUrl = "/optimum-gold-standard-100-whey-6202";
+    public final String productUrl = "/optimum-gold-standard-100-whey";
     public final String oOSProductUrl = "/healthy-food/snacks-drinks/spreads/healthyco-peanut-butter";
     public final String notAvailableOfferProduct = "/catalog/product/view/id/44012/s/olimp-chitosan-chromium-43840/";
     public final String sportsUrl = "/sports/";
     public final String toysAndGamesUrl = "/toys-and-games";
     public final String wearableTechUrl = "/wearable-tech";
     public final String shippingInformationUrl = "/checkout";
-    public String productWithFreeGiift="";
+    public  static String bogoProduct="";
 
     public WebDriver webDriver;
     //Need to check
@@ -118,6 +118,9 @@ public class BasePage {
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.exceptionPageMsg), "An error has happened during application run. See exception log for details in page and the URL is " + webDriver.getCurrentUrl());
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.offerNotAvailableMsg), "The  offer is not available in your country page is displayed" + webDriver.getCurrentUrl());
     }
-
+    public void navigateToBogoProduct(){
+        webDriver.navigate().to(BasePage.BaseURL+aeDomain+bogoProduct);
+        DataHelperAndWait.waitForUrlContains(bogoProduct,webDriver,6);
+    }
 }
 

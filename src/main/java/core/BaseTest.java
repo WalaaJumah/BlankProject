@@ -46,7 +46,7 @@ public class BaseTest {
     {
         try{
             WebElement btnCloseElement = webDriver.findElement(By.id("btnClose"));
-            DataHelperAndWait.waitToBeVisible(btnCloseElement,5,webDriver);
+            DataHelperAndWait.waitToBeVisible(btnCloseElement,6,webDriver);
 
             if (btnCloseElement != null
                     && btnCloseElement.isDisplayed()) {
@@ -95,12 +95,13 @@ public class BaseTest {
     // The Below Method to run the TCs on Onc Browser like Chrome
 
     @BeforeClass(alwaysRun = true)
-    @Parameters({"environment", "browser", "country"})
-    public void setupBrowser( String environment, String browser,@Optional("") String country) throws Exception {
+    @Parameters({"environment", "browser", "country","bogoProduct"})
+    public void setupBrowser( String environment, String browser,@Optional("") String country,String bogoProduct) throws Exception {
         environmentName=environment;
         this.browserName = browser;
         BasePage.BaseURL=environment;
         this.countryUrl=country;
+        BasePage.bogoProduct=bogoProduct;
         //This ChromeWebDriver 108
         switch (browser) {
 //    Check if parameter passed from TestNG is 'firefox'

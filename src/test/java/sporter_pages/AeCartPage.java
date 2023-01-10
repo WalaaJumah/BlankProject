@@ -92,7 +92,7 @@ public class AeCartPage extends BasePage {
 
     //Getter Methods
     public WebElement getItemsCounterInCartPage() {
-        DataHelperAndWait.waitToBeVisible(itemsCounter,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(itemsCounter,7,webDriver);
         return itemsCounter;
     }
 
@@ -252,7 +252,7 @@ public class AeCartPage extends BasePage {
     }
 
     public void clickOnHereLink() {
-        DataHelperAndWait.isDisplayed(hereLink, 3,webDriver);
+        DataHelperAndWait.isDisplayed(hereLink, 6,webDriver);
         this.hereLink.click();
     }
 

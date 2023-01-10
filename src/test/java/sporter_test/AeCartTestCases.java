@@ -35,33 +35,35 @@ public class AeCartTestCases extends BaseTest {
     public void viewCartFromPDP() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AeCartPage aeCartPage = new AeCartPage(webDriver);
-        aeProductDetailsPage.displayTheProduct();
-        aeProductDetailsPage.addToCart();
-        aeProductDetailsPage.viewCart();
+        aeProductDetailsPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.waitForUrlContains(aeProductDetailsPage.cartURL,webDriver,5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeProductDetailsPage.cartURL) );
+        aeCartPage.clickOnRemoveItem();
     }
     @Test(groups = {"Cart Page","Smoke Testing Result","Low Severity"},description = " Cart Page- Make sure that the product counter that appears in the cart page works correctly", priority = 3)
     public void verifyProductCounterAppearsInTheCartPageWorksCorrectly() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
-        String itemsCounter = "(2 Items)";
+        AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        aeCartPage.navigateToBogoProduct();
+        aeProductDetailsPage.addToCart();
+        aeProductDetailsPage.viewCart();
+        String itemsCounter = "(1 Items)";
         Assert.assertEquals(aeCartPage.getItemsCounterInCartPage().getText(), itemsCounter);
-        aeCartPage.clickOnRemoveItem();
         aeCartPage.clickOnRemoveItem();
     }
     @Test(groups = {"Cart Page","Smoke Testing Result","Medium Severity"},description = " Cart Page- Make sure that the Free Gift is removed from the cart when you remove the product", priority = 4)
     public void verifyTheFreeGiftIsRemovedWhenRemovingTheProduct() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AeCartPage aeCartPage = new AeCartPage(webDriver);
-        aeProductDetailsPage.clickOnShopeByMenu();
-        aeProductDetailsPage.clickOnSalesAndOffersMenu();
-        aeProductDetailsPage.clickOnBuy1Get1Card();
-        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getFirstProductInTheCategoryList(), 5,webDriver);
-        aeProductDetailsPage.DisplayProductInTheList(0);
+//        aeProductDetailsPage.clickOnShopeByMenu();
+//        aeProductDetailsPage.clickOnSalesAndOffersMenu();
+//        aeProductDetailsPage.clickOnBuy1Get1Card();
+//        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getFirstProductInTheCategoryList(), 5,webDriver);
+//        aeProductDetailsPage.DisplayProductInTheList(0);
+        aeCartPage.navigateToBogoProduct();
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
         Assert.assertTrue(aeCartPage.getFreePrice().isDisplayed());
-        aeCartPage.clickOnRemoveItem();
         aeCartPage.clickOnRemoveItem();
         Assert.assertTrue(aeCartPage.getNoItemInCartLabel().isDisplayed());
     }
@@ -79,6 +81,11 @@ public class AeCartTestCases extends BaseTest {
     @Test(groups = {"Cart Page","Smoke Testing Result","Low Severity"},description = " Cart Page- Verify that Here Link appear after clearing the items from the Cart works successfully", priority = 6)
     public void verifyHereLinkInCartPageWorking() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
+        AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+//        aeProductDetailsPage.displayTheProduct();
+//        aeProductDetailsPage.addToCart();
+//        aeProductDetailsPage.viewCart();
+//        aeCartPage.clickOnRemoveItem();
 //        this.verifyAbilityToRemoveProductFromCart();
         DataHelperAndWait.isDisplayed(aeCartPage.getHereLink(), 5,webDriver);
         aeCartPage.clickOnHereLink();
@@ -93,8 +100,10 @@ public class AeCartTestCases extends BaseTest {
         aeProductDetailsPage.increaseTheQuantity();
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
-//        this.viewCartFromPDP();
-//        this.viewCartFromPDP();
+//                AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        aeProductDetailsPage.addToCartAndDisplayTheCart();
+//                AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        aeProductDetailsPage.addToCartAndDisplayTheCart();
         String itemsCounter = "(4 Items)";
         DataHelperAndWait.waitToBeVisible(aeCartPage.getItemsCounterInCartPage(), 5,webDriver);
         Assert.assertEquals(aeCartPage.getItemsCounterInCartPage().getText(), itemsCounter);
@@ -120,11 +129,12 @@ public class AeCartTestCases extends BaseTest {
     public void verifyAbilityToViewTheCartAfterAddingMoreThanProducts() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AeCartPage aeCartPage = new AeCartPage(webDriver);
-        aeProductDetailsPage.clickOnShopeByMenu();
-        aeProductDetailsPage.clickOnSalesAndOffersMenu();
-        aeProductDetailsPage.clickOnBuy1Get1Card();
-        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getFirstProductInTheCategoryList(), 5,webDriver);
-        aeProductDetailsPage.DisplayProductInTheList(0);
+//        aeProductDetailsPage.clickOnShopeByMenu();
+//        aeProductDetailsPage.clickOnSalesAndOffersMenu();
+//        aeProductDetailsPage.clickOnBuy1Get1Card();
+//        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getFirstProductInTheCategoryList(), 5,webDriver);
+//        aeProductDetailsPage.DisplayProductInTheList(0);
+        aeCartPage.navigateToBogoProduct();
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.keepShopping();
         aeProductDetailsPage.displayTheProduct();
@@ -192,7 +202,8 @@ public class AeCartTestCases extends BaseTest {
     @Test(groups = {"Cart Page","Smoke Testing Result","High Severity"},description = " Cart Page- Verify ability to increase the product quantity from Cart page from the Cart Page works successfully", priority = 14)
     public void verifyIncreaseQtyBtnInCartPageWorking() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
-        this.viewCartFromPDP();
+        AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        aeProductDetailsPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.waitToBeClickable(aeCartPage.getIncreaseQtyBtn(), 5,webDriver);
         aeCartPage.clickOnIncreaseQtyBtn();
         Assert.assertEquals(aeCartPage.getQtyField().getAttribute("value"), "2");
@@ -201,7 +212,8 @@ public class AeCartTestCases extends BaseTest {
     @Test(groups = {"Cart Page","Smoke Testing Result","High Severity"},description = " Cart Page- Verify ability to Decrease the product quantity from Cart page from the Cart Page works successfully", priority = 15)
     public void verifyDecreaseQtyBtnInCartPageWorking() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
-//        this.viewCartFromPDP();
+        AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+//        aeProductDetailsPage.addToCartAndDisplayTheCart();
 //        DataHelperAndWait.waitToBeClickable(aeCartPage.getIncreaseQtyBtn(), 5,webDriver);
 //        aeCartPage.clickOnIncreaseQtyBtn();
         DataHelperAndWait.waitToBeClickable(aeCartPage.getDecreaseQtyBtn(), 5,webDriver);
@@ -211,7 +223,8 @@ public class AeCartTestCases extends BaseTest {
     @Test(groups = {"Cart Page","Smoke Testing Result","Medium Severity"},description = " Cart Page- Verify ability to display the product from the Cart Page works successfully", priority = 16)
     public void verifyAbilityToDisplayTheProductFromTheCartPage() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
-        this.viewCartFromPDP();
+                AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        aeProductDetailsPage.addToCartAndDisplayTheCart();
         aeCartPage.clickOnProductCartInCartPage();
         Assert.assertNotEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeCartPage.aeDomain, "The Current URL is not matched with the AE Site URL");
         aeCartPage.removeProductFromCart();
@@ -220,10 +233,11 @@ public class AeCartTestCases extends BaseTest {
     public void verifyTheFreeGiftIsAddedCorrectlyToTheCart() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AeCartPage aeCartPage = new AeCartPage(webDriver);
-        aeProductDetailsPage.clickOnShopeByMenu();
-        aeProductDetailsPage.clickOnSalesAndOffersMenu();
-        aeProductDetailsPage.clickOnBuy1Get1Card();
-        aeProductDetailsPage.DisplayProductInTheList(0);
+//        aeProductDetailsPage.clickOnShopeByMenu();
+//        aeProductDetailsPage.clickOnSalesAndOffersMenu();
+//        aeProductDetailsPage.clickOnBuy1Get1Card();
+//        aeProductDetailsPage.DisplayProductInTheList(0);
+        aeCartPage.navigateToBogoProduct();
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
         Assert.assertTrue(aeCartPage.getFreeFromSporterSection().isDisplayed());
@@ -234,10 +248,11 @@ public class AeCartTestCases extends BaseTest {
     public void verifyTheFreeGiftIsDoesNotHavePrice() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AeCartPage aeCartPage = new AeCartPage(webDriver);
-        aeProductDetailsPage.clickOnShopeByMenu();
-        aeProductDetailsPage.clickOnSalesAndOffersMenu();
-        aeProductDetailsPage.clickOnBuy1Get1Card();
-        aeProductDetailsPage.DisplayProductInTheList(0);
+//        aeProductDetailsPage.clickOnShopeByMenu();
+//        aeProductDetailsPage.clickOnSalesAndOffersMenu();
+//        aeProductDetailsPage.clickOnBuy1Get1Card();
+//        aeProductDetailsPage.DisplayProductInTheList(0);
+        aeCartPage.navigateToBogoProduct();
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
         Assert.assertTrue(aeCartPage.getFreePrice().isDisplayed());
@@ -247,7 +262,8 @@ public class AeCartTestCases extends BaseTest {
     @Test(groups = {"Cart Page","Smoke Testing Result","Medium Severity"},description = " Cart Page- Make sure that all payment methods are appear correctly in the Cart page", priority = 19)
     public void verifyAllPaymentMethodAppearingTheCartPage() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
-        this.viewCartFromPDP();
+                AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        aeProductDetailsPage.addToCartAndDisplayTheCart();
         Assert.assertTrue(aeCartPage.getWeAcceptLabel().isDisplayed());
         Assert.assertTrue(aeCartPage.getCodOption().isDisplayed());
         Assert.assertTrue(aeCartPage.getCreditCardOption().isDisplayed());
@@ -296,10 +312,11 @@ public class AeCartTestCases extends BaseTest {
     public void verifyTheCounterInCartIconWorksCorrectly() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
-        aeProductDetailsPage.clickOnShopeByMenu();
-        aeProductDetailsPage.clickOnSalesAndOffersMenu();
-        aeProductDetailsPage.clickOnBuy1Get1Card();
-        aeProductDetailsPage.DisplayProductInTheList(0);
+//        aeProductDetailsPage.clickOnShopeByMenu();
+//        aeProductDetailsPage.clickOnSalesAndOffersMenu();
+//        aeProductDetailsPage.clickOnBuy1Get1Card();
+//        aeProductDetailsPage.DisplayProductInTheList(0);
+        aeCartPage.navigateToBogoProduct();
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
         Assert.assertEquals(aeCartPage.getCartCounter().getText(), "2");
@@ -309,10 +326,11 @@ public class AeCartTestCases extends BaseTest {
     public void verifyTheCloseIconInCartPopupWorksCorrectly() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AeCartPage aeCartPage = new AeCartPage(webDriver);
-        aeProductDetailsPage.clickOnShopeByMenu();
-        aeProductDetailsPage.clickOnSalesAndOffersMenu();
-        aeProductDetailsPage.clickOnBuy1Get1Card();
-        aeProductDetailsPage.DisplayProductInTheList(0);
+//        aeProductDetailsPage.clickOnShopeByMenu();
+//        aeProductDetailsPage.clickOnSalesAndOffersMenu();
+//        aeProductDetailsPage.clickOnBuy1Get1Card();
+//        aeProductDetailsPage.DisplayProductInTheList(0);
+        aeCartPage.navigateToBogoProduct();
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
         aeCartPage.clickOnCartIcon();
@@ -321,7 +339,8 @@ public class AeCartTestCases extends BaseTest {
     @Test(groups = {"Cart Page","Smoke Testing Result","Medium Severity"},description = " Cart Page- Make sure that the system does not apply invalid coupon code", priority = 25)
     public void verifyInabilityToApplyInvalidCouponCode() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
-        this.viewCartFromPDP();
+                AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        aeProductDetailsPage.addToCartAndDisplayTheCart();
         aeCartPage.FillInCouponCode("test");
         DataHelperAndWait.waitToBeVisible(aeCartPage.getNotExistCouponMsg(), 5,webDriver);
         Assert.assertTrue(aeCartPage.getNotExistCouponMsg().isDisplayed());
@@ -330,7 +349,8 @@ public class AeCartTestCases extends BaseTest {
     @Test(groups = {"Cart Page","Smoke Testing Result","Medium Severity"},description = " Cart Page- Make sure inability to apply coupon code without filling the code", priority = 26)
     public void verifyInabilityToApplyCouponCodeWithoutFillingTheCode() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
-        this.viewCartFromPDP();
+                AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        aeProductDetailsPage.addToCartAndDisplayTheCart();
         aeCartPage.FillInCouponCode(" ");
         DataHelperAndWait.waitToBeVisible(aeCartPage.getRequiredCouponMsg(), 5,webDriver);
         Assert.assertTrue(aeCartPage.getRequiredCouponMsg().isDisplayed());
@@ -340,10 +360,11 @@ public class AeCartTestCases extends BaseTest {
     public void verifyTheFreeGiftIsNotCalculatedInTheCartPrice() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AeCartPage aeCartPage = new AeCartPage(webDriver);
-        aeProductDetailsPage.clickOnShopeByMenu();
-        aeProductDetailsPage.clickOnSalesAndOffersMenu();
-        aeProductDetailsPage.clickOnBuy1Get1Card();
-        aeProductDetailsPage.DisplayProductInTheList(0);
+//        aeProductDetailsPage.clickOnShopeByMenu();
+//        aeProductDetailsPage.clickOnSalesAndOffersMenu();
+//        aeProductDetailsPage.clickOnBuy1Get1Card();
+//        aeProductDetailsPage.DisplayProductInTheList(0);
+        aeCartPage.navigateToBogoProduct();
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
         Assert.assertTrue(aeCartPage.getFreeFromSporterSection().isDisplayed());
@@ -370,9 +391,9 @@ public class AeCartTestCases extends BaseTest {
     @Test(groups = {"Cart Page","Smoke Testing Result","High Severity"},description = " Cart Page- Verify that the search button works correctly from the Cart Page", priority = 29)
     public void verifySearchBtnWorksCorrectlyFromCartPage() {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
-        AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AeCartPage aeCartPage=new AeCartPage(webDriver);
-        this.viewCartFromPDP();
+        AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        aeProductDetailsPage.addToCartAndDisplayTheCart();
         aeProductDetailsPage.searchForBundle();
         aeProductDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
@@ -382,7 +403,8 @@ public class AeCartTestCases extends BaseTest {
     @Test(description = " Cart Page- Make sure that the product price is changed when you change the quantity from the Cart Page", priority = 30)
     public void verifyProductPriceChangesWhenChangingTheProductQtyFromTheCartPage() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
-        this.viewCartFromPDP();
+                AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        aeProductDetailsPage.addToCartAndDisplayTheCart();
         String currentProductPrice = aeCartPage.getPriceInCartPage().getText();
         aeCartPage.clickOnIncreaseQtyBtn();
         DataHelperAndWait.refreshPage(webDriver);
@@ -393,7 +415,8 @@ public class AeCartTestCases extends BaseTest {
     @Test(description = " Cart Page- Make sure that Make sure that complete your order, to get 100% GENUINE PRODUCTS and SUPER DELIVERY WITHIN 2 WORKING DAYS label appears in the Cart Page", priority = 31)
     public void verifyTheFreeShippingLabelAppearCorrectlyInTheCartPage() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
-        this.viewCartFromPDP();
+                AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        aeProductDetailsPage.addToCartAndDisplayTheCart();
         Assert.assertTrue(aeCartPage.getFreeShippingLabel().isDisplayed());
         aeCartPage.removeProductFromCart();
     }
@@ -414,10 +437,11 @@ public class AeCartTestCases extends BaseTest {
     public void verifyTheItemsCounterInCartPopupWorksCorrectly() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AeCartPage aeCartPage = new AeCartPage(webDriver);
-        aeProductDetailsPage.clickOnShopeByMenu();
-        aeProductDetailsPage.clickOnSalesAndOffersMenu();
-        aeProductDetailsPage.clickOnBuy1Get1Card();
-        aeProductDetailsPage.DisplayProductInTheList(0);
+//        aeProductDetailsPage.clickOnShopeByMenu();
+//        aeProductDetailsPage.clickOnSalesAndOffersMenu();
+//        aeProductDetailsPage.clickOnBuy1Get1Card();
+//        aeProductDetailsPage.DisplayProductInTheList(0);
+        aeCartPage.navigateToBogoProduct();
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
         Assert.assertTrue(aeCartPage.getFreeFromSporterSection().isDisplayed());
@@ -428,13 +452,15 @@ public class AeCartTestCases extends BaseTest {
     @Test(description = " Cart Page- Make sure that My Shopping Cart title appears in the Cart Page", priority = 34)
     public void verifyMyShoppingCartTitleAppearCorrectlyInTheCartPage() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
-        this.viewCartFromPDP();
+                AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        aeProductDetailsPage.addToCartAndDisplayTheCart();
         Assert.assertTrue(aeCartPage.getMyShoppingCartMsg().getText().contains("My Shopping Cart"));
     }
     @Test(description = " Cart Page- Make sure that the system cancel the coupon code correctly", priority = 35,enabled = false)
     public void verifyAbilityToCancelTheCouponCode() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
-        this.viewCartFromPDP();
+                AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        aeProductDetailsPage.addToCartAndDisplayTheCart();
         aeCartPage.FillInCouponCode(freeCouponeCode);
         DataHelperAndWait.waitToBeVisible(aeCartPage.getUsedFreeCouponMsg(), 5,webDriver);
         aeCartPage.clickOnCancelCouponCodeBtn();
@@ -445,7 +471,8 @@ public class AeCartTestCases extends BaseTest {
     @Test(description = " Cart Page- Verify that The requested qty is not available message appear when the product becomes OOS in Cart Page successfully", priority = 36,enabled = false)
     public void verifyToDisplayRequestedQtyIsNotAvailableMsgWhenProductOOSinCartPage() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
-//        this.viewCartFromPDP();
+        AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        aeProductDetailsPage.addToCartAndDisplayTheCart();
         aeCartPage.FillInQtyField("10000");
         aeCartPage.clickOnIncreaseQtyBtn();
         DataHelperAndWait.waitToBeVisible(aeCartPage.getQtyUnavailableMsgInCartPage(), 5,webDriver);
@@ -457,10 +484,11 @@ public class AeCartTestCases extends BaseTest {
         WebDriverWait wait = new WebDriverWait(webDriver, 30);
         AeCartPage aeCartPage = new AeCartPage(webDriver);
         aeProductDetailsPage.switchToJOCountry();
-        aeProductDetailsPage.clickOnShopeByMenu();
-        aeProductDetailsPage.clickOnSportsSupplementsMenu();
-        aeProductDetailsPage.DisplayProductInTheList(0);
-        aeProductDetailsPage.clickOnFirstProductFlavor();
+//        aeProductDetailsPage.clickOnShopeByMenu();
+//        aeProductDetailsPage.clickOnSportsSupplementsMenu();
+//        aeProductDetailsPage.DisplayProductInTheList(0);
+//        aeProductDetailsPage.clickOnFirstProductFlavor();
+        aeCartPage.navigateToBogoProduct();
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
         aeCartPage.clickOnIncreaseQtyBtn();
@@ -482,7 +510,8 @@ public class AeCartTestCases extends BaseTest {
     @Test(description = " Cart Page- Make sure that the free coupon code working fine", priority = 39,enabled = false)
     public void verifyFreeCouponCodeFunctionWorksCorrectly() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
-        this.viewCartFromPDP();
+                AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        aeProductDetailsPage.addToCartAndDisplayTheCart();
         aeCartPage.FillInCouponCode(freeCouponeCode);
         DataHelperAndWait.waitToBeVisible(aeCartPage.getUsedFreeCouponMsg(), 5,webDriver);
         Assert.assertTrue(aeCartPage.getFreeFromSporterSection().isDisplayed());

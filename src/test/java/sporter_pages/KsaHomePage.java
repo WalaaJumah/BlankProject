@@ -345,6 +345,7 @@ dataHelperAndWait.waitToBeVisible(homePageRotatingSlider,5,webDriver);
         return homePageHorizontalBanner;
     }
     public WebElement getBannerInRotatingSliderSection() {
+        DataHelperAndWait.waitToBeVisible(bannerInRotatingSliderSection,6,webDriver);
         return bannerInRotatingSliderSection;
     }
 

@@ -298,7 +298,7 @@ public class AEGuestUserPage extends BasePage {
         DataHelperAndWait.waitToBeClickable(addToCartBtn, 6,webDriver);
         this.addToCartBtn.click();}
     catch(Exception e){
-        DataHelperAndWait.waitToBeClickable(addToCartBtn, 6,webDriver);
+        DataHelperAndWait.waitToBeClickable(addToCartBtn, 3,webDriver);
         this.addToCartBtn.click();}
     }
 
@@ -308,8 +308,12 @@ public class AEGuestUserPage extends BasePage {
     }
 
     public void viewCart() {
-        DataHelperAndWait.waitToBeClickable(viewCartBtn, 3,webDriver);
-        this.viewCartBtn.click();
+        try{
+        DataHelperAndWait.waitToBeClickable(viewCartBtn, 6,webDriver);
+        this.viewCartBtn.click();}
+        catch (Exception e){
+            DataHelperAndWait.waitToBeClickable(viewCartBtn, 3,webDriver);
+            this.viewCartBtn.click();}
     }
 
     public void clickOnGuestCheckoutBtn() {

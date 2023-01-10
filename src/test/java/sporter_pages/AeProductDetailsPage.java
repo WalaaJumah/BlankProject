@@ -363,30 +363,30 @@ public class AeProductDetailsPage extends BasePage {
 
     public void addToCart() {
         try{
-        DataHelperAndWait.waitToBeClickable(addToCartBtn, 5, webDriver);
+        DataHelperAndWait.waitToBeClickable(addToCartBtn, 6, webDriver);
         this.addToCartBtn.click();}
         catch(Exception e){
-            DataHelperAndWait.waitToBeClickable(addToCartBtn, 5, webDriver);
+            DataHelperAndWait.waitToBeClickable(addToCartBtn, 6, webDriver);
             this.addToCartBtn.click();
         }
     }
 
     public void keepShopping() {
         try{
-        DataHelperAndWait.waitToBeVisible(keepShippingBtn, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(keepShippingBtn, 6, webDriver);
         this.keepShippingBtn.click();}
         catch (Exception e){
-            DataHelperAndWait.waitToBeVisible(keepShippingBtn, 5, webDriver);
+            DataHelperAndWait.waitToBeVisible(keepShippingBtn, 6, webDriver);
             this.keepShippingBtn.click();
         }
     }
 
     public void viewCart() {
         try{
-        DataHelperAndWait.waitToBeClickable(viewCartBtn, 6, webDriver);
+        DataHelperAndWait.waitToBeVisible(viewCartBtn, 6, webDriver);
         this.viewCartBtn.click();}
         catch(Exception e){
-            DataHelperAndWait.waitToBeClickable(viewCartBtn, 6, webDriver);
+            DataHelperAndWait.waitToBeVisible(viewCartBtn, 6, webDriver);
             this.viewCartBtn.click();
         }
     }
@@ -645,4 +645,9 @@ public class AeProductDetailsPage extends BasePage {
             return false;
         }
     }
+
+    public void addToCartAndDisplayTheCart(){
+    this.displayTheProduct();
+        this.addToCart();
+        this.viewCart();}
 }
