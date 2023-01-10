@@ -184,6 +184,7 @@ public class AeWomenOnlyCategoryPage extends BasePage {
         return lastProductInSupplementsForHerSection;
     }
     public WebElement getProductCardInSupplementsForHerSection() {
+        DataHelperAndWait.waitToBeVisible(productCardInSupplementsForHerSection,5,webDriver);
         return productCardInSupplementsForHerSection;
     }
     public WebElement getProductCardInWomenVitaminsSection() {

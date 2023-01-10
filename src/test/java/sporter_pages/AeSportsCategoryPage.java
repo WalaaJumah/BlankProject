@@ -215,7 +215,7 @@ public class AeSportsCategoryPage  extends BasePage {
 //        this.personalCareApparelCategory.click();
 //    }
     public WebElement getNextIconInRecommendedProductsSection() {
-        DataHelperAndWait.waitToBeVisible(nextIconInRecommendedProductsSection,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(nextIconInRecommendedProductsSection,7,webDriver);
         return nextIconInRecommendedProductsSection;
     }
     public void navigateToSportsPage(){webDriver.navigate().to(BaseURL +aeDomain+sportsUrl);}

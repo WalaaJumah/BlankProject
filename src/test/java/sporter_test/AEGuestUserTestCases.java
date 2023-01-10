@@ -53,7 +53,7 @@ public class AEGuestUserTestCases extends BaseTest {
 
         Assert.assertTrue(aeGuestUserPage.getRegisterAtSporterOption().isDisplayed());
     }
-    @Test(description = "Make sure the title section appearing in the Shipping information screen is displayed correctly ", priority = 4)
+    @Test(groups = {"Guest User Page","Low Severity"},description = "Make sure the title section appearing in the Shipping information screen is displayed correctly ", priority = 4)
     public void verifyTheHeaderOfShippingInformationFormIsDisplayed() {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
 //        this.verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPageCorrectly();
@@ -220,7 +220,7 @@ aeGuestUserPage.clickOnContinueBtn();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(cartURL) );
     }
 
-    @Test(description = "Make sure ability to navigate to the home page by clicking on the sporter logo from the shipping information form for the Guest User ", priority = 16)
+    @Test(groups = {"Guest User Page","Medium Severity"},description = "Make sure ability to navigate to the home page by clicking on the sporter logo from the shipping information form for the Guest User ", priority = 16)
     public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogo() {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
 //        this.verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPageCorrectly();
@@ -230,13 +230,13 @@ aeGuestUserPage.clickOnContinueBtn();
         Assert.assertEquals(webDriver.getCurrentUrl(), BaseURL +aeDomain+"/");
     }
 
-    @Test(description = "Guest Checkout- Make sure ability to navigate to the shipping information directly from the URL", priority = 17)
+    @Test(groups = {"Guest User Page","Medium Severity"},description = "Guest Checkout- Make sure ability to navigate to the shipping information directly from the URL", priority = 17)
     public void verifyInabilityToNavigateToShippingInformationViaUrlWithoutAddingProductToCart() {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
         webDriver.navigate().to("https://www.sporter.com/en-ae/checkout/cart/#shipping");
         aeGuestUserPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-    @Test(description = "Make sure the Guest user can filling the shipping information correctly when switching to Arabic version", priority = 18)
+    @Test(groups = {"Guest User Page","Critical Severity"},description = "Make sure the Guest user can filling the shipping information correctly when switching to Arabic version", priority = 18)
     public void verifyTheGuestUserCanFillTheShippingInformationWhenSwitchingToArabicCorrectly() {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
         aeGuestUserPage.navigateToHomePage();
@@ -253,7 +253,7 @@ aeGuestUserPage.clickOnContinueBtn();
         Assert.assertTrue(aeGuestUserPage.getShippingMethodSection().isDisplayed());
     }
     //There's a bug here
-    @Test( description = "Guest User- Make sure the validation message appears when submiting tGhe shipping information without filling the city field", priority = 19)
+    @Test(groups = {"Guest User Page","Low Severity"}, description = "Guest User- Make sure the validation message appears when submiting the shipping information without filling the city field", priority = 19)
     public void verifyTheValidationMsgAppearingWhenSubmittingTheShippingFormWithoutFillingTheCityField() {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
         aeGuestUserPage.navigateToHomePage();

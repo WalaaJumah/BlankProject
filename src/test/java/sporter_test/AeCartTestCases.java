@@ -400,7 +400,7 @@ public class AeCartTestCases extends BaseTest {
         aeGuestUserPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeCartPage.removeProductFromCart();
     }
-    @Test(description = " Cart Page- Make sure that the product price is changed when you change the quantity from the Cart Page", priority = 30)
+    @Test(groups = {"Cart Page","Medium Severity"},description = " Cart Page- Make sure that the product price is changed when you change the quantity from the Cart Page", priority = 30)
     public void verifyProductPriceChangesWhenChangingTheProductQtyFromTheCartPage() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
                 AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
@@ -412,7 +412,7 @@ public class AeCartTestCases extends BaseTest {
         Assert.assertNotEquals(currentProductPrice, newProductPrice);
         aeCartPage.removeProductFromCart();
     }
-    @Test(description = " Cart Page- Make sure that Make sure that complete your order, to get 100% GENUINE PRODUCTS and SUPER DELIVERY WITHIN 2 WORKING DAYS label appears in the Cart Page", priority = 31)
+    @Test(groups = {"Cart Page","Low Severity"},description = " Cart Page- Make sure that Make sure that complete your order, to get 100% GENUINE PRODUCTS and SUPER DELIVERY WITHIN 2 WORKING DAYS label appears in the Cart Page", priority = 31)
     public void verifyTheFreeShippingLabelAppearCorrectlyInTheCartPage() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
                 AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
@@ -420,7 +420,7 @@ public class AeCartTestCases extends BaseTest {
         Assert.assertTrue(aeCartPage.getFreeShippingLabel().isDisplayed());
         aeCartPage.removeProductFromCart();
     }
-    @Test(description = " Cart Page- Make sure that the Expected delivery date field in the cart page retrieves data", priority = 32)
+    @Test(groups = {"Cart Page","Low Severity"},description = " Cart Page- Make sure that the Expected delivery date field in the cart page retrieves data", priority = 32)
     public void verifyExpectedDeliveryDateRetrievesData() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
@@ -449,14 +449,14 @@ public class AeCartTestCases extends BaseTest {
         Assert.assertEquals(aeCartPage.getItemCounterInCartPopUp().getText(), "(2 of 2 Items )");
         aeCartPage.removeProductFromCart();
     }
-    @Test(description = " Cart Page- Make sure that My Shopping Cart title appears in the Cart Page", priority = 34)
+    @Test(groups = {"Cart Page","Medium Severity"},description = " Cart Page- Make sure that My Shopping Cart title appears in the Cart Page", priority = 34)
     public void verifyMyShoppingCartTitleAppearCorrectlyInTheCartPage() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
                 AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.addToCartAndDisplayTheCart();
         Assert.assertTrue(aeCartPage.getMyShoppingCartMsg().getText().contains("My Shopping Cart"));
     }
-    @Test(description = " Cart Page- Make sure that the system cancel the coupon code correctly", priority = 35,enabled = false)
+    @Test(groups = {"Cart Page","Medium Severity"},description = " Cart Page- Make sure that the system cancel the coupon code correctly", priority = 35,enabled = false)
     public void verifyAbilityToCancelTheCouponCode() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
                 AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
@@ -468,7 +468,7 @@ public class AeCartTestCases extends BaseTest {
         Assert.assertTrue(aeCartPage.getApplyCouponCode().isDisplayed());
         aeCartPage.removeProductFromCart();
     }
-    @Test(description = " Cart Page- Verify that The requested qty is not available message appear when the product becomes OOS in Cart Page successfully", priority = 36,enabled = false)
+    @Test(groups = {"Cart Page","Medium Severity"},description = " Cart Page- Verify that The requested qty is not available message appear when the product becomes OOS in Cart Page successfully", priority = 36,enabled = false)
     public void verifyToDisplayRequestedQtyIsNotAvailableMsgWhenProductOOSinCartPage() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
@@ -478,7 +478,7 @@ public class AeCartTestCases extends BaseTest {
         DataHelperAndWait.waitToBeVisible(aeCartPage.getQtyUnavailableMsgInCartPage(), 5,webDriver);
         Assert.assertTrue(aeCartPage.getQtyUnavailableMsgInCartPage().isDisplayed());
     }
-    @Test(description = " Cart Page- Make sure that the customer can't add more than 2 Qty of the same product when switching to Jordan Store from Cart Page", priority = 37,enabled = false)
+    @Test(groups = {"Cart Page","High Severity"},description = " Cart Page- Make sure that the customer can't add more than 2 Qty of the same product when switching to Jordan Store from Cart Page", priority = 37,enabled = false)
     public void verifyInabilityToAddMoreThan2QtyOfSameProductFromTheCartPageForJordanStore() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         WebDriverWait wait = new WebDriverWait(webDriver, 30);
@@ -495,7 +495,7 @@ public class AeCartTestCases extends BaseTest {
         if (wait.until(ExpectedConditions.alertIsPresent()) != null)
             webDriver.switchTo().alert().dismiss();
     }
-    @Test(description = " Cart Page- Make sure that the system will empty the cart after switching the country", priority = 38,enabled = false)
+    @Test(groups = {"Cart Page","Medium Severity"},description = " Cart Page- Make sure that the system will empty the cart after switching the country", priority = 38,enabled = false)
     public void verifyTheCartWillRemoveAllProductsAfterSwitchingTheCountry() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
@@ -507,7 +507,7 @@ public class AeCartTestCases extends BaseTest {
         aeProductDetailsPage.switchToJOCountry();
         Assert.assertTrue(aeCartPage.getNoItemInCartLabel().isDisplayed());
     }
-    @Test(description = " Cart Page- Make sure that the free coupon code working fine", priority = 39,enabled = false)
+    @Test(groups = {"Cart Page","High Severity"},description = " Cart Page- Make sure that the free coupon code working fine", priority = 39,enabled = false)
     public void verifyFreeCouponCodeFunctionWorksCorrectly() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
                 AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);

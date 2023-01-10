@@ -84,17 +84,27 @@
 
 
 
+<!--For Smoke Report-->
+<!--&lt;!&ndash;Display the Critical Severity in Red color&ndash;&gt;-->
+<!--              $('#cat-collection > li:nth-child(3) > div.cat-head > span').css('color', 'red');-->
+<!--&lt;!&ndash;Display the High Severity in Orang color&ndash;&gt;-->
+<!--              $('#cat-collection > li:nth-child(7) > div.cat-head > span').css('color', 'orange');-->
+<!--&lt;!&ndash;Display the Medium Severity in darkblue color&ndash;&gt;-->
+<!--              $('#cat-collection > li:nth-child(10) > div.cat-head > span').css('color', 'darkblue');-->
+<!--&lt;!&ndash;Display the Low Severity in blue color&ndash;&gt;-->
+<!--              $('#cat-collection > li:nth-child(9) > div.cat-head > span').css('color', 'blue');-->
 
-<!--Display the Critical Severity in Red color-->
-              $('#cat-collection > li:nth-child(3) > div.cat-head > span').css('color', 'red');
-<!--Display the High Severity in Orang color-->
-              $('#cat-collection > li:nth-child(7) > div.cat-head > span').css('color', 'orange');
-<!--Display the Medium Severity in darkblue color-->
-              $('#cat-collection > li:nth-child(10) > div.cat-head > span').css('color', 'darkblue');
-<!--Display the Low Severity in blue color-->
-              $('#cat-collection > li:nth-child(9) > div.cat-head > span').css('color', 'blue');
+<!--**************************************************************************************************************************-->
 
-
+<!--For System Report-->
+<!--&lt;!&ndash;Display the Critical Severity in Red color&ndash;&gt;-->
+<!--              $('#cat-collection > li:nth-child(3) > div.cat-head > span').css('color', 'red');-->
+<!--&lt;!&ndash;Display the High Severity in Orang color&ndash;&gt;-->
+<!--              $('#cat-collection > li:nth-child(7) > div.cat-head > span').css('color', 'orange');-->
+<!--&lt;!&ndash;Display the Medium Severity in darkblue color&ndash;&gt;-->
+<!--              $('#cat-collection > li:nth-child(10) > div.cat-head > span').css('color', 'darkblue');-->
+<!--&lt;!&ndash;Display the Low Severity in blue color&ndash;&gt;-->
+<!--              $('#cat-collection > li:nth-child(9) > div.cat-head > span').css('color', 'blue');-->
 
 
 
@@ -119,7 +129,7 @@
 
 
 
-.label.dot {font-size: 10 px;width: auto;height: auto;}
+.label.dot {font-size: auto!important;width: auto;height: auto;}
 
 
 

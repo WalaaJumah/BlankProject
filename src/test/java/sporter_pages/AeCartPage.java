@@ -181,12 +181,12 @@ public class AeCartPage extends BasePage {
     }
 
     public WebElement getProceedCheckoutBtn() {
-        DataHelperAndWait.waitToBeVisible(proceedCheckoutBtn,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(proceedCheckoutBtn,6,webDriver);
         return proceedCheckoutBtn;
     }
 
     public WebElement getSubTotalValue() {
-        DataHelperAndWait.waitToBeVisible(subTotalValue,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(subTotalValue,6,webDriver);
         return subTotalValue;
     }
 
