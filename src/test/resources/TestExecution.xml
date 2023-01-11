@@ -6,14 +6,14 @@
         <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>
         <listener class-name="extent_report_listner.ExtentReportListener" />
     </listeners>
-<!--    <test name="Smoke Testing Result- Production" preserve-order="true">-->
+<!--    <test name="All Smoke Testing Result- Production" preserve-order="true">-->
 <!--        <parameter name="environment" value="https://www.sporter.com" />-->
 <!--        <parameter name="browser" value="chrome" />-->
 <!--        &lt;!&ndash;        <parameter name="country" value="en-qa" />&ndash;&gt;-->
 <!--        <parameter name="bogoProduct" value="/phd-nutrition-diet-whey-protein-47340" />-->
 <!--        <groups>-->
 <!--            <run>-->
-<!--                <include name="Smoke Testing Result"/>-->
+<!--                <include name="All Smoke Testing Result"/>-->
 <!--            </run>-->
 <!--        </groups>-->
 <!--        <classes>-->
@@ -59,7 +59,9 @@
 <!--                </class>-->
 <!--                    <class name="sporter_test.AeCartTestCases"/>-->
 <!--                    <class name="sporter_test.AeRecommendedProductsTestCases"/>-->
-                    <class name="sporter_test.QatarHomePageTestCases"/>
+                <class name="sporter_test.AeAllPagesInsideCategoriesInMegaMenuTestCases">
+                    <methods><include name="verifyAbilityToAccessAllPagesInsideSkinCareOptionCategoryRelatedToSportsCategoryPage"/></methods>
+                </class>
 <!--                    <class name="sporter_test.KsaHomePageTestCases"/>-->
 <!--                    <class name="sporter_test.AeWomenOnlyCategoryTestCases"/>-->
 
@@ -116,7 +118,7 @@
     <!--    </test>-->
 
 
-<!--        <test name="Smoke Testing Result- STG" preserve-order="true">-->
+<!--        <test name="All Smoke Testing Result- STG" preserve-order="true">-->
 <!--            <parameter name="environment" value="https://stg.sporter.com" />-->
 <!--            <parameter name="browser" value="chrome" />-->
 <!--    &lt;!&ndash;        <parameter name="country" value="en-qa" />&ndash;&gt;-->
@@ -125,7 +127,7 @@
 
 <!--            <groups>-->
 <!--                <run>-->
-<!--                    <include name="Smoke Testing Result"/>-->
+<!--                    <include name="All Smoke Testing Result"/>-->
 <!--                </run>-->
 <!--            </groups>-->
 <!--            <classes>-->

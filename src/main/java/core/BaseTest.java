@@ -54,9 +54,10 @@ public class BaseTest {
             }
         }
         catch (NoSuchElementException e){
-            System.out.println(e.getMessage());
+//            System.out.println(e.getMessage());
+            }
 
-        }
+
     }
 //    The Below Methods we need to run the TCs across the broswers
 //    @BeforeClass(alwaysRun = true)
@@ -136,7 +137,7 @@ public class BaseTest {
 
 
 
-//    @BeforeGroups(groups = "Smoke Testing Result")
+//    @BeforeGroups(groups = "All Smoke Testing Result")
 //    @Parameters({"environment"})
 //
 //    public void setupBrowserForGroup(String environment) throws Exception {

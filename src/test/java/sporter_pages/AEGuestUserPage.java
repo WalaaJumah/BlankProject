@@ -312,6 +312,7 @@ public class AEGuestUserPage extends BasePage {
         DataHelperAndWait.waitToBeClickable(viewCartBtn, 6,webDriver);
         this.viewCartBtn.click();}
         catch (Exception e){
+            webDriver.navigate().refresh();
             DataHelperAndWait.waitToBeClickable(viewCartBtn, 3,webDriver);
             this.viewCartBtn.click();}
     }

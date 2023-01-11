@@ -20,7 +20,7 @@ import sporter_pages.QatarHomePage;
 import java.util.ArrayList;
 
 public class AccessAllStoresCountriesTestCases extends BaseTest {
-    @Test(groups = {"Smoke Testing Result","1. Critical Severity"},description = "Ability to access all stores", priority = 1)
+    @Test(groups = {"All Smoke Testing Result","1. Critical Severity"},description = "Ability to access all stores", priority = 1)
     public void accessAllCountries(){
         AccessAllStoresCountriesPage accessAllStoresCountriesPage = new AccessAllStoresCountriesPage(webDriver);
         ArrayList<String> expectedOption = new ArrayList<>() {{
@@ -47,14 +47,14 @@ public class AccessAllStoresCountriesTestCases extends BaseTest {
 
     }
 
-//    @Test(groups = "Smoke Testing Result",description = "Ability switching to Qatar Store", priority = 1)
+//    @Test(groups = "All Smoke Testing Result",description = "Ability switching to Qatar Store", priority = 1)
 //    public void switchToQatarStore() {
 //        QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
 //        qatarHomePage.switchToQatarCountry();
 //        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +qatarHomePage.qatarDomain+"/");
 //        qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
-//       @Test(groups = "Smoke Testing Result",description = "Ability switching between store language (Arabic & English) in Qatar Store", priority = 2)
+//       @Test(groups = "All Smoke Testing Result",description = "Ability switching between store language (Arabic & English) in Qatar Store", priority = 2)
 //    public void switchLanguageInQatarStore() {
 //           AccessAllStoresCountriesPage accessAllStoresCountriesPage = new AccessAllStoresCountriesPage(webDriver);
 //           QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
@@ -67,14 +67,14 @@ public class AccessAllStoresCountriesTestCases extends BaseTest {
 //           qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //
-//     @Test(groups = "Smoke Testing Result",description = "Ability switching to UAE Store", priority = 3)
+//     @Test(groups = "All Smoke Testing Result",description = "Ability switching to UAE Store", priority = 3)
 //    public void switchToUAEStore() {
 //        AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
 //         aeProductDetailsPage.switchToAECountry();
 //        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeProductDetailsPage.aeDomain+"/");
 //        aeProductDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
-//    @Test(groups = "Smoke Testing Result",description = "Ability switching between store language (Arabic & English) in UAE Store", priority = 4)
+//    @Test(groups = "All Smoke Testing Result",description = "Ability switching between store language (Arabic & English) in UAE Store", priority = 4)
 //    public void switchLanguageInUAEStore() {
 //        AccessAllStoresCountriesPage accessAllStoresCountriesPage = new AccessAllStoresCountriesPage(webDriver);
 //        AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
@@ -86,14 +86,14 @@ public class AccessAllStoresCountriesTestCases extends BaseTest {
 //        Assert.assertTrue(accessAllStoresCountriesPage.getArabicLanguageBtn().isDisplayed());
 //        aeProductDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
-//       @Test(groups = "Smoke Testing Result",description = "Ability switching to Jordan Store", priority = 5)
+//       @Test(groups = "All Smoke Testing Result",description = "Ability switching to Jordan Store", priority = 5)
 //    public void switchToJordanStore() {
 //        AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
 //         aeProductDetailsPage.switchToJOCountry();
 //        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeProductDetailsPage.jordanDomain+"/");
 //        aeProductDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
-//    @Test(groups = "Smoke Testing Result",description = "Ability switching between store language (Arabic & English) in Jordan Store", priority = 6)
+//    @Test(groups = "All Smoke Testing Result",description = "Ability switching between store language (Arabic & English) in Jordan Store", priority = 6)
 //    public void switchLanguageInJordanStore() {
 //        AccessAllStoresCountriesPage accessAllStoresCountriesPage = new AccessAllStoresCountriesPage(webDriver);
 //        AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
@@ -105,14 +105,14 @@ public class AccessAllStoresCountriesTestCases extends BaseTest {
 //        Assert.assertTrue(accessAllStoresCountriesPage.getArabicLanguageBtn().isDisplayed());
 //        aeProductDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
-//       @Test(groups = "Smoke Testing Result",description = "Ability switching to KSA Store", priority = 7)
+//       @Test(groups = "All Smoke Testing Result",description = "Ability switching to KSA Store", priority = 7)
 //    public void switchToKSAStore() {
 //        KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //           ksaHomePage.switchToKsaCountry();
 //        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +ksaHomePage.saudiDomain+"/");
 //        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
-//    @Test(groups = "Smoke Testing Result",description = "Ability switching between store language (Arabic & English) in KSA Store", priority = 8)
+//    @Test(groups = "All Smoke Testing Result",description = "Ability switching between store language (Arabic & English) in KSA Store", priority = 8)
 //    public void switchLanguageInKSAStore() {
 //        AccessAllStoresCountriesPage accessAllStoresCountriesPage = new AccessAllStoresCountriesPage(webDriver);
 //        KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
@@ -124,14 +124,14 @@ public class AccessAllStoresCountriesTestCases extends BaseTest {
 //        Assert.assertTrue(accessAllStoresCountriesPage.getArabicLanguageBtn().isDisplayed());
 //        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
-//        @Test(groups = "Smoke Testing Result",description = "Ability switching to Bahrain Store", priority = 9)
+//        @Test(groups = "All Smoke Testing Result",description = "Ability switching to Bahrain Store", priority = 9)
 //    public void switchToBahrainStore() {
 //        AccessAllStoresCountriesPage accessAllStoresCountriesPage = new AccessAllStoresCountriesPage(webDriver);
 //            accessAllStoresCountriesPage.switchToBahrainCountryCountry();
 //        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +accessAllStoresCountriesPage.bahrainDomain+"/");
 //        accessAllStoresCountriesPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
-//    @Test(groups = "Smoke Testing Result",description = "Ability switching between store language (Arabic & English) in Bahrain Store", priority = 10)
+//    @Test(groups = "All Smoke Testing Result",description = "Ability switching between store language (Arabic & English) in Bahrain Store", priority = 10)
 //    public void switchLanguageInBahrainStore() {
 //        AccessAllStoresCountriesPage accessAllStoresCountriesPage = new AccessAllStoresCountriesPage(webDriver);
 //        KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
@@ -143,14 +143,14 @@ public class AccessAllStoresCountriesTestCases extends BaseTest {
 //        Assert.assertTrue(accessAllStoresCountriesPage.getArabicLanguageBtn().isDisplayed());
 //        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
-//        @Test(groups = "Smoke Testing Result",description = "Ability switching to Oman Store", priority = 11)
+//        @Test(groups = "All Smoke Testing Result",description = "Ability switching to Oman Store", priority = 11)
 //    public void switchToOmanStore() {
 //        AccessAllStoresCountriesPage accessAllStoresCountriesPage = new AccessAllStoresCountriesPage(webDriver);
 //            accessAllStoresCountriesPage.switchToOmanCountryCountry();
 //        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +accessAllStoresCountriesPage.omanDomain+"/");
 //        accessAllStoresCountriesPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
-//    @Test(groups = "Smoke Testing Result",description = "Ability switching between store language (Arabic & English) in Oman Store", priority = 12)
+//    @Test(groups = "All Smoke Testing Result",description = "Ability switching between store language (Arabic & English) in Oman Store", priority = 12)
 //    public void switchLanguageInOmanStore() {
 //        AccessAllStoresCountriesPage accessAllStoresCountriesPage = new AccessAllStoresCountriesPage(webDriver);
 //        KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
@@ -162,14 +162,14 @@ public class AccessAllStoresCountriesTestCases extends BaseTest {
 //        Assert.assertTrue(accessAllStoresCountriesPage.getArabicLanguageBtn().isDisplayed());
 //        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
-//        @Test(groups = "Smoke Testing Result",description = "Ability switching to Kuwait Store", priority = 13)
+//        @Test(groups = "All Smoke Testing Result",description = "Ability switching to Kuwait Store", priority = 13)
 //    public void switchToKuwaitStore() {
 //        AccessAllStoresCountriesPage accessAllStoresCountriesPage = new AccessAllStoresCountriesPage(webDriver);
 //            accessAllStoresCountriesPage.switchToKuwaitCountryCountry();
 //        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +accessAllStoresCountriesPage.kuwaitDomain+"/");
 //        accessAllStoresCountriesPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
-//    @Test(groups = "Smoke Testing Result",description = "Ability switching between store language (Arabic & English) in Kuwait Store", priority = 14)
+//    @Test(groups = "All Smoke Testing Result",description = "Ability switching between store language (Arabic & English) in Kuwait Store", priority = 14)
 //    public void switchLanguageInKuwaitStore() {
 //        AccessAllStoresCountriesPage accessAllStoresCountriesPage = new AccessAllStoresCountriesPage(webDriver);
 //        KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
@@ -181,14 +181,14 @@ public class AccessAllStoresCountriesTestCases extends BaseTest {
 //        Assert.assertTrue(accessAllStoresCountriesPage.getArabicLanguageBtn().isDisplayed());
 //        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
-//        @Test(groups = "Smoke Testing Result",description = "Ability switching to Egypt Store", priority = 15)
+//        @Test(groups = "All Smoke Testing Result",description = "Ability switching to Egypt Store", priority = 15)
 //    public void switchToEqyptStore() {
 //        AccessAllStoresCountriesPage accessAllStoresCountriesPage = new AccessAllStoresCountriesPage(webDriver);
 //            accessAllStoresCountriesPage.switchToEgyptCountryCountry();
 //        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +accessAllStoresCountriesPage.egyptDomain+"/");
 //        accessAllStoresCountriesPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
-//    @Test(groups = "Smoke Testing Result",description = "Ability switching between store language (Arabic & English) in Egypt Store", priority = 16)
+//    @Test(groups = "All Smoke Testing Result",description = "Ability switching between store language (Arabic & English) in Egypt Store", priority = 16)
 //    public void switchLanguageIEgyptStore() {
 //        AccessAllStoresCountriesPage accessAllStoresCountriesPage = new AccessAllStoresCountriesPage(webDriver);
 //        KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
@@ -201,14 +201,14 @@ public class AccessAllStoresCountriesTestCases extends BaseTest {
 //        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
 //
-//        @Test(groups = "Smoke Testing Result",description = "Ability switching to International Store", priority = 17)
+//        @Test(groups = "All Smoke Testing Result",description = "Ability switching to International Store", priority = 17)
 //    public void switchToInternationalStore() {
 //        AccessAllStoresCountriesPage accessAllStoresCountriesPage = new AccessAllStoresCountriesPage(webDriver);
 //            accessAllStoresCountriesPage.switchToInternationalCountryCountry();
 //        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +accessAllStoresCountriesPage.aeDomain+"/");
 //        accessAllStoresCountriesPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
-//    @Test(groups = "Smoke Testing Result",description = "Ability switching between store language (Arabic & English) in International Store", priority = 18)
+//    @Test(groups = "All Smoke Testing Result",description = "Ability switching between store language (Arabic & English) in International Store", priority = 18)
 //    public void switchLanguageIInternationalStore() {
 //        AccessAllStoresCountriesPage accessAllStoresCountriesPage = new AccessAllStoresCountriesPage(webDriver);
 //        KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
@@ -220,14 +220,14 @@ public class AccessAllStoresCountriesTestCases extends BaseTest {
 //        Assert.assertTrue(accessAllStoresCountriesPage.getArabicLanguageBtn().isDisplayed());
 //        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
-//        @Test(groups = "Smoke Testing Result",description = "Ability switching to Lebanon Store", priority = 19)
+//        @Test(groups = "All Smoke Testing Result",description = "Ability switching to Lebanon Store", priority = 19)
 //    public void switchToLebanonlStore() {
 //            AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
 //            aeProductDetailsPage.switchToLebanonCountry();
 //        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeProductDetailsPage.lebanonDomain+"/");
 //        aeProductDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //    }
-//    @Test(groups = "Smoke Testing Result",description = "Ability switching between store language (Arabic & English) in Lebanon Store", priority = 20)
+//    @Test(groups = "All Smoke Testing Result",description = "Ability switching between store language (Arabic & English) in Lebanon Store", priority = 20)
 //    public void switchLanguageLebanonStore() {
 //        AccessAllStoresCountriesPage accessAllStoresCountriesPage = new AccessAllStoresCountriesPage(webDriver);
 //        KsaHomePage ksaHomePage = new KsaHomePage(webDriver);

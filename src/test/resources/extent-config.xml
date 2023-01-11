@@ -102,9 +102,12 @@
 
 
 <!-- To Hide Other Status Icon-->
-<!--              $('#cat-details-wrapper > div > div > div > div > div.category-status-counts > div > a.other.label.filter').css('display','none');-->
               $('a.other.label.filter').css('display','none');
               $('a.other.label.filter').hide();
+
+<!--To display the smoke testing row in Bold              -->
+              $('#cat-collection > li:nth-child(5) > div.cat-head > span').css('font-weight', '600');
+
         });
 
       ]]>
