@@ -53,12 +53,27 @@ public class BaseTest {
                 btnCloseElement.click();
             }
         }
-        catch (NoSuchElementException e){
+        catch (NoSuchElementException ex){
 //            System.out.println(e.getMessage());
-            }
+try{
+    WebElement btnCloseElement = webDriver.findElement(By.id("btnClose"));
+    DataHelperAndWait.waitToBeVisible(btnCloseElement,6,webDriver);
 
+    if (btnCloseElement != null
+            && btnCloseElement.isDisplayed()) {
+        btnCloseElement.click();
+    }}
+     catch (NoSuchElementException e){
+        //            System.out.println(e.getMessage());
 
     }
+
+
+
+
+
+
+    }}
 //    The Below Methods we need to run the TCs across the broswers
 //    @BeforeClass(alwaysRun = true)
 //    @Parameters({"environment","browser"})

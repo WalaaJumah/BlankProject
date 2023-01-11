@@ -136,12 +136,12 @@ public class AeCartPage extends BasePage {
     }
 
     public WebElement getPriceInCartPage() {
-        DataHelperAndWait.waitToBeVisible(priceInCartPage,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(priceInCartPage,8,webDriver);
         return priceInCartPage;
     }
 
     public WebElement getFreeFromSporterSection() {
-        DataHelperAndWait.waitToBeVisible(freeFromSporter,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(freeFromSporter,8,webDriver);
         return freeFromSporter;
     }
 
@@ -231,7 +231,7 @@ public class AeCartPage extends BasePage {
     }
 
     public WebElement getRequiredCouponMsg() {
-        DataHelperAndWait.waitToBeVisible(requiredCouponMsg,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(requiredCouponMsg,8,webDriver);
         return requiredCouponMsg;
     }
 

@@ -1,6 +1,7 @@
 package sporter_pages;
 
 import core.BasePage;
+import core.DataHelperAndWait;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -176,6 +177,7 @@ public class AeSearchPage extends BasePage {
         return filtrationColumn;
     }
     public WebElement getProductsListInAllTab() {
+        DataHelperAndWait.waitToBeVisible(productsListInAllTab,5,webDriver);
         return productsListInAllTab;
     }
     public WebElement getBrandsListInAllTab() {
