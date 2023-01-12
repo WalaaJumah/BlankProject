@@ -309,7 +309,7 @@ public class AEGuestUserPage extends BasePage {
 
     public void viewCart() {
         try{
-        DataHelperAndWait.waitToBeClickable(viewCartBtn, 6,webDriver);
+        DataHelperAndWait.waitToBeClickable(viewCartBtn, 10,webDriver);
         this.viewCartBtn.click();}
         catch (Exception e){
             webDriver.navigate().refresh();

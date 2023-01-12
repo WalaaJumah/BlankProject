@@ -33,7 +33,7 @@ public class AeSearchPageTestCases extends BaseTest {
         DataHelperAndWait.waitForUrlContains(aeProductDetailsPage.searchUrl,webDriver,5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeProductDetailsPage.searchUrl));
     }
-    @Test(description = "Make sure all search tabs(All, Products, Articles, Brands) tabs appearing correctly in the search screen", priority = 2)
+    @Test(groups = {"Search", "1. Critical Severity"},description = "Make sure all search tabs(All, Products, Articles, Brands) tabs appearing correctly in the search screen", priority = 2)
     public void verifyAllSearchTabsLikeAll_Products_Articles_AndBrandsTabsAppearCorrectlyInTheSearchScreen() {
         AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         this.verifyClickingOnSearchIconWillRedirectUserTOTheSearchScreen();
@@ -46,7 +46,7 @@ public class AeSearchPageTestCases extends BaseTest {
        Assert.assertTrue(aeSearchPage.getBrandsTab().isDisplayed(),"Brands tab is missing");
        Assert.assertEquals(aeSearchPage.getBrandsTab().getText(), "BRANDS ","Brands tab have incorrect name");
     }
-    @Test(description = "Search Page-Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Search Page", priority = 3)
+    @Test(groups = {"Search", "4. Low Severity"},description = "Search Page-Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Search Page", priority = 3)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInSearchPage(){
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         Assert.assertTrue(aeFooterPage.getPageBottomSection().isDisplayed());
@@ -83,7 +83,7 @@ public class AeSearchPageTestCases extends BaseTest {
         Assert.assertTrue(aeMegamenuPage.getMegaMenuSection().isDisplayed());
     }
     //All Tab
-    @Test(description = "Search Page- Make sure clicking on the All tab will redirect the user to the correct page", priority = 5)
+    @Test(groups = {"Search", "1. Critical Severity"},description = "Search Page- Make sure clicking on the All tab will redirect the user to the correct page", priority = 5)
     public void verifyClickingOnAllTabRedirectUserToCorrectPage(){
         AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         this.verifyClickingOnSearchIconWillRedirectUserTOTheSearchScreen();
@@ -111,7 +111,7 @@ public class AeSearchPageTestCases extends BaseTest {
     }
 
 
-    @Test(description = "Search Page- Make sure the ability to access all brands appearing in the Brands Page", priority = 7)
+    @Test(groups = {"Search", "1. Critical Severity"},description = "Search Page- Make sure the ability to access all brands appearing in the Brands Page", priority = 7)
     public void verifyAbilityToAccessAllBrandsListedInBrandsPageCorrectly(){
         AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage=new AeProductDetailsPage(webDriver);
@@ -132,7 +132,7 @@ public class AeSearchPageTestCases extends BaseTest {
 
         }
     }
-    @Test(description = "Search Page- Make sure the the number of Brands Result retrieve a correct number", priority = 8)
+    @Test(groups = {"Search", "3. Medium Severity"},description = "Search Page- Make sure the the number of Brands Result retrieve a correct number", priority = 8)
     public void verifyAbilityNumberOfBrandsResultRetrieveCorrectValue(){
         AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage=new AeProductDetailsPage(webDriver);
@@ -144,7 +144,7 @@ public class AeSearchPageTestCases extends BaseTest {
         int numberOfProductInTheListInInt=Integer.parseInt(numberOfProductWithOutResultLabel);
         Assert.assertEquals(numberOfProductInTheListInInt, aeSearchPage.getBrandsListInBrandPage().size(),"The number of Brands Result retrieve incorrect number");
     }
-    @Test(description = "Search Page- Make sure the ability to access all brands appearing below the Brands section in the All Page", priority = 9)
+    @Test(groups = {"Search", "1. Critical Severity"},description = "Search Page- Make sure the ability to access all brands appearing below the Brands section in the All Page", priority = 9)
     public void verifyAbilityToAccessAllBrandsListedBelowTheBrandsSectionInTheAllTabCorrectly(){
         AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage=new AeProductDetailsPage(webDriver);
@@ -163,7 +163,7 @@ public class AeSearchPageTestCases extends BaseTest {
         }
     }
 // Search Result
-    @Test(description = "Search Page- Make sure the search result matched with what the user search for", priority = 10)
+    @Test(groups = {"Search", "3. Medium Severity"},description = "Search Page- Make sure the search result matched with what the user search for", priority = 10)
     public void verifyTheSearchResultMatchedWithWhatTheUserSearch(){
         AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage=new AeProductDetailsPage(webDriver);

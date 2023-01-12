@@ -303,7 +303,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     //There's a performance issue in the Navigation
-    @Test(groups = {"Women Only Category Page","2. High Severity"},description = "Women's Only Category- Make Sure the Pagination control in the Supplements For Her category page works correctly", priority = 25)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the Pagination control in the Supplements For Her category page works correctly", priority = 25)
     public void verifyThePaginationControlInSupplementsForHerCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -472,7 +472,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     //There's a performance issue in the Navigation
-    @Test(description = "Women's Only Category- Make Sure the Pagination control in the Women's Daily Vitamins category page works correctly", priority = 39)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the Pagination control in the Women's Daily Vitamins category page works correctly", priority = 39)
     public void verifyThePaginationControlInWomenDailyVitaminsCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -482,7 +482,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
-    @Test(description = "Women's Only Category- Make Sure the previous page button In Women's Daily Vitamins Category Page works correctly", priority = 40)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the previous page button In Women's Daily Vitamins Category Page works correctly", priority = 40)
     public void verifyPreviousPageBtnInWomenDailyVitaminsCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -491,7 +491,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
     }
 
-    @Test(description = "Women's Only Category- Make Sure the next page button In Women's Daily Vitamins Category Page works correctly", priority = 41)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the next page button In Women's Daily Vitamins Category Page works correctly", priority = 41)
     public void verifyNextPageBtnInWomenDailyVitaminsCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -501,7 +501,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
-    @Test(description = "Women's Only Category- Make sure all secure tabs appears correctly in the Women Daily Vitamins category page(100% Secure Payments & Authentic Products & Fast Delivery Service blocks)", priority = 42)
+    @Test(groups = {"Women Only Category Page", "4. Low Severity"},description = "Women's Only Category- Make sure all secure tabs appears correctly in the Women Daily Vitamins category page(100% Secure Payments & Authentic Products & Fast Delivery Service blocks)", priority = 42)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInWomenDailyVitaminsCategoryPage() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         Assert.assertTrue(aeWomenOnlyCategoryPage.getPageBottomSection().isDisplayed());
@@ -541,7 +541,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedCategoryUrl.replace(BaseURL, BaseURL + aeDomain)));
     }
 
-    @Test(description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the Lady-Friendly Snacks & Food category page ", priority = 45)
+    @Test(groups = {"Women Only Category Page","4. Low Severity"},description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the Lady-Friendly Snacks & Food category page ", priority = 45)
     public void verifyResultFieldAndItsVaLueAppearInTheLadyFriendlySnacksAndFoodCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -553,7 +553,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     //There's a bug here due to some filtration is missing
-    @Test(description = "Women's Only Category- Make sure that Sort By menu and its options appear correctly in the Lady-Friendly Snacks & Food category page ", priority = 46)
+    @Test(groups = {"Women Only Category Page", "3. Medium Severity"},description = "Women's Only Category- Make sure that Sort By menu and its options appear correctly in the Lady-Friendly Snacks & Food category page ", priority = 46)
     public void verifySortByMenuAndItsOptionsAppearCorrectlyInTheLadyFriendlySnacksAndFoodCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -627,7 +627,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     //There's a performance issue in the Navigation
-    @Test(description = "Women's Only Category- Make Sure the Pagination control in the Lady-Friendly Snacks & Food category page works correctly", priority = 53)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the Pagination control in the Lady-Friendly Snacks & Food category page works correctly", priority = 53)
     public void verifyThePaginationControlInLadyFriendlySnacksAndFoodCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -637,7 +637,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
-    @Test(description = "Women's Only Category- Make Sure the previous page button In Lady-Friendly Snacks & Food Category Page works correctly", priority = 54)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the previous page button In Lady-Friendly Snacks & Food Category Page works correctly", priority = 54)
     public void verifyPreviousPageBtnInLadyFriendlySnacksAndFoodCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -646,7 +646,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
     }
 
-    @Test(description = "Women's Only Category- Make Sure the next page button In Lady-Friendly Snacks & Food Category Page works correctly", priority = 55)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the next page button In Lady-Friendly Snacks & Food Category Page works correctly", priority = 55)
     public void verifyNextPageBtnInLadyFriendlySnacksAndFoodCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -656,7 +656,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
-    @Test(description = "Women's Only Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Lady-Friendly Snacks & Food category page", priority = 56)
+    @Test(groups = {"Women Only Category Page", "4. Low Severity"},description = "Women's Only Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Lady-Friendly Snacks & Food category page", priority = 56)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInLadyFriendlySnacksAndFoodCategoryPage() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         Assert.assertTrue(aeWomenOnlyCategoryPage.getPageBottomSection().isDisplayed());
@@ -696,7 +696,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedCategoryUrl.replace(BaseURL, BaseURL + aeDomain)));
     }
 
-    @Test(description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the Makeup for Active Lifestyles category page ", priority = 59)
+    @Test(groups = {"Women Only Category Page","4. Low Severity"},description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the Makeup for Active Lifestyles category page ", priority = 59)
     public void verifyResultFieldAndItsVaLueAppearInTheMakeupForActiveLifestylesCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -708,7 +708,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     //There's a bug here due to some filtration is missing
-    @Test(description = "Women's Only Category- Make sure that Sort By menu and its options appear correctly in the Makeup for Active Lifestyles category page ", priority = 60)
+    @Test(groups = {"Women Only Category Page", "3. Medium Severity"},description = "Women's Only Category- Make sure that Sort By menu and its options appear correctly in the Makeup for Active Lifestyles category page ", priority = 60)
     public void verifySortByMenuAndItsOptionsAppearCorrectlyInTheMakeupForActiveLifestylesCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -785,7 +785,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     //There's a performance issue in the Navigation
-    @Test(description = "Women's Only Category- Make Sure the Pagination control in the Makeup for Active Lifestyles category page works correctly", priority = 66)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the Pagination control in the Makeup for Active Lifestyles category page works correctly", priority = 66)
     public void verifyThePaginationControlInMakeupForActiveLifestylesCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -799,7 +799,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));}
     }
 
-    @Test(description = "Women's Only Category- Make Sure the previous page button In Makeup for Active Lifestyles Category Page works correctly", priority = 67)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the previous page button In Makeup for Active Lifestyles Category Page works correctly", priority = 67)
     public void verifyPreviousPageBtnInMakeupForActiveLifestylesCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -812,7 +812,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));}
     }
 
-    @Test(description = "Women's Only Category- Make Sure the next page button In Makeup for Active Lifestyles Category Page works correctly", priority = 68)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the next page button In Makeup for Active Lifestyles Category Page works correctly", priority = 68)
     public void verifyNextPageBtnInMakeupForActiveLifestylesCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -826,7 +826,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));}
     }
 
-    @Test(description = "Women's Only Category- Make sure all secure tabs appears correctly in the Makeup For Active Life styles category page(100% Secure Payments & Authentic Products & Fast Delivery Service blocks)", priority = 69)
+    @Test(groups = {"Women Only Category Page", "4. Low Severity"},description = "Women's Only Category- Make sure all secure tabs appears correctly in the Makeup For Active Life styles category page(100% Secure Payments & Authentic Products & Fast Delivery Service blocks)", priority = 69)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInMakeupForActiveLifestylesCategoryPage() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         Assert.assertTrue(aeWomenOnlyCategoryPage.getPageBottomSection().isDisplayed());
@@ -890,7 +890,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl.replace(BaseURL, BaseURL + aeDomain)));
     }
 
-    @Test(description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the Hair, Skin & Nails Category page ", priority = 73)
+    @Test(groups = {"Women Only Category Page","4. Low Severity"},description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the Hair, Skin & Nails Category page ", priority = 73)
     public void verifyResultFieldAndItsVaLueAppearInTheHairSkinAndNailsCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -902,7 +902,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     //There's a bug here due to some filtration is missing
-    @Test(description = "Women's Only Category- Make sure that Sort By menu and its options appear correctly in the Hair, Skin & Nails Category page ", priority = 74)
+    @Test(groups = {"Women Only Category Page", "3. Medium Severity"},description = "Women's Only Category- Make sure that Sort By menu and its options appear correctly in the Hair, Skin & Nails Category page ", priority = 74)
     public void verifySortByMenuAndItsOptionsAppearCorrectlyInTheHairSkinAndNailsCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -949,7 +949,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
     }
 
-    @Test(description = "Women's Only Category- Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Hair, Skin & Nails Category Page ", priority = 77)
+    @Test(groups = {"Women Only Category Page", "4. Low Severity"},description = "Women's Only Category- Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Hair, Skin & Nails Category Page ", priority = 77)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumbInHairSkinAndNailsCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -991,7 +991,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
 //    There's a performance issue in the Navigation
-    @Test(description = "Women's Only Category- Make Sure the Pagination control in the Hair, Skin & Nails Category page works correctly", priority = 81)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the Pagination control in the Hair, Skin & Nails Category page works correctly", priority = 81)
     public void verifyThePaginationControlInHairSkinAndNailsCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1001,7 +1001,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
-    @Test(description = "Women's Only Category- Make Sure the previous page button In Hair, Skin & Nails Category Page works correctly", priority = 82)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the previous page button In Hair, Skin & Nails Category Page works correctly", priority = 82)
     public void verifyPreviousPageBtnInHairSkinAndNailsCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1011,7 +1011,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
     }
 
-    @Test(description = "Women's Only Category- Make Sure the next page button In Hair, Skin & Nails Category Page works correctly", priority = 83)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the next page button In Hair, Skin & Nails Category Page works correctly", priority = 83)
     public void verifyNextPageBtnInHairSkinAndNailsCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1021,7 +1021,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
 
-    @Test(description = "Women's Only Category- Make sure all secure tabs appears correctly in the Hair Skin & Nails category page(100% Secure Payments & Authentic Products & Fast Delivery Service blocks)", priority = 84)
+    @Test(groups = {"Women Only Category Page", "4. Low Severity"},description = "Women's Only Category- Make sure all secure tabs appears correctly in the Hair Skin & Nails category page(100% Secure Payments & Authentic Products & Fast Delivery Service blocks)", priority = 84)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInHairSkinAndNailsCategoryPage() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         Assert.assertTrue(aeWomenOnlyCategoryPage.getPageBottomSection().isDisplayed());
@@ -1062,7 +1062,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl.replace(BaseURL, BaseURL + aeDomain)));
     }
 
-    @Test(description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the Weight Loss Category page ", priority = 87)
+    @Test(groups = {"Women Only Category Page","4. Low Severity"},description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the Weight Loss Category page ", priority = 87)
     public void verifyResultFieldAndItsVaLueAppearInTheWeightLossCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1074,7 +1074,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     //There's a bug here due to some filtration is missing
-    @Test(description = "Women's Only Category- Make sure that Sort By menu and its options appear correctly in the Weight Loss Category page ", priority = 88)
+    @Test(groups = {"Women Only Category Page", "4. Low Severity"},description = "Women's Only Category- Make sure that Sort By menu and its options appear correctly in the Weight Loss Category page ", priority = 88)
     public void verifySortByMenuAndItsOptionsAppearCorrectlyInTheWeightLossCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1121,7 +1121,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
     }
 
-    @Test(description = "Women's Only Category- Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Weight Loss Category Page ", priority = 91)
+    @Test(groups = {"Women Only Category Page", "4. Low Severity"},description = "Women's Only Category- Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Weight Loss Category Page ", priority = 91)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumbInWeightLossCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1161,7 +1161,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     //There's a performance issue in the Navigation
-    @Test(description = "Women's Only Category- Make Sure the Pagination control in the Weight Loss Category page works correctly", priority = 95)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the Pagination control in the Weight Loss Category page works correctly", priority = 95)
     public void verifyThePaginationControlInWeightLossCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1171,7 +1171,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
-    @Test(description = "Women's Only Category- Make Sure the previous page button In Weight Loss Category Page works correctly", priority = 96)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the previous page button In Weight Loss Category Page works correctly", priority = 96)
     public void verifyPreviousPageBtnInWeightLossCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1180,7 +1180,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
     }
 
-    @Test(description = "Women's Only Category- Make Sure the next page button In Weight Loss Category Page works correctly", priority = 97)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the next page button In Weight Loss Category Page works correctly", priority = 97)
     public void verifyNextPageBtnInWeightLossCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1191,7 +1191,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
     }
 
-    @Test(description = "Women's Only Category- Make sure all secure tabs appears correctly in the Weight Loss category page(100% Secure Payments & Authentic Products & Fast Delivery Service blocks)", priority = 98)
+    @Test(groups = {"Women Only Category Page", "4. Low Severity"},description = "Women's Only Category- Make sure all secure tabs appears correctly in the Weight Loss category page(100% Secure Payments & Authentic Products & Fast Delivery Service blocks)", priority = 98)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInWeightLossCategoryPage() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         Assert.assertTrue(aeWomenOnlyCategoryPage.getPageBottomSection().isDisplayed());
@@ -1230,7 +1230,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
 //        Assert.assertEquals(webDriver.getCurrentUrl(),newExpectedUrl.substring(0,expectedUrl.length()-1));
     }
 
-    @Test(description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the Mood Support Category page ", priority = 101)
+    @Test(groups = {"Women Only Category Page","4. Low Severity"},description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the Mood Support Category page ", priority = 101)
     public void verifyResultFieldAndItsVaLueAppearInTheMoodSupportCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1242,7 +1242,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     //There's a bug here due to some filtration is missing
-    @Test(description = "Women's Only Category- Make sure that Sort By menu and its options appear correctly in the Mood Support Category page ", priority = 102)
+    @Test(groups = {"Women Only Category Page", "3. Medium Severity"},description = "Women's Only Category- Make sure that Sort By menu and its options appear correctly in the Mood Support Category page ", priority = 102)
     public void verifySortByMenuAndItsOptionsAppearCorrectlyInTheMoodSupportCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1286,7 +1286,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
     }
 
-    @Test(description = "Women's Only Category- Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Mood Support Category Page ", priority = 105)
+    @Test(groups = {"Women Only Category Page", "4. Low Severity"},description = "Women's Only Category- Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Mood Support Category Page ", priority = 105)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumbInMoodSupportCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1326,7 +1326,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     //There's a performance issue in the Navigation
-    @Test(description = "Women's Only Category- Make Sure the Pagination control in the Mood Support Category page works correctly", priority = 109)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the Pagination control in the Mood Support Category page works correctly", priority = 109)
     public void verifyThePaginationControlInMoodSupportCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1336,7 +1336,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
-    @Test(description = "Women's Only Category- Make Sure the previous page button In Mood Support Category Page works correctly", priority = 110)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the previous page button In Mood Support Category Page works correctly", priority = 110)
     public void verifyPreviousPageBtnInMoodSupportCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1346,7 +1346,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
     }
 
-    @Test(description = "Women's Only Category- Make Sure the next page button In Mood Support Category Page works correctly", priority = 111)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the next page button In Mood Support Category Page works correctly", priority = 111)
     public void verifyNextPageBtnInMoodSupportCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1356,7 +1356,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2")," The system redirect you to "+webDriver.getCurrentUrl());
     }
 
-    @Test(description = " Women's Only Category- Make sure all secure tabs appears correctly in the Mood Support category page(100% Secure Payments & Authentic Products & Fast Delivery Service blocks)", priority = 112)
+    @Test(groups = {"Women Only Category Page", "4. Low Severity"},description = " Women's Only Category- Make sure all secure tabs appears correctly in the Mood Support category page(100% Secure Payments & Authentic Products & Fast Delivery Service blocks)", priority = 112)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInMoodSupportCategoryPage() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         Assert.assertTrue(aeWomenOnlyCategoryPage.getPageBottomSection().isDisplayed());
@@ -1395,7 +1395,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl.replace(BaseURL, BaseURL + aeDomain)));
     }
 
-    @Test(description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the Detox & Cleanse Category page ", priority = 115)
+    @Test(groups = {"Women Only Category Page","4. Low Severity"},description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the Detox & Cleanse Category page ", priority = 115)
     public void verifyResultFieldAndItsVaLueAppearInTheDetoxAndCleanseCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1407,7 +1407,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     //There's a bug here due to some filtration is missing
-    @Test(description = "Women's Only Category- Make sure that Sort By menu and its options appear correctly in the Detox & Cleanse Category page ", priority = 116)
+    @Test(groups = {"Women Only Category Page", "3. Medium Severity"},description = "Women's Only Category- Make sure that Sort By menu and its options appear correctly in the Detox & Cleanse Category page ", priority = 116)
     public void verifySortByMenuAndItsOptionsAppearCorrectlyInTheDetoxAndCleanseCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1451,7 +1451,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
     }
 
-    @Test(description = "Women's Only Category- Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Detox & Cleanse Category Page ", priority = 119)
+    @Test(groups = {"Women Only Category Page", "4. Low Severity"},description = "Women's Only Category- Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Detox & Cleanse Category Page ", priority = 119)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumbInDetoxAndCleanseCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1491,7 +1491,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     //There's a performance issue in the Navigation
-    @Test(description = "Women's Only Category- Make Sure the Pagination control in the Detox & Cleanse Category page works correctly", priority = 123)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the Pagination control in the Detox & Cleanse Category page works correctly", priority = 123)
     public void verifyThePaginationControlInDetoxAndCleanseCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1501,7 +1501,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
-    @Test(description = "Women's Only Category- Make Sure the previous page button In Detox & Cleanse Category Page works correctly", priority = 124)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the previous page button In Detox & Cleanse Category Page works correctly", priority = 124)
     public void verifyPreviousPageBtnInDetoxAndCleanseCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1510,7 +1510,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
     }
 
-    @Test(description = "Women's Only Category- Make Sure the next page button In Detox & Cleanse Category Page works correctly", priority = 125)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the next page button In Detox & Cleanse Category Page works correctly", priority = 125)
     public void verifyNextPageBtnInDetoxAndCleanseCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1520,7 +1520,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
-    @Test(description = "Women's Only Category- Make sure all secure tabs appears correctly in the Detox & Cleanse category page(100% Secure Payments & Authentic Products & Fast Delivery Service blocks)", priority = 126)
+    @Test(groups = {"Women Only Category Page", "4. Low Severity"},description = "Women's Only Category- Make sure all secure tabs appears correctly in the Detox & Cleanse category page(100% Secure Payments & Authentic Products & Fast Delivery Service blocks)", priority = 126)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInDetoxAndCleanseCategoryPage() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         Assert.assertTrue(aeWomenOnlyCategoryPage.getPageBottomSection().isDisplayed());
@@ -1559,7 +1559,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl.replace(BaseURL, BaseURL + aeDomain)));
     }
 
-    @Test(description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the PMS Relief Category page ", priority = 129)
+    @Test(groups = {"Women Only Category Page","4. Low Severity"},description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the PMS Relief Category page ", priority = 129)
     public void verifyResultFieldAndItsVaLueAppearInThePMSReliefCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1571,7 +1571,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     //There's a bug here due to some filtration is missing
-    @Test(description = "Women's Only Category- Make sure that Sort By menu and its options appear correctly in the PMS Relief Category page ", priority = 130)
+    @Test(groups = {"Women Only Category Page", "3. Medium Severity"},description = "Women's Only Category- Make sure that Sort By menu and its options appear correctly in the PMS Relief Category page ", priority = 130)
     public void verifySortByMenuAndItsOptionsAppearCorrectlyInThePMSReliefCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1616,7 +1616,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
     }
 
-    @Test(description = "Women's Only Category- Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the PMS Relief Category Page ", priority = 133)
+    @Test(groups = {"Women Only Category Page", "4. Low Severity"},description = "Women's Only Category- Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the PMS Relief Category Page ", priority = 133)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumbInPMSReliefCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1660,7 +1660,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     //There's a performance issue in the Navigation
-    @Test(description = "Women's Only Category- Make Sure the Pagination control in the PMS Relief Category page works correctly", priority = 137)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the Pagination control in the PMS Relief Category page works correctly", priority = 137)
     public void verifyThePaginationControlInPMSReliefCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1674,7 +1674,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));}
     }
 
-    @Test(description = "Women's Only Category- Make Sure the previous page button In PMS Relief Category Page works correctly", priority = 138)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the previous page button In PMS Relief Category Page works correctly", priority = 138)
     public void verifyPreviousPageBtnInPMSReliefCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1687,7 +1687,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));}
     }
 
-    @Test(description = "Women's Only Category- Make Sure the next page button In PMS Relief Category Page works correctly", priority = 139)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the next page button In PMS Relief Category Page works correctly", priority = 139)
     public void verifyNextPageBtnInPMSReliefCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1701,7 +1701,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));}
     }
 
-    @Test(description = "Women's Only Category- Make sure all secure tabs appears correctly in the PMS Relief category page(100% Secure Payments & Authentic Products & Fast Delivery Service blocks)", priority = 140)
+    @Test(groups = {"Women Only Category Page", "4. Low Severity"},description = "Women's Only Category- Make sure all secure tabs appears correctly in the PMS Relief category page(100% Secure Payments & Authentic Products & Fast Delivery Service blocks)", priority = 140)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInPMSReliefCategoryPage() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         Assert.assertTrue(aeWomenOnlyCategoryPage.getPageBottomSection().isDisplayed());
@@ -1740,7 +1740,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl.replace(BaseURL, BaseURL + aeDomain)));
     }
 
-    @Test(description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the Energy & Endurance Category page ", priority = 143)
+    @Test(groups = {"Women Only Category Page","4. Low Severity"},description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the Energy & Endurance Category page ", priority = 143)
     public void verifyResultFieldAndItsVaLueAppearInTheEnergyAndEnduranceCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1752,7 +1752,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     //There's a bug here due to some filtration is missing
-    @Test(description = "Women's Only Category- Make sure that Sort By menu and its options appear correctly in the Energy & Endurance Category page ", priority = 144)
+    @Test(groups = {"Women Only Category Page", "3. Medium Severity"},description = "Women's Only Category- Make sure that Sort By menu and its options appear correctly in the Energy & Endurance Category page ", priority = 144)
     public void verifySortByMenuAndItsOptionsAppearCorrectlyInTheEnergyAndEnduranceCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1796,7 +1796,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
     }
 
-    @Test(description = "Women's Only Category- Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Energy & Endurance Category Page ", priority = 147)
+    @Test(groups = {"Women Only Category Page", "4. Low Severity"},description = "Women's Only Category- Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Energy & Endurance Category Page ", priority = 147)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumbInEnergyAndEnduranceCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1824,7 +1824,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     //There's a performance issue in the Navigation
-    @Test(description = "Women's Only Category- Make Sure the Pagination control in the Energy & Endurance Category page works correctly", priority = 150)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the Pagination control in the Energy & Endurance Category page works correctly", priority = 150)
     public void verifyThePaginationControlInEnergyAndEnduranceCategoryPageWorksCorrectly() {
                AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1834,7 +1834,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
-    @Test(description = "Women's Only Category- Make Sure the previous page button In Energy & Endurance Category Page works correctly", priority = 151)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the previous page button In Energy & Endurance Category Page works correctly", priority = 151)
     public void verifyPreviousPageBtnInEnergyAndEnduranceCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1843,7 +1843,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
     }
 
-    @Test(description = "Women's Only Category- Make Sure the next page button In Energy & Endurance Category Page works correctly", priority = 152)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the next page button In Energy & Endurance Category Page works correctly", priority = 152)
     public void verifyNextPageBtnInEnergyAndEnduranceCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1854,7 +1854,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
     }
 
-    @Test(description = "Women's Only Category- Make sure all secure tabs appears correctly in the Energy & Endurance category page(100% Secure Payments & Authentic Products & Fast Delivery Service blocks)", priority = 153)
+    @Test(groups = {"Women Only Category Page", "4. Low Severity"},description = "Women's Only Category- Make sure all secure tabs appears correctly in the Energy & Endurance category page(100% Secure Payments & Authentic Products & Fast Delivery Service blocks)", priority = 153)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInEnergyAndEnduranceCategoryPage() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         Assert.assertTrue(aeWomenOnlyCategoryPage.getPageBottomSection().isDisplayed());
@@ -1894,7 +1894,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         assertEquals(webDriver.getCurrentUrl().substring(29), expectedUrl.substring(29));
     }
 
-    @Test(description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the Prenatal Care Category page ", priority = 156)
+    @Test(groups = {"Women Only Category Page","4. Low Severity"},description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the Prenatal Care Category page ", priority = 156)
     public void verifyResultFieldAndItsVaLueAppearInThePrenatalCareCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1906,7 +1906,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     //There's a bug here due to some filtration is missing
-    @Test(description = "Women's Only Category- Make sure that Sort By menu and its options appear correctly in the Prenatal Care Category page ", priority = 157)
+    @Test(groups = {"Women Only Category Page", "3. Medium Severity"},description = "Women's Only Category- Make sure that Sort By menu and its options appear correctly in the Prenatal Care Category page ", priority = 157)
     public void verifySortByMenuAndItsOptionsAppearCorrectlyInThePrenatalCareCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1950,7 +1950,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
     }
 
-    @Test(description = "Women's Only Category- Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Prenatal Care Category Page ", priority = 160)
+    @Test(groups = {"Women Only Category Page", "4. Low Severity"},description = "Women's Only Category- Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Prenatal Care Category Page ", priority = 160)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumbInPrenatalCareCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1978,7 +1978,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     //There's a performance issue in the Navigation
-    @Test(description = "Women's Only Category- Make Sure the Pagination control in the Prenatal Care Category page works correctly", priority = 163)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the Pagination control in the Prenatal Care Category page works correctly", priority = 163)
     public void verifyThePaginationControlInPrenatalCareCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1988,7 +1988,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
-    @Test(description = "Women's Only Category- Make Sure the previous page button In Prenatal Care Category Page works correctly", priority = 164)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the previous page button In Prenatal Care Category Page works correctly", priority = 164)
     public void verifyPreviousPageBtnInPrenatalCareCategoryPageWorksCorrectly() {
                     AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1997,7 +1997,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
     }
 
-    @Test(description = "Women's Only Category- Make Sure the next page button In Prenatal Care Category Page works correctly", priority = 165)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the next page button In Prenatal Care Category Page works correctly", priority = 165)
     public void verifyNextPageBtnInPrenatalCareCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -2007,7 +2007,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
-    @Test(description = "Women's Only Category- Make sure all secure tabs appears correctly in the Prenatal Care category page(100% Secure Payments & Authentic Products & Fast Delivery Service blocks)", priority = 166)
+    @Test(groups = {"Women Only Category Page", "4. Low Severity"},description = "Women's Only Category- Make sure all secure tabs appears correctly in the Prenatal Care category page(100% Secure Payments & Authentic Products & Fast Delivery Service blocks)", priority = 166)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInPrenatalCareCategoryPage() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         Assert.assertTrue(aeWomenOnlyCategoryPage.getPageBottomSection().isDisplayed());
@@ -2047,7 +2047,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains("muscle-weight-gain"));
     }
 
-    @Test(description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the Muscle & Weight Gain Category page ", priority = 169)
+    @Test(groups = {"Women Only Category Page","4. Low Severity"},description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the Muscle & Weight Gain Category page ", priority = 169)
     public void verifyResultFieldAndItsVaLueAppearInTheMuscleAndWeightGainCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -2059,7 +2059,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     //There's a bug here due to some filtration is missing
-    @Test(description = "Women's Only Category- Make sure that Sort By menu and its options appear correctly in the Muscle & Weight Gain Category page ", priority = 170)
+    @Test(groups = {"Women Only Category Page", "3. Medium Severity"},description = "Women's Only Category- Make sure that Sort By menu and its options appear correctly in the Muscle & Weight Gain Category page ", priority = 170)
     public void verifySortByMenuAndItsOptionsAppearCorrectlyInTheMuscleAndWeightGainCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -2106,7 +2106,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
     }
 
-    @Test(description = "Women's Only Category- Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Muscle & Weight Gain Category Page ", priority = 173)
+    @Test(groups = {"Women Only Category Page", "4. Low Severity"},description = "Women's Only Category- Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Muscle & Weight Gain Category Page ", priority = 173)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumbInMuscleAndWeightGainCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -2135,7 +2135,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     //There's a performance issue in the Navigation
-    @Test(description = "Women's Only Category- Make Sure the Pagination control in the Muscle & Weight Gain Category page works correctly", priority = 176)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the Pagination control in the Muscle & Weight Gain Category page works correctly", priority = 176)
     public void verifyThePaginationControlInMuscleAndWeightGainCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -2145,7 +2145,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
-    @Test(description = "Women's Only Category- Make Sure the previous page button In Muscle & Weight Gain Category Page works correctly", priority = 177)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the previous page button In Muscle & Weight Gain Category Page works correctly", priority = 177)
     public void verifyPreviousPageBtnInMuscleAndWeightGainCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -2154,7 +2154,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
     }
 
-    @Test(description = "Women's Only Category- Make Sure the next page button In Muscle & Weight Gain Category Page works correctly", priority = 178)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the next page button In Muscle & Weight Gain Category Page works correctly", priority = 178)
     public void verifyNextPageBtnInMuscleAndWeightGainCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -2164,7 +2164,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
-    @Test(description = "Women's Only Category- Make sure all secure tabs appears correctly in the Muscle & Weight Gain category page(100% Secure Payments & Authentic Products & Fast Delivery Service blocks)", priority = 179)
+    @Test(groups = {"Women Only Category Page", "4. Low Severity"},description = "Women's Only Category- Make sure all secure tabs appears correctly in the Muscle & Weight Gain category page(100% Secure Payments & Authentic Products & Fast Delivery Service blocks)", priority = 179)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInMuscleAndWeightGainCategoryPage() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         Assert.assertTrue(aeWomenOnlyCategoryPage.getPageBottomSection().isDisplayed());
@@ -2204,7 +2204,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl.replace(BaseURL, BaseURL + aeDomain)));
     }
 
-    @Test(description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the Fashion & Style Category page ", priority = 182)
+    @Test(groups = {"Women Only Category Page","4. Low Severity"},description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the Fashion & Style Category page ", priority = 182)
     public void verifyResultFieldAndItsVaLueAppearInTheFashionAndStyleCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -2216,7 +2216,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     //There's a bug here due to some filtration is missing
-    @Test(description = "Women's Only Category- Make sure that Sort By menu and its options appear correctly in the Fashion & Style Category page ", priority = 183)
+    @Test(groups = {"Women Only Category Page", "3. Medium Severity"},description = "Women's Only Category- Make sure that Sort By menu and its options appear correctly in the Fashion & Style Category page ", priority = 183)
     public void verifySortByMenuAndItsOptionsAppearCorrectlyInTheFashionAndStyleCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -2260,7 +2260,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
     }
 
-    @Test(description = "Women's Only Category- Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Fashion & Style Category Page ", priority = 186)
+    @Test(groups = {"Women Only Category Page", "4. Low Severity"},description = "Women's Only Category- Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Fashion & Style Category Page ", priority = 186)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumbInFashionAndStyleCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -2300,7 +2300,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     //There's a performance issue in the Navigation
-    @Test(description = "Women's Only Category- Make Sure the Pagination control in the Fashion & Style Category page works correctly", priority = 190)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the Pagination control in the Fashion & Style Category page works correctly", priority = 190)
     public void verifyThePaginationControlInFashionAndStyleCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -2310,7 +2310,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
-    @Test(description = "Women's Only Category- Make Sure the previous page button In Fashion & Style Category Page works correctly", priority = 191)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the previous page button In Fashion & Style Category Page works correctly", priority = 191)
     public void verifyPreviousPageBtnInFashionAndStyleCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -2319,7 +2319,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
     }
 
-    @Test(description = "Women's Only Category- Make Sure the next page button In Fashion & Style Category Page works correctly", priority = 192)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the next page button In Fashion & Style Category Page works correctly", priority = 192)
     public void verifyNextPageBtnInFashionAndStyleCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -2329,7 +2329,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
-    @Test(description = "Women's Only Category- Make sure all secure tabs appears correctly in the Fashion & Style category page(100% Secure Payments & Authentic Products & Fast Delivery Service blocks)", priority = 193)
+    @Test(groups = {"Women Only Category Page", "4. Low Severity"},description = "Women's Only Category- Make sure all secure tabs appears correctly in the Fashion & Style category page(100% Secure Payments & Authentic Products & Fast Delivery Service blocks)", priority = 193)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInFashionAndStyleCategoryPage() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         Assert.assertTrue(aeWomenOnlyCategoryPage.getPageBottomSection().isDisplayed());
@@ -2368,7 +2368,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertEquals(webDriver.getCurrentUrl(), expectedUrl);
     }
 
-    @Test(description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the Personal Care Category page ", priority = 196)
+    @Test(groups = {"Women Only Category Page","4. Low Severity"},description = "Women's Only Category- Make sure that the Result label and its value appear correctly in the Personal Care Category page ", priority = 196)
     public void verifyResultFieldAndItsVaLueAppearInThePersonalCareCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -2380,7 +2380,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     //There's a bug here due to some filtration is missing
-    @Test(description = "Women's Only Category- Make sure that Sort By menu and its options appear correctly in the Personal Care Category page ", priority = 197)
+    @Test(groups = {"Women Only Category Page", "3. Medium Severity"},description = "Women's Only Category- Make sure that Sort By menu and its options appear correctly in the Personal Care Category page ", priority = 197)
     public void verifySortByMenuAndItsOptionsAppearCorrectlyInThePersonalCareCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -2425,7 +2425,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
     }
 
-    @Test(description = "Women's Only Category- Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Personal Care Category Page ", priority = 200)
+    @Test(groups = {"Women Only Category Page", "4. Low Severity"},description = "Women's Only Category- Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Personal Care Category Page ", priority = 200)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumbInPersonalCareCategoryPage() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -2457,7 +2457,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     }
 
     //There's a performance issue in the Navigation
-    @Test(description = "Women's Only Category- Make Sure the Pagination control in the Personal Care Category page works correctly", priority = 203)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the Pagination control in the Personal Care Category page works correctly", priority = 203)
     public void verifyThePaginationControlInPersonalCareCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -2471,7 +2471,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));}
     }
 
-    @Test(description = "Women's Only Category- Make Sure the previous page button In Personal Care Category Page works correctly", priority = 204)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the previous page button In Personal Care Category Page works correctly", priority = 204)
     public void verifyPreviousPageBtnInPersonalCareCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -2484,7 +2484,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));}
     }
 
-    @Test(description = "Women's Only Category- Make Sure the next page button In Personal Care Category Page works correctly", priority = 205)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make Sure the next page button In Personal Care Category Page works correctly", priority = 205)
     public void verifyNextPageBtnInPersonalCareCategoryPageWorksCorrectly() {
                 AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -2498,7 +2498,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));}
     }
 
-    @Test(description = "Women's Only Category- Make sure all secure tabs appears correctly in the Personal Care category page(100% Secure Payments & Authentic Products & Fast Delivery Service blocks)", priority = 206)
+    @Test(groups = {"Women Only Category Page", "4. Low Severity"},description = "Women's Only Category- Make sure all secure tabs appears correctly in the Personal Care category page(100% Secure Payments & Authentic Products & Fast Delivery Service blocks)", priority = 206)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInPersonalCareCategoryPage() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         Assert.assertTrue(aeWomenOnlyCategoryPage.getPageBottomSection().isDisplayed());
@@ -2541,7 +2541,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         Assert.assertFalse(aeSportsCategoryPage.getPreviousIconInRecommendedProductsSection().isDisplayed());
     }
 
-    @Test(description = "Women's Only Category- Make sure clicking on Next Button in the Supplements For Her Widget works correctly", priority = 210)
+    @Test(groups = {"Women Only Category Page", "3. Medium Severity"},description = "Women's Only Category- Make sure clicking on Next Button in the Supplements For Her Widget works correctly", priority = 210)
     public void verifyClickingOnNextIconInSupplementsForHerWidgetWorksCorrectly() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         aeSportsCategoryPage = new AeSportsCategoryPage(webDriver);
@@ -2593,7 +2593,7 @@ AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(we
         Assert.assertFalse(aeWomenOnlyCategoryPage.getPreviousIconInWomenVitaminsSection().isDisplayed());
     }
 
-    @Test(description = "Women's Only Category- Make sure clicking on Next Button in the Women's Vitamins Widget works correctly", priority = 216)
+    @Test(groups = {"Women Only Category Page", "3. Medium Severity"},description = "Women's Only Category- Make sure clicking on Next Button in the Women's Vitamins Widget works correctly", priority = 216)
     public void verifyClickingOnNextIconInWomenVitaminsWidgetWorksCorrectly() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         //        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -2646,7 +2646,7 @@ AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(we
         Assert.assertTrue(aeWomenOnlyCategoryPage.getPreviousIconInWorkoutInStyleSection().isDisplayed());
     }
 
-    @Test(description = "Women's Only Category- Make sure clicking on Next Button in the Workout In Style Widget works correctly", priority = 222)
+    @Test(groups = {"Women Only Category Page", "3. Medium Severity"},description = "Women's Only Category- Make sure clicking on Next Button in the Workout In Style Widget works correctly", priority = 222)
     public void verifyClickingOnNextIconInWorkoutInStyleWidgetWorksCorrectly() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         //        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -2692,7 +2692,7 @@ AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(we
         Assert.assertTrue(aeWomenOnlyCategoryPage.getLadyFriendlySnacksAndFoodSection().isDisplayed());
     }
 
-    @Test(description = "Women's Only Category- Make sure the previous arrow icon is not appear by default in the Lady-Friendly Snacks & Food Widget ", priority = 227)
+    @Test(groups = {"Women Only Category Page", "4. Low Severity"},description = "Women's Only Category- Make sure the previous arrow icon is not appear by default in the Lady-Friendly Snacks & Food Widget ", priority = 227)
     public void verifyPreviousArrowButtonInLadyFriendlySnacksAndFoodWidgetIsNotDisplayedByDefault() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         //        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -2700,7 +2700,7 @@ AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(we
         Assert.assertTrue(aeWomenOnlyCategoryPage.getPreviousIconInLadyFriendlySnacksFoodSection().isDisplayed());
     }
 
-    @Test(description = "Women's Only Category- Make sure clicking on Next Button in the Lady-Friendly Snacks & Food Widget works correctly", priority = 228,expectedExceptions = { org.openqa.selenium.TimeoutException.class })
+    @Test(groups = {"Women Only Category Page", "3. Medium Severity"},description = "Women's Only Category- Make sure clicking on Next Button in the Lady-Friendly Snacks & Food Widget works correctly", priority = 228,expectedExceptions = { org.openqa.selenium.TimeoutException.class })
     public void verifyClickingOnNextIconInLadyFriendlySnacksAndFoodWidgetWorksCorrectly() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         //        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();

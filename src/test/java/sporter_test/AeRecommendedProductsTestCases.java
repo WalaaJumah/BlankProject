@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
 import sporter_pages.AeProductDetailsPage;
 import sporter_pages.AeRecommendedProductsPage;
 
-
 public class AeRecommendedProductsTestCases extends BaseTest {
     @Test(groups = "All Smoke Testing Result",description = "Recommended Products Pop-up- Switching to the UAE Store", priority = 1)
     public void switchToAeStore() {

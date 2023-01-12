@@ -18,6 +18,7 @@ import sporter_pages.AeSportSupplementsCategoryPage;
 import sporter_pages.AeWomenOnlyCategoryPage;
 
 
+
 public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
     private Actions action;
 
@@ -33,7 +34,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
             CloseInitialDialog();        }
     }
     //Sport Supplements Category Pages
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Sport Supplements Category Page", priority = 1)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Sport Supplements Category Page", priority = 1)
     public void verifyAbilityToAccessAllPagesInsideSportSupplementsCategoryPageFromMegaMenu(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         action = new Actions(webDriver);
@@ -45,7 +46,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
             System.out.println("There's no pages");
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);    }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Protein Sub-Category related to the Sport Supplements Category ", priority = 2)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Protein Sub-Category related to the Sport Supplements Category ", priority = 2)
     public void verifyAbilityToAccessAllPagesInsideProteinCategoryRelatedToSportSupplementsCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -64,7 +65,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Whey Protein Sub-Category related to the Sport Supplements Category ", priority = 3)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Whey Protein Sub-Category related to the Sport Supplements Category ", priority = 3)
     public void verifyAbilityToAccessAllPagesInsideWheyProteinCategoryRelatedToSportSupplementsCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -83,7 +84,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Whey Protein Isolate Sub-Category related to the Sport Supplements Category ", priority = 4)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Whey Protein Isolate Sub-Category related to the Sport Supplements Category ", priority = 4)
     public void verifyAbilityToAccessAllPagesInsideWheyProteinIsolateCategoryRelatedToSportSupplementsCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -102,7 +103,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Protein Blends Sub-Category related to the Sport Supplements Category ", priority = 5)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Protein Blends Sub-Category related to the Sport Supplements Category ", priority = 5)
     public void verifyAbilityToAccessAllPagesInsideProteinBlendsCategoryRelatedToSportSupplementsCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -121,7 +122,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Non Dairy Protein Sub-Category related to the Sport Supplements Category ", priority = 6)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Non Dairy Protein Sub-Category related to the Sport Supplements Category ", priority = 6)
     public void verifyAbilityToAccessAllPagesInsideNonDairyProteinCategoryRelatedToSportSupplementsCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -140,7 +141,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Casein Protein Sub-Category related to the Sport Supplements Category ", priority = 7)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Casein Protein Sub-Category related to the Sport Supplements Category ", priority = 7)
     public void verifyAbilityToAccessAllPagesInsideCaseinProteinCategoryRelatedToSportSupplementsCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -159,7 +160,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Diet Protein Sub-Category related to the Sport Supplements Category ", priority = 8)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Diet Protein Sub-Category related to the Sport Supplements Category ", priority = 8)
     public void verifyAbilityToAccessAllPagesInsideDietProteinCategoryRelatedToSportSupplementsCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -178,7 +179,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Mass Gainers Sub-Category related to the Sport Supplements Category ", priority = 9)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Mass Gainers Sub-Category related to the Sport Supplements Category ", priority = 9)
     public void verifyAbilityToAccessAllPagesInsideMassGainersCategoryRelatedToSportSupplementsCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -197,7 +198,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Creatine Sub-Category related to the Sport Supplements Category ", priority = 10)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Creatine Sub-Category related to the Sport Supplements Category ", priority = 10)
     public void verifyAbilityToAccessAllPagesInsideCreatineCategoryRelatedToSportSupplementsCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -216,7 +217,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Creatine Monohydrate Sub-Category related to the Sport Supplements Category ", priority = 11)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Creatine Monohydrate Sub-Category related to the Sport Supplements Category ", priority = 11)
     public void verifyAbilityToAccessAllPagesInsideCreatineMonohydrateCategoryRelatedToSportSupplementsCategoryPage(){
         AeSportSupplementsCategoryPage  aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -235,7 +236,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Creatine Blends Sub-Category related to the Sport Supplements Category ", priority = 12)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Creatine Blends Sub-Category related to the Sport Supplements Category ", priority = 12)
     public void verifyAbilityToAccessAllPagesInsideCreatineBlendsCategoryRelatedToSportSupplementsCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -254,7 +255,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Amino Acids Sub-Category related to the Sport Supplements Category ", priority = 13)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Amino Acids Sub-Category related to the Sport Supplements Category ", priority = 13)
     public void verifyAbilityToAccessAllPagesInsideAminoAcidsCategoryRelatedToSportSupplementsCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -273,7 +274,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside BCAA Sub-Category related to the Sport Supplements Category ", priority = 14)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside BCAA Sub-Category related to the Sport Supplements Category ", priority = 14)
     public void verifyAbilityToAccessAllPagesInsideBCAACategoryRelatedToSportSupplementsCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -292,7 +293,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside EAA Sub-Category related to the Sport Supplements Category ", priority = 15)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside EAA Sub-Category related to the Sport Supplements Category ", priority = 15)
     public void verifyAbilityToAccessAllPagesInsideEAACategoryRelatedToSportSupplementsCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -312,7 +313,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
 
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Arginine Sub-Category related to the Sport Supplements Category ", priority = 16)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Arginine Sub-Category related to the Sport Supplements Category ", priority = 16)
     public void verifyAbilityToAccessAllPagesInsideArginineCategoryRelatedToSportSupplementsCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -331,7 +332,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Beta Alanine Sub-Category related to the Sport Supplements Category ", priority = 17)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Beta Alanine Sub-Category related to the Sport Supplements Category ", priority = 17)
     public void verifyAbilityToAccessAllPagesInsideBetaAlanineCategoryRelatedToSportSupplementsCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -350,7 +351,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside HMb Sub-Category related to the Sport Supplements Category ", priority = 18)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside HMb Sub-Category related to the Sport Supplements Category ", priority = 18)
     public void verifyAbilityToAccessAllPagesInsideHMbCategoryRelatedToSportSupplementsCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -369,7 +370,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Amino Acid Powders Sub-Category related to the Sport Supplements Category ", priority = 19)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Amino Acid Powders Sub-Category related to the Sport Supplements Category ", priority = 19)
     public void verifyAbilityToAccessAllPagesInsideAminoAcidPowdersCategoryRelatedToSportSupplementsCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -388,7 +389,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Amino Acid Pills Sub-Category related to the Sport Supplements Category ", priority = 20)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Amino Acid Pills Sub-Category related to the Sport Supplements Category ", priority = 20)
     public void verifyAbilityToAccessAllPagesInsideAminoAcidPillsCategoryRelatedToSportSupplementsCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -407,7 +408,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Citrulline Sub-Category related to the Sport Supplements Category ", priority = 21)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Citrulline Sub-Category related to the Sport Supplements Category ", priority = 21)
     public void verifyAbilityToAccessAllPagesInsideCitrullineCategoryRelatedToSportSupplementsCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -426,7 +427,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Amino Acid Liquids Sub-Category related to the Sport Supplements Category ", priority = 22)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Amino Acid Liquids Sub-Category related to the Sport Supplements Category ", priority = 22)
     public void verifyAbilityToAccessAllPagesInsideAminoAcidLiquidsCategoryRelatedToSportSupplementsCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -445,7 +446,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Muscle Boosters Sub-Category related to the Sport Supplements Category ", priority = 23)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Muscle Boosters Sub-Category related to the Sport Supplements Category ", priority = 23)
     public void verifyAbilityToAccessAllPagesInsideMuscleBoostersCategoryRelatedToSportSupplementsCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -464,7 +465,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Testosterone Boosters Sub-Category related to the Sport Supplements Category ", priority = 24)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Testosterone Boosters Sub-Category related to the Sport Supplements Category ", priority = 24)
     public void verifyAbilityToAccessAllPagesInsideTestosteroneBoostersCategoryRelatedToSportSupplementsCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -483,7 +484,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-  @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Gh Booster Sub-Category related to the Sport Supplements Category ", priority = 25)
+  @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Gh Booster Sub-Category related to the Sport Supplements Category ", priority = 25)
     public void verifyAbilityToAccessAllPagesInsideGhBoosterCategoryRelatedToSportSupplementsCategoryPage(){
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -502,7 +503,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-  @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Weight Management Sub-Category related to the Sport Supplements Category ", priority = 26)
+  @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Weight Management Sub-Category related to the Sport Supplements Category ", priority = 26)
     public void verifyAbilityToAccessAllPagesInsideWeightManagementCategoryRelatedToSportSupplementsCategoryPage(){
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -521,7 +522,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-  @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Stimulant Weight Loss Sub-Category related to the Sport Supplements Category ", priority = 27)
+  @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Stimulant Weight Loss Sub-Category related to the Sport Supplements Category ", priority = 27)
     public void verifyAbilityToAccessAllPagesInsideStimulantWeightLossCategoryRelatedToSportSupplementsCategoryPage(){
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -540,7 +541,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-  @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Non Stimulant Weight Loss Sub-Category related to the Sport Supplements Category ", priority = 28)
+  @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Non Stimulant Weight Loss Sub-Category related to the Sport Supplements Category ", priority = 28)
     public void verifyAbilityToAccessAllPagesInsideNonStimulantWeightLossCategoryRelatedToSportSupplementsCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -559,7 +560,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-  @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Meal Replacements Sub-Category related to the Sport Supplements Category ", priority = 29)
+  @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Meal Replacements Sub-Category related to the Sport Supplements Category ", priority = 29)
     public void verifyAbilityToAccessAllPagesInsideMealReplacementsCategoryRelatedToSportSupplementsCategoryPage(){
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -578,7 +579,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-  @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Metabolism Support Sub-Category related to the Sport Supplements Category ", priority = 30)
+  @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Metabolism Support Sub-Category related to the Sport Supplements Category ", priority = 30)
     public void verifyAbilityToAccessAllPagesInsideMetabolismSupportCategoryRelatedToSportSupplementsCategoryPage(){
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -597,7 +598,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-  @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Toning Creams Sub-Category related to the Sport Supplements Category ", priority = 31)
+  @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Toning Creams Sub-Category related to the Sport Supplements Category ", priority = 31)
     public void verifyAbilityToAccessAllPagesInsideToningCreamsCategoryRelatedToSportSupplementsCategoryPage(){
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -616,7 +617,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Mct Sub-Category related to the Sport Supplements Category ", priority = 32)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Mct Sub-Category related to the Sport Supplements Category ", priority = 32)
     public void verifyAbilityToAccessAllPagesInsideMctCategoryRelatedToSportSupplementsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -635,7 +636,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Recovery Sub-Category related to the Sport Supplements Category ", priority = 33)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Recovery Sub-Category related to the Sport Supplements Category ", priority = 33)
     public void verifyAbilityToAccessAllPagesInsideRecoveryCategoryRelatedToSportSupplementsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -654,7 +655,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Glutamine Sub-Category related to the Sport Supplements Category ", priority = 34)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Glutamine Sub-Category related to the Sport Supplements Category ", priority = 34)
     public void verifyAbilityToAccessAllPagesInsideGlutamineCategoryRelatedToSportSupplementsCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -673,7 +674,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Recovery Blend Sub-Category related to the Sport Supplements Category ", priority = 35)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Recovery Blend Sub-Category related to the Sport Supplements Category ", priority = 35)
     public void verifyAbilityToAccessAllPagesInsideRecoveryBlendCategoryRelatedToSportSupplementsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -692,7 +693,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Electrolytes And Hydration Sub-Category related to the Sport Supplements Category ", priority = 36)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Electrolytes And Hydration Sub-Category related to the Sport Supplements Category ", priority = 36)
     public void verifyAbilityToAccessAllPagesInsideElectrolytesAndHydrationCategoryRelatedToSportSupplementsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -711,7 +712,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Carbohydrates Sub-Category related to the Sport Supplements Category ", priority = 37)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Carbohydrates Sub-Category related to the Sport Supplements Category ", priority = 37)
     public void verifyAbilityToAccessAllPagesInsideCarbohydratesCategoryRelatedToSportSupplementsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -730,7 +731,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Carbohydrate Powders Sub-Category related to the Sport Supplements Category ", priority = 38)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Carbohydrate Powders Sub-Category related to the Sport Supplements Category ", priority = 38)
     public void verifyAbilityToAccessAllPagesInsideCarbohydratePowdersCategoryRelatedToSportSupplementsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -749,7 +750,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Energy And Endurance Sub-Category related to the Sport Supplements Category ", priority = 39)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Energy And Endurance Sub-Category related to the Sport Supplements Category ", priority = 39)
     public void verifyAbilityToAccessAllPagesInsideEnergyAndEnduranceCategoryRelatedToSportSupplementsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -769,7 +770,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
 
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Stimulant Energy Sub-Category related to the Sport Supplements Category ", priority = 40)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Stimulant Energy Sub-Category related to the Sport Supplements Category ", priority = 40)
     public void verifyAbilityToAccessAllPagesInsideStimulantEnergyCategoryRelatedToSportSupplementsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -788,7 +789,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Non Stimulant Energy Sub-Category related to the Sport Supplements Category ", priority = 41)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Non Stimulant Energy Sub-Category related to the Sport Supplements Category ", priority = 41)
     public void verifyAbilityToAccessAllPagesInsideNonStimulantEnergyCategoryRelatedToSportSupplementsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -807,7 +808,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Gaming And Focus Sub-Category related to the Sport Supplements Category ", priority = 42)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Gaming And Focus Sub-Category related to the Sport Supplements Category ", priority = 42)
     public void verifyAbilityToAccessAllPagesInsideGamingAndFocusCategoryRelatedToSportSupplementsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -826,7 +827,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Gaming Essentials Sub-Category related to the Sport Supplements Category ", priority = 43)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Gaming Essentials Sub-Category related to the Sport Supplements Category ", priority = 43)
     public void verifyAbilityToAccessAllPagesInsideGamingEssentialsCategoryRelatedToSportSupplementsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -846,7 +847,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
     //Vitamins & Health Category Pages
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Featured Sub-Category related to the Vitamins & Health Category ", priority = 44)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Featured Sub-Category related to the Vitamins & Health Category ", priority = 44)
     public void verifyAbilityToAccessAllPagesInsideFeaturedCategoryRelatedTVitaminsAndHealthCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -865,7 +866,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Best Sellers Sub-Category related to the Vitamins & Health Category ", priority = 45)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Best Sellers Sub-Category related to the Vitamins & Health Category ", priority = 45)
     public void verifyAbilityToAccessAllPagesInsideBestSellersCategoryRelatedTVitaminsAndHealthCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -884,7 +885,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Sexual Health Sub-Category related to the Vitamins & Health Category ", priority = 46)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Sexual Health Sub-Category related to the Vitamins & Health Category ", priority = 46)
     public void verifyAbilityToAccessAllPagesInsideSexualHealthCategoryRelatedTVitaminsAndHealthCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -904,7 +905,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Essential Vitamins Sub-Category related to the Vitamins & Health Category ", priority = 47)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Essential Vitamins Sub-Category related to the Vitamins & Health Category ", priority = 47)
     public void verifyAbilityToAccessAllPagesInsideEssentialVitaminsCategoryRelatedTVitaminsAndHealthCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -923,7 +924,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Folic Acid Sub-Category related to the Vitamins & Health Category ", priority = 48)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Folic Acid Sub-Category related to the Vitamins & Health Category ", priority = 48)
     public void verifyAbilityToAccessAllPagesInsideFolicAcidCategoryRelatedTVitaminsAndHealthCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -942,7 +943,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Vitamin A Sub-Category related to the Vitamins & Health Category ", priority = 49)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Vitamin A Sub-Category related to the Vitamins & Health Category ", priority = 49)
     public void verifyAbilityToAccessAllPagesInsideVitaminACategoryRelatedTVitaminsAndHealthCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -961,7 +962,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Vitamin B Sub-Category related to the Vitamins & Health Category ", priority = 50)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Vitamin B Sub-Category related to the Vitamins & Health Category ", priority = 50)
     public void verifyAbilityToAccessAllPagesInsideVitaminBCategoryRelatedTVitaminsAndHealthCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -980,7 +981,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Vitamin C Sub-Category related to the Vitamins & Health Category ", priority = 51)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Vitamin C Sub-Category related to the Vitamins & Health Category ", priority = 51)
     public void verifyAbilityToAccessAllPagesInsideVitaminCCategoryRelatedTVitaminsAndHealthCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -999,7 +1000,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Vitamin D Sub-Category related to the Vitamins & Health Category ", priority = 52)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Vitamin D Sub-Category related to the Vitamins & Health Category ", priority = 52)
     public void verifyAbilityToAccessAllPagesInsideVitaminDCategoryRelatedTVitaminsAndHealthCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1018,7 +1019,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Vitamin E Sub-Category related to the Vitamins & Health Category ", priority = 53)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Vitamin E Sub-Category related to the Vitamins & Health Category ", priority = 53)
     public void verifyAbilityToAccessAllPagesInsideVitaminECategoryRelatedTVitaminsAndHealthCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1037,7 +1038,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Vitamin K Sub-Category related to the Vitamins & Health Category ", priority = 54)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Vitamin K Sub-Category related to the Vitamins & Health Category ", priority = 54)
     public void verifyAbilityToAccessAllPagesInsideVitaminKCategoryRelatedTVitaminsAndHealthCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1056,7 +1057,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Multi Vitamins Sub-Category related to the Vitamins & Health Category ", priority = 55)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Multi Vitamins Sub-Category related to the Vitamins & Health Category ", priority = 55)
     public void verifyAbilityToAccessAllPagesInsideMultiVitaminsCategoryRelatedTVitaminsAndHealthCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1075,7 +1076,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Vitamins For Kids Sub-Category related to the Vitamins & Health Category ", priority = 56)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Vitamins For Kids Sub-Category related to the Vitamins & Health Category ", priority = 56)
     public void verifyAbilityToAccessAllPagesInsideVitaminsForKidsCategoryRelatedTVitaminsAndHealthCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1094,7 +1095,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Vitamins For Men Sub-Category related to the Vitamins & Health Category ", priority = 57)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Vitamins For Men Sub-Category related to the Vitamins & Health Category ", priority = 57)
     public void verifyAbilityToAccessAllPagesInsideVitaminsForMenCategoryRelatedTVitaminsAndHealthCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1113,7 +1114,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Vitamins For Women Sub-Category related to the Vitamins & Health Category ", priority = 58)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Vitamins For Women Sub-Category related to the Vitamins & Health Category ", priority = 58)
     public void verifyAbilityToAccessAllPagesInsideVitaminsForWomenCategoryRelatedTVitaminsAndHealthCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1132,7 +1133,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Bone And Joint Sub-Category related to the Vitamins & Health Category ", priority = 59)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Bone And Joint Sub-Category related to the Vitamins & Health Category ", priority = 59)
     public void verifyAbilityToAccessAllPagesInsideBoneAndJointCategoryRelatedTVitaminsAndHealthCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1151,7 +1152,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Bone Health Sub-Category related to the Vitamins & Health Category ", priority = 60)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Bone Health Sub-Category related to the Vitamins & Health Category ", priority = 60)
     public void verifyAbilityToAccessAllPagesInsideBoneHealthCategoryRelatedTVitaminsAndHealthCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1170,7 +1171,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Joint Health Sub-Category related to the Vitamins & Health Category ", priority = 61)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Joint Health Sub-Category related to the Vitamins & Health Category ", priority = 61)
     public void verifyAbilityToAccessAllPagesInsideJointHealthCategoryRelatedTVitaminsAndHealthCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1189,7 +1190,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Beauty Sub-Category related to the Vitamins & Health Category ", priority = 62)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Beauty Sub-Category related to the Vitamins & Health Category ", priority = 62)
     public void verifyAbilityToAccessAllPagesInsideBeautyCategoryRelatedTVitaminsAndHealthCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1208,7 +1209,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Collagen Sub-Category related to the Vitamins & Health Category ", priority = 63)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Collagen Sub-Category related to the Vitamins & Health Category ", priority = 63)
     public void verifyAbilityToAccessAllPagesInsideCollagenCategoryRelatedTVitaminsAndHealthCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1227,7 +1228,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Hair Skin And Nails Sub-Category related to the Vitamins & Health Category ", priority = 64)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Hair Skin And Nails Sub-Category related to the Vitamins & Health Category ", priority = 64)
     public void verifyAbilityToAccessAllPagesInsideHairSkinAndNailsCategoryRelatedTVitaminsAndHealthCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1246,7 +1247,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Fish Oil Omegas Sub-Category related to the Vitamins & Health Category ", priority = 65)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Fish Oil Omegas Sub-Category related to the Vitamins & Health Category ", priority = 65)
     public void verifyAbilityToAccessAllPagesInsideFishOilOmegasCategoryRelatedTVitaminsAndHealthCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1265,7 +1266,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Fish Oil Sub-Category related to the Vitamins & Health Category ", priority = 66)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Fish Oil Sub-Category related to the Vitamins & Health Category ", priority = 66)
     public void verifyAbilityToAccessAllPagesInsideFishOilCategoryRelatedTVitaminsAndHealthCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1284,7 +1285,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Omega369 Sub-Category related to the Vitamins & Health Category ", priority = 67)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Omega369 Sub-Category related to the Vitamins & Health Category ", priority = 67)
     public void verifyAbilityToAccessAllPagesInsideOmega369CategoryRelatedTVitaminsAndHealthCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1303,7 +1304,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Health Life style Sub-Category related to the Vitamins & Health Category ", priority = 68)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Health Life style Sub-Category related to the Vitamins & Health Category ", priority = 68)
     public void verifyAbilityToAccessAllPagesInsideHealthLifestyleCategoryRelatedTVitaminsAndHealthCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1322,7 +1323,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Antioxidants Sub-Category related to the Vitamins & Health Category ", priority = 69)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Antioxidants Sub-Category related to the Vitamins & Health Category ", priority = 69)
     public void verifyAbilityToAccessAllPagesInsideAntioxidantsCategoryRelatedTVitaminsAndHealthCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1341,7 +1342,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Blood Sugar Support Sub-Category related to the Vitamins & Health Category ", priority = 70)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Blood Sugar Support Sub-Category related to the Vitamins & Health Category ", priority = 70)
     public void verifyAbilityToAccessAllPagesInsideBloodSugarSupportCategoryRelatedTVitaminsAndHealthCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1360,7 +1361,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Brain Support Sub-Category related to the Vitamins & Health Category ", priority = 71)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Brain Support Sub-Category related to the Vitamins & Health Category ", priority = 71)
     public void verifyAbilityToAccessAllPagesInsideBrainSupportCategoryRelatedTVitaminsAndHealthCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1379,7 +1380,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Detox And Cleans Sub-Category related to the Vitamins & Health Category ", priority = 72)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Detox And Cleans Sub-Category related to the Vitamins & Health Category ", priority = 72)
     public void verifyAbilityToAccessAllPagesInsideDetoxAndCleansCategoryCategoryRelatedTVitaminsAndHealthCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1398,7 +1399,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Energy Formulas Sub-Category related to the Vitamins & Health Category ", priority = 74)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Energy Formulas Sub-Category related to the Vitamins & Health Category ", priority = 74)
     public void verifyAbilityToAccessAllPagesInsideEnergyFormulasCategoryRelatedTVitaminsAndHealthCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1417,7 +1418,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Eye Health Sub-Category related to the Vitamins & Health Category ", priority = 75)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Eye Health Sub-Category related to the Vitamins & Health Category ", priority = 75)
     public void verifyAbilityToAccessAllPagesInsideEyeHealthCategoryRelatedTVitaminsAndHealthCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1436,7 +1437,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Herbs Option Sub-Category related to the Vitamins & Health Category ", priority = 76)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Herbs Option Sub-Category related to the Vitamins & Health Category ", priority = 76)
     public void verifyAbilityToAccessAllPagesInsideHerbsOptionCategoryRelatedTVitaminsAndHealthCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1455,7 +1456,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Hormones Balance Option Sub-Category related to the Vitamins & Health Category ", priority = 77)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Hormones Balance Option Sub-Category related to the Vitamins & Health Category ", priority = 77)
     public void verifyAbilityToAccessAllPagesInsideHormonesBalanceOptionCategoryRelatedTVitaminsAndHealthCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1474,7 +1475,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Immune Support Option Sub-Category related to the Vitamins & Health Category ", priority = 78)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Immune Support Option Sub-Category related to the Vitamins & Health Category ", priority = 78)
     public void verifyAbilityToAccessAllPagesInsideImmuneSupportOptionCategoryRelatedTVitaminsAndHealthCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1493,7 +1494,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Mens Health Option Sub-Category related to the Vitamins & Health Category ", priority = 79)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Mens Health Option Sub-Category related to the Vitamins & Health Category ", priority = 79)
     public void verifyAbilityToAccessAllPagesInsideMensHealthOptionCategoryRelatedTVitaminsAndHealthCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1512,7 +1513,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Stress Relief Option Sub-Category related to the Vitamins & Health Category ", priority = 80)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Stress Relief Option Sub-Category related to the Vitamins & Health Category ", priority = 80)
     public void verifyAbilityToAccessAllPagesInsideStressReliefOptionCategoryRelatedTVitaminsAndHealthCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1531,7 +1532,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Sleep Support Option Sub-Category related to the Vitamins & Health Category ", priority = 81)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Sleep Support Option Sub-Category related to the Vitamins & Health Category ", priority = 81)
     public void verifyAbilityToAccessAllPagesInsideSleepSupportOptionCategoryRelatedTVitaminsAndHealthCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1550,7 +1551,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-  @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Super Foods Option Sub-Category related to the Vitamins & Health Category ", priority = 82)
+  @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Super Foods Option Sub-Category related to the Vitamins & Health Category ", priority = 82)
     public void verifyAbilityToAccessAllPagesInsideSuperFoodsOptionCategoryRelatedTVitaminsAndHealthCategoryPage(){
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1569,7 +1570,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-  @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Urinary Tract Support Option Sub-Category related to the Vitamins & Health Category ", priority = 83)
+  @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Urinary Tract Support Option Sub-Category related to the Vitamins & Health Category ", priority = 83)
     public void verifyAbilityToAccessAllPagesInsideUrinaryTractSupportOptionCategoryRelatedTVitaminsAndHealthCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1588,7 +1589,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-  @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Weight Management Option Sub-Category related to the Vitamins & Health Category ", priority = 84)
+  @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Weight Management Option Sub-Category related to the Vitamins & Health Category ", priority = 84)
     public void verifyAbilityToAccessAllPagesInsideWeightManagementSupportOptionCategoryRelatedTVitaminsAndHealthCategoryPage(){
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1607,7 +1608,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-  @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Womens Health  Option Sub-Category related to the Vitamins & Health Category ", priority = 85)
+  @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Womens Health  Option Sub-Category related to the Vitamins & Health Category ", priority = 85)
     public void verifyAbilityToAccessAllPagesInsideWomensHealthOptionCategoryRelatedTVitaminsAndHealthCategoryPage(){
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1626,7 +1627,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-  @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Digestion Option Sub-Category related to the Vitamins & Health Category ", priority = 86)
+  @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Digestion Option Sub-Category related to the Vitamins & Health Category ", priority = 86)
     public void verifyAbilityToAccessAllPagesInsideDigestionOptionCategoryRelatedTVitaminsAndHealthCategoryPage(){
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1645,7 +1646,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-  @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Digestion Support Option Sub-Category related to the Vitamins & Health Category ", priority = 87)
+  @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Digestion Support Option Sub-Category related to the Vitamins & Health Category ", priority = 87)
     public void verifyAbilityToAccessAllPagesInsideDigestionSupportOptionCategoryRelatedTVitaminsAndHealthCategoryPage(){
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1664,7 +1665,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-  @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Probiotics Option Sub-Category related to the Vitamins & Health Category ", priority = 88)
+  @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Probiotics Option Sub-Category related to the Vitamins & Health Category ", priority = 88)
     public void verifyAbilityToAccessAllPagesInsideProbioticsOptionCategoryRelatedTVitaminsAndHealthCategoryPage(){
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1683,7 +1684,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-  @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Sport Vitamins Option Sub-Category related to the Vitamins & Health Category ", priority = 89)
+  @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Sport Vitamins Option Sub-Category related to the Vitamins & Health Category ", priority = 89)
     public void verifyAbilityToAccessAllPagesInsideSportVitaminsOptionCategoryRelatedTVitaminsAndHealthCategoryPage(){
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1702,7 +1703,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-  @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Amino Acid Option Sub-Category related to the Vitamins & Health Category ", priority = 90)
+  @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Amino Acid Option Sub-Category related to the Vitamins & Health Category ", priority = 90)
     public void verifyAbilityToAccessAllPagesInsideAminoAcidOptionCategoryRelatedTVitaminsAndHealthCategoryPage(){
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1721,7 +1722,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-  @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Minerals Option Sub-Category related to the Vitamins & Health Category ", priority = 91)
+  @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Minerals Option Sub-Category related to the Vitamins & Health Category ", priority = 91)
     public void verifyAbilityToAccessAllPagesInsideMineralsOptionCategoryRelatedTVitaminsAndHealthCategoryPage(){
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1740,7 +1741,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-  @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Calcium Option Sub-Category related to the Vitamins & Health Category ", priority = 92)
+  @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Calcium Option Sub-Category related to the Vitamins & Health Category ", priority = 92)
     public void verifyAbilityToAccessAllPagesInsideCalciumOptionCategoryRelatedTVitaminsAndHealthCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1759,7 +1760,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-  @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Iron Option Sub-Category related to the Vitamins & Health Category ", priority = 93)
+  @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Iron Option Sub-Category related to the Vitamins & Health Category ", priority = 93)
     public void verifyAbilityToAccessAllPagesInsideIronOptionCategoryRelatedTVitaminsAndHealthCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1778,7 +1779,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-  @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Magnesium Option Sub-Category related to the Vitamins & Health Category ", priority = 94)
+  @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Magnesium Option Sub-Category related to the Vitamins & Health Category ", priority = 94)
     public void verifyAbilityToAccessAllPagesInsideMagnesiumOptionCategoryRelatedTVitaminsAndHealthCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1797,7 +1798,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-  @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Multi mineral Formulas Option Sub-Category related to the Vitamins & Health Category ", priority = 95)
+  @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Multi mineral Formulas Option Sub-Category related to the Vitamins & Health Category ", priority = 95)
     public void verifyAbilityToAccessAllPagesInsideMultiMineralFormulasOptionCategoryRelatedTVitaminsAndHealthCategoryPage(){
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1816,7 +1817,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-  @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Zinc Option Sub-Category related to the Vitamins & Health Category ", priority = 96)
+  @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Zinc Option Sub-Category related to the Vitamins & Health Category ", priority = 96)
     public void verifyAbilityToAccessAllPagesInsideZincOptionCategoryRelatedTVitaminsAndHealthCategoryPage(){
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1835,7 +1836,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-  @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Potassium Option Sub-Category related to the Vitamins & Health Category ", priority = 97)
+  @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Potassium Option Sub-Category related to the Vitamins & Health Category ", priority = 97)
     public void verifyAbilityToAccessAllPagesInsidePotassiumOptionCategoryRelatedTVitaminsAndHealthCategoryPage(){
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1854,7 +1855,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-  @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Healthy Drinks Option Sub-Category related to the Vitamins & Health Category ", priority = 98)
+  @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Healthy Drinks Option Sub-Category related to the Vitamins & Health Category ", priority = 98)
     public void verifyAbilityToAccessAllPagesInsideHealthyDrinksOptionCategoryRelatedTVitaminsAndHealthCategoryPage(){
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1873,7 +1874,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-  @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Healthy Drinkable Vitamins Option Sub-Category related to the Vitamins & Health Category ", priority = 99)
+  @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Healthy Drinkable Vitamins Option Sub-Category related to the Vitamins & Health Category ", priority = 99)
     public void verifyAbilityToAccessAllPagesInsideDrinkableVitaminsOptionCategoryRelatedTVitaminsAndHealthCategoryPage(){
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1892,7 +1893,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-  @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Healthy Pets Option Sub-Category related to the Vitamins & Health Category ", priority = 100)
+  @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Healthy Pets Option Sub-Category related to the Vitamins & Health Category ", priority = 100)
     public void verifyAbilityToAccessAllPagesInsidePetsOptionCategoryRelatedTVitaminsAndHealthCategoryPage(){
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1911,7 +1912,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-  @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Healthy Supplements More Option Sub-Category related to the Vitamins & Health Category ", priority = 101)
+  @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Healthy Supplements More Option Sub-Category related to the Vitamins & Health Category ", priority = 101)
     public void verifyAbilityToAccessAllPagesInsideSupplementsMoreOptionCategoryRelatedTVitaminsAndHealthCategoryPage(){
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1931,7 +1932,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
 //Healthy Food Category Pages
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Healthy Food Category Page", priority = 102)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Healthy Food Category Page", priority = 102)
 public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMenu(){
     AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -1942,7 +1943,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
 }
-    @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Healthy Grocery Option Sub-Category related to the Healthy Food Category ", priority = 103)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Healthy Grocery Option Sub-Category related to the Healthy Food Category ", priority = 103)
     public void verifyAbilityToAccessAllPagesInsideGroceryOptionCategoryRelatedToHealthyFoodCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1962,7 +1963,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
 
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Baking And Cooking Option Sub-Category related to the Healthy Food Category ", priority = 104)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Baking And Cooking Option Sub-Category related to the Healthy Food Category ", priority = 104)
     public void verifyAbilityToAccessAllPagesInsideBakingAndCookingOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1981,7 +1982,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Canned Option Sub-Category related to the Healthy Food Category ", priority = 105)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Canned Option Sub-Category related to the Healthy Food Category ", priority = 105)
     public void verifyAbilityToAccessAllPagesInsideCannedOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2000,7 +2001,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Coffee Option Sub-Category related to the Healthy Food Category ", priority = 106)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Coffee Option Sub-Category related to the Healthy Food Category ", priority = 106)
     public void verifyAbilityToAccessAllPagesInsideCoffeeOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2019,7 +2020,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Condiments Option Sub-Category related to the Healthy Food Category ", priority = 107)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Condiments Option Sub-Category related to the Healthy Food Category ", priority = 107)
     public void verifyAbilityToAccessAllPagesInsideCondimentsOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2038,7 +2039,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Milk And Cream Option Sub-Category related to the Healthy Food Category ", priority = 108)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Milk And Cream Option Sub-Category related to the Healthy Food Category ", priority = 108)
     public void verifyAbilityToAccessAllPagesInsideMilkAndCreamOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2057,7 +2058,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Nuts And Oats Option Sub-Category related to the Healthy Food Category ", priority = 109)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Nuts And Oats Option Sub-Category related to the Healthy Food Category ", priority = 109)
     public void verifyAbilityToAccessAllPagesInsideNutsAndOatsOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2076,7 +2077,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Oils Option Sub-Category related to the Healthy Food Category ", priority = 110)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Oils Option Sub-Category related to the Healthy Food Category ", priority = 110)
     public void verifyAbilityToAccessAllPagesInsideOilsOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2095,7 +2096,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Pasta Option Sub-Category related to the Healthy Food Category ", priority = 111)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Pasta Option Sub-Category related to the Healthy Food Category ", priority = 111)
     public void verifyAbilityToAccessAllPagesInsidePastaOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2114,7 +2115,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Rice And Grains Option Sub-Category related to the Healthy Food Category ", priority = 112)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Rice And Grains Option Sub-Category related to the Healthy Food Category ", priority = 112)
     public void verifyAbilityToAccessAllPagesInsideRiceAndGrainsOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2133,7 +2134,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Seasonings Option Sub-Category related to the Healthy Food Category ", priority = 113)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Seasonings Option Sub-Category related to the Healthy Food Category ", priority = 113)
     public void verifyAbilityToAccessAllPagesInsideSeasoningsOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2152,7 +2153,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Sugar Sweeteners Option Sub-Category related to the Healthy Food Category ", priority = 114)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Sugar Sweeteners Option Sub-Category related to the Healthy Food Category ", priority = 114)
     public void verifyAbilityToAccessAllPagesInsideSugarSweetenersOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2171,7 +2172,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Syrups Option Sub-Category related to the Healthy Food Category ", priority = 115)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Syrups Option Sub-Category related to the Healthy Food Category ", priority = 115)
     public void verifyAbilityToAccessAllPagesInsideSyrupsOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2190,7 +2191,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Tea And Herbs Option Sub-Category related to the Healthy Food Category ", priority = 116)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Tea And Herbs Option Sub-Category related to the Healthy Food Category ", priority = 116)
     public void verifyAbilityToAccessAllPagesInsideTeaAndHerbsOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2209,7 +2210,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Superfoods Option Sub-Category related to the Healthy Food Category ", priority = 117)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Superfoods Option Sub-Category related to the Healthy Food Category ", priority = 117)
     public void verifyAbilityToAccessAllPagesInsideSuperfoodsOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2228,7 +2229,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Ready Mixes Option Sub-Category related to the Healthy Food Category ", priority = 118)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Ready Mixes Option Sub-Category related to the Healthy Food Category ", priority = 118)
     public void verifyAbilityToAccessAllPagesInsideReadyMixesOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2247,7 +2248,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Breakfast And Cereal Option Sub-Category related to the Healthy Food Category ", priority = 119)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Breakfast And Cereal Option Sub-Category related to the Healthy Food Category ", priority = 119)
     public void verifyAbilityToAccessAllPagesInsideBreakfastAndCerealOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2266,7 +2267,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Ready To Drink Option Sub-Category related to the Healthy Food Category ", priority = 120)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Ready To Drink Option Sub-Category related to the Healthy Food Category ", priority = 120)
     public void verifyAbilityToAccessAllPagesInsideReadyToDrinkOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2286,7 +2287,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
 
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Amino And Bcaas Option Sub-Category related to the Healthy Food Category ", priority = 121)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Amino And Bcaas Option Sub-Category related to the Healthy Food Category ", priority = 121)
     public void verifyAbilityToAccessAllPagesInsideAminoAndBcaasOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2305,7 +2306,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Energy Drinks Option Sub-Category related to the Healthy Food Category ", priority = 122)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Energy Drinks Option Sub-Category related to the Healthy Food Category ", priority = 122)
     public void verifyAbilityToAccessAllPagesInsideEnergyDrinksOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2324,7 +2325,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Protein Shakes Option Sub-Category related to the Healthy Food Category ", priority = 123)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Protein Shakes Option Sub-Category related to the Healthy Food Category ", priority = 123)
     public void verifyAbilityToAccessAllPagesInsideProteinShakesOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2343,7 +2344,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Electrolytes And Hydration Option Sub-Category related to the Healthy Food Category ", priority = 124)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Electrolytes And Hydration Option Sub-Category related to the Healthy Food Category ", priority = 124)
     public void verifyAbilityToAccessAllPagesInsideElectrolytesAndHydrationOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2362,7 +2363,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Healthy Snacks Option Sub-Category related to the Healthy Food Category ", priority = 125)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Healthy Snacks Option Sub-Category related to the Healthy Food Category ", priority = 125)
     public void verifyAbilityToAccessAllPagesInsideHealthySnacksOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2381,7 +2382,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Protein Bars Option Sub-Category related to the Healthy Food Category ", priority = 126)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Protein Bars Option Sub-Category related to the Healthy Food Category ", priority = 126)
     public void verifyAbilityToAccessAllPagesInsideProteinBarsOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2400,7 +2401,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Cookies Option Sub-Category related to the Healthy Food Category ", priority = 127)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Cookies Option Sub-Category related to the Healthy Food Category ", priority = 127)
     public void verifyAbilityToAccessAllPagesInsideCookiesOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2419,7 +2420,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Chips Option Sub-Category related to the Healthy Food Category ", priority = 128)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Chips Option Sub-Category related to the Healthy Food Category ", priority = 128)
     public void verifyAbilityToAccessAllPagesInsideChipsOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2438,7 +2439,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Brownies And Pancakes Option Sub-Category related to the Healthy Food Category ", priority = 129)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Brownies And Pancakes Option Sub-Category related to the Healthy Food Category ", priority = 129)
     public void verifyAbilityToAccessAllPagesInsideBrowniesAndPancakesOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2457,7 +2458,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Snack Bars Option Sub-Category related to the Healthy Food Category ", priority = 130)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Snack Bars Option Sub-Category related to the Healthy Food Category ", priority = 130)
     public void verifyAbilityToAccessAllPagesInsideSnackBarsOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2476,7 +2477,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Spreads Option Sub-Category related to the Healthy Food Category ", priority = 131)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Spreads Option Sub-Category related to the Healthy Food Category ", priority = 131)
     public void verifyAbilityToAccessAllPagesInsideSpreadsOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2495,7 +2496,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Other Healthy Snacks Option Sub-Category related to the Healthy Food Category ", priority = 132)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Other Healthy Snacks Option Sub-Category related to the Healthy Food Category ", priority = 132)
     public void verifyAbilityToAccessAllPagesInsideOtherHealthySnacksOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2514,7 +2515,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Ready To Eat Option Sub-Category related to the Healthy Food Category ", priority = 133)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Ready To Eat Option Sub-Category related to the Healthy Food Category ", priority = 133)
     public void verifyAbilityToAccessAllPagesInsideReadyToEatOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2533,7 +2534,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Healthy Meals Option Sub-Category related to the Healthy Food Category ", priority = 134)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Healthy Meals Option Sub-Category related to the Healthy Food Category ", priority = 134)
     public void verifyAbilityToAccessAllPagesInsideHealthyMealsOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2553,7 +2554,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Featured Option Sub-Category related to the Healthy Food Category ", priority = 135)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Featured Option Sub-Category related to the Healthy Food Category ", priority = 135)
     public void verifyAbilityToAccessAllPagesInsideFeaturedOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2572,7 +2573,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Healthy Meal Replacement Option Sub-Category related to the Healthy Food Category ", priority = 136)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Healthy Meal Replacement Option Sub-Category related to the Healthy Food Category ", priority = 136)
     public void verifyAbilityToAccessAllPagesInsideHealthyMealReplacementOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2591,7 +2592,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Protein Option Sub-Category related to the Healthy Food Category ", priority = 137)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Protein Option Sub-Category related to the Healthy Food Category ", priority = 137)
     public void verifyAbilityToAccessAllPagesInsideProteinOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2610,7 +2611,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Candies Option Sub-Category related to the Healthy Food Category ", priority = 138)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Candies Option Sub-Category related to the Healthy Food Category ", priority = 138)
     public void verifyAbilityToAccessAllPagesInsideCandiesOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2629,7 +2630,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Flavoring Agents Option Sub-Category related to the Healthy Food Category ", priority = 139)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Flavoring Agents Option Sub-Category related to the Healthy Food Category ", priority = 139)
     public void verifyAbilityToAccessAllPagesInsideFlavoringAgentsOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2648,7 +2649,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Keto Option Sub-Category related to the Healthy Food Category ", priority = 140)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Keto Option Sub-Category related to the Healthy Food Category ", priority = 140)
     public void verifyAbilityToAccessAllPagesInsideKetoOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2667,7 +2668,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Manuka Honey Option Sub-Category related to the Healthy Food Category ", priority = 141)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Manuka Honey Option Sub-Category related to the Healthy Food Category ", priority = 141)
     public void verifyAbilityToAccessAllPagesInsideManukaHoneyOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2686,7 +2687,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-   @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Meat Snacks Option Sub-Category related to the Healthy Food Category ", priority = 142)
+   @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Meat Snacks Option Sub-Category related to the Healthy Food Category ", priority = 142)
     public void verifyAbilityToAccessAllPagesInsideMeatSnacksOptionCategoryRelatedToHealthyFoodCategoryPage(){
        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2706,7 +2707,7 @@ public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPageFromMegaMe
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
 //Sports Category Pages
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Men Option Sub-Category related to the Sports Category ", priority = 143)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Men Option Sub-Category related to the Sports Category ", priority = 143)
 public void verifyAbilityToAccessAllPagesInsideMenOptionCategoryRelatedToSportsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2725,7 +2726,7 @@ public void verifyAbilityToAccessAllPagesInsideMenOptionCategoryRelatedToSportsC
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Sport Option Sub-Category related to the Sports Category ", priority = 144)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Sport Option Sub-Category related to the Sports Category ", priority = 144)
 public void verifyAbilityToAccessAllPagesInsideSportOptionCategoryRelatedToSportsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2744,7 +2745,7 @@ public void verifyAbilityToAccessAllPagesInsideSportOptionCategoryRelatedToSport
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Football Option Sub-Category related to the Sports Category ", priority = 145)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Football Option Sub-Category related to the Sports Category ", priority = 145)
 public void verifyAbilityToAccessAllPagesInsideFootballOptionCategoryRelatedToSportsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2763,7 +2764,7 @@ public void verifyAbilityToAccessAllPagesInsideFootballOptionCategoryRelatedToSp
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Basketball Option Sub-Category related to the Sports Category ", priority = 146)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Basketball Option Sub-Category related to the Sports Category ", priority = 146)
 public void verifyAbilityToAccessAllPagesInsideBasketballOptionCategoryRelatedToSportsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2782,7 +2783,7 @@ public void verifyAbilityToAccessAllPagesInsideBasketballOptionCategoryRelatedTo
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Baseball Option Sub-Category related to the Sports Category ", priority = 147)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Baseball Option Sub-Category related to the Sports Category ", priority = 147)
 public void verifyAbilityToAccessAllPagesInsideBaseballOptionCategoryRelatedToSportsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2801,7 +2802,7 @@ public void verifyAbilityToAccessAllPagesInsideBaseballOptionCategoryRelatedToSp
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Running Option Sub-Category related to the Sports Category ", priority = 148)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Running Option Sub-Category related to the Sports Category ", priority = 148)
 public void verifyAbilityToAccessAllPagesInsideRunningOptionCategoryRelatedToSportsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2820,7 +2821,7 @@ public void verifyAbilityToAccessAllPagesInsideRunningOptionCategoryRelatedToSpo
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Safety Swimming Option Sub-Category related to the Sports Category ", priority = 149)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Safety Swimming Option Sub-Category related to the Sports Category ", priority = 149)
 public void verifyAbilityToAccessAllPagesInsideSafetySwimmingOptionCategoryRelatedToSportsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2839,7 +2840,7 @@ public void verifyAbilityToAccessAllPagesInsideSafetySwimmingOptionCategoryRelat
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Yoga Option Sub-Category related to the Sports Category ", priority = 150)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Yoga Option Sub-Category related to the Sports Category ", priority = 150)
 public void verifyAbilityToAccessAllPagesInsideYogaOptionCategoryRelatedToSportsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2858,7 +2859,7 @@ public void verifyAbilityToAccessAllPagesInsideYogaOptionCategoryRelatedToSports
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Fitness And Training1 Option related to the Sports Category ", priority = 151)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Fitness And Training1 Option related to the Sports Category ", priority = 151)
 public void verifyAbilityToAccessAllPagesInsideFitnessAndTraining1OptionCategoryRelatedToSportsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2877,7 +2878,7 @@ public void verifyAbilityToAccessAllPagesInsideFitnessAndTraining1OptionCategory
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Mma Option Sub-Category related to the Sports Category ", priority = 152)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Mma Option Sub-Category related to the Sports Category ", priority = 152)
 public void verifyAbilityToAccessAllPagesInsideMmaOptionCategoryRelatedToSportsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2896,7 +2897,7 @@ public void verifyAbilityToAccessAllPagesInsideMmaOptionCategoryRelatedToSportsC
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside JiuJitsu Option Sub-Category related to the Sports Category ", priority = 153)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside JiuJitsu Option Sub-Category related to the Sports Category ", priority = 153)
 public void verifyAbilityToAccessAllPagesInsideJiuJitsuOptionCategoryRelatedToSportsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2915,7 +2916,7 @@ public void verifyAbilityToAccessAllPagesInsideJiuJitsuOptionCategoryRelatedToSp
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Board Games Option Sub-Category related to the Sports Category ", priority = 154)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Board Games Option Sub-Category related to the Sports Category ", priority = 154)
 public void verifyAbilityToAccessAllPagesInsideBoardGamesOptionCategoryRelatedToSportsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2934,7 +2935,7 @@ public void verifyAbilityToAccessAllPagesInsideBoardGamesOptionCategoryRelatedTo
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Sports Tech Option Sub-Category related to the Sports Category ", priority = 155)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Sports Tech Option Sub-Category related to the Sports Category ", priority = 155)
 public void verifyAbilityToAccessAllPagesInsideSportsTechOptionCategoryRelatedToSportsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2953,7 +2954,7 @@ public void verifyAbilityToAccessAllPagesInsideSportsTechOptionCategoryRelatedTo
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Wearable Tech Option Sub-Category related to the Sports Category ", priority = 156)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Wearable Tech Option Sub-Category related to the Sports Category ", priority = 156)
 public void verifyAbilityToAccessAllPagesInsideWearableTechOptionCategoryRelatedToSportsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2972,7 +2973,7 @@ public void verifyAbilityToAccessAllPagesInsideWearableTechOptionCategoryRelated
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Cameras Option Sub-Category related to the Sports Category ", priority = 157)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Cameras Option Sub-Category related to the Sports Category ", priority = 157)
 public void verifyAbilityToAccessAllPagesInsideCamerasOptionCategoryRelatedToSportsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -2991,7 +2992,7 @@ public void verifyAbilityToAccessAllPagesInsideCamerasOptionCategoryRelatedToSpo
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Phone Accessories Option Sub-Category related to the Sports Category ", priority = 158)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Phone Accessories Option Sub-Category related to the Sports Category ", priority = 158)
 public void verifyAbilityToAccessAllPagesInsidePhoneAccessoriesOptionCategoryRelatedToSportsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3010,7 +3011,7 @@ public void verifyAbilityToAccessAllPagesInsidePhoneAccessoriesOptionCategoryRel
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Personal Care Option Sub-Category related to the Sports Category ", priority = 159)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Personal Care Option Sub-Category related to the Sports Category ", priority = 159)
 public void verifyAbilityToAccessAllPagesInsidePersonalCareOptionCategoryRelatedToSportsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3029,7 +3030,7 @@ public void verifyAbilityToAccessAllPagesInsidePersonalCareOptionCategoryRelated
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(groups = {"MegaMenu","All Smoke Testing Result","3. Medium Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Showering Option Sub-Category related to the Sports Category ", priority = 160)
+ @Test(groups = {"MegaMenu","All Smoke Testing Result","2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Showering Option Sub-Category related to the Sports Category ", priority = 160)
 public void verifyAbilityToAccessAllPagesInsideShoweringOptionCategoryRelatedToSportsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3087,7 +3088,7 @@ public void verifyAbilityToAccessAllPagesInsideSkinCareOptionCategoryRelatedToSp
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Body Care Option Sub-Category related to the Sports Category ", priority = 163)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Body Care Option Sub-Category related to the Sports Category ", priority = 163)
 public void verifyAbilityToAccessAllPagesInsideBodyCareOptionCategoryRelatedToSportsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3106,7 +3107,7 @@ public void verifyAbilityToAccessAllPagesInsideBodyCareOptionCategoryRelatedToSp
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Oral Care Option Sub-Category related to the Sports Category ", priority = 164)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Oral Care Option Sub-Category related to the Sports Category ", priority = 164)
 public void verifyAbilityToAccessAllPagesInsideOralCareOptionCategoryRelatedToSportsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3125,7 +3126,7 @@ public void verifyAbilityToAccessAllPagesInsideOralCareOptionCategoryRelatedToSp
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Therapy Option Sub-Category related to the Sports Category ", priority = 165)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Therapy Option Sub-Category related to the Sports Category ", priority = 165)
 public void verifyAbilityToAccessAllPagesInsideTherapyOptionCategoryRelatedToSportsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3144,7 +3145,7 @@ public void verifyAbilityToAccessAllPagesInsideTherapyOptionCategoryRelatedToSpo
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Masks Option Sub-Category related to the Sports Category ", priority = 166)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Masks Option Sub-Category related to the Sports Category ", priority = 166)
 public void verifyAbilityToAccessAllPagesInsideMasksOptionCategoryRelatedToSportsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3163,7 +3164,7 @@ public void verifyAbilityToAccessAllPagesInsideMasksOptionCategoryRelatedToSport
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Fitness And Training Option Sub-Category related to the Sports Category ", priority = 167)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Fitness And Training Option Sub-Category related to the Sports Category ", priority = 167)
 public void verifyAbilityToAccessAllPagesInsideFitnessAndTrainingOptionCategoryRelatedToSportsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3182,7 +3183,7 @@ public void verifyAbilityToAccessAllPagesInsideFitnessAndTrainingOptionCategoryR
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Fitness Equipment Option Sub-Category related to the Sports Category ", priority = 168)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Fitness Equipment Option Sub-Category related to the Sports Category ", priority = 168)
 public void verifyAbilityToAccessAllPagesInsideFitnessEquipmentOptionCategoryRelatedToSportsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3201,7 +3202,7 @@ public void verifyAbilityToAccessAllPagesInsideFitnessEquipmentOptionCategoryRel
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Skipping Ropes Option Sub-Category related to the Sports Category ", priority = 169)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Skipping Ropes Option Sub-Category related to the Sports Category ", priority = 169)
 public void verifyAbilityToAccessAllPagesInsideSkippingRopesOptionCategoryRelatedToSportsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3220,7 +3221,7 @@ public void verifyAbilityToAccessAllPagesInsideSkippingRopesOptionCategoryRelate
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the " +
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the " +
          "ability to access all pages inside Weigh tBelts Tech Option Sub-Category related to the Sports Category ", priority = 170)
 public void verifyAbilityToAccessAllPagesInsideWeightBeltsOptionCategoryRelatedToSportsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
@@ -3240,7 +3241,7 @@ public void verifyAbilityToAccessAllPagesInsideWeightBeltsOptionCategoryRelatedT
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside Scooters Option Sub-Category related to the Sports Category ", priority = 171)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Scooters Option Sub-Category related to the Sports Category ", priority = 171)
 public void verifyAbilityToAccessAllPagesInsideScootersOptionCategoryRelatedToSportsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3259,7 +3260,7 @@ public void verifyAbilityToAccessAllPagesInsideScootersOptionCategoryRelatedToSp
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(description = "MegaMenu- Make Sure the ability to access all pages inside  Training Accessories Option Sub-Category related to the Sports Category ", priority = 172)
+ @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside  Training Accessories Option Sub-Category related to the Sports Category ", priority = 172)
 public void verifyAbilityToAccessAllPagesInsideTrainingAccessoriesOptionCategoryRelatedToSportsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3279,7 +3280,7 @@ public void verifyAbilityToAccessAllPagesInsideTrainingAccessoriesOptionCategory
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
 
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Shakers And Bottles Option Sub-Category related to the Sports Category ", priority = 173)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Shakers And Bottles Option Sub-Category related to the Sports Category ", priority = 173)
 public void verifyAbilityToAccessAllPagesInsideShakersAndBottlesOptionCategoryRelatedToSportsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3298,7 +3299,7 @@ public void verifyAbilityToAccessAllPagesInsideShakersAndBottlesOptionCategoryRe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
 }
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Bags Option Sub-Category related to the Sports Category ", priority = 174)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Bags Option Sub-Category related to the Sports Category ", priority = 174)
 public void verifyAbilityToAccessAllPagesInsideBagsOptionCategoryRelatedToSportsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3317,7 +3318,7 @@ public void verifyAbilityToAccessAllPagesInsideBagsOptionCategoryRelatedToSports
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
 }
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Gloves Option Sub-Category related to the Sports Category ", priority = 175)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Gloves Option Sub-Category related to the Sports Category ", priority = 175)
 public void verifyAbilityToAccessAllPagesInsideGlovesOptionCategoryRelatedToSportsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3336,7 +3337,7 @@ public void verifyAbilityToAccessAllPagesInsideGlovesOptionCategoryRelatedToSpor
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
 }
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Braces And Sleeves Option Sub-Category related to the Sports Category ", priority = 176)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Braces And Sleeves Option Sub-Category related to the Sports Category ", priority = 176)
 public void verifyAbilityToAccessAllPagesInsideBracesAndSleevesOptionCategoryRelatedToSportsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3355,7 +3356,7 @@ public void verifyAbilityToAccessAllPagesInsideBracesAndSleevesOptionCategoryRel
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
 }
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Mouthguard Option Sub-Category related to the Sports Category ", priority = 177)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Mouthguard Option Sub-Category related to the Sports Category ", priority = 177)
 public void verifyAbilityToAccessAllPagesInsideMouthguardOptionCategoryRelatedToSportsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3374,7 +3375,7 @@ public void verifyAbilityToAccessAllPagesInsideMouthguardOptionCategoryRelatedTo
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
 }
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Appeal Option Sub-Category related to the Sports Category ", priority = 178)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Appeal Option Sub-Category related to the Sports Category ", priority = 178)
 public void verifyAbilityToAccessAllPagesInsideAppealOptionCategoryRelatedToSportsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3393,7 +3394,7 @@ public void verifyAbilityToAccessAllPagesInsideAppealOptionCategoryRelatedToSpor
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
 }
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Sportswear Option Sub-Category related to the Sports Category ", priority = 179)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Sportswear Option Sub-Category related to the Sports Category ", priority = 179)
 public void verifyAbilityToAccessAllPagesInsideSportswearOptionCategoryRelatedToSportsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3412,7 +3413,7 @@ public void verifyAbilityToAccessAllPagesInsideSportswearOptionCategoryRelatedTo
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
 }
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Pants Option Sub-Category related to the Sports Category ", priority = 180)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Pants Option Sub-Category related to the Sports Category ", priority = 180)
 public void verifyAbilityToAccessAllPagesInsidePantsOptionCategoryRelatedToSportsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3431,7 +3432,7 @@ public void verifyAbilityToAccessAllPagesInsidePantsOptionCategoryRelatedToSport
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
 }
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Shorts Option Sub-Category related to the Sports Category ", priority = 181)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Shorts Option Sub-Category related to the Sports Category ", priority = 181)
 public void verifyAbilityToAccessAllPagesInsideShortsOptionCategoryRelatedToSportsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3450,7 +3451,7 @@ public void verifyAbilityToAccessAllPagesInsideShortsOptionCategoryRelatedToSpor
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
 }
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Hoodies Option Sub-Category related to the Sports Category ", priority = 182)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Hoodies Option Sub-Category related to the Sports Category ", priority = 182)
 public void verifyAbilityToAccessAllPagesInsideHoodiesOptionCategoryRelatedToSportsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3469,7 +3470,7 @@ public void verifyAbilityToAccessAllPagesInsideHoodiesOptionCategoryRelatedToSpo
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
 }
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside TShirts Option Sub-Category related to the Sports Category ", priority = 183)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside TShirts Option Sub-Category related to the Sports Category ", priority = 183)
 public void verifyAbilityToAccessAllPagesInsideTShirtsOptionCategoryRelatedToSportsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3488,7 +3489,7 @@ public void verifyAbilityToAccessAllPagesInsideTShirtsOptionCategoryRelatedToSpo
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
 }
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Tanks Option Sub-Category related to the Sports Category ", priority = 184)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Tanks Option Sub-Category related to the Sports Category ", priority = 184)
 public void verifyAbilityToAccessAllPagesInsideTanksOptionCategoryRelatedToSportsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3507,7 +3508,7 @@ public void verifyAbilityToAccessAllPagesInsideTanksOptionCategoryRelatedToSport
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
 }
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Footwear Option Sub-Category related to the Sports Category ", priority = 185)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Footwear Option Sub-Category related to the Sports Category ", priority = 185)
 public void verifyAbilityToAccessAllPagesInsideFootwearOptionCategoryRelatedToSportsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3526,7 +3527,7 @@ public void verifyAbilityToAccessAllPagesInsideFootwearOptionCategoryRelatedToSp
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
 }
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Sneakers Option Sub-Category related to the Sports Category ", priority = 186)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Sneakers Option Sub-Category related to the Sports Category ", priority = 186)
 public void verifyAbilityToAccessAllPagesInsideSneakersOptionCategoryRelatedToSportsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3545,7 +3546,7 @@ public void verifyAbilityToAccessAllPagesInsideSneakersOptionCategoryRelatedToSp
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
 }
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Training Shoes Option Sub-Category related to the Sports Category ", priority = 187)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Training Shoes Option Sub-Category related to the Sports Category ", priority = 187)
 public void verifyAbilityToAccessAllPagesInsideTrainingShoesOptionCategoryRelatedToSportsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3564,7 +3565,7 @@ public void verifyAbilityToAccessAllPagesInsideTrainingShoesOptionCategoryRelate
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
 }
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Running Shoes Option Sub-Category related to the Sports Category ", priority = 188)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Running Shoes Option Sub-Category related to the Sports Category ", priority = 188)
 public void verifyAbilityToAccessAllPagesInsideRunningShoesOptionCategoryRelatedToSportsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3583,7 +3584,7 @@ public void verifyAbilityToAccessAllPagesInsideRunningShoesOptionCategoryRelated
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
 }
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Women Option Sub-Category related to the Sports Category ", priority = 189)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Women Option Sub-Category related to the Sports Category ", priority = 189)
 public void verifyAbilityToAccessAllPagesInsideWomenOptionCategoryRelatedToSportsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3602,7 +3603,7 @@ public void verifyAbilityToAccessAllPagesInsideWomenOptionCategoryRelatedToSport
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
 }
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Women Sports Tech Option Sub-Category related to the Sports Category ", priority = 190)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Women Sports Tech Option Sub-Category related to the Sports Category ", priority = 190)
 public void verifyAbilityToAccessAllPagesInsideWomenSportsTechOptionCategoryRelatedToSportsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3621,7 +3622,7 @@ public void verifyAbilityToAccessAllPagesInsideWomenSportsTechOptionCategoryRela
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
 }
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Women Wearable Tech Option Sub-Category related to the Sports Category ", priority = 191)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Women Wearable Tech Option Sub-Category related to the Sports Category ", priority = 191)
 public void verifyAbilityToAccessAllPagesInsideWomenWearableTechOptionCategoryRelatedToSportsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3640,7 +3641,7 @@ public void verifyAbilityToAccessAllPagesInsideWomenWearableTechOptionCategoryRe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
 }
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Women Cameras Option Sub-Category related to the Sports Category ", priority = 192)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Women Cameras Option Sub-Category related to the Sports Category ", priority = 192)
 public void verifyAbilityToAccessAllPagesInsideWomenCamerasOptionCategoryRelatedToSportsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3659,7 +3660,7 @@ public void verifyAbilityToAccessAllPagesInsideWomenCamerasOptionCategoryRelated
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
 }
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Women Phone Accessories Option Sub-Category related to the Sports Category ", priority = 193)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Women Phone Accessories Option Sub-Category related to the Sports Category ", priority = 193)
 public void verifyAbilityToAccessAllPagesInsideWomenPhoneAccessoriesOptionCategoryRelatedToSportsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3678,7 +3679,7 @@ public void verifyAbilityToAccessAllPagesInsideWomenPhoneAccessoriesOptionCatego
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
 }
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Women Personal Care Option Sub-Category related to the Sports Category ", priority = 194)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Women Personal Care Option Sub-Category related to the Sports Category ", priority = 194)
 public void verifyAbilityToAccessAllPagesInsideWomenPersonalCareOptionCategoryRelatedToSportsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3697,7 +3698,7 @@ public void verifyAbilityToAccessAllPagesInsideWomenPersonalCareOptionCategoryRe
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
 }
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Women Showering Option Sub-Category related to the Sports Category ", priority = 195)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Women Showering Option Sub-Category related to the Sports Category ", priority = 195)
 public void verifyAbilityToAccessAllPagesInsideWomenShoweringOptionCategoryRelatedToSportsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3716,7 +3717,7 @@ public void verifyAbilityToAccessAllPagesInsideWomenShoweringOptionCategoryRelat
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
 }
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Women Skin Care Option Sub-Category related to the Sports Category ", priority = 196)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Women Skin Care Option Sub-Category related to the Sports Category ", priority = 196)
 public void verifyAbilityToAccessAllPagesInsideWomenSkinCareOptionCategoryRelatedToSportsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3735,7 +3736,7 @@ public void verifyAbilityToAccessAllPagesInsideWomenSkinCareOptionCategoryRelate
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
 }
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Women Body Care Option Sub-Category related to the Sports Category ", priority = 197)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Women Body Care Option Sub-Category related to the Sports Category ", priority = 197)
 public void verifyAbilityToAccessAllPagesInsideWomenBodyCareOptionCategoryRelatedToSportsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3754,7 +3755,7 @@ public void verifyAbilityToAccessAllPagesInsideWomenBodyCareOptionCategoryRelate
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
 }
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Women Oral Care Option Sub-Category related to the Sports Category ", priority = 198)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Women Oral Care Option Sub-Category related to the Sports Category ", priority = 198)
 public void verifyAbilityToAccessAllPagesInsideWomenOralCareOptionCategoryRelatedToSportsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3773,7 +3774,7 @@ public void verifyAbilityToAccessAllPagesInsideWomenOralCareOptionCategoryRelate
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
 }
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Women Therapy Option Sub-Category related to the Sports Category ", priority = 199)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Women Therapy Option Sub-Category related to the Sports Category ", priority = 199)
 public void verifyAbilityToAccessAllPagesInsideWomenTherapyOptionCategoryRelatedToSportsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3792,7 +3793,7 @@ public void verifyAbilityToAccessAllPagesInsideWomenTherapyOptionCategoryRelated
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
 }
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Women Masks Option Sub-Category related to the Sports Category ", priority = 200)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Women Masks Option Sub-Category related to the Sports Category ", priority = 200)
 public void verifyAbilityToAccessAllPagesInsideWomenMasksOptionCategoryRelatedToSportsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3811,7 +3812,7 @@ public void verifyAbilityToAccessAllPagesInsideWomenMasksOptionCategoryRelatedTo
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
 }
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Women Fitness And Training Option Sub-Category related to the Sports Category ", priority = 201)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Women Fitness And Training Option Sub-Category related to the Sports Category ", priority = 201)
 public void verifyAbilityToAccessAllPagesInsideWomenFitnessAndTrainingOptionCategoryRelatedToSportsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -3830,7 +3831,7 @@ public void verifyAbilityToAccessAllPagesInsideWomenFitnessAndTrainingOptionCate
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
 }
-@Test(description = "MegaMenu- Make Sure the ability to access all pages inside Women Training Accessories Option Sub-Category related to the Sports Category ", priority = 202)
+@Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Women Training Accessories Option Sub-Category related to the Sports Category ", priority = 202)
 public void verifyAbilityToAccessAllPagesInsideWomenTrainingAccessoriesOptionCategoryRelatedToSportsCategoryPage(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
     AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
