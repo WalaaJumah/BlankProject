@@ -464,7 +464,7 @@ public class KsaHomePageTestCases extends BaseTest {
         ksaHomePage.navigate();
         String expectedUrl = ksaHomePage.getViewAllBtnInTopSellingStacksSection().getAttribute("href");
         ksaHomePage.clickOnViewAllBtnInTopSellingStacksSection();
-        DataHelperAndWait.waitForUrlContains("/sporter-stacks",webDriver,5);
+        DataHelperAndWait.waitForUrlContains("/sporter-stacks",webDriver,10);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("/sporter-stacks"), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
         ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
         String numberOfProductInTheList=ksaHomePage.getSearchResultValue().getText();

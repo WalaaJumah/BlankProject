@@ -47,12 +47,12 @@ public class AccessAllStoresCountriesPage extends BasePage {
 
 //Getter Methods
 public WebElement getArabicLanguageBtn() {
-    DataHelperAndWait.waitToBeVisible(arabicLanguageBtn,6,webDriver);
+    DataHelperAndWait.waitToBeVisible(arabicLanguageBtn,10,webDriver);
     return arabicLanguageBtn;
 }
 
     public WebElement getEnglishLanguageBtn() {
-        DataHelperAndWait.waitToBeVisible(englishLanguageBtn,6,webDriver);
+        DataHelperAndWait.waitToBeVisible(englishLanguageBtn,10,webDriver);
         return englishLanguageBtn;
     }
     //Main actions

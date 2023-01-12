@@ -97,13 +97,12 @@ public class AeSearchPageTestCases extends BaseTest {
     public void verifyAbilityToAccessAllProductsListedBelowTheProductsSectionInTheAllTabCorrectly(){
         AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage=new AeProductDetailsPage(webDriver);
-        String expectedProductURL;
         this.verifyClickingOnSearchIconWillRedirectUserTOTheSearchScreen();
         aeSearchPage.getAllTab().click();
 //        for(int i=0; i<aeSearchPage.getProductCardInProductsSection().size();i++){
 //            DataHelperAndWait.waitToBeVisible(aeSearchPage.getProductCardInProductsSection().get(i),5,webDriver);
 //            expectedProductURL=aeSearchPage.getProductCardInProductsSection().get(i).getAttribute("href");
-            aeSearchPage.getProductCardInProductsSection().get(2).click();
+            aeSearchPage.getFirstProductCardInProductsSection().click();
 //            Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedProductURL));
             aeProductDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
 

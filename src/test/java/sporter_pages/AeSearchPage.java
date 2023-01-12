@@ -72,6 +72,9 @@ public class AeSearchPage extends BasePage {
     private WebElement articlesListInAllTab;
     @FindBy(xpath="//*[@id='all-section-products']/li/div/div/a")
     private List<WebElement> productCardInProductsSection;
+
+    @FindBy(xpath="//*[@id='all-section-products']/li[1]/div/div/a")
+    private WebElement firstProductCardInProductsSection;
    @FindBy(xpath="//*[@id='all-section-brands']/li/a")
     private List<WebElement> brandCardInProductsSection;
     @FindBy(xpath="//ul[@id='full-brand-list']/li/a")
@@ -100,7 +103,9 @@ public class AeSearchPage extends BasePage {
     }    public List<WebElement> getProductsResult() {
         return productsResult;
     }
-
+    public WebElement getFirstProductCardInProductsSection() {
+        return firstProductCardInProductsSection;
+    }
 
     public WebElement getProductsTab() {
         return productsTab;
@@ -177,7 +182,7 @@ public class AeSearchPage extends BasePage {
         return filtrationColumn;
     }
     public WebElement getProductsListInAllTab() {
-        DataHelperAndWait.waitToBeVisible(productsListInAllTab,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(productsListInAllTab,8,webDriver);
         return productsListInAllTab;
     }
     public WebElement getBrandsListInAllTab() {

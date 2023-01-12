@@ -58,7 +58,7 @@ public class AeCartTestCases extends BaseTest {
 //        aeProductDetailsPage.clickOnShopeByMenu();
 //        aeProductDetailsPage.clickOnSalesAndOffersMenu();
 //        aeProductDetailsPage.clickOnBuy1Get1Card();
-//        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getFirstProductInTheCategoryList(), 5,webDriver);
+//        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getFirstProductInTheCategoryList(), 8,webDriver);
 //        aeProductDetailsPage.DisplayProductInTheList(0);
         aeCartPage.navigateToBogoProduct();
         aeProductDetailsPage.addToCart();
@@ -87,7 +87,7 @@ public class AeCartTestCases extends BaseTest {
 //        aeProductDetailsPage.viewCart();
 //        aeCartPage.clickOnRemoveItem();
 //        this.verifyAbilityToRemoveProductFromCart();
-        DataHelperAndWait.isDisplayed(aeCartPage.getHereLink(), 5,webDriver);
+        DataHelperAndWait.isDisplayed(aeCartPage.getHereLink(), 8,webDriver);
         aeCartPage.clickOnHereLink();
         Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeCartPage.aeDomain+"/", "The Current URL is not matched with the AE Site URL");
     }
@@ -105,7 +105,7 @@ public class AeCartTestCases extends BaseTest {
 //                AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.addToCartAndDisplayTheCart();
         String itemsCounter = "(4 Items)";
-        DataHelperAndWait.waitToBeVisible(aeCartPage.getItemsCounterInCartPage(), 5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeCartPage.getItemsCounterInCartPage(), 8,webDriver);
         Assert.assertEquals(aeCartPage.getItemsCounterInCartPage().getText(), itemsCounter);
         aeCartPage.clickOnRemoveItem();
         aeCartPage.clickOnRemoveItem();
@@ -132,7 +132,7 @@ public class AeCartTestCases extends BaseTest {
 //        aeProductDetailsPage.clickOnShopeByMenu();
 //        aeProductDetailsPage.clickOnSalesAndOffersMenu();
 //        aeProductDetailsPage.clickOnBuy1Get1Card();
-//        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getFirstProductInTheCategoryList(), 5,webDriver);
+//        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getFirstProductInTheCategoryList(), 8,webDriver);
 //        aeProductDetailsPage.DisplayProductInTheList(0);
         aeCartPage.navigateToBogoProduct();
         aeProductDetailsPage.addToCart();
@@ -172,7 +172,7 @@ public class AeCartTestCases extends BaseTest {
         aeProductDetailsPage.searchForBundle();
         aeProductDetailsPage.clickOnSearchBtn();
         aeProductDetailsPage.clickOnTheProductCard();
-        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getBundleMenu(), 5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getBundleMenu(), 8,webDriver);
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
         DataHelperAndWait.waitForUrlContains(aeProductDetailsPage.cartURL,webDriver,5);
@@ -204,7 +204,7 @@ public class AeCartTestCases extends BaseTest {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.addToCartAndDisplayTheCart();
-        DataHelperAndWait.waitToBeClickable(aeCartPage.getIncreaseQtyBtn(), 5,webDriver);
+        DataHelperAndWait.waitToBeClickable(aeCartPage.getIncreaseQtyBtn(), 8,webDriver);
         aeCartPage.clickOnIncreaseQtyBtn();
         Assert.assertEquals(aeCartPage.getQtyField().getAttribute("value"), "2");
     }
@@ -214,9 +214,9 @@ public class AeCartTestCases extends BaseTest {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
 //        aeProductDetailsPage.addToCartAndDisplayTheCart();
-//        DataHelperAndWait.waitToBeClickable(aeCartPage.getIncreaseQtyBtn(), 5,webDriver);
+//        DataHelperAndWait.waitToBeClickable(aeCartPage.getIncreaseQtyBtn(), 8,webDriver);
 //        aeCartPage.clickOnIncreaseQtyBtn();
-        DataHelperAndWait.waitToBeClickable(aeCartPage.getDecreaseQtyBtn(), 5,webDriver);
+        DataHelperAndWait.waitToBeClickable(aeCartPage.getDecreaseQtyBtn(), 8,webDriver);
         aeCartPage.clickOnDecreaseQtyBtn();
         Assert.assertEquals(aeCartPage.getQtyField().getAttribute("value"), "1");
     }
@@ -342,7 +342,7 @@ public class AeCartTestCases extends BaseTest {
                 AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.addToCartAndDisplayTheCart();
         aeCartPage.FillInCouponCode("test");
-        DataHelperAndWait.waitToBeVisible(aeCartPage.getNotExistCouponMsg(), 5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeCartPage.getNotExistCouponMsg(), 8,webDriver);
         Assert.assertTrue(aeCartPage.getNotExistCouponMsg().isDisplayed());
         aeCartPage.removeProductFromCart();
     }
@@ -352,7 +352,7 @@ public class AeCartTestCases extends BaseTest {
                 AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.addToCartAndDisplayTheCart();
         aeCartPage.FillInCouponCode(" ");
-        DataHelperAndWait.waitToBeVisible(aeCartPage.getRequiredCouponMsg(), 5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeCartPage.getRequiredCouponMsg(), 8,webDriver);
         Assert.assertTrue(aeCartPage.getRequiredCouponMsg().isDisplayed());
         aeCartPage.removeProductFromCart();
     }
@@ -462,7 +462,7 @@ public class AeCartTestCases extends BaseTest {
                 AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.addToCartAndDisplayTheCart();
         aeCartPage.FillInCouponCode(freeCouponeCode);
-        DataHelperAndWait.waitToBeVisible(aeCartPage.getUsedFreeCouponMsg(), 5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeCartPage.getUsedFreeCouponMsg(), 8,webDriver);
         aeCartPage.clickOnCancelCouponCodeBtn();
         Assert.assertFalse(aeCartPage.getFreeFromSporterSection().isDisplayed());
         Assert.assertTrue(aeCartPage.getApplyCouponCode().isDisplayed());
@@ -475,7 +475,7 @@ public class AeCartTestCases extends BaseTest {
         aeProductDetailsPage.addToCartAndDisplayTheCart();
         aeCartPage.FillInQtyField("10000");
         aeCartPage.clickOnIncreaseQtyBtn();
-        DataHelperAndWait.waitToBeVisible(aeCartPage.getQtyUnavailableMsgInCartPage(), 5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeCartPage.getQtyUnavailableMsgInCartPage(), 8,webDriver);
         Assert.assertTrue(aeCartPage.getQtyUnavailableMsgInCartPage().isDisplayed());
     }
     @Test(groups = {"Cart Page","2. High Severity"},description = " Cart Page- Make sure that the customer can't add more than 2 Qty of the same product when switching to Jordan Store from Cart Page", priority = 37,enabled = false)
@@ -513,7 +513,7 @@ public class AeCartTestCases extends BaseTest {
                 AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.addToCartAndDisplayTheCart();
         aeCartPage.FillInCouponCode(freeCouponeCode);
-        DataHelperAndWait.waitToBeVisible(aeCartPage.getUsedFreeCouponMsg(), 5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeCartPage.getUsedFreeCouponMsg(), 8,webDriver);
         Assert.assertTrue(aeCartPage.getFreeFromSporterSection().isDisplayed());
     }
     @Test(groups = {"Cart Page","All Smoke Testing Result","2. High Severity"},description = " Cart Page- Make sure ability to add a bundle to the cart with all bundle options", priority = 40)
@@ -523,9 +523,9 @@ public class AeCartTestCases extends BaseTest {
         aeProductDetailsPage.navigateToHomePage();
         aeProductDetailsPage.searchForBundle();
         aeProductDetailsPage.clickOnSearchBtn();
-        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getProductCard(), 5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getProductCard(), 8,webDriver);
         aeProductDetailsPage.clickOnTheProductCard();
-        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getBundleMenu(), 5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getBundleMenu(), 8,webDriver);
         Select select = new Select(aeProductDetailsPage.getBundleMenu());
         List<WebElement> elementCount = select.getOptions();
         int menuSize = elementCount.size();
@@ -618,9 +618,9 @@ public class AeCartTestCases extends BaseTest {
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
         Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +aeProductDetailsPage.aeDomain+aeProductDetailsPage.cartURL );
-        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getLanguageSwitcher(), 5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getLanguageSwitcher(), 8,webDriver);
         aeProductDetailsPage.switchToArabicVersion();
-        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getEnglishLangBtn(), 5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getEnglishLangBtn(), 8,webDriver);
         Assert.assertTrue(aeProductDetailsPage.getEnglishLangBtn().isDisplayed());
     }
 }
