@@ -16,7 +16,7 @@ import java.text.DecimalFormat;
 import java.util.List;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
-
+@Test(groups = "Cart Page")
 public class AeCartTestCases extends BaseTest {
 
     Actions action;

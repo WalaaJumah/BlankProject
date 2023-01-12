@@ -13,9 +13,8 @@ import sporter_pages.AEGuestUserPage;
 import sporter_pages.AeProductDetailsPage;
 
 import static core.BasePage.BaseURL;
-
+@Test(groups = "Guest User Page")
 public class AEGuestUserTestCases extends BaseTest {
-
     public void accessShippingInformationScreen(){
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
         DataHelperAndWait.implicitWait(3,webDriver);

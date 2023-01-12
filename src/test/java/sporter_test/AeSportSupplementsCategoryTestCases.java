@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.testng.Assert.assertFalse;
-
 public class AeSportSupplementsCategoryTestCases extends BaseTest {
     private AeProductDetailsPage aeProductDetailsPage;
     private AEGuestUserPage aeGuestUserPage;
@@ -70,7 +69,7 @@ public void switchToUaeStore(){
 
     }
 
-    @Test(description = "Sports Supplements Category- Make sure the Horizontal Category Image appears correctly in the landing page ", priority = 5)
+    @Test(groups = {"Sports Supplements Category", "4. Low Severity"},description = "Sports Supplements Category- Make sure the Horizontal Category Image appears correctly in the landing page ", priority = 5)
     public void verifyTheHorizontalCategoryImageAppearsCorrectlyInSportSupplementsLandingPage() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -78,7 +77,7 @@ public void switchToUaeStore(){
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
     }
 
-    @Test(description = "Sports Supplements Category- Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly", priority = 6)
+    @Test(groups = {"Sports Supplements Category", "4. Low Severity"},description = "Sports Supplements Category- Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly", priority = 6)
     public void verifyTitleAndParagraphAppearingCorrectlyInHorizontalCategoryImageInSportSupplementsLandingPage() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -89,7 +88,7 @@ public void switchToUaeStore(){
         Assert.assertEquals(aeSportSupplementsCategoryPage.getParagraphInSportSupplementsCategoryImage().getText(), "For Every Training Goal & Body Type", "Wrong Paragraph appears in the sport Supplements category image");
     }
 
-    @Test(description = "Sports Supplements Category- Make sure the Horizontal Banners appear correctly", priority = 7)
+    @Test(groups = {"Sports Supplements Category", "2. High Severity"},description = "Sports Supplements Category- Make sure the Horizontal Banners appear correctly", priority = 7)
     public void verifyTheHorizontalBannersAppearCorrectlyInSportSupplementsLandingPage() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -121,7 +120,7 @@ public void switchToUaeStore(){
         Assert.assertEquals(webDriver.getCurrentUrl(), aeSportSupplementsCategoryPage.BaseURL +aeSiteURL);
     }
 
-    @Test(description = "Sports Supplements Category Page- Make sure that the Result label and its value appear correctly ", priority = 10)
+    @Test(groups = {"Sports Supplements Category", "3. Medium Severity"},description = "Sports Supplements Category Page- Make sure that the Result label and its value appear correctly ", priority = 10)
     public void verifyResultFieldAndItsVaLueAppearInTheSportSupplementsCategoryPage() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -132,7 +131,7 @@ public void switchToUaeStore(){
         sa.assertNotEquals(aeSportSupplementsCategoryPage.getSearchResultValue().getText(), "0", "The number of result is Zero");
     }
 
-    @Test(description = "Sports Supplements Category Page- Make sure that Sort By menu and its options appear correctly ", priority = 11)
+    @Test(groups = {"Sports Supplements Category", "3. Medium Severity"},description = "Sports Supplements Category Page- Make sure that Sort By menu and its options appear correctly ", priority = 11)
     public void verifySortByMenuAndItsOptionsAppearCorrectly() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -152,7 +151,7 @@ public void switchToUaeStore(){
         }
     }
 
-    @Test(description = "Sports Supplements Category- Make sure that the Best Selling option is selected by default in the Sort By menu ", priority = 12)
+    @Test(groups = {"Sports Supplements Category", "4. Low Severity"},description = "Sports Supplements Category- Make sure that the Best Selling option is selected by default in the Sort By menu ", priority = 12)
     public void verifyBestSellingOptionIsSelectedByDefaultInSortByMenu() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -167,7 +166,7 @@ public void switchToUaeStore(){
         }    }
 
     //There's a bug here when sorting the products then the Horizontal Banners are hidden
-    @Test(description = "Sports Supplements Category- Make sure each of the Sport Supplements category image and Horizontal Banners appearing after sorting the products  ", priority = 13)
+    @Test(groups = {"Sports Supplements Category", "3. Medium Severity"},description = "Sports Supplements Category- Make sure each of the Sport Supplements category image and Horizontal Banners appearing after sorting the products  ", priority = 13)
     public void verifySportSupplementsCategoryImageAndHorizontalBannersAppearingAfterSortingTheProducts() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -178,7 +177,7 @@ public void switchToUaeStore(){
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
         Assert.assertTrue(aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsSection().isDisplayed(),"The Horizontal Banners is missing after sorting the products ");
     }
-    @Test(description = "Sports Supplements Category- Make sure Sort By Menu appears correctly in the page after sorting By Featured  ", priority = 14)
+    @Test(groups = {"Sports Supplements Category", "3. Medium Severity"},description = "Sports Supplements Category- Make sure Sort By Menu appears correctly in the page after sorting By Featured  ", priority = 14)
     public void verifySortByMenuAppearingAfterSortingByBestSelling() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -189,7 +188,7 @@ public void switchToUaeStore(){
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
     }
 
-    @Test(description = "Sports Supplements Category- Make sure Sort By Menu appears correctly in the page after sorting By Price Min-Max  ", priority = 15)
+    @Test(groups = {"Sports Supplements Category", "3. Medium Severity"},description = "Sports Supplements Category- Make sure Sort By Menu appears correctly in the page after sorting By Price Min-Max  ", priority = 15)
     public void verifySortByMenuAppearingAfterSortingByPriceMinMax() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -200,7 +199,7 @@ public void switchToUaeStore(){
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
     }
 
-    @Test(description = "Sports Supplements Category- Make sure Sort By Menu appears correctly in the page after sorting By Price Max-Min  ", priority = 16)
+    @Test(groups = {"Sports Supplements Category", "3. Medium Severity"},description = "Sports Supplements Category- Make sure Sort By Menu appears correctly in the page after sorting By Price Max-Min  ", priority = 16)
     public void verifySortByMenuAppearingAfterSortingByPriceMaxMin() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -211,7 +210,7 @@ public void switchToUaeStore(){
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
     }
 
-    @Test(description = "Sports Supplements Category- Make sure  the Sport Supplements footer appears correctly  ", priority = 17)
+    @Test(groups = {"Sports Supplements Category", "4. Low Severity"},description = "Sports Supplements Category- Make sure  the Sport Supplements footer appears correctly  ", priority = 17)
     public void verifySportSupplementsFooterSectionAppearsCorrectly() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -220,7 +219,7 @@ public void switchToUaeStore(){
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSportSupplementsFooterSection().getCssValue("background"), "rgb(242, 242, 242) none repeat scroll 0% 0% / auto padding-box border-box");
     }
 
-    @Test(description = "Sports Supplements Category- Make sure the text appears in the Sport Supplements footer appears correctly  ", priority = 18)
+    @Test(groups = {"Sports Supplements Category", "4. Low Severity"},description = "Sports Supplements Category- Make sure the text appears in the Sport Supplements footer appears correctly  ", priority = 18)
     public void verifyTheTextAppearInTheSportSupplementsFooterSectionAppearsCorrectly() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -229,7 +228,7 @@ public void switchToUaeStore(){
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsDescriptionInFooterSection().isDisplayed());
     }
 
-    @Test(description = "Sports Supplements Category- Verify that the search button works correctly from the Sport Supplements category page", priority = 19)
+    @Test(groups = {"Sports Supplements Category", "2. High Severity"},description = "Sports Supplements Category- Verify that the search button works correctly from the Sport Supplements category page", priority = 19)
     public void verifySearchBtnWorksCorrectlyFromSportSupplementsCategoryPage() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage = new AeProductDetailsPage(webDriver);
@@ -241,7 +240,7 @@ public void switchToUaeStore(){
         aeSportSupplementsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(description = "Sports Supplements Category- Verify that the previous page button is disable when the current page is page 1 ", priority = 20)
+    @Test(groups = {"Sports Supplements Category", "3. Medium Severity"},description = "Sports Supplements Category- Verify that the previous page button is disable when the current page is page 1 ", priority = 20)
     public void verifyThePreviousBtnIsDisableWhenDisplayPage1() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -249,7 +248,7 @@ public void switchToUaeStore(){
         Assert.assertTrue(aeSportSupplementsCategoryPage.getDisabledPreviousPageBtn().isDisplayed());
     }
 
-    @Test(description = "Sports Supplements Category- Make Sure the Pagination control works correctly", priority = 21)
+    @Test(groups = {"Sports Supplements Category", "3. Medium Severity"},description = "Sports Supplements Category- Make Sure the Pagination control works correctly", priority = 21)
     public void verifyThePaginationControlWorksCorrectly() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -259,14 +258,14 @@ public void switchToUaeStore(){
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
-    @Test(description = "Sports Supplements Category- Make Sure the previous page button works correctly", priority = 22)
+    @Test(groups = {"Sports Supplements Category", "3. Medium Severity"},description = "Sports Supplements Category- Make Sure the previous page button works correctly", priority = 22)
     public void verifyPreviousPageBtnWorksCorrectly() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
         Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
   }
 
-    @Test(description = "Sports Supplements Category- Make Sure the next page button works correctly", priority = 23)
+    @Test(groups = {"Sports Supplements Category", "3. Medium Severity"},description = "Sports Supplements Category- Make Sure the next page button works correctly", priority = 23)
     public void verifyNextPageBtnWorksCorrectly() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
@@ -274,7 +273,7 @@ public void switchToUaeStore(){
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
-    @Test(description = "Sports Supplements Category- Make Sure All Search Fields Inside Form Filtration Section Appears Correctly", priority = 24)
+    @Test(groups = {"Sports Supplements Category", "3. Medium Severity"},description = "Sports Supplements Category- Make Sure All Search Fields Inside Form Filtration Section Appears Correctly", priority = 24)
     public void verifyAllSearchFieldsInsideFormFiltrationSectionAppearsCorrectly() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -304,7 +303,7 @@ public void switchToUaeStore(){
             DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getFormFiltrationSection().get(i),2,webDriver);
             Assert.assertTrue(aeSportSupplementsCategoryPage.getFormFiltrationSection().get(i).isDisplayed());}
     }
-    @Test(description = "Sports Supplements Category- Make sure all secure tabs appears correctly(100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks)", priority = 25)
+    @Test(groups = {"Sports Supplements Category", "4. Low Severity"},description = "Sports Supplements Category- Make sure all secure tabs appears correctly(100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks)", priority = 25)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInSportSupplementsCategoryPage(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
@@ -336,7 +335,7 @@ public void switchToUaeStore(){
             DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList, aeSportSupplementsCategoryPage.getNextPageBtn(), webDriver);
         }}
     //There's a bug here due to the BreadCrumb is missing after sorting the products
-    @Test(description = "Sports Supplements Category- Make sure that the BreadCrumb appears correctly after sorting the product ", priority = 27)
+    @Test(groups = {"Sports Supplements Category", "4. Low Severity"},description = "Sports Supplements Category- Make sure that the BreadCrumb appears correctly after sorting the product ", priority = 27)
     public void verifyTheBreadCrumbAppearingCorrectlyAfterSortingTheProducts() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -346,7 +345,7 @@ public void switchToUaeStore(){
         DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getHomeBreadcrumbs(),5,webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getHomeBreadcrumbs().isDisplayed());
     }
-    @Test(description = "Sports Supplements Category- Make sure ability to navigate to the home page by clicking on the sporter logo  ", priority = 28)
+    @Test(groups = {"Sports Supplements Category", "3. Medium Severity"},description = "Sports Supplements Category- Make sure ability to navigate to the home page by clicking on the sporter logo  ", priority = 28)
     public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromCartPage() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         aeGuestUserPage= new AEGuestUserPage(webDriver);

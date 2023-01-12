@@ -5,7 +5,7 @@ import core.DataHelperAndWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.QatarHomePage;
-
+@Test(groups = "Home Page")
 public class QatarHomePageTestCases extends BaseTest {
 
 
