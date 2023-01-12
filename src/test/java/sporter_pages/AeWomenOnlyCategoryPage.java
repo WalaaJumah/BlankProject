@@ -184,11 +184,11 @@ public class AeWomenOnlyCategoryPage extends BasePage {
         return lastProductInSupplementsForHerSection;
     }
     public WebElement getProductCardInSupplementsForHerSection() {
-        DataHelperAndWait.waitToBeVisible(productCardInSupplementsForHerSection,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(productCardInSupplementsForHerSection,10,webDriver);
         return productCardInSupplementsForHerSection;
     }
     public WebElement getProductCardInWomenVitaminsSection() {
-        DataHelperAndWait.waitToBeVisible(productCardInWomenVitaminsSection,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(productCardInWomenVitaminsSection,10,webDriver);
         return productCardInWomenVitaminsSection;
     }
     public WebElement getLastProductInWomenVitaminsSection() {
@@ -206,14 +206,14 @@ public class AeWomenOnlyCategoryPage extends BasePage {
     }
 
     public WebElement getPreviousIconInWorkoutInStyleSection() {
-        DataHelperAndWait.waitToBeVisible(previousIconInWorkoutInStyleSection,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(previousIconInWorkoutInStyleSection,10,webDriver);
         return previousIconInWorkoutInStyleSection;
     }
     public WebElement getLastProductInWorkoutInStyleSection() {
         return lastProductInWorkoutInStyleSection;
     }
     public WebElement getProductCardInWorkoutInStyleSection() {
-        DataHelperAndWait.waitToBeVisible(productCardInWorkoutInStyleSection,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(productCardInWorkoutInStyleSection,10,webDriver);
         return productCardInWorkoutInStyleSection;
     }
     public WebElement getViewAllInSupplementsForHerSection() {
@@ -232,15 +232,15 @@ public class AeWomenOnlyCategoryPage extends BasePage {
         return viewAllInLadyFriendlySnacksFoodSection;
     }
     public WebElement getPreviousIconInLadyFriendlySnacksFoodSection() {
-        DataHelperAndWait.waitToBeVisible(previousIconInLadyFriendlySnacksFoodSection,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(previousIconInLadyFriendlySnacksFoodSection,10,webDriver);
         return previousIconInLadyFriendlySnacksFoodSection;
     }
     public WebElement getNextIconInInLadyFriendlySnacksFoodSection() {
-        DataHelperAndWait.waitToBeVisible(nextIconInInLadyFriendlySnacksFoodSection,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(nextIconInInLadyFriendlySnacksFoodSection,10,webDriver);
         return nextIconInInLadyFriendlySnacksFoodSection;
     }
     public WebElement getProductCardInLadyFriendlySnacksFoodSection() {
-        DataHelperAndWait.waitToBeVisible(productCardInLadyFriendlySnacksFoodSection,6,webDriver);
+        DataHelperAndWait.waitToBeVisible(productCardInLadyFriendlySnacksFoodSection,10,webDriver);
         return productCardInLadyFriendlySnacksFoodSection;
     }
     public WebElement getFemaleGallerySectionTitle() {

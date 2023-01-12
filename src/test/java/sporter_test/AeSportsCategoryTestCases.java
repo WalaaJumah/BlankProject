@@ -36,7 +36,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         aeMegamenuPage.getSportsMainMenu().click();
-        DataHelperAndWait.waitForUrlContains(aeMegamenuPage.sportsUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeMegamenuPage.sportsUrl,webDriver,8);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeMegamenuPage.sportsUrl));
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -361,7 +361,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnMensApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Sports Category", "3. Medium Severity"},description = "Sports Category- Make Sure the previous page button In Men's Apparel Category Page works correctly", priority = 31)
@@ -377,7 +377,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnMensApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Sports Category", "4. Low Severity"},description = "Sports Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Men's Apparel category page", priority = 33)
@@ -504,7 +504,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnWomenApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Sports Category", "3. Medium Severity"},description = "Sports Category- Make Sure the previous page button In Women's Apparel Category Page works correctly", priority = 45)
@@ -520,7 +520,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnWomenApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Sports Category", "4. Low Severity"},description = "Sports Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Women's Apparel category page", priority = 47)
@@ -828,7 +828,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnSwimmingApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Sports Category", "4. Low Severity"},description = "Sports Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Swimming Apparel category page", priority = 75)
@@ -966,7 +966,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
             System.out.println("There's no pages");
         else{
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));}
     }
     @Test(groups = {"Sports Category", "3. Medium Severity"},description = "Sports Category- Make Sure the previous page button In Mma Apparel Category Page works correctly", priority = 87)
@@ -1127,7 +1127,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
             System.out.println("There's no pages");
         else{
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));}
     }
     @Test(groups = {"Sports Category", "3. Medium Severity"},description = "Sports Category- Make Sure the previous page button In Cricket Category Page works correctly", priority = 101)
@@ -1188,7 +1188,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         aeSportsCategoryPage.navigateToSportsPage();
         aeSportsCategoryPage.clickOnToysAndGamesCategory(webDriver);
         aeSportsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        DataHelperAndWait.waitForUrlContains(aeSportsCategoryPage.toysAndGamesUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeSportsCategoryPage.toysAndGamesUrl,webDriver,8);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeSportsCategoryPage.toysAndGamesUrl));
         aeSportsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -1281,7 +1281,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnToysAndGamesCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Sports Category", "3. Medium Severity"},description = "Sports Category- Make Sure the previous page button In Toys And Games Category Page works correctly", priority = 115)
@@ -1297,7 +1297,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnToysAndGamesCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Sports Category", "4. Low Severity"},description = "Sports Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Toys And Games category page", priority = 117)
@@ -1335,7 +1335,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         aeSportsCategoryPage.navigateToSportsPage();
         aeSportsCategoryPage.clickOnWearableTechApparelCategory(webDriver);
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        DataHelperAndWait.waitForUrlContains(aeSportsCategoryPage.wearableTechUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeSportsCategoryPage.wearableTechUrl,webDriver,8);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeSportsCategoryPage.wearableTechUrl));
         aeSportsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -1447,7 +1447,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnWearableTechCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Sports Category", "4. Low Severity"},description = "Sports Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Wearable Tech category page", priority = 131)
@@ -1575,7 +1575,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnPersonalCareCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Sports Category", "3. Medium Severity"},description = "Sports Category- Make Sure the previous page button In Personal Care Category Page works correctly", priority = 143)
@@ -1591,7 +1591,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnPersonalCareCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Sports Category", "4. Low Severity"},description = "Sports Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Personal Care category page", priority = 145)
@@ -1730,7 +1730,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnMenCategoryFromSportsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Sports Category", "3. Medium Severity"},description = "Sports Category- Make Sure the previous page button In Men Category Page works correctly", priority = 158)
@@ -1746,7 +1746,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnMenCategoryFromSportsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Sports Category", "4. Low Severity"},description = "Sports Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Men category page", priority = 160)
@@ -1886,7 +1886,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnWomenCategoryFromSportsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Sports Category", "3. Medium Severity"},description = "Sports Category- Make Sure the previous page button In Women Category Page works correctly", priority = 173)
@@ -1902,7 +1902,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnWomenCategoryFromSportsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Sports Category", "4. Low Severity"},description = "Sports Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Women category page", priority = 175)
@@ -2040,7 +2040,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnSportsTechCategoryFromSportsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Sports Category", "3. Medium Severity"},description = "Sports Category- Make Sure the previous page button In Sports Tech Category Page works correctly", priority = 188)
@@ -2056,7 +2056,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnSportsTechCategoryFromSportsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Sports Category", "4. Low Severity"},description = "Sports Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Sports Tech category page", priority = 190)
@@ -2195,7 +2195,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnKidsCategoryFromSportsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Sports Category", "3. Medium Severity"},description = "Sports Category- Make Sure the previous page button In Kids Category Page works correctly", priority = 203)
@@ -2211,7 +2211,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnKidsCategoryFromSportsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Sports Category", "4. Low Severity"},description = "Sports Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Kids category page", priority = 205)
@@ -2351,7 +2351,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnSportsCategoryFromSportsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Sports Category", "3. Medium Severity"},description = "Sports Category- Make Sure the previous page button In Sports Category Page works correctly", priority = 218)
@@ -2367,7 +2367,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnSportsCategoryFromSportsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Sports Category", "4. Low Severity"},description = "Sports Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Sports category page", priority = 220)

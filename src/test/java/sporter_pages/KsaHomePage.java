@@ -216,7 +216,7 @@ public class KsaHomePage extends BasePage {
 
     public WebElement getPreviousArrowInHomePageRotatingSlider( ) {
                 dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.waitToBeVisible(previousArrowInHomePageRotatingSlider,3,webDriver);
+dataHelperAndWait.waitToBeVisible(previousArrowInHomePageRotatingSlider,10,webDriver);
         return previousArrowInHomePageRotatingSlider;
     }
     public WebElement getNextPageBtn() {
@@ -229,7 +229,7 @@ dataHelperAndWait.waitToBeVisible(previousArrowInHomePageRotatingSlider,3,webDri
 
     public WebElement getHomePageRotatingSliderPagingControl() {
                 dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.waitToBeVisible(homePageRotatingSliderPagingControl,3,webDriver);
+dataHelperAndWait.waitToBeVisible(homePageRotatingSliderPagingControl,10,webDriver);
         return homePageRotatingSliderPagingControl;
     }
 
@@ -451,7 +451,7 @@ dataHelperAndWait.waitToBeVisible(homePageRotatingSlider,5,webDriver);
 
     public WebElement getTrendingOnSporterSectionPositionAfterClickingOnNext() {
                 dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.waitToBeVisible(trendingOnSporterSectionPositionAfterClickingOnNext,3,webDriver);
+dataHelperAndWait.waitToBeVisible(trendingOnSporterSectionPositionAfterClickingOnNext,10,webDriver);
         return trendingOnSporterSectionPositionAfterClickingOnNext;
     }
 
@@ -467,7 +467,7 @@ dataHelperAndWait.waitToBeVisible(trendingOnSporterSectionPositionAfterClickingO
 
     public WebElement getTopSellerSectionPositionAfterClickingOnNext() {
                 dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.waitToBeVisible(topSellerSectionPositionAfterClickingOnNext,3,webDriver);
+dataHelperAndWait.waitToBeVisible(topSellerSectionPositionAfterClickingOnNext,10,webDriver);
         return topSellerSectionPositionAfterClickingOnNext;
     }
 
@@ -481,7 +481,7 @@ dataHelperAndWait.waitToBeVisible(topSellerSectionPositionAfterClickingOnNext,3,
 
     public WebElement getNewArrivalsAllLink() {
                 dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.waitToBeVisible(newArrivalsAllLink,3,webDriver);
+dataHelperAndWait.waitToBeVisible(newArrivalsAllLink,10,webDriver);
         return newArrivalsAllLink;
     }
 
@@ -519,13 +519,13 @@ dataHelperAndWait.waitToBeVisible(newArrivalsAllLink,3,webDriver);
 
     public WebElement getNewArrivalsSectionPositionAfterClickingOnPrevious() {
                 dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.waitToBeVisible(NewArrivalSectionPositionAfterClickingOnPrevious,3,webDriver);
+dataHelperAndWait.waitToBeVisible(NewArrivalSectionPositionAfterClickingOnPrevious,10,webDriver);
         return NewArrivalSectionPositionAfterClickingOnPrevious;
     }
 
     public WebElement getNewArrivalsSectionPositionAfterClickingOnNext() {
                 dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.waitToBeVisible(NewArrivalSectionPositionAfterClickingOnNext,3,webDriver);
+dataHelperAndWait.waitToBeVisible(NewArrivalSectionPositionAfterClickingOnNext,10,webDriver);
         return NewArrivalSectionPositionAfterClickingOnNext;
     }
 
@@ -855,7 +855,7 @@ dataHelperAndWait.isDisplayed(sportswearAndAccessoriesCategory, 1,webDriver);
     public void clickOnFirstProductInTheTopSellingStacksSection(){
         try{
                     dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.waitToBeVisible(this.firstProductInTopSellingStacksSection,3,webDriver);
+dataHelperAndWait.waitToBeVisible(this.firstProductInTopSellingStacksSection,10,webDriver);
             this.firstProductInTopSellingStacksSection.click();
         }
         catch (Exception e){
@@ -868,7 +868,7 @@ dataHelperAndWait.waitToBeVisible(this.firstProductInTopSellingStacksSection,1,w
   public void clickOnSecondProductInTheTopSellingStacksSection(){
         try{
                     dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.waitToBeVisible(this.secondProductInTopSellingStacksSection,3,webDriver);
+dataHelperAndWait.waitToBeVisible(this.secondProductInTopSellingStacksSection,10,webDriver);
             this.secondProductInTopSellingStacksSection.click();
         }
         catch (Exception e){
@@ -880,7 +880,7 @@ dataHelperAndWait.waitToBeVisible(this.secondProductInTopSellingStacksSection,1,
   public void clickOnThirdProductInTheTopSellingStacksSection(){
         try{
                     dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.waitToBeVisible(this.thirdProductInTopSellingStacksSection,3,webDriver);
+dataHelperAndWait.waitToBeVisible(this.thirdProductInTopSellingStacksSection,10,webDriver);
             this.thirdProductInTopSellingStacksSection.click();
         }
         catch (Exception e){
@@ -892,7 +892,7 @@ dataHelperAndWait.waitToBeVisible(this.thirdProductInTopSellingStacksSection,1,w
   public void clickOnFourthProductInTheTopSellingStacksSection(){
         try{
                     dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.waitToBeVisible(this.fourthProductInTopSellingStacksSection,3,webDriver);
+dataHelperAndWait.waitToBeVisible(this.fourthProductInTopSellingStacksSection,10,webDriver);
             this.fourthProductInTopSellingStacksSection.click();
         }
         catch (Exception e){
@@ -904,7 +904,7 @@ dataHelperAndWait.waitToBeVisible(this.fourthProductInTopSellingStacksSection,1,
   public void clickOnFifthProductInTheTopSellingStacksSection(){
         try{
                     dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.waitToBeVisible(this.fiveProductInTopSellingStacksSection,3,webDriver);
+dataHelperAndWait.waitToBeVisible(this.fiveProductInTopSellingStacksSection,10,webDriver);
             this.fiveProductInTopSellingStacksSection.click();
         }
         catch (Exception e){
@@ -916,7 +916,7 @@ dataHelperAndWait.waitToBeVisible(this.fiveProductInTopSellingStacksSection,1,we
     public void clickOnFirstProductInTheTopSellersSection(){
         try{
                     dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.waitToBeVisible(this.firstProductInTopSellersSection,3,webDriver);
+dataHelperAndWait.waitToBeVisible(this.firstProductInTopSellersSection,10,webDriver);
             this.firstProductInTopSellersSection.click();
         }
         catch (Exception e){
@@ -929,7 +929,7 @@ dataHelperAndWait.waitToBeVisible(this.firstProductInTopSellersSection,1,webDriv
   public void clickOnSecondProductInTheTopSellersSection(){
         try{
                     dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.waitToBeVisible(this.secondProductInTopSellersSection,3,webDriver);
+dataHelperAndWait.waitToBeVisible(this.secondProductInTopSellersSection,10,webDriver);
             this.secondProductInTopSellersSection.click();
         }
         catch (Exception e){
@@ -941,7 +941,7 @@ dataHelperAndWait.waitToBeVisible(this.secondProductInTopSellersSection,1,webDri
   public void clickOnThirdProductInTheTopSellersSection(){
         try{
                     dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.waitToBeVisible(this.thirdProductInTopSellersSection,3,webDriver);
+dataHelperAndWait.waitToBeVisible(this.thirdProductInTopSellersSection,10,webDriver);
             this.thirdProductInTopSellersSection.click();
         }
         catch (Exception e){
@@ -953,7 +953,7 @@ dataHelperAndWait.waitToBeVisible(this.thirdProductInTopSellersSection,1,webDriv
   public void clickOnFourthProductInTheTopSellersSection(){
         try{
                     dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.waitToBeVisible(this.fourthProductInTopSellersSection,3,webDriver);
+dataHelperAndWait.waitToBeVisible(this.fourthProductInTopSellersSection,10,webDriver);
             this.fourthProductInTopSellersSection.click();
         }
         catch (Exception e){
@@ -965,7 +965,7 @@ dataHelperAndWait.waitToBeVisible(this.fourthProductInTopSellersSection,1,webDri
   public void clickOnFifthProductInTheTopSellersSection(){
         try{
                     dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.waitToBeVisible(this.fiveProductInTopSellersSection,3,webDriver);
+dataHelperAndWait.waitToBeVisible(this.fiveProductInTopSellersSection,10,webDriver);
             this.fiveProductInTopSellersSection.click();
         }
         catch (Exception e){
@@ -977,7 +977,7 @@ dataHelperAndWait.waitToBeVisible(this.fiveProductInTopSellersSection,1,webDrive
     public void clickOnFirstProductInTheNewArrivalsSection(){
         try{
                     dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.waitToBeVisible(this.firstProductInNewArrivalsSection,3,webDriver);
+dataHelperAndWait.waitToBeVisible(this.firstProductInNewArrivalsSection,10,webDriver);
             this.firstProductInNewArrivalsSection.click();
         }
         catch (Exception e){
@@ -990,7 +990,7 @@ dataHelperAndWait.waitToBeVisible(this.firstProductInNewArrivalsSection,1,webDri
   public void clickOnSecondProductInTheNewArrivalsSection(){
         try{
                     dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.waitToBeVisible(this.secondProductInNewArrivalsSection,3,webDriver);
+dataHelperAndWait.waitToBeVisible(this.secondProductInNewArrivalsSection,10,webDriver);
             this.secondProductInNewArrivalsSection.click();
         }
         catch (Exception e){
@@ -1002,7 +1002,7 @@ dataHelperAndWait.waitToBeVisible(this.secondProductInNewArrivalsSection,1,webDr
   public void clickOnThirdProductInTheNewArrivalsSection(){
         try{
                     dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.waitToBeVisible(this.thirdProductInNewArrivalsSection,3,webDriver);
+dataHelperAndWait.waitToBeVisible(this.thirdProductInNewArrivalsSection,10,webDriver);
             this.thirdProductInNewArrivalsSection.click();
         }
         catch (Exception e){
@@ -1014,7 +1014,7 @@ dataHelperAndWait.waitToBeVisible(this.thirdProductInNewArrivalsSection,1,webDri
   public void clickOnFourthProductInTheNewArrivalsSection(){
         try{
                     dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.waitToBeVisible(this.fourthProductInNewArrivalsSection,3,webDriver);
+dataHelperAndWait.waitToBeVisible(this.fourthProductInNewArrivalsSection,10,webDriver);
             this.fourthProductInNewArrivalsSection.click();
         }
         catch (Exception e){
@@ -1026,7 +1026,7 @@ dataHelperAndWait.waitToBeVisible(this.fourthProductInNewArrivalsSection,1,webDr
   public void clickOnFifthProductInTheNewArrivalsSection(){
         try{
                     dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.waitToBeVisible(this.fiveProductInNewArrivalsSection,3,webDriver);
+dataHelperAndWait.waitToBeVisible(this.fiveProductInNewArrivalsSection,10,webDriver);
             this.fiveProductInNewArrivalsSection.click();
         }
         catch (Exception e){

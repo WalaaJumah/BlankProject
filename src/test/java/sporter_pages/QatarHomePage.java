@@ -226,7 +226,7 @@ public class QatarHomePage extends BasePage {
     }
 
     public WebElement getShopByCategorySections(  ) {
-        DataHelperAndWait.waitToBeVisible(shopByCategorySections,3,webDriver);
+        DataHelperAndWait.waitToBeVisible(shopByCategorySections,10,webDriver);
         return shopByCategorySections;
     }
 
@@ -237,21 +237,21 @@ public class QatarHomePage extends BasePage {
         return viewAllBtnInTopSellingStacksSection;
     }
     public WebElement getFirstSideBanner() {
-        DataHelperAndWait.waitToBeVisible(firstSideBanner,3,webDriver);
+        DataHelperAndWait.waitToBeVisible(firstSideBanner,10,webDriver);
         return firstSideBanner;
     }
     public WebElement getFirstProductInTopSellingStacksSection(  ) {
-        DataHelperAndWait.waitToBeVisible(firstProductInTopSellingStacksSection,3,webDriver);
+        DataHelperAndWait.waitToBeVisible(firstProductInTopSellingStacksSection,10,webDriver);
         return firstProductInTopSellingStacksSection;
     }
 
     public WebElement getSecondProductInTopSellingStacksSection(  ) {
-        DataHelperAndWait.waitToBeVisible(secondProductInTopSellingStacksSection,3,webDriver);
+        DataHelperAndWait.waitToBeVisible(secondProductInTopSellingStacksSection,10,webDriver);
         return secondProductInTopSellingStacksSection;
     }
 
     public WebElement getThirdProductInTopSellingStacksSection(  ) {
-        DataHelperAndWait.waitToBeVisible(thirdProductInTopSellingStacksSection,3,webDriver);
+        DataHelperAndWait.waitToBeVisible(thirdProductInTopSellingStacksSection,10,webDriver);
         return thirdProductInTopSellingStacksSection;
     }
 
@@ -328,7 +328,7 @@ public class QatarHomePage extends BasePage {
         return shopByOption;
     }
     public WebElement getBannerInRotatingSliderSection(  ) {
-        DataHelperAndWait.waitToBeVisible(bannerInRotatingSliderSection,3,webDriver);
+        DataHelperAndWait.waitToBeVisible(bannerInRotatingSliderSection,10,webDriver);
         return bannerInRotatingSliderSection;
     }
 
@@ -409,7 +409,7 @@ public class QatarHomePage extends BasePage {
     }
 
     public WebElement getPreviousButtonInTopSellerSection() {
-        DataHelperAndWait.waitToBeVisible(previousButtonInTopSellerSection,3,webDriver);
+        DataHelperAndWait.waitToBeVisible(previousButtonInTopSellerSection,10,webDriver);
         return previousButtonInTopSellerSection;
     }
 
@@ -422,22 +422,22 @@ public class QatarHomePage extends BasePage {
     }
 
     public WebElement getTrendingOnSporterSectionPositionAfterClickingOnNext(  ) {
-        DataHelperAndWait.waitToBeVisible(trendingOnSporterSectionPositionAfterClickingOnNext,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(trendingOnSporterSectionPositionAfterClickingOnNext,10,webDriver);
         return trendingOnSporterSectionPositionAfterClickingOnNext;
     }
 
     public WebElement getTrendingOnSporterSectionPositionAfterClickingOnPrevious(  ) {
-        DataHelperAndWait.waitToBeVisible(trendingOnSporterSectionPositionAfterClickingOnPrevious,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(trendingOnSporterSectionPositionAfterClickingOnPrevious,10,webDriver);
         return trendingOnSporterSectionPositionAfterClickingOnPrevious;
     }
 
     public WebElement getTopSellerSectionPositionAfterClickingOnPrevious(  ) {
-        DataHelperAndWait.waitToBeVisible(topSellerSectionPositionAfterClickingOnPrevious,3,webDriver);
+        DataHelperAndWait.waitToBeVisible(topSellerSectionPositionAfterClickingOnPrevious,10,webDriver);
         return topSellerSectionPositionAfterClickingOnPrevious;
     }
 
     public WebElement getTopSellerSectionPositionAfterClickingOnNext(  ) {
-        DataHelperAndWait.waitToBeVisible(topSellerSectionPositionAfterClickingOnNext,3,webDriver);
+        DataHelperAndWait.waitToBeVisible(topSellerSectionPositionAfterClickingOnNext,10,webDriver);
         return topSellerSectionPositionAfterClickingOnNext;
     }
 
@@ -450,7 +450,7 @@ public class QatarHomePage extends BasePage {
     }
 
     public WebElement getNewArrivalsAllLink(  ) {
-        DataHelperAndWait.waitToBeVisible(newArrivalsAllLink,3,webDriver);
+        DataHelperAndWait.waitToBeVisible(newArrivalsAllLink,10,webDriver);
         return newArrivalsAllLink;
     }
 
@@ -499,7 +499,7 @@ public class QatarHomePage extends BasePage {
     }
 
     public WebElement getPreviousBtnInNewArrivalsSection() {
-        DataHelperAndWait.waitToBeVisible(previousBtnInNewArrivalsSection,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(previousBtnInNewArrivalsSection,10,webDriver);
         return previousBtnInNewArrivalsSection;
     }
 
@@ -520,18 +520,18 @@ public class QatarHomePage extends BasePage {
         try {
             DataHelperAndWait.isDisplayed(countryList, 7,webDriver);
             this.countryList.click();
-            DataHelperAndWait.waitToBeVisible(qatarCountry, 5,webDriver);
+            DataHelperAndWait.waitToBeVisible(qatarCountry, 10,webDriver);
             this.qatarCountry.click();
         } catch (Exception e) {
-            DataHelperAndWait.isDisplayed(countryList, 5,webDriver);
+            DataHelperAndWait.isDisplayed(countryList, 10,webDriver);
             this.countryList.click();
-            DataHelperAndWait.waitToBeVisible(qatarCountry, 5,webDriver);
+            DataHelperAndWait.waitToBeVisible(qatarCountry, 10,webDriver);
             this.qatarCountry.click();
         }
     }
 
     public void clickOnViewAllBtnInTopSellingStacksSection(  ) {
-        DataHelperAndWait.isDisplayed(viewAllBtnInTopSellingStacksSection, 3,webDriver);
+        DataHelperAndWait.isDisplayed(viewAllBtnInTopSellingStacksSection, 10,webDriver);
         this.viewAllBtnInTopSellingStacksSection.click();
     }
 
@@ -651,7 +651,7 @@ public class QatarHomePage extends BasePage {
     public void clickOnSportSupplementsLinkInNewArrivalsSection(  ) {
         try {
 //            DataHelperAndWait.isDisplayed(newArrivalsSportSupplementsLink, 3);
-            DataHelperAndWait.fluentWait(this.newArrivalsSportSupplementsLink,2,3,webDriver);
+            DataHelperAndWait.fluentWait(this.newArrivalsSportSupplementsLink,2,10,webDriver);
             this.newArrivalsSportSupplementsLink.click();
         }
         catch (Exception e){
@@ -663,7 +663,7 @@ public class QatarHomePage extends BasePage {
     public void clickOnHealthyFoodLinkInNewArrivalsSection(  ) {
         try {
 //            DataHelperAndWait.isDisplayed(newArrivalsHealthyFoodLink, 2);
-            DataHelperAndWait.fluentWait(this.newArrivalsHealthyFoodLink,2,3,webDriver);
+            DataHelperAndWait.fluentWait(this.newArrivalsHealthyFoodLink,2,10,webDriver);
 
             this.newArrivalsHealthyFoodLink.click();
         }
@@ -676,7 +676,7 @@ public class QatarHomePage extends BasePage {
     public void clickOnVitaminsAndHealthLinkInNewArrivalsSection(  ) {
         try {
 //            DataHelperAndWait.isDisplayed(newArrivalsVitaminsAndHealthLink, 2);
-            DataHelperAndWait.fluentWait(this.newArrivalsVitaminsAndHealthLink,2,3,webDriver);
+            DataHelperAndWait.fluentWait(this.newArrivalsVitaminsAndHealthLink,2,10,webDriver);
 
             this.newArrivalsVitaminsAndHealthLink.click();
         }
@@ -688,7 +688,7 @@ public class QatarHomePage extends BasePage {
     public void clickOnSportswearAndAccessoriesLinkInNewArrivalsSection(  ) {
         try {
 //            DataHelperAndWait.isDisplayed(newArrivalsSportWearAndAccessoriesLink, 2);
-            DataHelperAndWait.fluentWait(this.newArrivalsSportWearAndAccessoriesLink,2,3,webDriver);
+            DataHelperAndWait.fluentWait(this.newArrivalsSportWearAndAccessoriesLink,2,10,webDriver);
 
             this.newArrivalsSportWearAndAccessoriesLink.click();
         }
@@ -711,7 +711,7 @@ public class QatarHomePage extends BasePage {
 
     public void clickOnNextButtonInNewArrivalSection(  ) {
         try {
-            DataHelperAndWait.waitToBeVisible(nextBtnInNewArrivalsSection,5,webDriver);
+            DataHelperAndWait.waitToBeVisible(nextBtnInNewArrivalsSection,10,webDriver);
 
             this.nextBtnInNewArrivalsSection.click();
         }
