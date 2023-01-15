@@ -1950,6 +1950,7 @@ public class AEMegaMenuPage extends BasePage {
     }
 
     public WebElement getSupplementsOptionInByBrandMenu() {
+        DataHelperAndWait.waitToBeVisible(supplementsOptionInByBrandMenu,5,webDriver);
         return supplementsOptionInByBrandMenu;
     }
 
@@ -2225,6 +2226,7 @@ public class AEMegaMenuPage extends BasePage {
     }
 
     public WebElement getSportSupplementsMainMenu() {
+        DataHelperAndWait.waitToBeVisible(sportSupplementsMainMenu,5,webDriver);
         return sportSupplementsMainMenu;
     }
 

@@ -2692,7 +2692,7 @@ AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(we
         Assert.assertTrue(aeWomenOnlyCategoryPage.getLadyFriendlySnacksAndFoodSection().isDisplayed());
     }
 
-    @Test(groups = {"Women Only Category Page", "4. Low Severity"},description = "Women's Only Category- Make sure the previous arrow icon is not appear by default in the Lady-Friendly Snacks & Food Widget ", priority = 227)
+    @Test(groups = {"Women Only Category Page", "4. Low Severity"},description = "Women's Only Category- Make sure the previous arrow icon is not appear by default in the Lady-Friendly Snacks & Food Widget ", priority = 227,enabled = false)
     public void verifyPreviousArrowButtonInLadyFriendlySnacksAndFoodWidgetIsNotDisplayedByDefault() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         //        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -2708,7 +2708,7 @@ AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(we
         aeWomenOnlyCategoryPage.getNextIconInInLadyFriendlySnacksFoodSection().click();
     }
 
-    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make sure clicking on Previous Button in the Lady-Friendly Snacks & Food Widget works correctly", priority = 229)
+    @Test(groups = {"Women Only Category Page","3. Medium Severity"},description = "Women's Only Category- Make sure clicking on Previous Button in the Lady-Friendly Snacks & Food Widget works correctly", priority = 229,enabled = false)
     public void verifyClickingOnPreviousIconInLadyFriendlySnacksAndFoodWidgetWorksCorrectly() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         //        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();

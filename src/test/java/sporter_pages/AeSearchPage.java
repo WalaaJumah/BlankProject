@@ -73,7 +73,7 @@ public class AeSearchPage extends BasePage {
     @FindBy(xpath="//*[@id='all-section-products']/li/div/div/a")
     private List<WebElement> productCardInProductsSection;
 
-    @FindBy(xpath="//*[@id='all-section-products']/li[1]/div/div/a")
+    @FindBy(xpath="(//a[@class='result'])[7]")
     private WebElement firstProductCardInProductsSection;
    @FindBy(xpath="//*[@id='all-section-brands']/li/a")
     private List<WebElement> brandCardInProductsSection;
@@ -104,6 +104,7 @@ public class AeSearchPage extends BasePage {
         return productsResult;
     }
     public WebElement getFirstProductCardInProductsSection() {
+        DataHelperAndWait.waitToBeVisible(firstProductCardInProductsSection,8,webDriver);
         return firstProductCardInProductsSection;
     }
 

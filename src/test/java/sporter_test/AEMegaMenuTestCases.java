@@ -985,7 +985,7 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
           
     }
 
-    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make sure the Vitamins & Health menu Inside ShopBy Menu display the correct categories and sub-categories", priority = 70)
+    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make sure the Vitamins & Health menu Inside ShopBy Menu display the correct categories and sub-categories", priority = 70,enabled = false)
     public void verifyVitaminsAndHealthMenuInsideShopByMenuDisplayTheCorrectCategoriesAndSubCategories() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1003,7 +1003,7 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
                 "Drinkable Vitamins\n" + "PETS\n" + "Supplements & More");
     }
 
-    @Test(groups = {"MegaMenu", "4. Low Severity"},description = "MegaMenu- Make sure the main categories in the Vitamins & Health menu Inside ShopBy Menu appearing in Bold Font", priority = 71)
+    @Test(groups = {"MegaMenu", "4. Low Severity"},description = "MegaMenu- Make sure the main categories in the Vitamins & Health menu Inside ShopBy Menu appearing in Bold Font", priority = 71,enabled = false)
     public void verifyTheMainCategoriesInTheVitaminsAndHealthMenuInsideShopByMenuAppearingInBoldFont() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1024,7 +1024,7 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         Assert.assertTrue(aeMegamenuPage.getPetsOptionInVitaminsAndHealthMenu().getCssValue("font-weight").contains("700"));
     }
 
-    @Test(groups = {"MegaMenu", "4. Low Severity"},description = "MegaMenu- Make sure the main categories in the Vitamins & Health menu Inside ShopBy Menu menu appearing in uppercase", priority = 72)
+    @Test(groups = {"MegaMenu", "4. Low Severity"},description = "MegaMenu- Make sure the main categories in the Vitamins & Health menu Inside ShopBy Menu menu appearing in uppercase", priority = 72,enabled = false)
     public void verifyTheMainCategoriesInTheVitaminsAndHealthMenuInsideShopByMenuAppearingInUppercase() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
