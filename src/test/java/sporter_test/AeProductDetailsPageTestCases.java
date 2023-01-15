@@ -162,10 +162,7 @@ public class AeProductDetailsPageTestCases extends BaseTest {
     @Test(groups = {"Product Page", "2. High Severity"},description = "Verify that the system display a label on the PDP to indicate for the customer he will get a free product", priority = 16)
     public void verifyTheresLabelInPdpToIndicateThatTheresAnOfferOnThisProduct() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
-        aeProductDetailsPage.clickOnShopeByMenu();
-        aeProductDetailsPage.clickOnSalesAndOffersMenu();
-        aeProductDetailsPage.clickOnBuy1Get1Card();
-        aeProductDetailsPage.clickOnFirstProductInTheCategoryList();
+        aeProductDetailsPage.navigateToBogoProduct();
         assertTrue(aeProductDetailsPage.getFreeProductLabel().isDisplayed());
     }
 

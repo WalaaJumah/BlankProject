@@ -109,6 +109,7 @@ public class AeSportsCategoryPage  extends BasePage {
     }
 
     public WebElement getPersonalCareApparelCategory() {
+        DataHelperAndWait.waitToBeVisible(personalCareApparelCategory,8,webDriver);
         return personalCareApparelCategory;
     }
     public WebElement getMenCategory() {

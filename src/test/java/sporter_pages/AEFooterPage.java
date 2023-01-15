@@ -45,9 +45,9 @@ public class AEFooterPage extends BasePage {
     private WebElement newsletterBlock;
     @FindBy(xpath = "//input[@id='newsletter']")
     private WebElement emailFieldInNewsletterBlock;
-    @FindBy(xpath = "//label[@for='newsletter_male']")
+    @FindBy(id = "newsletter_male")
     private WebElement maleOptionInNewsletterBlock;
-    @FindBy(xpath = "//label[@for='newsletter_female']")
+    @FindBy(id = "newsletter_female")
     private WebElement femaleOptionInNewsletterBlock;
     @FindBy(xpath = "//button[@class='action subscribe primary']")
     private WebElement joinBtnInNewsletterBlock;
@@ -622,12 +622,12 @@ public class AEFooterPage extends BasePage {
     }
 
     public void selectMaleOptionInNewsletterBlock() {
-        DataHelperAndWait.waitToBeVisible(this.maleOptionInNewsletterBlock, 3,webDriver);
+        DataHelperAndWait.waitToBeVisible(this.maleOptionInNewsletterBlock, 6,webDriver);
         maleOptionInNewsletterBlock.click();
     }
 
     public void selectFemaleOptionInNewsletterBlock() {
-        DataHelperAndWait.waitToBeVisible(this.femaleOptionInNewsletterBlock, 3,webDriver);
+        DataHelperAndWait.waitToBeVisible(this.femaleOptionInNewsletterBlock, 6,webDriver);
         femaleOptionInNewsletterBlock.click();
     }
 
