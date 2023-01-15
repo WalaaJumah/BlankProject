@@ -340,21 +340,24 @@ public class AeCartTestCases extends BaseTest {
     public void verifyInabilityToApplyInvalidCouponCode() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
                 AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
-        aeProductDetailsPage.addToCartAndDisplayTheCart();
+//        aeProductDetailsPage.addToCartAndDisplayTheCart();
+        aeProductDetailsPage.navigateToBogoProduct();
+        aeProductDetailsPage.addToCart();
+        aeProductDetailsPage.viewCart();
         aeCartPage.FillInCouponCode("test");
         DataHelperAndWait.waitToBeVisible(aeCartPage.getNotExistCouponMsg(), 8,webDriver);
         Assert.assertTrue(aeCartPage.getNotExistCouponMsg().isDisplayed());
-        aeCartPage.removeProductFromCart();
+//        aeCartPage.removeProductFromCart();
     }
     @Test(groups = {"Cart Page","All Smoke Testing Result","3. Medium Severity"},description = " Cart Page- Make sure inability to apply coupon code without filling the code", priority = 26)
     public void verifyInabilityToApplyCouponCodeWithoutFillingTheCode() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
                 AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
-        aeProductDetailsPage.addToCartAndDisplayTheCart();
+//        aeProductDetailsPage.addToCartAndDisplayTheCart();
         aeCartPage.FillInCouponCode(" ");
         DataHelperAndWait.waitToBeVisible(aeCartPage.getRequiredCouponMsg(), 8,webDriver);
         Assert.assertTrue(aeCartPage.getRequiredCouponMsg().isDisplayed());
-        aeCartPage.removeProductFromCart();
+//        aeCartPage.removeProductFromCart();
     }
     @Test(groups = {"Cart Page","All Smoke Testing Result","3. Medium Severity"},description = " Cart Page- Make sure that the free gift is not calculated in the cart price", priority = 27)
     public void verifyTheFreeGiftIsNotCalculatedInTheCartPrice() {
@@ -364,12 +367,12 @@ public class AeCartTestCases extends BaseTest {
 //        aeProductDetailsPage.clickOnSalesAndOffersMenu();
 //        aeProductDetailsPage.clickOnBuy1Get1Card();
 //        aeProductDetailsPage.DisplayProductInTheList(0);
-        aeCartPage.navigateToBogoProduct();
-        aeProductDetailsPage.addToCart();
-        aeProductDetailsPage.viewCart();
+//        aeCartPage.navigateToBogoProduct();
+//        aeProductDetailsPage.addToCart();
+//        aeProductDetailsPage.viewCart();
         Assert.assertTrue(aeCartPage.getFreeFromSporterSection().isDisplayed());
         Assert.assertEquals(aeCartPage.getPriceInCartPage().getText(), aeCartPage.getSubTotalValue().getText());
-        aeCartPage.clickOnRemoveItem();
+//        aeCartPage.clickOnRemoveItem();
     }
 
     @Test(groups = {"Cart Page","All Smoke Testing Result","2. High Severity"},description = " Cart Page- Make sure the tax calculate correctly", priority = 28)

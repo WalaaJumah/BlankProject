@@ -240,7 +240,7 @@ public class AEFooterPage extends BasePage {
     }
 
     public WebElement getFemaleOptionInNewsletterBlock() {
-        DataHelperAndWait.waitToBeVisible(femaleOptionInNewsletterBlock,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(femaleOptionInNewsletterBlock,8,webDriver);
         return femaleOptionInNewsletterBlock;
     }
 

@@ -21,7 +21,7 @@ public class AeCartPage extends BasePage {
     private WebElement requestedQtyUnAvailableMsg;
     @FindBy(xpath = "//button[text()='CONTINUE SHOPPING']")
     private WebElement continueShoppingBtn;
-    @FindBy(xpath = "//a[@title='Remove item']")
+    @FindBy(xpath = "(//a[@title='Remove item'])[1]")
     private WebElement removeItem;
     @FindBy(xpath = "//p[text()='You have no items in your shopping cart.']")
     private WebElement noItemInCartLabel;
