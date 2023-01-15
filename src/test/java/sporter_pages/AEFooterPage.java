@@ -43,11 +43,11 @@ public class AEFooterPage extends BasePage {
     private WebElement authenticProductsDescription;
     @FindBy(xpath = "//div[@class='block newsletter']")
     private WebElement newsletterBlock;
-    @FindBy(xpath = "//input[@id='newsletter']")
+    @FindBy(id = "newsletter")
     private WebElement emailFieldInNewsletterBlock;
-    @FindBy(id = "newsletter_male")
+    @FindBy(xpath = "//label[@for='newsletter_male']")
     private WebElement maleOptionInNewsletterBlock;
-    @FindBy(id = "newsletter_female")
+    @FindBy(xpath = "//label[@for='newsletter_female']")
     private WebElement femaleOptionInNewsletterBlock;
     @FindBy(xpath = "//button[@class='action subscribe primary']")
     private WebElement joinBtnInNewsletterBlock;
@@ -230,12 +230,12 @@ public class AEFooterPage extends BasePage {
     }
 
     public WebElement getNewsletterBlock() {
-        DataHelperAndWait.waitToBeVisible(newsletterBlock,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(newsletterBlock,8,webDriver);
         return newsletterBlock;
     }
 
     public WebElement getEmailFieldInNewsletterBlock() {
-        DataHelperAndWait.waitToBeVisible(emailFieldInNewsletterBlock,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(emailFieldInNewsletterBlock,8,webDriver);
         return emailFieldInNewsletterBlock;
     }
 
