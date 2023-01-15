@@ -5,6 +5,8 @@ import core.DataHelperAndWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.QatarHomePage;
+import xml_reader.XmlReader;
+
 @Test(groups = "Home Page")
 public class QatarHomePageTestCases extends BaseTest {
 
@@ -439,5 +441,10 @@ public class QatarHomePageTestCases extends BaseTest {
         qatarHomePage.clickOnPhoneBtn();
         String currentWindow = webDriver.getWindowHandle();
         webDriver.switchTo().window(currentWindow);
+
+    }
+    @Test
+    public void testt(){
+        System.out.println(XmlReader.getChildNodeValuesAsArray("smiliarProducts"));
     }
 }
