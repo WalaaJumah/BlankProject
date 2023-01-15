@@ -247,7 +247,7 @@ public class AeCartPage extends BasePage {
     }
 
     public void clickOnRemoveItem() {
-        DataHelperAndWait.isDisplayed(removeItem, 5,webDriver);
+        DataHelperAndWait.isDisplayed(removeItem, 8,webDriver);
         this.removeItem.click();
     }
 
@@ -296,9 +296,9 @@ public class AeCartPage extends BasePage {
     }
 
     public void FillInCouponCode(String couponCode) {
-        DataHelperAndWait.waitToBeVisible(couponCodeField, 3,webDriver);
+        DataHelperAndWait.waitToBeVisible(couponCodeField, 8,webDriver);
         this.couponCodeField.sendKeys(couponCode);
-        DataHelperAndWait.waitToBeClickable(applyCouponCodeBtn, 3,webDriver);
+        DataHelperAndWait.waitToBeClickable(applyCouponCodeBtn, 8,webDriver);
         this.applyCouponCodeBtn.click();
     }
 
