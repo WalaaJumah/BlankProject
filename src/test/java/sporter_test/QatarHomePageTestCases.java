@@ -313,7 +313,7 @@ public class QatarHomePageTestCases extends BaseTest {
     @Test(groups = {"Home Page","All Smoke Testing Result","1. Critical Severity"},description = "Qatar HomePage- Make sure clicking on email button from the Got A Question section works correctly ", priority = 30)
     public void verifyAbilityToClickOnEmailBtnInGotQuestionSectionCorrectly() {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
-//        qatarHomePage.clickOnEmailBtn();
+        qatarHomePage.clickOnEmailBtn();
         DataHelperAndWait.waitForUrlContains(qatarHomePage.contactUsUrl,webDriver,5);
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(qatarHomePage.contactUsUrl), "The system redirect the user to wrong URL " + webDriver.getCurrentUrl());
     }
@@ -353,28 +353,45 @@ public class QatarHomePageTestCases extends BaseTest {
     @Test(groups = {"Home Page","1. Critical Severity"},description = "Qatar HomePage- Make sure clicking on the products appearing in the Top Selling Stacks section works correctly", priority = 35)
     public void verifyClickOnTheProductsAppearingInTheTopSellingStacksSectionRedirectTheUserToCorrectUrl() {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
-        qatarHomePage.navigate();
-        String expectedUrl = qatarHomePage.getFirstProductInTopSellingStacksSection().getAttribute("href");
-        qatarHomePage.clickOnFirstProductInTheTopSellingStacksSection();
+        for(int i=0; i<qatarHomePage.getFirstProductInTopSellingStacksSection().size();i++ ){
+            do{
+                qatarHomePage.clickOnNextButtonInTopSellersSection();
+            }
+            while(!qatarHomePage.getFirstProductInTopSellingStacksSection().get(i).isDisplayed());
+
+            String expectedUrl = qatarHomePage.getFirstProductInTopSellingStacksSection().get(i).getAttribute("href");
+            DataHelperAndWait.waitToBeVisible(qatarHomePage.getFirstProductInTopSellingStacksSection().get(i),8,webDriver);
+            qatarHomePage.getFirstProductInTopSellingStacksSection().get(i).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
-        qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
-        qatarHomePage.navigate();
-        expectedUrl = qatarHomePage.getSecondProductInTopSellingStacksSection().getAttribute("href");
-        qatarHomePage.clickOnSecondProductInTheTopSellingStacksSection();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
-        qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
-        qatarHomePage.navigate();
-        qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
-        qatarHomePage.navigate();
-        expectedUrl = qatarHomePage.getFourthProductInTopSellingStacksSection().getAttribute("href");
-        qatarHomePage.clickOnFourthProductInTheTopSellingStacksSection();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
-        qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
-        qatarHomePage.navigate();
-        expectedUrl = qatarHomePage.getFiveProductInTopSellingStacksSection().getAttribute("href");
-        qatarHomePage.clickOnFifthProductInTheTopSellingStacksSection();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
-        qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
+            qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
+            qatarHomePage.navigate();
+
+        }
+
+
+
+//        qatarHomePage.navigate();
+//        String expectedUrl = qatarHomePage.getFirstProductInTopSellingStacksSection().getAttribute("href");
+//        qatarHomePage.clickOnFirstProductInTheTopSellingStacksSection();
+//        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
+//        qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
+//        qatarHomePage.navigate();
+//        expectedUrl = qatarHomePage.getSecondProductInTopSellingStacksSection().getAttribute("href");
+//        qatarHomePage.clickOnSecondProductInTheTopSellingStacksSection();
+//        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
+//        qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
+//        qatarHomePage.navigate();
+//        qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
+//        qatarHomePage.navigate();
+//        expectedUrl = qatarHomePage.getFourthProductInTopSellingStacksSection().getAttribute("href");
+//        qatarHomePage.clickOnFourthProductInTheTopSellingStacksSection();
+//        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
+//        qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
+//        qatarHomePage.navigate();
+//        expectedUrl = qatarHomePage.getFiveProductInTopSellingStacksSection().getAttribute("href");
+//        qatarHomePage.clickOnFifthProductInTheTopSellingStacksSection();
+//        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
+//        qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
     @Test(groups = {"Home Page","1. Critical Severity"},description = "Qatar HomePage- Make sure clicking on the products appearing in the Top Sellers section redirect the user to the correct URL", priority = 36)
@@ -442,9 +459,5 @@ public class QatarHomePageTestCases extends BaseTest {
         String currentWindow = webDriver.getWindowHandle();
         webDriver.switchTo().window(currentWindow);
 
-    }
-    @Test
-    public void testt(){
-        System.out.println(XmlReader.getChildNodeValuesAsArray("smiliarProducts"));
     }
 }

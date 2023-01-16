@@ -161,8 +161,8 @@ public class QatarHomePage extends BasePage {
     private WebElement firstSideBanner;
     @FindBy(xpath = "(//div[@class='nutritious-right'])/a[2]")
     private WebElement secondSideBanner;
-    @FindBy(xpath = "(//div[@id='tab-41-all41']/div/div/div/div/a)[1]")
-    private WebElement firstProductInTopSellingStacksSection;
+    @FindBy(xpath = "(//div[@class='top-seller-slider']//div[@class='swiper-wrapper'])[1]/div/div/a")
+    private List<WebElement> firstProductInTopSellingStacksSection;
     @FindBy(xpath = "(//div[@id='tab-41-all41']/div/div/div/div/a)[2]")
     private WebElement secondProductInTopSellingStacksSection;
     @FindBy(xpath = "(//div[@id='tab-41-all41']/div/div/div/div/a)[3]")
@@ -240,8 +240,7 @@ public class QatarHomePage extends BasePage {
         DataHelperAndWait.waitToBeVisible(firstSideBanner,10,webDriver);
         return firstSideBanner;
     }
-    public WebElement getFirstProductInTopSellingStacksSection(  ) {
-        DataHelperAndWait.waitToBeVisible(firstProductInTopSellingStacksSection,10,webDriver);
+    public List<WebElement> getFirstProductInTopSellingStacksSection(  ) {
         return firstProductInTopSellingStacksSection;
     }
 
@@ -797,16 +796,16 @@ public class QatarHomePage extends BasePage {
             this.sportswearAndAccessoriesCategory.click();
         }
     }
-    public void clickOnFirstProductInTheTopSellingStacksSection(  ){
-        try{
-            DataHelperAndWait.waitToBeVisible(this.firstProductInTopSellingStacksSection,2,webDriver);
-            this.firstProductInTopSellingStacksSection.click();
-        }
-        catch (Exception e){
-            DataHelperAndWait.waitToBeVisible(this.firstProductInTopSellingStacksSection,1,webDriver);
-            this.firstProductInTopSellingStacksSection.click();
-        }
-    }
+//    public void clickOnFirstProductInTheTopSellingStacksSection(  ){
+//        try{
+//            DataHelperAndWait.waitToBeVisible(this.firstProductInTopSellingStacksSection,2,webDriver);
+//            this.firstProductInTopSellingStacksSection.click();
+//        }
+//        catch (Exception e){
+//            DataHelperAndWait.waitToBeVisible(this.firstProductInTopSellingStacksSection,1,webDriver);
+//            this.firstProductInTopSellingStacksSection.click();
+//        }
+//    }
 
     public void clickOnSecondProductInTheTopSellingStacksSection(  ){
         try{
