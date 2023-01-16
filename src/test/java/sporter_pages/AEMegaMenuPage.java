@@ -1065,27 +1065,27 @@ public class AEMegaMenuPage extends BasePage {
     }
 
     public WebElement getMegaMenuSection() {
-        DataHelperAndWait.waitToBeVisible(megaMenuSection,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(megaMenuSection ,webDriver);
         return megaMenuSection;
     }
 
     public WebElement getShopeByMenu() {
-        DataHelperAndWait.waitToBeVisible(shopeByMenu,6,webDriver);
+        DataHelperAndWait.waitToBeVisible(shopeByMenu ,webDriver);
         return shopeByMenu;
     }
 
     public WebElement getSportsSupplementsOption() {
-        DataHelperAndWait.waitToBeVisible(sportsSupplementsOption,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(sportsSupplementsOption ,webDriver);
         return sportsSupplementsOption;
     }
 
     public WebElement getVitaminsAndHealthOption() {
-        DataHelperAndWait.waitToBeVisible(vitaminsAndHealthOption,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(vitaminsAndHealthOption ,webDriver);
         return vitaminsAndHealthOption;
     }
 
     public WebElement getHealthFoodOption() {
-        DataHelperAndWait.waitToBeVisible(healthFoodOption,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(healthFoodOption ,webDriver);
         return healthFoodOption;
     }
 
@@ -1098,7 +1098,7 @@ public class AEMegaMenuPage extends BasePage {
     }
 
     public WebElement getByBrandOption() {
-        DataHelperAndWait.waitToBeVisible(byBrandOption,6,webDriver);
+        DataHelperAndWait.waitToBeVisible(byBrandOption ,webDriver);
         return byBrandOption;
     }
 
@@ -1115,13 +1115,13 @@ public class AEMegaMenuPage extends BasePage {
     }
 
     public WebElement getSubMenuSection() {
-        DataHelperAndWait.waitToBeVisible(subMenuSection,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(subMenuSection ,webDriver);
         return subMenuSection;
     }
 
 
     public WebElement getProteinOptionInSportSupplementsMenu() {
-        DataHelperAndWait.waitToBeVisible(proteinOptionInSportSupplementsMenu,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(proteinOptionInSportSupplementsMenu ,webDriver);
         return proteinOptionInSportSupplementsMenu;
     }
 
@@ -1134,7 +1134,7 @@ public class AEMegaMenuPage extends BasePage {
     }
 
     public WebElement getSportsSupplementsArrowIcon() {
-        DataHelperAndWait.waitToBeVisible(sportsSupplementsArrowIcon,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(sportsSupplementsArrowIcon ,webDriver);
         return sportsSupplementsArrowIcon;
     }
 
@@ -1151,7 +1151,7 @@ public class AEMegaMenuPage extends BasePage {
     }
 
     public WebElement getCreatineOptionInSportSupplementsMenu() {
-        DataHelperAndWait.waitToBeVisible(creatineOptionInSportSupplementsMenu,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(creatineOptionInSportSupplementsMenu ,webDriver);
         return creatineOptionInSportSupplementsMenu;
     }
 
@@ -1160,32 +1160,32 @@ public class AEMegaMenuPage extends BasePage {
     }
 
     public WebElement getMuscleBoostersOptionInSportSupplementsMenu() {
-        DataHelperAndWait.waitToBeVisible(muscleBoostersOptionInSportSupplementsMenu,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(muscleBoostersOptionInSportSupplementsMenu ,webDriver);
         return muscleBoostersOptionInSportSupplementsMenu;
     }
 
     public WebElement getWeightManagementOptionInSportSupplementsMenu() {
-        DataHelperAndWait.waitToBeVisible(weightManagementOptionInSportSupplementsMenu,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(weightManagementOptionInSportSupplementsMenu ,webDriver);
         return weightManagementOptionInSportSupplementsMenu;
     }
 
     public WebElement getRecoveryOptionInSportSupplementsMenu() {
-        DataHelperAndWait.waitToBeVisible(recoveryOptionInSportSupplementsMenu,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(recoveryOptionInSportSupplementsMenu ,webDriver);
         return recoveryOptionInSportSupplementsMenu;
     }
 
     public WebElement getCarbohydratesOptionInSportSupplementsMenu() {
-        DataHelperAndWait.waitToBeVisible(carbohydratesOptionInSportSupplementsMenu,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(carbohydratesOptionInSportSupplementsMenu ,webDriver);
         return carbohydratesOptionInSportSupplementsMenu;
     }
 
     public WebElement getEnergyAndEnduranceOptionInSportSupplementsMenu() {
-        DataHelperAndWait.waitToBeVisible(energyAndEnduranceOptionInSportSupplementsMenu,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(energyAndEnduranceOptionInSportSupplementsMenu ,webDriver);
         return energyAndEnduranceOptionInSportSupplementsMenu;
     }
 
     public WebElement getGamingAndFocusOptionInSportSupplementsMenu() {
-        DataHelperAndWait.waitToBeVisible(gamingAndFocusOptionInSportSupplementsMenu,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(gamingAndFocusOptionInSportSupplementsMenu ,webDriver);
         return gamingAndFocusOptionInSportSupplementsMenu;
     }
 
@@ -1840,7 +1840,7 @@ public class AEMegaMenuPage extends BasePage {
     }
 
     public WebElement getGripsInSportsMenu() {
-        DataHelperAndWait.waitToBeVisible(gripsInSportsMenu,3,webDriver);
+        DataHelperAndWait.waitToBeVisible(gripsInSportsMenu ,webDriver);
         return gripsInSportsMenu;
     }
 
@@ -1950,7 +1950,7 @@ public class AEMegaMenuPage extends BasePage {
     }
 
     public WebElement getSupplementsOptionInByBrandMenu() {
-        DataHelperAndWait.waitToBeVisible(supplementsOptionInByBrandMenu,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(supplementsOptionInByBrandMenu ,webDriver);
         return supplementsOptionInByBrandMenu;
     }
 
@@ -2019,7 +2019,7 @@ public class AEMegaMenuPage extends BasePage {
     }
 
     public WebElement getMuscleNutritionOptionInByBrandMenu() {
-        DataHelperAndWait.waitToBeVisible(muscleNutritionOptionInByBrandMenu,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(muscleNutritionOptionInByBrandMenu ,webDriver);
         return muscleNutritionOptionInByBrandMenu;
     }
 
@@ -2028,7 +2028,7 @@ public class AEMegaMenuPage extends BasePage {
     }
 
     public WebElement getLabradaOptionInByBrandMenu() {
-        DataHelperAndWait.waitToBeVisible(labradaOptionInByBrandMenu,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(labradaOptionInByBrandMenu ,webDriver);
         return labradaOptionInByBrandMenu;
     }
 
@@ -2089,7 +2089,7 @@ public class AEMegaMenuPage extends BasePage {
     }
 
     public WebElement getOlimpSportNutritionOptionInByBrandMenu() {
-        DataHelperAndWait.waitToBeVisible(olimpSportNutritionOptionInByBrandMenu,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(olimpSportNutritionOptionInByBrandMenu ,webDriver);
         return olimpSportNutritionOptionInByBrandMenu;
     }
 
@@ -2226,7 +2226,7 @@ public class AEMegaMenuPage extends BasePage {
     }
 
     public WebElement getSportSupplementsMainMenu() {
-        DataHelperAndWait.waitToBeVisible(sportSupplementsMainMenu,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(sportSupplementsMainMenu ,webDriver);
         return sportSupplementsMainMenu;
     }
 
@@ -2255,7 +2255,7 @@ public class AEMegaMenuPage extends BasePage {
     }
 
     public WebElement getEnergyAndEnduranceOptionInSportSupplementsMainMenu() {
-        DataHelperAndWait.waitToBeVisible(energyAndEnduranceOptionInSportSupplementsMainMenu,3,webDriver);
+        DataHelperAndWait.waitToBeVisible(energyAndEnduranceOptionInSportSupplementsMainMenu ,webDriver);
         return energyAndEnduranceOptionInSportSupplementsMainMenu;
     }
 
@@ -2336,7 +2336,7 @@ public class AEMegaMenuPage extends BasePage {
     }
 
     public WebElement getCitrullineOptionInSportSupplementsMainMenu() {
-        DataHelperAndWait.waitToBeVisible(citrullineOptionInSportSupplementsMainMenu,3,webDriver);
+        DataHelperAndWait.waitToBeVisible(citrullineOptionInSportSupplementsMainMenu ,webDriver);
         return citrullineOptionInSportSupplementsMainMenu;
     }
 
@@ -2755,7 +2755,7 @@ public class AEMegaMenuPage extends BasePage {
     }
 
     public WebElement getSnackBarsOptionInHealthyFoodMainMenu() {
-        DataHelperAndWait.waitToBeVisible(snackBarsOptionInHealthyFoodMainMenu,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(snackBarsOptionInHealthyFoodMainMenu ,webDriver);
         return snackBarsOptionInHealthyFoodMainMenu;
     }
 
@@ -2813,7 +2813,7 @@ public class AEMegaMenuPage extends BasePage {
 
     //Sports Main Menu
     public WebElement getSportsMainMenu() {
-        DataHelperAndWait.waitToBeVisible(sportsMainMenu,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(sportsMainMenu ,webDriver);
         return sportsMainMenu;
     }
 
@@ -3126,14 +3126,14 @@ public class AEMegaMenuPage extends BasePage {
     //Define the main actions we need to execute our TCs
     public void switchToAECountry() {
         try {
-            DataHelperAndWait.waitToBeVisible(countryList, 5,webDriver);
+            DataHelperAndWait.waitToBeVisible(countryList,webDriver);
             this.countryList.click();
-            DataHelperAndWait.waitToBeVisible(aeCountry, 5,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeCountry,webDriver);
             this.aeCountry.click();
         } catch (Exception e) {
-            DataHelperAndWait.waitToBeVisible(countryList, 5,webDriver);
+            DataHelperAndWait.waitToBeVisible(countryList,webDriver);
             this.countryList.click();
-            DataHelperAndWait.waitToBeVisible(aeCountry, 5,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeCountry,webDriver);
             this.aeCountry.click();
         }
     }

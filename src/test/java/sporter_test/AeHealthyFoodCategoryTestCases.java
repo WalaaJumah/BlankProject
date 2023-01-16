@@ -80,7 +80,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         for (int i = 0; i < aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().size(); i++) {
-            DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().get(i),6,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().get(i),webDriver);
             Assert.assertTrue(aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().get(i).isDisplayed());
         }
     }
@@ -89,7 +89,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         for (int i = 0; i < aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().size(); i++) {
-            DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().get(i),6,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().get(i),webDriver);
             aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().get(i).click();
             aeHealthyFoodCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
             webDriver.navigate().back();
@@ -248,7 +248,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,7);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Healthy Food Category", "3. Medium Severity"},description = "Healthy Food Category- Make Sure the previous page button works correctly", priority = 25)
@@ -263,7 +263,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,7);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Healthy Food Category", "3. Medium Severity"},description = "Healthy Food Category- Make Sure the Filtration Section Appears Correctly", priority = 27)
@@ -302,7 +302,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
             add("Pods");
         }};
         for (int i = 0; i < aeSportSupplementsCategoryPage.getFormFiltrationSection().size(); i++) {
-            DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getFormFiltrationSection().get(i),5,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getFormFiltrationSection().get(i),webDriver);
             Assert.assertTrue(aeSportSupplementsCategoryPage.getFormFiltrationSection().get(i).isDisplayed());
         }
     }

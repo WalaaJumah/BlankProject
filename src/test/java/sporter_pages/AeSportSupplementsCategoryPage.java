@@ -120,11 +120,11 @@ public class AeSportSupplementsCategoryPage extends BasePage {
         return pageBottomBlocksList;
     }
     public WebElement getSportSupplementsCategoryImage() {
-        DataHelperAndWait.waitToBeVisible(sportSupplementsCategoryImage,3,webDriver);
+        DataHelperAndWait.waitToBeVisible(sportSupplementsCategoryImage ,webDriver);
         return sportSupplementsCategoryImage;
     }
     public WebElement getSportSupplementsTitleInCategoryImage() {
-        DataHelperAndWait.waitToBeVisible(sportSupplementsTitleInSportSupplementsCategoryImage,3,webDriver);
+        DataHelperAndWait.waitToBeVisible(sportSupplementsTitleInSportSupplementsCategoryImage ,webDriver);
         return sportSupplementsTitleInSportSupplementsCategoryImage;
     }
     public WebElement getShopeByMenu() {
@@ -135,7 +135,7 @@ public class AeSportSupplementsCategoryPage extends BasePage {
     }
 
     public WebElement getParagraphInSportSupplementsCategoryImage() {
-        DataHelperAndWait.waitToBeVisible(paragraphInInSportSupplementsCategoryImage,3,webDriver);
+        DataHelperAndWait.waitToBeVisible(paragraphInInSportSupplementsCategoryImage ,webDriver);
         return paragraphInInSportSupplementsCategoryImage;
     }
     public List<WebElement> getMainBannersInTheSportSupplementsScreen() {
@@ -146,42 +146,42 @@ public class AeSportSupplementsCategoryPage extends BasePage {
     }
     public WebElement getResultLabel() {
         try{
-        DataHelperAndWait.waitToBeVisible(resultLabel,7,webDriver);
+        DataHelperAndWait.waitToBeVisible(resultLabel ,webDriver);
         return resultLabel;}
         catch(Exception e) {
-            DataHelperAndWait.waitToBeVisible(resultLabel,7,webDriver);
+            DataHelperAndWait.waitToBeVisible(resultLabel ,webDriver);
             return resultLabel;
         }
 
     }
     public WebElement getSearchResultValue() {
-        DataHelperAndWait.waitToBeVisible(searchResultValue,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(searchResultValue ,webDriver);
         return searchResultValue;
     }
     public WebElement getSortByLabel() {
-        DataHelperAndWait.waitToBeVisible(sortByLabel,6,webDriver);
+        DataHelperAndWait.waitToBeVisible(sortByLabel ,webDriver);
         return sortByLabel;
     }
     public WebElement getSortByMenu() {
         return sortByMenu;
     }
     public WebElement getMainBannersInTheSportSupplementsSection() {
-        DataHelperAndWait.waitToBeVisible(mainBannersInTheSportSupplementsSection,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(mainBannersInTheSportSupplementsSection ,webDriver);
         return mainBannersInTheSportSupplementsSection;
     }
     public WebElement getSportSupplementsTitleInFooterSection() {
-        DataHelperAndWait.waitToBeVisible(sportSupplementsTitleInFooterSection,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(sportSupplementsTitleInFooterSection ,webDriver);
         return sportSupplementsTitleInFooterSection;
     }
     public WebElement getSportSupplementsDescriptionInFooterSection() {
-        DataHelperAndWait.waitToBeVisible(sportSupplementsDescriptionInFooterSection,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(sportSupplementsDescriptionInFooterSection ,webDriver);
         return sportSupplementsDescriptionInFooterSection;
     }
     public WebElement getSportSupplementsFooterSection() {
         return sportSupplementsFooterSection;
     }
     public WebElement getDisabledPreviousPageBtn() {
-        DataHelperAndWait.waitToBeVisible(disabledPreviousPageBtn,3,webDriver);
+        DataHelperAndWait.waitToBeVisible(disabledPreviousPageBtn ,webDriver);
         return disabledPreviousPageBtn;
     }
     public WebElement getCountryList() {
@@ -192,10 +192,10 @@ public class AeSportSupplementsCategoryPage extends BasePage {
     }
     public WebElement getNextPageBtn() {
         try{
-        DataHelperAndWait.waitToBeVisible(NextPageBtn,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(NextPageBtn ,webDriver);
         return NextPageBtn;}
         catch (Exception e){
-            DataHelperAndWait.waitToBeVisible(NextPageBtn,5,webDriver);
+            DataHelperAndWait.waitToBeVisible(NextPageBtn ,webDriver);
             return NextPageBtn;}
     }
     public WebElement getPageTwoBtn() {
@@ -216,72 +216,72 @@ public class AeSportSupplementsCategoryPage extends BasePage {
     //Define the main actions we need to execute our TCs
     public void switchToAECountry() {
         try {
-            DataHelperAndWait.waitToBeVisible(countryList, 6,webDriver);
+            DataHelperAndWait.waitToBeVisible(countryList ,webDriver);
             this.countryList.click();
-            DataHelperAndWait.waitToBeVisible(aeCountry, 6,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeCountry ,webDriver);
             this.aeCountry.click();
         } catch (Exception e) {
-            DataHelperAndWait.waitToBeVisible(countryList, 6,webDriver);
+            DataHelperAndWait.waitToBeVisible(countryList ,webDriver);
             this.countryList.click();
-            DataHelperAndWait.waitToBeVisible(aeCountry, 6,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeCountry ,webDriver);
             this.aeCountry.click();
     }}
     public void clickOnBreadcrumbHomePage() {
-        DataHelperAndWait.waitToBeVisible(homeBreadcrumbs, 6,webDriver);
+        DataHelperAndWait.waitToBeVisible(homeBreadcrumbs ,webDriver);
         this.homeBreadcrumbs.click();
     }
 
     public void clickOnSearchBtn() {
-        DataHelperAndWait.waitToBeClickable(searchBtn, 3,webDriver);
+        DataHelperAndWait.waitToBeClickable(searchBtn ,webDriver);
         searchBtn.click();
     }
 
     public void fillInSearchField(String text) {
-        DataHelperAndWait.waitToBeVisible(searchField, 3,webDriver);
+        DataHelperAndWait.waitToBeVisible(searchField ,webDriver);
         searchField.sendKeys(text);
     }
 
     public void navigateToPage2() {
-        DataHelperAndWait.waitToBeVisible(pageTwoBtn, 6,webDriver);
+        DataHelperAndWait.waitToBeVisible(pageTwoBtn ,webDriver);
         pageTwoBtn.click();
     }
     public void navigateToPage2InPersonalCarePage() {
-        DataHelperAndWait.waitToBeVisible(pageTwoBtnInPersonalCare, 6,webDriver);
+        DataHelperAndWait.waitToBeVisible(pageTwoBtnInPersonalCare ,webDriver);
         pageTwoBtnInPersonalCare.click();
     }
 
     public void navigateToPage3() {
-        DataHelperAndWait.waitToBeVisible(pageThreeBtn, 3,webDriver);
+        DataHelperAndWait.waitToBeVisible(pageThreeBtn ,webDriver);
         pageThreeBtn.click();
     }
 
     public void clickOnPreviousPageBtn() {
         try{
-        DataHelperAndWait.waitToBeVisible(previousPageBtn, 5,webDriver);
+        DataHelperAndWait.waitToBeVisible(previousPageBtn ,webDriver);
         previousPageBtn.click();}
-        catch(Exception e){        DataHelperAndWait.waitToBeVisible(previousPageBtn, 3,webDriver);
+        catch(Exception e){        DataHelperAndWait.waitToBeVisible(previousPageBtn ,webDriver);
             previousPageBtn.click();}
     }
 
     public void clickOnNextPageBtn() {
         try{
-        DataHelperAndWait.waitToBeVisible(NextPageBtn, 6,webDriver);
+        DataHelperAndWait.waitToBeVisible(NextPageBtn ,webDriver);
         NextPageBtn.click();}
         catch(Exception e){
-            DataHelperAndWait.waitToBeVisible(NextPageBtn, 5,webDriver);
+            DataHelperAndWait.waitToBeVisible(NextPageBtn ,webDriver);
             NextPageBtn.click();}
     }
 
     public void clickOnSeeAllBtnInFormSection() {
         try{
-        DataHelperAndWait.waitToBeVisible(seeAllBtnInFormSection, 5,webDriver);
+        DataHelperAndWait.waitToBeVisible(seeAllBtnInFormSection ,webDriver);
         seeAllBtnInFormSection.click();}
         catch (Exception e){
-            DataHelperAndWait.waitToBeVisible(seeAllBtnInFormSection, 5,webDriver);
+            DataHelperAndWait.waitToBeVisible(seeAllBtnInFormSection ,webDriver);
             seeAllBtnInFormSection.click();}
     }
     public WebElement getHomeBreadcrumbs() {
-        DataHelperAndWait.waitToBeVisible(homeBreadcrumbs,35,webDriver);
+        DataHelperAndWait.waitToBeVisible(homeBreadcrumbs ,webDriver);
         return homeBreadcrumbs;
     }
     public void navigate(){webDriver.navigate().to(BaseURL +aeDomain+sportSupplementsUrl);}

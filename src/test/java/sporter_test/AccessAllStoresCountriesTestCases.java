@@ -36,11 +36,11 @@ public class AccessAllStoresCountriesTestCases extends BaseTest {
             add("/en-ae");
         }};
         for(int i=0; i<accessAllStoresCountriesPage.getListOfCountry().size();i++){
-            DataHelperAndWait.waitToBeVisible(accessAllStoresCountriesPage.getCountryList(),10,webDriver);
+            DataHelperAndWait.waitToBeVisible(accessAllStoresCountriesPage.getCountryList() ,webDriver);
             accessAllStoresCountriesPage.getCountryList().click();
-            DataHelperAndWait.waitToBeVisible(accessAllStoresCountriesPage.getListOfCountry().get(i),10,webDriver);
+            DataHelperAndWait.waitToBeVisible(accessAllStoresCountriesPage.getListOfCountry().get(i) ,webDriver);
             accessAllStoresCountriesPage.getListOfCountry().get(i).click();
-            DataHelperAndWait.waitForUrlContains(expectedOption.get(i),webDriver,10);
+            DataHelperAndWait.waitForUrlContains(expectedOption.get(i),webDriver );
             Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedOption.get(i)),"Incorret URL: "+ webDriver.getCurrentUrl()+" While the Expected URL is: "+BasePage.BaseURL+expectedOption.get(i));
             System.out.println("The Current URL is: "+webDriver.getCurrentUrl()+"  And the Expected URL is:  "+BasePage.BaseURL+expectedOption.get(i));
         }

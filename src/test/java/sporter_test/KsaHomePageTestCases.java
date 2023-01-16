@@ -59,7 +59,7 @@ public class KsaHomePageTestCases extends BaseTest {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
         for (int i = 0; i < ksaHomePage.getHomePageRotatingSliderPagingList().size(); i++) {
-            DataHelperAndWait.waitToBeVisible(ksaHomePage.getHomePageRotatingSliderPagingList().get(i),5,webDriver);
+            DataHelperAndWait.waitToBeVisible(ksaHomePage.getHomePageRotatingSliderPagingList().get(i),webDriver);
             ksaHomePage.getHomePageRotatingSliderPagingList().get(i).click();
             ksaHomePage.getBannerInRotatingSliderSection().click();
             ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -195,7 +195,7 @@ public class KsaHomePageTestCases extends BaseTest {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
         ksaHomePage.clickOnSportSupplementsLinkInTopSellerSection();
-        DataHelperAndWait.waitToBeVisible(ksaHomePage.getSportSupplementsActiveLink(), 3, webDriver);
+        DataHelperAndWait.waitToBeVisible(ksaHomePage.getSportSupplementsActiveLink(), webDriver);
         Assert.assertTrue(ksaHomePage.getSportSupplementsActiveLink().isDisplayed());
     }
 
@@ -204,7 +204,7 @@ public class KsaHomePageTestCases extends BaseTest {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
         ksaHomePage.clickOnHealthyFoodLinkInTopSellerSection();
-        DataHelperAndWait.waitToBeVisible(ksaHomePage.getHealthyFoodActiveLink(), 3, webDriver);
+        DataHelperAndWait.waitToBeVisible(ksaHomePage.getHealthyFoodActiveLink(), webDriver);
         Assert.assertTrue(ksaHomePage.getHealthyFoodActiveLink().isDisplayed());
     }
 
@@ -213,7 +213,7 @@ public class KsaHomePageTestCases extends BaseTest {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
         ksaHomePage.clickOnVitaminsAndHealthLinkInTopSellerSection();
-        DataHelperAndWait.waitToBeVisible(ksaHomePage.getVitaminsAndHealthActiveLinkInTopSellersSection(), 3, webDriver);
+        DataHelperAndWait.waitToBeVisible(ksaHomePage.getVitaminsAndHealthActiveLinkInTopSellersSection(), webDriver);
         Assert.assertTrue(ksaHomePage.getVitaminsAndHealthActiveLinkInTopSellersSection().isDisplayed());
     }
 
@@ -222,7 +222,7 @@ public class KsaHomePageTestCases extends BaseTest {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
         ksaHomePage.clickOnSportswearAndAccessoriesLinkInTopSellerSection();
-        DataHelperAndWait.waitToBeVisible(ksaHomePage.getSportswearAndAccessoriesActiveLink(), 3, webDriver);
+        DataHelperAndWait.waitToBeVisible(ksaHomePage.getSportswearAndAccessoriesActiveLink(), webDriver);
         Assert.assertTrue(ksaHomePage.getSportswearAndAccessoriesActiveLink().isDisplayed());
     }
 
@@ -292,7 +292,7 @@ public class KsaHomePageTestCases extends BaseTest {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
         ksaHomePage.clickOnAllLinkInNewArrivalsSection();
-        DataHelperAndWait.waitToBeVisible(ksaHomePage.getNewArrivalsAllActiveLink(), 3, webDriver);
+        DataHelperAndWait.waitToBeVisible(ksaHomePage.getNewArrivalsAllActiveLink(), webDriver);
         Assert.assertTrue(ksaHomePage.getNewArrivalsAllActiveLink().isDisplayed());
     }
 
@@ -301,7 +301,7 @@ public class KsaHomePageTestCases extends BaseTest {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
         ksaHomePage.clickOnSportSupplementsLinkInNewArrivalsSection();
-        DataHelperAndWait.waitToBeVisible(ksaHomePage.getNewArrivalsSportSupplementsActiveLink(), 3, webDriver);
+        DataHelperAndWait.waitToBeVisible(ksaHomePage.getNewArrivalsSportSupplementsActiveLink(), webDriver);
         Assert.assertTrue(ksaHomePage.getNewArrivalsSportSupplementsActiveLink().isDisplayed());
     }
 
@@ -310,7 +310,7 @@ public class KsaHomePageTestCases extends BaseTest {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
         ksaHomePage.clickOnHealthyFoodLinkInNewArrivalsSection();
-        DataHelperAndWait.waitToBeVisible(ksaHomePage.getNewArrivalsHealthyFoodActiveLink(), 3, webDriver);
+        DataHelperAndWait.waitToBeVisible(ksaHomePage.getNewArrivalsHealthyFoodActiveLink(), webDriver);
         Assert.assertTrue(ksaHomePage.getNewArrivalsHealthyFoodActiveLink().isDisplayed());
     }
 
@@ -327,7 +327,7 @@ public class KsaHomePageTestCases extends BaseTest {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
         ksaHomePage.clickOnSportswearAndAccessoriesLinkInNewArrivalsSection();
-        DataHelperAndWait.waitToBeVisible(ksaHomePage.getNewArrivalsSportWearAndAccessoriesActiveLink(), 3, webDriver);
+        DataHelperAndWait.waitToBeVisible(ksaHomePage.getNewArrivalsSportWearAndAccessoriesActiveLink(), webDriver);
         Assert.assertTrue(ksaHomePage.getNewArrivalsSportWearAndAccessoriesActiveLink().isDisplayed());
     }
 
@@ -464,7 +464,7 @@ public class KsaHomePageTestCases extends BaseTest {
         ksaHomePage.navigate();
         String expectedUrl = ksaHomePage.getViewAllBtnInTopSellingStacksSection().getAttribute("href");
         ksaHomePage.clickOnViewAllBtnInTopSellingStacksSection();
-        DataHelperAndWait.waitForUrlContains("/sporter-stacks",webDriver,10);
+        DataHelperAndWait.waitForUrlContains("/sporter-stacks",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("/sporter-stacks"), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
         ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
         String numberOfProductInTheList=ksaHomePage.getSearchResultValue().getText();

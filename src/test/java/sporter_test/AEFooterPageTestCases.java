@@ -353,7 +353,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getAboutSporterOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.aboutSporterUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.aboutSporterUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.aboutSporterUrl)," The current URL is not matched with the aboutSporterUrl page");
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -370,7 +370,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getProductQualityOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.productQualityUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.productQualityUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.productQualityUrl)," The Current URL is not matched with the productQuality Url");
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -387,7 +387,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getProductAuthenticityOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.productAuthenticityUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.productAuthenticityUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.productAuthenticityUrl)," The current URL is not matched with the productAuthenticity Url");
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -404,7 +404,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getWholesaleOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.wholesaleUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.wholesaleUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.wholesaleUrl),"The Current URL is not matched with the wholesale Url ");
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -436,7 +436,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getSporterBlogOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.sporterBlogUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.sporterBlogUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.sporterBlogUrl)," The Current URL is not matched with the sporterBlog Url");
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -467,7 +467,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getContactInfoOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.contactUsUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.contactUsUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.contactUsUrl)," The Current URL is not matched with the contactUs Url ");
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -508,7 +508,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getTrainingApparelOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.trainingApparelUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.trainingApparelUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.trainingApparelUrl)," The Current URL is not matched with the trainingApparel Url");
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -525,7 +525,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getFitnessAccessoriesOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.fitnessAccessoriesUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.fitnessAccessoriesUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.fitnessAccessoriesUrl)," The Current URL is not matched with the fitnessAccessories Url");
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -542,7 +542,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getShakersOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.shakersUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.shakersUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.shakersUrl)," The Current URL is not matched with the shakers Url ");
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -559,7 +559,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getHomeGymEquipmentOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.homeGymEquipmentUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.homeGymEquipmentUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.homeGymEquipmentUrl)," The Current URL is not matched with the homeGymEquipment Url");
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -576,7 +576,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getWatchesOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.watchesUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.watchesUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.watchesUrl)," The Current URL is not matched with the watches Url");
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -593,7 +593,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getStrapsOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.strapsUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.strapsUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.strapsUrl)," The Current URL is not matched with the straps Url");
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -610,7 +610,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getBagsOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.bagsUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.bagsUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.bagsUrl)," The Current URL is not matched with the bags Url");
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -643,7 +643,7 @@ public class AEFooterPageTestCases extends BaseTest {
     public void verifyWheyProteinLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.getWheyProteinOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.wheyProteinUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.wheyProteinUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.wheyProteinUrl));
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -660,7 +660,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getWheyProteinIsolateOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.wheyProteinIsolateUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.wheyProteinIsolateUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.wheyProteinIsolateUrl)," The Current URL is not matched with the wheyProteinIsolate Url");
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -677,7 +677,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getCaseinProteinOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.caseinProteinUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.caseinProteinUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.caseinProteinUrl)," The Current URL is not matched with the caseinProtein Url");
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -694,7 +694,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getWeightGainAndMassGainerOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.weightGainAndMassGainerUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.weightGainAndMassGainerUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.weightGainAndMassGainerUrl)," The Current URL is not matched with weightGainAndMassGainer Url");
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -711,7 +711,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getBCAAsAndAminoAcidsOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.bCAAsAndAminoAcidsUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.bCAAsAndAminoAcidsUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.bCAAsAndAminoAcidsUrl)," The Current URL is not matched with the bCAAsAndAminoAcids Url");
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -728,7 +728,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getPreWorkoutAndEnduranceOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.preWorkoutAndEnduranceUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.preWorkoutAndEnduranceUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.preWorkoutAndEnduranceUrl)," The Current URL is not matched with the preWorkoutAndEnduranceUrl");
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -760,7 +760,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getFatBurnersOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.fatBurnersUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.fatBurnersUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.fatBurnersUrl)," The Current URL is not matched wih the fatBurners Url");
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -777,7 +777,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getProteinBarsOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.proteinBarsUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.proteinBarsUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.proteinBarsUrl)," The Current URL is not matched with the proteinBars Url");
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -794,7 +794,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getHealthySnacksOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.healthySnacksUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.healthySnacksUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.healthySnacksUrl)," The Current URL is not matched with the healthySnacks Url");
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -830,7 +830,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getMultivitaminsOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.multivitaminsUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.multivitaminsUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.multivitaminsUrl)," The Current URL is not matched with the multivitamins Url");
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -847,7 +847,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getVitaminsdOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.vitamindUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.vitamindUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.vitamindUrl));
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -864,7 +864,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getVitaminscOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.vitamincUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.vitamincUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.vitamincUrl));
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -881,7 +881,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getVitaminseOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.vitamineUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.vitamineUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.vitamineUrl));
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -898,7 +898,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getFishOilAndOmega3Option().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.fishOilOmegasUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.fishOilOmegasUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.fishOilOmegasUrl));
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -915,7 +915,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getFolicAcidOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.folicAcidUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.folicAcidUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.folicAcidUrl));
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -932,7 +932,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getBoneAndJointSupportOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.boneJointSupportUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.boneJointSupportUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.boneJointSupportUrl));
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -949,7 +949,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getCollagenOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.collagenUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.collagenUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.collagenUrl));
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -966,7 +966,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getHairSkinAndNailsOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.hairSkinNailsUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.hairSkinNailsUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.hairSkinNailsUrl));
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -983,7 +983,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getTestosteroneBoosterOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.testosteroneBoosterUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.testosteroneBoosterUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.testosteroneBoosterUrl));
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -1000,7 +1000,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getMelatoninAndSleepSupportOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.melatoninSleepSupportUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.melatoninSleepSupportUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.melatoninSleepSupportUrl));
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -1017,7 +1017,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getDigestiveSupportOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.digestionSupportUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.digestionSupportUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.digestionSupportUrl));
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
 
@@ -1035,7 +1035,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getTermsAndServiceOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.termsAndServiceUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.termsAndServiceUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.termsAndServiceUrl));
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -1052,7 +1052,7 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getPrivacyPolicyOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.privacyPolicyUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.privacyPolicyUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.privacyPolicyUrl));
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -1077,7 +1077,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getInstagramIcon().click();
         DataHelperAndWait.switchToTabBrowser(1,webDriver);
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.instagramURL,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.instagramURL,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.instagramURL));
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -1090,7 +1090,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getFacebookIcon().click();
         DataHelperAndWait.switchToTabBrowser(1,webDriver);
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.facebookURL,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.facebookURL,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.facebookURL));
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
         webDriver.close();
@@ -1105,7 +1105,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getTwitterIcon().click();
         DataHelperAndWait.switchToTabBrowser(1,webDriver);
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.twitterURL,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.twitterURL,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.twitterURL));
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();;
         webDriver.close();
@@ -1120,7 +1120,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.switchToAECountry();
         aeFooterPage.getYoutubeIcon().click();
         DataHelperAndWait.switchToTabBrowser(1,webDriver);
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.youtubeURL,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeFooterPage.youtubeURL,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.youtubeURL));
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();;
         webDriver.close();

@@ -152,7 +152,7 @@ public class QatarHomePageTestCases extends BaseTest {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
 //        qatarHomePage.navigate();
         qatarHomePage.clickOnSportSupplementsLinkInTopSellerSection();
-        DataHelperAndWait.waitToBeVisible(qatarHomePage.getSportSupplementsActiveLink(), 3, webDriver);
+        DataHelperAndWait.waitToBeVisible(qatarHomePage.getSportSupplementsActiveLink(), webDriver);
         Assert.assertTrue(qatarHomePage.getSportSupplementsActiveLink().isDisplayed());
     }
 
@@ -161,7 +161,7 @@ public class QatarHomePageTestCases extends BaseTest {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
 //        qatarHomePage.navigate();
         qatarHomePage.clickOnHealthyFoodLinkInTopSellerSection();
-        DataHelperAndWait.waitToBeVisible(qatarHomePage.getHealthyFoodActiveLink(), 3, webDriver);
+        DataHelperAndWait.waitToBeVisible(qatarHomePage.getHealthyFoodActiveLink(), webDriver);
         Assert.assertTrue(qatarHomePage.getHealthyFoodActiveLink().isDisplayed());
     }
 
@@ -170,7 +170,7 @@ public class QatarHomePageTestCases extends BaseTest {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
 //        qatarHomePage.navigate();
         qatarHomePage.clickOnVitaminsAndHealthLinkInTopSellerSection();
-        DataHelperAndWait.waitToBeVisible(qatarHomePage.getVitaminsAndHealthActiveLink(), 3, webDriver);
+        DataHelperAndWait.waitToBeVisible(qatarHomePage.getVitaminsAndHealthActiveLink(), webDriver);
         Assert.assertTrue(qatarHomePage.getVitaminsAndHealthActiveLink().isDisplayed());
     }
 
@@ -179,7 +179,7 @@ public class QatarHomePageTestCases extends BaseTest {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
 //        qatarHomePage.navigate();
         qatarHomePage.clickOnSportswearAndAccessoriesLinkInTopSellerSection();
-        DataHelperAndWait.waitToBeVisible(qatarHomePage.getSportswearAndAccessoriesActiveLink(), 3, webDriver);
+        DataHelperAndWait.waitToBeVisible(qatarHomePage.getSportswearAndAccessoriesActiveLink(), webDriver);
         Assert.assertTrue(qatarHomePage.getSportswearAndAccessoriesActiveLink().isDisplayed());
     }
     @Test(groups = {"Home Page","3. Medium Severity"},description = "Qatar HomePage- Make sure that previous and next buttons in the Top Seller Section work correctly ", priority = 17)
@@ -237,7 +237,7 @@ public class QatarHomePageTestCases extends BaseTest {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
 //        qatarHomePage.navigate();
         qatarHomePage.clickOnAllLinkInNewArrivalsSection();
-        DataHelperAndWait.waitToBeVisible(qatarHomePage.getNewArrivalsAllActiveLink(), 4, webDriver);
+        DataHelperAndWait.waitToBeVisible(qatarHomePage.getNewArrivalsAllActiveLink(), webDriver);
         Assert.assertTrue(qatarHomePage.getNewArrivalsAllActiveLink().isDisplayed());
     }
 
@@ -246,7 +246,7 @@ public class QatarHomePageTestCases extends BaseTest {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
 //        qatarHomePage.navigate();
         qatarHomePage.clickOnSportSupplementsLinkInNewArrivalsSection();
-        DataHelperAndWait.waitToBeVisible(qatarHomePage.getNewArrivalsSportSupplementsActiveLink(), 4, webDriver);
+        DataHelperAndWait.waitToBeVisible(qatarHomePage.getNewArrivalsSportSupplementsActiveLink(), webDriver);
         Assert.assertTrue(qatarHomePage.getNewArrivalsSportSupplementsActiveLink().isDisplayed());
     }
 
@@ -255,7 +255,7 @@ public class QatarHomePageTestCases extends BaseTest {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
 //        qatarHomePage.navigate();
         qatarHomePage.clickOnHealthyFoodLinkInNewArrivalsSection();
-        DataHelperAndWait.waitToBeVisible(qatarHomePage.getNewArrivalsHealthyFoodActiveLink(), 4, webDriver);
+        DataHelperAndWait.waitToBeVisible(qatarHomePage.getNewArrivalsHealthyFoodActiveLink(), webDriver);
         Assert.assertTrue(qatarHomePage.getNewArrivalsHealthyFoodActiveLink().isDisplayed());
     }
 
@@ -272,7 +272,7 @@ public class QatarHomePageTestCases extends BaseTest {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
 //        qatarHomePage.navigate();
         qatarHomePage.clickOnSportswearAndAccessoriesLinkInNewArrivalsSection();
-        DataHelperAndWait.waitToBeVisible(qatarHomePage.getNewArrivalsSportWearAndAccessoriesActiveLink(), 4, webDriver);
+        DataHelperAndWait.waitToBeVisible(qatarHomePage.getNewArrivalsSportWearAndAccessoriesActiveLink(), webDriver);
         Assert.assertTrue(qatarHomePage.getNewArrivalsSportWearAndAccessoriesActiveLink().isDisplayed());
     }
 
@@ -314,7 +314,7 @@ public class QatarHomePageTestCases extends BaseTest {
     public void verifyAbilityToClickOnEmailBtnInGotQuestionSectionCorrectly() {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.clickOnEmailBtn();
-        DataHelperAndWait.waitForUrlContains(qatarHomePage.contactUsUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(qatarHomePage.contactUsUrl,webDriver);
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(qatarHomePage.contactUsUrl), "The system redirect the user to wrong URL " + webDriver.getCurrentUrl());
     }
 
@@ -360,7 +360,7 @@ public class QatarHomePageTestCases extends BaseTest {
             while(!qatarHomePage.getFirstProductInTopSellingStacksSection().get(i).isDisplayed());
 
             String expectedUrl = qatarHomePage.getFirstProductInTopSellingStacksSection().get(i).getAttribute("href");
-            DataHelperAndWait.waitToBeVisible(qatarHomePage.getFirstProductInTopSellingStacksSection().get(i),8,webDriver);
+            DataHelperAndWait.waitToBeVisible(qatarHomePage.getFirstProductInTopSellingStacksSection().get(i),webDriver);
             qatarHomePage.getFirstProductInTopSellingStacksSection().get(i).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
             qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();

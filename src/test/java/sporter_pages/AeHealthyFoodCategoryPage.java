@@ -68,19 +68,19 @@ public class AeHealthyFoodCategoryPage extends BasePage {
     private WebElement sportSupplementsDescriptionInFooterSection;
     //Getter Methods
     public WebElement getParagraphInSportSupplementsCategoryImage() {
-        DataHelperAndWait.waitToBeVisible(paragraphInInSportSupplementsCategoryImage,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(paragraphInInSportSupplementsCategoryImage ,webDriver);
         return paragraphInInSportSupplementsCategoryImage;
     }
     public WebElement getSportSupplementsTitleInFooterSection() {
-        DataHelperAndWait.waitToBeVisible(sportSupplementsTitleInFooterSection,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(sportSupplementsTitleInFooterSection ,webDriver);
         return sportSupplementsTitleInFooterSection;
     }
     public WebElement getSportSupplementsDescriptionInFooterSection() {
-        DataHelperAndWait.waitToBeVisible(sportSupplementsDescriptionInFooterSection,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(sportSupplementsDescriptionInFooterSection ,webDriver);
         return sportSupplementsDescriptionInFooterSection;
     }
     public WebElement getSportSupplementsFooterSection() {
-        DataHelperAndWait.waitToBeVisible(sportSupplementsFooterSection,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(sportSupplementsFooterSection ,webDriver);
         return sportSupplementsFooterSection;
     }
     public WebElement getHealthyFoodMainMenu() {
@@ -116,19 +116,19 @@ public class AeHealthyFoodCategoryPage extends BasePage {
     public List<WebElement> getPageBottomBlocksList() {
         return pageBottomBlocksList;}
         public WebElement getHealthyFoodCategoryInHomePage() {
-        DataHelperAndWait.waitToBeVisible(healthyFoodCategoryInHomePage,6,webDriver);
+        DataHelperAndWait.waitToBeVisible(healthyFoodCategoryInHomePage ,webDriver);
         return healthyFoodCategoryInHomePage;
     }
     public WebElement getSportSupplementsCategoryImage() {
-        DataHelperAndWait.waitToBeVisible(sportSupplementsCategoryImage,7,webDriver);
+        DataHelperAndWait.waitToBeVisible(sportSupplementsCategoryImage ,webDriver);
         return sportSupplementsCategoryImage;
     }
     public WebElement getMainBannersInTheSportSupplementsSection() {
-        DataHelperAndWait.waitToBeVisible(mainBannersInTheSportSupplementsSection,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(mainBannersInTheSportSupplementsSection ,webDriver);
         return mainBannersInTheSportSupplementsSection;
     }
     public WebElement getSportSupplementsTitleInCategoryImage() {
-        DataHelperAndWait.waitToBeVisible(sportSupplementsTitleInSportSupplementsCategoryImage,7,webDriver);
+        DataHelperAndWait.waitToBeVisible(sportSupplementsTitleInSportSupplementsCategoryImage ,webDriver);
         return sportSupplementsTitleInSportSupplementsCategoryImage;
     }
 
@@ -151,11 +151,11 @@ public class AeHealthyFoodCategoryPage extends BasePage {
     public void switchToAECountry() {
         try {
             this.countryList.click();
-            DataHelperAndWait.isDisplayed(countryList, 6,webDriver);
+            DataHelperAndWait.isDisplayed(countryList ,webDriver);
             this.aeCountry.click();
         } catch (Exception e) {
             this.countryList.click();
-            DataHelperAndWait.isDisplayed(countryList, 6,webDriver);
+            DataHelperAndWait.isDisplayed(countryList ,webDriver);
             this.aeCountry.click();
         }
     }

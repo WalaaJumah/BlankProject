@@ -47,66 +47,66 @@ public class AccessAllStoresCountriesPage extends BasePage {
 
 //Getter Methods
 public WebElement getArabicLanguageBtn() {
-    DataHelperAndWait.waitToBeVisible(arabicLanguageBtn,10,webDriver);
+    DataHelperAndWait.waitToBeVisible(arabicLanguageBtn ,webDriver);
     return arabicLanguageBtn;
 }
 
     public WebElement getEnglishLanguageBtn() {
-        DataHelperAndWait.waitToBeVisible(englishLanguageBtn,10,webDriver);
+        DataHelperAndWait.waitToBeVisible(englishLanguageBtn ,webDriver);
         return englishLanguageBtn;
     }
     //Main actions
     public void switchToBahrainCountryCountry(  ) {
         try {
-            DataHelperAndWait.isDisplayed(countryList, 5,webDriver);
+            DataHelperAndWait.isDisplayed(countryList ,webDriver);
             this.countryList.click();
             this.bahrainCountry.click();
         } catch (Exception e) {
-            DataHelperAndWait.isDisplayed(countryList, 5,webDriver);
+            DataHelperAndWait.isDisplayed(countryList ,webDriver);
             this.countryList.click();
             this.bahrainCountry.click();
         }
     }
        public void switchToEgyptCountryCountry(  ) {
         try {
-            DataHelperAndWait.isDisplayed(countryList, 5,webDriver);
+            DataHelperAndWait.isDisplayed(countryList ,webDriver);
             this.countryList.click();
             this.egyptCountry.click();
         } catch (Exception e) {
-            DataHelperAndWait.isDisplayed(countryList, 5,webDriver);
+            DataHelperAndWait.isDisplayed(countryList ,webDriver);
             this.countryList.click();
             this.egyptCountry.click();
         }
     }
        public void switchToKuwaitCountryCountry(  ) {
         try {
-            DataHelperAndWait.isDisplayed(countryList, 5,webDriver);
+            DataHelperAndWait.isDisplayed(countryList ,webDriver);
             this.countryList.click();
             this.kuwaitCountry.click();
         } catch (Exception e) {
-            DataHelperAndWait.isDisplayed(countryList, 5,webDriver);
+            DataHelperAndWait.isDisplayed(countryList ,webDriver);
             this.countryList.click();
             this.kuwaitCountry.click();
         }
     }
        public void switchToOmanCountryCountry(  ) {
         try {
-            DataHelperAndWait.isDisplayed(countryList, 5,webDriver);
+            DataHelperAndWait.isDisplayed(countryList ,webDriver);
             this.countryList.click();
             this.omanCountry.click();
         } catch (Exception e) {
-            DataHelperAndWait.isDisplayed(countryList, 5,webDriver);
+            DataHelperAndWait.isDisplayed(countryList ,webDriver);
             this.countryList.click();
             this.omanCountry.click();
         }
     }
        public void switchToInternationalCountryCountry(  ) {
         try {
-            DataHelperAndWait.isDisplayed(countryList, 5,webDriver);
+            DataHelperAndWait.isDisplayed(countryList ,webDriver);
             this.countryList.click();
             this.internationalCountry.click();
         } catch (Exception e) {
-            DataHelperAndWait.isDisplayed(countryList, 5,webDriver);
+            DataHelperAndWait.isDisplayed(countryList ,webDriver);
             this.countryList.click();
             this.internationalCountry.click();
         }

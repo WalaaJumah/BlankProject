@@ -201,7 +201,7 @@ public class AeProductDetailsPageTestCases extends BaseTest {
         aeProductDetailsPage.displayTheProduct();
         Actions action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
-        DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getSportsSupplementMainMenuList().get(0),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getSportsSupplementMainMenuList().get(0),webDriver);
         Assert.assertEquals(aeMegamenuPage.getSportsSupplementMainMenuList().get(0).getText(), "PROTEIN\n" + "Whey Protein\n" + "Whey Protein Isolate\n" +
                 "Protein Blends\n" + "Non-dairy Protein\n" + "Casein Protein\n" + "Diet Protein\n" + "Mass Gainers\n" + "CREATINE\n" +
                 "Creatine Monohydrate\n" + "Creatine Blends\n" + "AMINO ACIDS\n" + "BCAA\n" + "EAA\n" + "Arginine\n" + "Beta Alanine\n" +
@@ -284,7 +284,7 @@ public class AeProductDetailsPageTestCases extends BaseTest {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.displayTheProduct();
         aeProductDetailsPage.clickOnProductBrandLink();
-        DataHelperAndWait.waitForUrlContains("brands",webDriver,5);
+        DataHelperAndWait.waitForUrlContains("brands",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("brands"));
         aeProductDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -311,7 +311,7 @@ public class AeProductDetailsPageTestCases extends BaseTest {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.displayTheProduct();
         aeProductDetailsPage.clickOnNextReviewPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 //There's bug here
@@ -327,7 +327,7 @@ public class AeProductDetailsPageTestCases extends BaseTest {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.displayTheProduct();
         aeProductDetailsPage.clickOnPageBtnInReviewSection();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 

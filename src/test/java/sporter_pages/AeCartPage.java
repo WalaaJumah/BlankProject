@@ -92,7 +92,7 @@ public class AeCartPage extends BasePage {
 
     //Getter Methods
     public WebElement getItemsCounterInCartPage() {
-        DataHelperAndWait.waitToBeVisible(itemsCounter,7,webDriver);
+        DataHelperAndWait.waitToBeVisible(itemsCounter ,webDriver);
         return itemsCounter;
     }
 
@@ -101,158 +101,158 @@ public class AeCartPage extends BasePage {
     }
 
     public WebElement getContinueShoppingBtn() {
-        DataHelperAndWait.waitToBeVisible(continueShoppingBtn,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(continueShoppingBtn ,webDriver);
         return continueShoppingBtn;
     }
 
     public WebElement getNoItemInCartLabel() {
-        DataHelperAndWait.waitToBeVisible(noItemInCartLabel,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(noItemInCartLabel ,webDriver);
         return noItemInCartLabel;
     }
 
     public WebElement getHereLink() {
-        DataHelperAndWait.waitToBeVisible(hereLink,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(hereLink ,webDriver);
         return hereLink;
     }
 
     public WebElement getDecreaseQtyBtn() {
-        DataHelperAndWait.waitToBeVisible(decreaseQtyBtn,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(decreaseQtyBtn ,webDriver);
         return decreaseQtyBtn;
     }
 
     public WebElement getIncreaseQtyBtn() {
-        DataHelperAndWait.waitToBeVisible(increaseQtyBtn,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(increaseQtyBtn ,webDriver);
         return increaseQtyBtn;
     }
 
     public WebElement getQtyField() {
-        DataHelperAndWait.waitToBeVisible(qtyField,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(qtyField ,webDriver);
         return qtyField;
     }
 
     public WebElement getQtyUnavailableMsgInCartPage() {
-        DataHelperAndWait.waitToBeVisible(qtyUnavailableMsgInCartPage,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(qtyUnavailableMsgInCartPage ,webDriver);
         return qtyUnavailableMsgInCartPage;
     }
 
     public WebElement getPriceInCartPage() {
-        DataHelperAndWait.waitToBeVisible(priceInCartPage,8,webDriver);
+        DataHelperAndWait.waitToBeVisible(priceInCartPage ,webDriver);
         return priceInCartPage;
     }
 
     public WebElement getFreeFromSporterSection() {
-        DataHelperAndWait.waitToBeVisible(freeFromSporter,8,webDriver);
+        DataHelperAndWait.waitToBeVisible(freeFromSporter ,webDriver);
         return freeFromSporter;
     }
 
     public WebElement getFreePrice() {
-        DataHelperAndWait.waitToBeVisible(freePrice,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(freePrice ,webDriver);
         return freePrice;
     }
 
     public WebElement getCodOption() {
-        DataHelperAndWait.waitToBeVisible(codOption,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(codOption ,webDriver);
         return codOption;
     }
 
     public WebElement getWeAcceptLabel() {
-        DataHelperAndWait.waitToBeVisible(weAcceptLabel,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(weAcceptLabel ,webDriver);
         return weAcceptLabel;
     }
 
     public WebElement getCreditCardOption() {
-        DataHelperAndWait.waitToBeVisible(creditCardOption,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(creditCardOption ,webDriver);
         return creditCardOption;
     }
 
     public WebElement getFreeShippingLabel() {
-        DataHelperAndWait.waitToBeVisible(freeShippingLabel,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(freeShippingLabel ,webDriver);
         return freeShippingLabel;
     }
 
     public WebElement getExpectedDeliveryDateLabel() {
-        DataHelperAndWait.waitToBeVisible(expectedDeliveryDateLabel,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(expectedDeliveryDateLabel ,webDriver);
         return expectedDeliveryDateLabel;
     }
 
     public WebElement getExpectedDeliveryDateValue() {
-        DataHelperAndWait.waitToBeVisible(expectedDeliveryDateValue,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(expectedDeliveryDateValue ,webDriver);
         return expectedDeliveryDateValue;
     }
 
     public WebElement getProceedCheckoutBtn() {
-        DataHelperAndWait.waitToBeVisible(proceedCheckoutBtn,6,webDriver);
+        DataHelperAndWait.waitToBeVisible(proceedCheckoutBtn ,webDriver);
         return proceedCheckoutBtn;
     }
 
     public WebElement getSubTotalValue() {
-        DataHelperAndWait.waitToBeVisible(subTotalValue,6,webDriver);
+        DataHelperAndWait.waitToBeVisible(subTotalValue ,webDriver);
         return subTotalValue;
     }
 
     public WebElement getTaxValue() {
-        DataHelperAndWait.waitToBeVisible(taxValue,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(taxValue ,webDriver);
         return taxValue;
     }
 
     public WebElement getOrderTotalValue() {
-        DataHelperAndWait.waitToBeVisible(orderTotalValue,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(orderTotalValue ,webDriver);
         return orderTotalValue;
     }
 
     public WebElement getCartCounter() {
-        DataHelperAndWait.waitToBeVisible(cartCounter,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(cartCounter ,webDriver);
         return cartCounter;
     }
 
     public WebElement getItemCounterInCartPopUp() {
-        DataHelperAndWait.waitToBeVisible(itemCounterInCartPopUp,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(itemCounterInCartPopUp ,webDriver);
         return itemCounterInCartPopUp;
     }
 
     public WebElement getCloseIconInCartPopup() {
-        DataHelperAndWait.waitToBeVisible(cartCloseIcon,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(cartCloseIcon ,webDriver);
         return cartCloseIcon;
     }
 
     public WebElement getUsedFreeCouponMsg() {
-        DataHelperAndWait.waitToBeVisible(usedFreeCouponMsg,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(usedFreeCouponMsg ,webDriver);
         return usedFreeCouponMsg;
     }
 
     public WebElement getApplyCouponCode() {
-        DataHelperAndWait.waitToBeVisible(applyCouponCodeBtn,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(applyCouponCodeBtn ,webDriver);
         return applyCouponCodeBtn;
     }
 
     public WebElement getNotExistCouponMsg() {
-        DataHelperAndWait.waitToBeVisible(notExistCouponMsg,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(notExistCouponMsg ,webDriver);
         return notExistCouponMsg;
     }
 
     public WebElement getRequiredCouponMsg() {
-        DataHelperAndWait.waitToBeVisible(requiredCouponMsg,8,webDriver);
+        DataHelperAndWait.waitToBeVisible(requiredCouponMsg ,webDriver);
         return requiredCouponMsg;
     }
 
     public WebElement getMyShoppingCartMsg() {
-        DataHelperAndWait.waitToBeVisible(myShoppingCartMsg,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(myShoppingCartMsg ,webDriver);
         return myShoppingCartMsg;
     }
 
     //Define the main actions we need to execute our TCs
     public void clickOnTheContinueShoppingBtn() {
-        DataHelperAndWait.isDisplayed(continueShoppingBtn, 3,webDriver);
+        DataHelperAndWait.isDisplayed(continueShoppingBtn ,webDriver);
         this.continueShoppingBtn.click();
     }
 
     public void clickOnRemoveItem() {
-        DataHelperAndWait.isDisplayed(removeItem, 8,webDriver);
+        DataHelperAndWait.isDisplayed(removeItem ,webDriver);
         this.removeItem.click();
     }
 
     public void clickOnHereLink() {
-        DataHelperAndWait.isDisplayed(hereLink, 6,webDriver);
+        DataHelperAndWait.isDisplayed(hereLink ,webDriver);
         this.hereLink.click();
     }
 
@@ -261,49 +261,49 @@ public class AeCartPage extends BasePage {
     }
 
     public void clickOnIncreaseQtyBtn() {
-        DataHelperAndWait.waitToBeClickable(increaseQtyBtn, 3,webDriver);
+        DataHelperAndWait.waitToBeClickable(increaseQtyBtn ,webDriver);
         this.increaseQtyBtn.click();
     }
 
     public void FillInQtyField(String qty) {
-        DataHelperAndWait.waitToBeVisible(qtyField, 3,webDriver);
+        DataHelperAndWait.waitToBeVisible(qtyField ,webDriver);
         this.qtyField.sendKeys(qty);
     }
 
     public void clickOnProductCartInCartPage() {
-        DataHelperAndWait.waitToBeVisible(productCartInCartPage, 3,webDriver);
+        DataHelperAndWait.waitToBeVisible(productCartInCartPage ,webDriver);
         this.productCartInCartPage.click();
     }
 
     public void clickOnCartIcon() {
-        DataHelperAndWait.waitToBeVisible(cartIcon, 3,webDriver);
+        DataHelperAndWait.waitToBeVisible(cartIcon ,webDriver);
         this.cartIcon.click();
     }
 
     public void clickOnViewCartInCartPopUp() {
-        DataHelperAndWait.waitToBeVisible(viewCartInCartPopup, 3,webDriver);
+        DataHelperAndWait.waitToBeVisible(viewCartInCartPopup ,webDriver);
         this.viewCartInCartPopup.click();
     }
 
     public void clickOnProceedCheckoutBtnInCartPopup() {
-        DataHelperAndWait.waitToBeClickable(proceedCheckoutBtnInCartPopup, 3,webDriver);
+        DataHelperAndWait.waitToBeClickable(proceedCheckoutBtnInCartPopup ,webDriver);
         this.proceedCheckoutBtnInCartPopup.click();
     }
 
     public void clickOnCartCloseIcon() {
-        DataHelperAndWait.waitToBeVisible(cartCloseIcon, 3,webDriver);
+        DataHelperAndWait.waitToBeVisible(cartCloseIcon ,webDriver);
         this.cartCloseIcon.click();
     }
 
     public void FillInCouponCode(String couponCode) {
-        DataHelperAndWait.waitToBeVisible(couponCodeField, 8,webDriver);
+        DataHelperAndWait.waitToBeVisible(couponCodeField ,webDriver);
         this.couponCodeField.sendKeys(couponCode);
-        DataHelperAndWait.waitToBeClickable(applyCouponCodeBtn, 8,webDriver);
+        DataHelperAndWait.waitToBeClickable(applyCouponCodeBtn ,webDriver);
         this.applyCouponCodeBtn.click();
     }
 
     public void clickOnCancelCouponCodeBtn() {
-        DataHelperAndWait.waitToBeClickable(cancelCouponCodeBtn, 3,webDriver);
+        DataHelperAndWait.waitToBeClickable(cancelCouponCodeBtn ,webDriver);
         this.cancelCouponCodeBtn.click();
     }
     public void removeProductFromCart(){

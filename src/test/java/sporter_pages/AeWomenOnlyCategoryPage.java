@@ -184,11 +184,11 @@ public class AeWomenOnlyCategoryPage extends BasePage {
         return lastProductInSupplementsForHerSection;
     }
     public WebElement getProductCardInSupplementsForHerSection() {
-        DataHelperAndWait.waitToBeVisible(productCardInSupplementsForHerSection,10,webDriver);
+        DataHelperAndWait.waitToBeVisible(productCardInSupplementsForHerSection ,webDriver);
         return productCardInSupplementsForHerSection;
     }
     public WebElement getProductCardInWomenVitaminsSection() {
-        DataHelperAndWait.waitToBeVisible(productCardInWomenVitaminsSection,10,webDriver);
+        DataHelperAndWait.waitToBeVisible(productCardInWomenVitaminsSection ,webDriver);
         return productCardInWomenVitaminsSection;
     }
     public WebElement getLastProductInWomenVitaminsSection() {
@@ -206,14 +206,14 @@ public class AeWomenOnlyCategoryPage extends BasePage {
     }
 
     public WebElement getPreviousIconInWorkoutInStyleSection() {
-        DataHelperAndWait.waitToBeVisible(previousIconInWorkoutInStyleSection,10,webDriver);
+        DataHelperAndWait.waitToBeVisible(previousIconInWorkoutInStyleSection ,webDriver);
         return previousIconInWorkoutInStyleSection;
     }
     public WebElement getLastProductInWorkoutInStyleSection() {
         return lastProductInWorkoutInStyleSection;
     }
     public WebElement getProductCardInWorkoutInStyleSection() {
-        DataHelperAndWait.waitToBeVisible(productCardInWorkoutInStyleSection,10,webDriver);
+        DataHelperAndWait.waitToBeVisible(productCardInWorkoutInStyleSection ,webDriver);
         return productCardInWorkoutInStyleSection;
     }
     public WebElement getViewAllInSupplementsForHerSection() {
@@ -232,15 +232,15 @@ public class AeWomenOnlyCategoryPage extends BasePage {
         return viewAllInLadyFriendlySnacksFoodSection;
     }
     public WebElement getPreviousIconInLadyFriendlySnacksFoodSection() {
-        DataHelperAndWait.waitToBeVisible(previousIconInLadyFriendlySnacksFoodSection,10,webDriver);
+        DataHelperAndWait.waitToBeVisible(previousIconInLadyFriendlySnacksFoodSection ,webDriver);
         return previousIconInLadyFriendlySnacksFoodSection;
     }
     public WebElement getNextIconInInLadyFriendlySnacksFoodSection() {
-        DataHelperAndWait.waitToBeVisible(nextIconInInLadyFriendlySnacksFoodSection,10,webDriver);
+        DataHelperAndWait.waitToBeVisible(nextIconInInLadyFriendlySnacksFoodSection ,webDriver);
         return nextIconInInLadyFriendlySnacksFoodSection;
     }
     public WebElement getProductCardInLadyFriendlySnacksFoodSection() {
-        DataHelperAndWait.waitToBeVisible(productCardInLadyFriendlySnacksFoodSection,10,webDriver);
+        DataHelperAndWait.waitToBeVisible(productCardInLadyFriendlySnacksFoodSection ,webDriver);
         return productCardInLadyFriendlySnacksFoodSection;
     }
     public WebElement getFemaleGallerySectionTitle() {
@@ -260,14 +260,14 @@ public class AeWomenOnlyCategoryPage extends BasePage {
     public void navigateToWomenOnlyPage(){webDriver.navigate().to(BaseURL +aeDomain+womenOnlyUrl);}
     public void switchToAECountry() {
         try {
-            DataHelperAndWait.waitToBeVisible(countryList, 5,webDriver);
+            DataHelperAndWait.waitToBeVisible(countryList ,webDriver);
             this.countryList.click();
-            DataHelperAndWait.waitToBeVisible(aeCountry, 5,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeCountry ,webDriver);
             this.aeCountry.click();
         } catch (Exception e) {
-            DataHelperAndWait.waitToBeVisible(countryList, 5,webDriver);
+            DataHelperAndWait.waitToBeVisible(countryList ,webDriver);
             this.countryList.click();
-            DataHelperAndWait.waitToBeVisible(aeCountry, 5,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeCountry ,webDriver);
             this.aeCountry.click();
         }}
     public WebElement getWomenOnlyMainMenu() {

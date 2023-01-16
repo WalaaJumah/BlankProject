@@ -104,7 +104,7 @@ public class AeSearchPage extends BasePage {
         return productsResult;
     }
     public WebElement getFirstProductCardInProductsSection() {
-        DataHelperAndWait.waitToBeVisible(firstProductCardInProductsSection,8,webDriver);
+        DataHelperAndWait.waitToBeVisible(firstProductCardInProductsSection ,webDriver);
         return firstProductCardInProductsSection;
     }
 
@@ -183,7 +183,7 @@ public class AeSearchPage extends BasePage {
         return filtrationColumn;
     }
     public WebElement getProductsListInAllTab() {
-        DataHelperAndWait.waitToBeVisible(productsListInAllTab,8,webDriver);
+        DataHelperAndWait.waitToBeVisible(productsListInAllTab ,webDriver);
         return productsListInAllTab;
     }
     public WebElement getBrandsListInAllTab() {

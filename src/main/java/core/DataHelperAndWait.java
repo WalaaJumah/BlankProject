@@ -14,10 +14,10 @@ import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 public  class DataHelperAndWait  {
-
-    public static   void waitForElement(WebElement element, int Time, WebDriver webDriver) {
+    private static int WaitTime=8;
+    public static   void waitForElement(WebElement element, WebDriver webDriver) {
         WebDriverWait wait;
-        wait = new WebDriverWait(webDriver, Time);
+        wait = new WebDriverWait(webDriver, WaitTime);
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
@@ -29,9 +29,9 @@ public  class DataHelperAndWait  {
         }
     }
 
-    public static  boolean isDisplayed(WebElement element, int Time, WebDriver webDriver) {
+    public static  boolean isDisplayed(WebElement element, WebDriver webDriver) {
         WebDriverWait wait;
-        wait = new WebDriverWait(webDriver, Time);
+        wait = new WebDriverWait(webDriver, WaitTime);
         return wait.until(ExpectedConditions.visibilityOf(element)).isDisplayed();
     }
     public static  boolean isPresent(WebElement webElement,WebDriver webDriver) {
@@ -48,21 +48,21 @@ public  class DataHelperAndWait  {
         webDriver.manage().timeouts().implicitlyWait(timeSecond, TimeUnit.SECONDS);
     }
 
-    public static  void waitToBeClickable(WebElement element, int Time, WebDriver webDriver) {
+    public static  void waitToBeClickable(WebElement element, WebDriver webDriver) {
         WebDriverWait wait;
-        wait = new WebDriverWait(webDriver, Time);
+        wait = new WebDriverWait(webDriver, WaitTime);
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    public static  void waitToBePresent(String Xpath, int Time, WebDriver webDriver) {
+    public static  void waitToBePresent(String Xpath, WebDriver webDriver) {
         WebDriverWait wait;
-        wait = new WebDriverWait(webDriver, Time);
+        wait = new WebDriverWait(webDriver, WaitTime);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Xpath)));
     }
 
-    public static  void waitToBeVisible(WebElement element, int Time, WebDriver webDriver) {
+    public static  void waitToBeVisible(WebElement element, WebDriver webDriver) {
         WebDriverWait wait;
-        wait = new WebDriverWait(webDriver, Time);
+        wait = new WebDriverWait(webDriver, WaitTime);
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
@@ -78,9 +78,9 @@ public  class DataHelperAndWait  {
         }
     }
 
-    public static  void fluentWait(WebElement element, int timeOut, int pollingEveryTime, WebDriver webDriver) {
+    public static  void fluentWait(WebElement element, int pollingEveryTime, WebDriver webDriver) {
         Wait<WebDriver> Fwait = new FluentWait<WebDriver>(webDriver)
-                .withTimeout(Duration.ofSeconds(timeOut))
+                .withTimeout(Duration.ofSeconds(WaitTime))
                 .pollingEvery(Duration.ofSeconds(pollingEveryTime))
                 .ignoring(NoSuchElementException.class);
         WebElement waitElement = Fwait.until(new Function<WebDriver, WebElement>() {
@@ -159,8 +159,8 @@ public  class DataHelperAndWait  {
             element.sendKeys(Keys.BACK_SPACE);
         }
     }
-    public static  void waitForUrlContains(String expectedString, WebDriver driver, int specifiedTimeout) {
-        WebDriverWait wait = new WebDriverWait(driver, specifiedTimeout);
+    public static  void waitForUrlContains(String expectedString, WebDriver driver) {
+        WebDriverWait wait = new WebDriverWait(driver, WaitTime);
         ExpectedCondition<Boolean> urlIsCorrect = arg0 ->    driver.getCurrentUrl().contains(expectedString);
         wait.until(urlIsCorrect);
     }
@@ -177,10 +177,10 @@ public  class DataHelperAndWait  {
             int i = 2;
             do {
                 String pageNumber = Integer.toString(i);
-                DataHelperAndWait.waitToBeClickable(element,5,webDriver);
+                DataHelperAndWait.waitToBeClickable(element,webDriver);
                 element.click();
 //                DataHelperAndWait.waitForTime(6000);
-                DataHelperAndWait.waitForUrlContains(pageNumber,webDriver,9);
+                DataHelperAndWait.waitForUrlContains(pageNumber,webDriver);
                 Assert.assertTrue(webDriver.getCurrentUrl().endsWith(pageNumber),"The URL is wrong in page"+pageNumber);
                 boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
                 assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
@@ -205,7 +205,7 @@ public  class DataHelperAndWait  {
     public  static Boolean isTheresNoPages(String numberOfProductInTheList){
         String numberOfProductWithOutItemLabel;
         if(numberOfProductInTheList.contains("Items"))
-         numberOfProductWithOutItemLabel= numberOfProductInTheList.replace(") Items","");
+            numberOfProductWithOutItemLabel= numberOfProductInTheList.replace(") Items","");
         else
             numberOfProductWithOutItemLabel= numberOfProductInTheList.replace(") Item","");
         String numberOfProductWithOutResultLabel= numberOfProductWithOutItemLabel.replace("Results: (","");
@@ -215,5 +215,9 @@ public  class DataHelperAndWait  {
     }
     public static void updateAllText(WebElement element, String newText) {
         element.sendKeys(Keys.chord(Keys.CONTROL, "a"), newText);
+    }
+    public static void clickOnElement(WebElement webElement,WebDriver webDriver){
+        DataHelperAndWait.waitToBeVisible(webElement,webDriver);
+        webElement.click();
     }
 }

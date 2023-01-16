@@ -62,7 +62,7 @@ public void switchToUaeStore(){
     public void verifyClickingOnSportsSupplementsCategoryFromHomePageRedirectUserToCorrectURL() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         webDriver.navigate().to("https://www.sporter.com");
-        DataHelperAndWait.waitToBeClickable(aeSportSupplementsCategoryPage.getSportSupplementsCategoryInHomePage(), 8,webDriver);
+        DataHelperAndWait.waitToBeClickable(aeSportSupplementsCategoryPage.getSportSupplementsCategoryInHomePage(),webDriver);
         aeSportSupplementsCategoryPage.getSportSupplementsCategoryInHomePage().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(sportSupplementsUrl));
         aeSportSupplementsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -73,7 +73,7 @@ public void switchToUaeStore(){
     public void verifyTheHorizontalCategoryImageAppearsCorrectlyInSportSupplementsLandingPage() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-        DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage(), 8,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage(),webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
     }
 
@@ -82,8 +82,8 @@ public void switchToUaeStore(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        aeSportSupplementsCategoryPage.navigate();
-        DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getSportSupplementsTitleInCategoryImage(), 8,webDriver);
-        DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getParagraphInSportSupplementsCategoryImage(), 8,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getSportSupplementsTitleInCategoryImage(),webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getParagraphInSportSupplementsCategoryImage(),webDriver);
         Assert.assertEquals(aeSportSupplementsCategoryPage.getSportSupplementsTitleInCategoryImage().getText(), "Sport Supplements", "Wrong title appears in the sport Supplements category image");
         Assert.assertEquals(aeSportSupplementsCategoryPage.getParagraphInSportSupplementsCategoryImage().getText(), "For Every Training Goal & Body Type", "Wrong Paragraph appears in the sport Supplements category image");
     }
@@ -93,7 +93,7 @@ public void switchToUaeStore(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         for (int i = 0; i < aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().size(); i++) {
-            DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().get(i), 8,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().get(i),webDriver);
             Assert.assertTrue(aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().get(i).isDisplayed());
         }
     }
@@ -102,9 +102,9 @@ public void switchToUaeStore(){
     public void verifyClickingOnHorizontalBannersAppearingInSportSupplementsLandingPageOpensCorrectly() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-        DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().get(0), 8,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().get(0),webDriver);
         for (int i = 0; i < aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().size(); i++) {
-            DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().get(i), 8,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().get(i),webDriver);
             aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().get(i).click();
             aeSportSupplementsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
             webDriver.navigate().back();
@@ -173,7 +173,7 @@ public void switchToUaeStore(){
 //        aeSportSupplementsCategoryPage.navigate();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         select.selectByVisibleText("Price Min-Max");
-        DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage(), 3,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage(),webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
         Assert.assertTrue(aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsSection().isDisplayed(),"The Horizontal Banners is missing after sorting the products ");
     }
@@ -254,7 +254,7 @@ public void switchToUaeStore(){
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeSportSupplementsCategoryPage.navigate();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
@@ -269,7 +269,7 @@ public void switchToUaeStore(){
     public void verifyNextPageBtnWorksCorrectly() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
 
@@ -300,7 +300,7 @@ public void switchToUaeStore(){
 //            Assert.assertEquals(aeSportSupplementsCategoryPage.getFormFiltrationSection().get(i).getText(), expectedFiltration.get(i));
 //        }
         for (int i = 0; i < aeSportSupplementsCategoryPage.getFormFiltrationSection().size(); i++){
-            DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getFormFiltrationSection().get(i),2,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getFormFiltrationSection().get(i),webDriver);
             Assert.assertTrue(aeSportSupplementsCategoryPage.getFormFiltrationSection().get(i).isDisplayed());}
     }
     @Test(groups = {"Sports Supplements Category", "4. Low Severity"},description = "Sports Supplements Category- Make sure all secure tabs appears correctly(100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks)", priority = 25)
@@ -342,7 +342,7 @@ public void switchToUaeStore(){
         aeSportSupplementsCategoryPage.navigate();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         select.selectByIndex(1);
-        DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getHomeBreadcrumbs(), 8,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getHomeBreadcrumbs(),webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getHomeBreadcrumbs().isDisplayed());
     }
     @Test(groups = {"Sports Supplements Category", "3. Medium Severity"},description = "Sports Supplements Category- Make sure ability to navigate to the home page by clicking on the sporter logo  ", priority = 28)

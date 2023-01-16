@@ -46,7 +46,7 @@ public class BaseTest {
     {
         try{
             WebElement btnCloseElement = webDriver.findElement(By.id("btnClose"));
-            DataHelperAndWait.waitToBeVisible(btnCloseElement,6,webDriver);
+            DataHelperAndWait.waitToBeVisible(btnCloseElement,webDriver);
 
             if (btnCloseElement != null
                     && btnCloseElement.isDisplayed()) {
@@ -57,7 +57,7 @@ public class BaseTest {
 //            System.out.println(e.getMessage());
 try{
     WebElement btnCloseElement = webDriver.findElement(By.id("btnClose"));
-    DataHelperAndWait.waitToBeVisible(btnCloseElement,6,webDriver);
+    DataHelperAndWait.waitToBeVisible(btnCloseElement,webDriver);
 
     if (btnCloseElement != null
             && btnCloseElement.isDisplayed()) {

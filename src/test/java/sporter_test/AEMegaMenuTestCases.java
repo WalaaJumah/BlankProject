@@ -35,7 +35,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void verifyMegaMenuSectionAppearsCorrectlyWithAllMainColumns() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         Assert.assertTrue(aeMegamenuPage.getMegaMenuSection().isDisplayed());
-        DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getMegaMenuList().get(0),4,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getMegaMenuList().get(0),webDriver);
         Assert.assertEquals(aeMegamenuPage.getMegaMenuList().get(0).getText(), "Shop By\n" +
                 "Sport Supplements\n" +
                 "Vitamins & Health\n" +
@@ -287,7 +287,7 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsSupplementsOption()).perform();
-        DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getSubMenuList().get(0),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getSubMenuList().get(0),webDriver);
         Assert.assertEquals(aeMegamenuPage.getSubMenuList().get(0).getText(), "PROTEIN\n" + "Whey Protein\n" + "Whey Protein Isolate\n" +
                 "Protein Blends\n" + "Non-dairy Protein\n" + "Casein Protein\n" + "Diet Protein\n" + "Mass Gainers\n" + "CREATINE\n" +
                 "Creatine Monohydrate\n" + "Creatine Blends\n" + "AMINO ACIDS\n" + "BCAA\n" + "EAA\n" + "Arginine\n" + "Beta Alanine\n" +
@@ -992,7 +992,7 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
                 aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
-        DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getOptionList().get(0),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getOptionList().get(0),webDriver);
         Assert.assertEquals(aeMegamenuPage.getOptionList().get(0).getText(), "FEATURED\n" + "Best Sellers\n" + "Sexual Health\n" + "ESSENTIAL VITAMINS\n" +
                 "Folic Acid\n" + "Vitamin A\n" + "Vitamin B\n" + "Vitamin C\n" + "Vitamin D\n" + "Vitamin E\n" + "Vitamin K\n" + "MULTIVITAMINS\n" + "Vitamins For Kids\n" +
                 "Multivitamins For Men\n" + "Multivitamins For Women\n" + "BONE & JOINT\n" + "Bone Health\n" + "Joint Health\n" + "BEAUTY\n" + "Collagen\n" + "Hair, Skin & Nails\n" +
@@ -2004,7 +2004,7 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
                 //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodOption()).perform();
-        DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getOptionList().get(0),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getOptionList().get(0),webDriver);
         Assert.assertEquals(aeMegamenuPage.getOptionList().get(0).getText(), "GROCERY\n" + "Baking & Cooking\n" + "Canned\n" + "Coffee\n" + "Condiments\n" +
                 "Milk & Cream\n" + "Oats & Granola\n" + "Oils\n" + "Pasta\n" + "Rice & Grains\n" + "Seasonings & Spices\n" + "Sugar & Sweeteners\n" + "Syrups\n" + "Tea & Herbs\n" +
                 "Superfoods\n" + "Ready Mixes\n" + "Breakfast & Cereal\n" + "READY TO DRINK\n" + "Amino & Bcaas\n" + "Energy Drinks\n" + "Protein Shakes\n" + "Electrolytes & Hydration\n" + "HEALTHY SNACKS\n" + "Protein Bars\n" +
@@ -2659,7 +2659,7 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
                 //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
-        DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getOptionList().get(0),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getOptionList().get(0),webDriver);
         Assert.assertEquals(aeMegamenuPage.getOptionList().get(0).getText(), "MEN\n" + "CLOTHING\n" + "Tops\n" + "Pants\n" + "Shorts\n" + "Jackets And Coats\n" +
                 "Safety Masks\n" + "FOOTWEAR\n" + "Sneakers\n" + "Training Shoes\n" + "Running Shoes\n" + "Hiking Shoes\n" + "ACCESSORIES\n" + "Gloves\n" + "Belts\n" +
                 "CAPS & HATS\n" + "Cap\n" + "SHAKERS\n" + "Water Bottles\n" + "Water Bottles\n" + "Socks\n" + "Towels\n" + "Sunglasses\n" + "Mixer\n" + "BAGS\n" + "Backpacks\n" +
@@ -3965,7 +3965,7 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         String expectedUrl=aeMegamenuPage.getLabradaOptionInByBrandMenu().getAttribute("href");
         aeMegamenuPage.getLabradaOptionInByBrandMenu().click();
 //        aeMegamenuPage.getMuscleNutritionOptionInByBrandMenu().click();
-        DataHelperAndWait.waitForUrlContains(expectedUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(expectedUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), labradaInByBrandMenuUrl);
          aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -4701,7 +4701,7 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         action = new Actions(webDriver);
                 //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
-        DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getSportsSupplementMainMenuList().get(0),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getSportsSupplementMainMenuList().get(0),webDriver);
         Assert.assertEquals(aeMegamenuPage.getSportsSupplementMainMenuList().get(0).getText(), "PROTEIN\n" + "Whey Protein\n" + "Whey Protein Isolate\n" +
                 "Protein Blends\n" + "Non-dairy Protein\n" + "Casein Protein\n" + "Diet Protein\n" + "Mass Gainers\n" + "CREATINE\n" +
                 "Creatine Monohydrate\n" + "Creatine Blends\n" + "AMINO ACIDS\n" + "BCAA\n" + "EAA\n" + "Arginine\n" + "Beta Alanine\n" +
@@ -5415,7 +5415,7 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         action = new Actions(webDriver);
                 //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
-        DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getVitaminsAndHealthMainMenuList().get(0),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getVitaminsAndHealthMainMenuList().get(0),webDriver);
         Assert.assertEquals(aeMegamenuPage.getVitaminsAndHealthMainMenuList().get(0).getText(), "FEATURED\n" + "Best Sellers\n" + "Sexual Health\n" + "ESSENTIAL VITAMINS\n" +
                 "Folic Acid\n" + "Vitamin A\n" + "Vitamin B\n" + "Vitamin C\n" + "Vitamin D\n" + "Vitamin E\n" + "Vitamin K\n" + "MULTIVITAMINS\n" + "Vitamins For Kids\n" +
                 "Multivitamins For Men\n" + "Multivitamins For Women\n" + "BONE & JOINT\n" + "Bone Health\n" + "Joint Health\n" + "BEAUTY\n" + "Collagen\n" + "Hair, Skin & Nails\n" +
@@ -6321,7 +6321,7 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         action = new Actions(webDriver);
                 //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
-        DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getHealthyFoodMainMenuList().get(0),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getHealthyFoodMainMenuList().get(0),webDriver);
         Assert.assertEquals(aeMegamenuPage.getHealthyFoodMainMenuList().get(0).getText(), "GROCERY\n" + "Baking & Cooking\n" + "Canned\n" + "Coffee\n" + "Condiments\n" +
                 "Milk & Cream\n" + "Oats & Granola\n" + "Oils\n" + "Pasta\n" + "Rice & Grains\n" + "Seasonings & Spices\n" + "Sugar & Sweeteners\n" + "Syrups\n" + "Tea & Herbs\n" +
                 "Superfoods\n" + "Ready Mixes\n" + "Breakfast & Cereal\n" + "READY TO DRINK\n" + "Amino & Bcaas\n" + "Energy Drinks\n" + "Protein Shakes\n" + "Electrolytes & Hydration\n" +
@@ -6969,7 +6969,7 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         action = new Actions(webDriver);
                 //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
-        DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getSportsMainMenuList().get(0),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeMegamenuPage.getSportsMainMenuList().get(0),webDriver);
         Assert.assertEquals(aeMegamenuPage.getSportsMainMenuList().get(0).getText(), "MEN\n" + "SPORT\n" + "Football\n" + "Basketball\n" + "Baseball\n" + "Running\n" +
                 "Swimming\n" + "Yoga\n" + "Fitness And Training\n" + "MMA\n" + "Jiu Jitsu\n" + "Board Games\n" + "SPORTS TECH\n" + "Wearable Tech\n" + "Cameras\n" + "Phone Accessories\n" +
                 "PERSONAL CARE\n" + "Showering\n" + "Shaving\n" + "Skin Care\n" + "Body Care\n" + "Oral Care\n" + "Therapy\n" + "Masks\n" + "FITNESS AND TRAINING\n" + "FITNESS EQUIPMENT\n" +

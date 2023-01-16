@@ -30,7 +30,7 @@ public class AeSearchPageTestCases extends BaseTest {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
-        DataHelperAndWait.waitForUrlContains(aeProductDetailsPage.searchUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeProductDetailsPage.searchUrl,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeProductDetailsPage.searchUrl));
     }
     @Test(groups = {"Search", "1. Critical Severity"},description = "Make sure all search tabs(All, Products, Articles, Brands) tabs appearing correctly in the search screen", priority = 2)
@@ -100,7 +100,7 @@ public class AeSearchPageTestCases extends BaseTest {
         this.verifyClickingOnSearchIconWillRedirectUserTOTheSearchScreen();
         aeSearchPage.getAllTab().click();
 //        for(int i=0; i<aeSearchPage.getProductCardInProductsSection().size();i++){
-//            DataHelperAndWait.waitToBeVisible(aeSearchPage.getProductCardInProductsSection().get(i),5,webDriver);
+//            DataHelperAndWait.waitToBeVisible(aeSearchPage.getProductCardInProductsSection().get(i),webDriver);
 //            expectedProductURL=aeSearchPage.getProductCardInProductsSection().get(i).getAttribute("href");
             aeSearchPage.getFirstProductCardInProductsSection().click();
 //            Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedProductURL));
@@ -118,15 +118,15 @@ public class AeSearchPageTestCases extends BaseTest {
         this.verifyClickingOnSearchIconWillRedirectUserTOTheSearchScreen();
         aeSearchPage.getBrandsTab().click();
         for(int i=0; i<aeSearchPage.getBrandsListInBrandPage().size();i++){
-            DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(i),5,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(i),webDriver);
 //            expectedProductURL=aeSearchPage.getBrandsListInBrandPage().get(i).getAttribute("href");
             aeSearchPage.getBrandsListInBrandPage().get(i).click();
             aeSearchPage.verifyTheDisplayedPageDoesNotHaveErrors();
-//            DataHelperAndWait.waitForUrlContains(expectedProductURL,webDriver,5);
+//            DataHelperAndWait.waitForUrlContains(expectedProductURL,webDriver);
 //            Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedProductURL));
             aeProductDetailsPage.getSearchBtn().click();
             aeSearchPage.getBrandsTab().click();
-            DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(i),3,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(i),webDriver);
             aeSearchPage.verifyTheDisplayedPageDoesNotHaveErrors();
 
         }
@@ -151,13 +151,13 @@ public class AeSearchPageTestCases extends BaseTest {
         this.verifyClickingOnSearchIconWillRedirectUserTOTheSearchScreen();
         aeSearchPage.getAllTab().click();
         for(int i=0; i<aeSearchPage.getBrandCardInProductsSection().size();i++){
-            DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandCardInProductsSection().get(i),5,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandCardInProductsSection().get(i),webDriver);
             expectedProductURL=aeSearchPage.getBrandCardInProductsSection().get(i).getAttribute("href");
             aeSearchPage.getBrandCardInProductsSection().get(i).click();
             Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedProductURL));
             aeProductDetailsPage.getSearchBtn().click();
             aeSearchPage.getAllTab().click();
-            DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandCardInProductsSection().get(i),3,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandCardInProductsSection().get(i),webDriver);
 
         }
     }
@@ -169,7 +169,7 @@ public class AeSearchPageTestCases extends BaseTest {
         aeProductDetailsPage.getSearchField().sendKeys("Basixs ");
         aeProductDetailsPage.getSearchBtn().click();
         for(int i=0; i<aeSearchPage.getProductsResult().size();i++){
-            DataHelperAndWait.waitToBeVisible(aeSearchPage.getProductsResult().get(i),3,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeSearchPage.getProductsResult().get(i),webDriver);
             aeSearchPage.getProductsResult().get(i).click();
             Assert.assertTrue(aeSearchPage.getProductNameInThePDP().getText().contains("Basix ")," The product "+ aeSearchPage.getProductNameInThePDP().getText() +" does not contains Basixs word");
             boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");

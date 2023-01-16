@@ -214,7 +214,7 @@ aeGuestUserPage.clickOnContinueBtn();
         aeGuestUserPage.navigateToHomePage();
         this.verifyAbilityToAccessTheGuestCheckoutPageFromTheCartPageCorrectly();
         aeGuestUserPage.clickOnReturnToCartIcon();
-        DataHelperAndWait.waitForUrlContains(aeGuestUserPage.cartURL,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(aeGuestUserPage.cartURL,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(cartURL) );
     }
 
@@ -224,7 +224,7 @@ aeGuestUserPage.clickOnContinueBtn();
 //        this.verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPageCorrectly();
         this.accessShippingInformationScreen();
         aeGuestUserPage.clickOnSporterLogo();
-        DataHelperAndWait.waitForUrlContains(BaseURL,webDriver,10);
+        DataHelperAndWait.waitForUrlContains(BaseURL,webDriver);
         Assert.assertEquals(webDriver.getCurrentUrl(), BaseURL +aeDomain+"/");
     }
 

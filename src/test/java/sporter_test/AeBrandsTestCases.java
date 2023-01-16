@@ -37,7 +37,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(0),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(0) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(0).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(0).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -54,7 +54,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(1),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(1) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(1).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(1).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -71,7 +71,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(2),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(2) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(2).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(2).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -88,7 +88,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(3),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(3) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(3).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(3).click();
         aeSearchPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -106,7 +106,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(4),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(4) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(4).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(4).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -123,7 +123,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(5),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(5) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(5).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(5).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -140,7 +140,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(6),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(6) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(6).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(6).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -157,7 +157,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(7),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(7) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(7).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(7).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -175,7 +175,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(8),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(8) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(8).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(8).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -193,7 +193,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(9),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(9) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(9).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(9).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -210,7 +210,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(10),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(10) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(10).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(10).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -228,7 +228,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(11),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(11) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(11).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(11).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -247,7 +247,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(12),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(12) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(12).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(12).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -265,7 +265,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(13),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(13) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(13).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(13).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -284,7 +284,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(14),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(14) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(14).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(14).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -302,7 +302,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(15),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(15) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(15).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(15).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -321,7 +321,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(16),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(16) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(16).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(16).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -339,7 +339,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(17),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(17) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(17).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(17).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -358,7 +358,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(18),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(18) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(18).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(18).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -376,7 +376,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(19),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(19) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(19).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(19).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -394,7 +394,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(20),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(20) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(20).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(20).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -413,7 +413,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(21),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(21) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(21).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(21).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -431,7 +431,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(22),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(22) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(22).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(22).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -449,7 +449,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(23),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(23) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(23).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(23).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -468,7 +468,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(24),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(24) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(24).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(24).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -487,7 +487,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(25),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(25) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(25).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(25).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -505,7 +505,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(26),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(26) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(26).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(26).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -524,7 +524,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(27),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(27) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(27).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(27).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -542,7 +542,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(28),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(28) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(28).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(28).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -560,7 +560,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(29),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(29) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(29).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(29).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -578,7 +578,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(30),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(30) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(30).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(30).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -596,7 +596,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(31),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(31) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(31).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(31).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -614,7 +614,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(32),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(32) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(32).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(32).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -632,7 +632,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(33),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(33) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(33).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(33).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -650,7 +650,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(34),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(34) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(34).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(34).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -669,7 +669,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(35),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(35) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(35).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(35).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -687,7 +687,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(36),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(36) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(36).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(36).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -705,7 +705,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(37),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(37) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(37).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(37).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -723,7 +723,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(38),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(38) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(38).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(38).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -741,7 +741,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(39),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(39) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(39).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(39).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -759,7 +759,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(40),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(40) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(40).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(40).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -777,7 +777,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(41),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(41) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(41).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(41).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -795,7 +795,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(42),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(42) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(42).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(42).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -813,7 +813,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(43),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(43) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(43).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(43).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -831,7 +831,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(44),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(44) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(44).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(44).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -849,7 +849,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(45),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(45) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(45).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(45).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -867,7 +867,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(46),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(46) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(46).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(46).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -885,7 +885,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(47),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(47) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(47).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(47).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -903,7 +903,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(48),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(48) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(48).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(48).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -921,7 +921,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(49),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(49) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(49).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(49).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -939,7 +939,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(50),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(50) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(50).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(50).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -957,7 +957,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(51),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(51) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(51).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(51).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -976,7 +976,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(52),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(52) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(52).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(52).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -994,7 +994,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(53),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(53) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(53).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(53).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
@@ -1012,7 +1012,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
-        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(54),5,webDriver);
+        DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(54) ,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(54).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(54).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());

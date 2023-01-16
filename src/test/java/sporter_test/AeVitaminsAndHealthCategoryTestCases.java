@@ -119,7 +119,7 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         for (int i = 0; i < aeVitaminsAndHealthCategoryPage.getPagerOfRotatingSlider().size(); i++) {
            aeVitaminsAndHealthCategoryPage.getPagerOfRotatingSlider().get(i).click();
-           DataHelperAndWait.waitToBeVisible( aeVitaminsAndHealthCategoryPage.getPagerOfRotatingSlider().get(i),3,webDriver);
+           DataHelperAndWait.waitToBeVisible( aeVitaminsAndHealthCategoryPage.getPagerOfRotatingSlider().get(i),webDriver);
            Assert.assertEquals(aeVitaminsAndHealthCategoryPage.getPagerOfRotatingSlider().get(i).getAttribute("class"),"flex-active");
         }
     }
@@ -283,10 +283,10 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnFishOilAndOmegasCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        DataHelperAndWait.waitForUrlContains("p=3",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=3",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     @Test(groups = {"Vitamins & Health Category", "3. Medium Severity"},description = "Vitamins & Health Category- Make Sure the previous page button In Fish Oil And Omegas Category Page works correctly", priority = 27)
@@ -434,10 +434,10 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnMultivitaminsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        DataHelperAndWait.waitForUrlContains("p=3",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=3",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     //There's a performance issue when clicking on the previous button
@@ -447,7 +447,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyThePaginationControlInMultivitaminsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Vitamins & Health Category", "3. Medium Severity"},description = "Vitamins & Health Category- Make Sure the next page button In Multivitamins Category Page works correctly", priority = 42)
@@ -592,10 +592,10 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsA_ZCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        DataHelperAndWait.waitForUrlContains("p=3",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=3",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     @Test(groups = {"Vitamins & Health Category", "3. Medium Severity"},description = "Vitamins & Health Category- Make Sure the previous page button In VitaminsA_Z Category Page works correctly", priority = 55)
@@ -744,10 +744,10 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnMineralsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        DataHelperAndWait.waitForUrlContains("p=3",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=3",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     //There's a performance issue when clicking on the previous button
@@ -757,7 +757,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyThePaginationControlInMineralsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     //There's a performance issue when clicking on the previous button
@@ -767,7 +767,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyThePaginationControlInMineralsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=3",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=3",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     @Test(groups = {"Vitamins & Health Category", "4. Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Minerals category page", priority = 71)
@@ -897,7 +897,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnAntioxidantsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     //There's a performance issue when clicking on the previous button
@@ -916,7 +916,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyThePaginationControlInAntioxidantsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Vitamins & Health Category", "4. Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Antioxidants category page", priority = 85)
@@ -1047,7 +1047,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSuperfoodsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Vitamins & Health Category", "3. Medium Severity"},description = "Vitamins & Health Category- Make Sure the previous page button In Superfoods Category Page works correctly", priority = 96)
@@ -1065,7 +1065,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyThePaginationControlInSuperfoodsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Vitamins & Health Category", "4. Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Superfoods category page", priority = 98)
@@ -1199,10 +1199,10 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnCollagenCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        DataHelperAndWait.waitForUrlContains("p=3",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=3",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     //There's a performance issue here
@@ -1212,7 +1212,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyThePaginationControlInCollagenCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Vitamins & Health Category", "3. Medium Severity"},description = "Vitamins & Health Category- Make Sure the next page button In Collagen Category Page works correctly", priority = 111)
@@ -1221,7 +1221,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyThePaginationControlInCollagenCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=3",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=3",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     @Test(groups = {"Vitamins & Health Category", "4. Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Collagen category page", priority = 112)
@@ -1353,7 +1353,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnMelatoninCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
 
     }
@@ -1372,7 +1372,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyThePaginationControlInMelatoninCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Vitamins & Health Category", "4. Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Melatonin category page", priority = 126)
@@ -1813,7 +1813,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnBeautyCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     //There's a performance issue when clicking on the previous button
@@ -1832,7 +1832,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnBeautyCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Vitamins & Health Category", "4. Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Beauty category page", priority = 164)
@@ -1971,7 +1971,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnBoneAndJointCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     //There's a performance issue when clicking on the previous button
@@ -1991,7 +1991,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnBoneAndJointCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Vitamins & Health Category", "4. Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Bone And Joint category page", priority = 179)
@@ -2129,7 +2129,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnBrainSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
 
     }
@@ -2149,7 +2149,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnBrainSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,3);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Vitamins & Health Category", "4. Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Brain Support category page", priority = 194)
@@ -2278,7 +2278,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnDetoxAndLiverSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     //There's a performance issue when clicking on the previous button
@@ -2297,7 +2297,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnDetoxAndLiverSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Vitamins & Health Category", "4. Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Detox & Liver Support category page", priority = 209)
@@ -2430,7 +2430,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnDigestiveSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     //There's a performance issue when clicking on the previous button
@@ -2449,7 +2449,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnDigestiveSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Vitamins & Health Category", "4. Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Digestive Support category page", priority = 224)
@@ -2580,7 +2580,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnEnergyFormulasCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     //There's a performance issue when clicking on the previous button
@@ -2599,7 +2599,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnEnergyFormulasCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Vitamins & Health Category", "4. Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Energy Formulas category page", priority = 239)
@@ -2718,7 +2718,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnHairAndSkinAndNailsCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     //There's a performance issue when clicking on the previous button
@@ -2737,7 +2737,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnHairAndSkinAndNailsCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Vitamins & Health Category", "4. Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Hair, Skin & Nails, Beauty category page", priority = 254)
@@ -2873,7 +2873,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnHeartHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Vitamins & Health Category", "3. Medium Severity"},description = "Vitamins & Health Category- Make Sure the previous page button In Heart Health Category Page works correctly", priority = 267)
@@ -2890,7 +2890,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnHeartHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Vitamins & Health Category", "4. Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Heart Health category page", priority = 269)
@@ -3021,7 +3021,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnImmunitySupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Vitamins & Health Category", "3. Medium Severity"},description = "Vitamins & Health Category- Make Sure the previous page button In Immunity Support Category Page works correctly", priority = 282)
@@ -3038,7 +3038,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnImmunitySupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Vitamins & Health Category", "4. Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Immunity Support category page", priority = 284)
@@ -3174,7 +3174,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnKidsHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Vitamins & Health Category", "3. Medium Severity"},description = "Vitamins & Health Category- Make Sure the previous page button In Kids Health Category Page works correctly", priority = 297)
@@ -3191,7 +3191,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnKidsHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Vitamins & Health Category", "4. Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Kids Health category page", priority = 299)
@@ -3321,7 +3321,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnMensHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Vitamins & Health Category", "3. Medium Severity"},description = "Vitamins & Health Category- Make Sure the previous page button In Mens Health Category Page works correctly", priority = 312)
@@ -3338,7 +3338,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnMensHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Vitamins & Health Category", "4. Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Mens Health category page", priority = 314)
@@ -3469,7 +3469,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
             aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSexualHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-            DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+            DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Vitamins & Health Category", "3. Medium Severity"},description = "Vitamins & Health Category- Make Sure the previous page button In Sexual Health Category Page works correctly", priority = 327)
@@ -3486,7 +3486,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSexualHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Vitamins & Health Category", "4. Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Sexual Health category page", priority = 329)
@@ -3612,7 +3612,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSleepSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Vitamins & Health Category", "3. Medium Severity"},description = "Vitamins & Health Category- Make Sure the previous page button In Sleep Support Category Page works correctly", priority = 342)
@@ -3629,7 +3629,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSleepSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Vitamins & Health Category", "4. Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Sleep Support category page", priority = 344)
@@ -3761,7 +3761,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnDietWeightManagementCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Vitamins & Health Category", "3. Medium Severity"},description = "Vitamins & Health Category- Make Sure the previous page button In Diet Weight Management Category Page works correctly", priority = 357)
@@ -3778,7 +3778,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnDietWeightManagementCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Vitamins & Health Category", "4. Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Diet Weight Management category page", priority = 359)
@@ -3909,7 +3909,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnWomenHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Vitamins & Health Category", "3. Medium Severity"},description = "Vitamins & Health Category- Make Sure the previous page button In Women Health Category Page works correctly", priority = 372)
@@ -3926,7 +3926,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnWomenHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
     @Test(groups = {"Vitamins & Health Category", "4. Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Women Health category page", priority = 374)
