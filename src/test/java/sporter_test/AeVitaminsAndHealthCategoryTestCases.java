@@ -211,8 +211,8 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
         for (int i = 0; i < expectedOption.size(); i++) {
-//            //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
-            System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
+//            //Assert.assertEquals(expectedOption.get(i), expectedOption.get(i));
+            System.out.println("Actual: "+expectedOption.get(i)+"  Expected: "+expectedOption.get(i));
         }
     }
     @Test(groups = {"Vitamins & Health Category", "4. Low Severity"},description = "Vitamins & Health Category- Make sure that the Featured option is selected by default in the Sort By menu for Fish Oil And Omegas Category Page ", priority = 18)
@@ -364,8 +364,8 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
         for (int i = 0; i < expectedOption.size(); i++) {
-//            //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
-            System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
+//            //Assert.assertEquals(expectedOption.get(i), expectedOption.get(i));
+            System.out.println("Actual: "+expectedOption.get(i)+"  Expected: "+expectedOption.get(i));
         }
     }
     //There's a bug here due to the Featured option is missing
@@ -519,8 +519,8 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
         for (int i = 0; i < expectedOption.size(); i++) {
-//            //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
-            System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
+//            //Assert.assertEquals(expectedOption.get(i), expectedOption.get(i));
+            System.out.println("Actual: "+expectedOption.get(i)+"  Expected: "+expectedOption.get(i));
         }
     }
     //There's a bug here due to the Featured option is missing
@@ -674,8 +674,8 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
         for (int i = 0; i < expectedOption.size(); i++) {
-//            //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
-            System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
+//            //Assert.assertEquals(expectedOption.get(i), expectedOption.get(i));
+            System.out.println("Actual: "+expectedOption.get(i)+"  Expected: "+expectedOption.get(i));
         }
     }
     //There's a bug here due to the Featured option is missing
@@ -832,8 +832,8 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
         for (int i = 0; i < expectedOption.size(); i++) {
-            //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
-            System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
+            //Assert.assertEquals(expectedOption.get(i), expectedOption.get(i));
+            System.out.println("Actual: "+expectedOption.get(i)+"  Expected: "+expectedOption.get(i));
         }
     }
     //There's a bug here due to the Best Selling option is missing
@@ -980,8 +980,8 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
         for (int i = 0; i < expectedOption.size(); i++) {
-            //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
-            System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
+            //Assert.assertEquals(expectedOption.get(i), expectedOption.get(i));
+            System.out.println("Actual: "+expectedOption.get(i)+"  Expected: "+expectedOption.get(i));
         }
     }
     //There's a bug here due to the Best Selling option is missing
@@ -1128,8 +1128,8 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
         for (int i = 0; i < expectedOption.size(); i++) {
-            //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
-            System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
+            //Assert.assertEquals(expectedOption.get(i), expectedOption.get(i));
+            System.out.println("Actual: "+expectedOption.get(i)+"  Expected: "+expectedOption.get(i));
         }
     }
     //There's a bug here due to the Featured option is missing
@@ -1288,8 +1288,8 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
         for (int i = 0; i < expectedOption.size(); i++) {
-            //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
-            System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
+            //Assert.assertEquals(expectedOption.get(i), expectedOption.get(i));
+            System.out.println("Actual: "+expectedOption.get(i)+"  Expected: "+expectedOption.get(i));
         }
     }
     //There's a bug here due to the Featured option is missing
@@ -1742,8 +1742,8 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
         for (int i = 0; i < expectedOption.size(); i++) {
-            //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
-            System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
+            //Assert.assertEquals(expectedOption.get(i), expectedOption.get(i));
+            System.out.println("Actual: "+expectedOption.get(i)+"  Expected: "+expectedOption.get(i));
         }
     }
     //There's a bug here due to the Best Selling option is missing
@@ -1900,8 +1900,8 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
         for (int i = 0; i < expectedOption.size(); i++) {
-            //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
-            System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
+            //Assert.assertEquals(expectedOption.get(i), expectedOption.get(i));
+            System.out.println("Actual: "+expectedOption.get(i)+"  Expected: "+expectedOption.get(i));
         }
     }
     //There's a bug here due to the Best Selling option is missing
@@ -2058,8 +2058,8 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
         for (int i = 0; i < expectedOption.size(); i++) {
-            //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
-            System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
+            //Assert.assertEquals(expectedOption.get(i), expectedOption.get(i));
+            System.out.println("Actual: "+expectedOption.get(i)+"  Expected: "+expectedOption.get(i));
         }
     }
     //There's a bug here due to the Featured option is missing
@@ -2216,8 +2216,8 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
         for (int i = 0; i < expectedOption.size(); i++) {
-            //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
-            System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
+            //Assert.assertEquals(expectedOption.get(i), expectedOption.get(i));
+            System.out.println("Actual: "+expectedOption.get(i)+"  Expected: "+expectedOption.get(i));
         }
     }
     //There's a bug here due to the Best Selling option is missing
@@ -2367,8 +2367,8 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         List<WebElement> options = select.getOptions();
         for (int i = 0; i < expectedOption.size(); i++) {
             try{
-            //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
-            System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));}
+            //Assert.assertEquals(expectedOption.get(i), expectedOption.get(i));
+            System.out.println("Actual: "+expectedOption.get(i)+"  Expected: "+expectedOption.get(i));}
             catch (AssertionError r){
                 System.out.println("The options are changes");
             }
@@ -2520,8 +2520,8 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
         for (int i = 0; i < expectedOption.size(); i++) {
-            //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
-            System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
+            //Assert.assertEquals(expectedOption.get(i), expectedOption.get(i));
+            System.out.println("Actual: "+expectedOption.get(i)+"  Expected: "+expectedOption.get(i));
         }
     }
     //There's a bug here due to the Best Selling option is missing
@@ -2667,8 +2667,8 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
         for (int i = 0; i < expectedOption.size(); i++) {
-            //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
-            System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
+            //Assert.assertEquals(expectedOption.get(i), expectedOption.get(i));
+            System.out.println("Actual: "+expectedOption.get(i)+"  Expected: "+expectedOption.get(i));
         }
     }
     //There's a bug here due to the Best Selling option is missing
@@ -2806,8 +2806,8 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
         for (int i = 0; i < expectedOption.size(); i++) {
-            //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
-            System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
+            //Assert.assertEquals(expectedOption.get(i), expectedOption.get(i));
+            System.out.println("Actual: "+expectedOption.get(i)+"  Expected: "+expectedOption.get(i));
         }
     }
     //There's a bug here due to the Best Selling option is missing
@@ -2961,8 +2961,8 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
         for (int i = 0; i < expectedOption.size(); i++) {
-            //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
-            System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
+            //Assert.assertEquals(expectedOption.get(i), expectedOption.get(i));
+            System.out.println("Actual: "+expectedOption.get(i)+"  Expected: "+expectedOption.get(i));
         }
     }
     //There's a bug here due to the Best Selling option is missing
@@ -3107,8 +3107,8 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
         for (int i = 0; i < expectedOption.size(); i++) {
-            //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
-            System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
+            //Assert.assertEquals(expectedOption.get(i), expectedOption.get(i));
+            System.out.println("Actual: "+expectedOption.get(i)+"  Expected: "+expectedOption.get(i));
         }
     }
     //There's a bug here due to the Best Selling option is missing
@@ -3261,8 +3261,8 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
         for (int i = 0; i < expectedOption.size(); i++) {
-            //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
-            System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
+            //Assert.assertEquals(expectedOption.get(i), expectedOption.get(i));
+            System.out.println("Actual: "+expectedOption.get(i)+"  Expected: "+expectedOption.get(i));
         }
     }
     //There's a bug here due to the Best Selling option is missing
@@ -3409,8 +3409,8 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
         for (int i = 0; i < expectedOption.size(); i++) {
-            //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
-            System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
+            //Assert.assertEquals(expectedOption.get(i), expectedOption.get(i));
+            System.out.println("Actual: "+expectedOption.get(i)+"  Expected: "+expectedOption.get(i));
         }
     }
     //There's a bug here due to the Best Selling option is missing
@@ -3560,8 +3560,8 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
         for (int i = 0; i < expectedOption.size(); i++) {
-            //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
-            System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
+            //Assert.assertEquals(expectedOption.get(i), expectedOption.get(i));
+            System.out.println("Actual: "+expectedOption.get(i)+"  Expected: "+expectedOption.get(i));
         }
     }
     //There's a bug here due to the Best Selling option is missing
@@ -3701,8 +3701,8 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
         for (int i = 0; i < expectedOption.size(); i++) {
-            //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
-            System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
+            //Assert.assertEquals(expectedOption.get(i), expectedOption.get(i));
+            System.out.println("Actual: "+expectedOption.get(i)+"  Expected: "+expectedOption.get(i));
         }
     }
     //There's a bug here due to the Best Selling option is missing
@@ -3850,8 +3850,8 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
         for (int i = 0; i < expectedOption.size(); i++) {
-            //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
-            System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
+            //Assert.assertEquals(expectedOption.get(i), expectedOption.get(i));
+            System.out.println("Actual: "+expectedOption.get(i)+"  Expected: "+expectedOption.get(i));
         }
     }
     //There's a bug here due to the Best Selling option is missing

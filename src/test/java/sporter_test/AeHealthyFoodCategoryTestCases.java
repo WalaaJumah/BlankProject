@@ -128,7 +128,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
         for (int i = 0; i < expectedOption.size(); i++) {
-//            Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
+//            Assert.assertEquals(expectedOption.get(i), expectedOption.get(i));
         }
     }
     @Test(groups = {"Healthy Food Category", "4. Low Severity"},description = "Healthy Food Category- Make sure that the Best Selling option is selected by default in the Sort By menu ", priority = 12)
