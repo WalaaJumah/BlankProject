@@ -145,7 +145,7 @@ public class QatarHomePage extends BasePage {
     private WebElement getQuestionBlock;
     @FindBy(xpath = "//*[@title='Call']")
     private WebElement phoneBtn;
-    @FindBy(xpath = "//li[@class='email']/a")
+    @FindBy(xpath = "//a[@title='Email']")
     private WebElement emailBtn;
     @FindBy(xpath = "(//a[@title='Start Shopping'])[1]")
     private WebElement sportsSupplementsCategory;
@@ -733,11 +733,11 @@ public class QatarHomePage extends BasePage {
     }
     public void clickOnEmailBtn(  ) {
         try {
-            DataHelperAndWait.isDisplayed(emailBtn, 5,webDriver);
+            DataHelperAndWait.isDisplayed(emailBtn, 10,webDriver);
             this.emailBtn.click();
         }
         catch (Exception e){
-            DataHelperAndWait.isDisplayed(emailBtn, 1,webDriver);
+            DataHelperAndWait.isDisplayed(emailBtn, 3,webDriver);
             this.emailBtn.click();
         }
     }

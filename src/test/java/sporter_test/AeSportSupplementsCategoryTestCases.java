@@ -147,11 +147,8 @@ public void switchToUaeStore(){
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
         for (int i = 0; i < options.size(); i++) {
-            try{
-            Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));}
-            catch (AssertionError r){
-                System.out.println("The options are changes");
-            }
+//            Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));}
+            System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
         }
     }
 

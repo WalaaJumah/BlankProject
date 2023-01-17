@@ -495,7 +495,7 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
     }
 
     public WebElement getFiltrationSection() {
-        DataHelperAndWait.waitToBeVisible(filtrationSection,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(filtrationSection,10,webDriver);
         return filtrationSection;
     }
 

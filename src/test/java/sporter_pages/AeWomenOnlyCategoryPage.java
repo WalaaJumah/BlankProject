@@ -236,6 +236,7 @@ public class AeWomenOnlyCategoryPage extends BasePage {
         return previousIconInLadyFriendlySnacksFoodSection;
     }
     public WebElement getNextIconInInLadyFriendlySnacksFoodSection() {
+
         DataHelperAndWait.waitToBeVisible(nextIconInInLadyFriendlySnacksFoodSection,10,webDriver);
         return nextIconInInLadyFriendlySnacksFoodSection;
     }
