@@ -217,7 +217,12 @@ public  class DataHelperAndWait  {
         element.sendKeys(Keys.chord(Keys.CONTROL, "a"), newText);
     }
     public static void clickOnElement(WebElement webElement,WebDriver webDriver){
+        try {
         DataHelperAndWait.waitToBeVisible(webElement,webDriver);
-        webElement.click();
-    }
+        webElement.click();}
+        catch (Exception e){
+            DataHelperAndWait.waitToBeVisible(webElement,webDriver);
+            webElement.click();}
+        }
+
 }
