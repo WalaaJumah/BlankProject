@@ -45,7 +45,7 @@ public class BaseTest {
 
     {
         try{
-            WebElement btnCloseElement = webDriver.findElement(By.id("btnClose"));
+            WebElement btnCloseElement = webDriver.findElement(By.xpath("//button[@class='button_btn__zg_G5 changeStorePopUp_btn__sggmr']/span"));
             DataHelperAndWait.waitToBeVisible(btnCloseElement,webDriver);
 
             if (btnCloseElement != null
@@ -56,7 +56,7 @@ public class BaseTest {
         catch (NoSuchElementException ex){
 //            System.out.println(e.getMessage());
 try{
-    WebElement btnCloseElement = webDriver.findElement(By.id("btnClose"));
+    WebElement btnCloseElement = webDriver.findElement(By.id("//button[@class='button_btn__zg_G5 changeStorePopUp_btn__sggmr']/span"));
     DataHelperAndWait.waitToBeVisible(btnCloseElement,webDriver);
 
     if (btnCloseElement != null

@@ -36,7 +36,7 @@ public class HomePage extends BasePage {
     private List<WebElement> homePageRotatingSliderList;
     @FindBy(id = "crouselContainer")
     private WebElement homePageRotatingSlider;
-    @FindBy(className = "swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal")
+    @FindBy(className = "carousel_bullet__gEAG0")
     private List<WebElement> homePageRotatingSliderPagingList;
     @FindBy(id = "AdvertiseContainersecond")
     private List<WebElement> homePageUnderShopByCategoryBanners;
@@ -54,7 +54,7 @@ public class HomePage extends BasePage {
     private WebElement womenOnlyOption;
     @FindBy(id = "//ul[@class='nav-primary']")
     private WebElement megaMenuMainComponent;
-    @FindBy(className = "swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal")
+    @FindBy(xpath = "//div[@class='swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal']")
     private WebElement homePageRotatingSliderPagingControl;
     @FindBy(id = "crousel_imagesContainer")
     private WebElement homePageSideBanner;
@@ -66,7 +66,7 @@ public class HomePage extends BasePage {
     private WebElement topSellingStacksHeader;
     @FindBy(id = "CategoryProductsTitle_topSeller")
     private WebElement topSellerHeader;
-    @FindBy(className = "swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden")
+    @FindBy(id = "ShopByCategoryContainer")
     private WebElement shopByCategorySections;
     @FindBy(css = "#Swiper_mostSelling > div.swiper-wrapper")
     private WebElement topSellingStacksSections;
@@ -164,7 +164,7 @@ public class HomePage extends BasePage {
     private WebElement vitaminsAndHealthCategory;
     @FindBy(id = "ShopByCategoryItemBtn3")
     private WebElement sportswearAndAccessoriesCategory;
-    @FindBy(id = "//div[@class='flex-viewport']")
+    @FindBy(xpath = "//img[contains(@id,'swiperSlideimg')]")
     private WebElement bannerInRotatingSliderSection;
     @FindBy(id = "crousel_link1")
     private WebElement firstSideBanner;
