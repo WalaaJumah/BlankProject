@@ -64,26 +64,26 @@ public class HomePage extends BasePage {
     private WebElement shopByCategoryHeader;
     @FindBy(id = "CategoryProductsTitle_mostSelling")
     private WebElement topSellingStacksHeader;
-    @FindBy(id = "//h2[text()='Top Sellers']")
+    @FindBy(id = "CategoryProductsTitle_topSeller")
     private WebElement topSellerHeader;
     @FindBy(className = "swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden")
     private WebElement shopByCategorySections;
     @FindBy(css = "#Swiper_mostSelling > div.swiper-wrapper")
     private WebElement topSellingStacksSections;
-    @FindBy(id = "tab-67-all67")
+    @FindBy(id = "Swiper_mostSelling")
     private WebElement topSellerSections;
     @FindBy(id = "OptionsContainerOptions_allmostSelling")
     private WebElement viewAllBtnInTopSellingStacksSection;
-    @FindBy(id = "//ul[@class='tabs tabs67']/li[2]/a")
-    private WebElement sportSupplementsLink;
-    @FindBy(id = "//ul[@class='tabs tabs67']/li[1]/a")
-    private WebElement allLink;
-    @FindBy(id = "//li[@class='tabli-67-618']")
-    private WebElement healthyFoodLink;
-    @FindBy(id = "//li[@class='tabli-67-686']")
-    private WebElement vitaminsAndHealthLink;
-    @FindBy(id = "//li[@class='tabli-67-736']")
-    private WebElement sportswearAndAccessoriesLink;
+    @FindBy(id = "OptionsContainerOptions_0mostSelling")
+    private WebElement sportSupplementsLinkInTopSellers;
+    @FindBy(id = "OptionsContainerOptions_allmostSelling")
+    private WebElement allLinkInTopSellers;
+    @FindBy(id = "OptionsContainerOptions_1mostSelling")
+    private WebElement healthyFoodLinkInTopSellers;
+    @FindBy(id = "OptionsContainerOptions_2mostSelling")
+    private WebElement vitaminsAndHealthLinkInTopSellers;
+    @FindBy(id = "OptionsContainerOptions_3mostSelling")
+    private WebElement sportswearAndAccessoriesLinkInTopSellers;
     @FindBy(id = "//ul[@class='tabs tabs67']/li[2]/a")
     private WebElement sportSupplementsActiveLink;
     @FindBy(id = "//ul[@class='tabs tabs67']/li[@class='active']")
@@ -96,13 +96,13 @@ public class HomePage extends BasePage {
     private WebElement vitaminsAndHealthActiveLinkInTopeSellersSection;
     @FindBy(id = "//ul[@class='tabs tabs67']/li[5]/a")
     private WebElement sportswearAndAccessoriesActiveLink;
-    @FindBy(id = "(//div[@class='swiper-button-next top-sellers-swiper-button-next'])[1]")
+    @FindBy(id = "ControllersrtArrow_mostSelling")
     private WebElement nextButtonInTopSellerSection;
-    @FindBy(id = "(//div[@class='swiper-button-prev top-sellers-swiper-button-prev'])[1]")
+    @FindBy(id = "ControllersLtArrow_mostSelling")
     private WebElement previousButtonInTopSellerSection;
-    @FindBy(id = "//h2[text()='Trending on Sporter']")
+    @FindBy(id = "Trendscontainer_title")
     private WebElement trendingOnSporterHeader;
-    @FindBy(id = "//div[@class='swiper-container swiper-container-horizontal trending']")
+    @FindBy(id = "trendContainer")
     private WebElement trendingOnSporterSection;
     @FindBy(id = "//div[@class='trending-swiper-button-next']/i")
     private WebElement nextBtnInTrendingOnSporterSection;
@@ -122,19 +122,19 @@ public class HomePage extends BasePage {
     private WebElement NewArrivalSectionPositionAfterClickingOnPrevious;
     @FindBy(id = "//div[@style='transform: translate3d(-249px, 0px, 0px); transition-duration: 0ms;']")
     private WebElement NewArrivalSectionPositionAfterClickingOnNext;
-    @FindBy(id = "//h2[text()='New Arrivals']")
+    @FindBy(id = "CategoryProductsTitle_newArrival")
     private WebElement newArrivalsHeader;
-    @FindBy(id = "tab-6-all6")
+    @FindBy(id = "Swiper_newArrival")
     private WebElement newArrivalsSection;
-    @FindBy(id = "//li/a[@href='#tab-6-all6']")
+    @FindBy(id = "OptionsContainerOptions_allnewArrival")
     private WebElement newArrivalsAllLink;
-    @FindBy(id = "//li[@class='tabli-6-583']")
+    @FindBy(id = "OptionsContainerOptions_allnewArrival")
     private WebElement newArrivalsSpportSupplementsLink;
-    @FindBy(id = "//li[@class='tabli-6-618']")
+    @FindBy(id = "OptionsContainerOptions_1newArrival")
     private WebElement newArrivalsHealthyFoodLink;
-    @FindBy(id = "//li[@class='tabli-6-686']")
+    @FindBy(id = "OptionsContainerOptions_2newArrival")
     private WebElement newArrivalsVitaminsAndHealthLink;
-    @FindBy(id = "//li[@class='tabli-6-736']")
+    @FindBy(id = "OptionsContainerOptions_3newArrival")
     private WebElement newArrivalsSportWearAndAccessoriesLink;
     @FindBy(id = "//li[@class='tabli-6-583 active']")
     private WebElement newArrivalsSportSupplementsActiveLink;
@@ -146,23 +146,23 @@ public class HomePage extends BasePage {
     private WebElement newArrivalsVitaminsAndHealthActiveLink;
     @FindBy(id = "//li[@class='tabli-6-736 active']")
     private WebElement newArrivalsSportswearAndAccessoriesActiveLink;
-    @FindBy(id = "(//div[@class='swiper-button-next top-sellers-swiper-button-next'])[5]")
+    @FindBy(id = "ControllersrtArrow_newArrival")
     private WebElement nextBtnInNewArrivalsSection;
-    @FindBy(id = "//div[@id='tab-6-736']/div[3]/i")
+    @FindBy(id = "ControllersLtArrow_newArrival")
     private WebElement previousBtnInNewArrivalsSection;
-    @FindBy(id = "//div[@class='left-quetion-block quetion-inner']")
+    @FindBy(xpath = "(//div[@class='contactForm_container'])[1]")
     private WebElement getQuestionBlock;
-    @FindBy(id = "//*[@title='Call']")
+    @FindBy(xpath = "//*[@title='Call']")
     private WebElement phoneBtn;
-    @FindBy(id = "//*[text()='Email ']")
+    @FindBy(xpath = "//*[@title='Email']")
     private WebElement emailBtn;
-    @FindBy(id = "(//a[@title='Start Shopping'])[1]")
+    @FindBy(id = "ShopByCategoryItemBtn0")
     private WebElement sportsSupplementsCategory;
-    @FindBy(id = "(//a[@title='Start Shopping'])[2]")
+    @FindBy(id = "ShopByCategoryItemBtn1")
     private WebElement healthyFoodCategory;
-    @FindBy(id = "(//a[@title='Start Shopping'])[3]")
+    @FindBy(id = "ShopByCategoryItemBtn2")
     private WebElement vitaminsAndHealthCategory;
-    @FindBy(id = "(//a[@title='Start Shopping'])[4]")
+    @FindBy(id = "ShopByCategoryItemBtn3")
     private WebElement sportswearAndAccessoriesCategory;
     @FindBy(id = "//div[@class='flex-viewport']")
     private WebElement bannerInRotatingSliderSection;
@@ -170,7 +170,7 @@ public class HomePage extends BasePage {
     private WebElement firstSideBanner;
     @FindBy(id = "crousel_link2")
     private WebElement secondSideBanner;
-    @FindBy(id = "(//div[@class='top-seller-slider']//div[@class='swiper-wrapper'])[1]/div/div/a")
+    @FindBy(id = "Swiper_topSeller")
     private List<WebElement> ProductsInTopSellingStacksSection;
     @FindBy(id = "(//div[@id='tab-39-all39']/div/div/div/div/a)[2]")
     private WebElement secondProductInTopSellingStacksSection;
@@ -180,7 +180,7 @@ public class HomePage extends BasePage {
     private WebElement fourthProductInTopSellingStacksSection;
     @FindBy(id = "(//div[@id='tab-39-all39']/div/div/div/div/a)[5]")
     private WebElement fiveProductInTopSellingStacksSection;
-    @FindBy(id = "(//div[@class='top-seller-slider']//div[@class='swiper-wrapper'])[2]/div/div/a")
+    @FindBy(id = "Swiper_mostSelling")
     private List<WebElement> productsInTopSellersSection;
     @FindBy(id = "(//div[@id='tab-67-all67']/div/div/div/div/a)[2]")
     private WebElement secondProductInTopSellersSection;
@@ -190,7 +190,7 @@ public class HomePage extends BasePage {
     private WebElement fourthProductInTopSellersSection;
     @FindBy(id = "(//div[@id='tab-67-all67']/div/div/div/div/a)[5]")
     private WebElement fiveProductInTopSellersSection;
-    @FindBy(id = "(//div[@class='top-seller-slider new-arrival-slider']//div[@class='swiper-wrapper'])[1]/div/div/a")
+    @FindBy(id = "Swiper_newArrival")
     private List<WebElement> productsInNewArrivalsSection;
     @FindBy(id = "(//div[@id='tab-6-all6']/div/div/div/div/a)[2]")
     private WebElement secondProductInNewArrivalsSection;
@@ -206,6 +206,8 @@ public class HomePage extends BasePage {
     private WebElement searchResultValue;
     @FindBy(id = "(//li[@class='item pages-item-next']/a)[2]")
     private WebElement NextPageBtn;
+    @FindBy(xpath = "//div[@id='trendContainer']//a")
+    private List<WebElement> categoriesInsideTrendingOnSporterSection;
 
     //Main WebElement Test Cases
     public void clickOnViewAllBtnInTopSellingStacksSection() {
@@ -213,20 +215,20 @@ public class HomePage extends BasePage {
     }
 
     public void clickOnAllLinkInTopSellerSection() {
-        DataHelperAndWait.clickOnElement(allLink,webDriver);
+        DataHelperAndWait.clickOnElement(allLinkInTopSellers,webDriver);
     }
     public void clickOnSportSupplementsLinkInTopSellerSection() {
-        DataHelperAndWait.clickOnElement(sportSupplementsLink,webDriver);
+        DataHelperAndWait.clickOnElement(sportSupplementsLinkInTopSellers,webDriver);
     }
 
     public void clickOnHealthyFoodLinkInTopSellerSection() {
-        DataHelperAndWait.clickOnElement(healthyFoodLink,webDriver);
+        DataHelperAndWait.clickOnElement(healthyFoodLinkInTopSellers,webDriver);
     }
     public void clickOnVitaminsAndHealthLinkInTopSellerSection() {
-        DataHelperAndWait.clickOnElement(vitaminsAndHealthLink,webDriver);
+        DataHelperAndWait.clickOnElement(vitaminsAndHealthLinkInTopSellers,webDriver);
     }
     public void clickOnSportswearAndAccessoriesLinkInTopSellerSection() {
-        DataHelperAndWait.clickOnElement(sportswearAndAccessoriesLink,webDriver);
+        DataHelperAndWait.clickOnElement(sportswearAndAccessoriesLinkInTopSellers,webDriver);
     }
     public void clickOnNextButtonInTopSellerSectionInTopSellerSection() {
         DataHelperAndWait.clickOnElement(nextButtonInTopSellerSection,webDriver);

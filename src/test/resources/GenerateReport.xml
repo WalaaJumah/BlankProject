@@ -78,20 +78,20 @@
 <!--        <parameter name="country" value="en-qa" />-->
     <parameter name="bogoProduct" value="/phd-nutrition-diet-whey-protein-47340" />
             <classes>
-                        <class name="sporter_test.homepage_test_cases.HomePageTestCases"/>
+                        <class name="sporter_test.homepage_test_cases.HomePageTestCases">
 <!--                <class name="sporter_test.AeCartTestCases"/>-->
 <!--                <class name="sporter_test.AeRecommendedProductsTestCases"/>-->
 <!--                <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases"/>-->
 <!--                <class name="sporter_test.homepage_test_cases.UAEHomePageTestCases"/>-->
 <!--                <class name="sporter_test.homepage_test_cases.QatarHomePageTestCases"/>-->
 <!--                <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases">-->
-<!--                    <methods>-->
-<!--                        <include name="switchToKsaStore"/>-->
-<!--&lt;!&ndash;                        <include name="verifyClickOnTheProductsAppearingInTheTopSellingStacksSectionRedirectTheUserToCorrectUrl"/>&ndash;&gt;-->
+                    <methods>
+                        <include name="verifyClickOnTheCategoriesAppearingInTheTrendingOnSporterSectionRedirectTheUserToCorrectUrl"/>
+<!--                        <include name="verifyClickOnTheProductsAppearingInTheTopSellingStacksSectionRedirectTheUserToCorrectUrl"/>-->
 <!--                        <include name="verifyClickOnTheProductsAppearingInTheTopSellersSectionRedirectTheUserToCorrectUrl"/>-->
 <!--                        <include name="verifyClickOnTheProductsAppearingInTheNewArrivalsSectionRedirectTheUserToCorrectUrl"/>-->
-<!--                    </methods>-->
-<!--                </class>-->
+                    </methods>
+                </class>
 <!--                <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>-->
 <!--                <class name="sporter_test.homepage_test_cases.QatarHomePageTestCases"/>-->
 <!--                <class name="sporter_test.AeWomenOnlyCategoryTestCases"/>-->
