@@ -10,7 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import sporter_pages.*;
-import sporter_pages.homepage_classes.KsaHomePage;
+import sporter_pages.homepage_classes.HomePage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -89,22 +89,22 @@ public class AeSportsCategoryTestCases extends BaseTest {
 
     @Test(groups = {"Sports Category", "4. Low Severity"},description = "Sports Category- Make sure the Got A Question blocks appears correctly in the Sports category page", priority = 5)
     public void verifyGotAQuestionSectionAppearsCorrectlyInSportsCategoryPage() {
-        KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
+        HomePage homePage = new HomePage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
         aeSportsCategoryPage.navigateToSportsPage();
-        Assert.assertTrue(ksaHomePage.getQuestionBlock().isDisplayed());
-        Assert.assertTrue(ksaHomePage.getPhoneBtn().isDisplayed());
-        Assert.assertTrue(ksaHomePage.getEmailBtn().isDisplayed());
+        Assert.assertTrue(homePage.getGetQuestionBlock().isDisplayed());
+        Assert.assertTrue(homePage.getPhoneBtn().isDisplayed());
+        Assert.assertTrue(homePage.getEmailBtn().isDisplayed());
     }
 
     @Test(groups = {"Sports Category", "4. Low Severity"},description = "Sports Category- Make sure the Ability to click on email button that appears in the Got A Question section from Sports Category Page ", priority = 6)
     public void verifyAbilityToClickOnEmailBtnInGotQuestionSectionFromSportsCategoryPage() {
-        KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
+        HomePage homePage = new HomePage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
         aeSportsCategoryPage.navigateToSportsPage();
-        ksaHomePage.clickOnEmailBtn();
+        homePage.clickOnEmailBtn();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("contacts-us"));
-        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
+        homePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     @Test(groups = {"Sports Category", "3. Medium Severity"},description = "Sports Category- Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Sports Category Page ", priority = 8)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumbAppearingInSportsCategoryPage() {
@@ -116,44 +116,44 @@ public class AeSportsCategoryTestCases extends BaseTest {
     }
     @Test(groups = {"Sports Category", "2. High Severity"},description = "Sports Category- Make sure the rotating slider section is displayed in Sports Category page correctly ", priority = 9)
     public void verifyRotatingSliderIsDisplayedInTheSportsCategoryPage() {
-        KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
+        HomePage homePage = new HomePage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
         aeSportsCategoryPage.navigateToSportsPage();
-        Assert.assertTrue(ksaHomePage.getHomePageRotatingSlider().isDisplayed());
-        for (int i = 0; i < ksaHomePage.getHomePageRotatingSliderList().size(); i++) {
-            Assert.assertTrue(ksaHomePage.getHomePageRotatingSliderList().get(i).isDisplayed());
+        Assert.assertTrue(homePage.getHomePageRotatingSlider().isDisplayed());
+        for (int i = 0; i < homePage.getHomePageRotatingSliderList().size(); i++) {
+            Assert.assertTrue(homePage.getHomePageRotatingSliderList().get(i).isDisplayed());
         }
     }
     @Test(groups = {"Sports Category", "3. Medium Severity"},description = "Sports Category- Make sure the next arrow of the rotating slider section is displayed in the Sports Category Page", priority = 10)
     public void verifyNextArrowOfRotatingSliderIsDisplayedInTheSportsCategoryPage() {
-        KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
+        HomePage homePage = new HomePage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
         aeSportsCategoryPage.navigateToSportsPage();
-        Assert.assertTrue(ksaHomePage.getNextArrowInHomePageRotatingSlider().isDisplayed());
+        Assert.assertTrue(homePage.getNextArrowInHomePageRotatingSlider().isDisplayed());
     }
         @Test(groups = {"Sports Category", "3. Medium Severity"},description = "Sports Category- Make sure the previous arrow of the rotating slider section is displayed in the Sports Category Page ", priority = 11)
     public void verifyPreviousArrowOfRotatingSliderIsDisplayedInTheSportsCategoryPage() {
-        KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
+        HomePage homePage = new HomePage(webDriver);
             AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
             aeSportsCategoryPage.navigateToSportsPage();
-            Assert.assertTrue(ksaHomePage.getPreviousArrowInHomePageRotatingSlider().isDisplayed());
+            Assert.assertTrue(homePage.getPreviousArrowInHomePageRotatingSlider().isDisplayed());
     }
     @Test(groups = {"Sports Category", "2. High Severity"},description = "Sports Category- Make sure the pagination control of rotating slider section is displayed in Sports Category Page", priority = 12)
     public void verifyPaginationControlOfRotatingSliderSectionIsDisplayedInTheSportsCategoryPage() {
-        KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
+        HomePage homePage = new HomePage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
         aeSportsCategoryPage.navigateToSportsPage();
-        Assert.assertTrue(ksaHomePage.getHomePageRotatingSliderPagingControl().isDisplayed());
-        for (int i = 0; i < ksaHomePage.getHomePageRotatingSliderPagingList().size(); i++) {
-            Assert.assertTrue(ksaHomePage.getHomePageRotatingSliderPagingList().get(i).isDisplayed());
+        Assert.assertTrue(homePage.getHomePageRotatingSliderPagingControl().isDisplayed());
+        for (int i = 0; i < homePage.getHomePageRotatingSliderPagingList().size(); i++) {
+            Assert.assertTrue(homePage.getHomePageRotatingSliderPagingList().get(i).isDisplayed());
         }
     }
     @Test(groups = {"Sports Category", "2. High Severity"},description = "Sports Category- Make sure the side Banners is displayed in the Sports Category Page ", priority = 13)
     public void verifySideBannersIsDisplayedInTheSportsCategoryPage() {
-        KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
+        HomePage homePage = new HomePage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
         aeSportsCategoryPage.navigateToSportsPage();
-        Assert.assertTrue(ksaHomePage.getHomePageSideBanner().isDisplayed());
+        Assert.assertTrue(homePage.getHomePageSideBanner().isDisplayed());
     }
     @Test(groups = {"Sports Category", "2. High Severity"},description = "Sports Category- Make sure the pagination control of rotating slider section works correctly in Sports Category Page", priority = 14)
     public void verifyPaginationControlOfRotatingSliderSectionWorksCorrectlyInTheSportsCategoryPage() {
@@ -2568,10 +2568,10 @@ public class AeSportsCategoryTestCases extends BaseTest {
     }
     @Test(groups = {"Sports Category", "4. Low Severity"},description = "Sports Category- Make sure the Ability to click on phone button that appears in the Got A Question section correctly from Sports Category Page ", priority = 241)
     public void verifyAbilityToClickOnPhoneBtnInGotQuestionSectionFromSportsCategoryPage() {
-        KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
+        HomePage homePage = new HomePage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
         aeSportsCategoryPage.navigateToSportsPage();
-        ksaHomePage.clickOnPhoneBtn();
+        homePage.clickOnPhoneBtn();
         // store window handles in Set
 //        String myWindowHandle = webDriver.getWindowHandle();
 //        webDriver.switchTo().window(myWindowHandle);

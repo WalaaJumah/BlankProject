@@ -26,4 +26,13 @@ public class WebElementsAssertion {
         Assert.assertEquals(webElement.getText(), expectedResult);
     }
 
+    public static boolean checkIfElementIsNull(WebElement webElement){
+        if(webElement==null){
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
 }

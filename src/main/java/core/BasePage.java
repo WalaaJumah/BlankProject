@@ -127,5 +127,6 @@ public class BasePage {
     }
     public void navigateToHomePage(){webDriver.navigate().to(BaseURL);}
 
+
 }
 

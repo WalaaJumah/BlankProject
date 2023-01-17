@@ -5,24 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86683dee-3ff6-4652-96ae-dd8bddfbd97f" name="Changes" comment="test">
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/homepage_classes/JordanHomePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/homepage_classes/UAEHomePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/homepage_classes/JordanHomePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/homepage_classes/KsaHomePageTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/homepage_classes/QatarHomePageTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/homepage_classes/UAEHomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_16_2023_2_17_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_16_2023_2_17_PM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/headerPages/HeaderPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/headerPages/JordanHeaderPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/headerPages/KSAHeaderPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/headerPages/QatarHeaderPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/headerPages/UAEHeaderPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/homepage_classes/EgyptHomePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/headerTestCases/HeaderTestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/headerTestCases/JordanHeaderTestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/headerTestCases/KSAHeaderTestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/headerTestCases/QatarHeaderTestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/headerTestCases/UAEHeaderTestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/homepage_test_cases/EgyptHomePageTestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/homepage_test_cases/JordanHomePageTestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/homepage_test_cases/KsaHomePageTestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/homepage_test_cases/QatarHomePageTestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/homepage_test_cases/UAEHomePageTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/homepage_classes/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/KsaHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/homepage_classes/KsaHomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/QatarHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/homepage_classes/QatarHomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AccessAllStoresCountriesTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AccessAllStoresCountriesTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/WebElementsAssertion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/WebElementsAssertion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/homepage_classes/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/homepage_classes/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/homepage_classes/JordanHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/homepage_classes/JordanHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/homepage_classes/KsaHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/homepage_classes/KsaHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/homepage_classes/QatarHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/homepage_classes/QatarHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/homepage_classes/UAEHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/homepage_classes/UAEHomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeSportsCategoryTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AeSportsCategoryTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeVitaminsAndHealthCategoryTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AeVitaminsAndHealthCategoryTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeWomenOnlyCategoryTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AeWomenOnlyCategoryTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/HomePageTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/homepage_classes/HomePageTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/KsaHomePageTestCases.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/QatarHomePageTestCases.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/homepage_classes/HomePageTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/homepage_test_cases/HomePageTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/homepage_classes/JordanHomePage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/homepage_classes/KsaHomePageTestCases.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/homepage_classes/QatarHomePageTestCases.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/homepage_classes/UAEHomePage.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/GenerateReport.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/GenerateReport.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/SmokeTestCrossBrowsers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/SmokeTestCrossBrowsers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" afterDir="false" />
@@ -110,7 +122,7 @@
       <module name="sporter-web-automation" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sporter_test.homepage_classes.*" />
+          <option name="PATTERN" value="sporter_test.homepage_test_cases.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -128,7 +140,7 @@
       <module name="sporter-web-automation" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sporter_test.homepage_classes.*" />
+          <option name="PATTERN" value="sporter_test.homepage_test_cases.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -181,12 +193,12 @@
       <module name="sporter-web-automation" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sporter_test.homepage_classes.*" />
+          <option name="PATTERN" value="sporter_test.homepage_test_cases.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="sporter_test" />
-      <option name="MAIN_CLASS_NAME" value="sporter_test.homepage_classes.QatarHomePageTestCases" />
+      <option name="MAIN_CLASS_NAME" value="sporter_test.homepage_test_cases.QatarHomePageTestCases" />
       <option name="METHOD_NAME" value="testt" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />

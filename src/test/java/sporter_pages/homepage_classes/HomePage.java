@@ -17,13 +17,16 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 @Getter
 public class HomePage extends BasePage {
+    public final String jordanDomain = "/en-jo";
+
     public HomePage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
 
     }
     DataHelperAndWait dataHelperAndWait;
-
+    @FindBy(id = "switcher-store-trigger")
+    private WebElement countryList;
     //declare all locators related to the Cart Page
     @FindBy(xpath = "//a[contains(text(),'Next')]")
     private WebElement nextArrowInHomePageRotatingSlider;
@@ -211,8 +214,8 @@ public class HomePage extends BasePage {
             this.viewAllBtnInTopSellingStacksSection.click();
         }
         catch (Exception e){
-            DataHelperAndWait.waitToBeVisible(viewAllBtnInTopSellingStacksSection,webDriver);
-            this.viewAllBtnInTopSellingStacksSection.click();
+
+
         }
 
     }
@@ -691,6 +694,20 @@ public class HomePage extends BasePage {
     public void clickOnBannerInRotatingSliderSection(){
         DataHelperAndWait.waitToBeVisible(bannerInRotatingSliderSection,webDriver);
         bannerInRotatingSliderSection.click();
+    }
+
+    public void switchCountry(WebElement countryElement){
+        try {
+            DataHelperAndWait.isDisplayed(countryList ,webDriver);
+            this.countryList.click();
+            countryElement.click();
+        } catch (Exception e) {
+            DataHelperAndWait.isDisplayed(countryList ,webDriver);
+            this.countryList.click();
+            countryElement.click();
+        }
+
+
     }
 
 }

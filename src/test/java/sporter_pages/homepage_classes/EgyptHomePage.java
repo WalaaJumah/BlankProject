@@ -1,7 +1,7 @@
 /**
  * @author w.jumaa
  * @projectName sporter-web-automation
- * @classDescription Jordan HomePage
+ * @classDescription EgyptHomePage
  */
 
 package sporter_pages.homepage_classes;
@@ -12,12 +12,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 @Getter
-public class JordanHomePage extends HomePage {
-    public JordanHomePage(WebDriver webDriver) {
+public class EgyptHomePage extends HomePage {
+    public EgyptHomePage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
 
     }
     @FindBy(xpath ="//ul[@class='dropdown switcher-dropdown']/li[4]" )
-    private WebElement jordanCountry;
+    private WebElement egyptCountry;
 }
