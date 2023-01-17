@@ -236,9 +236,14 @@ public class AeWomenOnlyCategoryPage extends BasePage {
         return previousIconInLadyFriendlySnacksFoodSection;
     }
     public WebElement getNextIconInInLadyFriendlySnacksFoodSection() {
-
+try{
         DataHelperAndWait.waitToBeVisible(nextIconInInLadyFriendlySnacksFoodSection,10,webDriver);
-        return nextIconInInLadyFriendlySnacksFoodSection;
+        return nextIconInInLadyFriendlySnacksFoodSection;}
+catch (Exception e){
+    navigateToWomenOnlyPage();
+    DataHelperAndWait.waitToBeVisible(nextIconInInLadyFriendlySnacksFoodSection,10,webDriver);
+    return nextIconInInLadyFriendlySnacksFoodSection;
+}
     }
     public WebElement getProductCardInLadyFriendlySnacksFoodSection() {
         DataHelperAndWait.waitToBeVisible(productCardInLadyFriendlySnacksFoodSection,10,webDriver);

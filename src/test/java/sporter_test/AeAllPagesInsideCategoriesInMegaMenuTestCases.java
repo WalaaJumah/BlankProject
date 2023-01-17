@@ -260,7 +260,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
-//        //aeMegamenuPage.navigateToHomePage();
+        //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getAminoAcidsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getAminoAcidsOptionInSportSupplementsMainMenu().getAttribute("href");

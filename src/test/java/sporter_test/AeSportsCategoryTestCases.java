@@ -300,7 +300,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         }};
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
-        for (int i = 0; i < options.size(); i++) {
+        for (int i = 0; i < expectedOption.size(); i++) {
             //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
             System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
         }
@@ -443,7 +443,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         }};
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
-        for (int i = 0; i < options.size(); i++) {
+        for (int i = 0; i < expectedOption.size(); i++) {
             //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
             System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
         }
@@ -586,7 +586,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         }};
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
-        for (int i = 0; i < options.size(); i++) {
+        for (int i = 0; i < expectedOption.size(); i++) {
             //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
             System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
         }
@@ -747,7 +747,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         }};
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
-        for (int i = 0; i < options.size(); i++) {
+        for (int i = 0; i < expectedOption.size(); i++) {
             //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
             System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
         }
@@ -896,7 +896,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         }};
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
-        for (int i = 0; i < options.size(); i++) {
+        for (int i = 0; i < expectedOption.size(); i++) {
             //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
             System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
         }
@@ -1057,7 +1057,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         }};
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
-        for (int i = 0; i < options.size(); i++) {
+        for (int i = 0; i < expectedOption.size(); i++) {
             //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
             System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
         }
@@ -1219,7 +1219,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         }};
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
-        for (int i = 0; i < options.size(); i++) {
+        for (int i = 0; i < expectedOption.size(); i++) {
             //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
             System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
         }
@@ -1366,7 +1366,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         }};
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
-        for (int i = 0; i < options.size(); i++) {
+        for (int i = 0; i < expectedOption.size(); i++) {
             //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
             System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
         }
@@ -1513,7 +1513,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         }};
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
-        for (int i = 0; i < options.size(); i++) {
+        for (int i = 0; i < expectedOption.size(); i++) {
             //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
             System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
         }
@@ -1668,7 +1668,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         }};
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
-        for (int i = 0; i < options.size(); i++) {
+        for (int i = 0; i < expectedOption.size(); i++) {
             //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
             System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
         }
@@ -1823,7 +1823,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         }};
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
-        for (int i = 0; i < options.size(); i++) {
+        for (int i = 0; i < expectedOption.size(); i++) {
             //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
             System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
         }
@@ -1978,7 +1978,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         }};
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
-        for (int i = 0; i < options.size(); i++) {
+        for (int i = 0; i < expectedOption.size(); i++) {
             //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
             System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
         }
@@ -2133,7 +2133,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         }};
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
-        for (int i = 0; i < options.size(); i++) {
+        for (int i = 0; i < expectedOption.size(); i++) {
             //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
             System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
         }
@@ -2289,7 +2289,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         }};
         Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
         List<WebElement> options = select.getOptions();
-        for (int i = 0; i < options.size(); i++) {
+        for (int i = 0; i < expectedOption.size(); i++) {
             //Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
             System.out.println("Actual: "+options.get(i).getText()+"  Expected: "+expectedOption.get(i));
         }

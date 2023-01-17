@@ -259,7 +259,9 @@ public class AeSportSupplementsCategoryPage extends BasePage {
         try{
         DataHelperAndWait.waitToBeVisible(previousPageBtn, 8,webDriver);
         previousPageBtn.click();}
-        catch(Exception e){        DataHelperAndWait.waitToBeVisible(previousPageBtn, 8,webDriver);
+        catch(Exception e){
+            navigateToPage2();
+            DataHelperAndWait.waitToBeVisible(previousPageBtn, 8,webDriver);
             previousPageBtn.click();}
     }
 
