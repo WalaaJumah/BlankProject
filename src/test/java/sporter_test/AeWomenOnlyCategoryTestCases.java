@@ -489,7 +489,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyThePaginationControlInWomenDailyVitaminsCategoryPageWorksCorrectly();
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
-        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
+//        DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
         Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
     }
 

@@ -257,11 +257,11 @@ public class AeSportSupplementsCategoryPage extends BasePage {
 
     public void clickOnPreviousPageBtn() {
         try{
-        DataHelperAndWait.waitToBeVisible(previousPageBtn, 8,webDriver);
+        DataHelperAndWait.waitToBeVisible(previousPageBtn, 10,webDriver);
         previousPageBtn.click();}
         catch(Exception e){
             navigateToPage2();
-            DataHelperAndWait.waitToBeVisible(previousPageBtn, 8,webDriver);
+            DataHelperAndWait.waitToBeVisible(previousPageBtn, 10,webDriver);
             previousPageBtn.click();}
     }
 

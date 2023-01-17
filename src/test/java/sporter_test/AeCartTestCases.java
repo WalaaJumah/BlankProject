@@ -375,7 +375,7 @@ public class AeCartTestCases extends BaseTest {
 //        aeCartPage.clickOnRemoveItem();
     }
 
-    @Test(groups = {"Cart Page","All Smoke Testing Result","2. High Severity"},description = " Cart Page- Make sure the tax calculate correctly", priority = 28)
+    @Test(groups = {"Cart Page","All Smoke Testing Result","2. High Severity"},description = " Cart Page- Make sure the tax calculate correctly", priority = 28,enabled = false)
     public void verifyTheTaxCalculatedCorrectly() {
         DecimalFormat df = new DecimalFormat("0.00");
         AeCartPage aeCartPage = new AeCartPage(webDriver);

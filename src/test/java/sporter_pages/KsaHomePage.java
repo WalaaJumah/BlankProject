@@ -106,7 +106,7 @@ public class KsaHomePage extends BasePage {
     private WebElement nextBtnInTrendingOnSporterSection;
     @FindBy(xpath = "//*[@id=\"maincontent\"]/div[3]/div/div[8]/div[4]")
     private WebElement previousBtnInTrendingOnSporterSection;
-    @FindBy(xpath = "//div[@style='transform: translate3d(-1482px, 0px, 0px); transition-duration: 0ms;']")
+    @FindBy(xpath = "(//div[@data-swiper-slide-index='5'])[2]")
     private WebElement trendingOnSporterSectionPositionAfterClickingOnNext;
     @FindBy(xpath = "//div[@style='transform: translate3d(-1235px, 0px, 0px); transition-duration: 0ms;']")
     private WebElement trendingOnSporterSectionPositionAfterClickingOnPrevious;
