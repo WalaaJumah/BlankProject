@@ -8,9 +8,10 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.asserts.Assertion;
 import org.testng.asserts.SoftAssert;
 import sporter_pages.*;
+import sporter_pages.homepage_classes.KsaHomePage;
+
 import java.util.ArrayList;
 import java.util.List;
 import static core.BasePage.BaseURL;

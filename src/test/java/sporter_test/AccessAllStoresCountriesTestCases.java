@@ -9,13 +9,9 @@ package sporter_test;
 import core.BasePage;
 import core.BaseTest;
 import core.DataHelperAndWait;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.AccessAllStoresCountriesPage;
-import sporter_pages.AeProductDetailsPage;
-import sporter_pages.KsaHomePage;
-import sporter_pages.QatarHomePage;
 
 import java.util.ArrayList;
 

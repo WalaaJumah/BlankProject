@@ -4,7 +4,7 @@
  * @classDescription This class contains all elements related to the Home Page
  */
 
-package sporter_pages;
+package sporter_pages.homepage_classes;
 
 import core.BasePage;
 import core.DataHelperAndWait;

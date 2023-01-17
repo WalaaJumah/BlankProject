@@ -4,15 +4,15 @@
  * @classDescription This class contains all test cases related to the HomePgae
  */
 
-package sporter_test;
+package sporter_test.homepage_classes;
 
 import core.BaseTest;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import sporter_pages.HomePage;
-import sporter_pages.KsaHomePage;
+import sporter_pages.homepage_classes.HomePage;
+import sporter_pages.homepage_classes.KsaHomePage;
 
 public class HomePageTestCases extends BaseTest {
     @Test(groups = "All Smoke Testing Result",description = "KSA HomePage- Switching to the KSA Store", priority = 1)

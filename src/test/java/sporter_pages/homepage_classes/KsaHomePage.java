@@ -1,6 +1,5 @@
-package sporter_pages;
+package sporter_pages.homepage_classes;
 
-import core.BasePage;
 import core.DataHelperAndWait;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class KsaHomePage extends BasePage {
+public class KsaHomePage extends HomePage {
     public KsaHomePage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);

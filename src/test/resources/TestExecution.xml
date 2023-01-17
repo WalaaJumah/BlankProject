@@ -20,8 +20,8 @@
 <!--                <class name="sporter_test.AEGuestUserTestCases"/>-->
 <!--                <class name="sporter_test.AeCartTestCases"/>-->
 <!--                <class name="sporter_test.AeRecommendedProductsTestCases"/>-->
-<!--                <class name="sporter_test.QatarHomePageTestCases"/>-->
-<!--                <class name="sporter_test.KsaHomePageTestCases"/>-->
+<!--                <class name="sporter_test.homepage_classes.QatarHomePageTestCases"/>-->
+<!--                <class name="sporter_test.homepage_classes.KsaHomePageTestCases"/>-->
 <!--                <class name="sporter_test.AeWomenOnlyCategoryTestCases"/>-->
 <!--                <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases"/>-->
 <!--                <class name="sporter_test.AeSportSupplementsCategoryTestCases"/>-->
@@ -52,12 +52,12 @@
 <!--            <class name="sporter_test.AEGuestUserTestCases"/>-->
 <!--            <class name="sporter_test.AeCartTestCases"/>-->
 <!--            <class name="sporter_test.AeRecommendedProductsTestCases"/>-->
-            <class name="sporter_test.QatarHomePageTestCases">
+            <class name="sporter_test.homepage_classes.QatarHomePageTestCases">
                 <methods>
                     <include name="testt"></include>
                 </methods>
             </class>
-<!--            <class name="sporter_test.KsaHomePageTestCases"/>-->
+<!--            <class name="sporter_test.homepage_classes.KsaHomePageTestCases"/>-->
 <!--            <class name="sporter_test.AeWomenOnlyCategoryTestCases"/>-->
 <!--            <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases"/>-->
 <!--            <class name="sporter_test.AeSportSupplementsCategoryTestCases"/>-->
@@ -94,8 +94,8 @@
     <!--            <class name="sporter_test.AEGuestUserTestCases"/>-->
     <!--            <class name="sporter_test.AeCartTestCases"/>-->
     <!--            <class name="sporter_test.AeRecommendedProductsTestCases"/>-->
-    <!--            <class name="sporter_test.QatarHomePageTestCases"/>-->
-    <!--            <class name="sporter_test.KsaHomePageTestCases"/>-->
+    <!--            <class name="sporter_test.homepage_classes.QatarHomePageTestCases"/>-->
+    <!--            <class name="sporter_test.homepage_classes.KsaHomePageTestCases"/>-->
     <!--            <class name="sporter_test.AeWomenOnlyCategoryTestCases"/>-->
     <!--            <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases"/>-->
     <!--            <class name="sporter_test.AeSportSupplementsCategoryTestCases"/>-->
