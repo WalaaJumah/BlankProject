@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86683dee-3ff6-4652-96ae-dd8bddfbd97f" name="Changes" comment="test">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/retry_failed_test_cases/RetryFailedTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/retry_failed_test_cases/RetryFailedTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/headerPages/HeaderPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/headerPages/HeaderPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/homepage_classes/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/homepage_classes/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/homepage_classes/JordanHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/homepage_classes/JordanHomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/homepage_classes/KsaHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/homepage_classes/KsaHomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/headerTestCases/HeaderTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/headerTestCases/HeaderTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/homepage_test_cases/HomePageTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/homepage_test_cases/HomePageTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/GenerateReport.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/GenerateReport.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/TestData.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/TestData.xml" afterDir="false" />
-    </list>
+    <list default="true" id="86683dee-3ff6-4652-96ae-dd8bddfbd97f" name="Changes" comment="test" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
