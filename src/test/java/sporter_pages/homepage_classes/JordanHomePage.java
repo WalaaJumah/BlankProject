@@ -18,6 +18,6 @@ public class JordanHomePage extends HomePage {
         PageFactory.initElements(webDriver, this);
 
     }
-    @FindBy(xpath ="//ul[@class='dropdown switcher-dropdown']/li[4]" )
+    @FindBy(xpath ="//span[@id='symbol' and contains(text(),'JO')] " )
     private WebElement jordanCountry;
 }

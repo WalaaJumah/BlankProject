@@ -3,11 +3,12 @@
     <TestData1>368</TestData1>
     <TestData2>368</TestData2>
     <ParentData1>
-        <value1>40-42</value1>
-        <value2>44-46</value2>
-        <value3>48-50</value3>
-        <value4>52-54</value4>
-        <value5>56-58</value5>
+        <customerServicePhoneNumber> +971 4 88 30 300</customerServicePhoneNumber>
+        <CustomerServiceEnLabel>Customer Service: </CustomerServiceEnLabel>
+        <CustomerServiceArLabel>خدمة العملاء: </CustomerServiceArLabel>
+        <TextSlider1>48-50</TextSlider1>
+        <TextSlider1>48-50</TextSlider1>
+
     </ParentData1>
     <shippingAddress>
         <addressId>13523</addressId>

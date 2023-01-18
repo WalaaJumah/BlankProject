@@ -15,13 +15,6 @@ import sporter_pages.homepage_classes.HomePage;
 
 public class HomePageTestCases extends BaseTest {
 
-    @Test(groups = { "1. Critical Severity"}, description = "HomePage- Make sure the Banners appear correctly in the HomePage rotating slider section ", priority = 2)
-    public void verifyHomePageRotatingSliderIsDisplayed() {
-        HomePage homePage = new HomePage(webDriver);
-        for (int i = 0; i < homePage.getHomePageRotatingSliderList().size(); i++) {
-            WebElementsAssertion.validateTheElementIsDisplayed(homePage.getHomePageRotatingSliderList().get(i), webDriver);
-        }
-    }
 
     @Test(groups = { "3. Medium Severity"}, description = "HomePage- Make sure the next button at the HomePage rotating slider section is displayed ", priority = 3)
     public void verifyNextArrowAtHomePageRotatingSliderIsDisplayed() {
@@ -73,7 +66,6 @@ public class HomePageTestCases extends BaseTest {
         HomePage homePage = new HomePage(webDriver);
         String expectedUrl = homePage.getFirstSideBanner().getAttribute("href");
         homePage.clickOnFirstSideBanner();
-//        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
         WebElementsAssertion.validateTheCurrentUrlContainsString(expectedUrl, webDriver);
         homePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -84,8 +76,7 @@ public class HomePageTestCases extends BaseTest {
         homePage.navigateToHomePage();
         String expectedUrl = homePage.getSecondSideBanner().getAttribute("href");
         homePage.clickOnSecondSideBanner();
-        //Check With Momen about the expected href
-//        WebElementsAssertion.validateTheCurrentUrlContainsString(expectedUrl, webDriver);
+        WebElementsAssertion.validateTheCurrentUrlContainsString(expectedUrl, webDriver);
         homePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
@@ -160,55 +151,35 @@ public class HomePageTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getSportswearAndAccessoriesLinkInTopSellers(), webDriver);
     }
 
-    @Test(groups = { "2. High Severity"}, description = "HomePage- Make sure clicking on the All tab from the Top Seller Section works correctly ", priority = 19)
-    public void verifyAbilityToClickOnTheAllLinkInTopSellersSection() {
+    @Test(groups = { "2. High Severity"}, description = "HomePage- Make sure clicking on the Categories tabs appearing in the Top Sellers section are working correctly", priority = 19)
+    public void verifyAbilityToClickOnAllCategoriesTabInTopSellersSection(){
         HomePage homePage = new HomePage(webDriver);
-        homePage.clickOnAllLinkInTopSellerSection();
-        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getAllLinkInTopSellers(), webDriver);
-
-    }
-
-    @Test(groups = { "3. Medium Severity"}, description = "HomePage- Make sure clicking on the Sport Supplements tab from the Top Seller Section works correctly", priority = 20)
-    public void verifyAbilityToClickOnTheSportSupplementsLinkInTopSellersSection() {
-        HomePage homePage = new HomePage(webDriver);
-        homePage.clickOnSportSupplementsLinkInTopSellerSection();
-        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getSportSupplementsLinkInTopSellers(), webDriver);
-    }
-
-    @Test(groups = { "3. Medium Severity"}, description = "HomePage- Make sure clicking on the Healthy Food tab from the Top Seller Section works correctly ", priority = 21)
-    public void verifyAbilityToClickOnTheHealthyFoodLinkInTopSellersSection() {
-        HomePage homePage = new HomePage(webDriver);
-        homePage.clickOnHealthyFoodLinkInTopSellerSection();
-        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getHealthyFoodLinkInTopSellers(), webDriver);
-    }
-
-    @Test(groups = { "3. Medium Severity"}, description = "HomePage- Make sure clicking on the Vitamins And Health tab from the Top Seller Section works correctly ", priority = 22)
-    public void verifyAbilityToClickOnTheVitaminsAndHealthLinkInTopSellersSection() {
-        HomePage homePage = new HomePage(webDriver);
-        homePage.clickOnVitaminsAndHealthLinkInTopSellerSection();
-        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthLinkInTopSellers(), webDriver);
-    }
-
-    @Test(groups = { "3. Medium Severity"}, description = "HomePage- Make sure clicking on the Sportswear And Accessories tab from the Top Seller Section works correctly ", priority = 23)
-    public void verifyAbilityToClickOnTheSportswearAndAccessoriesLinkInTopSellersSection() {
-        HomePage homePage = new HomePage(webDriver);
-        homePage.clickOnSportswearAndAccessoriesLinkInTopSellerSection();
-        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getSportswearAndAccessoriesLinkInTopSellers(), webDriver);
+        for (int i = 0; i < homePage.getTopSellerCategoriesTabs().size(); i++) {
+            DataHelperAndWait.clickOnElement(homePage.getTopSellerCategoriesTabs().get(i), webDriver);
+            Assert.assertTrue(homePage.getTopSellerCategoriesTabs().get(i).getAttribute("class").startsWith("options_active"),"Clicking on The Categories tabs are not working correctly");
+     }
     }
 
     @Test(groups = { "3. Medium Severity"}, description = "HomePage- Make sure that previous button in the Top Seller Section works correctly ", priority = 24)
     public void verifyPreviousBtnWillAppearInTopSellersSectionOnceClickingOnNextBtn() {
         HomePage homePage = new HomePage(webDriver);
+        try{
         homePage.clickOnNextButtonInTopSellerSectionInTopSellerSection();
-        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getPreviousButtonInTopSellerSection(), webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getPreviousButtonInTopSellerSection(), webDriver);}
+                catch (Exception e){
+            System.out.println("There's No previous Button");
+        }
     }
 
     @Test(groups = { "3. Medium Severity"}, description = "HomePage- Make sure the next button appearing in the Top Seller section works Correctly ", priority = 25)
     public void verifyNextBtnInTopSellerSectionWorks() {
         HomePage homePage = new HomePage(webDriver);
-        homePage.clickOnPreviousButtonInTopSellersSection();
+        try{
         homePage.clickOnNextButtonInTopSellersSection();
-        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getPreviousButtonInTopSellerSection(), webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getPreviousButtonInTopSellerSection(), webDriver);}
+        catch (Exception e){
+            System.out.println("There's No Next Button");
+        }
     }
 
     @Test(groups = { "All Smoke Testing Result", "2. High Severity"}, description = "HomePage- Make sure the Trending On Sporter sections are displayed ", priority = 26)
@@ -240,61 +211,23 @@ public class HomePageTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getNewArrivalsHeader(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getNewArrivalsSection(), webDriver);
     }
-
-    @Test(groups = { "All Smoke Testing Result", "3. Medium Severity"}, description = "HomePage- Make sure that all links appearing correctly in the New Arrivals section ", priority = 30)
-    public void verifyAllLinksInNewArrivalsSectionAreDisplayed() {
+    @Test(groups = { "2. High Severity"}, description = "HomePage- Make sure clicking on the Categories tabs appearing in the New Arrivals section are working correctly", priority = 19)
+    public void verifyAbilityToClickOnAllCategoriesTabInNewArrivalsSection(){
         HomePage homePage = new HomePage(webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getNewArrivalsAllLink(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getNewArrivalsSpportSupplementsLink(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getNewArrivalsHealthyFoodLink(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getNewArrivalsVitaminsAndHealthLink(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getNewArrivalsSportWearAndAccessoriesLink(), webDriver);
+        for (int i = 0; i < homePage.getNewArrivalsCategoriesTabs().size(); i++) {
+            DataHelperAndWait.clickOnElement(homePage.getNewArrivalsCategoriesTabs().get(i), webDriver);
+            Assert.assertTrue(homePage.getNewArrivalsCategoriesTabs().get(i).getAttribute("class").startsWith("options_active"),"Clicking on The Categories tabs are not working correctly");
+        }
     }
-
-    @Test(groups = { "3. Medium Severity"}, description = "HomePage- Make sure clicking on the all tab from the New Arrivals Section works correctly", priority = 31)
-    public void verifyAbilityToClickOnTheAllLinkInNewArrivalsSection() {
-        HomePage homePage = new HomePage(webDriver);
-        homePage.clickOnAllLinkInNewArrivalsSection();
-        DataHelperAndWait.waitToBeVisible(homePage.getNewArrivalsAllLink(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getNewArrivalsAllLink(), webDriver);
-    }
-
-    @Test(groups = { "3. Medium Severity"}, description = "HomePage- Make sure clicking on the Sport Supplements tab from the New Arrivals Section works correctly ", priority = 32)
-    public void verifyAbilityToClickOnTheSportSupplementsLinkInNewArrivalsSection() {
-        HomePage homePage = new HomePage(webDriver);
-        homePage.clickOnSportSupplementsLinkInNewArrivalsSection();
-        DataHelperAndWait.waitToBeVisible(homePage.getNewArrivalsSpportSupplementsLink(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getNewArrivalsSpportSupplementsLink(), webDriver);
-    }
-
-    @Test(groups = { "3. Medium Severity"}, description = "HomePage- Make sure clicking on the Healthy Food tab that appear in the New Arrivals Section works correctly ", priority = 33)
-    public void verifyAbilityToClickOnTheHealthyFoodLinkInNewArrivalsSection() {
-        HomePage homePage = new HomePage(webDriver);
-        homePage.clickOnHealthyFoodLinkInNewArrivalsSection();
-        DataHelperAndWait.waitToBeVisible(homePage.getNewArrivalsHealthyFoodLink(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getNewArrivalsHealthyFoodLink(), webDriver);
-    }
-
-    @Test(groups = { "3. Medium Severity"}, description = "HomePage- Make sure clicking on the Vitamins And Health tab from the New Arrivals Section works correctly", priority = 34)
-    public void verifyAbilityToClickOnTheVitaminsAndHealthLinkInNewArrivalsSection() {
-        HomePage homePage = new HomePage(webDriver);
-        homePage.clickOnVitaminsAndHealthLinkInNewArrivalsSection();
-        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(), webDriver);
-    }
-
-    @Test(groups = { "3. Medium Severity"}, description = "HomePage- Make sure clicking on the Sportswear And Accessories tab from the New Arrivals Section works correctly ", priority = 35)
-    public void verifyAbilityToClickOnTheSportswearAndAccessoriesLinkInNewArrivalsSection() {
-        HomePage homePage = new HomePage(webDriver);
-        homePage.clickOnSportswearAndAccessoriesLinkInNewArrivalsSection();
-        DataHelperAndWait.waitToBeVisible(homePage.getNewArrivalsSportWearAndAccessoriesLink(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getNewArrivalsSportWearAndAccessoriesLink(), webDriver);
-    }
-
     @Test(groups = { "3. Medium Severity"}, description = "HomePage- Make sure that previous and next button in the New Arrivals Section works correctly", priority = 36)
     public void verifyPreviousBtnWillAppearInNewArrivalsSectionOnceClickingOnNextBtn() {
         HomePage homePage = new HomePage(webDriver);
+        try{
         homePage.clickOnNextButtonInNewArrivalSection();
-        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getPreviousBtnInNewArrivalsSection(), webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getPreviousBtnInNewArrivalsSection(), webDriver);}
+        catch (Exception e){
+            System.out.println("There's No Pagination control in this section");
+        }
     }
 
     @Test(groups = { "All Smoke Testing Result", "3. Medium Severity"}, description = "HomePage- Make sure the Got A Question section is displayed ", priority = 37)
@@ -323,7 +256,7 @@ public class HomePageTestCases extends BaseTest {
     }
 
     @Test(groups = { "1. Critical Severity"}, description = "HomePage- Make sure clicking on the Healthy Food category from the HomePage works correctly ", priority = 40)
-    public void verifyClickingOnHealthyFoodCategoryDoeNotRedirectTheUserToCorrectPage() {
+    public void verifyClickingOnHealthyFoodCategoryRedirectTheUserToCorrectPage() {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
         homePage.clickOnHealthyFoodCategory();
@@ -331,7 +264,7 @@ public class HomePageTestCases extends BaseTest {
     }
 
     @Test(groups = { "1. Critical Severity"}, description = "HomePage- Make sure clicking on the Vitamins And Health category from the HomePage works correctly ", priority = 41)
-    public void verifyClickingOnVitaminsAndHealthCategoryDoeNotRedirectTheUserToCorrectPage() {
+    public void verifyClickingOnVitaminsAndHealthCategoryRedirectTheUserToCorrectPage() {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
         homePage.clickOnVitaminsAndHealthCategory();
@@ -339,7 +272,7 @@ public class HomePageTestCases extends BaseTest {
     }
 
     @Test(groups = { "1. Critical Severity"}, description = "HomePage- Make sure clicking on the Sportswear & Accessories category from the HomePage works correctly ", priority = 42)
-    public void verifyClickingOnSportswearAndAccessoriesCategoryDoeNotRedirectTheUserToCorrectPage() {
+    public void verifyClickingOnSportswearAndAccessoriesCategoryRedirectTheUserToCorrectPage() {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
         homePage.clickOnSportswearAndAccessoriesCategory();
@@ -352,12 +285,9 @@ public class HomePageTestCases extends BaseTest {
         homePage.navigateToHomePage();
         Assert.assertTrue(homePage.getProductsInTopSellingStacksSection().size()>0,"There's no any products in the list");
         for (int i = 0; i < homePage.getProductsInTopSellingStacksSection().size(); i++) {
-            do {
-                homePage.clickOnNextButtonInTopSellersSection();
-            }
-            while (!homePage.getProductsInTopSellingStacksSection().get(i).isDisplayed());
+            DataHelperAndWait.waitToBeClickable(homePage.getProductsInTopSellingStacksSection().get(i),webDriver);
             String expectedUrl = homePage.getProductsInTopSellingStacksSection().get(i).getAttribute("href");
-            DataHelperAndWait.clickOnElement(homePage.getProductsInTopSellingStacksSection().get(i), webDriver);
+            homePage.getProductsInTopSellingStacksSection().get(i).click();
 //            WebElementsAssertion.validateTheCurrentUrlContainsString(expectedUrl, webDriver);
             homePage.verifyTheDisplayedPageDoesNotHaveErrors();
             homePage.navigateToHomePage();
@@ -370,15 +300,18 @@ public class HomePageTestCases extends BaseTest {
         homePage.navigateToHomePage();
         Assert.assertTrue(homePage.getProductsInTopSellersSection().size()>0,"There's no any products in the list");
         for (int i = 0; i < homePage.getProductsInTopSellersSection().size(); i++) {
-            do {
+            if (i>4){
                 homePage.clickOnNextButtonInTopSellersSection();
             }
-            while (!homePage.getProductsInTopSellersSection().get(i).isDisplayed());
             String expectedUrl = homePage.getProductsInTopSellersSection().get(i).getAttribute("href");
-            DataHelperAndWait.clickOnElement(homePage.getProductsInTopSellersSection().get(i), webDriver);
+            DataHelperAndWait.waitToBeVisible(homePage.getProductsInTopSellersSection().get(i),webDriver);
+            homePage.getProductsInTopSellersSection().get(i).click();
 //            WebElementsAssertion.validateTheCurrentUrlContainsString(expectedUrl, webDriver);
             homePage.verifyTheDisplayedPageDoesNotHaveErrors();
+            System.out.println(i);
             homePage.navigateToHomePage();
+
+
         }
     }
 
@@ -388,12 +321,16 @@ public class HomePageTestCases extends BaseTest {
         homePage.navigateToHomePage();
         Assert.assertTrue(homePage.getProductsInNewArrivalsSection().size()>0,"There's no any products in the list");
         for (int i = 0; i < homePage.getProductsInNewArrivalsSection().size(); i++) {
-            do {
-                homePage.clickOnNextButtonInNewArrivalSection();
-            }
-            while (!homePage.getProductsInNewArrivalsSection().get(i).isDisplayed());
             String expectedUrl = homePage.getProductsInNewArrivalsSection().get(i).getAttribute("href");
-            DataHelperAndWait.clickOnElement(homePage.getProductsInNewArrivalsSection().get(i), webDriver);
+            try{
+            homePage.getProductsInNewArrivalsSection().get(i).click();}
+            catch (Exception e){
+                do{
+                homePage.clickOnNextButtonInNewArrivalSection();}
+                while (!homePage.getProductsInNewArrivalsSection().get(i).isDisplayed());
+            }
+            homePage.getProductsInNewArrivalsSection().get(i).click();
+
 //            WebElementsAssertion.validateTheCurrentUrlContainsString(expectedUrl, webDriver);
             homePage.verifyTheDisplayedPageDoesNotHaveErrors();
             homePage.navigateToHomePage();

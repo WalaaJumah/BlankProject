@@ -45,7 +45,8 @@ public class BaseTest {
 
     {
         try{
-            WebElement btnCloseElement = webDriver.findElement(By.xpath("//button[@class='button_btn__zg_G5 changeStorePopUp_btn__sggmr']/span"));
+            WebElement btnCloseElement = webDriver.findElement(By.xpath("(//button[@type='submit'])[1]"));
+            DataHelperAndWait.waitForTime(2000);
             DataHelperAndWait.waitToBeVisible(btnCloseElement,webDriver);
 
             if (btnCloseElement != null

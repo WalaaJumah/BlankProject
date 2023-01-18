@@ -10,7 +10,10 @@
 package core;
 
 import error_helper.SporterErrorPage;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 public class BasePage {
@@ -125,7 +128,36 @@ public class BasePage {
         webDriver.navigate().to(BasePage.BaseURL+aeDomain+bogoProduct);
         DataHelperAndWait.waitForUrlContains(bogoProduct,webDriver);
     }
-    public void navigateToHomePage(){webDriver.navigate().to(BaseURL);}
+    public void navigateToHomePage(){
+        try{
+            WebElement btnCloseElement = webDriver.findElement(By.xpath("//button[@class='button_btn__zg_G5 changeStorePopUp_btn__sggmr']/span"));
+            DataHelperAndWait.waitForTime(2000);
+            DataHelperAndWait.waitToBeVisible(btnCloseElement,webDriver);
+
+            if (btnCloseElement != null
+                    && btnCloseElement.isDisplayed()) {
+                btnCloseElement.click();
+            }
+        }
+        catch (NoSuchElementException ex) {
+//            System.out.println(e.getMessage());
+            try {
+                WebElement btnCloseElement = webDriver.findElement(By.id("//button[@class='button_btn__zg_G5 changeStorePopUp_btn__sggmr']/span"));
+                DataHelperAndWait.waitToBeVisible(btnCloseElement, webDriver);
+
+                if (btnCloseElement != null
+                        && btnCloseElement.isDisplayed()) {
+                    btnCloseElement.click();
+                }
+            } catch (NoSuchElementException e) {
+                //            System.out.println(e.getMessage());
+
+            }
+        }
+
+
+
+        webDriver.navigate().to(BaseURL);}
 
 
 }
