@@ -18,6 +18,6 @@ public class JordanHomePage extends HomePage {
         PageFactory.initElements(webDriver, this);
 
     }
-    @FindBy(xpath ="//span[@id='symbol' and contains(text(),'JO')] " )
+    @FindBy(xpath ="(//li[@class='countryItem_container__StFb3']/a)[5]" )
     private WebElement jordanCountry;
 }

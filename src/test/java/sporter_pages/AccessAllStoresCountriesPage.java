@@ -22,7 +22,7 @@ public class AccessAllStoresCountriesPage extends BasePage {
         PageFactory.initElements(webDriver, this);
     }
 
-    @FindBy(id = "CountrySelector")
+    @FindBy(xpath = "//div[@class='CountrySelector']//li[@class='countryItem_container__StFb3']/a")
     private List<WebElement> countryList;
     @FindBy(id = "downArrow")
     private WebElement countryMenuIcon;

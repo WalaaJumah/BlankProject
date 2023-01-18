@@ -17,7 +17,7 @@ public class KsaHomePage extends HomePage {
     public final String saudiDomain = "/en-sa";
 
     DataHelperAndWait dataHelperAndWait;
-    @FindBy(xpath ="//span[@id='symbol' and contains(text(),'SA')]" )
+    @FindBy(xpath ="(//li[@class='countryItem_container__StFb3']/a)[3]" )
     private WebElement ksaCountry;
 
 

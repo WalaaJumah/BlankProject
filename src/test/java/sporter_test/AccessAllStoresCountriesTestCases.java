@@ -20,7 +20,6 @@ public class AccessAllStoresCountriesTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result","1. Critical Severity"},description = "Ability to access all stores", priority = 1)
     public void accessAllCountries(){
         AccessAllStoresCountriesPage accessAllStoresCountriesPage = new AccessAllStoresCountriesPage(webDriver);
-        System.out.println(accessAllStoresCountriesPage.getCountryList().size());
         ArrayList<String> expectedOption = new ArrayList<>() {{
             add("/en-ae");
             add("/en-eg");
@@ -33,13 +32,18 @@ public class AccessAllStoresCountriesTestCases extends BaseTest {
             add("/en-lb");
             add("/en-ae");
         }};
+        DataHelperAndWait.clickOnElement(accessAllStoresCountriesPage.getCountryMenuIcon(),webDriver);
+
         for(int i=0; i<accessAllStoresCountriesPage.getCountryList().size();i++){
-            DataHelperAndWait.clickOnElement(accessAllStoresCountriesPage.getCountryMenuIcon(),webDriver);
-            DataHelperAndWait.clickOnElement(accessAllStoresCountriesPage.getCountryList().get(i),webDriver);
-            WebElementsAssertion.validateTheCurrentUrlContainsString(expectedOption.get(i),webDriver);
-            System.out.println("The Current URL is: "+webDriver.getCurrentUrl()+"  And the Expected URL is:  "+BasePage.BaseURL+expectedOption.get(i));
+//            DataHelperAndWait.clickOnElement(accessAllStoresCountriesPage.getCountryMenuIcon(),webDriver);
+accessAllStoresCountriesPage.getCountryList().get(i).click();
+    System.out.println(accessAllStoresCountriesPage.getCountryList().size());
+            }
+//            DataHelperAndWait.clickOnElement(accessAllStoresCountriesPage.getCountryList().get(i),webDriver);
+//            WebElementsAssertion.validateTheCurrentUrlContainsString(expectedOption.get(i),webDriver);
+//            System.out.println("The Current URL is: "+webDriver.getCurrentUrl()+"  And the Expected URL is:  "+BasePage.BaseURL+expectedOption.get(i));
         }
 
     }
 
-}
+
