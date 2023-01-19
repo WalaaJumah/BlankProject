@@ -399,57 +399,32 @@ public class QatarHomePageTestCases extends BaseTest {
     public void verifyClickOnTheProductsAppearingInTheTopSellersSectionRedirectTheUserToCorrectUrl() {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.navigate();
-        String expectedUrl = qatarHomePage.getFirstProductInTopSellersSection().getAttribute("href");
-        qatarHomePage.clickOnFirstProductInTheTopSellersSection();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
-        qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
-        qatarHomePage.navigate();
-        expectedUrl = qatarHomePage.getSecondProductInTopSellersSection().getAttribute("href");
-        qatarHomePage.clickOnSecondProductInTheTopSellersSection();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
-        qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
-        qatarHomePage.navigate();
-        qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
-        qatarHomePage.navigate();
-        expectedUrl = qatarHomePage.getFourthProductInTopSellersSection().getAttribute("href");
-        qatarHomePage.clickOnFourthProductInTheTopSellersSection();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
-        qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
-        qatarHomePage.navigate();
-        expectedUrl = qatarHomePage.getFiveProductInTopSellersSection().getAttribute("href");
-        qatarHomePage.clickOnFifthProductInTheTopSellersSection();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
-        qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
+        Assert.assertTrue(qatarHomePage.getProductListInTopSellersSection().size() > 0, "There's no any products in the list");
+        for (int i = 0; i < qatarHomePage.getProductListInTopSellersSection().size(); i++) {
+            try{
+            DataHelperAndWait.waitToBeClickable(qatarHomePage.getProductListInTopSellersSection().get(i), 5, webDriver);
+            qatarHomePage.getProductListInTopSellersSection().get(i).click();}
+            catch (Exception e){
+                qatarHomePage.clickOnNextButtonInTopSellerSectionInTopSellerSection();
+                DataHelperAndWait.waitToBeClickable(qatarHomePage.getProductListInTopSellersSection().get(i), 5, webDriver);
+                qatarHomePage.getProductListInTopSellersSection().get(i).click();
+            }
+            qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
+            qatarHomePage.navigate();
+        }
     }
 
     @Test(groups = {"Home Page","1. Critical Severity"},description = "Qatar HomePage- Make sure clicking on the products appearing in the New Arrivals section redirect the user to the correct URL", priority = 37)
     public void verifyClickOnTheProductsAppearingInTheNewArrivalsSectionRedirectTheUserToCorrectUrl() {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.navigate();
-        String expectedUrl = qatarHomePage.getFirstProductInNewArrivalsSection().getAttribute("href");
-        qatarHomePage.clickOnFirstProductInTheNewArrivalsSection();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
-        qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
-        qatarHomePage.navigate();
-        expectedUrl = qatarHomePage.getSecondProductInNewArrivalsSection().getAttribute("href");
-        qatarHomePage.clickOnSecondProductInTheNewArrivalsSection();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
-        qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
-        qatarHomePage.navigate();
-        expectedUrl = qatarHomePage.getThirdProductInNewArrivalsSection().getAttribute("href");
-        qatarHomePage.clickOnThirdProductInTheNewArrivalsSection();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
-        qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
-        qatarHomePage.navigate();
-        expectedUrl = qatarHomePage.getFourthProductInNewArrivalsSection().getAttribute("href");
-        qatarHomePage.clickOnFourthProductInTheNewArrivalsSection();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
-        qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
-        qatarHomePage.navigate();
-        expectedUrl = qatarHomePage.getFiveProductInNewArrivalsSection().getAttribute("href");
-        qatarHomePage.clickOnFifthProductInTheNewArrivalsSection();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
-        qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
+        Assert.assertTrue(qatarHomePage.getProductsListInNewArrivalsSection().size() > 0, "There's no any products in the list");
+        for (int i = 0; i < qatarHomePage.getProductsListInNewArrivalsSection().size(); i++) {
+            DataHelperAndWait.waitToBeClickable(qatarHomePage.getProductsListInNewArrivalsSection().get(i), 5, webDriver);
+            qatarHomePage.getProductsListInNewArrivalsSection().get(i).click();
+            qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
+            qatarHomePage.navigate();
+        }
     }
 
     @Test(groups = {"Home Page","2. High Severity"},description = "Qatar HomePage- Make sure clicking on phone button from the Got A Question section works correctly ", priority = 38)

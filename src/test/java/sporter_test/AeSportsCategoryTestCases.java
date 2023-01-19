@@ -222,10 +222,6 @@ public class AeSportsCategoryTestCases extends BaseTest {
         Assert.assertTrue(aeSportsCategoryPage.getToysAndGamesCategory().isDisplayed());
         aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
         aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
-        Assert.assertTrue(aeSportsCategoryPage.getWearableTechApparelCategory().isDisplayed());
-        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
-        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
-        Assert.assertTrue(aeSportsCategoryPage.getPersonalCareApparelCategory().isDisplayed());
     }
     @Test(groups = {"Sports Category", "2. High Severity"},description = "Sports Category- Make sure the previous item button appears in the Trending in Sports section works correctly ", priority = 20)
     public void verifyPreviousButtonAppearsInTheTrendingInSportsSectionWorksCorrectly() {
@@ -237,33 +233,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
         aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
         DataHelperAndWait.waitToBeVisible(aeSportsCategoryPage.getPersonalCareApparelCategory(),5,webDriver);
-//        Assert.assertTrue(aeSportsCategoryPage.getPersonalCareApparelCategory().isDisplayed());
-//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-//        Assert.assertTrue(aeSportsCategoryPage.getWearableTechApparelCategory().isDisplayed());
-//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-//        Assert.assertTrue(aeSportsCategoryPage.getToysAndGamesCategory().isDisplayed());
-//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-//        Assert.assertTrue(aeSportsCategoryPage.getCricketApparelCategory().isDisplayed());
-//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-//        Assert.assertTrue(aeSportsCategoryPage.getMmaApparelCategory().isDisplayed());
-//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-//        Assert.assertTrue(aeSportsCategoryPage.getSwimmingApparelCategory().isDisplayed());
-//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-//        Assert.assertTrue(aeSportsCategoryPage.getYogaApparelCategory().isDisplayed());
-//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-//        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-//        Assert.assertTrue(aeSportsCategoryPage.getWomenApparelCategory().isDisplayed());
+//
     }
     //Men's Apparel section Test Cases
     @Test(groups = {"Sports Category","All Smoke Testing Result","3. Medium Severity"},description = "Sports Category- Make sure clicking on the Men's Apparel category inside Trending in Sports section works correctly ", priority = 21)

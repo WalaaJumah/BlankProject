@@ -174,6 +174,8 @@ public class KsaHomePage extends BasePage {
     private WebElement secondSideBanner;
     @FindBy(xpath = "(//div[@id='tab-39-all39']/div/div/div/div/a)[1]")
     private WebElement firstProductInTopSellingStacksSection;
+    @FindBy(xpath = "//div[@id='tab-39-all39']/div/div/div/div/a")
+    private List<WebElement> productsListInTopSellingStacksSection;
     @FindBy(xpath = "(//div[@id='tab-39-all39']/div/div/div/div/a)[2]")
     private WebElement secondProductInTopSellingStacksSection;
     @FindBy(xpath = "(//div[@id='tab-39-all39']/div/div/div/div/a)[3]")
@@ -184,6 +186,10 @@ public class KsaHomePage extends BasePage {
     private WebElement fiveProductInTopSellingStacksSection;
     @FindBy(xpath = "(//div[@id='tab-67-all67']/div/div/div/div/a)[1]")
     private WebElement firstProductInTopSellersSection;
+
+    @FindBy(xpath = "//div[@id='tab-67-all67']/div/div/div/div/a")
+    private List<WebElement> productsListInTopSellersSection;
+
     @FindBy(xpath = "(//div[@id='tab-67-all67']/div/div/div/div/a)[2]")
     private WebElement secondProductInTopSellersSection;
     @FindBy(xpath = "(//div[@id='tab-67-all67']/div/div/div/div/a)[3]")
@@ -194,6 +200,9 @@ public class KsaHomePage extends BasePage {
     private WebElement fiveProductInTopSellersSection;
     @FindBy(xpath = "(//div[@id='tab-6-all6']/div/div/div/div/a)[1]")
     private WebElement firstProductInNewArrivalsSection;
+    @FindBy(xpath = "//div[@id='tab-6-all6']/div/div/div/div/a")
+    private List<WebElement> productsInNewArrivalsSection;
+
     @FindBy(xpath = "(//div[@id='tab-6-all6']/div/div/div/div/a)[2]")
     private WebElement secondProductInNewArrivalsSection;
     @FindBy(xpath = "(//div[@id='tab-6-all6']/div/div/div/div/a)[3]")
@@ -212,6 +221,12 @@ public class KsaHomePage extends BasePage {
     //Getter Methods
     public WebElement getNextArrowInHomePageRotatingSlider() {
         return nextArrowInHomePageRotatingSlider;
+    }
+    public List<WebElement> getProductsInNewArrivalsSection() {
+        return productsInNewArrivalsSection;
+    }
+    public List<WebElement> getProductsListInTopSellersSection() {
+        return productsListInTopSellersSection;
     }
 
     public WebElement getPreviousArrowInHomePageRotatingSlider( ) {
@@ -544,6 +559,9 @@ dataHelperAndWait.waitToBeVisible(NewArrivalSectionPositionAfterClickingOnNext,1
 
     public WebElement getEmailBtn() {
         return emailBtn;
+    }
+    public List<WebElement> getProductsListInTopSellingStacksSection() {
+        return productsListInTopSellingStacksSection;
     }
 
     //Define the main actions we need to execute our TCs

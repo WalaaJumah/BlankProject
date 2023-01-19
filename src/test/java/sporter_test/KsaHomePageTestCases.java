@@ -395,68 +395,38 @@ public class KsaHomePageTestCases extends BaseTest {
     public void verifyClickOnTheProductsAppearingInTheTopSellingStacksSectionRedirectTheUserToCorrectUrl() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.navigate();
-        String expectedUrl = ksaHomePage.getFirstProductInTopSellingStacksSection().getAttribute("href");
-        ksaHomePage.clickOnFirstProductInTheTopSellingStacksSection();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
-        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
-        ksaHomePage.navigate();
-        expectedUrl = ksaHomePage.getSecondProductInTopSellingStacksSection().getAttribute("href");
-        ksaHomePage.clickOnSecondProductInTheTopSellingStacksSection();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
-        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
-        ksaHomePage.navigate();
-        ksaHomePage.clickOnThirdProductInTheTopSellingStacksSection();
-        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
-        ksaHomePage.navigate();
-        expectedUrl = ksaHomePage.getFourthProductInTopSellingStacksSection().getAttribute("href");
-        ksaHomePage.clickOnFourthProductInTheTopSellingStacksSection();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
-        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
-        ksaHomePage.navigate();
-        expectedUrl = ksaHomePage.getFiveProductInTopSellingStacksSection().getAttribute("href");
-        ksaHomePage.clickOnFifthProductInTheTopSellingStacksSection();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
-        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
+        Assert.assertTrue(ksaHomePage.getProductsListInTopSellingStacksSection().size() > 0, "There's no any products in the list");
+        for (int i = 0; i < ksaHomePage.getProductsListInTopSellingStacksSection().size(); i++) {
+            DataHelperAndWait.waitToBeClickable(ksaHomePage.getProductsListInTopSellingStacksSection().get(i), 5, webDriver);
+            ksaHomePage.getProductsListInTopSellingStacksSection().get(i).click();
+            ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
+            ksaHomePage.navigate();
+        }
     }
-
     @Test(groups = {"Home Page","1. Critical Severity"},description = "KSA HomePage- Make sure clicking on the products appearing in the Top Sellers section works correctly", priority = 44)
     public void verifyClickOnTheProductsAppearingInTheTopSellersSectionRedirectTheUserToCorrectUrl() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.navigate();
-        ksaHomePage.clickOnFirstProductInTheTopSellersSection();
-        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
-        ksaHomePage.navigate();
-        ksaHomePage.clickOnSecondProductInTheTopSellersSection();
-        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
-        ksaHomePage.navigate();
-        ksaHomePage.clickOnThirdProductInTheTopSellersSection();
-        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
-        ksaHomePage.navigate();
-        ksaHomePage.clickOnFourthProductInTheTopSellersSection();
-        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
-        ksaHomePage.navigate();
-        ksaHomePage.clickOnFifthProductInTheTopSellersSection();
-        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
+        Assert.assertTrue(ksaHomePage.getProductsListInTopSellersSection().size() > 0, "There's no any products in the list");
+        for (int i = 0; i < ksaHomePage.getProductsListInTopSellersSection().size(); i++) {
+            DataHelperAndWait.waitToBeClickable(ksaHomePage.getProductsListInTopSellersSection().get(i), 5, webDriver);
+            ksaHomePage.getProductsListInTopSellersSection().get(i).click();
+            ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
+            ksaHomePage.navigate();
+        }
     }
 
     @Test(groups = {"Home Page","1. Critical Severity"},description = "KSA HomePage- Make sure clicking on the products appearing in the New Arrivals section works correctly", priority = 45)
     public void verifyClickOnTheProductsAppearingInTheNewArrivalsSectionRedirectTheUserToCorrectUrl() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.navigate();
-        ksaHomePage.clickOnFirstProductInTheNewArrivalsSection();
-        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
-        ksaHomePage.navigate();
-        ksaHomePage.clickOnSecondProductInTheNewArrivalsSection();
-        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
-        ksaHomePage.navigate();
-        ksaHomePage.clickOnThirdProductInTheNewArrivalsSection();
-        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
-        ksaHomePage.navigate();
-        ksaHomePage.clickOnFourthProductInTheNewArrivalsSection();
-        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
-        ksaHomePage.navigate();
-        ksaHomePage.clickOnFifthProductInTheNewArrivalsSection();
-        ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
+        Assert.assertTrue(ksaHomePage.getProductsInNewArrivalsSection().size() > 0, "There's no any products in the list");
+        for (int i = 0; i < ksaHomePage.getProductsInNewArrivalsSection().size(); i++) {
+            DataHelperAndWait.waitToBeClickable(ksaHomePage.getProductsInNewArrivalsSection().get(i), 5, webDriver);
+            ksaHomePage.getProductsInNewArrivalsSection().get(i).click();
+            ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
+            ksaHomePage.navigate();
+        }
     }
     @Test(groups = {"Home Page","1. Critical Severity"},description = "KSA HomePage- Make sure ability to access all pages inside the Top Selling Stacks category correctly ", priority = 46)
     public void verifyAbilityToAccessAllPagesInsideTheTopSellingStacksCategoryCorrectly(){

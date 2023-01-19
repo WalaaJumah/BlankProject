@@ -173,6 +173,10 @@ public class QatarHomePage extends BasePage {
     private WebElement fiveProductInTopSellingStacksSection;
     @FindBy(xpath = "(//div[@id='tab-75-all75']/div/div/div/div/a)[1]")
     private WebElement firstProductInTopSellersSection;
+
+    @FindBy(xpath = "//div[@id='tab-75-all75']/div/div/div/div/a")
+    private List<WebElement> productListInTopSellersSection;
+
     @FindBy(xpath = "(//div[@id='tab-75-all75']/div/div/div/div/a)[2]")
     private WebElement secondProductInTopSellersSection;
     @FindBy(xpath = "(//div[@id='tab-75-all75']/div/div/div/div/a)[3]")
@@ -183,8 +187,13 @@ public class QatarHomePage extends BasePage {
     private WebElement fiveProductInTopSellersSection;
     @FindBy(xpath = "//div[@id='tab-6-all6']/div/div/div/div/a")
     private WebElement firstProductInNewArrivalsSection;
+
     @FindBy(xpath = "(//div[@id='tab-6-all6']/div/div/div/div/a)[2]")
     private WebElement secondProductInNewArrivalsSection;
+
+    @FindBy(xpath = "//div[@id='tab-6-all6']/div/div/div/div/a")
+    private List<WebElement> productsListInNewArrivalsSection;
+
     @FindBy(xpath = "(//div[@id='tab-6-all6']/div/div/div/div/a)[3]")
     private WebElement thirdProductInNewArrivalsSection;
     @FindBy(xpath = "(//div[@id='tab-6-all6']/div/div/div/div/a)[4]")
@@ -195,6 +204,12 @@ public class QatarHomePage extends BasePage {
     //Getter Methods
     public WebElement getNextArrowInHomePageRotatingSlider() {
         return nextArrowInHomePageRotatingSlider;
+    }
+    public List<WebElement> getProductListInTopSellersSection() {
+        return productListInTopSellersSection;
+    }
+    public List<WebElement> getProductsListInNewArrivalsSection() {
+        return productsListInNewArrivalsSection;
     }
 
     public WebElement getPreviousArrowInHomePageRotatingSlider() {
