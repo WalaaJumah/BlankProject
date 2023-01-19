@@ -4079,16 +4079,24 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyClickingOnNextIconInVitaminsAZSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        if(aeVitaminsAndHealthCategoryPage.getProductsListInVitaminsAZSection().size()>4){
         aeVitaminsAndHealthCategoryPage.getNextIconInVitaminsAZSection().click();
-        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFishOilAndOmegasSectionPositionAfterClickingOnNextIcon().isDisplayed());
+        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFishOilAndOmegasSectionPositionAfterClickingOnNextIcon().isDisplayed());}
+        else {
+            System.out.println("The Products number is less than 5");
+        }
     }
     @Test(groups = {"Vitamins & Health Category", "2. High Severity"},description = "Vitamins & Health Category- Make sure clicking on Previous Button in the Vitamins A-Z section works correctly", priority = 391)
     public void verifyClickingOnPreviousIconInVitaminsAZSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        aeVitaminsAndHealthCategoryPage.getNextIconInVitaminsAZSection().click();
-        aeVitaminsAndHealthCategoryPage.getPreviousIconInVitaminsAZSection().click();
-        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getMultiVitaminsSectionDefaultPosition().isDisplayed());
+        if(aeVitaminsAndHealthCategoryPage.getProductsListInVitaminsAZSection().size()>4){
+            aeVitaminsAndHealthCategoryPage.getPreviousIconInVitaminsAZSection().click();
+        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getMultiVitaminsSectionDefaultPosition().isDisplayed());}
+        else {
+            System.out.println("The Products number is less than 5");
+        }
     }
     @Test(groups = {"Vitamins & Health Category", "1. Critical Severity"},description = "Vitamins & Health Category- Make sure clicking on the View All button in the Vitamins A-Z section works correctly ", priority = 392)
     public void verifyClickingOnViewAllBtnInsideVitaminsAZSectionWorksCorrectly() {

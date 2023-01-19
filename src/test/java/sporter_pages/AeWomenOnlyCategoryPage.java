@@ -63,6 +63,8 @@ public class AeWomenOnlyCategoryPage extends BasePage {
     private WebElement nextIconInInWorkoutInStyleSection;
     @FindBy(xpath="(//i[@class='fas fa-chevron-right'])[5]")
     private WebElement nextIconInInLadyFriendlySnacksFoodSection;
+    @FindBy(xpath = "//div[@id='tab-260-all260']/div/div/div")
+    private List<WebElement> productsInLadyFriendlySnacksFoodSection;
     @FindBy(xpath="(//i[@class='fas fa-chevron-left'])[4]")
     private WebElement previousIconInWorkoutInStyleSection;
     @FindBy(xpath="(//i[@class='fas fa-chevron-left'])[5]")
@@ -278,5 +280,8 @@ catch (Exception e){
         }}
     public WebElement getWomenOnlyMainMenu() {
         return womenOnlyMainMenu;
+    }
+    public List<WebElement> getProductsInLadyFriendlySnacksFoodSection() {
+        return productsInLadyFriendlySnacksFoodSection;
     }
 }

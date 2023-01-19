@@ -1478,6 +1478,7 @@ public class AEMegaMenuPage extends BasePage {
     }
 
     public WebElement getPetsOptionInVitaminsAndHealthMenu() {
+        DataHelperAndWait.waitToBeVisible(petsOptionInVitaminsAndHealthMenu,5,webDriver);
         return petsOptionInVitaminsAndHealthMenu;
     }
 
@@ -1548,6 +1549,7 @@ public class AEMegaMenuPage extends BasePage {
     }
 
     public WebElement getSupplementsMoreOptionInVitaminsAndHealthMenu() {
+        DataHelperAndWait.waitToBeVisible(supplementsMoreOptionInVitaminsAndHealthMenu,5,webDriver);
         return supplementsMoreOptionInVitaminsAndHealthMenu;
     }
 
@@ -2618,10 +2620,12 @@ public class AEMegaMenuPage extends BasePage {
     }
 
     public WebElement getPetsOptionInVitaminsAndHealthMainMenu() {
+        DataHelperAndWait.waitToBeVisible(petsOptionInVitaminsAndHealthMianMenu,5,webDriver);
         return petsOptionInVitaminsAndHealthMianMenu;
     }
 
     public WebElement getSupplementsMoreOptionInVitaminsAndHealthMainMenu() {
+        DataHelperAndWait.waitToBeVisible(supplementsMoreOptionInVitaminsAndHealthMainMenu,5,webDriver);
         return supplementsMoreOptionInVitaminsAndHealthMainMenu;
     }
 

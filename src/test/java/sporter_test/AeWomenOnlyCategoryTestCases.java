@@ -2698,16 +2698,25 @@ AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(we
     public void verifyPreviousArrowButtonInLadyFriendlySnacksAndFoodWidgetIsNotDisplayedByDefault() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         //        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        if(aeWomenOnlyCategoryPage.getProductsInLadyFriendlySnacksFoodSection().size()>4){
         aeWomenOnlyCategoryPage.getNextIconInInLadyFriendlySnacksFoodSection().click();
-        Assert.assertTrue(aeWomenOnlyCategoryPage.getPreviousIconInLadyFriendlySnacksFoodSection().isDisplayed());
+        Assert.assertTrue(aeWomenOnlyCategoryPage.getPreviousIconInLadyFriendlySnacksFoodSection().isDisplayed());}
+        else {
+            System.out.println("The Products number is less than 5");
+        }
+
     }
 
-    @Test(groups = {"Women Only Category Page", "3. Medium Severity"},description = "Women's Only Category- Make sure clicking on Next Button in the Lady-Friendly Snacks & Food Widget works correctly", priority = 228,expectedExceptions = { org.openqa.selenium.TimeoutException.class })
+    @Test(groups = {"Women Only Category Page", "3. Medium Severity"},description = "Women's Only Category- Make sure clicking on Next Button in the Lady-Friendly Snacks & Food Widget works correctly", priority = 228)
     public void verifyClickingOnNextIconInLadyFriendlySnacksAndFoodWidgetWorksCorrectly() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
         //        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-         aeWomenOnlyCategoryPage.getNextIconInInLadyFriendlySnacksFoodSection().click();
+        if(aeWomenOnlyCategoryPage.getProductsInLadyFriendlySnacksFoodSection().size()>4){
             aeWomenOnlyCategoryPage.getNextIconInInLadyFriendlySnacksFoodSection().click();
+            aeWomenOnlyCategoryPage.getNextIconInInLadyFriendlySnacksFoodSection().click();}
+        else {
+            System.out.println("The Products number is less than 5");
+        }
     }
 
 

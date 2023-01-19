@@ -106,6 +106,7 @@ public class AeBrandsTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
         aeProductDetailsPage.getSearchBtn().click();
         aeSearchPage.getBrandsTab().click();
+        DataHelperAndWait.waitForTime(3000);
         DataHelperAndWait.waitToBeVisible(aeSearchPage.getBrandsListInBrandPage().get(4),5,webDriver);
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(4).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(4).click();

@@ -400,7 +400,7 @@ public class KsaHomePageTestCases extends BaseTest {
         ksaHomePage.navigate();
         Assert.assertTrue(ksaHomePage.getProductsListInTopSellingStacksSection().size() > 0, "There's no any products in the list");
         for (int i = 0; i < ksaHomePage.getProductsListInTopSellingStacksSection().size(); i++) {
-            if( ksaHomePage.getProductsListInTopSellingStacksSection().size()>5){
+            if( ksaHomePage.getProductsListInTopSellingStacksSection().size()>4){
                 if(ksaHomePage.getProductsListInTopSellingStacksSection().get(i).isDisplayed()){
                     DataHelperAndWait.waitToBeVisible(ksaHomePage.getProductsListInTopSellingStacksSection().get(i),8,webDriver);
                     ksaHomePage.getProductsListInTopSellingStacksSection().get(i).click();

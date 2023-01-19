@@ -94,7 +94,7 @@ public class KsaHomePage extends BasePage {
     private WebElement vitaminsAndHealthActiveLinkInTopeSellersSection;
     @FindBy(xpath = "//ul[@class='tabs tabs67']/li[5]/a")
     private WebElement sportswearAndAccessoriesActiveLink;
-    @FindBy(xpath = "//div[@id='tab-67-736']/div[2]/i")
+    @FindBy(xpath = "(//div[@class='swiper-button-next top-sellers-swiper-button-next'])[1]")
     private WebElement nextButtonInTopSellerSection;
     @FindBy(xpath = "(//div[@class='swiper-button-prev top-sellers-swiper-button-prev'])[1]")
     private WebElement previousButtonInTopSellerSection;

@@ -112,6 +112,9 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
     private WebElement nextIconInMultiVitaminsSection;
     @FindBy(xpath = "(//i[@class='fas fa-chevron-right'])[5]")
     private WebElement nextIconInVitaminsAZSection;
+    @FindBy(xpath = "//div[@id='tab-294-all294']/div/div/div")
+    private List<WebElement> productsListInVitaminsAZSection;
+
     @FindBy(xpath = "(//i[@class='fas fa-chevron-right'])[6]")
     private WebElement nextIconInMineralsSection;
     @FindBy(xpath = "(//i[@class='fas fa-chevron-right'])[7]")
@@ -542,6 +545,9 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
     public WebElement getFishOilAndOmegasSectionPositionAfterClickingOnNextIcon() {
         DataHelperAndWait.waitToBeVisible(fishOilAndOmegasSectionPositionAfterClickingOnNextIcon,5,webDriver);
         return fishOilAndOmegasSectionPositionAfterClickingOnNextIcon;
+    }
+    public List<WebElement> getProductsListInVitaminsAZSection() {
+        return productsListInVitaminsAZSection;
     }
     public WebElement getProductCardInMultiVitaminsSection() {
         return productCardInMultiVitaminsSection;

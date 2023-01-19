@@ -107,6 +107,7 @@ public class BasePage {
     public final String wearableTechUrl = "/wearable-tech";
     public final String shippingInformationUrl = "/checkout";
     public  static String bogoProduct="";
+    public  static String bundleUrl="";
 
     public WebDriver webDriver;
     //Need to check

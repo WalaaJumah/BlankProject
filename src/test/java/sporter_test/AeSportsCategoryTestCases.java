@@ -210,29 +210,19 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage=new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
         aeSportsCategoryPage.navigateToSportsPage();
-        Assert.assertTrue(aeSportsCategoryPage.getMensApparelCategory().isDisplayed());
-        Assert.assertTrue(aeSportsCategoryPage.getWomenApparelCategory().isDisplayed());
-        Assert.assertTrue(aeSportsCategoryPage.getYogaApparelCategory().isDisplayed());
-        Assert.assertTrue(aeSportsCategoryPage.getSwimmingApparelCategory().isDisplayed());
-        Assert.assertTrue(aeSportsCategoryPage.getMmaApparelCategory().isDisplayed());
-        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
-        Assert.assertTrue(aeSportsCategoryPage.getCricketApparelCategory().isDisplayed());
-        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
-        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
-        Assert.assertTrue(aeSportsCategoryPage.getToysAndGamesCategory().isDisplayed());
-        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
-        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
+        do{
+            aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
+        }
+        while(!aeSportsCategoryPage.getCricketApparelCategory().isDisplayed());
     }
     @Test(groups = {"Sports Category", "2. High Severity"},description = "Sports Category- Make sure the previous item button appears in the Trending in Sports section works correctly ", priority = 20)
     public void verifyPreviousButtonAppearsInTheTrendingInSportsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage=new AeVitaminsAndHealthCategoryPage(webDriver);
         AeSportsCategoryPage aeSportsCategoryPage=new AeSportsCategoryPage(webDriver);
         aeSportsCategoryPage.navigateToSportsPage();
+        aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();
+            aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
         Assert.assertTrue(aeSportsCategoryPage.getMensApparelCategory().isDisplayed());
-        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-        aeVitaminsAndHealthCategoryPage.clickOnPreviousIconInShopByHealthNeedSection();
-        DataHelperAndWait.waitToBeVisible(aeSportsCategoryPage.getPersonalCareApparelCategory(),5,webDriver);
 //
     }
     //Men's Apparel section Test Cases

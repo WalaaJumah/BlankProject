@@ -29,7 +29,6 @@ import com.relevantcodes.extentreports.LogStatus;
 public class ExtentReportListener  implements IReporter {
 
     private ExtentReports extent;
-//    private ExtentSparkReporter spark;
     private ExtentTest test;
     String pattern = "yyyy-MM-dd-hh-mm-ss";
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
