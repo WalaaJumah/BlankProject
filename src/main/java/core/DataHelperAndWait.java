@@ -216,4 +216,6 @@ public  class DataHelperAndWait  {
     public static void updateAllText(WebElement element, String newText) {
         element.sendKeys(Keys.chord(Keys.CONTROL, "a"), newText);
     }
+
+
 }

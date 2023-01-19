@@ -401,18 +401,32 @@ public class QatarHomePageTestCases extends BaseTest {
         qatarHomePage.navigate();
         Assert.assertTrue(qatarHomePage.getProductListInTopSellersSection().size() > 0, "There's no any products in the list");
         for (int i = 0; i < qatarHomePage.getProductListInTopSellersSection().size(); i++) {
-            try{
-            DataHelperAndWait.waitToBeClickable(qatarHomePage.getProductListInTopSellersSection().get(i), 5, webDriver);
-            qatarHomePage.getProductListInTopSellersSection().get(i).click();}
-            catch (Exception e){
-                qatarHomePage.clickOnNextButtonInTopSellerSectionInTopSellerSection();
-                DataHelperAndWait.waitToBeClickable(qatarHomePage.getProductListInTopSellersSection().get(i), 5, webDriver);
+            if( qatarHomePage.getProductListInTopSellersSection().size()>5){
+            if(qatarHomePage.getProductListInTopSellersSection().get(i).isDisplayed()){
+                DataHelperAndWait.waitToBeVisible(qatarHomePage.getProductListInTopSellersSection().get(i),8,webDriver);
+            qatarHomePage.getProductListInTopSellersSection().get(i).click();
+            qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
+            qatarHomePage.navigate();}
+            else{
+                do{
+                    qatarHomePage.clickOnNextButtonInTopSellerSectionInTopSellerSection();
+                }
+                while(!qatarHomePage.getProductListInTopSellersSection().get(i).isDisplayed());
+                DataHelperAndWait.waitToBeVisible(qatarHomePage.getProductListInTopSellersSection().get(i),5,webDriver);
                 qatarHomePage.getProductListInTopSellersSection().get(i).click();
             }
-            qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
-            qatarHomePage.navigate();
+                qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
+                qatarHomePage.navigate();}
+        else
+            {
+                DataHelperAndWait.waitToBeVisible(qatarHomePage.getProductListInTopSellersSection().get(i),8,webDriver);
+                qatarHomePage.getProductListInTopSellersSection().get(i).click();
+                qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
+            }
         }
-    }
+
+        }
+
 
     @Test(groups = {"Home Page","1. Critical Severity"},description = "Qatar HomePage- Make sure clicking on the products appearing in the New Arrivals section redirect the user to the correct URL", priority = 37)
     public void verifyClickOnTheProductsAppearingInTheNewArrivalsSectionRedirectTheUserToCorrectUrl() {
@@ -420,10 +434,28 @@ public class QatarHomePageTestCases extends BaseTest {
         qatarHomePage.navigate();
         Assert.assertTrue(qatarHomePage.getProductsListInNewArrivalsSection().size() > 0, "There's no any products in the list");
         for (int i = 0; i < qatarHomePage.getProductsListInNewArrivalsSection().size(); i++) {
-            DataHelperAndWait.waitToBeClickable(qatarHomePage.getProductsListInNewArrivalsSection().get(i), 5, webDriver);
-            qatarHomePage.getProductsListInNewArrivalsSection().get(i).click();
-            qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
-            qatarHomePage.navigate();
+            if( qatarHomePage.getProductsListInNewArrivalsSection().size()>5){
+                if(qatarHomePage.getProductsListInNewArrivalsSection().get(i).isDisplayed()){
+                    DataHelperAndWait.waitToBeVisible(qatarHomePage.getProductsListInNewArrivalsSection().get(i),8,webDriver);
+                    qatarHomePage.getProductsListInNewArrivalsSection().get(i).click();
+                    qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
+                    qatarHomePage.navigate();}
+                else{
+                    do{
+                        qatarHomePage.clickOnNextButtonInNewArrivalSection();
+                    }
+                    while(!qatarHomePage.getProductsListInNewArrivalsSection().get(i).isDisplayed());
+                    DataHelperAndWait.waitToBeVisible(qatarHomePage.getProductsListInNewArrivalsSection().get(i),5,webDriver);
+                    qatarHomePage.getProductsListInNewArrivalsSection().get(i).click();
+                }
+                qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
+                qatarHomePage.navigate();}
+            else
+            {
+                DataHelperAndWait.waitToBeVisible(qatarHomePage.getProductsListInNewArrivalsSection().get(i),8,webDriver);
+                qatarHomePage.getProductsListInNewArrivalsSection().get(i).click();
+                qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
+            }
         }
     }
 

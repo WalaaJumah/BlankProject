@@ -89,7 +89,7 @@ public class QatarHomePage extends BasePage {
     private WebElement newArrivalVitaminsAndHealthActiveLink;
     @FindBy(xpath = "//li[@class='tabli-75-736 active']")
     private WebElement sportswearAndAccessoriesActiveLink;
-    @FindBy(xpath = "(//div[@class='swiper-button-next top-sellers-swiper-button-next']/i)[4]")
+    @FindBy(xpath = "(//div[@class='swiper-button-next top-sellers-swiper-button-next']/i)[1]")
     private WebElement nextButtonInTopSellerSection;
     @FindBy(xpath = "(//div[@class='swiper-button-prev top-sellers-swiper-button-prev']/i)[1]")
     private WebElement previousButtonInTopSellerSection;
