@@ -3,7 +3,7 @@
 <!--<suite name=" Test" thread-count="1" >-->
 <suite name="Automation Reports"  >
     <listeners>
-        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>
+<!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
         <listener class-name="extent_report_listner.ExtentReportListener" />
     </listeners>
 <!--        <test name="All Smoke Testing Result- Production" preserve-order="true">-->
@@ -52,10 +52,10 @@
 <!--            <class name="sporter_test.AEGuestUserTestCases"/>-->
 <!--            <class name="sporter_test.AeCartTestCases"/>-->
 <!--            <class name="sporter_test.AeRecommendedProductsTestCases"/>-->
-            <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases">
-                <methods>
-                    <include name="switchToJordanStore"></include>
-                </methods>
+            <class name="sporter_test.AccessAllStoresCountriesTestCases">
+<!--                <methods>-->
+<!--                    <include name="switchToJordanStore"></include>-->
+<!--                </methods>-->
             </class>
 <!--            <class name="sporter_test.homepage_test_cases.EgyptHomePageTestCases">-->
 <!--                <methods>-->

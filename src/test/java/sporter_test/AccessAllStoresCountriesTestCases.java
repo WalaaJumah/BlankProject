@@ -33,15 +33,16 @@ public class AccessAllStoresCountriesTestCases extends BaseTest {
             add("/en-ae");
         }};
         DataHelperAndWait.clickOnElement(accessAllStoresCountriesPage.getCountryMenuIcon(),webDriver);
+        DataHelperAndWait.waitForTime(3000);
 
         for(int i=0; i<accessAllStoresCountriesPage.getCountryList().size();i++){
+
+            accessAllStoresCountriesPage.getCountryList().get(i).click();
             DataHelperAndWait.clickOnElement(accessAllStoresCountriesPage.getCountryMenuIcon(),webDriver);
-accessAllStoresCountriesPage.getCountryList().get(i).click();
-    System.out.println(accessAllStoresCountriesPage.getCountryList().size());
-            }
-//            DataHelperAndWait.clickOnElement(accessAllStoresCountriesPage.getCountryList().get(i),webDriver);
-//            WebElementsAssertion.validateTheCurrentUrlContainsString(expectedOption.get(i),webDriver);
-//            System.out.println("The Current URL is: "+webDriver.getCurrentUrl()+"  And the Expected URL is:  "+BasePage.BaseURL+expectedOption.get(i));
+
+
+
+        }
         }
 
     }
