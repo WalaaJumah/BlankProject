@@ -18,6 +18,6 @@ public class UAEHomePage extends HomePage {
         PageFactory.initElements(webDriver, this);
 
     }
-    @FindBy(xpath ="//ul[@class='dropdown switcher-dropdown']/li[1]" )
+    @FindBy(xpath ="(//li[@class='countryItem_container__StFb3']/a)[1]" )
     private WebElement AeCountry;
 }

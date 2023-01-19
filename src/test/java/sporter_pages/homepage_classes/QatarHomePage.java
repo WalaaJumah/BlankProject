@@ -17,7 +17,7 @@ public class QatarHomePage extends HomePage {
     }
     public final String qatarDomain = "/en-qa";
 
-    @FindBy(xpath ="//ul[@class='dropdown switcher-dropdown']/li[8]" )
+    @FindBy(xpath ="(//li[@class='countryItem_container__StFb3']/a)[8]" )
     private WebElement qatarCountry;
 
 }

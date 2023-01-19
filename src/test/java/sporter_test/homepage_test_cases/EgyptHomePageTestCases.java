@@ -15,22 +15,22 @@ import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.EgyptHomePage;
 import sporter_pages.homepage_classes.HomePage;
+import sporter_pages.homepage_classes.JordanHomePage;
 import sporter_pages.homepage_classes.QatarHomePage;
 @Test(groups = "Egypt HomePage")
 public class EgyptHomePageTestCases extends BaseTest {
 
 
-    @Test(groups = { "All Smoke Testing Result"},description = " Qatar HomePage- Switching to Egypt store", priority = 1)
+    @Test(groups = { "All Smoke Testing Result"},description = " Egypt HomePage- Switching to Egypt store", priority = 1)
     public void switchToEgyptStore(){
-//        EgyptHomePage egyptHomePage=new EgyptHomePage(webDriver);
-//        egyptHomePage.switchCountry(egyptHomePage.getEgyptCountry());
-//        if(webDriver.getCurrentUrl().contains(egyptHomePage.qatarDomain)){
-//            System.out.println("You are in Qatar Store");
-//        }
-//        else {
-//            webDriver.navigate().to(BasePage.BaseURL+egyptHomePage.saudiDomain);
-//            CloseInitialDialog();          }
-        webDriver.navigate().to("https://dev.sporter.com/en-eg");
+        EgyptHomePage egyptHomePage=new EgyptHomePage(webDriver);
+        egyptHomePage.switchCountry(egyptHomePage.getEgyptCountry());
+        if(webDriver.getCurrentUrl().contains(egyptHomePage.egyptDomain)){
+            System.out.println("You are in Jordan Store");
+        }
+        else {
+            webDriver.navigate().to(BasePage.BaseURL+egyptHomePage.egyptDomain);
+            CloseInitialDialog();          }
     }
 @Test(groups = { "1. Critical Severity"}, description = "HomePage- Make sure the Banners appear correctly in the HomePage rotating slider section ", priority = 2)
 public void verifyHomePageRotatingSliderIsDisplayed() {

@@ -85,7 +85,7 @@
 
 <!--                <class name="sporter_test.homepage_test_cases.UAEHomePageTestCases"/>-->
 <!--                <class name="sporter_test.homepage_test_cases.QatarHomePageTestCases"/>-->
-                <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases">
+                <class name="sporter_test.AccessAllStoresCountriesTestCases">
 <!--                    <methods>-->
 <!--                        <include name="verifyAbilityToClickOnAllCategoriesTabInTopSellersSection"/>-->
 <!--&lt;!&ndash;                        <include name="verifyClickOnTheProductsAppearingInTheTopSellingStacksSectionRedirectTheUserToCorrectUrl"/>&ndash;&gt;-->

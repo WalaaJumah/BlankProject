@@ -35,7 +35,7 @@ public class AccessAllStoresCountriesTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(accessAllStoresCountriesPage.getCountryMenuIcon(),webDriver);
 
         for(int i=0; i<accessAllStoresCountriesPage.getCountryList().size();i++){
-//            DataHelperAndWait.clickOnElement(accessAllStoresCountriesPage.getCountryMenuIcon(),webDriver);
+            DataHelperAndWait.clickOnElement(accessAllStoresCountriesPage.getCountryMenuIcon(),webDriver);
 accessAllStoresCountriesPage.getCountryList().get(i).click();
     System.out.println(accessAllStoresCountriesPage.getCountryList().size());
             }

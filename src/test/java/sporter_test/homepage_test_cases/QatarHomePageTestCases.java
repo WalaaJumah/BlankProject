@@ -25,7 +25,7 @@ public void switchToQatarStore(){
         System.out.println("You are in Qatar Store");
     }
     else {
-        webDriver.navigate().to(BasePage.BaseURL+qatarHomePage.saudiDomain);
+        webDriver.navigate().to(BasePage.BaseURL+qatarHomePage.qatarDomain);
         CloseInitialDialog();          }
 }
 

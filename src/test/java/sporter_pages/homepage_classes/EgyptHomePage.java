@@ -13,12 +13,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 @Getter
-public class EgyptHomePage extends BasePage {
+public class EgyptHomePage extends HomePage {
     public EgyptHomePage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
 
     }
-    @FindBy(xpath ="//ul[@class='dropdown switcher-dropdown']/li[4]" )
+    @FindBy(xpath ="(//li[@class='countryItem_container__StFb3']/a)[2]" )
     private WebElement egyptCountry;
 }
