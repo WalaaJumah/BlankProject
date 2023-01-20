@@ -318,7 +318,7 @@ public class QatarHomePage extends BasePage {
     }
 
     public WebElement getSecondSideBanner() {
-        DataHelperAndWait.waitToBeVisible(secondSideBanner,2,webDriver);
+        DataHelperAndWait.waitToBeVisible(secondSideBanner,8,webDriver);
         return secondSideBanner;
     }
     public WebElement getTopSellingStacksSections() {
@@ -330,7 +330,7 @@ public class QatarHomePage extends BasePage {
     }
 
     public WebElement getHorizontalBanner(  ) {
-        DataHelperAndWait.waitToBeVisible(homePageHorizontalBanner,2,webDriver);
+        DataHelperAndWait.waitToBeVisible(homePageHorizontalBanner,8,webDriver);
         return homePageHorizontalBanner;
     }
 
@@ -477,12 +477,12 @@ public class QatarHomePage extends BasePage {
     }
 
     public WebElement getNewArrivalsVitaminsAndHealthLink(  ) {
-        DataHelperAndWait.waitToBeVisible(newArrivalsVitaminsAndHealthLink,2,webDriver);
+        DataHelperAndWait.waitToBeVisible(newArrivalsVitaminsAndHealthLink,8,webDriver);
         return newArrivalsVitaminsAndHealthLink;
     }
 
     public WebElement getNewArrivalsSportWearAndAccessoriesLink(  ) {
-        DataHelperAndWait.waitToBeVisible(newArrivalsSportWearAndAccessoriesLink,2,webDriver);
+        DataHelperAndWait.waitToBeVisible(newArrivalsSportWearAndAccessoriesLink,8,webDriver);
         return newArrivalsSportWearAndAccessoriesLink;
     }
 
@@ -503,12 +503,12 @@ public class QatarHomePage extends BasePage {
     }
 
     public WebElement getNewArrivalsSectionPositionAfterClickingOnPrevious(  ) {
-        DataHelperAndWait.waitToBeVisible(NewArrivalSectionPositionAfterClickingOnPrevious,2,webDriver);
+        DataHelperAndWait.waitToBeVisible(NewArrivalSectionPositionAfterClickingOnPrevious,8,webDriver);
         return NewArrivalSectionPositionAfterClickingOnPrevious;
     }
 
     public WebElement getNewArrivalsSectionPositionAfterClickingOnNext(  ) {
-        DataHelperAndWait.waitToBeVisible(NewArrivalSectionPositionAfterClickingOnNext,2,webDriver);
+        DataHelperAndWait.waitToBeVisible(NewArrivalSectionPositionAfterClickingOnNext,8,webDriver);
         return NewArrivalSectionPositionAfterClickingOnNext;
     }
 
@@ -551,7 +551,7 @@ public class QatarHomePage extends BasePage {
 
     public void clickOnAllLinkInTopSellerSection(  ) {
         try {
-        DataHelperAndWait.isDisplayed(allLink, 2,webDriver);
+        DataHelperAndWait.isDisplayed(allLink, 8,webDriver);
         this.allLink.click();}
         catch (Exception e){
             DataHelperAndWait.isDisplayed(allLink, 1,webDriver);
@@ -561,7 +561,7 @@ public class QatarHomePage extends BasePage {
 
     public void clickOnSportSupplementsLinkInTopSellerSection(  ) {
         try{
-        DataHelperAndWait.isDisplayed(sportSupplementsLink, 2,webDriver);
+        DataHelperAndWait.isDisplayed(sportSupplementsLink, 8,webDriver);
         this.sportSupplementsLink.click();}
         catch (Exception e){
             DataHelperAndWait.isDisplayed(sportSupplementsLink, 1,webDriver);
@@ -570,7 +570,7 @@ public class QatarHomePage extends BasePage {
 
     public void clickOnHealthyFoodLinkInTopSellerSection(  ) {
         try{
-            DataHelperAndWait.isDisplayed(healthyFoodLink, 2,webDriver);
+            DataHelperAndWait.isDisplayed(healthyFoodLink, 8,webDriver);
             this.healthyFoodLink.click();
         }
         catch (Exception e){
@@ -581,7 +581,7 @@ public class QatarHomePage extends BasePage {
 
     public void clickOnVitaminsAndHealthLinkInTopSellerSection() {
         try {
-            DataHelperAndWait.waitToBeVisible(vitaminsAndHealthLink, 2,webDriver);
+            DataHelperAndWait.waitToBeVisible(vitaminsAndHealthLink, 8,webDriver);
             this.vitaminsAndHealthLink.click();
         }
         catch (Exception e){
@@ -591,7 +591,7 @@ public class QatarHomePage extends BasePage {
 
     public void clickOnSportswearAndAccessoriesLinkInTopSellerSection(  ) {
         try {
-            DataHelperAndWait.isDisplayed(sportswearAndAccessoriesLink, 2,webDriver);
+            DataHelperAndWait.isDisplayed(sportswearAndAccessoriesLink, 8,webDriver);
             this.sportswearAndAccessoriesLink.click();
         }
         catch (Exception e){
@@ -602,7 +602,7 @@ public class QatarHomePage extends BasePage {
 
     public void clickOnNextButtonInTopSellerSectionInTopSellerSection(  ) {
         try{
-        DataHelperAndWait.isDisplayed(nextButtonInTopSellerSection, 2,webDriver);
+        DataHelperAndWait.isDisplayed(nextButtonInTopSellerSection, 8,webDriver);
         this.nextButtonInTopSellerSection.click();
     }catch (Exception e){
             DataHelperAndWait.isDisplayed(nextButtonInTopSellerSection, 1,webDriver);
@@ -611,7 +611,7 @@ public class QatarHomePage extends BasePage {
 
     public void clickOnNextButtonInTrendingOnSporterSection(  ) {
         try {
-            DataHelperAndWait.isDisplayed(nextBtnInTrendingOnSporterSection, 2,webDriver);
+            DataHelperAndWait.isDisplayed(nextBtnInTrendingOnSporterSection, 8,webDriver);
             this.nextBtnInTrendingOnSporterSection.click();
         }
         catch (Exception e){
@@ -622,7 +622,7 @@ public class QatarHomePage extends BasePage {
 
     public void clickOnPreviousButtonInTrendingOnSporterSection(  ) {
         try {
-            DataHelperAndWait.isDisplayed(previousBtnInTrendingOnSporterSection, 2,webDriver);
+            DataHelperAndWait.isDisplayed(previousBtnInTrendingOnSporterSection, 8,webDriver);
             this.previousBtnInTrendingOnSporterSection.click();
         }
         catch (Exception e){
@@ -633,7 +633,7 @@ public class QatarHomePage extends BasePage {
 
     public void clickOnPreviousButtonInTopSellersSection(  ) {
         try {
-            DataHelperAndWait.isDisplayed(previousButtonInTopSellerSection, 2,webDriver);
+            DataHelperAndWait.isDisplayed(previousButtonInTopSellerSection, 8,webDriver);
             this.previousButtonInTopSellerSection.click();
         }
         catch (Exception e){
@@ -643,7 +643,7 @@ public class QatarHomePage extends BasePage {
     }
     public void clickOnNextButtonInTopSellersSection(  ) {
         try {
-            DataHelperAndWait.isDisplayed(nextButtonInTopSellerSection, 2,webDriver);
+            DataHelperAndWait.isDisplayed(nextButtonInTopSellerSection, 8,webDriver);
             this.nextButtonInTopSellerSection.click();
         }
         catch (Exception e){
@@ -654,7 +654,7 @@ public class QatarHomePage extends BasePage {
 
     public void clickOnAllLinkInNewArrivalsSection(  ) {
         try {
-            DataHelperAndWait.isDisplayed(newArrivalsAllLink, 2,webDriver);
+            DataHelperAndWait.isDisplayed(newArrivalsAllLink, 8,webDriver);
             this.newArrivalsAllLink.click();
         }
         catch (Exception e){
@@ -665,7 +665,7 @@ public class QatarHomePage extends BasePage {
     public void clickOnSportSupplementsLinkInNewArrivalsSection(  ) {
         try {
 //            DataHelperAndWait.isDisplayed(newArrivalsSportSupplementsLink, 3);
-            DataHelperAndWait.fluentWait(this.newArrivalsSportSupplementsLink,2,10,webDriver);
+            DataHelperAndWait.fluentWait(this.newArrivalsSportSupplementsLink,8,10,webDriver);
             this.newArrivalsSportSupplementsLink.click();
         }
         catch (Exception e){
@@ -677,7 +677,7 @@ public class QatarHomePage extends BasePage {
     public void clickOnHealthyFoodLinkInNewArrivalsSection(  ) {
         try {
 //            DataHelperAndWait.isDisplayed(newArrivalsHealthyFoodLink, 2);
-            DataHelperAndWait.fluentWait(this.newArrivalsHealthyFoodLink,2,10,webDriver);
+            DataHelperAndWait.fluentWait(this.newArrivalsHealthyFoodLink,8,10,webDriver);
 
             this.newArrivalsHealthyFoodLink.click();
         }
@@ -690,7 +690,7 @@ public class QatarHomePage extends BasePage {
     public void clickOnVitaminsAndHealthLinkInNewArrivalsSection(  ) {
         try {
 //            DataHelperAndWait.isDisplayed(newArrivalsVitaminsAndHealthLink, 2);
-            DataHelperAndWait.fluentWait(this.newArrivalsVitaminsAndHealthLink,2,10,webDriver);
+            DataHelperAndWait.fluentWait(this.newArrivalsVitaminsAndHealthLink,8,10,webDriver);
 
             this.newArrivalsVitaminsAndHealthLink.click();
         }
@@ -702,7 +702,7 @@ public class QatarHomePage extends BasePage {
     public void clickOnSportswearAndAccessoriesLinkInNewArrivalsSection(  ) {
         try {
 //            DataHelperAndWait.isDisplayed(newArrivalsSportWearAndAccessoriesLink, 2);
-            DataHelperAndWait.fluentWait(this.newArrivalsSportWearAndAccessoriesLink,2,10,webDriver);
+            DataHelperAndWait.fluentWait(this.newArrivalsSportWearAndAccessoriesLink,8,10,webDriver);
 
             this.newArrivalsSportWearAndAccessoriesLink.click();
         }
@@ -714,7 +714,7 @@ public class QatarHomePage extends BasePage {
 
     public void clickOnPreviousButtonInNewArrivalSection(  ) {
         try {
-            DataHelperAndWait.isDisplayed(previousBtnInNewArrivalsSection, 2,webDriver);
+            DataHelperAndWait.isDisplayed(previousBtnInNewArrivalsSection, 8,webDriver);
             this.previousBtnInNewArrivalsSection.click();
         }
         catch (Exception e){
@@ -731,14 +731,14 @@ public class QatarHomePage extends BasePage {
         }
         catch (Exception e){
             this.navigate();
-            DataHelperAndWait.waitToBeVisible(nextBtnInNewArrivalsSection,2,webDriver);
+            DataHelperAndWait.waitToBeVisible(nextBtnInNewArrivalsSection,8,webDriver);
             this.nextBtnInNewArrivalsSection.click();
         }
     }
 
     public void clickOnPhoneBtn(  ) {
         try {
-            DataHelperAndWait.isDisplayed(phoneBtn, 2,webDriver);
+            DataHelperAndWait.isDisplayed(phoneBtn, 8,webDriver);
             this.phoneBtn.click();
         }
         catch (Exception e){
@@ -759,7 +759,7 @@ public class QatarHomePage extends BasePage {
 
     public void clickOnHomePageHorizontalBanner(  ) {
         try {
-            DataHelperAndWait.isDisplayed(homePageHorizontalBanner, 2,webDriver);
+            DataHelperAndWait.isDisplayed(homePageHorizontalBanner, 8,webDriver);
             this.homePageHorizontalBanner.click();
         }
         catch (Exception e){
@@ -770,7 +770,7 @@ public class QatarHomePage extends BasePage {
 
     public void clickOnSportsSupplementsCategory(  ) {
         try {
-            DataHelperAndWait.isDisplayed(sportsSupplementsCategory, 2,webDriver);
+            DataHelperAndWait.isDisplayed(sportsSupplementsCategory, 8,webDriver);
             this.sportsSupplementsCategory.click();
         }
         catch (Exception e){
@@ -781,7 +781,7 @@ public class QatarHomePage extends BasePage {
 
     public void clickOnHealthyFoodCategory(  ) {
         try {
-            DataHelperAndWait.isDisplayed(healthyFoodCategory, 2,webDriver);
+            DataHelperAndWait.isDisplayed(healthyFoodCategory, 8,webDriver);
             this.healthyFoodCategory.click();
         }
         catch (Exception e){
@@ -792,7 +792,7 @@ public class QatarHomePage extends BasePage {
 
     public void clickOnVitaminsAndHealthCategory(  ) {
         try {
-            DataHelperAndWait.isDisplayed(vitaminsAndHealthCategory, 2,webDriver);
+            DataHelperAndWait.isDisplayed(vitaminsAndHealthCategory, 8,webDriver);
             this.vitaminsAndHealthCategory.click();
         }
         catch (Exception e){
@@ -803,7 +803,7 @@ public class QatarHomePage extends BasePage {
 
     public void clickOnSportswearAndAccessoriesCategory(  ) {
         try {
-            DataHelperAndWait.isDisplayed(sportswearAndAccessoriesCategory, 2,webDriver);
+            DataHelperAndWait.isDisplayed(sportswearAndAccessoriesCategory, 8,webDriver);
             this.sportswearAndAccessoriesCategory.click();
         }
         catch (Exception e){
@@ -813,7 +813,7 @@ public class QatarHomePage extends BasePage {
     }
 //    public void clickOnFirstProductInTheTopSellingStacksSection(  ){
 //        try{
-//            DataHelperAndWait.waitToBeVisible(this.firstProductInTopSellingStacksSection,2,webDriver);
+//            DataHelperAndWait.waitToBeVisible(this.firstProductInTopSellingStacksSection,8,webDriver);
 //            this.firstProductInTopSellingStacksSection.click();
 //        }
 //        catch (Exception e){
@@ -824,7 +824,7 @@ public class QatarHomePage extends BasePage {
 
     public void clickOnSecondProductInTheTopSellingStacksSection(  ){
         try{
-            DataHelperAndWait.waitToBeVisible(this.secondProductInTopSellingStacksSection,2,webDriver);
+            DataHelperAndWait.waitToBeVisible(this.secondProductInTopSellingStacksSection,8,webDriver);
             this.secondProductInTopSellingStacksSection.click();
         }
         catch (Exception e){
@@ -834,7 +834,7 @@ public class QatarHomePage extends BasePage {
     }
     public void clickOnThirdProductInTheTopSellingStacksSection(  ){
         try{
-            DataHelperAndWait.waitToBeVisible(this.thirdProductInTopSellingStacksSection,2,webDriver);
+            DataHelperAndWait.waitToBeVisible(this.thirdProductInTopSellingStacksSection,8,webDriver);
             this.thirdProductInTopSellingStacksSection.click();
         }
         catch (Exception e){
@@ -844,7 +844,7 @@ public class QatarHomePage extends BasePage {
     }
     public void clickOnFourthProductInTheTopSellingStacksSection(  ){
         try{
-            DataHelperAndWait.waitToBeVisible(this.fourthProductInTopSellingStacksSection,2,webDriver);
+            DataHelperAndWait.waitToBeVisible(this.fourthProductInTopSellingStacksSection,8,webDriver);
             this.fourthProductInTopSellingStacksSection.click();
         }
         catch (Exception e){
@@ -854,7 +854,7 @@ public class QatarHomePage extends BasePage {
     }
     public void clickOnFifthProductInTheTopSellingStacksSection(  ){
         try{
-            DataHelperAndWait.waitToBeVisible(this.fiveProductInTopSellingStacksSection,2,webDriver);
+            DataHelperAndWait.waitToBeVisible(this.fiveProductInTopSellingStacksSection,8,webDriver);
             this.fiveProductInTopSellingStacksSection.click();
         }
         catch (Exception e){
@@ -864,7 +864,7 @@ public class QatarHomePage extends BasePage {
     }
     public void clickOnFirstProductInTheTopSellersSection(  ){
         try{
-            DataHelperAndWait.waitToBeVisible(this.firstProductInTopSellersSection,2,webDriver);
+            DataHelperAndWait.waitToBeVisible(this.firstProductInTopSellersSection,8,webDriver);
             this.firstProductInTopSellersSection.click();
         }
         catch (Exception e){
@@ -875,7 +875,7 @@ public class QatarHomePage extends BasePage {
 
     public void clickOnSecondProductInTheTopSellersSection(  ){
         try{
-            DataHelperAndWait.waitToBeVisible(this.secondProductInTopSellersSection,2,webDriver);
+            DataHelperAndWait.waitToBeVisible(this.secondProductInTopSellersSection,8,webDriver);
             this.secondProductInTopSellersSection.click();
         }
         catch (Exception e){
@@ -885,7 +885,7 @@ public class QatarHomePage extends BasePage {
     }
     public void clickOnThirdProductInTheTopSellersSection(  ){
         try{
-            DataHelperAndWait.waitToBeVisible(this.thirdProductInTopSellersSection,2,webDriver);
+            DataHelperAndWait.waitToBeVisible(this.thirdProductInTopSellersSection,8,webDriver);
             this.thirdProductInTopSellersSection.click();
         }
         catch (Exception e){
@@ -895,7 +895,7 @@ public class QatarHomePage extends BasePage {
     }
     public void clickOnFourthProductInTheTopSellersSection(  ){
         try{
-            DataHelperAndWait.waitToBeVisible(this.fourthProductInTopSellersSection,2,webDriver);
+            DataHelperAndWait.waitToBeVisible(this.fourthProductInTopSellersSection,8,webDriver);
             this.fourthProductInTopSellersSection.click();
         }
         catch (Exception e){
@@ -905,7 +905,7 @@ public class QatarHomePage extends BasePage {
     }
     public void clickOnFifthProductInTheTopSellersSection(  ){
         try{
-            DataHelperAndWait.waitToBeVisible(this.fiveProductInTopSellersSection,2,webDriver);
+            DataHelperAndWait.waitToBeVisible(this.fiveProductInTopSellersSection,8,webDriver);
             this.fiveProductInTopSellersSection.click();
         }
         catch (Exception e){
@@ -915,7 +915,7 @@ public class QatarHomePage extends BasePage {
     }
     public void clickOnFirstProductInTheNewArrivalsSection(  ){
         try{
-            DataHelperAndWait.waitToBeVisible(this.firstProductInNewArrivalsSection,2,webDriver);
+            DataHelperAndWait.waitToBeVisible(this.firstProductInNewArrivalsSection,8,webDriver);
             this.firstProductInNewArrivalsSection.click();
         }
         catch (Exception e){
@@ -926,7 +926,7 @@ public class QatarHomePage extends BasePage {
 
     public void clickOnSecondProductInTheNewArrivalsSection(  ){
         try{
-            DataHelperAndWait.waitToBeVisible(this.secondProductInNewArrivalsSection,2,webDriver);
+            DataHelperAndWait.waitToBeVisible(this.secondProductInNewArrivalsSection,8,webDriver);
             this.secondProductInNewArrivalsSection.click();
         }
         catch (Exception e){
@@ -936,7 +936,7 @@ public class QatarHomePage extends BasePage {
     }
     public void clickOnThirdProductInTheNewArrivalsSection(  ){
         try{
-            DataHelperAndWait.waitToBeVisible(this.thirdProductInNewArrivalsSection,2,webDriver);
+            DataHelperAndWait.waitToBeVisible(this.thirdProductInNewArrivalsSection,8,webDriver);
             this.thirdProductInNewArrivalsSection.click();
         }
         catch (Exception e){
@@ -946,7 +946,7 @@ public class QatarHomePage extends BasePage {
     }
     public void clickOnFourthProductInTheNewArrivalsSection(  ){
         try{
-            DataHelperAndWait.waitToBeVisible(this.fourthProductInNewArrivalsSection,2,webDriver);
+            DataHelperAndWait.waitToBeVisible(this.fourthProductInNewArrivalsSection,8,webDriver);
             this.fourthProductInNewArrivalsSection.click();
         }
         catch (Exception e){
@@ -956,7 +956,7 @@ public class QatarHomePage extends BasePage {
     }
     public void clickOnFifthProductInTheNewArrivalsSection(  ){
         try{
-            DataHelperAndWait.waitToBeVisible(this.fiveProductInNewArrivalsSection,2,webDriver);
+            DataHelperAndWait.waitToBeVisible(this.fiveProductInNewArrivalsSection,8,webDriver);
             this.fiveProductInNewArrivalsSection.click();
         }
         catch (Exception e){
