@@ -54,13 +54,12 @@ public class HomePageTestCases extends BaseTest {
         homePage.navigateToHomePage();
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getHomePageSideBanner(), webDriver);
     }
-
     @Test(groups = { "1. Critical Severity"}, description = "HomePage- Make sure the HomePage Horizontal Banner is displayed ", priority = 8)
     public void verifyHomePageHorizontalBannerIsDisplayed() {
         HomePage homePage = new HomePage(webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getHomePageHorizontalBanner(), webDriver);
     }
-
+//TODO: Activate the validation rule when deployed the site into production as discussed with Momean
     @Test(groups = { "All Smoke Testing Result", "2. High Severity"}, description = "HomePage- Make sure clicking on the first side banner works correctly", priority = 9)
     public void verifyClickingOnTheFirstSideBannersWorksCorrectlyInTheVitaminsAndHealthCategoryPage() {
         HomePage homePage = new HomePage(webDriver);
@@ -69,7 +68,7 @@ public class HomePageTestCases extends BaseTest {
 //        WebElementsAssertion.validateTheCurrentUrlContainsString(expectedUrl, webDriver);
         homePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-
+//TODO: Activate the validation rule when deployed the site into production as discussed with Momean
     @Test(groups = { "All Smoke Testing Result", "2. High Severity"}, description = "HomePage- Make sure clicking on the second side banner works correctly", priority = 10)
     public void verifyClickingOnTheSecondSideBannersWorksCorrectlyInTheVitaminsAndHealthCategoryPage() {
         HomePage homePage = new HomePage(webDriver);
