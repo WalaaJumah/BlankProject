@@ -41,73 +41,28 @@ public class BaseTest {
     public static String browserName;
     public static String countryUrl;
     public  WebDriver webDriver;
-    public void CloseInitialDialog()
-
-    {
+    public void CloseInitialDialog() {
+        WebElement btnCloseElement = webDriver.findElement(By.xpath("(//button[@type='submit'])[1]"));
         try{
-            WebElement btnCloseElement = webDriver.findElement(By.xpath("(//button[@type='submit'])[1]"));
-            DataHelperAndWait.waitForTime(2000);
-            DataHelperAndWait.waitToBeVisible(btnCloseElement,webDriver);
-
+            System.out.println("You are in CloseInitialDialog method ");
+            DataHelperAndWait.waitToBeClickable(btnCloseElement,webDriver);
             if (btnCloseElement != null
                     && btnCloseElement.isDisplayed()) {
-                btnCloseElement.click();
+                DataHelperAndWait.clickOnElement(btnCloseElement,webDriver);
+                System.out.println("You are in CloseInitialDialog method Yes");
             }
         }
-        catch (NoSuchElementException ex){
-//            System.out.println(e.getMessage());
-try{
-    WebElement btnCloseElement = webDriver.findElement(By.id("//button[@class='button_btn__zg_G5 changeStorePopUp_btn__sggmr']/span"));
-    DataHelperAndWait.waitToBeVisible(btnCloseElement,webDriver);
-
-    if (btnCloseElement != null
-            && btnCloseElement.isDisplayed()) {
-        btnCloseElement.click();
-    }}
-     catch (NoSuchElementException e){
-        //            System.out.println(e.getMessage());
-
-    }
-
-
-
-
-
-
-    }}
-//    The Below Methods we need to run the TCs across the broswers
-//    @BeforeClass(alwaysRun = true)
-//    @Parameters({"environment","browser"})
-//    public void setupBrowser( String environment ,String browser) throws Exception {
-//    BasePage.siteURL = environment;
-//        System.out.println(browser);
-////Check if parameter passed from TestNG is 'firefox'
-//        switch (browser) {
-////    Check if parameter passed from TestNG is 'firefox'
-//
-//            case "firefox":
-//                System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver.exe");
-//                webDriver = new FirefoxDriver();
-//                webDriver.manage().window().maximize();
-//                webDriver.navigate().to(BasePage.siteURL);
-//                break;
-//            case "chrome":
-//                System.setProperty("webdriver.chrome.driver","src/test/resources/drivers/chromedriver.exe");
-//                webDriver = new ChromeDriver();
-//                webDriver.manage().window().maximize();
-//                webDriver.navigate().to(BasePage.siteURL);
-//                break;
-//            case "Edge":
-//                System.setProperty("webdriver.edge.driver", "src/test/resources/drivers/msedgedriver.exe");
-//                webDriver = new EdgeDriver();
-//                webDriver.manage().window().maximize();
-//                webDriver.navigate().to(BasePage.siteURL);
-//                break;
-//            default:
-//////If no browser passed throw exception
-//                throw new Exception("Browser is not correct");
-//        }
-//    }
+        catch (NoSuchElementException ex) {
+            try{
+            if (btnCloseElement != null
+                    && btnCloseElement.isDisplayed()) {
+                DataHelperAndWait.clickOnElement(btnCloseElement,webDriver);
+                System.out.println("You are in CloseInitialDialog method Yes2");
+            }}
+            catch (Exception e){
+                e.getMessage();
+            }
+        }}
 
     // The Below Method to run the TCs on Onc Browser like Chrome
 
