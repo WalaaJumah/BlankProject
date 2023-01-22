@@ -295,7 +295,6 @@ public class HomePageTestCases extends BaseTest {
         for (int i = 0; i < homePage.getCategoriesInsideTrendingOnSporterSection().size(); i++) {
             String expectedUrl = homePage.getCategoriesInsideTrendingOnSporterSection().get(i).getAttribute("href");
             DataHelperAndWait.clickOnElement(homePage.getCategoriesInsideTrendingOnSporterSection().get(i), webDriver);
-//            WebElementsAssertion.validateTheCurrentUrlContainsString(expectedUrl, webDriver);
             homePage.verifyTheDisplayedPageDoesNotHaveErrors();
             homePage.navigateToHomePage();
         }

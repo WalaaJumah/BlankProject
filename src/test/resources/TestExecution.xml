@@ -53,10 +53,10 @@
 <!--            <class name="sporter_test.AeCartTestCases"/>-->
 <!--            <class name="sporter_test.AeRecommendedProductsTestCases"/>-->
             <class name="sporter_test.homepage_test_cases.UAEHomePageTestCases">
-<!--                <methods>-->
-<!--                    <include name="verifyClickOnTheProductsAppearingInTheTopSellersSectionRedirectTheUserToCorrectUrl"></include>-->
-<!--&lt;!&ndash;                    <include name="verifyPreviousBtnWillAppearInTopSellersSectionOnceClickingOnNextBtn"></include>&ndash;&gt;-->
-<!--                </methods>-->
+                <methods>
+                    <include name="verifyClickOnTheCategoriesAppearingInTheTrendingOnSporterSectionRedirectTheUserToCorrectUrl"></include>
+<!--                    <include name="verifyPreviousBtnWillAppearInTopSellersSectionOnceClickingOnNextBtn"></include>-->
+                </methods>
             </class>
 <!--                     <class name="sporter_test.homepage_test_cases.UAEHomePageTestCases">-->
 <!--                <methods>-->

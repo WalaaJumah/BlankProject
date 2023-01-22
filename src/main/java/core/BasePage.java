@@ -116,13 +116,18 @@ public class BasePage {
     public BasePage(WebDriver webDriver){
         this.webDriver = webDriver;
     }
-    public String getTitle(){return webDriver.getTitle();}
-    public String getSourcePage(){return webDriver.getPageSource();}
+    public String getTitle(){
+        DataHelperAndWait.waitForTime(500);
+        return webDriver.getTitle();}
+    public String getSourcePage(){
+        DataHelperAndWait.waitForTime(500);
+        return webDriver.getPageSource();}
     public void verifyTheDisplayedPageDoesNotHaveErrors() {
         Assert.assertFalse(this.getTitle().equalsIgnoreCase(SporterErrorPage.pageNotFoundTitle), "Page Not Found Is Displayed and the URL is " + webDriver.getCurrentUrl());
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.productsCannotFindMsg), "The page is empty and the URL is " + webDriver.getCurrentUrl());
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.exceptionPageMsg), "An error has happened during application run. See exception log for details in page and the URL is " + webDriver.getCurrentUrl());
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.offerNotAvailableMsg), "The  offer is not available in your country page is displayed" + webDriver.getCurrentUrl());
+        Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.pageNotFoundMsg), "Page Not Found Is Displayed and the URL is " + webDriver.getCurrentUrl());
     }
     public void navigateToBogoProduct(){
         webDriver.navigate().to(BasePage.BaseURL+aeDomain+bogoProduct);
