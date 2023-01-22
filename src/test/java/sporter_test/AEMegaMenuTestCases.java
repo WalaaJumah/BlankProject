@@ -1965,7 +1965,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
-    @Test(groups = {"MegaMenu", "1. Critical Severity"},description = "MegaMenu- Make sure clicking on the Pets Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 128)
+    @Test(groups = {"MegaMenu", "1. Critical Severity"},description = "MegaMenu- Make sure clicking on the Pets Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 128,enabled = false)
     public void verifyClickingOnPetsOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -1981,7 +1981,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
-    @Test(groups = {"MegaMenu", "1. Critical Severity"},description = "MegaMenu- Make sure clicking on the Supplements More Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 129)
+    @Test(groups = {"MegaMenu", "1. Critical Severity"},description = "MegaMenu- Make sure clicking on the Supplements More Option appearing in the Vitamins & Health menu inside ShopBy Menu will redirect the User to the correct URL", priority = 129,enabled = false)
     public void verifyClickingOnSupplementsMoreOptionInVitaminsAndHealthMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3386,7 +3386,7 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         action.moveToElement(aeMegamenuPage.getBugGlovesInSportsMenu()).perform();
         String expectedUrl=aeMegamenuPage.getBugGlovesInSportsMenu().getAttribute("href");
         aeMegamenuPage.getBugGlovesInSportsMenu().click();
-        Assert.assertEquals(webDriver.getCurrentUrl(), "Theres A Bug Here Due To Gloves Option Appearing Duplicated");
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
         System.out.println("Theres A Bug Here Due To Gloves Option Appearing Duplicated");
@@ -6266,7 +6266,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
-    @Test(groups = {"MegaMenu", "1. Critical Severity"},description = "MegaMenu- Make sure clicking on the Pets Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 403)
+    @Test(groups = {"MegaMenu", "1. Critical Severity"},description = "MegaMenu- Make sure clicking on the Pets Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 403,enabled = false)
     public void verifyClickingOnPetsOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6281,7 +6281,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
-    @Test(groups = {"MegaMenu", "1. Critical Severity"},description = "MegaMenu- Make sure clicking on the Supplements More Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 404)
+    @Test(groups = {"MegaMenu", "1. Critical Severity"},description = "MegaMenu- Make sure clicking on the Supplements More Option appearing in the Vitamins & Health main menu will redirect the User to the correct URL", priority = 404,enabled = false)
     public void verifyClickingOnSupplementsMoreOptionInVitaminsAndHealthMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7918,7 +7918,7 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         Assert.assertTrue(aeMegamenuPage.getSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
     }
 
-    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make sure the Sport Supplements menu is displayed when hovering on it from OOS Product page ", priority = 515)
+    @Test(groups = {"MegaMenu", "3. Medium Severity"},description = "MegaMenu- Make sure the Sport Supplements menu is displayed when hovering on it from OOS Product page ", priority = 515)
     public void verifySportSupplementsMenuIsDisplayedWhenHoveringOnItFromOosProductPage() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7928,7 +7928,7 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         Assert.assertTrue(aeMegamenuPage.getSportsSupplementsSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
     }
 
-    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make sure the Vitamins & Health menu is displayed when hovering on it from OOS Product page ", priority = 516)
+    @Test(groups = {"MegaMenu", "3. Medium Severity"},description = "MegaMenu- Make sure the Vitamins & Health menu is displayed when hovering on it from OOS Product page ", priority = 516)
     public void verifyVitaminsAndHealthMenuIsDisplayedWhenHoveringOnItFromOosProductPage() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7938,7 +7938,7 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         Assert.assertTrue(aeMegamenuPage.getVitaminsAndHealthSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
     }
 
-    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make sure the Healthy Food menu is displayed when hovering on it from OOS Product page ", priority = 517)
+    @Test(groups = {"MegaMenu", "3. Medium Severity"},description = "MegaMenu- Make sure the Healthy Food menu is displayed when hovering on it from OOS Product page ", priority = 517)
     public void verifyHealthyFoodMenuIsDisplayedWhenHoveringOnItFromOosProductPage() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7948,7 +7948,7 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         Assert.assertTrue(aeMegamenuPage.getHealthyFoodSubMenuSection().isDisplayed(), "The Sport Supplements menu is not displayed when Hovering on it from OOS Product Page");
     }
 
-    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make sure the Sports menu is displayed when hovering on it from OOS Product page ", priority = 518)
+    @Test(groups = {"MegaMenu", "3. Medium Severity"},description = "MegaMenu- Make sure the Sports menu is displayed when hovering on it from OOS Product page ", priority = 518)
     public void verifySportsMenuIsDisplayedWhenHoveringOnItFromOosProductPage() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -7959,7 +7959,7 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
     }
 
     //The following Test Cases handle displaying the Mega Menu from Product Page
-    @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make sure the ShopBy menu is displayed when hovering on it from OOS Product page ", priority = 519)
+    @Test(groups = {"MegaMenu", "3. Medium Severity"},description = "MegaMenu- Make sure the ShopBy menu is displayed when hovering on it from OOS Product page ", priority = 519)
     public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductPage() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);

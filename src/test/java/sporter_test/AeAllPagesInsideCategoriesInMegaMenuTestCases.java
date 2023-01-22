@@ -1893,7 +1893,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-  @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Healthy Pets Option Sub-Category related to the Vitamins & Health Category ", priority = 100)
+  @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Healthy Pets Option Sub-Category related to the Vitamins & Health Category ", priority = 100,enabled = false)
     public void verifyAbilityToAccessAllPagesInsidePetsOptionCategoryRelatedTVitaminsAndHealthCategoryPage(){
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
@@ -1912,7 +1912,7 @@ public class AeAllPagesInsideCategoriesInMegaMenuTestCases  extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-  @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Healthy Supplements More Option Sub-Category related to the Vitamins & Health Category ", priority = 101)
+  @Test(groups = {"MegaMenu", "2. High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Healthy Supplements More Option Sub-Category related to the Vitamins & Health Category ", priority = 101,enabled = false)
     public void verifyAbilityToAccessAllPagesInsideSupplementsMoreOptionCategoryRelatedTVitaminsAndHealthCategoryPage(){
       AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
       AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);

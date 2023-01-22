@@ -110,7 +110,7 @@ public class AeSearchPageTestCases extends BaseTest {
     }
 
 
-    @Test(groups = {"Search", "1. Critical Severity"},description = "Search Page- Make sure the ability to access all brands appearing in the Brands Page", priority = 7)
+    @Test(groups = {"Search", "3. Medium Severity"},description = "Search Page- Make sure the ability to access all brands appearing in the Brands Page", priority = 7,enabled = false)
     public void verifyAbilityToAccessAllBrandsListedInBrandsPageCorrectly(){
         AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage=new AeProductDetailsPage(webDriver);

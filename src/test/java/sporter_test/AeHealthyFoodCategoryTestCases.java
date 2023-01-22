@@ -144,7 +144,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
 
         }    }
 //    //There's a bug here
-    @Test(groups = {"Healthy Food Category", "2. High Severity"},description = "Healthy Food Category- Make sure each of the Healthy Food category image and Horizontal Banners appearing after sorting the products  ", priority = 13)
+    @Test(groups = {"Healthy Food Category", "3. Medium Severity"},description = "Healthy Food Category- Make sure each of the Healthy Food category image and Horizontal Banners appearing after sorting the products  ", priority = 13)
     public void verifyHealthyFoodCategoryImageAndHorizontalBannersAppearingAfterSortingTheProducts()  {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();

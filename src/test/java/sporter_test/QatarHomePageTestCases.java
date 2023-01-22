@@ -4,6 +4,7 @@ import core.BaseTest;
 import core.DataHelperAndWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import sporter_pages.AeVitaminsAndHealthCategoryPage;
 import sporter_pages.QatarHomePage;
 import xml_reader.XmlReader;
 
@@ -201,16 +202,17 @@ public class QatarHomePageTestCases extends BaseTest {
     @Test(groups = {"Home Page","3. Medium Severity"},description = "Qatar HomePage- Make sure the next button appearing in the Trending On Sporter section works Correctly ", priority = 19)
     public void verifyNextBtnInTrendingOnSporterSectionWorks() {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
-//        qatarHomePage.navigate();
+        //        qatarHomePage.navigate();
         qatarHomePage.clickOnNextButtonInTrendingOnSporterSection();
-        Assert.assertTrue(qatarHomePage.getTrendingOnSporterSectionPositionAfterClickingOnNext().isDisplayed());
+        Assert.assertTrue(qatarHomePage.getVitmainsForKidsCategory().isDisplayed());
+//        Assert.assertTrue(qatarHomePage.getTrendingOnSporterSectionPositionAfterClickingOnNext().isDisplayed());
     }
 
     @Test(groups = {"Home Page","3. Medium Severity"},description = "Qatar HomePage- Make sure the previous button appearing in the Trending On Sporter section works Correctly ", priority = 20)
     public void verifyPreviousBtnInTrendingOnSporterSectionWorks() {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.clickOnPreviousButtonInTrendingOnSporterSection();
-        Assert.assertTrue(qatarHomePage.getTrendingOnSporterSectionPositionAfterClickingOnPrevious().isDisplayed());
+        Assert.assertTrue(qatarHomePage.getGamingAndFocusCategory().isDisplayed());
     }
 
     @Test(groups = {"Home Page","All Smoke Testing Result","2. High Severity"},description = "Qatar HomePage- Make sure the New Arrivals section is displayed ", priority = 21)

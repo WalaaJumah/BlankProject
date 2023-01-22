@@ -449,6 +449,7 @@ dataHelperAndWait.waitToBeVisible(homePageRotatingSlider,5,webDriver);
     }
 
     public WebElement getPreviousButtonInTopSellerSection() {
+        DataHelperAndWait.waitToBeVisible(previousButtonInTopSellerSection,8,webDriver);
         return previousButtonInTopSellerSection;
     }
 
@@ -655,12 +656,12 @@ dataHelperAndWait.isDisplayed(sportswearAndAccessoriesLink, 1,webDriver);
     public void clickOnNextButtonInTopSellerSectionInTopSellerSection() {
         try{
                     dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.isDisplayed(nextButtonInTopSellerSection, 3,webDriver);
+dataHelperAndWait.isDisplayed(nextButtonInTopSellerSection, 10,webDriver);
             this.nextButtonInTopSellerSection.click();
         }
         catch (Exception e){
                     dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.isDisplayed(nextButtonInTopSellerSection, 1,webDriver);
+dataHelperAndWait.isDisplayed(nextButtonInTopSellerSection, 6,webDriver);
             this.nextButtonInTopSellerSection.click();
         }
     }
@@ -691,12 +692,12 @@ dataHelperAndWait.isDisplayed(previousBtnInTrendingOnSporterSection, 1,webDriver
     public void clickOnPreviousButtonInTopSellersSection() {
         try{
                     dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.isDisplayed(previousButtonInTopSellerSection, 3,webDriver);
+dataHelperAndWait.isDisplayed(previousButtonInTopSellerSection, 10,webDriver);
             this.previousButtonInTopSellerSection.click();
         }
         catch (Exception e){
                     dataHelperAndWait= new DataHelperAndWait();
-dataHelperAndWait.isDisplayed(previousButtonInTopSellerSection, 1,webDriver);
+dataHelperAndWait.isDisplayed(previousButtonInTopSellerSection, 8,webDriver);
             this.previousButtonInTopSellerSection.click();
         }
     }

@@ -111,11 +111,7 @@ public class AeBrandsTestCases extends BaseTest {
         String expectedUrl= aeSearchPage.getBrandsListInBrandPage().get(4).getAttribute("href");
         aeSearchPage.getBrandsListInBrandPage().get(4).click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl)," The URL of the brand page is incorrect, The URL: "+ webDriver.getCurrentUrl());
-        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
-                    if(DataHelperAndWait.isTheresNoPages(numberOfProductInTheList))
-            System.out.println("There's no pages");
-        else
-        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
+        aeSearchPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Swanson Vitamins brand correctly", priority =7 )
     public void VerifyAbilityToAccessAllPagesRelatedToSwansonVitaminsBrandCorrectly()

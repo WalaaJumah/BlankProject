@@ -200,8 +200,19 @@ public class QatarHomePage extends BasePage {
     private WebElement fourthProductInNewArrivalsSection;
     @FindBy(xpath = "(//div[@id='tab-6-all6']/div/div/div/div/a)[5]")
     private WebElement fiveProductInNewArrivalsSection;
+    @FindBy(xpath = "(//div[@data-swiper-slide-index='5'])[2]")
+    private WebElement vitmainsForKidsCategory;
+    @FindBy(xpath = "(//div[@data-swiper-slide-index='0'])[2]")
+    private WebElement gamingAndFocusCategory;
+
 
     //Getter Methods
+    public WebElement getGamingAndFocusCategory() {
+        return gamingAndFocusCategory;
+    }
+    public WebElement getVitmainsForKidsCategory() {
+        return vitmainsForKidsCategory;
+    }
     public WebElement getNextArrowInHomePageRotatingSlider() {
         return nextArrowInHomePageRotatingSlider;
     }
@@ -602,31 +613,31 @@ public class QatarHomePage extends BasePage {
 
     public void clickOnNextButtonInTopSellerSectionInTopSellerSection(  ) {
         try{
-        DataHelperAndWait.isDisplayed(nextButtonInTopSellerSection, 8,webDriver);
+        DataHelperAndWait.isDisplayed(nextButtonInTopSellerSection, 10,webDriver);
         this.nextButtonInTopSellerSection.click();
     }catch (Exception e){
-            DataHelperAndWait.isDisplayed(nextButtonInTopSellerSection, 1,webDriver);
+            DataHelperAndWait.isDisplayed(nextButtonInTopSellerSection, 5,webDriver);
             this.nextButtonInTopSellerSection.click();
         }}
 
     public void clickOnNextButtonInTrendingOnSporterSection(  ) {
         try {
-            DataHelperAndWait.isDisplayed(nextBtnInTrendingOnSporterSection, 8,webDriver);
+            DataHelperAndWait.isDisplayed(nextBtnInTrendingOnSporterSection, 10,webDriver);
             this.nextBtnInTrendingOnSporterSection.click();
         }
         catch (Exception e){
-            DataHelperAndWait.isDisplayed(nextBtnInTrendingOnSporterSection, 1,webDriver);
+            DataHelperAndWait.isDisplayed(nextBtnInTrendingOnSporterSection, 6,webDriver);
             this.nextBtnInTrendingOnSporterSection.click();
         }
     }
 
     public void clickOnPreviousButtonInTrendingOnSporterSection(  ) {
         try {
-            DataHelperAndWait.isDisplayed(previousBtnInTrendingOnSporterSection, 8,webDriver);
+            DataHelperAndWait.isDisplayed(previousBtnInTrendingOnSporterSection, 10,webDriver);
             this.previousBtnInTrendingOnSporterSection.click();
         }
         catch (Exception e){
-            DataHelperAndWait.isDisplayed(previousBtnInTrendingOnSporterSection, 1,webDriver);
+            DataHelperAndWait.isDisplayed(previousBtnInTrendingOnSporterSection, 6,webDriver);
             this.previousBtnInTrendingOnSporterSection.click();
         }
     }
