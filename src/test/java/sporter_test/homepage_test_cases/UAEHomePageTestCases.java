@@ -7,12 +7,13 @@
 package sporter_test.homepage_test_cases;
 
 import core.BasePage;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.UAEHomePage;
 
 @Test(groups = "UAE HomePage")
 public class UAEHomePageTestCases extends HomePageTestCases {
-    @Test(groups = { "All Smoke Testing Result"},description = " Qatar HomePage- Switching to UAE store", priority = 1)
+    @BeforeClass
     public void switchToQatarStore(){
         UAEHomePage uaeHomePage=new UAEHomePage(webDriver);
         uaeHomePage.switchCountry(uaeHomePage.getAeCountry());

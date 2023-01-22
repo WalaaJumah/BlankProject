@@ -42,8 +42,8 @@ public class BaseTest {
     public static String countryUrl;
     public  WebDriver webDriver;
     public void CloseInitialDialog() {
-        WebElement btnCloseElement = webDriver.findElement(By.xpath("(//button[@type='submit'])[1]"));
-        try{
+        try{   WebElement btnCloseElement = webDriver.findElement(By.xpath("(//button[@type='submit'])[1]"));
+
             System.out.println("You are in CloseInitialDialog method ");
             DataHelperAndWait.waitToBeClickable(btnCloseElement,webDriver);
             if (btnCloseElement != null
@@ -54,7 +54,8 @@ public class BaseTest {
         }
         catch (NoSuchElementException ex) {
             try{
-            if (btnCloseElement != null
+                WebElement btnCloseElement = webDriver.findElement(By.xpath("(//button[@type='submit'])[1]"));
+                if (btnCloseElement != null
                     && btnCloseElement.isDisplayed()) {
                 DataHelperAndWait.clickOnElement(btnCloseElement,webDriver);
                 System.out.println("You are in CloseInitialDialog method Yes2");

@@ -1,0 +1,14 @@
+Index: src/test/java/sporter_test/QatarHomePageTestCases.java
+===================================================================
+diff --git a/src/test/java/sporter_test/QatarHomePageTestCases.java b/src/test/java/sporter_test/QatarHomePageTestCases.java
+--- a/src/test/java/sporter_test/QatarHomePageTestCases.java	
++++ b/src/test/java/sporter_test/QatarHomePageTestCases.java	
+@@ -430,7 +430,7 @@
+         }
+ 
+ 
+-    @Test(groups = {"Home Page","1. Critical Severity"},description = "Qatar HomePage- Make sure clicking on the products appearing in the New Arrivals section redirect the user to the correct URL", priority = 37)
++    @Test(groups = {"Home Page","1. Criticl Severity"},description = "Qatar HomePage- Make sure clicking on the products appearing in the New Arrivals section redirect the user to the correct URL", priority = 37)
+     public void verifyClickOnTheProductsAppearingInTheNewArrivalsSectionRedirectTheUserToCorrectUrl() {
+         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
+         qatarHomePage.navigate();

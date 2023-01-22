@@ -1,5 +1,6 @@
 package core;
 
+import error_helper.SporterErrorPage;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
@@ -14,7 +15,7 @@ import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 public  class DataHelperAndWait  {
-    private static int WaitTime=10;
+    private static int WaitTime=12;
     public static   void waitForElement(WebElement element, WebDriver webDriver) {
         WebDriverWait wait;
         wait = new WebDriverWait(webDriver, WaitTime);
@@ -224,5 +225,48 @@ public  class DataHelperAndWait  {
             DataHelperAndWait.waitToBeVisible(webElement,webDriver);
             webElement.click();}
         }
+        public static void clickOnPreviousOrNextProductsInTheWidget(List<WebElement> productsList,WebElement nextOrPreviousButton,WebDriver driver){
+        if(productsList.size()>5){
+            clickOnElement(nextOrPreviousButton,driver);
+        }
+        else{
+            System.out.println("There's only "+ productsList.size()+1+" in the panel");
+        }
+
+        }
+
+        public static void validateNextOrPreviousBtnInPanelWork(List<WebElement> productsList,WebElement productCardNum,WebElement nextOrPreviousButton,WebDriver driver){
+        if(productsList.size()>4){
+            clickOnElement(nextOrPreviousButton,driver);
+            WebElementsAssertion.validateTheElementIsDisplayed(productCardNum,driver);
+        }
+        else{
+            System.out.println("There's only "+ productsList.size()+1+" in the panel");
+        }
+
+        }
+
+        public static void accessAllProductsInWidget(List<WebElement> productsList,WebElement nextOrPreviousBtnToClick,WebDriver driver,BasePage pageObj){
+            Assert.assertTrue( productsList.size()>0,"There's no any products in the list");
+            for (int i = 0; i < productsList.size(); i++) {
+                System.out.println(productsList.size());
+                if(!productsList.get(i).isDisplayed()){
+                    do{
+               clickOnElement(nextOrPreviousBtnToClick,driver);}
+                while (!productsList.get(i).isDisplayed());
+                }
+                    String expectedUrl = productsList.get(i).getAttribute("href");
+                    clickOnElement(productsList.get(i),driver);
+                    pageObj.verifyTheDisplayedPageDoesNotHaveErrors();
+                    pageObj.navigateToHomePage();
+                    System.out.println(i);
+}
+
+            }
+
+
+
+
+
 
 }

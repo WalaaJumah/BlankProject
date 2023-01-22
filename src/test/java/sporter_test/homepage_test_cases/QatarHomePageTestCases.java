@@ -1,6 +1,7 @@
 package sporter_test.homepage_test_cases;
 
 import core.BasePage;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.QatarHomePage;
 
@@ -17,7 +18,7 @@ public class QatarHomePageTestCases extends HomePageTestCases {
 //        super.setupBrowser(environment);
 //        qatarHomePage= new QatarHomePage(webDriver);
 //    }
-@Test(groups = { "All Smoke Testing Result"},description = " Qatar HomePage- Switching to Qatar store", priority = 1)
+@BeforeClass
 public void switchToQatarStore(){
     QatarHomePage qatarHomePage=new QatarHomePage(webDriver);
     qatarHomePage.switchCountry(qatarHomePage.getQatarCountry());

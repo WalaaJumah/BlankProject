@@ -1,12 +1,13 @@
 package sporter_test.homepage_test_cases;
 
 import core.BasePage;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.KsaHomePage;
 
 @Test(groups = "KSA HomePage")
 public class KsaHomePageTestCases  extends HomePageTestCases {
-    @Test(groups = { "All Smoke Testing Result"},description = " KSA HomePage- Switching to KSA store", priority = 1)
+    @BeforeClass
     public void switchToKsaStore(){
         KsaHomePage ksaHomePage=new KsaHomePage(webDriver);
         ksaHomePage.switchCountry(ksaHomePage.getKsaCountry());

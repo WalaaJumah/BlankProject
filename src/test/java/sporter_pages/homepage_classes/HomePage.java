@@ -71,7 +71,7 @@ public class HomePage extends BasePage {
     private WebElement topSellingStacksSections;
     @FindBy(id = "Swiper_mostSelling")
     private WebElement topSellerSections;
-    @FindBy(xpath = "//ul[@id='OptionsContainerOptions_mostSelling']/li")
+    @FindBy(xpath = "//ul[@id='OptionsContainer_topSeller']/li")
     private List<WebElement> topSellerCategoriesTabs;
     @FindBy(xpath = "//ul[@id='OptionsContainerOptions_newArrival']/li")
     private List<WebElement> newArrivalsCategoriesTabs;
@@ -99,9 +99,9 @@ public class HomePage extends BasePage {
     private WebElement vitaminsAndHealthActiveLinkInTopeSellersSection;
     @FindBy(id = "//ul[@class='tabs tabs67']/li[5]/a")
     private WebElement sportswearAndAccessoriesActiveLink;
-    @FindBy(id = "ControllersrtArrow_mostSelling")
+    @FindBy(id = "ControllersrtArrow_topSeller")
     private WebElement nextButtonInTopSellerSection;
-    @FindBy(id = "ControllersLtArrow_mostSelling")
+    @FindBy(id = "ControllersLtArrow_topSeller")
     private WebElement previousButtonInTopSellerSection;
     @FindBy(id = "Trendscontainer_title")
     private WebElement trendingOnSporterHeader;
@@ -111,18 +111,6 @@ public class HomePage extends BasePage {
     private WebElement nextBtnInTrendingOnSporterSection;
     @FindBy(id = "//div[@class='trending-swiper-button-prev']/i")
     private WebElement previousBtnInTrendingOnSporterSection;
-    @FindBy(id = "//div[@style='transform: translate3d(-1482px, 0px, 0px); transition-duration: 0ms;']")
-    private WebElement trendingOnSporterSectionPositionAfterClickingOnNext;
-    @FindBy(id = "//div[@style='transform: translate3d(-1235px, 0px, 0px); transition-duration: 0ms;']")
-    private WebElement trendingOnSporterSectionPositionAfterClickingOnPrevious;
-    @FindBy(id = "(//div[@class='swiper-wrapper'])[2]")
-    private WebElement topSellerSectionPositionAfterClickingOnPrevious;
-    @FindBy(id = "//div[@style='transform: translate3d(-249px, 0px, 0px); transition-duration: 0ms;']")
-    private WebElement topSellerSectionPositionAfterClickingOnNext;
-    @FindBy(id = "//div[@style='transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;']")
-    private WebElement NewArrivalSectionPositionAfterClickingOnPrevious;
-    @FindBy(id = "//div[@style='transform: translate3d(-249px, 0px, 0px); transition-duration: 0ms;']")
-    private WebElement NewArrivalSectionPositionAfterClickingOnNext;
     @FindBy(id = "CategoryProductsTitle_newArrival")
     private WebElement newArrivalsHeader;
     @FindBy(id = "Swiper_newArrival")
@@ -149,6 +137,9 @@ public class HomePage extends BasePage {
     private WebElement newArrivalsSportswearAndAccessoriesActiveLink;
     @FindBy(id = "ControllersrtArrow_newArrival")
     private WebElement nextBtnInNewArrivalsSection;
+       @FindBy(id = "ControllersLtArrow_mostselling")
+    private WebElement nextBtnInTopSellingStacksSection;
+
     @FindBy(id = "ControllersLtArrow_newArrival")
     private WebElement previousBtnInNewArrivalsSection;
     @FindBy(xpath = "(//div[@class='contactForm_container'])[1]")
@@ -193,14 +184,6 @@ public class HomePage extends BasePage {
     private WebElement fiveProductInTopSellersSection;
     @FindBy(xpath = "//div[@id='Swiper_newArrival']/div//a")
     private List<WebElement> productsInNewArrivalsSection;
-    @FindBy(id = "(//div[@id='tab-6-all6']/div/div/div/div/a)[2]")
-    private WebElement secondProductInNewArrivalsSection;
-    @FindBy(id = "(//div[@id='tab-6-all6']/div/div/div/div/a)[3]")
-    private WebElement thirdProductInNewArrivalsSection;
-    @FindBy(id = "(//div[@id='tab-6-all6']/div/div/div/div/a)[4]")
-    private WebElement fourthProductInNewArrivalsSection;
-    @FindBy(id = "(//div[@id='tab-6-all6']/div/div/div/div/a)[5]")
-    private WebElement fiveProductInNewArrivalsSection;
     @FindBy(id = "(//p[@class='count-container-item amount amount--has-pages'])[1]/span")
     private WebElement resultLabel;
     @FindBy(id = "(//p[@class='count-container-item amount amount--has-pages'])[1]")
@@ -338,18 +321,6 @@ public class HomePage extends BasePage {
     }
     public void clickOnFifthProductInTheTopSellersSection(){
         DataHelperAndWait.clickOnElement(fiveProductInTopSellersSection,webDriver);
-    }
-    public void clickOnSecondProductInTheNewArrivalsSection(){
-        DataHelperAndWait.clickOnElement(secondProductInNewArrivalsSection,webDriver);
-    }
-    public void clickOnThirdProductInTheNewArrivalsSection(){
-        DataHelperAndWait.clickOnElement(thirdProductInNewArrivalsSection,webDriver);
-    }
-    public void clickOnFourthProductInTheNewArrivalsSection(){
-        DataHelperAndWait.clickOnElement(fourthProductInNewArrivalsSection,webDriver);
-    }
-    public void clickOnFifthProductInTheNewArrivalsSection(){
-        DataHelperAndWait.clickOnElement(fiveProductInNewArrivalsSection,webDriver);
     }
     public void clickOnFirstSideBanner(){
         DataHelperAndWait.clickOnElement(firstSideBanner,webDriver);
