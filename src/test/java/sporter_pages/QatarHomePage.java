@@ -208,6 +208,7 @@ public class QatarHomePage extends BasePage {
 
     //Getter Methods
     public WebElement getGamingAndFocusCategory() {
+        DataHelperAndWait.waitToBeVisible(gamingAndFocusCategory,8,webDriver);
         return gamingAndFocusCategory;
     }
     public WebElement getVitmainsForKidsCategory() {
