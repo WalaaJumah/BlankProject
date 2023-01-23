@@ -3,9 +3,8 @@
     <TestData1>368</TestData1>
     <TestData2>368</TestData2>
     <ParentData1>
-        <customerServicePhoneNumber> +971 4 88 30 300</customerServicePhoneNumber>
-        <CustomerServiceEnLabel>Customer Service: </CustomerServiceEnLabel>
-        <CustomerServiceArLabel>خدمة العملاء: </CustomerServiceArLabel>
+        <CustomerServiceEnLabel>Customer Service: +971 4 88 30 300</CustomerServiceEnLabel>
+        <CustomerServiceArLabel>خدمة العملاء: +971 4 88 30 300</CustomerServiceArLabel>
         <ShopByEn>Shop By</ShopByEn>
         <ShopByAr>تسوق حسب</ShopByAr>
         <SportsSupplementsEn>Sports Supplements</SportsSupplementsEn>

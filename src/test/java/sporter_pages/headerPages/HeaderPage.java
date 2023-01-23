@@ -43,6 +43,14 @@ public class HeaderPage extends BasePage {
     private WebElement accountProfileIcon;
     @FindBy(id="CartIconContainer")
     private WebElement cartIcon;
-
-
+    @FindBy(id="SearchButton")
+    private WebElement searchBtn;
+    @FindBy(id="searchInput")
+    private WebElement searchField;
+    @FindBy(xpath = "//div[@id='CountrySelector']//ul/li/a")
+    private List<WebElement> countryList;
+    @FindBy(id = "downArrow")
+    private WebElement countryMenuIcon;
+    @FindBy(id = "LangSelector")
+    private WebElement LanguageBtn;
 }

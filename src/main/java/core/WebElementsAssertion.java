@@ -35,4 +35,20 @@ public class WebElementsAssertion {
         }
 
     }
+    public static void assertionTextIsEqual(WebElement webElement,WebDriver webDriver, String text){
+        DataHelperAndWait.waitToBeVisible(webElement,webDriver);
+        Assert.assertEquals(webElement.getText(),text, "The element contains : "+webElement.getText());
+
+    }
+    public static void assertionTextIsNotEqual(WebElement webElement,WebDriver webDriver, String text){
+        DataHelperAndWait.waitToBeVisible(webElement,webDriver);
+        Assert.assertNotEquals(webElement.getText(),text, "The element contains : "+webElement.getText());
+
+    }
+    public static void assertionAttributeTrueForElement(WebElement webElement,WebDriver webDriver,String attribute, String expectedAttribute){
+        DataHelperAndWait.waitToBeVisible(webElement,webDriver);
+        Assert.assertEquals(webElement.getAttribute(attribute),expectedAttribute,"The "+webElement.getAttribute(attribute)+" is not equal "+ expectedAttribute);
+    }
+
+
 }

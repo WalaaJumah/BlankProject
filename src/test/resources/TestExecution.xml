@@ -17,21 +17,29 @@
 <!--                <parameter name="country" value="en-qa" />-->
         <parameter name="bogoProduct" value="/phd-nutrition-diet-whey-protein-47340" />
         <classes>
-            <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>
-            <class name="sporter_test.homepage_test_cases.UAEHomePageTestCases"/>
-            <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases"/>
-            <class name="sporter_test.homepage_test_cases.QatarHomePageTestCases"/>
-            <class name="sporter_test.homepage_test_cases.EgyptHomePageTestCases"/>
+<!--            HomePage-->
+<!--            <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>-->
+<!--            <class name="sporter_test.homepage_test_cases.UAEHomePageTestCases"/>-->
+<!--            <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases"/>-->
+<!--            <class name="sporter_test.homepage_test_cases.QatarHomePageTestCases"/>-->
+<!--            <class name="sporter_test.homepage_test_cases.EgyptHomePageTestCases"/>-->
+<!--         Header   -->
+
+
+<!--            <class name="sporter_test.headerTestCases.UAEHeaderTestCases"/>-->
+<!--            <class name="sporter_test.headerTestCases.KSAHeaderTestCases"/>-->
 
 
 
 
-<!--            <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases">-->
-<!--                <methods>-->
-<!--                    <include name="verifyMainOptionsInTheMegaMenuAreDisplayed"></include>-->
-<!--&lt;!&ndash;                    <include name="verifyPreviousBtnWillAppearInTopSellersSectionOnceClickingOnNextBtn"></include>&ndash;&gt;-->
-<!--                </methods>-->
-<!--            </class>-->
+            <class name="sporter_test.headerTestCases.UAEHeaderTestCases">
+                <methods>
+                    <include name="verifySearchSectionCorrectly"></include>
+                    <include name="verifyCartIconAppearsCorrectly"></include>
+                    <include name="verifyProfileIconAppearsCorrectly"></include>
+<!--                    <include name="verifyPreviousBtnWillAppearInTopSellersSectionOnceClickingOnNextBtn"></include>-->
+                </methods>
+            </class>
 
         </classes>
 
