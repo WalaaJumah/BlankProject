@@ -18,18 +18,18 @@
         <parameter name="bogoProduct" value="/phd-nutrition-diet-whey-protein-47340" />
         <classes>
 <!--            HomePage-->
-<!--            <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>-->
-<!--            <class name="sporter_test.homepage_test_cases.UAEHomePageTestCases"/>-->
-<!--            <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases"/>-->
-<!--            <class name="sporter_test.homepage_test_cases.QatarHomePageTestCases"/>-->
+            <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>
+            <class name="sporter_test.homepage_test_cases.UAEHomePageTestCases"/>
+            <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases"/>
+            <class name="sporter_test.homepage_test_cases.QatarHomePageTestCases"/>
             <class name="sporter_test.homepage_test_cases.EgyptHomePageTestCases"/>
 <!--         Header   -->
 
 
-<!--            <class name="sporter_test.headerTestCases.KSAHeaderTestCases"/>-->
-<!--            <class name="sporter_test.headerTestCases.UAEHeaderTestCases"/>-->
-<!--            <class name="sporter_test.headerTestCases.JordanHeaderTestCases"/>-->
-<!--            <class name="sporter_test.headerTestCases.QatarHeaderTestCases"/>-->
+            <class name="sporter_test.headerTestCases.KSAHeaderTestCases"/>
+            <class name="sporter_test.headerTestCases.UAEHeaderTestCases"/>
+            <class name="sporter_test.headerTestCases.JordanHeaderTestCases"/>
+            <class name="sporter_test.headerTestCases.QatarHeaderTestCases"/>
             <class name="sporter_test.headerTestCases.EgyptHeaderTestCases"/>
 
 
