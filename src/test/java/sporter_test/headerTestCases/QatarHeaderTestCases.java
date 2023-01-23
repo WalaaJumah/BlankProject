@@ -8,8 +8,9 @@ package sporter_test.headerTestCases;
 
 import core.BasePage;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.QatarHomePage;
-
+@Test(groups = "Qatar Header Section")
 public class QatarHeaderTestCases extends HeaderTestCases {
     @BeforeClass
     public void switchToQatarStore() {
