@@ -78,5 +78,4 @@ public class HeaderTestCases extends BaseTest {
         HeaderPage headerPage=new HeaderPage(webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(headerPage.getAccountProfileIcon(),webDriver);
        }
-
 }

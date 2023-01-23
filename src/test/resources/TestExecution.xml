@@ -26,20 +26,23 @@
 <!--         Header   -->
 
 
-<!--            <class name="sporter_test.headerTestCases.UAEHeaderTestCases"/>-->
-<!--            <class name="sporter_test.headerTestCases.KSAHeaderTestCases"/>-->
+            <class name="sporter_test.headerTestCases.KSAHeaderTestCases"/>
+            <class name="sporter_test.headerTestCases.UAEHeaderTestCases"/>
+            <class name="sporter_test.headerTestCases.JordanHeaderTestCases"/>
+            <class name="sporter_test.headerTestCases.QatarHeaderTestCases"/>
+            <class name="sporter_test.headerTestCases.EgyptHeaderTestCases"/>
 
 
 
 
-            <class name="sporter_test.headerTestCases.UAEHeaderTestCases">
-                <methods>
-                    <include name="verifySearchSectionCorrectly"></include>
-                    <include name="verifyCartIconAppearsCorrectly"></include>
-                    <include name="verifyProfileIconAppearsCorrectly"></include>
-<!--                    <include name="verifyPreviousBtnWillAppearInTopSellersSectionOnceClickingOnNextBtn"></include>-->
-                </methods>
-            </class>
+<!--            <class name="sporter_test.headerTestCases.UAEHeaderTestCases">-->
+<!--                <methods>-->
+<!--                    <include name="verifySearchSectionCorrectly"></include>-->
+<!--                    <include name="verifyCartIconAppearsCorrectly"></include>-->
+<!--                    <include name="verifyProfileIconAppearsCorrectly"></include>-->
+<!--&lt;!&ndash;                    <include name="verifyPreviousBtnWillAppearInTopSellersSectionOnceClickingOnNextBtn"></include>&ndash;&gt;-->
+<!--                </methods>-->
+<!--            </class>-->
 
         </classes>
 

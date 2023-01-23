@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86683dee-3ff6-4652-96ae-dd8bddfbd97f" name="Changes" comment="test">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/WebElementsAssertion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/WebElementsAssertion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AccessAllStoresCountriesPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/headerPages/HeaderPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/headerPages/HeaderPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AccessAllStoresCountriesTestCases.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/headerTestCases/HeaderTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/headerTestCases/HeaderTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/headerTestCases/JordanHeaderTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/headerTestCases/JordanHeaderTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/headerTestCases/KSAHeaderTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/headerTestCases/KSAHeaderTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/headerTestCases/QatarHeaderTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/headerTestCases/QatarHeaderTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/headerTestCases/UAEHeaderTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/headerTestCases/UAEHeaderTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/TestData.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/TestData.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
