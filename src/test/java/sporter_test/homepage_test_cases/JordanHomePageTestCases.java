@@ -22,9 +22,16 @@ public class JordanHomePageTestCases extends HomePageTestCases {
         }
         else {
             webDriver.navigate().to(BasePage.BaseURL+jordanHomePage.jordanDomain);
-            CloseInitialDialog();          }
+            CloseInitialDialog();
+            System.out.println(webDriver.getCurrentUrl());
+        }
     }
-
+    @Test(enabled = false)
+    public void verifyTopSellingStacksSectionAreDisplayed() {}
+    @Test(enabled = false)
+    public void verifyViewAllBtnInTopSellingStacksSectionWorking() {}
+    @Test(enabled = false)
+    public void verifyClickOnTheProductsAppearingInTheTopSellingStacksSectionRedirectTheUserToCorrectUrl() {}
 
 
 }

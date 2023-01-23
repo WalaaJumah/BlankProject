@@ -248,7 +248,6 @@ public  class DataHelperAndWait  {
 
         public static void accessAllProductsInWidget(List<WebElement> productsList,WebElement nextOrPreviousBtnToClick,WebDriver driver,BasePage pageObj){
             Assert.assertTrue( productsList.size()>0,"There's no any products in the list");
-            System.out.println(productsList.size());
             for (int i = 0; i < productsList.size()-1; i++) {
                 if(!productsList.get(i).isDisplayed()){
                     do{
@@ -258,8 +257,6 @@ public  class DataHelperAndWait  {
                     String expectedUrl = productsList.get(i).getAttribute("href");
                     clickOnElement(productsList.get(i),driver);
                     pageObj.verifyTheDisplayedPageDoesNotHaveErrors();
-                    pageObj.navigateToHomePage();
-                    System.out.println(i);
-}
+                    pageObj.navigateToHomePage();}
             }
 }

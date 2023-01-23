@@ -69,7 +69,7 @@ public class HomePage extends BasePage {
     private WebElement shopByCategorySections;
     @FindBy(css = "#Swiper_mostSelling > div.swiper-wrapper")
     private WebElement topSellingStacksSections;
-    @FindBy(id = "Swiper_mostSelling")
+    @FindBy(id = "Swiper_topSeller")
     private WebElement topSellerSections;
     @FindBy(xpath = "//ul[@id='OptionsContainer_topSeller']/li")
     private List<WebElement> topSellerCategoriesTabs;

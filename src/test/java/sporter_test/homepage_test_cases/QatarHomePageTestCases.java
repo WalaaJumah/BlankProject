@@ -27,7 +27,9 @@ public void switchToQatarStore(){
     }
     else {
         webDriver.navigate().to(BasePage.BaseURL+qatarHomePage.qatarDomain);
-        CloseInitialDialog();          }
+        CloseInitialDialog();
+        System.out.println(webDriver.getCurrentUrl());
+    }
 }
 
 }

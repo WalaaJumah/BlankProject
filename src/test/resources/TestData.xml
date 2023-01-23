@@ -6,8 +6,18 @@
         <customerServicePhoneNumber> +971 4 88 30 300</customerServicePhoneNumber>
         <CustomerServiceEnLabel>Customer Service: </CustomerServiceEnLabel>
         <CustomerServiceArLabel>خدمة العملاء: </CustomerServiceArLabel>
-        <TextSlider1>48-50</TextSlider1>
-        <TextSlider1>48-50</TextSlider1>
+        <ShopByEn>Shop By</ShopByEn>
+        <ShopByAr>تسوق حسب</ShopByAr>
+        <SportsSupplementsEn>Sports Supplements</SportsSupplementsEn>
+        <SportsSupplementsAr>المكملات الرياضية</SportsSupplementsAr>
+        <VitaminsAndHealthEn>Vitamins &amp; Health</VitaminsAndHealthEn>
+        <VitaminsAndHealthAr>الفيتامينات و الصحة</VitaminsAndHealthAr>
+        <HealthyFoodEn>Healthy Food</HealthyFoodEn>
+        <HealthyFoodAr>الأغذية الصحية</HealthyFoodAr>
+        <SPORTSEn>SPORTS</SPORTSEn>
+        <SPORTSAr>رياضة</SPORTSAr>
+        <WomenOnlyEn>Women's Only</WomenOnlyEn>
+        <WomenOnlyAr>للنساء فقط</WomenOnlyAr>
 
     </ParentData1>
     <shippingAddress>

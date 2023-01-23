@@ -25,6 +25,8 @@ public class KsaHomePageTestCases  extends HomePageTestCases {
             CloseInitialDialog();          }
         DataHelperAndWait.clickOnElement(headerPage.getLanguageSelector(),webDriver);
         WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage,webDriver);
+        System.out.println(webDriver.getCurrentUrl());
+
     }
 
 
