@@ -115,6 +115,8 @@ public class AeCartTestCases extends BaseTest {
     public void verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AeCartPage aeCartPage = new AeCartPage(webDriver);
+        aeProductDetailsPage.displayTheProduct();
+        aeProductDetailsPage.increaseTheQuantity();
         aeCartPage.removeProductFromCart();
         aeProductDetailsPage.displayTheProduct();
         aeProductDetailsPage.increaseTheQuantity();

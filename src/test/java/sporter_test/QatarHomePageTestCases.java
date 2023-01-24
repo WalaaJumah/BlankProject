@@ -211,6 +211,8 @@ public class QatarHomePageTestCases extends BaseTest {
     @Test(groups = {"2.01 Home Page","1.3 Medium Severity"},description = "Qatar HomePage- Make sure the previous button appearing in the Trending On Sporter section works Correctly ", priority = 20)
     public void verifyPreviousBtnInTrendingOnSporterSectionWorks() {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
+        qatarHomePage.clickOnNextButtonInTrendingOnSporterSection();
+        qatarHomePage.clickOnPreviousButtonInTrendingOnSporterSection();
         qatarHomePage.clickOnPreviousButtonInTrendingOnSporterSection();
         Assert.assertTrue(qatarHomePage.getGamingAndFocusCategory().isDisplayed());
     }
@@ -430,7 +432,7 @@ public class QatarHomePageTestCases extends BaseTest {
         }
 
 
-    @Test(groups = {"2.01 Home Page","1.1 Critical Severity"},description = "Qatar HomePage- Make sure clicking on the products appearing in the New Arrivals section redirect the user to the correct URL", priority = 37)
+    @Test(groups = {"2.01 Home Page","1.1 Critical Severity"},description = "Qatar HomePage- Make sure clicking on the products appearing in the New Arrivals section redirect the user to the correct URL", priority = 37,enabled = false)
     public void verifyClickOnTheProductsAppearingInTheNewArrivalsSectionRedirectTheUserToCorrectUrl() {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.navigate();

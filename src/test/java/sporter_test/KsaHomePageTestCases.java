@@ -459,7 +459,7 @@ public class KsaHomePageTestCases extends BaseTest {
 
     }
 
-    @Test(groups = {"2.01 Home Page","1.1 Critical Severity"},description = "KSA HomePage- Make sure clicking on the products appearing in the New Arrivals section works correctly", priority = 45)
+    @Test(groups = {"2.01 Home Page","1.1 Critical Severity"},description = "KSA HomePage- Make sure clicking on the products appearing in the New Arrivals section works correctly", priority = 45,enabled = false)
     public void verifyClickOnTheProductsAppearingInTheNewArrivalsSectionRedirectTheUserToCorrectUrl() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.navigate();

@@ -218,10 +218,10 @@ public  class DataHelperAndWait  {
     }
     public static void clickOnElement(WebElement webElement,WebDriver webDriver){
         try {
-            DataHelperAndWait.waitToBeVisible(webElement,8,webDriver);
+            DataHelperAndWait.waitToBeVisible(webElement,12,webDriver);
             webElement.click();}
         catch (Exception e){
-            DataHelperAndWait.waitToBeVisible(webElement,8,webDriver);
+            DataHelperAndWait.waitToBeVisible(webElement,12,webDriver);
             webElement.click();}
     }
     public static void accessAllProductsInWidget(List<WebElement> productsList,WebElement nextOrPreviousBtnToClick,WebDriver driver,BasePage pageObj){

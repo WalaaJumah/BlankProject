@@ -3,7 +3,7 @@
 <!--<suite name=" Test" thread-count="1" >-->
 <suite name="Automation Reports"  >
     <listeners>
-<!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
+        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>
         <listener class-name="extent_report_listner.ExtentReportListener" />
     </listeners>
     <test name="All Smoke Testing Result- Production" preserve-order="true">
@@ -37,36 +37,36 @@
         </classes>
     </test>
 
-<!--    <test name="All Smoke Testing Result- STG" preserve-order="true">-->
-<!--        <parameter name="environment" value="https://stg.sporter.com" />-->
-<!--        <parameter name="browser" value="chrome" />-->
-<!--        &lt;!&ndash;        <parameter name="country" value="en-qa" />&ndash;&gt;-->
-<!--        <parameter name="bogoProduct" value="/be-coyote-bronzer-53797" />-->
-<!--        <groups>-->
-<!--            <run>-->
-<!--                <include name="All Smoke Testing Result"/>-->
-<!--            </run>-->
-<!--        </groups>-->
-<!--        <classes>-->
-<!--            <class name="sporter_test.AEGuestUserTestCases"/>-->
-<!--            <class name="sporter_test.AeCartTestCases"/>-->
-<!--            <class name="sporter_test.AeRecommendedProductsTestCases"/>-->
-<!--            <class name="sporter_test.QatarHomePageTestCases"/>-->
-<!--            <class name="sporter_test.KsaHomePageTestCases"/>-->
-<!--            <class name="sporter_test.AeWomenOnlyCategoryTestCases"/>-->
-<!--            <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases"/>-->
-<!--            <class name="sporter_test.AeSportSupplementsCategoryTestCases"/>-->
-<!--            <class name="sporter_test.AeSportsCategoryTestCases"/>-->
-<!--            <class name="sporter_test.AeSearchPageTestCases"/>-->
-<!--            <class name="sporter_test.AeProductDetailsPageTestCases"/>-->
-<!--            <class name="sporter_test.AEMegaMenuTestCases"/>-->
-<!--            <class name="sporter_test.AeHealthyFoodCategoryTestCases"/>-->
-<!--            <class name="sporter_test.AEFooterPageTestCases"/>-->
-<!--            <class name="sporter_test.AeBrandsTestCases"/>-->
-<!--            <class name="sporter_test.AeAllPagesInsideCategoriesInMegaMenuTestCases"/>-->
-<!--            <class name="sporter_test.AccessAllStoresCountriesTestCases"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="All Smoke Testing Result- STG" preserve-order="true">
+        <parameter name="environment" value="https://stg.sporter.com" />
+        <parameter name="browser" value="chrome" />
+        <!--        <parameter name="country" value="en-qa" />-->
+        <parameter name="bogoProduct" value="/be-coyote-bronzer-53797" />
+        <groups>
+            <run>
+                <include name="All Smoke Testing Result"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="sporter_test.AEGuestUserTestCases"/>
+            <class name="sporter_test.AeCartTestCases"/>
+            <class name="sporter_test.AeRecommendedProductsTestCases"/>
+            <class name="sporter_test.QatarHomePageTestCases"/>
+            <class name="sporter_test.KsaHomePageTestCases"/>
+            <class name="sporter_test.AeWomenOnlyCategoryTestCases"/>
+            <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases"/>
+            <class name="sporter_test.AeSportSupplementsCategoryTestCases"/>
+            <class name="sporter_test.AeSportsCategoryTestCases"/>
+            <class name="sporter_test.AeSearchPageTestCases"/>
+            <class name="sporter_test.AeProductDetailsPageTestCases"/>
+            <class name="sporter_test.AEMegaMenuTestCases"/>
+            <class name="sporter_test.AeHealthyFoodCategoryTestCases"/>
+            <class name="sporter_test.AEFooterPageTestCases"/>
+            <class name="sporter_test.AeBrandsTestCases"/>
+            <class name="sporter_test.AeAllPagesInsideCategoriesInMegaMenuTestCases"/>
+            <class name="sporter_test.AccessAllStoresCountriesTestCases"/>
+        </classes>
+    </test>
     <test name=" System Testing Report- Production" preserve-order="true">
 <!--                Guidelines:-->
 <!--                 1. To test on production Env, change the value to "https://www.sporter.com".-->
@@ -104,38 +104,38 @@
 
 
 
-<!--    <test name=" System Testing Report- STG" preserve-order="true">-->
-<!--        &lt;!&ndash;        Guidelines:&ndash;&gt;-->
-<!--        &lt;!&ndash;         1. To test on production Env, change the value to "https://www.sporter.com".&ndash;&gt;-->
-<!--        &lt;!&ndash;         2. To test on stgTest Env, change the value to "https://stg-test.sporter.com".&ndash;&gt;-->
-<!--        &lt;!&ndash;         3. To test on stg Env, change the value to "https://stg.sporter.com".&ndash;&gt;-->
-<!--        &lt;!&ndash;         4. To test on Staging2 Env, change the value to "https://staging2.sporter.com". &ndash;&gt;-->
-<!--        <parameter name="environment" value="https://stg.sporter.com" />-->
-<!--        <parameter name="browser" value="chrome" />-->
-<!--        &lt;!&ndash;        <parameter name="country" value="en-qa" />&ndash;&gt;-->
-<!--    <parameter name="bogoProduct" value="/be-coyote-bronzer-53797" />-->
+    <test name=" System Testing Report- STG" preserve-order="true">
+        <!--        Guidelines:-->
+        <!--         1. To test on production Env, change the value to "https://www.sporter.com".-->
+        <!--         2. To test on stgTest Env, change the value to "https://stg-test.sporter.com".-->
+        <!--         3. To test on stg Env, change the value to "https://stg.sporter.com".-->
+        <!--         4. To test on Staging2 Env, change the value to "https://staging2.sporter.com". -->
+        <parameter name="environment" value="https://stg.sporter.com" />
+        <parameter name="browser" value="chrome" />
+        <!--        <parameter name="country" value="en-qa" />-->
+    <parameter name="bogoProduct" value="/be-coyote-bronzer-53797" />
 
-<!--            <classes>-->
-<!--            <class name="sporter_test.AEGuestUserTestCases"/>-->
-<!--                <class name="sporter_test.AeCartTestCases"/>-->
-<!--                <class name="sporter_test.AeRecommendedProductsTestCases"/>-->
-<!--                <class name="sporter_test.QatarHomePageTestCases"/>-->
-<!--                <class name="sporter_test.KsaHomePageTestCases"/>-->
-<!--                <class name="sporter_test.AeWomenOnlyCategoryTestCases"/>-->
-<!--                <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases"/>-->
-<!--                <class name="sporter_test.AeSportSupplementsCategoryTestCases"/>-->
-<!--                <class name="sporter_test.AeSportsCategoryTestCases"/>-->
-<!--                <class name="sporter_test.AeSearchPageTestCases"/>-->
-<!--                <class name="sporter_test.AeProductDetailsPageTestCases"/>-->
-<!--                <class name="sporter_test.AEMegaMenuTestCases"/>-->
-<!--                <class name="sporter_test.AeHealthyFoodCategoryTestCases"/>-->
-<!--                <class name="sporter_test.AEFooterPageTestCases"/>-->
-<!--                <class name="sporter_test.AeBrandsTestCases"/>-->
-<!--                <class name="sporter_test.AeAllPagesInsideCategoriesInMegaMenuTestCases"/>-->
-<!--                <class name="sporter_test.AccessAllStoresCountriesTestCases"/>-->
-<!--        </classes>-->
+            <classes>
+            <class name="sporter_test.AEGuestUserTestCases"/>
+                <class name="sporter_test.AeCartTestCases"/>
+                <class name="sporter_test.AeRecommendedProductsTestCases"/>
+                <class name="sporter_test.QatarHomePageTestCases"/>
+                <class name="sporter_test.KsaHomePageTestCases"/>
+                <class name="sporter_test.AeWomenOnlyCategoryTestCases"/>
+                <class name="sporter_test.AeVitaminsAndHealthCategoryTestCases"/>
+                <class name="sporter_test.AeSportSupplementsCategoryTestCases"/>
+                <class name="sporter_test.AeSportsCategoryTestCases"/>
+                <class name="sporter_test.AeSearchPageTestCases"/>
+                <class name="sporter_test.AeProductDetailsPageTestCases"/>
+                <class name="sporter_test.AEMegaMenuTestCases"/>
+                <class name="sporter_test.AeHealthyFoodCategoryTestCases"/>
+                <class name="sporter_test.AEFooterPageTestCases"/>
+                <class name="sporter_test.AeBrandsTestCases"/>
+                <class name="sporter_test.AeAllPagesInsideCategoriesInMegaMenuTestCases"/>
+                <class name="sporter_test.AccessAllStoresCountriesTestCases"/>
+        </classes>
 
-<!--    </test>-->
+    </test>
 
 
 

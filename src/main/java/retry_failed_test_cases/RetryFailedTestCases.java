@@ -6,7 +6,7 @@ import org.testng.ITestResult;
 
 public class RetryFailedTestCases  implements IRetryAnalyzer {
 
-    private int retryCnt = 0;
+    private int retryCnt = 1;
     // If any failed testcases then it runs two times
     private  final int maxRetryCnt =2;
 
