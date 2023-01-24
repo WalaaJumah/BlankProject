@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.AEGuestUserPage;
-import sporter_pages.AeProductDetailsPage;
+import sporter_pages.productPage.ProductDetailsPage;
 
 import static core.BasePage.BaseURL;
 public class AEGuestUserTestCases extends BaseTest {
@@ -35,8 +35,8 @@ public class AEGuestUserTestCases extends BaseTest {
     @Test(groups = {"Guest User Page","All Smoke Testing Result","1. Critical Severity"},description = "Make sure to access the Guest Checkout page from the cart page correctly", priority = 2)
     public void verifyAbilityToAccessTheGuestCheckoutPageFromTheCartPageCorrectly() {
          AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
-        AeProductDetailsPage aeProductDetailsPage=new AeProductDetailsPage(webDriver);
-         aeProductDetailsPage.displayTheProduct();
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+         productDetailsPage.displayTheProduct();
         aeGuestUserPage.addToCart();
         aeGuestUserPage.viewCart();
         aeGuestUserPage.clickOnProceedCheckoutBtn();
@@ -84,7 +84,7 @@ aeGuestUserPage.clickOnContinueBtn();
     public void verifyTheGuestUserCannotSubmitTheShippingInformationWhenPhoneFieldHaveSmallTextLength() {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
         //        aeGuestUserPage.clearShippingInformationFields();
-//                aeProductDetailsPage.displayTheProduct();
+//                productDetailsPage.displayTheProduct();
 
 //        aeGuestUserPage.addToCart();
 //        aeGuestUserPage.viewCart();
@@ -100,7 +100,7 @@ aeGuestUserPage.clickOnContinueBtn();
     @Test(groups = {"Guest User Page","All Smoke Testing Result","3. Medium Severity"},description = "Make sure the Guest user cannot submit the shipping information with incorrect email format ", priority = 8)
     public void verifyTheGuestUserCannotSubmitTheShippingInformationWithIncorrectEmailFormat() {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
-//                aeProductDetailsPage.displayTheProduct();
+//                productDetailsPage.displayTheProduct();
 
 //        aeGuestUserPage.addToCart();
 //        aeGuestUserPage.viewCart();
