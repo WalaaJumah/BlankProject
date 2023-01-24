@@ -68,13 +68,14 @@ public class BaseTest {
     // The Below Method to run the TCs on Onc Browser like Chrome
 
     @BeforeClass(alwaysRun = true)
-    @Parameters({"environment", "browser", "country","bogoProduct"})
-    public void setupBrowser( String environment, String browser,@Optional("") String country,String bogoProduct) throws Exception {
+    @Parameters({"environment", "browser", "country","bogoProduct","oOSProduct"})
+    public void setupBrowser( String environment, String browser,@Optional("") String country,String bogoProduct, String oOSProduct) throws Exception {
         environmentName=environment;
         this.browserName = browser;
         BasePage.BaseURL=environment;
         this.countryUrl=country;
         BasePage.bogoProduct=bogoProduct;
+        BasePage.oOSProductUrl=oOSProduct;
         //This ChromeWebDriver 108
         switch (browser) {
 //    Check if parameter passed from TestNG is 'firefox'

@@ -8,13 +8,16 @@ package sporter_pages.productPage;
 
 import core.BasePage;
 import core.DataHelperAndWait;
+import core.WebElementsAssertion;
+import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import xml_reader.XmlReader;
 
 import java.util.List;
-
+@Getter
 public class ProductDetailsPage extends BasePage {
 
     public ProductDetailsPage(WebDriver webDriver) {
@@ -171,5 +174,55 @@ public class ProductDetailsPage extends BasePage {
     public void displayTheProduct() {
         webDriver.navigate().to(BaseURL + aeDomain + productUrl);
         verifyTheDisplayedPageDoesNotHaveErrors();
+    }
+    public void addToCart() {
+        DataHelperAndWait.clickOnElement(addToCartBtn,webDriver);
+    }
+    public void keepShopping() {
+        DataHelperAndWait.clickOnElement(keepShippingBtn,webDriver);
+    }
+    public void viewCart() {
+       DataHelperAndWait.clickOnElement(viewCartBtn , webDriver);
+    }
+    public void keepShoppingAfterAddingToCart(){
+        this.displayTheProduct( );
+        this.addToCart( );
+        this.keepShopping( );
+    }
+    public void displayOOSProduct() {
+        webDriver.navigate().to(BaseURL + aeDomain + oOSProductUrl);
+        verifyTheDisplayedPageDoesNotHaveErrors();
+    }
+    public void increaseTheQuantity() {
+        DataHelperAndWait.clickOnElement(quantityField,webDriver);
+        DataHelperAndWait.clickOnElement(qtyPlusButton,webDriver);
+    }
+    public void decreaseTheQuantity() {
+        DataHelperAndWait.clickOnElement(quantityField,webDriver);
+        DataHelperAndWait.clickOnElement(qtyMinusButton,webDriver);
+    }
+    public void selectStarInReview() {
+        DataHelperAndWait.clickOnElement(oneStarReview,webDriver);
+    }
+    public void submitProductReview(String reviewDesc, String reviewSummary, String nickName) {
+        DataHelperAndWait.clickOnElement(addReviewButton,webDriver);
+        DataHelperAndWait.typeTextInElement(reviewDescField,webDriver, XmlReader.getXMLData("reviewDesc"));
+        DataHelperAndWait.typeTextInElement(reviewSummaryField,webDriver, XmlReader.getXMLData("reviewSummary"));
+        DataHelperAndWait.typeTextInElement(nickNameField,webDriver, XmlReader.getXMLData("nickName"));
+        DataHelperAndWait.clickOnElement(submitReviewButton,webDriver);
+    }
+    public void searchForBundle() {
+        DataHelperAndWait.clickOnElement(searchField , webDriver);
+        DataHelperAndWait.typeTextInElement(searchField,webDriver,"Box");
+        DataHelperAndWait.clickOnElement(searchBtn , webDriver);
+    }
+    public void verifyReviewPagingWorks(){
+        try{
+            DataHelperAndWait.clickOnElement(pageBtnInReviewSection,webDriver);
+            WebElementsAssertion.validateTheCurrentUrlContainsString("p=2",webDriver);
+        }
+        catch (Exception e){
+            System.out.println("There's no pages in the Review Section");
+        }
     }
 }

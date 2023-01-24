@@ -225,6 +225,14 @@ public  class DataHelperAndWait  {
             DataHelperAndWait.waitToBeVisible(webElement,webDriver);
             webElement.click();}
         }
+    public static void typeTextInElement(WebElement webElement,WebDriver webDriver, String text){
+        try {
+            DataHelperAndWait.waitToBeVisible(webElement,webDriver);
+            webElement.sendKeys(text);}
+        catch (Exception e){
+            DataHelperAndWait.waitToBeVisible(webElement,webDriver);
+            webElement.sendKeys(text);}
+    }
         public static void clickOnPreviousOrNextProductsInTheWidget(List<WebElement> productsList,WebElement nextOrPreviousButton,WebDriver driver){
         if(productsList.size()>5){
             clickOnElement(nextOrPreviousButton,driver);

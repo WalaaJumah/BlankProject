@@ -21,7 +21,7 @@ public class WebElementsAssertion {
         DataHelperAndWait.waitToBeVisible(webElement,webDriver);
         Assert.assertTrue(webElement.isDisplayed(), "This element is not displayed: "+ webElement);
     }
-    public static void assertionEquals(WebElement webElement, WebDriver webDriver,String expectedResult){
+    public static void assertionEqualsForElementAttribute(WebElement webElement, WebDriver webDriver, String expectedResult){
         DataHelperAndWait.waitToBeVisible(webElement,webDriver);
         Assert.assertEquals(webElement.getText(), expectedResult);
     }
@@ -48,6 +48,10 @@ public class WebElementsAssertion {
     public static void assertionAttributeTrueForElement(WebElement webElement,WebDriver webDriver,String attribute, String expectedAttribute){
         DataHelperAndWait.waitToBeVisible(webElement,webDriver);
         Assert.assertEquals(webElement.getAttribute(attribute),expectedAttribute,"The "+webElement.getAttribute(attribute)+" is not equal "+ expectedAttribute);
+    }
+    public static void assertTheUrlEqualExpectedUrl(String actualUrl,String expectedUrl, WebDriver webDriver){
+        DataHelperAndWait.waitForUrlContains(expectedUrl,webDriver);
+        Assert.assertEquals(actualUrl,expectedUrl,"The Current URL is: "+ actualUrl+" But the expected URL is: "+expectedUrl);
     }
 
 

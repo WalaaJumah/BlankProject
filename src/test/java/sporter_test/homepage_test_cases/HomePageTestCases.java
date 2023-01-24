@@ -103,20 +103,20 @@ public class HomePageTestCases extends BaseTest {
     public void verifyMainOptionsInTheMegaMenuAreDisplayed() {
         HomePage homePage = new HomePage(webDriver);
         if(webDriver.getCurrentUrl().contains(".com/en-")){
-            WebElementsAssertion.assertionEquals(homePage.getShopByOption(), webDriver, XmlReader.getXMLData("ShopByEn"));
-            WebElementsAssertion.assertionEquals(homePage.getSportSupplementsOption(), webDriver,XmlReader.getXMLData( "SportsSupplementsEn"));
-            WebElementsAssertion.assertionEquals(homePage.getVitaminsAndHealthOption(), webDriver, XmlReader.getXMLData("VitaminsAndHealthEn"));
-            WebElementsAssertion.assertionEquals(homePage.getHealthyFoodOption(), webDriver, XmlReader.getXMLData("HealthyFoodEn"));
-            WebElementsAssertion.assertionEquals(homePage.getSportsOption(), webDriver, XmlReader.getXMLData("SPORTSEn"));
-            WebElementsAssertion.assertionEquals(homePage.getWomenOnlyOption(), webDriver, XmlReader.getXMLData("WomenOnlyEn"));}
+            WebElementsAssertion.assertionEqualsForElementAttribute(homePage.getShopByOption(), webDriver, XmlReader.getXMLData("ShopByEn"));
+            WebElementsAssertion.assertionEqualsForElementAttribute(homePage.getSportSupplementsOption(), webDriver,XmlReader.getXMLData( "SportsSupplementsEn"));
+            WebElementsAssertion.assertionEqualsForElementAttribute(homePage.getVitaminsAndHealthOption(), webDriver, XmlReader.getXMLData("VitaminsAndHealthEn"));
+            WebElementsAssertion.assertionEqualsForElementAttribute(homePage.getHealthyFoodOption(), webDriver, XmlReader.getXMLData("HealthyFoodEn"));
+            WebElementsAssertion.assertionEqualsForElementAttribute(homePage.getSportsOption(), webDriver, XmlReader.getXMLData("SPORTSEn"));
+            WebElementsAssertion.assertionEqualsForElementAttribute(homePage.getWomenOnlyOption(), webDriver, XmlReader.getXMLData("WomenOnlyEn"));}
 
         else{
-            WebElementsAssertion.assertionEquals(homePage.getShopByOption(), webDriver, XmlReader.getXMLData("ShopByAr"));
-            WebElementsAssertion.assertionEquals(homePage.getSportSupplementsOption(), webDriver,XmlReader.getXMLData( "SportsSupplementsAr"));
-            WebElementsAssertion.assertionEquals(homePage.getVitaminsAndHealthOption(), webDriver, XmlReader.getXMLData("VitaminsAndHealthAr"));
-            WebElementsAssertion.assertionEquals(homePage.getHealthyFoodOption(), webDriver, XmlReader.getXMLData("HealthyFoodAr"));
-            WebElementsAssertion.assertionEquals(homePage.getSportsOption(), webDriver, XmlReader.getXMLData("SPORTSAr"));
-            WebElementsAssertion.assertionEquals(homePage.getWomenOnlyOption(), webDriver, XmlReader.getXMLData("WomenOnlyAr"));}
+            WebElementsAssertion.assertionEqualsForElementAttribute(homePage.getShopByOption(), webDriver, XmlReader.getXMLData("ShopByAr"));
+            WebElementsAssertion.assertionEqualsForElementAttribute(homePage.getSportSupplementsOption(), webDriver,XmlReader.getXMLData( "SportsSupplementsAr"));
+            WebElementsAssertion.assertionEqualsForElementAttribute(homePage.getVitaminsAndHealthOption(), webDriver, XmlReader.getXMLData("VitaminsAndHealthAr"));
+            WebElementsAssertion.assertionEqualsForElementAttribute(homePage.getHealthyFoodOption(), webDriver, XmlReader.getXMLData("HealthyFoodAr"));
+            WebElementsAssertion.assertionEqualsForElementAttribute(homePage.getSportsOption(), webDriver, XmlReader.getXMLData("SPORTSAr"));
+            WebElementsAssertion.assertionEqualsForElementAttribute(homePage.getWomenOnlyOption(), webDriver, XmlReader.getXMLData("WomenOnlyAr"));}
     }
 
     @Test(groups = { "3. Medium Severity"}, description = "HomePage- Make sure the Banners appearing under shop by category are displayed", priority = 14)

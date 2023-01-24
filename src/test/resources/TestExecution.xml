@@ -16,6 +16,7 @@
         <parameter name="browser" value="chrome"/>
 <!--                <parameter name="country" value="en-qa" />-->
         <parameter name="bogoProduct" value="/phd-nutrition-diet-whey-protein-47340" />
+        <parameter name="oOSProduct" value="/alpro-soya-high-protein" />
         <classes>
 <!--            HomePage-->
             <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>
