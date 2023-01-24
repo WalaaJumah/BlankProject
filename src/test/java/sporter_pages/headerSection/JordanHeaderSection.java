@@ -1,16 +1,16 @@
 /**
  * @author w.jumaa
  * @projectName sporter-web-automation
- * @classDescription UAEHeaderPage
+ * @classDescription JordanHeaderSection
  */
 
-package sporter_pages.headerPages;
+package sporter_pages.headerSection;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class UAEHeaderPage extends HeaderPage {
-    public UAEHeaderPage(WebDriver webDriver) {
+public class JordanHeaderSection extends HeaderSection {
+    public JordanHeaderSection(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
     }

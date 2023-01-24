@@ -1,10 +1,10 @@
 /**
  * @author w.jumaa
  * @projectName sporter-web-automation
- * @classDescription HeaderPage
+ * @classDescription HeaderSection
  */
 
-package sporter_pages.headerPages;
+package sporter_pages.headerSection;
 
 import core.BasePage;
 import core.DataHelperAndWait;
@@ -17,8 +17,8 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 @Getter
-public class HeaderPage extends BasePage {
-    public HeaderPage(WebDriver webDriver) {
+public class HeaderSection extends BasePage {
+    public HeaderSection(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
 

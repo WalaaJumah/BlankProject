@@ -1,16 +1,16 @@
 /**
  * @author w.jumaa
  * @projectName sporter-web-automation
- * @classDescription QatarHeaderPage
+ * @classDescription KSAHeaderSection
  */
 
-package sporter_pages.headerPages;
+package sporter_pages.headerSection;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class QatarHeaderPage extends HeaderPage {
-    public QatarHeaderPage(WebDriver webDriver) {
+public class KSAHeaderSection extends HeaderSection {
+    public KSAHeaderSection(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
     }
