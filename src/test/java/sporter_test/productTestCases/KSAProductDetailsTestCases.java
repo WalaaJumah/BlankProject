@@ -49,4 +49,10 @@ public class KSAProductDetailsTestCases  extends ProductDetailsTestCases{
         DataHelperAndWait.clickOnElement(headerSection.getSporterLogo(),webDriver);
         WebElementsAssertion.assertTheUrlEqualExpectedUrl(webDriver.getCurrentUrl(), BasePage.BaseURL +productDetailsPage.saudiDomain+"/",webDriver);
     }
+    @Test(groups = {"Product Page", "2. High Severity"},description = "Verify that the system display a label on the PDP to indicate for the customer he will get a free product", priority = 16)
+    public void verifyTheresLabelInPdpToIndicateThatTheresAnOfferOnThisProduct() {
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        productDetailsPage.navigateToBogoProduct();
+        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getFreeProductLabelAr(),webDriver);
+    }
 }

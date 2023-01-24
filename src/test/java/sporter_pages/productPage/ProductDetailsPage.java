@@ -26,16 +26,14 @@ public class ProductDetailsPage extends BasePage {
     }
     DataHelperAndWait dataHelperAndWait;
     //declare all locators related to the Product Details Page
-    @FindBy(id = "qty")
+    @FindBy(id = "productQty")
     private WebElement quantityField;
-    @FindBy(id = "//a[@class='btn-qty-control btn-qty-control--plus']")
+    @FindBy(id = "increaseQty")
     private WebElement qtyPlusButton;
-    @FindBy(id = "//a[@class='btn-qty-control btn-qty-control--minus']")
+    @FindBy(id = "decreaseQty")
     private WebElement qtyMinusButton;
-    @FindBy(id = "product-addtocart-button")
+    @FindBy(id = "addToCartBtn")
     private WebElement addToCartBtn;
-    @FindBy(id = "//div[@class='product-options-bottom']")
-    private WebElement addToCartSectionForOOSProduct;
     @FindBy(id = "popup-block")
     private WebElement cartPopUp;
     @FindBy(id = "//*[@id=\"popup-block\"]/div[2]/a[1]")
@@ -44,131 +42,91 @@ public class ProductDetailsPage extends BasePage {
     private WebElement inconvenienceWarningMsg;
     @FindBy(id = "//*[@id=\"popup-block\"]/div[2]/a[2]")
     private WebElement viewCartBtn;
-    @FindBy(id = "option-label-size-165-item-10057")
-    private WebElement productAttribute;
-    @FindBy(id = "option-label-flavor-164-item-6959")
-    private WebElement productFlavor;
-    @FindBy(id = "//*[@id=\"algolia-searchbox\"]/button")
+    @FindBy(xpath = "(//div[@class='productOption_list__SYsKN'])[1]//div[starts-with(@id,'configurableOptionLabel_')]")
+    private List<WebElement> productSizeAttribute;
+    @FindBy(xpath = "(//div[@class='productOption_list__SYsKN'])[2]//div[starts-with(@id,'configurableOptionLabel_')]")
+    private List<WebElement> productFlavor;
+    @FindBy(id = "SearchButton")
     private WebElement searchBtn;
     @FindBy(id = "//a[@data-position='1']/div[@class= 'result-thumbnail product-image-wrapper']")
     private WebElement productCard;
-    @FindBy(id = "switcher-store-trigger")
-    private WebElement countryList;
-    @FindBy(id = "//li[@class='country_switch']/span[@class='AE']")
-    private WebElement aeCountry;
-    @FindBy(id = "//li[@class='country_switch']/span[@class='LB']")
-    private WebElement lebanonCountry;
-    @FindBy(id = "//li[@class='country_switch']/span[@class='JO']")
-    private WebElement joCountry;
-    @FindBy(id = "//*[@id=\"maincontent\"]/div[5]/div/div[2]/div[2]/a[1]/picture/img")
-    private WebElement firstProductInHomePage;
-    @FindBy(id = "(//div[@class='inner-seller-prod wp-id-6527']/a)[1]")
-    private WebElement productInHomePage;
-    @FindBy(id = "//*[@id=\"tab-67-all67\"]/div[1]/div/div[1]/div/a")
-    private WebElement joProductInHomePage;
-    @FindBy(id = "Overall Evaluation_1_label")
+    @FindBy(id = "star0")
     private WebElement oneStarReview;
-    @FindBy(id = "//span[@class='button button-review orange-btn']")
+    @FindBy(id = "addReviewBtn")
     private WebElement addReviewButton;
-    @FindBy(id = "review_field")
+    @FindBy(id = "reviewContent")
     private WebElement reviewDescField;
-    @FindBy(id = "summary_field")
+    @FindBy(id = "reviewTitle")
     private WebElement reviewSummaryField;
-    @FindBy(id = "nickname_field")
+    @FindBy(id = "reviewNickName")
     private WebElement nickNameField;
-    @FindBy(id = "//*[text()='Submit Review']")
+    @FindBy(id = "submitReviewBtn")
     private WebElement submitReviewButton;
-    @FindBy(id = "ratings[2]-error")
-    private WebElement reviewErrorMsg;
-    @FindBy(id = "//div[contains(text(),'You submitted your review for moderation.')]")
+    @FindBy(xpath = "//div[@class='productReview_rErr__YkUXT']")
+    private WebElement reviewErrorMsgRelatedToStars;
+    @FindBy(xpath = "//div[contains(text(),'You submitted your review for moderation.')]")
     private WebElement reviewToastMsg;
-    @FindBy(id = "//a[normalize-space()='Home']")
+    @FindBy(id = "pathSegment_0")
     private WebElement HomeBreadcrumbs;
-    @FindBy(id = "//*[text()='عربي']")
-    private WebElement arabicLangBtn;
-    @FindBy(id = "//*[text()='English']")
-    private WebElement englishLangBtn;
-    @FindBy(id = "switcher-language")
-    private WebElement languageSwitcher;
-    @FindBy(id = "//span[contains(text(),\"We're sorry for not being able to provide you with\")]")
+    @FindBy(xpath = "//div[@class='productHeader_label__hWVwg']")
     private WebElement OOSMsg;
-    @FindBy(id = "//div[@class='error-content-outer offer-not-available']/div[@class='block-content-wrapper search-outer']")
-    private WebElement productUnavailableForCountry;
-    @FindBy(linkText = "Shop By")
+    @FindBy(id = "TopCategoryItem_undefined_span")
     private WebElement shopByMenu;
-    @FindBy(id = "//span[@data-price-type='finalPrice']/span")
+    @FindBy(id = "SubCategoriesContainer")
+    private WebElement subCategoriesSectionInMegaMenu;
+    @FindBy(id = "SortCategoriesContainer")
+    private WebElement subCategoriesSectionForShopBy;
+    @FindBy(id = "currentPrice")
     private WebElement FinalProductPrice;
-    @FindBy(css = "div[class='product-column--side'] span[class='price']")
-    private WebElement productPrice;
-    @FindBy(id = "//input[@id='search']")
+    @FindBy(id = "searchInput")
     private WebElement searchField;
-    @FindBy(id = ".//*[@class='nav-primary']/li[1]")
-    private WebElement shopeByMenu;
-    @FindBy(id = ".//*[@class='cd-dropdown-content']/li[8]")
+    @FindBy(id = "SortItem_Sales & Offers_span")
     private WebElement salesAndOffersMenu;
-    @FindBy(id = ".//*[@class='cd-dropdown-content']/li[1]")
+    @FindBy(id = "TopCategoryItem_3_span")
     private WebElement SportsSupplementsMenu;
-    @FindBy(id = "//select")
+    @FindBy(xpath = "//select[starts-with(@id,'bundleOptionSelect')]")
     private WebElement bundleMenu;
-    @FindBy(id = "(//div[@class='inner-trend'])[3]")
+    @FindBy(xpath = "(//a[@title='Buy 1 Get 1'])[1]")
     private WebElement buy1Get1Card;
-    @FindBy(id = "//ol[@class='products list items product-items']//li")
-    private WebElement firstProductInTheCategoryList;
-    @FindBy(id = "//ol[@class='products list items product-items']//li")
-    private List productsListInTheCategoryPage;
-    @FindBy(id = "//strong[contains(text(),'Free')]")
-    private WebElement freeProductLabel;
-    @FindBy(id = "//ol[@class='products list items product-items']//li")
+    @FindBy(xpath = "//strong[contains(text(),'Free')]")
+    private WebElement freeProductLabelEn;
+    @FindBy(xpath = "//strong[contains(text(),'مجاناً')]")
+    private WebElement freeProductLabelAr;
+    @FindBy(id = "TopCategoryList")
     private List<WebElement> megaMenuList;
-    @FindBy(id = "//div[@class='swatch-attribute flavor']/div/div[@tabindex=0 and @index='0']")
-    private WebElement firstProductFlavor;
-    @FindBy(id = "(//div[@index='5'])[1]")
-    private WebElement firstProductSize;
-    @FindBy(id = "(//form/div/div/div/div/div/div)[1]")
-    private WebElement firstsimple;
-    @FindBy(id = "(//form/div/div/div/div/div/div)[2]")
-    private WebElement secondsimple;
-    @FindBy(id = "//div[@class='swatch-option text' and @index='1']")
-    private WebElement secondProductSize;
-    @FindBy(id = "//div[@class='swatch-attribute flavor']/div/div[@tabindex=0 and @index='2']")
-    private WebElement secondProductFlavor;
-    @FindBy(id = "//div[@class='product attribute description']")
+    @FindBy(id = "ProductDescription")
     private WebElement aboutThisProductSection;
-    @FindBy(id = "//div[@class='product attribute directions_of_use']")
-    private WebElement directionsOfUseSection;
-    @FindBy(id = "//div[@class='about-brand']")
+    @FindBy(id = "ProductBrandName")
     private WebElement aboutBrandSection;
-    @FindBy(id = "//div[@class='product attribute description']/h5")
+    @FindBy(xpath = "//div[@id='ProductDescription']/h3")
     private WebElement aboutThisProductTitle;
-    @FindBy(id = "product-attribute-specs-table")
+    @FindBy(xpath = "//div[@id='ProductSupplementFacts']//table")
     private WebElement supplementFactsTable;
-    @FindBy(id = "//div[@class='product attribute supplement_facts']/h2")
+    @FindBy(xpath = "//div[@id='ProductSupplementFacts']//h2")
     private WebElement supplementFactsTitle;
     @FindBy(id = "//a[@class='user-account']")
     private WebElement accountProfileIcon;
-    @FindBy(id = "(//div[@id='header-account']/div/ul)[2]")
+    @FindBy(id = "UserIconContainer")
     private WebElement accountProfileOptions;
-    @FindBy(id = "//div[@class='page-title-wrapper product']/h1/span")
+    @FindBy(id = "productTitle")
     private WebElement productName;
-    @FindBy(id = "//div[@class='header-bar main-container']")
+    @FindBy(id = "FixedAddtoCart")
     private WebElement ProductHeaderBar;
-    @FindBy(id = "(//button[@title='Add to Cart'])[1]")
+    @FindBy(id = "fixedAddToCartBtn")
     private WebElement addToCartBtnInProductHeaderBar;
-    @FindBy(id = "//div[@class='ratings brands-label']/a")
+    @FindBy(xpath = "//a[starts-with(@class,'productHeader_brand')]")
     private WebElement productBrandLink;
-    @FindBy(id = "(//a[@title='View Details'])[1]")
-    private WebElement firstProductInWheyProteinPage;
-    @FindBy(id = "//div[@class='expected-delivery mobile-add-cart']")
+    @FindBy(xpath = "//div[@id='expectedDeliveryDate']/span")
     private WebElement expectedDeliveryDateLabel;
-    @FindBy(id = "//div[@class='expected-delivery mobile-add-cart']/label")
+    @FindBy(xpath = "//div[@id='expectedDeliveryDate']/span[2]")
     private WebElement expectedDeliveryDateValue;
-    @FindBy(id = "(//a[@class='page'])[1]")
-    private WebElement pageBtnInReviewSection;
-    @FindBy(id = "//a[@class='action  next ']")
+    @FindBy(xpath = "//ul[starts-with(@class,'pagination_innerPagination')]/li[@class='pagination_item__cHfvi']")
+    private List<WebElement> pageBtnInReviewSection;
+    @FindBy(id = "(//li[starts-with(@class,'pagination_arrow')])[2]")
     private WebElement nextReviewPageBtn;
-    @FindBy(id = "//a[@class='action  previous ']")
+    @FindBy(id = "(//li[starts-with(@class,'pagination_arrow')])[1]")
     private WebElement previousReviewPageBtn;
-    @FindBy(id = "//div[@class='search-result-title-wrapper']")
+    @FindBy(xpath = "//div[@class='search-result-title-wrapper']")
     private WebElement searchPageTitle;
     //Methods we need during testing the Product details page
     public void displayTheProduct() {
@@ -218,7 +176,7 @@ public class ProductDetailsPage extends BasePage {
     }
     public void verifyReviewPagingWorks(){
         try{
-            DataHelperAndWait.clickOnElement(pageBtnInReviewSection,webDriver);
+            DataHelperAndWait.clickOnElement(pageBtnInReviewSection.get(1),webDriver);
             WebElementsAssertion.validateTheCurrentUrlContainsString("p=2",webDriver);
         }
         catch (Exception e){
