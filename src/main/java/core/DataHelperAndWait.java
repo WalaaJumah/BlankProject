@@ -216,6 +216,26 @@ public  class DataHelperAndWait  {
     public static void updateAllText(WebElement element, String newText) {
         element.sendKeys(Keys.chord(Keys.CONTROL, "a"), newText);
     }
-
+    public static void clickOnElement(WebElement webElement,WebDriver webDriver){
+        try {
+            DataHelperAndWait.waitToBeVisible(webElement,8,webDriver);
+            webElement.click();}
+        catch (Exception e){
+            DataHelperAndWait.waitToBeVisible(webElement,8,webDriver);
+            webElement.click();}
+    }
+    public static void accessAllProductsInWidget(List<WebElement> productsList,WebElement nextOrPreviousBtnToClick,WebDriver driver,BasePage pageObj){
+        Assert.assertTrue( productsList.size()>0,"There's no any products in the list");
+        for (int i = 0; i < productsList.size()-1; i++) {
+            if(!productsList.get(i).isDisplayed()){
+                do{
+                    clickOnElement(nextOrPreviousBtnToClick,driver);}
+                while (!productsList.get(i).isDisplayed());
+            }
+            String expectedUrl = productsList.get(i).getAttribute("href");
+            clickOnElement(productsList.get(i),driver);
+            pageObj.verifyTheDisplayedPageDoesNotHaveErrors();
+            pageObj.navigateToHomePage();}
+    }
 
 }

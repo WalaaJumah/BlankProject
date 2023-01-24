@@ -231,7 +231,7 @@ public class KsaHomePageTestCases extends BaseTest {
     @Test(groups = {"2.01 Home Page","1.3 Medium Severity"},description = "KSA HomePage- Make sure that previous button in the Top Seller Section works correctly ", priority = 24)
     public void verifyPreviousBtnWillAppearInTopSellersSectionOnceClickingOnNextBtn() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
-//        ksaHomePage.navigate();
+        ksaHomePage.navigate();
         ksaHomePage.clickOnNextButtonInTopSellerSectionInTopSellerSection();
         Assert.assertTrue(ksaHomePage.getPreviousButtonInTopSellerSection().isDisplayed());
     }
@@ -428,63 +428,68 @@ public class KsaHomePageTestCases extends BaseTest {
     public void verifyClickOnTheProductsAppearingInTheTopSellersSectionRedirectTheUserToCorrectUrl() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.navigate();
-        Assert.assertTrue(ksaHomePage.getProductsListInTopSellersSection().size() > 0, "There's no any products in the list");
-        for (int i = 0; i < ksaHomePage.getProductsListInTopSellersSection().size(); i++) {
+//        Assert.assertTrue(ksaHomePage.getProductsListInTopSellersSection().size() > 0, "There's no any products in the list");
+//        for (int i = 0; i < ksaHomePage.getProductsListInTopSellersSection().size(); i++) {
+//
+//            if( ksaHomePage.getProductsListInTopSellersSection().size()>5){
+//                if(ksaHomePage.getProductsListInTopSellersSection().get(i).isDisplayed()){
+//                    DataHelperAndWait.waitToBeVisible(ksaHomePage.getProductsListInTopSellersSection().get(i),8,webDriver);
+//                    ksaHomePage.getProductsListInTopSellersSection().get(i).click();
+//                    ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
+//                    ksaHomePage.navigate();}
+//                else{
+//                    do{
+//                        ksaHomePage.clickOnNextButtonInTopSellerSectionInTopSellerSection();
+//                    }
+//                    while(!ksaHomePage.getProductsListInTopSellersSection().get(i).isDisplayed());
+//                    DataHelperAndWait.waitToBeVisible(ksaHomePage.getProductsListInTopSellersSection().get(i),5,webDriver);
+//                    ksaHomePage.getProductsListInTopSellersSection().get(i).click();
+//                }
+//                ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
+//                ksaHomePage.navigate();}
+//            else
+//            {
+//                DataHelperAndWait.waitToBeVisible(ksaHomePage.getProductsListInTopSellersSection().get(i),8,webDriver);
+//                ksaHomePage.getProductsListInTopSellersSection().get(i).click();
+//                ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
+//            }
+//        }
 
-            if( ksaHomePage.getProductsListInTopSellersSection().size()>5){
-                if(ksaHomePage.getProductsListInTopSellersSection().get(i).isDisplayed()){
-                    DataHelperAndWait.waitToBeVisible(ksaHomePage.getProductsListInTopSellersSection().get(i),8,webDriver);
-                    ksaHomePage.getProductsListInTopSellersSection().get(i).click();
-                    ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
-                    ksaHomePage.navigate();}
-                else{
-                    do{
-                        ksaHomePage.clickOnNextButtonInTopSellerSectionInTopSellerSection();
-                    }
-                    while(!ksaHomePage.getProductsListInTopSellersSection().get(i).isDisplayed());
-                    DataHelperAndWait.waitToBeVisible(ksaHomePage.getProductsListInTopSellersSection().get(i),5,webDriver);
-                    ksaHomePage.getProductsListInTopSellersSection().get(i).click();
-                }
-                ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
-                ksaHomePage.navigate();}
-            else
-            {
-                DataHelperAndWait.waitToBeVisible(ksaHomePage.getProductsListInTopSellersSection().get(i),8,webDriver);
-                ksaHomePage.getProductsListInTopSellersSection().get(i).click();
-                ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
-            }
-        }
+        DataHelperAndWait.accessAllProductsInWidget(ksaHomePage.getProductsListInTopSellersSection(),ksaHomePage.getNextButtonInTopSellerSection(),webDriver,ksaHomePage);
+
     }
 
     @Test(groups = {"2.01 Home Page","1.1 Critical Severity"},description = "KSA HomePage- Make sure clicking on the products appearing in the New Arrivals section works correctly", priority = 45)
     public void verifyClickOnTheProductsAppearingInTheNewArrivalsSectionRedirectTheUserToCorrectUrl() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.navigate();
-        Assert.assertTrue(ksaHomePage.getProductsInNewArrivalsSection().size() > 0, "There's no any products in the list");
-        for (int i = 0; i < ksaHomePage.getProductsInNewArrivalsSection().size(); i++) {
-            if( ksaHomePage.getProductsInNewArrivalsSection().size()>5){
-                if(ksaHomePage.getProductsInNewArrivalsSection().get(i).isDisplayed()){
-                    DataHelperAndWait.waitToBeVisible(ksaHomePage.getProductsInNewArrivalsSection().get(i),8,webDriver);
-                    ksaHomePage.getProductsInNewArrivalsSection().get(i).click();
-                    ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
-                    ksaHomePage.navigate();}
-                else{
-                    do{
-                        ksaHomePage.clickOnNextButtonInNewArrivalSection();
-                    }
-                    while(!ksaHomePage.getProductsInNewArrivalsSection().get(i).isDisplayed());
-                    DataHelperAndWait.waitToBeVisible(ksaHomePage.getProductsInNewArrivalsSection().get(i),5,webDriver);
-                    ksaHomePage.getProductsInNewArrivalsSection().get(i).click();
-                }
-                ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
-                ksaHomePage.navigate();}
-            else
-            {
-                DataHelperAndWait.waitToBeVisible(ksaHomePage.getProductsInNewArrivalsSection().get(i),8,webDriver);
-                ksaHomePage.getProductsInNewArrivalsSection().get(i).click();
-                ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
-            }
-        }
+        DataHelperAndWait.accessAllProductsInWidget(ksaHomePage.getProductsInNewArrivalsSection(),ksaHomePage.getNextBtnInNewArrivalsSection(),webDriver,ksaHomePage);
+
+//        Assert.assertTrue(ksaHomePage.getProductsInNewArrivalsSection().size() > 0, "There's no any products in the list");
+//        for (int i = 0; i < ksaHomePage.getProductsInNewArrivalsSection().size(); i++) {
+//            if( ksaHomePage.getProductsInNewArrivalsSection().size()>5){
+//                if(ksaHomePage.getProductsInNewArrivalsSection().get(i).isDisplayed()){
+//                    DataHelperAndWait.waitToBeVisible(ksaHomePage.getProductsInNewArrivalsSection().get(i),8,webDriver);
+//                    ksaHomePage.getProductsInNewArrivalsSection().get(i).click();
+//                    ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
+//                    ksaHomePage.navigate();}
+//                else{
+//                    do{
+//                        ksaHomePage.clickOnNextButtonInNewArrivalSection();
+//                    }
+//                    while(!ksaHomePage.getProductsInNewArrivalsSection().get(i).isDisplayed());
+//                    DataHelperAndWait.waitToBeVisible(ksaHomePage.getProductsInNewArrivalsSection().get(i),5,webDriver);
+//                    ksaHomePage.getProductsInNewArrivalsSection().get(i).click();
+//                }
+//                ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
+//                ksaHomePage.navigate();}
+//            else
+//            {
+//                DataHelperAndWait.waitToBeVisible(ksaHomePage.getProductsInNewArrivalsSection().get(i),8,webDriver);
+//                ksaHomePage.getProductsInNewArrivalsSection().get(i).click();
+//                ksaHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
+//            }
+//        }
     }
     @Test(groups = {"2.01 Home Page","1.1 Critical Severity"},description = "KSA HomePage- Make sure ability to access all pages inside the Top Selling Stacks category correctly ", priority = 46)
     public void verifyAbilityToAccessAllPagesInsideTheTopSellingStacksCategoryCorrectly(){

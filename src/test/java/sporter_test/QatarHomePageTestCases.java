@@ -186,7 +186,7 @@ public class QatarHomePageTestCases extends BaseTest {
     @Test(groups = {"2.01 Home Page","1.3 Medium Severity"},description = "Qatar HomePage- Make sure that previous and next buttons in the Top Seller Section work correctly ", priority = 17)
     public void verifyPreviousBtnWillAppearInTopSellersSectionOnceClickingOnNextBtn() {
         QatarHomePage qatarHomePage= new QatarHomePage(webDriver);
-    //        qatarHomePage.navigate();
+            qatarHomePage.navigate();
         qatarHomePage.clickOnNextButtonInTopSellerSectionInTopSellerSection();
         Assert.assertTrue(qatarHomePage.getPreviousButtonInTopSellerSection().isDisplayed());
         qatarHomePage.clickOnPreviousButtonInTopSellersSection();
