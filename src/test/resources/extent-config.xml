@@ -15,7 +15,7 @@
         <protocol>https</protocol>
 
         <!-- title of the document -->
-        <documentTitle>Sporter Web Automation Report</documentTitle>
+        <documentTitle>Sporter Automation Report/Production</documentTitle>
 
         <!-- report name - displayed at top-nav -->
         <reportName>Sporter Web Automation
@@ -28,7 +28,7 @@
 
 
         <!-- report headline - displayed at top-nav, after reportHeadline -->
-        <reportHeadline>Report</reportHeadline>
+        <reportHeadline>Report/Production</reportHeadline>
 
         <!-- global date format override -->
         <!-- defaults to yyyy-MM-dd -->
@@ -83,7 +83,7 @@
 
 
 
-<!--Display the 1. Critical Severity in Red color-->
+<!--Display the 1.1 Critical Severity in Red color-->
               $('#cat-collection > li:nth-child(1) > div.cat-head > span').css('color', 'red');
 <!--Display the 2. High Severity in Orang color-->
               $('#cat-collection > li:nth-child(2) > div.cat-head > span').css('color', 'orange');
@@ -95,10 +95,10 @@
 
 
 <!--This to add list item after 4. Low Severity row-->
- $('<div class="category-item displayed" style="background: lightblue; font-weight: 600; height:30px;border:1px solid darkgray;text-align=center;"><div class="cat-head"> <span class="category-name"style="color: black;">      Test Cases Per Module</span> </div>').insertAfter('#cat-collection > li:nth-child(4)');
+ $('<div class="category-item displayed" style="background: lightblue; font-weight: 600; height:30px;border:1px solid darkgray;text-align=center;"><div class="cat-head"> <span class="category-name"style="color: black;">      2. Test Cases Per Module</span> </div>').insertAfter('#cat-collection > li:nth-child(4)');
 
-<!--This to add list item before 1. Critical Severity row-->
- $('<div class="category-item displayed" style="background: lightblue; font-weight: 600; height:30px;border:1px solid darkgray;text-align=center;"><div class="cat-head"> <span class="category-name"style="color: black;">      Test Cases Per Severity</span> </div>').insertAfter('#categories-view > div.col._addedCell1 > div > div.card-panel.filters');
+<!--This to add list item before 1.1 Critical Severity row-->
+ $('<div class="category-item displayed" style="background: lightblue; font-weight: 600; height:30px;border:1px solid darkgray;text-align=center;"><div class="cat-head"> <span class="category-name"style="color: black;">      1. Test Cases Per Severity</span> </div>').insertAfter('#categories-view > div.col._addedCell1 > div > div.card-panel.filters');
 
 
 <!-- To Hide Other Status Icon-->
