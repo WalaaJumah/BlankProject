@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.KsaHomePage;
 
-@Test(groups = "KSA HomePage")
+@Test(groups = "2.03 KSA HomePage")
 public class KsaHomePageTestCases  extends HomePageTestCases {
 
     @BeforeClass

@@ -80,7 +80,7 @@ public class AEFooterPageTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"Footer Section","All Smoke Testing Result","4. Low Severity"},description = " Footer Section- Verify the Join Our NEWSLETTER section that appears in the footer section is displayed correctly", priority = 2)
+    @Test(groups = {"Footer Section","All Smoke Testing Result","1.4 Low Severity"},description = " Footer Section- Verify the Join Our NEWSLETTER section that appears in the footer section is displayed correctly", priority = 2)
     public void verifyJoinOurNewsletterSectionIsDisplayedCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         Assert.assertTrue(aeFooterPage.getNewsletterBlock().isDisplayed());
@@ -90,7 +90,7 @@ public class AEFooterPageTestCases extends BaseTest {
         Assert.assertTrue(aeFooterPage.getJoinBtnInNewsletterBlock().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section","All Smoke Testing Result","3. Medium Severity"},description = " Footer Section- Make sure the user(Male) can join sporter NEWSLETTER correctly", priority = 3)
+    @Test(groups = {"Footer Section","All Smoke Testing Result","1.3 Medium Severity"},description = " Footer Section- Make sure the user(Male) can join sporter NEWSLETTER correctly", priority = 3)
     public void verifyAbilityToJoinSporterNewsletterWithMaleOptionCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.fillInemailFieldInNewsletterBlock(aeFooterPage.generateRandomEmail());
@@ -99,7 +99,7 @@ public class AEFooterPageTestCases extends BaseTest {
         Assert.assertTrue(aeFooterPage.getSubscriptionSuccessfulMsg().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section","All Smoke Testing Result","3. Medium Severity"},description = " Footer Section- Make sure the user(Female) can join sporter NEWSLETTER correctly", priority = 4)
+    @Test(groups = {"Footer Section","All Smoke Testing Result","1.3 Medium Severity"},description = " Footer Section- Make sure the user(Female) can join sporter NEWSLETTER correctly", priority = 4)
     public void verifyAbilityToJoinSporterNewsletterWithFemaleOptionCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -112,7 +112,7 @@ public class AEFooterPageTestCases extends BaseTest {
     }
 
     // There's a bug here, when joining using email already joined then the system display 2 invalid messages
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure inability to join sporter NEWSLETTER using email already joined", priority = 5)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure inability to join sporter NEWSLETTER using email already joined", priority = 5)
     public void verifyInabilityToJoinSporterNewsletterUsingEmailAlreadyJoined() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -125,7 +125,7 @@ public class AEFooterPageTestCases extends BaseTest {
     }
 
     //There's a UI issue when displaying the email formate message
-    @Test(groups = {"Footer Section", "3. Medium Severity"},description = " Footer Section- Make sure inability to join sporter NEWSLETTER using invalid email formate", priority = 6)
+    @Test(groups = {"Footer Section", "1.3 Medium Severity"},description = " Footer Section- Make sure inability to join sporter NEWSLETTER using invalid email formate", priority = 6)
     public void verifyInabilityToJoinSporterNewsletterUsingInvalidEmailFormate() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -136,7 +136,7 @@ public class AEFooterPageTestCases extends BaseTest {
         Assert.assertEquals(aeFooterPage.getEmailRequiredMsgInNewsletterSection().getText(), "Please enter a valid email address (Ex: johndoe@domain.com).");
     }
 
-    @Test(groups = {"Footer Section", "3. Medium Severity"},description = " Footer Section- Make sure inability to join sporter NEWSLETTER without filling email field", priority = 7)
+    @Test(groups = {"Footer Section", "1.3 Medium Severity"},description = " Footer Section- Make sure inability to join sporter NEWSLETTER without filling email field", priority = 7)
     public void verifyInabilityToJoinSporterNewsletterWithoutFillingEmailField() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -145,7 +145,7 @@ public class AEFooterPageTestCases extends BaseTest {
         Assert.assertEquals(aeFooterPage.getEmailRequiredMsgInNewsletterSection().getText(), "This is a required field.");
     }
 
-    @Test(groups = {"Footer Section", "3. Medium Severity"},description = " Footer Section- Make sure the Orders And Shipping Section Appears Correctly In Footer", priority = 8)
+    @Test(groups = {"Footer Section", "1.3 Medium Severity"},description = " Footer Section- Make sure the Orders And Shipping Section Appears Correctly In Footer", priority = 8)
     public void verifyOrdersAndShippingSectionAppearsCorrectlyInFooter() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         Assert.assertEquals(aeFooterPage.getOrdersAndShippingHeader().getText(), "Orders & Shipping");
@@ -154,7 +154,7 @@ public class AEFooterPageTestCases extends BaseTest {
         Assert.assertEquals(aeFooterPage.getRefundAndReturnsOption().getText(), "Refund & Returns");
     }
 
-    @Test(groups = {"Footer Section", "3. Medium Severity"},description = " Footer Section- Make sure the Track Your Order Link appears in the footer works correctly", priority = 9)
+    @Test(groups = {"Footer Section", "1.3 Medium Severity"},description = " Footer Section- Make sure the Track Your Order Link appears in the footer works correctly", priority = 9)
     public void verifyTrackYourOrderLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -163,14 +163,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "3. Medium Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Track Your Order page", priority = 10)
+    @Test(groups = {"Footer Section", "1.3 Medium Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Track Your Order page", priority = 10)
     public void verifyTheFooterSectionAppearsInTheTrackYourOrderPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyTrackYourOrderLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "3. Medium Severity"},description = " Footer Section- Make sure the Shipping And Delivery Link appears in the footer works correctly", priority = 11)
+    @Test(groups = {"Footer Section", "1.3 Medium Severity"},description = " Footer Section- Make sure the Shipping And Delivery Link appears in the footer works correctly", priority = 11)
     public void verifyShippingAndDeliveryLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -179,14 +179,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Shipping and Delivery page", priority = 12)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Shipping and Delivery page", priority = 12)
     public void verifyTheFooterSectionAppearsInTheShippingAndDeliveryPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyShippingAndDeliveryLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "3. Medium Severity"},description = " Footer Section- Make sure the Refund And Returns Link appears in the footer works correctly", priority = 13)
+    @Test(groups = {"Footer Section", "1.3 Medium Severity"},description = " Footer Section- Make sure the Refund And Returns Link appears in the footer works correctly", priority = 13)
     public void verifyRefundAndReturnLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -195,14 +195,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Refund And Returns page", priority = 14)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Refund And Returns page", priority = 14)
     public void verifyTheFooterSectionAppearsInTheRefundAndReturnPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyRefundAndReturnLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the Let Us Help You Section Appears Correctly In Footer", priority = 15)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the Let Us Help You Section Appears Correctly In Footer", priority = 15)
     public void verifyLetUsHelpYouSectionAppearsCorrectlyInFooter() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -211,7 +211,7 @@ public class AEFooterPageTestCases extends BaseTest {
         Assert.assertEquals(aeFooterPage.getFAQsOption().getText(), "FAQs");
     }
 
-    @Test(groups = {"Footer Section", "3. Medium Severity"},description = " Footer Section- Make sure the Wow Customer Service Link appears in the footer works correctly", priority = 16)
+    @Test(groups = {"Footer Section", "1.3 Medium Severity"},description = " Footer Section- Make sure the Wow Customer Service Link appears in the footer works correctly", priority = 16)
     public void verifyWowCustomerServiceLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.getWowCustomerServiceOption().click();
@@ -219,14 +219,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Wow Customer Service page", priority = 17)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Wow Customer Service page", priority = 17)
     public void verifyTheFooterSectionAppearsInTheWowCustomerServicePage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyWowCustomerServiceLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the FAQs Link appears in the footer works correctly", priority = 18)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the FAQs Link appears in the footer works correctly", priority = 18)
     public void verifyFAQsLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -235,14 +235,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the FAQs page", priority = 19)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the FAQs page", priority = 19)
     public void verifyTheFooterSectionAppearsInTheFAQsPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyFAQsLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-//    @Test(groups = {"Footer Section", "3. Medium Severity"},description = " Footer Section- Make sure the Most Selling Products Section Appears Correctly In Footer", priority = 20)
+//    @Test(groups = {"Footer Section", "1.3 Medium Severity"},description = " Footer Section- Make sure the Most Selling Products Section Appears Correctly In Footer", priority = 20)
 //    public void verifyMostSellingProductsSectionAppearsCorrectlyInFooter() {
 //        AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        aeFooterPage.navigateToHomePage();
@@ -251,7 +251,7 @@ public class AEFooterPageTestCases extends BaseTest {
 //        Assert.assertEquals(aeFooterPage.getDymatizeISO100ProteinOption().getText(), "Grenade Carb Killa Protein Bar");
 //        Assert.assertEquals(aeFooterPage.getGrenadeCarbKillaProteinBarOption().getText(), "Grenade Carb Killa Protein Bar - Box of 12");
 //    }
-    @Test(groups = {"Footer Section", "3. Medium Severity"},description = " Footer Section- Make sure ability to access all products listed in the Most Selling Products Section", priority = 20)
+    @Test(groups = {"Footer Section", "1.3 Medium Severity"},description = " Footer Section- Make sure ability to access all products listed in the Most Selling Products Section", priority = 20)
     public void verifyClickingOnProductsInsideMostSellingProductsSectionWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -261,21 +261,21 @@ public class AEFooterPageTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"Footer Section", "3. Medium Severity"},description = " Footer Section- Make sure the Grenade Reload Protein Oat Bar Link appears in the footer works correctly", priority = 21)
+    @Test(groups = {"Footer Section", "1.3 Medium Severity"},description = " Footer Section- Make sure the Grenade Reload Protein Oat Bar Link appears in the footer works correctly", priority = 21)
     public void verifyGrenadeReloadProteinOatBarLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.getGrenadeReloadProteinOatBarOption().click();
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Grenade Reload Protein Oat Bar page", priority = 22)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Grenade Reload Protein Oat Bar page", priority = 22)
     public void verifyTheFooterSectionAppearsInTheGrenadeReloadProteinOatBarPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyGrenadeReloadProteinOatBarLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "3. Medium Severity"},description = " Footer Section- Make sure the Dramatize Iso 100 Protein Link appears in the footer works correctly", priority = 23)
+    @Test(groups = {"Footer Section", "1.3 Medium Severity"},description = " Footer Section- Make sure the Dramatize Iso 100 Protein Link appears in the footer works correctly", priority = 23)
     public void verifyDramatizeIso100ProteinLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -283,14 +283,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Dramatize Iso 100 Protein page", priority = 24)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Dramatize Iso 100 Protein page", priority = 24)
     public void verifyTheFooterSectionAppearsInTheDramatizeIso100ProteinPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyDramatizeIso100ProteinLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Grenade Carb Killa Protein Bar Link appears in the footer works correctly", priority = 25)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Grenade Carb Killa Protein Bar Link appears in the footer works correctly", priority = 25)
     public void verifyGrenadeCarbKillaProteinBarLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -298,14 +298,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Dramatize Iso 100 Protein page", priority = 26)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Dramatize Iso 100 Protein page", priority = 26)
     public void verifyTheFooterSectionAppearsInTheGrenadeCarbKillaProteinBarPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyGrenadeCarbKillaProteinBarLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Quest Nutrition - Bars - Box of 12 Link appears in the footer works correctly", priority = 27)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Quest Nutrition - Bars - Box of 12 Link appears in the footer works correctly", priority = 27)
     public void verifyGrenadeCarbKillaProteinBarBoxOf12LinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -313,14 +313,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Grenade Carb Killa Protein Bar Box Of 12 page", priority = 28)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Grenade Carb Killa Protein Bar Box Of 12 page", priority = 28)
     public void verifyTheFooterSectionAppearsInTheGrenadeCarbKillaProteinBarBoxOf12Page() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyGrenadeCarbKillaProteinBarBoxOf12LinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Quest Nutrition Bars Box Of 12 Link appears in the footer works correctly", priority = 29)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Quest Nutrition Bars Box Of 12 Link appears in the footer works correctly", priority = 29)
     public void verifyQuestNutritionBarsBoxOf12LinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -328,14 +328,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Quest Nutrition Bars Box Of 12 page", priority = 30)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Quest Nutrition Bars Box Of 12 page", priority = 30)
     public void verifyTheFooterSectionAppearsInTheQuestNutritionBarsBoxOf12Page() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyQuestNutritionBarsBoxOf12LinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "3. Medium Severity"},description = " Footer Section- Make sure the Get To Know Us Section Appears Correctly In Footer", priority = 31)
+    @Test(groups = {"Footer Section", "1.3 Medium Severity"},description = " Footer Section- Make sure the Get To Know Us Section Appears Correctly In Footer", priority = 31)
     public void verifyGetToKnowUsSectionAppearsCorrectlyInFooter() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -348,7 +348,7 @@ public class AEFooterPageTestCases extends BaseTest {
         Assert.assertEquals(aeFooterPage.getSporterBlogOption().getText(), "Sporter Blog");
     }
 
-    @Test(groups = {"Footer Section", "1. Critical Severity"},description = " Footer Section- Make sure  About Sporter appears in the footer works correctly", priority = 32)
+    @Test(groups = {"Footer Section", "1.1 Critical Severity"},description = " Footer Section- Make sure  About Sporter appears in the footer works correctly", priority = 32)
     public void verifyAboutSporterLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -358,14 +358,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the About Sporter page", priority = 33)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the About Sporter page", priority = 33)
     public void verifyTheFooterSectionAppearsInTheAboutSporterPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyAboutSporterLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "1. Critical Severity"},description = " Footer Section- Make sure the Product Quality appears in the footer works correctly", priority = 34)
+    @Test(groups = {"Footer Section", "1.1 Critical Severity"},description = " Footer Section- Make sure the Product Quality appears in the footer works correctly", priority = 34)
     public void verifyProductQualityLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -375,14 +375,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Product Quality page", priority = 35)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Product Quality page", priority = 35)
     public void verifyTheFooterSectionAppearsInTheProductQualityPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyProductQualityLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "1. Critical Severity"},description = " Footer Section- Make sure the  Quality Authenticity appears in the footer works correctly", priority = 36)
+    @Test(groups = {"Footer Section", "1.1 Critical Severity"},description = " Footer Section- Make sure the  Quality Authenticity appears in the footer works correctly", priority = 36)
     public void verifyProductAuthenticityLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -392,14 +392,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Product Authenticity page", priority = 37)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Product Authenticity page", priority = 37)
     public void verifyTheFooterSectionAppearsInTheProductAuthenticityPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyProductAuthenticityLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "1. Critical Severity"},description = " Footer Section- Make sure the Wholesale appears in the footer works correctly", priority = 38)
+    @Test(groups = {"Footer Section", "1.1 Critical Severity"},description = " Footer Section- Make sure the Wholesale appears in the footer works correctly", priority = 38)
     public void verifyWholesaleLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -410,7 +410,7 @@ public class AEFooterPageTestCases extends BaseTest {
     }
 
     //Bug: The footer section is missing from Wholesale page.
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Wholesale page", priority = 39)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Wholesale page", priority = 39)
     public void verifyTheFooterSectionAppearsInTheWholesalePage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyWholesaleLinkAppearsInFooterWorksCorrectly();
@@ -418,7 +418,7 @@ public class AEFooterPageTestCases extends BaseTest {
     }
 
     //Bug: The system does not redirect the user to the Sporter LinkedIn page directly
-    @Test(groups = {"Footer Section", "1. Critical Severity"},description = " Footer Section- Make sure the Careers appears in the footer works correctly", priority = 40)
+    @Test(groups = {"Footer Section", "1.1 Critical Severity"},description = " Footer Section- Make sure the Careers appears in the footer works correctly", priority = 40)
     public void verifyCareersLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -431,7 +431,7 @@ public class AEFooterPageTestCases extends BaseTest {
     }
 
     //Bug: Clicking on the Sporter Blog link redirect the user to 404 Page
-    @Test(groups = {"Footer Section", "1. Critical Severity"},description = " Footer Section- Make sure the Sporter Blog appears in the footer works correctly", priority = 41)
+    @Test(groups = {"Footer Section", "1.1 Critical Severity"},description = " Footer Section- Make sure the Sporter Blog appears in the footer works correctly", priority = 41)
     public void verifySporterBlogLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -442,7 +442,7 @@ public class AEFooterPageTestCases extends BaseTest {
     }
 
     //Bug: Clicking on the Sporter Blog link redirect the user to 404 Page
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Sporter Blog page", priority = 42)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Sporter Blog page", priority = 42)
     public void verifyTheFooterSectionAppearsInTheSporterBlogPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifySporterBlogLinkAppearsInFooterWorksCorrectly();
@@ -450,7 +450,7 @@ public class AEFooterPageTestCases extends BaseTest {
     }
 
     //Bug: The address is missing
-    @Test(groups = {"Footer Section", "3. Medium Severity"},description = " Footer Section- Make sure the Contact Us Section Appears Correctly In Footer", priority = 43)
+    @Test(groups = {"Footer Section", "1.3 Medium Severity"},description = " Footer Section- Make sure the Contact Us Section Appears Correctly In Footer", priority = 43)
     public void verifyContactUsSectionAppearsCorrectlyInFooter() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -462,7 +462,7 @@ public class AEFooterPageTestCases extends BaseTest {
         Assert.assertEquals(aeFooterPage.getAddressValue().getText(), "There's bug here");
     }
 
-    @Test(groups = {"Footer Section", "1. Critical Severity"},description = " Footer Section- Make sure the contact Info appears in the footer works correctly", priority = 44)
+    @Test(groups = {"Footer Section", "1.1 Critical Severity"},description = " Footer Section- Make sure the contact Info appears in the footer works correctly", priority = 44)
     public void verifyContactInfoLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -472,7 +472,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the contact US page", priority = 45)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the contact US page", priority = 45)
     public void verifyTheFooterSectionAppearsInTheContactUsPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyContactInfoLinkAppearsInFooterWorksCorrectly();
@@ -480,7 +480,7 @@ public class AEFooterPageTestCases extends BaseTest {
     }
 
     //Bug: Clicking on the phone number will redirect the user to HomePage and need to check with Khaled about its
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the phone number appears in the footer works correctly", priority = 46)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the phone number appears in the footer works correctly", priority = 46)
     public void verifyPhoneNumberLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -489,7 +489,7 @@ public class AEFooterPageTestCases extends BaseTest {
         webDriver.switchTo().window(myWindowHandle);
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Accessories & Apparel Section Appears Correctly In Footer", priority = 47)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Accessories & Apparel Section Appears Correctly In Footer", priority = 47)
     public void verifyAccessoriesAndApparelSectionAppearsCorrectlyInFooter() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -503,7 +503,7 @@ public class AEFooterPageTestCases extends BaseTest {
         Assert.assertEquals(aeFooterPage.getBagsOption().getText(), "Bags");
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Training Apparel Link appears in the footer works correctly", priority = 48)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Training Apparel Link appears in the footer works correctly", priority = 48)
     public void verifyTrainingApparelLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -513,14 +513,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Training Apparel page", priority = 49)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Training Apparel page", priority = 49)
     public void verifyTheFooterSectionAppearsInTheTrainingApparelPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyTrainingApparelLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Fitness Accessories Link appears in the footer works correctly", priority = 50)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Fitness Accessories Link appears in the footer works correctly", priority = 50)
     public void verifyFitnessAccessoriesLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -530,14 +530,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Fitness Accessories page", priority = 51)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Fitness Accessories page", priority = 51)
     public void verifyTheFooterSectionAppearsInTheFitnessAccessoriesPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyFitnessAccessoriesLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Shakers Link appears in the footer works correctly", priority = 52)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Shakers Link appears in the footer works correctly", priority = 52)
     public void verifyShakersLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -547,14 +547,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Shakers page", priority = 53)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Shakers page", priority = 53)
     public void verifyTheFooterSectionAppearsInTheShakersPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyShakersLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Home Gym Equipment Link appears in the footer works correctly", priority = 54)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Home Gym Equipment Link appears in the footer works correctly", priority = 54)
     public void verifyHomeGymEquipmentLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -564,14 +564,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Home Gym Equipment page", priority = 55)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Home Gym Equipment page", priority = 55)
     public void verifyTheFooterSectionAppearsInTheHomeGymEquipmentPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyHomeGymEquipmentLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Watches Link appears in the footer works correctly", priority = 56)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Watches Link appears in the footer works correctly", priority = 56)
     public void verifyWatchesLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -581,14 +581,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Watches page", priority = 57)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Watches page", priority = 57)
     public void verifyTheFooterSectionAppearsInTheWatchesPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyWatchesLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Straps Link appears in the footer works correctly", priority = 58)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Straps Link appears in the footer works correctly", priority = 58)
     public void verifyStrapsLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -598,14 +598,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Straps page", priority = 59)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Straps page", priority = 59)
     public void verifyTheFooterSectionAppearsInTheStrapsPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyStrapsLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Bags Link appears in the footer works correctly", priority = 60)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Bags Link appears in the footer works correctly", priority = 60)
     public void verifyBagsLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -615,14 +615,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Straps page", priority = 61)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Straps page", priority = 61)
     public void verifyTheFooterSectionAppearsInTheBagsPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyBagsLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "3. Medium Severity"},description = " Footer Section- Make sure the Protein & Fitness Section Appears Correctly In Footer", priority = 62)
+    @Test(groups = {"Footer Section", "1.3 Medium Severity"},description = " Footer Section- Make sure the Protein & Fitness Section Appears Correctly In Footer", priority = 62)
     public void verifyProteinAndFitnessSectionAppearsCorrectlyInFooter() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -639,7 +639,7 @@ public class AEFooterPageTestCases extends BaseTest {
         Assert.assertEquals(aeFooterPage.getHealthySnacksOption().getText(), "Healthy Snacks");
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Whey Protein Link appears in the footer works correctly", priority = 63)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Whey Protein Link appears in the footer works correctly", priority = 63)
     public void verifyWheyProteinLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.getWheyProteinOption().click();
@@ -648,14 +648,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Whey Protein page", priority = 64)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Whey Protein page", priority = 64)
     public void verifyTheFooterSectionAppearsInTheWheyProteinPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyWheyProteinLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Whey Protein Isolate Link appears in the footer works correctly", priority = 65)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Whey Protein Isolate Link appears in the footer works correctly", priority = 65)
     public void verifyWheyProteinIsolateLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -665,14 +665,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Whey Protein Isolate page", priority = 66)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Whey Protein Isolate page", priority = 66)
     public void verifyTheFooterSectionAppearsInTheWheyProteinIsolatePage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyWheyProteinIsolateLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Casein Protein Link appears in the footer works correctly", priority = 67)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Casein Protein Link appears in the footer works correctly", priority = 67)
     public void verifyCaseinProteinLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -682,14 +682,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Casein Protein page", priority = 68)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Casein Protein page", priority = 68)
     public void verifyTheFooterSectionAppearsInTheCaseinProteinPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyCaseinProteinLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Weight Gain And Mass Gainer Link appears in the footer works correctly", priority = 69)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Weight Gain And Mass Gainer Link appears in the footer works correctly", priority = 69)
     public void verifyWeightGainAndMassGainerLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -699,14 +699,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Weight Gain And Mass Gainer page", priority = 70)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Weight Gain And Mass Gainer page", priority = 70)
     public void verifyTheFooterSectionAppearsInTheWeightGainAndMassGainerPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyWeightGainAndMassGainerLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the BCAAs And Amino Acids Link appears in the footer works correctly", priority = 71)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the BCAAs And Amino Acids Link appears in the footer works correctly", priority = 71)
     public void verifyBCAAsAndAminoAcidsLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -716,14 +716,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the BCAAs And Amino Acids page", priority = 72)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the BCAAs And Amino Acids page", priority = 72)
     public void verifyTheFooterSectionAppearsInTheBCAAsAndAminoAcidsPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyBCAAsAndAminoAcidsLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Pre-Workout And Endurance Link appears in the footer works correctly", priority = 73)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Pre-Workout And Endurance Link appears in the footer works correctly", priority = 73)
     public void verifyPreWorkoutAndEnduranceLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -733,14 +733,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Pre-Workout And Endurance page", priority = 74)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Pre-Workout And Endurance page", priority = 74)
     public void verifyTheFooterSectionAppearsInThePreWorkoutAndEndurancePage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyPreWorkoutAndEnduranceLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Glutamine And Recovery Link appears in the footer works correctly", priority = 75)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Glutamine And Recovery Link appears in the footer works correctly", priority = 75)
     public void verifyGlutamineAndRecoveryLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -748,14 +748,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Glutamine And Recovery page", priority = 76)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Glutamine And Recovery page", priority = 76)
     public void verifyTheFooterSectionAppearsInTheGlutamineAndRecoveryPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyGlutamineAndRecoveryLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Fat Burners Link appears in the footer works correctly", priority = 77)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Fat Burners Link appears in the footer works correctly", priority = 77)
     public void verifyFatBurnersLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -765,14 +765,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Fat Burners page", priority = 78)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Fat Burners page", priority = 78)
     public void verifyTheFooterSectionAppearsInTheFatBurnersPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyFatBurnersLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Protein Bars Link appears in the footer works correctly", priority = 79)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Protein Bars Link appears in the footer works correctly", priority = 79)
     public void verifyProteinBarsLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -782,14 +782,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Protein Bars page", priority = 80)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Protein Bars page", priority = 80)
     public void verifyTheFooterSectionAppearsInTheProteinBarsPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyProteinBarsLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Healthy Snacks Link appears in the footer works correctly", priority = 81)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Healthy Snacks Link appears in the footer works correctly", priority = 81)
     public void verifyHealthySnacksLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -799,14 +799,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Healthy Snacks page", priority = 82)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Healthy Snacks page", priority = 82)
     public void verifyTheFooterSectionAppearsInTheHealthySnacksPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyHealthySnacksLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "3. Medium Severity"},description = " Footer Section- Make sure the Vitamins & Health Section Appears Correctly In Footer", priority = 83)
+    @Test(groups = {"Footer Section", "1.3 Medium Severity"},description = " Footer Section- Make sure the Vitamins & Health Section Appears Correctly In Footer", priority = 83)
     public void verifyVitaminsAndHealthSectionAppearsCorrectlyInFooter() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -825,7 +825,7 @@ public class AEFooterPageTestCases extends BaseTest {
         Assert.assertEquals(aeFooterPage.getDigestiveSupportOption().getText(), "Digestive Support");
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Multivitamins Link appears in the footer works correctly", priority = 84)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Multivitamins Link appears in the footer works correctly", priority = 84)
     public void verifyMultivitaminsLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -835,14 +835,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Multivitamins page", priority = 85)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Multivitamins page", priority = 85)
     public void verifyTheFooterSectionAppearsInTheMultivitaminsPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyMultivitaminsLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Vitamins D Link appears in the footer works correctly", priority = 86)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Vitamins D Link appears in the footer works correctly", priority = 86)
     public void verifyVitaminsdLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -852,14 +852,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Vitamins D page", priority = 87)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Vitamins D page", priority = 87)
     public void verifyTheFooterSectionAppearsInTheVitaminsdPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyVitaminsdLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Vitamins C Link appears in the footer works correctly", priority = 88)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Vitamins C Link appears in the footer works correctly", priority = 88)
     public void verifyVitaminscLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -869,14 +869,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Vitamins C page", priority = 89)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Vitamins C page", priority = 89)
     public void verifyTheFooterSectionAppearsInTheVitaminscPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyVitaminscLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Vitamins E Link appears in the footer works correctly", priority = 90)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Vitamins E Link appears in the footer works correctly", priority = 90)
     public void verifyVitaminseLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -886,14 +886,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Vitamins E page", priority = 91)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Vitamins E page", priority = 91)
     public void verifyTheFooterSectionAppearsInTheVitaminsePage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyVitaminseLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Fish Oil & Omega 3 Link appears in the footer works correctly", priority = 92)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Fish Oil & Omega 3 Link appears in the footer works correctly", priority = 92)
     public void verifyFishOilAndOmega3LinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -903,14 +903,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Fish Oil & Omega 3 page", priority = 93)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Fish Oil & Omega 3 page", priority = 93)
     public void verifyTheFooterSectionAppearsInTheFishOilAndOmega3Page() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyFishOilAndOmega3LinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Folic Acid Link appears in the footer works correctly", priority = 94)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Folic Acid Link appears in the footer works correctly", priority = 94)
     public void verifyFolicAcidLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -920,14 +920,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Folic Acid page", priority = 95)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Folic Acid page", priority = 95)
     public void verifyTheFooterSectionAppearsInTheFolicAcidPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyFolicAcidLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Bone & Joint Support Link appears in the footer works correctly", priority = 96)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Bone & Joint Support Link appears in the footer works correctly", priority = 96)
     public void verifyBoneAndJointSupportLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -937,14 +937,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Bone & Joint Support page", priority = 97)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Bone & Joint Support page", priority = 97)
     public void verifyTheFooterSectionAppearsInTheBoneAndJointSupportPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyBoneAndJointSupportLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Collagen Link appears in the footer works correctly", priority = 98)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Collagen Link appears in the footer works correctly", priority = 98)
     public void verifyCollagenLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -954,14 +954,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Collagen page", priority = 99)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Collagen page", priority = 99)
     public void verifyTheFooterSectionAppearsInTheCollagenPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyCollagenLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Hair Skin & Nails Link appears in the footer works correctly", priority = 100)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Hair Skin & Nails Link appears in the footer works correctly", priority = 100)
     public void verifyHairSkinAndNailsLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -971,14 +971,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Hair Skin & Nails page", priority = 101)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Hair Skin & Nails page", priority = 101)
     public void verifyTheFooterSectionAppearsInTheHairSkinAndNailsPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyHairSkinAndNailsLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Testosterone Booster Link appears in the footer works correctly", priority = 102)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Testosterone Booster Link appears in the footer works correctly", priority = 102)
     public void verifyTestosteroneBoosterLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -988,14 +988,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Hair Testosterone Booster page", priority = 103)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Hair Testosterone Booster page", priority = 103)
     public void verifyTheFooterSectionAppearsInTheTestosteroneBoosterPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyTestosteroneBoosterLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Melatonin & Sleep Support Link appears in the footer works correctly", priority = 104)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Melatonin & Sleep Support Link appears in the footer works correctly", priority = 104)
     public void verifyMelatoninAndSleepSupportLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -1005,14 +1005,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the  Melatonin & Sleep Support page", priority = 105)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the  Melatonin & Sleep Support page", priority = 105)
     public void verifyTheFooterSectionAppearsInTheMelatoninAndSleepSupportPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyMelatoninAndSleepSupportLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Digestive Support Link appears in the footer works correctly", priority = 106)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Digestive Support Link appears in the footer works correctly", priority = 106)
     public void verifyDigestiveSupportLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -1023,14 +1023,14 @@ public class AEFooterPageTestCases extends BaseTest {
 
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Digestive Support  page", priority = 107)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Digestive Support  page", priority = 107)
     public void verifyTheFooterSectionAppearsInTheDigestiveSupportPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyDigestiveSupportLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Terms of Service Link appears in the footer works correctly", priority = 108)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Terms of Service Link appears in the footer works correctly", priority = 108)
     public void verifyTermsAndServiceLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -1040,14 +1040,14 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Terms of Service page", priority = 109)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Terms of Service page", priority = 109)
     public void verifyTheFooterSectionAppearsInTheTermsAndServicePage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyTermsAndServiceLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section- Make sure the Privacy Policy Link appears in the footer works correctly", priority = 110)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Privacy Policy Link appears in the footer works correctly", priority = 110)
     public void verifyPrivacyPolicyLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -1057,19 +1057,19 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Privacy Policy page", priority = 111)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the footer section appears correctly in the Privacy Policy page", priority = 111)
     public void verifyTheFooterSectionAppearsInThePrivacyPolicyPage() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
 //        this.verifyPrivacyPolicyLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
-    @Test(groups = {"Footer Section", "4. Low Severity"},description = " Footer Section- Make sure the copyright statement appears correctly in the footer section", priority = 116)
+    @Test(groups = {"Footer Section", "1.4 Low Severity"},description = " Footer Section- Make sure the copyright statement appears correctly in the footer section", priority = 116)
     public void verifyTheCopyRightStatementAppearsInTheFooter() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         Assert.assertTrue(aeFooterPage.getCopyright().isDisplayed());
     }
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section/Social Media- Make sure the ability to click on the instagram icon correctly", priority = 112)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section/Social Media- Make sure the ability to click on the instagram icon correctly", priority = 112)
     public void verifyAbilityToClickOnInstagramIconCorrectly() throws Exception {
         tearDown();
         setupBrowserFromTheClass(environmentName,browserName,countryUrl);
@@ -1082,7 +1082,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section/Social Media- Make sure the ability to click on the facebook icon correctly", priority = 113)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section/Social Media- Make sure the ability to click on the facebook icon correctly", priority = 113)
     public void verifyAbilityToClickOnFacebookIconCorrectly() throws Exception {
         tearDown();
         setupBrowserFromTheClass(environmentName,browserName,countryUrl);
@@ -1097,7 +1097,7 @@ public class AEFooterPageTestCases extends BaseTest {
         DataHelperAndWait.switchToTabBrowser(0,webDriver);
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section/Social Media- Make sure the ability to click on the twitter icon correctly", priority = 114)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section/Social Media- Make sure the ability to click on the twitter icon correctly", priority = 114)
     public void verifyAbilityToClickOnTwitterIconCorrectly() throws Exception {
         tearDown();
         setupBrowserFromTheClass(environmentName,browserName,countryUrl);
@@ -1112,7 +1112,7 @@ public class AEFooterPageTestCases extends BaseTest {
         DataHelperAndWait.switchToTabBrowser(0,webDriver);
     }
 
-    @Test(groups = {"Footer Section", "2. High Severity"},description = " Footer Section/Social Media- Make sure the ability to click on the youtube icon correctly", priority = 115)
+    @Test(groups = {"Footer Section", "1.2 High Severity"},description = " Footer Section/Social Media- Make sure the ability to click on the youtube icon correctly", priority = 115)
     public void verifyAbilityToClickOnYouTubeIconCorrectly() throws Exception {
         tearDown();
         setupBrowserFromTheClass(environmentName,browserName,countryUrl);

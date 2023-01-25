@@ -20,7 +20,7 @@ public class AeRecommendedProductsTestCases extends BaseTest {
             CloseInitialDialog();          }
     }
 
-    @Test(groups = {"Product Page","All Smoke Testing Result","1. Critical Severity"},description = "Recommended Products Pop-up- Make sure the keep shopping button appearing the Recommended products works correctly ", priority = 2)
+    @Test(groups = {"Product Page","All Smoke Testing Result","1.1 Critical Severity"},description = "Recommended Products Pop-up- Make sure the keep shopping button appearing the Recommended products works correctly ", priority = 2)
     public void verifyKeepShoppingBtnWorksCorrectly() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
@@ -30,7 +30,7 @@ public class AeRecommendedProductsTestCases extends BaseTest {
         Assert.assertEquals(webDriver.getCurrentUrl(), currentURL);
     }
 
-    @Test(groups = {"Product Page","All Smoke Testing Result","1. Critical Severity"},description = "Recommended Products Pop-up- Make sure the view Cart button appearing the Recommended products works correctly ", priority =3)
+    @Test(groups = {"Product Page","All Smoke Testing Result","1.1 Critical Severity"},description = "Recommended Products Pop-up- Make sure the view Cart button appearing the Recommended products works correctly ", priority =3)
     public void verifyViewCartWorksBtnCorrectly() {
         AeRecommendedProductsPage  aeRecommendedProductspage = new AeRecommendedProductsPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -40,7 +40,7 @@ public class AeRecommendedProductsTestCases extends BaseTest {
         Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +productDetailsPage.aeDomain+productDetailsPage.cartURL );
     }
 
-    @Test(groups = {"Product Page","3. Medium Severity"},description = "Recommended Products Pop-up- Make sure to close the Recommended products pop up correctly", priority = 4)
+    @Test(groups = {"Product Page","1.3 Medium Severity"},description = "Recommended Products Pop-up- Make sure to close the Recommended products pop up correctly", priority = 4)
     public void verifyCloseRecommendedPopupCorrectly() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         AeRecommendedProductsPage  aeRecommendedProductspage = new AeRecommendedProductsPage(webDriver);
@@ -51,7 +51,7 @@ public class AeRecommendedProductsTestCases extends BaseTest {
 
     }
 
-    @Test(groups = {"Product Page","3. Medium Severity"},description = "Recommended Products Pop-up- Make sure to close the Recommended products pop up when clicking outside the pop-up", priority = 5)
+    @Test(groups = {"Product Page","1.3 Medium Severity"},description = "Recommended Products Pop-up- Make sure to close the Recommended products pop up when clicking outside the pop-up", priority = 5)
     public void verifyCloseRecommendedPopupCorrectlyWhenClickingOutsideThePopup() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         AeRecommendedProductsPage  aeRecommendedProductspage = new AeRecommendedProductsPage(webDriver);
@@ -62,7 +62,7 @@ public class AeRecommendedProductsTestCases extends BaseTest {
         Assert.assertTrue(productDetailsPage.getAddToCartBtn().isDisplayed());
     }
 
-    @Test(groups = {"Product Page","3. Medium Severity"},description = "Recommended Products Pop-up- Make sure all components appear correctly in  Recommended products like keep shopping and view cart and products list and titles", priority = 6)
+    @Test(groups = {"Product Page","1.3 Medium Severity"},description = "Recommended Products Pop-up- Make sure all components appear correctly in  Recommended products like keep shopping and view cart and products list and titles", priority = 6)
     public void verifyAllRecommendedPopupComponentsIsExist() {
         AeRecommendedProductsPage aeRecommendedProductspage = new AeRecommendedProductsPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -88,7 +88,7 @@ public class AeRecommendedProductsTestCases extends BaseTest {
         Assert.assertTrue(productDetailsPage.getViewCartBtn().isDisplayed());
     }
 
-    @Test(groups = {"Product Page","All Smoke Testing Result","2. High Severity"},description = "Recommended Products Pop-up- Make sure ability to add Recommended product to the cart", priority = 7)
+    @Test(groups = {"Product Page","All Smoke Testing Result","1.2 High Severity"},description = "Recommended Products Pop-up- Make sure ability to add Recommended product to the cart", priority = 7)
     public void verifyAbilityToAddRecommendedProductToCart() {
         AeRecommendedProductsPage aeRecommendedProductspage = new AeRecommendedProductsPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -97,7 +97,7 @@ public class AeRecommendedProductsTestCases extends BaseTest {
         aeRecommendedProductspage.clickOnAddToCart();
     }
 
-    @Test(groups = {"Product Page","3. Medium Severity"},description = "Recommended Products Pop-up- Make sure the name of product added to the Cart displayed correctly in the Recommended product pop-up", priority = 8)
+    @Test(groups = {"Product Page","1.3 Medium Severity"},description = "Recommended Products Pop-up- Make sure the name of product added to the Cart displayed correctly in the Recommended product pop-up", priority = 8)
     public void verifyTheNameOfProductAddedToCatDisplayedInTheRecommendedPopup() {
         AeRecommendedProductsPage aeRecommendedProductspage = new AeRecommendedProductsPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -106,7 +106,7 @@ public class AeRecommendedProductsTestCases extends BaseTest {
         Assert.assertTrue(aeRecommendedProductspage.getAddedProductToCartMsg().getText().contains(productDetailsPage.getProductName().getText()));
     }
 
-    @Test(groups = {"Product Page","3. Medium Severity"},description = "Recommended Products Pop-up- Make sure the product price displayed in the Recommended product pop-up matches with the product price displayed in PDP", priority = 9)
+    @Test(groups = {"Product Page","1.3 Medium Severity"},description = "Recommended Products Pop-up- Make sure the product price displayed in the Recommended product pop-up matches with the product price displayed in PDP", priority = 9)
     public void verifyTheProductPriceInTheRecommendedPopupMatchesWithThePriceDisplaysInPdp() {
         AeRecommendedProductsPage  aeRecommendedProductspage = new AeRecommendedProductsPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -118,7 +118,7 @@ public class AeRecommendedProductsTestCases extends BaseTest {
         Assert.assertEquals(productPriceInPdp, productPriceInRecommendedPopup, "The product Price displayed in the Recommended pop-up is not match with the price in PDP"+ productPriceInPdp +" VS."+ productPriceInRecommendedPopup);
     }
 
-    @Test(groups = {"Product Page","2. High Severity"},description = "Recommended Products Pop-up- Make sure the clicking on the product card appears in the Recommended product pop-up will display the Product Details Page correctly", priority = 10)
+    @Test(groups = {"Product Page","1.2 High Severity"},description = "Recommended Products Pop-up- Make sure the clicking on the product card appears in the Recommended product pop-up will display the Product Details Page correctly", priority = 10)
     public void verifyClickingOnProductCardInTheRecommendedPopupWillDisplayThePdp() {
         AeRecommendedProductsPage aeRecommendedProductspage = new AeRecommendedProductsPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);

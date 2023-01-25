@@ -1,7 +1,7 @@
 /**
  * @author w.jumaa
  * @projectName sporter-web-automation
- * @classgroups = {"Brands Page", "2. High Severity"},description This class make sure all pages related to the Brand pages from search screen works fine
+ * @classgroups = {"Brands Page", "1.2 High Severity"},description This class make sure all pages related to the Brand pages from search screen works fine
  */
 
 package sporter_test;
@@ -18,7 +18,7 @@ import sporter_pages.productPage.ProductDetailsPage;
 
 public class AeBrandsTestCases extends BaseTest {
 
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Switching to UAE store", priority = 1)
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Switching to UAE store", priority = 1)
     public void switchToUaeStore(){
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         if(webDriver.getCurrentUrl().contains(productDetailsPage .aeDomain)){
@@ -29,7 +29,7 @@ public class AeBrandsTestCases extends BaseTest {
             CloseInitialDialog();
         }
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Jym supplementJym supplement brand correctly", priority =2 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Jym supplementJym supplement brand correctly", priority =2 )
     public void VerifyAbilityToAccessAllPagesRelatedToJymSupplementJymSupplementBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -46,7 +46,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Blender Bottle brand correctly", priority =3 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Blender Bottle brand correctly", priority =3 )
     public void VerifyAbilityToAccessAllPagesRelatedToBlenderBottleBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -63,7 +63,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the V3 Apparel brand correctly", priority =4 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the V3 Apparel brand correctly", priority =4 )
     public void VerifyAbilityToAccessAllPagesRelatedToV3ApparelBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -80,7 +80,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Yoga Design Lab brand correctly", priority =5 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Yoga Design Lab brand correctly", priority =5 )
     public void VerifyAbilityToAccessAllPagesRelatedToYogaDesignLabBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -98,7 +98,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Terry Naturally brand correctly", priority =6 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Terry Naturally brand correctly", priority =6 )
     public void VerifyAbilityToAccessAllPagesRelatedToTerryNaturallyBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -115,7 +115,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Swanson Vitamins brand correctly", priority =7 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Swanson Vitamins brand correctly", priority =7 )
     public void VerifyAbilityToAccessAllPagesRelatedToSwansonVitaminsBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -132,7 +132,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Efx Sports brand correctly", priority =8 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Efx Sports brand correctly", priority =8 )
     public void VerifyAbilityToAccessAllPagesRelatedToEfxSportsBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -149,7 +149,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Planetary Herbals brand correctly", priority =9 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Planetary Herbals brand correctly", priority =9 )
     public void VerifyAbilityToAccessAllPagesRelatedToPlanetaryHerbalsBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -167,7 +167,7 @@ public class AeBrandsTestCases extends BaseTest {
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
     //There's a bug here
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the nivea brand correctly", priority =10 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the nivea brand correctly", priority =10 )
     public void VerifyAbilityToAccessAllPagesRelatedToNiveaBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -185,7 +185,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the puma brand correctly", priority =11 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the puma brand correctly", priority =11 )
     public void VerifyAbilityToAccessAllPagesRelatedToPumaBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -202,7 +202,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Women Best brand correctly", priority =12 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Women Best brand correctly", priority =12 )
     public void VerifyAbilityToAccessAllPagesRelatedToWomensBestBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -220,7 +220,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Health Aid brand correctly", priority =13 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Health Aid brand correctly", priority =13 )
     public void VerifyAbilityToAccessAllPagesRelatedToHealthAidBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -239,7 +239,7 @@ public class AeBrandsTestCases extends BaseTest {
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
     //There's a bug here
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the O.a Foods brand correctly", priority =14 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the O.a Foods brand correctly", priority =14 )
     public void VerifyAbilityToAccessAllPagesRelatedToOAFoodsBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -257,7 +257,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Rainbow Light brand correctly", priority =15 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Rainbow Light brand correctly", priority =15 )
     public void VerifyAbilityToAccessAllPagesRelatedToRainbowLightBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -276,7 +276,7 @@ public class AeBrandsTestCases extends BaseTest {
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
     //There's a bug here
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Swisse brand correctly", priority =16)
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Swisse brand correctly", priority =16)
     public void VerifyAbilityToAccessAllPagesRelatedToSwisseBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -294,7 +294,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Ghost brand correctly", priority =17 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Ghost brand correctly", priority =17 )
     public void VerifyAbilityToAccessAllPagesRelatedToGhostBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -313,7 +313,7 @@ public class AeBrandsTestCases extends BaseTest {
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
     //There's a bug here
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Oomf-nutrition brand correctly", priority =18 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Oomf-nutrition brand correctly", priority =18 )
     public void VerifyAbilityToAccessAllPagesRelatedTOoomfNutritionBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -331,7 +331,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Full Green brand correctly", priority =19 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Full Green brand correctly", priority =19 )
     public void VerifyAbilityToAccessAllPagesRelatedTFullGreenBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -350,7 +350,7 @@ public class AeBrandsTestCases extends BaseTest {
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
     //There's a bug here
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Planet Organic brand correctly", priority =20 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Planet Organic brand correctly", priority =20 )
     public void VerifyAbilityToAccessAllPagesRelatedToPlanetOrganicBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -368,7 +368,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Life Extension brand correctly", priority =21 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Life Extension brand correctly", priority =21 )
     public void VerifyAbilityToAccessAllPagesRelatedToLifeExtensionBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -386,7 +386,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Sporter brand correctly", priority =22 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Sporter brand correctly", priority =22 )
     public void VerifyAbilityToAccessAllPagesRelatedToSporterBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -405,7 +405,7 @@ public class AeBrandsTestCases extends BaseTest {
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
     //There's a bug here
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Divine Health brand correctly", priority =23 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Divine Health brand correctly", priority =23 )
     public void VerifyAbilityToAccessAllPagesRelatedToDivineHealthBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -423,7 +423,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Titin Force brand correctly", priority =24 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Titin Force brand correctly", priority =24 )
     public void VerifyAbilityToAccessAllPagesRelatedToTitinForceBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -441,7 +441,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Sotru brand correctly", priority =25 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Sotru brand correctly", priority =25 )
     public void VerifyAbilityToAccessAllPagesRelatedToSotruBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -460,7 +460,7 @@ public class AeBrandsTestCases extends BaseTest {
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
     //There's a bug here
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Super Nutrition brand correctly", priority =26 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Super Nutrition brand correctly", priority =26 )
     public void VerifyAbilityToAccessAllPagesRelatedToSuperNutritionBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -479,7 +479,7 @@ public class AeBrandsTestCases extends BaseTest {
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
     //There's a bug here
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Lizi’s Granola brand correctly", priority =27 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Lizi’s Granola brand correctly", priority =27 )
     public void VerifyAbilityToAccessAllPagesRelatedToLiziGranolaBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -497,7 +497,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Nairn’s brand correctly", priority =28 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Nairn’s brand correctly", priority =28 )
     public void VerifyAbilityToAccessAllPagesRelatedToNairnBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -516,7 +516,7 @@ public class AeBrandsTestCases extends BaseTest {
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
     //There's a bug here
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the IRemedies brand correctly", priority =29 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the IRemedies brand correctly", priority =29 )
     public void VerifyAbilityToAccessAllPagesRelatedToIRemediesBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -534,7 +534,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Chike Nutrition brand correctly", priority =30 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Chike Nutrition brand correctly", priority =30 )
     public void VerifyAbilityToAccessAllPagesRelatedToChikeNutritionBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -552,7 +552,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Fitmark brand correctly", priority =31 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Fitmark brand correctly", priority =31 )
     public void VerifyAbilityToAccessAllPagesRelatedToFitmarkBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -570,7 +570,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Quest Nutrition brand correctly", priority =32 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Quest Nutrition brand correctly", priority =32 )
     public void VerifyAbilityToAccessAllPagesRelatedToQuestNutritionBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -588,7 +588,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Xtend brand correctly", priority =33 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Xtend brand correctly", priority =33 )
     public void VerifyAbilityToAccessAllPagesRelatedToXtendBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -606,7 +606,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Cellucor brand correctly", priority =34 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Cellucor brand correctly", priority =34 )
     public void VerifyAbilityToAccessAllPagesRelatedToCellucorBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -624,7 +624,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Bpi Sports brand correctly", priority =35 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Bpi Sports brand correctly", priority =35 )
     public void VerifyAbilityToAccessAllPagesRelatedToBpiSportsBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -642,7 +642,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Animal Nutrition brand correctly", priority =36 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Animal Nutrition brand correctly", priority =36 )
     public void VerifyAbilityToAccessAllPagesRelatedToAnimalNutritionBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -661,7 +661,7 @@ public class AeBrandsTestCases extends BaseTest {
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
     //There's a bug here
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Sahale Snacks brand correctly", priority =37 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Sahale Snacks brand correctly", priority =37 )
     public void VerifyAbilityToAccessAllPagesRelatedToSahaleSnacksBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -679,7 +679,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Universal Nutrition brand correctly", priority =38 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Universal Nutrition brand correctly", priority =38 )
     public void VerifyAbilityToAccessAllPagesRelatedToUniversalNutritionBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -697,7 +697,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Flahavan's brand correctly", priority =39 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Flahavan's brand correctly", priority =39 )
     public void VerifyAbilityToAccessAllPagesRelatedToFlahavansBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -715,7 +715,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Bobs Red Mill brand correctly", priority =40 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Bobs Red Mill brand correctly", priority =40 )
     public void VerifyAbilityToAccessAllPagesRelatedToBobsRedMillBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -733,7 +733,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Nu Hair brand correctly", priority =41 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Nu Hair brand correctly", priority =41 )
     public void VerifyAbilityToAccessAllPagesRelatedToNuHairBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -751,7 +751,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to theShen Min brand correctly", priority =42 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to theShen Min brand correctly", priority =42 )
     public void VerifyAbilityToAccessAllPagesRelatedToShenMinBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -769,7 +769,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Natrol brand correctly", priority =43 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Natrol brand correctly", priority =43 )
     public void VerifyAbilityToAccessAllPagesRelatedToNatrolBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -787,7 +787,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Pandomar brand correctly", priority =44 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Pandomar brand correctly", priority =44 )
     public void VerifyAbilityToAccessAllPagesRelatedToPandomarBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -805,7 +805,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Organic Larder brand correctly", priority =45 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Organic Larder brand correctly", priority =45 )
     public void VerifyAbilityToAccessAllPagesRelatedToOrganicLarderBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -823,7 +823,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Russian Bear brand correctly", priority =46 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Russian Bear brand correctly", priority =46 )
     public void VerifyAbilityToAccessAllPagesRelatedToRussianBearBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -841,7 +841,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Performa brand correctly", priority =47 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Performa brand correctly", priority =47 )
     public void VerifyAbilityToAccessAllPagesRelatedToPerformaBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -859,7 +859,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Webber Naturals brand correctly", priority =48 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Webber Naturals brand correctly", priority =48 )
     public void VerifyAbilityToAccessAllPagesRelatedToWebberNaturalsBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -877,7 +877,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Prolab brand correctly", priority =49 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Prolab brand correctly", priority =49 )
     public void VerifyAbilityToAccessAllPagesRelatedToProlabBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -895,7 +895,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Jobedu brand correctly", priority =50 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Jobedu brand correctly", priority =50 )
     public void VerifyAbilityToAccessAllPagesRelatedToJobeduBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -913,7 +913,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Windmill brand correctly", priority =51 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Windmill brand correctly", priority =51 )
     public void VerifyAbilityToAccessAllPagesRelatedToWindmillBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -931,7 +931,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Orgain brand correctly", priority =52 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Orgain brand correctly", priority =52 )
     public void VerifyAbilityToAccessAllPagesRelatedToOrgainBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -949,7 +949,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Optimum Nutrition brand correctly", priority =53 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Optimum Nutrition brand correctly", priority =53 )
     public void VerifyAbilityToAccessAllPagesRelatedToOptimumNutritionBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -968,7 +968,7 @@ public class AeBrandsTestCases extends BaseTest {
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
     //There's a bug here
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Applied Nutrition brand correctly", priority =54 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Applied Nutrition brand correctly", priority =54 )
     public void VerifyAbilityToAccessAllPagesRelatedToAppliedNutritionBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -986,7 +986,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Hunter Foods brand correctly", priority =55 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Hunter Foods brand correctly", priority =55 )
     public void VerifyAbilityToAccessAllPagesRelatedToHunterFoodsBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -1004,7 +1004,7 @@ public class AeBrandsTestCases extends BaseTest {
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
-    @Test(groups = {"Brands Page", "2. High Severity"},description = "Make sure the ability to access all pages related to the Nutrex Research brand correctly", priority =56 )
+    @Test(groups = {"Brands Page", "1.2 High Severity"},description = "Make sure the ability to access all pages related to the Nutrex Research brand correctly", priority =56 )
     public void VerifyAbilityToAccessAllPagesRelatedToNutrexResearchBrandCorrectly()
     {   AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);

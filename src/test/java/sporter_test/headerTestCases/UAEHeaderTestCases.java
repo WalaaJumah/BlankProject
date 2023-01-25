@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.KsaHomePage;
 import sporter_pages.homepage_classes.UAEHomePage;
-@Test(groups = "UAE Header Section")
+@Test(groups = "2.06 UAE Header Section")
 
 public class UAEHeaderTestCases extends HeaderTestCases{
     @BeforeClass

@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.KsaHomePage;
 
-@Test(groups = "KSA Header Section")
+@Test(groups = "2.08 KSA Header Section")
 public class KSAHeaderTestCases extends HeaderTestCases{
     @BeforeClass
     public void switchToKsaStore(){

@@ -10,7 +10,7 @@ import core.BasePage;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.JordanHomePage;
-@Test(groups = "Jordan Header Section")
+@Test(groups = "2.09 Jordan Header Section")
 
 public class JordanHeaderTestCases extends HeaderTestCases{
     @BeforeClass

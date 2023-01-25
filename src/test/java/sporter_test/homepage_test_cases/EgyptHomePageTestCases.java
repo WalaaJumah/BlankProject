@@ -19,7 +19,7 @@ import sporter_pages.homepage_classes.EgyptHomePage;
 import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.homepage_classes.JordanHomePage;
 import sporter_pages.homepage_classes.QatarHomePage;
-@Test(groups = "Egypt HomePage")
+@Test(groups = "2.05 Egypt HomePage")
 public class EgyptHomePageTestCases extends HomePageTestCases {
 
     @BeforeClass

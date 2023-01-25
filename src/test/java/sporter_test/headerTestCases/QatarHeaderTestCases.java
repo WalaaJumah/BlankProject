@@ -10,7 +10,7 @@ import core.BasePage;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.QatarHomePage;
-@Test(groups = "Qatar Header Section")
+@Test(groups = "2.07 Qatar Header Section")
 public class QatarHeaderTestCases extends HeaderTestCases {
     @BeforeClass
     public void switchToQatarStore() {

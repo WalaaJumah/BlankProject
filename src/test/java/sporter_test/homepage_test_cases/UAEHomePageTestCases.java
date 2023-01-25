@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.UAEHomePage;
 
-@Test(groups = "UAE HomePage")
+@Test(groups = "2.01 UAE HomePage")
 public class UAEHomePageTestCases extends HomePageTestCases {
     @BeforeClass
     public void switchToUAEStore(){

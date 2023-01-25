@@ -36,7 +36,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
             CloseInitialDialog();          }
     }
 
-    @Test(groups = {"Healthy Food Category","All Smoke Testing Result","1. Critical Severity"},description = "Healthy Food Category- Make sure clicking on the Healthy Food Category Appears In MegaMenu Redirect User To CorrectURL", priority = 2)
+    @Test(groups = {"Healthy Food Category","All Smoke Testing Result","1.1 Critical Severity"},description = "Healthy Food Category- Make sure clicking on the Healthy Food Category Appears In MegaMenu Redirect User To CorrectURL", priority = 2)
     public void verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL() {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         action = new Actions(webDriver);
@@ -46,7 +46,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
         aeHealthyFoodCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-    @Test(groups = {"Healthy Food Category","All Smoke Testing Result","1. Critical Severity"},description = "Healthy Food Category- Make sure clicking on the Healthy Food Category from ShopBy Menu Redirect User To CorrectURL", priority = 3)
+    @Test(groups = {"Healthy Food Category","All Smoke Testing Result","1.1 Critical Severity"},description = "Healthy Food Category- Make sure clicking on the Healthy Food Category from ShopBy Menu Redirect User To CorrectURL", priority = 3)
     public void verifyClickingOnHealthyFoodCategoryFromShopByMenuRedirectUserToCorrectURL() {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         action = new Actions(webDriver);
@@ -57,7 +57,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
         aeHealthyFoodCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-    @Test(groups = {"Healthy Food Category","All Smoke Testing Result","1. Critical Severity"},description = "Healthy Food Category- Make sure clicking on the Healthy Food Category from HomePage Redirect User To CorrectURL", priority =4)
+    @Test(groups = {"Healthy Food Category","All Smoke Testing Result","1.1 Critical Severity"},description = "Healthy Food Category- Make sure clicking on the Healthy Food Category from HomePage Redirect User To CorrectURL", priority =4)
     public void verifyClickingOnHealthyFoodCategoryFromHomePageRedirectUserToCorrectURL() {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeHealthyFoodCategoryPage.navigateToHomePage();
@@ -65,18 +65,18 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         Assert.assertEquals(webDriver.getCurrentUrl(),aeHealthyFoodCategoryPage.BaseURL +aeHealthyFoodCategoryPage.aeDomain+aeHealthyFoodCategoryPage.healthyFoodsUrl);
         aeHealthyFoodCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-    @Test(groups = {"Healthy Food Category", "4. Low Severity"},description = "Healthy Food Category- Make sure the Horizontal Category Image appears correctly in the Healthy Food landing page ", priority = 5)
+    @Test(groups = {"Healthy Food Category", "1.4 Low Severity"},description = "Healthy Food Category- Make sure the Horizontal Category Image appears correctly in the Healthy Food landing page ", priority = 5)
     public void verifyTheHorizontalCategoryImageAppearsCorrectlyInHealthyFoodLandingPage() {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         Assert.assertTrue(aeHealthyFoodCategoryPage.getSportSupplementsCategoryImage().isDisplayed());
     }
-    @Test(groups = {"Healthy Food Category", "4. Low Severity"},description = "Healthy Food Category- Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the Healthy Food landing page ", priority = 6)
+    @Test(groups = {"Healthy Food Category", "1.4 Low Severity"},description = "Healthy Food Category- Make sure each of the title and Paragraph appearing in the Horizontal Category Image appears correctly in the Healthy Food landing page ", priority = 6)
     public void verifyTitleAndParagraphAppearingCorrectlyInHorizontalCategoryImageInHealthyFoodLandingPage() {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         Assert.assertEquals(aeHealthyFoodCategoryPage.getSportSupplementsTitleInCategoryImage().getText(), "Healthy Food", "Wrong title appears in the Healthy Food category image");
         Assert.assertEquals(aeHealthyFoodCategoryPage.getParagraphInSportSupplementsCategoryImage().getText(), "For Every Training Goal & Body Type", "Wrong Paragraph appears in the Healthy Food category image");
     }
-    @Test(groups = {"Healthy Food Category", "3. Medium Severity"},description = "Healthy Food Category- Make sure the Horizontal Banners appear correctly in the Healthy Food landing page ", priority = 7)
+    @Test(groups = {"Healthy Food Category", "1.3 Medium Severity"},description = "Healthy Food Category- Make sure the Horizontal Banners appear correctly in the Healthy Food landing page ", priority = 7)
     public void verifyTheHorizontalBannersAppearCorrectlyInHealthyFoodLandingPage() {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -85,7 +85,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
             Assert.assertTrue(aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().get(i).isDisplayed());
         }
     }
-    @Test(groups = {"Healthy Food Category", "1. Critical Severity"},description = "Healthy Food Category- Make sure clicking on the Horizontal Banners appearing in the Healthy Food landing page opens correctly ", priority = 8)
+    @Test(groups = {"Healthy Food Category", "1.1 Critical Severity"},description = "Healthy Food Category- Make sure clicking on the Horizontal Banners appearing in the Healthy Food landing page opens correctly ", priority = 8)
     public void verifyClickingOnHorizontalBannersAppearingInHealthyFoodLandingPageOpensCorrectly() {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -96,14 +96,14 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
             webDriver.navigate().back();
         }
     }
-    @Test(groups = {"Healthy Food Category", "3. Medium Severity"},description = "Healthy Food Category- Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Healthy Food landing page ", priority = 9)
+    @Test(groups = {"Healthy Food Category", "1.3 Medium Severity"},description = "Healthy Food Category- Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Healthy Food landing page ", priority = 9)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumb() {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
         Assert.assertEquals(webDriver.getCurrentUrl(), aeHealthyFoodCategoryPage.BaseURL +aeHealthyFoodCategoryPage.aeSiteURL);
     }
-    @Test(groups = {"Healthy Food Category", "3. Medium Severity"},description = "Healthy Food Category- Make sure that the Result label and its value appear correctly in the Healthy Food Category page ", priority = 10)
+    @Test(groups = {"Healthy Food Category", "1.3 Medium Severity"},description = "Healthy Food Category- Make sure that the Result label and its value appear correctly in the Healthy Food Category page ", priority = 10)
     public void verifyResultFieldAndItsVaLueAppearInTheHealthyFoodCategoryPage() {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -113,7 +113,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSearchResultValue().isDisplayed());
         sa.assertNotEquals(aeSportSupplementsCategoryPage.getSearchResultValue().getText(), "0", "The number of result is Zero");
     }
-    @Test(groups = {"Healthy Food Category", "3. Medium Severity"},description = "Healthy Food Category- Make sure that Sort By menu and its options appear correctly ", priority = 11)
+    @Test(groups = {"Healthy Food Category", "1.3 Medium Severity"},description = "Healthy Food Category- Make sure that Sort By menu and its options appear correctly ", priority = 11)
     public void verifySortByMenuAndItsOptionsAppearCorrectly() {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -132,7 +132,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
             Assert.assertEquals(options.get(i).getText(), expectedOption.get(i));
         }
     }
-    @Test(groups = {"Healthy Food Category", "4. Low Severity"},description = "Healthy Food Category- Make sure that the Best Selling option is selected by default in the Sort By menu ", priority = 12)
+    @Test(groups = {"Healthy Food Category", "1.4 Low Severity"},description = "Healthy Food Category- Make sure that the Best Selling option is selected by default in the Sort By menu ", priority = 12)
     public void verifyBestSellingOptionIsSelectedByDefaultInSortByMenu() {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -145,7 +145,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
 
         }    }
 //    //There's a bug here
-    @Test(groups = {"Healthy Food Category", "2. High Severity"},description = "Healthy Food Category- Make sure each of the Healthy Food category image and Horizontal Banners appearing after sorting the products  ", priority = 13)
+    @Test(groups = {"Healthy Food Category", "1.2 High Severity"},description = "Healthy Food Category- Make sure each of the Healthy Food category image and Horizontal Banners appearing after sorting the products  ", priority = 13)
     public void verifyHealthyFoodCategoryImageAndHorizontalBannersAppearingAfterSortingTheProducts()  {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         this.verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
@@ -157,7 +157,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         Assert.assertTrue(aeHealthyFoodCategoryPage.getMainBannersInTheSportSupplementsSection().isDisplayed());
     }
 //    //There's a bug here
-    @Test(groups = {"Healthy Food Category", "3. Medium Severity"},description = "Healthy Food Category- Make sure Sort By Menu appears correctly in the page after sorting By Featured  ", priority = 14)
+    @Test(groups = {"Healthy Food Category", "1.3 Medium Severity"},description = "Healthy Food Category- Make sure Sort By Menu appears correctly in the page after sorting By Featured  ", priority = 14)
     public void verifySortByMenuAppearingAfterSortingByRelevance() {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -167,7 +167,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
     }
-    @Test(groups = {"Healthy Food Category", "3. Medium Severity"},description = "Healthy Food Category- Make sure Sort By Menu appears correctly in the page after sorting By Product Name  ", priority = 15)
+    @Test(groups = {"Healthy Food Category", "1.3 Medium Severity"},description = "Healthy Food Category- Make sure Sort By Menu appears correctly in the page after sorting By Product Name  ", priority = 15)
     public void verifySortByMenuAppearingAfterSortingByName() {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -177,7 +177,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
     }
-    @Test(groups = {"Healthy Food Category", "3. Medium Severity"},description = "Healthy Food Category- Make sure Sort By Menu appears correctly in the page after sorting By Best Selling  ", priority = 16)
+    @Test(groups = {"Healthy Food Category", "1.3 Medium Severity"},description = "Healthy Food Category- Make sure Sort By Menu appears correctly in the page after sorting By Best Selling  ", priority = 16)
     public void verifySortByMenuAppearingAfterSortingByBestSelling(){
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -187,7 +187,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
     }
-    @Test(groups = {"Healthy Food Category", "3. Medium Severity"},description = "Healthy Food Category- Make sure Sort By Menu appears correctly in the page after sorting By Price Min-Max  ", priority = 17)
+    @Test(groups = {"Healthy Food Category", "1.3 Medium Severity"},description = "Healthy Food Category- Make sure Sort By Menu appears correctly in the page after sorting By Price Min-Max  ", priority = 17)
     public void verifySortByMenuAppearingAfterSortingByPriceMinMax() {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -197,7 +197,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
     }
-    @Test(groups = {"Healthy Food Category", "3. Medium Severity"},description = "Healthy Food Category- Make sure Sort By Menu appears correctly in the page after sorting By Price Max-Min  ", priority = 18)
+    @Test(groups = {"Healthy Food Category", "1.3 Medium Severity"},description = "Healthy Food Category- Make sure Sort By Menu appears correctly in the page after sorting By Price Max-Min  ", priority = 18)
     public void verifySortByMenuAppearingAfterSortingByPriceMaxMin(){
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -207,26 +207,26 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSortByMenu().isDisplayed());
     }
-    @Test(groups = {"Healthy Food Category", "3. Medium Severity"},description = "Healthy Food Category- Make sure that the BreadCrumb correctly after sorting the product ", priority = 19)
+    @Test(groups = {"Healthy Food Category", "1.3 Medium Severity"},description = "Healthy Food Category- Make sure that the BreadCrumb correctly after sorting the product ", priority = 19)
     public void verifyTheBreadCrumbAppearingCorrectlyAfterSortingTheProducts() {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeHealthyFoodCategoryPage.navigate();
         Assert.assertTrue(aeSportSupplementsCategoryPage.getHomeBreadcrumbs().isDisplayed());
     }
-    @Test(groups = {"Healthy Food Category", "4. Low Severity"},description = "Healthy Food Category- Make sure  the Healthy Food footer appears correctly  ", priority = 20)
+    @Test(groups = {"Healthy Food Category", "1.4 Low Severity"},description = "Healthy Food Category- Make sure  the Healthy Food footer appears correctly  ", priority = 20)
     public void verifySportSupplementsFooterSectionAppearsCorrectly() {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         Assert.assertTrue(aeHealthyFoodCategoryPage.getSportSupplementsFooterSection().isDisplayed());
         Assert.assertEquals(aeHealthyFoodCategoryPage.getSportSupplementsFooterSection().getCssValue("background"), "rgb(242, 242, 242) none repeat scroll 0% 0% / auto padding-box border-box");
     }
-    @Test(groups = {"Healthy Food Category", "4. Low Severity"},description = "Healthy Food Category- Make sure the text appears in the Healthy Food footer appears correctly  ", priority = 21)
+    @Test(groups = {"Healthy Food Category", "1.4 Low Severity"},description = "Healthy Food Category- Make sure the text appears in the Healthy Food footer appears correctly  ", priority = 21)
     public void verifyTheTextAppearInTheHealthyFoodFooterSectionAppearsCorrectly() {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeHealthyFoodCategoryPage.navigate();
         Assert.assertEquals(aeHealthyFoodCategoryPage.getSportSupplementsTitleInFooterSection().getText(), "Healthy Food");
         Assert.assertTrue(aeHealthyFoodCategoryPage.getHealthyFoodDescriptionP1InFooterSection().getText().contains( "If you spend a lot of time researching, trying to eat healthy foods, have a dedicated diet or food restrictions, or consistently buy organic or non-GMO foods online, you probably" ));
     }
-    @Test(groups = {"Healthy Food Category", "2. High Severity"},description = "Healthy Food Category- Verify that the search button works correctly from the Healthy Food category page", priority = 22)
+    @Test(groups = {"Healthy Food Category", "1.2 High Severity"},description = "Healthy Food Category- Verify that the search button works correctly from the Healthy Food category page", priority = 22)
     public void verifySearchBtnWorksCorrectlyFromHealthyFoodCategoryPage() {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -237,14 +237,14 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         aeHealthyFoodCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"Healthy Food Category", "3. Medium Severity"},description = "Healthy Food Category- Verify that the previous page button is disable when the current page is page 1 ", priority = 23)
+    @Test(groups = {"Healthy Food Category", "1.3 Medium Severity"},description = "Healthy Food Category- Verify that the previous page button is disable when the current page is page 1 ", priority = 23)
     public void verifyThePreviousBtnIsDisableWhenDisplayPage1() {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         aeHealthyFoodCategoryPage.navigate();
         Assert.assertTrue(aeSportSupplementsCategoryPage.getDisabledPreviousPageBtn().isDisplayed());
     }
-    @Test(groups = {"Healthy Food Category", "1. Critical Severity"},description = "Healthy Food Category- Make Sure the Pagination control works correctly", priority = 24)
+    @Test(groups = {"Healthy Food Category", "1.1 Critical Severity"},description = "Healthy Food Category- Make Sure the Pagination control works correctly", priority = 24)
     public void verifyThePaginationControlWorksCorrectly(){
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -252,14 +252,14 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
-    @Test(groups = {"Healthy Food Category", "3. Medium Severity"},description = "Healthy Food Category- Make Sure the previous page button works correctly", priority = 25)
+    @Test(groups = {"Healthy Food Category", "1.3 Medium Severity"},description = "Healthy Food Category- Make Sure the previous page button works correctly", priority = 25)
     public void verifyPreviousPageBtnWorksCorrectly() {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
         Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
     }
-    @Test(groups = {"Healthy Food Category", "3. Medium Severity"},description = "Healthy Food Category- Make Sure the next page button works correctly", priority = 26)
+    @Test(groups = {"Healthy Food Category", "1.3 Medium Severity"},description = "Healthy Food Category- Make Sure the next page button works correctly", priority = 26)
     public void verifyNextPageBtnWorksCorrectly(){
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -267,7 +267,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         DataHelperAndWait.waitForUrlContains("p=2",webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
     }
-    @Test(groups = {"Healthy Food Category", "3. Medium Severity"},description = "Healthy Food Category- Make Sure the Filtration Section Appears Correctly", priority = 27)
+    @Test(groups = {"Healthy Food Category", "1.3 Medium Severity"},description = "Healthy Food Category- Make Sure the Filtration Section Appears Correctly", priority = 27)
     public void verifyAllSearchFieldsInsideFormFiltrationSectionAppearsCorrectly() {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -307,7 +307,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
             Assert.assertTrue(aeSportSupplementsCategoryPage.getFormFiltrationSection().get(i).isDisplayed());
         }
     }
-    @Test(groups = {"Healthy Food Category", "4. Low Severity"},description = "Healthy Food Category- Make sure all secure tabs appears correctly(100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks)", priority = 28)
+    @Test(groups = {"Healthy Food Category", "1.4 Low Severity"},description = "Healthy Food Category- Make sure all secure tabs appears correctly(100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks)", priority = 28)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInHealthyFoodCategoryPage(){
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         Assert.assertTrue(aeHealthyFoodCategoryPage.getPageBottomSection().isDisplayed());
@@ -327,7 +327,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         }
     }
     //Pagination control for all pages in the Healthy Food Category Pages
-    @Test(groups = {"Healthy Food Category","All Smoke Testing Result","3. Medium Severity"},description = "Healthy Food Category- Make Sure the ability to access all pages inside Healthy Food Category Page  ", priority = 29)
+    @Test(groups = {"Healthy Food Category","All Smoke Testing Result","1.3 Medium Severity"},description = "Healthy Food Category- Make Sure the ability to access all pages inside Healthy Food Category Page  ", priority = 29)
     public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPage(){
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
@@ -336,7 +336,7 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);}
     //There's a bug here due to the BreadCrumb is missing after sorting the products
 
-    @Test(groups = {"Healthy Food Category", "3. Medium Severity"},description = "Healthy Food Category- Make sure ability to navigate to the home page by clicking on the sporter logo  ", priority = 30)
+    @Test(groups = {"Healthy Food Category", "1.3 Medium Severity"},description = "Healthy Food Category- Make sure ability to navigate to the home page by clicking on the sporter logo  ", priority = 30)
     public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromCartPage() {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeGuestUserPage = new AEGuestUserPage(webDriver);

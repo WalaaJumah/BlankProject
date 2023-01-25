@@ -5,7 +5,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.QatarHomePage;
 
-@Test(groups = "Qatar HomePage")
+@Test(groups = "2.02 Qatar HomePage")
 public class QatarHomePageTestCases extends HomePageTestCases {
 
 

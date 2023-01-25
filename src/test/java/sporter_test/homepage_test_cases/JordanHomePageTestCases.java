@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.JordanHomePage;
 
-@Test(groups = "Jordan HomePage")
+@Test(groups = "2.04 Jordan HomePage")
 public class JordanHomePageTestCases extends HomePageTestCases {
     @BeforeClass
     public void switchToJordanStore(){
