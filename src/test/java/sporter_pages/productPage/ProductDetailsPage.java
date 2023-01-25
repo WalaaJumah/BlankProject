@@ -36,11 +36,11 @@ public class ProductDetailsPage extends BasePage {
     private WebElement addToCartBtn;
     @FindBy(id = "popup-block")
     private WebElement cartPopUp;
-    @FindBy(id = "//*[@id=\"popup-block\"]/div[2]/a[1]")
+    @FindBy(id = "keepShoppingBtn")
     private WebElement keepShippingBtn;
     @FindBy(xpath = "//button[@class='button_btn__zg_G5 ']/span")
     private WebElement continueBtnInOOSPoup;
-    @FindBy(id = "//*[@id=\"popup-block\"]/div[2]/a[2]")
+    @FindBy(id = "viewCartBtn]")
     private WebElement viewCartBtn;
     @FindBy(xpath = "(//div[@class='productOption_list__SYsKN'])[1]//div[starts-with(@id,'configurableOptionLabel_')]")
     private List<WebElement> productSizeAttribute;
