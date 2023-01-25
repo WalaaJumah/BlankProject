@@ -18,7 +18,7 @@ import sporter_pages.productPage.ProductDetailsPage;
 @Test(groups = "Jordan Product Details Page")
 
 public class JordanProductDetailsTestCases  extends ProductDetailsTestCases{
-    @BeforeClass
+    @BeforeClass(alwaysRun=true)
     public void switchToJordanStore(){
         JordanHomePage jordanHomePage=new JordanHomePage(webDriver);
         jordanHomePage.switchCountry(jordanHomePage.getJordanCountry());

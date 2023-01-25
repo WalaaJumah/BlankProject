@@ -12,7 +12,7 @@ import sporter_pages.homepage_classes.JordanHomePage;
 import sporter_test.headerTestCases.HeaderTestCases;
 
 public class JordanAccountRegistrationTestCases extends AccountRegistrationTestCases {
-    @BeforeClass
+    @BeforeClass(alwaysRun=true)
     public void switchToJordanStore(){
         JordanHomePage jordanHomePage=new JordanHomePage(webDriver);
         jordanHomePage.switchCountry(jordanHomePage.getJordanCountry());

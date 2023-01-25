@@ -13,7 +13,7 @@ import sporter_pages.homepage_classes.JordanHomePage;
 
 @Test(groups = "2.04 Jordan HomePage")
 public class JordanHomePageTestCases extends HomePageTestCases {
-    @BeforeClass
+    @BeforeClass(alwaysRun=true)
     public void switchToJordanStore(){
         JordanHomePage jordanHomePage=new JordanHomePage(webDriver);
         jordanHomePage.switchCountry(jordanHomePage.getJordanCountry());

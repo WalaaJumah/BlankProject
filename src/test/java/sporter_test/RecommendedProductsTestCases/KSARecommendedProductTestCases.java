@@ -16,7 +16,7 @@ import sporter_pages.homepage_classes.KsaHomePage;
 import sporter_test.productTestCases.ProductDetailsTestCases;
 @Test(groups = "KSA Product Details Page")
 public class KSARecommendedProductTestCases extends RecommendedProductTestCases {
-    @BeforeClass
+    @BeforeClass(alwaysRun=true)
     public void switchToKsaStore(){
         KsaHomePage ksaHomePage=new KsaHomePage(webDriver);
         HeaderSection headerSection =new HeaderSection(webDriver);

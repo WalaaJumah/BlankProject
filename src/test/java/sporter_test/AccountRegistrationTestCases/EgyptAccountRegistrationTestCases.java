@@ -12,7 +12,7 @@ import sporter_pages.homepage_classes.EgyptHomePage;
 import sporter_test.headerTestCases.HeaderTestCases;
 
 public class EgyptAccountRegistrationTestCases extends AccountRegistrationTestCases {
-    @BeforeClass
+    @BeforeClass(alwaysRun=true)
     public void switchToEgyptStore(){
         EgyptHomePage egyptHomePage=new EgyptHomePage(webDriver);
         egyptHomePage.switchCountry(egyptHomePage.getEgyptCountry());

@@ -13,7 +13,7 @@ import sporter_pages.homepage_classes.EgyptHomePage;
 import sporter_pages.productPage.ProductDetailsPage;
 @Test(groups = "Egypt Product Details Page")
 public class EgyptRecommendedProductTestCases extends RecommendedProductTestCases{
-    @BeforeClass
+    @BeforeClass(alwaysRun=true)
     public void switchToEgyptStore(){
         EgyptHomePage egyptHomePage=new EgyptHomePage(webDriver);
         ProductDetailsPage productDetailsPage= new ProductDetailsPage(webDriver);

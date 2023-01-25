@@ -18,7 +18,7 @@ import sporter_pages.productPage.ProductDetailsPage;
 @Test(groups = "UAE Product Details Page")
 
 public class UAEProductDetailsTestCases  extends ProductDetailsTestCases{
-    @BeforeClass
+    @BeforeClass(alwaysRun=true)
     public void switchToUAEStore(){
         UAEHomePage uaeHomePage=new UAEHomePage(webDriver);
         uaeHomePage.switchCountry(uaeHomePage.getAeCountry());

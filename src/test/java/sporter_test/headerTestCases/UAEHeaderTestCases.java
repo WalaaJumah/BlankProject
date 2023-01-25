@@ -14,7 +14,7 @@ import sporter_pages.homepage_classes.UAEHomePage;
 @Test(groups = "2.06 UAE Header Section")
 
 public class UAEHeaderTestCases extends HeaderTestCases{
-    @BeforeClass
+    @BeforeClass(alwaysRun=true)
     public void switchToQatarStore(){
         UAEHomePage uaeHomePage=new UAEHomePage(webDriver);
         uaeHomePage.switchCountry(uaeHomePage.getAeCountry());

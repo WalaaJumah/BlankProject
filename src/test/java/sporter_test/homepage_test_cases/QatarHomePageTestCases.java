@@ -18,7 +18,7 @@ public class QatarHomePageTestCases extends HomePageTestCases {
 //        super.setupBrowser(environment);
 //        qatarHomePage= new QatarHomePage(webDriver);
 //    }
-@BeforeClass
+@BeforeClass(alwaysRun=true)
 public void switchToQatarStore(){
     QatarHomePage qatarHomePage=new QatarHomePage(webDriver);
     qatarHomePage.switchCountry(qatarHomePage.getQatarCountry());

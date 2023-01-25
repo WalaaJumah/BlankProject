@@ -13,7 +13,7 @@ import sporter_pages.homepage_classes.QatarHomePage;
 import sporter_test.productTestCases.ProductDetailsTestCases;
 @Test(groups = "Qatar Product Details Page")
 public class QatarRecommendedProductTestCases extends RecommendedProductTestCases {
-    @BeforeClass
+    @BeforeClass(alwaysRun=true)
     public void switchToQatarStore(){
         QatarHomePage qatarHomePage=new QatarHomePage(webDriver);
         qatarHomePage.switchCountry(qatarHomePage.getQatarCountry());

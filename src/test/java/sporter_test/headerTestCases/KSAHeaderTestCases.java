@@ -16,7 +16,7 @@ import sporter_pages.homepage_classes.KsaHomePage;
 
 @Test(groups = "2.08 KSA Header Section")
 public class KSAHeaderTestCases extends HeaderTestCases{
-    @BeforeClass
+    @BeforeClass(alwaysRun=true)
     public void switchToKsaStore(){
         KsaHomePage ksaHomePage=new KsaHomePage(webDriver);
         HeaderSection headerSection =new HeaderSection(webDriver);

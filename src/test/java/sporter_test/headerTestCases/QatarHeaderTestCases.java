@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.QatarHomePage;
 @Test(groups = "2.07 Qatar Header Section")
 public class QatarHeaderTestCases extends HeaderTestCases {
-    @BeforeClass
+    @BeforeClass(alwaysRun=true)
     public void switchToQatarStore() {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.switchCountry(qatarHomePage.getQatarCountry());

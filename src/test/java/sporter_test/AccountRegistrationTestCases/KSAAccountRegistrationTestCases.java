@@ -15,7 +15,7 @@ import sporter_pages.homepage_classes.KsaHomePage;
 import sporter_test.headerTestCases.HeaderTestCases;
 
 public class KSAAccountRegistrationTestCases extends AccountRegistrationTestCases {
-    @BeforeClass
+    @BeforeClass(alwaysRun=true)
     public void switchToKsaStore(){
         KsaHomePage ksaHomePage=new KsaHomePage(webDriver);
         HeaderSection headerSection =new HeaderSection(webDriver);

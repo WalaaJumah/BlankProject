@@ -22,7 +22,7 @@ import sporter_pages.homepage_classes.QatarHomePage;
 @Test(groups = "2.05 Egypt HomePage")
 public class EgyptHomePageTestCases extends HomePageTestCases {
 
-    @BeforeClass
+    @BeforeClass(alwaysRun=true)
     public void switchToEgyptStore(){
         EgyptHomePage egyptHomePage=new EgyptHomePage(webDriver);
         egyptHomePage.switchCountry(egyptHomePage.getEgyptCountry());

@@ -13,7 +13,7 @@ import sporter_pages.homepage_classes.UAEHomePage;
 import sporter_test.productTestCases.ProductDetailsTestCases;
 @Test(groups = "UAE Product Details Page")
 public class UAERecommendedProductTestCases extends RecommendedProductTestCases {
-    @BeforeClass
+    @BeforeClass(alwaysRun=true)
     public void switchToUAEStore(){
         UAEHomePage uaeHomePage=new UAEHomePage(webDriver);
         uaeHomePage.switchCountry(uaeHomePage.getAeCountry());

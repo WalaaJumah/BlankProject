@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.EgyptHomePage;
 @Test(groups = "2.10 Egypt Header Section")
 public class EgyptHeaderTestCases extends HeaderTestCases{
-    @BeforeClass
+    @BeforeClass(alwaysRun=true)
     public void switchToEgyptStore(){
         EgyptHomePage egyptHomePage=new EgyptHomePage(webDriver);
         egyptHomePage.switchCountry(egyptHomePage.getEgyptCountry());

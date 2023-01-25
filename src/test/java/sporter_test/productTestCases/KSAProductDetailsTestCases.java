@@ -18,7 +18,7 @@ import sporter_pages.productPage.ProductDetailsPage;
 @Test(groups = "KSA Product Details Page")
 
 public class KSAProductDetailsTestCases  extends ProductDetailsTestCases{
-    @BeforeClass
+    @BeforeClass(alwaysRun=true)
     public void switchToKsaStore(){
         KsaHomePage ksaHomePage=new KsaHomePage(webDriver);
         HeaderSection headerSection =new HeaderSection(webDriver);

@@ -12,7 +12,7 @@ import sporter_pages.homepage_classes.QatarHomePage;
 import sporter_test.headerTestCases.HeaderTestCases;
 
 public class QatarAccountRegistrationTestCases extends AccountRegistrationTestCases {
-    @BeforeClass
+    @BeforeClass(alwaysRun=true)
     public void switchToQatarStore() {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.switchCountry(qatarHomePage.getQatarCountry());

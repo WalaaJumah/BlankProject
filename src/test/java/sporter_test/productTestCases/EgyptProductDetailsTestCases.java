@@ -17,7 +17,7 @@ import sporter_pages.productPage.ProductDetailsPage;
 
 @Test(groups = "Egypt Product Details Page")
 public class EgyptProductDetailsTestCases extends ProductDetailsTestCases{
-    @BeforeClass
+    @BeforeClass(alwaysRun=true)
     public void switchToEgyptStore(){
         EgyptHomePage egyptHomePage=new EgyptHomePage(webDriver);
         ProductDetailsPage productDetailsPage= new ProductDetailsPage(webDriver);
