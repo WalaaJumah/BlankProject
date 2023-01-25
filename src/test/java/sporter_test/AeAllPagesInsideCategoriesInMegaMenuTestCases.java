@@ -3030,7 +3030,7 @@ public void verifyAbilityToAccessAllPagesInsidePersonalCareOptionCategoryRelated
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);
     }
- @Test(groups = {"2.06 MegaMenu","All Smoke Testing Result","1.2 High Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Showering Option Sub-Category related to the Sports Category ", priority = 160)
+ @Test(groups = {"2.06 MegaMenu","All Smoke Testing Result","1.3 Medium Severity"},description = "MegaMenu- Make Sure the ability to access all pages inside Showering Option Sub-Category related to the Sports Category ", priority = 160)
 public void verifyAbilityToAccessAllPagesInsideShoweringOptionCategoryRelatedToSportsCategoryPage(){
      AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage= new AeSportSupplementsCategoryPage(webDriver);
      AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
