@@ -4,5 +4,17 @@
  * @classDescription JordanAccountRegistrationPage
  */
 
-package sporter_pages.AccountRegistrationPage;public class JordanAccountRegistrationPage {
+package sporter_pages.AccountRegistrationPage;
+
+import core.DataHelperAndWait;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+
+public class JordanAccountRegistrationPage extends AccountRegistrationPage {
+    public JordanAccountRegistrationPage(WebDriver webDriver) {
+        super(webDriver);
+        PageFactory.initElements(webDriver, this);
+
+    }
+    DataHelperAndWait dataHelperAndWait;
 }
