@@ -60,13 +60,14 @@ public class ProductDetailsTestCases extends BaseTest {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
         productDetailsPage.increaseTheQuantity();
-        WebElementsAssertion.assertionAttributeTrueForElement(productDetailsPage.getQuantityField(),webDriver,"value","2");
+        Assert.assertEquals( DataHelperAndWait.getWebElementText(productDetailsPage.getQuantityField(),webDriver),"2");;
     }
     @Test(groups = {"Product Page","All Smoke Testing Result","1.2 High Severity"},description = "Make sure that the Decrease quantity function works fine ", priority = 8)
     public void verifyDecreaseQuantityButtonWorkingFine() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.decreaseTheQuantity();
-        WebElementsAssertion.assertionAttributeTrueForElement(productDetailsPage.getQuantityField(),webDriver,"value","1");
+        Assert.assertEquals( DataHelperAndWait.getWebElementText(productDetailsPage.getQuantityField(),webDriver),"1");;
+//        WebElementsAssertion.assertionAttributeTrueForElement(productDetailsPage.getQuantityField(),webDriver,"value","1");
     }
     @Test(groups = {"Product Page","All Smoke Testing Result","1.3 Medium Severity"},description = "Make sure that the customer can submit his review successfully ", priority = 9)
     public void verifyAbilityToSubmitTheProductReview() {

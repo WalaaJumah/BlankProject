@@ -40,7 +40,7 @@ public class ProductDetailsPage extends BasePage {
     private WebElement keepShippingBtn;
     @FindBy(xpath = "//button[@class='button_btn__zg_G5 ']/span")
     private WebElement continueBtnInOOSPoup;
-    @FindBy(id = "viewCartBtn]")
+    @FindBy(id = "viewCartBtn")
     private WebElement viewCartBtn;
     @FindBy(xpath = "(//div[@class='productOption_list__SYsKN'])[1]//div[starts-with(@id,'configurableOptionLabel_')]")
     private List<WebElement> productSizeAttribute;
