@@ -8,9 +8,10 @@ package sporter_test.RecommendedProductsTestCases;
 
 import core.BasePage;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.UAEHomePage;
 import sporter_test.productTestCases.ProductDetailsTestCases;
-
+@Test(groups = "UAE Product Details Page")
 public class UAERecommendedProductTestCases extends RecommendedProductTestCases {
     @BeforeClass
     public void switchToUAEStore(){

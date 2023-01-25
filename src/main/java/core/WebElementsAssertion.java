@@ -53,6 +53,10 @@ public class WebElementsAssertion {
         DataHelperAndWait.waitForUrlContains(expectedUrl,webDriver);
         Assert.assertEquals(actualUrl,expectedUrl,"The Current URL is: "+ actualUrl+" But the expected URL is: "+expectedUrl);
     }
+    public static void assertionWebElementContainsText(WebElement webElement,WebDriver webDriver, String expectedText){
+        DataHelperAndWait.waitToBeVisible(webElement,webDriver);
+        Assert.assertEquals(webElement.getText(),expectedText, "The element does not contains : "+expectedText+ "And the Actual Text is: "+webElement.getText());
 
+    }
 
 }

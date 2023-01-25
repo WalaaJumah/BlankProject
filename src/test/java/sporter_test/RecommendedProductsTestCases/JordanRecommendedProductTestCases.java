@@ -8,9 +8,10 @@ package sporter_test.RecommendedProductsTestCases;
 
 import core.BasePage;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.JordanHomePage;
 import sporter_test.productTestCases.ProductDetailsTestCases;
-
+@Test(groups = "Jordan Product Details Page")
 public class JordanRecommendedProductTestCases extends RecommendedProductTestCases {
     @BeforeClass
     public void switchToJordanStore(){

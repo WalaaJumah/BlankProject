@@ -10,10 +10,11 @@ import core.BasePage;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.KsaHomePage;
 import sporter_test.productTestCases.ProductDetailsTestCases;
-
+@Test(groups = "KSA Product Details Page")
 public class KSARecommendedProductTestCases extends RecommendedProductTestCases {
     @BeforeClass
     public void switchToKsaStore(){

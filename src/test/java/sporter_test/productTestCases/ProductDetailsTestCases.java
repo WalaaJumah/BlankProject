@@ -37,7 +37,7 @@ public class ProductDetailsTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(productDetailsPage.getViewCartBtn(),webDriver);
         WebElementsAssertion.validateTheCurrentUrlContainsString(productDetailsPage.cartURL,webDriver);
  }
-    @Test(groups = {"Product Page", "2. High Severity"},description = "Make sure the out of stock message appears when displaying out of stock product ", priority =4)
+    @Test(groups = {"Product Page", "3. Medium Severity"},description = "Make sure the out of stock message appears when displaying out of stock product ", priority =4)
     public void verifyOOSMessageIsDisplayed() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayOOSProduct();
@@ -48,7 +48,7 @@ public class ProductDetailsTestCases extends BaseTest {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         Assert.assertFalse(productDetailsPage.getAddToCartBtn().isDisplayed());
     }
-    @Test(groups = {"Product Page","All Smoke Testing Result","2. High Severity"},description = "Make sure to display the product from search screen", priority = 6)
+    @Test(groups = {"Product Page","All Smoke Testing Result","1. Critical Severity"},description = "Make sure to display the product from search screen", priority = 6)
     public void verifyAbilityToDisplayTheProductFromSearchScreen() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(),webDriver);
@@ -75,14 +75,14 @@ public class ProductDetailsTestCases extends BaseTest {
         productDetailsPage.submitProductReview(XmlReader.getXMLData("reviewDesc"),XmlReader.getXMLData("reviewSummary"),XmlReader.getXMLData("nickName"));
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getReviewToastMsg(),webDriver);
     }
-    @Test(groups = {"Product Page", "2. High Severity"},description = "Make sure that the customer is unable to submit his review without selecting any star ", priority = 10)
+    @Test(groups = {"Product Page", "3. Medium Severity"},description = "Make sure that the customer is unable to submit his review without selecting any star ", priority = 10)
     public void verifyInabilityToSubmitReviewWithoutSelectingStar() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
         productDetailsPage.submitProductReview(XmlReader.getXMLData("reviewDesc"),XmlReader.getXMLData("reviewSummary"),XmlReader.getXMLData("nickName"));
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getReviewErrorMsgRelatedToStars(),webDriver);
     }
-    @Test(groups = {"Product Page", "1. Critical Severity"},description = "Make sure that the customer can submit his review when filling Review Form with Long Length", priority = 11)
+    @Test(groups = {"Product Page", "3. Medium Severity"},description = "Make sure that the customer can submit his review when filling Review Form with Long Length", priority = 11)
     public void verifyAbilityToFillTheReviewWIthLongLength() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();

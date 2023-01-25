@@ -267,4 +267,8 @@ public  class DataHelperAndWait  {
                     pageObj.verifyTheDisplayedPageDoesNotHaveErrors();
                     pageObj.navigateToHomePage();}
             }
+            public static String getWebElementText(WebElement webElement,WebDriver webDriver){
+        waitToBeVisible( webElement,webDriver);
+        return webElement.getText();
+            }
 }
