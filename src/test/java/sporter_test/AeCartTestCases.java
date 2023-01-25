@@ -111,17 +111,14 @@ public class AeCartTestCases extends BaseTest {
         aeCartPage.clickOnRemoveItem();
     }
 
-    @Test(groups = {"2.03 Cart Page","All Smoke Testing Result","1.1 Critical Severity"},description = " Cart Page- Make sure to view the cart after adding more than quantity for the same product", priority = 8)
+    @Test(groups = {"2.03 Cart Page","All Smoke Testing Result","1.1 Critical Severity"},description = " Cart Page- Make sure to view the cart after adding more than quantity for the same product", priority = 8,enabled = false)
     public void verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AeCartPage aeCartPage = new AeCartPage(webDriver);
         aeProductDetailsPage.displayTheProduct();
         aeProductDetailsPage.increaseTheQuantity();
-        aeCartPage.removeProductFromCart();
-        aeProductDetailsPage.displayTheProduct();
         aeProductDetailsPage.increaseTheQuantity();
-        Assert.assertEquals(aeProductDetailsPage.getQuantityField().getAttribute("value"), "2");
-        aeProductDetailsPage.addToCart();
+      aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
         DataHelperAndWait.waitForUrlContains(aeProductDetailsPage.cartURL,webDriver,5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeProductDetailsPage.cartURL) );

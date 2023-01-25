@@ -247,7 +247,7 @@ public class AeCartPage extends BasePage {
     }
 
     public void clickOnRemoveItem() {
-        DataHelperAndWait.isDisplayed(removeItem, 8,webDriver);
+        DataHelperAndWait.isDisplayed(removeItem, 10,webDriver);
         this.removeItem.click();
     }
 
