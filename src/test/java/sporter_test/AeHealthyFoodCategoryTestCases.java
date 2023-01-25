@@ -10,6 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import sporter_pages.*;
+import sporter_pages.productPage.ProductDetailsPage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +18,7 @@ import java.util.List;
 import static org.testng.Assert.assertFalse;
 
 public class AeHealthyFoodCategoryTestCases extends BaseTest {
-    private AeProductDetailsPage aeProductDetailsPage;
+    private ProductDetailsPage productDetailsPage;
     private AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage;
     private AEGuestUserPage aeGuestUserPage;
     private Actions action;
@@ -229,9 +230,9 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
     public void verifySearchBtnWorksCorrectlyFromHealthyFoodCategoryPage() {
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
         aeHealthyFoodCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }

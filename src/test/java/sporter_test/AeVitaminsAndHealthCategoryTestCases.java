@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import sporter_pages.*;
 import sporter_pages.homepage_classes.KsaHomePage;
+import sporter_pages.productPage.ProductDetailsPage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +21,7 @@ import static org.testng.Assert.assertFalse;
 
 public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
     private AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage;
-    private AeProductDetailsPage aeProductDetailsPage;
+    private ProductDetailsPage productDetailsPage;
     private KsaHomePage ksaHomePage;
     private AEFooterPage aeFooterPage;
     private AEGuestUserPage aeGuestUserPage;
@@ -264,10 +265,10 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
     @Test(groups = {"Vitamins & Health Category", "2. High Severity"},description = "Vitamins & Health Category- Verify that the search button works correctly from the Fish Oil & Omegas category page", priority = 24)
     public void verifySearchBtnWorksCorrectlyFromFishOilAndOmegasCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnFishOilAndOmegasCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -415,10 +416,10 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = {"Vitamins & Health Category", "2. High Severity"},description = "Vitamins & Health Category- Verify that the search button works correctly from the Multivitamins category page", priority = 38)
     public void verifySearchBtnWorksCorrectlyFromMultivitaminsCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnMultivitaminsCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -572,10 +573,10 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
     @Test(groups = {"Vitamins & Health Category", "2. High Severity"},description = "Vitamins & Health Category- Verify that the search button works correctly from the VitaminsA_Z category page", priority = 52)
     public void verifySearchBtnWorksCorrectlyFromVitaminsA_ZCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnVitaminsA_ZCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -725,10 +726,10 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
     @Test(groups = {"Vitamins & Health Category", "2. High Severity"},description = "Vitamins & Health Category- Verify that the search button works correctly from the Minerals category page", priority = 66)
     public void verifySearchBtnWorksCorrectlyFromMineralsCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnMineralsCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     @Test(groups = {"Vitamins & Health Category", "3. Medium Severity"},description = "Vitamins & Health Category- Verify that the previous page button in the Minerals category page is disable when the current page is page 1 ", priority = 67)
@@ -877,10 +878,10 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
     @Test(groups = {"Vitamins & Health Category", "2. High Severity"},description = "Vitamins & Health Category- Verify that the search button works correctly from the Antioxidants category page", priority = 80)
     public void verifySearchBtnWorksCorrectlyFromAntioxidantsCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnAntioxidantsCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -1026,10 +1027,10 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
     @Test(groups = {"Vitamins & Health Category", "2. High Severity"},description = "Vitamins & Health Category- Verify that the search button works correctly from the Superfoods category page", priority = 93)
     public void verifySearchBtnWorksCorrectlyFromSuperfoodsCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnSuperfoodsCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -1180,10 +1181,10 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
     @Test(groups = {"Vitamins & Health Category", "2. High Severity"},description = "Vitamins & Health Category- Verify that the search button works correctly from the Collagen category page", priority = 107)
     public void verifySearchBtnWorksCorrectlyFromCollagenCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnCollagenCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -1334,10 +1335,10 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
     @Test(groups = {"Vitamins & Health Category", "2. High Severity"},description = "Vitamins & Health Category- Verify that the search button works correctly from the Melatonin category page", priority = 121)
     public void verifySearchBtnWorksCorrectlyFromMelatoninCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnMelatoninCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -1621,11 +1622,11 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
     @Test(groups = {"Vitamins & Health Category", "2. High Severity"},description = "Vitamins & Health Category- Verify that the search button works correctly from the Tumeric page", priority = 143)
     public void verifySearchBtnWorksCorrectlyFromTumericPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnTumericPageRedirectUserToCorrectURL();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -1633,11 +1634,11 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
     @Test(groups = {"Vitamins & Health Category", "2. High Severity"},description = "Vitamins & Health Category- Verify that the search button works correctly from the Dandelion  page", priority = 144)
     public void verifySearchBtnWorksCorrectlyFromDandelionPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnDandelionPageRedirectUserToCorrectURL();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -1645,11 +1646,11 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
     @Test(groups = {"Vitamins & Health Category", "2. High Severity"},description = "Vitamins & Health Category- Verify that the search button works correctly from the Ginseng  page", priority = 145)
     public void verifySearchBtnWorksCorrectlyFromGinsengPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnGinsengPageRedirectUserToCorrectURL();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -1657,11 +1658,11 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
     @Test(groups = {"Vitamins & Health Category", "2. High Severity"},description = "Vitamins & Health Category- Verify that the search button works correctly from the Milk Thistle  page", priority = 146)
     public void verifySearchBtnWorksCorrectlyFromMilkThistlePage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnMilkThistlePageRedirectUserToCorrectURL();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -1669,11 +1670,11 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
     @Test(groups = {"Vitamins & Health Category", "2. High Severity"},description = "Vitamins & Health Category- Verify that the search button works correctly from the Alfalfa  page", priority = 147)
     public void verifySearchBtnWorksCorrectlyFromAlfalfaePage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnAlfalfaPageRedirectUserToCorrectURL();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -1794,10 +1795,10 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
     @Test(groups = {"Vitamins & Health Category", "2. High Severity"},description = "Vitamins & Health Category- Verify that the search button works correctly from the Beauty category page", priority = 159)
     public void verifySearchBtnWorksCorrectlyFromBeautyCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnBeautyCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -1952,10 +1953,10 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
     @Test(groups = {"Vitamins & Health Category", "2. High Severity"},description = "Vitamins & Health Category- Verify that the search button works correctly from the Bone And Joint category page", priority = 174)
     public void verifySearchBtnWorksCorrectlyFromBoneAndJointCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnBoneAndJointCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -2110,10 +2111,10 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
     @Test(groups = {"Vitamins & Health Category", "2. High Severity"},description = "Vitamins & Health Category- Verify that the search button works correctly from the Brain Support category page", priority = 189)
     public void verifySearchBtnWorksCorrectlyFromBrainSupportCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnBrainSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -2259,10 +2260,10 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
     @Test(groups = {"Vitamins & Health Category", "2. High Severity"},description = "Vitamins & Health Category- Verify that the search button works correctly from the Detox & Liver Support category page", priority = 204)
     public void verifySearchBtnWorksCorrectlyFromDetoxAndLiverSupportCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnDetoxAndLiverSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -2411,10 +2412,10 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = {"Vitamins & Health Category", "2. High Severity"},description = "Vitamins & Health Category- Verify that the search button works correctly from the Digestive Support category page", priority = 219)
     public void verifySearchBtnWorksCorrectlyFromDigestiveSupportCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnDigestiveSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -2561,10 +2562,10 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = {"Vitamins & Health Category", "2. High Severity"},description = "Vitamins & Health Category- Verify that the search button works correctly from the Energy Formulas category page", priority = 234)
     public void verifySearchBtnWorksCorrectlyFromEnergyFormulasCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnEnergyFormulasCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -2699,10 +2700,10 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = {"Vitamins & Health Category", "2. High Severity"},description = "Vitamins & Health Category- Verify that the search button works correctly from the Hair, Skin & Nails, Beauty category page", priority = 249)
     public void verifySearchBtnWorksCorrectlyFromHairAndSkinAndNailsCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnHairAndSkinAndNailsCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -2854,10 +2855,10 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = {"Vitamins & Health Category", "2. High Severity"},description = "Vitamins & Health Category- Verify that the search button works correctly from the Heart Health category page", priority = 264)
     public void verifySearchBtnWorksCorrectlyFromHeartHealthCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnHeartHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -3002,10 +3003,10 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = {"Vitamins & Health Category", "2. High Severity"},description = "Vitamins & Health Category- Verify that the search button works correctly from the Immunity Support category page", priority = 279)
     public void verifySearchBtnWorksCorrectlyFromImmunitySupportCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);;
-        aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnImmunitySupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -3155,10 +3156,10 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = {"Vitamins & Health Category", "2. High Severity"},description = "Vitamins & Health Category- Verify that the search button works correctly from the Kids Health category page", priority = 294)
     public void verifySearchBtnWorksCorrectlyFromKidsHealthCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnKidsHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -3302,10 +3303,10 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = {"Vitamins & Health Category", "2. High Severity"},description = "Vitamins & Health Category- Verify that the search button works correctly from the Mens Health category page", priority = 309)
     public void verifySearchBtnWorksCorrectlyFromMensHealthCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnMensHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -3450,10 +3451,10 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = {"Vitamins & Health Category", "2. High Severity"},description = "Vitamins & Health Category- Verify that the search button works correctly from the Sexual Health category page", priority = 324)
     public void verifySearchBtnWorksCorrectlyFromSexualHealthCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnSexualHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -3592,11 +3593,11 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = {"Vitamins & Health Category", "2. High Severity"},description = "Vitamins & Health Category- Verify that the search button works correctly from the Sleep Support category page", priority = 339)
     public void verifySearchBtnWorksCorrectlyFromSleepSupportCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnSleepSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -3742,10 +3743,10 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = {"Vitamins & Health Category", "2. High Severity"},description = "Vitamins & Health Category- Verify that the search button works correctly from the Diet Weight Management category page", priority = 354)
     public void verifySearchBtnWorksCorrectlyFromDietWeightManagementCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnDietWeightManagementCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -3890,10 +3891,10 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = {"Vitamins & Health Category", "2. High Severity"},description = "Vitamins & Health Category- Verify that the search button works correctly from the Women Health category page", priority = 369)
     public void verifySearchBtnWorksCorrectlyFromDietWomenHealthCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeProductDetailsPage= new AeProductDetailsPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnWomenHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }

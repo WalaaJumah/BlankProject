@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import sporter_pages.*;
 import sporter_pages.homepage_classes.KsaHomePage;
+import sporter_pages.productPage.ProductDetailsPage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +20,7 @@ import static org.testng.Assert.assertEquals;
 
 public class AeWomenOnlyCategoryTestCases extends BaseTest {
 
-    private AeProductDetailsPage aeProductDetailsPage;
+    private ProductDetailsPage productDetailsPage;
     private AEFooterPage aeFooterPage;
     private AeSportsCategoryPage aeSportsCategoryPage;
     private AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage;
@@ -285,10 +286,10 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(groups = {"Women Only Category Page","2. High Severity"},description = "Women's Only Category- Verify that the search button works correctly from the Supplements For Her category page", priority = 23)
     public void verifySearchBtnWorksCorrectlyFromSupplementsForHerCategoryPage() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
-        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        productDetailsPage= new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnSupplementsForHerCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
         aeWomenOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -455,10 +456,10 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(groups = {"Women Only Category Page","2. High Severity"},description = "Women's Only Category- Verify that the search button works correctly from the Women's Daily Vitamins category page", priority = 37)
     public void verifySearchBtnWorksCorrectlyFromWomenDailyVitaminsCategoryPage() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
-        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        productDetailsPage= new ProductDetailsPage(webDriver);
         this.verifyClickingOnWomenDailyVitaminsCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
         aeWomenOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -609,10 +610,10 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(groups = {"Women Only Category Page","2. High Severity"},description = "Women's Only Category- Verify that the search button works correctly from the Lady-Friendly Snacks & Food category page", priority = 51)
     public void verifySearchBtnWorksCorrectlyFromLadyFriendlySnacksAndFoodCategoryPage() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
-        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        productDetailsPage= new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnLadyFriendlySnacksAndFoodCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
         aeWomenOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -765,10 +766,10 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(groups = {"Women Only Category Page","2. High Severity"},description = "Women's Only Category- Verify that the search button works correctly from the Makeup for Active Lifestyles category page", priority = 64)
     public void verifySearchBtnWorksCorrectlyFromMakeupForActiveLifestylesCategoryPage() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
-        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        productDetailsPage= new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnMakeupForActiveLifestylesCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
         aeWomenOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -974,10 +975,10 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(groups = {"Women Only Category Page","2. High Severity"},description = "Women's Only Category- Verify that the search button works correctly from the Hair, Skin & Nails Category page", priority = 79)
     public void verifySearchBtnWorksCorrectlyFromHairSkinAndNailsCategoryPage() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
-        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        productDetailsPage= new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnHairSkinAndNailsCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
         aeWomenOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -1145,10 +1146,10 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(groups = {"Women Only Category Page","2. High Severity"},description = "Women's Only Category- Verify that the search button works correctly from the Weight Loss Category page", priority = 93)
     public void verifySearchBtnWorksCorrectlyFromWeightLossCategoryPage() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
-        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        productDetailsPage= new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnWeightLossCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
         aeWomenOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -1310,10 +1311,10 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(groups = {"Women Only Category Page","2. High Severity"},description = "Women's Only Category- Verify that the search button works correctly from the Mood Support Category page", priority = 107)
     public void verifySearchBtnWorksCorrectlyFromMoodSupportCategoryPage() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
-        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        productDetailsPage= new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnMoodSupportCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
         aeWomenOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -1475,10 +1476,10 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(groups = {"Women Only Category Page","2. High Severity"},description = "Women's Only Category- Verify that the search button works correctly from the Detox & Cleanse Category page", priority = 121)
     public void verifySearchBtnWorksCorrectlyFromDetoxAndCleanseCategoryPage() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
-        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        productDetailsPage= new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnDetoxAndCleanseCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
         aeWomenOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -1640,10 +1641,10 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(groups = {"Women Only Category Page","2. High Severity"},description = "Women's Only Category- Verify that the search button works correctly from the PMS Relief Category page", priority = 135)
     public void verifySearchBtnWorksCorrectlyFromPMSReliefCategoryPage() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
-        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        productDetailsPage= new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnPMSReliefCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
         aeWomenOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -1808,10 +1809,10 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(groups = {"Women Only Category Page","2. High Severity"},description = "Women's Only Category- Verify that the search button works correctly from the Energy & Endurance Category page", priority = 148)
     public void verifySearchBtnWorksCorrectlyFromEnergyAndEnduranceCategoryPage() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
-        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        productDetailsPage= new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnEnergyAndEnduranceCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
         aeWomenOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -1962,10 +1963,10 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(groups = {"Women Only Category Page","2. High Severity"},description = "Women's Only Category- Verify that the search button works correctly from the Prenatal Care Category page", priority = 161)
     public void verifySearchBtnWorksCorrectlyFromPrenatalCareCategoryPage() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
-        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        productDetailsPage= new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnPrenatalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
         aeWomenOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -2119,10 +2120,10 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(groups = {"Women Only Category Page","2. High Severity"},description = "Women's Only Category- Verify that the search button works correctly from the Muscle & Weight Gain Category page", priority = 174)
     public void verifySearchBtnWorksCorrectlyFromMuscleAndWeightGainCategoryPage() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
-        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        productDetailsPage= new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnMuscleAndWeightGainCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
         aeWomenOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -2284,10 +2285,10 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(groups = {"Women Only Category Page","2. High Severity"},description = "Women's Only Category- Verify that the search button works correctly from the Fashion & Style Category page", priority = 188)
     public void verifySearchBtnWorksCorrectlyFromFashionAndStyleCategoryPage() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
-        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        productDetailsPage= new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnFashionAndStyleCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
         aeWomenOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -2437,10 +2438,10 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(groups = {"Women Only Category Page","2. High Severity"},description = "Women's Only Category- Verify that the search button works correctly from the Personal Care Category page", priority = 201)
     public void verifySearchBtnWorksCorrectlyFromPersonalCareCategoryPage() {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
-        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        productDetailsPage= new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnPersonalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
         aeWomenOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }

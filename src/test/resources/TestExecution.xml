@@ -3,21 +3,21 @@
 <!--<suite name=" Test" thread-count="1" >-->
 <suite name="Automation Reports"  >
     <listeners>
-        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>
-        <listener class-name="extent_report_listner.ExtentReportListener" />
+<!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
+<!--        <listener class-name="extent_report_listner.ExtentReportListener" />-->
     </listeners>
     <test name=" System Testing Report- Production" preserve-order="true">
-        <parameter name="environment" value="https://new.sporter.com" />
+        <parameter name="environment" value="https://dev.sporter.com" />
         <parameter name="browser" value="chrome"/>
         <!-- <parameter name="country" value="en-qa" />-->
         <parameter name="bogoProduct" value="/phd-nutrition-diet-whey-protein-47340" />
         <parameter name="oOSProduct" value="/alpro-soya-high-protein" />
         <classes>
             <!--            HomePage-->
-            <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases">
-                <methods>
-                    <include name=""/>
-                </methods>
+            <class name="sporter_test.productTestCases.UAEProductDetailsTestCases">
+<!--                <methods>-->
+<!--                    <include name=""/>-->
+<!--                </methods>-->
             </class>
         </classes>
     </test>

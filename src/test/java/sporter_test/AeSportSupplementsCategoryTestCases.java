@@ -10,13 +10,14 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import sporter_pages.*;
+import sporter_pages.productPage.ProductDetailsPage;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.testng.Assert.assertFalse;
 public class AeSportSupplementsCategoryTestCases extends BaseTest {
-    private AeProductDetailsPage aeProductDetailsPage;
+    private ProductDetailsPage productDetailsPage;
     private AEGuestUserPage aeGuestUserPage;
     private Actions action;
     private final String  sportSupplementsUrl="/sport-supplements/";
@@ -231,11 +232,11 @@ public void switchToUaeStore(){
     @Test(groups = {"Sports Supplements Category", "2. High Severity"},description = "Sports Supplements Category- Verify that the search button works correctly from the Sport Supplements category page", priority = 19)
     public void verifySearchBtnWorksCorrectlyFromSportSupplementsCategoryPage() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        aeSportSupplementsCategoryPage.navigate();
-        aeProductDetailsPage.searchForBundle();
-        aeProductDetailsPage.getSearchBtn().click();
+        productDetailsPage.searchForBundle();
+        productDetailsPage.getSearchBtn().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
         aeSportSupplementsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
