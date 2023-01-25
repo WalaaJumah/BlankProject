@@ -12,6 +12,7 @@
         <!-- <parameter name="country" value="en-qa" />-->
         <parameter name="bogoProduct" value="/phd-nutrition-diet-whey-protein-47340" />
         <parameter name="oOSProduct" value="/alpro-soya-high-protein" />
+        <parameter name="bundleProductUrl" value="/grenade-carb-killa-protein-bar-box-of-12" />
         <classes>
             <!--            HomePage-->
             <class name="sporter_test.productTestCases.UAEProductDetailsTestCases">

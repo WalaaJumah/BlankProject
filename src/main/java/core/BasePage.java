@@ -35,7 +35,7 @@ public class BasePage {
     public final String stgSiteURL = "https://stg.sporter.com";
     public final String stgTestSiteURL = "https://stg-test.sporter.com";
     public final String staging2SiteURL = "https://staging2.sporter.com";
-    public final String cartURL= "/cart/";
+    public final String cartURL= "/cart";
     public final String aeSiteURL = "/en-ae/";
     public final String ksaSiteURL = "/en-sa/";
     public final String qaterSiteURL = "/en-qa/";
@@ -104,6 +104,7 @@ public class BasePage {
     public final String searchUrl="catalogsearch/result/?q=";
     public final String productUrl = "/optimum-gold-standard-100-whey";
     public  static String oOSProductUrl = "";
+    public  static String bundleUrl = "";
     public final String notAvailableOfferProduct = "/catalog/product/view/id/44012/s/olimp-chitosan-chromium-43840/";
     public final String sportsUrl = "/sports/";
     public final String toysAndGamesUrl = "/toys-and-games";
