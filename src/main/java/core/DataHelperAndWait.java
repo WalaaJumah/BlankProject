@@ -15,7 +15,7 @@ import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 public  class DataHelperAndWait  {
-    private static int WaitTime=15;
+    private static int WaitTime=10;
     public static   void waitForElement(WebElement element, WebDriver webDriver) {
         WebDriverWait wait;
         wait = new WebDriverWait(webDriver, WaitTime);
@@ -138,6 +138,7 @@ public  class DataHelperAndWait  {
     }
     public static  void scrollTo(WebElement element,WebDriver webDriver) {
         ((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView(false);", element);
+        DataHelperAndWait.waitToBeVisible(element,webDriver);
     }
 
     public static  void scrollBy(WebDriver webDriver) {

@@ -127,6 +127,7 @@ public class BasePage {
         Assert.assertFalse(this.getTitle().equalsIgnoreCase(SporterErrorPage.pageNotFoundTitle), "Page Not Found Is Displayed and the URL is " + webDriver.getCurrentUrl());
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.productsCannotFindMsg), "The page is empty and the URL is " + webDriver.getCurrentUrl());
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.exceptionPageMsg), "An error has happened during application run. See exception log for details in page and the URL is " + webDriver.getCurrentUrl());
+        Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.exceptionPageMsg2), "An error occurred on client and the URL is " + webDriver.getCurrentUrl());
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.offerNotAvailableMsg), "The  offer is not available in your country page is displayed" + webDriver.getCurrentUrl());
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.pageNotFoundMsg), "Page Not Found Is Displayed and the URL is " + webDriver.getCurrentUrl());
     }
@@ -134,6 +135,11 @@ public class BasePage {
         webDriver.navigate().to(BasePage.BaseURL+aeDomain+bogoProduct);
         DataHelperAndWait.waitForUrlContains(bogoProduct,webDriver);
     }
+        public void displayBundle(){
+        webDriver.navigate().to(BasePage.BaseURL+aeDomain+bundleUrl);
+        DataHelperAndWait.waitForUrlContains(bundleUrl,webDriver);
+    }
+
     public void navigateToHomePage(){
         try{
             WebElement btnCloseElement = webDriver.findElement(By.xpath("//button[@class='button_btn__zg_G5 changeStorePopUp_btn__sggmr']/span"));

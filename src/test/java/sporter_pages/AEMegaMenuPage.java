@@ -49,11 +49,11 @@ public class AEMegaMenuPage extends BasePage {
     private WebElement shopeByOption;
     @FindBy(xpath = ".//*[@class='nav-primary']/li[2]/a")
     private WebElement sportSupplementsMainMenu;
-    @FindBy(xpath = ".//*[@class='nav-primary']/li[3]/a")
+    @FindBy(xpath = "(//ul[starts-with(@class,'topCategoryList_container')]/li/a)[3]")
     private WebElement vitaminsAndHealthMainMenu;
-    @FindBy(xpath = ".//*[@class='nav-primary']/li[4]/a")
+    @FindBy(xpath = "(//ul[starts-with(@class,'topCategoryList_container')]/li/a)[4]")
     private WebElement healthyFoodMainMenu;
-    @FindBy(xpath = ".//*[@class='nav-primary']/li[5]/a")
+    @FindBy(xpath = "(//ul[starts-with(@class,'topCategoryList_container')]/li/a)[5]")
     private WebElement sportsMainMenu;
     @FindBy(xpath = ".//*[@class='nav-primary']/li[6]/a")
     private WebElement womenOnlyMainMenu;

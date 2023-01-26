@@ -70,19 +70,19 @@ public class ProductDetailsPage extends BasePage {
     private WebElement HomeBreadcrumbs;
     @FindBy(xpath = "//div[@class='productHeader_label__hWVwg']")
     private WebElement OOSMsg;
-    @FindBy(id = "TopCategoryItem_undefined_span")
+    @FindBy(xpath = "(//ul[starts-with(@class,'topCategoryList_container')]/li/a)[1]")
     private WebElement shopByMenu;
     @FindBy(id = "SubCategoriesContainer")
     private WebElement subCategoriesSectionInMegaMenu;
     @FindBy(id = "SortCategoriesContainer")
     private WebElement subCategoriesSectionForShopBy;
-    @FindBy(id = "currentPrice")
+    @FindBy(xpath = "(//div[@id='currentPrice'])[2]")
     private WebElement FinalProductPrice;
     @FindBy(id = "searchInput")
     private WebElement searchField;
     @FindBy(id = "SortItem_Sales & Offers_span")
     private WebElement salesAndOffersMenu;
-    @FindBy(id = "TopCategoryItem_3_span")
+    @FindBy(xpath = "(//ul[starts-with(@class,'topCategoryList_container')]/li/a)[2]")
     private WebElement SportsSupplementsMenu;
     @FindBy(xpath = "//select[starts-with(@id,'bundleOptionSelect')]")
     private WebElement bundleMenu;
@@ -104,7 +104,7 @@ public class ProductDetailsPage extends BasePage {
     private WebElement supplementFactsTable;
     @FindBy(xpath = "//div[@id='ProductSupplementFacts']//h2")
     private WebElement supplementFactsTitle;
-    @FindBy(id = "//a[@class='user-account']")
+    @FindBy(id = "UserIcon")
     private WebElement accountProfileIcon;
     @FindBy(id = "UserIconContainer")
     private WebElement accountProfileOptions;
@@ -122,9 +122,9 @@ public class ProductDetailsPage extends BasePage {
     private WebElement expectedDeliveryDateValue;
     @FindBy(xpath = "//ul[starts-with(@class,'pagination_innerPagination')]/li[@class='pagination_item__cHfvi']")
     private List<WebElement> pageBtnInReviewSection;
-    @FindBy(id = "(//li[starts-with(@class,'pagination_arrow')])[2]")
+    @FindBy(xpath = "(//li[starts-with(@class,'pagination_arrow')])[2]")
     private WebElement nextReviewPageBtn;
-    @FindBy(id = "(//li[starts-with(@class,'pagination_arrow')])[1]")
+    @FindBy(xpath = "(//li[starts-with(@class,'pagination_arrow')])[1]")
     private WebElement previousReviewPageBtn;
     @FindBy(xpath = "//div[@class='search-result-title-wrapper']")
     private WebElement searchPageTitle;

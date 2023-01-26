@@ -50,16 +50,30 @@ public class ExtentReportListener  implements IReporter {
 //            spark.viewConfigurer().viewOrder().as(new ViewName[]{ViewName.DASHBOARD, ViewName.TEST,ViewName.CATEGORY}).apply();
 
 //        extent.addSystemInfo("Author", "Wala'a Mohammad");
-                
-
-                
 
 
-                
+                //Create Node
+
+//                ExtentNode extentNode= extentTest.createNode(TestStep1);
+//                ExtentTest node = test.createNode("Node");  // level = 1
+
+
+//                ExtentTest parent = extent.startTest("Parent");
+//
+//                ExtentTest child1 = extent.startTest("Child 1");
+//                child1.log(LogStatus.INFO, "Info");
+//
+//                ExtentTest child2 = extent.startTest("Child 2");
+//                child2.log(LogStatus.PASS, "Pass");
+//
+//                parent
+//                        .appendChild(child1)
+//                        .appendChild(child2);
 
 
 
-        //loading the external xml file
+
+                //loading the external xml file
         extent.loadConfig(new File(System.getProperty("user.dir") + "./src/test/resources/extent-config.xml"));
 
 
@@ -83,6 +97,7 @@ public class ExtentReportListener  implements IReporter {
     private void buildTestNodes(IResultMap tests, LogStatus status) {
         ExtentTest test;
 
+
         if (tests.size() > 0) {
             for (ITestResult result : tests.getAllResults()) {
                 test = extent.startTest(result.getMethod().getDescription());
@@ -93,6 +108,12 @@ public class ExtentReportListener  implements IReporter {
 
                 for (String group : result.getMethod().getGroups())
                     test.assignCategory(group);
+
+                    //Create Node
+//                if(test.assignCategory(group).getClass().getName().contains("HomePage")){
+//                    test.appendChild(test);
+//                  //
+//                }
 
                 if (result.getThrowable() != null) {
                     test.log(status, result.getThrowable());
