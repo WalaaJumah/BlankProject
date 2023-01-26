@@ -16,9 +16,10 @@
         <classes>
             <!--            HomePage-->
             <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases">
-<!--                <methods>-->
-<!--                    <include name=""/>-->
-<!--                </methods>-->
+                <methods>
+                    <include name="verifyClickOnTheProductsAppearingInTheTopSellingStacksSectionRedirectTheUserToCorrectUrl"/>
+                    <include name="verifyMainOptionsInTheMegaMenuAreDisplayed"/>
+                </methods>
             </class>
         </classes>
     </test>

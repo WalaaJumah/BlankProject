@@ -39,17 +39,17 @@ public class HomePage extends BasePage {
     private List<WebElement> homePageRotatingSliderPagingList;
     @FindBy(id = "AdvertiseContainersecond")
     private List<WebElement> homePageUnderShopByCategoryBanners;
-    @FindBy(id = "TopCategoryItem_00_span")
+    @FindBy(xpath = "//ul[@id='TopCategoryList']/li[1]")
     private WebElement shopByOption;
-    @FindBy(id = "TopCategoryItem_0_span")
+    @FindBy(xpath = "//ul[@id='TopCategoryList']/li[2]")
     private WebElement sportSupplementsOption;
-    @FindBy(id = "TopCategoryItem_1_span")
+    @FindBy(xpath = "//ul[@id='TopCategoryList']/li[3]")
     private WebElement vitaminsAndHealthOption;
-    @FindBy(id = "TopCategoryItem_2_span")
+    @FindBy(xpath = "//ul[@id='TopCategoryList']/li[4]")
     private WebElement healthyFoodOption;
-    @FindBy(id = "TopCategoryItem_3_span")
+    @FindBy(xpath = "//ul[@id='TopCategoryList']/li[5]")
     private WebElement sportsOption;
-    @FindBy(id = "TopCategoryItem_4_span")
+    @FindBy(xpath = "//ul[@id='TopCategoryList']/li[6]")
     private WebElement womenOnlyOption;
     @FindBy(id = "//ul[@class='nav-primary']")
     private WebElement megaMenuMainComponent;
