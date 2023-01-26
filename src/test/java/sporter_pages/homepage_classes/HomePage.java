@@ -156,7 +156,7 @@ public class HomePage extends BasePage {
     private WebElement vitaminsAndHealthCategory;
     @FindBy(id = "ShopByCategoryItemBtn3")
     private WebElement sportswearAndAccessoriesCategory;
-    @FindBy(xpath = "(//div[@class='swiper-slide swiper-slide-active']//a)[1]")
+    @FindBy(xpath = "//*[@id=\"crouselContainer\"]/div")
     private WebElement bannerInRotatingSliderSection;
     @FindBy(id = "crousel_link1")
     private WebElement firstSideBanner;
