@@ -3,7 +3,7 @@
 <!--<suite name=" Test" thread-count="1" >-->
 <suite name="Automation Reports"  >
     <listeners>
-        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>
+<!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
         <listener class-name="extent_report_listner.ExtentReportListener" />
     </listeners>
     <test name=" System Testing Report- Sporter 2.1" preserve-order="true">
@@ -12,6 +12,7 @@
         <!-- <parameter name="country" value="en-qa" />-->
         <parameter name="bogoProduct" value="/phd-nutrition-diet-whey-protein-47340" />
         <parameter name="oOSProduct" value="/alpro-soya-high-protein" />
+        <parameter name="bundleProductUrl" value="/grenade-carb-killa-protein-bar-box-of-12" />
         <classes>
             <!--            HomePage-->
             <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>
@@ -27,6 +28,17 @@
             <class name="sporter_test.headerTestCases.JordanHeaderTestCases"/>
             <class name="sporter_test.headerTestCases.QatarHeaderTestCases"/>
             <class name="sporter_test.headerTestCases.EgyptHeaderTestCases"/>
+<!--Products Page-->
+            <class name="sporter_test.productTestCases.KSAProductDetailsTestCases"/>
+            <class name="sporter_test.productTestCases.UAEProductDetailsTestCases"/>
+            <class name="sporter_test.productTestCases.JordanProductDetailsTestCases"/>
+            <class name="sporter_test.productTestCases.QatarProductDetailsTestCases"/>
+            <class name="sporter_test.productTestCases.EgyptProductDetailsTestCases"/>
+            <class name="sporter_test.RecommendedProductsTestCases.KSARecommendedProductTestCases"/>
+            <class name="sporter_test.RecommendedProductsTestCases.UAERecommendedProductTestCases"/>
+            <class name="sporter_test.RecommendedProductsTestCases.JordanRecommendedProductTestCases"/>
+            <class name="sporter_test.RecommendedProductsTestCases.QatarRecommendedProductTestCases"/>
+            <class name="sporter_test.RecommendedProductsTestCases.EgyptRecommendedProductTestCases"/>
 
 
         </classes>
@@ -45,22 +57,22 @@
                 <include name="All Smoke Testing Result"/>
             </run>
         </groups>
-        <classes>
-            <!--            HomePage-->
-            <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>
-            <class name="sporter_test.homepage_test_cases.UAEHomePageTestCases"/>
-            <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases"/>
-            <class name="sporter_test.homepage_test_cases.QatarHomePageTestCases"/>
-            <class name="sporter_test.homepage_test_cases.EgyptHomePageTestCases"/>
-            <!--         Header   -->
+<!--        <classes>-->
+<!--            &lt;!&ndash;            HomePage&ndash;&gt;-->
+<!--            <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>-->
+<!--            <class name="sporter_test.homepage_test_cases.UAEHomePageTestCases"/>-->
+<!--            <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases"/>-->
+<!--            <class name="sporter_test.homepage_test_cases.QatarHomePageTestCases"/>-->
+<!--            <class name="sporter_test.homepage_test_cases.EgyptHomePageTestCases"/>-->
+<!--            &lt;!&ndash;         Header   &ndash;&gt;-->
 
 
-            <class name="sporter_test.headerTestCases.KSAHeaderTestCases"/>
-            <class name="sporter_test.headerTestCases.UAEHeaderTestCases"/>
-            <class name="sporter_test.headerTestCases.JordanHeaderTestCases"/>
-            <class name="sporter_test.headerTestCases.QatarHeaderTestCases"/>
-            <class name="sporter_test.headerTestCases.EgyptHeaderTestCases"/>
-        </classes>
+<!--            <class name="sporter_test.headerTestCases.KSAHeaderTestCases"/>-->
+<!--            <class name="sporter_test.headerTestCases.UAEHeaderTestCases"/>-->
+<!--            <class name="sporter_test.headerTestCases.JordanHeaderTestCases"/>-->
+<!--            <class name="sporter_test.headerTestCases.QatarHeaderTestCases"/>-->
+<!--            <class name="sporter_test.headerTestCases.EgyptHeaderTestCases"/>-->
+<!--        </classes>-->
     </test>
 
 

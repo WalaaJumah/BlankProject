@@ -14,6 +14,7 @@ import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.HomePage;
 import xml_reader.XmlReader;
 //TODO: Add Country to the test case description
+@Test(groups = "2.01 HomePage")
 public class HomePageTestCases extends BaseTest {
 
     @Test(groups = { "1.3 Medium Severity"}, description = "HomePage- Make sure the next button at the HomePage rotating slider section is displayed ", priority = 3)
