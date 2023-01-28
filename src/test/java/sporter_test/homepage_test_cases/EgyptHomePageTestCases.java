@@ -7,13 +7,9 @@
 package sporter_test.homepage_test_cases;
 
 import core.BasePage;
-import core.BaseTest;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
-import lombok.ToString;
-import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.*;
 import xml_reader.XmlReader;
@@ -72,19 +68,6 @@ public class EgyptHomePageTestCases extends HomePageTestCases {
     public void verifyClickOnTheCategoriesAppearingInTheTrendingOnSporterSectionRedirectTheUserToCorrectUrl() {}
     @Test(enabled = false)
     public void verifyAbilityToClickOnPhoneBtnInGotQuestionSectionCorrectly() {}
-
-    public void switchToUAEStore(){
-        UAEHomePage uaeHomePage=new UAEHomePage(webDriver);
-        uaeHomePage.switchCountry(uaeHomePage.getAeCountry());
-        if(webDriver.getCurrentUrl().contains(uaeHomePage.aeDomain)){
-            System.out.println("You are in UAE Store");
-        }
-        else {
-            webDriver.navigate().to(BasePage.BaseURL+uaeHomePage.aeDomain);
-            CloseInitialDialog();
-            System.out.println(webDriver.getCurrentUrl());
-        }
-    }
     @Test(groups = { "1.3 Medium Severity"}, description = "(Egypt Store/English Version):Make sure the next button at the HomePage rotating slider section is displayed ", priority = 3)
     public void verifyNextArrowAtHomePageRotatingSliderIsDisplayed() {
         HomePage homePage = new HomePage(webDriver);

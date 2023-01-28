@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.ITestContext;
 import org.testng.annotations.*;
 import org.testng.annotations.Parameters;
 
@@ -25,14 +24,13 @@ public class BaseTest {
     public final String aeDomain = "/en-ae";
     public final String websiteEnglishLanguage = "/en";
     public  final String websiteArabicLanguage = "/ar";
-    public final String uaeWebsite = "-ae/";
     public final String stgSiteURL = "https://stg.sporter.com";
     public final String stgTestSiteURL = "https://stg-test.sporter.com";
     public final String staging2SiteURL = "https://staging2.sporter.com";
     public final String cartURL= "/checkout/cart/";
     public final String aeSiteURL = "/en-ae/";
     public final String ksaSiteURL = "/en-sa/";
-    public final String qaterSiteURL = "/en-qa/";
+    public final String qatarSiteURL = "/en-qa/";
     public final String checkoutLoginStepURL = "/en-ae/checkout/#checkout-login-step";
     public final String freeCouponeCode= "spo15";
     public final String discaountCouponeCode= "";
