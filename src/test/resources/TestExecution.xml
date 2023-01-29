@@ -60,10 +60,12 @@
 <!--            <class name="sporter_test.headerTestCases.QatarHeaderTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.EgyptHeaderTestCases"/>-->
 <!--            Products-->
-                        <class name="sporter_test.productTestCases.UAEProductDetailsTestCases">
-<!--                                <methods>-->
-<!--                                    <include name=""/>-->
-<!--                                </methods>-->
+                        <class name="sporter_test.homepage_test_cases.EgyptHomePageTestCases">
+                                <methods>
+                                    <include name="verifyClickingOnTheBannersInsideTheHomePageRotatingSliderWillRedirectTheUserToCorrectPage"/>
+<!--                                    <include name="verifyTopSellersSectionAreDisplayed"/>-->
+<!--                                    <include name="verifyClickOnTheProductsAppearingInTheNewArrivalsSectionRedirectTheUserToCorrectUrl"/>-->
+                                </methods>
                         </class>
 
 

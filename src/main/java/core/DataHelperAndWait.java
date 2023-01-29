@@ -1,6 +1,5 @@
 package core;
 
-import error_helper.SporterErrorPage;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
@@ -141,6 +140,9 @@ public  class DataHelperAndWait  {
         DataHelperAndWait.waitToBeVisible(element,webDriver);
     }
 
+    public static  void scrollToPositionZero(WebDriver webDriver) {
+        ((JavascriptExecutor) webDriver).executeScript("window.scroll(0,0)", "");
+    }
     public static  void scrollBy(WebDriver webDriver) {
         ((JavascriptExecutor) webDriver).executeScript("window.scrollBy(0,2000)", "");
     }

@@ -18,9 +18,13 @@ import xml_reader.XmlReader;
 public class EgyptHomePageTestCases extends HomePageTestCases {
 
     @BeforeClass(alwaysRun=true)
+//    @Test
     public void switchToEgyptStore(){
         EgyptHomePage egyptHomePage=new EgyptHomePage(webDriver);
+        DataHelperAndWait.scrollToPositionZero(webDriver);
         egyptHomePage.switchCountry(egyptHomePage.getEgyptCountry());
+        DataHelperAndWait.scrollToPositionZero(webDriver);
+        DataHelperAndWait.waitForTime(5000);
         if(webDriver.getCurrentUrl().contains(egyptHomePage.egyptDomain)){
             System.out.println("You are in Jordan Store");
         }
