@@ -144,11 +144,9 @@ public class UAEProductDetailsTestCases  extends ProductDetailsTestCases{
         Select select = new Select(productDetailsPage.getBundleMenu());
         WebElement currentSelectedOption = select.getFirstSelectedOption();
         String currentSelectedOptionText = currentSelectedOption.getText();
-        System.out.println(currentSelectedOptionText);
         DataHelperAndWait.selectAllDropDownListOptions(select);
         WebElement newSelectedOption = select.getAllSelectedOptions().get(0);
         String newSelectedOptionText = newSelectedOption.getText();
-        System.out.println(newSelectedOptionText);
         Assert.assertNotEquals(currentSelectedOptionText, newSelectedOptionText);
     }
     @Test(groups = { "1.2 High Severity"},description = "(UAE Store/ English Version): Verify that the system display a label on the PDP to indicate for the customer he will get a free product", priority = 16)
@@ -197,7 +195,6 @@ public class UAEProductDetailsTestCases  extends ProductDetailsTestCases{
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         productDetailsPage.displayTheProduct();
         Actions action = new Actions(webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(aeMegamenuPage.getVitaminsAndHealthMainMenu(), webDriver);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
@@ -207,6 +204,7 @@ public class UAEProductDetailsTestCases  extends ProductDetailsTestCases{
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         productDetailsPage.displayTheProduct();
         Actions action = new Actions(webDriver);
+        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
@@ -275,15 +273,21 @@ public class UAEProductDetailsTestCases  extends ProductDetailsTestCases{
     public void verifyNextReviewPageBtnAppearsInReviewsSectionWorksCorrectly() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
+        String reviewPages=DataHelperAndWait.getWebElementText(productDetailsPage.getReviewsPageNumber(),webDriver);
         DataHelperAndWait.clickOnElement(productDetailsPage.getNextReviewPageBtn(),webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString("p=2",webDriver);
+        Assert.assertNotEquals(DataHelperAndWait.getWebElementText(productDetailsPage.getReviewsPageNumber(),webDriver),reviewPages);
     }
     //There's bug here
     @Test(groups = { "1.2 High Severity"},description = "(UAE Store/ English Version): Make sure that the Previous review page button appears in Reviews section works correctly ", priority = 33)
     public void verifyPreviousReviewPageBtnAppearsInReviewsSectionWorksCorrectly() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        productDetailsPage.displayTheProduct();
+        DataHelperAndWait.clickOnElement(productDetailsPage.getNextReviewPageBtn(),webDriver);
+        String reviewPagesInPage2=DataHelperAndWait.getWebElementText(productDetailsPage.getReviewsPageNumber(),webDriver);
         DataHelperAndWait.clickOnElement(productDetailsPage.getPreviousReviewPageBtn(),webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString("p=1",webDriver);
+        DataHelperAndWait.waitForTime(1000);
+        String reviewPagesInPage1=DataHelperAndWait.getWebElementText(productDetailsPage.getReviewsPageNumber(),webDriver);
+        Assert.assertNotEquals(reviewPagesInPage2,reviewPagesInPage1);
     }
     @Test(groups = { "1.2 High Severity"},description = "(UAE Store/ English Version): Make sure that the pagination control appears in Reviews section works correctly ", priority = 34)
     public void verifyPaginationControlAppearsInReviewsSectionWorksCorrectly() {

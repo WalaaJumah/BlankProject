@@ -128,6 +128,8 @@ public class ProductDetailsPage extends BasePage {
     private WebElement previousReviewPageBtn;
     @FindBy(xpath = "//div[@class='search-result-title-wrapper']")
     private WebElement searchPageTitle;
+    @FindBy(xpath = "//div[@class='reviewContainer_reviewsIndicator__kU10r']")
+    private WebElement reviewsPageNumber;
     //Methods we need during testing the Product details page
     public void displayTheProduct() {
         webDriver.navigate().to(BaseURL + aeDomain + productUrl);

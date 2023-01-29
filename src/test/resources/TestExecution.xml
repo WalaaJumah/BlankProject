@@ -4,7 +4,7 @@
 <suite name="Automation Reports"  >
     <listeners>
 <!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
-        <listener class-name="extent_report_listner.ExtentReportListener" />
+<!--        <listener class-name="extent_report_listner.ExtentReportListener" />-->
     </listeners>
 <!--    <test name=" System Testing Report- Production" preserve-order="true">-->
 <!--        <parameter name="environment" value="https://new.sporter.com" />-->
@@ -44,18 +44,29 @@
         <classes>
 <!--            &lt;!&ndash;            HomePage&ndash;&gt;-->
 <!--            <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>-->
-<!--            <class name="sporter_test.homepage_test_cases.UAEHomePageTestCases"/>-->
+<!--            <class name="sporter_test.homepage_test_cases.UAEHomePageTestCases">-->
+<!--            <methods>-->
+<!--                <include name=""/>-->
+<!--            </methods>-->
+<!--        </class>-->
 <!--            <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases"/>-->
 <!--            <class name="sporter_test.homepage_test_cases.QatarHomePageTestCases"/>-->
-            <class name="sporter_test.homepage_test_cases.EgyptHomePageTestCases"/>
+<!--            <class name="sporter_test.homepage_test_cases.EgyptHomePageTestCases"/>-->
+
 <!--                     Header   -->
-
-
 <!--            <class name="sporter_test.headerTestCases.KSAHeaderTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.UAEHeaderTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.JordanHeaderTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.QatarHeaderTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.EgyptHeaderTestCases"/>-->
+<!--            Products-->
+                        <class name="sporter_test.productTestCases.UAEProductDetailsTestCases">
+<!--                                <methods>-->
+<!--                                    <include name=""/>-->
+<!--                                </methods>-->
+                        </class>
+
+
         </classes>
     </test>
 
