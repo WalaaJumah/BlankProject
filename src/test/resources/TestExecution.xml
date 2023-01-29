@@ -35,7 +35,8 @@
 <!--            <class name="sporter_test.productTestCases.UAEProductDetailsTestCases"/>-->
 <!--            <class name="sporter_test.productTestCases.JordanProductDetailsTestCases"/>-->
 <!--            <class name="sporter_test.productTestCases.QatarProductDetailsTestCases"/>-->
-            <class name="sporter_test.productTestCases.EgyptProductDetailsTestCases"/>
+<!--            <class name="sporter_test.productTestCases.EgyptProductDetailsTestCases"/>-->
+            <class name="sporter_test.RecommendedProductsTestCases.EgyptRecommendedProductTestCases"/>
         </classes>
     </test>
 
