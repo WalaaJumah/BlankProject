@@ -24,7 +24,8 @@ public class RecommendedProductPage extends BasePage {
         PageFactory.initElements(webDriver, this);
     }
     //declare all locators related to the Cart Page
-    @FindBy(xpath = "//a[@class='close-popup close-cart-popup']")
+    //TODO: Validate it after adding the WebElement ID By Moamen
+    @FindBy(css = "path")
     private WebElement recommendedProductsCloseIcon;
     @FindBy(xpath = "//h2/i[1]")
     private WebElement circleIcon;
