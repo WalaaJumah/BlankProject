@@ -17,8 +17,12 @@ public class KSAProductDetailsPage extends ProductDetailsPage {
 
     }
     public void displayTheProduct() {
-        webDriver.navigate().to(BaseURL + saudiDomain + productUrl);
+        webDriver.navigate().to(BaseURL + saudiDomainArabic + productUrl);
         WebElementsAssertion.validateTheCurrentUrlContainsString(productUrl,webDriver);
+        verifyTheDisplayedPageDoesNotHaveErrors();
+    }
+    public void displayOOSProduct() {
+        webDriver.navigate().to(BaseURL + saudiDomainArabic + oOSProductUrl);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
 }

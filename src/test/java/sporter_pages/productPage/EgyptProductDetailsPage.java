@@ -22,4 +22,8 @@ public class EgyptProductDetailsPage extends ProductDetailsPage {
         WebElementsAssertion.validateTheCurrentUrlContainsString(productUrl,webDriver);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
+    public void displayOOSProduct() {
+        webDriver.navigate().to(BaseURL + egyptDomain + oOSProductUrl);
+        verifyTheDisplayedPageDoesNotHaveErrors();
+    }
 }

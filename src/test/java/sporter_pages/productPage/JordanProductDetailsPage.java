@@ -21,4 +21,8 @@ public class JordanProductDetailsPage extends ProductDetailsPage {
         WebElementsAssertion.validateTheCurrentUrlContainsString(productUrl,webDriver);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
+    public void displayOOSProduct() {
+        webDriver.navigate().to(BaseURL + jordanDomain + oOSProductUrl);
+        verifyTheDisplayedPageDoesNotHaveErrors();
+    }
 }

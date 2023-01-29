@@ -20,6 +20,7 @@ import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.homepage_classes.UAEHomePage;
 import sporter_pages.productPage.ProductDetailsPage;
+import sporter_pages.productPage.UAEProductDetailsPage;
 import xml_reader.XmlReader;
 
 import static org.testng.Assert.assertEquals;
@@ -43,105 +44,105 @@ public class UAEProductDetailsTestCases  extends ProductDetailsTestCases{
     }
     @Test(groups = { "1.1 Critical Severity"},description = "(UAE Store/ English Version): Make sure the shopper is able to keep the shopping after adding the product to the cart ", priority = 2)
     public void keepShoppingAfterAddingToTheCart() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.keepShoppingAfterAddingToCart();
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getAddToCartBtn(),webDriver);
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
+        uAEProductDetailsPage.keepShoppingAfterAddingToCart();
+        WebElementsAssertion.validateTheElementIsDisplayed(uAEProductDetailsPage.getAddToCartBtn(),webDriver);
     }
     @Test(groups = { "1.1 Critical Severity"},description = "(UAE Store/ English Version): Make sure the shopper is able to View the cart after adding the product to it ", priority = 3)
     public void viewCartAfterAddingTheProductToIt() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        DataHelperAndWait.clickOnElement(productDetailsPage.getAddToCartBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(productDetailsPage.getViewCartBtn(),webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString(productDetailsPage.cartURL,webDriver);
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
+        DataHelperAndWait.clickOnElement(uAEProductDetailsPage.getAddToCartBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(uAEProductDetailsPage.getViewCartBtn(),webDriver);
+        WebElementsAssertion.validateTheCurrentUrlContainsString(uAEProductDetailsPage.cartURL,webDriver);
     }
     @Test(groups = { "1.3 Medium Severity"},description = "(UAE Store/ English Version): Make sure the out of stock message appears when displaying out of stock product ", priority =4)
     public void verifyOOSMessageIsDisplayed() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.displayOOSProduct();
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getOOSMsg(),webDriver);
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
+        uAEProductDetailsPage.displayOOSProduct();
+        WebElementsAssertion.validateTheElementIsDisplayed(uAEProductDetailsPage.getOOSMsg(),webDriver);
     }
     @Test(groups = { "1.2 High Severity"},dependsOnMethods = "verifyOOSMessageIsDisplayed",description = "(UAE Store/ English Version): Make sure the shopper is unable to add out of stock product to the cart", priority =5,expectedExceptions = { org.openqa.selenium.NoSuchElementException.class })
     public void verifyInabilityToAddOosProductToTheCart(){
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        Assert.assertFalse(productDetailsPage.getAddToCartBtn().isDisplayed());
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
+        Assert.assertFalse(uAEProductDetailsPage.getAddToCartBtn().isDisplayed());
     }
     @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "(UAE Store/ English Version): Make sure to display the product from search screen", priority = 6)
     public void verifyAbilityToDisplayTheProductFromSearchScreen() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(productDetailsPage.getProductCard(),webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getProductName(),webDriver);
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
+        DataHelperAndWait.clickOnElement(uAEProductDetailsPage.getSearchBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(uAEProductDetailsPage.getProductCard(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(uAEProductDetailsPage.getProductName(),webDriver);
     }
     @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "(UAE Store/ English Version): Make sure that the increase quantity function works fine ", priority = 7)
     public void verifyIncreaseQuantityButtonWorkingFine() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.displayTheProduct();
-        productDetailsPage.increaseTheQuantity();
-        Assert.assertEquals( DataHelperAndWait.getWebElementText(productDetailsPage.getQuantityField(),webDriver),"2");;
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
+        uAEProductDetailsPage.displayTheProduct();
+        uAEProductDetailsPage.increaseTheQuantity();
+        Assert.assertEquals( DataHelperAndWait.getWebElementText(uAEProductDetailsPage.getQuantityField(),webDriver),"2");;
     }
     @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "(UAE Store/ English Version): Make sure that the Decrease quantity function works fine ", priority = 8)
     public void verifyDecreaseQuantityButtonWorkingFine() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.decreaseTheQuantity();
-        Assert.assertEquals( DataHelperAndWait.getWebElementText(productDetailsPage.getQuantityField(),webDriver),"1");;
-//        WebElementsAssertion.assertionAttributeTrueForElement(productDetailsPage.getQuantityField(),webDriver,"value","1");
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
+        uAEProductDetailsPage.decreaseTheQuantity();
+        Assert.assertEquals( DataHelperAndWait.getWebElementText(uAEProductDetailsPage.getQuantityField(),webDriver),"1");;
+//        WebElementsAssertion.assertionAttributeTrueForElement(uAEProductDetailsPage.getQuantityField(),webDriver,"value","1");
     }
     @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "(UAE Store/ English Version): Make sure that the customer can submit his review successfully ", priority = 9)
     public void verifyAbilityToSubmitTheProductReview() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.selectStarInReview();
-        productDetailsPage.submitProductReview(XmlReader.getXMLData("reviewDesc"),XmlReader.getXMLData("reviewSummary"),XmlReader.getXMLData("nickName"));
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getReviewToastMsg(),webDriver);
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
+        uAEProductDetailsPage.selectStarInReview();
+        uAEProductDetailsPage.submitProductReview(XmlReader.getXMLData("reviewDesc"),XmlReader.getXMLData("reviewSummary"),XmlReader.getXMLData("nickName"));
+        WebElementsAssertion.validateTheElementIsDisplayed(uAEProductDetailsPage.getReviewToastMsg(),webDriver);
     }
     @Test(groups = { "1.3 Medium Severity"},description = "(UAE Store/ English Version): Make sure that the customer is unable to submit his review without selecting any star ", priority = 10)
     public void verifyInabilityToSubmitReviewWithoutSelectingStar() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.displayTheProduct();
-        productDetailsPage.submitProductReview(XmlReader.getXMLData("reviewDesc"),XmlReader.getXMLData("reviewSummary"),XmlReader.getXMLData("nickName"));
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getReviewErrorMsgRelatedToStars(),webDriver);
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
+        uAEProductDetailsPage.displayTheProduct();
+        uAEProductDetailsPage.submitProductReview(XmlReader.getXMLData("reviewDesc"),XmlReader.getXMLData("reviewSummary"),XmlReader.getXMLData("nickName"));
+        WebElementsAssertion.validateTheElementIsDisplayed(uAEProductDetailsPage.getReviewErrorMsgRelatedToStars(),webDriver);
     }
     @Test(groups = { "1.3 Medium Severity"},description = "(UAE Store/ English Version): Make sure that the customer can submit his review when filling Review Form with Long Length", priority = 11)
     public void verifyAbilityToFillTheReviewWIthLongLength() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.displayTheProduct();
-        productDetailsPage.selectStarInReview();
-        productDetailsPage.submitProductReview(XmlReader.getXMLData("reviewDescLong"),XmlReader.getXMLData("reviewSummaryLong"),XmlReader.getXMLData("nickNameLong"));
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getReviewToastMsg(),webDriver);
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
+        uAEProductDetailsPage.displayTheProduct();
+        uAEProductDetailsPage.selectStarInReview();
+        uAEProductDetailsPage.submitProductReview(XmlReader.getXMLData("reviewDescLong"),XmlReader.getXMLData("reviewSummaryLong"),XmlReader.getXMLData("nickNameLong"));
+        WebElementsAssertion.validateTheElementIsDisplayed(uAEProductDetailsPage.getReviewToastMsg(),webDriver);
     }
     @Test(groups = { "1.3 Medium Severity"},description = "(UAE Store/ English Version): Make sure that the customer can navigate to the home page using the BreadCrumb ", priority = 12)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumb() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.displayTheProduct();
-        DataHelperAndWait.clickOnElement(productDetailsPage.getHomeBreadcrumbs(),webDriver);
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
+        uAEProductDetailsPage.displayTheProduct();
+        DataHelperAndWait.clickOnElement(uAEProductDetailsPage.getHomeBreadcrumbs(),webDriver);
         WebElementsAssertion.assertTheUrlEqualExpectedUrl(webDriver.getCurrentUrl(),BasePage.BaseURL +aeDomain,webDriver);
     }
     @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "(UAE Store/ English Version): Make sure that the customer can add the same product more than once by clicking on the Add To Product button in each time ", priority = 13)
     public void verifyAbilityToAddProductToCartMultiTimes() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.keepShoppingAfterAddingToCart();
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
+        uAEProductDetailsPage.keepShoppingAfterAddingToCart();
         String oldProductURL = webDriver.getCurrentUrl();
-        productDetailsPage.addToCart();
-        productDetailsPage.keepShopping();
+        uAEProductDetailsPage.addToCart();
+        uAEProductDetailsPage.keepShopping();
         String newProductURL = webDriver.getCurrentUrl();
         WebElementsAssertion.assertTheUrlEqualExpectedUrl(oldProductURL, newProductURL,webDriver);
     }
     @Test(groups = { "1.3 Medium Severity"},description = "(UAE Store/ English Version): Make sure that the product price is changed when you change the quantity ", priority = 14)
     public void verifyTheProductPriceChangesBasedOnTheSelectedQty() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.displayTheProduct();
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getFinalProductPrice(),webDriver);
-        String currentProductPrice = productDetailsPage.getFinalProductPrice().getText();
-        productDetailsPage.increaseTheQuantity();
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getFinalProductPrice(),webDriver);
-        String newProductPrice = productDetailsPage.getFinalProductPrice().getText();
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
+        uAEProductDetailsPage.displayTheProduct();
+        WebElementsAssertion.validateTheElementIsDisplayed(uAEProductDetailsPage.getFinalProductPrice(),webDriver);
+        String currentProductPrice = uAEProductDetailsPage.getFinalProductPrice().getText();
+        uAEProductDetailsPage.increaseTheQuantity();
+        WebElementsAssertion.validateTheElementIsDisplayed(uAEProductDetailsPage.getFinalProductPrice(),webDriver);
+        String newProductPrice = uAEProductDetailsPage.getFinalProductPrice().getText();
         Assert.assertNotEquals(currentProductPrice, newProductPrice);
     }
     @Test(groups = { "1.1 Critical Severity"},description = "(UAE Store/ English Version): Make sure ability to display the bundle and select all options", priority = 15)
     public void verifyAbilityToDisplayBundleAndSelectAllOptions() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.displayBundle();
-        DataHelperAndWait.waitToBeVisible(productDetailsPage.getBundleMenu(),webDriver);
-        Select select = new Select(productDetailsPage.getBundleMenu());
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
+        uAEProductDetailsPage.displayBundle();
+        DataHelperAndWait.waitToBeVisible(uAEProductDetailsPage.getBundleMenu(),webDriver);
+        Select select = new Select(uAEProductDetailsPage.getBundleMenu());
         WebElement currentSelectedOption = select.getFirstSelectedOption();
         String currentSelectedOptionText = currentSelectedOption.getText();
         DataHelperAndWait.selectAllDropDownListOptions(select);
@@ -151,166 +152,166 @@ public class UAEProductDetailsTestCases  extends ProductDetailsTestCases{
     }
     @Test(groups = { "1.2 High Severity"},description = "(UAE Store/ English Version): Verify that the system display a label on the PDP to indicate for the customer he will get a free product", priority = 16)
     public void verifyTheresLabelInPdpToIndicateThatTheresAnOfferOnThisProduct() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.navigateToBogoProduct();
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getFreeProductLabelEn(),webDriver);
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
+        uAEProductDetailsPage.navigateToBogoProduct();
+        WebElementsAssertion.validateTheElementIsDisplayed(uAEProductDetailsPage.getFreeProductLabelEn(),webDriver);
     }
     @Test(groups = { "1.4 Low Severity"},description = "(UAE Store/ English Version): Verify that the About This product section displays correctly in the PDP", priority = 17)
     public void verifyAboutThisProductSectionDisplaysCorrectlyInProductDetailsPage() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.displayTheProduct();
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getAboutThisProductSection(),webDriver);
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
+        uAEProductDetailsPage.displayTheProduct();
+        WebElementsAssertion.validateTheElementIsDisplayed(uAEProductDetailsPage.getAboutThisProductSection(),webDriver);
         if(webDriver.getCurrentUrl().contains("com/en")){
-            WebElementsAssertion.assertionTextIsEqual(productDetailsPage.getAboutThisProductTitle(),webDriver, "About This Product");}
+            WebElementsAssertion.assertionTextIsEqual(uAEProductDetailsPage.getAboutThisProductTitle(),webDriver, "About This Product");}
         else {
-            WebElementsAssertion.assertionTextIsEqual(productDetailsPage.getAboutThisProductTitle(),webDriver, "حول هذا المنتج");}
+            WebElementsAssertion.assertionTextIsEqual(uAEProductDetailsPage.getAboutThisProductTitle(),webDriver, "حول هذا المنتج");}
     }
     @Test(groups = { "1.4 Low Severity"},description = "(UAE Store/ English Version): Verify that the Supplement Facts section displays correctly in the PDP", priority = 18,enabled = false)
     public void verifySupplementFactsSectionDisplaysCorrectlyInProductDetailsPage() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.displayTheProduct();
-        assertTrue(productDetailsPage.getSupplementFactsTable().isDisplayed());
-        assertEquals(productDetailsPage.getSupplementFactsTitle().getText(), "Supplement Facts");
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
+        uAEProductDetailsPage.displayTheProduct();
+        assertTrue(uAEProductDetailsPage.getSupplementFactsTable().isDisplayed());
+        assertEquals(uAEProductDetailsPage.getSupplementFactsTitle().getText(), "Supplement Facts");
     }
     //      The following Test Cases handle displaying the Mega Menu from Product Page
     @Test(groups = {"All Smoke Testing Result","1.4 Low Severity"},description = "(UAE Store/ English Version): Verify that the ShopBy Menu Is Displayed When Hovering On It From Product Details Page", priority = 19)
     public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.displayTheProduct();
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
+        uAEProductDetailsPage.displayTheProduct();
         Actions action = new Actions(webDriver);
-        action.moveToElement(productDetailsPage.getShopByMenu()).perform();
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionForShopBy(),webDriver);
+        action.moveToElement(uAEProductDetailsPage.getShopByMenu()).perform();
+        WebElementsAssertion.validateTheElementIsDisplayed(uAEProductDetailsPage.getSubCategoriesSectionForShopBy(),webDriver);
     }
     @Test(groups = { "1.2 High Severity"},description = "(UAE Store/ English Version): Verify that the Sport Supplements Menu Is Displayed When Hovering On It From Product Details Page", priority = 20)
     public void verifySportSupplementsMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.displayTheProduct();
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
+        uAEProductDetailsPage.displayTheProduct();
         Actions action = new Actions(webDriver);
-        action.moveToElement(productDetailsPage.getSportsSupplementsMenu()).perform();
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
+        action.moveToElement(uAEProductDetailsPage.getSportsSupplementsMenu()).perform();
+        WebElementsAssertion.validateTheElementIsDisplayed(uAEProductDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
     @Test(groups = { "1.2 High Severity"},description = "(UAE Store/ English Version): Verify that the Vitamins And Health Menu Is Displayed When Hovering On It From Product Details Page", priority = 21)
     public void verifyVitaminsAndHealthMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
-        productDetailsPage.displayTheProduct();
+        uAEProductDetailsPage.displayTheProduct();
         Actions action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(uAEProductDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
     @Test(groups = { "1.2 High Severity"},description = "(UAE Store/ English Version): Verify that the Healthy Food Menu Is Displayed When Hovering On It From Product Details Page", priority = 22)
     public void verifyHealthyFoodMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
-        productDetailsPage.displayTheProduct();
+        uAEProductDetailsPage.displayTheProduct();
         Actions action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
         action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(uAEProductDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
     @Test(groups = { "1.2 High Severity"},description = "(UAE Store/ English Version): Verify that the Sports Menu Is Displayed When Hovering On It From Product Details Page", priority = 23)
     public void verifySportsMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
-        productDetailsPage.displayTheProduct();
+        uAEProductDetailsPage.displayTheProduct();
         Actions action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(uAEProductDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
     @Test(groups = { "1.1 Critical Severity"},description = "(UAE Store/ English Version): Verify that the account Profile icon works correctly in PDP", priority = 24)
     public void verifyAccountProfileIconWorksCorrectlyInProductDetailsPage() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.displayTheProduct();
-        DataHelperAndWait.clickOnElement(productDetailsPage.getAccountProfileIcon(),webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getAccountProfileOptions(), webDriver);
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
+        uAEProductDetailsPage.displayTheProduct();
+        DataHelperAndWait.clickOnElement(uAEProductDetailsPage.getAccountProfileIcon(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(uAEProductDetailsPage.getAccountProfileOptions(), webDriver);
     }
     @Test(groups = { "1.4 Low Severity"},description = "(UAE Store/ English Version): Verify that the Direction Of Use section displays correctly in the PDP", priority = 25,enabled = false)
     public void verifyDirectionOfUseSectionDisplaysCorrectlyInProductDetailsPage() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.displayTheProduct();
-//        assertTrue(productDetailsPage.getDirectionsOfUseSection().isDisplayed());
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
+        uAEProductDetailsPage.displayTheProduct();
+//        assertTrue(uAEProductDetailsPage.getDirectionsOfUseSection().isDisplayed());
     }
     @Test(groups = { "1.4 Low Severity"},description = "(UAE Store/ English Version): Verify that the About Brand section displays correctly in the PDP", priority = 26,enabled = false)
     public void verifyAboutBrandSectionDisplaysCorrectlyInProductDetailsPage() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        assertTrue(productDetailsPage.getAboutBrandSection().isDisplayed());
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
+        assertTrue(uAEProductDetailsPage.getAboutBrandSection().isDisplayed());
     }
     @Test(groups = { "1.3 Medium Severity"},description = "(UAE Store/ English Version): Verify that the header Bar in the PDP appears correctly when scrolling down", priority = 27)
     public void verifyAddToCartBtnInHeaderBarWorksCorrectly() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        DataHelperAndWait.scrollTo(productDetailsPage.getAddReviewButton(),webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getProductHeaderBar(), webDriver);
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
+        DataHelperAndWait.scrollTo(uAEProductDetailsPage.getAddReviewButton(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(uAEProductDetailsPage.getProductHeaderBar(), webDriver);
     }
     @Test(groups = { "1.1 Critical Severity"},description = "(UAE Store/ English Version): Verify that the Add to Cart Button appears in the header Bar in the PDP works correctly ", priority = 28)
     public void verifyHeaderBarDisplaysCorrectlyInProductDetailsPageWhenScrollingThePage() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        DataHelperAndWait.scrollTo(productDetailsPage.getAddReviewButton(),webDriver);
-        DataHelperAndWait.clickOnElement(productDetailsPage.getAddToCartBtnInProductHeaderBar(),webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getKeepShippingBtn(), webDriver);
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
+        DataHelperAndWait.scrollTo(uAEProductDetailsPage.getAddReviewButton(),webDriver);
+        DataHelperAndWait.clickOnElement(uAEProductDetailsPage.getAddToCartBtnInProductHeaderBar(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(uAEProductDetailsPage.getKeepShippingBtn(), webDriver);
     }
     @Test(groups = { "1.2 High Severity"},description = "(UAE Store/ English Version): Verify clicking on the By Brand Link appears in Product Name section will redirect the user to correct page ", priority = 29)
     public void verifyClickingOnByBrandLinkAppearsInProductNameSectionRedirectUserToCorrectPage() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.displayTheProduct();
-        DataHelperAndWait.clickOnElement(productDetailsPage.getProductBrandLink(),webDriver);
-        productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
+        uAEProductDetailsPage.displayTheProduct();
+        DataHelperAndWait.clickOnElement(uAEProductDetailsPage.getProductBrandLink(),webDriver);
+        uAEProductDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     @Test(groups = { "1.3 Medium Severity"},description = "(UAE Store/ English Version): Verify that Expected Delivery Date Label and its value displayed correctly", priority = 30)
     public void verifyExpectedDeliveryDateAppearsCorrectlyAndRetrieveDateInPdp() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.displayTheProduct();
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getExpectedDeliveryDateLabel(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getExpectedDeliveryDateValue(), webDriver);
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
+        uAEProductDetailsPage.displayTheProduct();
+        WebElementsAssertion.validateTheElementIsDisplayed(uAEProductDetailsPage.getExpectedDeliveryDateLabel(), webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(uAEProductDetailsPage.getExpectedDeliveryDateValue(), webDriver);
     }
     @Test(groups = { "1.2 High Severity"},description = "(UAE Store/ English Version): Verify that the search button works correctly from the PDP", priority = 31)
     public void verifySearchBtnWorksCorrectlyFromPdp() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(),webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSearchPageTitle(), webDriver);
-        productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
+        DataHelperAndWait.clickOnElement(uAEProductDetailsPage.getSearchBtn(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(uAEProductDetailsPage.getSearchPageTitle(), webDriver);
+        uAEProductDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     @Test(groups = { "1.2 High Severity"},description = "(UAE Store/ English Version): Make sure that the next review page button appears in Reviews section works correctly ", priority = 32)
     public void verifyNextReviewPageBtnAppearsInReviewsSectionWorksCorrectly() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.displayTheProduct();
-        String reviewPages=DataHelperAndWait.getWebElementText(productDetailsPage.getReviewsPageNumber(),webDriver);
-        DataHelperAndWait.clickOnElement(productDetailsPage.getNextReviewPageBtn(),webDriver);
-        Assert.assertNotEquals(DataHelperAndWait.getWebElementText(productDetailsPage.getReviewsPageNumber(),webDriver),reviewPages);
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
+        uAEProductDetailsPage.displayTheProduct();
+        String reviewPages=DataHelperAndWait.getWebElementText(uAEProductDetailsPage.getReviewsPageNumber(),webDriver);
+        DataHelperAndWait.clickOnElement(uAEProductDetailsPage.getNextReviewPageBtn(),webDriver);
+        Assert.assertNotEquals(DataHelperAndWait.getWebElementText(uAEProductDetailsPage.getReviewsPageNumber(),webDriver),reviewPages);
     }
     //There's bug here
     @Test(groups = { "1.2 High Severity"},description = "(UAE Store/ English Version): Make sure that the Previous review page button appears in Reviews section works correctly ", priority = 33)
     public void verifyPreviousReviewPageBtnAppearsInReviewsSectionWorksCorrectly() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.displayTheProduct();
-        DataHelperAndWait.clickOnElement(productDetailsPage.getNextReviewPageBtn(),webDriver);
-        String reviewPagesInPage2=DataHelperAndWait.getWebElementText(productDetailsPage.getReviewsPageNumber(),webDriver);
-        DataHelperAndWait.clickOnElement(productDetailsPage.getPreviousReviewPageBtn(),webDriver);
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
+        uAEProductDetailsPage.displayTheProduct();
+        DataHelperAndWait.clickOnElement(uAEProductDetailsPage.getNextReviewPageBtn(),webDriver);
+        String reviewPagesInPage2=DataHelperAndWait.getWebElementText(uAEProductDetailsPage.getReviewsPageNumber(),webDriver);
+        DataHelperAndWait.clickOnElement(uAEProductDetailsPage.getPreviousReviewPageBtn(),webDriver);
         DataHelperAndWait.waitForTime(1000);
-        String reviewPagesInPage1=DataHelperAndWait.getWebElementText(productDetailsPage.getReviewsPageNumber(),webDriver);
+        String reviewPagesInPage1=DataHelperAndWait.getWebElementText(uAEProductDetailsPage.getReviewsPageNumber(),webDriver);
         Assert.assertNotEquals(reviewPagesInPage2,reviewPagesInPage1);
     }
     @Test(groups = { "1.2 High Severity"},description = "(UAE Store/ English Version): Make sure that the pagination control appears in Reviews section works correctly ", priority = 34)
     public void verifyPaginationControlAppearsInReviewsSectionWorksCorrectly() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.displayTheProduct();
-        productDetailsPage.verifyReviewPagingWorks();
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
+        uAEProductDetailsPage.displayTheProduct();
+        uAEProductDetailsPage.verifyReviewPagingWorks();
     }
     @Test(groups = { "1.3 Medium Severity"},description = "(UAE Store/ English Version): Make sure that the simple price changes when navigation between sizes for the config ", priority = 35,enabled = false)
     public void verifySimplePriceChangesWhenNavigationBetweenSizesForTheConfig() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.displayTheProduct();
-//        DataHelperAndWait.clickOnElement(productDetailsPage.getFirstsimple(),webDriver);
-        String firstPrice = productDetailsPage.getFinalProductPrice().getText();
-//        DataHelperAndWait.clickOnElement(productDetailsPage.getSecondsimple(),webDriver);
-        String secondPrice = productDetailsPage.getFinalProductPrice().getText();
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
+        uAEProductDetailsPage.displayTheProduct();
+//        DataHelperAndWait.clickOnElement(uAEProductDetailsPage.getFirstsimple(),webDriver);
+        String firstPrice = uAEProductDetailsPage.getFinalProductPrice().getText();
+//        DataHelperAndWait.clickOnElement(uAEProductDetailsPage.getSecondsimple(),webDriver);
+        String secondPrice = uAEProductDetailsPage.getFinalProductPrice().getText();
         Assert.assertNotEquals(firstPrice, secondPrice,"The simple price is not changes");
     }
     @Test(groups = { "1.3 Medium Severity"},description = "(UAE Store/ English Version): Make sure ability to navigate to the home page by clicking on the sporter logo from the product Details Page  ", priority = 36)
     public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromPdp() {
         HeaderSection headerSection=new HeaderSection(webDriver);
         HomePage homePage=new HomePage(webDriver);
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.displayTheProduct();
+        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
+        uAEProductDetailsPage.displayTheProduct();
         DataHelperAndWait.clickOnElement(headerSection.getSporterLogo(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(),webDriver);
     }

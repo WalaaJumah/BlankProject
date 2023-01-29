@@ -27,7 +27,8 @@ public class BasePage {
     public final String egyptDomain = "/en-eg";
     public final String jordanDomain = "/en-jo";
     public final String qatarDomain = "/en-qa";
-    public final String saudiDomain = "/en-sa";
+    public final String saudiDomainEnglish = "/en-sa";
+    public final String saudiDomainArabic = "/ar-sa";
     public final String lebanonDomain = "/en-lb";
     public final String websiteEnglishLanguage = "/en";
     public  final String websiteArabicLanguage = "/ar";

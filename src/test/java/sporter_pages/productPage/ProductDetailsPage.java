@@ -74,7 +74,7 @@ public class ProductDetailsPage extends BasePage {
     private WebElement shopByMenu;
     @FindBy(id = "SubCategoriesContainer")
     private WebElement subCategoriesSectionInMegaMenu;
-    @FindBy(id = "SortCategoriesContainer")
+    @FindBy(id = "SubCategoriesContainer")
     private WebElement subCategoriesSectionForShopBy;
     @FindBy(xpath = "(//div[@id='currentPrice'])[2]")
     private WebElement FinalProductPrice;

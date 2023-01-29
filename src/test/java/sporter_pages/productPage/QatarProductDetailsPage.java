@@ -21,4 +21,8 @@ public class QatarProductDetailsPage extends ProductDetailsPage {
         verifyTheDisplayedPageDoesNotHaveErrors();
         WebElementsAssertion.validateTheCurrentUrlContainsString(productUrl, webDriver);
     }
+    public void displayOOSProduct() {
+        webDriver.navigate().to(BaseURL + qatarDomain + oOSProductUrl);
+        verifyTheDisplayedPageDoesNotHaveErrors();
+    }
 }

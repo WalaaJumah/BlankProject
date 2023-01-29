@@ -11,7 +11,7 @@
         <parameter name="browser" value="chrome"/>
         <!-- <parameter name="country" value="en-qa" />-->
         <parameter name="bogoProduct" value="/phd-nutrition-diet-whey-protein-47340" />
-        <parameter name="oOSProduct" value="/alpro-soya-high-protein" />
+        <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix" />
         <parameter name="bundleProductUrl" value="/grenade-carb-killa-protein-bar-box-of-12" />
         <classes>
             <!--            HomePage-->
@@ -50,7 +50,7 @@
         <parameter name="browser" value="chrome"/>
         <!-- <parameter name="country" value="en-qa" />-->
         <parameter name="bogoProduct" value="/phd-nutrition-diet-whey-protein-47340" />
-        <parameter name="oOSProduct" value="/alpro-soya-high-protein" />
+        <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix" />
         <parameter name="bundleProductUrl" value="/grenade-carb-killa-protein-bar-box-of-12" />
         <groups>
             <run>
