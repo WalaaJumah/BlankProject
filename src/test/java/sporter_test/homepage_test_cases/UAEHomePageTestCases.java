@@ -22,6 +22,7 @@ public class UAEHomePageTestCases extends HomePageTestCases {
     public void switchToUAEStore(){
         UAEHomePage uaeHomePage=new UAEHomePage(webDriver);
         uaeHomePage.switchCountry(uaeHomePage.getAeCountry());
+        DataHelperAndWait.scrollToPositionZero(webDriver);
         if(webDriver.getCurrentUrl().contains(uaeHomePage.aeDomain)){
             System.out.println("You are in UAE Store");
         }
@@ -56,6 +57,7 @@ public class UAEHomePageTestCases extends HomePageTestCases {
     public void verifyClickingOnTheBannersInsideTheHomePageRotatingSliderWillRedirectTheUserToCorrectPage() {
         HomePage homePage = new HomePage(webDriver);
         for (int i = 0; i < homePage.getHomePageRotatingSliderPagingList().size(); i++) {
+            DataHelperAndWait.scrollToPositionZero(webDriver);
             DataHelperAndWait.clickOnElement(homePage.getHomePageRotatingSliderPagingList().get(i), webDriver);
             homePage.clickOnBannerInRotatingSliderSection();
             homePage.verifyTheDisplayedPageDoesNotHaveErrors();

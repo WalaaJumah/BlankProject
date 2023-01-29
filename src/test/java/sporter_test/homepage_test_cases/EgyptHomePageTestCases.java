@@ -24,7 +24,6 @@ public class EgyptHomePageTestCases extends HomePageTestCases {
         DataHelperAndWait.scrollToPositionZero(webDriver);
         egyptHomePage.switchCountry(egyptHomePage.getEgyptCountry());
         DataHelperAndWait.scrollToPositionZero(webDriver);
-        DataHelperAndWait.waitForTime(5000);
         if(webDriver.getCurrentUrl().contains(egyptHomePage.egyptDomain)){
             System.out.println("You are in Jordan Store");
         }
@@ -97,6 +96,7 @@ public class EgyptHomePageTestCases extends HomePageTestCases {
     public void verifyClickingOnTheBannersInsideTheHomePageRotatingSliderWillRedirectTheUserToCorrectPage() {
         HomePage homePage = new HomePage(webDriver);
         for (int i = 0; i < homePage.getHomePageRotatingSliderPagingList().size(); i++) {
+            DataHelperAndWait.scrollToPositionZero(webDriver);
             DataHelperAndWait.clickOnElement(homePage.getHomePageRotatingSliderPagingList().get(i), webDriver);
             homePage.clickOnBannerInRotatingSliderSection();
             homePage.verifyTheDisplayedPageDoesNotHaveErrors();

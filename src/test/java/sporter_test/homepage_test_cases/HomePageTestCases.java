@@ -39,6 +39,7 @@ public class HomePageTestCases extends BaseTest {
     public void verifyClickingOnTheBannersInsideTheHomePageRotatingSliderWillRedirectTheUserToCorrectPage() {
         HomePage homePage = new HomePage(webDriver);
         for (int i = 0; i < homePage.getHomePageRotatingSliderPagingList().size(); i++) {
+            DataHelperAndWait.scrollToPositionZero(webDriver);
             DataHelperAndWait.clickOnElement(homePage.getHomePageRotatingSliderPagingList().get(i), webDriver);
             homePage.clickOnBannerInRotatingSliderSection();
             homePage.verifyTheDisplayedPageDoesNotHaveErrors();

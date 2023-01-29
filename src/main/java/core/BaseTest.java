@@ -98,6 +98,7 @@ public class BaseTest {
         webDriver.manage().window().maximize();
 //        webDriver.navigate().to(environment);
         webDriver.navigate().to(environment+"/"+country);
+        DataHelperAndWait.scrollToPositionZero(webDriver);
         this.CloseInitialDialog();
     }
 

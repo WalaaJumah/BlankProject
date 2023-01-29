@@ -27,6 +27,7 @@ public class QatarHomePageTestCases extends HomePageTestCases {
 public void switchToQatarStore(){
     QatarHomePage qatarHomePage=new QatarHomePage(webDriver);
     qatarHomePage.switchCountry(qatarHomePage.getQatarCountry());
+    DataHelperAndWait.scrollToPositionZero(webDriver);
     if(webDriver.getCurrentUrl().contains(qatarHomePage.qatarDomain)){
         System.out.println("You are in Qatar Store");
     }
@@ -61,6 +62,7 @@ public void switchToQatarStore(){
     public void verifyClickingOnTheBannersInsideTheHomePageRotatingSliderWillRedirectTheUserToCorrectPage() {
         HomePage homePage = new HomePage(webDriver);
         for (int i = 0; i < homePage.getHomePageRotatingSliderPagingList().size(); i++) {
+            DataHelperAndWait.scrollToPositionZero(webDriver);
             DataHelperAndWait.clickOnElement(homePage.getHomePageRotatingSliderPagingList().get(i), webDriver);
             homePage.clickOnBannerInRotatingSliderSection();
             homePage.verifyTheDisplayedPageDoesNotHaveErrors();

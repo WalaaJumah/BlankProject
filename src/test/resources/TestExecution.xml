@@ -67,6 +67,34 @@
 <!--                                    <include name="verifyClickOnTheProductsAppearingInTheNewArrivalsSectionRedirectTheUserToCorrectUrl"/>-->
                                 </methods>
                         </class>
+                        <class name="sporter_test.homepage_test_cases.UAEHomePageTestCases">
+                                <methods>
+                                    <include name="verifyClickingOnTheBannersInsideTheHomePageRotatingSliderWillRedirectTheUserToCorrectPage"/>
+<!--                                    <include name="verifyTopSellersSectionAreDisplayed"/>-->
+<!--                                    <include name="verifyClickOnTheProductsAppearingInTheNewArrivalsSectionRedirectTheUserToCorrectUrl"/>-->
+                                </methods>
+                        </class>
+                        <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases">
+                                <methods>
+                                    <include name="verifyClickingOnTheBannersInsideTheHomePageRotatingSliderWillRedirectTheUserToCorrectPage"/>
+<!--                                    <include name="verifyTopSellersSectionAreDisplayed"/>-->
+<!--                                    <include name="verifyClickOnTheProductsAppearingInTheNewArrivalsSectionRedirectTheUserToCorrectUrl"/>-->
+                                </methods>
+                        </class>
+                        <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases">
+                                <methods>
+                                    <include name="verifyClickingOnTheBannersInsideTheHomePageRotatingSliderWillRedirectTheUserToCorrectPage"/>
+<!--                                    <include name="verifyTopSellersSectionAreDisplayed"/>-->
+<!--                                    <include name="verifyClickOnTheProductsAppearingInTheNewArrivalsSectionRedirectTheUserToCorrectUrl"/>-->
+                                </methods>
+                        </class>
+                        <class name="sporter_test.homepage_test_cases.QatarHomePageTestCases">
+                                <methods>
+                                    <include name="verifyClickingOnTheBannersInsideTheHomePageRotatingSliderWillRedirectTheUserToCorrectPage"/>
+<!--                                    <include name="verifyTopSellersSectionAreDisplayed"/>-->
+<!--                                    <include name="verifyClickOnTheProductsAppearingInTheNewArrivalsSectionRedirectTheUserToCorrectUrl"/>-->
+                                </methods>
+                        </class>
 
 
         </classes>
