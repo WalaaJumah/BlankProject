@@ -116,11 +116,11 @@ public class EgyptHomePageTestCases extends HomePageTestCases {
         HomePage homePage = new HomePage(webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getHomePageHorizontalBanner(), webDriver);
     }
-
     //TODO: Activate the validation rule when deployed the site into production as discussed with Moamen
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "(Egypt Store/English Version):Make sure clicking on the first side banner works correctly", priority = 9)
     public void verifyClickingOnTheFirstSideBannersWorksCorrectlyInTheVitaminsAndHealthCategoryPage() {
         HomePage homePage = new HomePage(webDriver);
+        DataHelperAndWait.scrollToPositionZero(webDriver);
         String expectedUrl = homePage.getFirstSideBanner().getAttribute("href");
         homePage.clickOnFirstSideBanner();
 //        WebElementsAssertion.validateTheCurrentUrlContainsString(expectedUrl, webDriver);
@@ -132,6 +132,7 @@ public class EgyptHomePageTestCases extends HomePageTestCases {
     public void verifyClickingOnTheSecondSideBannersWorksCorrectlyInTheVitaminsAndHealthCategoryPage() {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
+        DataHelperAndWait.scrollToPositionZero(webDriver);
         String expectedUrl = homePage.getSecondSideBanner().getAttribute("href");
         homePage.clickOnSecondSideBanner();
 //        WebElementsAssertion.validateTheCurrentUrlContainsString(expectedUrl, webDriver);

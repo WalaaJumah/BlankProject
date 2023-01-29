@@ -75,6 +75,7 @@ public class KsaHomePageTestCases  extends HomePageTestCases {
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "(KSA Store/Arabic Version):Make sure clicking on the first side banner works correctly", priority = 9)
     public void verifyClickingOnTheFirstSideBannersWorksCorrectlyInTheVitaminsAndHealthCategoryPage() {
         HomePage homePage = new HomePage(webDriver);
+        DataHelperAndWait.scrollToPositionZero(webDriver);
         String expectedUrl = homePage.getFirstSideBanner().getAttribute("href");
         homePage.clickOnFirstSideBanner();
 //        WebElementsAssertion.validateTheCurrentUrlContainsString(expectedUrl, webDriver);
@@ -85,6 +86,7 @@ public class KsaHomePageTestCases  extends HomePageTestCases {
     public void verifyClickingOnTheSecondSideBannersWorksCorrectlyInTheVitaminsAndHealthCategoryPage() {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
+        DataHelperAndWait.scrollToPositionZero(webDriver);
         String expectedUrl = homePage.getSecondSideBanner().getAttribute("href");
         homePage.clickOnSecondSideBanner();
 //        WebElementsAssertion.validateTheCurrentUrlContainsString(expectedUrl, webDriver);
