@@ -31,16 +31,16 @@
 <!--            <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases"/>-->
 <!--            <class name="sporter_test.homepage_test_cases.QatarHomePageTestCases"/>-->
 <!--            <class name="sporter_test.homepage_test_cases.EgyptHomePageTestCases"/>-->
-<!--            <class name="sporter_test.productTestCases.KSAProductDetailsTestCases"/>-->
-<!--            <class name="sporter_test.productTestCases.UAEProductDetailsTestCases"/>-->
-<!--            <class name="sporter_test.productTestCases.JordanProductDetailsTestCases"/>-->
-<!--            <class name="sporter_test.productTestCases.QatarProductDetailsTestCases"/>-->
-<!--            <class name="sporter_test.productTestCases.EgyptProductDetailsTestCases"/>-->
-            <class name="sporter_test.RecommendedProductsTestCases.EgyptRecommendedProductTestCases"/>
-            <class name="sporter_test.RecommendedProductsTestCases.JordanRecommendedProductTestCases"/>
-            <class name="sporter_test.RecommendedProductsTestCases.QatarRecommendedProductTestCases"/>
-            <class name="sporter_test.RecommendedProductsTestCases.UAERecommendedProductTestCases"/>
-            <class name="sporter_test.RecommendedProductsTestCases.KSARecommendedProductTestCases"/>
+            <class name="sporter_test.productTestCases.KSAProductDetailsTestCases"/>
+            <class name="sporter_test.productTestCases.UAEProductDetailsTestCases"/>
+            <class name="sporter_test.productTestCases.JordanProductDetailsTestCases"/>
+            <class name="sporter_test.productTestCases.QatarProductDetailsTestCases"/>
+            <class name="sporter_test.productTestCases.EgyptProductDetailsTestCases"/>
+<!--            <class name="sporter_test.RecommendedProductsTestCases.EgyptRecommendedProductTestCases"/>-->
+<!--            <class name="sporter_test.RecommendedProductsTestCases.JordanRecommendedProductTestCases"/>-->
+<!--            <class name="sporter_test.RecommendedProductsTestCases.QatarRecommendedProductTestCases"/>-->
+<!--            <class name="sporter_test.RecommendedProductsTestCases.UAERecommendedProductTestCases"/>-->
+<!--            <class name="sporter_test.RecommendedProductsTestCases.KSARecommendedProductTestCases"/>-->
         </classes>
     </test>
 

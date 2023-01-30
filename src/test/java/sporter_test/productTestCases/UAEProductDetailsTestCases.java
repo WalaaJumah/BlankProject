@@ -20,6 +20,7 @@ import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.homepage_classes.UAEHomePage;
 import sporter_pages.productPage.ProductDetailsPage;
+import sporter_pages.productPage.QatarProductDetailsPage;
 import sporter_pages.productPage.UAEProductDetailsPage;
 import xml_reader.XmlReader;
 
@@ -174,48 +175,43 @@ public class UAEProductDetailsTestCases  extends ProductDetailsTestCases{
         assertEquals(uAEProductDetailsPage.getSupplementFactsTitle().getText(), "Supplement Facts");
     }
     //      The following Test Cases handle displaying the Mega Menu from Product Page
-    @Test(groups = {"All Smoke Testing Result","1.4 Low Severity"},description = "(UAE Store/ English Version): Verify that the ShopBy Menu Is Displayed When Hovering On It From Product Details Page", priority = 19)
+    @Test(groups = {"All Smoke Testing Result","1.4 Low Severity"},description = "(KSA Store/ Arabic Version): Verify that the ShopBy Menu Is Displayed When Hovering On It From Product Details Page", priority = 19)
     public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
         UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
         uAEProductDetailsPage.displayTheProduct();
-        Actions action = new Actions(webDriver);
-        action.moveToElement(uAEProductDetailsPage.getShopByMenu()).perform();
+        DataHelperAndWait.hoverOnElement(uAEProductDetailsPage.getShopByMenu(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(uAEProductDetailsPage.getSubCategoriesSectionForShopBy(),webDriver);
     }
-    @Test(groups = { "1.2 High Severity"},description = "(UAE Store/ English Version): Verify that the Sport Supplements Menu Is Displayed When Hovering On It From Product Details Page", priority = 20)
+    @Test(groups = { "1.2 High Severity"},description = "(KSA Store/ Arabic Version): Verify that the Sport Supplements Menu Is Displayed When Hovering On It From Product Details Page", priority = 20)
     public void verifySportSupplementsMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
         UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
         uAEProductDetailsPage.displayTheProduct();
-        Actions action = new Actions(webDriver);
-        action.moveToElement(uAEProductDetailsPage.getSportsSupplementsMenu()).perform();
+        DataHelperAndWait.hoverOnElement(uAEProductDetailsPage.getSportsSupplementsMenu(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(uAEProductDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
-    @Test(groups = { "1.2 High Severity"},description = "(UAE Store/ English Version): Verify that the Vitamins And Health Menu Is Displayed When Hovering On It From Product Details Page", priority = 21)
+    @Test(groups = { "1.2 High Severity"},description = "(KSA Store/ Arabic Version): Verify that the Vitamins And Health Menu Is Displayed When Hovering On It From Product Details Page", priority = 21)
     public void verifyVitaminsAndHealthMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
         UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         uAEProductDetailsPage.displayTheProduct();
-        Actions action = new Actions(webDriver);
-        action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
+        WebElementsAssertion.validateTheElementIsDisplayed(aeMegamenuPage.getVitaminsAndHealthMainMenu(), webDriver);
+        DataHelperAndWait.hoverOnElement(aeMegamenuPage.getVitaminsAndHealthMainMenu(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(uAEProductDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
-    @Test(groups = { "1.2 High Severity"},description = "(UAE Store/ English Version): Verify that the Healthy Food Menu Is Displayed When Hovering On It From Product Details Page", priority = 22)
+    @Test(groups = { "1.2 High Severity"},description = "(KSA Store/ Arabic Version): Verify that the Healthy Food Menu Is Displayed When Hovering On It From Product Details Page", priority = 22)
     public void verifyHealthyFoodMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
         UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         uAEProductDetailsPage.displayTheProduct();
-        Actions action = new Actions(webDriver);
-        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
-        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
+        DataHelperAndWait.hoverOnElement(aeMegamenuPage.getHealthyFoodMainMenu(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(uAEProductDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
-    @Test(groups = { "1.2 High Severity"},description = "(UAE Store/ English Version): Verify that the Sports Menu Is Displayed When Hovering On It From Product Details Page", priority = 23)
+    @Test(groups = { "1.2 High Severity"},description = "(KSA Store/ Arabic Version): Verify that the Sports Menu Is Displayed When Hovering On It From Product Details Page", priority = 23)
     public void verifySportsMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
         UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         uAEProductDetailsPage.displayTheProduct();
-        Actions action = new Actions(webDriver);
-        action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
+        DataHelperAndWait.hoverOnElement(aeMegamenuPage.getSportsMainMenu(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(uAEProductDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
     @Test(groups = { "1.1 Critical Severity"},description = "(UAE Store/ English Version): Verify that the account Profile icon works correctly in PDP", priority = 24)

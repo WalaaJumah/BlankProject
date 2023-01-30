@@ -19,6 +19,7 @@ import sporter_pages.AEMegaMenuPage;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.homepage_classes.JordanHomePage;
+import sporter_pages.productPage.EgyptProductDetailsPage;
 import sporter_pages.productPage.JordanProductDetailsPage;
 import sporter_pages.productPage.ProductDetailsPage;
 import xml_reader.XmlReader;
@@ -184,48 +185,43 @@ public class JordanProductDetailsTestCases  extends ProductDetailsTestCases{
         assertEquals(jordanProductDetailsPage.getSupplementFactsTitle().getText(), "Supplement Facts");
     }
     //      The following Test Cases handle displaying the Mega Menu from Product Page
-    @Test(groups = {"All Smoke Testing Result","1.4 Low Severity"},description = "(Jordan Store/ English Version): Verify that the ShopBy Menu Is Displayed When Hovering On It From Product Details Page", priority = 19)
+    @Test(groups = {"All Smoke Testing Result","1.4 Low Severity"},description = "(KSA Store/ Arabic Version): Verify that the ShopBy Menu Is Displayed When Hovering On It From Product Details Page", priority = 19)
     public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
         JordanProductDetailsPage jordanProductDetailsPage = new JordanProductDetailsPage(webDriver);
         jordanProductDetailsPage.displayTheProduct();
-        Actions action = new Actions(webDriver);
-        action.moveToElement(jordanProductDetailsPage.getShopByMenu()).perform();
+        DataHelperAndWait.hoverOnElement(jordanProductDetailsPage.getShopByMenu(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(jordanProductDetailsPage.getSubCategoriesSectionForShopBy(),webDriver);
     }
-    @Test(groups = { "1.2 High Severity"},description = "(Jordan Store/ English Version): Verify that the Sport Supplements Menu Is Displayed When Hovering On It From Product Details Page", priority = 20)
+    @Test(groups = { "1.2 High Severity"},description = "(KSA Store/ Arabic Version): Verify that the Sport Supplements Menu Is Displayed When Hovering On It From Product Details Page", priority = 20)
     public void verifySportSupplementsMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
         JordanProductDetailsPage jordanProductDetailsPage = new JordanProductDetailsPage(webDriver);
         jordanProductDetailsPage.displayTheProduct();
-        Actions action = new Actions(webDriver);
-        action.moveToElement(jordanProductDetailsPage.getSportsSupplementsMenu()).perform();
+        DataHelperAndWait.hoverOnElement(jordanProductDetailsPage.getSportsSupplementsMenu(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(jordanProductDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
-    @Test(groups = { "1.2 High Severity"},description = "(Jordan Store/ English Version): Verify that the Vitamins And Health Menu Is Displayed When Hovering On It From Product Details Page", priority = 21)
+    @Test(groups = { "1.2 High Severity"},description = "(KSA Store/ Arabic Version): Verify that the Vitamins And Health Menu Is Displayed When Hovering On It From Product Details Page", priority = 21)
     public void verifyVitaminsAndHealthMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
         JordanProductDetailsPage jordanProductDetailsPage = new JordanProductDetailsPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         jordanProductDetailsPage.displayTheProduct();
-        Actions action = new Actions(webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(aeMegamenuPage.getVitaminsAndHealthMainMenu(), webDriver);
-        action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
+        DataHelperAndWait.hoverOnElement(aeMegamenuPage.getVitaminsAndHealthMainMenu(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(jordanProductDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
-    @Test(groups = { "1.2 High Severity"},description = "(Jordan Store/ English Version): Verify that the Healthy Food Menu Is Displayed When Hovering On It From Product Details Page", priority = 22)
+    @Test(groups = { "1.2 High Severity"},description = "(KSA Store/ Arabic Version): Verify that the Healthy Food Menu Is Displayed When Hovering On It From Product Details Page", priority = 22)
     public void verifyHealthyFoodMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
         JordanProductDetailsPage jordanProductDetailsPage = new JordanProductDetailsPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         jordanProductDetailsPage.displayTheProduct();
-        Actions action = new Actions(webDriver);
-        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
+        DataHelperAndWait.hoverOnElement(aeMegamenuPage.getHealthyFoodMainMenu(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(jordanProductDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
-    @Test(groups = { "1.2 High Severity"},description = "(Jordan Store/ English Version): Verify that the Sports Menu Is Displayed When Hovering On It From Product Details Page", priority = 23)
+    @Test(groups = { "1.2 High Severity"},description = "(KSA Store/ Arabic Version): Verify that the Sports Menu Is Displayed When Hovering On It From Product Details Page", priority = 23)
     public void verifySportsMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
         JordanProductDetailsPage jordanProductDetailsPage = new JordanProductDetailsPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         jordanProductDetailsPage.displayTheProduct();
-        Actions action = new Actions(webDriver);
-        action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
+        DataHelperAndWait.hoverOnElement(aeMegamenuPage.getSportsMainMenu(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(jordanProductDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
     @Test(groups = { "1.1 Critical Severity"},description = "(Jordan Store/ English Version): Verify that the account Profile icon works correctly in PDP", priority = 24)
@@ -293,12 +289,10 @@ public class JordanProductDetailsTestCases  extends ProductDetailsTestCases{
     public void verifyPreviousReviewPageBtnAppearsInReviewsSectionWorksCorrectly() {
         JordanProductDetailsPage jordanProductDetailsPage = new JordanProductDetailsPage(webDriver);
         jordanProductDetailsPage.displayTheProduct();
-        DataHelperAndWait.clickOnElement(jordanProductDetailsPage.getNextReviewPageBtn(),webDriver);
         String reviewPagesInPage2=DataHelperAndWait.getWebElementText(jordanProductDetailsPage.getReviewsPageNumber(),webDriver);
+        DataHelperAndWait.clickOnElement(jordanProductDetailsPage.getNextReviewPageBtn(),webDriver);
         DataHelperAndWait.clickOnElement(jordanProductDetailsPage.getPreviousReviewPageBtn(),webDriver);
-        DataHelperAndWait.waitForTime(1000);
-        String reviewPagesInPage1=DataHelperAndWait.getWebElementText(jordanProductDetailsPage.getReviewsPageNumber(),webDriver);
-        Assert.assertNotEquals(reviewPagesInPage2,reviewPagesInPage1);
+        Assert.assertEquals(reviewPagesInPage2,DataHelperAndWait.getWebElementText(jordanProductDetailsPage.getReviewsPageNumber(),webDriver));
     }
     @Test(groups = { "1.2 High Severity"},description = "(Jordan Store/ English Version): Make sure that the pagination control appears in Reviews section works correctly ", priority = 34)
     public void verifyPaginationControlAppearsInReviewsSectionWorksCorrectly() {

@@ -1,6 +1,7 @@
 package core;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
 
@@ -274,4 +275,13 @@ public  class DataHelperAndWait  {
         waitToBeVisible( webElement,webDriver);
         return webElement.getText();
             }
+            public static void hoverOnElement(WebElement webElement, WebDriver webDriver){
+        Actions action = new Actions(webDriver);
+        try{
+            waitToBeVisible(webElement,webDriver);
+                action.moveToElement(webElement).perform();}
+        catch (Exception e){
+            action.moveToElement(webElement).perform();}
+            }
+
 }

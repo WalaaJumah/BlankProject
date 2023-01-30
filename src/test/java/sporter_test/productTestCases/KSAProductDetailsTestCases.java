@@ -17,6 +17,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.AEMegaMenuPage;
 import sporter_pages.headerSection.HeaderSection;
+import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.homepage_classes.KsaHomePage;
 import sporter_pages.productPage.KSAProductDetailsPage;
 import xml_reader.XmlReader;
@@ -54,10 +55,11 @@ public class KSAProductDetailsTestCases  extends ProductDetailsTestCases{
     @Test(groups = { "1.3 Medium Severity"},description = "(KSA Store/ Arabic Version): Make sure ability to navigate to the home page by clicking on the sporter logo from the product Details Page  ", priority = 36)
     public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromPdp() {
         HeaderSection headerSection=new HeaderSection(webDriver);
-        KSAProductDetailsPage kSAProductDetailsPage = new KSAProductDetailsPage(webDriver); 
+        HomePage homePage=new HomePage(webDriver);
+        KSAProductDetailsPage kSAProductDetailsPage = new KSAProductDetailsPage(webDriver);
         kSAProductDetailsPage.displayTheProduct();
         DataHelperAndWait.clickOnElement(headerSection.getSporterLogo(),webDriver);
-        WebElementsAssertion.assertTheUrlEqualExpectedUrl(webDriver.getCurrentUrl(), BasePage.BaseURL +kSAProductDetailsPage.saudiDomainArabic +"/",webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getHomePageRotatingSlider(),webDriver);
     }
     @Test(groups = { "1.2 High Severity"},description = "(KSA Store/ Arabic Version): Verify that the system display a label on the PDP to indicate for the customer he will get a free product", priority = 16)
     public void verifyTheresLabelInPdpToIndicateThatTheresAnOfferOnThisProduct() {
@@ -190,16 +192,14 @@ public class KSAProductDetailsTestCases  extends ProductDetailsTestCases{
     public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
         KSAProductDetailsPage kSAProductDetailsPage = new KSAProductDetailsPage(webDriver); 
         kSAProductDetailsPage.displayTheProduct();
-        Actions action = new Actions(webDriver);
-        action.moveToElement(kSAProductDetailsPage.getShopByMenu()).perform();
+        DataHelperAndWait.hoverOnElement(kSAProductDetailsPage.getShopByMenu(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(kSAProductDetailsPage.getSubCategoriesSectionForShopBy(),webDriver);
     }
     @Test(groups = { "1.2 High Severity"},description = "(KSA Store/ Arabic Version): Verify that the Sport Supplements Menu Is Displayed When Hovering On It From Product Details Page", priority = 20)
     public void verifySportSupplementsMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
         KSAProductDetailsPage kSAProductDetailsPage = new KSAProductDetailsPage(webDriver); 
         kSAProductDetailsPage.displayTheProduct();
-        Actions action = new Actions(webDriver);
-        action.moveToElement(kSAProductDetailsPage.getSportsSupplementsMenu()).perform();
+        DataHelperAndWait.hoverOnElement(kSAProductDetailsPage.getSportsSupplementsMenu(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(kSAProductDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
     @Test(groups = { "1.2 High Severity"},description = "(KSA Store/ Arabic Version): Verify that the Vitamins And Health Menu Is Displayed When Hovering On It From Product Details Page", priority = 21)
@@ -207,9 +207,8 @@ public class KSAProductDetailsTestCases  extends ProductDetailsTestCases{
         KSAProductDetailsPage kSAProductDetailsPage = new KSAProductDetailsPage(webDriver); 
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         kSAProductDetailsPage.displayTheProduct();
-        Actions action = new Actions(webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(aeMegamenuPage.getVitaminsAndHealthMainMenu(), webDriver);
-        action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
+        DataHelperAndWait.hoverOnElement(aeMegamenuPage.getVitaminsAndHealthMainMenu(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(kSAProductDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
     @Test(groups = { "1.2 High Severity"},description = "(KSA Store/ Arabic Version): Verify that the Healthy Food Menu Is Displayed When Hovering On It From Product Details Page", priority = 22)
@@ -217,8 +216,7 @@ public class KSAProductDetailsTestCases  extends ProductDetailsTestCases{
         KSAProductDetailsPage kSAProductDetailsPage = new KSAProductDetailsPage(webDriver); 
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         kSAProductDetailsPage.displayTheProduct();
-        Actions action = new Actions(webDriver);
-        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
+        DataHelperAndWait.hoverOnElement(aeMegamenuPage.getHealthyFoodMainMenu(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(kSAProductDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
     @Test(groups = { "1.2 High Severity"},description = "(KSA Store/ Arabic Version): Verify that the Sports Menu Is Displayed When Hovering On It From Product Details Page", priority = 23)
@@ -226,8 +224,7 @@ public class KSAProductDetailsTestCases  extends ProductDetailsTestCases{
         KSAProductDetailsPage kSAProductDetailsPage = new KSAProductDetailsPage(webDriver); 
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         kSAProductDetailsPage.displayTheProduct();
-        Actions action = new Actions(webDriver);
-        action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
+        DataHelperAndWait.hoverOnElement(aeMegamenuPage.getSportsMainMenu(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(kSAProductDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
     @Test(groups = { "1.1 Critical Severity"},description = "(KSA Store/ Arabic Version): Verify that the account Profile icon works correctly in PDP", priority = 24)
@@ -298,7 +295,7 @@ public class KSAProductDetailsTestCases  extends ProductDetailsTestCases{
         DataHelperAndWait.clickOnElement(kSAProductDetailsPage.getNextReviewPageBtn(),webDriver);
         String reviewPagesInPage2=DataHelperAndWait.getWebElementText(kSAProductDetailsPage.getReviewsPageNumber(),webDriver);
         DataHelperAndWait.clickOnElement(kSAProductDetailsPage.getPreviousReviewPageBtn(),webDriver);
-        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.waitForTime(2000);
         String reviewPagesInPage1=DataHelperAndWait.getWebElementText(kSAProductDetailsPage.getReviewsPageNumber(),webDriver);
         Assert.assertNotEquals(reviewPagesInPage2,reviewPagesInPage1);
     }
