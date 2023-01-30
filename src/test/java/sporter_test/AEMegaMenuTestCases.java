@@ -2492,7 +2492,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
-    @Test(groups = {"2.06 MegaMenu", "1.1 Critical Severity"},description = "MegaMenu- Make sure clicking on the Ready To Eat Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 161)
+    @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the Ready To Eat Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 161)
     public void verifyClickingOnReadyToEatOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
