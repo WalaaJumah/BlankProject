@@ -221,7 +221,7 @@ public class KsaHomePageTestCases  extends HomePageTestCases {
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getPhoneBtn(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getEmailBtn(), webDriver);
     }
-    @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "(KSA Store/Arabic Version):Make sure the clicking on email button from the Got A Question section works correctly ", priority = 38)
+    @Test(groups = { "All Smoke Testing Result", "1.3 Medium Severity"}, description = "(KSA Store/Arabic Version):Make sure the clicking on email button from the Got A Question section works correctly ", priority = 38)
     public void verifyAbilityToClickOnEmailBtnInGotQuestionSectionCorrectly() {
         HomePage homePage = new HomePage(webDriver);
         homePage.clickOnEmailBtn();
@@ -267,7 +267,7 @@ public class KsaHomePageTestCases  extends HomePageTestCases {
     public void verifyClickOnTheProductsAppearingInTheTopSellersSectionRedirectTheUserToCorrectUrl() {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
-        DataHelperAndWait.accessAllProductsInWidget(homePage.getProductsInTopSellersSection(),homePage.getNextButtonInTopSellerSection(),webDriver,homePage);
+            DataHelperAndWait.accessAllProductsInWidget(homePage.getProductsInTopSellersSection(),homePage.getNextButtonInTopSellerSection(),webDriver,homePage);
     }
     @Test(groups = { "1.1 Critical Severity"}, description = "(KSA Store/Arabic Version):Make sure clicking on the products appearing in the New Arrivals section works correctly", priority = 45)
     public void verifyClickOnTheProductsAppearingInTheNewArrivalsSectionRedirectTheUserToCorrectUrl() {

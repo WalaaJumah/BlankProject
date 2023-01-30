@@ -10,6 +10,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
+import java.util.List;
+
 public class WebElementsAssertion {
     DataHelperAndWait dataHelperAndWait;
     public static void validateTheCurrentUrlContainsString(String expectedValue, WebDriver webDriver){
@@ -53,10 +55,23 @@ public class WebElementsAssertion {
         DataHelperAndWait.waitForUrlContains(expectedUrl,webDriver);
         Assert.assertEquals(actualUrl,expectedUrl,"The Current URL is: "+ actualUrl+" But the expected URL is: "+expectedUrl);
     }
-    public static void assertionWebElementContainsText(WebElement webElement,WebDriver webDriver, String expectedText){
+    public static void assertionWebElementEqualText(WebElement webElement, WebDriver webDriver, String expectedText){
         DataHelperAndWait.waitToBeVisible(webElement,webDriver);
         Assert.assertEquals(webElement.getText(),expectedText, "The element does not contains : "+expectedText+ "And the Actual Text is: "+webElement.getText());
 
+    }
+        public static void assertionWebElementConatinsText(WebElement webElement, WebDriver webDriver, String expectedText){
+        DataHelperAndWait.waitToBeVisible(webElement,webDriver);
+        Assert.assertEquals(webElement.getText().contains(expectedText), "The element does not contains : "+expectedText+ "And the Actual Text is: "+webElement.getText());
+
+    }
+
+    public static void assertAllListItemsAreDisplayed(List<WebElement> webElement, WebDriver webDriver){
+        for (int i = 0; i < webElement.size(); i++){
+            DataHelperAndWait.hoverOnElement(webElement.get(i),webDriver);
+            DataHelperAndWait.waitToBeVisible(webElement.get(i),webDriver);
+            Assert.assertTrue(webElement.get(i).isDisplayed(), "This element is not displayed: "+ webElement);
+        }
     }
 
 }

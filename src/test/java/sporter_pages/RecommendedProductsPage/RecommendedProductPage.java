@@ -8,12 +8,15 @@ package sporter_pages.RecommendedProductsPage;
 
 import core.BasePage;
 import core.DataHelperAndWait;
+import core.WebElementsAssertion;
 import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import sporter_pages.productPage.ProductDetailsPage;
+
+import java.util.List;
 
 @Getter
 public class RecommendedProductPage extends BasePage {
@@ -27,24 +30,24 @@ public class RecommendedProductPage extends BasePage {
     //TODO: Validate it after adding the WebElement ID By Moamen
     @FindBy(css = "path")
     private WebElement recommendedProductsCloseIcon;
-    @FindBy(xpath = "//h2/i[1]")
+    @FindBy(css = "#ThumbsUpHeader > svg")
     private WebElement circleIcon;
-    @FindBy(xpath = "//h2[normalize-space()='Thumbs Up']")
+    @FindBy(id = "ThumbsUpHeader")
     private WebElement thumbsUpTitle;
-    @FindBy(xpath = "//*[@id='popup-block']/p")
+    @FindBy(id = "addedProductName")
     private WebElement addedProductToCartMsg;
-    @FindBy(xpath = "//*[@class='prod-img']")
-    private WebElement productImages;
-    @FindBy(xpath = "//div[@class='item-price']")
-    private WebElement productPrice;
+    @FindBy(xpath = "//div[@id='recommendProductsContainer']/div//img")
+    private List<WebElement> productImages;
+    @FindBy(xpath = "//div[@id='recommendProductsContainer']/div//div[starts-with(@class,'product_price')]")
+    private List<WebElement> productPrice;
     @FindBy(xpath = "(//div[@class='item-price'])[1]//span[@data-price-type='finalPrice']")
     private WebElement productPriceForFirstProduct;
     @FindBy(xpath = "(//div[@class='cart-button'])[1]")
     private WebElement addToCartBtnForFirstProduct;
-    @FindBy(css = "div[id='popup-block'] h2:nth-child(1)")
+    @FindBy(id = "recommendProductsLabel")
     private WebElement recommendedProductsTitle;
-    @FindBy(xpath = "//div[@class='cart-button']")
-    private WebElement addToCartBtn;
+    @FindBy(xpath = "//div[@id='recommendProductsContainer']/div//div[starts-with(@class,'product_button')]")
+    private List<WebElement> addToCartBtn;
     @FindBy(xpath = "(//button[@class='custom-button blue-btn'])[2]")
     private WebElement addToCart;
     @FindBy(xpath = "(//div[@class='inner-seller-prod'])[1]")
@@ -56,5 +59,21 @@ public class RecommendedProductPage extends BasePage {
         productDetailsPage.displayTheProduct();
         DataHelperAndWait.clickOnElement(productDetailsPage.getAddToCartBtn(),webDriver);
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getKeepShippingBtn(),webDriver);
+    }
+    public void clickOnAllListItemsAppearingInTheRecommendedPopup(List<WebElement> webElement){
+        for (int i = 0; i < webElement.size(); i++){
+            DataHelperAndWait.clickOnElement(webElement.get(i),webDriver);
+            this.displayTheRecommendedProductsPopUp();
+        }
+    }
+    public  void clickOnListItemsAndAssertion(List<WebElement> webElement, WebDriver webDriver, WebElement webElementToBeAssert){
+        for (int i = 0; i < webElement.size(); i++){
+            DataHelperAndWait.hoverOnElement(webElement.get(i),webDriver);
+            DataHelperAndWait.scrollToPositionZero(webDriver);
+            DataHelperAndWait.clickOnElement(webElement.get(i),webDriver);
+            WebElementsAssertion.validateTheElementIsDisplayed(webElementToBeAssert,webDriver);
+            this.displayTheRecommendedProductsPopUp();
+            DataHelperAndWait.scrollToPositionZero(webDriver);
+        }
     }
 }

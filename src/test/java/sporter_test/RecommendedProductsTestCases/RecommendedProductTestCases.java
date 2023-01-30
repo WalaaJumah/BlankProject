@@ -60,11 +60,11 @@ public class RecommendedProductTestCases extends BaseTest {
         //Make sure the Recommended products title is displayed
         WebElementsAssertion.validateTheElementIsDisplayed(recommendedProductpage.getRecommendedProductsTitle(),webDriver);
         //Make sure the products images are displayed
-        WebElementsAssertion.validateTheElementIsDisplayed(recommendedProductpage.getProductImages(),webDriver);
+        WebElementsAssertion.assertAllListItemsAreDisplayed(recommendedProductpage.getProductImages(),webDriver);
         //Make sure the products prices are displayed
-        WebElementsAssertion.validateTheElementIsDisplayed(recommendedProductpage.getProductPrice(),webDriver);
+        WebElementsAssertion.assertAllListItemsAreDisplayed(recommendedProductpage.getProductPrice(),webDriver);
         //Make sure the add to cart buttons are displayed
-        WebElementsAssertion.validateTheElementIsDisplayed(recommendedProductpage.getAddToCartBtn(),webDriver);
+        WebElementsAssertion.assertAllListItemsAreDisplayed(recommendedProductpage.getAddToCartBtn(),webDriver);
         //Make sure the keep shopping button is displayed
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getKeepShippingBtn(),webDriver);
         //Make sure the view cart button is displayed
@@ -74,8 +74,7 @@ public class RecommendedProductTestCases extends BaseTest {
     public void verifyAbilityToAddRecommendedProductToCart() {
         RecommendedProductPage recommendedProductpage = new RecommendedProductPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        recommendedProductpage.displayTheRecommendedProductsPopUp();
-        DataHelperAndWait.clickOnElement(productDetailsPage.getAddToCartBtn(),webDriver);
+        recommendedProductpage.clickOnListItemsAndAssertion(recommendedProductpage.getAddToCartBtn(),webDriver,productDetailsPage.getAddToCartBtn());
     }
     @Test(groups = {"1.3 Medium Severity"},description = "Recommended Products Pop-up- Make sure the name of product added to the Cart displayed correctly in the Recommended product pop-up", priority = 8)
     public void verifyTheNameOfProductAddedToCatDisplayedInTheRecommendedPopup() {
@@ -84,16 +83,15 @@ public class RecommendedProductTestCases extends BaseTest {
         productDetailsPage.displayTheProduct();
         String productNameInPDP=DataHelperAndWait.getWebElementText(productDetailsPage.getProductName(),webDriver);
         DataHelperAndWait.clickOnElement(productDetailsPage.getAddToCartBtn(),webDriver);
-        WebElementsAssertion.assertionWebElementContainsText(recommendedProductpage.getAddedProductToCartMsg(),webDriver,productNameInPDP);
+        WebElementsAssertion.assertionWebElementConatinsText(recommendedProductpage.getAddedProductToCartMsg(),webDriver,productNameInPDP);
     }
     @Test(groups = {"1.3 Medium Severity"},description = "Recommended Products Pop-up- Make sure the product price displayed in the Recommended product pop-up matches with the product price displayed in PDP", priority = 9)
     public void verifyTheProductPriceInTheRecommendedPopupMatchesWithThePriceDisplaysInPdp() {
         RecommendedProductPage recommendedProductpage = new RecommendedProductPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.displayTheProduct();
-        productDetailsPage.addToCart();
-        String productPriceInRecommendedPopup = DataHelperAndWait.getWebElementText(recommendedProductpage.getProductPriceForFirstProduct(),webDriver);
-        DataHelperAndWait.clickOnElement(recommendedProductpage.getAddToCartBtnForFirstProduct(),webDriver);
+        recommendedProductpage.displayTheRecommendedProductsPopUp();
+        String productPriceInRecommendedPopup = DataHelperAndWait.getWebElementText(recommendedProductpage.getProductPrice().get(0),webDriver);
+        DataHelperAndWait.clickOnElement(recommendedProductpage.getProductPrice().get(0),webDriver);
         String productPriceInPdp =DataHelperAndWait.getWebElementText(productDetailsPage.getFinalProductPrice(),webDriver);
         Assert.assertEquals(productPriceInPdp, productPriceInRecommendedPopup, "The product Price displayed in the Recommended pop-up is not match with the price in PDP"+ productPriceInPdp +" VS."+ productPriceInRecommendedPopup);
     }
@@ -102,8 +100,8 @@ public class RecommendedProductTestCases extends BaseTest {
         RecommendedProductPage recommendedProductpage = new RecommendedProductPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         recommendedProductpage.displayTheRecommendedProductsPopUp();
-        String productNameInRecommendedPopup = DataHelperAndWait.getWebElementText(recommendedProductpage.getFirstProductName(),webDriver);
-        DataHelperAndWait.clickOnElement(recommendedProductpage.getFirstProductCard(),webDriver);
+        String productNameInRecommendedPopup = DataHelperAndWait.getWebElementText(recommendedProductpage.getProductPrice().get(0),webDriver);
+        DataHelperAndWait.clickOnElement(recommendedProductpage.getProductPrice().get(0),webDriver);
         Assert.assertEquals(productNameInRecommendedPopup, DataHelperAndWait.getWebElementText(productDetailsPage.getProductName(),webDriver), "The product name displayed in the Recommended pop-up is not match with the name in PDP ");
     }
 }
