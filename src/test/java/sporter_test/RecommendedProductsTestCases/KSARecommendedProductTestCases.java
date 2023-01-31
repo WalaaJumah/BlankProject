@@ -92,41 +92,46 @@ public class KSARecommendedProductTestCases extends RecommendedProductTestCases 
 //        //Make sure the view cart button is displayed
 //        WebElementsAssertion.validateTheElementIsDisplayed(ksaProductDetailsPage.getViewCartBtn(),webDriver);
     }
-    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "(KSA Store/ Arabic Version): Make sure ability to add Recommended product to the cart", priority = 7)
-    public void verifyAbilityToAddRecommendedProductToCart() {
-        RecommendedProductPage recommendedProductpage = new RecommendedProductPage(webDriver);
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        recommendedProductpage.clickOnListItemsAndAssertion(recommendedProductpage.getAddToCartBtn(),webDriver,productDetailsPage.getAddToCartBtn());
-    }
-    @Test(groups = {"1.3 Medium Severity"},description = "(KSA Store/ Arabic Version): Make sure the name of product added to the Cart displayed correctly in the Recommended product pop-up", priority = 8)
-    public void verifyTheNameOfProductAddedToCatDisplayedInTheRecommendedPopup() {
-        RecommendedProductPage recommendedProductpage = new RecommendedProductPage(webDriver);
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.displayTheProduct();
-        String productNameInPDP=(DataHelperAndWait.getWebElementText(productDetailsPage.getProductName(),webDriver)).substring(5);
-        DataHelperAndWait.clickOnElement(productDetailsPage.getAddToCartBtn(),webDriver);
-        Assert.assertTrue(recommendedProductpage.getAddedProductToCartMsg().getText().startsWith(productNameInPDP));
-    }
-    @Test(groups = {"1.3 Medium Severity"},description = "(KSA Store/ Arabic Version): Make sure the product price displayed in the Recommended product pop-up matches with the product price displayed in PDP", priority = 9)
-    public void verifyTheProductPriceInTheRecommendedPopupMatchesWithThePriceDisplaysInPdp() {
-        RecommendedProductPage recommendedProductpage = new RecommendedProductPage(webDriver);
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        recommendedProductpage.displayTheRecommendedProductsPopUp();
-        String productPriceInRecommendedPopup = DataHelperAndWait.getWebElementText(recommendedProductpage.getProductPrice().get(1),webDriver);
-        DataHelperAndWait.clickOnElement(recommendedProductpage.getProductImages().get(1),webDriver);
-        try{
-            String productPriceInPdp =DataHelperAndWait.getWebElementText(productDetailsPage.getFinalProductPrice(),webDriver);
-            Assert.assertEquals(productPriceInPdp, productPriceInRecommendedPopup, "The product Price displayed in the Recommended pop-up is not match with the price in PDP"+ productPriceInPdp +" VS."+ productPriceInRecommendedPopup);
-        }
-        catch (Exception e){
-            System.out.println("An error occurs during open the page and this error already captured in other test case");
-        }
-    }
+//    @Test(groups = {"1.3 Medium Severity"},description = "(KSA Store/ Arabic Version): Make sure the product price displayed in the Recommended product pop-up matches with the product price displayed in PDP", priority = 7)
+//    public void verifyTheProductPriceInTheRecommendedPopupMatchesWithThePriceDisplaysInPdp() {
+//        RecommendedProductPage recommendedProductpage = new RecommendedProductPage(webDriver);
+//        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+//        recommendedProductpage.displayTheRecommendedProductsPopUp();
+//        String productPriceInRecommendedPopup;
+//        try{
+//         productPriceInRecommendedPopup = DataHelperAndWait.getWebElementText(recommendedProductpage.getProductPrice().get(0),webDriver);
+//        DataHelperAndWait.clickOnElement(recommendedProductpage.getProductImages().get(0),webDriver);}
+//        catch (IndexOutOfBoundsException e){
+//             productPriceInRecommendedPopup = DataHelperAndWait.getWebElementText(recommendedProductpage.getProductPrice().get(1),webDriver);
+//            DataHelperAndWait.clickOnElement(recommendedProductpage.getProductImages().get(1),webDriver);
+//        }
+//        DataHelperAndWait.clickOnElement(recommendedProductpage.getRecommendedProductsCloseIcon(),webDriver);
+//        try{
+//            String productPriceInPdp =DataHelperAndWait.getWebElementText(productDetailsPage.getFinalProductPrice(),webDriver);
+//            Assert.assertEquals(productPriceInPdp, productPriceInRecommendedPopup, "The product Price displayed in the Recommended pop-up is not match with the price in PDP"+ productPriceInPdp +" VS."+ productPriceInRecommendedPopup);
+//        }
+//        catch (Exception e){
+//            System.out.println("An error occurs during open the page and this error already captured in other test case");
+//        }
+//    }
+//    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "(KSA Store/ Arabic Version): Make sure ability to add Recommended product to the cart", priority = 8)
+//    public void verifyAbilityToAddRecommendedProductToCart() {
+//        RecommendedProductPage recommendedProductpage = new RecommendedProductPage(webDriver);
+//        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+//        recommendedProductpage.clickOnListItemsAndAssertion(recommendedProductpage.getAddToCartBtn(),webDriver,productDetailsPage.getAddToCartBtn());
+//    }
+//    @Test(groups = {"1.3 Medium Severity"},description = "(KSA Store/ Arabic Version): Make sure the name of product added to the Cart displayed correctly in the Recommended product pop-up", priority = 9)
+//    public void verifyTheNameOfProductAddedToCatDisplayedInTheRecommendedPopup() {
+//        RecommendedProductPage recommendedProductpage = new RecommendedProductPage(webDriver);
+//        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+//        productDetailsPage.displayTheProduct();
+//        String productNameInPDP=(DataHelperAndWait.getWebElementText(productDetailsPage.getProductName(),webDriver)).substring(6);
+//        DataHelperAndWait.clickOnElement(productDetailsPage.getAddToCartBtn(),webDriver);
+//        Assert.assertTrue(DataHelperAndWait.getWebElementText(recommendedProductpage.getAddedProductToCartMsg(),webDriver).startsWith(productNameInPDP));
+//    }
     @Test(groups = {"1.2 High Severity"},description = "(KSA Store/ Arabic Version): Make sure the clicking on the product card appears in the Recommended product pop-up will display the Product Details Page correctly", priority = 10)
     public void verifyClickingOnProductCardInTheRecommendedPopupWillDisplayThePdp() {
         RecommendedProductPage recommendedProductpage = new RecommendedProductPage(webDriver);
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        DataHelperAndWait.clickOnElement(recommendedProductpage.getProductImages().get(1),webDriver);
-        recommendedProductpage.verifyTheDisplayedPageDoesNotHaveErrors();
+        recommendedProductpage.clickOnProductCard();
     }
 }

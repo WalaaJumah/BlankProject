@@ -76,4 +76,11 @@ public class RecommendedProductPage extends BasePage {
             DataHelperAndWait.scrollToPositionZero(webDriver);
         }
     }
+    public void clickOnProductCard(){
+        for (int i = 0; i < productImages.size(); i++){
+            DataHelperAndWait.clickOnElement(productImages.get(i),webDriver);
+            verifyTheDisplayedPageDoesNotHaveErrors();
+            break;
+        }
+    }
 }
