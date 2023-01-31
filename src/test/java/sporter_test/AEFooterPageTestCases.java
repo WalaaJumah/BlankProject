@@ -431,7 +431,7 @@ public class AEFooterPageTestCases extends BaseTest {
     }
 
     //Bug: Clicking on the Sporter Blog link redirect the user to 404 Page
-    @Test(groups = {"2.12 Footer Section", "1.1 Critical Severity"},description = " Footer Section- Make sure the Sporter Blog appears in the footer works correctly", priority = 41)
+    @Test(groups = {"2.12 Footer Section", "1.3 Medium Severity"},description = " Footer Section- Make sure the Sporter Blog appears in the footer works correctly", priority = 41)
     public void verifySporterBlogLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
@@ -554,7 +554,7 @@ public class AEFooterPageTestCases extends BaseTest {
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"2.12 Footer Section", "1.2 High Severity"},description = " Footer Section- Make sure the Home Gym Equipment Link appears in the footer works correctly", priority = 54)
+    @Test(groups = {"2.12 Footer Section", "1.3 Medium Severity"},description = " Footer Section- Make sure the Home Gym Equipment Link appears in the footer works correctly", priority = 54)
     public void verifyHomeGymEquipmentLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();

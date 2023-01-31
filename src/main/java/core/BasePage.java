@@ -100,14 +100,14 @@ public class BasePage {
     public final  String youtubeURL = "https://www.youtube.com/user/SporterVideos";
     public final String searchUrl="catalogsearch/result/?q=";
     public final String productUrl = "/optimum-gold-standard-100-whey";
-    public final String oOSProductUrl = "/healthy-food/snacks-drinks/spreads/healthyco-peanut-butter";
     public final String notAvailableOfferProduct = "/catalog/product/view/id/44012/s/olimp-chitosan-chromium-43840/";
     public final String sportsUrl = "/sports/";
     public final String toysAndGamesUrl = "/toys-and-games";
     public final String wearableTechUrl = "/wearable-tech";
     public final String shippingInformationUrl = "/checkout";
     public  static String bogoProduct="";
-    public  static String bundleUrl="";
+    public  static String bundleUrl = "";
+    public  static String oOSProductUrl = "";
 
     public WebDriver webDriver;
     //Need to check
@@ -125,6 +125,10 @@ public class BasePage {
     public void navigateToBogoProduct(){
         webDriver.navigate().to(BasePage.BaseURL+aeDomain+bogoProduct);
         DataHelperAndWait.waitForUrlContains(bogoProduct,webDriver,6);
+    }
+    public void displayBundle(){
+        webDriver.navigate().to(BasePage.BaseURL+aeDomain+bundleUrl);
+        DataHelperAndWait.waitForUrlContains(bundleUrl,webDriver,15);
     }
     public void navigateToHomePage(){webDriver.navigate().to(BasePage.BaseURL);}
 

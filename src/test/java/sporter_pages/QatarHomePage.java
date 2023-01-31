@@ -614,7 +614,7 @@ public class QatarHomePage extends BasePage {
 
     public void clickOnNextButtonInTopSellerSectionInTopSellerSection(  ) {
         try{
-        DataHelperAndWait.isDisplayed(nextButtonInTopSellerSection, 10,webDriver);
+        DataHelperAndWait.isDisplayed(nextButtonInTopSellerSection, 15,webDriver);
         this.nextButtonInTopSellerSection.click();
     }catch (Exception e){
             DataHelperAndWait.isDisplayed(nextButtonInTopSellerSection, 5,webDriver);
