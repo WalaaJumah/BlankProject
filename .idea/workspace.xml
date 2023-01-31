@@ -6,14 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="86683dee-3ff6-4652-96ae-dd8bddfbd97f" name="Changes" comment="test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/RecommendedProductsPage/RecommendedProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/RecommendedProductsPage/RecommendedProductPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/RecommendedProductsTestCases/EgyptRecommendedProductTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/RecommendedProductsTestCases/EgyptRecommendedProductTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/RecommendedProductsTestCases/JordanRecommendedProductTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/RecommendedProductsTestCases/JordanRecommendedProductTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/RecommendedProductsTestCases/KSARecommendedProductTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/RecommendedProductsTestCases/KSARecommendedProductTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/RecommendedProductsTestCases/QatarRecommendedProductTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/RecommendedProductsTestCases/QatarRecommendedProductTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/RecommendedProductsTestCases/RecommendedProductTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/RecommendedProductsTestCases/RecommendedProductTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/RecommendedProductsTestCases/UAERecommendedProductTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/RecommendedProductsTestCases/UAERecommendedProductTestCases.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
