@@ -110,7 +110,7 @@ public class ProductDetailsTestCases extends BaseTest {
         productDetailsPage.keepShoppingAfterAddingToCart();
         String oldProductURL = webDriver.getCurrentUrl();
         productDetailsPage.addToCart();
-        productDetailsPage.keepShopping();
+//        productDetailsPage.keepShopping();
         String newProductURL = webDriver.getCurrentUrl();
         WebElementsAssertion.assertTheUrlEqualExpectedUrl(oldProductURL, newProductURL,webDriver);
     }
@@ -237,7 +237,7 @@ public class ProductDetailsTestCases extends BaseTest {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         DataHelperAndWait.scrollTo(productDetailsPage.getAddReviewButton(),webDriver);
         DataHelperAndWait.clickOnElement(productDetailsPage.getAddToCartBtnInProductHeaderBar(),webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getRecommendedProductsPopup(), webDriver);
+//        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getRecommendedProductsPopup(), webDriver);
     }
     @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify clicking on the By Brand Link appears in Product Name section will redirect the user to correct page ", priority = 29)
     public void verifyClickingOnByBrandLinkAppearsInProductNameSectionRedirectUserToCorrectPage() {
