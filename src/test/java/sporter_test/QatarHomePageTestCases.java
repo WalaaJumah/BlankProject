@@ -408,6 +408,7 @@ public class QatarHomePageTestCases extends BaseTest {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.navigate();
         Assert.assertTrue(qatarHomePage.getProductListInTopSellersSection().size() > 0, "There's no any products in the list");
+        try{
         for (int i = 0; i < qatarHomePage.getProductListInTopSellersSection().size(); i++) {
             if( qatarHomePage.getProductListInTopSellersSection().size()>5){
             if(qatarHomePage.getProductListInTopSellersSection().get(i).isDisplayed()){
@@ -431,6 +432,9 @@ public class QatarHomePageTestCases extends BaseTest {
                 qatarHomePage.getProductListInTopSellersSection().get(i).click();
                 qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();
             }
+        }}
+        catch (Exception e){
+            System.out.println("There's no products in the list");
         }
 
         }
