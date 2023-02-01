@@ -16,11 +16,13 @@ public class JordanProductDetailsPage extends ProductDetailsPage {
         PageFactory.initElements(webDriver, this);
 
     }
+    @Override
     public void displayTheProduct() {
         webDriver.navigate().to(BaseURL + jordanDomain + productUrl);
         WebElementsAssertion.validateTheCurrentUrlContainsString(productUrl,webDriver);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
+    @Override
     public void displayOOSProduct() {
         webDriver.navigate().to(BaseURL + jordanDomain + oOSProductUrl);
         verifyTheDisplayedPageDoesNotHaveErrors();

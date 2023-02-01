@@ -4,7 +4,7 @@
 <suite name="Automation Reports"  >
     <listeners>
 <!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
-<!--        <listener class-name="extent_report_listner.ExtentReportListener" />-->
+        <listener class-name="extent_report_listner.ExtentReportListener" />
     </listeners>
     <test name=" System Testing Report- Production" preserve-order="true">
         <parameter name="environment" value="https://new.sporter.com" />
@@ -22,8 +22,8 @@
 <!--&lt;!&ndash;                </methods>&ndash;&gt;-->
 <!--            </class>-->
 <!--            <class name="sporter_test.headerTestCases.KSAHeaderTestCases"/>-->
-<!--            <class name="sporter_test.headerTestCases.UAEHeaderTestCases"/>-->
-<!--            <class name="sporter_test.headerTestCases.JordanHeaderTestCases"/>-->
+            <class name="sporter_test.headerTestCases.UAEHeaderTestCases"/>
+            <class name="sporter_test.headerTestCases.JordanHeaderTestCases"/>
 <!--            <class name="sporter_test.headerTestCases.QatarHeaderTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.EgyptHeaderTestCases"/>-->
 <!--            <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>-->
@@ -36,11 +36,11 @@
 <!--            <class name="sporter_test.productTestCases.JordanProductDetailsTestCases"/>-->
 <!--            <class name="sporter_test.productTestCases.QatarProductDetailsTestCases"/>-->
 <!--            <class name="sporter_test.productTestCases.EgyptProductDetailsTestCases"/>-->
-            <class name="sporter_test.RecommendedProductsTestCases.EgyptRecommendedProductTestCases"/>
-            <class name="sporter_test.RecommendedProductsTestCases.JordanRecommendedProductTestCases"/>
-            <class name="sporter_test.RecommendedProductsTestCases.QatarRecommendedProductTestCases"/>
-            <class name="sporter_test.RecommendedProductsTestCases.UAERecommendedProductTestCases"/>
-            <class name="sporter_test.RecommendedProductsTestCases.KSARecommendedProductTestCases"/>
+<!--            <class name="sporter_test.RecommendedProductsTestCases.EgyptRecommendedProductTestCases"/>-->
+<!--            <class name="sporter_test.RecommendedProductsTestCases.JordanRecommendedProductTestCases"/>-->
+<!--            <class name="sporter_test.RecommendedProductsTestCases.QatarRecommendedProductTestCases"/>-->
+<!--            <class name="sporter_test.RecommendedProductsTestCases.UAERecommendedProductTestCases"/>-->
+<!--            <class name="sporter_test.RecommendedProductsTestCases.KSARecommendedProductTestCases"/>-->
         </classes>
     </test>
 

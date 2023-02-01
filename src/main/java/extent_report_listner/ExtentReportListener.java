@@ -100,14 +100,34 @@ public class ExtentReportListener  implements IReporter {
 
         if (tests.size() > 0) {
             for (ITestResult result : tests.getAllResults()) {
-                test = extent.startTest(result.getMethod().getDescription());
+                //             Class name test
+                String countryName =result.getTestClass().getRealClass().getSimpleName().replace("TestCases"," ");
+                String newDescription = result.getMethod().getDescription().replace("{{CountryName}}",countryName);
+//*************
+//                test = extent.startTest(result.getMethod().getDescription());
 //                    test = extent.startTest(result.getMethod().getMethodName());
 
+//             Class name test
+//
+                    test=extent.startTest(newDescription);
+//**************************************************
                 test.setStartedTime(getTime(result.getStartMillis()));
                 test.setEndedTime(getTime(result.getEndMillis()));
 
-                for (String group : result.getMethod().getGroups())
-                    test.assignCategory(group);
+                for (String group : result.getMethod().getGroups()){
+                    //Retrieve Test Result in the Method description
+//                    String countryName = result.getClass().getSimpleName();
+                    //Retrieve TestNG Method
+//                    String countryName =result.getMethod().getClass().getSimpleName();
+                    //Get full class name
+//                    String countryName =result.getTestClass().getName();
+                    //Retrieve the exact className
+//                    String countryName =result.getTestClass().getRealClass().getSimpleName().replace("TestCases"," ");
+//
+//                    String newDescription = result.getMethod().getDescription().replace("{{CountryName}}",countryName);
+//                    test=extent.startTest(newDescription);
+//                    test = extent.createTest(newDescription);
+                    test.assignCategory(group);}
 
                     //Create Node
 //                if(test.assignCategory(group).getClass().getName().contains("HomePage")){
