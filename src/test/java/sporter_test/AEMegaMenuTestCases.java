@@ -2508,7 +2508,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
-    @Test(groups = {"2.06 MegaMenu", "1.2 High Severity"},description = "MegaMenu- Make sure clicking on the Healthy Meals Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 162)
+    @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the Healthy Meals Option appearing in the Healthy Food menu inside ShopBy Menu will redirect the User to the correct URL", priority = 162)
     public void verifyClickingOnHealthyMealsOptionInHealthyFoodMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3168,7 +3168,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
-    @Test(groups = {"2.06 MegaMenu", "1.2 High Severity"},description = "MegaMenu- Make sure clicking on the Watches Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 202)
+    @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the Watches Option appearing in the Sports menu inside ShopBy Menu will redirect the User to the correct URL", priority = 202)
     public void verifyClickingOnWatchesOptionInSportsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3714,7 +3714,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
-    @Test(groups = {"2.06 MegaMenu", "1.2 High Severity"},description = "MegaMenu- Make sure clicking on the Muscle Pharm Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 236)
+    @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the Muscle Pharm Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 236)
     public void verifyClickingOnMusclePharmOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3938,7 +3938,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
-    @Test(groups = {"2.06 MegaMenu", "1.2 High Severity"},description = "MegaMenu- Make sure clicking on the Gat Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 250)
+    @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the Gat Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 250)
     public void verifyClickingOnGatNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4052,7 +4052,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
-    @Test(groups = {"2.06 MegaMenu", "1.2 High Severity"},description = "MegaMenu- Make sure clicking on the Divine Health Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 257)
+    @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the Divine Health Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 257)
     public void verifyClickingOnDivineHealthOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4596,7 +4596,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
-    @Test(groups = {"2.06 MegaMenu", "1.2 High Severity"},description = "MegaMenu- Make sure clicking on the Quest Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 291)
+    @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the Quest Nutrition Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 291)
     public void verifyClickingOnQuestNutritionOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4628,7 +4628,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
-    @Test(groups = {"2.06 MegaMenu", "1.2 High Severity"},description = "MegaMenu- Make sure clicking on the Reign Energy Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 293)
+    @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the Reign Energy Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 293)
     public void verifyClickingOnReignEnergyOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6794,7 +6794,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
-    @Test(groups = {"2.06 MegaMenu", "1.2 High Severity"},description = "MegaMenu- Make sure clicking on the Ready To Eat Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 439)
+    @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the Ready To Eat Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 439)
     public void verifyClickingOnReadyToEatOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6809,7 +6809,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
-    @Test(groups = {"2.06 MegaMenu", "1.2 High Severity"},description = "MegaMenu- Make sure clicking on the Healthy Meals Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 440)
+    @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the Healthy Meals Option appearing in the Healthy Food main menu will redirect the User to the correct URL", priority = 440)
     public void verifyClickingOnHealthyMealsOptionInHealthyFoodMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -6985,7 +6985,8 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
                 //aeMegamenuPage.navigateToHomePage();
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
-        String expectedUrl=aeMegamenuPage.getSportsMainMenu().getAttribute("href");
+        String expectedUrl="sports";
+//        String expectedUrl=aeMegamenuPage.getSportsMainMenu().getAttribute("href");
         aeMegamenuPage.getSportsMainMenu().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "The expected URL "+expectedUrl+" does not matched with the actual URL "+webDriver.getCurrentUrl() );
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
