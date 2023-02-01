@@ -21,6 +21,12 @@ public class BasePage {
 
     public  static String BaseURL = "https://sporter.com";
     public final String aeDomain = "/en-ae";
+
+//    public void setStoreCountry(String storeCountry) {
+//        this.storeCountry = storeCountry;
+//    }
+
+    public String storeCountry ="";
     public final String omanDomain = "/en-om";
     public final String bahrainDomain = "/en-bh";
     public final String kuwaitDomain = "/en-kw";

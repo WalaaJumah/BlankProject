@@ -22,8 +22,8 @@
 <!--&lt;!&ndash;                </methods>&ndash;&gt;-->
 <!--            </class>-->
 <!--            <class name="sporter_test.headerTestCases.KSAHeaderTestCases"/>-->
-            <class name="sporter_test.headerTestCases.UAEHeaderTestCases"/>
-            <class name="sporter_test.headerTestCases.JordanHeaderTestCases"/>
+<!--            <class name="sporter_test.headerTestCases.UAEHeaderTestCases"/>-->
+<!--            <class name="sporter_test.headerTestCases.JordanHeaderTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.QatarHeaderTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.EgyptHeaderTestCases"/>-->
 <!--            <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>-->
@@ -35,7 +35,7 @@
 <!--            <class name="sporter_test.productTestCases.UAEProductDetailsTestCases"/>-->
 <!--            <class name="sporter_test.productTestCases.JordanProductDetailsTestCases"/>-->
 <!--            <class name="sporter_test.productTestCases.QatarProductDetailsTestCases"/>-->
-<!--            <class name="sporter_test.productTestCases.EgyptProductDetailsTestCases"/>-->
+            <class name="sporter_test.productTestCases.EgyptProductDetailsTestCases"/>
 <!--            <class name="sporter_test.RecommendedProductsTestCases.EgyptRecommendedProductTestCases"/>-->
 <!--            <class name="sporter_test.RecommendedProductsTestCases.JordanRecommendedProductTestCases"/>-->
 <!--            <class name="sporter_test.RecommendedProductsTestCases.QatarRecommendedProductTestCases"/>-->

@@ -39,7 +39,10 @@ public class EgyptProductDetailsTestCases extends ProductDetailsTestCases{
         }
         else {
             webDriver.navigate().to(BasePage.BaseURL+egyptHomePage.egyptDomain);
-            CloseInitialDialog();          }
+            CloseInitialDialog();
+//            productDetailsPage.storeCountry="/en-eg";
+            productDetailsPage.storeCountry="/en-eg";
+        }
     }
 //    @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the customer can navigate to the home page using the BreadCrumb ", priority = 12)
 //    public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumb() {

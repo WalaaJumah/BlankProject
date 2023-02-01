@@ -42,7 +42,7 @@ public class ExtentReportListener  implements IReporter {
             for (ISuiteResult r : result.values()) {
         //The date will include with the file name
         extent = new ExtentReports("G:\\My Drive\\Automation Reports" + File.separator
-                + "Magento-Sporter-Automation_Report " + "[" + r.getTestContext().getName() + "]" + date + ".html", true);
+                + "Sporter2.1 Automation" + "[" + r.getTestContext().getName() + "]" + date + ".html", true);
 //        extent = new ExtentReports("C:\\Users\\w.jumaa\\Desktop\\Automation Reports" + File.separator
 //                + "Magento-Sporter-Automation_Report " + "[" + r.getTestContext().getName() + "]" + date + ".html", true);
 

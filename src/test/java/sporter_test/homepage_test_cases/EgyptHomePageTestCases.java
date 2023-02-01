@@ -29,7 +29,8 @@ public class EgyptHomePageTestCases extends HomePageTestCases {
         }
         else {
             webDriver.navigate().to(BasePage.BaseURL+egyptHomePage.egyptDomain);
-            CloseInitialDialog();          }
+            CloseInitialDialog();
+        }
     }
     @Test(enabled = false)
     public void verifyHomePageUnderShopByCategoryBannersAreDisplayed() {}

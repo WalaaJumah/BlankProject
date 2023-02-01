@@ -132,7 +132,8 @@ public class ProductDetailsPage extends BasePage {
     private WebElement reviewsPageNumber;
     //Methods we need during testing the Product details page
     public void displayTheProduct() {
-        webDriver.navigate().to(BaseURL + aeDomain + productUrl);
+        webDriver.navigate().to(BaseURL + storeCountry + productUrl);
+        System.out.println(BaseURL + storeCountry + productUrl);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
     public void addToCart() {
@@ -150,7 +151,7 @@ public class ProductDetailsPage extends BasePage {
         this.keepShopping( );
     }
     public void displayOOSProduct() {
-        webDriver.navigate().to(BaseURL + aeDomain + oOSProductUrl);
+        webDriver.navigate().to(BaseURL + storeCountry + oOSProductUrl);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
     public void increaseTheQuantity() {
