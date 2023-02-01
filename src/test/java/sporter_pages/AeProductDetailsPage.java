@@ -276,7 +276,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public WebElement getFinalProductPrice() {
-        DataHelperAndWait.waitToBeVisible(FinalProductPrice, 10, webDriver);
+        DataHelperAndWait.waitToBeVisible(FinalProductPrice, 12, webDriver);
         return FinalProductPrice;
     }
 
