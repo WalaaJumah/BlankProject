@@ -38,6 +38,8 @@ public class ProductDetailsPage extends BasePage {
     private WebElement cartPopUp;
     @FindBy(id = "keepShoppingBtn")
     private WebElement keepShippingBtn;
+    @FindBy(id = "ThumbsUpContainer")
+    private WebElement recommendedProductsPopup;
     @FindBy(xpath = "//button[@class='button_btn__zg_G5 ']/span")
     private WebElement continueBtnInOOSPoup;
     @FindBy(id = "viewCartBtn")
