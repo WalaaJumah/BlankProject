@@ -281,7 +281,7 @@ public class AEGuestUserPage extends BasePage {
     }
 
     public void clickOnProceedCheckoutBtnInCartPopup() {
-        DataHelperAndWait.waitToBeVisible(proceedCheckoutBtnInCartPopup, 6,webDriver);
+        DataHelperAndWait.waitToBeVisible(proceedCheckoutBtnInCartPopup, 15,webDriver);
         this.proceedCheckoutBtnInCartPopup.click();
     }
 
@@ -309,7 +309,7 @@ public class AEGuestUserPage extends BasePage {
 
     public void viewCart() {
         try{
-        DataHelperAndWait.waitToBeClickable(viewCartBtn, 10,webDriver);
+        DataHelperAndWait.waitToBeClickable(viewCartBtn, 15,webDriver);
         this.viewCartBtn.click();}
         catch (Exception e){
             webDriver.navigate().refresh();
@@ -337,8 +337,9 @@ public class AEGuestUserPage extends BasePage {
         this.returnToCartLink.click();
     }
 
-    public void fillInShippingInformationInputField(String firstName, String lastName, String email, String phone, String address, String streetLineOne, String streetLineTwo) {
-        DataHelperAndWait.waitToBeVisible(firstNameField, 12,webDriver);
+    public void fillInShippingInformationInputField(String firstName, String lastName, String email, String phone, String streetLineOne, String streetLineTwo) {
+//    public void fillInShippingInformationInputField(String firstName, String lastName, String email, String phone, String address, String streetLineOne, String streetLineTwo) {
+        DataHelperAndWait.waitToBeVisible(firstNameField, 15,webDriver);
         DataHelperAndWait.updateAllText(firstNameField,firstName);
 //        firstNameField.sendKeys(firstName);
         DataHelperAndWait.waitToBeVisible(lastNameField, 12,webDriver);
@@ -350,8 +351,9 @@ public class AEGuestUserPage extends BasePage {
         DataHelperAndWait.waitToBeVisible(phoneField, 12,webDriver);
         DataHelperAndWait.updateAllText(phoneField,phone);
 //        phoneField.sendKeys(phone);
-        DataHelperAndWait.waitToBeVisible(addressField, 12,webDriver);
-        DataHelperAndWait.updateAllText(addressField,address);
+        //Removed based on the ticket 9025
+//        DataHelperAndWait.waitToBeVisible(addressField, 12,webDriver);
+//        DataHelperAndWait.updateAllText(addressField,address);
 //        addressField.sendKeys(address);
         DataHelperAndWait.waitToBeVisible(streetLineOneField, 12,webDriver);
         DataHelperAndWait.updateAllText(streetLineOneField,streetLineOne);
@@ -396,8 +398,8 @@ public class AEGuestUserPage extends BasePage {
         DataHelperAndWait.clearWebField(emailField);
         DataHelperAndWait.waitToBeVisible(phoneField, 12,webDriver);
         DataHelperAndWait.clearWebField(phoneField);
-        DataHelperAndWait.waitToBeVisible(addressField, 12,webDriver);
-        DataHelperAndWait.clearWebField(addressField);
+//        DataHelperAndWait.waitToBeVisible(addressField, 12,webDriver);
+//        DataHelperAndWait.clearWebField(addressField);
         DataHelperAndWait.waitToBeVisible(streetLineOneField, 12,webDriver);
         DataHelperAndWait.clearWebField(streetLineOneField);
         DataHelperAndWait.waitToBeVisible(streetLineTwoField, 12,webDriver);
