@@ -4,6 +4,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
@@ -82,10 +83,29 @@ public class BaseTest {
             case "firefox":
                 System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver.exe");
                 webDriver = new FirefoxDriver();
+                //FirefoxDriver headless
+//                FirefoxOptions options  = new FirefoxOptions();
+//                options.addArguments("headless");
+//                webDriver = new FirefoxDriver(options);
                 break;
             case "chrome":
+                //This Statement will run always
                 System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
-                webDriver = new ChromeDriver();
+                //This if we need to run the Script using the Normal WebDriver
+//                webDriver = new ChromeDriver();
+
+                //Chrome headless
+//                ChromeOptions opt = new ChromeOptions();
+//                opt.addArguments("headless");
+//                 webDriver = new ChromeDriver(opt);
+
+                //Chrome Headless from https://stackoverflow.com/questions/45562750/elementnotvisibleexception-when-use-headless-chrome-browser
+                ChromeOptions options = new ChromeOptions();
+                options.addArguments("headless");
+                options.addArguments("disable-gpu");
+                options.addArguments("window-size=1200,1100");
+                webDriver = new ChromeDriver(options);
+
                 break;
             case "edge":
                 System.setProperty("webdriver.edge.driver", "src/test/resources/drivers/msedgedriver.exe");
@@ -98,7 +118,6 @@ public class BaseTest {
         webDriver.manage().window().maximize();
 //        webDriver.navigate().to(environment);
         webDriver.navigate().to(environment+"/"+country);
-        DataHelperAndWait.scrollToPositionZero(webDriver);
         this.CloseInitialDialog();
     }
 
