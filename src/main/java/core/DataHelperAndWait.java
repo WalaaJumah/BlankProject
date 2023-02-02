@@ -249,8 +249,14 @@ public  class DataHelperAndWait  {
 
         public static void validateNextOrPreviousBtnInPanelWork(List<WebElement> productsList,WebElement productCardNum,WebElement nextOrPreviousButton,WebDriver driver){
         if(productsList.size()>4){
+            try{
             clickOnElement(nextOrPreviousButton,driver);
-            WebElementsAssertion.validateTheElementIsDisplayed(productCardNum,driver);
+            WebElementsAssertion.validateTheElementIsDisplayed(productCardNum,driver);}
+            catch (Exception e){
+                driver.navigate().refresh();
+                clickOnElement(nextOrPreviousButton,driver);
+                WebElementsAssertion.validateTheElementIsDisplayed(productCardNum,driver);
+            }
         }
         else{
             System.out.println("There's only "+ productsList.size()+1+" in the panel");
