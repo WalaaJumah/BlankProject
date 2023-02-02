@@ -28,11 +28,13 @@ public class RecommendedProductTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(productDetailsPage.getAddToCartBtn(),webDriver);
         DataHelperAndWait.clickOnElement(productDetailsPage.getViewCartBtn(),webDriver);
         WebElementsAssertion.validateTheCurrentUrlContainsString(productDetailsPage.cartURL,webDriver);
+
     }
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}: Make sure to close the Recommended products pop up correctly", priority = 4)
     public void verifyCloseRecommendedPopupCorrectly() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         RecommendedProductPage recommendedProductpage = new RecommendedProductPage(webDriver);
+        recommendedProductpage.removeProductFromCart();
         recommendedProductpage.displayTheRecommendedProductsPopUp();
         DataHelperAndWait.clickOnElement(recommendedProductpage.getRecommendedProductsCloseIcon(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getAddToCartBtn(),webDriver);
@@ -49,7 +51,6 @@ public class RecommendedProductTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}: Make sure all components appear correctly in  Recommended products like keep shopping and view cart and products list and titles", priority = 6)
     public void verifyAllRecommendedPopupComponentsIsExist() {
         RecommendedProductPage recommendedProductpage = new RecommendedProductPage(webDriver);
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         recommendedProductpage.displayTheRecommendedProductsPopUp();
         //Make sure the check circle icon is displayed
         WebElementsAssertion.validateTheElementIsDisplayed(recommendedProductpage.getCircleIcon(),webDriver);
@@ -92,6 +93,7 @@ public class RecommendedProductTestCases extends BaseTest {
     public void verifyTheNameOfProductAddedToCatDisplayedInTheRecommendedPopup() {
         RecommendedProductPage recommendedProductpage = new RecommendedProductPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        recommendedProductpage.removeProductFromCart();
         productDetailsPage.displayTheProduct();
         String productNameInPDP=(DataHelperAndWait.getWebElementText(productDetailsPage.getProductName(),webDriver)).substring(6);
         DataHelperAndWait.clickOnElement(productDetailsPage.getAddToCartBtn(),webDriver);
@@ -101,7 +103,26 @@ public class RecommendedProductTestCases extends BaseTest {
     public void verifyClickingOnProductCardInTheRecommendedPopupWillDisplayThePdp() {
         RecommendedProductPage recommendedProductpage = new RecommendedProductPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        DataHelperAndWait.clickOnElement(recommendedProductpage.getProductImages().get(1),webDriver);
+//        DataHelperAndWait.clickOnElement(recommendedProductpage.getProductImages().get(0),webDriver);
+        recommendedProductpage.clickOnProductCard();
         recommendedProductpage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
+    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Make sure the Recommended product pop-up will hide after clicking on the Keep Shopping Button", priority = 11,expectedExceptions = { org.openqa.selenium.NoSuchElementException.class })
+    public void verifyRecommendedProductsPopUpisHiddenAfterClickingOnTheKeepShoppingBtn() {
+        RecommendedProductPage recommendedProductpage = new RecommendedProductPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        productDetailsPage.displayTheProduct();
+        productDetailsPage.keepShoppingAfterAddingToCart();
+        Assert.assertFalse(productDetailsPage.getKeepShippingBtn().isDisplayed());
+    }
+       @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Make sure the Recommended product pop-up will hide after clicking on the View Cart Button", priority = 12,expectedExceptions = { org.openqa.selenium.NoSuchElementException.class })
+    public void verifyRecommendedProductsPopUpisHiddenAfterClickingOnTheViewBtn() {
+        RecommendedProductPage recommendedProductpage = new RecommendedProductPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        productDetailsPage.displayTheProduct();
+           DataHelperAndWait.clickOnElement(productDetailsPage.getAddToCartBtn(),webDriver);
+           DataHelperAndWait.clickOnElement(productDetailsPage.getViewCartBtn(),webDriver);
+        Assert.assertFalse(productDetailsPage.getKeepShippingBtn().isDisplayed());
+    }
+
 }

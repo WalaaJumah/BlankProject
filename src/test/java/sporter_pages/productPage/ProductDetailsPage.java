@@ -14,6 +14,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import sporter_pages.homepage_classes.HomePage;
 import xml_reader.XmlReader;
 
 import java.util.List;
@@ -132,6 +133,14 @@ public class ProductDetailsPage extends BasePage {
     private WebElement searchPageTitle;
     @FindBy(xpath = "//div[@class='reviewContainer_reviewsIndicator__kU10r']")
     private WebElement reviewsPageNumber;
+    @FindBy(id= "AddToCartErrContainer")
+    private WebElement AddToCartErrorPopUp;
+    @FindBy(id= "removeItemBtn")
+    private WebElement removeItem;
+
+    @FindBy(id= "closeAddToCartErrBtn")
+    private WebElement closeToCartErrorPopUp;
+
     //Methods we need during testing the Product details page
     public void displayTheProduct() {
         webDriver.navigate().to(BaseURL + storeCountry + productUrl);
@@ -148,10 +157,23 @@ public class ProductDetailsPage extends BasePage {
        DataHelperAndWait.clickOnElement(viewCartBtn , webDriver);
     }
     public void keepShoppingAfterAddingToCart(){
-        this.displayTheProduct( );
-        this.addToCart( );
-        this.keepShopping( );
-    }
+        HomePage homePage=new HomePage(webDriver);
+        try{
+            this.displayTheProduct( );
+            this.addToCart( );
+            this.keepShopping( );}
+        catch (Exception e){
+            if(this.getAddToCartErrorPopUp().isDisplayed()){
+                DataHelperAndWait.clickOnElement(this.closeToCartErrorPopUp,webDriver);
+                navigateToHomePage();
+                DataHelperAndWait.clickOnElement(homePage.getProductsInTopSellersSection().get(0),webDriver);
+                this.displayTheProduct( );
+                this.addToCart( );
+                this.keepShopping( );
+            }
+        }}
+
+
     public void displayOOSProduct() {
         webDriver.navigate().to(BaseURL + storeCountry + oOSProductUrl);
         verifyTheDisplayedPageDoesNotHaveErrors();

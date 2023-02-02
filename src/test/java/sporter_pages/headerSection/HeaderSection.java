@@ -53,4 +53,7 @@ public class HeaderSection extends BasePage {
     private WebElement countryMenuIcon;
     @FindBy(id = "LangSelector")
     private WebElement LanguageBtn;
+        @FindBy(id = "cartPagelink")
+    private WebElement viewCartLinkInCartPopUp;
+
 }

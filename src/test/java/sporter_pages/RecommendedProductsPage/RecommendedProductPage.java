@@ -14,6 +14,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import sporter_pages.headerSection.HeaderSection;
+import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.productPage.ProductDetailsPage;
 
 import java.util.List;
@@ -21,6 +23,8 @@ import java.util.List;
 @Getter
 public class RecommendedProductPage extends BasePage {
     ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+    HomePage homePage=new HomePage(webDriver);
+    HeaderSection headerSection= new HeaderSection(webDriver);
 
     public RecommendedProductPage(WebDriver webDriver) {
         super(webDriver);
@@ -55,10 +59,32 @@ public class RecommendedProductPage extends BasePage {
     @FindBy(xpath = "(//a[@class='rcmd-product-name'])[1]")
     private WebElement firstProductName;
 
+
     public void displayTheRecommendedProductsPopUp(){
         productDetailsPage.displayTheProduct();
-        DataHelperAndWait.clickOnElement(productDetailsPage.getAddToCartBtn(),webDriver);
-        DataHelperAndWait.waitToBeVisible(productDetailsPage.getKeepShippingBtn(),webDriver);
+//        DataHelperAndWait.clickOnElement(productDetailsPage.getAddToCartBtn(),webDriver);
+//        DataHelperAndWait.waitToBeVisible(productDetailsPage.getKeepShippingBtn(),webDriver);
+        try{
+            DataHelperAndWait.clickOnElement(productDetailsPage.getAddToCartBtn(),webDriver);
+            DataHelperAndWait.waitToBeVisible(productDetailsPage.getKeepShippingBtn(),webDriver);}
+        catch (Exception e){
+            if(productDetailsPage.getAddToCartErrorPopUp().isDisplayed()){
+                DataHelperAndWait.clickOnElement(productDetailsPage.getCloseToCartErrorPopUp(),webDriver);
+                DataHelperAndWait.clickOnElement(headerSection.getCartIcon(),webDriver);
+                DataHelperAndWait.clickOnElement(headerSection.getViewCartLinkInCartPopUp(),webDriver);
+                DataHelperAndWait.clickOnElement(productDetailsPage.getRemoveItem(),webDriver);
+                productDetailsPage.displayTheProduct();
+                DataHelperAndWait.clickOnElement(productDetailsPage.getAddToCartBtn(),webDriver);
+                DataHelperAndWait.waitToBeVisible(productDetailsPage.getKeepShippingBtn(),webDriver);
+            }
+        }
+    }
+    public void removeProductFromCart(){
+        navigateToHomePage();
+        DataHelperAndWait.clickOnElement(headerSection.getCartIcon(),webDriver);
+        DataHelperAndWait.clickOnElement(headerSection.getViewCartLinkInCartPopUp(),webDriver);
+        DataHelperAndWait.clickOnElement(productDetailsPage.getRemoveItem(),webDriver);
+        productDetailsPage.displayTheProduct();
     }
     public void clickOnAllListItemsAppearingInTheRecommendedPopup(List<WebElement> webElement){
         for (int i = 0; i < webElement.size(); i++){

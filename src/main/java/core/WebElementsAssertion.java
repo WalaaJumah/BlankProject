@@ -23,6 +23,7 @@ public class WebElementsAssertion {
         DataHelperAndWait.waitToBeVisible(webElement,webDriver);
         Assert.assertTrue(webElement.isDisplayed(), "This element is not displayed: "+ webElement);
     }
+
     public static void assertionEqualsForElementAttribute(WebElement webElement, WebDriver webDriver, String expectedResult){
         DataHelperAndWait.waitToBeVisible(webElement,webDriver);
         Assert.assertEquals(webElement.getText(), expectedResult);
