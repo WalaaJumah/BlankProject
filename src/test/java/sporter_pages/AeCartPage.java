@@ -281,7 +281,7 @@ public class AeCartPage extends BasePage {
     }
 
     public void clickOnViewCartInCartPopUp() {
-        DataHelperAndWait.waitToBeVisible(viewCartInCartPopup, 3,webDriver);
+        DataHelperAndWait.waitToBeVisible(viewCartInCartPopup, 15,webDriver);
         this.viewCartInCartPopup.click();
     }
 

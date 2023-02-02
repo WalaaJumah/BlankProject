@@ -363,7 +363,7 @@ public class AeProductDetailsPage extends BasePage {
 
     public void addToCart() {
         try{
-        DataHelperAndWait.waitToBeClickable(addToCartBtn, 8, webDriver);
+        DataHelperAndWait.waitToBeClickable(addToCartBtn, 16, webDriver);
         this.addToCartBtn.click();}
         catch(Exception e){
             DataHelperAndWait.waitToBeClickable(addToCartBtn, 6, webDriver);
@@ -383,7 +383,7 @@ public class AeProductDetailsPage extends BasePage {
 
     public void viewCart() {
         try{
-        DataHelperAndWait.waitToBeVisible(viewCartBtn, 10, webDriver);
+        DataHelperAndWait.waitToBeVisible(viewCartBtn, 15, webDriver);
         this.viewCartBtn.click();}
         catch(Exception e){
             DataHelperAndWait.waitToBeVisible(viewCartBtn, 6, webDriver);
