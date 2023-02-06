@@ -9,6 +9,7 @@ package core;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import xml_reader.XmlReader;
 
 import java.util.List;
 
@@ -73,6 +74,15 @@ public class WebElementsAssertion {
             DataHelperAndWait.waitToBeVisible(webElement.get(i),webDriver);
             Assert.assertTrue(webElement.get(i).isDisplayed(), "This element is not displayed: "+ webElement);
         }
+    }
+    public static void checkRequiredErrorMsgIsDisplayed(WebElement webElement,WebDriver webDriver){
+        if(webDriver.getCurrentUrl().contains("sporter.com/ar")){
+            WebElementsAssertion.assertionWebElementEqualText(webElement,webDriver, XmlReader.getXMLData("requiredErrorMsAr"));
+        }
+        if(webDriver.getCurrentUrl().contains("sporter.com/en")){
+            WebElementsAssertion.assertionWebElementEqualText(webElement,webDriver, XmlReader.getXMLData("requiredErrorMsEn"));
+        }
+
     }
 
 }

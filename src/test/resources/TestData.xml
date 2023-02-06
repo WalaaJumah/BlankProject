@@ -25,6 +25,27 @@
         <nickNameLong> Automation  Automation  Automation  Automation  Automation  Automation  Automation  Automation  Automation  Automation  Automation  Automation  Automation  Automation  Automation </nickNameLong>
 
     </ParentData1>
+    <RegistartionForm>
+        <correctEmail>Sportertesta@gmail.com</correctEmail>
+        <incorrectEmailFormate>Sportertesta@gmail</incorrectEmailFormate>
+        <correctPassword>@SD123456789</correctPassword>
+        <shortPassword>123</shortPassword>
+        <passwordDoesNotMatchTheRules>123456789</passwordDoesNotMatchTheRules>
+        <firstName>Automation</firstName>
+        <lastName>User</lastName>
+        <requiredErrorMsEn>This is a required field.</requiredErrorMsEn>
+        <requiredErrorMsAr>هذه الخانة مطلوبة</requiredErrorMsAr>
+        <emailFormatErrorEn>Please enter a valid email address (Ex: johndoe@domain.com).</emailFormatErrorEn>
+        <emailFormatErrorAr>The Msg is not translate</emailFormatErrorAr>
+        <passwordShortErrorEn>Please enter 8 or more characters. Leading and trailing spaces will be ignored.</passwordShortErrorEn>
+        <passwordShortErrorAr>The Msg is not translate</passwordShortErrorAr>
+        <passwordFormatErrorEn>Minimum of different classes of characters in password is 3. Classes of characters: Lower Case, Upper Case, Digits, Special Characters.</passwordFormatErrorEn>
+        <passwordFormatErrorAr>The Msg is not translate</passwordFormatErrorAr>
+        <confirmpasswordErrorEn>Please enter the same value again.</confirmpasswordErrorEn>
+        <confirmpasswordErrorAr>The Msg is not translate</confirmpasswordErrorAr>
+
+
+    </RegistartionForm>
     <shippingAddress>
         <addressId>13523</addressId>
         <addressArea>amman</addressArea>
@@ -43,4 +64,5 @@
         <addressBiuldingName>building 1</addressBiuldingName>
         <addressFullContactName>Muna Abuyounes</addressFullContactName>
     </shippingAddress>
+
 </Data>

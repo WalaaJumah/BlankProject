@@ -5,6 +5,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
 
+import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.*;
 import java.util.NoSuchElementException;
@@ -15,7 +16,8 @@ import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 public  class DataHelperAndWait  {
-    private static int WaitTime=17;
+    private static int WaitTime=18;
+
     public static   void waitForElement(WebElement element, WebDriver webDriver) {
         WebDriverWait wait;
         wait = new WebDriverWait(webDriver, WaitTime);
@@ -111,9 +113,12 @@ public  class DataHelperAndWait  {
         webDriver.switchTo().window(numberOfTabsTwo.get(tabIndex));
     }
     public static String generateRandomEmail(){
+        String  pattern2 = "ss";
+        SimpleDateFormat  simpleDateFormat2 = new SimpleDateFormat(pattern2);
+        String  date2 = simpleDateFormat2.format(new Date());
         Random randomGenerator = new Random();
         int randomInt = randomGenerator.nextInt(1000);
-        return "username"+ randomInt +"@gmail.com";
+        return "AutomationUser"+ randomInt +date2+"@gmail.com";
     }
     public static  void selectFromDropDownList(String element, List<WebElement> list) {
         for (WebElement option : list) {
@@ -287,7 +292,15 @@ public  class DataHelperAndWait  {
             waitToBeVisible(webElement,webDriver);
                 action.moveToElement(webElement).perform();}
         catch (Exception e){
-            action.moveToElement(webElement).perform();}
+            action.moveToElement(webElement).perform();}}
+
+        public static void hoverOnElementAndClick(WebElement webElement, WebDriver webDriver){
+        Actions action = new Actions(webDriver);
+        try{
+            waitToBeVisible(webElement,webDriver);
+                action.moveToElement(webElement).click();}
+        catch (Exception e){
+            action.moveToElement(webElement).click();}
             }
 
 }

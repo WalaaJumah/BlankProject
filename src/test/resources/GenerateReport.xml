@@ -4,7 +4,7 @@
 <suite name="Automation Reports"  >
     <listeners>
 <!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
-        <listener class-name="extent_report_listner.ExtentReportListener" />
+<!--        <listener class-name="extent_report_listner.ExtentReportListener" />-->
     </listeners>
     <test name=" System Testing Report- Sporter 2.1" preserve-order="true">
         <parameter name="environment" value="https://new.sporter.com" />
@@ -15,48 +15,77 @@
         <parameter name="bundleProductUrl" value="/grenade-carb-killa-protein-bar-box-of-12" />
         <classes>
             <!--            HomePage-->
-            <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>
-            <class name="sporter_test.homepage_test_cases.UAEHomePageTestCases"/>
-            <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases"/>
-            <class name="sporter_test.homepage_test_cases.QatarHomePageTestCases"/>
-            <class name="sporter_test.homepage_test_cases.EgyptHomePageTestCases"/>
-            <!--         Header   -->
+<!--            <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>-->
+<!--            <class name="sporter_test.homepage_test_cases.UAEHomePageTestCases"/>-->
+<!--            <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases"/>-->
+<!--            <class name="sporter_test.homepage_test_cases.QatarHomePageTestCases"/>-->
+<!--            <class name="sporter_test.homepage_test_cases.EgyptHomePageTestCases"/>-->
+<!--            &lt;!&ndash;         Header   &ndash;&gt;-->
 
 
-            <class name="sporter_test.headerTestCases.KSAHeaderTestCases"/>
-            <class name="sporter_test.headerTestCases.UAEHeaderTestCases"/>
-            <class name="sporter_test.headerTestCases.JordanHeaderTestCases"/>
-            <class name="sporter_test.headerTestCases.QatarHeaderTestCases"/>
-            <class name="sporter_test.headerTestCases.EgyptHeaderTestCases"/>
-<!--Products Page-->
-            <class name="sporter_test.productTestCases.KSAProductDetailsTestCases"/>
-            <class name="sporter_test.productTestCases.UAEProductDetailsTestCases"/>
-            <class name="sporter_test.productTestCases.JordanProductDetailsTestCases"/>
-            <class name="sporter_test.productTestCases.QatarProductDetailsTestCases"/>
-            <class name="sporter_test.productTestCases.EgyptProductDetailsTestCases"/>
-            <class name="sporter_test.RecommendedProductsTestCases.KSARecommendedProductTestCases"/>
-            <class name="sporter_test.RecommendedProductsTestCases.UAERecommendedProductTestCases"/>
-            <class name="sporter_test.RecommendedProductsTestCases.JordanRecommendedProductTestCases"/>
-            <class name="sporter_test.RecommendedProductsTestCases.QatarRecommendedProductTestCases"/>
-            <class name="sporter_test.RecommendedProductsTestCases.EgyptRecommendedProductTestCases"/>
-
-
+<!--            <class name="sporter_test.headerTestCases.KSAHeaderTestCases"/>-->
+<!--            <class name="sporter_test.headerTestCases.UAEHeaderTestCases"/>-->
+<!--            <class name="sporter_test.headerTestCases.JordanHeaderTestCases"/>-->
+<!--            <class name="sporter_test.headerTestCases.QatarHeaderTestCases"/>-->
+<!--            <class name="sporter_test.headerTestCases.EgyptHeaderTestCases"/>-->
+<!--&lt;!&ndash;Products Page&ndash;&gt;-->
+<!--            <class name="sporter_test.productTestCases.KSAProductDetailsTestCases"/>-->
+<!--            <class name="sporter_test.productTestCases.UAEProductDetailsTestCases"/>-->
+<!--            <class name="sporter_test.productTestCases.JordanProductDetailsTestCases"/>-->
+<!--            <class name="sporter_test.productTestCases.QatarProductDetailsTestCases"/>-->
+<!--            <class name="sporter_test.productTestCases.EgyptProductDetailsTestCases"/>-->
+<!--            <class name="sporter_test.RecommendedProductsTestCases.KSARecommendedProductTestCases"/>-->
+<!--            <class name="sporter_test.RecommendedProductsTestCases.UAERecommendedProductTestCases"/>-->
+<!--            <class name="sporter_test.RecommendedProductsTestCases.JordanRecommendedProductTestCases"/>-->
+<!--            <class name="sporter_test.RecommendedProductsTestCases.QatarRecommendedProductTestCases"/>-->
+<!--            <class name="sporter_test.RecommendedProductsTestCases.EgyptRecommendedProductTestCases"/>-->
+<!--            Register Page-->
+            <class name="sporter_test.AccountRegistrationTestCases.AccountRegistrationTestCases">
+                <methods>
+                    <include name="verifyInabilityToRegisterAccountUsingWrongConfirmedPassword"/>
+                </methods>
+            </class>
         </classes>
 
     </test>
 
-    <test name="All Smoke Testing Result- Sporter 2.1" preserve-order="true">
-        <parameter name="environment" value="https://new.sporter.com" />
-        <parameter name="browser" value="chrome"/>
-        <!-- <parameter name="country" value="en-qa" />-->
-        <parameter name="bogoProduct" value="/phd-nutrition-diet-whey-protein-47340" />
-        <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix" />
-        <parameter name="bundleProductUrl" value="/grenade-carb-killa-protein-bar-box-of-12" />
-        <groups>
-            <run>
-                <include name="All Smoke Testing Result"/>
-            </run>
-        </groups>
+<!--    <test name="All Smoke Testing Result- Sporter 2.1" preserve-order="true">-->
+<!--        <parameter name="environment" value="https://new.sporter.com" />-->
+<!--        <parameter name="browser" value="chrome"/>-->
+<!--        &lt;!&ndash; <parameter name="country" value="en-qa" />&ndash;&gt;-->
+<!--        <parameter name="bogoProduct" value="/phd-nutrition-diet-whey-protein-47340" />-->
+<!--        <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix" />-->
+<!--        <parameter name="bundleProductUrl" value="/grenade-carb-killa-protein-bar-box-of-12" />-->
+<!--        <groups>-->
+<!--            <run>-->
+<!--                <include name="All Smoke Testing Result"/>-->
+<!--            </run>-->
+<!--        </groups>-->
+<!--&lt;!&ndash;        <classes>&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;            HomePage&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <class name="sporter_test.homepage_test_cases.UAEHomePageTestCases"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <class name="sporter_test.homepage_test_cases.QatarHomePageTestCases"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <class name="sporter_test.homepage_test_cases.EgyptHomePageTestCases"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;         Header   &ndash;&gt;&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;            <class name="sporter_test.headerTestCases.KSAHeaderTestCases"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <class name="sporter_test.headerTestCases.UAEHeaderTestCases"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <class name="sporter_test.headerTestCases.JordanHeaderTestCases"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <class name="sporter_test.headerTestCases.QatarHeaderTestCases"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <class name="sporter_test.headerTestCases.EgyptHeaderTestCases"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        </classes>&ndash;&gt;-->
+<!--    </test>-->
+
+<!--    <test name=" System Testing Report2- Sporter 2.1" preserve-order="true">-->
+<!--        <parameter name="environment" value="https://new.sporter.com" />-->
+<!--        <parameter name="browser" value="chrome"/>-->
+<!--        &lt;!&ndash; <parameter name="country" value="en-qa" />&ndash;&gt;-->
+<!--        <parameter name="bogoProduct" value="/phd-nutrition-diet-whey-protein-47340" />-->
+<!--        <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix" />-->
+<!--        <parameter name="bundleProductUrl" value="/grenade-carb-killa-protein-bar-box-of-12" />-->
 <!--        <classes>-->
 <!--            &lt;!&ndash;            HomePage&ndash;&gt;-->
 <!--            <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>-->
@@ -72,77 +101,52 @@
 <!--            <class name="sporter_test.headerTestCases.JordanHeaderTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.QatarHeaderTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.EgyptHeaderTestCases"/>-->
+<!--&lt;!&ndash;Products Page&ndash;&gt;-->
+<!--            <class name="sporter_test.productTestCases.KSAProductDetailsTestCases"/>-->
+<!--            <class name="sporter_test.productTestCases.UAEProductDetailsTestCases"/>-->
+<!--            <class name="sporter_test.productTestCases.JordanProductDetailsTestCases"/>-->
+<!--            <class name="sporter_test.productTestCases.QatarProductDetailsTestCases"/>-->
+<!--            <class name="sporter_test.productTestCases.EgyptProductDetailsTestCases"/>-->
+<!--            <class name="sporter_test.RecommendedProductsTestCases.KSARecommendedProductTestCases"/>-->
+<!--            <class name="sporter_test.RecommendedProductsTestCases.UAERecommendedProductTestCases"/>-->
+<!--            <class name="sporter_test.RecommendedProductsTestCases.JordanRecommendedProductTestCases"/>-->
+<!--            <class name="sporter_test.RecommendedProductsTestCases.QatarRecommendedProductTestCases"/>-->
+<!--            <class name="sporter_test.RecommendedProductsTestCases.EgyptRecommendedProductTestCases"/>-->
+
+
 <!--        </classes>-->
-    </test>
 
-    <test name=" System Testing Report2- Sporter 2.1" preserve-order="true">
-        <parameter name="environment" value="https://new.sporter.com" />
-        <parameter name="browser" value="chrome"/>
-        <!-- <parameter name="country" value="en-qa" />-->
-        <parameter name="bogoProduct" value="/phd-nutrition-diet-whey-protein-47340" />
-        <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix" />
-        <parameter name="bundleProductUrl" value="/grenade-carb-killa-protein-bar-box-of-12" />
-        <classes>
-            <!--            HomePage-->
-            <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>
-            <class name="sporter_test.homepage_test_cases.UAEHomePageTestCases"/>
-            <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases"/>
-            <class name="sporter_test.homepage_test_cases.QatarHomePageTestCases"/>
-            <class name="sporter_test.homepage_test_cases.EgyptHomePageTestCases"/>
-            <!--         Header   -->
+<!--    </test>-->
 
-
-            <class name="sporter_test.headerTestCases.KSAHeaderTestCases"/>
-            <class name="sporter_test.headerTestCases.UAEHeaderTestCases"/>
-            <class name="sporter_test.headerTestCases.JordanHeaderTestCases"/>
-            <class name="sporter_test.headerTestCases.QatarHeaderTestCases"/>
-            <class name="sporter_test.headerTestCases.EgyptHeaderTestCases"/>
-<!--Products Page-->
-            <class name="sporter_test.productTestCases.KSAProductDetailsTestCases"/>
-            <class name="sporter_test.productTestCases.UAEProductDetailsTestCases"/>
-            <class name="sporter_test.productTestCases.JordanProductDetailsTestCases"/>
-            <class name="sporter_test.productTestCases.QatarProductDetailsTestCases"/>
-            <class name="sporter_test.productTestCases.EgyptProductDetailsTestCases"/>
-            <class name="sporter_test.RecommendedProductsTestCases.KSARecommendedProductTestCases"/>
-            <class name="sporter_test.RecommendedProductsTestCases.UAERecommendedProductTestCases"/>
-            <class name="sporter_test.RecommendedProductsTestCases.JordanRecommendedProductTestCases"/>
-            <class name="sporter_test.RecommendedProductsTestCases.QatarRecommendedProductTestCases"/>
-            <class name="sporter_test.RecommendedProductsTestCases.EgyptRecommendedProductTestCases"/>
+<!--    <test name="All Smoke Testing Result2- Sporter 2.1" preserve-order="true">-->
+<!--        <parameter name="environment" value="https://new.sporter.com" />-->
+<!--        <parameter name="browser" value="chrome"/>-->
+<!--        &lt;!&ndash; <parameter name="country" value="en-qa" />&ndash;&gt;-->
+<!--        <parameter name="bogoProduct" value="/phd-nutrition-diet-whey-protein-47340" />-->
+<!--        <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix" />-->
+<!--        <parameter name="bundleProductUrl" value="/grenade-carb-killa-protein-bar-box-of-12" />-->
+<!--        <groups>-->
+<!--            <run>-->
+<!--                <include name="All Smoke Testing Result"/>-->
+<!--            </run>-->
+<!--        </groups>-->
+<!--&lt;!&ndash;        <classes>&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;            HomePage&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <class name="sporter_test.homepage_test_cases.UAEHomePageTestCases"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <class name="sporter_test.homepage_test_cases.QatarHomePageTestCases"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <class name="sporter_test.homepage_test_cases.EgyptHomePageTestCases"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;         Header   &ndash;&gt;&ndash;&gt;-->
 
 
-        </classes>
-
-    </test>
-
-    <test name="All Smoke Testing Result2- Sporter 2.1" preserve-order="true">
-        <parameter name="environment" value="https://new.sporter.com" />
-        <parameter name="browser" value="chrome"/>
-        <!-- <parameter name="country" value="en-qa" />-->
-        <parameter name="bogoProduct" value="/phd-nutrition-diet-whey-protein-47340" />
-        <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix" />
-        <parameter name="bundleProductUrl" value="/grenade-carb-killa-protein-bar-box-of-12" />
-        <groups>
-            <run>
-                <include name="All Smoke Testing Result"/>
-            </run>
-        </groups>
-<!--        <classes>-->
-<!--            &lt;!&ndash;            HomePage&ndash;&gt;-->
-<!--            <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>-->
-<!--            <class name="sporter_test.homepage_test_cases.UAEHomePageTestCases"/>-->
-<!--            <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases"/>-->
-<!--            <class name="sporter_test.homepage_test_cases.QatarHomePageTestCases"/>-->
-<!--            <class name="sporter_test.homepage_test_cases.EgyptHomePageTestCases"/>-->
-<!--            &lt;!&ndash;         Header   &ndash;&gt;-->
-
-
-<!--            <class name="sporter_test.headerTestCases.KSAHeaderTestCases"/>-->
-<!--            <class name="sporter_test.headerTestCases.UAEHeaderTestCases"/>-->
-<!--            <class name="sporter_test.headerTestCases.JordanHeaderTestCases"/>-->
-<!--            <class name="sporter_test.headerTestCases.QatarHeaderTestCases"/>-->
-<!--            <class name="sporter_test.headerTestCases.EgyptHeaderTestCases"/>-->
-<!--        </classes>-->
-    </test>
+<!--&lt;!&ndash;            <class name="sporter_test.headerTestCases.KSAHeaderTestCases"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <class name="sporter_test.headerTestCases.UAEHeaderTestCases"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <class name="sporter_test.headerTestCases.JordanHeaderTestCases"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <class name="sporter_test.headerTestCases.QatarHeaderTestCases"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <class name="sporter_test.headerTestCases.EgyptHeaderTestCases"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        </classes>&ndash;&gt;-->
+<!--    </test>-->
 
 
 
