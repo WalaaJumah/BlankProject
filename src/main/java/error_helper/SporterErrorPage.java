@@ -20,6 +20,7 @@ public class SporterErrorPage extends BasePage {
    public static final String exceptionPageMsg= "An error has happened during application run. See exception log for details.";
    public static final String exceptionPageMsg2= "An error occurred on client";
    public static final String offerNotAvailableMsg= "this offer is not available in your country";
+   public static final String facebookError= "App not active";
 
 
 

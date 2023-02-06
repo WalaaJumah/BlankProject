@@ -8,11 +8,13 @@ package sporter_pages.AccountRegistrationPage;
 
 import core.BasePage;
 import core.DataHelperAndWait;
+import error_helper.SporterErrorPage;
 import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import sporter_pages.headerSection.HeaderSection;
 import xml_reader.XmlReader;
 
@@ -75,6 +77,8 @@ public class AccountRegistrationPage extends BasePage {
     private WebElement emailAddressFieldInAccountInformation;
     @FindBy(id="signUpHeader")
     private WebElement becomeASporterHeader;
+    @FindBy(id="loginHeader")
+    private WebElement WelcomeToSporterHeader;
     @FindBy(id="createAccountLabel")
     private WebElement createAnAccountLabel;
     @FindBy(id="submitSecondForm")
@@ -84,6 +88,14 @@ public class AccountRegistrationPage extends BasePage {
     //TODO: There's a bug due to this error should not appear
     @FindBy(xpath="//div[@class='firstForm_serverError__HATCJ']")
     private WebElement emailUsedMsg;
+    @FindBy(id="email")
+    private WebElement faceBookEmail;
+    @FindBy(id="pass")
+    private WebElement faceBookPassword;
+
+    public void verifyFaceBookIsActive() {
+        Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.facebookError), "FaceBook is inactive " + webDriver.getCurrentUrl());
+    }
 
 
     public void navigateToRegistrationPage(){
