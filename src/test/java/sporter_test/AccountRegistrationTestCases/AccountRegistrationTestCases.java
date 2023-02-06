@@ -214,6 +214,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         registerPage.fillInExtraInformationForm("Walaa","Mohammad");
         DataHelperAndWait.clickOnElement(registerPage.getSubmitBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(),webDriver);
+        DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(),webDriver);
     }
     @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:  Verify Sign in button appears in the Create Account screen works correctly", priority = 19)
     public void verifySignInBtnInCreateAccountScreenWorksCorrectly(){
