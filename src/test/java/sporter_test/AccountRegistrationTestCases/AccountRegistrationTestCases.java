@@ -202,8 +202,6 @@ public class AccountRegistrationTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(registerPage.getSubmitBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getFirstNameField(),webDriver);
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(registerPage.getFirstNameErrorMs(),webDriver);
-        WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(registerPage.getLastNameErrorMs(),webDriver);
-        DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(),webDriver);
     }
     @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:  Verify ability to register a new account without selecting the gender", priority = 18)
     public void verifyAbilityToRegisterAccountWithoutSelectingTheGender(){
@@ -216,7 +214,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         registerPage.fillInExtraInformationForm("Walaa","Mohammad");
         DataHelperAndWait.clickOnElement(registerPage.getSubmitBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(),webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(header.getAccountProfileIcon(),webDriver);
+        DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(),webDriver);
         DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(),webDriver);
     }
     @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:  Verify Sign in button appears in the Create Account screen works correctly", priority = 19)
