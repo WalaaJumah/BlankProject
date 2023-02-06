@@ -209,13 +209,14 @@ public class AccountRegistrationTestCases extends BaseTest {
     public void verifyAbilityToRegisterAccountWithoutSelectingTheGender(){
         AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
         HomePage homePage= new HomePage(webDriver);
+        HeaderSection header=new HeaderSection(webDriver);
         registerPage.navigateToRegistrationPage();
         registerPage.fillInCreateAccountForm(DataHelperAndWait.generateRandomEmail(),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData("correctPassword"));
         DataHelperAndWait.clickOnElement(registerPage.getCreateAccountBtn(),webDriver);
         registerPage.fillInExtraInformationForm("Walaa","Mohammad");
         DataHelperAndWait.clickOnElement(registerPage.getSubmitBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(),webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(header.getAccountProfileIcon(),webDriver);
         DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(),webDriver);
     }
     @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:  Verify Sign in button appears in the Create Account screen works correctly", priority = 19)
