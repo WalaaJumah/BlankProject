@@ -203,6 +203,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getFirstNameField(),webDriver);
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(registerPage.getFirstNameErrorMs(),webDriver);
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(registerPage.getLastNameErrorMs(),webDriver);
+        DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(),webDriver);
     }
     @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:  Verify ability to register a new account without selecting the gender", priority = 18)
     public void verifyAbilityToRegisterAccountWithoutSelectingTheGender(){
@@ -214,6 +215,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         registerPage.fillInExtraInformationForm("Walaa","Mohammad");
         DataHelperAndWait.clickOnElement(registerPage.getSubmitBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(),webDriver);
         DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(),webDriver);
     }
     @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:  Verify Sign in button appears in the Create Account screen works correctly", priority = 19)
@@ -275,4 +277,13 @@ public class AccountRegistrationTestCases extends BaseTest {
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(registerPage.getFirstNameErrorMs(),webDriver);
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(registerPage.getLastNameErrorMs(),webDriver);
     }
+      @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:  Verify A Validation Msg will appear when filling the First Name & Last Name field with text contains a special Character", priority = 28)
+    public void verifyAValidationMsgWillAppearWhenFillingFirstAndLastNameWithIncorrectText(){
+        AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
+        registerPage.navigateToRegistrationPage();
+        registerPage.submitAllCreateAccountForms(DataHelperAndWait.generateRandomEmail(),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData("correctPassword"),"w@@","w@@",2);
+        WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(registerPage.getFirstNameErrorMs(),webDriver);
+        WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(registerPage.getLastNameErrorMs(),webDriver);
+    }
+
 }
