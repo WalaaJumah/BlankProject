@@ -48,7 +48,7 @@
         <forgetPasswordSubHeaderEn>Retrieve your password here</forgetPasswordSubHeaderEn>
         <forgetPasswordSubHeaderAr>استعادة كلمة المرور من هنا</forgetPasswordSubHeaderAr>
         <forgetPasswordDescriptionEn>Please enter your email address below. You will receive a link to reset your password.</forgetPasswordDescriptionEn>
-        <forgetPasswordDescriptionEn>يرجى إدخال عنوان البريد الالكتروني أدناه. سوف تتلقى وصلة لإعادة تعيين كلمة المرور الخاصة بك.</forgetPasswordDescriptionEn>
+        <forgetPasswordDescriptionAr>يرجى إدخال عنوان البريد الالكتروني أدناه. سوف تتلقى وصلة لإعادة تعيين كلمة المرور الخاصة بك.</forgetPasswordDescriptionAr>
         <loginErroEn>The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.</loginErroEn>
         <loginErroAr>The Msg is not translate</loginErroAr>
         <forgetPasswordToastMsgEn>If there is an account associated with this Email Address you will receive an email with a link to reset your password.</forgetPasswordToastMsgEn>
