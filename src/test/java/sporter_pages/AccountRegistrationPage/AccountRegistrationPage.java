@@ -92,6 +92,8 @@ public class AccountRegistrationPage extends BasePage {
     private WebElement faceBookEmail;
     @FindBy(id="pass")
     private WebElement faceBookPassword;
+    @FindBy(id="loginbutton")
+    private WebElement loginInFaceBookPage;
 
     public void verifyFaceBookIsActive() {
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.facebookError), "FaceBook is inactive " + webDriver.getCurrentUrl());

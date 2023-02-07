@@ -124,9 +124,9 @@ public class AccountRegistrationTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(registerPage.getCreateAccountBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getConfirmPasswordErrorMsg(),webDriver);
         if(webDriver.getCurrentUrl().contains("sporter.com/ar")){
-            WebElementsAssertion.assertionWebElementConatinsText(registerPage.getConfirmPasswordErrorMsg(),webDriver,XmlReader.getXMLData("requiredErrorMsAr"));}
+            WebElementsAssertion.assertionTextIsEqual(registerPage.getConfirmPasswordErrorMsg(),webDriver,XmlReader.getXMLData("requiredErrorMsAr"));}
         if(webDriver.getCurrentUrl().contains("sporter.com/en")){
-            WebElementsAssertion.assertionWebElementEqualText(registerPage.getConfirmPasswordErrorMsg(),webDriver,XmlReader.getXMLData("requiredErrorMsEn"));
+            WebElementsAssertion.assertionTextIsEqual(registerPage.getConfirmPasswordErrorMsg(),webDriver,XmlReader.getXMLData("requiredErrorMsEn"));
         }    }
     @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:  Verify Inability to register new account Using email have incorrect Format", priority = 12)
     public void verifyInabilityToRegisterAccountUsingEmailWithIncorrectFormat(){
@@ -284,5 +284,18 @@ public class AccountRegistrationTestCases extends BaseTest {
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(registerPage.getFirstNameErrorMs(),webDriver);
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(registerPage.getLastNameErrorMs(),webDriver);
     }
+    //TODO: There's a bug here & we will revisit it after fixing: https://sporter1.atlassian.net/browse/NS-56
+      @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:  Verify ability to sign up using FaceBook account", priority = 29)
+    public void verifyAbilityToSignUpUsingFaceBook(){
+        AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
+        registerPage.navigateToRegistrationPage();
+        DataHelperAndWait.clickOnElement(registerPage.getSignInUsingFacebookBtn(),webDriver);
+        registerPage.verifyFaceBookIsActive();
+        DataHelperAndWait.typeTextInElement(registerPage.getFaceBookEmail(),webDriver,XmlReader.getXMLData("correctEmail"));
+        DataHelperAndWait.typeTextInElement(registerPage.getFaceBookPassword(),webDriver,XmlReader.getXMLData("correctPassword"));
+          DataHelperAndWait.clickOnElement(registerPage.getLoginInFaceBookPage(),webDriver);
+          registerPage.verifyFaceBookIsActive();
+
+      }
 
 }

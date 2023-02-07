@@ -40,19 +40,19 @@
 <!--            <class name="sporter_test.RecommendedProductsTestCases.QatarRecommendedProductTestCases"/>-->
 <!--            <class name="sporter_test.RecommendedProductsTestCases.EgyptRecommendedProductTestCases"/>-->
 <!--            Register Page-->
-            <class name="sporter_test.AccountRegistrationTestCases.EgyptAccountRegistrationTestCases"/>
-            <class name="sporter_test.AccountRegistrationTestCases.KSAAccountRegistrationTestCases"/>
-            <class name="sporter_test.AccountRegistrationTestCases.UAEAccountRegistrationTestCases"/>
-            <class name="sporter_test.AccountRegistrationTestCases.JordanAccountRegistrationTestCases"/>
-            <class name="sporter_test.AccountRegistrationTestCases.QatarAccountRegistrationTestCases"/>
+<!--            <class name="sporter_test.AccountRegistrationTestCases.EgyptAccountRegistrationTestCases"/>-->
+<!--            <class name="sporter_test.AccountRegistrationTestCases.KSAAccountRegistrationTestCases"/>-->
+<!--            <class name="sporter_test.AccountRegistrationTestCases.UAEAccountRegistrationTestCases"/>-->
+<!--            <class name="sporter_test.AccountRegistrationTestCases.JordanAccountRegistrationTestCases"/>-->
+<!--            <class name="sporter_test.AccountRegistrationTestCases.QatarAccountRegistrationTestCases"/>-->
 
 
 
-<!--            <class name="sporter_test.AccountRegistrationTestCases.AccountRegistrationTestCases">-->
-<!--&lt;!&ndash;                <methods>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <include name="verifyInabilityToRegisterAccountUsingWrongConfirmedPassword"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                </methods>&ndash;&gt;-->
-<!--            </class>-->
+            <class name="sporter_test.AccountRegistrationTestCases.AccountRegistrationTestCases">
+                <methods>
+                    <include name="verifyAbilityToSignUpUsingFaceBook"/>
+                </methods>
+            </class>
         </classes>
 
     </test>
