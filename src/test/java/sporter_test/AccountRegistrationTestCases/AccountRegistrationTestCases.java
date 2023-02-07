@@ -17,7 +17,7 @@ import xml_reader.XmlReader;
 
 import javax.sound.midi.ShortMessage;
 
-@Test(groups = "2.04 Account Registration")
+@Test(groups = "2.02 Account Registration")
 public class AccountRegistrationTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:  Ability to access the New account registration screen From Account profile icon", priority = 1)
     public void verifyAbilityToAccessNewAccountRegistrationScreen(){
@@ -229,7 +229,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
         registerPage.navigateToRegistrationPage();
         registerPage.fillInCreateAccountForm(DataHelperAndWait.generateRandomEmail(),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData("correctPassword"));
-        DataHelperAndWait.clickOnElement(registerPage.getEyeIconOnPassword(),webDriver);
+        DataHelperAndWait.clickOnElement(registerPage.getShowPasswordIcon(),webDriver);
         WebElementsAssertion.assertionAttributeTrueForElement(registerPage.getPasswordField(),webDriver,"type","text");
         DataHelperAndWait.clickOnElement(registerPage.getEyeIconOnConfirmPassword(),webDriver);
         WebElementsAssertion.assertionAttributeTrueForElement(registerPage.getConfirmPasswordField(),webDriver,"type","text");
@@ -237,7 +237,7 @@ public class AccountRegistrationTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}:  Verify Hide Password icon works correctly", priority = 23)
     public void verifyHidePasswordIconWorksCorrectly(){
         AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
-        DataHelperAndWait.clickOnElement(registerPage.getEyeIconOnPassword(),webDriver);
+        DataHelperAndWait.clickOnElement(registerPage.getHidePasswordIcon(),webDriver);
         WebElementsAssertion.assertionAttributeTrueForElement(registerPage.getPasswordField(),webDriver,"type","password");
         DataHelperAndWait.clickOnElement(registerPage.getEyeIconOnConfirmPassword(),webDriver);
         WebElementsAssertion.assertionAttributeTrueForElement(registerPage.getConfirmPasswordField(),webDriver,"type","password");

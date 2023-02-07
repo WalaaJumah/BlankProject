@@ -15,7 +15,7 @@ import xml_reader.XmlReader;
 
 import java.util.ArrayList;
 //TODO: Add Country to the test case description
-@Test(groups = "2.03 Header Section")
+@Test(groups = "2.08 Header Section")
 public class HeaderTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:  Ability to access all stores using Country List appearing in the Header", priority = 1)
     public void accessAllCountries(){

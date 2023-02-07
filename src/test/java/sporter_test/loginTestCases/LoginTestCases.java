@@ -15,7 +15,7 @@ import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.loginPage.LoginPage;
 import xml_reader.XmlReader;
 
-@Test(groups = "2.05 Login")
+@Test(groups = "2.03 Login")
 public class LoginTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Ability to access login page From Account profile icon", priority = 1)
     public void verifyAbilityToAccessNewAccountRegistrationScreen() {
@@ -34,7 +34,6 @@ public class LoginTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getHaveAnAccountTab(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(loginPage.getEmailField(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(loginPage.getPasswordField(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(loginPage.getShowHidePasswordIcon(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(loginPage.getLoginBtn(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(loginPage.getForgetPasswordLink(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(loginPage.getNewToSporterLabel(), webDriver);
@@ -61,7 +60,7 @@ public class LoginTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(), webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Verify Inability to login wrong email", priority = 5)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to login using wrong email and the correct Error Msg appears", priority = 5)
     public void verifyInAbilityToLoginUsingWrongEmail() {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToLoginPage();
@@ -77,7 +76,7 @@ public class LoginTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Verify Inability to login using correct Email & Wrong Password", priority = 6)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to login using correct Email & Wrong Password and the correct Error Msg appears", priority = 6)
     public void verifyInAbilityToLoginUsingCorrectEmailAndWrongPassword() {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToLoginPage();
@@ -119,7 +118,7 @@ public class LoginTestCases extends BaseTest {
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(loginPage.getPasswordErrorMsg(), webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Verify Inability to login with wrong email format and the correct error Msg appears", priority = 10)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to login with wrong email format and the correct error Msg appears", priority = 10)
     public void verifyInAbilityToLoginWithIncorrectEmailFormat() {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToLoginPage();
@@ -138,14 +137,14 @@ public class LoginTestCases extends BaseTest {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToLoginPage();
         loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail"), XmlReader.getXMLData("correctPassword"));
-        DataHelperAndWait.clickOnElement(loginPage.getShowHidePasswordIcon(), webDriver);
+        DataHelperAndWait.clickOnElement(loginPage.getShowPasswordIcon(), webDriver);
         WebElementsAssertion.assertionAttributeTrueForElement(loginPage.getPasswordField(), webDriver, "type", "text");
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Verify hide password icon works correctly", priority = 12)
     public void verifyHidePasswordIconWorksCorrectly() {
         LoginPage loginPage = new LoginPage(webDriver);
-        DataHelperAndWait.clickOnElement(loginPage.getShowHidePasswordIcon(), webDriver);
+        DataHelperAndWait.clickOnElement(loginPage.getHidePasswordIcon(), webDriver);
         WebElementsAssertion.assertionAttributeTrueForElement(loginPage.getPasswordField(), webDriver, "type", "password");
     }
 

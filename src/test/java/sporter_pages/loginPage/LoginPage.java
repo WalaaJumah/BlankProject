@@ -29,8 +29,10 @@ public class LoginPage extends BasePage {
     }
 
     //declare all locators related to the Cart Page
-    @FindBy(css = "#loginForm > div:nth-child(2) > div > svg > path")
-    private WebElement showHidePasswordIcon;
+    @FindBy(id = "showPasswordIcon")
+    private WebElement showPasswordIcon;
+    @FindBy(id = "hidePasswordIcon")
+    private WebElement HidePasswordIcon;
     @FindBy(id = "emailInput")
     private WebElement emailField;
     @FindBy(id = "passwordInput")
@@ -48,7 +50,7 @@ public class LoginPage extends BasePage {
     @FindBy(id = "FBIcon")
     private WebElement faceBookLoginBtn;
     //TODO:To revisit after fixing the id by Moamen
-    @FindBy(xpath = "//*[@id=\"__next\"]/div/a")
+    @FindBy(id = "backToLogin")
     private WebElement backToLoginLink;
     @FindBy(id = "submitBtn")
     private WebElement submitBtnInForgetPassword;

@@ -14,7 +14,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.RecommendedProductsPage.RecommendedProductPage;
 import sporter_pages.productPage.ProductDetailsPage;
-@Test(groups = "2.03 Recommended Products Page")
+@Test(groups = "2.05 Recommended Products Page")
 public class RecommendedProductTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure the keep shopping button appearing the Recommended products works correctly ", priority = 2)
     public void verifyKeepShoppingBtnWorksCorrectly() {

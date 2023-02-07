@@ -41,8 +41,10 @@ public class AccountRegistrationPage extends BasePage {
     private WebElement confirmPasswordField;
     @FindBy(id="submitBtn")
     private WebElement createAccountBtn;
-    @FindBy(css="#signupForm > div:nth-child(6) > div > svg > path")
-    private WebElement eyeIconOnPassword;
+    @FindBy(id = "showPasswordIcon")
+    private WebElement showPasswordIcon;
+    @FindBy(id = "hidePasswordIcon")
+    private WebElement HidePasswordIcon;
     @FindBy(css="#signupForm > div:nth-child(7) > div > svg > path")
     private WebElement eyeIconOnConfirmPassword;
     @FindBy(id="loginLink")

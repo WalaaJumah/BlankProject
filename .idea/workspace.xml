@@ -5,22 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86683dee-3ff6-4652-96ae-dd8bddfbd97f" name="Changes" comment="test">
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/forgetPasswordPage/EgyptForgetPasswordPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/forgetPasswordPage/ForgetPasswordPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/forgetPasswordPage/JordanForgetPasswordPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/forgetPasswordPage/KSAForgetPasswordPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/forgetPasswordPage/QatarForgetPasswordPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/forgetPasswordPage/UAEForgetPasswordPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/forgetPasswordTestCases/EgyptForgetPasswordTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/forgetPasswordTestCases/ForgetPasswordTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/forgetPasswordTestCases/JordanForgetPasswordTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/forgetPasswordTestCases/KSAForgetPasswordTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/forgetPasswordTestCases/QatarForgetPasswordTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/forgetPasswordTestCases/UAEForgetPasswordTestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/cartPages/CartPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/cartPages/EgyptCartPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/cartPages/JordanCartPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/cartPages/KSACartPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/cartPages/QatarCartPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/cartPages/UAECartPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/cartTestCases/CartTestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/cartTestCases/EgyptCartTestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/cartTestCases/JordanCartTestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/cartTestCases/KSACartTestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/cartTestCases/QatarCartTestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/cartTestCases/UAECartTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AccountRegistrationPage/AccountRegistrationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/AccountRegistrationPage/AccountRegistrationPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/loginPage/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/loginPage/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AccountRegistrationTestCases/AccountRegistrationTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AccountRegistrationTestCases/AccountRegistrationTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/RecommendedProductsTestCases/RecommendedProductTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/RecommendedProductsTestCases/RecommendedProductTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/forgetPasswordTestCases/ForgetPasswordTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/forgetPasswordTestCases/ForgetPasswordTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/headerTestCases/HeaderTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/headerTestCases/HeaderTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/homepage_test_cases/HomePageTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/homepage_test_cases/HomePageTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/loginTestCases/LoginTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/loginTestCases/LoginTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/TestData.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/TestData.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/productTestCases/ProductDetailsTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/productTestCases/ProductDetailsTestCases.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

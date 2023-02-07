@@ -23,7 +23,7 @@ import sporter_pages.productPage.ProductDetailsPage;
 import xml_reader.XmlReader;
 import static org.testng.Assert.*;
 import static org.testng.Assert.assertTrue;
-@Test(groups = "2.02 Product Details Page")
+@Test(groups = "2.04 Product Details Page")
 
 public class ProductDetailsTestCases extends BaseTest {
     @Test(groups = { "1.1 Critical Severity"},description = "{{CountryName}}:Make sure the shopper is able to keep the shopping after adding the product to the cart ", priority = 2)

@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 import sporter_pages.loginPage.LoginPage;
 import xml_reader.XmlReader;
 
-@Test(groups = "2.06 Forget Password Page")
+@Test(groups = "2.07 Forget Password Page")
 //TODO: Move All locators related to Forget Password from Login Class To Forget Password Class
 public class ForgetPasswordTestCases extends BaseTest {
     //TODO: Forget Password test cases related to the forget password email is not included
@@ -34,7 +34,7 @@ public class ForgetPasswordTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(loginPage.getEmailField(), webDriver);
     }
 
-    @Test(groups = {"1.3 Medium Severit"}, description = "{{CountryName}}: Verify Inability to click on Submit Button from the Forget Password page without filling Email Address", priority = 3)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to click on Submit Button from the Forget Password page without filling Email Address", priority = 3)
     public void verifyInabilityToClickOnSubmitBtnInForgetPasswordWithoutFillingEmailAddress() {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToForgetPassword();
@@ -42,7 +42,7 @@ public class ForgetPasswordTestCases extends BaseTest {
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(loginPage.getEmailErrorMsgInForgetPassword(), webDriver);
     }
 
-    @Test(groups = {"1.3 Medium Severit"}, description = "{{CountryName}}: Verify Inability to click on Submit Button with wrong email format and the correct error Msg appears", priority = 4)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to click on Submit Button with wrong email format and the correct error Msg appears", priority = 4)
     public void verifyInAbilityToClickOnSubmitInForgetPasswordWithIncorrectEmailFormat() {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToForgetPassword();
@@ -56,7 +56,7 @@ public class ForgetPasswordTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"1.3 Medium Severit"}, description = "{{CountryName}}: Verify All fields, labels & Components appear correctly in the Forget Password Page", priority = 5)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify All fields, labels & Components appear correctly in the Forget Password Page", priority = 5)
     public void verifyAllFieldsAppearCorrectlyInForgetPasswordPage() {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToForgetPassword();
