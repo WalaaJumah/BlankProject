@@ -35,6 +35,9 @@ public class BasePage {
     public final String qatarDomain = "/en-qa";
     public final String saudiDomainEnglish = "/en-sa";
     public final String registerAccountLink = "/register/signup";
+    public final String loginLink = "/register/login";
+      public final String forgetPasswordURL = "/forgetPassword";
+
     public final String saudiDomainArabic = "/ar-sa";
     public final String lebanonDomain = "/en-lb";
     public final String websiteEnglishLanguage = "/en";

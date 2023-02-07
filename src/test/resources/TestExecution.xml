@@ -15,12 +15,12 @@
         <parameter name="bundleProductUrl" value="/grenade-carb-killa-protein-bar-box-of-12" />
         <classes>
             <!--            HomePage-->
-            <!--            <class name="sporter_test.productTestCases.UAEProductDetailsTestCases">-->
-            <!--&lt;!&ndash;                <methods>&ndash;&gt;-->
-            <!--&lt;!&ndash;                    <include name="verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromPdp"/>&ndash;&gt;-->
-            <!--&lt;!&ndash;&lt;!&ndash;                    <include name="verifyMainOptionsInTheMegaMenuAreDisplayed"/>&ndash;&gt;&ndash;&gt;-->
-            <!--&lt;!&ndash;                </methods>&ndash;&gt;-->
-            <!--            </class>-->
+                        <class name="sporter_test.loginTestCases.LoginTestCases">
+                            <methods>
+                                <include name="verifyAllFieldsAppearCorrectlyInForgetPasswordPage"/>
+            <!--&lt;!&ndash;                    <include name="verifyMainOptionsInTheMegaMenuAreDisplayed"/>&ndash;&gt;-->
+                            </methods>
+                        </class>
 <!--            <class name="sporter_test.headerTestCases.KSAHeaderTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.UAEHeaderTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.JordanHeaderTestCases"/>-->

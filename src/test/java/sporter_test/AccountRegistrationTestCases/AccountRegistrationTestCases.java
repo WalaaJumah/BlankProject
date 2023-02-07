@@ -295,6 +295,5 @@ public class AccountRegistrationTestCases extends BaseTest {
         DataHelperAndWait.typeTextInElement(registerPage.getFaceBookPassword(),webDriver,XmlReader.getXMLData("correctPassword"));
           DataHelperAndWait.clickOnElement(registerPage.getLoginInFaceBookPage(),webDriver);
           registerPage.verifyFaceBookIsActive();
-
       }
 }

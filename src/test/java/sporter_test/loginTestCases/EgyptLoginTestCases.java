@@ -1,17 +1,17 @@
 /**
  * @author w.jumaa
  * @projectName sporter-web-automation
- * @classDescription EgyptAccountRegistrationTestCases
+ * @classDescription EgyptLoginTestCases
  */
 
-package sporter_test.AccountRegistrationTestCases;
+package sporter_test.loginTestCases;
 
 import core.BasePage;
 import org.testng.annotations.BeforeClass;
 import sporter_pages.homepage_classes.EgyptHomePage;
-import sporter_test.headerTestCases.HeaderTestCases;
+import sporter_test.AccountRegistrationTestCases.AccountRegistrationTestCases;
 
-public class EgyptAccountRegistrationTestCases extends AccountRegistrationTestCases {
+public class EgyptLoginTestCases extends LoginTestCases {
     @BeforeClass(alwaysRun=true)
     public void switchToEgyptStore(){
         EgyptHomePage egyptHomePage=new EgyptHomePage(webDriver);
