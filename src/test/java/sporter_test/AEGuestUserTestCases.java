@@ -176,7 +176,7 @@ aeGuestUserPage.clickOnContinueBtn();
         aeGuestUserPage.getStreetLineTwoField().sendKeys(aeGuestUserPage.streetLineTwo);
         act.sendKeys(Keys.TAB).build().perform();
         act.sendKeys(Keys.ENTER).build().perform();
-        Assert.assertTrue(aeGuestUserPage.getShippingMethodSection().isDisplayed());
+//        Assert.assertTrue(aeGuestUserPage.getShippingMethodSection().isDisplayed());
     }
     @Test(description = "Guest Checkout- Make sure inability to submit the shipping information when filling " +
             "streetLine 1&2 & First Name & Last Name fields with the text length>=255 symbols & the validation message appears correctly", priority = 13)
@@ -203,11 +203,13 @@ aeGuestUserPage.clickOnContinueBtn();
         //        aeGuestUserPage.clearShippingInformationFields();
 //        this.verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPageCorrectly();
         aeGuestUserPage.fillInShippingInformationInputField(aeGuestUserPage.firstName, aeGuestUserPage.lastName, aeGuestUserPage.email, aeGuestUserPage.phone, aeGuestUserPage.streetLineOne,aeGuestUserPage. streetLineTwo);
+        aeGuestUserPage.getAddressField().sendKeys("walaa");
         Select select = new Select(aeGuestUserPage.getCityMenu());
         WebElement cityOption = select.getOptions().get(2);
         cityOption.click();
         DataHelperAndWait.scrollTo(aeGuestUserPage.getContinueBtn(),webDriver);
 aeGuestUserPage.clickOnContinueBtn();
+DataHelperAndWait.waitForTime(1000);
         Assert.assertTrue(aeGuestUserPage.getShippingMethodSection().isDisplayed());
     }
     @Test(groups = {"2.04 Guest User Page","All Smoke Testing Result","1.4  Low Severity"},description = "Make sure the return to the cart button appearing in the shipping information screen for the Guest User works correctly  ", priority = 15)

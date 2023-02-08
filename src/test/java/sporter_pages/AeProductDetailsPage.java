@@ -619,7 +619,8 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void displayTheProduct() {
-        webDriver.navigate().to(BaseURL + aeDomain + productUrl);
+        webDriver.navigate().to(BaseURL  + productUrl);
+//        webDriver.navigate().to(BaseURL + aeDomain + productUrl);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
@@ -628,7 +629,8 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void displayOOSProduct() {
-        webDriver.navigate().to(BaseURL + aeDomain + oOSProductUrl);
+        webDriver.navigate().to(BaseURL  + oOSProductUrl);
+//        webDriver.navigate().to(BaseURL + aeDomain + oOSProductUrl);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
 

@@ -123,11 +123,13 @@ public class BasePage {
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.offerNotAvailableMsg), "The  offer is not available in your country page is displayed" + webDriver.getCurrentUrl());
     }
     public void navigateToBogoProduct(){
-        webDriver.navigate().to(BasePage.BaseURL+aeDomain+bogoProduct);
+        webDriver.navigate().to(BasePage.BaseURL+bogoProduct);
+//        webDriver.navigate().to(BasePage.BaseURL+aeDomain+bogoProduct);
         DataHelperAndWait.waitForUrlContains(bogoProduct,webDriver,6);
     }
     public void displayBundle(){
-        webDriver.navigate().to(BasePage.BaseURL+aeDomain+bundleUrl);
+        webDriver.navigate().to(BasePage.BaseURL+bundleUrl);
+//        webDriver.navigate().to(BasePage.BaseURL+aeDomain+bundleUrl);
         DataHelperAndWait.waitForUrlContains(bundleUrl,webDriver,15);
     }
     public void navigateToHomePage(){webDriver.navigate().to(BasePage.BaseURL);}
