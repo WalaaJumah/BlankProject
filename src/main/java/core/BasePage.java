@@ -143,7 +143,7 @@ public class BasePage {
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.pageNotFoundMsg), "Page Not Found Is Displayed and the URL is " + webDriver.getCurrentUrl());
     }
     public void navigateToBogoProduct(){
-        webDriver.navigate().to(BasePage.BaseURL+aeDomain+bogoProduct);
+        webDriver.navigate().to(BasePage.BaseURL+bogoProduct);
         DataHelperAndWait.waitForUrlContains(bogoProduct,webDriver);
     }
         public void displayBundle(){

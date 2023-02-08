@@ -17,7 +17,7 @@ import java.util.ArrayList;
 //TODO: Add Country to the test case description
 @Test(groups = "2.08 Header Section")
 public class HeaderTestCases extends BaseTest {
-    @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:  Ability to access all stores using Country List appearing in the Header", priority = 1)
+    @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Ability to access all stores using Country List appearing in the Header", priority = 1)
     public void accessAllCountries(){
         HeaderSection headerSection = new HeaderSection(webDriver);
         ArrayList<String> expectedOption = new ArrayList<>() {{
@@ -39,7 +39,7 @@ public class HeaderTestCases extends BaseTest {
             DataHelperAndWait.clickOnElement(headerSection.getCountryMenuIcon(),webDriver);
         }
     }
-    @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:  Make sure switching language button works correctly", priority = 2)
+    @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure switching language button works correctly", priority = 2)
     public void verifySwitchLanguageWorksCorrectly(){
         HeaderSection headerSection = new HeaderSection(webDriver);
         if(webDriver.getCurrentUrl().contains("com/ar-")){
@@ -53,7 +53,7 @@ public class HeaderTestCases extends BaseTest {
             WebElementsAssertion.assertionTextIsEqual(headerSection.getLanguageSelector(),webDriver,"English");
         }
     }
-    @Test(groups = {"All Smoke Testing Result","1.4 Low Severity"},description = "{{CountryName}}:  Make sure the Customer Service label & Phone Number appearing correctly", priority = 3)
+    @Test(groups = {"All Smoke Testing Result","1.4 Low Severity"},description = "{{CountryName}}: Make sure the Customer Service label & Phone Number appearing correctly", priority = 3)
     public void verifyCustomerServiceAppearingCorrectly() {
         HeaderSection headerSection = new HeaderSection(webDriver);
         if(webDriver.getCurrentUrl().contains("com/ar-"))
@@ -61,19 +61,19 @@ public class HeaderTestCases extends BaseTest {
         else
             WebElementsAssertion.assertionTextIsEqual(headerSection.getCustomerServiceLabel(),webDriver, XmlReader.getXMLData("CustomerServiceEnLabel"));
     }
-       @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}:  Make sure the Search section appears correctly", priority = 4)
+       @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure the Search section appears correctly", priority = 4)
     public void verifySearchSectionCorrectly() {
         HeaderSection headerSection =new HeaderSection(webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getSearchSection(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getSearchField(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getSearchBtn(),webDriver);
        }
-       @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}:  Make sure the Cart icon appears correctly", priority = 5)
+       @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure the Cart icon appears correctly", priority = 5)
     public void verifyCartIconAppearsCorrectly() {
         HeaderSection headerSection =new HeaderSection(webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getCartIcon(),webDriver);
        }
-       @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}:  Make sure the My Account icon appears correctly", priority = 6)
+       @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure the My Account icon appears correctly", priority = 6)
     public void verifyProfileIconAppearsCorrectly() {
         HeaderSection headerSection =new HeaderSection(webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getAccountProfileIcon(),webDriver);

@@ -134,4 +134,20 @@ private WebElement freeFromSporter;
 @FindBy(xpath = "(//span[text()='Free'])[1]")
 private WebElement freePrice;
 
+   public void addToCartAndDisplayTheCart(){
+       productDetailsPage.displayTheProduct();
+       productDetailsPage.addToCart();
+       productDetailsPage.viewCart();
+   }
+      public void addToBogoToCartAndDisplayTheCart(){
+       productDetailsPage.navigateToBogoProduct();
+       productDetailsPage.addToCart();
+       productDetailsPage.viewCart();
+   }
+
+    public void removeItem() {
+        DataHelperAndWait.isDisplayed(this.removeItemBtn ,webDriver);
+        this.removeItemBtn.click();
+    }
+
 }
