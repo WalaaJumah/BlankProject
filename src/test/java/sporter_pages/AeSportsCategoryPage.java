@@ -219,7 +219,7 @@ public class AeSportsCategoryPage  extends BasePage {
         DataHelperAndWait.waitToBeVisible(nextIconInRecommendedProductsSection,7,webDriver);
         return nextIconInRecommendedProductsSection;
     }
-    public void navigateToSportsPage(){webDriver.navigate().to(BaseURL +aeDomain+sportsUrl);}
+    public void navigateToSportsPage(){webDriver.navigate().to(BaseURL +sportsUrl);}
 
 
 }

@@ -584,7 +584,7 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
 Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
-    @Test(groups = {"2.06 MegaMenu", "1.1 Critical Severity"},description = "MegaMenu- Make sure clicking on the Creatine Blends Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 45)
+    @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the Creatine Blends Option appearing in the Sports Supplements menu inside ShopBy Menu will redirect the User to the correct URL", priority = 45)
     public void verifyClickingOnCreatineBlendsOptionInSportsSupplementsMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -3874,7 +3874,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
-    @Test(groups = {"2.06 MegaMenu", "1.1 Critical Severity"},description = "MegaMenu- Make sure clicking on the MHP  Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 246)
+    @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the MHP  Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 246)
     public void verifyClickingOnMhpOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4372,7 +4372,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
-    @Test(groups = {"2.06 MegaMenu", "1.1 Critical Severity"},description = "MegaMenu- Make sure clicking on the USN Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 277)
+    @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the USN Option appearing in the By Brand menu inside ShopBy Menu will redirect the User to the correct URL", priority = 277)
     public void verifyClickingOnUsnOptionInBrandByMenuInsideShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
@@ -4910,7 +4910,7 @@ aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
     }
 
-    @Test(groups = {"2.06 MegaMenu", "1.1 Critical Severity"},description = "MegaMenu- Make sure clicking on the Creatine Blends Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 312)
+    @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the Creatine Blends Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 312)
     public void verifyClickingOnCreatineBlendsOptionInSportsSupplementsMainMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);

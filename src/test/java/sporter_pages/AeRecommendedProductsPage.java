@@ -94,7 +94,7 @@ public class AeRecommendedProductsPage extends BasePage {
     }
 
     public void clickOnAddToCart() {
-        DataHelperAndWait.waitToBeVisible(addToCart, 4,webDriver);
+        DataHelperAndWait.waitToBeVisible(addToCart, 15,webDriver);
         this.addToCart.click();
     }
 

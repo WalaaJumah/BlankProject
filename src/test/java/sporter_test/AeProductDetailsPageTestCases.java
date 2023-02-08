@@ -102,7 +102,7 @@ public class AeProductDetailsPageTestCases extends BaseTest {
         assertTrue(aeProductDetailsPage.getReviewErrorMsg().isDisplayed());
     }
 
-    @Test(groups = {"2.02 Product Page", "1.1 Critical Severity"},description = "Make sure that the customer can submit his review when filling Review Form with Long Length", priority = 11)
+    @Test(groups = {"2.02 Product Page", "1.3 Medium Severity"},description = "Make sure that the customer can submit his review when filling Review Form with Long Length", priority = 11)
     public void verifyAbilityToFillTheReviewWIthLongLength() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.displayTheProduct();

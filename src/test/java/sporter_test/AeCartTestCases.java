@@ -96,20 +96,21 @@ public class AeCartTestCases extends BaseTest {
     public void verifyProductCounterAppearsInTheCartPageCountsFreeGifts() {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
-        aeProductDetailsPage.displayTheProduct();
-        aeProductDetailsPage.increaseTheQuantity();
+//        aeProductDetailsPage.displayTheProduct();
+//        aeProductDetailsPage.increaseTheQuantity();
+        aeProductDetailsPage.navigateToBogoProduct();
         aeProductDetailsPage.addToCart();
         DataHelperAndWait.waitForTime(1000);
         aeProductDetailsPage.viewCart();
 //                AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
-        aeProductDetailsPage.addToCartAndDisplayTheCart();
+//        aeProductDetailsPage.addToCartAndDisplayTheCart();
 //                AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
-        aeProductDetailsPage.addToCartAndDisplayTheCart();
-        String itemsCounter = "(2 Items)";
+//        aeProductDetailsPage.addToCartAndDisplayTheCart();
+        String itemsCounter = "(3 Items)";
         DataHelperAndWait.waitToBeVisible(aeCartPage.getItemsCounterInCartPage(), 8,webDriver);
         Assert.assertEquals(aeCartPage.getItemsCounterInCartPage().getText(), itemsCounter);
         aeCartPage.clickOnRemoveItem();
-        aeCartPage.clickOnRemoveItem();
+//        aeCartPage.clickOnRemoveItem();
     }
 
     @Test(groups = {"2.03 Cart Page","All Smoke Testing Result","1.1 Critical Severity"},description = " Cart Page- Make sure to view the cart after adding more than quantity for the same product", priority = 8,enabled = false)

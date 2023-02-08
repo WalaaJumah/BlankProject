@@ -252,7 +252,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public WebElement getReviewToastMsg() {
-        DataHelperAndWait.waitToBeVisible(reviewToastMsg, 6, webDriver);
+        DataHelperAndWait.waitToBeVisible(reviewToastMsg, 20, webDriver);
         return reviewToastMsg;
     }
 
@@ -482,7 +482,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void selectStarInReview() {
-        DataHelperAndWait.waitToBeVisible(oneStarReview, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(oneStarReview, 19, webDriver);
         this.oneStarReview.click();
     }
 

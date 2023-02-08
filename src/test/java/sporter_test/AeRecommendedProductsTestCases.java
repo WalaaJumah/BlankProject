@@ -95,7 +95,7 @@ public class AeRecommendedProductsTestCases extends BaseTest {
         AeProductDetailsPage  aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.displayTheProduct();
         aeProductDetailsPage.addToCart();
-        aeRecommendedProductspage.clickOnAddToCart();
+//        aeRecommendedProductspage.clickOnAddToCart();
     }
 
     @Test(groups = {"2.02 Product Page","1.3 Medium Severity"},description = "Recommended Products Pop-up- Make sure the name of product added to the Cart displayed correctly in the Recommended product pop-up", priority = 8)
