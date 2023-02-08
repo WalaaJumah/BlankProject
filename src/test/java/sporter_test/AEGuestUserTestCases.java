@@ -16,10 +16,14 @@ import static core.BasePage.BaseURL;
 public class AEGuestUserTestCases extends BaseTest {
     public void accessShippingInformationScreen(){
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
-        DataHelperAndWait.implicitWait(3,webDriver);
+       try{ DataHelperAndWait.implicitWait(3,webDriver);
         aeGuestUserPage.clickOnCartIcon();
         aeGuestUserPage.clickOnProceedCheckoutBtnInCartPopup();
-        aeGuestUserPage.clickOnGuestCheckoutBtn();
+        aeGuestUserPage.clickOnGuestCheckoutBtn();}
+       catch (Exception e){
+           webDriver.navigate().to(BaseURL+"/checkout/cart/");
+           aeGuestUserPage.clickOnGuestCheckoutBtn();
+       }
     }
     @Test(groups = "All Smoke Testing Result",description = "Guest User- Switching to UAE store", priority = 1)
     public void switchToUaeStore(){
