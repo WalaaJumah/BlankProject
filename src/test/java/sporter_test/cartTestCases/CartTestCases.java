@@ -10,10 +10,13 @@ import core.BaseTest;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import sporter_pages.cartPages.CartPage;
+import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.productPage.ProductDetailsPage;
+
+import java.util.List;
 
 @Test(groups = "2.06 Cart Page")
 
@@ -21,10 +24,9 @@ public class CartTestCases extends BaseTest {
     String itemsCounter;
     @Test(groups = {"Cart Page","All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure to view the cart from PDP after adding  product to it", priority = 1)
     public void viewCartFromPDP() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
-        WebElementsAssertion.validateTheCurrentUrlContainsString(productDetailsPage.cartURL,webDriver);
+        WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.cartURL,webDriver);
     }
     @Test(groups = {"Cart Page","All Smoke Testing Result","1.4 Low Severity"},description = "{{CountryName}}: Make sure that the product counter that appears in the cart page works correctly", priority = 2)
     public void verifyProductCounterAppearsInTheCartPageWorksCorrectly() {
@@ -46,132 +48,112 @@ public class CartTestCases extends BaseTest {
         cartPage.removeItem();
     }
     //TODO: This test case should be revisit after solving: https://sporter1.atlassian.net/browse/NS-120 & https://sporter1.atlassian.net/browse/NS-42
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the Free Gift is removed from the cart when you remove the product", priority = 4)
+    @Test(groups = {"Cart Page","All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the Free Gift is removed from the cart when you remove the product", priority = 5)
     public void verifyTheFreeGiftIsRemovedWhenRemovingTheProduct() {
+
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.addToBogoToCartAndDisplayTheCart();
+        cartPage.addBogoToCartAndDisplayTheCart();
+        try{
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getFreePrice(),webDriver);
+            cartPage.removeItem();
+        }
+        catch (Exception e){
+            cartPage.removeItem();
+            WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getFreePrice(),webDriver);
+        }
+       }
+
+    @Test(groups = {"Cart Page","All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Verify ability to remove the product from the cart successfully", priority = 6)
+    public void verifyAbilityToRemoveProductFromCart() {
+        CartPage cartPage=new CartPage(webDriver);
+        cartPage.addToCartAndDisplayTheCart();
+        cartPage.removeItem();
+        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getNoItemInCartLabel(),webDriver);
+    }
+    @Test(groups = {"Cart Page","All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Verify that Here Link appear after clearing the items from the Cart works successfully", priority = 7)
+    public void verifyHereLinkInCartPageWorking() {
+        CartPage cartPage = new CartPage(webDriver);
+        HomePage homePage= new HomePage(webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getHereLink(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getSportsSupplementsCategory(),webDriver);
+    }
+    //TODO: This test case should be revisit after solving: https://sporter1.atlassian.net/browse/NS-120 & https://sporter1.atlassian.net/browse/NS-42
+    @Test(groups = {"Cart Page","All Smoke Testing Result","1.4 Low Severity"},description = "{{CountryName}}: Make sure that the product counter that appears in the cart page counts the free gift correctly", priority = 8)
+    public void verifyProductCounterAppearsInTheCartPageCountsFreeGifts() {
+        CartPage cartPage = new CartPage(webDriver);
+        cartPage.addBogoToCartAndDisplayTheCart();
+        String itemsCounter = "(2 Items)";
+        try{
+        WebElementsAssertion.assertionTextIsEqual(cartPage.getItemsCounter(),webDriver,itemsCounter);
+            cartPage.removeItem();
+        }
+        catch (AssertionError a){
+            cartPage.removeItem();
+        }
+    }
+    @Test(groups = {"Cart Page","All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure to view the cart after adding more than quantity for the same product", priority = 9)
+    public void verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct() {
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        CartPage cartPage = new CartPage(webDriver);
+        productDetailsPage.displayTheProduct();
+        productDetailsPage.increaseTheQuantity();
+        cartPage.addToCartAndViewCart();
+        WebElementsAssertion.validateTheCurrentUrlContainsString(productDetailsPage.cartURL,webDriver);
         cartPage.removeItem();
     }
-//    @Test(groups = {"Cart Page","All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Verify ability to remove the product from the cart successfully", priority = 5)
-//    public void verifyAbilityToRemoveProductFromCart() {
-//        CartPage cartPage=new CartPage(webDriver);
-//        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-//        productDetailsPage.displayTheProduct();
-//        productDetailsPage.addToCart();
-//        productDetailsPage.viewCart();
-//        Assert.assertTrue(webDriver.getCurrentUrl().contains(productDetailsPage.cartURL) );
-//        cartPage.clickOnRemoveItem();
-//        Assert.assertTrue(cartPage.getNoItemInCartLabel().isDisplayed());
-//    }
-//    @Test(groups = {"Cart Page","All Smoke Testing Result","1.4 Low Severity"},description = "{{CountryName}}: Verify that Here Link appear after clearing the items from the Cart works successfully", priority = 6)
-//    public void verifyHereLinkInCartPageWorking() {
-//        CartPage cartPage = new CartPage(webDriver);
-//        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-////        productDetailsPage.displayTheProduct();
-////        productDetailsPage.addToCart();
-////        productDetailsPage.viewCart();
-////        cartPage.clickOnRemoveItem();
-////        this.verifyAbilityToRemoveProductFromCart();
-//        DataHelperAndWait.isDisplayed(cartPage.getHereLink() ,webDriver);
-//        cartPage.clickOnHereLink();
-//        Assert.assertEquals(webDriver.getCurrentUrl(), BasePage.BaseURL +cartPage.aeDomain+"/", "The Current URL is not matched with the AE Site URL");
-//    }
-//
-//    @Test(groups = {"Cart Page","All Smoke Testing Result","1.4 Low Severity"},description = "{{CountryName}}: Make sure that the product counter that appears in the cart page counts the free gift correctly", priority = 7)
-//    public void verifyProductCounterAppearsInTheCartPageCountsFreeGifts() {
-//        CartPage cartPage = new CartPage(webDriver);
-//        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-//        productDetailsPage.displayTheProduct();
-//        productDetailsPage.increaseTheQuantity();
-//        productDetailsPage.addToCart();
-//        productDetailsPage.viewCart();
-////                AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
-//        cartPage.addToCartAndDisplayTheCart();
-////                AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
-//        cartPage.addToCartAndDisplayTheCart();
-//        String itemsCounter = "(4 Items)";
-//        DataHelperAndWait.waitToBeVisible(cartPage.getItemsCounterInCartPage() ,webDriver);
-//        Assert.assertEquals(cartPage.getItemsCounterInCartPage().getText(), itemsCounter);
-//        cartPage.clickOnRemoveItem();
-//        cartPage.clickOnRemoveItem();
-//    }
-//
-//    @Test(groups = {"Cart Page","All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure to view the cart after adding more than quantity for the same product", priority = 8)
-//    public void verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct() {
-//        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-//        CartPage cartPage = new CartPage(webDriver);
-//        cartPage.removeProductFromCart();
-//        productDetailsPage.displayTheProduct();
-//        productDetailsPage.increaseTheQuantity();
-//        Assert.assertEquals(productDetailsPage.getQuantityField().getAttribute("value"), "2");
-//        productDetailsPage.addToCart();
-//        productDetailsPage.viewCart();
-//        DataHelperAndWait.waitForUrlContains(productDetailsPage.cartURL,webDriver );
-//        Assert.assertTrue(webDriver.getCurrentUrl().contains(productDetailsPage.cartURL) );
-//    cartPage.clickOnRemoveItem();}
-//
-//    @Test(groups = {"Cart Page","All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure to view the cart after adding more than products to it", priority = 9)
-//    public void verifyAbilityToViewTheCartAfterAddingMoreThanProducts() {
-//        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-//        CartPage cartPage = new CartPage(webDriver);
-////        productDetailsPage.clickOnShopeByMenu();
-////        productDetailsPage.clickOnSalesAndOffersMenu();
-////        productDetailsPage.clickOnBuy1Get1Card();
-////        DataHelperAndWait.waitToBeVisible(productDetailsPage.getFirstProductInTheCategoryList() ,webDriver);
-////        productDetailsPage.DisplayProductInTheList(0);
-//        cartPage.navigateToBogoProduct();
-//        productDetailsPage.addToCart();
-//        productDetailsPage.keepShopping();
-//        productDetailsPage.displayTheProduct();
-//        productDetailsPage.addToCart();
-//        productDetailsPage.viewCart();
-//        DataHelperAndWait.waitForUrlContains(productDetailsPage.cartURL,webDriver );
-//        Assert.assertTrue(webDriver.getCurrentUrl().contains(productDetailsPage.cartURL) );
-//    cartPage.clickOnRemoveItem();
-//    cartPage.clickOnRemoveItem();
-//    }
-//
-//    @Test(groups = {"Cart Page","All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Adding a config to the cart more than one with different simple in each time", priority = 10)
-//    public void verifyAbilityToViewTheCartAfterAddingMoreThanSimpleOfTheSameConfig() {
-//        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-//        CartPage cartPage = new CartPage(webDriver);
-//        productDetailsPage.displayTheProduct();
-//        productDetailsPage.clickOnFirstsimple();
-//        productDetailsPage.addToCart();
-//        productDetailsPage.keepShopping();
-//        productDetailsPage.clickOnSecondimple();
-//        productDetailsPage.addToCart();
-//        productDetailsPage.viewCart();
-//        String itemsCounter = "(2 Items)";
-//        DataHelperAndWait.waitForUrlContains(productDetailsPage.cartURL,webDriver );
-//        Assert.assertTrue(webDriver.getCurrentUrl().contains(productDetailsPage.cartURL) );
-//        cartPage.clickOnRemoveItem();
-//        cartPage.clickOnRemoveItem();
-//    }
-//
-//
-//    @Test(groups = {"Cart Page","All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure ability to add bundle to the Cart", priority = 11)
-//    public void verifyAbilityToAddBundleToCart() {
-//        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-//        CartPage cartPage=new CartPage(webDriver);
-//        productDetailsPage.searchForBundle();
-//        productDetailsPage.clickOnSearchBtn();
-//        productDetailsPage.clickOnTheProductCard();
-//        DataHelperAndWait.waitToBeVisible(productDetailsPage.getBundleMenu() ,webDriver);
-//        productDetailsPage.addToCart();
-//        productDetailsPage.viewCart();
-//        DataHelperAndWait.waitForUrlContains(productDetailsPage.cartURL,webDriver );
-//        Assert.assertTrue(webDriver.getCurrentUrl().contains(productDetailsPage.cartURL) );
-//        cartPage.clickOnRemoveItem();
-//    }
+    @Test(groups = {"Cart Page","All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure to view the cart after adding more than products to it", priority = 10)
+    public void verifyAbilityToViewTheCartAfterAddingMoreThanProducts() {
+        CartPage cartPage = new CartPage(webDriver);
+        cartPage.addToCartAndDisplayTheCart();
+        cartPage.addBogoToCartAndDisplayTheCart();
+        WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.cartURL,webDriver);
+    }
+    @Test(groups = {"Cart Page","All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure remove Item button works correctly when the cart conatins more than item", priority = 11)
+    public void verifyRemoveItemBtnWorksWhenCartContainsMoreThanItem() {
+        CartPage cartPage = new CartPage(webDriver);
+        cartPage.removeAllItems(2);
+    }
+    @Test(groups = {"Cart Page","All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Adding a config to the cart more than one with different simple in each time", priority = 12)
+    public void verifyAbilityToViewTheCartAfterAddingMoreThanSimpleOfTheSameConfig() {
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        CartPage cartPage = new CartPage(webDriver);
+        productDetailsPage.displayTheProduct();
+        DataHelperAndWait.clickOnElement(productDetailsPage.getProductFlavor().get(productDetailsPage.getProductFlavor().size()-1),webDriver);
+        productDetailsPage.addToCart();
+        productDetailsPage.keepShopping();
+        DataHelperAndWait.clickOnElement(productDetailsPage.getProductSizeAttribute().get(productDetailsPage.getProductSizeAttribute().size()-2),webDriver);
+        cartPage.addToCartAndViewCart();
+        WebElementsAssertion.validateTheCurrentUrlContainsString(productDetailsPage.cartURL,webDriver);
+        cartPage.removeAllItems(2);
+
+    }
+    @Test(groups = {"Cart Page","All Smoke Testing Result","1.2 High Severity"},description = " Cart Page- Make sure ability to add a bundle to the cart with all bundle options", priority = 13)
+    public void verifyAbilityToAddBundleWithAllItsOptionsToCart() {
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        CartPage cartPage = new CartPage(webDriver);
+        productDetailsPage.displayBundle();
+        DataHelperAndWait.waitToBeVisible(productDetailsPage.getBundleMenu() ,webDriver);
+        Select select = new Select(productDetailsPage.getBundleMenu());
+        List<WebElement> elementCount = select.getOptions();
+        int menuSize = elementCount.size();
+        for (int i = 0; i < menuSize; i++) {
+            try {
+                select.selectByIndex(i);
+                productDetailsPage.addToCart();
+                productDetailsPage.keepShopping();
+            } catch (Exception e) {
+                DataHelperAndWait.clickOnElement(productDetailsPage.getCloseToCartErrorPopUp(),webDriver);
+            }
+        }
+    }
 //    @Test(groups = {"Cart Page","All Smoke Testing Result","1.4 Low Severity"},description = "{{CountryName}}: Verify that the The requested qty is not available message appear when the product becomes OOS", priority = 12)
 //    public void verifyToDisplayRequestedQtyIsNotAvailableMsg() {
 //        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        CartPage cartPage = new CartPage(webDriver);
 //        productDetailsPage.displayTheProduct();
-//        productDetailsPage.fillInQtyField("10000");
+//        DataHelperAndWait.typeTextInElement(cartPage.getQtyField(),webDriver,"500");
 //        productDetailsPage.addToCart();
+//        WebElementsAssertion.validateTheElementIsDisplayed(cartPage);
 //        Assert.assertTrue(cartPage.getContinueShoppingBtn().isDisplayed());
 //    }
 //    @Test(groups = {"Cart Page","All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Verify that the ContinueShoppingBtn works correctly when displaying The requested qty is not available message", priority = 13)

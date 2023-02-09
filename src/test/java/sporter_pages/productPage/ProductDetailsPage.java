@@ -148,13 +148,21 @@ public class ProductDetailsPage extends BasePage {
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
     public void addToCart() {
-        DataHelperAndWait.clickOnElement(addToCartBtn,webDriver);
+        try{
+        DataHelperAndWait.clickOnElement(addToCartBtn,webDriver);}
+        catch (Exception e){
+            DataHelperAndWait.clickOnElement(addToCartBtn,webDriver);
+        }
     }
     public void keepShopping() {
         DataHelperAndWait.clickOnElement(keepShippingBtn,webDriver);
     }
     public void viewCart() {
-       DataHelperAndWait.clickOnElement(viewCartBtn , webDriver);
+        try{
+       DataHelperAndWait.clickOnElement(viewCartBtn , webDriver);}
+        catch (Exception e){
+            DataHelperAndWait.clickOnElement(viewCartBtn , webDriver);
+        }
     }
     public void keepShoppingAfterAddingToCart(){
         HomePage homePage=new HomePage(webDriver);

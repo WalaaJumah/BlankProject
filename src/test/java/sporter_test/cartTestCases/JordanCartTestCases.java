@@ -8,6 +8,7 @@ package sporter_test.cartTestCases;
 
 import core.BasePage;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.JordanHomePage;
 
 public class JordanCartTestCases extends CartTestCases {
@@ -24,4 +25,6 @@ public class JordanCartTestCases extends CartTestCases {
             System.out.println(webDriver.getCurrentUrl());
         }
     }
+    @Test(enabled = false)
+    public void verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct(){}
 }

@@ -9,14 +9,17 @@ package sporter_pages.cartPages;
 import core.BasePage;
 import core.DataHelperAndWait;
 import lombok.Getter;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.productPage.ProductDetailsPage;
 
+import java.sql.SQLSyntaxErrorException;
 import java.util.List;
 
 @Getter
@@ -84,7 +87,9 @@ public class CartPage extends BasePage {
 //    @FindBy(css = "#cartItemInfo24397958 > div.cartItem_Itemcontrollers__CJ4Xu > div:nth-child(2) > div > span")
 //    private WebElement qtyField;
     @FindBy(id = "cartItemQty")
-    private List<WebElement> qtyField;
+    private List<WebElement> qtyFieldList;
+    @FindBy(id = "cartItemQty")
+    private WebElement qtyField;
     @FindBy(id = "cartcloseIcon")
     private WebElement cartCloseIcon;
     @FindBy(id = "cartitemsCount")
@@ -123,6 +128,8 @@ public class CartPage extends BasePage {
     private WebElement myShoppingCartMsg;
     @FindBy(id = "cartPageHead")
     private WebElement freeShippingLabel;
+    @FindBy(id="removeItemBtn")
+    private List<WebElement> removemoreThanProduct;
 //TODO: Ask Moamen About Coupon code
 @FindBy(xpath = "//button[@value='Cancel']")
 private WebElement cancelCouponCodeBtn;
@@ -139,15 +146,57 @@ private WebElement freePrice;
        productDetailsPage.addToCart();
        productDetailsPage.viewCart();
    }
-      public void addToBogoToCartAndDisplayTheCart(){
-       productDetailsPage.navigateToBogoProduct();
+      public void addToCartAndViewCart(){
        productDetailsPage.addToCart();
        productDetailsPage.viewCart();
    }
 
+      public void addBogoToCartAndDisplayTheCart(){
+       try{
+       productDetailsPage.navigateToBogoProduct();
+       DataHelperAndWait.waitForTime(2000);
+       productDetailsPage.addToCart();
+       productDetailsPage.viewCart();}
+       catch (Exception e){
+           productDetailsPage.navigateToBogoProduct();
+           DataHelperAndWait.waitForTime(2000);
+           productDetailsPage.addToCart();
+           productDetailsPage.viewCart();
+       }
+
+   }
+    public void addBundleToCartAndDisplayTheCart(){
+            productDetailsPage.displayBundle();
+            productDetailsPage.addToCart();
+            productDetailsPage.viewCart();
+    }
     public void removeItem() {
-        DataHelperAndWait.isDisplayed(this.removeItemBtn ,webDriver);
+        DataHelperAndWait.waitToBeClickable(this.removeItemBtn ,webDriver);
         this.removeItemBtn.click();
     }
+    public void removeAllItems(int productNumber) {
+for(int i=1;i<=productNumber;i++){
+    DataHelperAndWait.clickOnElement(removeItemBtn,webDriver);
+    DataHelperAndWait.waitForTime(1000);
+}
+   }
+    public static  void addBundleOptionToCart(Select select, WebDriver webDriver) {
+       ProductDetailsPage product= new ProductDetailsPage(webDriver);
+        List<WebElement> elementCount = select.getOptions();
+        int menuSize = elementCount.size();
+        for (int i = 0; i < menuSize; i++) {
+            try{
+            select.selectByIndex(i);
+            product.addToCart();
+            break;
+            }
+            catch (Exception e){
+                e.getMessage();
+            }
+
+        }
+    }
+
+
 
 }
