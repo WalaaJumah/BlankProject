@@ -124,6 +124,7 @@ public  class DataHelperAndWait  {
         for (WebElement option : list) {
             if (option.getText().equalsIgnoreCase(element)) {
                 option.click();
+                option.click();
                 break;
             }
         }

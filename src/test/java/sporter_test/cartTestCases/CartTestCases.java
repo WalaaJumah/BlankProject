@@ -10,7 +10,10 @@ import core.BaseTest;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import sporter_pages.cartPages.CartPage;
 import sporter_pages.homepage_classes.HomePage;
@@ -130,8 +133,8 @@ public class CartTestCases extends BaseTest {
     @Test(groups = {"Cart Page","All Smoke Testing Result","1.2 High Severity"},description = " Cart Page- Make sure ability to add a bundle to the cart with all bundle options", priority = 13)
     public void verifyAbilityToAddBundleWithAllItsOptionsToCart() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        CartPage cartPage = new CartPage(webDriver);
         productDetailsPage.displayBundle();
+        WebDriverWait wait;
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getBundleMenu() ,webDriver);
         Select select = new Select(productDetailsPage.getBundleMenu());
         List<WebElement> elementCount = select.getOptions();
@@ -140,7 +143,9 @@ public class CartTestCases extends BaseTest {
             try {
                 select.selectByIndex(i);
                 productDetailsPage.addToCart();
-                productDetailsPage.keepShopping();
+                wait = new WebDriverWait(webDriver, 3);
+                 wait.until(ExpectedConditions.visibilityOf(productDetailsPage.getKeepShippingBtn())).isDisplayed();
+                productDetailsPage.getKeepShippingBtn().click();
             } catch (Exception e) {
                 DataHelperAndWait.clickOnElement(productDetailsPage.getCloseToCartErrorPopUp(),webDriver);
             }
