@@ -319,7 +319,7 @@ public class AEGuestUserPage extends BasePage {
 
     public void clickOnGuestCheckoutBtn() {
         try {
-            DataHelperAndWait.waitToBeClickable(guestCheckoutBtn, 12,webDriver);
+            DataHelperAndWait.waitToBeClickable(guestCheckoutBtn, 15,webDriver);
             this.guestCheckoutBtn.click();
         } catch (Exception e) {
             DataHelperAndWait.waitToBeClickable(guestCheckoutBtn, 3,webDriver);
@@ -328,7 +328,7 @@ public class AEGuestUserPage extends BasePage {
     }
 
     public void clickOnProceedCheckoutBtn() {
-        DataHelperAndWait.waitToBeClickable(proceedCheckoutBtn, 3,webDriver);
+        DataHelperAndWait.waitToBeClickable(proceedCheckoutBtn, 18,webDriver);
         this.proceedCheckoutBtn.click();
     }
 

@@ -7909,7 +7909,7 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
     }
 
     //The following test cases to handle (#8456 - Main menu not working when you try to open it from OOS product page)
-    @Test(groups = {"2.06 MegaMenu", "1.2 High Severity"},description = "MegaMenu- Make sure the ShopBy menu is displayed when hovering on it from OOS Product page ", priority = 514)
+    @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure the ShopBy menu is displayed when hovering on it from OOS Product page ", priority = 514)
     public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromOosProductPage() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
