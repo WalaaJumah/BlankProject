@@ -85,8 +85,8 @@ public class AeProductDetailsPageTestCases extends BaseTest {
         aeProductDetailsPage.decreaseTheQuantity();
         Assert.assertEquals(aeProductDetailsPage.getQuantityField().getAttribute("value"), "1");
     }
-
-    @Test(groups = {"2.02 Product Page","All Smoke Testing Result","1.3 Medium Severity"},description = "Make sure that the customer can submit his review successfully ", priority = 9)
+//TODO: Cannot handle #8887 - Add Captcha on Add product reviews Form
+    @Test(groups = {"2.02 Product Page","All Smoke Testing Result","1.3 Medium Severity"},description = "Make sure that the customer can submit his review successfully ", priority = 9,enabled = false)
     public void verifyAbilityToSubmitTheProductReview() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.selectStarInReview();
@@ -101,8 +101,8 @@ public class AeProductDetailsPageTestCases extends BaseTest {
         aeProductDetailsPage.submitProductReview("Review Description", "Review Summary", "Wala'a Mohammad");
         assertTrue(aeProductDetailsPage.getReviewErrorMsg().isDisplayed());
     }
-
-    @Test(groups = {"2.02 Product Page", "1.3 Medium Severity"},description = "Make sure that the customer can submit his review when filling Review Form with Long Length", priority = 11)
+//TODO:Cannot Handle #8887 - Add Captcha on Add product reviews Form
+    @Test(groups = {"2.02 Product Page", "1.3 Medium Severity"},description = "Make sure that the customer can submit his review when filling Review Form with Long Length", priority = 11,enabled = false)
     public void verifyAbilityToFillTheReviewWIthLongLength() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.displayTheProduct();
