@@ -168,15 +168,17 @@ public class AeProductDetailsPage extends BasePage {
     private WebElement previousReviewPageBtn;
     @FindBy(xpath = "//div[@class='search-result-title-wrapper']")
     private WebElement searchPageTitle;
+    @FindBy(xpath = "//span[@id='recaptcha-anchor']/div")
+    private WebElement notReportCheckBox;
 
     //Getter Methods
     public WebElement getBundleMenu() {
-        DataHelperAndWait.waitToBeVisible(bundleMenu, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(bundleMenu, 15, webDriver);
         return bundleMenu;
     }
 
     public WebElement getSearchPageTitle() {
-        DataHelperAndWait.waitToBeVisible(searchPageTitle, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(searchPageTitle, 15, webDriver);
         return searchPageTitle;
     }
 
@@ -193,7 +195,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public WebElement getAddToCartBtn() {
-        DataHelperAndWait.waitToBeVisible(addToCartBtn, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(addToCartBtn, 15, webDriver);
         return addToCartBtn;
     }
 
@@ -202,12 +204,12 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public WebElement getKeepShippingBtn() {
-        DataHelperAndWait.waitToBeVisible(keepShippingBtn, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(keepShippingBtn, 15, webDriver);
         return keepShippingBtn;
     }
 
     public WebElement getViewCartBtn() {
-        DataHelperAndWait.waitToBeVisible(viewCartBtn, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(viewCartBtn, 15, webDriver);
         return viewCartBtn;
     }
 
@@ -220,7 +222,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public WebElement getSearchBtn() {
-        DataHelperAndWait.waitToBeClickable(searchBtn, 5, webDriver);
+        DataHelperAndWait.waitToBeClickable(searchBtn, 15, webDriver);
         return searchBtn;
     }
 
@@ -229,12 +231,12 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public WebElement getInconvenienceWarningMsg() {
-        DataHelperAndWait.waitToBeVisible(inconvenienceWarningMsg, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(inconvenienceWarningMsg, 15, webDriver);
         return inconvenienceWarningMsg;
     }
 
     public WebElement getOOSMsg() {
-        DataHelperAndWait.waitToBeVisible(OOSMsg, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(OOSMsg, 15, webDriver);
         return OOSMsg;
     }
 
@@ -247,7 +249,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public WebElement getReviewErrorMsg() {
-        DataHelperAndWait.waitToBeVisible(reviewErrorMsg, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(reviewErrorMsg, 15, webDriver);
         return reviewErrorMsg;
     }
 
@@ -271,7 +273,7 @@ public class AeProductDetailsPage extends BasePage {
         return addToCartBtn;
     }
     public WebElement getEnglishLangBtn() {
-        DataHelperAndWait.waitToBeVisible(englishLangBtn, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(englishLangBtn, 15, webDriver);
         return englishLangBtn;
     }
 
@@ -281,12 +283,12 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public WebElement getProductPrice() {
-        DataHelperAndWait.waitToBeVisible(productPrice, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(productPrice, 15, webDriver);
         return productPrice;
     }
 
     public WebElement getFreeProductLabel() {
-        DataHelperAndWait.waitToBeVisible(freeProductLabel, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(freeProductLabel, 15, webDriver);
         return freeProductLabel;
     }
 
@@ -295,17 +297,17 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public WebElement getAboutThisProductSection() {
-        DataHelperAndWait.waitToBeVisible(aboutThisProductSection, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(aboutThisProductSection, 15, webDriver);
         return aboutThisProductSection;
     }
 
     public WebElement getAboutThisProductTitle() {
-        DataHelperAndWait.waitToBeVisible(aboutThisProductTitle, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(aboutThisProductTitle, 15, webDriver);
         return aboutThisProductTitle;
     }
 
     public WebElement getSupplementFactsTable() {
-        DataHelperAndWait.waitToBeVisible(supplementFactsTable, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(supplementFactsTable, 15, webDriver);
         return supplementFactsTable;
     }
 
@@ -319,44 +321,44 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public WebElement getAccountProfileOptions() {
-        DataHelperAndWait.waitToBeVisible(accountProfileOptions, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(accountProfileOptions, 15, webDriver);
         return accountProfileOptions;
     }
 
     public WebElement getProductName() {
-        DataHelperAndWait.waitToBeVisible(productName, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(productName, 15, webDriver);
         return productName;
     }
 
     public WebElement getDirectionsOfUseSection() {
-        DataHelperAndWait.waitToBeVisible(directionsOfUseSection, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(directionsOfUseSection, 15, webDriver);
         return directionsOfUseSection;
     }
 
     public WebElement getAboutBrandSection() {
-        DataHelperAndWait.waitToBeVisible(aboutBrandSection, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(aboutBrandSection, 15, webDriver);
         return aboutBrandSection;
     }
 
     public WebElement getProductHeaderBar() {
-        DataHelperAndWait.waitToBeVisible(ProductHeaderBar, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(ProductHeaderBar, 15, webDriver);
         return ProductHeaderBar;
     }
 
     public WebElement getExpectedDeliveryDateLabel() {
-        DataHelperAndWait.waitToBeVisible(expectedDeliveryDateLabel, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(expectedDeliveryDateLabel, 15, webDriver);
         return expectedDeliveryDateLabel;
     }
 
     public WebElement getExpectedDeliveryDateValue() {
-        DataHelperAndWait.waitToBeVisible(expectedDeliveryDateValue, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(expectedDeliveryDateValue, 15, webDriver);
         return expectedDeliveryDateValue;
     }
 
 
     //Define the main actions we need to execute our TCs
     public void clickOnTheProductAttributes() {
-        DataHelperAndWait.isDisplayed(productAttribute, 5, webDriver);
+        DataHelperAndWait.isDisplayed(productAttribute, 15, webDriver);
         this.productAttribute.click();
         this.productFlavor.click();
     }
@@ -383,7 +385,7 @@ public class AeProductDetailsPage extends BasePage {
 
     public void viewCart() {
         try{
-        DataHelperAndWait.waitToBeVisible(viewCartBtn, 15, webDriver);
+        DataHelperAndWait.waitToBeVisible(viewCartBtn, 115, webDriver);
         this.viewCartBtn.click();}
         catch(Exception e){
             DataHelperAndWait.waitToBeVisible(viewCartBtn, 6, webDriver);
@@ -392,40 +394,40 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void clickOnSearchBtn() {
-        DataHelperAndWait.waitToBeClickable(searchBtn, 5, webDriver);
+        DataHelperAndWait.waitToBeClickable(searchBtn, 15, webDriver);
         this.searchBtn.click();
     }
 
     public void searchForBundle() {
-        DataHelperAndWait.waitToBeClickable(searchField, 5, webDriver);
+        DataHelperAndWait.waitToBeClickable(searchField, 15, webDriver);
         this.searchField.sendKeys("Box");
     }
 
     public void clickOnTheProductCard() {
-        DataHelperAndWait.waitToBeClickable(productCard, 5, webDriver);
+        DataHelperAndWait.waitToBeClickable(productCard, 15, webDriver);
         this.productCard.click();
     }
 
     public void clickOnFirstProductFlavor() {
-        DataHelperAndWait.waitToBeClickable(firstProductFlavor, 5, webDriver);
+        DataHelperAndWait.waitToBeClickable(firstProductFlavor, 15, webDriver);
         this.firstProductFlavor.click();
     }
 
     public void clickOnSecondProductFlavor() {
-        DataHelperAndWait.waitToBeClickable(secondProductFlavor, 5, webDriver);
+        DataHelperAndWait.waitToBeClickable(secondProductFlavor, 15, webDriver);
         this.secondProductFlavor.click();
     }
 
     public void switchToAECountry() {
         try {
-            DataHelperAndWait.waitToBeVisible(countryList, 5,webDriver);
+            DataHelperAndWait.waitToBeVisible(countryList, 15,webDriver);
             this.countryList.click();
-            DataHelperAndWait.waitToBeVisible(aeCountry, 5,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeCountry, 15,webDriver);
             this.aeCountry.click();
         } catch (Exception e) {
-            DataHelperAndWait.waitToBeVisible(countryList, 5,webDriver);
+            DataHelperAndWait.waitToBeVisible(countryList, 15,webDriver);
             this.countryList.click();
-            DataHelperAndWait.waitToBeVisible(aeCountry, 5,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeCountry, 15,webDriver);
             this.aeCountry.click();
         }
     }
@@ -433,11 +435,11 @@ public class AeProductDetailsPage extends BasePage {
     public void switchToLebanonCountry() {
         try {
             this.countryList.click();
-            DataHelperAndWait.isDisplayed(countryList, 5, webDriver);
+            DataHelperAndWait.isDisplayed(countryList, 15, webDriver);
             this.lebanonCountry.click();
         } catch (Exception e) {
             this.countryList.click();
-            DataHelperAndWait.isDisplayed(countryList, 5, webDriver);
+            DataHelperAndWait.isDisplayed(countryList, 15, webDriver);
             this.lebanonCountry.click();
         }
     }
@@ -445,11 +447,11 @@ public class AeProductDetailsPage extends BasePage {
     public void switchToJOCountry() {
         try {
             this.countryList.click();
-            DataHelperAndWait.isDisplayed(countryList, 5, webDriver);
+            DataHelperAndWait.isDisplayed(countryList, 15, webDriver);
             this.joCountry.click();
         } catch (Exception e) {
             this.countryList.click();
-            DataHelperAndWait.isDisplayed(countryList, 5, webDriver);
+            DataHelperAndWait.isDisplayed(countryList, 15, webDriver);
             this.joCountry.click();
         }
     }
@@ -466,14 +468,14 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void decreaseTheQuantity() {
-        DataHelperAndWait.waitToBeVisible(quantityField, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(quantityField, 15, webDriver);
         this.quantityField.click();
-        DataHelperAndWait.waitToBeVisible(qtyMinusButton, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(qtyMinusButton, 15, webDriver);
         this.qtyMinusButton.click();
     }
 
     public void clickOnProductInHomePage() {
-        DataHelperAndWait.waitToBeClickable(this.productInHomePage, 5, webDriver);
+        DataHelperAndWait.waitToBeClickable(this.productInHomePage, 15, webDriver);
         this.productInHomePage.click();
     }
 
@@ -487,25 +489,26 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void clickOnSalesAndOffersMenu() {
-        DataHelperAndWait.isDisplayed(salesAndOffersMenu, 5, webDriver);
+        DataHelperAndWait.isDisplayed(salesAndOffersMenu, 15, webDriver);
         this.salesAndOffersMenu.click();
     }
 
     public void clickOnSportsSupplementsMenu() {
-        DataHelperAndWait.waitToBeClickable(SportsSupplementsMenu, 5, webDriver);
+        DataHelperAndWait.waitToBeClickable(SportsSupplementsMenu, 15, webDriver);
         this.SportsSupplementsMenu.click();
     }
 
     public void submitProductReview(String reviewDesc, String reviewSummary, String nickName) {
-        DataHelperAndWait.waitToBeVisible(addReviewButton, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(addReviewButton, 15, webDriver);
         this.addReviewButton.click();
-        DataHelperAndWait.waitToBeVisible(reviewDescField, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(reviewDescField, 15, webDriver);
         this.reviewDescField.sendKeys(reviewDesc);
-        DataHelperAndWait.waitToBeVisible(reviewSummaryField, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(reviewSummaryField, 15, webDriver);
         this.reviewSummaryField.sendKeys(reviewSummary);
-        DataHelperAndWait.waitToBeVisible(nickNameField, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(nickNameField, 15, webDriver);
         this.nickNameField.sendKeys(nickName);
-        DataHelperAndWait.waitToBeClickable(submitReviewButton, 5, webDriver);
+//        DataHelperAndWait.clickOnElement(this.notReportCheckBox,webDriver);
+        DataHelperAndWait.waitToBeClickable(submitReviewButton, 15, webDriver);
         DataHelperAndWait.waitToBeClickable(submitReviewButton,6,webDriver);
         this.submitReviewButton.click();
         //Test123456789
@@ -514,34 +517,34 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void clickOnBreadcrumbHomePage() {
-        DataHelperAndWait.waitToBeVisible(HomeBreadcrumbs, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(HomeBreadcrumbs, 15, webDriver);
         this.HomeBreadcrumbs.click();
     }
 
     public void switchToArabicVersion() {
-        DataHelperAndWait.isDisplayed(arabicLangBtn, 5, webDriver);
+        DataHelperAndWait.isDisplayed(arabicLangBtn, 15, webDriver);
         this.arabicLangBtn.click();
     }
 
     public void switchCountryThenAddProductToCart() {
         this.switchToAECountry();
-        DataHelperAndWait.waitToBeVisible(productInHomePage, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(productInHomePage, 15, webDriver);
         this.clickOnProductInHomePage();
         this.addToCart();
     }
 
     public void clickOnShopeByMenu() {
-        DataHelperAndWait.isDisplayed(shopeByMenu, 5, webDriver);
+        DataHelperAndWait.isDisplayed(shopeByMenu, 15, webDriver);
         this.shopeByMenu.click();
     }
 
     public void clickOnBuy1Get1Card() {
-        DataHelperAndWait.waitToBeVisible(buy1Get1Card, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(buy1Get1Card, 15, webDriver);
         this.buy1Get1Card.click();
     }
 
     public void clickOnFirstProductInTheCategoryList() {
-        DataHelperAndWait.isDisplayed(firstProductInTheCategoryList, 5, webDriver);
+        DataHelperAndWait.isDisplayed(firstProductInTheCategoryList, 15, webDriver);
         for (WebElement webElement : megaMenuList) {
             webElement.click();
             break;
@@ -549,7 +552,7 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void DisplayProductInTheList(int listIndex) {
-        DataHelperAndWait.waitToBeVisible(firstProductInTheCategoryList, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(firstProductInTheCategoryList, 15, webDriver);
         for (int i = 1; i < megaMenuList.size(); i++) {
             WebElement productIndex = megaMenuList.get(listIndex);
             productIndex.click();
@@ -557,60 +560,60 @@ public class AeProductDetailsPage extends BasePage {
     }
 
     public void fillInQtyField(String qtyNumber) {
-        DataHelperAndWait.isDisplayed(quantityField, 5, webDriver);
+        DataHelperAndWait.isDisplayed(quantityField, 15, webDriver);
         this.quantityField.sendKeys(qtyNumber);
     }
 
     public void clickOnAccountProfileIcon() {
-        DataHelperAndWait.isDisplayed(accountProfileIcon, 5, webDriver);
+        DataHelperAndWait.isDisplayed(accountProfileIcon, 15, webDriver);
         this.accountProfileIcon.click();
     }
 
     public void clickOnAddToCartBtnInProductHeaderBar() {
-        DataHelperAndWait.isDisplayed(addToCartBtnInProductHeaderBar, 5, webDriver);
+        DataHelperAndWait.isDisplayed(addToCartBtnInProductHeaderBar, 15, webDriver);
         this.addToCartBtnInProductHeaderBar.click();
     }
 
     public void clickOnProductBrandLink() {
-        DataHelperAndWait.isDisplayed(productBrandLink, 5, webDriver);
+        DataHelperAndWait.isDisplayed(productBrandLink, 15, webDriver);
         this.productBrandLink.click();
     }
 
     public void clickOnFirstProductInWheyProteinPage() {
-        DataHelperAndWait.isDisplayed(firstProductInWheyProteinPage, 5, webDriver);
+        DataHelperAndWait.isDisplayed(firstProductInWheyProteinPage, 15, webDriver);
         this.firstProductInWheyProteinPage.click();
     }
 
     public void clickOnPageBtnInReviewSection() {
-        DataHelperAndWait.isDisplayed(pageBtnInReviewSection, 5, webDriver);
+        DataHelperAndWait.isDisplayed(pageBtnInReviewSection, 15, webDriver);
         this.pageBtnInReviewSection.click();
     }
 
     public void clickOnPreviousReviewPageBtn() {
-        DataHelperAndWait.isDisplayed(previousReviewPageBtn, 5, webDriver);
+        DataHelperAndWait.isDisplayed(previousReviewPageBtn, 15, webDriver);
         this.previousReviewPageBtn.click();
     }
 
     public void clickOnNextReviewPageBtn() {
-        DataHelperAndWait.isDisplayed(nextReviewPageBtn, 5, webDriver);
+        DataHelperAndWait.isDisplayed(nextReviewPageBtn, 15, webDriver);
         this.nextReviewPageBtn.click();
     }
 
     public void clickOnFirstProductSize() {
-        DataHelperAndWait.isDisplayed(firstProductSize, 5, webDriver);
+        DataHelperAndWait.isDisplayed(firstProductSize, 15, webDriver);
         this.firstProductSize.click();
     }
     public void clickOnFirstsimple() {
-        DataHelperAndWait.waitToBeVisible(firstsimple, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(firstsimple, 15, webDriver);
         this.firstsimple.click();
     }
     public void clickOnSecondimple() {
-        DataHelperAndWait.waitToBeVisible(secondsimple, 5, webDriver);
+        DataHelperAndWait.waitToBeVisible(secondsimple, 15, webDriver);
         this.secondsimple.click();
     }
 
     public void clickOnSecondProductSize() {
-        DataHelperAndWait.isDisplayed(secondProductSize, 5, webDriver);
+        DataHelperAndWait.isDisplayed(secondProductSize, 15, webDriver);
         this.secondProductSize.click();
     }
 
