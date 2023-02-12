@@ -318,7 +318,7 @@ public class QatarHomePageTestCases extends BaseTest {
         Assert.assertTrue(qatarHomePage.getEmailBtn().isDisplayed());
     }
 
-    @Test(groups = {"2.01 Home Page","All Smoke Testing Result","1.2 High Severity"},description = "Qatar HomePage- Make sure clicking on email button from the Got A Question section works correctly ", priority = 30)
+    @Test(groups = {"2.01 Home Page","All Smoke Testing Result","1.3 Medium Severity"},description = "Qatar HomePage- Make sure clicking on email button from the Got A Question section works correctly ", priority = 30)
     public void verifyAbilityToClickOnEmailBtnInGotQuestionSectionCorrectly() {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.navigate();

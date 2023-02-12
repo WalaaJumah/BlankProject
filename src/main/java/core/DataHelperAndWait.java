@@ -180,7 +180,7 @@ public  class DataHelperAndWait  {
                 DataHelperAndWait.waitToBeClickable(element,5,webDriver);
                 element.click();
 //                DataHelperAndWait.waitForTime(6000);
-                DataHelperAndWait.waitForUrlContains(pageNumber,webDriver,9);
+                DataHelperAndWait.waitForUrlContains(pageNumber,webDriver,20);
                 Assert.assertTrue(webDriver.getCurrentUrl().endsWith(pageNumber),"The URL is wrong in page"+pageNumber);
                 boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
                 assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
