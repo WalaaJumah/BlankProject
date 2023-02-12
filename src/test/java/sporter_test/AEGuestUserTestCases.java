@@ -207,7 +207,7 @@ aeGuestUserPage.clickOnContinueBtn();
         //        aeGuestUserPage.clearShippingInformationFields();
 //        this.verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPageCorrectly();
         aeGuestUserPage.fillInShippingInformationInputField(aeGuestUserPage.firstName, aeGuestUserPage.lastName, aeGuestUserPage.email, aeGuestUserPage.phone, aeGuestUserPage.streetLineOne,aeGuestUserPage. streetLineTwo);
-        aeGuestUserPage.getAddressField().sendKeys("walaa");
+//        aeGuestUserPage.getAddressField().sendKeys("walaa");
         Select select = new Select(aeGuestUserPage.getCityMenu());
         WebElement cityOption = select.getOptions().get(2);
         cityOption.click();

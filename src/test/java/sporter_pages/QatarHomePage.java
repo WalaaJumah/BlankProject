@@ -14,7 +14,7 @@ public class QatarHomePage extends BasePage {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
     }
-    public String contactUsUrl = "contacts-us#contact-form";
+    public String contactUsUrl = "/contacts-us/#contact-form";
 
     //declare all locators related to the Cart Page
     @FindBy(id = "switcher-store-trigger")

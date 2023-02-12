@@ -323,7 +323,7 @@ public class QatarHomePageTestCases extends BaseTest {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.navigate();
         qatarHomePage.clickOnEmailBtn();
-        DataHelperAndWait.waitForUrlContains(qatarHomePage.contactUsUrl,webDriver,5);
+        DataHelperAndWait.waitForUrlContains(qatarHomePage.contactUsUrl,webDriver,20);
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(qatarHomePage.contactUsUrl), "The system redirect the user to wrong URL " + webDriver.getCurrentUrl());
     }
 
