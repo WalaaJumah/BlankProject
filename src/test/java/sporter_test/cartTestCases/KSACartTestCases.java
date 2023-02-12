@@ -9,9 +9,15 @@ package sporter_test.cartTestCases;
 import core.BasePage;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+import sporter_pages.cartPages.CartPage;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.KsaHomePage;
+import sporter_pages.productPage.ProductDetailsPage;
+
+import java.text.DecimalFormat;
 
 public class KSACartTestCases extends CartTestCases {
     @BeforeClass(alwaysRun=true)
@@ -29,5 +35,17 @@ public class KSACartTestCases extends CartTestCases {
         WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage,webDriver);
         System.out.println(webDriver.getCurrentUrl());
 
+    }
+    @Test(groups = {"Cart Page","All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Make sure the tax calculate correctly", priority = 30)
+    public void verifyTheTaxCalculatedCorrectly() {
+        DecimalFormat df = new DecimalFormat("0.00");
+        CartPage cartPage = new CartPage(webDriver);
+        cartPage.addToCartAndDisplayTheCart();
+        float subTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue(),webDriver);
+        float tax = subTotal * (float) (0.15);
+        float expectedCartTotal = subTotal + tax;
+        float actualCartTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(),webDriver);
+        Assert.assertEquals(df.format(actualCartTotal), df.format(expectedCartTotal));
+        cartPage.removeItem();
     }
 }

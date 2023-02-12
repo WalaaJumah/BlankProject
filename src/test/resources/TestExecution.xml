@@ -12,18 +12,18 @@
         <!-- <parameter name="country" value="en-qa" />-->
         <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32569/" />
         <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix" />
-        <parameter name="bundleProductUrl" value="/grenade-carb-killa-protein-bar-box-of-12" />
+        <parameter name="bundleProductUrl" value="/3d-energy-drink-box-of-12/" />
         <classes>
             <!--            HomePage-->
 <!--                        <class name="sporter_test.forgetPasswordTestCases.KSAForgetPasswordTestCases"/>-->
 <!--                        <class name="sporter_test.forgetPasswordTestCases.JordanForgetPasswordTestCases"/>-->
 <!--                        <class name="sporter_test.loginTestCases.LoginTestCases"/>-->
                         <class name="sporter_test.cartTestCases.UAECartTestCases">
-                            <methods>
-                                <include name="verifyAbilityToAddBundleWithAllItsOptionsToCart"/>
-<!--                                <include name="verifyHereLinkInCartPageWorking"/>-->
-            <!--                    <include name="verifyMainOptionsInTheMegaMenuAreDisplayed"/>-->
-                            </methods>
+<!--                            <methods>-->
+<!--                                <include name="verifyOrderTotalCalculationInCartPageWorksCorrectly"/>-->
+<!--&lt;!&ndash;&lt;!&ndash;                                <include name="verifyHereLinkInCartPageWorking"/>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;                    <include name="verifyMainOptionsInTheMegaMenuAreDisplayed"/>&ndash;&gt;&ndash;&gt;-->
+<!--                            </methods>-->
                         </class>
 <!--            <class name="sporter_test.headerTestCases.KSAHeaderTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.UAEHeaderTestCases"/>-->

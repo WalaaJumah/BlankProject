@@ -8,6 +8,7 @@ package sporter_test.cartTestCases;
 
 import core.BasePage;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.EgyptHomePage;
 import sporter_test.AccountRegistrationTestCases.AccountRegistrationTestCases;
 
@@ -23,4 +24,6 @@ public class EgyptCartTestCases extends CartTestCases {
             webDriver.navigate().to(BasePage.BaseURL+egyptHomePage.egyptDomain);
             CloseInitialDialog();          }
     }
+    @Test(enabled = false)
+    public void verifyTheTaxCalculatedCorrectly() {}
 }

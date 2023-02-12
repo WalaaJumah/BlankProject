@@ -45,9 +45,9 @@ public class ProductDetailsPage extends BasePage {
     private WebElement continueBtnInOOSPoup;
     @FindBy(id = "viewCartBtn")
     private WebElement viewCartBtn;
-    @FindBy(xpath = "(//div[@class='productOption_list__SYsKN'])[1]//div[starts-with(@id,'configurableOptionLabel_')]")
+    @FindBy(xpath = "//div[starts-with(@id,'configurableOptionLabel')]")
     private List<WebElement> productSizeAttribute;
-    @FindBy(xpath = "(//div[@class='productOption_list__SYsKN'])[2]//div[starts-with(@id,'configurableOptionLabel_')]")
+    @FindBy(xpath = "//div[starts-with(@id,'configurableOptionLabel')]")
     private List<WebElement> productFlavor;
     @FindBy(id = "SearchButton")
     private WebElement searchBtn;
@@ -144,7 +144,6 @@ public class ProductDetailsPage extends BasePage {
     //Methods we need during testing the Product details page
     public void displayTheProduct() {
         webDriver.navigate().to(BaseURL + storeCountry + productUrl);
-        System.out.println(BaseURL + storeCountry + productUrl);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
     public void addToCart() {
@@ -161,6 +160,7 @@ public class ProductDetailsPage extends BasePage {
         try{
        DataHelperAndWait.clickOnElement(viewCartBtn , webDriver);}
         catch (Exception e){
+            webDriver.navigate().refresh();
             DataHelperAndWait.clickOnElement(viewCartBtn , webDriver);
         }
     }

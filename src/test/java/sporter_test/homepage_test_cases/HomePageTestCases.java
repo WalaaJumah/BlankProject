@@ -99,20 +99,20 @@ public class HomePageTestCases extends BaseTest {
     public void verifyMainOptionsInTheMegaMenuAreDisplayed() {
         HomePage homePage = new HomePage(webDriver);
         if(webDriver.getCurrentUrl().contains(".com/en-")){
-            WebElementsAssertion.assertionEqualsForElementAttribute(homePage.getShopByOption(), webDriver, XmlReader.getXMLData("ShopByEn"));
-            WebElementsAssertion.assertionEqualsForElementAttribute(homePage.getSportSupplementsOption(), webDriver,XmlReader.getXMLData( "SportsSupplementsEn"));
-            WebElementsAssertion.assertionEqualsForElementAttribute(homePage.getVitaminsAndHealthOption(), webDriver, XmlReader.getXMLData("VitaminsAndHealthEn"));
-            WebElementsAssertion.assertionEqualsForElementAttribute(homePage.getHealthyFoodOption(), webDriver, XmlReader.getXMLData("HealthyFoodEn"));
-            WebElementsAssertion.assertionEqualsForElementAttribute(homePage.getSportsOption(), webDriver, XmlReader.getXMLData("SPORTSEn"));
-            WebElementsAssertion.assertionEqualsForElementAttribute(homePage.getWomenOnlyOption(), webDriver, XmlReader.getXMLData("WomenOnlyEn"));}
+            WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getShopByOption(), webDriver, XmlReader.getXMLData("ShopByEn"));
+            WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getSportSupplementsOption(), webDriver,XmlReader.getXMLData( "SportsSupplementsEn"));
+            WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getVitaminsAndHealthOption(), webDriver, XmlReader.getXMLData("VitaminsAndHealthEn"));
+            WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getHealthyFoodOption(), webDriver, XmlReader.getXMLData("HealthyFoodEn"));
+            WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getSportsOption(), webDriver, XmlReader.getXMLData("SPORTSEn"));
+            WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getWomenOnlyOption(), webDriver, XmlReader.getXMLData("WomenOnlyEn"));}
 
         else{
-            WebElementsAssertion.assertionEqualsForElementAttribute(homePage.getShopByOption(), webDriver, XmlReader.getXMLData("ShopByAr"));
-            WebElementsAssertion.assertionEqualsForElementAttribute(homePage.getSportSupplementsOption(), webDriver,XmlReader.getXMLData( "SportsSupplementsAr"));
-            WebElementsAssertion.assertionEqualsForElementAttribute(homePage.getVitaminsAndHealthOption(), webDriver, XmlReader.getXMLData("VitaminsAndHealthAr"));
-            WebElementsAssertion.assertionEqualsForElementAttribute(homePage.getHealthyFoodOption(), webDriver, XmlReader.getXMLData("HealthyFoodAr"));
-            WebElementsAssertion.assertionEqualsForElementAttribute(homePage.getSportsOption(), webDriver, XmlReader.getXMLData("SPORTSAr"));
-            WebElementsAssertion.assertionEqualsForElementAttribute(homePage.getWomenOnlyOption(), webDriver, XmlReader.getXMLData("WomenOnlyAr"));}
+            WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getShopByOption(), webDriver, XmlReader.getXMLData("ShopByAr"));
+            WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getSportSupplementsOption(), webDriver,XmlReader.getXMLData( "SportsSupplementsAr"));
+            WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getVitaminsAndHealthOption(), webDriver, XmlReader.getXMLData("VitaminsAndHealthAr"));
+            WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getHealthyFoodOption(), webDriver, XmlReader.getXMLData("HealthyFoodAr"));
+            WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getSportsOption(), webDriver, XmlReader.getXMLData("SPORTSAr"));
+            WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getWomenOnlyOption(), webDriver, XmlReader.getXMLData("WomenOnlyAr"));}
     }
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Banners appearing under shop by category are displayed", priority = 14)
     public void verifyHomePageUnderShopByCategoryBannersAreDisplayed() {

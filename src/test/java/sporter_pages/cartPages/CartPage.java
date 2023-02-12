@@ -45,10 +45,15 @@ public class CartPage extends BasePage {
     private WebElement cartErrorMsg;
     @FindBy(id = "closeAddToCartErrBtn")
     private WebElement closeAddToCartErrorMsg;
+    //TODO: Needs to revisit after fixing the Bogo issue
+     @FindBy(id = "closeAddToCartErrBtn")
+    private WebElement freeFromSporterSection;
     @FindBy(id = "removeItemBtn")
     private WebElement removeItemBtn;
     @FindBy(id = "cartItemPrice")
     private List<WebElement> priceInCartPage;
+    @FindBy(id = "cartItemPrice")
+    private WebElement productPrice;
     //TODO: To replace it with ID after added it by Moamen
     @FindBy(xpath = "//div[@id='cartPageContainer']//h2[2]")
     private WebElement noItemInCartLabel;
@@ -57,14 +62,14 @@ public class CartPage extends BasePage {
     //TODO: To replace it with ID after added it by Moamen
     @FindBy(css = "#FaShoppingCart > path")
     private WebElement cartIcon;
-    @FindBy(id = "cartPagelink")
+    @FindBy(xpath="(//a[@id='cartPagelink'])[1]")
     private WebElement viewCartInCartPopup;
     @FindBy(xpath = "checkoutbtn")
     private WebElement proceedCheckoutBtnInCartPopup;
     //TODO: To replace it with ID after added it by Moamen
     @FindBy(xpath = "//div[@id='cartPageContainer']/h2[2]/a")
     private WebElement hereLink;
-    @FindBy(xpath = "decreaseQtyBtn")
+    @FindBy(id = "decreaseQtyBtn")
     private WebElement decreaseQtyBtn;
     @FindBy(id = "increaseQtyBtn")
     private WebElement increaseQtyBtn;
@@ -98,14 +103,18 @@ public class CartPage extends BasePage {
     //TODO: There's a bug here due to the Msg is missing
     @FindBy(xpath = "//div[@id='coupon_code-error']")
     private WebElement requiredCouponMsg;
-    @FindBy(id = "taxValue")
+    @FindBy(xpath = "(//span[@id='taxValue'])[2]")
     private WebElement taxValue;
-    @FindBy(id = "subTotalValue")
+    @FindBy(xpath = "(//span[@id='subTotalValue'])[2]")
     private WebElement subTotalValue;
     @FindBy(id = "cartItemTotalPrice")
     private List<WebElement> valueInTotalColumn;
     @FindBy(xpath = "//div[starts-with(@id,'cartItemImage')]")
     private List<WebElement> productImg;
+    @FindBy(xpath = "//div[starts-with(@id,'cartItemImage')]")
+    private WebElement productImgForOneProduct;
+    @FindBy(xpath = "//a[starts-with(@class,'cartItem_itemName')]")
+    private WebElement productNameForOneProduct;
     @FindBy(xpath = "//div[starts-with(@id,'itemToWhishListBtn')]")
     private List<WebElement> moveToWishList;
     @FindBy(id = "cartTotal")
@@ -164,6 +173,10 @@ private WebElement freePrice;
            productDetailsPage.viewCart();
        }
 
+   }
+   public void navigateToCartPage(){
+       webDriver.navigate().to(BaseURL+cartURL);
+       DataHelperAndWait.waitForUrlContains(cartURL,webDriver);
    }
     public void addBundleToCartAndDisplayTheCart(){
             productDetailsPage.displayBundle();
