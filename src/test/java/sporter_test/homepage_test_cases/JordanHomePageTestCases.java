@@ -1,37 +1,40 @@
-package sporter_test.forgetPasswordTestCases.homepage_test_cases;
+/**
+ * @author w.jumaa
+ * @projectName sporter-web-automation
+ * @classDescription This class for JordanHomePageTestCases
+ */
+
+package sporter_test.homepage_test_cases;
 
 import core.BasePage;
 import core.DataHelperAndWait;
 import org.testng.annotations.BeforeClass;
-import sporter_pages.homepage_classes.QatarHomePage;
+import org.testng.annotations.Test;
+import sporter_pages.homepage_classes.JordanHomePage;
 
-//@Test(groups = "2.02 Qatar HomePage")
-public class QatarHomePageTestCases extends HomePageTestCases {
-
-
-//    QatarHomePage qatarHomePage;
-//The below code used when we did not define the QatarHomePageObject inside each method
-//    @BeforeClass
-//    @Override
-//    @Parameters({"environment"})
-//    public void setupBrowser( String environment) throws Exception {
-//        super.setupBrowser(environment);
-//        qatarHomePage= new QatarHomePage(webDriver);
-//    }
-@BeforeClass(alwaysRun=true)
-public void switchToQatarStore(){
-    QatarHomePage qatarHomePage=new QatarHomePage(webDriver);
-    qatarHomePage.switchCountry(qatarHomePage.getQatarCountry());
-    DataHelperAndWait.scrollToPositionZero(webDriver);
-    if(webDriver.getCurrentUrl().contains(qatarHomePage.qatarDomain)){
-        System.out.println("You are in Qatar Store");
+//@Test(groups = "2.04 Jordan HomePage")
+public class JordanHomePageTestCases extends HomePageTestCases {
+    @BeforeClass(alwaysRun=true)
+    public void switchToJordanStore(){
+        JordanHomePage jordanHomePage=new JordanHomePage(webDriver);
+        jordanHomePage.switchCountry(jordanHomePage.getJordanCountry());
+        DataHelperAndWait.scrollToPositionZero(webDriver);
+        if(webDriver.getCurrentUrl().contains(jordanHomePage.jordanDomain)){
+            System.out.println("You are in Jordan Store");
+        }
+        else {
+            webDriver.navigate().to(BasePage.BaseURL+jordanHomePage.jordanDomain);
+            CloseInitialDialog();
+            System.out.println(webDriver.getCurrentUrl());
+        }
     }
-    else {
-        webDriver.navigate().to(BasePage.BaseURL+qatarHomePage.qatarDomain);
-        CloseInitialDialog();
-        System.out.println(webDriver.getCurrentUrl());
-    }
-}
+    @Test(enabled = false)
+    public void verifyTopSellingStacksSectionAreDisplayed() {}
+    @Test(enabled = false)
+    public void verifyViewAllBtnInTopSellingStacksSectionWorking() {}
+    @Test(enabled = false)
+    public void verifyClickOnTheProductsAppearingInTheTopSellingStacksSectionRedirectTheUserToCorrectUrl() {}
+//
 //    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the next button at the HomePage rotating slider section is displayed ", priority = 3)
 //    public void verifyNextArrowAtHomePageRotatingSliderIsDisplayed() {
 //        HomePage homePage = new HomePage(webDriver);
@@ -146,22 +149,6 @@ public void switchToQatarStore(){
 //        for (int i = 0; i < homePage.getHomePageUnderShopByCategoryBanners().size(); i++) {
 //            WebElementsAssertion.validateTheElementIsDisplayed(homePage.getHomePageUnderShopByCategoryBanners().get(i), webDriver);
 //        }
-//    }
-//
-//    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure the Top Selling Stacks section is displayed ", priority = 15)
-//    public void verifyTopSellingStacksSectionAreDisplayed() {
-//        HomePage homePage = new HomePage(webDriver);
-//        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getTopSellingStacksHeader(), webDriver);
-//        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getTopSellingStacksSections(), webDriver);}
-//
-//    @Test(groups = { "1.2 High Severity"}, description = "{{CountryName}}: Make sure clicking on the view all button from the Top Selling Stacks section works correctly ", priority = 16)
-//    public void verifyViewAllBtnInTopSellingStacksSectionWorking() {
-//        HomePage homePage = new HomePage(webDriver);
-//        String expectedUrl = homePage.getViewAllBtnInTopSellingStacksSection().getAttribute("href");
-//        homePage.clickOnViewAllBtnInTopSellingStacksSection();
-//        WebElementsAssertion.validateTheCurrentUrlContainsString(expectedUrl, webDriver);
-//        homePage.verifyTheDisplayedPageDoesNotHaveErrors();
-//
 //    }
 //
 //    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure the Top Sellers sections are displayed ", priority = 17)
@@ -284,13 +271,6 @@ public void switchToQatarStore(){
 //        homePage.navigateToHomePage();
 //        homePage.clickOnSportswearAndAccessoriesCategory();
 //        homePage.verifyTheDisplayedPageDoesNotHaveErrors();
-//    }
-//
-//    @Test(groups = { "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure clicking on the products appearing in the Top Selling Stacks section works correctly", priority = 43)
-//    public void verifyClickOnTheProductsAppearingInTheTopSellingStacksSectionRedirectTheUserToCorrectUrl() {
-//        HomePage homePage = new HomePage(webDriver);
-//        homePage.navigateToHomePage();
-//        DataHelperAndWait.accessAllProductsInWidget(homePage.getProductsInTopSellingStacksSection(),homePage.getNextBtnInTopSellingStacksSection(),webDriver,homePage);
 //    }
 //
 //    @Test(groups = { "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure clicking on the products appearing in the Top Sellers section works correctly", priority = 44)

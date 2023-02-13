@@ -4,7 +4,7 @@
  * @classDescription This class for UAE Home Page
  */
 
-package sporter_test.forgetPasswordTestCases.homepage_test_cases;
+package sporter_test.homepage_test_cases;
 
 import core.BasePage;
 import core.DataHelperAndWait;
