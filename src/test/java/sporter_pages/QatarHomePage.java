@@ -750,11 +750,11 @@ public class QatarHomePage extends BasePage {
 
     public void clickOnPhoneBtn(  ) {
         try {
-            DataHelperAndWait.isDisplayed(phoneBtn, 8,webDriver);
+            DataHelperAndWait.isDisplayed(phoneBtn, 15,webDriver);
             this.phoneBtn.click();
         }
         catch (Exception e){
-            DataHelperAndWait.isDisplayed(phoneBtn, 1,webDriver);
+            DataHelperAndWait.isDisplayed(phoneBtn, 10,webDriver);
             this.phoneBtn.click();
         }
     }

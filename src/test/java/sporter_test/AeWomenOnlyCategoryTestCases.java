@@ -2253,6 +2253,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnFashionAndStyleCategoryInsideTheShopByCategorySectionWorksCorrectly();
         SoftAssert sa = new SoftAssert();
+        DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getResultLabel(), 10,webDriver);
         Assert.assertEquals(aeSportSupplementsCategoryPage.getResultLabel().getText(), "Results:");
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSearchResultValue().isDisplayed());
         sa.assertNotEquals(aeSportSupplementsCategoryPage.getSearchResultValue().getText(), "0", "The number of result is Zero");
@@ -2417,6 +2418,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnPersonalCareCategoryInsideTheShopByCategorySectionWorksCorrectly();
         SoftAssert sa = new SoftAssert();
+        DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getResultLabel(),7,webDriver);
         Assert.assertEquals(aeSportSupplementsCategoryPage.getResultLabel().getText(), "Results:");
         Assert.assertTrue(aeSportSupplementsCategoryPage.getSearchResultValue().isDisplayed());
         sa.assertNotEquals(aeSportSupplementsCategoryPage.getSearchResultValue().getText(), "0", "The number of result is Zero");

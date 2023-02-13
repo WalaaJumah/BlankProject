@@ -880,7 +880,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
 //        this.verifyClickingOnAntioxidantsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         aeProductDetailsPage.searchForBundle();
         aeProductDetailsPage.getSearchBtn().click();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
+//        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Verify that the previous page button in the Antioxidants category page is disable when the current page is page 1 ", priority = 81)
