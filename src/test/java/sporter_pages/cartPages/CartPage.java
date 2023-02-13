@@ -34,7 +34,6 @@ public class CartPage extends BasePage {
         PageFactory.initElements(webDriver, this);
     }
     //declare all locators related to the Cart Page
-    //TODO: To replace it with ID after added it by Moamen
     @FindBy(xpath = "//div[@id='cartItemsHeaderLabel']/span")
     private WebElement itemsCounter;
     @FindBy(id = "AddToCartErrContainer")
@@ -64,7 +63,7 @@ public class CartPage extends BasePage {
     private WebElement cartIcon;
     @FindBy(xpath="(//a[@id='cartPagelink'])[1]")
     private WebElement viewCartInCartPopup;
-    @FindBy(xpath = "checkoutbtn")
+    @FindBy(id = "checkoutbtn")
     private WebElement proceedCheckoutBtnInCartPopup;
     //TODO: To replace it with ID after added it by Moamen
     @FindBy(xpath = "//div[@id='cartPageContainer']/h2[2]/a")
@@ -109,6 +108,8 @@ public class CartPage extends BasePage {
     private WebElement subTotalValue;
     @FindBy(id = "cartItemTotalPrice")
     private List<WebElement> valueInTotalColumn;
+    @FindBy(id = "cartItemTotalPrice")
+    private WebElement productPriceTotal;
     @FindBy(xpath = "//div[starts-with(@id,'cartItemImage')]")
     private List<WebElement> productImg;
     @FindBy(xpath = "//div[starts-with(@id,'cartItemImage')]")

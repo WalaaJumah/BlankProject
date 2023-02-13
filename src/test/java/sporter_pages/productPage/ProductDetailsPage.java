@@ -12,6 +12,7 @@ import core.WebElementsAssertion;
 import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import sporter_pages.homepage_classes.HomePage;
@@ -34,6 +35,7 @@ public class ProductDetailsPage extends BasePage {
     @FindBy(id = "decreaseQty")
     private WebElement qtyMinusButton;
     @FindBy(id = "addToCartBtn")
+    @CacheLookup
     private WebElement addToCartBtn;
     @FindBy(id = "popup-block")
     private WebElement cartPopUp;
@@ -44,6 +46,7 @@ public class ProductDetailsPage extends BasePage {
     @FindBy(xpath = "//button[@class='button_btn__zg_G5 ']/span")
     private WebElement continueBtnInOOSPoup;
     @FindBy(id = "viewCartBtn")
+    @CacheLookup
     private WebElement viewCartBtn;
     @FindBy(xpath = "//div[starts-with(@id,'configurableOptionLabel')]")
     private List<WebElement> productSizeAttribute;
