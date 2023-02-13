@@ -4,7 +4,7 @@
  * @classDescription This class contains all test cases related to the HomePage
  */
 
-package sporter_test.homepage_test_cases;
+package sporter_test.forgetPasswordTestCases.homepage_test_cases;
 
 import core.BaseTest;
 import core.DataHelperAndWait;

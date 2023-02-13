@@ -19,11 +19,11 @@
 <!--                        <class name="sporter_test.forgetPasswordTestCases.JordanForgetPasswordTestCases"/>-->
 <!--                        <class name="sporter_test.loginTestCases.LoginTestCases"/>-->
                         <class name="sporter_test.cartTestCases.UAECartTestCases">
-<!--                            <methods>-->
-<!--                                <include name="verifyOrderTotalCalculationInCartPageWorksCorrectly"/>-->
-<!--&lt;!&ndash;&lt;!&ndash;                                <include name="verifyHereLinkInCartPageWorking"/>&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;            &lt;!&ndash;                    <include name="verifyMainOptionsInTheMegaMenuAreDisplayed"/>&ndash;&gt;&ndash;&gt;-->
-<!--                            </methods>-->
+                            <methods>
+                                <include name="viewCartFromPDP"/>
+<!--&lt;!&ndash;                                <include name="verifyHereLinkInCartPageWorking"/>&ndash;&gt;-->
+<!--            &lt;!&ndash;                    <include name="verifyMainOptionsInTheMegaMenuAreDisplayed"/>&ndash;&gt;-->
+                            </methods>
                         </class>
 <!--            <class name="sporter_test.headerTestCases.KSAHeaderTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.UAEHeaderTestCases"/>-->
