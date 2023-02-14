@@ -12,6 +12,7 @@ import core.WebElementsAssertion;
 import org.testng.annotations.Test;
 import sporter_pages.AccountRegistrationPage.AccountRegistrationPage;
 import sporter_pages.headerSection.HeaderSection;
+import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.loginPage.LoginPage;
 import xml_reader.XmlReader;
 
@@ -41,26 +42,7 @@ public class LoginTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(loginPage.getFaceBookLoginBtn(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(loginPage.getSignInWithSocialMediaLabel(), webDriver);
     }
-
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:  Verify Have Account tab is Active By Default when access Login Page", priority = 3)
-    public void verifyHaveAccountTabActiveByDefault() {
-        AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
-        WebElementsAssertion.assertionAttributeTrueForElement(registerPage.getHaveAnAccountTab(), webDriver, "active", "1");
-    }
-
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Ability to login correctly using valid credential", priority = 4)
-    public void verifyAbilityToLoginCorrectlyWithValidCredentials() {
-        HeaderSection header = new HeaderSection(webDriver);
-        AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
-        LoginPage loginPage = new LoginPage(webDriver);
-        loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail"), XmlReader.getXMLData("correctPassword"));
-        DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
-        DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
-        DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(), webDriver);
-    }
-
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to login using wrong email and the correct Error Msg appears", priority = 5)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to login using wrong email and the correct Error Msg appears", priority = 3)
     public void verifyInAbilityToLoginUsingWrongEmail() {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToLoginPage();
@@ -76,6 +58,24 @@ public class LoginTestCases extends BaseTest {
         }
     }
 
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:  Verify Have Account tab is Active By Default when access Login Page", priority = 4)
+    public void verifyHaveAccountTabActiveByDefault() {
+        AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
+        WebElementsAssertion.assertionAttributeTrueForElement(registerPage.getHaveAnAccountTab(), webDriver, "active", "1");
+    }
+
+    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Ability to login correctly using valid credential", priority = 5)
+    public void verifyAbilityToLoginCorrectlyWithValidCredentials() {
+        HeaderSection header = new HeaderSection(webDriver);
+        AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
+        LoginPage loginPage = new LoginPage(webDriver);
+        loginPage.navigateToLoginPage();
+        loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail"), XmlReader.getXMLData("correctPassword"));
+        DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
+        DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
+        DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(), webDriver);
+    }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to login using correct Email & Wrong Password and the correct Error Msg appears", priority = 6)
     public void verifyInAbilityToLoginUsingCorrectEmailAndWrongPassword() {
         LoginPage loginPage = new LoginPage(webDriver);
@@ -202,6 +202,7 @@ public class LoginTestCases extends BaseTest {
         HeaderSection header = new HeaderSection(webDriver);
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         LoginPage loginPage = new LoginPage(webDriver);
+        HomePage homePage=new HomePage(webDriver);
         loginPage.navigateToLoginPage();
         loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail"), XmlReader.getXMLData("correctPassword"));
         DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
@@ -209,6 +210,9 @@ public class LoginTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
         DataHelperAndWait.clickOnElement(header.getCountryMenuIcon(),webDriver);
          DataHelperAndWait.clickOnElement(header.getCountryList().get(8),webDriver);
+        DataHelperAndWait.clickOnElement(header.getSporterLogo(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(),webDriver);
+        DataHelperAndWait.waitForTime(3000);
         DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
     }
