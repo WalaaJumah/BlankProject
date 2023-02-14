@@ -18,9 +18,9 @@
 <!--                        <class name="sporter_test.forgetPasswordTestCases.KSAForgetPasswordTestCases"/>-->
 <!--                        <class name="sporter_test.forgetPasswordTestCases.JordanForgetPasswordTestCases"/>-->
 <!--                        <class name="sporter_test.loginTestCases.LoginTestCases"/>-->
-                        <class name="sporter_test.cartTestCases.UAECartTestCases">
+                        <class name="sporter_test.AccountRegistrationTestCases.QatarAccountRegistrationTestCases">
 <!--                            <methods>-->
-<!--                                <include name="verifyAbilityToViewTheCartAfterAddingMoreThanProducts"/>-->
+<!--                                <include name="verifySignInBtnInCreateAccountScreenWorksCorrectly"/>-->
 <!--&lt;!&ndash;&lt;!&ndash;                                <include name="verifyHereLinkInCartPageWorking"/>&ndash;&gt;&ndash;&gt;-->
 <!--&lt;!&ndash;            &lt;!&ndash;                    <include name="verifyMainOptionsInTheMegaMenuAreDisplayed"/>&ndash;&gt;&ndash;&gt;-->
 <!--                            </methods>-->

@@ -16,7 +16,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import sporter_pages.headerSection.HeaderSection;
-import xml_reader.XmlReader;
 
 @Getter
 public class AccountRegistrationPage extends BasePage {
@@ -96,6 +95,8 @@ public class AccountRegistrationPage extends BasePage {
     private WebElement faceBookPassword;
     @FindBy(id="loginbutton")
     private WebElement loginInFaceBookPage;
+    @FindBy(id="swiperSlideimg_0")
+    private WebElement successfulMsg;
 
     public void verifyFaceBookIsActive() {
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.facebookError), "FaceBook is inactive " + webDriver.getCurrentUrl());
@@ -132,7 +133,27 @@ public class AccountRegistrationPage extends BasePage {
          DataHelperAndWait.typeTextInElement(this.getFirstNameField(),webDriver, firstName);
          DataHelperAndWait.typeTextInElement(this.getLastNameField(),webDriver, lastName);
    }
-    public void submitAllCreateAccountForms(String email, String password, String confirmPassword,String firstName, String lastName, int gender){
+    public void submitAllCreateAccountFormsCorrectly(String email, String password, String confirmPassword, String firstName, String lastName, int gender){
+        DataHelperAndWait.typeTextInElement(this.getEmailField(),webDriver,email);
+        DataHelperAndWait.typeTextInElement(this.getPasswordField(),webDriver, password);
+        DataHelperAndWait.typeTextInElement(this.getConfirmPasswordField(),webDriver, password);
+        DataHelperAndWait.clickOnElement(this.getCreateAccountBtn(),webDriver);
+        DataHelperAndWait.typeTextInElement(this.getFirstNameField(),webDriver, firstName);
+        DataHelperAndWait.typeTextInElement(this.getLastNameField(),webDriver, lastName);
+        if(gender==1){
+            DataHelperAndWait.hoverOnElementAndClick(this.getMaleOption(),webDriver);
+        }
+        if(gender==2){
+            DataHelperAndWait.hoverOnElementAndClick(this.getFemaleOption(),webDriver);
+        }
+        if(gender==0){
+            gender=0;
+        }
+        DataHelperAndWait.clickOnElement(this.getSubmitBtn(),webDriver);
+        DataHelperAndWait.waitToBeVisible(successfulMsg,webDriver);
+        DataHelperAndWait.waitForTime(3000);
+    }
+    public void fillingAllCreateAccountForms(String email, String password, String confirmPassword, String firstName, String lastName, int gender){
         DataHelperAndWait.typeTextInElement(this.getEmailField(),webDriver,email);
         DataHelperAndWait.typeTextInElement(this.getPasswordField(),webDriver, password);
         DataHelperAndWait.typeTextInElement(this.getConfirmPasswordField(),webDriver, password);

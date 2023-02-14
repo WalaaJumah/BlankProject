@@ -13,9 +13,8 @@ import org.testng.annotations.Test;
 import sporter_pages.AccountRegistrationPage.AccountRegistrationPage;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.HomePage;
+import sporter_pages.loginPage.LoginPage;
 import xml_reader.XmlReader;
-
-import javax.sound.midi.ShortMessage;
 
 @Test(groups = "2.02 Account Registration")
 public class AccountRegistrationTestCases extends BaseTest {
@@ -49,7 +48,59 @@ public class AccountRegistrationTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getAlreadyHaveAccountLabel(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getSignInLink(),webDriver);
     }
-    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:  Verify the system redirect the customer to Personal information form after clicking on the Create Account Button", priority = 4)
+    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}:  Verify Show Password icon works correctly", priority = 4)
+    public void verifyShowPasswordIconWorksCorrectly(){
+        AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
+        registerPage.navigateToRegistrationPage();
+        registerPage.fillInCreateAccountForm(DataHelperAndWait.generateRandomEmail(),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData("correctPassword"));
+        DataHelperAndWait.clickOnElement(registerPage.getShowPasswordIcon(),webDriver);
+        WebElementsAssertion.assertionAttributeTrueForElement(registerPage.getPasswordField(),webDriver,"type","text");
+        DataHelperAndWait.clickOnElement(registerPage.getEyeIconOnConfirmPassword(),webDriver);
+        WebElementsAssertion.assertionAttributeTrueForElement(registerPage.getConfirmPasswordField(),webDriver,"type","text");
+    }
+    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}:  Verify Hide Password icon works correctly", priority = 5)
+    public void verifyHidePasswordIconWorksCorrectly(){
+        AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
+        DataHelperAndWait.clickOnElement(registerPage.getHidePasswordIcon(),webDriver);
+        WebElementsAssertion.assertionAttributeTrueForElement(registerPage.getPasswordField(),webDriver,"type","password");
+        DataHelperAndWait.clickOnElement(registerPage.getEyeIconOnConfirmPassword(),webDriver);
+        WebElementsAssertion.assertionAttributeTrueForElement(registerPage.getConfirmPasswordField(),webDriver,"type","password");
+    }
+    @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:  Verify Sign in button appears in the Create Account screen works correctly", priority = 6)
+    public void verifySignInBtnInCreateAccountScreenWorksCorrectly(){
+        AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
+        registerPage.navigateToRegistrationPage();
+        DataHelperAndWait.clickOnElement(registerPage.getSignInLink(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getWelcomeToSporterHeader(),webDriver);
+    }
+    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:  Verify clicking on Have Account tab works correctly", priority = 7)
+    public void verifyClickingOnHaveAccountTabWorksCorrectly(){
+        AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
+        registerPage.navigateToRegistrationPage();
+        DataHelperAndWait.clickOnElement(registerPage.getHaveAnAccountTab(),webDriver);
+        WebElementsAssertion.assertionAttributeTrueForElement(registerPage.getHaveAnAccountTab(),webDriver,"active","1");
+    }
+    //TODO: This TC should be revisit after fix bug: https://sporter1.atlassian.net/browse/NS-169
+    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}:  Verify Inability to register an account using email already registered", priority = 8)
+    public void verifyInabilityToRegisterAccountUsingEmailAlreadyRegistered(){
+        AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
+        HeaderSection header= new HeaderSection(webDriver);
+        LoginPage loginPage= new LoginPage(webDriver);
+        registerPage.navigateToRegistrationPage();
+        registerPage.fillingAllCreateAccountForms(XmlReader.getXMLData("correctEmail"),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData("firstName"),XmlReader.getXMLData("lastName"),1);
+        DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(loginPage.getSignInOption(),webDriver);
+
+    }
+    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:  Verify the Error Msg related to the Email AAlready Used appears in the correct screen", priority = 9)
+    public void verifyWhenRegisterAccountUsingEmailAlreadyRegisteredTheErrorMsgAppearsInCorrectScreen(){
+        AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
+        registerPage.navigateToRegistrationPage();
+        registerPage.fillInCreateAccountForm(XmlReader.getXMLData("correctEmail"),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData("correctPassword"));
+        DataHelperAndWait.clickOnElement(registerPage.getCreateAccountBtn(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getEmailErrorMs(),webDriver);
+    }
+    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:  Verify the system redirect the customer to Personal information form after clicking on the Create Account Button", priority = 10)
     public void verifyPersonalInfoFormAppearsAfterClickingOnCreateAccountBtn(){
         AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
         registerPage.navigateToRegistrationPage();
@@ -58,45 +109,40 @@ public class AccountRegistrationTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getFirstNameField(),webDriver);
     }
     //There's bug here due to there's no successful Msg
-    @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:  Verify Ability to register new account correctly with Female Gender", priority = 5)
+    @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:  Verify Ability to register new account correctly with Female Gender", priority = 11)
     public void verifyAbilityToRegisterAccountCorrectlyWhenSelectingFemaleGender(){
         AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
         HeaderSection header= new HeaderSection(webDriver);
+        HomePage homePage=new HomePage(webDriver);
         registerPage.navigateToRegistrationPage();
-        registerPage.submitAllCreateAccountForms(DataHelperAndWait.generateRandomEmail(),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData("firstName"),XmlReader.getXMLData("lastName"),2);
+        registerPage.submitAllCreateAccountFormsCorrectly(DataHelperAndWait.generateRandomEmail(),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData("firstName"),XmlReader.getXMLData("lastName"),2);
+        DataHelperAndWait.clickOnElement(header.getSporterLogo(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(),webDriver);
+        DataHelperAndWait.waitForTime(3000);
         DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(),webDriver);
-        DataHelperAndWait.waitForTime(500);
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(),webDriver);
         DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(),webDriver);
-
+        DataHelperAndWait.clickOnElement(header.getSporterLogo(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(),webDriver);
+        DataHelperAndWait.waitForTime(3000);
     }
-    @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:  Verify Ability to register new account correctly with Male Gender", priority = 6)
+    @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:  Verify Ability to register new account correctly with Male Gender", priority = 12)
     public void verifyAbilityToRegisterAccountCorrectlyWhenSelectingMaleGender(){
         AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
         HeaderSection header= new HeaderSection(webDriver);
+        HomePage homePage=new HomePage(webDriver);
         registerPage.navigateToRegistrationPage();
-        registerPage.submitAllCreateAccountForms(DataHelperAndWait.generateRandomEmail(),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData("firstName"),XmlReader.getXMLData("lastName"),1);
+        registerPage.submitAllCreateAccountFormsCorrectly(DataHelperAndWait.generateRandomEmail(),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData("firstName"),XmlReader.getXMLData("lastName"),1);
+        DataHelperAndWait.clickOnElement(header.getSporterLogo(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(),webDriver);
         DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(),webDriver);
         DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(),webDriver);
+        DataHelperAndWait.clickOnElement(header.getSporterLogo(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(),webDriver);
     }
-    //TODO: This TC should be revisit after fix bug: https://sporter1.atlassian.net/browse/NS-169
-    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}:  Verify Inability to register an account using email already registered", priority = 7)
-    public void verifyInabilityToRegisterAccountUsingEmailAlreadyRegistered(){
-        AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
-        registerPage.navigateToRegistrationPage();
-        registerPage.submitAllCreateAccountForms(XmlReader.getXMLData("correctEmail"),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData("firstName"),XmlReader.getXMLData("lastName"),1);
-        WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getEmailUsedMsg(),webDriver);
-    }
-    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:  Verify the Error Msg related to the Email AAlready Used appears in the correct screen", priority = 8)
-    public void verifyWhenRegisterAccountUsingEmailAlreadyRegisteredTheErrorMsgAppearsInCorrectScreen(){
-        AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
-        registerPage.navigateToRegistrationPage();
-        registerPage.fillInCreateAccountForm(XmlReader.getXMLData("correctEmail"),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData("correctPassword"));
-        DataHelperAndWait.clickOnElement(registerPage.getCreateAccountBtn(),webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getEmailErrorMs(),webDriver);
-    }
-    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}:  Verify Inability to register new account without filling Email Field", priority = 9)
+
+    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}:  Verify Inability to register new account without filling Email Field", priority = 13)
     public void verifyInabilityToRegisterAccountWithoutFillingEmailField(){
         AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
         HeaderSection header= new HeaderSection(webDriver);
@@ -106,7 +152,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getEmailErrorMs(),webDriver);
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(registerPage.getEmailErrorMs(),webDriver);
     }
-    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}:  Verify Inability to register new account without filling Password Field", priority = 10)
+    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}:  Verify Inability to register new account without filling Password Field", priority = 14)
     public void verifyInabilityToRegisterAccountWithoutFillingPasswordField(){
         AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
         registerPage.navigateToRegistrationPage();
@@ -115,7 +161,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getPasswordErrorMsg(),webDriver);
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(registerPage.getPasswordErrorMsg(),webDriver);
     }
-    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}:  Verify Inability to register new account without filling Confirm Password Field", priority = 11)
+    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}:  Verify Inability to register new account without filling Confirm Password Field", priority = 15)
     public void verifyInabilityToRegisterAccountWithoutFillingConfirmPasswordField(){
         AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
         registerPage.navigateToRegistrationPage();
@@ -128,7 +174,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         if(webDriver.getCurrentUrl().contains("sporter.com/en")){
             WebElementsAssertion.assertionTextIsEqual(registerPage.getConfirmPasswordErrorMsg(),webDriver,XmlReader.getXMLData("requiredErrorMsEn"));
         }    }
-    @Test(groups = {"1.2 High Severity"},description = "{{CountryName}}:  Verify Inability to register new account Using email have incorrect Format", priority = 12)
+    @Test(groups = {"1.2 High Severity"},description = "{{CountryName}}:  Verify Inability to register new account Using email have incorrect Format", priority = 16)
     public void verifyInabilityToRegisterAccountUsingEmailWithIncorrectFormat(){
         AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
         registerPage.navigateToRegistrationPage();
@@ -141,7 +187,7 @@ public class AccountRegistrationTestCases extends BaseTest {
             WebElementsAssertion.assertionWebElementEqualText(registerPage.getEmailErrorMs(),webDriver,XmlReader.getXMLData("emailFormatErrorEn"));
         }
     }
-    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:  Verify Inability to register new account when the entered password is not match with the password rule", priority = 13)
+    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:  Verify Inability to register new account when the entered password is not match with the password rule", priority = 17)
     public void verifyInabilityToRegisterAccountUsingPasswordHaveIncorrectRule(){
         AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
         registerPage.navigateToRegistrationPage();
@@ -155,7 +201,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:  Verify Inability to register new account when the entered password less than 8 Characters", priority = 14)
+    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:  Verify Inability to register new account when the entered password less than 8 Characters", priority = 18)
     public void verifyInabilityToRegisterAccountUsingPasswordLessThanEightCharacters(){
         AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
         registerPage.navigateToRegistrationPage();
@@ -168,7 +214,7 @@ public class AccountRegistrationTestCases extends BaseTest {
             WebElementsAssertion.assertionWebElementEqualText(registerPage.getPasswordErrorMsg(),webDriver,XmlReader.getXMLData("passwordShortErrorEn"));
         }
     }
-    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:  Verify Inability to register new account when the password entered in Confirm Password field with the password you entered in the Password field", priority = 15)
+    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:  Verify Inability to register new account when the password entered in Confirm Password field with the password you entered in the Password field", priority = 19)
     public void verifyInabilityToRegisterAccountUsingWrongConfirmedPassword(){
         AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
         registerPage.navigateToRegistrationPage();
@@ -183,7 +229,7 @@ public class AccountRegistrationTestCases extends BaseTest {
             WebElementsAssertion.assertionTextIsEqual(registerPage.getConfirmPasswordErrorMsg(),webDriver,XmlReader.getXMLData("confirmpasswordErrorEn"));
         }
     }
-    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}:  Verify Inability to register new account without filling all required fields", priority = 16)
+    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}:  Verify Inability to register new account without filling all required fields", priority = 20)
     public void verifyInabilityToRegisterAccountWithoutFillingAllRequiredFields(){
         AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
         registerPage.navigateToRegistrationPage();
@@ -192,7 +238,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getPasswordErrorMsg(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getConfirmPasswordErrorMsg(),webDriver);
     }
-    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:  Verify Inability to register a new account without filling the First and Last Name", priority = 17)
+    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:  Verify Inability to register a new account without filling the First and Last Name", priority = 21)
     public void verifyInabilityToRegisterAccountWithoutFillingFirstAndLastName(){
         AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
         registerPage.navigateToRegistrationPage();
@@ -203,47 +249,25 @@ public class AccountRegistrationTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getFirstNameField(),webDriver);
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(registerPage.getFirstNameErrorMs(),webDriver);
     }
-    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}:  Verify ability to register a new account without selecting the gender", priority = 18)
+    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}:  Verify ability to register a new account without selecting the gender", priority = 22)
     public void verifyAbilityToRegisterAccountWithoutSelectingTheGender(){
         AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
-        HomePage homePage= new HomePage(webDriver);
-        HeaderSection header=new HeaderSection(webDriver);
+        HeaderSection header= new HeaderSection(webDriver);
+        HomePage homePage=new HomePage(webDriver);
         registerPage.navigateToRegistrationPage();
-        registerPage.fillInCreateAccountForm(DataHelperAndWait.generateRandomEmail(),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData("correctPassword"));
-        DataHelperAndWait.clickOnElement(registerPage.getCreateAccountBtn(),webDriver);
-        registerPage.fillInExtraInformationForm("Walaa","Mohammad");
-        DataHelperAndWait.clickOnElement(registerPage.getSubmitBtn(),webDriver);
+        registerPage.submitAllCreateAccountFormsCorrectly(DataHelperAndWait.generateRandomEmail(),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData("firstName"),XmlReader.getXMLData("lastName"),0);
+        DataHelperAndWait.clickOnElement(header.getSporterLogo(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(),webDriver);
+        DataHelperAndWait.waitForTime(3000);
         DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(),webDriver);
         DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(),webDriver);
-    }
-    @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:  Verify Sign in button appears in the Create Account screen works correctly", priority = 19)
-    public void verifySignInBtnInCreateAccountScreenWorksCorrectly(){
-        AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
-        registerPage.navigateToRegistrationPage();
-        DataHelperAndWait.clickOnElement(registerPage.getSignInLink(),webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getWelcomeToSporterHeader(),webDriver);
-    }
-    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}:  Verify Show Password icon works correctly", priority = 22)
-    public void verifyShowPasswordIconWorksCorrectly(){
-        AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
-        registerPage.navigateToRegistrationPage();
-        registerPage.fillInCreateAccountForm(DataHelperAndWait.generateRandomEmail(),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData("correctPassword"));
-        DataHelperAndWait.clickOnElement(registerPage.getShowPasswordIcon(),webDriver);
-        WebElementsAssertion.assertionAttributeTrueForElement(registerPage.getPasswordField(),webDriver,"type","text");
-        DataHelperAndWait.clickOnElement(registerPage.getEyeIconOnConfirmPassword(),webDriver);
-        WebElementsAssertion.assertionAttributeTrueForElement(registerPage.getConfirmPasswordField(),webDriver,"type","text");
-    }
-    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}:  Verify Hide Password icon works correctly", priority = 23)
-    public void verifyHidePasswordIconWorksCorrectly(){
-        AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
-        DataHelperAndWait.clickOnElement(registerPage.getHidePasswordIcon(),webDriver);
-        WebElementsAssertion.assertionAttributeTrueForElement(registerPage.getPasswordField(),webDriver,"type","password");
-        DataHelperAndWait.clickOnElement(registerPage.getEyeIconOnConfirmPassword(),webDriver);
-        WebElementsAssertion.assertionAttributeTrueForElement(registerPage.getConfirmPasswordField(),webDriver,"type","password");
+        DataHelperAndWait.clickOnElement(header.getSporterLogo(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(),webDriver);
+        DataHelperAndWait.waitForTime(3000);
     }
     //TODO: To be revisit after fixing https://sporter1.atlassian.net/browse/NS-56
-    @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:  Verify Sign-up using facebook works correctly", priority = 24)
+    @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:  Verify Sign-up using facebook works correctly", priority = 23)
     public void verifySignUpUsingFaceBookWorks(){
         AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
         registerPage.navigateToRegistrationPage();
@@ -252,14 +276,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getFaceBookEmail(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getFaceBookPassword(),webDriver);
     }
-       @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:  Verify clicking on Have Account tab works correctly", priority = 25)
-    public void verifyClickingOnHaveAccountTabWorksCorrectly(){
-        AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
-        registerPage.navigateToRegistrationPage();
-        DataHelperAndWait.clickOnElement(registerPage.getHaveAnAccountTab(),webDriver);
-        WebElementsAssertion.assertionAttributeTrueForElement(registerPage.getHaveAnAccountTab(),webDriver,"active","1");
-    }
-    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:  Verify Clicking on Sporter Logo works fine from Create An Account screen", priority = 26)
+    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:  Verify Clicking on Sporter Logo works fine from Create An Account screen", priority = 24)
     public void verifyClickingOnLogoFromCreateAccountScreenWorksCorrectly(){
         AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
         HeaderSection header= new HeaderSection(webDriver);
@@ -268,24 +285,24 @@ public class AccountRegistrationTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(header.getSporterLogo(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(),webDriver);
     }
-    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:  Verify Inability to register a new account when filling the First and Last Name with spaces", priority = 27)
+    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:  Verify Inability to register a new account when filling the First and Last Name with spaces", priority = 25)
     public void verifyInabilityToRegisterAccountWhenFillingFirstAndLastNameWithSpaces(){
         AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
         registerPage.navigateToRegistrationPage();
-        registerPage.submitAllCreateAccountForms(DataHelperAndWait.generateRandomEmail(),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData(" "),XmlReader.getXMLData(" "),2);
+        registerPage.submitAllCreateAccountFormsCorrectly(DataHelperAndWait.generateRandomEmail(),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData(" "),XmlReader.getXMLData(" "),2);
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(registerPage.getFirstNameErrorMs(),webDriver);
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(registerPage.getLastNameErrorMs(),webDriver);
     }
-      @Test(groups = {"1.4 Low Severity"},description = "{{CountryName}}:  Verify A Validation Msg will appear when filling the First Name & Last Name field with text contains a special Character", priority = 28)
+      @Test(groups = {"1.4 Low Severity"},description = "{{CountryName}}:  Verify A Validation Msg will appear when filling the First Name & Last Name field with text contains a special Character", priority = 26)
     public void verifyAValidationMsgWillAppearWhenFillingFirstAndLastNameWithIncorrectText(){
         AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
         registerPage.navigateToRegistrationPage();
-        registerPage.submitAllCreateAccountForms(DataHelperAndWait.generateRandomEmail(),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData("correctPassword"),"w@@","w@@",2);
+        registerPage.fillingAllCreateAccountForms(DataHelperAndWait.generateRandomEmail(),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData("correctPassword"),"w@@","w@@",2);
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(registerPage.getFirstNameErrorMs(),webDriver);
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(registerPage.getLastNameErrorMs(),webDriver);
     }
     //TODO: There's a bug here & we will revisit it after fixing: https://sporter1.atlassian.net/browse/NS-56
-      @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:  Verify ability to sign up using FaceBook account", priority = 29)
+      @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:  Verify ability to sign up using FaceBook account", priority = 27)
     public void verifyAbilityToSignUpUsingFaceBook(){
         AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
         registerPage.navigateToRegistrationPage();
