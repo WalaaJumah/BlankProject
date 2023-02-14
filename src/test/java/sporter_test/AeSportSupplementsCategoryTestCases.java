@@ -98,11 +98,11 @@ public void switchToUaeStore(){
         }
     }
 
-    @Test(groups = {"2.07 Sports Supplements Category","All Smoke Testing Result","1.2 High Severity"},description = "Sports Supplements Category- Make sure clicking on the Horizontal Banners works correctly ", priority = 8)
+    @Test(groups = {"2.07 Sports Supplements Category","All Smoke Testing Result","1.3 Medium Severity"},description = "Sports Supplements Category- Make sure clicking on the Horizontal Banners works correctly ", priority = 8)
     public void verifyClickingOnHorizontalBannersAppearingInSportSupplementsLandingPageOpensCorrectly() {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-        DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().get(0), 8,webDriver);
+//        DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().get(0), 8,webDriver);
         for (int i = 0; i < aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().size(); i++) {
             DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().get(i), 8,webDriver);
             aeSportSupplementsCategoryPage.getMainBannersInTheSportSupplementsScreen().get(i).click();

@@ -53,10 +53,10 @@
         <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix" />
         <parameter name="bundleProductUrl" value="/grenade-carb-killa-protein-bar-box-of-12" />
         <classes>
-            <class name="sporter_test.AeProductDetailsPageTestCases">
-                <methods>
-                    <include name="verifyAbilityToFillTheReviewWIthLongLength"></include>
-                </methods>
+            <class name="sporter_test.AeSportSupplementsCategoryTestCases">
+<!--                <methods>-->
+<!--                    <include name="verifyAbilityToFillTheReviewWIthLongLength"></include>-->
+<!--                </methods>-->
             </class>
 <!--            <class name="sporter_test.KsaHomePageTestCases">-->
 <!--                <methods>-->
