@@ -71,7 +71,7 @@ public class ProductDetailsPage extends BasePage {
     private WebElement reviewToastMsg;
     @FindBy(id = "pathSegment_0")
     private WebElement HomeBreadcrumbs;
-    @FindBy(xpath = "//div[@class='productHeader_label__hWVwg']")
+    @FindBy(xpath = "//div[starts-with(@class,'productHeader_otOfStocklabe')]")
     private WebElement OOSMsg;
     @FindBy(xpath = "(//ul[starts-with(@class,'topCategoryList_container')]/li/a)[1]")
     private WebElement shopByMenu;
@@ -91,9 +91,9 @@ public class ProductDetailsPage extends BasePage {
     private WebElement bundleMenu;
     @FindBy(xpath = "(//a[@title='Buy 1 Get 1'])[1]")
     private WebElement buy1Get1Card;
-    @FindBy(xpath = "//strong[contains(text(),'Free')]")
+    @FindBy(id = "promotion")
     private WebElement freeProductLabelEn;
-    @FindBy(xpath = "//strong[contains(text(),'مجاناً')]")
+    @FindBy(id = "promotion")
     private WebElement freeProductLabelAr;
     @FindBy(id = "TopCategoryList")
     private List<WebElement> megaMenuList;
@@ -101,7 +101,7 @@ public class ProductDetailsPage extends BasePage {
     private WebElement aboutThisProductSection;
     @FindBy(id = "ProductBrandName")
     private WebElement aboutBrandSection;
-    @FindBy(xpath = "//div[@id='ProductDescription']/h3")
+    @FindBy(xpath = "//div[@id='ProductDescription']/h2")
     private WebElement aboutThisProductTitle;
     @FindBy(xpath = "//div[@id='ProductSupplementFacts']//table")
     private WebElement supplementFactsTable;

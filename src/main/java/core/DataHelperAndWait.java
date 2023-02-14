@@ -232,8 +232,9 @@ public  class DataHelperAndWait  {
         DataHelperAndWait.waitToBeVisible(webElement,webDriver);
         webElement.click();}
         catch (Exception e){
+            Actions action = new Actions(webDriver);
             DataHelperAndWait.waitToBeVisible(webElement,webDriver);
-            webElement.click();}
+            action.moveToElement(webElement).click();}
         }
     public static void typeTextInElement(WebElement webElement,WebDriver webDriver, String text){
         try {

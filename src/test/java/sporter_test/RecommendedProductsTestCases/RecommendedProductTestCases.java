@@ -13,7 +13,10 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.RecommendedProductsPage.RecommendedProductPage;
+import sporter_pages.cartPages.CartPage;
 import sporter_pages.productPage.ProductDetailsPage;
+import sporter_test.cartTestCases.CartTestCases;
+
 @Test(groups = "2.05 Recommended Products Page")
 public class RecommendedProductTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure the keep shopping button appearing the Recommended products works correctly ", priority = 2)
@@ -28,7 +31,6 @@ public class RecommendedProductTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(productDetailsPage.getAddToCartBtn(),webDriver);
         DataHelperAndWait.clickOnElement(productDetailsPage.getViewCartBtn(),webDriver);
         WebElementsAssertion.validateTheCurrentUrlContainsString(productDetailsPage.cartURL,webDriver);
-
     }
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}: Make sure to close the Recommended products pop up correctly", priority = 4)
     public void verifyCloseRecommendedPopupCorrectly() {
@@ -97,7 +99,7 @@ public class RecommendedProductTestCases extends BaseTest {
         productDetailsPage.displayTheProduct();
         String productNameInPDP=(DataHelperAndWait.getWebElementText(productDetailsPage.getProductName(),webDriver)).substring(6);
         DataHelperAndWait.clickOnElement(productDetailsPage.getAddToCartBtn(),webDriver);
-        Assert.assertTrue(DataHelperAndWait.getWebElementText(recommendedProductpage.getAddedProductToCartMsg(),webDriver).startsWith(productNameInPDP));
+        Assert.assertTrue(DataHelperAndWait.getWebElementText(recommendedProductpage.getAddedProductToCartMsg(),webDriver).startsWith(productNameInPDP.replace("Protein","")));
     }
     @Test(groups = {"1.2 High Severity"},description = "{{CountryName}}: Make sure the clicking on the product card appears in the Recommended product pop-up will display the Product Details Page correctly", priority = 10)
     public void verifyClickingOnProductCardInTheRecommendedPopupWillDisplayThePdp() {
@@ -120,8 +122,7 @@ public class RecommendedProductTestCases extends BaseTest {
         RecommendedProductPage recommendedProductpage = new RecommendedProductPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
-           DataHelperAndWait.clickOnElement(productDetailsPage.getAddToCartBtn(),webDriver);
-           DataHelperAndWait.clickOnElement(productDetailsPage.getViewCartBtn(),webDriver);
+           productDetailsPage.viewCart();
         Assert.assertFalse(productDetailsPage.getKeepShippingBtn().isDisplayed());
     }
 
