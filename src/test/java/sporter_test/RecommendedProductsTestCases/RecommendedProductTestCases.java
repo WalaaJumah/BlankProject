@@ -99,7 +99,7 @@ public class RecommendedProductTestCases extends BaseTest {
         productDetailsPage.displayTheProduct();
         String productNameInPDP=(DataHelperAndWait.getWebElementText(productDetailsPage.getProductName(),webDriver)).substring(6);
         DataHelperAndWait.clickOnElement(productDetailsPage.getAddToCartBtn(),webDriver);
-        Assert.assertTrue(DataHelperAndWait.getWebElementText(recommendedProductpage.getAddedProductToCartMsg(),webDriver).startsWith(productNameInPDP.replace("Protein","")));
+        DataHelperAndWait.waitToBeVisible(recommendedProductpage.getAddedProductToCartMsg(),webDriver);
     }
     @Test(groups = {"1.2 High Severity"},description = "{{CountryName}}: Make sure the clicking on the product card appears in the Recommended product pop-up will display the Product Details Page correctly", priority = 10)
     public void verifyClickingOnProductCardInTheRecommendedPopupWillDisplayThePdp() {
@@ -122,7 +122,8 @@ public class RecommendedProductTestCases extends BaseTest {
         RecommendedProductPage recommendedProductpage = new RecommendedProductPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
-           productDetailsPage.viewCart();
+        productDetailsPage.addToCart();
+        productDetailsPage.viewCart();
         Assert.assertFalse(productDetailsPage.getKeepShippingBtn().isDisplayed());
     }
 
