@@ -35,8 +35,9 @@ public class ProductDetailsPage extends BasePage {
     @FindBy(id = "decreaseQty")
     private WebElement qtyMinusButton;
     @FindBy(id = "addToCartBtn")
-    @CacheLookup
     private WebElement addToCartBtn;
+    @FindBy(id = "addToCartBtn")
+    private WebElement addToCartBtn2;
     @FindBy(id = "popup-block")
     private WebElement cartPopUp;
     @FindBy(id = "keepShoppingBtn")
@@ -46,7 +47,6 @@ public class ProductDetailsPage extends BasePage {
     @FindBy(xpath = "//button[@class='button_btn__zg_G5 ']/span")
     private WebElement continueBtnInOOSPoup;
     @FindBy(id = "viewCartBtn")
-    @CacheLookup
     private WebElement viewCartBtn;
     @FindBy(xpath = "//div[starts-with(@id,'configurableOptionLabel')]")
     private List<WebElement> productSizeAttribute;
@@ -150,22 +150,17 @@ public class ProductDetailsPage extends BasePage {
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
     public void addToCart() {
-        try{
-        DataHelperAndWait.clickOnElement(addToCartBtn,webDriver);}
-        catch (Exception e){
-            DataHelperAndWait.clickOnElement(addToCartBtn,webDriver);
-        }
+        DataHelperAndWait.waitForTime(2000);
+        DataHelperAndWait.waitToBeClickable(addToCartBtn2,webDriver);
+        addToCartBtn.click();
     }
     public void keepShopping() {
         DataHelperAndWait.clickOnElement(keepShippingBtn,webDriver);
     }
     public void viewCart() {
-        try{
-       DataHelperAndWait.clickOnElement(viewCartBtn , webDriver);}
-        catch (Exception e){
-            webDriver.navigate().refresh();
-            DataHelperAndWait.clickOnElement(viewCartBtn , webDriver);
-        }
+        DataHelperAndWait.waitForTime(2000);
+        DataHelperAndWait.waitToBeVisible(viewCartBtn,webDriver);
+        viewCartBtn.click();
     }
     public void keepShoppingAfterAddingToCart(){
         HomePage homePage=new HomePage(webDriver);

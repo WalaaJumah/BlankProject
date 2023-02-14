@@ -94,7 +94,7 @@ public class CartPage extends BasePage {
     private List<WebElement> qtyFieldList;
     @FindBy(id = "cartItemQty")
     private WebElement qtyField;
-    @FindBy(id = "cartcloseIcon")
+    @FindBy(css = "#cartcloseIcon > path")
     private WebElement cartCloseIcon;
     @FindBy(id = "cartitemsCount")
     private WebElement itemCounterInCartPopUp;
@@ -162,17 +162,10 @@ private WebElement freePrice;
    }
 
       public void addBogoToCartAndDisplayTheCart(){
-       try{
        productDetailsPage.navigateToBogoProduct();
        DataHelperAndWait.waitForTime(2000);
        productDetailsPage.addToCart();
-       productDetailsPage.viewCart();}
-       catch (Exception e){
-           productDetailsPage.navigateToBogoProduct();
-           DataHelperAndWait.waitForTime(2000);
-           productDetailsPage.addToCart();
-           productDetailsPage.viewCart();
-       }
+       productDetailsPage.viewCart();
 
    }
    public void navigateToCartPage(){

@@ -18,19 +18,19 @@
 <!--                        <class name="sporter_test.forgetPasswordTestCases.KSAForgetPasswordTestCases"/>-->
 <!--                        <class name="sporter_test.forgetPasswordTestCases.JordanForgetPasswordTestCases"/>-->
 <!--                        <class name="sporter_test.loginTestCases.LoginTestCases"/>-->
-<!--                        <class name="sporter_test.cartTestCases.UAECartTestCases">-->
+                        <class name="sporter_test.cartTestCases.UAECartTestCases">
 <!--                            <methods>-->
-<!--                                <include name="verifyProceedCheckoutBtnWorksInCartPopUp"/>-->
+<!--                                <include name="verifyAbilityToViewTheCartAfterAddingMoreThanProducts"/>-->
 <!--&lt;!&ndash;&lt;!&ndash;                                <include name="verifyHereLinkInCartPageWorking"/>&ndash;&gt;&ndash;&gt;-->
 <!--&lt;!&ndash;            &lt;!&ndash;                    <include name="verifyMainOptionsInTheMegaMenuAreDisplayed"/>&ndash;&gt;&ndash;&gt;-->
 <!--                            </methods>-->
-<!--                        </class>-->
+                        </class>
 <!--            <class name="sporter_test.headerTestCases.KSAHeaderTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.UAEHeaderTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.JordanHeaderTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.QatarHeaderTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.EgyptHeaderTestCases"/>-->
-            <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>
+<!--            <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>-->
 <!--            <class name="sporter_test.homepage_test_cases.UAEHomePageTestCases"/>-->
 <!--            <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases"/>-->
 <!--            <class name="sporter_test.homepage_test_cases.QatarHomePageTestCases"/>-->
