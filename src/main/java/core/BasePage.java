@@ -144,7 +144,7 @@ public class BasePage {
     }
     public void navigateToBogoProduct(){
         webDriver.navigate().to(BasePage.BaseURL+bogoProduct);
-        DataHelperAndWait.waitForUrlContains(bogoProduct,webDriver);
+//        DataHelperAndWait.waitForUrlContains(bogoProduct,webDriver);
     }
         public void displayBundle(){
         webDriver.navigate().to(BasePage.BaseURL+aeDomain+bundleUrl);

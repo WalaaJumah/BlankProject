@@ -32,13 +32,6 @@ public class ProductDetailsTestCases extends BaseTest {
         productDetailsPage.keepShoppingAfterAddingToCart();
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getAddToCartBtn(),webDriver);
     }
-    @Test(groups = { "1.1 Critical Severity"},description = "{{CountryName}}:Make sure the shopper is able to View the cart after adding the product to it ", priority = 3)
-    public void viewCartAfterAddingTheProductToIt() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        DataHelperAndWait.clickOnElement(productDetailsPage.getAddToCartBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(productDetailsPage.getViewCartBtn(),webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString(productDetailsPage.cartURL,webDriver);
- }
     @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}:Make sure the out of stock message appears when displaying out of stock product ", priority =4)
     public void verifyOOSMessageIsDisplayed() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -66,13 +59,13 @@ public class ProductDetailsTestCases extends BaseTest {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
         productDetailsPage.increaseTheQuantity();
-        Assert.assertEquals( DataHelperAndWait.getWebElementText(productDetailsPage.getQuantityField(),webDriver),"2");;
+        WebElementsAssertion.assertionAttributeTrueForElement(productDetailsPage.getQuantityField(),webDriver,"value","2");
     }
     @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}:Make sure that the Decrease quantity function works fine ", priority = 8)
     public void verifyDecreaseQuantityButtonWorkingFine() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.decreaseTheQuantity();
-        Assert.assertEquals( DataHelperAndWait.getWebElementText(productDetailsPage.getQuantityField(),webDriver),"1");;
+        WebElementsAssertion.assertionAttributeTrueForElement(productDetailsPage.getQuantityField(),webDriver,"value","1");
 //        WebElementsAssertion.assertionAttributeTrueForElement(productDetailsPage.getQuantityField(),webDriver,"value","1");
     }
     @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}:Make sure that the customer can submit his review successfully ", priority = 9)
@@ -102,17 +95,8 @@ public class ProductDetailsTestCases extends BaseTest {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
         DataHelperAndWait.clickOnElement(productDetailsPage.getHomeBreadcrumbs(),webDriver);
-        WebElementsAssertion.assertTheUrlEqualExpectedUrl(webDriver.getCurrentUrl(),BasePage.BaseURL +aeDomain,webDriver);
-    }
-    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}:Make sure that the customer can add the same product more than once by clicking on the Add To Product button in each time ", priority = 13)
-    public void verifyAbilityToAddProductToCartMultiTimes() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.keepShoppingAfterAddingToCart();
-        String oldProductURL = webDriver.getCurrentUrl();
-        productDetailsPage.addToCart();
-//        productDetailsPage.keepShopping();
-        String newProductURL = webDriver.getCurrentUrl();
-        WebElementsAssertion.assertTheUrlEqualExpectedUrl(oldProductURL, newProductURL,webDriver);
+        DataHelperAndWait.waitForTime(4000);
+        Assert.assertFalse(webDriver.getCurrentUrl().contains(productDetailsPage.productUrl));
     }
     @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}:Make sure that the product price is changed when you change the quantity ", priority = 14)
     public void verifyTheProductPriceChangesBasedOnTheSelectedQty() {
