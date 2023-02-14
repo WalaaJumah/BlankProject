@@ -54,8 +54,15 @@
         <forgetPasswordToastMsgEn>If there is an account associated with this Email Address you will receive an email with a link to reset your password.</forgetPasswordToastMsgEn>
         <forgetPasswordToastMsgAr>The Msg is not translate</forgetPasswordToastMsgAr>
 
-
     </RegistartionForm>
+    <CheckoutData>
+        <invalidCouponCode>Hello</invalidCouponCode>
+        <FreeCouponCode>walaa</FreeCouponCode>
+        <CartTitleEn>My Shopping Cart</CartTitleEn>
+        <CartTitleAr>عربة التسوق</CartTitleAr>
+
+
+    </CheckoutData>
     <shippingAddress>
         <addressId>13523</addressId>
         <addressArea>amman</addressArea>

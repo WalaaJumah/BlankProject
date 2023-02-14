@@ -12,6 +12,7 @@ import core.WebElementsAssertion;
 import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import sporter_pages.homepage_classes.HomePage;
@@ -35,6 +36,8 @@ public class ProductDetailsPage extends BasePage {
     private WebElement qtyMinusButton;
     @FindBy(id = "addToCartBtn")
     private WebElement addToCartBtn;
+    @FindBy(id = "addToCartBtn")
+    private WebElement addToCartBtn2;
     @FindBy(id = "popup-block")
     private WebElement cartPopUp;
     @FindBy(id = "keepShoppingBtn")
@@ -45,9 +48,9 @@ public class ProductDetailsPage extends BasePage {
     private WebElement continueBtnInOOSPoup;
     @FindBy(id = "viewCartBtn")
     private WebElement viewCartBtn;
-    @FindBy(xpath = "(//div[@class='productOption_list__SYsKN'])[1]//div[starts-with(@id,'configurableOptionLabel_')]")
+    @FindBy(xpath = "//div[starts-with(@id,'configurableOptionLabel')]")
     private List<WebElement> productSizeAttribute;
-    @FindBy(xpath = "(//div[@class='productOption_list__SYsKN'])[2]//div[starts-with(@id,'configurableOptionLabel_')]")
+    @FindBy(xpath = "//div[starts-with(@id,'configurableOptionLabel')]")
     private List<WebElement> productFlavor;
     @FindBy(id = "SearchButton")
     private WebElement searchBtn;
@@ -144,25 +147,20 @@ public class ProductDetailsPage extends BasePage {
     //Methods we need during testing the Product details page
     public void displayTheProduct() {
         webDriver.navigate().to(BaseURL + storeCountry + productUrl);
-        System.out.println(BaseURL + storeCountry + productUrl);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
     public void addToCart() {
-        try{
-        DataHelperAndWait.clickOnElement(addToCartBtn,webDriver);}
-        catch (Exception e){
-            DataHelperAndWait.clickOnElement(addToCartBtn,webDriver);
-        }
+        DataHelperAndWait.waitForTime(2000);
+        DataHelperAndWait.waitToBeClickable(addToCartBtn2,webDriver);
+        addToCartBtn.click();
     }
     public void keepShopping() {
         DataHelperAndWait.clickOnElement(keepShippingBtn,webDriver);
     }
     public void viewCart() {
-        try{
-       DataHelperAndWait.clickOnElement(viewCartBtn , webDriver);}
-        catch (Exception e){
-            DataHelperAndWait.clickOnElement(viewCartBtn , webDriver);
-        }
+        DataHelperAndWait.waitForTime(2000);
+        DataHelperAndWait.waitToBeVisible(viewCartBtn,webDriver);
+        viewCartBtn.click();
     }
     public void keepShoppingAfterAddingToCart(){
         HomePage homePage=new HomePage(webDriver);

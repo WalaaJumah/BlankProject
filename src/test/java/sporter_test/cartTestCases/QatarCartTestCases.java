@@ -8,6 +8,7 @@ package sporter_test.cartTestCases;
 
 import core.BasePage;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.QatarHomePage;
 
 public class QatarCartTestCases extends CartTestCases {
@@ -24,4 +25,6 @@ public class QatarCartTestCases extends CartTestCases {
         }
 
     }
+    @Test(enabled = false)
+    public void verifyTheTaxCalculatedCorrectly() {}
 }

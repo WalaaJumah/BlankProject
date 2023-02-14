@@ -8,11 +8,9 @@ package sporter_test.homepage_test_cases;
 
 import core.BasePage;
 import core.DataHelperAndWait;
-import core.WebElementsAssertion;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.*;
-import xml_reader.XmlReader;
 
 //@Test(groups = "2.05 Egypt HomePage")
 public class EgyptHomePageTestCases extends HomePageTestCases {

@@ -6,6 +6,7 @@
 
 package core;
 
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -14,18 +15,22 @@ import xml_reader.XmlReader;
 import java.util.List;
 
 public class WebElementsAssertion {
-    DataHelperAndWait dataHelperAndWait;
     public static void validateTheCurrentUrlContainsString(String expectedValue, WebDriver webDriver){
         DataHelperAndWait.waitForUrlContains(expectedValue,webDriver);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedValue), "Incorrect URL is displayed " + webDriver.getCurrentUrl());
-
     }
+     public static void validateTheCurrentUrlNotContainsString(String expectedValue, WebDriver webDriver){
+        try{
+        Assert.assertFalse(webDriver.getCurrentUrl().contains(expectedValue), "Incorrect URL is displayed " + webDriver.getCurrentUrl());}
+        catch (TimeoutException e){
+            Assert.assertFalse(webDriver.getCurrentUrl().contains(expectedValue), "Incorrect URL is displayed " + webDriver.getCurrentUrl());}
+     }
     public static void validateTheElementIsDisplayed(WebElement webElement, WebDriver webDriver){
         DataHelperAndWait.waitToBeVisible(webElement,webDriver);
         Assert.assertTrue(webElement.isDisplayed(), "This element is not displayed: "+ webElement);
     }
 
-    public static void assertionEqualsForElementAttribute(WebElement webElement, WebDriver webDriver, String expectedResult){
+    public static void assertionTextEqualsForElementAttribute(WebElement webElement, WebDriver webDriver, String expectedResult){
         DataHelperAndWait.waitToBeVisible(webElement,webDriver);
         Assert.assertEquals(webElement.getText(), expectedResult);
     }

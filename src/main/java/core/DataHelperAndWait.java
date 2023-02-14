@@ -102,7 +102,8 @@ public  class DataHelperAndWait  {
         jse.executeScript("arguments[0].click()", element);
     }
 
-    public static  float convertTheStringToFloat(WebElement element) {
+    public static  float convertTheStringToFloat(WebElement element,WebDriver webDriver) {
+        DataHelperAndWait.waitToBeVisible(element,webDriver);
         String elementValue = element.getText();
         String elementValueWithoutCurrency = elementValue.replaceAll("AED", "");
         String elementValueWithoutSpace = elementValueWithoutCurrency.replaceAll(" ", "");

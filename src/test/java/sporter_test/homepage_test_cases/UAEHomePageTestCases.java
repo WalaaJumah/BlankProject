@@ -8,13 +8,8 @@ package sporter_test.homepage_test_cases;
 
 import core.BasePage;
 import core.DataHelperAndWait;
-import core.WebElementsAssertion;
-import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
-import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.homepage_classes.UAEHomePage;
-import xml_reader.XmlReader;
 
 //@Test(groups = "2.01 UAE HomePage")
 public class UAEHomePageTestCases extends HomePageTestCases {
