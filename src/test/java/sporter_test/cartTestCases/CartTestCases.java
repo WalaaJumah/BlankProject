@@ -225,7 +225,7 @@ public class CartTestCases extends BaseTest {
     public void verifyDecreaseQtyBtnInCartPageWorking() {
         CartPage cartPage = new CartPage(webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getDecreaseQtyBtn() ,webDriver);
-        DataHelperAndWait.waitForTime(2000);
+        DataHelperAndWait.waitForTime(4000);
         WebElementsAssertion.assertionWebElementEqualText(cartPage.getQtyField(),webDriver, "1");
 //        WebElementsAssertion.assertionAttributeTrueForElement(cartPage.getQtyField(),webDriver,"value", "1");
     }
@@ -293,13 +293,14 @@ public class CartTestCases extends BaseTest {
         cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.typeTextInElement(cartPage.getApplyCouponCodeBtn(),webDriver, XmlReader.getXMLData("invalidCouponCode"));
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
-        DataHelperAndWait.isDisplayed(cartPage.getNotExistCouponMsg() ,webDriver);
+        DataHelperAndWait.isDisplayed(cartPage.getCartErrorMsg() ,webDriver);
+        DataHelperAndWait.waitToBeClickable(cartPage.getCartErrorMsg(),webDriver);
     }
     //TODO: Should be revisit after solving https://sporter1.atlassian.net/browse/NS-189
     @Test(groups = {"Cart Page","All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure inability to apply coupon code without filling the code", priority = 28)
     public void verifyInabilityToApplyCouponCodeWithoutFillingTheCode() {
         CartPage cartPage = new CartPage(webDriver);
-        webDriver.navigate().refresh();
+        DataHelperAndWait.clearWebField(cartPage.getCouponCodeField());
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
         DataHelperAndWait.isDisplayed(cartPage.getRequiredCouponMsg() ,webDriver);
         cartPage.removeItem();

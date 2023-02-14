@@ -21,6 +21,7 @@ public class WebElementsAssertion {
     }
      public static void validateTheCurrentUrlNotContainsString(String expectedValue, WebDriver webDriver){
         try{
+            DataHelperAndWait.waitForTime(3000);
         Assert.assertFalse(webDriver.getCurrentUrl().contains(expectedValue), "Incorrect URL is displayed " + webDriver.getCurrentUrl());}
         catch (TimeoutException e){
             Assert.assertFalse(webDriver.getCurrentUrl().contains(expectedValue), "Incorrect URL is displayed " + webDriver.getCurrentUrl());}

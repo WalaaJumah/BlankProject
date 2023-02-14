@@ -145,6 +145,7 @@ public class CartPage extends BasePage {
 private WebElement cancelCouponCodeBtn;
 @FindBy(xpath = "//div[@data-bind='html: $parent.prepareMessageForHtml(message.text)']")
 private WebElement notExistCouponMsg;
+
 //TODO: Needs To check After solving Bogo Bug
 @FindBy(xpath = "//td[text()='FREE from SPORTER']")
 private WebElement freeFromSporter;
