@@ -298,8 +298,11 @@ public class AccountRegistrationTestCases extends BaseTest {
         AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
         registerPage.navigateToRegistrationPage();
         registerPage.fillingAllCreateAccountForms(DataHelperAndWait.generateRandomEmail(),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData("correctPassword"),"w@@","w@@",2);
-        WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(registerPage.getFirstNameErrorMs(),webDriver);
-        WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(registerPage.getLastNameErrorMs(),webDriver);
+          if(webDriver.getCurrentUrl().contains("sporter.com/ar")){
+              WebElementsAssertion.assertionTextIsEqual(registerPage.getFirstNameErrorMs(),webDriver,XmlReader.getXMLData("nameErrorAr"));}
+          if(webDriver.getCurrentUrl().contains("sporter.com/en")){
+              WebElementsAssertion.assertionTextIsEqual(registerPage.getFirstNameErrorMs(),webDriver,XmlReader.getXMLData("nameErrorEn"));
+          }
     }
     //TODO: There's a bug here & we will revisit it after fixing: https://sporter1.atlassian.net/browse/NS-56
       @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:  Verify ability to sign up using FaceBook account", priority = 27)

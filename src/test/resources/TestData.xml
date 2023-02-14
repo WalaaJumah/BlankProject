@@ -53,6 +53,8 @@
         <loginErroAr>The Msg is not translate</loginErroAr>
         <forgetPasswordToastMsgEn>If there is an account associated with this Email Address you will receive an email with a link to reset your password.</forgetPasswordToastMsgEn>
         <forgetPasswordToastMsgAr>The Msg is not translate</forgetPasswordToastMsgAr>
+        <nameErrorEn>Please enter a valid Name</nameErrorEn>
+        <nameErrorAr>الرجاء ادخال اسم صحيح</nameErrorAr>
 
     </RegistartionForm>
     <CheckoutData>
