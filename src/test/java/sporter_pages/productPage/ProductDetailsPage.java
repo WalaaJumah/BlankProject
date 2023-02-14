@@ -68,7 +68,7 @@ public class ProductDetailsPage extends BasePage {
     private WebElement nickNameField;
     @FindBy(id = "submitReviewBtn")
     private WebElement submitReviewButton;
-    @FindBy(xpath = "//div[@class='productReview_rErr__YkUXT']")
+    @FindBy(xpath = "//div[starts-with(@class,'productReview_rErr')]")
     private WebElement reviewErrorMsgRelatedToStars;
     @FindBy(xpath = "//div[contains(text(),'You submitted your review for moderation.')]")
     private WebElement reviewToastMsg;
@@ -80,7 +80,7 @@ public class ProductDetailsPage extends BasePage {
     private WebElement shopByMenu;
     @FindBy(id = "SubCategoriesContainer")
     private WebElement subCategoriesSectionInMegaMenu;
-    @FindBy(id = "SortCategoriesContainer")
+    @FindBy(xpath = "//div[@id='SortCategoriesContainer']/div")
     private WebElement subCategoriesSectionForShopBy;
     @FindBy(xpath = "(//div[@id='currentPrice'])[2]")
     private WebElement FinalProductPrice;
