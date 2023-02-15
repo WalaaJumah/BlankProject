@@ -114,6 +114,7 @@ public class BasePage {
     public final  String youtubeURL = "https://www.youtube.com/user/SporterVideos";
     public final String searchUrl="catalogsearch/result/?q=";
     public final String productUrl = "/optimum-gold-standard-100-whey";
+    public final String product2UrlLessQty = "/positive-nutrition-recharge-pods-53972";
     public  static String oOSProductUrl = "";
     public  static String bundleUrl = "";
     public final String notAvailableOfferProduct = "/catalog/product/view/id/44012/s/olimp-chitosan-chromium-43840/";

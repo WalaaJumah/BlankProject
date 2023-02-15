@@ -9,7 +9,6 @@ package sporter_pages.cartPages;
 import core.BasePage;
 import core.DataHelperAndWait;
 import lombok.Getter;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,8 +17,8 @@ import org.openqa.selenium.support.ui.Select;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.productPage.ProductDetailsPage;
+import xml_reader.XmlReader;
 
-import java.sql.SQLSyntaxErrorException;
 import java.util.List;
 
 @Getter
@@ -54,7 +53,7 @@ public class CartPage extends BasePage {
     @FindBy(id = "cartItemPrice")
     private WebElement productPrice;
     //TODO: To replace it with ID after added it by Moamen
-    @FindBy(xpath = "//div[@id='cartPageContainer']//h2[2]")
+    @FindBy(xpath = "//div[@id='cartPageContainer']/div[1]")
     private WebElement noItemInCartLabel;
     @FindBy(id = "CartIconContainerqty")
     private WebElement cartCounter;
@@ -66,7 +65,7 @@ public class CartPage extends BasePage {
     @FindBy(id = "checkoutbtn")
     private WebElement proceedCheckoutBtnInCartPopup;
     //TODO: To replace it with ID after added it by Moamen
-    @FindBy(xpath = "//div[@id='cartPageContainer']/h2[2]/a")
+    @FindBy(xpath = "//div[@id='cartPageContainer']//a")
     private WebElement hereLink;
     @FindBy(id = "decreaseQtyBtn")
     private WebElement decreaseQtyBtn;
@@ -100,7 +99,7 @@ public class CartPage extends BasePage {
     private WebElement itemCounterInCartPopUp;
     //TODO: To replace it with ID after added it by Moamen
     //TODO: There's a bug here due to the Msg is missing
-    @FindBy(xpath = "//div[@id='coupon_code-error']")
+    @FindBy(id = "couponecideErr")
     private WebElement requiredCouponMsg;
     @FindBy(xpath = "(//span[@id='taxValue'])[2]")
     private WebElement taxValue;
@@ -151,12 +150,20 @@ private WebElement notExistCouponMsg;
 private WebElement freeFromSporter;
 @FindBy(xpath = "(//span[text()='Free'])[1]")
 private WebElement freePrice;
+@FindBy(xpath = "div.popUp_thumbsHead__Fbo8M")
+private WebElement couponSuccessfulMsg;
 
    public void addToCartAndDisplayTheCart(){
        productDetailsPage.displayTheProduct();
        productDetailsPage.addToCart();
        productDetailsPage.viewCart();
    }
+     public void addToCartAndDisplayTheCartForOos(){
+       productDetailsPage.displayTheProductHaveLessQty();
+       productDetailsPage.addToCart();
+       productDetailsPage.viewCart();
+   }
+
       public void addToCartAndViewCart(){
        productDetailsPage.addToCart();
        productDetailsPage.viewCart();
@@ -204,7 +211,23 @@ for(int i=1;i<=productNumber;i++){
 
         }
     }
+   public void clickOnHereLink(){
+       try{
+       DataHelperAndWait.waitToBeClickable(hereLink,webDriver);
+       hereLink.click();}
+       catch (Exception e){
+           DataHelperAndWait.waitForTime(3000);
+           hereLink.click();
+       }
+   }
+public void getFreeGiftByCoupon(){
+    DataHelperAndWait.typeTextInElement(applyCouponCodeBtn,webDriver, XmlReader.getXMLData("FreeCouponCode"));
+    DataHelperAndWait.clickOnElement(applyCouponCodeBtn,webDriver);
+}
+public void clickOnCartIcon(){
+       DataHelperAndWait.waitForTime(2000);
+       DataHelperAndWait.waitToBeVisible(cartIcon,webDriver);
+    cartIcon.click();
 
-
-
+}
 }

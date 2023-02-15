@@ -149,6 +149,11 @@ public class ProductDetailsPage extends BasePage {
         webDriver.navigate().to(BaseURL + storeCountry + productUrl);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
+        public void displayTheProductHaveLessQty() {
+        webDriver.navigate().to(BaseURL + storeCountry + product2UrlLessQty);
+        verifyTheDisplayedPageDoesNotHaveErrors();
+    }
+
     public void addToCart() {
         DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.waitToBeClickable(addToCartBtn2,webDriver);

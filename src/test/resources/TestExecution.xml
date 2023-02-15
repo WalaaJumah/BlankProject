@@ -18,9 +18,9 @@
 <!--                        <class name="sporter_test.forgetPasswordTestCases.KSAForgetPasswordTestCases"/>-->
 <!--                        <class name="sporter_test.forgetPasswordTestCases.JordanForgetPasswordTestCases"/>-->
 <!--                        <class name="sporter_test.loginTestCases.LoginTestCases"/>-->
-                        <class name="sporter_test.RecommendedProductsTestCases.UAERecommendedProductTestCases">
+                        <class name="sporter_test.cartTestCases.UAECartTestCases">
 <!--                            <methods>-->
-<!--                                <include name="verifyAValidationMsgWillAppearWhenFillingFirstAndLastNameWithIncorrectText"/>-->
+<!--                                <include name="verifyTheCloseIconInCartPopupWorksCorrectly"/>-->
 <!--&lt;!&ndash;&lt;!&ndash;                                <include name="verifyHereLinkInCartPageWorking"/>&ndash;&gt;&ndash;&gt;-->
 <!--&lt;!&ndash;            &lt;!&ndash;                    <include name="verifyMainOptionsInTheMegaMenuAreDisplayed"/>&ndash;&gt;&ndash;&gt;-->
 <!--                            </methods>-->
