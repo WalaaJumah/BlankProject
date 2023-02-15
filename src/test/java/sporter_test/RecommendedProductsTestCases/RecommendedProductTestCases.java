@@ -115,6 +115,7 @@ public class RecommendedProductTestCases extends BaseTest {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
         productDetailsPage.keepShoppingAfterAddingToCart();
+        DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductName(),webDriver);
         Assert.assertFalse(productDetailsPage.getKeepShippingBtn().isDisplayed());
     }
        @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Make sure the Recommended product pop-up will hide after clicking on the View Cart Button", priority = 12,expectedExceptions = { org.openqa.selenium.NoSuchElementException.class })
