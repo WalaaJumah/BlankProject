@@ -30,8 +30,7 @@ public class ForgetPasswordTestCases extends BaseTest {
     public void verifyBackToLoginBtnAppearsInForgetPasswordPageWorksCorrectly() {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToForgetPassword();
-        DataHelperAndWait.clickOnElement(loginPage.getBackToLoginLink(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(loginPage.getEmailField(), webDriver);
+        loginPage.clickOnBackToLogin();
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to click on Submit Button from the Forget Password page without filling Email Address", priority = 3)

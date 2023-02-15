@@ -89,6 +89,7 @@ public class LoginPage extends BasePage {
         DataHelperAndWait.typeTextInElement(this.passwordField, webDriver, password);
     }
     public void clickOnBackToLogin(){
+        DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.waitToBeClickable(backToLoginLink,webDriver);
         backToLoginLink.click();
         DataHelperAndWait.waitToBeVisible(forgetPasswordLink,webDriver);
