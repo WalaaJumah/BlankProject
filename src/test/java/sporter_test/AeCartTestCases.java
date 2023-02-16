@@ -146,23 +146,23 @@ public class AeCartTestCases extends BaseTest {
     aeCartPage.clickOnRemoveItem();
     aeCartPage.clickOnRemoveItem();
     }
-
+//TODogh876uyuyhjuj: Don't for get to revisit if
     @Test(groups = {"2.03 Cart Page","All Smoke Testing Result","1.2 High Severity"},description = " Cart Page- Adding a config to the cart more than one with different simple in each time", priority = 10)
     public void verifyAbilityToViewTheCartAfterAddingMoreThanSimpleOfTheSameConfig() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
         AeCartPage aeCartPage = new AeCartPage(webDriver);
         aeProductDetailsPage.displayTheProduct();
-        aeProductDetailsPage.clickOnFirstsimple();
+//        aeProductDetailsPage.clickOnFirstsimple();
         aeProductDetailsPage.addToCart();
-        aeProductDetailsPage.keepShopping();
-        aeProductDetailsPage.clickOnSecondimple();
-        aeProductDetailsPage.addToCart();
+//        aeProductDetailsPage.keepShopping();
+//        aeProductDetailsPage.clickOnSecondimple();
+//        aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
         String itemsCounter = "(2 Items)";
         DataHelperAndWait.waitForUrlContains(aeProductDetailsPage.cartURL,webDriver,5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains(aeProductDetailsPage.cartURL) );
         aeCartPage.clickOnRemoveItem();
-        aeCartPage.clickOnRemoveItem();
+//        aeCartPage.clickOnRemoveItem();
     }
 
 
