@@ -18,7 +18,7 @@
 <!--                        <class name="sporter_test.forgetPasswordTestCases.KSAForgetPasswordTestCases"/>-->
 <!--                        <class name="sporter_test.forgetPasswordTestCases.JordanForgetPasswordTestCases"/>-->
 <!--                        <class name="sporter_test.loginTestCases.LoginTestCases"/>-->
-                        <class name="sporter_test.cartTestCases.UAECartTestCases">
+                        <class name="sporter_test.RecommendedProductsTestCases.UAERecommendedProductTestCases">
 <!--                            <methods>-->
 <!--                                <include name="verifyTheCloseIconInCartPopupWorksCorrectly"/>-->
 <!--&lt;!&ndash;&lt;!&ndash;                                <include name="verifyHereLinkInCartPageWorking"/>&ndash;&gt;&ndash;&gt;-->
