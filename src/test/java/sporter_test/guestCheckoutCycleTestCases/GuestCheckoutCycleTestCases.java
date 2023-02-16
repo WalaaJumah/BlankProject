@@ -167,7 +167,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
                 XmlReader.getXMLData("StreetTwoAddressName")
         );
         guestCheckoutCyclePage.clickOnContinueBtn();
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getEmailErrMsg(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFirstNameField(),webDriver);
     }
 
 
