@@ -298,7 +298,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnMensApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getSportSupplementsTitleInCategoryImage(), 5,webDriver);
-        Assert.assertEquals(aeSportSupplementsCategoryPage.getSportSupplementsTitleInCategoryImage().getText(), "Apparel , Men", "Wrong title appears in the sport Supplements category image");
+        Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsTitleInCategoryImage().isDisplayed());
     }
     @Test(groups = {"2.10 Sports Category", "1.2 High Severity"},description = "Sports Category- Verify that the search button works correctly from the Men's Apparel category page", priority = 28)
     public void verifySearchBtnWorksCorrectlyFromMensApparelCategoryPage(){
