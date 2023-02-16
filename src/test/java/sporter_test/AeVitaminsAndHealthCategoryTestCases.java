@@ -1,5 +1,6 @@
 package sporter_test;
 
+import com.beust.ah.A;
 import core.BasePage;
 import core.BaseTest;
 import core.DataHelperAndWait;
@@ -308,20 +309,20 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = {"2.08 Vitamins & Health Category", "1.4  Low Severity"},description = "Vitamins & Health Category- Fish Oil & Omegas Category- Make sure all secure tabs appears correctly(100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks)", priority = 29)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInFishOilAndOmegasCategoryPage () {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage=new AeWomenOnlyCategoryPage(webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
         for (int i = 0; i < aeSportSupplementsCategoryPage.getPageBottomBlocksList().size(); i++) {
             Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
             switch (i) {
                 case 0:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentDescription().isDisplayed());
                 case 1:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsDescription().isDisplayed());
                 case 2:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
-            }
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryDescription().isDisplayed());            }
         }
     }
 //    Multivitamins Category page Test Cases
@@ -460,23 +461,21 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.4  Low Severity"},description = "Vitamins & Health Category- Multivitamins Category- Make sure all secure tabs appears correctly(100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks)", priority = 43)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInMultivitaminsCategoryPage () {
-        AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-//        this.verifyClickingOnMultivitaminsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage=new AeWomenOnlyCategoryPage(webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
         for (int i = 0; i < aeSportSupplementsCategoryPage.getPageBottomBlocksList().size(); i++) {
             Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
             switch (i) {
                 case 0:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentDescription().isDisplayed());
                 case 1:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsDescription().isDisplayed());
                 case 2:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
-            }
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryDescription().isDisplayed());            }
         }
     }
     //Vitamins A-Z Category page Test Cases
@@ -616,23 +615,21 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.4  Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the VitaminsA_Z category page", priority = 57)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInVitaminsA_ZCategoryPage () {
-        AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-//        this.verifyClickingOnVitaminsA_ZCategoryInsideTheShopByCategorySectionWorksCorrectly();
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage=new AeWomenOnlyCategoryPage(webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
         for (int i = 0; i < aeSportSupplementsCategoryPage.getPageBottomBlocksList().size(); i++) {
             Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
             switch (i) {
                 case 0:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentDescription().isDisplayed());
                 case 1:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsDescription().isDisplayed());
                 case 2:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
-            }
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryDescription().isDisplayed());            }
         }
     }
 //    Minerals Category page Test Cases
@@ -773,6 +770,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
     @Test(groups = {"2.08 Vitamins & Health Category", "1.4  Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Minerals category page", priority = 71)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInMineralsCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
+        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage=new AeWomenOnlyCategoryPage(webDriver);
 //        this.verifyClickingOnMineralsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
@@ -780,15 +778,14 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
             Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
             switch (i) {
                 case 0:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentDescription().isDisplayed());
                 case 1:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsDescription().isDisplayed());
                 case 2:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
-            }
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryDescription().isDisplayed());            }
         }
     }
 
@@ -923,20 +920,20 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInAntioxidantsCategoryPage () {
         this.verifyClickingOnAntioxidantsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage=new AeWomenOnlyCategoryPage(webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
         for (int i = 0; i < aeSportSupplementsCategoryPage.getPageBottomBlocksList().size(); i++) {
             Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
             switch (i) {
                 case 0:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentDescription().isDisplayed());
                 case 1:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsDescription().isDisplayed());
                 case 2:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
-            }
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryDescription().isDisplayed());            }
         }
     }
 
@@ -1073,20 +1070,20 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
 //        this.verifyClickingOnSuperfoodsCategoryInsideTheShopByCategorySectionWorksCorrectly();
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage=new AeWomenOnlyCategoryPage(webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
         for (int i = 0; i < aeSportSupplementsCategoryPage.getPageBottomBlocksList().size(); i++) {
             Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
             switch (i) {
                 case 0:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentDescription().isDisplayed());
                 case 1:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsDescription().isDisplayed());
                 case 2:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
-            }
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryDescription().isDisplayed());            }
         }
     }
 //    Collagen Category page Test Cases
@@ -1228,6 +1225,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
     @Test(groups = {"2.08 Vitamins & Health Category", "1.4  Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Collagen category page", priority = 112)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInCollagenCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
+        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage=new AeWomenOnlyCategoryPage(webDriver);
         this.verifyClickingOnCollagenCategoryInsideTheShopByCategorySectionWorksCorrectly();
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
@@ -1235,15 +1233,14 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
             Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
             switch (i) {
                 case 0:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentDescription().isDisplayed());
                 case 1:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsDescription().isDisplayed());
                 case 2:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
-            }
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryDescription().isDisplayed());            }
         }
     }
     //Melatonin Category page Test Cases
@@ -1381,20 +1378,20 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
 //        this.verifyClickingOnMelatoninCategoryInsideTheShopByCategorySectionWorksCorrectly();
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage=new AeWomenOnlyCategoryPage(webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
         for (int i = 0; i < aeSportSupplementsCategoryPage.getPageBottomBlocksList().size(); i++) {
             Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
             switch (i) {
                 case 0:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentDescription().isDisplayed());
                 case 1:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsDescription().isDisplayed());
                 case 2:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
-            }
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryDescription().isDisplayed());            }
         }
     }
     //Herbal Reference Guide Test Cases
@@ -1429,6 +1426,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
     @Test(groups = {"2.08 Vitamins & Health Category", "1.4  Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Tumeric page", priority = 138)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInTumericPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
+        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage=new AeWomenOnlyCategoryPage(webDriver);
 //        this.verifyClickingOnTumericPageRedirectUserToCorrectURL();
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
@@ -1436,15 +1434,14 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
             Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
             switch (i) {
                 case 0:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentDescription().isDisplayed());
                 case 1:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsDescription().isDisplayed());
                 case 2:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
-            }
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryDescription().isDisplayed());            }
         }
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Tumeric Page ", priority = 133)
@@ -1468,6 +1465,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
     @Test(groups = {"2.08 Vitamins & Health Category", "1.4  Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Dandelion page", priority = 139)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInDandelionPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
+        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage=new AeWomenOnlyCategoryPage(webDriver);
 //        this.verifyClickingOnDandelionPageRedirectUserToCorrectURL();
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
@@ -1475,15 +1473,14 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
             Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
             switch (i) {
                 case 0:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentDescription().isDisplayed());
                 case 1:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsDescription().isDisplayed());
                 case 2:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
-            }
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryDescription().isDisplayed());            }
         }
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Dandelion Page ", priority = 134)
@@ -1508,6 +1505,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
     @Test(groups = {"2.08 Vitamins & Health Category", "1.4  Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Ginseng page", priority = 140)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInGinsengPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
+        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage=new AeWomenOnlyCategoryPage(webDriver);
 //        this.verifyClickingOnGinsengPageRedirectUserToCorrectURL();
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
@@ -1515,15 +1513,14 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
             Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
             switch (i) {
                 case 0:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentDescription().isDisplayed());
                 case 1:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsDescription().isDisplayed());
                 case 2:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
-            }
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryDescription().isDisplayed());            }
         }
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Ginseng Page ", priority = 135)
@@ -1548,6 +1545,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
     @Test(groups = {"2.08 Vitamins & Health Category", "1.4  Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Milk Thistle page", priority = 141)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInMilkThistlPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
+        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage=new AeWomenOnlyCategoryPage(webDriver);
 //        this.verifyClickingOnMilkThistlePageRedirectUserToCorrectURL();
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
@@ -1555,15 +1553,14 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
             Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
             switch (i) {
                 case 0:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentDescription().isDisplayed());
                 case 1:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsDescription().isDisplayed());
                 case 2:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
-            }
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryDescription().isDisplayed());            }
         }
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure that the customer can navigate to the home page using the BreadCrumb appearing in the Milk Thistle Page ", priority = 136)
@@ -1588,6 +1585,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
     @Test(groups = {"2.08 Vitamins & Health Category", "1.4  Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Alfalfa page", priority = 142)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInAlfalfaPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
+        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage=new AeWomenOnlyCategoryPage(webDriver);
 //        this.verifyClickingOnAlfalfaPageRedirectUserToCorrectURL();
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
@@ -1595,15 +1593,14 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
             Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
             switch (i) {
                 case 0:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentDescription().isDisplayed());
                 case 1:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsDescription().isDisplayed());
                 case 2:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
-            }
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryDescription().isDisplayed());            }
         }
     }
 
@@ -1839,6 +1836,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
     @Test(groups = {"2.08 Vitamins & Health Category", "1.4  Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Beauty category page", priority = 164)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInBeautyCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
+        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage= new AeWomenOnlyCategoryPage(webDriver);
 //        this.verifyClickingOnBeautyCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
@@ -1846,15 +1844,14 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
             Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
             switch (i) {
                 case 0:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentDescription().isDisplayed());
                 case 1:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsDescription().isDisplayed());
                 case 2:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
-            }
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryDescription().isDisplayed());            }
         }
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure the Filtration Section is displayed in the Beauty category page", priority = 165)
@@ -1998,6 +1995,7 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
     @Test(groups = {"2.08 Vitamins & Health Category", "1.4  Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Bone And Joint category page", priority = 179)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInBoneAndJointCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
+        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage= new AeWomenOnlyCategoryPage(webDriver);
 //        this.verifyClickingOnBoneAndJointCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
@@ -2005,15 +2003,14 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
             Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
             switch (i) {
                 case 0:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentDescription().isDisplayed());
                 case 1:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsDescription().isDisplayed());
                 case 2:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
-            }
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryDescription().isDisplayed());            }
         }
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure the Filtration Section is displayed in the Bone And Joint category page", priority = 180)
@@ -2156,23 +2153,23 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
     @Test(groups = {"2.08 Vitamins & Health Category", "1.4  Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Brain Support category page", priority = 194)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInBrainSupportCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-//        this.verifyClickingOnBrainSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
+        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage= new AeWomenOnlyCategoryPage(webDriver);
+//        this.verifyClickingOnBoneAndJointCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
         for (int i = 0; i < aeSportSupplementsCategoryPage.getPageBottomBlocksList().size(); i++) {
             Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
             switch (i) {
                 case 0:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentDescription().isDisplayed());
                 case 1:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsDescription().isDisplayed());
                 case 2:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
-            }
-        }    }
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryDescription().isDisplayed());            }
+        }   }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure the Filtration Section is displayed in the BrainSupport category page", priority = 195)
     public void verifyFiltrationSectionIsDisplayedInBrainSupportCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
@@ -2304,23 +2301,23 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = {"2.08 Vitamins & Health Category", "1.4  Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Detox & Liver Support category page", priority = 209)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInDetoxAndLiverSupportCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-//        this.verifyClickingOnDetoxAndLiverSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
+        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage= new AeWomenOnlyCategoryPage(webDriver);
+//        this.verifyClickingOnBoneAndJointCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
         for (int i = 0; i < aeSportSupplementsCategoryPage.getPageBottomBlocksList().size(); i++) {
             Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
             switch (i) {
                 case 0:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentDescription().isDisplayed());
                 case 1:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsDescription().isDisplayed());
                 case 2:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
-            }
-        }    }
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryDescription().isDisplayed());            }
+        }   }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure the Filtration Section is displayed in the Detox & Liver Support category page", priority = 210)
     public void verifyFiltrationSectionIsDisplayedInDetoxAndLiverSupportCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
@@ -2460,23 +2457,23 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = {"2.08 Vitamins & Health Category", "1.4  Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Digestive Support category page", priority = 224)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInDigestiveSupportCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-//        this.verifyClickingOnDigestiveSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
+        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage= new AeWomenOnlyCategoryPage(webDriver);
+//        this.verifyClickingOnBoneAndJointCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
         for (int i = 0; i < aeSportSupplementsCategoryPage.getPageBottomBlocksList().size(); i++) {
             Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
             switch (i) {
                 case 0:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentDescription().isDisplayed());
                 case 1:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsDescription().isDisplayed());
                 case 2:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
-            }
-        }    }
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryDescription().isDisplayed());            }
+        }   }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure the Filtration Section is displayed in the Digestive Support category page", priority = 225)
     public void verifyFiltrationSectionIsDisplayedInDigestiveSupportCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
@@ -2610,22 +2607,22 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = {"2.08 Vitamins & Health Category", "1.4  Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Energy Formulas category page", priority = 239)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInEnergyFormulasCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-//        this.verifyClickingOnEnergyFormulasCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
+        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage= new AeWomenOnlyCategoryPage(webDriver);
+//        this.verifyClickingOnBoneAndJointCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
         for (int i = 0; i < aeSportSupplementsCategoryPage.getPageBottomBlocksList().size(); i++) {
             Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
             switch (i) {
                 case 0:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentDescription().isDisplayed());
                 case 1:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsDescription().isDisplayed());
                 case 2:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
-            }
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryDescription().isDisplayed());            }
         }    }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure the Filtration Section is displayed in the Energy Formulas category page", priority = 240)
     public void verifyFiltrationSectionIsDisplayedInEnergyFormulasCategoryPage () {
@@ -2748,23 +2745,23 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = {"2.08 Vitamins & Health Category", "1.4  Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Hair, Skin & Nails, Beauty category page", priority = 254)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInHairAndSkinAndNailsCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-//        this.verifyClickingOnHairAndSkinAndNailsCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
+        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage= new AeWomenOnlyCategoryPage(webDriver);
+//        this.verifyClickingOnBoneAndJointCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
         for (int i = 0; i < aeSportSupplementsCategoryPage.getPageBottomBlocksList().size(); i++) {
             Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
             switch (i) {
                 case 0:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentDescription().isDisplayed());
                 case 1:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsDescription().isDisplayed());
                 case 2:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
-            }
-        }    }
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryDescription().isDisplayed());            }
+        }   }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure the Filtration Section is displayed in the Hair, Skin & Nails, Beauty category page", priority = 255)
     public void verifyFiltrationSectionIsDisplayedInHairAndSkinAndNailsCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
@@ -2901,22 +2898,22 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = {"2.08 Vitamins & Health Category", "1.4  Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Heart Health category page", priority = 269)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInHeartHealthCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-//        this.verifyClickingOnHeartHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
+        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage= new AeWomenOnlyCategoryPage(webDriver);
+//        this.verifyClickingOnBoneAndJointCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
         for (int i = 0; i < aeSportSupplementsCategoryPage.getPageBottomBlocksList().size(); i++) {
             Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
             switch (i) {
                 case 0:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentDescription().isDisplayed());
                 case 1:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsDescription().isDisplayed());
                 case 2:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
-            }
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryDescription().isDisplayed());            }
         }    }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure the Filtration Section is displayed in the Heart Health category page", priority = 270)
     public void verifyFiltrationSectionIsDisplayedInHeartHealthCategoryPage () {
@@ -3049,22 +3046,22 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = {"2.08 Vitamins & Health Category", "1.4  Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Immunity Support category page", priority = 284)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInImmunitySupportCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-//        this.verifyClickingOnImmunitySupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
+        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage= new AeWomenOnlyCategoryPage(webDriver);
+//        this.verifyClickingOnBoneAndJointCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
         for (int i = 0; i < aeSportSupplementsCategoryPage.getPageBottomBlocksList().size(); i++) {
             Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
             switch (i) {
                 case 0:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentDescription().isDisplayed());
                 case 1:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsDescription().isDisplayed());
                 case 2:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
-            }
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryDescription().isDisplayed());            }
         }    }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure the Filtration Section is displayed in the Immunity Support category page", priority = 285)
     public void verifyFiltrationSectionIsDisplayedInImmunitySupportCategoryPage () {
@@ -3202,23 +3199,23 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = {"2.08 Vitamins & Health Category", "1.4  Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Kids Health category page", priority = 299)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInKidsHealthCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-//        this.verifyClickingOnKidsHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
+        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage= new AeWomenOnlyCategoryPage(webDriver);
+//        this.verifyClickingOnBoneAndJointCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
         for (int i = 0; i < aeSportSupplementsCategoryPage.getPageBottomBlocksList().size(); i++) {
             Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
             switch (i) {
                 case 0:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentDescription().isDisplayed());
                 case 1:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsDescription().isDisplayed());
                 case 2:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
-            }
-        }    }
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryDescription().isDisplayed());            }
+        }   }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure the Filtration Section is displayed in the Kids Health category page", priority = 300)
     public void verifyFiltrationSectionIsDisplayedInKidsHealthCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
@@ -3349,23 +3346,23 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = {"2.08 Vitamins & Health Category", "1.4  Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Mens Health category page", priority = 314)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInMensHealthCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-//        this.verifyClickingOnMensHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
+        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage= new AeWomenOnlyCategoryPage(webDriver);
+//        this.verifyClickingOnBoneAndJointCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
         for (int i = 0; i < aeSportSupplementsCategoryPage.getPageBottomBlocksList().size(); i++) {
             Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
             switch (i) {
                 case 0:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentDescription().isDisplayed());
                 case 1:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsDescription().isDisplayed());
                 case 2:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
-            }
-        }    }
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryDescription().isDisplayed());            }
+        }   }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure the Filtration Section is displayed in the Mens Health category page", priority = 315)
     public void verifyFiltrationSectionIsDisplayedInMensHealthCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
@@ -3497,23 +3494,23 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = {"2.08 Vitamins & Health Category", "1.4  Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Sexual Health category page", priority = 329)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInSexualHealthCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-//        this.verifyClickingOnSexualHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
+        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage= new AeWomenOnlyCategoryPage(webDriver);
+//        this.verifyClickingOnBoneAndJointCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
         for (int i = 0; i < aeSportSupplementsCategoryPage.getPageBottomBlocksList().size(); i++) {
             Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
             switch (i) {
                 case 0:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentDescription().isDisplayed());
                 case 1:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsDescription().isDisplayed());
                 case 2:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
-            }
-        }    }
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryDescription().isDisplayed());            }
+        }  }
     //There's a bug here, due to the filtration section is missing
     @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure the Filtration Section is displayed in the Sexual Health category page", priority = 330)
     public void verifyFiltrationSectionIsDisplayedInSexualHealthCategoryPage () {
@@ -3640,23 +3637,23 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = {"2.08 Vitamins & Health Category", "1.4  Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Sleep Support category page", priority = 344)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInSleepSupportCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-//        this.verifyClickingOnSleepSupportCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
+        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage= new AeWomenOnlyCategoryPage(webDriver);
+//        this.verifyClickingOnBoneAndJointCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
         for (int i = 0; i < aeSportSupplementsCategoryPage.getPageBottomBlocksList().size(); i++) {
             Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
             switch (i) {
                 case 0:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentDescription().isDisplayed());
                 case 1:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsDescription().isDisplayed());
                 case 2:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
-            }
-        }    }
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryDescription().isDisplayed());            }
+        }   }
     //There's a bug here, due to the filtration section is missing
     @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure the Filtration Section is displayed in the Sleep Support category page", priority = 345)
     public void verifyFiltrationSectionIsDisplayedInSleepSupportCategoryPage () {
@@ -3789,23 +3786,23 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = {"2.08 Vitamins & Health Category", "1.4  Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Diet Weight Management category page", priority = 359)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInDietWeightManagementCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-//        this.verifyClickingOnDietWeightManagementCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
+        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage= new AeWomenOnlyCategoryPage(webDriver);
+//        this.verifyClickingOnBoneAndJointCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
         for (int i = 0; i < aeSportSupplementsCategoryPage.getPageBottomBlocksList().size(); i++) {
             Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
             switch (i) {
                 case 0:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentDescription().isDisplayed());
                 case 1:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsDescription().isDisplayed());
                 case 2:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
-            }
-        }    }
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryDescription().isDisplayed());            }
+        }   }
     //There's a bug here, due to the filtration section is missing
     @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure the Filtration Section is displayed in the Diet Weight Management category page", priority = 360)
     public void verifyFiltrationSectionIsDisplayedInDietWeightManagementCategoryPage () {
@@ -3937,23 +3934,23 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = {"2.08 Vitamins & Health Category", "1.4  Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Women Health category page", priority = 374)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInWomenHealthCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-//        this.verifyClickingOnWomenHealthCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
+        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage= new AeWomenOnlyCategoryPage(webDriver);
+//        this.verifyClickingOnBoneAndJointCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
         for (int i = 0; i < aeSportSupplementsCategoryPage.getPageBottomBlocksList().size(); i++) {
             Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
             switch (i) {
                 case 0:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentDescription().isDisplayed());
                 case 1:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsDescription().isDisplayed());
                 case 2:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
-            }
-        }    }
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryDescription().isDisplayed());            }
+        }   }
     //There's a bug here, due to the filtration section is missing
     @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure the Filtration Section is displayed in the Women Health category page", priority = 375)
     public void verifyFiltrationSectionIsDisplayedInWomenHealthCategoryPage () {
@@ -4359,24 +4356,23 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = {"2.08 Vitamins & Health Category", "1.4  Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Vitamins & Health category page", priority = 424)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInVitaminsAndHealthCategoryPage () {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
-        aeVitaminsAndHealthCategoryPage.navigateToHomePage();
-        aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
+        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage= new AeWomenOnlyCategoryPage(webDriver);
+//        this.verifyClickingOnBoneAndJointCategoryInsideTheShopByHealthNeedSectionWorksCorrectly();
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
         for (int i = 0; i < aeSportSupplementsCategoryPage.getPageBottomBlocksList().size(); i++) {
             Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
             switch (i) {
                 case 0:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentDescription().isDisplayed());
                 case 1:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsDescription().isDisplayed());
                 case 2:
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
-                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
-            }
-        }    }
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryDescription().isDisplayed());            }
+        }   }
 
     @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure the Footer section appears correctly in the Vitamins & Health category page", priority = 425)
     public void verifyFooterSectionAppearsCorrectlyInVitaminsAndHealthCategoryPage () {

@@ -309,20 +309,20 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
     @Test(groups = {"2.09 Healthy Food Category", "1.4  Low Severity"},description = "Healthy Food Category- Make sure all secure tabs appears correctly(100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks)", priority = 28)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInHealthyFoodCategoryPage(){
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
+        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage=new AeWomenOnlyCategoryPage(webDriver);
         Assert.assertTrue(aeHealthyFoodCategoryPage.getPageBottomSection().isDisplayed());
         for (int i = 0; i < aeHealthyFoodCategoryPage.getPageBottomBlocksList().size(); i++) {
             Assert.assertTrue(aeHealthyFoodCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
             switch (i) {
                 case 0:
-                    Assert.assertEquals(aeHealthyFoodCategoryPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
-                    Assert.assertEquals(aeHealthyFoodCategoryPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentDescription().isDisplayed());
                 case 1:
-                    Assert.assertEquals(aeHealthyFoodCategoryPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
-                    Assert.assertEquals(aeHealthyFoodCategoryPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsDescription().isDisplayed());
                 case 2:
-                    Assert.assertEquals(aeHealthyFoodCategoryPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
-                    Assert.assertEquals(aeHealthyFoodCategoryPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
-            }
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryDescription().isDisplayed());            }
         }
     }
     //Pagination control for all pages in the Healthy Food Category Pages

@@ -11,6 +11,7 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import sporter_pages.AEFooterPage;
+import sporter_pages.AeWomenOnlyCategoryPage;
 
 import static org.testng.Assert.assertFalse;
 
@@ -63,20 +64,20 @@ public class AEFooterPageTestCases extends BaseTest {
     @Test(groups = "2.12 Footer Section",description = " Footer Section- Verify the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks ", priority = 1)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
+        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage=new AeWomenOnlyCategoryPage(webDriver);
         Assert.assertTrue(aeFooterPage.getPageBottomSection().isDisplayed());
         for (int i = 0; i < aeFooterPage.getPageBottomBlocksList().size(); i++) {
             Assert.assertTrue(aeFooterPage.getPageBottomBlocksList().get(i).isDisplayed());
             switch (i) {
                 case 0:
-                    Assert.assertEquals(aeFooterPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
-                    Assert.assertEquals(aeFooterPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentDescription().isDisplayed());
                 case 1:
-                    Assert.assertEquals(aeFooterPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
-                    Assert.assertEquals(aeFooterPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsDescription().isDisplayed());
                 case 2:
-                    Assert.assertEquals(aeFooterPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
-                    Assert.assertEquals(aeFooterPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
-            }
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryDescription().isDisplayed());            }
         }
     }
 

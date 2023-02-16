@@ -142,7 +142,7 @@
 
 
 
-    <test name=" System Testing Report- STG" preserve-order="true">
+    <test name=" System Testing Report- Production" preserve-order="true">
         <!--        Guidelines:-->
         <!--         1. To test on production Env, change the value to "https://www.sporter.com".-->
         <!--         2. To test on stgTest Env, change the value to "https://stg-test.sporter.com".-->

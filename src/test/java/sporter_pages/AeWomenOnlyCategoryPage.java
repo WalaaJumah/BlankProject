@@ -99,11 +99,11 @@ public class AeWomenOnlyCategoryPage extends BasePage {
     private WebElement securePaymentDescription;
     @FindBy(xpath = "(//li[@class='secure-listing'])[3]/a/span[1]")
     private WebElement authenticProductsTitle;
-    @FindBy(xpath = "(//li[@class='secure-listing'])[3]/a/span[2]")
+    @FindBy(xpath = "(//li[@class='secure-listing'])[2]")
     private WebElement authenticProductsDescription;
-    @FindBy(xpath = "(//li[@class='secure-listing']//h3[1])[3]")
+    @FindBy(xpath = "(//li[@class='secure-listing']//span)[3]")
     private WebElement fastDeliveryTitle;
-    @FindBy(xpath = "(//a[@title='100% Secure payments']//span)[3]")
+    @FindBy(xpath = "(//li[@class='secure-listing']//span[2])[3]")
     private WebElement fastDeliveryDescription;
     @FindBy(xpath = "//div[@class='category-details']/h1")
     private WebElement sportSupplementsTitleInSportSupplementsCategoryImage;
