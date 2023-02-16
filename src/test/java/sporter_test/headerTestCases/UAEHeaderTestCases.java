@@ -7,22 +7,14 @@
 package sporter_test.headerTestCases;
 
 import core.BasePage;
-import core.DataHelperAndWait;
-import core.WebElementsAssertion;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
-import sporter_pages.headerSection.HeaderSection;
-import sporter_pages.homepage_classes.KsaHomePage;
 import sporter_pages.homepage_classes.UAEHomePage;
-import xml_reader.XmlReader;
-
-import java.util.ArrayList;
 
 //@Test(groups = "2.06 UAE Header Section")
 
 public class UAEHeaderTestCases extends HeaderTestCases{
     @BeforeClass(alwaysRun=true)
-    public void switchToQatarStore(){
+    public void switchToUAEStore(){
         UAEHomePage uaeHomePage=new UAEHomePage(webDriver);
         uaeHomePage.switchCountry(uaeHomePage.getAeCountry());
         if(webDriver.getCurrentUrl().contains(uaeHomePage.aeDomain)){

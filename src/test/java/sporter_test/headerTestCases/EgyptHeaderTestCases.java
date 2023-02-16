@@ -24,7 +24,7 @@ public class EgyptHeaderTestCases extends HeaderTestCases{
         EgyptHomePage egyptHomePage=new EgyptHomePage(webDriver);
         egyptHomePage.switchCountry(egyptHomePage.getEgyptCountry());
         if(webDriver.getCurrentUrl().contains(egyptHomePage.egyptDomain)){
-            System.out.println("You are in Jordan Store");
+            System.out.println("You are in Egypt Store");
         }
         else {
             webDriver.navigate().to(BasePage.BaseURL+egyptHomePage.egyptDomain);
