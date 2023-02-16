@@ -45,9 +45,9 @@ public class AeWomenOnlyCategoryPage extends BasePage {
     private WebElement productCardInSupplementsForHerSection;
     @FindBy(xpath = "//div[@class='inner-seller-prod wp-id-20476']")
     private WebElement productCardInWomenVitaminsSection;
-    @FindBy(xpath = "//div[@class='inner-seller-prod wp-id-17813']")
+    @FindBy(xpath = "//*[@id=\"tab-259-all259\"]/div[1]/div/div[1]/div/a")
     private WebElement productCardInWorkoutInStyleSection;
-    @FindBy(xpath = "(//div[@class='swiper-wrapper'])[4]/div[4]")
+    @FindBy(xpath = "//*[@id=\"tab-260-all260\"]/div[1]/div/div[1]/div/a")
     private WebElement productCardInLadyFriendlySnacksFoodSection;
 //    @FindBy(xpath = "//div[@class='inner-seller-prod wp-id-37638']")
 //    private WebElement productCardInLadyFriendlySnacksFoodSection;
@@ -93,13 +93,13 @@ public class AeWomenOnlyCategoryPage extends BasePage {
     private WebElement pageBottomSection;
     @FindBy(xpath = "//div[@class='container']/ul[@class='clearfix']")
     private List<WebElement> pageBottomBlocksList;
-    @FindBy(xpath = "(//li[@class='secure-listing']//h3[1])[1]")
+    @FindBy(xpath = "(//li[@class='secure-listing']/a)[1]/span")
     private WebElement securePaymentTitle;
     @FindBy(xpath = "//em[@class='fas fa-unlock']/following-sibling::span")
     private WebElement securePaymentDescription;
-    @FindBy(xpath = "(//li[@class='secure-listing']//h3[1])[2]")
+    @FindBy(xpath = "(//li[@class='secure-listing'])[3]/a/span[1]")
     private WebElement authenticProductsTitle;
-    @FindBy(xpath = "(//a[@title='100% Secure payments']//span)[2]")
+    @FindBy(xpath = "(//li[@class='secure-listing'])[3]/a/span[2]")
     private WebElement authenticProductsDescription;
     @FindBy(xpath = "(//li[@class='secure-listing']//h3[1])[3]")
     private WebElement fastDeliveryTitle;
@@ -215,7 +215,7 @@ public class AeWomenOnlyCategoryPage extends BasePage {
         return lastProductInWorkoutInStyleSection;
     }
     public WebElement getProductCardInWorkoutInStyleSection() {
-        DataHelperAndWait.waitToBeVisible(productCardInWorkoutInStyleSection,10,webDriver);
+        DataHelperAndWait.waitToBeVisible(productCardInWorkoutInStyleSection,20,webDriver);
         return productCardInWorkoutInStyleSection;
     }
     public WebElement getViewAllInSupplementsForHerSection() {

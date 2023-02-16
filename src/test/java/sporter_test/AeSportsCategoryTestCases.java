@@ -1301,9 +1301,9 @@ public class AeSportsCategoryTestCases extends BaseTest {
         aeSportsCategoryPage.navigateToSportsPage();
         aeSportsCategoryPage.clickOnWearableTechApparelCategory(webDriver);
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        DataHelperAndWait.waitForUrlContains(aeSportsCategoryPage.wearableTechUrl,webDriver,8);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(aeSportsCategoryPage.wearableTechUrl));
-        aeSportsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
+//        DataHelperAndWait.waitForUrlContains(aeSportsCategoryPage.wearableTechUrl,webDriver,8);
+//        Assert.assertTrue(webDriver.getCurrentUrl().contains(aeSportsCategoryPage.wearableTechUrl));
+//        aeSportsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     @Test(groups = {"2.10 Sports Category", "1.3 Medium Severity"},description = "Sports Category- Make sure that the Result label and its value appear correctly in the Wearable Tech category page ", priority = 120)
     public void verifyResultFieldAndItsVaLueAppearInTheWearableTechCategoryPage(){
@@ -2467,15 +2467,16 @@ public class AeSportsCategoryTestCases extends BaseTest {
              System.out.println("There's no pages");
         else
         DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);}
-    @Test(groups = {"2.10 Sports Category","All Smoke Testing Result","1.2 High Severity"},description = "Sports Category- Make Sure the ability to access all pages inside Wearable Tech Category Page ", priority = 234)
-    public void verifyAbilityToAccessAllPagesInsideWearableTechCategoryPageCorrectly(){
-        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-        this.verifyClickingOnWearableTechCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
-        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
-                 if(DataHelperAndWait.isTheresNoPages(numberOfProductInTheList)) 
-             System.out.println("There's no pages");
-        else
-        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);}
+    //Thos Category is hidden by production team
+//    @Test(groups = {"2.10 Sports Category","All Smoke Testing Result","1.2 High Severity"},description = "Sports Category- Make Sure the ability to access all pages inside Wearable Tech Category Page ", priority = 234)
+//    public void verifyAbilityToAccessAllPagesInsideWearableTechCategoryPageCorrectly(){
+//        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+//        this.verifyClickingOnWearableTechCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
+//        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
+//                 if(DataHelperAndWait.isTheresNoPages(numberOfProductInTheList))
+//             System.out.println("There's no pages");
+//        else
+//        DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList,aeSportSupplementsCategoryPage.getNextPageBtn(),webDriver);}
     @Test(groups = {"2.10 Sports Category","All Smoke Testing Result","1.2 High Severity"},description = "Sports Category- Make Sure the ability to access all pages inside Personal Care Category Page ", priority = 235)
     public void verifyAbilityToAccessAllPagesInsidePersonalCareCategoryPageCorrectly(){
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);

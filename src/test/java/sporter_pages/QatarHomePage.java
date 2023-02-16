@@ -19,6 +19,13 @@ public class QatarHomePage extends BasePage {
     //declare all locators related to the Cart Page
     @FindBy(id = "switcher-store-trigger")
     private WebElement countryList;
+
+    public WebElement getContactUsBox() {
+        return contactUsBox;
+    }
+
+    @FindBy(xpath = "//div[@class='contact-us-box']")
+    private WebElement contactUsBox;
     @FindBy(xpath = "//li[@class='country_switch']/span[@class='QA']")
     private WebElement qatarCountry;
     @FindBy(xpath = "//a[contains(text(),'Next')]")
