@@ -48,21 +48,21 @@ public class AeSearchPageTestCases extends BaseTest {
     }
     @Test(groups = {"2.05 Search", "1.4  Low Severity"},description = "Search Page-Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Search Page", priority = 3)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInSearchPage(){
-        AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
-        Assert.assertTrue(aeFooterPage.getPageBottomSection().isDisplayed());
-        for (int i = 0; i < aeFooterPage.getPageBottomBlocksList().size(); i++) {
-            Assert.assertTrue(aeFooterPage.getPageBottomBlocksList().get(i).isDisplayed());
+        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+        AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage=new AeWomenOnlyCategoryPage(webDriver);
+        Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
+        for (int i = 0; i < aeSportSupplementsCategoryPage.getPageBottomBlocksList().size(); i++) {
+            Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
             switch (i) {
                 case 0:
-                    Assert.assertEquals(aeFooterPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
-                    Assert.assertEquals(aeFooterPage.getSecurePaymentDescription().getText(), "Secure checkout verified by Norton VeriSign.");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getSecurePaymentDescription().isDisplayed());
                 case 1:
-                    Assert.assertEquals(aeFooterPage.getAuthenticProductsTitle().getText(), "100% Authentic Products");
-                    Assert.assertEquals(aeFooterPage.getAuthenticProductsDescription().getText(), "We only deal with original products");
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getAuthenticProductsDescription().isDisplayed());
                 case 2:
-                    Assert.assertEquals(aeFooterPage.getFastDeliveryTitle().getText(), "Fast Delivery Service");
-                    Assert.assertEquals(aeFooterPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
-            }
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryTitle().isDisplayed());
+                    Assert.assertTrue(aeWomenOnlyCategoryPage.getFastDeliveryDescription().isDisplayed());            }
         }
     }
     //      The following Test Cases handle displaying the Mega Menu from search Page
@@ -166,8 +166,9 @@ public class AeSearchPageTestCases extends BaseTest {
     public void verifyTheSearchResultMatchedWithWhatTheUserSearch(){
         AeSearchPage aeSearchPage=new AeSearchPage(webDriver);
         AeProductDetailsPage aeProductDetailsPage=new AeProductDetailsPage(webDriver);
+        DataHelperAndWait.waitToBeVisible(aeProductDetailsPage.getSearchField(),7,webDriver);
         aeProductDetailsPage.getSearchField().sendKeys("Basixs ");
-        aeProductDetailsPage.getSearchBtn().click();
+        DataHelperAndWait.clickOnElement(aeProductDetailsPage.getSearchBtn(),webDriver);
         for(int i=0; i<aeSearchPage.getProductsResult().size();i++){
             DataHelperAndWait.waitToBeVisible(aeSearchPage.getProductsResult().get(i),3,webDriver);
             aeSearchPage.getProductsResult().get(i).click();

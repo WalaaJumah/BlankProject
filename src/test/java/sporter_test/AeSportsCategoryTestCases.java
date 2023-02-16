@@ -772,10 +772,10 @@ public class AeSportsCategoryTestCases extends BaseTest {
         AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnSwimmingApparelCategoryInsideTheTrendingInSportsSectionWorksCorrectly();
         aeSportSupplementsCategoryPage.navigateToPage2();
-        DataHelperAndWait.waitForTime(5000);
+        DataHelperAndWait.waitForUrlContains("p=2",webDriver,5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
-        DataHelperAndWait.waitForTime(5000);
+        DataHelperAndWait.waitForUrlContains("p=3",webDriver,5);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
     }
     @Test(groups = {"2.10 Sports Category", "1.3 Medium Severity"},description = "Sports Category- Make Sure the previous page button In Swimming Apparel Category Page works correctly", priority = 73)
