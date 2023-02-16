@@ -50,6 +50,15 @@ public class WebElementsAssertion {
         Assert.assertEquals(webElement.getText(),text, "The element contains : "+webElement.getText());
 
     }
+        public static void assertionElementEnable(WebElement webElement,WebDriver webDriver){
+        DataHelperAndWait.waitToBeVisible(webElement,webDriver);
+        Assert.assertTrue(webElement.isEnabled(), "The element is disable");
+    }
+          public static void assertionElementNotEnable(WebElement webElement,WebDriver webDriver){
+        DataHelperAndWait.waitToBeVisible(webElement,webDriver);
+        Assert.assertFalse(webElement.isEnabled(), "The element is enable");
+    }
+
     public static void assertionTextIsNotEqual(WebElement webElement,WebDriver webDriver, String text){
         DataHelperAndWait.waitToBeVisible(webElement,webDriver);
         Assert.assertNotEquals(webElement.getText(),text, "The element contains : "+webElement.getText());

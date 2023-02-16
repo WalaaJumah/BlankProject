@@ -23,5 +23,6 @@ public class UAEGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCases{
             CloseInitialDialog();
             System.out.println(webDriver.getCurrentUrl());
         }
+        storeCountry="United Arab Emirates";
     }
 }

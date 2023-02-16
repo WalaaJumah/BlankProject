@@ -62,6 +62,15 @@
         <FreeCouponCode>spr-128978-1</FreeCouponCode>
         <CartTitleEn>My Shopping Cart</CartTitleEn>
         <CartTitleAr>عربة التسوق</CartTitleAr>
+        <smallLenghthPhoneErrEn>Text length does not satisfy specified text range.</smallLenghthPhoneErrEn>
+        <smallLenghthPhoneErrAr>Text length does not satisfy specified text range.</smallLenghthPhoneErrAr>
+        <AddressName>Automation Address</AddressName>
+        <StreetOneAddressName>Automation Street 1 Address</StreetOneAddressName>
+        <StreetTwoAddressName>Automation Street 2 Address</StreetTwoAddressName>
+        <phoneNumber>22222222</phoneNumber>
+        <SmallPhoneNumber>22</SmallPhoneNumber>
+        <LongPhoneNumber>3333333333333333333333</LongPhoneNumber>
+        <LongLenghthText>This text is for automation Use This text is for automation Use This text is for automation Use This text is for automation Use This text is for automation Use This text is for automation Use </LongLenghthText>
 
 
     </CheckoutData>
