@@ -32,7 +32,8 @@ public class AEFooterPageTestCases extends BaseTest {
                 webDriver = new FirefoxDriver();
                 break;
             case "chrome":
-                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
+//                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriverV110.exe");
                 webDriver = new ChromeDriver();
                 break;
             case "edge":
@@ -1064,13 +1065,13 @@ public class AEFooterPageTestCases extends BaseTest {
 //        this.verifyPrivacyPolicyLinkAppearsInFooterWorksCorrectly();
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
-    @Test(groups = {"2.12 Footer Section", "1.4  Low Severity"},description = " Footer Section- Make sure the copyright statement appears correctly in the footer section", priority = 116)
+    @Test(groups = {"2.12 Footer Section", "1.4  Low Severity"},description = " Footer Section- Make sure the copyright statement appears correctly in the footer section", priority = 112)
     public void verifyTheCopyRightStatementAppearsInTheFooter() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         Assert.assertTrue(aeFooterPage.getCopyright().isDisplayed());
     }
-    @Test(groups = {"2.12 Footer Section", "1.2 High Severity"},description = " Footer Section/Social Media- Make sure the ability to click on the instagram icon correctly", priority = 112)
+    @Test(groups = {"2.12 Footer Section", "1.3 Medium Severity"},description = " Footer Section/Social Media- Make sure the ability to click on the instagram icon correctly", priority = 113)
     public void verifyAbilityToClickOnInstagramIconCorrectly() throws Exception {
         tearDown();
         setupBrowserFromTheClass(environmentName,browserName,countryUrl);
@@ -1083,7 +1084,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"2.12 Footer Section", "1.2 High Severity"},description = " Footer Section/Social Media- Make sure the ability to click on the facebook icon correctly", priority = 113)
+    @Test(groups = {"2.12 Footer Section", "1.3 Medium Severity"},description = " Footer Section/Social Media- Make sure the ability to click on the facebook icon correctly", priority = 114)
     public void verifyAbilityToClickOnFacebookIconCorrectly() throws Exception {
         tearDown();
         setupBrowserFromTheClass(environmentName,browserName,countryUrl);
@@ -1098,7 +1099,7 @@ public class AEFooterPageTestCases extends BaseTest {
         DataHelperAndWait.switchToTabBrowser(0,webDriver);
     }
 
-    @Test(groups = {"2.12 Footer Section", "1.2 High Severity"},description = " Footer Section/Social Media- Make sure the ability to click on the twitter icon correctly", priority = 114)
+    @Test(groups = {"2.12 Footer Section", "1.3 Medium Severity"},description = " Footer Section/Social Media- Make sure the ability to click on the twitter icon correctly", priority = 115)
     public void verifyAbilityToClickOnTwitterIconCorrectly() throws Exception {
         tearDown();
         setupBrowserFromTheClass(environmentName,browserName,countryUrl);
@@ -1113,7 +1114,7 @@ public class AEFooterPageTestCases extends BaseTest {
         DataHelperAndWait.switchToTabBrowser(0,webDriver);
     }
 
-    @Test(groups = {"2.12 Footer Section", "1.2 High Severity"},description = " Footer Section/Social Media- Make sure the ability to click on the youtube icon correctly", priority = 115)
+    @Test(groups = {"2.12 Footer Section", "1.3 Medium Severity"},description = " Footer Section/Social Media- Make sure the ability to click on the youtube icon correctly", priority = 116)
     public void verifyAbilityToClickOnYouTubeIconCorrectly() throws Exception {
         tearDown();
         setupBrowserFromTheClass(environmentName,browserName,countryUrl);
