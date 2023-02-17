@@ -18,13 +18,17 @@
 <!--                        <class name="sporter_test.forgetPasswordTestCases.KSAForgetPasswordTestCases"/>-->
 <!--                        <class name="sporter_test.forgetPasswordTestCases.JordanForgetPasswordTestCases"/>-->
 <!--                        <class name="sporter_test.loginTestCases.LoginTestCases"/>-->
-                        <class name="sporter_test.guestCheckoutCycleTestCases.UAEGuestCheckoutCycleTestCases">
+                        <class name="sporter_test.guestCheckoutCycleTestCases.UAEGuestCheckoutCycleTestCases"/>
+                        <class name="sporter_test.guestCheckoutCycleTestCases.EgyptGuestCheckoutCycleTestCases"/>
+                        <class name="sporter_test.guestCheckoutCycleTestCases.JordanGuestCheckoutCycleTestCases"/>
+                        <class name="sporter_test.guestCheckoutCycleTestCases.KSAGuestCheckoutCycleTestCases"/>
+                        <class name="sporter_test.guestCheckoutCycleTestCases.QatarGuestCheckoutCycleTestCases"/>
 <!--                            <methods>-->
 <!--                                <include name="verifyTheCloseIconInCartPopupWorksCorrectly"/>-->
 <!--&lt;!&ndash;&lt;!&ndash;                                <include name="verifyHereLinkInCartPageWorking"/>&ndash;&gt;&ndash;&gt;-->
 <!--&lt;!&ndash;            &lt;!&ndash;                    <include name="verifyMainOptionsInTheMegaMenuAreDisplayed"/>&ndash;&gt;&ndash;&gt;-->
 <!--                            </methods>-->
-                        </class>
+<!--                        </class>-->
 <!--            <class name="sporter_test.headerTestCases.KSAHeaderTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.UAEHeaderTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.JordanHeaderTestCases"/>-->

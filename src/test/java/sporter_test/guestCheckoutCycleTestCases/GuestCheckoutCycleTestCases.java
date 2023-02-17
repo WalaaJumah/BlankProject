@@ -9,8 +9,11 @@ package sporter_test.guestCheckoutCycleTestCases;
 import core.BaseTest;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import sporter_pages.AEGuestUserPage;
 import sporter_pages.cartPages.CartPage;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import sporter_pages.productPage.ProductDetailsPage;
@@ -138,7 +141,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(guestCheckoutCyclePage.getAddressErrMsg(), webDriver);
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(guestCheckoutCyclePage.getStreetlineOneErrMsg(), webDriver);
     }
-    @Test(groups = {"Guest User Page","All Smoke Testing Result","1.3 Medium Severity"},description = "Make sure the Guest user cannot submit the shipping information when the phone number length is small ", priority = 14)
+    @Test(groups = {"Guest User Page","All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}:Make sure the Guest user cannot submit the shipping information when the phone number length is small ", priority = 14)
     public void verifyTheGuestUserCannotSubmitTheShippingInformationWhenPhoneFieldHaveSmallTextLength() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         guestCheckoutCyclePage.fillInShippingInformationInputField(
@@ -153,7 +156,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getPhoneErrMsg(),webDriver);
     }
-      @Test(groups = {"Guest User Page","All Smoke Testing Result","1.3 Medium Severity"},description = "Make sure the Guest user cannot submit the shipping information using invalid email format", priority = 15)
+      @Test(groups = {"Guest User Page","All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}:Make sure the Guest user cannot submit the shipping information using invalid email format", priority = 15)
     public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidEmailFormat() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         guestCheckoutCyclePage.accessGuestCheckoutForm();
@@ -169,7 +172,22 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFirstNameField(),webDriver);
     }
-
+    @Test(groups = {"Guest User Page","All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:Make sure the Guest user can filling the shipping information and clicking on the Continue button correctly", priority = 16)
+    public void verifyTheGuestUserCanFillTheShippingInformationCorrectly() {
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        guestCheckoutCyclePage.accessGuestCheckoutForm();
+        guestCheckoutCyclePage.fillInShippingInformationInputField(
+                XmlReader.getXMLData("firstName"),
+                XmlReader.getXMLData("lastName"),
+                XmlReader.getXMLData("correctEmail"),
+                XmlReader.getXMLData("phoneNumber"),
+                XmlReader.getXMLData("AddressName"),
+                XmlReader.getXMLData("StreetOneAddressName"),
+                XmlReader.getXMLData("StreetTwoAddressName")
+        );
+        guestCheckoutCyclePage.clickOnContinueBtn();
+        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getShippingMethodsOptionsSection(),webDriver);
+    }
 
 
 

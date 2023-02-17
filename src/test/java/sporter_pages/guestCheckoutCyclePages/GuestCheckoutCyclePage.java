@@ -83,6 +83,9 @@ public class GuestCheckoutCyclePage extends BasePage {
     private WebElement streetlineOneErrMsg;
     @FindBy(xpath = "(//div[@id='_errMsg'])[6]")
     private WebElement streetlineErrMsg;
+    @FindBy(xpath = "//div[starts-with(@class,'shippingMethod_shippingMethods')]")
+    private WebElement shippingMethodsOptionsSection;
+
     public void fillInShippingInformationInputField(String firstName, String lastName, String email, String phone, String address, String streetLineOne, String streetLineTwo) {
         DataHelperAndWait.waitToBeVisible(firstNameField ,webDriver);
         DataHelperAndWait.updateAllText(firstNameField,firstName);
