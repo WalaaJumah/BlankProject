@@ -74,6 +74,7 @@ public class WebElementsAssertion {
     }
     public static void assertionWebElementEqualText(WebElement webElement, WebDriver webDriver, String expectedText){
         DataHelperAndWait.waitToBeVisible(webElement,webDriver);
+        Assert.assertEquals(webElement.getText(),expectedText);
         Assert.assertEquals(webElement.getText(),expectedText, "The element does not contains : "+expectedText+ "And the Actual Text is: "+webElement.getText());
 
     }

@@ -18,13 +18,22 @@
 <!--                        <class name="sporter_test.forgetPasswordTestCases.KSAForgetPasswordTestCases"/>-->
 <!--                        <class name="sporter_test.forgetPasswordTestCases.JordanForgetPasswordTestCases"/>-->
 <!--                        <class name="sporter_test.loginTestCases.LoginTestCases"/>-->
-                        <class name="sporter_test.guestCheckoutCycleTestCases.UAEGuestCheckoutCycleTestCases"/>
-                        <class name="sporter_test.guestCheckoutCycleTestCases.EgyptGuestCheckoutCycleTestCases"/>
                         <class name="sporter_test.guestCheckoutCycleTestCases.JordanGuestCheckoutCycleTestCases"/>
+                        <class name="sporter_test.guestCheckoutCycleTestCases.EgyptGuestCheckoutCycleTestCases"/>
+                        <class name="sporter_test.guestCheckoutCycleTestCases.UAEGuestCheckoutCycleTestCases"/>
                         <class name="sporter_test.guestCheckoutCycleTestCases.KSAGuestCheckoutCycleTestCases"/>
                         <class name="sporter_test.guestCheckoutCycleTestCases.QatarGuestCheckoutCycleTestCases"/>
 <!--                            <methods>-->
-<!--                                <include name="verifyTheCloseIconInCartPopupWorksCorrectly"/>-->
+<!--                                <include name="addToCartAndViewCartFromPDP"/>-->
+<!--                                <include name="verifyClickingOnCheckOutAsGuestUserBtnRedirectTheUserToShippingInformationForm"/>-->
+<!--&lt;!&ndash;                                <include name="verifyTheCorrectCountyCodeRetrievedCorrectlyInPhoneField"/>&ndash;&gt;-->
+<!--                                <include name="verifyTheGuestUserCanFillTheShippingInformationCorrectly"/>-->
+<!--&lt;!&ndash;                                <include name="verifyTheEditShippingInfoBtnWorksFine"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <include name="verifyAllShippingMethodsAppearCorrectly"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <include name="verifyContinueBtnAppearsInShippingMethodsIsDisableWhenNoMethodSelected"/>&ndash;&gt;-->
+<!--                                <include name="verifyAbilityToSelect2BusinessDaysShippingMethodCorrectly"/>-->
+<!--                                <include name="verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod"/>-->
+<!--                                <include name="verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod"/>-->
 <!--&lt;!&ndash;&lt;!&ndash;                                <include name="verifyHereLinkInCartPageWorking"/>&ndash;&gt;&ndash;&gt;-->
 <!--&lt;!&ndash;            &lt;!&ndash;                    <include name="verifyMainOptionsInTheMegaMenuAreDisplayed"/>&ndash;&gt;&ndash;&gt;-->
 <!--                            </methods>-->

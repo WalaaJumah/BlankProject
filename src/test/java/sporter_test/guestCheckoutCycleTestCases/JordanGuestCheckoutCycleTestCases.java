@@ -23,5 +23,6 @@ public class JordanGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCas
             CloseInitialDialog();
             System.out.println(webDriver.getCurrentUrl());
         }
+        storeCountry="Jordan";
     }
 }

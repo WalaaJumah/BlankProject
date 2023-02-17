@@ -71,9 +71,19 @@
         <SmallPhoneNumber>22</SmallPhoneNumber>
         <LongPhoneNumber>3333333333333333333333</LongPhoneNumber>
         <LongLenghthText>This text is for automation Use This text is for automation Use This text is for automation Use This text is for automation Use This text is for automation Use This text is for automation Use </LongLenghthText>
-
+        <UAECountryCode>971</UAECountryCode>
+        <jordanCountryCode>962</jordanCountryCode>
+        <KSACountryCode>961</KSACountryCode>
+        <qatarCountryCode>961</qatarCountryCode>
+        <egyptCountryCode>961</egyptCountryCode>
 
     </CheckoutData>
+    <UAECheckout>
+        <twoBusinessDay>2 Business Days Super Express Shipping&#xA;Cash on Delivery Service Available</twoBusinessDay>
+        <sameDayDelivery>Same Day Delivery</sameDayDelivery>
+    </UAECheckout>
+
+
     <shippingAddress>
         <addressId>13523</addressId>
         <addressArea>amman</addressArea>

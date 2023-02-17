@@ -22,6 +22,6 @@ public class QatarGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCase
             CloseInitialDialog();
             System.out.println(webDriver.getCurrentUrl());
         }
-
+        storeCountry="Qatar";
     }
 }

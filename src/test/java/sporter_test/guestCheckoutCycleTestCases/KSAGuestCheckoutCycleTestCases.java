@@ -28,6 +28,7 @@ public class KSAGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCases{
         DataHelperAndWait.clickOnElement(headerSection.getLanguageSelector(),webDriver);
         WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage,webDriver);
         System.out.println(webDriver.getCurrentUrl());
+        storeCountry="المملكة العربية السعودية";
 
     }
 }
