@@ -96,7 +96,8 @@ try{
                 break;
             case "chrome":
                 //This Statement will run always
-                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
+//                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriverV110.exe");
                 //This if we need to run the Script using the Normal WebDriver
                 webDriver = new ChromeDriver();
 
