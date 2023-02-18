@@ -50,7 +50,7 @@ public class QatarGuestCheckoutCyclePage extends  GuestCheckoutCyclePage{
         DataHelperAndWait.waitToBeVisible(streetLineTwoField ,webDriver);
         DataHelperAndWait.updateAllText(streetLineTwoField,streetLineTwo);
         DataHelperAndWait.waitToBeVisible(nationalIDField ,webDriver);
-        DataHelperAndWait.updateAllText(nationalIDField,streetLineTwo);
+        DataHelperAndWait.updateAllText(nationalIDField,nationaLID);
 
     }
     public void navigateToShippingMethodsPage(){

@@ -16,7 +16,7 @@ import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 public  class DataHelperAndWait  {
-    private static int WaitTime=15;
+    private static int WaitTime=12;
     //test4
 
     public static   void waitForElement(WebElement element, WebDriver webDriver) {
@@ -103,10 +103,10 @@ public  class DataHelperAndWait  {
         jse.executeScript("arguments[0].click()", element);
     }
 
-    public static  float convertTheStringToFloat(WebElement element,WebDriver webDriver, String currency) {
+    public static  float convertTheStringToFloat(WebElement element,WebDriver webDriver,String currency) {
         DataHelperAndWait.waitToBeVisible(element,webDriver);
         String elementValue = element.getText();
-        String elementValueWithoutCurrency = elementValue.replaceAll("AED", "");
+        String elementValueWithoutCurrency = elementValue.replaceAll(currency, "");
         String elementValueWithoutSpace = elementValueWithoutCurrency.replaceAll(" ", "");
         return Float.parseFloat(elementValueWithoutSpace);
     }

@@ -35,7 +35,7 @@ public class JordanGuestCheckoutCyclePage extends  GuestCheckoutCyclePage{
     @FindBy(xpath = "(//input[starts-with(@class,'input_input')])[7]")
     private WebElement streetLineTwoField;
 
-    public void fillInShippingInformationInputField(String firstName, String lastName, String email, String phone, String address, String streetLineOne, String streetLineTwo, String nationaLID) {
+    public void fillInShippingInformationInputField(String firstName, String lastName, String email, String phone, String address, String streetLineOne, String streetLineTwo, String nationalID) {
         DataHelperAndWait.waitToBeVisible(getFirstNameField() ,webDriver);
         DataHelperAndWait.updateAllText(getFirstNameField(),firstName);
         DataHelperAndWait.waitToBeVisible(getLastNameField() ,webDriver);
@@ -51,7 +51,7 @@ public class JordanGuestCheckoutCyclePage extends  GuestCheckoutCyclePage{
         DataHelperAndWait.waitToBeVisible(streetLineTwoField ,webDriver);
         DataHelperAndWait.updateAllText(streetLineTwoField,streetLineTwo);
         DataHelperAndWait.waitToBeVisible(nationalIDField ,webDriver);
-        DataHelperAndWait.updateAllText(nationalIDField,streetLineTwo);
+        DataHelperAndWait.updateAllText(nationalIDField,nationalID);
 
     }
     public void navigateToShippingMethodsPage(){
