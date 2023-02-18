@@ -10,6 +10,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
 import org.testng.annotations.Parameters;
 
+import java.util.Arrays;
+
 public class BaseTest {
 //    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
@@ -94,6 +96,7 @@ public class BaseTest {
                 System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriverVersion110.exe");
                 //This if we need to run the Script using the Normal WebDriver
                 webDriver = new ChromeDriver();
+
 
                 //Chrome headless
 //                ChromeOptions opt = new ChromeOptions();

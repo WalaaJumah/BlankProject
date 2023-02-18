@@ -118,8 +118,22 @@ private WebElement sameDayDelivery;
    private WebElement finalPlaceOrderBtn;
    @FindBy(xpath = "//div[starts-with(@class,'successfullOrderPage_header')]")
    private WebElement successPage;
-    @FindBy(xpath = "(//button[contains(@class,'submitOrderBtn_btn')])[2]")
+   @FindBy(xpath = "(//button[contains(@class,'submitOrderBtn_btn')])[2]")
    private WebElement finalPlaceOrderBtnOnRightScreen;
+  @FindBy(id = "checkout-frames-card-number")
+   private WebElement creditCardNumber;
+   @FindBy(id = "checkout-frames-expiry-date")
+   private WebElement creditCardDate;
+   @FindBy(id = "checkout-frames-cvv")
+   private WebElement creditCardCVV;
+   @FindBy(id = "singleIframe")
+   private WebElement creditCardIFrame;
+   @FindBy(id = "closeAddToCartErrBtn")
+   private WebElement closeCheckoutErr;
+   @FindBy(id = "password")
+   private WebElement secureAnd2Authentication;
+   @FindBy(id = "txtButton")
+   private WebElement secureAnd2AuthenticationSubmitBtn;
 
 
     public void fillInShippingInformationInputField(String firstName, String lastName, String email, String phone, String address, String streetLineOne, String streetLineTwo) {
@@ -201,6 +215,27 @@ public void AddToCartAndAccessShippingMethodsPage(){
     this.setSelectDubaiCityCity();
     this.clickOnContinueBtn();
 }
-
-
+public void submitCreditCard(String creditNumber,String cardDate, String cvv){
+//    DataHelperAndWait.clickOnElement(this.getCreditCardPaymentMethod(),webDriver);
+//    webDriver.switchTo().frame(this.getCreditCardIFrame());
+//    DataHelperAndWait.typeTextInElement(this.getCreditCardNumber(), webDriver,creditNumber);
+//    DataHelperAndWait.typeTextInElement(this.getCreditCardDate(), webDriver,cardDate);
+//    DataHelperAndWait.typeTextInElement(this.getCreditCardCVV(), webDriver,cvv);
+//    webDriver.switchTo().defaultContent();
+//    DataHelperAndWait.clickOnElement(this.getContinuePaymentMethodsBtn(), webDriver);
+    DataHelperAndWait.clickOnElement(this.getCreditCardPaymentMethod(),webDriver);
+    webDriver.switchTo().frame(this.getCreditCardIFrame());
+    DataHelperAndWait.waitToBeVisible(this.getCreditCardNumber(),webDriver);
+    DataHelperAndWait.updateAllText(this.getCreditCardNumber(),creditNumber);
+    DataHelperAndWait.waitToBeVisible(this.getCreditCardDate(),webDriver);
+    DataHelperAndWait.updateAllText(this.getCreditCardDate(),cardDate);
+    DataHelperAndWait.waitToBeVisible(this.getCreditCardCVV(),webDriver);
+    DataHelperAndWait.updateAllText(this.getCreditCardCVV(),cvv);
+    webDriver.switchTo().defaultContent();
+    DataHelperAndWait.clickOnElement(this.getContinuePaymentMethodsBtn(), webDriver);
+}
+public void submitSecureAndAuthenticationCheckout(){
+    DataHelperAndWait.typeTextInElement(this.getSecureAnd2Authentication(),webDriver,XmlReader.getXMLData("checkout3DSecure"));
+    DataHelperAndWait.clickOnElement(this.getSecureAnd2AuthenticationSubmitBtn(),webDriver);
+}
 }

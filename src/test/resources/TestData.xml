@@ -77,6 +77,11 @@
         <qatarCountryCode>961</qatarCountryCode>
         <egyptCountryCode>961</egyptCountryCode>
         <nationalID>1234567891</nationalID>
+        <testCreditCard>4242 4242 4242 4242</testCreditCard>
+        <invalidCreditCard>4242 4242 4242 41</invalidCreditCard>
+        <testCVV>257</testCVV>
+        <creditCardDate>1225</creditCardDate>
+        <checkout3DSecure>Checkout1!</checkout3DSecure>
 
     </CheckoutData>
     <UAECheckout>
