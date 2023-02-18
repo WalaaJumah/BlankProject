@@ -24,6 +24,7 @@ import java.text.DecimalFormat;
 @Test(groups = "2.01 Checkout Cycle( Guest User)")
 public class GuestCheckoutCycleTestCases extends BaseTest {
     String storeCountry;
+    String countryCode;
 
     @Test(groups = {"1.1 Critical Severity"}, description = "{{CountryName}}:Make sure the shopper is able to keep the shopping after adding the product to the cart ", priority = 1)
     public void keepShoppingAfterAddingToTheCart() {
@@ -144,7 +145,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     @Test(groups = {"Guest User Page", "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Make sure the County Code retrieved correctly in the Phone Field", priority = 14)
     public void verifyTheCorrectCountyCodeRetrievedCorrectlyInPhoneField() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getCountryCode(),webDriver,XmlReader.getXMLData("UAECountryCode"));
+        WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getCountryCode(),webDriver,countryCode);
     }
     @Test(groups = {"Guest User Page","All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}:Make sure the Guest user cannot submit the shipping information when the phone number length is small ", priority = 15)
     public void verifyTheGuestUserCannotSubmitTheShippingInformationWhenPhoneFieldHaveSmallTextLength() {

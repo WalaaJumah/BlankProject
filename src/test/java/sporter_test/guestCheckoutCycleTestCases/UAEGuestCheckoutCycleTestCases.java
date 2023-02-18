@@ -24,5 +24,6 @@ public class UAEGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCases{
             System.out.println(webDriver.getCurrentUrl());
         }
         storeCountry="United Arab Emirates";
+        countryCode="971";
     }
 }

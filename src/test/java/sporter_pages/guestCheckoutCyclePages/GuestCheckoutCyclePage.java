@@ -13,6 +13,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Optional;
 import sporter_pages.cartPages.CartPage;
 import xml_reader.XmlReader;
 
@@ -135,7 +136,7 @@ private WebElement sameDayDelivery;
         DataHelperAndWait.waitToBeVisible(streetLineOneField ,webDriver);
         DataHelperAndWait.updateAllText(streetLineOneField,streetLineOne);
         DataHelperAndWait.waitToBeVisible(streetLineTwoField ,webDriver);
-        DataHelperAndWait.updateAllText(streetLineTwoField,streetLineOne);
+        DataHelperAndWait.updateAllText(streetLineTwoField,streetLineTwo);
     }
     public void clickOnContinueBtn() {
         DataHelperAndWait.scrollTo(continueShippingInfoBtn,webDriver);

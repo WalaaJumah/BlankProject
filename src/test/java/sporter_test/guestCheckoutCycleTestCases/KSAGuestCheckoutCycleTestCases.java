@@ -10,6 +10,7 @@ import core.BasePage;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.KsaHomePage;
 
@@ -29,6 +30,13 @@ public class KSAGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCases{
         WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage,webDriver);
         System.out.println(webDriver.getCurrentUrl());
         storeCountry="المملكة العربية السعودية";
-
+        countryCode="966";
+    }
+    @Test(enabled = false)
+    public void verifySameDayShippingMethodAppearsForDubaiCityOnly() {
+    }
+    //TODO:The Same Day Delivery is Missing
+    @Test(enabled = false)
+    public void verifyAbilityToSelectSameDayShippingMethodCorrectly() {
     }
 }

@@ -8,6 +8,7 @@ package sporter_test.guestCheckoutCycleTestCases;
 
 import core.BasePage;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.EgyptHomePage;
 
 public class EgyptGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCases{
@@ -21,5 +22,13 @@ public class EgyptGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCase
         else {
             webDriver.navigate().to(BasePage.BaseURL+egyptHomePage.egyptDomain);
             CloseInitialDialog();          }
+        countryCode="20";
+    }
+    @Test(enabled = false)
+    public void verifySameDayShippingMethodAppearsForDubaiCityOnly() {
+    }
+    //TODO:The Same Day Delivery is Missing
+    @Test(enabled = false)
+    public void verifyAbilityToSelectSameDayShippingMethodCorrectly() {
     }
 }
