@@ -41,11 +41,22 @@ public class KSACartTestCases extends CartTestCases {
         DecimalFormat df = new DecimalFormat("0.00");
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
-        float subTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue(),webDriver);
+        float subTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue(),webDriver,"SAR");
         float tax = subTotal * (float) (0.15);
         float expectedCartTotal = subTotal + tax;
-        float actualCartTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(),webDriver);
+        float actualCartTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(),webDriver,"SAR");
         Assert.assertEquals(df.format(actualCartTotal), df.format(expectedCartTotal));
+        cartPage.removeItem();
+    }
+    @Test(groups = {"Cart Page","All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 26)
+    public void verifyOrderTotalCalculationInCartPageWorksCorrectly() {
+        CartPage cartPage = new CartPage(webDriver);
+        cartPage.addToCartAndDisplayTheCart();
+        float subTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue(),webDriver,"SAR");
+        float tax = DataHelperAndWait.convertTheStringToFloat(cartPage.getTaxValue(),webDriver,"SAR");
+        float orderTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(),webDriver,"SAR");
+        double cartTotal = subTotal + tax;
+        Assert.assertEquals(orderTotal, cartTotal);
         cartPage.removeItem();
     }
 }

@@ -7,7 +7,9 @@
 package sporter_test.guestCheckoutCycleTestCases;
 
 import core.BasePage;
+import core.DataHelperAndWait;
 import core.WebElementsAssertion;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.cartPages.CartPage;
@@ -16,6 +18,8 @@ import sporter_pages.guestCheckoutCyclePages.JordanGuestCheckoutCyclePage;
 import sporter_pages.guestCheckoutCyclePages.QatarGuestCheckoutCyclePage;
 import sporter_pages.homepage_classes.QatarHomePage;
 import xml_reader.XmlReader;
+
+import java.text.DecimalFormat;
 
 public class QatarGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCases{
     @BeforeClass(alwaysRun = true)
@@ -76,5 +80,16 @@ public class QatarGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCase
         QatarGuestCheckoutCyclePage qa= new QatarGuestCheckoutCyclePage(webDriver);
         qa.navigateToShippingMethodsPage();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getShippingMethodsOptionsSection(),webDriver);
+    }
+    @Test(groups = {"Cart Page", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 6)
+    public void verifyOrderTotalCalculationInCartPageWorksCorrectly() {
+        CartPage cartPage = new CartPage(webDriver);
+        DecimalFormat df = new DecimalFormat("0.00");
+        cartPage.navigateToCartPage();
+        double subTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue(), webDriver,"QAR");
+        double tax = DataHelperAndWait.convertTheStringToFloat(cartPage.getTaxValue(), webDriver,"QAR");
+        double orderTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(), webDriver,"QAR");
+        double cartTotal = subTotal + tax;
+        Assert.assertEquals(df.format(orderTotal), df.format(cartTotal));
     }
 }

@@ -272,9 +272,9 @@ public class CartTestCases extends BaseTest {
     public void verifyOrderTotalCalculationInCartPageWorksCorrectly() {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
-        float subTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue(),webDriver);
-        float tax = DataHelperAndWait.convertTheStringToFloat(cartPage.getTaxValue(),webDriver);
-        float orderTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(),webDriver);
+        float subTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue(),webDriver,"AED");
+        float tax = DataHelperAndWait.convertTheStringToFloat(cartPage.getTaxValue(),webDriver,"AED");
+        float orderTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(),webDriver,"AED");
         double cartTotal = subTotal + tax;
         Assert.assertEquals(orderTotal, cartTotal);
         cartPage.removeItem();
@@ -317,10 +317,10 @@ public class CartTestCases extends BaseTest {
         DecimalFormat df = new DecimalFormat("0.00");
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
-        float subTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue(),webDriver);
+        float subTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue(),webDriver,"AED");
         float tax = subTotal * (float) (0.05);
         float expectedCartTotal = subTotal + tax;
-        float actualCartTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(),webDriver);
+        float actualCartTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(),webDriver,"AED");
         Assert.assertEquals(df.format(actualCartTotal), df.format(expectedCartTotal));
         cartPage.removeItem();
     }

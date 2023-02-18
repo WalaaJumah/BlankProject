@@ -9,10 +9,14 @@ package sporter_test.guestCheckoutCycleTestCases;
 import core.BasePage;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import sporter_pages.cartPages.CartPage;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.KsaHomePage;
+
+import java.text.DecimalFormat;
 
 public class KSAGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCases{
     @BeforeClass(alwaysRun=true)
@@ -38,5 +42,16 @@ public class KSAGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCases{
     //TODO:The Same Day Delivery is Missing
     @Test(enabled = false)
     public void verifyAbilityToSelectSameDayShippingMethodCorrectly() {
+    }
+    @Test(groups = {"Cart Page", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 6)
+    public void verifyOrderTotalCalculationInCartPageWorksCorrectly() {
+        CartPage cartPage = new CartPage(webDriver);
+        DecimalFormat df = new DecimalFormat("0.00");
+        cartPage.navigateToCartPage();
+        double subTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue(), webDriver,"SAR");
+        double tax = DataHelperAndWait.convertTheStringToFloat(cartPage.getTaxValue(), webDriver,"SAR");
+        double orderTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(), webDriver,"SAR");
+        double cartTotal = subTotal + tax;
+        Assert.assertEquals(df.format(orderTotal), df.format(cartTotal));
     }
 }
