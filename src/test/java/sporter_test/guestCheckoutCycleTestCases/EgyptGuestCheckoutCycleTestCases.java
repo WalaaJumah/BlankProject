@@ -27,6 +27,7 @@ public class EgyptGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCase
         else {
             webDriver.navigate().to(BasePage.BaseURL+egyptHomePage.egyptDomain);
             CloseInitialDialog();          }
+        storeCountry="Egypt";
         countryCode="20";
     }
     @Test(enabled = false)

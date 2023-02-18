@@ -306,5 +306,11 @@ public  class DataHelperAndWait  {
         catch (Exception e){
             action.moveToElement(webElement).click();}
             }
+        public static String extractDigitsFromString(WebElement element,WebDriver webDriver){
+        DataHelperAndWait.waitToBeVisible(element,webDriver);
+        String text=element.getText();
+        String numberOnly= text.replaceAll("[^0-9]", "");
+        return numberOnly;
+    }
 
 }
