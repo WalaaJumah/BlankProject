@@ -54,4 +54,6 @@ public class KSAGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCases{
         double cartTotal = subTotal + tax;
         Assert.assertEquals(df.format(orderTotal), df.format(cartTotal));
     }
+    @Test(enabled = false)
+    public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNationalID() {}
 }

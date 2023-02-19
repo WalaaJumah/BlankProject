@@ -7,7 +7,9 @@
 package sporter_test.guestCheckoutCycleTestCases;
 
 import core.BasePage;
+import jdk.jfr.Enabled;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.UAEHomePage;
 
 public class UAEGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCases{
@@ -26,4 +28,6 @@ public class UAEGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCases{
         storeCountry="United Arab Emirates";
         countryCode="971";
     }
+@Test(enabled = false)
+public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNationalID() {}
 }

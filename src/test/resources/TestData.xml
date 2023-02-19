@@ -88,6 +88,9 @@
         <twoBusinessDay>2 Business Days Super Express Shipping&#xA;Cash on Delivery Service Available</twoBusinessDay>
         <sameDayDelivery>Same Day Delivery</sameDayDelivery>
     </UAECheckout>
+    <JordanCheckout>
+        <fiveBusinessDays>5 Business Days Super Express Shipping </fiveBusinessDays>
+    </JordanCheckout>
 
 
     <shippingAddress>

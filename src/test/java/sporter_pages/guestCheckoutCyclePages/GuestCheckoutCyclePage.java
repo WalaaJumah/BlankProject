@@ -8,6 +8,7 @@ package sporter_pages.guestCheckoutCyclePages;
 
 import core.BasePage;
 import core.DataHelperAndWait;
+import core.WebElementsAssertion;
 import lombok.Getter;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -137,13 +138,18 @@ private WebElement sameDayDelivery;
 //   private WebElement secureAnd2Authentication;
     @FindBy(id = "password")
    private WebElement secureAnd2Authentication;
-//
    @FindBy(id = "txtButton")
    private WebElement secureAnd2AuthenticationSubmitBtn;
    @FindBy(id = "form")
    private WebElement checkoutForm;
    @FindBy(xpath = "//iframe[@frameborder='0']")
    private WebElement checkoutIFrame;
+   @FindBy(xpath = "(//div[starts-with(@class,'orderReview_total')]/span)[1]")
+   private WebElement orderTotalFieldInrReviewPage;
+   @FindBy(xpath = "(//div[starts-with(@class,'orderReview_total')]/span)[2]")
+   private WebElement orderTotalValueInrReviewPage;
+   @FindBy(xpath = "(//span[starts-with(@class,'shippingMethod_amount')])[1]")
+   private WebElement firstShippingMethodAmount;
 
 
     public void fillInShippingInformationInputField(String firstName, String lastName, String email, String phone, String address, String streetLineOne, String streetLineTwo) {
@@ -263,15 +269,22 @@ public void submitSecureAndAuthenticationCheckout(){
 //    actions.moveToElement(this.getSecureAnd2Authentication());
 //    this.secureAnd2Authentication.click();
 //    this.secureAnd2Authentication.sendKeys(XmlReader.getXMLData("checkout3DSecure"));
-
     webDriver.switchTo().frame(checkoutIFrame);
 //    actions.moveToElement(this.getSecureAnd2Authentication()).sendKeys(XmlReader.getXMLData("checkout3DSecure")).perform();
     DataHelperAndWait.typeTextInElement(this.getSecureAnd2Authentication(),webDriver,XmlReader.getXMLData("checkout3DSecure"));
 //    DataHelperAndWait.waitForTime(3000);
     webDriver.switchTo().defaultContent();
-
     Actions actions= new Actions(webDriver);
     actions.sendKeys(Keys.ENTER).perform();
 //    DataHelperAndWait.clickOnElement(this.getSecureAnd2AuthenticationSubmitBtn(),webDriver);
 }
+public void validateTheShippingMethodAmount(WebElement shippingFee, WebElement shippingMethod)
+ {
+        if(shippingMethod.getText().equalsIgnoreCase(XmlReader.getXMLData("twoBusinessDay"))){
+                WebElementsAssertion.assertionWebElementEqualText(shippingFee,webDriver,"10AED");
+        } else if (shippingFee.getText().equalsIgnoreCase(XmlReader.getXMLData("fiveBusinessDays"))) {
+            WebElementsAssertion.assertionWebElementEqualText(shippingFee,webDriver,"15JOD");
+        }
+        }
+
 }
