@@ -10,6 +10,7 @@ import core.BasePage;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -23,7 +24,6 @@ import xml_reader.XmlReader;
 
 import java.io.IOException;
 import java.text.DecimalFormat;
-import java.util.NoSuchElementException;
 import java.util.Set;
 
 public class KSAGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCases{

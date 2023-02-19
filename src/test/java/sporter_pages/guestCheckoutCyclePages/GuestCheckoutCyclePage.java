@@ -307,8 +307,11 @@ public void validateTheShippingMethodAmount(WebElement shippingFee, WebElement s
      if(shippingMethod.getText().equalsIgnoreCase(XmlReader.getXMLData("dootToDoor"))){
          WebElementsAssertion.assertionWebElementEqualText(shippingFee,webDriver,"25SAR");
      }
-          if(shippingMethod.getText().equalsIgnoreCase(XmlReader.getXMLData("pickupShipping"))){
+     if(shippingMethod.getText().equalsIgnoreCase(XmlReader.getXMLData("pickupShipping"))){
          WebElementsAssertion.assertionWebElementEqualText(shippingFee,webDriver,"25SAR");
+     }
+     if(shippingMethod.getText().equalsIgnoreCase(XmlReader.getXMLData("nextDayDelivery"))){
+         WebElementsAssertion.assertionWebElementEqualText(shippingFee,webDriver,"Free Shipping");
      }
 
         }

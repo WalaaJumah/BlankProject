@@ -98,6 +98,9 @@
         <dootToDoor>خدمة التوصيل حتى باب المنزل ( خلال 4 - 5 يوم عمل ) خدمه الدفع عند الاستلام متوفره</dootToDoor>
         <pickupShipping>Pickup In Store</pickupShipping>
     </KSACheckout>
+    <EgyptCheckout>
+        <nextDayDelivery>Next day delivery</nextDayDelivery>
+    </EgyptCheckout>
 
     <shippingAddress>
         <addressId>13523</addressId>
