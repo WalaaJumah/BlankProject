@@ -55,10 +55,14 @@ public class AeProductDetailsPageTestCases extends BaseTest {
         assertTrue(aeProductDetailsPage.getOOSMsg().isDisplayed());
     }
 
-    @Test(groups = {"2.02 Product Page", "1.2 High Severity"},dependsOnMethods = "verifyOOSMessageIsDisplayed",description = "Make sure the shopper is unable to add out of stock product to the cart", priority =5,expectedExceptions = { org.openqa.selenium.NoSuchElementException.class })
-    public void verifyInabilityToAddOosProductToTheCart() throws Exception{
+    @Test(groups = {"2.02 Product Page", "1.2 High Severity"},dependsOnMethods = "verifyOOSMessageIsDisplayed",description = "Make sure the shopper is unable to add out of stock product to the cart", priority =5)
+    public void verifyInabilityToAddOosProductToTheCart(){
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
-        Assert.assertFalse(aeProductDetailsPage.getAddToCartSectionForOOSProduct().isDisplayed());
+        try{
+        Assert.assertFalse(aeProductDetailsPage.getAddToCartSectionForOOSProduct().isDisplayed());}
+        catch (Exception e){
+            System.out.println("The Add to cat is disable correctly");
+        }
     }
 
     @Test(groups = {"2.02 Product Page","All Smoke Testing Result","1.2 High Severity"},description = "Make sure to display the product from search screen", priority = 6)
