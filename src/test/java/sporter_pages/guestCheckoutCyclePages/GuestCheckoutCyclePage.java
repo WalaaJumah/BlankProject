@@ -106,7 +106,7 @@ public class GuestCheckoutCyclePage extends BasePage {
     @FindBy(xpath = "///div[starts-with(@class,'paymentInfo_methods')]")
     private WebElement paymentMethodsSection;
 //TODO:Same Day Delivery https://spocan.easyredmine.com/issues/8732?jump=issues
-@FindBy(xpath = "(//div[starts-with(@class,'radioButton_circle')])[2]")
+@FindBy(xpath = "(//div[starts-with(@class,'radioButton_circle')]/following::span[1])[2]")
 private WebElement sameDayDelivery;
    @FindBy(xpath = "//div[2]/div[2]/div[5]")
    private WebElement dubaiCity;
@@ -303,8 +303,14 @@ public void validateTheShippingMethodAmount(WebElement shippingFee, WebElement s
         }
         if(shippingMethod.getText().equalsIgnoreCase(XmlReader.getXMLData("fourToFiveBusinessDays"))){
      WebElementsAssertion.assertionWebElementEqualText(shippingFee,webDriver,"60QAR");
-
  }
+     if(shippingMethod.getText().equalsIgnoreCase(XmlReader.getXMLData("dootToDoor"))){
+         WebElementsAssertion.assertionWebElementEqualText(shippingFee,webDriver,"25SAR");
+     }
+          if(shippingMethod.getText().equalsIgnoreCase(XmlReader.getXMLData("pickupShipping"))){
+         WebElementsAssertion.assertionWebElementEqualText(shippingFee,webDriver,"25SAR");
+     }
+
         }
 
 }

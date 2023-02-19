@@ -94,6 +94,10 @@
     <QatarCheckout>
         <fourToFiveBusinessDays>4-5 Business Days Super Express Shipping&#xA;Online Credit or Debit Card Payment is Required</fourToFiveBusinessDays>
     </QatarCheckout>
+    <KSACheckout>
+        <dootToDoor>خدمة التوصيل حتى باب المنزل ( خلال 4 - 5 يوم عمل ) خدمه الدفع عند الاستلام متوفره</dootToDoor>
+        <pickupShipping>Pickup In Store</pickupShipping>
+    </KSACheckout>
 
     <shippingAddress>
         <addressId>13523</addressId>
