@@ -231,6 +231,22 @@ public void AddToCartAndAccessShippingMethodsPage(){
     this.setSelectDubaiCityCity();
     this.clickOnContinueBtn();
 }
+    public void viewCartAndAccessShippingMethodsPage(){
+        CartPage cartPage=new CartPage(webDriver);
+        cartPage.navigateToCartPage();
+        this.accessGuestCheckoutForm();
+        this.fillInShippingInformationInputField(
+                XmlReader.getXMLData("firstName"),
+                XmlReader.getXMLData("lastName"),
+                XmlReader.getXMLData("correctEmail"),
+                XmlReader.getXMLData("phoneNumber"),
+                XmlReader.getXMLData("AddressName"),
+                XmlReader.getXMLData("StreetOneAddressName"),
+                XmlReader.getXMLData("StreetTwoAddressName")
+        );
+        this.setSelectDubaiCityCity();
+        this.clickOnContinueBtn();
+    }
 public void submitCreditCard(String creditNumber,String cardDate, String cvv){
 //    DataHelperAndWait.clickOnElement(this.getCreditCardPaymentMethod(),webDriver);
 //    webDriver.switchTo().frame(this.getCreditCardIFrame());
