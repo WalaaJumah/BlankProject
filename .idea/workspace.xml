@@ -10,8 +10,6 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/guestCheckoutCyclePages/GuestCheckoutCyclePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/guestCheckoutCyclePages/GuestCheckoutCyclePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/GuestCheckoutCycleTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/GuestCheckoutCycleTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/TestData.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/TestData.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,7 +269,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/GuestCheckoutCycleTestCases.java</url>
-          <line>81</line>
+          <line>82</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>

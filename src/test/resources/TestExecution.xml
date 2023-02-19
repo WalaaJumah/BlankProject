@@ -23,10 +23,10 @@
                         <class name="sporter_test.guestCheckoutCycleTestCases.UAEGuestCheckoutCycleTestCases">
 <!--                        <class name="sporter_test.guestCheckoutCycleTestCases.KSAGuestCheckoutCycleTestCases"/>-->
 <!--                        <class name="sporter_test.guestCheckoutCycleTestCases.QatarGuestCheckoutCycleTestCases"/>-->
-                            <methods>
-                                <include name="verifyInabilityToUseInvalidCreditCardPaymentMethod"/>
-                                <include name="verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithValidCreditCardPaymentMethod"/>
-                                <include name="verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCreditCardPaymentMethod"/>
+<!--                            <methods>-->
+<!--                                <include name="verifyInabilityToUseInvalidCreditCardPaymentMethod"/>-->
+<!--                                <include name="verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithValidCreditCardPaymentMethod"/>-->
+<!--                                <include name="verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCreditCardPaymentMethod"/>-->
 <!--                                <include name="verifyClickingOnCheckOutAsGuestUserBtnRedirectTheUserToShippingInformationForm"/>-->
 <!--&lt;!&ndash;                                <include name="verifyTheCorrectCountyCodeRetrievedCorrectlyInPhoneField"/>&ndash;&gt;-->
 <!--                                <include name="verifyTheGuestUserCanFillTheShippingInformationCorrectly"/>-->
@@ -38,7 +38,7 @@
 <!--                                <include name="verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod"/>-->
 <!--&lt;!&ndash;                                <include name="verifyHereLinkInCartPageWorking"/>&ndash;&gt;-->
 <!--            &lt;!&ndash;                    <include name="verifyMainOptionsInTheMegaMenuAreDisplayed"/>&ndash;&gt;-->
-                            </methods>
+<!--                            </methods>-->
                         </class>
 <!--            <class name="sporter_test.headerTestCases.KSAHeaderTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.UAEHeaderTestCases"/>-->

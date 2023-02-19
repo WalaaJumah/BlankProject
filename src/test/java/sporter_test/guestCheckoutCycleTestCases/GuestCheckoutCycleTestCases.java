@@ -23,6 +23,7 @@ import sporter_pages.productPage.ProductDetailsPage;
 import xml_reader.XmlReader;
 
 import java.text.DecimalFormat;
+import java.util.Set;
 
 @Test(groups = "2.01 Checkout Cycle( Guest User)")
 public class GuestCheckoutCycleTestCases extends BaseTest {
@@ -273,10 +274,26 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
     }
     @Test(groups = {"Cart Page", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Credit Card Payment Method ", priority = 28)
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCreditCardPaymentMethod() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        DataHelperAndWait.waitForTime(2000);
+        String mainWindow= webDriver.getWindowHandle();
+        Set<String> handles = webDriver.getWindowHandles();
+// Switch to the pop-up window
+        for (String handle : handles) {
+            if (!handle.equals(mainWindow)) {
+                webDriver.switchTo().window(handle);
+            }
+        }
+// Close the pop-up window
+        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        Actions actions= new Actions(webDriver);
+        actions.sendKeys(Keys.ENTER).perform();
+// Switch back to the main window
+//        webDriver.switchTo().window(mainWindow);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         guestCheckoutCyclePage.submitSecureAndAuthenticationCheckout();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getSuccessPage(),webDriver);

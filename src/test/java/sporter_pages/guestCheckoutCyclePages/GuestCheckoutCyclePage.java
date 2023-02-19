@@ -9,8 +9,10 @@ package sporter_pages.guestCheckoutCyclePages;
 import core.BasePage;
 import core.DataHelperAndWait;
 import lombok.Getter;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Optional;
@@ -24,6 +26,7 @@ public class GuestCheckoutCyclePage extends BasePage {
         PageFactory.initElements(webDriver, this);
 
     }
+    String checkOutComUrl="checkout.com";
     DataHelperAndWait dataHelperAndWait;
     @FindBy(xpath = "//button[contains(@class,'submitOrderBtn')]")
     private WebElement placeOrderBtn;
@@ -130,10 +133,17 @@ private WebElement sameDayDelivery;
    private WebElement creditCardIFrame;
    @FindBy(id = "closeAddToCartErrBtn")
    private WebElement closeCheckoutErr;
-   @FindBy(id = "password")
+//   @FindBy(xpath = "//input[@placeholder='Hint: Checkout1!']")
+//   private WebElement secureAnd2Authentication;
+    @FindBy(id = "password")
    private WebElement secureAnd2Authentication;
+//
    @FindBy(id = "txtButton")
    private WebElement secureAnd2AuthenticationSubmitBtn;
+   @FindBy(id = "form")
+   private WebElement checkoutForm;
+   @FindBy(xpath = "//iframe[@frameborder='0']")
+   private WebElement checkoutIFrame;
 
 
     public void fillInShippingInformationInputField(String firstName, String lastName, String email, String phone, String address, String streetLineOne, String streetLineTwo) {
@@ -235,7 +245,33 @@ public void submitCreditCard(String creditNumber,String cardDate, String cvv){
     DataHelperAndWait.clickOnElement(this.getContinuePaymentMethodsBtn(), webDriver);
 }
 public void submitSecureAndAuthenticationCheckout(){
+    // Switch to the new window that has been opened for 3D Secure 2 authentication
+//    String parentWindowHandle = webDriver.getWindowHandle();
+//    for (String windowHandle : webDriver.getWindowHandles()) {
+//        if (!windowHandle.equals(parentWindowHandle)) {
+//            webDriver.switchTo().window(windowHandle);
+//            break;
+//        }
+//    }
+//    // Switch back to the original window and complete checkout process
+//    webDriver.switchTo().window(parentWindowHandle);
+    DataHelperAndWait.waitForUrlContains(checkOutComUrl,webDriver);
+//    DataHelperAndWait.waitToBeVisible(this.secureAnd2Authentication,webDriver);
+//    Actions actions= new Actions(webDriver);
+//    actions.sendKeys(Keys.TAB).perform();
+//    actions.sendKeys(Keys.ENTER).perform();
+//    actions.moveToElement(this.getSecureAnd2Authentication());
+//    this.secureAnd2Authentication.click();
+//    this.secureAnd2Authentication.sendKeys(XmlReader.getXMLData("checkout3DSecure"));
+
+    webDriver.switchTo().frame(checkoutIFrame);
+//    actions.moveToElement(this.getSecureAnd2Authentication()).sendKeys(XmlReader.getXMLData("checkout3DSecure")).perform();
     DataHelperAndWait.typeTextInElement(this.getSecureAnd2Authentication(),webDriver,XmlReader.getXMLData("checkout3DSecure"));
-    DataHelperAndWait.clickOnElement(this.getSecureAnd2AuthenticationSubmitBtn(),webDriver);
+//    DataHelperAndWait.waitForTime(3000);
+    webDriver.switchTo().defaultContent();
+
+    Actions actions= new Actions(webDriver);
+    actions.sendKeys(Keys.ENTER).perform();
+//    DataHelperAndWait.clickOnElement(this.getSecureAnd2AuthenticationSubmitBtn(),webDriver);
 }
 }

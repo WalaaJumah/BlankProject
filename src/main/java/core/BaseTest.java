@@ -98,6 +98,7 @@ public class BaseTest {
                 webDriver = new ChromeDriver();
 
 
+
                 //Chrome headless
 //                ChromeOptions opt = new ChromeOptions();
 //                opt.addArguments("headless");
