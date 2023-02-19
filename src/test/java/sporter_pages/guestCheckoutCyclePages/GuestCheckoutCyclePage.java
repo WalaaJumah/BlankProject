@@ -301,6 +301,10 @@ public void validateTheShippingMethodAmount(WebElement shippingFee, WebElement s
         } else if (shippingFee.getText().equalsIgnoreCase(XmlReader.getXMLData("fiveBusinessDays"))) {
             WebElementsAssertion.assertionWebElementEqualText(shippingFee,webDriver,"15JOD");
         }
+        if(shippingMethod.getText().equalsIgnoreCase(XmlReader.getXMLData("fourToFiveBusinessDays"))){
+     WebElementsAssertion.assertionWebElementEqualText(shippingFee,webDriver,"60QAR");
+
+ }
         }
 
 }

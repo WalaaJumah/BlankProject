@@ -91,7 +91,9 @@
     <JordanCheckout>
         <fiveBusinessDays>5 Business Days Super Express Shipping</fiveBusinessDays>
     </JordanCheckout>
-
+    <QatarCheckout>
+        <fourToFiveBusinessDays>4-5 Business Days Super Express Shipping&#xA;Online Credit or Debit Card Payment is Required</fourToFiveBusinessDays>
+    </QatarCheckout>
 
     <shippingAddress>
         <addressId>13523</addressId>

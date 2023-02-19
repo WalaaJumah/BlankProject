@@ -50,7 +50,6 @@ public class BaseTest {
             if (btnCloseElement != null
                     && btnCloseElement.isDisplayed()) {
                 DataHelperAndWait.clickOnElement(btnCloseElement,webDriver);
-                System.out.println("You are in CloseInitialDialog method Yes");
             }
         }
         catch (NoSuchElementException ex) {
@@ -59,7 +58,6 @@ public class BaseTest {
                 if (btnCloseElement != null
                     && btnCloseElement.isDisplayed()) {
                 DataHelperAndWait.clickOnElement(btnCloseElement,webDriver);
-                System.out.println("You are in CloseInitialDialog method Yes2");
             }}
             catch (Exception e){
                 e.getMessage();

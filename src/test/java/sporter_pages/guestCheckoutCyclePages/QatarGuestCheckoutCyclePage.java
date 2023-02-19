@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import sporter_pages.cartPages.CartPage;
 import xml_reader.XmlReader;
 @Getter
 public class QatarGuestCheckoutCyclePage extends  GuestCheckoutCyclePage{
@@ -68,4 +69,22 @@ public class QatarGuestCheckoutCyclePage extends  GuestCheckoutCyclePage{
         this.setSelectDubaiCityCity();
         this.clickOnContinueBtn();
     }
+    public void viewCartAndAccessShippingMethodsPage(){
+        CartPage cartPage=new CartPage(webDriver);
+        cartPage.navigateToCartPage();
+        this.accessGuestCheckoutForm();
+        this.fillInShippingInformationInputField(
+                XmlReader.getXMLData("firstName"),
+                XmlReader.getXMLData("lastName"),
+                XmlReader.getXMLData("correctEmail"),
+                XmlReader.getXMLData("phoneNumber"),
+                XmlReader.getXMLData("AddressName"),
+                XmlReader.getXMLData("StreetOneAddressName"),
+                XmlReader.getXMLData("StreetTwoAddressName"),
+                XmlReader.getXMLData("nationalID")
+        );
+        this.setSelectDubaiCityCity();
+        this.clickOnContinueBtn();
+    }
+
 }
