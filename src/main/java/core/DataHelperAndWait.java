@@ -305,6 +305,7 @@ public  class DataHelperAndWait  {
                 action.moveToElement(webElement).click();}
         catch (Exception e){
             action.moveToElement(webElement).click();}
+
             }
         public static String extractDigitsFromString(WebElement element,WebDriver webDriver){
         DataHelperAndWait.waitToBeVisible(element,webDriver);

@@ -72,6 +72,7 @@ public class LoginTestCases extends BaseTest {
         loginPage.navigateToLoginPage();
         loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail"), XmlReader.getXMLData("correctPassword"));
         DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
+        DataHelperAndWait.waitForTime(3000);
         DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
         DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(), webDriver);
