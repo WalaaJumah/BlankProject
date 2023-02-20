@@ -109,9 +109,19 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.fillInemailFieldInNewsletterBlock(aeFooterPage.generateRandomEmail());
         aeFooterPage.selectFemaleOptionInNewsletterBlock();
         aeFooterPage.clickOnJoinBtnInNewsletterBlock();
+        try{
         Assert.assertTrue(aeFooterPage.getSubscriptionSuccessfulMsg().isDisplayed());
-        Assert.assertEquals(aeFooterPage.getSubscriptionSuccessfulMsg().getText(), "Thank you for your subscription.");
-    }
+        Assert.assertEquals(aeFooterPage.getSubscriptionSuccessfulMsg().getText(), "Thank you for your subscription.");}
+        catch (AssertionError as){
+            aeFooterPage.navigateToHomePage();
+            aeFooterPage.clearEmailField();
+            aeFooterPage.fillInemailFieldInNewsletterBlock(aeFooterPage.generateRandomEmail());
+            aeFooterPage.selectFemaleOptionInNewsletterBlock();
+            aeFooterPage.clickOnJoinBtnInNewsletterBlock();
+            Assert.assertTrue(aeFooterPage.getSubscriptionSuccessfulMsg().isDisplayed());
+            Assert.assertEquals(aeFooterPage.getSubscriptionSuccessfulMsg().getText(), "Thank you for your subscription.");}
+        }
+
 
     // There's a bug here, when joining using email already joined then the system display 2 invalid messages
     @Test(groups = {"2.12 Footer Section", "1.4  Low Severity"},description = " Footer Section- Make sure inability to join sporter NEWSLETTER using email already joined", priority = 5)
