@@ -152,6 +152,8 @@ private WebElement freeFromSporter;
 private WebElement freePrice;
 @FindBy(xpath = "div.popUp_thumbsHead__Fbo8M")
 private WebElement couponSuccessfulMsg;
+@FindBy(xpath = "//button[contains(@class,'popUp_btn_')]")
+private WebElement closeCouponSuccessfulMsg;
 
    public void addToCartAndDisplayTheCart(){
        productDetailsPage.displayTheProduct();
