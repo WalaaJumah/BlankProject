@@ -20,6 +20,8 @@ import org.testng.annotations.Optional;
 import sporter_pages.cartPages.CartPage;
 import xml_reader.XmlReader;
 
+import java.text.DecimalFormat;
+
 @Getter
 public class GuestCheckoutCyclePage extends BasePage {
     public GuestCheckoutCyclePage(WebDriver webDriver) {
@@ -53,7 +55,7 @@ public class GuestCheckoutCyclePage extends BasePage {
     private WebElement checkoutAsGuestHeader;
     @FindBy(xpath = "//div[starts-with(@class,'checkoutMethod_asGuestInfo')]")
     private WebElement checkoutAsGuestDescription;
-    @FindBy(xpath = "//span[starts-with(@class,'sideOrderReview_totalAmount')]")
+    @FindBy(xpath = "//span[contains(@class,'totalAmount')]")
     private WebElement orderTotalValue;
     @FindBy(xpath = "//div[starts-with(@class,'checkbox_checkBoxContainer')]")
     private WebElement registerAtSporterOption;
@@ -180,11 +182,17 @@ private WebElement sameDayDelivery;
         }
     }
     public void navigateToCheckoutPage(){
-        webDriver.navigate().to(BaseURL+shippingInformationUrl);
-        DataHelperAndWait.waitForUrlContains(shippingInformationUrl,webDriver);
+//        webDriver.navigate().to(BaseURL+shippingInformationUrl);
+//        DataHelperAndWait.waitForUrlContains(shippingInformationUrl,webDriver);
+        CartPage cartPage = new CartPage(webDriver);
+        cartPage.navigateToCartPage();
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
     }
         public void accessGuestCheckoutForm(){
-        webDriver.navigate().to(BaseURL+shippingInformationUrl);
+//        webDriver.navigate().to(BaseURL+shippingInformationUrl);
+            CartPage cartPage = new CartPage(webDriver);
+            cartPage.navigateToCartPage();
+            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
         DataHelperAndWait.waitForUrlContains(shippingInformationUrl,webDriver);
         DataHelperAndWait.clickOnElement(checkoutAsGuestBtn,webDriver);
     }
@@ -233,7 +241,7 @@ public void AddToCartAndAccessShippingMethodsPage(){
 }
     public void viewCartAndAccessShippingMethodsPage(){
         CartPage cartPage=new CartPage(webDriver);
-        cartPage.navigateToCartPage();
+        cartPage.addToCartAndDisplayTheCart();
         this.accessGuestCheckoutForm();
         this.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),

@@ -44,8 +44,6 @@ public class BaseTest {
     public  WebDriver webDriver;
     public void CloseInitialDialog() {
         try{   WebElement btnCloseElement = webDriver.findElement(By.xpath("(//button[@type='submit'])[1]"));
-
-            System.out.println("You are in CloseInitialDialog method ");
             DataHelperAndWait.waitToBeClickable(btnCloseElement,webDriver);
             if (btnCloseElement != null
                     && btnCloseElement.isDisplayed()) {

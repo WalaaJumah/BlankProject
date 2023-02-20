@@ -27,8 +27,14 @@ public class WebElementsAssertion {
             Assert.assertFalse(webDriver.getCurrentUrl().contains(expectedValue), "Incorrect URL is displayed " + webDriver.getCurrentUrl());}
      }
     public static void validateTheElementIsDisplayed(WebElement webElement, WebDriver webDriver){
+        try{
         DataHelperAndWait.waitToBeVisible(webElement,webDriver);
-        Assert.assertTrue(webElement.isDisplayed(), "This element is not displayed: "+ webElement);
+        Assert.assertTrue(webElement.isDisplayed(), "This element is not displayed: "+ webElement);}
+        catch (Exception e){
+            DataHelperAndWait.waitForTime(2000);
+            DataHelperAndWait.waitToBeVisible(webElement,webDriver);
+            Assert.assertTrue(webElement.isDisplayed(), "This element is not displayed: "+ webElement);
+        }
     }
 
     public static void assertionTextEqualsForElementAttribute(WebElement webElement, WebDriver webDriver, String expectedResult){
