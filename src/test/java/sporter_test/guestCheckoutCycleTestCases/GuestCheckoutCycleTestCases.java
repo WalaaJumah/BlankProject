@@ -187,7 +187,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
                 XmlReader.getXMLData("StreetTwoAddressName")
         );
         guestCheckoutCyclePage.clickOnContinueBtn();
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFirstNameField(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getEmailErrMsg(),webDriver);
     }
     @Test(groups = {"Guest User Page","All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}:Make sure the Guest user cannot submit the shipping information using incorrect National ID", priority = 16)
     public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNationalID() {
@@ -205,7 +205,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
                 "12"
         );
         guestCheckoutCyclePage.clickOnContinueBtn();
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFirstnameErrMsg(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(jo.getNationalIdErrMsg(),webDriver);
     }
     @Test(groups = {"Guest User Page","All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:Make sure the Guest user can filling the shipping information and clicking on the Continue button correctly", priority = 17)
     public void verifyTheGuestUserCanFillTheShippingInformationCorrectly() {
@@ -282,6 +282,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
+        DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getSuccessPage(),webDriver);
         orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);

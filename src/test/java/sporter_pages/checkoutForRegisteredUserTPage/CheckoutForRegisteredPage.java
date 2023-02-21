@@ -19,12 +19,24 @@ import xml_reader.XmlReader;
 
 @Getter
 public class CheckoutForRegisteredPage extends BasePage {
-    @FindBy(xpath = "(//div[@id='_errMsg'])[3]")
-    private WebElement addressErrMsg;
-    @FindBy(xpath = "(//div[@id='_errMsg'])[4]")
-    private WebElement streetlineOneErrMsg;
-     @FindBy(xpath = "//*/text()[normalize-space(.)='Add new Address']/parent::*")
+     @FindBy(id = "addNewAddressBtn")
     private WebElement addNewAddressBtn;
+     @FindBy(id = "emailInput")
+     private WebElement emailFieldInSignIn;
+     @FindBy(id = "passwordInput")
+     private WebElement passwordFieldInSignIn;
+     @FindBy(id = "forgetPasswordBtn")
+     private WebElement forgetPasswordBtn;
+     @FindBy(id = "createAccountLink")
+     private WebElement createAccountLink;
+     @FindBy(id = "FBlogin")
+     private WebElement facebookBtn;
+     @FindBy(id = "submitdBtn")
+     private WebElement sigInBtn;
+     @FindBy(id = "showPasswordIcon")
+     private WebElement showPasswordIcon;
+     @FindBy(id = "hidePasswordIcon")
+     private WebElement hidePasswordIcon;
 
     public CheckoutForRegisteredPage(WebDriver webDriver) {
         super(webDriver);

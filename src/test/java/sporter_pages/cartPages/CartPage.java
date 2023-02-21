@@ -58,7 +58,9 @@ public class CartPage extends BasePage {
     @FindBy(id = "CartIconContainerqty")
     private WebElement cartCounter;
     //TODO: To replace it with ID after added it by Moamen
-    @FindBy(css = "#FaShoppingCart > path")
+//    @FindBy(css = "#FaShoppingCart > path")
+//    private WebElement cartIcon;
+    @FindBy(id = "CartIconInnerContainer")
     private WebElement cartIcon;
     @FindBy(xpath="(//a[@id='cartPagelink'])[1]")
     private WebElement viewCartInCartPopup;
@@ -129,9 +131,9 @@ public class CartPage extends BasePage {
     private List<WebElement> productCardInCartPage;
     @FindBy(id = "paymentOptionsLabel")
     private WebElement weAcceptLabel;
-    @FindBy(id = "radioButton_container__il26_ cartInfo_option__krxQO sporter_cashondelivery")
+    @FindBy(xpath = "(//div[@id='paymentOptions']//span[@id='label'])[1]")
     private WebElement cODOption;
-    @FindBy(id = "radioButton_container__il26_ cartInfo_option__krxQO checkoutcom_card_payment")
+    @FindBy(xpath = "(//div[@id='paymentOptions']//span[@id='label'])[1]")
     private WebElement creditCardOption;
     @FindBy(id = "cartItemsHeaderLabel")
     private WebElement myShoppingCartMsg;

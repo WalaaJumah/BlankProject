@@ -22,13 +22,13 @@ public class JordanGuestCheckoutCyclePage extends  GuestCheckoutCyclePage{
         super(webDriver);
         PageFactory.initElements(webDriver, this);
     }
-    @FindBy(xpath = "(//div[@id='_errMsg'])[4]")
+    @FindBy(id = "nationalIdField_errMsg")
     private WebElement nationalIdErrMsg;
     @FindBy(xpath = "(//div[@id='_errMsg'])[5]")
     private WebElement streetLineOneErrMsg;
     @FindBy(xpath = "(//div[@id='_errMsg'])[6]")
     private WebElement streetLineErrMsg;
-    @FindBy(xpath = "(//input[starts-with(@class,'input_input')])[4]")
+    @FindBy(id = "nationalIdField")
     private WebElement nationalIDField;
     @FindBy(xpath = "(//input[starts-with(@class,'input_input')])[5]")
     private WebElement addressNameField;

@@ -31,13 +31,13 @@ public class GuestCheckoutCyclePage extends BasePage {
     }
     String checkOutComUrl="checkout.com";
     DataHelperAndWait dataHelperAndWait;
-    @FindBy(xpath = "//button[contains(@class,'submitOrderBtn')]")
+    @FindBy(id = "placeOrderSideBtn")
     private WebElement placeOrderBtn;
-    @FindBy(xpath = "//button[contains(@class,'checkoutMethod_btn')]")
+    @FindBy(id = "submitGuestOptionBtn")
     private WebElement checkoutAsGuestBtn;
     @FindBy(xpath = "//a[contains(@class,'orderPage_head')]")
     private WebElement logoInCheckoutMethod;
-    @FindBy(xpath = "(//div[contains(@class,'segmentHeader_infoLabelContainer')]/span)[1]")
+    @FindBy(id = "cMethod")
     private WebElement checkoutMethodLabel;
     @FindBy(xpath = "(//div[contains(@class,'segmentHeader_infoLabelContainer')]/span)[2]")
     private WebElement shippingInformationLabel;
@@ -45,7 +45,7 @@ public class GuestCheckoutCyclePage extends BasePage {
     private WebElement securedCheckoutLabel;
     @FindBy(xpath = "(//div[contains(@class,'segmentHeader_infoLabelContainer')]/span)[4]")
     private WebElement shippingMethodLabel;
-    @FindBy(xpath = "(//div[contains(@class,'segmentHeader_infoLabelContainer')]/span)[5]")
+    @FindBy(id = "pInfo")
     private WebElement paymentInformationLabel;
     @FindBy(xpath = "(//div[contains(@class,'segmentHeader_infoLabelContainer')]/span)[6]")
     private WebElement orderReviewLabel;
@@ -55,49 +55,47 @@ public class GuestCheckoutCyclePage extends BasePage {
     private WebElement checkoutAsGuestHeader;
     @FindBy(xpath = "//div[starts-with(@class,'checkoutMethod_asGuestInfo')]")
     private WebElement checkoutAsGuestDescription;
-    @FindBy(xpath = "//span[contains(@class,'totalAmount')]")
+    @FindBy(id = "value")
     private WebElement orderTotalValue;
-    @FindBy(xpath = "//div[starts-with(@class,'checkbox_checkBoxContainer')]")
+    @FindBy(id = "registerGuestCheckBox")
     private WebElement registerAtSporterOption;
-    @FindBy(xpath = "(//input[starts-with(@class,'input_input')])[1]")
+    @FindBy(id = "firstnameField")
     private WebElement firstNameField;
-    @FindBy(xpath = "(//input[starts-with(@class,'input_input')])[2]")
+    @FindBy(id = "lastnameField")
     private WebElement lastNameField;
-    @FindBy(xpath = "(//input[starts-with(@class,'input_input')])[3]")
+    @FindBy(id = "emailField")
     private WebElement emailField;
     @FindBy(xpath = "//input[starts-with(@class,'teleInput_input')]")
     private WebElement phoneField;
-    @FindBy(xpath = "(//input[starts-with(@class,'input_input')])[4]")
+    @FindBy(id = "addressNameField")
     private WebElement addressNameField;
-    @FindBy(xpath = "(//input[starts-with(@class,'input_input')])[5]")
+    @FindBy(id = "street1Field")
     private WebElement streetLineOneField;
-    @FindBy(xpath = "(//input[starts-with(@class,'input_input')])[6]")
+    @FindBy(id = "street2Field")
     private WebElement streetLineTwoField;
-    @FindBy(xpath = "//button[contains(@class,'shippingInfo_btn')]")
+    @FindBy(id = "submitShippingAddressBtn")
     private WebElement continueShippingInfoBtn;
-    @FindBy(xpath = "//button[contains(@class,'shippingMethod_btn')]")
+    @FindBy(id = "submitShippingMethodBtn")
     private WebElement continueShippingMethodsBtn;
-    @FindBy(xpath = "//button[contains(@class,'paymentInfo_btn')]")
+    @FindBy(id = "submitPaymentMethodBtn")
     private WebElement continuePaymentMethodsBtn;
     @FindBy(xpath = "//div[@id='citiesSelector']/div")
     private WebElement cityMenu;
-    @FindBy(xpath = "//select[starts-with(@class,'countrySelectorInput')]")
+    @FindBy(id = "countrySelector")
     private WebElement countryMenu;
-    @FindBy(xpath = "(//div[@id='_errMsg'])[2]")
+    @FindBy(id = "lastnameField_errMsg")
     private WebElement lastNameErrMsg;
-    @FindBy(xpath = "(//div[@id='_errMsg'])[3]")
+    @FindBy(id = "emailField_errMsg")
     private WebElement emailErrMsg;
     @FindBy(xpath = "//div[starts-with(@class,'teleInput_errorMsg')]")
     private WebElement phoneErrMsg;
-    @FindBy(xpath = "(//div[@id='_errMsg'])[4]")
+    @FindBy(id = "addressNameField_errMsg")
     private WebElement addressErrMsg;
-    @FindBy(xpath = "(//div[@id='_errMsg'])[1]")
+    @FindBy(id = "firstnameField_errMsg")
     private WebElement firstnameErrMsg;
-    @FindBy(xpath = "(//div[@id='_errMsg'])[5]")
+    @FindBy(id = "street1Field_errMsg")
     private WebElement streetlineOneErrMsg;
-    @FindBy(xpath = "(//div[@id='_errMsg'])[6]")
-    private WebElement streetlineErrMsg;
-    @FindBy(xpath = "//div[starts-with(@class,'shippingMethod_shippingMethods')]")
+    @FindBy(id = "shippingMethodsContainer")
     private WebElement shippingMethodsOptionsSection;
     @FindBy(xpath = "(//span[starts-with(@class,'segmentHeader_edit')])[2]")
     private WebElement editShippingInfoBtn;
@@ -116,15 +114,15 @@ private WebElement sameDayDelivery;
    private WebElement abuDhabiCity;
    @FindBy(xpath = "//span[starts-with(@class,'teleInput_code')]")
    private WebElement countryCode;
-   @FindBy(xpath = "//div[contains(@id,'cashondelivery')]")
+   @FindBy(xpath = "//div[@id='sporter_cashondelivery']//div[@id='circle']")
    private WebElement cODPaymentMethod;
-   @FindBy(xpath = "//div[contains(@id,'card_payment')]")
+   @FindBy(xpath = "//div[@id='checkoutcom_card_payment']//div[@id='circle']")
    private WebElement creditCardPaymentMethod;
-   @FindBy(xpath = "(//button[contains(@class,'submitOrderBtn_btn')])[1]")
+   @FindBy(id = "placeOrderBtn")
    private WebElement finalPlaceOrderBtn;
-   @FindBy(xpath = "//div[starts-with(@class,'successfullOrderPage_header')]")
+   @FindBy(id = "orderID")
    private WebElement successPage;
-   @FindBy(xpath = "(//button[contains(@class,'submitOrderBtn_btn')])[2]")
+   @FindBy(id = "placeOrderSideBtn")
    private WebElement finalPlaceOrderBtnOnRightScreen;
   @FindBy(id = "checkout-frames-card-number")
    private WebElement creditCardNumber;
