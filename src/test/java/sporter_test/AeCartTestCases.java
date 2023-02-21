@@ -47,7 +47,7 @@ public class AeCartTestCases extends BaseTest {
         aeCartPage.navigateToBogoProduct();
         aeProductDetailsPage.addToCart();
         aeProductDetailsPage.viewCart();
-        String itemsCounter = "(3 Items)";
+        String itemsCounter = "(2 Items)";
         Assert.assertEquals(aeCartPage.getItemsCounterInCartPage().getText(), itemsCounter);
         aeCartPage.clickOnRemoveItem();
     }
@@ -106,7 +106,7 @@ public class AeCartTestCases extends BaseTest {
 //        aeProductDetailsPage.addToCartAndDisplayTheCart();
 //                AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
 //        aeProductDetailsPage.addToCartAndDisplayTheCart();
-        String itemsCounter = "(3 Items)";
+        String itemsCounter = "(2 Items)";
         DataHelperAndWait.waitToBeVisible(aeCartPage.getItemsCounterInCartPage(), 8,webDriver);
         Assert.assertEquals(aeCartPage.getItemsCounterInCartPage().getText(), itemsCounter);
         aeCartPage.clickOnRemoveItem();
