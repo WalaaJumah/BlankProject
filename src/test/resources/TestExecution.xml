@@ -24,8 +24,8 @@
 <!--                        <class name="sporter_test.guestCheckoutCycleTestCases.JordanGuestCheckoutCycleTestCases"/>-->
 <!--                        <class name="sporter_test.guestCheckoutCycleTestCases.KSAGuestCheckoutCycleTestCases"/>-->
                         <class name="sporter_test.guestCheckoutCycleTestCases.UAEGuestCheckoutCycleTestCases">
-<!--                            <methods>-->
-<!--                                <include name="verifyAbilityToPlaceOrderWhenUsingFreeCouponCode"/>-->
+                            <methods>
+                                <include name="verifyAbilityToPlaceOrderWhenUsingFreeCouponCode"/>
 <!--                                <include name="verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithValidCreditCardPaymentMethod"/>-->
 <!--                                <include name="verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCreditCardPaymentMethod"/>-->
 <!--                                <include name="verifyClickingOnCheckOutAsGuestUserBtnRedirectTheUserToShippingInformationForm"/>-->
@@ -39,7 +39,7 @@
 <!--                                <include name="verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod"/>-->
 <!--                                <include name="verifyHereLinkInCartPageWorking"/>-->
 <!--                                <include name="verifyMainOptionsInTheMegaMenuAreDisplayed"/>-->
-<!--                            </methods>-->
+                            </methods>
                         </class>
 <!--            <class name="sporter_test.headerTestCases.KSAHeaderTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.UAEHeaderTestCases"/>-->
