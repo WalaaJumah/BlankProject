@@ -37,7 +37,26 @@ public class CheckoutForRegisteredPage extends BasePage {
      private WebElement showPasswordIcon;
      @FindBy(id = "hidePasswordIcon")
      private WebElement hidePasswordIcon;
-
+     @FindBy(xpath = "(//div[@id='savedAddressesContainer'])[1]")
+     private WebElement savedAddressOption;
+     @FindBy(xpath = "//div[@id='citiesSelector']/div[2]/div[2]/div[5]")
+     private WebElement dubaiCity;
+    @FindBy(xpath="(//div[@id='itemToWhishListBtn'])[1]")
+    private WebElement addToWishListBtn;
+    @FindBy(xpath="(//a[starts-with(@class,'wItem_imgContainer')])[1]")
+    private WebElement addedItemToWashList;
+    @FindBy(xpath="(//a[starts-with(@class,'dashboardSidebar_item')])[1]")
+    private WebElement wishListTab;
+    public void setSelectDubaiCityCity(){
+        GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
+        try{
+            DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCityMenu(),webDriver);
+            DataHelperAndWait.clickOnElement(dubaiCity,webDriver);}
+        catch (Exception e){
+            DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCityMenu(),webDriver);
+            DataHelperAndWait.clickOnElement(dubaiCity,webDriver);
+        }
+    }
     public CheckoutForRegisteredPage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
@@ -102,5 +121,58 @@ public class CheckoutForRegisteredPage extends BasePage {
         );
         guestCheckoutCyclePage.setSelectDubaiCityCity();
         guestCheckoutCyclePage.clickOnContinueBtn();
+    }
+    public void navigateToPaymentMethodScreenWithSavedAddress(){
+        GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
+        guestCheckoutCyclePage.accessGuestCheckoutForm();
+        DataHelperAndWait.clickOnElement(this.getSavedAddressOption(),webDriver);
+        guestCheckoutCyclePage.clickOnContinueBtn();
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+    }
+    public void AddToCartAndAccessShippingMethodsPageForSavedAddress(){
+        GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
+        CartPage cartPage=new CartPage(webDriver);
+        cartPage.addToCartAndDisplayTheCart();
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+        try{
+        DataHelperAndWait.clickOnElement(this.getSavedAddressOption(),webDriver);}
+        catch (Exception e){
+            this.fillInShippingInformationInputField(
+                    XmlReader.getXMLData("firstName"),
+                    XmlReader.getXMLData("lastName"),
+                    XmlReader.getXMLData("phoneNumber"),
+                    XmlReader.getXMLData("AddressName"),
+                    XmlReader.getXMLData("StreetOneAddressName"),
+                    XmlReader.getXMLData("StreetTwoAddressName")
+            );
+        }
+        guestCheckoutCyclePage.clickOnContinueBtn();
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+    }
+    public void AddToCartAndAccessShippingMethodsPageForSavedAddressForDubaiCity(){
+        GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
+        CartPage cartPage=new CartPage(webDriver);
+        cartPage.addToCartAndDisplayTheCart();
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(addNewAddressBtn,webDriver);
+        this.fillInShippingInformationInputField(
+                XmlReader.getXMLData("firstName"),
+                XmlReader.getXMLData("lastName"),
+                XmlReader.getXMLData("phoneNumber"),
+                XmlReader.getXMLData("AddressName"),
+                XmlReader.getXMLData("StreetOneAddressName"),
+                XmlReader.getXMLData("StreetTwoAddressName")
+        );
+        this.setSelectDubaiCityCity();
+        guestCheckoutCyclePage.clickOnContinueBtn();
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
+    }
+    public void accessGuestCheckoutForm(){
+//        webDriver.navigate().to(BaseURL+shippingInformationUrl);
+        CartPage cartPage = new CartPage(webDriver);
+        cartPage.navigateToCartPage();
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
     }
 }

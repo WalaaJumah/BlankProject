@@ -77,7 +77,9 @@ public class LoginPage extends BasePage {
 
     public void navigateToLoginPage() {
         webDriver.navigate().to(BaseURL + loginLink);
-        verifyTheDisplayedPageDoesNotHaveErrors();
+        if(!webDriver.getCurrentUrl().contains(loginLink))
+            webDriver.navigate().to(BaseURL + loginLink);
+            verifyTheDisplayedPageDoesNotHaveErrors();
     }
     public void navigateToForgetPassword() {
         webDriver.navigate().to(BaseURL + forgetPasswordURL);

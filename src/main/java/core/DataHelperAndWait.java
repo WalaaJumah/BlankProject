@@ -16,7 +16,7 @@ import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 public  class DataHelperAndWait  {
-    private static int WaitTime=22;
+    private static int WaitTime=12;
     //test4
 
     public static   void waitForElement(WebElement element, WebDriver webDriver) {
@@ -110,6 +110,12 @@ public  class DataHelperAndWait  {
         String elementValueWithoutSpace = elementValueWithoutCurrency.replaceAll(" ", "");
         return Float.parseFloat(elementValueWithoutSpace);
     }
+        public static  int convertTheStringToInt(WebElement element,WebDriver webDriver) {
+        DataHelperAndWait.waitToBeVisible(element,webDriver);
+        String elementValue = element.getText();
+        return Integer.parseInt(elementValue);
+    }
+
     public static  void switchToTabBrowser(int tabIndex,WebDriver webDriver) {
         ArrayList<String> numberOfTabsTwo = new ArrayList<String>(webDriver.getWindowHandles());
         webDriver.switchTo().window(numberOfTabsTwo.get(tabIndex));

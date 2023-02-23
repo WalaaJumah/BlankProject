@@ -97,12 +97,13 @@ public class GuestCheckoutCyclePage extends BasePage {
     private WebElement streetlineOneErrMsg;
     @FindBy(id = "shippingMethodsContainer")
     private WebElement shippingMethodsOptionsSection;
-    @FindBy(xpath = "(//span[starts-with(@class,'segmentHeader_edit')])[2]")
+    @FindBy(id = "oInfoEdit")
     private WebElement editShippingInfoBtn;
-    @FindBy(xpath = "(//span[starts-with(@class,'segmentHeader_edit')])[3]")
+    @FindBy(id = "oInfoEdit")
     private WebElement editShippingMethodsBtn;
     @FindBy(xpath = "//div[starts-with(@class,'radioButton_circle')]/following::span[1]")
     private WebElement twoBusinessDaysSuperExpressShipping;
+
     @FindBy(xpath = "///div[starts-with(@class,'paymentInfo_methods')]")
     private WebElement paymentMethodsSection;
 //TODO:Same Day Delivery https://spocan.easyredmine.com/issues/8732?jump=issues
@@ -221,6 +222,7 @@ public void navigateToShippingMethodsPage(){
     this.setSelectDubaiCityCity();
     this.clickOnContinueBtn();
 }
+
 public void AddToCartAndAccessShippingMethodsPage(){
     CartPage cartPage=new CartPage(webDriver);
     cartPage.addToCartAndDisplayTheCart();
@@ -303,12 +305,12 @@ public void submitSecureAndAuthenticationCheckout(){
 public void validateTheShippingMethodAmount(WebElement shippingFee, WebElement shippingMethod)
  {
         if(shippingMethod.getText().equalsIgnoreCase(XmlReader.getXMLData("twoBusinessDay"))){
-                WebElementsAssertion.assertionWebElementEqualText(shippingFee,webDriver,"10AED");
+                WebElementsAssertion.assertionWebElementEqualText(shippingFee,webDriver,"10 AED");
         } else if (shippingFee.getText().equalsIgnoreCase(XmlReader.getXMLData("fiveBusinessDays"))) {
             WebElementsAssertion.assertionWebElementEqualText(shippingFee,webDriver,"15JOD");
         }
         if(shippingMethod.getText().equalsIgnoreCase(XmlReader.getXMLData("fourToFiveBusinessDays"))){
-     WebElementsAssertion.assertionWebElementEqualText(shippingFee,webDriver,"60QAR");
+     WebElementsAssertion.assertionWebElementEqualText(shippingFee,webDriver,"60 QAR");
  }
      if(shippingMethod.getText().equalsIgnoreCase(XmlReader.getXMLData("dootToDoor"))){
          WebElementsAssertion.assertionWebElementEqualText(shippingFee,webDriver,"25SAR");

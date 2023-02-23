@@ -33,7 +33,7 @@ public class CartPage extends BasePage {
         PageFactory.initElements(webDriver, this);
     }
     //declare all locators related to the Cart Page
-    @FindBy(xpath = "//div[@id='cartItemsHeaderLabel']/span")
+    @FindBy(id = "CartIconContainerqty")
     private WebElement itemsCounter;
     @FindBy(id = "AddToCartErrContainer")
     private WebElement cartErrorPopUp;

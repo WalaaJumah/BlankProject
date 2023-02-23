@@ -69,4 +69,27 @@ public class JordanCheckoutForRegisteredPage extends CheckoutForRegisteredPage {
         guestCheckoutCyclePage.setSelectDubaiCityCity();
         guestCheckoutCyclePage.clickOnContinueBtn();
     }
+    public void AddToCartAndAccessShippingMethodsPageForSavedAddress(){
+        GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
+        CartPage cartPage=new CartPage(webDriver);
+        cartPage.addToCartAndDisplayTheCart();
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+        try{
+            DataHelperAndWait.clickOnElement(this.getSavedAddressOption(),webDriver);}
+        catch (Exception e){
+            this.fillInShippingInformationInputField(
+                    XmlReader.getXMLData("firstName"),
+                    XmlReader.getXMLData("lastName"),
+                    XmlReader.getXMLData("phoneNumber"),
+                    XmlReader.getXMLData("AddressName"),
+                    XmlReader.getXMLData("StreetOneAddressName"),
+                    XmlReader.getXMLData("StreetTwoAddressName"),
+                    XmlReader.getXMLData("nationalID")
+
+            );
+        }
+        guestCheckoutCyclePage.clickOnContinueBtn();
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+    }
 }

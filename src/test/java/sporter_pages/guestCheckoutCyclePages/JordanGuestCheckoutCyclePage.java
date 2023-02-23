@@ -36,6 +36,8 @@ public class JordanGuestCheckoutCyclePage extends  GuestCheckoutCyclePage{
     private WebElement streetLineOneField;
     @FindBy(xpath = "(//input[starts-with(@class,'input_input')])[7]")
     private WebElement streetLineTwoField;
+    @FindBy(id="bestway")
+    private WebElement fiveBusinessDays;
 
     public void fillInShippingInformationInputField(String firstName, String lastName, String email, String phone, String address, String streetLineOne, String streetLineTwo, String nationalID) {
         DataHelperAndWait.waitToBeVisible(getFirstNameField() ,webDriver);

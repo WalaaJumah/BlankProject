@@ -83,7 +83,9 @@
         <testCVV>257</testCVV>
         <creditCardDate>1225</creditCardDate>
         <checkout3DSecure>Checkout1!</checkout3DSecure>
-
+        <phoneNumberErrorEn>Please enter a valid Phone Number</phoneNumberErrorEn>
+        <phoneNumberErrorAr>Needs To translate</phoneNumberErrorAr>
+<qatarPhoneNumber>55555396</qatarPhoneNumber>
     </CheckoutData>
     <UAECheckout>
         <twoBusinessDay>2 Business Days Super Express Shipping&#xA;Cash on Delivery Service Available</twoBusinessDay>
