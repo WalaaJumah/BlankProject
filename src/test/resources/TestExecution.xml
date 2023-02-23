@@ -7,7 +7,7 @@
 <!--        <listener class-name="extent_report_listner.ExtentReportListener" />-->
     </listeners>
     <test name=" System Testing Report- Header and HomePage and Product Page" preserve-order="true">
-        <parameter name="environment" value="https://new.sporter.com" />
+        <parameter name="environment" value="https://dev.sporter.com" />
         <parameter name="browser" value="chrome"/>
         <!-- <parameter name="country" value="en-qa" />-->
         <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32569/" />
