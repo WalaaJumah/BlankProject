@@ -98,6 +98,7 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.fillInemailFieldInNewsletterBlock(aeFooterPage.generateRandomEmail());
         aeFooterPage.selectMaleOptionInNewsletterBlock();
         aeFooterPage.clickOnJoinBtnInNewsletterBlock();
+        DataHelperAndWait.waitForTime(3000);
         Assert.assertTrue(aeFooterPage.getSubscriptionSuccessfulMsg().isDisplayed());
     }
 
@@ -110,7 +111,8 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.selectFemaleOptionInNewsletterBlock();
         aeFooterPage.clickOnJoinBtnInNewsletterBlock();
         try{
-        Assert.assertTrue(aeFooterPage.getSubscriptionSuccessfulMsg().isDisplayed());
+            DataHelperAndWait.waitForTime(3000);
+            Assert.assertTrue(aeFooterPage.getSubscriptionSuccessfulMsg().isDisplayed());
         Assert.assertEquals(aeFooterPage.getSubscriptionSuccessfulMsg().getText(), "Thank you for your subscription.");}
         catch (AssertionError as){
             aeFooterPage.navigateToHomePage();
