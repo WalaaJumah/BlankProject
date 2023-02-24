@@ -375,6 +375,7 @@ catch (Exception e){
         HeaderSection header=new HeaderSection(webDriver);
         AccountRegistrationPage registrationPage=new AccountRegistrationPage(webDriver);
         DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getAddToWishListBtn(),webDriver);
+        DataHelperAndWait.refreshPage(webDriver);
         DataHelperAndWait.waitForTime(3000);
         DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
         DataHelperAndWait.clickOnElement(registrationPage.getMyAccountOption(), webDriver);
