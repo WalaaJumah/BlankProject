@@ -30,7 +30,7 @@ public class QatarCartTestCases extends CartTestCases {
     }
     @Test(enabled = false)
     public void verifyTheTaxCalculatedCorrectly() {}
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 26)
+    @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 26)
     public void verifyOrderTotalCalculationInCartPageWorksCorrectly() {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();

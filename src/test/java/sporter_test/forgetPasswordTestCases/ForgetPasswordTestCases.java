@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 import sporter_pages.loginPage.LoginPage;
 import xml_reader.XmlReader;
 
-@Test(groups = "2.07 Forget Password Page")
+@Test(groups = "2.09 Forget Password Page")
 //TODO: Move All locators related to Forget Password from Login Class To Forget Password Class
 public class ForgetPasswordTestCases extends BaseTest {
     //TODO: Forget Password test cases related to the forget password email is not included

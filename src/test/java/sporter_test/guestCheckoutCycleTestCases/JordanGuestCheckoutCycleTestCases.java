@@ -46,7 +46,7 @@ public class JordanGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCas
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getWeAcceptLabel(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCreditCardOption(), webDriver);
     }
-    @Test(groups = {"Guest User Page", "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Make sure the Guest user cannot submit the shipping information without filling the required fields empty", priority = 13)
+    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Make sure the Guest user cannot submit the shipping information without filling the required fields empty", priority = 13)
     public void verifyTheGuestUserCannotSubmitTheShippingInformationWithoutFillingTheRequiredFields() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
@@ -60,7 +60,7 @@ public class JordanGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCas
         WebElementsAssertion.validateTheElementIsDisplayed(jo.getAddressErrMsg(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(jo.getStreetLineOneField(),webDriver);
     }
-    @Test(groups = {"Guest User Page","All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}:Make sure the Guest user cannot submit the shipping information when the phone number length is small ", priority = 15)
+    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}:Make sure the Guest user cannot submit the shipping information when the phone number length is small ", priority = 15)
     public void verifyTheGuestUserCannotSubmitTheShippingInformationWhenPhoneFieldHaveSmallTextLength() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
@@ -77,7 +77,7 @@ public class JordanGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCas
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getPhoneErrMsg(),webDriver);
     }
-    @Test(groups = {"Guest User Page","All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:Make sure the Guest user can filling the shipping information and clicking on the Continue button correctly", priority = 17)
+    @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:Make sure the Guest user can filling the shipping information and clicking on the Continue button correctly", priority = 17)
     public void verifyTheGuestUserCanFillTheShippingInformationCorrectly() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
@@ -105,7 +105,7 @@ public class JordanGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCas
         double cartTotal = subTotal + tax;
         Assert.assertEquals(df.format(orderTotal), df.format(cartTotal));
     }
-    @Test(groups = {"Guest User Page","All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:Verify All Shipping Methods appear correctly", priority = 20)
+    @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:Verify All Shipping Methods appear correctly", priority = 20)
     public void verifyAllShippingMethodsAppearCorrectly(){
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         JordanGuestCheckoutCyclePage jordanGuestCheckoutCyclePage= new JordanGuestCheckoutCyclePage(webDriver);

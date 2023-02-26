@@ -17,7 +17,7 @@ import sporter_pages.cartPages.CartPage;
 import sporter_pages.productPage.ProductDetailsPage;
 import sporter_test.cartTestCases.CartTestCases;
 
-@Test(groups = "2.05 Recommended Products Page")
+@Test(groups = "2.07 Recommended Products Page")
 public class RecommendedProductTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure the keep shopping button appearing the Recommended products works correctly ", priority = 2)
     public void verifyKeepShoppingBtnWorksCorrectly() {

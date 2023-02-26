@@ -26,41 +26,41 @@ import xml_reader.XmlReader;
 import java.text.DecimalFormat;
 import java.util.List;
 
-@Test(groups = "2.06 Cart Page")
+@Test(groups = "2.08 Cart Page")
 
 public class CartTestCases extends BaseTest {
     String itemsCounter;
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure to view the cart from PDP after adding  product to it", priority = 1)
+    @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure to view the cart from PDP after adding  product to it", priority = 1)
     public void viewCartFromPDP() {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
         WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.cartURL,webDriver);
     }
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.4 Low Severity"},description = "{{CountryName}}: Make sure that the product counter that appears in the cart page works correctly", priority = 2)
+    @Test(groups = {"All Smoke Testing Result","1.4 Low Severity"},description = "{{CountryName}}: Make sure that the product counter that appears in the cart page works correctly", priority = 2)
     public void verifyProductCounterAppearsInTheCartPageWorksCorrectly() {
         CartPage cartPage = new CartPage(webDriver);
         itemsCounter = "(1 Items)";
         WebElementsAssertion.assertionTextIsEqual(cartPage.getItemsCounter(),webDriver,itemsCounter);
     }
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.4 Low Severity"},description = "{{CountryName}}: Make sure that the counter-number appears in the cart icon works correctly", priority = 3)
+    @Test(groups = {"All Smoke Testing Result","1.4 Low Severity"},description = "{{CountryName}}: Make sure that the counter-number appears in the cart icon works correctly", priority = 3)
     public void verifyTheCounterInCartIconWorksCorrectly() {
         CartPage cartPage = new CartPage(webDriver);
         WebElementsAssertion.assertionTextIsEqual(cartPage.getCartCounter(),webDriver,"1");
     }
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.4 Low Severity"},description = "{{CountryName}}: Make sure that the counter-number appears inside the cart pop-up works correctly", priority = 4)
+    @Test(groups = {"All Smoke Testing Result","1.4 Low Severity"},description = "{{CountryName}}: Make sure that the counter-number appears inside the cart pop-up works correctly", priority = 4)
     public void verifyTheCounterInsideCartPopUpWorksCorrectly() {
         CartPage cartPage = new CartPage(webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
         itemsCounter = "(1 Of 1 Items )";
         WebElementsAssertion.assertionTextIsEqual(cartPage.getItemCounterInCartPopUp(), webDriver, itemsCounter);
     }
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Make sure that the view Cart button appearing in the Cart pop-up works correctly", priority = 5)
+    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Make sure that the view Cart button appearing in the Cart pop-up works correctly", priority = 5)
     public void verifyAbilityToViewCartFromCartIcon() {
         CartPage cartPage = new CartPage(webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getViewCartInCartPopup(),webDriver);
         WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.cartURL,webDriver);
     }
-    @Test(groups = {"Cart Page","1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the product price is changed when you change the quantity from the Cart Page", priority = 6)
+    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the product price is changed when you change the quantity from the Cart Page", priority = 6)
     public void verifyProductPriceChangesWhenChangingTheProductQtyFromTheCartPage() {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToCartPage();
@@ -71,12 +71,12 @@ public class CartTestCases extends BaseTest {
         Assert.assertNotEquals(currentProductPrice, newProductPrice);
         cartPage.removeItem();
     }
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Verify ability to remove the product from the cart successfully", priority = 7)
+    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Verify ability to remove the product from the cart successfully", priority = 7)
     public void verifyAbilityToRemoveProductFromCart() {
         CartPage cartPage=new CartPage(webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getNoItemInCartLabel(),webDriver);
     }
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Verify that Here Link appear after clearing the items from the Cart works successfully", priority = 8)
+    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Verify that Here Link appear after clearing the items from the Cart works successfully", priority = 8)
     public void verifyHereLinkInCartPageWorking() {
         CartPage cartPage = new CartPage(webDriver);
         HomePage homePage= new HomePage(webDriver);
@@ -84,7 +84,7 @@ public class CartTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getSportsSupplementsCategory(),webDriver);
     }
     //TODO: This test case should be revisit after solving: https://sporter1.atlassian.net/browse/NS-120 & https://sporter1.atlassian.net/browse/NS-42
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the Free Gift is removed from the cart when you remove the product For Bogo", priority = 9)
+    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the Free Gift is removed from the cart when you remove the product For Bogo", priority = 9)
     public void verifyTheFreeGiftIsRemovedWhenRemovingTheProductForBogo() {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addBogoToCartAndDisplayTheCart();
@@ -98,7 +98,7 @@ public class CartTestCases extends BaseTest {
         }
        }
     //TODO: This test case should be revisit after solving: https://sporter1.atlassian.net/browse/NS-120 & https://sporter1.atlassian.net/browse/NS-42
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.4 Low Severity"},description = "{{CountryName}}: Make sure that the product counter that appears in the cart page counts the free gift correctly", priority = 10)
+    @Test(groups = {"All Smoke Testing Result","1.4 Low Severity"},description = "{{CountryName}}: Make sure that the product counter that appears in the cart page counts the free gift correctly", priority = 10)
     public void verifyProductCounterAppearsInTheCartPageCountsFreeGifts() {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
@@ -107,14 +107,14 @@ public class CartTestCases extends BaseTest {
         WebElementsAssertion.assertionTextIsEqual(cartPage.getItemsCounter(),webDriver,itemsCounter);
             cartPage.removeItem();
     }
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the Free Gift is removed from the cart when you remove the product For Free gift gained by Coupon", priority = 11)
+    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the Free Gift is removed from the cart when you remove the product For Free gift gained by Coupon", priority = 11)
     public void verifyTheFreeGiftIsRemovedWhenRemovingTheProductForFreeGiftGainedByCoupon() {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.removeItem();
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getNoItemInCartLabel(),webDriver);
 
     }
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure to view the cart after adding more than quantity for the same product", priority = 12)
+    @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure to view the cart after adding more than quantity for the same product", priority = 12)
     public void verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
@@ -124,19 +124,19 @@ public class CartTestCases extends BaseTest {
         WebElementsAssertion.validateTheCurrentUrlContainsString(productDetailsPage.cartURL,webDriver);
         cartPage.removeItem();
     }
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure to view the cart after adding more than products to it", priority = 13)
+    @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure to view the cart after adding more than products to it", priority = 13)
     public void verifyAbilityToViewTheCartAfterAddingMoreThanProducts() {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
         cartPage.addBogoToCartAndDisplayTheCart();
         WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.cartURL,webDriver);
     }
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure remove Item button works correctly when the cart conatins more than item", priority = 14)
+    @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure remove Item button works correctly when the cart conatins more than item", priority = 14)
     public void verifyRemoveItemBtnWorksWhenCartContainsMoreThanItem() {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.removeAllItems(2);
     }
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Adding a config to the cart more than one with different simple in each time", priority = 15)
+    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Adding a config to the cart more than one with different simple in each time", priority = 15)
     public void verifyAbilityToViewTheCartAfterAddingMoreThanSimpleOfTheSameConfig() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
@@ -150,7 +150,7 @@ public class CartTestCases extends BaseTest {
         cartPage.removeAllItems(2);
 
     }
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.2 High Severity"},description = " Cart Page- Make sure ability to add a bundle to the cart ", priority = 16)
+    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = " Cart Page- Make sure ability to add a bundle to the cart ", priority = 16)
     public void verifyAbilityToAddBundleToCart() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         WebDriverWait wait;
@@ -177,7 +177,7 @@ public class CartTestCases extends BaseTest {
         WebElementsAssertion.validateTheCurrentUrlContainsString(productDetailsPage.cartURL,webDriver);
         cartPage.removeItem();
     }
-//    @Test(groups = {"Cart Page","All Smoke Testing Result","1.2 High Severity"},description = " Cart Page- Make sure ability to add a bundle to the cart with all bundle options", priority = 50)
+//    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = " Cart Page- Make sure ability to add a bundle to the cart with all bundle options", priority = 50)
 //    public void verifyAbilityToAddBundleWithAllItsOptionsToCart() {
 //        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        productDetailsPage.displayBundle();
@@ -198,7 +198,7 @@ public class CartTestCases extends BaseTest {
 //        }
 //    }
     //TODO:There's a bug here, check: https://sporter1.atlassian.net/browse/NS-184/https://sporter1.atlassian.net/browse/NS-107
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.4 Low Severity"},description = "{{CountryName}}: Verify that the The requested qty is not available message appear when the product becomes OOS", priority = 17)
+    @Test(groups = {"All Smoke Testing Result","1.4 Low Severity"},description = "{{CountryName}}: Verify that the The requested qty is not available message appear when the product becomes OOS", priority = 17)
     public void verifyToDisplayRequestedQtyIsNotAvailableMsg() {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCartForOos();
@@ -207,12 +207,12 @@ public class CartTestCases extends BaseTest {
         DataHelperAndWait.isDisplayed(cartPage.getCloseAddToCartErrorMsg(),webDriver);
     }
     //TODO:There's a bug here, check: https://sporter1.atlassian.net/browse/NS-184/https://sporter1.atlassian.net/browse/NS-107
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Verify that the ContinueShoppingBtn works correctly when displaying The requested qty is not available message", priority = 18)
+    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Verify that the ContinueShoppingBtn works correctly when displaying The requested qty is not available message", priority = 18)
     public void verifyContinueShoppingBtnWorksCorrectlyWhenTheProductBecomeOOS() {
         CartPage cartPage = new CartPage(webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCloseAddToCartErrorMsg(),webDriver);
     }
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Verify increase quantity button from Cart page works successfully", priority = 19)
+    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Verify increase quantity button from Cart page works successfully", priority = 19)
     public void verifyIncreaseQtyBtnInCartPageWorking() {
         CartPage cartPage = new CartPage(webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn() ,webDriver);
@@ -220,7 +220,7 @@ public class CartTestCases extends BaseTest {
         WebElementsAssertion.assertionWebElementEqualText(cartPage.getQtyField(),webDriver, "2");
 //        WebElementsAssertion.assertionAttributeTrueForElement(cartPage.getQtyField(),webDriver,"value", "2");
     }
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Verify ability to Decrease the product quantity from Cart page from the Cart Page works successfully", priority = 20)
+    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Verify ability to Decrease the product quantity from Cart page from the Cart Page works successfully", priority = 20)
     public void verifyDecreaseQtyBtnInCartPageWorking() {
         CartPage cartPage = new CartPage(webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getDecreaseQtyBtn() ,webDriver);
@@ -228,7 +228,7 @@ public class CartTestCases extends BaseTest {
         WebElementsAssertion.assertionWebElementEqualText(cartPage.getQtyField(),webDriver, "1");
 //        WebElementsAssertion.assertionAttributeTrueForElement(cartPage.getQtyField(),webDriver,"value", "1");
     }
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Verify ability to display the product from the Cart Page works successfully", priority = 21)
+    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Verify ability to display the product from the Cart Page works successfully", priority = 21)
     public void verifyAbilityToDisplayTheProductFromTheCartPage() {
         CartPage cartPage = new CartPage(webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getProductNameForOneProduct(),webDriver);
@@ -237,19 +237,19 @@ public class CartTestCases extends BaseTest {
         cartPage.removeItem();
     }
     //TODO: This test case should be revisit after solving: https://sporter1.atlassian.net/browse/NS-120 & https://sporter1.atlassian.net/browse/NS-42
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the Free Gift is added correctly to the Cart", priority = 22)
+    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the Free Gift is added correctly to the Cart", priority = 22)
     public void verifyTheFreeGiftIsAddedCorrectlyToTheCart() {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addBogoToCartAndDisplayTheCart();
         DataHelperAndWait.isDisplayed(cartPage.getFreeFromSporter(),webDriver);
     }
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the Free Gift does not have a price", priority = 23)
+    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the Free Gift does not have a price", priority = 23)
     public void verifyTheFreeGiftIsDoesNotHavePrice() {
         CartPage cartPage = new CartPage(webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getFreePrice(),webDriver);
         cartPage.removeItem();
     }
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure that all payment methods are appear correctly in the Cart page", priority = 24)
+    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure that all payment methods are appear correctly in the Cart page", priority = 24)
     public void verifyAllPaymentMethodAppearingTheCartPage() {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
@@ -258,7 +258,7 @@ public class CartTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCreditCardOption(),webDriver);
         cartPage.removeItem();
     }
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure that the Proceed to checkout button appears in the cart page works correctly", priority = 25)
+    @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure that the Proceed to checkout button appears in the cart page works correctly", priority = 25)
     public void verifyProceedCheckoutBtnAppearsCorrectlyInCartPage() {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
@@ -268,7 +268,7 @@ public class CartTestCases extends BaseTest {
         cartPage.removeItem();
     }
 
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 26)
+    @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 26)
     public void verifyOrderTotalCalculationInCartPageWorksCorrectly() {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
@@ -279,7 +279,7 @@ public class CartTestCases extends BaseTest {
         Assert.assertEquals(orderTotal, cartTotal);
         cartPage.removeItem();
     }
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.4 Low Severity"},description = "{{CountryName}}: Make sure that the  close icon appears in the cart pop-up works correctly", priority = 27)
+    @Test(groups = {"All Smoke Testing Result","1.4 Low Severity"},description = "{{CountryName}}: Make sure that the  close icon appears in the cart pop-up works correctly", priority = 27)
     public void verifyTheCloseIconInCartPopupWorksCorrectly() {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
@@ -287,7 +287,7 @@ public class CartTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(cartPage.getCartCloseIcon(),webDriver);
     }
     //TODO: Should be revisit after solving https://sporter1.atlassian.net/browse/NS-188 & https://sporter1.atlassian.net/browse/NS-190
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the system does not apply invalid coupon code", priority = 28)
+    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the system does not apply invalid coupon code", priority = 28)
     public void verifyInabilityToApplyInvalidCouponCode() {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
@@ -296,7 +296,7 @@ public class CartTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(cartPage.getCloseAddToCartErrorMsg(),webDriver);
     }
     //TODO: Should be revisit after solving https://sporter1.atlassian.net/browse/NS-189
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure inability to apply coupon code without filling the code", priority = 29)
+    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure inability to apply coupon code without filling the code", priority = 29)
     public void verifyInabilityToApplyCouponCodeWithoutFillingTheCode() {
         CartPage cartPage = new CartPage(webDriver);
         DataHelperAndWait.clearWebField(cartPage.getCouponCodeField());
@@ -304,7 +304,7 @@ public class CartTestCases extends BaseTest {
         DataHelperAndWait.isDisplayed(cartPage.getRequiredCouponMsg() ,webDriver);
         cartPage.removeItem();
     }
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the free gift is not calculated in the cart price", priority = 30)
+    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the free gift is not calculated in the cart price", priority = 30)
     public void verifyTheFreeGiftIsNotCalculatedInTheCartPrice() {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addBogoToCartAndDisplayTheCart();
@@ -312,7 +312,7 @@ public class CartTestCases extends BaseTest {
         Assert.assertTrue(cartPage.getFreeFromSporterSection().isDisplayed());
         cartPage.removeItem();
     }
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Make sure the tax calculate correctly", priority = 31,enabled = false)
+    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Make sure the tax calculate correctly", priority = 31,enabled = false)
     public void verifyTheTaxCalculatedCorrectly() {
         DecimalFormat df = new DecimalFormat("0.00");
         CartPage cartPage = new CartPage(webDriver);
@@ -325,7 +325,7 @@ public class CartTestCases extends BaseTest {
         cartPage.removeItem();
     }
     //TODO: https://sporter1.atlassian.net/browse/NS-28
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Verify that the search button works correctly from the Cart Page", priority = 32)
+    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Verify that the search button works correctly from the Cart Page", priority = 32)
     public void verifySearchBtnWorksCorrectlyFromCartPage() {
         CartPage cartPage=new CartPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -334,20 +334,20 @@ public class CartTestCases extends BaseTest {
         WebElementsAssertion.validateTheCurrentUrlContainsString("search",webDriver);
     }
 
-    @Test(groups = {"Cart Page","1.4 Low Severity"},description = "{{CountryName}}: Make sure that Make sure that complete your order, to get 100% GENUINE PRODUCTS and SUPER DELIVERY WITHIN 2 WORKING DAYS label appears in the Cart Page", priority = 33)
+    @Test(groups = {"1.4 Low Severity"},description = "{{CountryName}}: Make sure that Make sure that complete your order, to get 100% GENUINE PRODUCTS and SUPER DELIVERY WITHIN 2 WORKING DAYS label appears in the Cart Page", priority = 33)
     public void verifyTheFreeShippingLabelAppearCorrectlyInTheCartPage() {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.isDisplayed(cartPage.getFreeShippingLabel() ,webDriver);
     }
-    @Test(groups = {"Cart Page","1.4 Low Severity"},description = "{{CountryName}}: Make sure that the Expected delivery date field in the cart page retrieves data", priority = 34)
+    @Test(groups = {"1.4 Low Severity"},description = "{{CountryName}}: Make sure that the Expected delivery date field in the cart page retrieves data", priority = 34)
     public void verifyExpectedDeliveryDateRetrievesData() {
         CartPage cartPage = new CartPage(webDriver);
         DataHelperAndWait.isDisplayed(cartPage.getExpectedDeliveryDateLabel() ,webDriver);
         String expectedDeliveryDate = DataHelperAndWait.getWebElementText(cartPage.getExpectedDeliveryDateValue(),webDriver);
         Assert.assertNotNull(expectedDeliveryDate);
     }
-    @Test(groups = {"Cart Page","1.3 Medium Severity"},description = "{{CountryName}}: Make sure that My Shopping Cart title appears in the Cart Page", priority = 35)
+    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}: Make sure that My Shopping Cart title appears in the Cart Page", priority = 35)
     public void verifyMyShoppingCartTitleAppearCorrectlyInTheCartPage() {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
@@ -362,7 +362,7 @@ public class CartTestCases extends BaseTest {
         cartPage.removeItem();
     }
     //TODO: Should be revisit after solving https://sporter1.atlassian.net/browse/NS-188 & https://sporter1.atlassian.net/browse/NS-190
-    @Test(groups = {"Cart Page","1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the system apply Free Gift coupon code correctly", priority = 36)
+    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the system apply Free Gift coupon code correctly", priority = 36)
     public void verifyAbilityToApplyFreeGiftCouponCode() {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
@@ -371,14 +371,14 @@ public class CartTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);
     }
     //TODO: Should be revisit after solving https://sporter1.atlassian.net/browse/NS-188 & https://sporter1.atlassian.net/browse/NS-190
-    @Test(groups = {"Cart Page","1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the system cancel the coupon code correctly", priority = 37)
+    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the system cancel the coupon code correctly", priority = 37)
     public void verifyAbilityToCancelTheCouponCode() {
         CartPage cartPage = new CartPage(webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCancelCouponCodeBtn(),webDriver);
         Assert.assertFalse(cartPage.getFreeFromSporterSection().isDisplayed());
         cartPage.removeItem();
     }
-//    @Test(groups = {"Cart Page","1.2 High Severity"},description = "{{CountryName}}: Make sure that the customer can't add more than 2 Qty of the same product when switching to Jordan Store from Cart Page", priority = 37,enabled = false)
+//    @Test(groups = {"1.2 High Severity"},description = "{{CountryName}}: Make sure that the customer can't add more than 2 Qty of the same product when switching to Jordan Store from Cart Page", priority = 37,enabled = false)
 //    public void verifyInabilityToAddMoreThan2QtyOfSameProductFromTheCartPageForJordanStore() {
 //        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        WebDriverWait wait = new WebDriverWait(webDriver, 30);
@@ -452,7 +452,7 @@ public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() 
         DataHelperAndWait.clickOnElement(productDetailsPage.getAccountProfileIcon(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getAccountProfileOptions(), webDriver);
     }
-    @Test(groups = {"Cart Page","All Smoke Testing Result","1.4 Low Severity"},description = "{{CountryName}}: Make sure ability to navigate to the home page by clicking on the Sporter logo from the Cart Page ", priority = 44)
+    @Test(groups = {"All Smoke Testing Result","1.4 Low Severity"},description = "{{CountryName}}: Make sure ability to navigate to the home page by clicking on the Sporter logo from the Cart Page ", priority = 44)
     public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromCartPage() {
         HeaderSection headerSection=new HeaderSection(webDriver);
         HomePage homePage=new HomePage(webDriver);

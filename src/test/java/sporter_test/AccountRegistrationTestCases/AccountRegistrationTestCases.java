@@ -16,7 +16,7 @@ import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.loginPage.LoginPage;
 import xml_reader.XmlReader;
 
-@Test(groups = "2.02 Account Registration")
+@Test(groups = "2.03 Account Registration")
 public class AccountRegistrationTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:  Ability to access the New account registration screen From Account profile icon", priority = 1)
     public void verifyAbilityToAccessNewAccountRegistrationScreen(){

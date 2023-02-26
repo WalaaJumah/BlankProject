@@ -56,7 +56,7 @@ public class EgyptGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCase
     }
     @Test(enabled = false)
     public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNationalID() {}
-    @Test(groups = {"Guest User Page","All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:Verify All Shipping Methods appear correctly", priority = 21)
+    @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:Verify All Shipping Methods appear correctly", priority = 21)
     public void verifyAllShippingMethodsAppearCorrectly(){
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver, XmlReader.getXMLData("nextDayDelivery"));
