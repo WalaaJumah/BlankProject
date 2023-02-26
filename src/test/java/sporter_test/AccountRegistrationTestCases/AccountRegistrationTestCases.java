@@ -118,13 +118,13 @@ public class AccountRegistrationTestCases extends BaseTest {
         registerPage.submitAllCreateAccountFormsCorrectly(DataHelperAndWait.generateRandomEmail(),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData("firstName"),XmlReader.getXMLData("lastName"),2);
         DataHelperAndWait.clickOnElement(header.getSporterLogo(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(),webDriver);
-        DataHelperAndWait.waitForTime(3000);
+//        DataHelperAndWait.waitForTime(3000);
         DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(),webDriver);
         DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(),webDriver);
         DataHelperAndWait.clickOnElement(header.getSporterLogo(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(),webDriver);
-        DataHelperAndWait.waitForTime(3000);
+//        DataHelperAndWait.waitForTime(3000);
     }
     @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:  Verify Ability to register new account correctly with Male Gender", priority = 12)
     public void verifyAbilityToRegisterAccountCorrectlyWhenSelectingMaleGender(){
@@ -258,13 +258,13 @@ public class AccountRegistrationTestCases extends BaseTest {
         registerPage.submitAllCreateAccountFormsCorrectly(DataHelperAndWait.generateRandomEmail(),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData("correctPassword"),XmlReader.getXMLData("firstName"),XmlReader.getXMLData("lastName"),0);
         DataHelperAndWait.clickOnElement(header.getSporterLogo(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(),webDriver);
-        DataHelperAndWait.waitForTime(3000);
+//        DataHelperAndWait.waitForTime(3000);
         DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(),webDriver);
         DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(),webDriver);
         DataHelperAndWait.clickOnElement(header.getSporterLogo(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(),webDriver);
-        DataHelperAndWait.waitForTime(3000);
+//        DataHelperAndWait.waitForTime(3000);
     }
     //TODO: To be revisit after fixing https://sporter1.atlassian.net/browse/NS-56
     @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:  Verify Sign-up using facebook works correctly", priority = 23)

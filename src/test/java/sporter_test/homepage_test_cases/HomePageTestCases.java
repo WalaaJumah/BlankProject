@@ -191,7 +191,7 @@ public class HomePageTestCases extends BaseTest {
         HomePage homePage = new HomePage(webDriver);
         for (int i = 0; i < homePage.getNewArrivalsCategoriesTabs().size(); i++) {
             DataHelperAndWait.clickOnElement(homePage.getNewArrivalsCategoriesTabs().get(i), webDriver);
-            DataHelperAndWait.waitForTime(1500);
+//            DataHelperAndWait.waitForTime(1500);
             Assert.assertTrue(homePage.getNewArrivalsCategoriesTabs().get(i).getAttribute("class").startsWith("options_active"),"Clicking on The Categories tabs are not working correctly");
         }
     }

@@ -151,7 +151,7 @@ public class AccountRegistrationPage extends BasePage {
         }
         DataHelperAndWait.clickOnElement(this.getSubmitBtn(),webDriver);
         DataHelperAndWait.waitToBeVisible(successfulMsg,webDriver);
-        DataHelperAndWait.waitForTime(3000);
+//        DataHelperAndWait.waitForTime(3000);
     }
     public void fillingAllCreateAccountForms(String email, String password, String confirmPassword, String firstName, String lastName, int gender){
         DataHelperAndWait.typeTextInElement(this.getEmailField(),webDriver,email);

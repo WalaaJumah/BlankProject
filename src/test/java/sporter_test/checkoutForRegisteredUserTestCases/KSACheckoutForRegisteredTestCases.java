@@ -145,7 +145,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
     @Test(groups = {"2.02 Checkout Cycle( Registered User)", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Door To Door Shipping Method With Credit Card Payment Method ", priority = 30)
     public void verifyAbilityToPlaceOrderWhenSelectingDoorToDoorShippingMethodWithCreditCardPaymentMethod() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        DataHelperAndWait.waitForTime(2000);
+//        DataHelperAndWait.waitForTime(2000);
         String mainWindow= webDriver.getWindowHandle();
         Set<String> handles = webDriver.getWindowHandles();
 // Switch to the pop-up window
@@ -194,7 +194,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting pickUp in Store Method With Credit Card Payment Method ", priority = 82)
     public void verifyAbilityToPlaceOrderWhenSelectingPickUpInStoreShippingMethodWithCreditCardPaymentMethod() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        DataHelperAndWait.waitForTime(2000);
+//        DataHelperAndWait.waitForTime(2000);
         String mainWindow= webDriver.getWindowHandle();
         Set<String> handles = webDriver.getWindowHandles();
 // Switch to the pop-up window

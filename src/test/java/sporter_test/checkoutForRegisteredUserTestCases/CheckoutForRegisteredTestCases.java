@@ -46,14 +46,14 @@ public class CheckoutForRegisteredTestCases extends BaseTest
         loginPage.navigateToLoginPage();
         loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword"));
         DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
-        DataHelperAndWait.waitForTime(4000);
+//        DataHelperAndWait.waitForTime(4000);
         DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(registrationPage.getMyAccountOption(), webDriver);
         int newCartCounter=DataHelperAndWait.convertTheStringToInt(cartPage.getItemsCounter(),webDriver);
         Assert.assertTrue(newCartCounter>=oldCartCounter);
         cartPage.navigateToCartPage();
         cartPage.removeItem();
-        DataHelperAndWait.waitForTime(3000);
+//        DataHelperAndWait.waitForTime(3000);
         DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
         DataHelperAndWait.clickOnElement(registrationPage.getLogoutOption(), webDriver);
     }
@@ -65,7 +65,7 @@ public class CheckoutForRegisteredTestCases extends BaseTest
         loginPage.navigateToLoginPage();
         loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword"));
         DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
-        DataHelperAndWait.waitForTime(3000);
+//        DataHelperAndWait.waitForTime(3000);
         DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
     }
@@ -309,7 +309,7 @@ catch (Exception e){
     @Test(groups = {"2.02 Checkout Cycle( Registered User)", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Credit Card Payment Method ", priority = 30)
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCreditCardPaymentMethod() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        DataHelperAndWait.waitForTime(2000);
+//        DataHelperAndWait.waitForTime(2000);
         String mainWindow= webDriver.getWindowHandle();
         Set<String> handles = webDriver.getWindowHandles();
 // Switch to the pop-up window
@@ -380,7 +380,7 @@ catch (Exception e){
         AccountRegistrationPage registrationPage=new AccountRegistrationPage(webDriver);
         DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getAddToWishListBtn(),webDriver);
         DataHelperAndWait.refreshPage(webDriver);
-        DataHelperAndWait.waitForTime(3000);
+//        DataHelperAndWait.waitForTime(3000);
         DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
         DataHelperAndWait.clickOnElement(registrationPage.getMyAccountOption(), webDriver);
         DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getWishListTab(), webDriver);

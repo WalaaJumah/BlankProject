@@ -130,10 +130,10 @@ public class BasePage {
         this.webDriver = webDriver;
     }
     public String getTitle(){
-        DataHelperAndWait.waitForTime(500);
+//        DataHelperAndWait.waitForTime(500);
         return webDriver.getTitle();}
     public String getSourcePage(){
-        DataHelperAndWait.waitForTime(500);
+//        DataHelperAndWait.waitForTime(500);
         return webDriver.getPageSource();}
     public void verifyTheDisplayedPageDoesNotHaveErrors() {
         Assert.assertFalse(this.getTitle().equalsIgnoreCase(SporterErrorPage.pageNotFoundTitle), "Page Not Found Is Displayed and the URL is " + webDriver.getCurrentUrl());
@@ -155,7 +155,7 @@ public class BasePage {
     public void navigateToHomePage(){
         try{
             WebElement btnCloseElement = webDriver.findElement(By.xpath("//button[@class='button_btn__zg_G5 changeStorePopUp_btn__sggmr']/span"));
-            DataHelperAndWait.waitForTime(2000);
+//            DataHelperAndWait.waitForTime(2000);
             DataHelperAndWait.waitToBeVisible(btnCloseElement,webDriver);
 
             if (btnCloseElement != null

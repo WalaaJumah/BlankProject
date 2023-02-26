@@ -216,7 +216,7 @@ public class CartTestCases extends BaseTest {
     public void verifyIncreaseQtyBtnInCartPageWorking() {
         CartPage cartPage = new CartPage(webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn() ,webDriver);
-        DataHelperAndWait.waitForTime(3000);
+//        DataHelperAndWait.waitForTime(3000);
         WebElementsAssertion.assertionWebElementEqualText(cartPage.getQtyField(),webDriver, "2");
 //        WebElementsAssertion.assertionAttributeTrueForElement(cartPage.getQtyField(),webDriver,"value", "2");
     }
@@ -224,7 +224,7 @@ public class CartTestCases extends BaseTest {
     public void verifyDecreaseQtyBtnInCartPageWorking() {
         CartPage cartPage = new CartPage(webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getDecreaseQtyBtn() ,webDriver);
-        DataHelperAndWait.waitForTime(4000);
+//        DataHelperAndWait.waitForTime(4000);
         WebElementsAssertion.assertionWebElementEqualText(cartPage.getQtyField(),webDriver, "1");
 //        WebElementsAssertion.assertionAttributeTrueForElement(cartPage.getQtyField(),webDriver,"value", "1");
     }

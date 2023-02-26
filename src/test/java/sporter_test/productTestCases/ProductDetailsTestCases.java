@@ -103,7 +103,7 @@ public class ProductDetailsTestCases extends BaseTest {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
         DataHelperAndWait.clickOnElement(productDetailsPage.getHomeBreadcrumbs(),webDriver);
-        DataHelperAndWait.waitForTime(4000);
+//        DataHelperAndWait.waitForTime(4000);
         Assert.assertFalse(webDriver.getCurrentUrl().contains(productDetailsPage.productUrl));
     }
     @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}:Make sure that the product price is changed when you change the quantity ", priority = 12)

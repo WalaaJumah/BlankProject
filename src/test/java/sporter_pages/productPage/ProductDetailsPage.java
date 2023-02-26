@@ -155,7 +155,7 @@ public class ProductDetailsPage extends BasePage {
     }
 
     public void addToCart() {
-        DataHelperAndWait.waitForTime(2000);
+//        DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.waitToBeClickable(addToCartBtn2,webDriver);
         addToCartBtn.click();
     }
@@ -163,7 +163,7 @@ public class ProductDetailsPage extends BasePage {
         DataHelperAndWait.clickOnElement(keepShippingBtn,webDriver);
     }
     public void viewCart() {
-        DataHelperAndWait.waitForTime(3000);
+//        DataHelperAndWait.waitForTime(3000);
         DataHelperAndWait.waitToBeVisible(viewCartBtn,webDriver);
         viewCartBtn.click();
     }

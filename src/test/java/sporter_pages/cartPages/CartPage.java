@@ -175,7 +175,7 @@ private WebElement closeCouponSuccessfulMsg;
 
       public void addBogoToCartAndDisplayTheCart(){
        productDetailsPage.navigateToBogoProduct();
-       DataHelperAndWait.waitForTime(2000);
+//       DataHelperAndWait.waitForTime(2000);
        productDetailsPage.addToCart();
        productDetailsPage.viewCart();
 
@@ -196,7 +196,7 @@ private WebElement closeCouponSuccessfulMsg;
     public void removeAllItems(int productNumber) {
 for(int i=1;i<=productNumber;i++){
     DataHelperAndWait.clickOnElement(removeItemBtn,webDriver);
-    DataHelperAndWait.waitForTime(1000);
+//    DataHelperAndWait.waitForTime(1000);
 }
    }
     public static  void addBundleOptionToCart(Select select, WebDriver webDriver) {
@@ -220,7 +220,7 @@ for(int i=1;i<=productNumber;i++){
        DataHelperAndWait.waitToBeClickable(hereLink,webDriver);
        hereLink.click();}
        catch (Exception e){
-           DataHelperAndWait.waitForTime(3000);
+//           DataHelperAndWait.waitForTime(3000);
            hereLink.click();
        }
    }
@@ -229,7 +229,7 @@ public void getFreeGiftByCoupon(){
     DataHelperAndWait.clickOnElement(applyCouponCodeBtn,webDriver);
 }
 public void clickOnCartIcon(){
-       DataHelperAndWait.waitForTime(2000);
+//       DataHelperAndWait.waitForTime(2000);
        DataHelperAndWait.waitToBeVisible(cartIcon,webDriver);
     cartIcon.click();
 
