@@ -12,7 +12,7 @@ import org.testng.annotations.Parameters;
 
 import java.util.Arrays;
 
-public class BaseTest extends Thread{
+public class BaseTest{
 //    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
 //    @Parameters({"environment"})
