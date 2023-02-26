@@ -24,25 +24,25 @@
 <!--                        <class name="sporter_test.guestCheckoutCycleTestCases.JordanGuestCheckoutCycleTestCases"/>-->
 <!--                        <class name="sporter_test.guestCheckoutCycleTestCases.KSAGuestCheckoutCycleTestCases"/>-->
 <!--                        <class name="sporter_test.checkoutForRegisteredUserTestCases.QatarCheckoutForRegisteredTestCases"/>-->
-                        <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases">
+                        <class name="sporter_test.checkoutForRegisteredUserTestCases.KSACheckoutForRegisteredTestCases">
 <!--                        <class name="sporter_test.checkoutForRegisteredUserTestCases.UAECheckoutForRegisteredTestCases">-->
-                            <methods>
-                                <include name="verifyClickOnTheProductsAppearingInTheTopSellersSectionRedirectTheUserToCorrectUrl"/>
-<!--                                <include name="verifyAbilityToPlaceOrderWhenUsingFreeCouponCode"/>-->
-<!--                                <include name="verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithValidCreditCardPaymentMethod"/>-->
-<!--                                <include name="verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCreditCardPaymentMethod"/>-->
-<!--                                <include name="verifyClickingOnCheckOutAsGuestUserBtnRedirectTheUserToShippingInformationForm"/>-->
-<!--&lt;!&ndash;                                <include name="verifyTheCorrectCountyCodeRetrievedCorrectlyInPhoneField"/>&ndash;&gt;-->
-<!--                                <include name="verifyTheGuestUserCanFillTheShippingInformationCorrectly"/>-->
-<!--&lt;!&ndash;                                <include name="verifyTheEditShippingInfoBtnWorksFine"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                                <include name="verifyAllShippingMethodsAppearCorrectly"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                                <include name="verifyContinueBtnAppearsInShippingMethodsIsDisableWhenNoMethodSelected"/>&ndash;&gt;-->
-<!--                                <include name="verifyAbilityToSelect2BusinessDaysShippingMethodCorrectly"/>-->
-<!--                                <include name="verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod"/>-->
-<!--                                <include name="verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod"/>-->
-<!--                                <include name="verifyHereLinkInCartPageWorking"/>-->
-<!--                                <include name="verifyMainOptionsInTheMegaMenuAreDisplayed"/>-->
-                            </methods>
+<!--                            <methods>-->
+<!--                                <include name="verifyClickOnTheProductsAppearingInTheTopSellersSectionRedirectTheUserToCorrectUrl"/>-->
+<!--&lt;!&ndash;                                <include name="verifyAbilityToPlaceOrderWhenUsingFreeCouponCode"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <include name="verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithValidCreditCardPaymentMethod"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <include name="verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCreditCardPaymentMethod"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <include name="verifyClickingOnCheckOutAsGuestUserBtnRedirectTheUserToShippingInformationForm"/>&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                                <include name="verifyTheCorrectCountyCodeRetrievedCorrectlyInPhoneField"/>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                                <include name="verifyTheGuestUserCanFillTheShippingInformationCorrectly"/>&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                                <include name="verifyTheEditShippingInfoBtnWorksFine"/>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                                <include name="verifyAllShippingMethodsAppearCorrectly"/>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                                <include name="verifyContinueBtnAppearsInShippingMethodsIsDisableWhenNoMethodSelected"/>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                                <include name="verifyAbilityToSelect2BusinessDaysShippingMethodCorrectly"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <include name="verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <include name="verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <include name="verifyHereLinkInCartPageWorking"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <include name="verifyMainOptionsInTheMegaMenuAreDisplayed"/>&ndash;&gt;-->
+<!--                            </methods>-->
                         </class>
 <!--            <class name="sporter_test.headerTestCases.KSAHeaderTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.UAEHeaderTestCases"/>-->
