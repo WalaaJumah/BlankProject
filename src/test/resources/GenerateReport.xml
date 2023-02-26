@@ -7,7 +7,7 @@
         <listener class-name="extent_report_listner.ExtentReportListener" />
     </listeners>
     <test name=" Sporter 2.1" preserve-order="true">
-        <parameter name="environment" value="https://new.sporter.com" />
+        <parameter name="environment" value="https://dev.sporter.com" />
         <parameter name="browser" value="chrome"/>
         <!-- <parameter name="country" value="en-qa" />-->
         <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32569/" />
@@ -59,6 +59,27 @@
             <class name="sporter_test.forgetPasswordTestCases.KSAForgetPasswordTestCases"/>
             <class name="sporter_test.forgetPasswordTestCases.JordanForgetPasswordTestCases"/>
 
+<!--            Cart-->
+            <class name="sporter_test.cartTestCases.UAECartTestCases"></class>
+            <class name="sporter_test.cartTestCases.KSACartTestCases"></class>
+            <class name="sporter_test.cartTestCases.JordanCartTestCases"></class>
+            <class name="sporter_test.cartTestCases.EgyptCartTestCases"></class>
+            <class name="sporter_test.cartTestCases.QatarCartTestCases"></class>
+
+<!--            Guest Checkout -->
+            <class name="sporter_test.guestCheckoutCycleTestCases.UAEGuestCheckoutCycleTestCases"></class>
+            <class name="sporter_test.guestCheckoutCycleTestCases.KSAGuestCheckoutCycleTestCases"></class>
+            <class name="sporter_test.guestCheckoutCycleTestCases.JordanGuestCheckoutCycleTestCases"></class>
+            <class name="sporter_test.guestCheckoutCycleTestCases.QatarGuestCheckoutCycleTestCases"></class>
+            <class name="sporter_test.guestCheckoutCycleTestCases.EgyptGuestCheckoutCycleTestCases"></class>
+
+<!--            Registered Checkout-->
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.UAECheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.JordanCheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.QatarCheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.KSACheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.EgyptCheckoutForRegisteredTestCases"></class>
+
             <!--            <class name="sporter_test.AccountRegistrationTestCases.AccountRegistrationTestCases">-->
 <!--                <methods>-->
 <!--                    <include name="verifyAbilityToSignUpUsingFaceBook"/>-->
@@ -82,11 +103,11 @@
 <!--        </groups>-->
 <!--&lt;!&ndash;        <classes>&ndash;&gt;-->
 <!--&lt;!&ndash;            &lt;!&ndash;            HomePage&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;            <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>&ndash;&gt;-->
-<!--&lt;!&ndash;            <class name="sporter_test.homepage_test_cases.UAEHomePageTestCases"/>&ndash;&gt;-->
-<!--&lt;!&ndash;            <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases"/>&ndash;&gt;-->
-<!--&lt;!&ndash;            <class name="sporter_test.homepage_test_cases.QatarHomePageTestCases"/>&ndash;&gt;-->
-<!--&lt;!&ndash;            <class name="sporter_test.homepage_test_cases.EgyptHomePageTestCases"/>&ndash;&gt;-->
+<!--            <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>-->
+<!--            <class name="sporter_test.homepage_test_cases.UAEHomePageTestCases"/>-->
+<!--            <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases"/>-->
+<!--            <class name="sporter_test.homepage_test_cases.QatarHomePageTestCases"/>-->
+<!--            <class name="sporter_test.homepage_test_cases.EgyptHomePageTestCases"/>-->
 <!--&lt;!&ndash;            &lt;!&ndash;         Header   &ndash;&gt;&ndash;&gt;-->
 
 
