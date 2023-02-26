@@ -138,8 +138,6 @@ public class CheckoutForRegisteredPage extends BasePage {
         cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
         try{
-        DataHelperAndWait.clickOnElement(this.getSavedAddressOption(),webDriver);}
-        catch (Exception e){
             this.fillInShippingInformationInputField(
                     XmlReader.getXMLData("firstName"),
                     XmlReader.getXMLData("lastName"),
@@ -148,6 +146,9 @@ public class CheckoutForRegisteredPage extends BasePage {
                     XmlReader.getXMLData("StreetOneAddressName"),
                     XmlReader.getXMLData("StreetTwoAddressName")
             );
+        }
+        catch (Exception e){
+            DataHelperAndWait.clickOnElement(this.getSavedAddressOption(),webDriver);
         }
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);

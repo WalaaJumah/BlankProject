@@ -24,8 +24,8 @@
 <!--                        <class name="sporter_test.guestCheckoutCycleTestCases.JordanGuestCheckoutCycleTestCases"/>-->
 <!--                        <class name="sporter_test.guestCheckoutCycleTestCases.KSAGuestCheckoutCycleTestCases"/>-->
                         <class name="sporter_test.checkoutForRegisteredUserTestCases.QatarCheckoutForRegisteredTestCases"/>
-                        <class name="sporter_test.checkoutForRegisteredUserTestCases.JordanCheckoutForRegisteredTestCases"/>
-                        <class name="sporter_test.checkoutForRegisteredUserTestCases.UAECheckoutForRegisteredTestCases">
+<!--                        <class name="sporter_test.checkoutForRegisteredUserTestCases.JordanCheckoutForRegisteredTestCases"/>-->
+<!--                        <class name="sporter_test.checkoutForRegisteredUserTestCases.UAECheckoutForRegisteredTestCases">-->
 <!--                            <methods>-->
 <!--                                <include name="verifyAbilityToLoginCorrectlyWithValidCredentials"/>-->
 <!--                                <include name="verifyAbilityToPlaceOrderWhenUsingFreeCouponCode"/>-->
@@ -43,7 +43,7 @@
 <!--&lt;!&ndash;                                <include name="verifyHereLinkInCartPageWorking"/>&ndash;&gt;-->
 <!--&lt;!&ndash;                                <include name="verifyMainOptionsInTheMegaMenuAreDisplayed"/>&ndash;&gt;-->
 <!--                            </methods>-->
-                        </class>
+<!--                        </class>-->
 <!--            <class name="sporter_test.headerTestCases.KSAHeaderTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.UAEHeaderTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.JordanHeaderTestCases"/>-->

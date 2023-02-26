@@ -75,8 +75,6 @@ public class JordanCheckoutForRegisteredPage extends CheckoutForRegisteredPage {
         cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
         try{
-            DataHelperAndWait.clickOnElement(this.getSavedAddressOption(),webDriver);}
-        catch (Exception e){
             this.fillInShippingInformationInputField(
                     XmlReader.getXMLData("firstName"),
                     XmlReader.getXMLData("lastName"),
@@ -87,6 +85,9 @@ public class JordanCheckoutForRegisteredPage extends CheckoutForRegisteredPage {
                     XmlReader.getXMLData("nationalID")
 
             );
+        }
+        catch (Exception e){
+            DataHelperAndWait.clickOnElement(this.getSavedAddressOption(),webDriver);
         }
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
