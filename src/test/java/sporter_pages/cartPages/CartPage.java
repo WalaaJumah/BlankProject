@@ -131,7 +131,7 @@ public class CartPage extends BasePage {
     private List<WebElement> productCardInCartPage;
     @FindBy(id = "paymentOptionsLabel")
     private WebElement weAcceptLabel;
-    @FindBy(xpath = "(//div[@id='paymentOptions']//span[@id='label'])[1]")
+    @FindBy(xpath = "(//div[@id='paymentOptions']//span[@id='label'])[2]")
     private WebElement cODOption;
     @FindBy(xpath = "(//div[@id='paymentOptions']//span[@id='label'])[1]")
     private WebElement creditCardOption;

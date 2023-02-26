@@ -86,6 +86,7 @@
         <phoneNumberErrorEn>Please enter a valid Phone Number</phoneNumberErrorEn>
         <phoneNumberErrorAr>Needs To translate</phoneNumberErrorAr>
 <qatarPhoneNumber>55555396</qatarPhoneNumber>
+<ksaPhoneNumber>595552396</ksaPhoneNumber>
     </CheckoutData>
     <UAECheckout>
         <twoBusinessDay>2 Business Days Super Express Shipping&#xA;Cash on Delivery Service Available</twoBusinessDay>
