@@ -70,7 +70,7 @@ public class ProductDetailsPage extends BasePage {
     private WebElement submitReviewButton;
     @FindBy(xpath = "//div[starts-with(@class,'productReview_rErr')]")
     private WebElement reviewErrorMsgRelatedToStars;
-    @FindBy(xpath = "//div[contains(text(),'You submitted your review for moderation.')]")
+    @FindBy(xpath = "//button[contains(@class,'popUp_btn')]")
     private WebElement reviewToastMsg;
     @FindBy(id = "pathSegment_0")
     private WebElement HomeBreadcrumbs;
