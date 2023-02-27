@@ -120,6 +120,7 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+        DataHelperAndWait.refreshPage(webDriver);
         try{
             jordanGuestCheckoutCyclePage.fillInShippingInformationInputField(
                     XmlReader.getXMLData("firstName"),
@@ -129,11 +130,11 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
                     XmlReader.getXMLData("StreetOneAddressName"),
                     XmlReader.getXMLData("StreetTwoAddressName"),
                     XmlReader.getXMLData("nationalID")
-            );
-            }
+            );}
         catch (Exception e){
-            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
-        }
+                DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver); }
+
+
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(jordanGuestCheckoutCyclePage.getFiveBusinessDays(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -170,4 +171,5 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
         orderNumberCreditCard= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
         System.out.println(orderNumberCreditCard);
     }
+
 }

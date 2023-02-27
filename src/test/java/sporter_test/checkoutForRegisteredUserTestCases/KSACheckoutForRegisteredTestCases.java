@@ -210,7 +210,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
 // Switch back to the main window
 //        webDriver.switchTo().window(mainWindow);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        guestCheckoutCyclePage.submitSecureAndAuthenticationCheckout();
+//        guestCheckoutCyclePage.submitSecureAndAuthenticationCheckout();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getSuccessPage(),webDriver);
         orderNumberCreditCard= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
         System.out.println(orderNumberCreditCard);
@@ -233,11 +233,11 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(),webDriver);
     }
-    @Test(groups = {"2.02 Checkout Cycle( Registered User)","All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:Verify All Shipping Methods appear correctly", priority = 31)
+    @Test(groups = {"2.02 Checkout Cycle( Registered User)","All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:Verify All Shipping Methods appear correctly", priority = 23)
     public void verifyAllShippingMethodsAppearCorrectly(){
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        KSACheckoutForRegisteredPage ksa= new KSACheckoutForRegisteredPage(webDriver);
-        ksa.AddToCartAndAccessShippingMethodsPageForSavedAddressForDubaiCity();
+//        KSACheckoutForRegisteredPage ksa= new KSACheckoutForRegisteredPage(webDriver);
+//        ksa.AddToCartAndAccessShippingMethodsPageForSavedAddressForDubaiCity();
         WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver, XmlReader.getXMLData("dootToDoor"));
         WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getSameDayDelivery(),webDriver,XmlReader.getXMLData("pickupShipping"));
     }

@@ -5,7 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86683dee-3ff6-4652-96ae-dd8bddfbd97f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_17_2023_1_15_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_17_2023_1_15_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_19_2023_11_29_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_19_2023_11_29_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_19_2023_8_05_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_19_2023_8_05_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_22_2023_11_13_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_22_2023_11_13_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_22_2023_11_14_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_22_2023_11_14_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_24_2023_12_09_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_24_2023_12_09_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_24_2023_8_23_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_24_2023_8_23_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_24_2023_9_41_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_24_2023_9_41_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_25_2023_8_15_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_25_2023_8_15_AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeVitaminsAndHealthCategoryTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AeVitaminsAndHealthCategoryTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeWomenOnlyCategoryTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AeWomenOnlyCategoryTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/CheckoutForRegisteredTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/CheckoutForRegisteredTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/JordanCheckoutForRegisteredTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/JordanCheckoutForRegisteredTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/KSACheckoutForRegisteredTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/KSACheckoutForRegisteredTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/QatarCheckoutForRegisteredTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/QatarCheckoutForRegisteredTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +47,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="New_Sporter2.1" />
+        <entry key="$PROJECT_DIR$" value="New_Sporter2.1_Without_Implicit_Wait" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
