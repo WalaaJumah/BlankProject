@@ -379,7 +379,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
 //        String expectedCategoryUrl=aeSportsCategoryPage.getWomenApparelCategory().getAttribute("href");
         aeSportsCategoryPage.getWomenApparelCategory().click();
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-//        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
+//        //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
     }
     @Test(groups = {"2.10 Sports Category", "1.3 Medium Severity"},description = "Sports Category- Make sure that the Result label and its value appear correctly in the Women's Apparel category page ", priority = 36)
     public void verifyResultFieldAndItsVaLueAppearInTheWomenApparelCategoryPage(){
@@ -521,7 +521,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
 //        String expectedCategoryUrl=aeSportsCategoryPage.getYogaApparelCategory().getAttribute("href");
         aeSportsCategoryPage.getYogaApparelCategory().click();
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-//        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
+//        //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
     }
     @Test(groups = {"2.10 Sports Category", "1.3 Medium Severity"},description = "Sports Category- Make sure that the Result label and its value appear correctly in the Yoga Apparel category page ", priority = 50)
     public void verifyResultFieldAndItsVaLueAppearInTheYogaApparelCategoryPage(){
@@ -681,7 +681,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
 //        String expectedCategoryUrl=aeSportsCategoryPage.getSwimmingApparelCategory().getAttribute("href");
         aeSportsCategoryPage.getSwimmingApparelCategory().click();
         aeSportsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-//        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
+//        //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
     }
     @Test(groups = {"2.10 Sports Category", "1.3 Medium Severity"},description = "Sports Category- Make sure that the Result label and its value appear correctly in the Swimming Apparel category page ", priority = 64)
     public void verifyResultFieldAndItsVaLueAppearInTheSwimmingApparelCategoryPage(){
@@ -832,7 +832,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         webDriver.navigate().to(BasePage.BaseURL+"/sports/sport/mma/");
 //        String expectedCategoryUrl=aeSportsCategoryPage.getMmaApparelCategory().getAttribute("href");
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-//        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
+//        //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
     }
     @Test(groups = {"2.10 Sports Category", "1.3 Medium Severity"},description = "Sports Category- Make sure that the Result label and its value appear correctly in the Mma Apparel category page ", priority = 78)
     public void verifyResultFieldAndItsVaLueAppearInTheMmaApparelCategoryPage(){
@@ -995,7 +995,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
 //        String expectedCategoryUrl=aeSportsCategoryPage.getCricketApparelCategory().getAttribute("href");
 //        aeSportsCategoryPage.clickOnCricketCategory(webDriver);
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-//        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
+//        //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
     }
     @Test(groups = {"2.10 Sports Category", "1.3 Medium Severity"},description = "Sports Category- Make sure that the Result label and its value appear correctly in the Cricket category page ", priority = 92)
     public void verifyResultFieldAndItsVaLueAppearInTheCricketCategoryPage(){
