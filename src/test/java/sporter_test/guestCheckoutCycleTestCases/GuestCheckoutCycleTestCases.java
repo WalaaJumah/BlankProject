@@ -148,7 +148,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
         if(webDriver.getCurrentUrl().contains("sporter.com/en")){
         WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getPhoneErrMsg(), webDriver,XmlReader.getXMLData("smallLenghthPhoneErrEn"));}
         if(webDriver.getCurrentUrl().contains("sporter.com/ar")){
-            WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getPhoneErrMsg(), webDriver,XmlReader.getXMLData("smallLenghthPhoneErrAr"));}
+            WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getPhoneErrMsg(), webDriver,XmlReader.getXMLData("smallLenghthPhoneErr"));}
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(guestCheckoutCyclePage.getAddressErrMsg(), webDriver);
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(guestCheckoutCyclePage.getStreetlineOneErrMsg(), webDriver);
     }

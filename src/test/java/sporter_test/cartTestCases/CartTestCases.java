@@ -52,6 +52,7 @@ public class CartTestCases extends BaseTest {
         CartPage cartPage = new CartPage(webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
         itemsCounter = "(1 Of 1 Items )";
+        DataHelperAndWait.waitToBeVisible(cartPage.getItemCounterInCartPopUp(), webDriver);
         WebElementsAssertion.assertionTextIsEqual(cartPage.getItemCounterInCartPopUp(), webDriver, itemsCounter);
     }
     @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Make sure that the view Cart button appearing in the Cart pop-up works correctly", priority = 5)
@@ -93,6 +94,7 @@ public class CartTestCases extends BaseTest {
             cartPage.removeItem();
         }
         catch (Exception e){
+            cartPage.removeItem();
             System.out.println("All is fine");
         }
        }
