@@ -4,24 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86683dee-3ff6-4652-96ae-dd8bddfbd97f" name="Changes" comment=" Adding webDriverlocaL Changes by Tobji">
+    <list default="true" id="86683dee-3ff6-4652-96ae-dd8bddfbd97f" name="Changes" comment="Remove the implicit wait">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/WebElementsAssertion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/WebElementsAssertion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AccountRegistrationPage/AccountRegistrationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/AccountRegistrationPage/AccountRegistrationPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/cartPages/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/cartPages/CartPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/loginPage/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/loginPage/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/RecommendedProductsPage/RecommendedProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/RecommendedProductsPage/RecommendedProductPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/productPage/ProductDetailsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/productPage/ProductDetailsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AccountRegistrationTestCases/AccountRegistrationTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AccountRegistrationTestCases/AccountRegistrationTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/cartTestCases/CartTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/cartTestCases/CartTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/CheckoutForRegisteredTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/CheckoutForRegisteredTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/JordanCheckoutForRegisteredTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/JordanCheckoutForRegisteredTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/KSACheckoutForRegisteredTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/KSACheckoutForRegisteredTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/GuestCheckoutCycleTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/GuestCheckoutCycleTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/homepage_test_cases/HomePageTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/homepage_test_cases/HomePageTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/loginTestCases/LoginTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/loginTestCases/LoginTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/productTestCases/ProductDetailsTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/productTestCases/ProductDetailsTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/GenerateReport.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/GenerateReport.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/RecommendedProductsTestCases/RecommendedProductTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/RecommendedProductsTestCases/RecommendedProductTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677434290906</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Remove the implicit wait">
+      <created>1677436749123</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1677436749123</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -279,7 +275,8 @@
     <MESSAGE value="test" />
     <MESSAGE value="Add Chrome Driver Version 110" />
     <MESSAGE value=" Adding webDriverlocaL Changes by Tobji" />
-    <option name="LAST_COMMIT_MESSAGE" value=" Adding webDriverlocaL Changes by Tobji" />
+    <MESSAGE value="Remove the implicit wait" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove the implicit wait" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -302,6 +299,8 @@
         <watch expression="addToCartBtn" />
         <watch expression="result" />
         <watch expression="suite" />
+        <watch expression="productsInTopSellersSection" />
+        <watch expression="getWebDriver" />
       </configuration>
     </watches-manager>
   </component>

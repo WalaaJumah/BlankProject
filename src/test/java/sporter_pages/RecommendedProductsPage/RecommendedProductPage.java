@@ -65,7 +65,7 @@ public class RecommendedProductPage extends BasePage {
 //        DataHelperAndWait.clickOnElement(productDetailsPage.getAddToCartBtn(),webDriver);
 //        DataHelperAndWait.waitToBeVisible(productDetailsPage.getKeepShippingBtn(),webDriver);
         try{
-            DataHelperAndWait.clickOnElement(productDetailsPage.getAddToCartBtn(),webDriver);
+            productDetailsPage.addToCart();
             DataHelperAndWait.waitToBeVisible(productDetailsPage.getKeepShippingBtn(),webDriver);}
         catch (Exception e){
             if(productDetailsPage.getAddToCartErrorPopUp().isDisplayed()){
@@ -74,13 +74,12 @@ public class RecommendedProductPage extends BasePage {
                 DataHelperAndWait.clickOnElement(headerSection.getViewCartLinkInCartPopUp(),webDriver);
                 DataHelperAndWait.clickOnElement(productDetailsPage.getRemoveItem(),webDriver);
                 productDetailsPage.displayTheProduct();
-                DataHelperAndWait.clickOnElement(productDetailsPage.getAddToCartBtn(),webDriver);
+                productDetailsPage.addToCart();
                 DataHelperAndWait.waitToBeVisible(productDetailsPage.getKeepShippingBtn(),webDriver);
             }
         }
     }
     public void removeProductFromCart(){
-        navigateToHomePage();
         DataHelperAndWait.clickOnElement(headerSection.getCartIcon(),webDriver);
         DataHelperAndWait.clickOnElement(headerSection.getViewCartLinkInCartPopUp(),webDriver);
         DataHelperAndWait.clickOnElement(productDetailsPage.getRemoveItem(),webDriver);
