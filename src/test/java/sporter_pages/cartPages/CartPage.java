@@ -217,10 +217,10 @@ for(int i=1;i<=productNumber;i++){
     }
    public void clickOnHereLink(){
        try{
-       DataHelperAndWait.waitToBeClickable(hereLink,webDriver);
+       DataHelperAndWait.waitToBeVisible(hereLink,webDriver);
        hereLink.click();}
        catch (Exception e){
-//           DataHelperAndWait.waitForTime(3000);
+           DataHelperAndWait.waitToBeClickable(hereLink,webDriver);
            hereLink.click();
        }
    }
