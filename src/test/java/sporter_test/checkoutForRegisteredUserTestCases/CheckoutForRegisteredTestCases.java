@@ -53,6 +53,7 @@ public class CheckoutForRegisteredTestCases extends BaseTest
         Assert.assertTrue(newCartCounter>=oldCartCounter);
         cartPage.navigateToCartPage();
         cartPage.removeItem();
+        cartPage.navigateToHomePage();
 //        DataHelperAndWait.waitForTime(3000);
         DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
         DataHelperAndWait.clickOnElement(registrationPage.getLogoutOption(), webDriver);
@@ -334,6 +335,9 @@ catch (Exception e){
     public void verifyInabilityToUseInvalidCreditCardPaymentMethod() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
+        CartPage cartPage= new CartPage(webDriver);
+        cartPage.navigateToCartPage();
+        cartPage.removeItem();
         checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("invalidCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCloseCheckoutErr(), webDriver);

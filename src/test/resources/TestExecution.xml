@@ -24,7 +24,7 @@
 <!--                        <class name="sporter_test.guestCheckoutCycleTestCases.JordanGuestCheckoutCycleTestCases"/>-->
 <!--                        <class name="sporter_test.guestCheckoutCycleTestCases.KSAGuestCheckoutCycleTestCases"/>-->
 <!--                        <class name="sporter_test.checkoutForRegisteredUserTestCases.QatarCheckoutForRegisteredTestCases"/>-->
-                        <class name="sporter_test.RecommendedProductsTestCases.KSARecommendedProductTestCases">
+                        <class name="sporter_test.checkoutForRegisteredUserTestCases.EgyptCheckoutForRegisteredTestCases">
 <!--                        <class name="sporter_test.checkoutForRegisteredUserTestCases.UAECheckoutForRegisteredTestCases">-->
 <!--                            <methods>-->
 <!--                                <include name="verifyClickOnTheProductsAppearingInTheTopSellersSectionRedirectTheUserToCorrectUrl"/>-->
