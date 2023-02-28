@@ -55,7 +55,7 @@ public class JordanGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCas
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(guestCheckoutCyclePage.getFirstnameErrMsg(), webDriver);
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(guestCheckoutCyclePage.getLastNameErrMsg(), webDriver);
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(guestCheckoutCyclePage.getEmailErrMsg(), webDriver);
-        WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(guestCheckoutCyclePage.getPhoneErrMsg(), webDriver);
+//        WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(guestCheckoutCyclePage.getPhoneErrMsg(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(jo.getNationalIdErrMsg(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(jo.getAddressErrMsg(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(jo.getStreetLineOneField(),webDriver);

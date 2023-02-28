@@ -65,6 +65,7 @@
         <CartTitleAr>عربة التسوق</CartTitleAr>
         <smallLenghthPhoneErrEn>Text length does not satisfy specified text range</smallLenghthPhoneErrEn>
         <smallLenghthPhoneErrAr>Text length does not satisfy specified text range</smallLenghthPhoneErrAr>
+        <smallLenghthPhoneErrAr2>يرجى ادخال رقم صحيح</smallLenghthPhoneErrAr2>
         <AddressName>Automation Address</AddressName>
         <StreetOneAddressName>Automation Street 1 Address</StreetOneAddressName>
         <StreetTwoAddressName>Automation Street 2 Address</StreetTwoAddressName>

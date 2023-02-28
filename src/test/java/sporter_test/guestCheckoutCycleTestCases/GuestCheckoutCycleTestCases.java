@@ -148,7 +148,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
         if(webDriver.getCurrentUrl().contains("sporter.com/en")){
         WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getPhoneErrMsg(), webDriver,XmlReader.getXMLData("smallLenghthPhoneErrEn"));}
         if(webDriver.getCurrentUrl().contains("sporter.com/ar")){
-            WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getPhoneErrMsg(), webDriver,XmlReader.getXMLData("smallLenghthPhoneErrAr"));}
+            WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getPhoneErrMsg(), webDriver,XmlReader.getXMLData("smallLenghthPhoneErrAr2"));}
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(guestCheckoutCyclePage.getAddressErrMsg(), webDriver);
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(guestCheckoutCyclePage.getStreetlineOneErrMsg(), webDriver);
     }
@@ -325,7 +325,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("invalidCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCloseCheckoutErr(), webDriver);
     }
-    @Test(groups = {"2.01 Checkout Cycle( Guest User)", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when using a Free Coupon Code ", priority = 81)
+    @Test(groups = {"2.01 Checkout Cycle( Guest User)", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when using a Free Coupon Code ", priority = 99)
     public void verifyAbilityToPlaceOrderWhenUsingFreeCouponCode() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);

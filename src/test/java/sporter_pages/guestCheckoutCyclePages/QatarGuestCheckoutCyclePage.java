@@ -20,7 +20,7 @@ public class QatarGuestCheckoutCyclePage extends  GuestCheckoutCyclePage{
         super(webDriver);
         PageFactory.initElements(webDriver, this);
     }
-    @FindBy(xpath = "(//div[@id='_errMsg'])[4]")
+    @FindBy(id = "nationalIdField_errMsg")
     private WebElement nationalIdErrMsg;
     @FindBy(xpath = "(//div[@id='_errMsg'])[5]")
     private WebElement streetLineOneErrMsg;
