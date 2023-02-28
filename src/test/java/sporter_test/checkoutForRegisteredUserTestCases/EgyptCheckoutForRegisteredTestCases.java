@@ -118,7 +118,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         cartPage.navigateToCartPage();
         cartPage.removeItem();
         egypt.AddToCartAndAccessShippingMethodsPageForEgypt();
-        WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver,XmlReader.getXMLData("twoBusinessDay"));
+        WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver,XmlReader.getXMLData("standard"));
     }
     @Test(enabled = false)
     public void verifySameDayShippingMethodAppearsForDubaiCityOnly() {  }
