@@ -330,6 +330,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
+        cartPage.navigateToCartPage();
         DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);

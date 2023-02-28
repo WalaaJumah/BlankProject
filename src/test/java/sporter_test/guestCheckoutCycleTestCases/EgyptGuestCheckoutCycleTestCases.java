@@ -65,7 +65,8 @@ public class EgyptGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCase
     public void verifyInabilityToUseInvalidCreditCardPaymentMethod() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
+//        cartPage.addToCartAndDisplayTheCart();
+
         guestCheckoutCyclePage.navigateToShippingMethodsPage();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
