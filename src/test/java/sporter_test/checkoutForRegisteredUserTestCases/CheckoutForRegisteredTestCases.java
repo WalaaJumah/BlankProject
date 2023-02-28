@@ -340,9 +340,9 @@ catch (Exception e){
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        cartPage.navigateToCartPage();
-        cartPage.removeItem();
-        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
+//        cartPage.navigateToCartPage();
+//        cartPage.removeItem();
+//        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("invalidCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCloseCheckoutErr(), webDriver);
     }
