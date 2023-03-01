@@ -106,6 +106,9 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
 //        cartPage.navigateToCartPage();
 //        cartPage.removeItem();
 //        jordanCheckoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
+        guestCheckoutCyclePage.navigateToShippingMethodsPage();
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("invalidCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCloseCheckoutErr(), webDriver);
     }
