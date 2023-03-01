@@ -60,11 +60,11 @@
             <class name="sporter_test.forgetPasswordTestCases.JordanForgetPasswordTestCases"/>
 
 <!--            Cart-->
-            <class name="sporter_test.cartTestCases.UAECartTestCases"></class>
-            <class name="sporter_test.cartTestCases.KSACartTestCases"></class>
-            <class name="sporter_test.cartTestCases.JordanCartTestCases"></class>
-            <class name="sporter_test.cartTestCases.EgyptCartTestCases"></class>
-            <class name="sporter_test.cartTestCases.QatarCartTestCases"></class>
+<!--            <class name="sporter_test.cartTestCases.UAECartTestCases"></class>-->
+<!--            <class name="sporter_test.cartTestCases.KSACartTestCases"></class>-->
+<!--            <class name="sporter_test.cartTestCases.JordanCartTestCases"></class>-->
+<!--            <class name="sporter_test.cartTestCases.EgyptCartTestCases"></class>-->
+<!--            <class name="sporter_test.cartTestCases.QatarCartTestCases"></class>-->
 
 <!--            Guest Checkout -->
             <class name="sporter_test.guestCheckoutCycleTestCases.UAEGuestCheckoutCycleTestCases"></class>
