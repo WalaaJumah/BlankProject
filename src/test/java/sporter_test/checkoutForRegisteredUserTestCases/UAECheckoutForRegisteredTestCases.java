@@ -42,8 +42,9 @@ public class UAECheckoutForRegisteredTestCases extends CheckoutForRegisteredTest
         CartPage cartPage= new CartPage(webDriver);
         cartPage.navigateToCartPage();
 //        cartPage.removeItem();
-        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("invalidCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
+        guestCheckoutCyclePage.navigateToShippingMethodsPage();
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);        guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("invalidCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCloseCheckoutErr(), webDriver);
     }
 }
