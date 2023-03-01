@@ -108,7 +108,7 @@
 <!--    </test>-->
 
     <test name="Smoke Testing Report- STG" preserve-order="true">
-        <parameter name="environment" value="https://stg.sporter.com" />
+        <parameter name="environment" value="https://www.sporter.com" />
         <parameter name="browser" value="chrome" />
         <!--                <parameter name="country" value="en-qa" />-->
         <parameter name="bogoProduct" value="/the-pack-bcaas-flow" />
