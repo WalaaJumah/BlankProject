@@ -142,7 +142,7 @@ public class CartPage extends BasePage {
     @FindBy(id="removeItemBtn")
     private List<WebElement> removemoreThanProduct;
 //TODO: Ask Moamen About Coupon code
-@FindBy(xpath = "//button[@value='Cancel']")
+@FindBy(id = "removeCodeBtn")
 private WebElement cancelCouponCodeBtn;
 @FindBy(xpath = "//div[@data-bind='html: $parent.prepareMessageForHtml(message.text)']")
 private WebElement notExistCouponMsg;
@@ -220,7 +220,7 @@ for(int i=1;i<=productNumber;i++){
        DataHelperAndWait.waitToBeVisible(hereLink,webDriver);
        hereLink.click();}
        catch (Exception e){
-           DataHelperAndWait.waitToBeClickable(hereLink,webDriver);
+           DataHelperAndWait.hoverOnElementAndClick(hereLink,webDriver);
            hereLink.click();
        }
    }

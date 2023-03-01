@@ -23,11 +23,17 @@
 <!--                        <class name="sporter_test.checkoutForRegisteredUserTestCases.UAECheckoutForRegisteredTestCases">-->
 <!--                        <class name="sporter_test.guestCheckoutCycleTestCases.JordanGuestCheckoutCycleTestCases"/>-->
 <!--                        <class name="sporter_test.guestCheckoutCycleTestCases.KSAGuestCheckoutCycleTestCases"/>-->
-<!--                        <class name="sporter_test.checkoutForRegisteredUserTestCases.QatarCheckoutForRegisteredTestCases"/>-->
-                        <class name="sporter_test.checkoutForRegisteredUserTestCases.JordanCheckoutForRegisteredTestCases">
-<!--                        <class name="sporter_test.checkoutForRegisteredUserTestCases.UAECheckoutForRegisteredTestCases">-->
+                        <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases">
+<!--                        <class name="sporter_test.checkoutForRegisteredUserTestCases.UAECheckoutForRegisteredTestCases"/>-->
+<!--                            <class name="sporter_test.guestCheckoutCycleTestCases.UAEGuestCheckoutCycleTestCases"/>-->
+<!--                            <class name="sporter_test.guestCheckoutCycleTestCases.QatarGuestCheckoutCycleTestCases"/>-->
+
+                            <!--                        <class name="sporter_test.checkoutForRegisteredUserTestCases.UAECheckoutForRegisteredTestCases">-->
 <!--                            <methods>-->
-<!--                                <include name="verifyClickOnTheProductsAppearingInTheTopSellersSectionRedirectTheUserToCorrectUrl"/>-->
+<!--&lt;!&ndash;                                <include name="verifyAbilityToLoginCorrectlyWithValidCredentials"/>&ndash;&gt;-->
+<!--                                <include name="verifyInabilityToUseInvalidCreditCardPaymentMethod"/>-->
+<!--                                <include name="verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithValidCreditCardPaymentMethod"/>-->
+<!--                                <include name="verifyAbilityToSelectTheDoorToDoorShippingMethodWithValidCreditCardPaymentMethod"/>-->
 <!--&lt;!&ndash;                                <include name="verifyAbilityToPlaceOrderWhenUsingFreeCouponCode"/>&ndash;&gt;-->
 <!--&lt;!&ndash;                                <include name="verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithValidCreditCardPaymentMethod"/>&ndash;&gt;-->
 <!--&lt;!&ndash;                                <include name="verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCreditCardPaymentMethod"/>&ndash;&gt;-->

@@ -126,7 +126,7 @@ public class HomePageTestCases extends BaseTest {
         HomePage homePage = new HomePage(webDriver);
             WebElementsAssertion.validateTheElementIsDisplayed(homePage.getTopSellingStacksHeader(), webDriver);
             WebElementsAssertion.validateTheElementIsDisplayed(homePage.getTopSellingStacksSections(), webDriver);}
-    @Test(groups = { "1.2 High Severity"}, description = "{{CountryName}}: Make sure clicking on the view all button from the Top Selling Stacks section works correctly ", priority = 16)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure clicking on the view all button from the Top Selling Stacks section works correctly ", priority = 16)
     public void verifyViewAllBtnInTopSellingStacksSectionWorking() {
         HomePage homePage = new HomePage(webDriver);
         String expectedUrl = homePage.getViewAllBtnInTopSellingStacksSection().getAttribute("href");
@@ -254,7 +254,7 @@ public class HomePageTestCases extends BaseTest {
         homePage.navigateToHomePage();
         DataHelperAndWait.accessAllProductsInWidget(homePage.getProductsInTopSellingStacksSection(),homePage.getNextBtnInTopSellingStacksSection(),webDriver,homePage);
     }
-    @Test(groups = { "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure clicking on the products appearing in the Top Sellers section works correctly", priority = 44)
+    @Test(groups = { "1.2 High Severity"}, description = "{{CountryName}}: Make sure clicking on the products appearing in the Top Sellers section works correctly", priority = 44)
     public void verifyClickOnTheProductsAppearingInTheTopSellersSectionRedirectTheUserToCorrectUrl() {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
@@ -266,7 +266,7 @@ public class HomePageTestCases extends BaseTest {
         homePage.navigateToHomePage();
         DataHelperAndWait.accessAllProductsInWidget(homePage.getProductsInNewArrivalsSection(),homePage.getNextBtnInNewArrivalsSection(),webDriver,homePage);
     }
-    @Test(groups = { "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to access all categories inside Trending On Sporter Section Correctly", priority = 46)
+    @Test(groups = { "1.2 High Severity"}, description = "{{CountryName}}: Make sure ability to access all categories inside Trending On Sporter Section Correctly", priority = 46)
     public void verifyClickOnTheCategoriesAppearingInTheTrendingOnSporterSectionRedirectTheUserToCorrectUrl() {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();

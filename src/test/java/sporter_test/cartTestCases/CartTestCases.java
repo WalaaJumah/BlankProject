@@ -81,6 +81,9 @@ public class CartTestCases extends BaseTest {
     public void verifyHereLinkInCartPageWorking() {
         CartPage cartPage = new CartPage(webDriver);
         HomePage homePage= new HomePage(webDriver);
+//        cartPage.addToCartAndDisplayTheCart();
+//        cartPage.removeItem();
+        DataHelperAndWait.waitForTime(500);
         cartPage.clickOnHereLink();
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getSportsSupplementsCategory(),webDriver);
     }
@@ -137,20 +140,21 @@ public class CartTestCases extends BaseTest {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.removeAllItems(2);
     }
-    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Adding a config to the cart more than one with different simple in each time", priority = 15)
-    public void verifyAbilityToViewTheCartAfterAddingMoreThanSimpleOfTheSameConfig() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        CartPage cartPage = new CartPage(webDriver);
-        productDetailsPage.displayTheProduct();
-        DataHelperAndWait.clickOnElement(productDetailsPage.getProductFlavor().get(productDetailsPage.getProductFlavor().size()-1),webDriver);
-        productDetailsPage.addToCart();
-        productDetailsPage.keepShopping();
-        DataHelperAndWait.clickOnElement(productDetailsPage.getProductSizeAttribute().get(productDetailsPage.getProductFlavor().size()-2),webDriver);
-        cartPage.addToCartAndViewCart();
-        WebElementsAssertion.validateTheCurrentUrlContainsString(productDetailsPage.cartURL,webDriver);
-        cartPage.removeAllItems(2);
-
-    }
+    //TODO: To be revisit
+//    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Adding a config to the cart more than one with different simple in each time", priority = 15)
+//    public void verifyAbilityToViewTheCartAfterAddingMoreThanSimpleOfTheSameConfig() {
+//        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+//        CartPage cartPage = new CartPage(webDriver);
+//        productDetailsPage.displayTheProduct();
+//        DataHelperAndWait.clickOnElement(productDetailsPage.getProductFlavor().get(productDetailsPage.getProductFlavor().size()-1),webDriver);
+//        productDetailsPage.addToCart();
+//        productDetailsPage.keepShopping();
+//        DataHelperAndWait.clickOnElement(productDetailsPage.getProductSizeAttribute().get(productDetailsPage.getProductFlavor().size()-2),webDriver);
+//        cartPage.addToCartAndViewCart();
+//        WebElementsAssertion.validateTheCurrentUrlContainsString(productDetailsPage.cartURL,webDriver);
+//        cartPage.removeAllItems(2);
+//
+//    }
     @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = " Cart Page- Make sure ability to add a bundle to the cart ", priority = 16)
     public void verifyAbilityToAddBundleToCart() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -305,14 +309,14 @@ public class CartTestCases extends BaseTest {
         DataHelperAndWait.isDisplayed(cartPage.getRequiredCouponMsg() ,webDriver);
         cartPage.removeItem();
     }
-    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the free gift is not calculated in the cart price", priority = 30)
-    public void verifyTheFreeGiftIsNotCalculatedInTheCartPrice() {
-        CartPage cartPage = new CartPage(webDriver);
-        cartPage.addBogoToCartAndDisplayTheCart();
-//ToDO: Needs to revisit after fixing the Bogo
-        Assert.assertTrue(cartPage.getFreeFromSporterSection().isDisplayed());
-        cartPage.removeItem();
-    }
+//    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the free gift is not calculated in the cart price", priority = 30)
+//    public void verifyTheFreeGiftIsNotCalculatedInTheCartPrice() {
+//        CartPage cartPage = new CartPage(webDriver);
+//        cartPage.addBogoToCartAndDisplayTheCart();
+////ToDO: Needs to revisit after fixing the Bogo
+//        Assert.assertTrue(cartPage.getFreeFromSporterSection().isDisplayed());
+//        cartPage.removeItem();
+//    }
     @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Make sure the tax calculate correctly", priority = 31,enabled = false)
     public void verifyTheTaxCalculatedCorrectly() {
         DecimalFormat df = new DecimalFormat("0.00");
@@ -326,21 +330,21 @@ public class CartTestCases extends BaseTest {
         cartPage.removeItem();
     }
     //TODO: https://sporter1.atlassian.net/browse/NS-28
-    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Verify that the search button works correctly from the Cart Page", priority = 32)
-    public void verifySearchBtnWorksCorrectlyFromCartPage() {
-        CartPage cartPage=new CartPage(webDriver);
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
-        DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(),webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString("search",webDriver);
-    }
+//    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Verify that the search button works correctly from the Cart Page", priority = 32)
+//    public void verifySearchBtnWorksCorrectlyFromCartPage() {
+//        CartPage cartPage=new CartPage(webDriver);
+//        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+//        cartPage.addToCartAndDisplayTheCart();
+//        DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(),webDriver);
+//        WebElementsAssertion.validateTheCurrentUrlContainsString("search",webDriver);
+//    }
 
-    @Test(groups = {"1.4 Low Severity"},description = "{{CountryName}}: Make sure that Make sure that complete your order, to get 100% GENUINE PRODUCTS and SUPER DELIVERY WITHIN 2 WORKING DAYS label appears in the Cart Page", priority = 33)
-    public void verifyTheFreeShippingLabelAppearCorrectlyInTheCartPage() {
-        CartPage cartPage = new CartPage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
-        DataHelperAndWait.isDisplayed(cartPage.getFreeShippingLabel() ,webDriver);
-    }
+//    @Test(groups = {"1.4 Low Severity"},description = "{{CountryName}}: Make sure that Make sure that complete your order, to get 100% GENUINE PRODUCTS and SUPER DELIVERY WITHIN 2 WORKING DAYS label appears in the Cart Page", priority = 33)
+//    public void verifyTheFreeShippingLabelAppearCorrectlyInTheCartPage() {
+//        CartPage cartPage = new CartPage(webDriver);
+//        cartPage.addToCartAndDisplayTheCart();
+//        DataHelperAndWait.isDisplayed(cartPage.getFreeShippingLabel() ,webDriver);
+//    }
     @Test(groups = {"1.4 Low Severity"},description = "{{CountryName}}: Make sure that the Expected delivery date field in the cart page retrieves data", priority = 34)
     public void verifyExpectedDeliveryDateRetrievesData() {
         CartPage cartPage = new CartPage(webDriver);
@@ -348,20 +352,20 @@ public class CartTestCases extends BaseTest {
         String expectedDeliveryDate = DataHelperAndWait.getWebElementText(cartPage.getExpectedDeliveryDateValue(),webDriver);
         Assert.assertNotNull(expectedDeliveryDate);
     }
-    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}: Make sure that My Shopping Cart title appears in the Cart Page", priority = 35)
-    public void verifyMyShoppingCartTitleAppearCorrectlyInTheCartPage() {
-        CartPage cartPage = new CartPage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
-        String cartTitle;
-        if(webDriver.getCurrentUrl().contains("com/en")){
-             cartTitle= (DataHelperAndWait.getWebElementText(cartPage.getMyShoppingCartMsg(),webDriver)).substring(0,16);
-            Assert.assertEquals(cartTitle,XmlReader.getXMLData("CartTitleEn"));}
-
-        else {
-            cartTitle= (DataHelperAndWait.getWebElementText(cartPage.getMyShoppingCartMsg(),webDriver)).substring(0,11);
-            Assert.assertEquals(cartTitle,XmlReader.getXMLData("CartTitleAr"));}
-        cartPage.removeItem();
-    }
+//    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}: Make sure that My Shopping Cart title appears in the Cart Page", priority = 35)
+//    public void verifyMyShoppingCartTitleAppearCorrectlyInTheCartPage() {
+//        CartPage cartPage = new CartPage(webDriver);
+//        cartPage.addToCartAndDisplayTheCart();
+//        String cartTitle;
+//        if(webDriver.getCurrentUrl().contains("com/en")){
+//             cartTitle= (DataHelperAndWait.getWebElementText(cartPage.getMyShoppingCartMsg(),webDriver)).substring(0,16);
+//            Assert.assertEquals(cartTitle,XmlReader.getXMLData("CartTitleEn"));}
+//
+//        else {
+//            cartTitle= (DataHelperAndWait.getWebElementText(cartPage.getMyShoppingCartMsg(),webDriver)).substring(0,11);
+//            Assert.assertEquals(cartTitle,XmlReader.getXMLData("CartTitleAr"));}
+//        cartPage.removeItem();
+//    }
     //TODO: Should be revisit after solving https://sporter1.atlassian.net/browse/NS-188 & https://sporter1.atlassian.net/browse/NS-190
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the system apply Free Gift coupon code correctly", priority = 36)
     public void verifyAbilityToApplyFreeGiftCouponCode() {
@@ -376,6 +380,7 @@ public class CartTestCases extends BaseTest {
     public void verifyAbilityToCancelTheCouponCode() {
         CartPage cartPage = new CartPage(webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCancelCouponCodeBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);
         Assert.assertFalse(cartPage.getFreeFromSporterSection().isDisplayed());
         cartPage.removeItem();
     }

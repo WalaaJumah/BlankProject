@@ -16,6 +16,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.cartPages.CartPage;
 import sporter_pages.checkoutForRegisteredUserTPage.CheckoutForRegisteredPage;
+import sporter_pages.checkoutForRegisteredUserTPage.EgyptCheckoutForRegisteredPage;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import sporter_pages.homepage_classes.EgyptHomePage;
 import xml_reader.XmlReader;
@@ -37,7 +38,7 @@ public class EgyptCheckoutForRegisteredTestCases  extends CheckoutForRegisteredT
         storeCountry="Egypt";
        countryCode="20";
     }
-    @Test(groups = {"2.02 Checkout Cycle( Registered User)", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 9)
+    @Test(groups = {"2.02 Checkout Cycle( Registered User)", "All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 9)
     public void verifyOrderTotalCalculationInCartPageWorksCorrectly() {
         CartPage cartPage = new CartPage(webDriver);
         DecimalFormat df = new DecimalFormat("0.00");
@@ -109,17 +110,49 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
     }
     @Test(enabled = false)
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCreditCardPaymentMethod() { }
-    @Test(groups = {"2.02 Checkout Cycle( Registered User)","All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:Verify All Shipping Methods appear correctly", priority = 78)
+    @Test(groups = {"2.02 Checkout Cycle( Registered User)","All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}:Verify All Shipping Methods appear correctly", priority = 78)
     public void verifyAllShippingMethodsAppearCorrectly(){
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver);
-        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddressForDubaiCity();
-        WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver,XmlReader.getXMLData("twoBusinessDay"));
+        EgyptCheckoutForRegisteredPage egypt= new EgyptCheckoutForRegisteredPage(webDriver);
+        CartPage cartPage= new CartPage(webDriver);
+        cartPage.navigateToCartPage();
+        cartPage.removeItem();
+        egypt.AddToCartAndAccessShippingMethodsPageForEgypt();
+        WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver,XmlReader.getXMLData("standard"));
     }
     @Test(enabled = false)
     public void verifySameDayShippingMethodAppearsForDubaiCityOnly() {  }
     //TODO:The Same Day Delivery is Missing
     @Test(enabled = false)
     public void verifyAbilityToSelectSameDayShippingMethodCorrectly() {}
+    @Test(groups = {"2.02 Checkout Cycle( Registered User)", "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure Inability to continue the placing order process using invalid Credit Card", priority = 31)
+    public void verifyInabilityToUseInvalidCreditCardPaymentMethod() {
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
+        CartPage cartPage= new CartPage(webDriver);
+//        cartPage.navigateToCartPage();
+//        cartPage.removeItem();
+//        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
 
+        cartPage.addToCartAndDisplayTheCart();
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+        try{
+            checkoutForRegisteredPage.fillInShippingInformationInputField(
+                    XmlReader.getXMLData("firstName"),
+                    XmlReader.getXMLData("lastName"),
+                    XmlReader.getXMLData("phoneNumber"),
+                    XmlReader.getXMLData("AddressName"),
+                    XmlReader.getXMLData("StreetOneAddressName"),
+                    XmlReader.getXMLData("StreetTwoAddressName")
+            );}
+        catch (Exception e){
+            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
+        }
+        guestCheckoutCyclePage.clickOnContinueBtn();
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCreditCardPaymentMethod(),webDriver);
+        guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("invalidCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCloseCheckoutErr(), webDriver);
+    }
 }
