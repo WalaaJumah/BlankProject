@@ -47,6 +47,7 @@ public class QatarHomePageTestCases extends BaseTest {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
 //        qatarHomePage.navigate();
         for (int i = 0; i < qatarHomePage.getHomePageRotatingSliderPagingList().size(); i++) {
+            DataHelperAndWait.waitToBeVisible(qatarHomePage.getHomePageRotatingSliderPagingList().get(i),15,webDriver);
             qatarHomePage.getHomePageRotatingSliderPagingList().get(i).click();
             qatarHomePage.getBannerInRotatingSliderSection().click();
             qatarHomePage.verifyTheDisplayedPageDoesNotHaveErrors();

@@ -108,12 +108,12 @@
 <!--    </test>-->
 
     <test name="Smoke Testing Report- STG" preserve-order="true">
-        <parameter name="environment" value="https://stg-test.sporter.com" />
+        <parameter name="environment" value="https://stg.sporter.com" />
         <parameter name="browser" value="chrome" />
         <!--                <parameter name="country" value="en-qa" />-->
-        <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32569" />
+        <parameter name="bogoProduct" value="/the-pack-bcaas-flow" />
         <parameter name="oOSProduct" value="/monster-energy-super-fuel-sub-zero-box-of-12" />
-        <parameter name="bundleProductUrl" value="/healthy-food/novo-protein-chips-box-of-6/" />
+        <parameter name="bundleProductUrl" value="/grenade-carb-killa-protein-bar-box-of-12" />
         <groups>
             <run>
                 <include name="All Smoke Testing Result"/>
