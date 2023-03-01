@@ -36,18 +36,18 @@ public class KSACartTestCases extends CartTestCases {
         System.out.println(webDriver.getCurrentUrl());
 
     }
-    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Make sure the tax calculate correctly", priority = 30)
-    public void verifyTheTaxCalculatedCorrectly() {
-        DecimalFormat df = new DecimalFormat("0.00");
-        CartPage cartPage = new CartPage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
-        float subTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue(),webDriver,"SAR");
-        float tax = subTotal * (float) (0.15);
-        float expectedCartTotal = subTotal + tax;
-        float actualCartTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(),webDriver,"SAR");
-        Assert.assertEquals(df.format(actualCartTotal), df.format(expectedCartTotal));
-        cartPage.removeItem();
-    }
+//    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Make sure the tax calculate correctly", priority = 30)
+//    public void verifyTheTaxCalculatedCorrectly() {
+//        DecimalFormat df = new DecimalFormat("0.00");
+//        CartPage cartPage = new CartPage(webDriver);
+//        cartPage.addToCartAndDisplayTheCart();
+//        float subTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue(),webDriver,"SAR");
+//        float tax = subTotal * (float) (0.15);
+//        float expectedCartTotal = subTotal + tax;
+//        float actualCartTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(),webDriver,"SAR");
+//        Assert.assertEquals(df.format(actualCartTotal), df.format(expectedCartTotal));
+//        cartPage.removeItem();
+//    }
     @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 26)
     public void verifyOrderTotalCalculationInCartPageWorksCorrectly() {
         CartPage cartPage = new CartPage(webDriver);

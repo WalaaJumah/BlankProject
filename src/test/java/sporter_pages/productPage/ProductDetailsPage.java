@@ -202,9 +202,9 @@ public class ProductDetailsPage extends BasePage {
     }
     public void submitProductReview(String reviewDesc, String reviewSummary, String nickName) {
         DataHelperAndWait.clickOnElement(addReviewButton,webDriver);
-        DataHelperAndWait.typeTextInElement(reviewDescField,webDriver, XmlReader.getXMLData("reviewDesc"));
-        DataHelperAndWait.typeTextInElement(reviewSummaryField,webDriver, XmlReader.getXMLData("reviewSummary"));
-        DataHelperAndWait.typeTextInElement(nickNameField,webDriver, XmlReader.getXMLData("nickName"));
+        DataHelperAndWait.typeTextInElement(reviewDescField,webDriver,reviewDesc);
+        DataHelperAndWait.typeTextInElement(reviewSummaryField,webDriver, reviewSummary);
+        DataHelperAndWait.typeTextInElement(nickNameField,webDriver, nickName);
         DataHelperAndWait.clickOnElement(submitReviewButton,webDriver);
     }
     public void searchForBundle() {

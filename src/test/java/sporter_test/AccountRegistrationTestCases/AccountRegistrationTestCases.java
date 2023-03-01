@@ -92,7 +92,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(loginPage.getSignInOption(),webDriver);
 
     }
-    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:  Verify the Error Msg related to the Email AAlready Used appears in the correct screen", priority = 9)
+    @Test(groups = {"1.4 Low Severity"},description = "{{CountryName}}:  Verify the Error Msg related to the Email AAlready Used appears in the correct screen", priority = 9)
     public void verifyWhenRegisterAccountUsingEmailAlreadyRegisteredTheErrorMsgAppearsInCorrectScreen(){
         AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
         registerPage.navigateToRegistrationPage();
@@ -174,7 +174,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         if(webDriver.getCurrentUrl().contains("sporter.com/en")){
             WebElementsAssertion.assertionTextIsEqual(registerPage.getConfirmPasswordErrorMsg(),webDriver,XmlReader.getXMLData("requiredErrorMsEn"));
         }    }
-    @Test(groups = {"1.2 High Severity"},description = "{{CountryName}}:  Verify Inability to register new account Using email have incorrect Format", priority = 16)
+    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:  Verify Inability to register new account Using email have incorrect Format", priority = 16)
     public void verifyInabilityToRegisterAccountUsingEmailWithIncorrectFormat(){
         AccountRegistrationPage registerPage= new AccountRegistrationPage(webDriver);
         registerPage.navigateToRegistrationPage();

@@ -77,7 +77,7 @@ public class ProductDetailsTestCases extends BaseTest {
         productDetailsPage.selectStarInReview();
         productDetailsPage.submitProductReview(XmlReader.getXMLData("reviewDesc"),XmlReader.getXMLData("reviewSummary"),XmlReader.getXMLData("nickName"));
     }
-    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}:Make sure that the Successful message appears after submitting the review successfully ", priority = 8)
+    @Test(groups = {"All Smoke Testing Result","1.4 Low Severity"},description = "{{CountryName}}:Make sure that the Successful message appears after submitting the review successfully ", priority = 8)
     public void verifySuccessfulMsgAppearsAfterSubmittingTheReview() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.selectStarInReview();
@@ -135,7 +135,7 @@ public class ProductDetailsTestCases extends BaseTest {
         System.out.println(newSelectedOptionText);
         Assert.assertNotEquals(currentSelectedOptionText, newSelectedOptionText);
     }
-    @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify that the system display a label on the PDP to indicate for the customer he will get a free product", priority = 14)
+    @Test(groups = { "1.3 Medium Severity`"},description = "{{CountryName}}:Verify that the system display a label on the PDP to indicate for the customer he will get a free product", priority = 14)
     public void verifyTheresLabelInPdpToIndicateThatTheresAnOfferOnThisProduct() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.navigateToBogoProduct();
