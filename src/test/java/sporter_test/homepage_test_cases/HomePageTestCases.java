@@ -13,7 +13,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.HomePage;
 import xml_reader.XmlReader;
-//TODO: Add Country to the test case description
 @Test(groups = "2.05 HomePage")
 public class HomePageTestCases extends BaseTest {
 
