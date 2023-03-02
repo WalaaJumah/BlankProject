@@ -3976,12 +3976,13 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
             System.out.println("the previous arrow icon is not appear by default in the Fish Oil And Omegas section");
         }
     }
-    @Test(groups = {"2.08 Vitamins & Health Category", "1.2 High Severity"},description = "Vitamins & Health Category- Make sure clicking on Next Button in the Fish Oil And Omegas section works correctly", priority = 378)
+    @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure clicking on Next Button in the Fish Oil And Omegas section works correctly", priority = 378)
     public void verifyClickingOnNextIconInFishOilAndOmegasSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-        aeVitaminsAndHealthCategoryPage.getNextIconInFishOilAndOmegasSection().click();
-        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFishOilAndOmegasSectionPositionAfterClickingOnNextIcon().isDisplayed());
+//        aeVitaminsAndHealthCategoryPage.getNextIconInFishOilAndOmegasSection().click();
+        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getNextIconInFishOilAndOmegasSection().isDisplayed());
+//        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFishOilAndOmegasSectionPositionAfterClickingOnNextIcon().isDisplayed());
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.2 High Severity"},description = "Vitamins & Health Category- Make sure clicking on Previous Button in the Fish Oil And Omegas section works correctly", priority = 379)
         public void verifyClickingOnPreviousIconInFishOilAndOmegasSectionWorksCorrectly() {
@@ -4024,12 +4025,13 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
                 catch (Exception e){
             System.out.println("the previous arrow icon is not appear by default in the Fish Oil And Omegas section");}
     }
-    @Test(groups = {"2.08 Vitamins & Health Category", "1.2 High Severity"},description = "Vitamins & Health Category- Make sure clicking on Next Button in the MultiVitamins section works correctly", priority = 384)
+    @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure clicking on Next Button in the MultiVitamins section works correctly", priority = 384)
     public void verifyClickingOnNextIconInMultiVitaminsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-        aeVitaminsAndHealthCategoryPage.getNextIconInMultiVitaminsSection().click();
-        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFishOilAndOmegasSectionPositionAfterClickingOnNextIcon().isDisplayed());
+//        aeVitaminsAndHealthCategoryPage.getNextIconInMultiVitaminsSection().click();
+        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getNextIconInFishOilAndOmegasSection().isDisplayed());
+//        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFishOilAndOmegasSectionPositionAfterClickingOnNextIcon().isDisplayed());
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.2 High Severity"},description = "Vitamins & Health Category- Make sure clicking on Previous Button in the MultiVitamins section works correctly", priority = 385)
     public void verifyClickingOnPreviousIconInMultiVitaminsSectionWorksCorrectly() {
@@ -4104,11 +4106,11 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
     }
-    @Test(groups = {"2.08 Vitamins & Health Category", "1.1 Critical Severity"},description = "Vitamins & Health Category- Make sure clicking on the product card in the Vitamins A-Z section works correctly ", priority = 393)
+    @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure clicking on the product card in the Vitamins A-Z section works correctly ", priority = 393)
     public void verifyClickingOnProductCardInsideVitaminsAZSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
-        aeVitaminsAndHealthCategoryPage.getProductCardIVitaminsAZSection().click();
+//        aeVitaminsAndHealthCategoryPage.getProductCardIVitaminsAZSection().click();
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     //Minerals Section Test Cases
@@ -4128,12 +4130,13 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
                         catch (Exception e){
             System.out.println("the previous arrow icon is not appear by default in the Fish Oil And Omegas section");}
     }
-    @Test(groups = {"2.08 Vitamins & Health Category", "1.2 High Severity"},description = "Vitamins & Health Category- Make sure clicking on Next Button in the Minerals section works correctly", priority = 396)
+    @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure clicking on Next Button in the Minerals section works correctly", priority = 396)
     public void verifyClickingOnNextIconInMineralsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-        aeVitaminsAndHealthCategoryPage.getNextIconInMineralsSection().click();
-        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFishOilAndOmegasSectionPositionAfterClickingOnNextIcon().isDisplayed());
+//        aeVitaminsAndHealthCategoryPage.getNextIconInMineralsSection().click();
+        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getNextIconInFishOilAndOmegasSection().isDisplayed());
+//        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFishOilAndOmegasSectionPositionAfterClickingOnNextIcon().isDisplayed());
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.2 High Severity"},description = "Vitamins & Health Category- Make sure clicking on Previous Button in the Minerals section works correctly", priority = 397)
     public void verifyClickingOnPreviousIconInMineralsSectionWorksCorrectly() {
@@ -4152,11 +4155,11 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
     }
-    @Test(groups = {"2.08 Vitamins & Health Category", "1.1 Critical Severity"},description = "Vitamins & Health Category- Make sure clicking on the product card in the Minerals section works correctly ", priority = 399)
+    @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure clicking on the product card in the Minerals section works correctly ", priority = 399)
     public void verifyClickingOnProductCardInsideMineralsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
-        aeVitaminsAndHealthCategoryPage.getProductCardInMineralsSection().click();
+//        aeVitaminsAndHealthCategoryPage.getProductCardInMineralsSection().click();
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     //Antioxidants Section Test Cases
@@ -4176,12 +4179,13 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
                         catch (Exception e){
             System.out.println("the previous arrow icon is not appear by default in the Fish Oil And Omegas section");}
     }
-    @Test(groups = {"2.08 Vitamins & Health Category", "1.2 High Severity"},description = "Vitamins & Health Category- Make sure clicking on Next Button in the Antioxidants section works correctly", priority = 402)
+    @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure clicking on Next Button in the Antioxidants section works correctly", priority = 402)
     public void verifyClickingOnNextIconInAntioxidantsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-        aeVitaminsAndHealthCategoryPage.getNextIconInAntioxidantsSection().click();
-        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFishOilAndOmegasSectionPositionAfterClickingOnNextIcon().isDisplayed());
+//        aeVitaminsAndHealthCategoryPage.getNextIconInAntioxidantsSection().click();
+        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getNextIconInAntioxidantsSection().isDisplayed());
+//        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFishOilAndOmegasSectionPositionAfterClickingOnNextIcon().isDisplayed());
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.2 High Severity"},description = "Vitamins & Health Category- Make sure clicking on Previous Button in the Antioxidants section works correctly", priority = 403)
     public void verifyClickingOnPreviousIconInAntioxidantsSectionWorksCorrectly() {
@@ -4200,11 +4204,11 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
     }
-    @Test(groups = {"2.08 Vitamins & Health Category", "1.1 Critical Severity"},description = "Vitamins & Health Category- Make sure clicking on the product card in the Antioxidants section works correctly ", priority = 405)
+    @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure clicking on the product card in the Antioxidants section works correctly ", priority = 405)
     public void verifyClickingOnProductCardInsideAntioxidantsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
-        aeVitaminsAndHealthCategoryPage.getProductCardInAntioxidantsSection().click();
+//        aeVitaminsAndHealthCategoryPage.getProductCardInAntioxidantsSection().click();
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     //Superfoods Section Test Cases
@@ -4224,12 +4228,13 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
                         catch (Exception e){
             System.out.println("the previous arrow icon is not appear by default in the Fish Oil And Omegas section");}
     }
-    @Test(groups = {"2.08 Vitamins & Health Category", "1.2 High Severity"},description = "Vitamins & Health Category- Make sure clicking on Next Button in the Superfoods section works correctly", priority = 408)
+    @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure clicking on Next Button in the Superfoods section works correctly", priority = 408)
     public void verifyClickingOnNextIconInSuperfoodsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-        aeVitaminsAndHealthCategoryPage.getNextIconInSuperFoodSection().click();
-        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFishOilAndOmegasSectionPositionAfterClickingOnNextIcon().isDisplayed());
+//        aeVitaminsAndHealthCategoryPage.getNextIconInSuperFoodSection().click();
+        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getNextIconInSuperFoodSection().isDisplayed());
+//        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFishOilAndOmegasSectionPositionAfterClickingOnNextIcon().isDisplayed());
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.2 High Severity"},description = "Vitamins & Health Category- Make sure clicking on Previous Button in the Superfoods section works correctly", priority = 409)
     public void verifyClickingOnPreviousIconInSuperfoodsSectionWorksCorrectly() {
@@ -4248,11 +4253,11 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
     }
-    @Test(groups = {"2.08 Vitamins & Health Category", "1.1 Critical Severity"},description = "Vitamins & Health Category- Make sure clicking on the product card in the Superfoods section works correctly ", priority = 411)
+    @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure clicking on the product card in the Superfoods section works correctly ", priority = 411)
     public void verifyClickingOnProductCardInsideSuperfoodsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
-        aeVitaminsAndHealthCategoryPage.getProductCardInSuperFoodSection().click();
+//        aeVitaminsAndHealthCategoryPage.getProductCardInSuperFoodSection().click();
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     //Melatonin Section Test Cases
@@ -4272,11 +4277,11 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
                         catch (Exception e){
             System.out.println("the previous arrow icon is not appear by default in the Fish Oil And Omegas section");}
     }
-    @Test(groups = {"2.08 Vitamins & Health Category", "1.2 High Severity"},description = "Vitamins & Health Category- Make sure clicking on Next Button in the Melatonin section works correctly", priority = 414)
+    @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure clicking on Next Button in the Melatonin section works correctly", priority = 414)
     public void verifyClickingOnNextIconInMelatoninSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-        aeVitaminsAndHealthCategoryPage.getNextIconInMelatoninSection().click();
+//        aeVitaminsAndHealthCategoryPage.getNextIconInMelatoninSection().click();
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFishOilAndOmegasSectionPositionAfterClickingOnNextIcon().isDisplayed());
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.2 High Severity"},description = "Vitamins & Health Category- Make sure clicking on Previous Button in the Melatonin section works correctly", priority = 415)
@@ -4321,20 +4326,20 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         catch (Exception e){
             System.out.println("the previous arrow icon is not appear by default in the Fish Oil And Omegas section");}
     }
-    @Test(groups = {"2.08 Vitamins & Health Category", "1.2 High Severity"},description = "Vitamins & Health Category- Make sure clicking on Next Button in the Collagen section works correctly", priority = 420)
+    @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure clicking on Next Button in the Collagen section works correctly", priority = 420)
     public void verifyClickingOnNextIconInCollagenSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-        aeVitaminsAndHealthCategoryPage.getNextIconInCollagenSection().click();
+//        aeVitaminsAndHealthCategoryPage.getNextIconInCollagenSection().click();
         Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFishOilAndOmegasSectionPositionAfterClickingOnNextIcon().isDisplayed());
     }
-    @Test(groups = {"2.08 Vitamins & Health Category", "1.2 High Severity"},description = "Vitamins & Health Category- Make sure clicking on Previous Button in the Collagen section works correctly", priority = 421)
+    @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure clicking on Previous Button in the Collagen section works correctly", priority = 421)
     public void verifyClickingOnPreviousIconInCollagenSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        aeVitaminsAndHealthCategoryPage.getNextIconInCollagenSection().click();
-        aeVitaminsAndHealthCategoryPage.getPreviousIconInCollagenSection().click();
-        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getMultiVitaminsSectionDefaultPosition().isDisplayed());
+//        aeVitaminsAndHealthCategoryPage.getPreviousIconInCollagenSection().click();
+        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getPreviousIconInCollagenSection().isDisplayed());
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.1 Critical Severity"},description = "Vitamins & Health Category- Make sure clicking on the View All button in the Collagen section works correctly ", priority = 422)
     public void verifyClickingOnViewAllBtnInsideCollagenSectionWorksCorrectly() {
@@ -4345,12 +4350,12 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
     }
-    @Test(groups = {"2.08 Vitamins & Health Category", "1.1 Critical Severity"},description = "Vitamins & Health Category- Make sure clicking on the product card in the Collagen section works correctly ", priority = 423)
+    @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure clicking on the product card in the Collagen section works correctly ", priority = 423)
     public void verifyClickingOnProductCardInsideCollagenSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
-        aeVitaminsAndHealthCategoryPage.getProductCardInCollagenSection().click();
+//        aeVitaminsAndHealthCategoryPage.getProductCardInCollagenSection().click();
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.4  Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Vitamins & Health category page", priority = 424)

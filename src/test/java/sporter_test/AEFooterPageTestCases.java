@@ -432,7 +432,7 @@ public class AEFooterPageTestCases extends BaseTest {
     }
 
     //Bug: The system does not redirect the user to the Sporter LinkedIn page directly
-    @Test(groups = {"2.12 Footer Section", "1.1 Critical Severity"},description = " Footer Section- Make sure the Careers appears in the footer works correctly", priority = 40)
+    @Test(groups = {"2.12 Footer Section", "1.3 Medium Severity"},description = " Footer Section- Make sure the Careers appears in the footer works correctly", priority = 40)
     public void verifyCareersLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
