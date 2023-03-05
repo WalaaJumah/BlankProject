@@ -54,5 +54,22 @@ public class JordanCartTestCases extends CartTestCases {
 public void verifyIncreaseQtyBtnInCartPageWorking() {}
     @Test(enabled = false)
     public void verifyProductPriceChangesWhenChangingTheProductQtyFromTheCartPage(){}
+    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the Free Gift is removed from the cart when you remove the product For Bogo", priority = 11)
+    public void verifyTheFreeGiftIsRemovedWhenRemovingTheProductForBogo() {
+        CartPage cartPage = new CartPage(webDriver);
+        cartPage.navigateToCartPage();
+        cartPage.removeItem();
+        cartPage.addBogoToCartAndDisplayTheCart();
+        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getFreeFromSporterLabelInProductCard(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getNoItemInCartLabel(),webDriver);
+    }
+    @Test(groups = {"All Smoke Testing Result","1.4 Low Severity"},description = "{{CountryName}}: Make sure that the product counter that appears in the cart page counts the free gift correctly", priority = 12)
+    public void verifyProductCounterAppearsInTheCartPageCountsFreeGifts() {
+        CartPage cartPage = new CartPage(webDriver);
+//        cartPage.addToCartAndDisplayTheCart();
+        String itemsCounter = "2";
+        WebElementsAssertion.assertionTextIsEqual(cartPage.getItemsCounter(),webDriver,itemsCounter);
+    }
 
-}
+
+    }

@@ -192,6 +192,7 @@ private WebElement freeFromSporterLabelInProductCard;
    }
 
       public void addBogoToCartAndDisplayTheCart(){
+
        productDetailsPage.navigateToBogoProduct();
 //       DataHelperAndWait.waitForTime(2000);
        productDetailsPage.addToCart();
