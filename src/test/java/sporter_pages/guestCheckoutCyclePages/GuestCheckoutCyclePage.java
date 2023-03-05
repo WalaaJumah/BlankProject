@@ -152,30 +152,6 @@ private WebElement sameDayDelivery;
    private WebElement orderTotalValueInrReviewPage;
    @FindBy(xpath = "(//span[starts-with(@class,'shippingMethod_amount')])[1]")
    private WebElement firstShippingMethodAmount;
-   @FindBy(xpath="//a[contains(@href,'admin/sales/order/view/order_id')]")
-   private WebElement viewOrderMagento;
-   @FindBy(xpath="(//button[contains(@data-action,'grid-filter-expand')])[1]")
-   private WebElement orderFiltersBtnMagento;
-   @FindBy(xpath="(//button[contains(@data-action,'grid-filter-apply')])[1]")
-   private WebElement orderApplyFilterBtnMagento;
-   @FindBy(xpath="//input[@name='quote_id']")
-   private WebElement quoteIdSearchField;
-   @FindBy(id="order_ship")
-   private WebElement approveOrderBtn;
-   @FindBy(id="order-view-cancel-button")
-   private WebElement cancelOrderBtn;
-   @FindBy(id="(//button[contains(@title,'Submit Shipment')])[1]")
-   private WebElement submitShipmentBtn;
-   @FindBy(xpath="(//div[contains(@data-ui-id,'messages-message-success')])[1]")
-   private WebElement magentoSussMsg;
-   @FindBy(id="order_status")
-   private WebElement orderStatusMagento;
-   @FindBy(id="menu-magento-sales-sales")
-   private WebElement magentoSalesTab;
-   @FindBy(id="(//li[contains(@data-ui-id,'menu-magento-sales-sales')])[3]")
-   private WebElement magentoOrderTab;
-
-
     public void fillInShippingInformationInputField(String firstName, String lastName, String email, String phone, String address, String streetLineOne, String streetLineTwo) {
         DataHelperAndWait.waitToBeVisible(firstNameField ,webDriver);
         DataHelperAndWait.updateAllText(firstNameField,firstName);

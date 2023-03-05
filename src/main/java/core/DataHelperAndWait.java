@@ -241,7 +241,6 @@ public  class DataHelperAndWait  {
         webElement.click();}
         catch (Exception e){
             Actions action = new Actions(webDriver);
-            DataHelperAndWait.waitForTime(3000);
             DataHelperAndWait.waitToBeVisible(webElement,webDriver);
             action.moveToElement(webElement).click();}
         }
@@ -320,5 +319,9 @@ public  class DataHelperAndWait  {
         String numberOnly= text.replaceAll("[^0-9]", "");
         return numberOnly;
     }
-
+    public static void waitTillTextChanges(By element,WebDriver webDriver, String expectedText){
+        WebDriverWait wait;
+        wait = new WebDriverWait(webDriver, WaitTime);
+        wait.until(ExpectedConditions.invisibilityOfElementWithText(element,expectedText));
+    }
 }

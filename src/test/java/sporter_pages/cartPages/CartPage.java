@@ -9,11 +9,14 @@ package sporter_pages.cartPages;
 import core.BasePage;
 import core.DataHelperAndWait;
 import lombok.Getter;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.productPage.ProductDetailsPage;
@@ -95,6 +98,9 @@ public class CartPage extends BasePage {
     private List<WebElement> qtyFieldList;
     @FindBy(id = "cartItemQty")
     private WebElement qtyField;
+    @FindBy(xpath = "(//span[@id='cartItemQty'])[1]")
+    private WebElement firstQtyField;
+
     @FindBy(css = "#cartcloseIcon > path")
     private WebElement cartCloseIcon;
     @FindBy(id = "cartitemsCount")
@@ -156,6 +162,9 @@ private WebElement freePrice;
 private WebElement couponSuccessfulMsg;
 @FindBy(xpath = "//button[contains(@class,'popUp_btn_')]")
 private WebElement closeCouponSuccessfulMsg;
+@FindBy(xpath = "//div[starts-with(@class,'cartItem_freeGift')]")
+private WebElement freeFromSporterLabelInProductCard;
+
 
    public void addToCartAndDisplayTheCart(){
        productDetailsPage.displayTheProduct();
@@ -225,13 +234,16 @@ for(int i=1;i<=productNumber;i++){
        }
    }
 public void getFreeGiftByCoupon(){
-    DataHelperAndWait.typeTextInElement(applyCouponCodeBtn,webDriver, XmlReader.getXMLData("FreeCouponCode"));
+    DataHelperAndWait.typeTextInElement(couponCodeField,webDriver, XmlReader.getXMLData("FreeCouponCode"));
     DataHelperAndWait.clickOnElement(applyCouponCodeBtn,webDriver);
 }
 public void clickOnCartIcon(){
 //       DataHelperAndWait.waitForTime(2000);
-       DataHelperAndWait.waitToBeVisible(cartIcon,webDriver);
-    cartIcon.click();
-
+       DataHelperAndWait.clickOnElement(cartIcon,webDriver);
 }
+    public void waitTillQtyValueChanges( String expectedText){
+        WebDriverWait wait;
+        wait = new WebDriverWait(webDriver, 8);
+        wait.until(ExpectedConditions.invisibilityOfElementWithText(By.id("cartItemQty"),expectedText));
+    }
 }
