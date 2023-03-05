@@ -91,7 +91,7 @@ public class BaseTest{
 //                System.setProperty("webdriver.chrome.driver", "C:\\Users\\w.jumaa\\Downloads\\chromedriver1.exe");
                 System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriverVersion110.exe");
                 //This if we need to run the Script using the Normal WebDriver
-//                webDriver = new ChromeDriver();
+                webDriver = new ChromeDriver();
 
 
 
@@ -101,11 +101,11 @@ public class BaseTest{
 //                 webDriver = new ChromeDriver(opt);
 
                 //Chrome Headless from https://stackoverflow.com/questions/45562750/elementnotvisibleexception-when-use-headless-chrome-browser
-                ChromeOptions options = new ChromeOptions();
-                options.addArguments("headless");
-                options.addArguments("disable-gpu");
-                options.addArguments("window-size=1200,1100");
-                webDriver = new ChromeDriver(options);
+//                ChromeOptions options = new ChromeOptions();
+//                options.addArguments("headless");
+//                options.addArguments("disable-gpu");
+//                options.addArguments("window-size=1200,1100");
+//                webDriver = new ChromeDriver(options);
 
                 break;
             case "edge":

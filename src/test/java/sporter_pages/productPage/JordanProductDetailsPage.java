@@ -14,7 +14,6 @@ public class JordanProductDetailsPage extends ProductDetailsPage {
     public JordanProductDetailsPage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
-
     }
     @Override
     public void displayTheProduct() {
