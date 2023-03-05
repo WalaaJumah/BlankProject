@@ -23,7 +23,7 @@
 <!--                        <class name="sporter_test.checkoutForRegisteredUserTestCases.UAECheckoutForRegisteredTestCases">-->
 <!--                        <class name="sporter_test.guestCheckoutCycleTestCases.JordanGuestCheckoutCycleTestCases"/>-->
 <!--                        <class name="sporter_test.guestCheckoutCycleTestCases.KSAGuestCheckoutCycleTestCases"/>-->
-                        <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases">
+<!--                        <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases">-->
 <!--                        <class name="sporter_test.checkoutForRegisteredUserTestCases.UAECheckoutForRegisteredTestCases"/>-->
 <!--                            <class name="sporter_test.guestCheckoutCycleTestCases.UAEGuestCheckoutCycleTestCases"/>-->
 <!--                            <class name="sporter_test.guestCheckoutCycleTestCases.QatarGuestCheckoutCycleTestCases"/>-->
@@ -49,7 +49,7 @@
 <!--&lt;!&ndash;                                <include name="verifyHereLinkInCartPageWorking"/>&ndash;&gt;-->
 <!--&lt;!&ndash;                                <include name="verifyMainOptionsInTheMegaMenuAreDisplayed"/>&ndash;&gt;-->
 <!--                            </methods>-->
-                        </class>
+<!--                        </class>-->
 <!--            <class name="sporter_test.headerTestCases.KSAHeaderTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.UAEHeaderTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.JordanHeaderTestCases"/>-->
@@ -70,6 +70,20 @@
 <!--                        <class name="sporter_test.RecommendedProductsTestCases.QatarRecommendedProductTestCases"/>-->
 <!--                        <class name="sporter_test.RecommendedProductsTestCases.UAERecommendedProductTestCases"/>-->
 <!--                        <class name="sporter_test.RecommendedProductsTestCases.KSARecommendedProductTestCases"/>-->
+
+            <!--            Guest Checkout -->
+            <class name="sporter_test.guestCheckoutCycleTestCases.UAEGuestCheckoutCycleTestCases"></class>
+            <class name="sporter_test.guestCheckoutCycleTestCases.KSAGuestCheckoutCycleTestCases"></class>
+            <class name="sporter_test.guestCheckoutCycleTestCases.JordanGuestCheckoutCycleTestCases"></class>
+            <class name="sporter_test.guestCheckoutCycleTestCases.QatarGuestCheckoutCycleTestCases"></class>
+            <class name="sporter_test.guestCheckoutCycleTestCases.EgyptGuestCheckoutCycleTestCases"></class>
+
+            <!--            Registered Checkout-->
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.UAECheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.JordanCheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.QatarCheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.KSACheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.EgyptCheckoutForRegisteredTestCases"></class>
         </classes>
     </test>
 
