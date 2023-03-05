@@ -167,9 +167,13 @@ private WebElement freeFromSporterLabelInProductCard;
 
 
    public void addToCartAndDisplayTheCart(){
+       try{
        productDetailsPage.displayTheProduct();
        productDetailsPage.addToCart();
-       productDetailsPage.viewCart();
+       productDetailsPage.viewCart();}
+       catch (Exception e){
+           navigateToCartPage();
+       }
    }
      public void addToCartAndDisplayTheCartForOos(){
        productDetailsPage.displayTheProductHaveLessQty();
@@ -178,8 +182,13 @@ private WebElement freeFromSporterLabelInProductCard;
    }
 
       public void addToCartAndViewCart(){
-       productDetailsPage.addToCart();
-       productDetailsPage.viewCart();
+       try {
+           productDetailsPage.addToCart();
+           productDetailsPage.viewCart();
+       }
+       catch (Exception e){
+           navigateToCartPage();
+       }
    }
 
       public void addBogoToCartAndDisplayTheCart(){

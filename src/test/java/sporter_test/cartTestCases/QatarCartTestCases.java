@@ -39,6 +39,5 @@ public class QatarCartTestCases extends CartTestCases {
         float orderTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(),webDriver,"QAR");
         double cartTotal = subTotal + tax;
         Assert.assertEquals(orderTotal, cartTotal);
-        cartPage.removeItem();
     }
 }

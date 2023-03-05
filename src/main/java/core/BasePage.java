@@ -114,6 +114,9 @@ public class BasePage {
     public final  String youtubeURL = "https://www.youtube.com/user/SporterVideos";
     public final String searchUrl="catalogsearch/result/?q=";
     public final String productUrl = "/cellucor-c4";
+    public final String bogoUrlKSA = "/catalog-pro-32569-32569";
+    public final String bogoUrlQatar = "/catalog-pro-32569-32569";
+    public final String bogoUrlEgypt = "/cellucor-c4";
     public final String product2UrlLessQty = "/positive-nutrition-recharge-pods-53972";
     public  static String oOSProductUrl = "";
     public  static String bundleUrl = "";
@@ -144,11 +147,20 @@ public class BasePage {
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.pageNotFoundMsg), "Page Not Found Is Displayed and the URL is " + webDriver.getCurrentUrl());
     }
     public void navigateToBogoProduct(){
-        webDriver.navigate().to(BasePage.BaseURL+bogoProduct);
+            if(webDriver.getCurrentUrl().contains("ar-sa/")){
+                webDriver.navigate().to(BaseURL  + bogoUrlKSA);}
+            if(webDriver.getCurrentUrl().contains("en-eg/")){
+                webDriver.navigate().to(BaseURL  + bogoUrlEgypt);}
+        if(webDriver.getCurrentUrl().contains("en-qa/")){
+            webDriver.navigate().to(BaseURL  + bogoUrlQatar);}
+            else
+            {webDriver.navigate().to(BasePage.BaseURL+bogoProduct);
+
+    }
 //        DataHelperAndWait.waitForUrlContains(bogoProduct,webDriver);
     }
         public void displayBundle(){
-        webDriver.navigate().to(BasePage.BaseURL+aeDomain+bundleUrl);
+        webDriver.navigate().to(BasePage.BaseURL+bundleUrl);
         DataHelperAndWait.waitForUrlContains(bundleUrl,webDriver);
     }
 

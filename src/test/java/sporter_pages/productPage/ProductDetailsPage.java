@@ -147,7 +147,7 @@ public class ProductDetailsPage extends BasePage {
     //Methods we need during testing the Product details page
     public void displayTheProduct() {
         webDriver.navigate().to(BaseURL  + productUrl);
-        verifyTheDisplayedPageDoesNotHaveErrors();
+            verifyTheDisplayedPageDoesNotHaveErrors();
     }
         public void displayTheProductHaveLessQty() {
         webDriver.navigate().to(BaseURL + storeCountry + product2UrlLessQty);
