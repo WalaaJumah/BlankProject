@@ -113,7 +113,7 @@ public class BasePage {
     public final  String twitterURL = "https://twitter.com/sportercom?lang=en";
     public final  String youtubeURL = "https://www.youtube.com/user/SporterVideos";
     public final String searchUrl="catalogsearch/result/?q=";
-    public final String productUrl = "/optimum-gold-standard-100-whey";
+    public final String productUrl = "/cellucor-c4";
     public final String product2UrlLessQty = "/positive-nutrition-recharge-pods-53972";
     public  static String oOSProductUrl = "";
     public  static String bundleUrl = "";
