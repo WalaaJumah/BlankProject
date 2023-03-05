@@ -4,7 +4,7 @@
 <suite name="Automation Reports"  >
     <listeners>
 <!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
-        <listener class-name="extent_report_listner.ExtentReportListener" />
+<!--        <listener class-name="extent_report_listner.ExtentReportListener" />-->
     </listeners>
     <test name=" Sporter 2.1" preserve-order="true">-am
         <parameter name="environment" value="https://new.sporter.com" />
@@ -60,11 +60,11 @@
             <class name="sporter_test.forgetPasswordTestCases.JordanForgetPasswordTestCases"/>
 
 <!--            Cart-->
-<!--            <class name="sporter_test.cartTestCases.UAECartTestCases"></class>-->
-<!--            <class name="sporter_test.cartTestCases.KSACartTestCases"></class>-->
-<!--            <class name="sporter_test.cartTestCases.JordanCartTestCases"></class>-->
-<!--            <class name="sporter_test.cartTestCases.EgyptCartTestCases"></class>-->
-<!--            <class name="sporter_test.cartTestCases.QatarCartTestCases"></class>-->
+            <class name="sporter_test.cartTestCases.UAECartTestCases"></class>
+            <class name="sporter_test.cartTestCases.KSACartTestCases"></class>
+            <class name="sporter_test.cartTestCases.JordanCartTestCases"></class>
+            <class name="sporter_test.cartTestCases.EgyptCartTestCases"></class>
+            <class name="sporter_test.cartTestCases.QatarCartTestCases"></class>
 
 <!--            Guest Checkout -->
             <class name="sporter_test.guestCheckoutCycleTestCases.UAEGuestCheckoutCycleTestCases"></class>
