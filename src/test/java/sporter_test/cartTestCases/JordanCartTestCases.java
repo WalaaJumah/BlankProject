@@ -8,6 +8,7 @@ package sporter_test.cartTestCases;
 
 import core.BasePage;
 import core.DataHelperAndWait;
+import core.WebElementsAssertion;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -49,4 +50,9 @@ public class JordanCartTestCases extends CartTestCases {
         Assert.assertEquals(orderTotal, cartTotal);
         cartPage.removeItem();
     }
+@Test(enabled = false)
+public void verifyIncreaseQtyBtnInCartPageWorking() {}
+    @Test(enabled = false)
+    public void verifyProductPriceChangesWhenChangingTheProductQtyFromTheCartPage(){}
+
 }
