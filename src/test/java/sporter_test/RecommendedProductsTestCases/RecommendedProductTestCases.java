@@ -16,6 +16,7 @@ import sporter_pages.productPage.ProductDetailsPage;
 
 @Test(groups = "2.07 Recommended Products Page")
 public class RecommendedProductTestCases extends BaseTest {
+    String storeCountry;
     @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure the keep shopping button appearing the Recommended products works correctly ", priority = 1)
     public void verifyKeepShoppingBtnWorksCorrectly() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);

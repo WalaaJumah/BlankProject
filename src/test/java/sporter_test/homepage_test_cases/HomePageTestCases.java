@@ -15,6 +15,7 @@ import sporter_pages.homepage_classes.HomePage;
 import xml_reader.XmlReader;
 @Test(groups = "2.05 HomePage")
 public class HomePageTestCases extends BaseTest {
+    String storeCountry;
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the next button at the HomePage rotating slider section is displayed ", priority = 3)
     public void verifyNextArrowAtHomePageRotatingSliderIsDisplayed() {

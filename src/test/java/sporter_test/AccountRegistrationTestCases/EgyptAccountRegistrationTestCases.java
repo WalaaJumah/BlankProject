@@ -22,5 +22,6 @@ public class EgyptAccountRegistrationTestCases extends AccountRegistrationTestCa
         else {
             webDriver.navigate().to(BasePage.BaseURL+egyptHomePage.egyptDomain);
             CloseInitialDialog();          }
+
     }
 }

@@ -26,6 +26,7 @@ public class EgyptCartTestCases extends CartTestCases {
         else {
             webDriver.navigate().to(BasePage.BaseURL+egyptHomePage.egyptDomain);
             CloseInitialDialog();          }
+
     }
     @Test(enabled = false)
     public void verifyTheTaxCalculatedCorrectly() {}

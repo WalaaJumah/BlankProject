@@ -30,6 +30,7 @@ import java.util.List;
 
 public class CartTestCases extends BaseTest {
     String itemsCounter;
+    String storeCountry;
     @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure to view the cart from PDP after adding  product to it", priority = 1)
     public void viewCartFromPDP() {
         CartPage cartPage = new CartPage(webDriver);

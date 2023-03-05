@@ -24,6 +24,7 @@ import static org.testng.Assert.assertTrue;
 @Test(groups = "2.06 Product Details Page")
 
 public class ProductDetailsTestCases extends BaseTest {
+    String storeCountry;
     @Test(groups = { "1.1 Critical Severity"},description = "{{CountryName}}:Make sure the shopper is able to keep the shopping after adding the product to the cart ", priority = 1)
     public void keepShoppingAfterAddingToTheCart() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);

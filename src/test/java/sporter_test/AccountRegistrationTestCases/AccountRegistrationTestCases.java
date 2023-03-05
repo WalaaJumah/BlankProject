@@ -18,6 +18,7 @@ import xml_reader.XmlReader;
 
 @Test(groups = "2.03 Account Registration")
 public class AccountRegistrationTestCases extends BaseTest {
+    String storeCountry;
     @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:  Ability to access the New account registration screen From Account profile icon", priority = 1)
     public void verifyAbilityToAccessNewAccountRegistrationScreen(){
         HeaderSection header= new HeaderSection(webDriver);
