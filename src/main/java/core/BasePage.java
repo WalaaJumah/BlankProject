@@ -113,9 +113,10 @@ public class BasePage {
     public final  String twitterURL = "https://twitter.com/sportercom?lang=en";
     public final  String youtubeURL = "https://www.youtube.com/user/SporterVideos";
     public final String searchUrl="catalogsearch/result/?q=";
-    public static String productUrl = "/cellucor-c4";
+    public static String productUrl = "/optimum-gold-standard-100-whey";
     public static String productUrlKSA = "/cellucor-c4";
     public static String productUrlEgypt = "/cellucor-c4";
+    public static String productUrlJordan = "/optimum-gold-standard-100-whey";
     public final String bogoUrlKSA = "/catalog-pro-32569-32569";
     public final String bogoUrlQatar = "/catalog-pro-32569-32569";
     public final String bogoUrlEgypt = "/cellucor-c4";

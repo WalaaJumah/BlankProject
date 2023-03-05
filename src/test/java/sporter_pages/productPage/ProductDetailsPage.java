@@ -146,6 +146,9 @@ public class ProductDetailsPage extends BasePage {
 
     //Methods we need during testing the Product details page
     public void displayTheProduct() {
+        if(webDriver.getCurrentUrl().contains("en-jo")){
+            webDriver.navigate().to(BaseURL  + productUrlJordan);
+        }
         webDriver.navigate().to(BaseURL  + productUrl);
             verifyTheDisplayedPageDoesNotHaveErrors();
     }

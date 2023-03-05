@@ -61,6 +61,7 @@ public class CartTestCases extends BaseTest {
         CartPage cartPage = new CartPage(webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn() ,webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getDecreaseQtyBtn() ,webDriver);
+        DataHelperAndWait.waitForTime(500);
         try{
         WebElementsAssertion.assertionWebElementEqualText(cartPage.getQtyField(),webDriver, "2");}
         catch (AssertionError a){
