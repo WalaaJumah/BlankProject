@@ -427,7 +427,7 @@ public class CartTestCases extends BaseTest {
 public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
     ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
     CartPage cartPage= new CartPage(webDriver);
-    cartPage.navigateToCartPage();
+    cartPage.addToCartAndDisplayTheCart();
     Actions action = new Actions(webDriver);
     action.moveToElement(productDetailsPage.getShopByMenu()).perform();
     WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionForShopBy(),webDriver);
