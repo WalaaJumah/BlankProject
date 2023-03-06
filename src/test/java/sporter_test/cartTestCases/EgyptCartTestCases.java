@@ -105,6 +105,7 @@ public class EgyptCartTestCases extends CartTestCases {
     public void verifyAbilityToDisplayTheProductFromTheCartPage() {
         CartPage cartPage = new CartPage(webDriver);
         ProductDetailsPage productDetailsPage= new ProductDetailsPage(webDriver);
+        cartPage.navigateToCartPage();
         DataHelperAndWait.clickOnElement(cartPage.getProductNameForOneProduct(),webDriver);
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductName(),webDriver);
         WebElementsAssertion.validateTheCurrentUrlNotContainsString(cartPage.cartURL,webDriver);
@@ -130,5 +131,17 @@ public class EgyptCartTestCases extends CartTestCases {
         DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);
+    }
+    @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure to view the cart after adding more than quantity for the same product", priority = 14)
+    public void verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct() {
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        CartPage cartPage = new CartPage(webDriver);
+        cartPage.navigateToCartPage();
+        cartPage.removeItem();
+        productDetailsPage.displayTheProduct();
+        productDetailsPage.increaseTheQuantity();
+        cartPage.addToCartAndViewCart();
+        WebElementsAssertion.validateTheCurrentUrlContainsString(productDetailsPage.cartURL,webDriver);
+        cartPage.removeItem();
     }
 }
