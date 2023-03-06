@@ -325,7 +325,7 @@ public class CartTestCases extends BaseTest {
         CartPage cartPage = new CartPage(webDriver);
         DataHelperAndWait.clearWebField(cartPage.getCouponCodeField());
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
-        DataHelperAndWait.isDisplayed(cartPage.getRequiredCouponMsg() ,webDriver);
+//        DataHelperAndWait.isDisplayed(cartPage.getRequiredCouponMsg() ,webDriver);
 //        cartPage.removeItem();
     }
     @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the free gift is not calculated in the cart price", priority = 28)

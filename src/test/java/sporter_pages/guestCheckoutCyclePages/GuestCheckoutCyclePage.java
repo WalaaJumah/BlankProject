@@ -199,7 +199,9 @@ private WebElement sameDayDelivery;
             catch (Exception e){
                 cartPage.addToCartAndDisplayTheCart();
             }
-        DataHelperAndWait.waitForUrlContains(shippingInformationUrl,webDriver);
+            cartPage.clickOnCartIcon();
+            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+            DataHelperAndWait.waitForUrlContains(shippingInformationUrl,webDriver);
         DataHelperAndWait.clickOnElement(checkoutAsGuestBtn,webDriver);
     }
     public void setSelectDubaiCityCity(){

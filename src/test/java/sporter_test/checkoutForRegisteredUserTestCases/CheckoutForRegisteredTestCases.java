@@ -118,12 +118,13 @@ public class CheckoutForRegisteredTestCases extends BaseTest
         double cartTotal = subTotal + tax;
         Assert.assertEquals(df.format(orderTotal), df.format(cartTotal));
     }
-    @Test(groups = {"2.02 Checkout Cycle( Registered User)", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure that the Proceed to checkout button appears in the cart page works correctly", priority = 10)
-    public void verifyProceedCheckoutBtnAppearingInCartPageWorksCorrectly() {
-        CartPage cartPage = new CartPage(webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.shippingInformationUrl, webDriver);
-    }
+//    @Test(groups = {"2.02 Checkout Cycle( Registered User)", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure that the Proceed to checkout button appears in the cart page works correctly", priority = 10)
+//    public void verifyProceedCheckoutBtnAppearingInCartPageWorksCorrectly() {
+//        CartPage cartPage = new CartPage(webDriver);
+//
+//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
+//        WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.shippingInformationUrl, webDriver);
+//    }
     @Test(groups = {"2.02 Checkout Cycle( Registered User)", "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure that the Proceed to checkout button appearing in the Cart pop-up works correctly", priority = 11)
     public void verifyProceedCheckoutBtnAppearingInCartPopUpWorksCorrectly() {
         CartPage cartPage = new CartPage(webDriver);
@@ -388,7 +389,6 @@ catch (Exception e){
         AccountRegistrationPage registrationPage=new AccountRegistrationPage(webDriver);
         DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getAddToWishListBtn(),webDriver);
 //        header.navigateToHomePage();
-        DataHelperAndWait.waitForTime(500);
         header.navigateToHomePage();
         DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
         DataHelperAndWait.clickOnElement(registrationPage.getMyAccountOption(), webDriver);

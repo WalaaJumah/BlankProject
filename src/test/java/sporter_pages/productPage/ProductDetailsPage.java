@@ -80,7 +80,7 @@ public class ProductDetailsPage extends BasePage {
     private WebElement shopByMenu;
     @FindBy(id = "SubCategoriesContainer")
     private WebElement subCategoriesSectionInMegaMenu;
-    @FindBy(xpath = "//div[@id='SortCategoriesContainer']/div")
+    @FindBy(xpath = "(//div[@id='SortCategoriesContainer']/div)[1]")
     private WebElement subCategoriesSectionForShopBy;
     @FindBy(xpath = "(//div[@id='currentPrice'])[2]")
     private WebElement FinalProductPrice;
