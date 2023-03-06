@@ -9,7 +9,9 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/core/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/BasePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/productPage/ProductDetailsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/productPage/ProductDetailsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/cartTestCases/CartTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/cartTestCases/CartTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/cartTestCases/KSACartTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/cartTestCases/KSACartTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/cartTestCases/QatarCartTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/cartTestCases/QatarCartTestCases.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
