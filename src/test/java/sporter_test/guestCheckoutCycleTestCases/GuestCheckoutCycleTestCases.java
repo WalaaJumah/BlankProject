@@ -101,9 +101,9 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     public void verifyAllFieldsAppearCorrectlyInCheckoutMethodScreen() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.navigateToHomePage();
-        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
+//        cartPage.navigateToHomePage();
+//        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
+//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCheckoutMethodLabel(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCheckoutAsGuestHeader(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCheckoutAsGuestDescription(), webDriver);
@@ -126,7 +126,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     @Test(groups = {"2.01 Checkout Cycle( Guest User)", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure that the Checkout As A Guest button redirect the User to the Shipping information Form", priority = 10)
     public void verifyClickingOnCheckOutAsGuestUserBtnRedirectTheUserToShippingInformationForm() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        guestCheckoutCyclePage.navigateToCheckoutPage();
+//        guestCheckoutCyclePage.navigateToCheckoutPage();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCheckoutAsGuestBtn(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getRegisterAtSporterOption(), webDriver);
     }
@@ -175,7 +175,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
       @Test(groups = {"2.01 Checkout Cycle( Guest User)","All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}:Make sure the Guest user cannot submit the shipping information using invalid email format", priority = 15)
     public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidEmailFormat() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
+//        guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -295,6 +295,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     @Test(groups = {"2.01 Checkout Cycle( Guest User)", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Credit Card Payment Method ", priority = 29)
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCreditCardPaymentMethod() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+
 //        DataHelperAndWait.waitForTime(2000);
         String mainWindow= webDriver.getWindowHandle();
         Set<String> handles = webDriver.getWindowHandles();
@@ -305,12 +306,12 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
             }
         }
 // Close the pop-up window
-        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        Actions actions= new Actions(webDriver);
-        actions.sendKeys(Keys.ENTER).perform();
+//        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+//        Actions actions= new Actions(webDriver);
+//        actions.sendKeys(Keys.ENTER).perform();
 // Switch back to the main window
 //        webDriver.switchTo().window(mainWindow);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+//        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         guestCheckoutCyclePage.submitSecureAndAuthenticationCheckout();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getSuccessPage(),webDriver);
         orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
@@ -350,12 +351,12 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
             }
         }
 // Close the pop-up window
-        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        Actions actions= new Actions(webDriver);
-        actions.sendKeys(Keys.ENTER).perform();
+//        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+//        Actions actions= new Actions(webDriver);
+//        actions.sendKeys(Keys.ENTER).perform();
 // Switch back to the main window
 //        webDriver.switchTo().window(mainWindow);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+//        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         guestCheckoutCyclePage.submitSecureAndAuthenticationCheckout();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getSuccessPage(),webDriver);
         orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
