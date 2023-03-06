@@ -96,7 +96,7 @@ public class EgyptCartTestCases extends CartTestCases {
     public void verifyAbilityToViewTheCartAfterAddingMoreThanProducts() {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToCartPage();
-        cartPage.removeItem();
+//        cartPage.removeItem();
         cartPage.addToCartAndDisplayTheCart();
         cartPage.addBogoToCartAndDisplayTheCart();
         WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.cartURL,webDriver);

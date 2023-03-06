@@ -16,6 +16,10 @@ import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 public  class DataHelperAndWait  {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3663e3bca2556ad0907613bde0b8f0f041cc4c8a
     private static int WaitTime=15;
     //test5
 
