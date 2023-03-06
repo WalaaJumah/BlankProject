@@ -189,8 +189,11 @@ private WebElement sameDayDelivery;
         public void accessGuestCheckoutForm(){
 //        webDriver.navigate().to(BaseURL+shippingInformationUrl);
             CartPage cartPage = new CartPage(webDriver);
-            cartPage.navigateToCartPage();
-            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+//            cartPage.navigateToCartPage();
+//            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+            cartPage.navigateToHomePage();
+            cartPage.clickOnCartIcon();
+            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
         DataHelperAndWait.waitForUrlContains(shippingInformationUrl,webDriver);
         DataHelperAndWait.clickOnElement(checkoutAsGuestBtn,webDriver);
     }
