@@ -158,6 +158,10 @@ public class ProductDetailsPage extends BasePage {
             verifyTheDisplayedPageDoesNotHaveErrors();
     }
         public void displayTheProductHaveLessQty() {
+            if(webDriver.getCurrentUrl().contains("en-eg")){
+                webDriver.navigate().to(BaseURL  + productUrlEgypt);
+            }
+            else
         webDriver.navigate().to(BaseURL + product2UrlLessQty);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
