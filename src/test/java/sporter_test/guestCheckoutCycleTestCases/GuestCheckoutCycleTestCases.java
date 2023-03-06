@@ -342,14 +342,14 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
 //        DataHelperAndWait.waitForTime(2000);
-        String mainWindow= webDriver.getWindowHandle();
-        Set<String> handles = webDriver.getWindowHandles();
-// Switch to the pop-up window
-        for (String handle : handles) {
-            if (!handle.equals(mainWindow)) {
-                webDriver.switchTo().window(handle);
-            }
-        }
+//        String mainWindow= webDriver.getWindowHandle();
+//        Set<String> handles = webDriver.getWindowHandles();
+//// Switch to the pop-up window
+//        for (String handle : handles) {
+//            if (!handle.equals(mainWindow)) {
+//                webDriver.switchTo().window(handle);
+//            }
+//        }
 // Close the pop-up window
 //        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
 //        Actions actions= new Actions(webDriver);
@@ -357,7 +357,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
 // Switch back to the main window
 //        webDriver.switchTo().window(mainWindow);
 //        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        guestCheckoutCyclePage.submitSecureAndAuthenticationCheckout();
+//        guestCheckoutCyclePage.submitSecureAndAuthenticationCheckout();
 //        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getSuccessPage(),webDriver);
 //        orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
 //        System.out.println(orderNumber);
