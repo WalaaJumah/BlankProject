@@ -153,7 +153,7 @@ public class ProductDetailsPage extends BasePage {
             verifyTheDisplayedPageDoesNotHaveErrors();
     }
         public void displayTheProductHaveLessQty() {
-        webDriver.navigate().to(BaseURL + storeCountry + product2UrlLessQty);
+        webDriver.navigate().to(BaseURL + product2UrlLessQty);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
 

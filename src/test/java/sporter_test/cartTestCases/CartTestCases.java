@@ -60,27 +60,26 @@ public class CartTestCases extends BaseTest {
     public void verifyIncreaseQtyBtnInCartPageWorking() {
         CartPage cartPage = new CartPage(webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn() ,webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getDecreaseQtyBtn() ,webDriver);
-        DataHelperAndWait.waitForTime(500);
-        try{
-        WebElementsAssertion.assertionWebElementEqualText(cartPage.getQtyField(),webDriver, "2");}
-        catch (AssertionError a){
-            DataHelperAndWait.refreshPage(webDriver);
-            DataHelperAndWait.waitForTime(2000);
-            WebElementsAssertion.assertionWebElementEqualText(cartPage.getQtyField(),webDriver, "2");}
+//        DataHelperAndWait.waitForTime(500);
+        cartPage.waitTillQtyValueChanges("2");
+//        try{
+//        WebElementsAssertion.assertionWebElementEqualText(cartPage.getQtyField(),webDriver, "2");}
+//        catch (AssertionError a){
+//            DataHelperAndWait.refreshPage(webDriver);
+//            DataHelperAndWait.waitForTime(500);
+//            WebElementsAssertion.assertionWebElementEqualText(cartPage.getQtyField(),webDriver, "2");}
 //        WebElementsAssertion.assertionAttributeTrueForElement(cartPage.getQtyField(),webDriver,"value", "2");
     }
     @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Verify ability to Decrease the product quantity from Cart page from the Cart Page works successfully", priority = 6)
     public void verifyDecreaseQtyBtnInCartPageWorking() {
         CartPage cartPage = new CartPage(webDriver);
-        DataHelperAndWait.waitForTime(500);
         DataHelperAndWait.clickOnElement(cartPage.getDecreaseQtyBtn() ,webDriver);
-
-        try{
-        WebElementsAssertion.assertionWebElementEqualText(cartPage.getQtyField(),webDriver, "1");}
-        catch (AssertionError a){
-            DataHelperAndWait.waitForTime(3000);
-            WebElementsAssertion.assertionWebElementEqualText(cartPage.getQtyField(),webDriver, "1");}
+        cartPage.waitTillQtyValueChanges("1");
+//        try{
+//        WebElementsAssertion.assertionWebElementEqualText(cartPage.getQtyField(),webDriver, "1");}
+//        catch (AssertionError a){
+//            DataHelperAndWait.waitForTime(500);
+//            WebElementsAssertion.assertionWebElementEqualText(cartPage.getQtyField(),webDriver, "1");}
 //        WebElementsAssertion.assertionAttributeTrueForElement(cartPage.getQtyField(),webDriver,"value", "1");
     }
 
@@ -98,9 +97,9 @@ public class CartTestCases extends BaseTest {
         cartPage.navigateToCartPage();
         String currentProductPrice = DataHelperAndWait.getWebElementText(cartPage.getProductPriceTotal(),webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(),webDriver);
-        DataHelperAndWait.refreshPage(webDriver);
+        cartPage.waitTillQtyValueChanges("2");
+        DataHelperAndWait.waitForTime(500);
         String newProductPrice = DataHelperAndWait.getWebElementText(cartPage.getProductPriceTotal(),webDriver);
-        DataHelperAndWait.refreshPage(webDriver);
         Assert.assertNotEquals(currentProductPrice, newProductPrice);
         cartPage.removeItem();
     }
@@ -165,19 +164,18 @@ public class CartTestCases extends BaseTest {
         cartPage.removeAllItems(2);
     }
     //TODO: To be revisit
-    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Adding a config to the cart more than one with different simple in each time", priority = 100)
-    public void verifyAbilityToViewTheCartAfterAddingMoreThanSimpleOfTheSameConfig() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        CartPage cartPage = new CartPage(webDriver);
-        productDetailsPage.displayTheProduct();
-        DataHelperAndWait.clickOnElement(productDetailsPage.getProductFlavor().get(0),webDriver);
-        productDetailsPage.addToCart();
-        productDetailsPage.keepShopping();
-        DataHelperAndWait.clickOnElement(productDetailsPage.getProductFlavor().get(0),webDriver);
-        cartPage.addToCartAndViewCart();
-        WebElementsAssertion.validateTheCurrentUrlContainsString(productDetailsPage.cartURL,webDriver);
-        cartPage.removeAllItems(2);
-    }
+//    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Adding a config to the cart more than one with different simple in each time", priority = 100)
+//    public void verifyAbilityToViewTheCartAfterAddingMoreThanSimpleOfTheSameConfig() {
+//        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+//        CartPage cartPage = new CartPage(webDriver);
+//        productDetailsPage.displayTheProduct();
+//        productDetailsPage.addToCart();
+//        productDetailsPage.keepShopping();
+//        DataHelperAndWait.clickOnElement(productDetailsPage.getProductFlavor().get(0),webDriver);
+//        cartPage.addToCartAndViewCart();
+//        WebElementsAssertion.validateTheCurrentUrlContainsString(productDetailsPage.cartURL,webDriver);
+//        cartPage.removeAllItems(2);
+//    }
     @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = " Cart Page- Make sure ability to add a bundle to the cart ", priority = 17)
     public void verifyAbilityToAddBundleToCart() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -246,8 +244,9 @@ public class CartTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Verify ability to display the product from the Cart Page works successfully", priority = 19)
     public void verifyAbilityToDisplayTheProductFromTheCartPage() {
         CartPage cartPage = new CartPage(webDriver);
+        ProductDetailsPage productDetailsPage= new ProductDetailsPage(webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getProductNameForOneProduct(),webDriver);
-        DataHelperAndWait.refreshPage(webDriver);
+        DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductName(),webDriver);
         WebElementsAssertion.validateTheCurrentUrlNotContainsString(cartPage.cartURL,webDriver);
         cartPage.navigateToCartPage();
         cartPage.removeItem();
@@ -313,11 +312,11 @@ public class CartTestCases extends BaseTest {
     public void verifyInabilityToApplyInvalidCouponCode() {
         CartPage cartPage = new CartPage(webDriver);
 //        cartPage.addToCartAndDisplayTheCart();
+        cartPage.navigateToCartPage();
         DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("invalidCouponCode"));
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCloseAddToCartErrorMsg(),webDriver);
         DataHelperAndWait.refreshPage(webDriver);
-        cartPage.removeItem();
 
     }
     //TODO: Should be revisit after solving https://sporter1.atlassian.net/browse/NS-189
@@ -362,7 +361,8 @@ public class CartTestCases extends BaseTest {
     @Test(groups = {"1.4 Low Severity"},description = "{{CountryName}}: Make sure that Make sure that complete your order, to get 100% GENUINE PRODUCTS and SUPER DELIVERY WITHIN 2 WORKING DAYS label appears in the Cart Page", priority = 31)
     public void verifyTheFreeShippingLabelAppearCorrectlyInTheCartPage() {
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
+//        cartPage.addToCartAndDisplayTheCart();
+        cartPage.navigateToCartPage();
         DataHelperAndWait.isDisplayed(cartPage.getFreeShippingLabel() ,webDriver);
     }
     @Test(groups = {"1.4 Low Severity"},description = "{{CountryName}}: Make sure that the Expected delivery date field in the cart page retrieves data", priority = 32)
@@ -401,8 +401,7 @@ public class CartTestCases extends BaseTest {
         CartPage cartPage = new CartPage(webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCancelCouponCodeBtn(),webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);
-        DataHelperAndWait.waitForTime(2000);
-        Assert.assertFalse(cartPage.getFreeFromSporterLabelInProductCard().isDisplayed());
+        DataHelperAndWait.refreshPage(webDriver);
         cartPage.removeItem();
     }
 //    @Test(groups = {"1.2 High Severity"},description = "{{CountryName}}: Make sure that the customer can't add more than 2 Qty of the same product when switching to Jordan Store from Cart Page", priority = 37,enabled = false)

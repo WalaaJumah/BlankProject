@@ -5,39 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86683dee-3ff6-4652-96ae-dd8bddfbd97f" name="Changes" comment="Remove the implicit wait">
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/magentoOrderFlowPages/EgyptMagentoOrderFlowPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/magentoOrderFlowPages/JordanMagentoOrderFlowPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/magentoOrderFlowPages/KSAMagentoOrderFlowPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/magentoOrderFlowPages/QatarMagentoOrderFlowPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/magentoOrderFlowPages/UAEMagentoOrderFlowPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/magentoOrderFlowTestCases/EgyptMagentoOrderFlowTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/magentoOrderFlowTestCases/JordanMagentoOrderFlowTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/magentoOrderFlowTestCases/KSAMagentoOrderFlowTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/magentoOrderFlowTestCases/MagentoOrderFlowTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/magentoOrderFlowTestCases/QatarMagentoOrderFlowTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/magentoOrderFlowTestCases/UAEMagentoOrderFlowTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/cartPages/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/cartPages/CartPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/guestCheckoutCyclePages/GuestCheckoutCyclePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/guestCheckoutCyclePages/GuestCheckoutCyclePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/magentoOrderFlowPages/MagentoOrderFlowPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/magentoOrderFlowPages/MagentoOrderFlowPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/productPage/JordanProductDetailsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/productPage/JordanProductDetailsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/productPage/ProductDetailsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/productPage/ProductDetailsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AccountRegistrationTestCases/AccountRegistrationTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AccountRegistrationTestCases/AccountRegistrationTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AccountRegistrationTestCases/EgyptAccountRegistrationTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AccountRegistrationTestCases/EgyptAccountRegistrationTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/RecommendedProductsTestCases/RecommendedProductTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/RecommendedProductsTestCases/RecommendedProductTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/cartTestCases/CartTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/cartTestCases/CartTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/cartTestCases/EgyptCartTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/cartTestCases/EgyptCartTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/cartTestCases/JordanCartTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/cartTestCases/JordanCartTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/forgetPasswordTestCases/ForgetPasswordTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/forgetPasswordTestCases/ForgetPasswordTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/headerTestCases/HeaderTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/headerTestCases/HeaderTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/homepage_test_cases/HomePageTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/homepage_test_cases/HomePageTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/loginTestCases/LoginTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/loginTestCases/LoginTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/productTestCases/ProductDetailsTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/productTestCases/ProductDetailsTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/GenerateReport.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/GenerateReport.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
