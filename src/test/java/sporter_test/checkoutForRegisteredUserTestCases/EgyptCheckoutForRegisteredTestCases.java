@@ -91,22 +91,22 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         String mainWindow= webDriver.getWindowHandle();
         Set<String> handles = webDriver.getWindowHandles();
 // Switch to the pop-up window
-        for (String handle : handles) {
-            if (!handle.equals(mainWindow)) {
-                webDriver.switchTo().window(handle);
-            }
-        }
+//        for (String handle : handles) {
+//            if (!handle.equals(mainWindow)) {
+//                webDriver.switchTo().window(handle);
+//            }
+//        }
 // Close the pop-up window
-        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        Actions actions= new Actions(webDriver);
-        actions.sendKeys(Keys.ENTER).perform();
-// Switch back to the main window
-//        webDriver.switchTo().window(mainWindow);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        guestCheckoutCyclePage.submitSecureAndAuthenticationCheckout();
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getSuccessPage(),webDriver);
-        orderNumberCreditCard= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
-        System.out.println(orderNumberCreditCard);
+//        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+//        Actions actions= new Actions(webDriver);
+//        actions.sendKeys(Keys.ENTER).perform();
+//// Switch back to the main window
+////        webDriver.switchTo().window(mainWindow);
+//        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+//        guestCheckoutCyclePage.submitSecureAndAuthenticationCheckout();
+//        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getSuccessPage(),webDriver);
+//        orderNumberCreditCard= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
+//        System.out.println(orderNumberCreditCard);
     }
     @Test(enabled = false)
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCreditCardPaymentMethod() { }

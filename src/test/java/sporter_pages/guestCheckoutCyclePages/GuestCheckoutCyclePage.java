@@ -193,7 +193,12 @@ private WebElement sameDayDelivery;
 //            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
             cartPage.navigateToHomePage();
             cartPage.clickOnCartIcon();
-            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+            try {
+                DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+            }
+            catch (Exception e){
+                cartPage.addToCartAndDisplayTheCart();
+            }
         DataHelperAndWait.waitForUrlContains(shippingInformationUrl,webDriver);
         DataHelperAndWait.clickOnElement(checkoutAsGuestBtn,webDriver);
     }

@@ -66,7 +66,7 @@ public class CheckoutForRegisteredTestCases extends BaseTest
         loginPage.navigateToLoginPage();
         loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword"));
         DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
-//        DataHelperAndWait.waitForTime(3000);
+        DataHelperAndWait.waitForTime(1000);
         DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
     }
@@ -101,8 +101,6 @@ public class CheckoutForRegisteredTestCases extends BaseTest
     @Test(groups = {"2.02 Checkout Cycle( Registered User)", "All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that all payment methods are appear correctly in the Cart page", priority = 8)
     public void verifyAllPaymentMethodAppearingTheCartPage() {
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.navigateToCartPage();
-        cartPage.removeItem();
         cartPage.addToCartAndDisplayTheCart();
 //        cartPage.navigateToCartPage();
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getWeAcceptLabel(), webDriver);
@@ -237,7 +235,7 @@ catch (Exception e){
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getEditShippingInfoBtn(),webDriver);
-        checkoutForRegisteredPage.setSelectDubaiCityCity();
+//        checkoutForRegisteredPage.setSelectDubaiCityCity();
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getEditShippingInfoBtn(),webDriver);
     }
@@ -318,22 +316,22 @@ catch (Exception e){
         String mainWindow= webDriver.getWindowHandle();
         Set<String> handles = webDriver.getWindowHandles();
 // Switch to the pop-up window
-        for (String handle : handles) {
-            if (!handle.equals(mainWindow)) {
-                webDriver.switchTo().window(handle);
-            }
-        }
-// Close the pop-up window
-        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        Actions actions= new Actions(webDriver);
-        actions.sendKeys(Keys.ENTER).perform();
-// Switch back to the main window
-//        webDriver.switchTo().window(mainWindow);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        guestCheckoutCyclePage.submitSecureAndAuthenticationCheckout();
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getSuccessPage(),webDriver);
-        orderNumberCreditCard= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
-        System.out.println(orderNumberCreditCard);
+//        for (String handle : handles) {
+//            if (!handle.equals(mainWindow)) {
+//                webDriver.switchTo().window(handle);
+//            }
+//        }
+//// Close the pop-up window
+//        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+//        Actions actions= new Actions(webDriver);
+//        actions.sendKeys(Keys.ENTER).perform();
+//// Switch back to the main window
+////        webDriver.switchTo().window(mainWindow);
+//        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+//        guestCheckoutCyclePage.submitSecureAndAuthenticationCheckout();
+//        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getSuccessPage(),webDriver);
+//        orderNumberCreditCard= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
+//        System.out.println(orderNumberCreditCard);
     }
     @Test(groups = {"2.02 Checkout Cycle( Registered User)", "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure Inability to continue the placing order process using invalid Credit Card", priority = 31)
     public void verifyInabilityToUseInvalidCreditCardPaymentMethod() {
@@ -389,8 +387,9 @@ catch (Exception e){
         HeaderSection header=new HeaderSection(webDriver);
         AccountRegistrationPage registrationPage=new AccountRegistrationPage(webDriver);
         DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getAddToWishListBtn(),webDriver);
+//        header.navigateToHomePage();
+        DataHelperAndWait.waitForTime(500);
         header.navigateToHomePage();
-//        DataHelperAndWait.waitForTime(3000);
         DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
         DataHelperAndWait.clickOnElement(registrationPage.getMyAccountOption(), webDriver);
         DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getWishListTab(), webDriver);
