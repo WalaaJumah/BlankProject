@@ -12,7 +12,7 @@
         <!-- <parameter name="country" value="en-qa" />-->
         <parameter name="bogoProduct" value="/positive-nutrition-recharge-pods" />
         <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix" />
-        <parameter name="bundleProductUrl" value="/phd-nutrition-diet-whey-bar-box-of-12" />
+        <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/" />
         <classes>
             <!--            HomePage-->
             <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>

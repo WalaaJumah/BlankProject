@@ -12,8 +12,13 @@
         <!-- <parameter name="country" value="en-qa" />-->
         <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32569/" />
         <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix" />
-        <parameter name="bundleProductUrl" value="/3d-energy-drink-box-of-12/" />
+        <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/" />
         <classes>
+            <class name="sporter_test.cartTestCases.UAECartTestCases"></class>
+            <class name="sporter_test.cartTestCases.KSACartTestCases"></class>
+            <class name="sporter_test.cartTestCases.JordanCartTestCases"></class>
+            <class name="sporter_test.cartTestCases.EgyptCartTestCases"></class>
+            <class name="sporter_test.cartTestCases.QatarCartTestCases"></class>
             <!--            HomePage-->
 <!--                        <class name="sporter_test.forgetPasswordTestCases.KSAForgetPasswordTestCases"/>-->
 <!--                        <class name="sporter_test.forgetPasswordTestCases.JordanForgetPasswordTestCases"/>-->
@@ -72,18 +77,18 @@
 <!--                        <class name="sporter_test.RecommendedProductsTestCases.KSARecommendedProductTestCases"/>-->
 
             <!--            Guest Checkout -->
-            <class name="sporter_test.guestCheckoutCycleTestCases.UAEGuestCheckoutCycleTestCases"></class>
-            <class name="sporter_test.guestCheckoutCycleTestCases.KSAGuestCheckoutCycleTestCases"></class>
-            <class name="sporter_test.guestCheckoutCycleTestCases.JordanGuestCheckoutCycleTestCases"></class>
-            <class name="sporter_test.guestCheckoutCycleTestCases.QatarGuestCheckoutCycleTestCases"></class>
-            <class name="sporter_test.guestCheckoutCycleTestCases.EgyptGuestCheckoutCycleTestCases"></class>
+<!--            <class name="sporter_test.guestCheckoutCycleTestCases.UAEGuestCheckoutCycleTestCases"></class>-->
+<!--            <class name="sporter_test.guestCheckoutCycleTestCases.KSAGuestCheckoutCycleTestCases"></class>-->
+<!--            <class name="sporter_test.guestCheckoutCycleTestCases.JordanGuestCheckoutCycleTestCases"></class>-->
+<!--            <class name="sporter_test.guestCheckoutCycleTestCases.QatarGuestCheckoutCycleTestCases"></class>-->
+<!--            <class name="sporter_test.guestCheckoutCycleTestCases.EgyptGuestCheckoutCycleTestCases"></class>-->
 
-            <!--            Registered Checkout-->
-            <class name="sporter_test.checkoutForRegisteredUserTestCases.UAECheckoutForRegisteredTestCases"></class>
-            <class name="sporter_test.checkoutForRegisteredUserTestCases.JordanCheckoutForRegisteredTestCases"></class>
-            <class name="sporter_test.checkoutForRegisteredUserTestCases.QatarCheckoutForRegisteredTestCases"></class>
-            <class name="sporter_test.checkoutForRegisteredUserTestCases.KSACheckoutForRegisteredTestCases"></class>
-            <class name="sporter_test.checkoutForRegisteredUserTestCases.EgyptCheckoutForRegisteredTestCases"></class>
+<!--            &lt;!&ndash;            Registered Checkout&ndash;&gt;-->
+<!--            <class name="sporter_test.checkoutForRegisteredUserTestCases.UAECheckoutForRegisteredTestCases"></class>-->
+<!--            <class name="sporter_test.checkoutForRegisteredUserTestCases.JordanCheckoutForRegisteredTestCases"></class>-->
+<!--            <class name="sporter_test.checkoutForRegisteredUserTestCases.QatarCheckoutForRegisteredTestCases"></class>-->
+<!--            <class name="sporter_test.checkoutForRegisteredUserTestCases.KSACheckoutForRegisteredTestCases"></class>-->
+<!--            <class name="sporter_test.checkoutForRegisteredUserTestCases.EgyptCheckoutForRegisteredTestCases"></class>-->
         </classes>
     </test>
 
