@@ -16,11 +16,8 @@ import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 public  class DataHelperAndWait  {
-<<<<<<< HEAD
-    private static int WaitTime=10;
-=======
+
     private static int WaitTime=15;
->>>>>>> aa6771775b4074c04aa66b1e70005f91fb0d6b4a
     //test5
 
     public static   void waitForElement(WebElement element, WebDriver webDriver) {
