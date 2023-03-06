@@ -108,5 +108,13 @@ public class KSACartTestCases extends CartTestCases {
         DataHelperAndWait.refreshPage(webDriver);
 //        cartPage.removeItem();
     }
+    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Verify that the search button works correctly from the Cart Page", priority = 30)
+    public void verifySearchBtnWorksCorrectlyFromCartPage() {
+        CartPage cartPage=new CartPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        cartPage.navigateToCartPage();
+        DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(),webDriver);
+        WebElementsAssertion.validateTheCurrentUrlContainsString("search",webDriver);
+    }
 }
 

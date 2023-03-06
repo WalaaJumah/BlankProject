@@ -25,16 +25,6 @@ public class KSACheckoutForRegisteredPage extends CheckoutForRegisteredPage {
         cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
         try{
-        DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getAddNewAddressBtn(),webDriver);
-        this.fillInShippingInformationInputField(
-                XmlReader.getXMLData("firstName"),
-                XmlReader.getXMLData("lastName"),
-                XmlReader.getXMLData("ksaPhoneNumber"),
-                XmlReader.getXMLData("AddressName"),
-                XmlReader.getXMLData("StreetOneAddressName"),
-                XmlReader.getXMLData("StreetTwoAddressName")
-        );}
-        catch (Exception e){
             this.fillInShippingInformationInputField(
                     XmlReader.getXMLData("firstName"),
                     XmlReader.getXMLData("lastName"),
@@ -44,6 +34,18 @@ public class KSACheckoutForRegisteredPage extends CheckoutForRegisteredPage {
                     XmlReader.getXMLData("StreetTwoAddressName")
             );
         }
+        catch (Exception e){
+            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getAddNewAddressBtn(),webDriver);
+            this.fillInShippingInformationInputField(
+                    XmlReader.getXMLData("firstName"),
+                    XmlReader.getXMLData("lastName"),
+                    XmlReader.getXMLData("ksaPhoneNumber"),
+                    XmlReader.getXMLData("AddressName"),
+                    XmlReader.getXMLData("StreetOneAddressName"),
+                    XmlReader.getXMLData("StreetTwoAddressName")
+            );
+        }
+
 //        this.setSelectDubaiCityCity();
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);

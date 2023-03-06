@@ -261,12 +261,12 @@ public class CartTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the Free Gift does not have a price", priority = 22)
     public void verifyTheFreeGiftIsDoesNotHavePrice() {
         CartPage cartPage = new CartPage(webDriver);
-        try{
+//        try{
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getFreePrice(),webDriver);
-        cartPage.removeItem();}
-        catch (Exception e){
-            cartPage.removeItem();
-        }
+//        cartPage.removeItem();}
+//        catch (Exception e){
+//            cartPage.removeItem();
+//        }
     }
     @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure that all payment methods are appear correctly in the Cart page", priority = 21)
     public void verifyAllPaymentMethodAppearingTheCartPage() {
@@ -280,7 +280,7 @@ public class CartTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure that the Proceed to checkout button appears in the cart page works correctly", priority = 23)
     public void verifyProceedCheckoutBtnAppearsCorrectlyInCartPage() {
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
+//        cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
         WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.shippingInformationUrl,webDriver);
         cartPage.navigateToCartPage();
@@ -353,7 +353,7 @@ public class CartTestCases extends BaseTest {
     public void verifySearchBtnWorksCorrectlyFromCartPage() {
         CartPage cartPage=new CartPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
+//        cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(),webDriver);
         WebElementsAssertion.validateTheCurrentUrlContainsString("search",webDriver);
     }
@@ -375,7 +375,7 @@ public class CartTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}: Make sure that My Shopping Cart title appears in the Cart Page", priority = 33)
     public void verifyMyShoppingCartTitleAppearCorrectlyInTheCartPage() {
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
+        cartPage.navigateToCartPage();
         String cartTitle;
         if(webDriver.getCurrentUrl().contains("com/en")){
              cartTitle= (DataHelperAndWait.getWebElementText(cartPage.getMyShoppingCartMsg(),webDriver)).substring(0,16);
@@ -427,7 +427,7 @@ public class CartTestCases extends BaseTest {
 public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
     ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
     CartPage cartPage= new CartPage(webDriver);
-    cartPage.addToCartAndDisplayTheCart();
+//    cartPage.addToCartAndDisplayTheCart();
     Actions action = new Actions(webDriver);
     action.moveToElement(productDetailsPage.getShopByMenu()).perform();
     WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionForShopBy(),webDriver);
