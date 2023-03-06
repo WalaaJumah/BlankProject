@@ -114,7 +114,7 @@ public class BasePage {
     public final  String youtubeURL = "https://www.youtube.com/user/SporterVideos";
     public final String searchUrl="catalogsearch/result/?q=";
     public static String productUrl = "/optimum-gold-standard-100-whey";
-    public static String productUrlKSA = "/cellucor-c4";
+    public static String productUrlKSA = "/the-pack-wild-pre-workout";
     public static String productUrlEgypt = "/cellucor-c4";
     public static String productUrlJordan = "/optimum-gold-standard-100-whey";
     public final String bogoUrlKSA = "/catalog-pro-32569-32569";
@@ -152,9 +152,10 @@ public class BasePage {
     public void navigateToBogoProduct(){
             if(webDriver.getCurrentUrl().contains("ar-sa/")){
                 webDriver.navigate().to(BaseURL  + bogoUrlKSA);}
-            if(webDriver.getCurrentUrl().contains("en-eg/")){
+
+            else if(webDriver.getCurrentUrl().contains("en-eg/")){
                 webDriver.navigate().to(BaseURL  + bogoUrlEgypt);}
-        if(webDriver.getCurrentUrl().contains("en-qa/")){
+            else if(webDriver.getCurrentUrl().contains("en-qa/")){
             webDriver.navigate().to(BaseURL  + bogoUrlQatar);}
             else
             {webDriver.navigate().to(BasePage.BaseURL+bogoProduct);

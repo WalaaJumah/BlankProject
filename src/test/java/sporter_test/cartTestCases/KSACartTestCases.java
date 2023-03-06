@@ -87,5 +87,26 @@ public class KSACartTestCases extends CartTestCases {
     }
     @Test(enabled = false)
     public void verifyAbilityToViewTheCartAfterAddingMoreThanSimpleOfTheSameConfig(){}
+    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the product price is changed when you change the quantity from the Cart Page", priority = 8)
+    public void verifyProductPriceChangesWhenChangingTheProductQtyFromTheCartPage() {
+        CartPage cartPage = new CartPage(webDriver);
+        cartPage.navigateToCartPage();
+        String currentProductPrice = DataHelperAndWait.getWebElementText(cartPage.getProductPriceTotal(),webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getDecreaseQtyBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(),webDriver);
+        cartPage.waitTillQtyValueChanges("2");
+        DataHelperAndWait.waitForTime(500);
+        String newProductPrice = DataHelperAndWait.getWebElementText(cartPage.getProductPriceTotal(),webDriver);
+        Assert.assertNotEquals(currentProductPrice, newProductPrice);
+        cartPage.removeItem();
+    }
+    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the system cancel the coupon code correctly", priority = 35)
+    public void verifyAbilityToCancelTheCouponCode() {
+        CartPage cartPage = new CartPage(webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getCancelCouponCodeBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);
+        DataHelperAndWait.refreshPage(webDriver);
+//        cartPage.removeItem();
+    }
 }
 

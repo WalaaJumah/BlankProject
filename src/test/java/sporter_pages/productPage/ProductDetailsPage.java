@@ -149,6 +149,11 @@ public class ProductDetailsPage extends BasePage {
         if(webDriver.getCurrentUrl().contains("en-jo")){
             webDriver.navigate().to(BaseURL  + productUrlJordan);
         }
+            if(webDriver.getCurrentUrl().contains("ar-sa")){
+            webDriver.navigate().to(BaseURL  + productUrlKSA);
+        }
+
+        else
         webDriver.navigate().to(BaseURL  + productUrl);
             verifyTheDisplayedPageDoesNotHaveErrors();
     }
