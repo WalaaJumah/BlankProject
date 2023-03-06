@@ -35,7 +35,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getAddToCartBtn(), webDriver);
     }
 
-    @Test(groups = {"2.01 Checkout Cycle( Guest User)", "All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Verify ability to remove the product from the cart successfully", priority = 1)
+    @Test(groups = {"2.01 Checkout Cycle( Guest User)", "All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Verify ability to remove the product from the cart successfully", priority = 2)
     public void verifyAbilityToRemoveProductFromCart() {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToCartPage();
@@ -43,33 +43,32 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getNoItemInCartLabel(), webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure to add product to the Cart from Product Details Page", priority = 2)
+    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure to add product to the Cart from Product Details Page", priority = 3)
     public void addToCartAndViewCartFromPDP() {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
         WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.cartURL, webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure to view the Cart using cart icon appearing at the top of screen", priority = 3)
+    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure to view the Cart using cart icon appearing at the top of screen", priority = 4)
     public void viewCartFromCartIcon() {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getViewCartInCartPopup(), webDriver);
         WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.cartURL, webDriver);
-        cartPage.removeItem();
     }
 
-    @Test(groups = {"2.01 Checkout Cycle( Guest User)", "All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that all payment methods are appear correctly in the Cart page", priority = 4)
+    @Test(groups = {"2.01 Checkout Cycle( Guest User)", "All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that all payment methods are appear correctly in the Cart page", priority = 5)
     public void verifyAllPaymentMethodAppearingTheCartPage() {
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
+//        cartPage.addToCartAndDisplayTheCart();
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getWeAcceptLabel(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCODOption(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCreditCardOption(), webDriver);
     }
 
-    @Test(groups = {"2.01 Checkout Cycle( Guest User)", "All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 5)
+    @Test(groups = {"2.01 Checkout Cycle( Guest User)", "All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 6)
     public void verifyOrderTotalCalculationInCartPageWorksCorrectly() {
         CartPage cartPage = new CartPage(webDriver);
         DecimalFormat df = new DecimalFormat("0.00");
@@ -81,9 +80,10 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
         Assert.assertEquals(df.format(orderTotal), df.format(cartTotal));
     }
 
-    @Test(groups = {"2.01 Checkout Cycle( Guest User)", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure that the Proceed to checkout button appears in the cart page works correctly", priority = 6)
+    @Test(groups = {"2.01 Checkout Cycle( Guest User)", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure that the Proceed to checkout button appears in the cart page works correctly", priority = 4)
     public void verifyProceedCheckoutBtnAppearingInCartPageWorksCorrectly() {
         CartPage cartPage = new CartPage(webDriver);
+        DataHelperAndWait.scrollToPositionZero(webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
         WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.shippingInformationUrl, webDriver);
     }
