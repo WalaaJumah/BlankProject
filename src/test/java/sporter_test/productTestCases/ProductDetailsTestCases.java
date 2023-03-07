@@ -84,7 +84,8 @@ public class ProductDetailsTestCases extends BaseTest {
         productDetailsPage.selectStarInReview();
         productDetailsPage.submitProductReview(XmlReader.getXMLData("reviewDesc"),XmlReader.getXMLData("reviewSummary"),XmlReader.getXMLData("nickName"));
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getReviewToastMsg(),webDriver);
-        DataHelperAndWait.clickOnElement(productDetailsPage.getReviewToastMsg(),webDriver);
+//        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getReviewToastMsgBtn(),webDriver);
+//        DataHelperAndWait.clickOnElement(productDetailsPage.getReviewToastMsgBtn(),webDriver);
     }
     @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}:Make sure that the customer is unable to submit his review without selecting any star ", priority = 9)
     public void verifyInabilityToSubmitReviewWithoutSelectingStar() {
@@ -99,8 +100,8 @@ public class ProductDetailsTestCases extends BaseTest {
         productDetailsPage.displayTheProduct();
         productDetailsPage.selectStarInReview();
         productDetailsPage.submitProductReview(XmlReader.getXMLData("reviewDescLong"),XmlReader.getXMLData("reviewSummaryLong"),XmlReader.getXMLData("nickNameLong"));
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getReviewToastMsg(),webDriver);
-        DataHelperAndWait.clickOnElement(productDetailsPage.getReviewToastMsg(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getReviewToastMsgBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(productDetailsPage.getReviewToastMsgBtn(),webDriver);
     }
     @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}:Make sure that the customer can navigate to the home page using the BreadCrumb ", priority = 11)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumb() {

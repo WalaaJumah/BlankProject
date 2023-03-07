@@ -12,11 +12,9 @@ import core.WebElementsAssertion;
 import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import sporter_pages.homepage_classes.HomePage;
-import xml_reader.XmlReader;
 
 import java.util.List;
 @Getter
@@ -71,6 +69,8 @@ public class ProductDetailsPage extends BasePage {
     @FindBy(xpath = "//div[starts-with(@class,'productReview_rErr')]")
     private WebElement reviewErrorMsgRelatedToStars;
     @FindBy(xpath = "//button[contains(@class,'popUp_btn')]")
+    private WebElement reviewToastMsgBtn;
+      @FindBy(xpath = "//div[contains(@class,'popUp_popUp')]")
     private WebElement reviewToastMsg;
     @FindBy(id = "pathSegment_0")
     private WebElement HomeBreadcrumbs;
@@ -151,6 +151,9 @@ public class ProductDetailsPage extends BasePage {
         }
             if(webDriver.getCurrentUrl().contains("ar-sa")){
             webDriver.navigate().to(BaseURL  + productUrlKSA);
+        }
+        if(webDriver.getCurrentUrl().contains("en-eg")){
+            webDriver.navigate().to(BaseURL  + productUrlEgypt);
         }
 
         else
