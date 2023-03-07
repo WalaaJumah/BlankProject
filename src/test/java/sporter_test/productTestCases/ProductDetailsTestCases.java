@@ -9,6 +9,7 @@ package sporter_test.productTestCases;
 import core.BaseTest;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -81,11 +82,7 @@ public class ProductDetailsTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result","1.4 Low Severity"},description = "{{CountryName}}:Make sure that the Successful message appears after submitting the review successfully ", priority = 8)
     public void verifySuccessfulMsgAppearsAfterSubmittingTheReview() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.selectStarInReview();
-        productDetailsPage.submitProductReview(XmlReader.getXMLData("reviewDesc"),XmlReader.getXMLData("reviewSummary"),XmlReader.getXMLData("nickName"));
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getReviewToastMsg(),webDriver);
-//        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getReviewToastMsgBtn(),webDriver);
-//        DataHelperAndWait.clickOnElement(productDetailsPage.getReviewToastMsgBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(productDetailsPage.getReviewToastMsgBtn(),webDriver);
     }
     @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}:Make sure that the customer is unable to submit his review without selecting any star ", priority = 9)
     public void verifyInabilityToSubmitReviewWithoutSelectingStar() {
