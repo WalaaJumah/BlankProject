@@ -212,6 +212,11 @@ private WebElement freeFromSporterLabelInProductCard;
         DataHelperAndWait.waitToBeClickable(this.removeItemBtn ,webDriver);
         this.removeItemBtn.click();
     }
+    public void clearCart()
+    {
+        this.navigateToCartPage();
+        this.removeItem();
+    }
     public void removeAllItems(int productNumber) {
 for(int i=1;i<=productNumber;i++){
     DataHelperAndWait.clickOnElement(removeItemBtn,webDriver);

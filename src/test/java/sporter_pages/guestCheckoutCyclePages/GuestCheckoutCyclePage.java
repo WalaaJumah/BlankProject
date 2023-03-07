@@ -187,22 +187,43 @@ private WebElement sameDayDelivery;
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
     }
         public void accessGuestCheckoutForm(){
-//        webDriver.navigate().to(BaseURL+shippingInformationUrl);
+////        webDriver.navigate().to(BaseURL+shippingInformationUrl);
+//            CartPage cartPage = new CartPage(webDriver);
+////            cartPage.navigateToCartPage();
+////            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+//            cartPage.addToCartAndDisplayTheCart();
+//            cartPage.clickOnCartIcon();
+//            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+//
+////            try {
+////                DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+////            }
+////            catch (Exception e){
+////                cartPage.addToCartAndDisplayTheCart();
+////            }
+////            cartPage.clickOnCartIcon();
+////            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+//            DataHelperAndWait.waitForUrlContains(shippingInformationUrl,webDriver);
+//        DataHelperAndWait.clickOnElement(checkoutAsGuestBtn,webDriver);
+            webDriver.navigate().to(BaseURL+shippingInformationUrl);
             CartPage cartPage = new CartPage(webDriver);
 //            cartPage.navigateToCartPage();
 //            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
-            cartPage.navigateToHomePage();
-            cartPage.clickOnCartIcon();
-            try {
-                DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-            }
-            catch (Exception e){
-                cartPage.addToCartAndDisplayTheCart();
-            }
-            cartPage.clickOnCartIcon();
-            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+            cartPage.addToCartAndDisplayTheCart();
+//            cartPage.clickOnCartIcon();
+//            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+
+//            try {
+//                DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+//            }
+//            catch (Exception e){
+//                cartPage.addToCartAndDisplayTheCart();
+//            }
+//            cartPage.clickOnCartIcon();
+//            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
             DataHelperAndWait.waitForUrlContains(shippingInformationUrl,webDriver);
-        DataHelperAndWait.clickOnElement(checkoutAsGuestBtn,webDriver);
+            DataHelperAndWait.clickOnElement(checkoutAsGuestBtn,webDriver);
     }
     public void setSelectDubaiCityCity(){
         try{
@@ -228,7 +249,7 @@ public void navigateToShippingMethodsPage(){
             XmlReader.getXMLData("StreetOneAddressName"),
             XmlReader.getXMLData("StreetTwoAddressName")
     );
-    this.setSelectDubaiCityCity();
+//    this.setSelectDubaiCityCity();
     this.clickOnContinueBtn();
 }
 

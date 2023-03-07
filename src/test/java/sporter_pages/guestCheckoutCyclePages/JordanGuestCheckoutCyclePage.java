@@ -7,6 +7,7 @@
 package sporter_pages.guestCheckoutCyclePages;
 
 import core.DataHelperAndWait;
+import core.WebElementsAssertion;
 import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,6 +15,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 import sporter_pages.cartPages.CartPage;
+import sporter_test.guestCheckoutCycleTestCases.JordanGuestCheckoutCycleTestCases;
 import xml_reader.XmlReader;
 
 @Getter
@@ -70,7 +72,7 @@ public class JordanGuestCheckoutCyclePage extends  GuestCheckoutCyclePage{
                 XmlReader.getXMLData("StreetTwoAddressName"),
                 XmlReader.getXMLData("nationalID")
         );
-        this.setSelectDubaiCityCity();
+//        this.setSelectDubaiCityCity();
         this.clickOnContinueBtn();
     }
     public void viewCartAndAccessShippingMethodsPage(){
