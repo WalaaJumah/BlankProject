@@ -148,9 +148,11 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
     @Test(groups = {"2.01 Checkout Cycle( Guest User)", "All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that all payment methods are appear correctly in the Cart page", priority = 4)
     public void verifyAllPaymentMethodAppearingTheCartPage() {
         CartPage cartPage = new CartPage(webDriver);
+        cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getWeAcceptLabel(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCODOption(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCreditCardOption(), webDriver);
     }
+
 }
