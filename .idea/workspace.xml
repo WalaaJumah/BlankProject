@@ -4,20 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86683dee-3ff6-4652-96ae-dd8bddfbd97f" name="Changes" comment="Add product to the Egypt testcases">
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/cartRulesPages/CartRulesPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/cartRulesPages/EgyptCartRulesPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/cartRulesPages/JordanCartRulesPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/cartRulesPages/KSACartRulesPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/cartRulesPages/QatarCartRulesPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/cartRulesPages/UAECartRulesPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/cartRulesTestCases/CartRulesTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/cartRulesTestCases/EgyptCartRulesTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/cartRulesTestCases/JordanCartRulesTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/cartRulesTestCases/KSACartRulesTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/cartRulesTestCases/QatarCartRulesTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/cartRulesTestCases/UAECartRulesTestCases.java" afterDir="false" />
+    <list default="true" id="86683dee-3ff6-4652-96ae-dd8bddfbd97f" name="Changes" comment="Add Cart Rules Classes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/cartRulesTestCases/CartRulesTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/cartRulesTestCases/CartRulesTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/cartRulesTestCases/KSACartRulesTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/cartRulesTestCases/KSACartRulesTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/TestExecution.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TestExecution.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678104656927</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add Cart Rules Classes">
+      <created>1678175392350</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1678175392350</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -288,7 +286,8 @@
     <MESSAGE value="Add Chrome Driver Version 110" />
     <MESSAGE value=" Adding webDriverlocaL Changes by Tobji" />
     <MESSAGE value="Remove the implicit wait" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove the implicit wait" />
+    <MESSAGE value="Add Cart Rules Classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Cart Rules Classes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
