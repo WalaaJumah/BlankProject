@@ -175,8 +175,7 @@ private WebElement sameDayDelivery;
             DataHelperAndWait.waitToBeVisible(continueShippingInfoBtn,webDriver);
             this.continueShippingInfoBtn.click();}
         catch (Exception e){
-            DataHelperAndWait.waitToBeVisible(continueShippingInfoBtn,webDriver);
-            this.continueShippingInfoBtn.click();
+            DataHelperAndWait.hoverOnElementAndClick(continueShippingInfoBtn,webDriver);
         }
     }
     public void navigateToCheckoutPage(){
