@@ -134,7 +134,7 @@ public class ProductDetailsTestCases extends BaseTest {
         System.out.println(newSelectedOptionText);
         Assert.assertNotEquals(currentSelectedOptionText, newSelectedOptionText);
     }
-    @Test(groups = { "1.3 Medium Severity`"},description = "{{CountryName}}:Verify that the system display a label on the PDP to indicate for the customer he will get a free product", priority = 14)
+    @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}:Verify that the system display a label on the PDP to indicate for the customer he will get a free product", priority = 14)
     public void verifyTheresLabelInPdpToIndicateThatTheresAnOfferOnThisProduct() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.navigateToBogoProduct();
