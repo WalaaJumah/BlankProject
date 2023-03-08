@@ -135,24 +135,30 @@ public class CheckoutForRegisteredPage extends BasePage {
     public void AddToCartAndAccessShippingMethodsPageForSavedAddress(){
         GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage=new CartPage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
         try{
+        cartPage.clearCart();}
+        catch (Exception e){
+            System.out.println("");
+        }
+        cartPage.addToCartAndDisplayTheCart();
+        cartPage.navigateToHomePage();
+        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+        try{
+            DataHelperAndWait.clickOnElement(this.getSavedAddressOption(),webDriver);
+        }
+        catch (Exception e){
             this.fillInShippingInformationInputField(
                     XmlReader.getXMLData("firstName"),
                     XmlReader.getXMLData("lastName"),
                     XmlReader.getXMLData("phoneNumber"),
                     XmlReader.getXMLData("AddressName"),
                     XmlReader.getXMLData("StreetOneAddressName"),
-                    XmlReader.getXMLData("StreetTwoAddressName")
-            );
-        }
-        catch (Exception e){
-            DataHelperAndWait.clickOnElement(this.getSavedAddressOption(),webDriver);
+                    XmlReader.getXMLData("StreetTwoAddressName"));
         }
         guestCheckoutCyclePage.clickOnContinueBtn();
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+//        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
+//        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
     }
     public void AddToCartAndAccessShippingMethodsPageForSavedAddressForDubaiCity(){
         GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
