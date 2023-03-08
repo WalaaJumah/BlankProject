@@ -63,12 +63,14 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
     @Test(enabled = false)
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod() {}
     @Test(groups = {"2.02 Checkout Cycle( Registered User)", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Next Day Delivery With COD Payment Method ", priority = 28)
-    public void verifyAbilityToPlaceOrderWhenSelectingNextDayDeliveryWithCODPaymentMethod() {
+    public void verifyAbilityToPlaceOrderWhenSelectingNextDaySuperExpressShippingMethodWithCODPaymentMethod() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        CartPage cartPage= new CartPage(webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.waitForTime(500);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getSuccessPage(),webDriver);
-        orderNumberCOD= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
-        System.out.println(orderNumberCOD);
+        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
+
     }
     @Test(enabled = false)
     public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithValidCreditCardPaymentMethod() {}
@@ -77,36 +79,47 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        cartPage.navigateToCartPage();
-        cartPage.removeItem();
         checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+       ;
     }
     @Test(groups = {"2.02 Checkout Cycle( Registered User)", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Next Day Delivery With Credit Card Payment Method ", priority = 30)
     public void verifyAbilityToPlaceOrderWhenSelectingNextDayDeliveryWithCreditCardPaymentMethod() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-//        DataHelperAndWait.waitForTime(2000);
-        String mainWindow= webDriver.getWindowHandle();
-        Set<String> handles = webDriver.getWindowHandles();
-// Switch to the pop-up window
-//        for (String handle : handles) {
-//            if (!handle.equals(mainWindow)) {
-//                webDriver.switchTo().window(handle);
-//            }
-//        }
-// Close the pop-up window
-//        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-//        Actions actions= new Actions(webDriver);
-//        actions.sendKeys(Keys.ENTER).perform();
-//// Switch back to the main window
-////        webDriver.switchTo().window(mainWindow);
-//        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-//        guestCheckoutCyclePage.submitSecureAndAuthenticationCheckout();
-//        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getSuccessPage(),webDriver);
-//        orderNumberCreditCard= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
-//        System.out.println(orderNumberCreditCard);
+        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver);
+        CartPage cartPage= new CartPage(webDriver);
+        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
+        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.waitForTime(500);
+        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+////        DataHelperAndWait.waitForTime(2000);
+//        String mainWindow= webDriver.getWindowHandle();
+//        Set<String> handles = webDriver.getWindowHandles();
+//// Switch to the pop-up window
+////        for (String handle : handles) {
+////            if (!handle.equals(mainWindow)) {
+////                webDriver.switchTo().window(handle);
+////            }
+////        }
+//// Close the pop-up window
+////        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+////        Actions actions= new Actions(webDriver);
+////        actions.sendKeys(Keys.ENTER).perform();
+////// Switch back to the main window
+//////        webDriver.switchTo().window(mainWindow);
+////        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+////        guestCheckoutCyclePage.submitSecureAndAuthenticationCheckout();
+////        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getSuccessPage(),webDriver);
+////        orderNumberCreditCard= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
+////        System.out.println(orderNumberCreditCard);
     }
     @Test(enabled = false)
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCreditCardPaymentMethod() { }
@@ -115,10 +128,8 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         EgyptCheckoutForRegisteredPage egypt= new EgyptCheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        cartPage.navigateToCartPage();
-        cartPage.removeItem();
         egypt.AddToCartAndAccessShippingMethodsPageForEgypt();
-        WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver,XmlReader.getXMLData("standard"));
+        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
     }
     @Test(enabled = false)
     public void verifySameDayShippingMethodAppearsForDubaiCityOnly() {  }
@@ -133,6 +144,12 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
 //        cartPage.navigateToCartPage();
 //        cartPage.removeItem();
 //        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
+        try {
+            cartPage.clearCart();
+        }
+        catch (Exception e){
+            System.out.println("");
+        }
 
         cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);

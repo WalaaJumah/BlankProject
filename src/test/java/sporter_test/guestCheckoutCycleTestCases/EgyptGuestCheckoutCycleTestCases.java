@@ -85,11 +85,13 @@ public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithC
     @Test(enabled = false)
     public void verifyAbilityToPlaceOrderWhenSelectingNextDaySuperExpressShippingMethodWithCODPaymentMethod() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        CartPage cartPage= new CartPage(webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.waitForTime(500);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getSuccessPage(),webDriver);
-        orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
-        System.out.println(orderNumber);
+        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
+
     }
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Next Day Delivery Shipping Method With COD Payment Method ", priority = 26)
     public void verifyAbilityToPlaceOrderWhenSelectingNextDayDeliveryShippingMethodWithCODPaymentMethod() {

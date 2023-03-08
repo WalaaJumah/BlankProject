@@ -21,19 +21,27 @@ public class EgyptCheckoutForRegisteredPage extends CheckoutForRegisteredPage {
     public void AddToCartAndAccessShippingMethodsPageForEgypt(){
         GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage=new CartPage(webDriver);
+        try{
+            cartPage.clearCart();}
+        catch (Exception e){
+            System.out.println("");
+        }
         cartPage.addToCartAndDisplayTheCart();
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
-//        DataHelperAndWait.clickOnElement(getAddNewAddressBtn(),webDriver);
-        this.fillInShippingInformationInputField(
-                XmlReader.getXMLData("firstName"),
-                XmlReader.getXMLData("lastName"),
-                XmlReader.getXMLData("phoneNumber"),
-                XmlReader.getXMLData("AddressName"),
-                XmlReader.getXMLData("StreetOneAddressName"),
-                XmlReader.getXMLData("StreetTwoAddressName")
-        );
-        this.setSelectDubaiCityCity();
+        cartPage.navigateToHomePage();
+        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+        try{
+            DataHelperAndWait.clickOnElement(this.getSavedAddressOption(),webDriver);
+        }
+        catch (Exception e){
+            this.fillInShippingInformationInputField(
+                    XmlReader.getXMLData("firstName"),
+                    XmlReader.getXMLData("lastName"),
+                    XmlReader.getXMLData("phoneNumber"),
+                    XmlReader.getXMLData("AddressName"),
+                    XmlReader.getXMLData("StreetOneAddressName"),
+                    XmlReader.getXMLData("StreetTwoAddressName"));
+        }
         guestCheckoutCyclePage.clickOnContinueBtn();
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
     }
 }
