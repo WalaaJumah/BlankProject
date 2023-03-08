@@ -16,6 +16,7 @@ import org.testng.annotations.Test;
 import sporter_pages.cartPages.CartPage;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import sporter_pages.guestCheckoutCyclePages.JordanGuestCheckoutCyclePage;
+import sporter_pages.guestCheckoutCyclePages.KSAGuestCheckoutCyclePage;
 import sporter_pages.productPage.ProductDetailsPage;
 import xml_reader.XmlReader;
 
@@ -211,7 +212,20 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     @Test(groups = {"2.01 Checkout Cycle( Guest User)","All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:Make sure the Guest user can filling the shipping information and clicking on the Continue button correctly", priority = 17)
     public void verifyTheGuestUserCanFillTheShippingInformationCorrectly() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        guestCheckoutCyclePage.navigateToShippingMethodsPage();
+        KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
+        CartPage cartPage = new CartPage(webDriver);
+        cartPage.clearCart();
+        guestCheckoutCyclePage.accessGuestCheckoutForm();
+        guestCheckoutCyclePage.fillInShippingInformationInputField(
+                XmlReader.getXMLData("firstName"),
+                XmlReader.getXMLData("lastName"),
+                XmlReader.getXMLData("correctEmail"),
+                XmlReader.getXMLData("phoneNumber"),
+                XmlReader.getXMLData("AddressName"),
+                XmlReader.getXMLData("StreetOneAddressName"),
+                XmlReader.getXMLData("ksaPhoneNumber")
+        );
+        guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getShippingMethodsOptionsSection(),webDriver);
     }
 //    @Test(groups = {"2.01 Checkout Cycle( Guest User)","All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:Verify the shipping Fee retrieved correctly in the Shipping Methods screen ", priority = 18)
