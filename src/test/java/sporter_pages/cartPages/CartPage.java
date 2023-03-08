@@ -214,8 +214,12 @@ private WebElement freeFromSporterLabelInProductCard;
     }
     public void clearCart()
     {
+        try{
         this.navigateToCartPage();
-        this.removeItem();
+        this.removeItem();}
+        catch (Exception e){
+            System.out.println("");
+        }
     }
     public void removeAllItems(int productNumber) {
 for(int i=1;i<=productNumber;i++){
