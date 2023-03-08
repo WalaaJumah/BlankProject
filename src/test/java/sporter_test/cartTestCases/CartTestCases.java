@@ -305,6 +305,7 @@ public class CartTestCases extends BaseTest {
         cartPage.navigateToHomePage();
         cartPage.clickOnCartIcon();
 //        DataHelperAndWait.clickOnElement(cartPage.getViewCartInCartPopup(),webDriver);
+        DataHelperAndWait.waitForTime(500);
         DataHelperAndWait.clickOnElement(cartPage.getCartCloseIcon(),webDriver);
     }
     //TODO: Should be revisit after solving https://sporter1.atlassian.net/browse/NS-188 & https://sporter1.atlassian.net/browse/NS-190
