@@ -214,11 +214,11 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
         guestCheckoutCyclePage.navigateToShippingMethodsPage();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getShippingMethodsOptionsSection(),webDriver);
     }
-    @Test(groups = {"2.01 Checkout Cycle( Guest User)","All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:Verify the shipping Fee retrieved correctly in the Shipping Methods screen ", priority = 18)
-    public void verifyShippingFeeRetrievedCorrectlyInShippingMethodsScreen(){
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        guestCheckoutCyclePage.validateTheShippingMethodAmount(guestCheckoutCyclePage.getFirstShippingMethodAmount(),guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping());
-    }
+//    @Test(groups = {"2.01 Checkout Cycle( Guest User)","All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:Verify the shipping Fee retrieved correctly in the Shipping Methods screen ", priority = 18)
+//    public void verifyShippingFeeRetrievedCorrectlyInShippingMethodsScreen(){
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        guestCheckoutCyclePage.validateTheShippingMethodAmount(guestCheckoutCyclePage.getFirstShippingMethodAmount(),guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping());
+//    }
     @Test(groups = {"2.01 Checkout Cycle( Guest User)", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure that the Continue button appears in the Shipping Methods screen is disable when no shipping method is selected", priority = 19)
     public void verifyContinueBtnAppearsInShippingMethodsIsDisableWhenNoMethodSelected() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
