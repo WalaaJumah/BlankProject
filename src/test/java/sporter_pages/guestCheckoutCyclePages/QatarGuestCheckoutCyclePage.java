@@ -14,8 +14,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import sporter_pages.cartPages.CartPage;
 import xml_reader.XmlReader;
+
+import java.nio.file.WatchEvent;
+
 @Getter
 public class QatarGuestCheckoutCyclePage extends  GuestCheckoutCyclePage{
+    @FindBy(id ="flatrate")
+    WebElement fourToFiveDayMethod;
     public QatarGuestCheckoutCyclePage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
