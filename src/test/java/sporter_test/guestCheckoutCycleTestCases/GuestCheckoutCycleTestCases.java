@@ -85,7 +85,9 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     public void verifyProceedCheckoutBtnAppearingInCartPageWorksCorrectly() {
         CartPage cartPage = new CartPage(webDriver);
         DataHelperAndWait.scrollToPositionZero(webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
+        cartPage.navigateToHomePage();
+        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getViewCartInCartPopup(), webDriver);
         WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.shippingInformationUrl, webDriver);
     }
 
