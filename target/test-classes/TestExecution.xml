@@ -16,6 +16,7 @@
         <classes>
             <class name="sporter_test.checkoutForRegisteredUserTestCases.UAECheckoutForRegisteredTestCases">
 <!--                <methods>-->
+<!--                    <include name="verifyAbilityToLoginCorrectlyWithValidCredentials"/>-->
 <!--                    <include name="verifyAbilityToPlaceOrderWhenUsingFreeCouponCode"/>-->
 <!--&lt;!&ndash;                    <include name="verifyAbilityToSubmitTheProductReview"/>&ndash;&gt;-->
 <!--&lt;!&ndash;                    <include name="verifySuccessfulMsgAppearsAfterSubmittingTheReview"/>&ndash;&gt;-->
