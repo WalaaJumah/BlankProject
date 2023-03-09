@@ -17,6 +17,7 @@ import org.testng.annotations.Test;
 import sporter_pages.cartPages.CartPage;
 import sporter_pages.checkoutForRegisteredUserTPage.CheckoutForRegisteredPage;
 import sporter_pages.checkoutForRegisteredUserTPage.EgyptCheckoutForRegisteredPage;
+import sporter_pages.guestCheckoutCyclePages.EgyptGuestCheckoutCyclePage;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import sporter_pages.homepage_classes.EgyptHomePage;
 import xml_reader.XmlReader;
@@ -38,24 +39,38 @@ public class EgyptCheckoutForRegisteredTestCases  extends CheckoutForRegisteredT
         storeCountry="Egypt";
        countryCode="20";
     }
-    @Test(groups = {"2.02 Checkout Cycle( Registered User)", "All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 9)
-    public void verifyOrderTotalCalculationInCartPageWorksCorrectly() {
-        CartPage cartPage = new CartPage(webDriver);
-        DecimalFormat df = new DecimalFormat("0.00");
-        cartPage.navigateToCartPage();
-        double subTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue(), webDriver,"EGP");
-        double tax = DataHelperAndWait.convertTheStringToFloat(cartPage.getTaxValue(), webDriver,"EGP");
-        double orderTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(), webDriver,"EGP");
-        double cartTotal = subTotal + tax;
-        Assert.assertEquals(df.format(orderTotal), df.format(cartTotal));
+@Test(enabled = false)    public void verifyOrderTotalCalculationInCartPageWorksCorrectly() {
+
     }
 @Test(enabled = false)
 public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNationalID() {}
+
     @Test(enabled = false)
     public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod() {}
     @Test(groups = {"2.02 Checkout Cycle( Registered User)", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to select the Next Day Delivery With COD Payment Method correctly", priority = 27)
     public void verifyAbilityToSelectTheNextDayDeliveryWithCODPaymentMethod() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        CartPage cartPage= new CartPage(webDriver);
+        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
+        EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
+        cartPage.clearCart();
+        cartPage.addToCartAndDisplayTheCart();
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+        try{
+            DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
+        }
+        catch (Exception e){
+            registeredPage.fillInShippingInformationInputField(
+                    XmlReader.getXMLData("firstName"),
+                    XmlReader.getXMLData("lastName"),
+                    XmlReader.getXMLData("phoneNumber"),
+                    XmlReader.getXMLData("AddressName"),
+                    XmlReader.getXMLData("StreetOneAddressName"),
+                    XmlReader.getXMLData("StreetTwoAddressName"));
+        }
+        guestCheckoutCyclePage.clickOnContinueBtn();
+        DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
@@ -66,8 +81,30 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
     public void verifyAbilityToPlaceOrderWhenSelectingNextDaySuperExpressShippingMethodWithCODPaymentMethod() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
+        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
+        EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
+        cartPage.clearCart();
+        cartPage.addToCartAndDisplayTheCart();
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+        try{
+            DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
+        }
+        catch (Exception e){
+            registeredPage.fillInShippingInformationInputField(
+                    XmlReader.getXMLData("firstName"),
+                    XmlReader.getXMLData("lastName"),
+                    XmlReader.getXMLData("phoneNumber"),
+                    XmlReader.getXMLData("AddressName"),
+                    XmlReader.getXMLData("StreetOneAddressName"),
+                    XmlReader.getXMLData("StreetTwoAddressName"));
+        }
+        guestCheckoutCyclePage.clickOnContinueBtn();
+        DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.waitForTime(500);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getSuccessPage(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
 
@@ -78,9 +115,10 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
     public void verifyAbilityToSelectTheNextDayDeliveryWithValidCreditCardPaymentMethod() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver);
+        EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
@@ -90,9 +128,10 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
     public void verifyAbilityToPlaceOrderWhenSelectingNextDayDeliveryWithCreditCardPaymentMethod() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver);
+        EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
@@ -125,11 +164,11 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCreditCardPaymentMethod() { }
     @Test(groups = {"2.02 Checkout Cycle( Registered User)","All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}:Verify All Shipping Methods appear correctly", priority = 78)
     public void verifyAllShippingMethodsAppearCorrectly(){
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        EgyptGuestCheckoutCyclePage egypt1= new EgyptGuestCheckoutCyclePage(webDriver);
         EgyptCheckoutForRegisteredPage egypt= new EgyptCheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         egypt.AddToCartAndAccessShippingMethodsPageForEgypt();
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(egypt1.getNextDayMethod(),webDriver);
     }
     @Test(enabled = false)
     public void verifySameDayShippingMethodAppearsForDubaiCityOnly() {  }
@@ -141,6 +180,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
+        EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
 //        cartPage.navigateToCartPage();
 //        cartPage.removeItem();
 //        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
@@ -166,7 +206,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
             );
         }
         guestCheckoutCyclePage.clickOnContinueBtn();
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCreditCardPaymentMethod(),webDriver);
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("invalidCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));

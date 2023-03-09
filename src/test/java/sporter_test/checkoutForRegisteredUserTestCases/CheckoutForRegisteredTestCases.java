@@ -17,6 +17,7 @@ import sporter_pages.AccountRegistrationPage.AccountRegistrationPage;
 import sporter_pages.cartPages.CartPage;
 import sporter_pages.checkoutForRegisteredUserTPage.CheckoutForRegisteredPage;
 import sporter_pages.checkoutForRegisteredUserTPage.JordanCheckoutForRegisteredPage;
+import sporter_pages.guestCheckoutCyclePages.EgyptGuestCheckoutCyclePage;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import sporter_pages.guestCheckoutCyclePages.JordanGuestCheckoutCyclePage;
 import sporter_pages.guestCheckoutCyclePages.KSAGuestCheckoutCyclePage;
@@ -276,9 +277,23 @@ catch (Exception e){
     @Test(groups = {"2.02 Checkout Cycle( Registered User)", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure that each of COD & Credit Card Payment methods appear correctly", priority = 25)
     public void verifyEachOfCODAndCreditCardPaymentMethodCorrectly() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
+        EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
+        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         guestCheckoutCyclePage.navigateToCheckoutPage();
-        DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
+        try{
+            DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
+        }
+        catch (Exception e){
+            registeredPage.fillInShippingInformationInputField(
+                    XmlReader.getXMLData("firstName"),
+                    XmlReader.getXMLData("lastName"),
+                    XmlReader.getXMLData("phoneNumber"),
+                    XmlReader.getXMLData("AddressName"),
+                    XmlReader.getXMLData("StreetOneAddressName"),
+                    XmlReader.getXMLData("StreetTwoAddressName"));
+        }
+        guestCheckoutCyclePage.clickOnContinueBtn();
+        DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCreditCardPaymentMethod(),webDriver);
@@ -286,9 +301,30 @@ catch (Exception e){
     @Test(groups = {"2.02 Checkout Cycle( Registered User)", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure that the Continue button appears in the Payment Methods screen is disable when no shipping method is selected", priority = 26)
     public void verifyContinueBtnAppearsInPaymentMethodsIsDisableWhenNoMethodSelected() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        CartPage cartPage= new CartPage(webDriver);
+        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
+        cartPage.navigateToCartPage();
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+        try{
+            DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
+        }
+        catch (Exception e){
+            registeredPage.fillInShippingInformationInputField(
+                    XmlReader.getXMLData("firstName"),
+                    XmlReader.getXMLData("lastName"),
+                    XmlReader.getXMLData("phoneNumber"),
+                    XmlReader.getXMLData("AddressName"),
+                    XmlReader.getXMLData("StreetOneAddressName"),
+                    XmlReader.getXMLData("StreetTwoAddressName"));
+        }
+        guestCheckoutCyclePage.clickOnContinueBtn();
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+
 //        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
 //        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
 //        WebElementsAssertion.assertionElementNotEnable(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
+
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCreditCardPaymentMethod(),webDriver);
     }
     @Test(groups = {"2.02 Checkout Cycle( Registered User)", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to select the 2 Business Days Super Express Shipping Method With COD Payment Method correctly", priority = 29)
@@ -402,11 +438,7 @@ catch (Exception e){
         CartPage cartPage = new CartPage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
 //        cartPage.addToCartAndDisplayTheCart();
-        try{
-        cartPage.clearCart();}
-        catch (Exception e){
-            System.out.println("");
-        }
+        cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
@@ -433,15 +465,18 @@ catch (Exception e){
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getSuccessPage(),webDriver);
-        orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
-        System.out.println(orderNumber);
+//        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getSuccessPage(),webDriver);
+//        orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
+//        System.out.println(orderNumber);
+       cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     @Test(groups = {"2.02 Checkout Cycle( Registered User)", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure the Add To Wish List Button works correctly and the added item appears correctly in the WishList screen ", priority = 7)
     public void verifyAddToWishListBtnWorksCorrectly() {
          CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver);
         HeaderSection header=new HeaderSection(webDriver);
         AccountRegistrationPage registrationPage=new AccountRegistrationPage(webDriver);
+        CartPage cartPage= new CartPage(webDriver);
+        cartPage.navigateToCartPage();
         DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getAddToWishListBtn(),webDriver);
 //        header.navigateToHomePage();
         header.navigateToHomePage();

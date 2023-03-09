@@ -111,6 +111,7 @@ public  class DataHelperAndWait  {
         String elementValueWithoutSpace = elementValueWithoutCurrency.replaceAll(" ", "");
         return Float.parseFloat(elementValueWithoutSpace);
     }
+
         public static  int convertTheStringToInt(WebElement element,WebDriver webDriver) {
         DataHelperAndWait.waitToBeVisible(element,webDriver);
         String elementValue = element.getText();

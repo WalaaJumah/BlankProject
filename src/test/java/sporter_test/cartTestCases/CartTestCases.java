@@ -287,7 +287,7 @@ public class CartTestCases extends BaseTest {
         cartPage.removeItem();
     }
 
-    @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 24)
+    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 24)
     public void verifyOrderTotalCalculationInCartPageWorksCorrectly() {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();

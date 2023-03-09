@@ -40,6 +40,7 @@ public class KSACartRulesTestCases extends CartRulesTestCases{
     public void verify3ItemOfTheSameKindRuleWorksCorrectly(){
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
+        cartPage.clearCart();
         productDetailsPage.keepShoppingAfterAddingToCart();
         productDetailsPage.addToCart();
         productDetailsPage.keepShopping();

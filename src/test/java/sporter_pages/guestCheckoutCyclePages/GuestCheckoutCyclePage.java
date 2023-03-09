@@ -183,7 +183,6 @@ private WebElement sameDayDelivery;
 //        DataHelperAndWait.waitForUrlContains(shippingInformationUrl,webDriver);
         CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToCartPage();
-        DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
     }
         public void accessGuestCheckoutForm(){

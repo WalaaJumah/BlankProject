@@ -131,7 +131,7 @@ public class CartPage extends BasePage {
     private WebElement expectedDeliveryDateLabel;
     @FindBy(xpath = "//span[starts-with(@class,'cartInfo_EDDateAmount')]")
     private WebElement expectedDeliveryDateValue;
-    @FindBy(xpath = "//span[starts-with(@class,'cartInfo_orderTotalAmount')]")
+    @FindBy(id = "orderTotalAmount")
     private WebElement orderTotalValue;
     @FindBy(xpath = "//div[starts-with(@id,'cartItemInfo')]")
     private List<WebElement> productCardInCartPage;
