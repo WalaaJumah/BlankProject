@@ -137,7 +137,8 @@ public class KSACartRulesTestCases extends CartRulesTestCases{
     public void verifyInabilityToCheckoutOrderWhenTheTotalExceed819SAR(){
         CartPage cartPage= new CartPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        cartPage.clearCart();
+        cartPage.navigateToCartPage();
+        cartPage.removeAllItems(3);
         webDriver.navigate().to(BaseURL+cartPage.productUrlKSAWithHighPrice1);
         productDetailsPage.addToCart();
         productDetailsPage.keepShopping();
