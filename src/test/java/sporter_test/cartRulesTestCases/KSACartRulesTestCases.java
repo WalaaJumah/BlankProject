@@ -121,7 +121,8 @@ public class KSACartRulesTestCases extends CartRulesTestCases{
     public void verifyInabilityToAddMoreThan5ItemsToTheCartAnd3OfThemWithTheSameKind(){
         CartPage cartPage= new CartPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        cartPage.clearCart();
+        cartPage.navigateToCartPage();
+        cartPage.removeAllItems(5);
         webDriver.navigate().to(BaseURL+cartPage.productUrlKSA2);
         productDetailsPage.addToCart();
         webDriver.navigate().to(BaseURL+cartPage.productUrlKSA1);
