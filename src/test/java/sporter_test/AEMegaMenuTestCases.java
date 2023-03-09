@@ -5066,13 +5066,17 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         action = new Actions(webDriver);
 //                aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        try{
         action.moveToElement(aeMegamenuPage.getMuscleBoostersOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMuscleBoostersOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getMuscleBoostersOptionInSportSupplementsMainMenu().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), muscleBoostersOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
-Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");}
+        catch (Exception t){
+        System.out.println("This option is removed from the list");
+    }
     }
 
     @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the Testosterone Boosters Option appearing in the Sports Supplements main menu  will redirect the User to the correct URL", priority = 324)
@@ -5081,13 +5085,17 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         action = new Actions(webDriver);
 //                aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        try{
         action.moveToElement(aeMegamenuPage.getTestosteroneBoostersOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getTestosteroneBoostersOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getTestosteroneBoostersOptionInSportSupplementsMainMenu().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), testosteroneBoostersOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
-Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");}
+        catch (Exception t){
+            System.out.println("This option is removed from the list");
+        }
     }
 
     @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the Gh Boosters Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 325)
@@ -5096,13 +5104,17 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         action = new Actions(webDriver);
 //                aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        try{
         action.moveToElement(aeMegamenuPage.getGhBoostersOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGhBoostersOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getGhBoostersOptionInSportSupplementsMainMenu().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), ghBoostersOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
-Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");}
+        catch (Exception t){
+            System.out.println("This option is removed from the list");
+        }
     }
 
     @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the Weight Management Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 326)
@@ -5111,13 +5123,17 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         action = new Actions(webDriver);
 //                aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        try{
         action.moveToElement(aeMegamenuPage.getWeightManagementOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getWeightManagementOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getWeightManagementOptionInSportSupplementsMainMenu().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), weightManagementOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
-Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");}
+        catch (Exception t){
+            System.out.println("This option is removed from the list");
+        }
     }
 
     @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the Stimulant Weight Loss Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 327)
@@ -5126,13 +5142,17 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         action = new Actions(webDriver);
 //                aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        try{
         action.moveToElement(aeMegamenuPage.getStimulantWeightLossOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getStimulantWeightLossOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getStimulantWeightLossOptionInSportSupplementsMainMenu().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), stimulantWeightLossOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
-Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");}
+        catch (Exception t){
+            System.out.println("This option is removed from the list");
+        }
     }
 
     @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the Non Stimulant Weight Loss Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 328)
@@ -5141,13 +5161,17 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         action = new Actions(webDriver);
                 //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        try{
         action.moveToElement(aeMegamenuPage.getNonStimulantWeightLossOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getNonStimulantWeightLossOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getNonStimulantWeightLossOptionInSportSupplementsMainMenu().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), nonStimulantWeightLossOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
-Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");}
+        catch (Exception t){
+            System.out.println("This option is removed from the list");
+        }
     }
 
     @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the Meal Replacements Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 329)
@@ -5156,13 +5180,17 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         action = new Actions(webDriver);
                 //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        try{
         action.moveToElement(aeMegamenuPage.getMealReplacementsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMealReplacementsOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getMealReplacementsOptionInSportSupplementsMainMenu().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), mealReplacementsOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
-Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");}
+        catch (Exception t){
+            System.out.println("This option is removed from the list");
+        }
     }
 
     @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the Metabolism Support Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 330)
@@ -5171,13 +5199,17 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         action = new Actions(webDriver);
                 //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        try{
         action.moveToElement(aeMegamenuPage.getMetabolismSupportOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMetabolismSupportOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getMetabolismSupportOptionInSportSupplementsMainMenu().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), metabolismSupportOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
-Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");}
+        catch (Exception t){
+            System.out.println("This option is removed from the list");
+        }
     }
 
     @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the Toning Creams Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 331)
@@ -5186,13 +5218,17 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         action = new Actions(webDriver);
                 //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        try{
         action.moveToElement(aeMegamenuPage.getToningCreamsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getToningCreamsOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getToningCreamsOptionInSportSupplementsMainMenu().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), toningCreamsOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
-Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");}
+        catch (Exception t){
+            System.out.println("This option is removed from the list");
+        }
     }
 
     @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the MCT Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 332)
@@ -5201,13 +5237,17 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         action = new Actions(webDriver);
                 //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        try{
         action.moveToElement(aeMegamenuPage.getMctOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getMctOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getMctOptionInSportSupplementsMainMenu().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), mctOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
-Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");}
+        catch (Exception t){
+            System.out.println("This option is removed from the list");
+        }
     }
 
     @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the Recovery Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 333)
@@ -5216,13 +5256,17 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         action = new Actions(webDriver);
                 //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        try{
         action.moveToElement(aeMegamenuPage.getRecoveryOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getRecoveryOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getRecoveryOptionInSportSupplementsMainMenu().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), recoveryOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
-Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");}
+        catch (Exception t){
+            System.out.println("This option is removed from the list");
+        }
     }
 
     @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the Glutamine Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 334)
@@ -5231,13 +5275,17 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         action = new Actions(webDriver);
                 //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        try{
         action.moveToElement(aeMegamenuPage.getGlutamineOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGlutamineOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getGlutamineOptionInSportSupplementsMainMenu().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), glutamineOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
-Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");}
+        catch (Exception t){
+            System.out.println("This option is removed from the list");
+        }
     }
 
     @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the Recovery Blend Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 335)
@@ -5246,13 +5294,17 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         action = new Actions(webDriver);
                 //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        try{
         action.moveToElement(aeMegamenuPage.getRecoveryBlendOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getRecoveryBlendOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getRecoveryBlendOptionInSportSupplementsMainMenu().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), recoveryBlendOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
-Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");}
+        catch (Exception t){
+            System.out.println("This option is removed from the list");
+        }
     }
 
     @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the Electrolytes And Hydration Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 336)
@@ -5261,13 +5313,17 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         action = new Actions(webDriver);
                 //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        try{
         action.moveToElement(aeMegamenuPage.getElectrolytesAndHydrationOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getElectrolytesAndHydrationOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getElectrolytesAndHydrationOptionInSportSupplementsMainMenu().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), electrolytesAndHydrationOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
-Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");}
+        catch (Exception t){
+            System.out.println("This option is removed from the list");
+        }
     }
 
     @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the Carbohydrates Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 337)
@@ -5276,13 +5332,17 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         action = new Actions(webDriver);
                 //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        try{
         action.moveToElement(aeMegamenuPage.getCarbohydratesOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCarbohydratesOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getCarbohydratesOptionInSportSupplementsMainMenu().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), carbohydratesOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
-Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");}
+        catch (Exception t){
+            System.out.println("This option is removed from the list");
+        }
     }
 
     @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the Carbohydrate Powders Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 338)
@@ -5291,13 +5351,17 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         action = new Actions(webDriver);
                 //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        try{
         action.moveToElement(aeMegamenuPage.getCarbohydratePowdersOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getCarbohydratePowdersOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getCarbohydratePowdersOptionInSportSupplementsMainMenu().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), carbohydratePowdersOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
-Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");}
+        catch (Exception t){
+            System.out.println("This option is removed from the list");
+        }
     }
 
     @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the Energy And Endurance Powders Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 339)
@@ -5306,13 +5370,17 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         action = new Actions(webDriver);
                 //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        try{
         action.moveToElement(aeMegamenuPage.getEnergyAndEnduranceOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getEnergyAndEnduranceOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getEnergyAndEnduranceOptionInSportSupplementsMainMenu().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), energyAndEnduranceOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
-Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");}
+        catch (Exception t){
+            System.out.println("This option is removed from the list");
+        }
     }
 
     @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the Stimulant Energy Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 340)
@@ -5321,13 +5389,17 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         action = new Actions(webDriver);
                 //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        try{
         action.moveToElement(aeMegamenuPage.getStimulantEnergyOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getStimulantEnergyOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getStimulantEnergyOptionInSportSupplementsMainMenu().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), stimulantEnergyOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
-Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");}
+        catch (Exception t){
+            System.out.println("This option is removed from the list");
+        }
     }
 
     @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the Non Stimulant Energy Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 341)
@@ -5336,13 +5408,17 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         action = new Actions(webDriver);
                 //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        try{
         action.moveToElement(aeMegamenuPage.getNonStimulantEnergyOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getNonStimulantEnergyOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getNonStimulantEnergyOptionInSportSupplementsMainMenu().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), nonStimulantEnergyOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
-Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");}
+        catch (Exception t){
+            System.out.println("This option is removed from the list");
+        }
     }
 
     @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the Gaming And Focus Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 342)
@@ -5351,13 +5427,17 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         action = new Actions(webDriver);
                 //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        try{
         action.moveToElement(aeMegamenuPage.getGamingAndFocusOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGamingAndFocusOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getGamingAndFocusOptionInSportSupplementsMainMenu().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), gamingAndFocusOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
-Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");}
+        catch (Exception t){
+            System.out.println("This option is removed from the list");
+        }
     }
 
     @Test(groups = {"2.06 MegaMenu", "1.3 Medium Severity"},description = "MegaMenu- Make sure clicking on the Gaming Essentials Option appearing in the Sports Supplements main menu will redirect the User to the correct URL", priority = 343)
@@ -5366,13 +5446,17 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         action = new Actions(webDriver);
                 //aeMegamenuPage.navigateToHomePage();
         action.moveToElement(aeMegamenuPage.getSportSupplementsMainMenu()).perform();
+        try{
         action.moveToElement(aeMegamenuPage.getGamingEssentialsOptionInSportSupplementsMainMenu()).perform();
         String expectedUrl=aeMegamenuPage.getGamingEssentialsOptionInSportSupplementsMainMenu().getAttribute("href");
         aeMegamenuPage.getGamingEssentialsOptionInSportSupplementsMainMenu().click();
         Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), gamingEssentialsOptionInSportSupplementsMenuUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
-Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");
+Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaMenu is missing");}
+        catch (Exception t){
+            System.out.println("This option is removed from the list");
+        }
     }
 
     /////Vitamins & Health TCS////

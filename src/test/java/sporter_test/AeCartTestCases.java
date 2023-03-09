@@ -408,7 +408,7 @@ public class AeCartTestCases extends BaseTest {
         AeCartPage aeCartPage = new AeCartPage(webDriver);
                 AeProductDetailsPage aeProductDetailsPage= new AeProductDetailsPage(webDriver);
         aeProductDetailsPage.addToCartAndDisplayTheCart();
-        String currentProductPrice = aeCartPage.getPriceInCartPage().getText();
+//        String currentProductPrice = aeCartPage.getPriceInCartPage().getText();
         aeCartPage.clickOnIncreaseQtyBtn();
         DataHelperAndWait.refreshPage(webDriver);
         String newProductPrice = aeCartPage.getPriceInCartPage().getText();

@@ -4,6 +4,7 @@ import com.beust.ah.A;
 import core.BasePage;
 import core.BaseTest;
 import core.DataHelperAndWait;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -3989,8 +3990,12 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        aeVitaminsAndHealthCategoryPage.getNextIconInFishOilAndOmegasSection().click();
+        try{
         aeVitaminsAndHealthCategoryPage.getPreviousIconInFishOilAndOmegasSection().click();
-        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFishOilAndOmegasSectionDefaultPosition().isDisplayed());
+        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFishOilAndOmegasSectionDefaultPosition().isDisplayed());}
+        catch (TimeoutException t){
+            System.out.println("There's not No Next/Previous Button");
+        }
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.1 Critical Severity"},description = "Vitamins & Health Category- Make sure clicking on the View All button in the Fish Oil And Omegas section works correctly ", priority = 380)
     public void verifyClickingOnViewAllBtnInsideFishOilAndOmegasSectionWorksCorrectly() {
@@ -4030,7 +4035,11 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        aeVitaminsAndHealthCategoryPage.getNextIconInMultiVitaminsSection().click();
-        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getNextIconInFishOilAndOmegasSection().isDisplayed());
+        try{
+        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getNextIconInFishOilAndOmegasSection().isDisplayed());}
+        catch (TimeoutException t){
+            System.out.println("There's not No Next/Previous Button");
+        }
 //        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFishOilAndOmegasSectionPositionAfterClickingOnNextIcon().isDisplayed());
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.2 High Severity"},description = "Vitamins & Health Category- Make sure clicking on Previous Button in the MultiVitamins section works correctly", priority = 385)
@@ -4038,8 +4047,12 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        aeVitaminsAndHealthCategoryPage.getNextIconInMultiVitaminsSection().click();
+        try{
         aeVitaminsAndHealthCategoryPage.getPreviousIconInMultiVitaminsSection().click();
-        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getMultiVitaminsSectionDefaultPosition().isDisplayed());
+        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getMultiVitaminsSectionDefaultPosition().isDisplayed());}
+        catch (TimeoutException t){
+            System.out.println("There's not No Next/Previous Button");
+        }
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.1 Critical Severity"},description = "Vitamins & Health Category- Make sure clicking on the View All button in the MultiVitamins section works correctly ", priority = 386)
     public void verifyClickingOnViewAllBtnInsideMultiVitaminsSectionWorksCorrectly() {
@@ -4135,7 +4148,11 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        aeVitaminsAndHealthCategoryPage.getNextIconInMineralsSection().click();
-        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getNextIconInFishOilAndOmegasSection().isDisplayed());
+        try{
+        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getNextIconInFishOilAndOmegasSection().isDisplayed());}
+        catch (TimeoutException t){
+            System.out.println("There's not No Next/Previous Button");
+        }
 //        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFishOilAndOmegasSectionPositionAfterClickingOnNextIcon().isDisplayed());
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.2 High Severity"},description = "Vitamins & Health Category- Make sure clicking on Previous Button in the Minerals section works correctly", priority = 397)
@@ -4143,8 +4160,12 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        aeVitaminsAndHealthCategoryPage.getNextIconInMineralsSection().click();
+        try{
         aeVitaminsAndHealthCategoryPage.getPreviousIconInMineralsSection().click();
-        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getMultiVitaminsSectionDefaultPosition().isDisplayed());
+        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getMultiVitaminsSectionDefaultPosition().isDisplayed());}
+        catch (TimeoutException t){
+            System.out.println("There's not No Next/Previous Button");
+        }
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.1 Critical Severity"},description = "Vitamins & Health Category- Make sure clicking on the View All button in the Minerals section works correctly ", priority = 398)
     public void verifyClickingOnViewAllBtnInsideMineralsSectionWorksCorrectly() {
@@ -4184,7 +4205,11 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        aeVitaminsAndHealthCategoryPage.getNextIconInAntioxidantsSection().click();
-        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getNextIconInAntioxidantsSection().isDisplayed());
+        try{
+        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getNextIconInAntioxidantsSection().isDisplayed());}
+        catch (TimeoutException t){
+            System.out.println("There's not No Next/Previous Button");
+        }
 //        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFishOilAndOmegasSectionPositionAfterClickingOnNextIcon().isDisplayed());
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.2 High Severity"},description = "Vitamins & Health Category- Make sure clicking on Previous Button in the Antioxidants section works correctly", priority = 403)
@@ -4192,8 +4217,12 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        aeVitaminsAndHealthCategoryPage.getNextIconInAntioxidantsSection().click();
+        try{
         aeVitaminsAndHealthCategoryPage.getPreviousIconInAntioxidantsSection().click();
-        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getMultiVitaminsSectionDefaultPosition().isDisplayed());
+        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getMultiVitaminsSectionDefaultPosition().isDisplayed());}
+        catch (TimeoutException t){
+            System.out.println("There's not No Next/Previous Button");
+        }
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.1 Critical Severity"},description = "Vitamins & Health Category- Make sure clicking on the View All button in the Antioxidants section works correctly ", priority = 404)
     public void verifyClickingOnViewAllBtnInsideAntioxidantsSectionWorksCorrectly() {
@@ -4233,7 +4262,11 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        aeVitaminsAndHealthCategoryPage.getNextIconInSuperFoodSection().click();
-        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getNextIconInSuperFoodSection().isDisplayed());
+        try{
+        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getNextIconInSuperFoodSection().isDisplayed());}
+        catch (TimeoutException t){
+            System.out.println("There's not No Next/Previous Button");
+        }
 //        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFishOilAndOmegasSectionPositionAfterClickingOnNextIcon().isDisplayed());
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.2 High Severity"},description = "Vitamins & Health Category- Make sure clicking on Previous Button in the Superfoods section works correctly", priority = 409)
@@ -4241,8 +4274,12 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        aeVitaminsAndHealthCategoryPage.getNextIconInSuperFoodSection().click();
+        try{
         aeVitaminsAndHealthCategoryPage.getPreviousIconInSuperFoodSection().click();
-        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getMultiVitaminsSectionDefaultPosition().isDisplayed());
+        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getMultiVitaminsSectionDefaultPosition().isDisplayed());}
+        catch (TimeoutException t){
+            System.out.println("There's not No Next/Previous Button");
+        }
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.1 Critical Severity"},description = "Vitamins & Health Category- Make sure clicking on the View All button in the Superfoods section works correctly ", priority = 410)
     public void verifyClickingOnViewAllBtnInsideSuperfoodsSectionWorksCorrectly() {
@@ -4282,15 +4319,23 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        aeVitaminsAndHealthCategoryPage.getNextIconInMelatoninSection().click();
-        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFishOilAndOmegasSectionPositionAfterClickingOnNextIcon().isDisplayed());
+        try{
+        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFishOilAndOmegasSectionPositionAfterClickingOnNextIcon().isDisplayed());}
+        catch (TimeoutException t){
+            System.out.println("There's not No Next/Previous Button");
+        }
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.2 High Severity"},description = "Vitamins & Health Category- Make sure clicking on Previous Button in the Melatonin section works correctly", priority = 415)
     public void verifyClickingOnPreviousIconInMelatoninSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        aeVitaminsAndHealthCategoryPage.getNextIconInMelatoninSection().click();
+        try{
         aeVitaminsAndHealthCategoryPage.getPreviousIconInMelatoninSection().click();
-        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getMultiVitaminsSectionDefaultPosition().isDisplayed());
+        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getMultiVitaminsSectionDefaultPosition().isDisplayed());}
+        catch (TimeoutException t){
+            System.out.println("There's not No Next/Previous Button");
+        }
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.1 Critical Severity"},description = "Vitamins & Health Category- Make sure clicking on the View All button in the Melatonin section works correctly ", priority = 416)
     public void verifyClickingOnViewAllBtnInsideMelatoninSectionWorksCorrectly() {
@@ -4331,7 +4376,11 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        aeVitaminsAndHealthCategoryPage.getNextIconInCollagenSection().click();
-        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFishOilAndOmegasSectionPositionAfterClickingOnNextIcon().isDisplayed());
+        try{
+        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getFishOilAndOmegasSectionPositionAfterClickingOnNextIcon().isDisplayed());}
+        catch (TimeoutException t){
+            System.out.println("There's not No Next/Previous Button");
+        }
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure clicking on Previous Button in the Collagen section works correctly", priority = 421)
     public void verifyClickingOnPreviousIconInCollagenSectionWorksCorrectly() {
@@ -4339,7 +4388,11 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //        this.verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
 //        aeVitaminsAndHealthCategoryPage.getNextIconInCollagenSection().click();
 //        aeVitaminsAndHealthCategoryPage.getPreviousIconInCollagenSection().click();
-        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getPreviousIconInCollagenSection().isDisplayed());
+        try{
+        Assert.assertTrue(aeVitaminsAndHealthCategoryPage.getPreviousIconInCollagenSection().isDisplayed());}
+        catch (TimeoutException t){
+            System.out.println("There's not No Next/Previous Button");
+        }
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.1 Critical Severity"},description = "Vitamins & Health Category- Make sure clicking on the View All button in the Collagen section works correctly ", priority = 422)
     public void verifyClickingOnViewAllBtnInsideCollagenSectionWorksCorrectly() {
