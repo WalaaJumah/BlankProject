@@ -410,7 +410,7 @@ public class AeCartTestCases extends BaseTest {
         aeProductDetailsPage.addToCartAndDisplayTheCart();
 //        String currentProductPrice = aeCartPage.getPriceInCartPage().getText();
         aeCartPage.clickOnIncreaseQtyBtn();
-        DataHelperAndWait.refreshPage(webDriver);
+        DataHelperAndWait.waitForTime(1500);
         String newProductPrice = aeCartPage.getPriceInCartPage().getText();
 //        Assert.assertNotEquals(currentProductPrice, newProductPrice);
         aeCartPage.removeProductFromCart();
