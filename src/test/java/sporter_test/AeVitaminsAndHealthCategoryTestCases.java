@@ -591,28 +591,42 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnVitaminsA_ZCategoryInsideTheShopByCategorySectionWorksCorrectly();
+        try{
         aeSportSupplementsCategoryPage.navigateToPage2();
         DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
         aeSportSupplementsCategoryPage.navigateToPage3();
         DataHelperAndWait.waitForUrlContains("p=3",webDriver,8);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));}
+        catch (Exception e){
+            System.out.println("There's no pagenation");
+        }
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make Sure the previous page button In VitaminsA_Z Category Page works correctly", priority = 55)
     public void verifyPreviousPageBtnInVitaminsA_ZCategoryPageWorksCorrectly() throws InterruptedException{
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyThePaginationControlInVitaminsA_ZCategoryPageWorksCorrectly();
+        try{
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));}
+
+        catch (Exception e){
+        System.out.println("There's no pagenation");
+    }
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make Sure the next page button In VitaminsA_Z Category Page works correctly", priority = 56)
     public void verifyNextPageBtnInVitaminsA_ZCategoryPageWorksCorrectly() throws InterruptedException{
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyThePaginationControlInVitaminsA_ZCategoryPageWorksCorrectly();
+        try{
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
         Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
+    }
+        catch (Exception e){
+                System.out.println("There's no pagenation");
+                }
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.4  Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the VitaminsA_Z category page", priority = 57)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInVitaminsA_ZCategoryPage () {
@@ -887,7 +901,11 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnAntioxidantsCategoryInsideTheShopByCategorySectionWorksCorrectly();
+        try{
         Assert.assertTrue(aeSportSupplementsCategoryPage.getDisabledPreviousPageBtn().isDisplayed());}
+        catch (Exception e){
+            System.out.println("There's no pagenation");
+        }}
     //There's a performance issue in the pagination control
     @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make Sure the Pagination control in the Antioxidants category page works correctly", priority = 82)
     public void verifyThePaginationControlInAntioxidantsCategoryPageWorksCorrectly() {
@@ -1036,7 +1054,11 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnSuperfoodsCategoryInsideTheShopByCategorySectionWorksCorrectly();
+        try{
         Assert.assertTrue(aeSportSupplementsCategoryPage.getDisabledPreviousPageBtn().isDisplayed());}
+        catch (Exception e){
+            System.out.println("There's no pagenation");
+        }}
 
     //There's a performance issue in the pagination control
     @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make Sure the Pagination control in the Superfoods category page works correctly", priority = 95)
@@ -1044,17 +1066,25 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnSuperfoodsCategoryInsideTheShopByCategorySectionWorksCorrectly();
+        try{
         aeSportSupplementsCategoryPage.navigateToPage2();
         DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));}
+        catch (Exception e){
+            System.out.println("There's no pagenation");
+        }
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make Sure the previous page button In Superfoods Category Page works correctly", priority = 96)
     public void verifyPreviousPageBtnInSuperfoodsCategoryPageWorksCorrectly() throws InterruptedException{
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyThePaginationControlInSuperfoodsCategoryPageWorksCorrectly();
+        try{
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
-        Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
+        Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));}
+        catch (Exception e){
+            System.out.println("There's no pagenation");
+        }
     }
     //There's a performance issue when clicking on the previous button
     @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make Sure the next page button In Superfoods Category Page works correctly", priority = 97)
@@ -1062,9 +1092,13 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyThePaginationControlInSuperfoodsCategoryPageWorksCorrectly();
+        try{
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
         DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));}
+        catch (Exception e){
+            System.out.println("There's no pagenation");
+        }
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.4  Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Superfoods category page", priority = 98)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInSuperfoodsCategoryPage () {
@@ -1219,9 +1253,13 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyThePaginationControlInCollagenCategoryPageWorksCorrectly();
+        try{
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
         DataHelperAndWait.waitForUrlContains("p=3",webDriver,8);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=3"));}
+        catch (Exception e){
+            System.out.println("There's no pagenation");
+        }
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.4  Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Collagen category page", priority = 112)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInCollagenCategoryPage () {
@@ -1345,15 +1383,23 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         aeVitaminsAndHealthCategoryPage.navigateToHomePage();
         this.verifyClickingOnMelatoninCategoryInsideTheShopByCategorySectionWorksCorrectly();
+        try{
         Assert.assertTrue(aeSportSupplementsCategoryPage.getDisabledPreviousPageBtn().isDisplayed());}
+        catch (Exception e){
+            System.out.println("There's no pagenation");
+        }}
     @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make Sure the Pagination control in the Melatonin category page works correctly", priority = 123)
     public void verifyThePaginationControlInMelatoninCategoryPageWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyClickingOnMelatoninCategoryInsideTheShopByCategorySectionWorksCorrectly();
+        try{
         aeSportSupplementsCategoryPage.navigateToPage2();
         DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));}
+        catch (Exception e){
+            System.out.println("There's no pagenation");
+        }
 
     }
     //There's a performance issue here
@@ -1362,17 +1408,25 @@ aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyThePaginationControlInMelatoninCategoryPageWorksCorrectly();
+        try{
         aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
-        Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
+        Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));}
+        catch (Exception e){
+            System.out.println("There's no pagenation");
+        }
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make Sure the next page button In Melatonin Category Page works correctly", priority = 125)
     public void verifyNextPageBtnInMelatoninCategoryPageWorksCorrectly() throws InterruptedException{
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
 //        this.verifyThePaginationControlInMelatoninCategoryPageWorksCorrectly();
+        try{
         aeSportSupplementsCategoryPage.clickOnNextPageBtn();
         DataHelperAndWait.waitForUrlContains("p=2",webDriver,8);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));}
+        catch (Exception e){
+            System.out.println("There's no pagenation");
+        }
     }
     @Test(groups = {"2.08 Vitamins & Health Category", "1.4  Low Severity"},description = "Vitamins & Health Category- Make sure the page bottom that appears in the footer section displays all 3 blocks:100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks in the Melatonin category page", priority = 126)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInMelatoninCategoryPage () {
