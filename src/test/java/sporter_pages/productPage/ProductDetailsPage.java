@@ -150,15 +150,17 @@ public class ProductDetailsPage extends BasePage {
             webDriver.navigate().to(BaseURL  + productUrlJordan);
         }
             if(webDriver.getCurrentUrl().contains("ar-sa")){
-            webDriver.navigate().to(BaseURL  + productUrlKSA);
+            webDriver.navigate().to(BaseURL  + productUrlKSA1);
         }
         if(webDriver.getCurrentUrl().contains("en-eg")){
             webDriver.navigate().to(BaseURL  + productUrlEgypt);
         }
-
-        else
-        webDriver.navigate().to(BaseURL  + productUrl);
-            verifyTheDisplayedPageDoesNotHaveErrors();
+        if(webDriver.getCurrentUrl().contains("en-qa")){
+            webDriver.navigate().to(BaseURL  + productUrl);
+            verifyTheDisplayedPageDoesNotHaveErrors();}
+        if(webDriver.getCurrentUrl().contains("en-ae")){
+            webDriver.navigate().to(BaseURL  + productUrl);
+            verifyTheDisplayedPageDoesNotHaveErrors();}
     }
         public void displayTheProductHaveLessQty() {
             if(webDriver.getCurrentUrl().contains("en-eg")){

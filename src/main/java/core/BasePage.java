@@ -114,7 +114,13 @@ public class BasePage {
     public final  String youtubeURL = "https://www.youtube.com/user/SporterVideos";
     public final String searchUrl="catalogsearch/result/?q=";
     public static String productUrl = "/optimum-gold-standard-100-whey";
-    public static String productUrlKSA = "/the-pack-wild-pre-workout";
+    public static String productUrlKSA1 = "/the-pack-wild-pre-workout";
+    public static String productUrlKSA2 = "/soulution-high-protein-blend-pancake-mix";
+    public static String productUrlKSA3 = "/windmill-natural-vitamins-omega-3-1000mg-with-epa-dha";
+    public static String productUrlKSA4 = "/webber-naturals-joint-ease-glucosamine-chondroitin";
+    public static String productUrlKSA5 = "/sportlife-boost-focus-freshmint-gums";
+    public static String productUrlKSA6 = "/yumearth-organic-assorted-vitamin-c-lollipops-14-pops";
+    public static String productUrlKSAWithHighPrice1 = "/dymatize-iso-100";
     public static String productUrlEgypt = "/cellucor-c4";
     public static String productUrlJordan = "/optimum-gold-standard-100-whey";
     public final String bogoUrlKSA = "/catalog-pro-32569-32569";

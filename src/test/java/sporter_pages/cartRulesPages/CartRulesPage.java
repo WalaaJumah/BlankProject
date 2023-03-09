@@ -16,4 +16,17 @@ public class CartRulesPage extends CartPage {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
     }
+    public void clearCart()
+    {
+        CartPage cartPage= new CartPage(webDriver);
+            this.navigateToCartPage();
+
+                if (cartPage.getNoItemInCartLabel().isDisplayed()) {
+                    System.out.println("");
+                }
+
+        else{
+            cartPage.removeItem();
+        }
+    }
 }
