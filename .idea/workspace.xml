@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86683dee-3ff6-4652-96ae-dd8bddfbd97f" name="Changes" comment="test" />
+    <list default="true" id="86683dee-3ff6-4652-96ae-dd8bddfbd97f" name="Changes" comment="Revet the changes on the checkout related to the cokkies">
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/CheckoutForRegisteredTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/CheckoutForRegisteredTestCases.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -289,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678614875147</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Revet the changes on the checkout related to the cokkies">
+      <created>1678622175856</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1678622175856</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -333,7 +342,8 @@
     <MESSAGE value="Add Cart Rules Classes" />
     <MESSAGE value="Update the Checkout classes" />
     <MESSAGE value="Update Qatar Cart Rules" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Qatar Cart Rules" />
+    <MESSAGE value="Revet the changes on the checkout related to the cokkies" />
+    <option name="LAST_COMMIT_MESSAGE" value="Revet the changes on the checkout related to the cokkies" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
