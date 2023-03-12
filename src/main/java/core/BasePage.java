@@ -126,6 +126,10 @@ public class BasePage {
     public static String productUrlJordan = "/optimum-gold-standard-100-whey";
     public static String productUrlJordanWithLowPrice = "/jack-links-beef-jerky-54840/";
     public static String productUrlJordanWithHighPrice = "/climaqx-gym-bag-21711";
+    public static String productUrlQatarWithHighPrice = "/optimum-gold-standard-100-whey-6202";
+    public static String productUrlQatarWithHighPrice2 = "/dymatize-iso-100-7164";
+    public static String productUrlQatarWithHighPrice3 = "/dymatize-elite-whey-7161";
+    public static String productUrlQatarWithHighPrice4 = "/evl-nutrition-100-whey-protein-55126";
     public static String productUrlJordanWithHighPrice2 = "/catlog-product-view-id-6847-6773";
     public final String bogoUrlKSA = "/catalog-pro-32569-32569";
     public final String bogoUrlQatar = "/catalog-pro-32569-32569";

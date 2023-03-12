@@ -59,9 +59,10 @@ public class QatarCartRulesTestCases extends CartRulesTestCases {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
-        productDetailsPage.displayTheProduct();
-        productDetailsPage.addToCart();
+productDetailsPage.displayTheProduct();
+productDetailsPage.addToCart();
         productDetailsPage.viewCart();
+        DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(),webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(),webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
@@ -101,6 +102,19 @@ public class QatarCartRulesTestCases extends CartRulesTestCases {
         webDriver.navigate().to(BaseURL+cartPage.productUrlKSA1);
         productDetailsPage.increaseTheQuantity();
         productDetailsPage.increaseTheQuantity();
+        productDetailsPage.increaseTheQuantity();
+        productDetailsPage.addToCart();
+        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
+    }
+    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure that inability to checkout when adding 2 items of the same kind to the cart & total exceed 925 QAR (Tax excluded) ", priority = 6)
+    public void verifyInabilityToCheckoutOrderWhenTheTotalExceed925QARByIncreasingTheQty() throws Exception {
+        CartPage cartPage= new CartPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        webDriver.navigate().to(BaseURL+cartPage.productUrlQatarWithHighPrice2);
+        productDetailsPage.increaseTheQuantity();
+        productDetailsPage.addToCart();
+        webDriver.navigate().to(BaseURL+cartPage.productUrlQatarWithHighPrice);
         productDetailsPage.increaseTheQuantity();
         productDetailsPage.addToCart();
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
