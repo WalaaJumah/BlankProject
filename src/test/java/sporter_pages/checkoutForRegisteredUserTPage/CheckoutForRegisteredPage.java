@@ -181,7 +181,7 @@ public class CheckoutForRegisteredPage extends BasePage {
     public void accessGuestCheckoutForm(){
 //        webDriver.navigate().to(BaseURL+shippingInformationUrl);
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.navigateToCartPage();
+        cartPage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
     }
