@@ -42,7 +42,7 @@ public class EgyptCartTestCases extends CartTestCases {
         float orderTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(),webDriver,"EGP");
         double cartTotal = subTotal + tax;
         Assert.assertEquals(orderTotal, cartTotal);
-        cartPage.removeItem();
+        webDriver.manage().deleteCookieNamed("guestCartId");
     }
     @Test(groups = {"All Smoke Testing Result","1.4 Low Severity"},description = "{{CountryName}}: Make sure that the counter-number appears inside the cart pop-up works correctly", priority = 4)
     public void verifyTheCounterInsideCartPopUpWorksCorrectly() {
@@ -82,7 +82,7 @@ public class EgyptCartTestCases extends CartTestCases {
         DataHelperAndWait.waitForTime(500);
         String newProductPrice = DataHelperAndWait.getWebElementText(cartPage.getProductPriceTotal(),webDriver);
         Assert.assertNotEquals(currentProductPrice, newProductPrice);
-        cartPage.removeItem();
+        webDriver.manage().deleteCookieNamed("guestCartId");
     }
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the system cancel the coupon code correctly", priority = 35)
     public void verifyAbilityToCancelTheCouponCode() {
@@ -119,9 +119,10 @@ public class EgyptCartTestCases extends CartTestCases {
         cartPage.addBogoToCartAndDisplayTheCart();
         try{
             WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getFreePrice(),webDriver);
-            cartPage.removeItem();}
+            webDriver.manage().deleteCookieNamed("guestCartId");
+        }
         catch (Exception e){
-            cartPage.removeItem();
+            webDriver.manage().deleteCookieNamed("guestCartId");
         }
     }
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the system apply Free Gift coupon code correctly", priority = 34)
@@ -136,12 +137,11 @@ public class EgyptCartTestCases extends CartTestCases {
     public void verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.navigateToCartPage();
-        cartPage.removeItem();
+        webDriver.manage().deleteCookieNamed("guestCartId");
         productDetailsPage.displayTheProduct();
         productDetailsPage.increaseTheQuantity();
         cartPage.addToCartAndViewCart();
         WebElementsAssertion.validateTheCurrentUrlContainsString(productDetailsPage.cartURL,webDriver);
-        cartPage.removeItem();
+        webDriver.manage().deleteCookieNamed("guestCartId");
     }
 }

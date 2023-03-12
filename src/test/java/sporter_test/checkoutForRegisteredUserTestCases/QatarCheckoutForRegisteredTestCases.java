@@ -57,7 +57,8 @@ public class QatarCheckoutForRegisteredTestCases extends CheckoutForRegisteredTe
         JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         try{
-            cartPage.clearCart();}
+            webDriver.manage().deleteCookieNamed("guestCartId");
+        }
         catch (Exception e){
             System.out.println("");
         }
@@ -151,8 +152,7 @@ public class QatarCheckoutForRegisteredTestCases extends CheckoutForRegisteredTe
         CheckoutForRegisteredPage checkoutForRegisteredPage=new CheckoutForRegisteredPage(webDriver);
         JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.navigateToCartPage();
-        cartPage.removeItem();
+        webDriver.manage().deleteCookieNamed("guestCartId");
         cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);

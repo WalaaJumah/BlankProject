@@ -81,7 +81,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         CartPage cartPage = new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
         try {
-            cartPage.clearCart();
+            webDriver.manage().deleteCookieNamed("guestCartId");
         }
         catch (Exception e){
             System.out.println("");
@@ -126,7 +126,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
 //        cartPage.removeItem();
 //        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         try {
-            cartPage.clearCart();
+            webDriver.manage().deleteCookieNamed("guestCartId");
         }
         catch (Exception e){
             System.out.println("");
@@ -166,7 +166,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
 //        cartPage.removeItem();
 //        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         try {
-            cartPage.clearCart();
+            webDriver.manage().deleteCookieNamed("guestCartId");
         }
         catch (Exception e){
             System.out.println("");
@@ -207,7 +207,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
 //        cartPage.removeItem();
 //        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         try {
-            cartPage.clearCart();
+            webDriver.manage().deleteCookieNamed("guestCartId");
         }
         catch (Exception e){
             System.out.println("");
@@ -246,7 +246,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
 //        cartPage.removeItem();
 //        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         try {
-            cartPage.clearCart();
+            webDriver.manage().deleteCookieNamed("guestCartId");
         }
         catch (Exception e){
             System.out.println("");
@@ -290,7 +290,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
 //        cartPage.removeItem();
 //        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         try {
-            cartPage.clearCart();
+            webDriver.manage().deleteCookieNamed("guestCartId");
         }
         catch (Exception e){
             System.out.println("");
@@ -357,7 +357,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
 //        cartPage.removeItem();
 //        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         try {
-            cartPage.clearCart();
+            webDriver.manage().deleteCookieNamed("guestCartId");
         }
         catch (Exception e){
             System.out.println("");
@@ -417,7 +417,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
 //        cartPage.removeItem();
 //        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         try {
-            cartPage.clearCart();
+            webDriver.manage().deleteCookieNamed("guestCartId");
         }
         catch (Exception e){
             System.out.println("");
@@ -455,7 +455,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
 //        cartPage.removeItem();
 //        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         try {
-            cartPage.clearCart();
+            webDriver.manage().deleteCookieNamed("guestCartId");
         }
         catch (Exception e){
             System.out.println("");
@@ -490,7 +490,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
 //        cartPage.removeItem();
 //        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         try {
-            cartPage.clearCart();
+            webDriver.manage().deleteCookieNamed("guestCartId");
         }
         catch (Exception e){
             System.out.println("");

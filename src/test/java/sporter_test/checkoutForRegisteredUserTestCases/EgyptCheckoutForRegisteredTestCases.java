@@ -53,7 +53,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         CartPage cartPage= new CartPage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
-        cartPage.clearCart();
+        webDriver.manage().deleteCookieNamed("guestCartId");
         cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
         try{
@@ -83,7 +83,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         CartPage cartPage= new CartPage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
-        cartPage.clearCart();
+        webDriver.manage().deleteCookieNamed("guestCartId");
         cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
         try{
@@ -185,7 +185,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
 //        cartPage.removeItem();
 //        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         try {
-            cartPage.clearCart();
+            webDriver.manage().deleteCookieNamed("guestCartId");
         }
         catch (Exception e){
             System.out.println("");

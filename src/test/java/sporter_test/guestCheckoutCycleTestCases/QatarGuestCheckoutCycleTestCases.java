@@ -132,7 +132,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
            JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
            QatarGuestCheckoutCyclePage qatar= new QatarGuestCheckoutCyclePage(webDriver);
            CartPage cartPage= new CartPage(webDriver);
-           cartPage.clearCart();
+           webDriver.manage().deleteCookieNamed("guestCartId");
            guestCheckoutCyclePage.accessGuestCheckoutForm();
            jo.fillInShippingInformationInputField(
                    XmlReader.getXMLData("firstName"),
@@ -161,7 +161,7 @@ public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithV
         JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
         QatarGuestCheckoutCyclePage qatar= new QatarGuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        cartPage.clearCart();
+        webDriver.manage().deleteCookieNamed("guestCartId");
         guestCheckoutCyclePage.accessGuestCheckoutForm();
         jo.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
@@ -187,7 +187,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         QatarGuestCheckoutCyclePage qatar= new QatarGuestCheckoutCyclePage(webDriver);
-        cartPage.clearCart();
+        webDriver.manage().deleteCookieNamed("guestCartId");
         guestCheckoutCyclePage.accessGuestCheckoutForm();
         jo.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
@@ -236,7 +236,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
         QatarGuestCheckoutCyclePage qatar= new QatarGuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        cartPage.clearCart();
+        webDriver.manage().deleteCookieNamed("guestCartId");
         guestCheckoutCyclePage.accessGuestCheckoutForm();
         jo.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
@@ -261,7 +261,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         JordanGuestCheckoutCyclePage guestCheckoutCyclePage = new JordanGuestCheckoutCyclePage(webDriver);
         QatarGuestCheckoutCyclePage qatar= new QatarGuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        cartPage.clearCart();
+        webDriver.manage().deleteCookieNamed("guestCartId");
         guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),

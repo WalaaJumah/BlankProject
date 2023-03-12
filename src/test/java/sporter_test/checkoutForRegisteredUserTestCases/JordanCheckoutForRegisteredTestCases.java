@@ -59,9 +59,9 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        try{
-        cartPage.clearCart();}
-        catch (Exception e){
+        try {
+            webDriver.manage().deleteCookieNamed("guestCartId");
+        }        catch (Exception e){
             System.out.println("");
         }
         cartPage.addToCartAndDisplayTheCart();
@@ -136,7 +136,7 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
 //        cartPage.removeItem();
 //        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         try {
-            cartPage.clearCart();
+            webDriver.manage().deleteCookieNamed("guestCartId");
         }
         catch (Exception e){
             System.out.println("");
@@ -208,7 +208,7 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        cartPage.clearCart();
+        webDriver.manage().deleteCookieNamed("guestCartId");
         guestCheckoutCyclePage.accessGuestCheckoutForm();
         try{            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
