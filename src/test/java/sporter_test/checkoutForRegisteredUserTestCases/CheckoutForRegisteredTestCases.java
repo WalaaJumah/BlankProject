@@ -55,7 +55,7 @@ public class CheckoutForRegisteredTestCases extends BaseTest
         int newCartCounter=DataHelperAndWait.convertTheStringToInt(cartPage.getItemsCounter(),webDriver);
         Assert.assertTrue(newCartCounter>=oldCartCounter);
         webDriver.manage().deleteCookieNamed("guestCartId");
-        cartPage.navigateToHomePage();
+//        cartPage.navigateToHomePage();
 //        DataHelperAndWait.waitForTime(3000);
         webDriver.manage().deleteCookieNamed("uid");
 //        DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
@@ -82,8 +82,12 @@ public class CheckoutForRegisteredTestCases extends BaseTest
     @Test(groups = {"2.02 Checkout Cycle( Registered User)", "All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Verify ability to remove the product from the cart successfully", priority = 4)
     public void verifyAbilityToRemoveProductFromCart() {
         CartPage cartPage = new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getNoItemInCartLabel(), webDriver);
+        cartPage.navigateToCartPage();
+        try{
+            cartPage.clearCart();}
+        catch (Exception e){
+            System.out.println("");
+        }        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getNoItemInCartLabel(), webDriver);
     }
     @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure to add product to the Cart from Product Details Page", priority = 5)
     public void addToCartAndViewCartFromPDP() {

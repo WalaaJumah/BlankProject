@@ -59,9 +59,9 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        try {
-            webDriver.manage().deleteCookieNamed("guestCartId");
-        }        catch (Exception e){
+        try{
+            cartPage.clearCart();}
+        catch (Exception e){
             System.out.println("");
         }
         cartPage.addToCartAndDisplayTheCart();

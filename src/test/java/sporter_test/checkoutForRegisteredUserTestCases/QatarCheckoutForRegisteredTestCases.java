@@ -57,8 +57,7 @@ public class QatarCheckoutForRegisteredTestCases extends CheckoutForRegisteredTe
         JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         try{
-            webDriver.manage().deleteCookieNamed("guestCartId");
-        }
+            cartPage.clearCart();}
         catch (Exception e){
             System.out.println("");
         }

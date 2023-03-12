@@ -184,9 +184,8 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
 //        cartPage.navigateToCartPage();
 //        cartPage.removeItem();
 //        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        try {
-            webDriver.manage().deleteCookieNamed("guestCartId");
-        }
+        try{
+            cartPage.clearCart();}
         catch (Exception e){
             System.out.println("");
         }
