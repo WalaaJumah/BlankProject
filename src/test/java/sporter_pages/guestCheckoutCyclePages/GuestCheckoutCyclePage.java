@@ -182,8 +182,12 @@ private WebElement sameDayDelivery;
 //        webDriver.navigate().to(BaseURL+shippingInformationUrl);
 //        DataHelperAndWait.waitForUrlContains(shippingInformationUrl,webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.navigateToCartPage();
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+//        cartPage.navigateToCartPage();
+        cartPage.navigateToHomePage();
+                    cartPage.clickOnCartIcon();
+            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+        //TODO: CHECK pROCEED TO CHECKOUT AFTER SOLVED IT BY MOAMEN
+//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
     }
         public void accessGuestCheckoutForm(){
 ////        webDriver.navigate().to(BaseURL+shippingInformationUrl);
