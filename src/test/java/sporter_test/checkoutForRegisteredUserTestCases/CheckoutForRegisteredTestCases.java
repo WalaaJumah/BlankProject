@@ -57,8 +57,9 @@ public class CheckoutForRegisteredTestCases extends BaseTest
         webDriver.manage().deleteCookieNamed("guestCartId");
         cartPage.navigateToHomePage();
 //        DataHelperAndWait.waitForTime(3000);
-        DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
-        DataHelperAndWait.clickOnElement(registrationPage.getLogoutOption(), webDriver);
+        webDriver.manage().deleteCookieNamed("uid");
+//        DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
+//        DataHelperAndWait.clickOnElement(registrationPage.getLogoutOption(), webDriver);
     }
     @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Ability to login correctly from Sign In Page using valid credential", priority = 2)
     public void verifyAbilityToLoginCorrectlyWithValidCredentials() {
