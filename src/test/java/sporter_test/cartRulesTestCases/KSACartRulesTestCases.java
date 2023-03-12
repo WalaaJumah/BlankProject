@@ -13,6 +13,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.cartPages.CartPage;
+import sporter_pages.cartRulesPages.CartRulesPage;
 import sporter_pages.cartRulesPages.KSACartRulesPage;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import sporter_pages.headerSection.HeaderSection;
@@ -23,6 +24,7 @@ import xml_reader.XmlReader;
 import static core.BasePage.BaseURL;
 
 public class KSACartRulesTestCases extends CartRulesTestCases{
+//    @BeforeClass(alwaysRun=true)
     @BeforeClass(alwaysRun=true)
     public void switchToKsaStore(){
         KsaHomePage ksaHomePage=new KsaHomePage(webDriver);
@@ -46,7 +48,8 @@ public class KSACartRulesTestCases extends CartRulesTestCases{
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         KSACartRulesPage ksaCartRulesPage= new KSACartRulesPage(webDriver);
-        ksaCartRulesPage.clearCart();
+//        ksaCartRulesPage.clearCart();
+        webDriver.manage().deleteCookieNamed("guestCartId");
         productDetailsPage.keepShoppingAfterAddingToCart();
         productDetailsPage.addToCart();
         productDetailsPage.keepShopping();
@@ -60,19 +63,22 @@ public class KSACartRulesTestCases extends CartRulesTestCases{
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         KSACartRulesPage ksaCartRulesPage= new KSACartRulesPage(webDriver);
-        ksaCartRulesPage.clearCart();
-        productDetailsPage.displayTheProduct();
+//        ksaCartRulesPage.clearCart();
+           webDriver.manage().deleteCookieNamed("guestCartId");
+           productDetailsPage.displayTheProduct();
         productDetailsPage.increaseTheQuantity();
         productDetailsPage.increaseTheQuantity();
         productDetailsPage.increaseTheQuantity();
         productDetailsPage.addToCart();
+//        DataHelperAndWait.clickOnElement(cartPage.getCartErrorMsg(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
     }
        @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure that inability to add more than 3 items of the same kind to the cart by increasing the quantity to 3 from the Cart Page", priority = 3)
     public void verify3ItemOfTheSameKindRuleWorksCorrectlyWhenIncreasingTheQtyTo3FromCartPage(){
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        cartPage.clearCart();
+//        cartPage.clearCart();
+           webDriver.manage().deleteCookieNamed("guestCartId");
            productDetailsPage.displayTheProduct();
            productDetailsPage.addToCart();
         productDetailsPage.viewCart();
@@ -82,69 +88,70 @@ public class KSACartRulesTestCases extends CartRulesTestCases{
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(),webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
+//        tearDown();
     }
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure that inability to add more than 5 items to the cart", priority = 4)
-    public void verifyInabilityToAddMoreThan5ItemsToTheCart(){
+    public void verifyInabilityToAddMoreThan5ItemsToTheCart() throws Exception {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        cartPage.clearCart();
+//        setupBrowserFromTheClass(environmentName,browserName,countryUrl,cartPage.bogoProduct,cartPage.oOSProductUrl,cartPage.bundleUrl);
+//        switchToKsaStore();
+        webDriver.manage().deleteCookieNamed("guestCartId");
         webDriver.navigate().to(BaseURL+cartPage.productUrlKSA1);
         productDetailsPage.addToCart();
+        productDetailsPage.keepShopping();
         webDriver.navigate().to(BaseURL+cartPage.productUrlKSA2);
         productDetailsPage.addToCart();
+        productDetailsPage.keepShopping();
         webDriver.navigate().to(BaseURL+cartPage.productUrlKSA3);
         productDetailsPage.addToCart();
+        productDetailsPage.keepShopping();
         webDriver.navigate().to(BaseURL+cartPage.productUrlKSA4);
         productDetailsPage.addToCart();
+        productDetailsPage.keepShopping();
         webDriver.navigate().to(BaseURL+cartPage.productUrlKSA5);
         productDetailsPage.addToCart();
+        productDetailsPage.keepShopping();
         webDriver.navigate().to(BaseURL+cartPage.productUrlKSA6);
         productDetailsPage.addToCart();
-//        productDetailsPage.viewCart();
-//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
-//        DataHelperAndWait.waitForUrlContains(guestCheckoutCyclePage.shippingInformationUrl,webDriver);
-//        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCheckoutAsGuestBtn(),webDriver);
-//        guestCheckoutCyclePage.fillInShippingInformationInputField(
-//                XmlReader.getXMLData("firstName"),
-//                XmlReader.getXMLData("lastName"),
-//                XmlReader.getXMLData("correctEmail"),
-//                XmlReader.getXMLData("phoneNumber"),
-//                XmlReader.getXMLData("AddressName"),
-//                XmlReader.getXMLData("StreetOneAddressName"),
-//                XmlReader.getXMLData("ksaPhoneNumber")
-//        );
-//        guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
+//        tearDown();
     }
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure that inability to add more than 5 items to the cart and 3 of them with the same kind", priority = 5)
-    public void verifyInabilityToAddMoreThan5ItemsToTheCartAnd3OfThemWithTheSameKind(){
+    public void verifyInabilityToAddMoreThan5ItemsToTheCartAnd3OfThemWithTheSameKind() throws Exception {
         CartPage cartPage= new CartPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        cartPage.navigateToCartPage();
-        cartPage.removeAllItems(5);
+        CartRulesPage cartRulesPage= new CartRulesPage(webDriver);
+//        setupBrowserFromTheClass(environmentName,browserName,countryUrl,cartPage.bogoProduct,cartPage.oOSProductUrl,cartPage.bundleUrl);
+//        switchToKsaStore();
+        webDriver.manage().deleteCookieNamed("guestCartId");
+//        cartRulesPage.clearAllItems(5);
         webDriver.navigate().to(BaseURL+cartPage.productUrlKSA2);
         productDetailsPage.addToCart();
+        productDetailsPage.keepShopping();
         webDriver.navigate().to(BaseURL+cartPage.productUrlKSA1);
-        productDetailsPage.addToCart();
-        productDetailsPage.keepShopping();
-        productDetailsPage.addToCart();
-        productDetailsPage.keepShopping();
+        productDetailsPage.increaseTheQuantity();
+        productDetailsPage.increaseTheQuantity();
+        productDetailsPage.increaseTheQuantity();
         productDetailsPage.addToCart();
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
+//        tearDown();
     }
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure that inability to checkout the order when its total exceed 819 SAR (Tax excluded) ", priority = 6)
-    public void verifyInabilityToCheckoutOrderWhenTheTotalExceed819SAR(){
+    public void verifyInabilityToCheckoutOrderWhenTheTotalExceed819SAR() throws Exception {
         CartPage cartPage= new CartPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        cartPage.navigateToCartPage();
-        cartPage.removeAllItems(3);
+        CartRulesPage cartRulesPage= new CartRulesPage(webDriver);
+//        setupBrowserFromTheClass(environmentName,browserName,countryUrl,cartPage.bogoProduct,cartPage.oOSProductUrl,cartPage.bundleUrl);
+//        switchToKsaStore();
+        webDriver.manage().deleteCookieNamed("guestCartId");
+//        cartRulesPage.clearAllItems(4);
         webDriver.navigate().to(BaseURL+cartPage.productUrlKSAWithHighPrice1);
         productDetailsPage.addToCart();
         productDetailsPage.keepShopping();
-        productDetailsPage.addToCart();
-        productDetailsPage.keepShopping();
+        webDriver.navigate().to(BaseURL+cartPage.productUrlKSAWithHighPrice2);
         productDetailsPage.addToCart();
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
+//        tearDown();
     }
 }
