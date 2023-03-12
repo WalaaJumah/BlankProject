@@ -124,6 +124,9 @@ public class BasePage {
     public static String productUrlKSAWithHighPrice2 = "/asics-gel-kayano-26-ls-graphite-grey-piedmont-grey-32131";
     public static String productUrlEgypt = "/cellucor-c4";
     public static String productUrlJordan = "/optimum-gold-standard-100-whey";
+    public static String productUrlJordanWithLowPrice = "/jack-links-beef-jerky-54840/";
+    public static String productUrlJordanWithHighPrice = "/climaqx-gym-bag-21711";
+    public static String productUrlJordanWithHighPrice2 = "/catlog-product-view-id-6847-6773";
     public final String bogoUrlKSA = "/catalog-pro-32569-32569";
     public final String bogoUrlQatar = "/catalog-pro-32569-32569";
     public final String bogoUrlEgypt = "/cellucor-c4";
