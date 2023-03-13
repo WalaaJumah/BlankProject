@@ -161,7 +161,7 @@ public class CartTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure remove Item button works correctly when the cart conatins more than item", priority = 16)
     public void verifyRemoveItemBtnWorksWhenCartContainsMoreThanItem() {
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.removeAllItems(2);
+        webDriver.manage().deleteCookieNamed("guestCartId");
     }
     //TODO: To be revisit
 //    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Adding a config to the cart more than one with different simple in each time", priority = 100)

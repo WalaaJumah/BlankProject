@@ -110,12 +110,12 @@ public class EgyptCartTestCases extends CartTestCases {
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductName(),webDriver);
         WebElementsAssertion.validateTheCurrentUrlNotContainsString(cartPage.cartURL,webDriver);
         cartPage.navigateToCartPage();
-        cartPage.removeAllItems(2);
+        webDriver.manage().deleteCookieNamed("guestCartId");
     }
     @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the Free Gift does not have a price", priority = 22)
     public void verifyTheFreeGiftIsDoesNotHavePrice() {
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.removeItem();
+        webDriver.manage().deleteCookieNamed("guestCartId");
         cartPage.addBogoToCartAndDisplayTheCart();
         try{
             WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getFreePrice(),webDriver);

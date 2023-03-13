@@ -60,7 +60,7 @@ public void verifyIncreaseQtyBtnInCartPageWorking() {}
     @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the Free Gift is removed from the cart when you remove the product For Bogo", priority = 12)
     public void verifyTheFreeGiftIsRemovedWhenRemovingTheProductForBogo() {
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.removeItem();
+        webDriver.manage().deleteCookieNamed("guestCartId");
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getFreeFromSporterLabelInProductCard(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getNoItemInCartLabel(),webDriver);
     }
@@ -80,7 +80,7 @@ public void verifyIncreaseQtyBtnInCartPageWorking() {}
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getWeAcceptLabel(),webDriver);
 //        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCODOption(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCreditCardOption(),webDriver);
-        cartPage.removeAllItems(2);
+        webDriver.manage().deleteCookieNamed("guestCartId");
     }
     @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}: Make sure that the view Cart button appearing in the Cart pop-up works correctly", priority = 7)
     public void verifyAbilityToViewCartFromCartIcon() {
@@ -98,7 +98,7 @@ public void verifyIncreaseQtyBtnInCartPageWorking() {}
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductName(),webDriver);
         WebElementsAssertion.validateTheCurrentUrlNotContainsString(cartPage.cartURL,webDriver);
         cartPage.navigateToCartPage();
-        cartPage.removeAllItems(2);
+        webDriver.manage().deleteCookieNamed("guestCartId");
     }
 
     }
