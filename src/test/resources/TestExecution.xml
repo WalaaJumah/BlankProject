@@ -14,7 +14,7 @@
         <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix" />
         <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/" />
         <classes>
-            <class name="sporter_test.myAccountTestCases.KuwaitMyAccountTestCases">
+            <class name="sporter_test.myAccountTestCases.OmanMyAccountTestCases">
 <!--                <methods>-->
 <!--                    <include name="verifyAllMyAccountOptionsAppearCorrectly"/>-->
 <!--                    <include name="verifyAbilityToEditAddressCorrectly"/>-->

@@ -11,21 +11,22 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.EgyptHomePage;
 import sporter_pages.myAccountPages.KuwaitMyAccountPage;
+import sporter_pages.myAccountPages.OmanMyAccountPage;
 
-public class KuwaitMyAccountTestCases extends MyAccountTestCases{
+public class OmanMyAccountTestCases extends MyAccountTestCases{
     @BeforeClass(alwaysRun=true)
-    public void switchToKuwaitStore(){
-        KuwaitMyAccountPage kuwaitMyAccountPage= new KuwaitMyAccountPage(webDriver);
+    public void switchToOmanStore(){
+        OmanMyAccountPage omanMyAccountPage= new OmanMyAccountPage(webDriver);
         EgyptHomePage egyptHomePage=new EgyptHomePage(webDriver);
-        egyptHomePage.switchCountry(kuwaitMyAccountPage.getKuwaitCountry());
-        if(webDriver.getCurrentUrl().contains(egyptHomePage.kuwaitDomain)){
-            System.out.println("You are in Kuwait Store");
+        egyptHomePage.switchCountry(omanMyAccountPage.getOmanCountry());
+        if(webDriver.getCurrentUrl().contains(egyptHomePage.omanDomain)){
+            System.out.println("You are in Oman Store");
         }
         else {
-            webDriver.navigate().to(BasePage.BaseURL+egyptHomePage.kuwaitDomain);
+            webDriver.navigate().to(BasePage.BaseURL+egyptHomePage.omanDomain);
             CloseInitialDialog();          }
-        storeCountry="Kuwait";
-        countryCode="965";
+        storeCountry="Oman";
+        countryCode="968";
     }
     @Test(enabled = false)
     public void verifyInabilityToAddNewAddressUsingInvalidNationalID(){}
