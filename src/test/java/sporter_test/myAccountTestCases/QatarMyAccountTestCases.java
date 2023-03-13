@@ -18,7 +18,8 @@ import sporter_pages.myAccountPages.JordanMyAccountPage;
 import sporter_pages.myAccountPages.MyAccountPage;
 import xml_reader.XmlReader;
 
-public class QatarMyAccountTestCases extends MyAccountTestCases  {    @BeforeClass(alwaysRun = true)
+public class QatarMyAccountTestCases extends MyAccountTestCases  {
+    @BeforeClass(alwaysRun = true)
 public void switchToQatarStore() {
     QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
     qatarHomePage.switchCountry(qatarHomePage.getQatarCountry());

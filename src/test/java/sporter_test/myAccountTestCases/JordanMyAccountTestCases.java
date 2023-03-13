@@ -9,6 +9,7 @@ package sporter_test.myAccountTestCases;
 import core.BasePage;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
@@ -18,7 +19,8 @@ import sporter_pages.myAccountPages.JordanMyAccountPage;
 import sporter_pages.myAccountPages.MyAccountPage;
 import xml_reader.XmlReader;
 
-public class JordanMyAccountTestCases extends MyAccountTestCases  { @BeforeClass(alwaysRun=true)
+public class JordanMyAccountTestCases extends MyAccountTestCases  {
+    @BeforeClass(alwaysRun=true)
 public void switchToJordanStore(){
     JordanHomePage jordanHomePage=new JordanHomePage(webDriver);
     jordanHomePage.switchCountry(jordanHomePage.getJordanCountry());
