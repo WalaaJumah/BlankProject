@@ -122,7 +122,7 @@ public class BasePage {
     public static String productUrlKSA6 = "/yumearth-organic-assorted-vitamin-c-lollipops-14-pops";
     public static String productUrlKSAWithHighPrice1 = "/puma-speed-orbiter-black-nrgy-red-yellow-33980/";
     public static String productUrlKSAWithHighPrice2 = "/asics-gel-kayano-26-ls-graphite-grey-piedmont-grey-32131";
-    public static String productUrlEgypt = "/cellucor-c4";
+    public static String productUrlEgypt = "/optimum-gold-standard-100-whey";
     public static String productUrlJordan = "/optimum-gold-standard-100-whey";
     public static String productUrlJordanWithLowPrice = "/jack-links-beef-jerky-54840/";
     public static String productUrlJordanWithHighPrice = "/climaqx-gym-bag-21711";
@@ -168,7 +168,7 @@ public class BasePage {
                 webDriver.navigate().to(BaseURL  + bogoUrlKSA);}
 
             else if(webDriver.getCurrentUrl().contains("en-eg/")){
-                webDriver.navigate().to(BaseURL  + bogoUrlEgypt);}
+                webDriver.navigate().to(BaseURL  + productUrlEgypt);}
             else if(webDriver.getCurrentUrl().contains("en-qa/")){
             webDriver.navigate().to(BaseURL  + bogoUrlQatar);}
             else
