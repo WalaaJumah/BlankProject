@@ -22,6 +22,7 @@ import sporter_pages.myAccountPages.JordanMyAccountPage;
 import sporter_pages.myAccountPages.MyAccountPage;
 import sporter_pages.productPage.ProductDetailsPage;
 import xml_reader.XmlReader;
+@Test(groups = "2.12 My Account Screens")
 
 public class MyAccountTestCases extends BaseTest {
     String storeCountry;

@@ -78,10 +78,18 @@
             <class name="sporter_test.cartTestCases.JordanCartTestCases"></class>
             <class name="sporter_test.cartTestCases.EgyptCartTestCases"></class>
             <class name="sporter_test.cartTestCases.QatarCartTestCases"></class>
+<!--            Cart Rules-->
 
             <class name="sporter_test.cartRulesTestCases.QatarCartRulesTestCases"></class>
             <class name="sporter_test.cartRulesTestCases.JordanCartRulesTestCases"></class>
             <class name="sporter_test.cartRulesTestCases.KSACartRulesTestCases"></class>
+
+<!--            My Account test cases-->
+            <class name="sporter_test.myAccountTestCases.UAEMyAccountTestCases"></class>
+            <class name="sporter_test.myAccountTestCases.KSAMyAccountTestCases"></class>
+            <class name="sporter_test.myAccountTestCases.JordanMyAccountTestCases"></class>
+            <class name="sporter_test.myAccountTestCases.QatarMyAccountTestCases"></class>
+            <class name="sporter_test.myAccountTestCases.EgyptMyAccountTestCases"></class>
 
             <!--            <class name="sporter_test.AccountRegistrationTestCases.AccountRegistrationTestCases">-->
 <!--                <methods>-->
