@@ -92,6 +92,7 @@
             <class name="sporter_test.myAccountTestCases.EgyptMyAccountTestCases"></class>
             <class name="sporter_test.myAccountTestCases.KuwaitMyAccountTestCases"></class>
             <class name="sporter_test.myAccountTestCases.OmanMyAccountTestCases"></class>
+            <class name="sporter_test.myAccountTestCases.BahrainMyAccountTestCases"></class>
 
             <!--            <class name="sporter_test.AccountRegistrationTestCases.AccountRegistrationTestCases">-->
 <!--                <methods>-->
