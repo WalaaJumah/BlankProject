@@ -208,14 +208,16 @@ private WebElement sameDayDelivery;
 ////            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
 //            DataHelperAndWait.waitForUrlContains(shippingInformationUrl,webDriver);
 //        DataHelperAndWait.clickOnElement(checkoutAsGuestBtn,webDriver);
-            webDriver.navigate().to(BaseURL+shippingInformationUrl);
+//            webDriver.navigate().to(BaseURL+shippingInformationUrl);
             CartPage cartPage = new CartPage(webDriver);
 //            cartPage.navigateToCartPage();
 //            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
             cartPage.addToCartAndDisplayTheCart();
-//            cartPage.clickOnCartIcon();
-//            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+            cartPage.navigateToHomePage();
+            cartPage.clickOnCartIcon();
+            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+//            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+
 
 //            try {
 //                DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);

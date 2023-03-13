@@ -53,7 +53,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         CartPage cartPage= new CartPage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
+        cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
         try{
@@ -83,7 +83,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         CartPage cartPage= new CartPage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
+        cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
         try{

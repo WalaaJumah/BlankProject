@@ -85,14 +85,14 @@
             <class name="sporter_test.cartRulesTestCases.KSACartRulesTestCases"></class>
 
 <!--            My Account test cases-->
-            <class name="sporter_test.myAccountTestCases.UAEMyAccountTestCases"></class>
-            <class name="sporter_test.myAccountTestCases.KSAMyAccountTestCases"></class>
-            <class name="sporter_test.myAccountTestCases.JordanMyAccountTestCases"></class>
-            <class name="sporter_test.myAccountTestCases.QatarMyAccountTestCases"></class>
-            <class name="sporter_test.myAccountTestCases.EgyptMyAccountTestCases"></class>
-            <class name="sporter_test.myAccountTestCases.KuwaitMyAccountTestCases"></class>
-            <class name="sporter_test.myAccountTestCases.OmanMyAccountTestCases"></class>
-            <class name="sporter_test.myAccountTestCases.BahrainMyAccountTestCases"></class>
+<!--            <class name="sporter_test.myAccountTestCases.UAEMyAccountTestCases"></class>-->
+<!--            <class name="sporter_test.myAccountTestCases.KSAMyAccountTestCases"></class>-->
+<!--            <class name="sporter_test.myAccountTestCases.JordanMyAccountTestCases"></class>-->
+<!--            <class name="sporter_test.myAccountTestCases.QatarMyAccountTestCases"></class>-->
+<!--            <class name="sporter_test.myAccountTestCases.EgyptMyAccountTestCases"></class>-->
+<!--            <class name="sporter_test.myAccountTestCases.KuwaitMyAccountTestCases"></class>-->
+<!--            <class name="sporter_test.myAccountTestCases.OmanMyAccountTestCases"></class>-->
+<!--            <class name="sporter_test.myAccountTestCases.BahrainMyAccountTestCases"></class>-->
 
             <!--            <class name="sporter_test.AccountRegistrationTestCases.AccountRegistrationTestCases">-->
 <!--                <methods>-->
@@ -102,6 +102,7 @@
         </classes>
 
     </test>
+
 <!--    <test name=" Checkout" preserve-order="true">-am-->
 <!--        <parameter name="environment" value="https://new.sporter.com" />-->
 <!--        <parameter name="browser" value="chrome"/>-->

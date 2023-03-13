@@ -59,21 +59,21 @@ public class WebElementsAssertion {
     }
         public static void assertionElementEnable(WebElement webElement,WebDriver webDriver){
         DataHelperAndWait.waitToBeVisible(webElement,webDriver);
-        Assert.assertTrue(webElement.isEnabled(), "The element is disable"+ " And the URL is: "+ webDriver.getCurrentUrl());
+        Assert.assertTrue(webElement.isEnabled(), "The element is disable");
     }
           public static void assertionElementNotEnable(WebElement webElement,WebDriver webDriver){
         DataHelperAndWait.waitToBeVisible(webElement,webDriver);
-        Assert.assertFalse(webElement.isEnabled(), "The element is enable"+ " And the URL is: "+ webDriver.getCurrentUrl());
+        Assert.assertFalse(webElement.isEnabled(), "The element is enable");
     }
 
     public static void assertionTextIsNotEqual(WebElement webElement,WebDriver webDriver, String text){
         DataHelperAndWait.waitToBeVisible(webElement,webDriver);
-        Assert.assertNotEquals(webElement.getText(),text, "The element contains : "+webElement.getText()+ " And the URL is: "+ webDriver.getCurrentUrl());
+        Assert.assertNotEquals(webElement.getText(),text, "The element contains : "+webElement.getText());
 
     }
     public static void assertionAttributeTrueForElement(WebElement webElement,WebDriver webDriver,String attribute, String expectedAttribute){
         DataHelperAndWait.waitToBeVisible(webElement,webDriver);
-        Assert.assertEquals(webElement.getAttribute(attribute),expectedAttribute,"The "+webElement.getAttribute(attribute)+" is not equal "+ expectedAttribute+ " And the URL is: "+ webDriver.getCurrentUrl());
+        Assert.assertEquals(webElement.getAttribute(attribute),expectedAttribute,"The "+webElement.getAttribute(attribute)+" is not equal "+ expectedAttribute);
     }
     public static void assertTheUrlEqualExpectedUrl(String actualUrl,String expectedUrl, WebDriver webDriver){
         DataHelperAndWait.waitForUrlContains(expectedUrl,webDriver);
@@ -82,12 +82,12 @@ public class WebElementsAssertion {
     public static void assertionWebElementEqualText(WebElement webElement, WebDriver webDriver, String expectedText){
         DataHelperAndWait.waitToBeVisible(webElement,webDriver);
         Assert.assertEquals(webElement.getText(),expectedText);
-        Assert.assertEquals(webElement.getText(),expectedText, "The element does not contains : "+expectedText+ "And the Actual Text is: "+webElement.getText()+ " And the URL is: "+ webDriver.getCurrentUrl());
+        Assert.assertEquals(webElement.getText(),expectedText, "The element does not contains : "+expectedText+ "And the Actual Text is: "+webElement.getText());
 
     }
         public static void assertionWebElementConatinsText(WebElement webElement, WebDriver webDriver, String expectedText){
         DataHelperAndWait.waitToBeVisible(webElement,webDriver);
-        Assert.assertEquals(webElement.getText().contains(expectedText), "The element does not contains : "+expectedText+ "And the Actual Text is: "+webElement.getText()+ " And the URL is: "+ webDriver.getCurrentUrl());
+        Assert.assertEquals(webElement.getText().contains(expectedText), "The element does not contains : "+expectedText+ "And the Actual Text is: "+webElement.getText());
 
     }
 
@@ -95,15 +95,15 @@ public class WebElementsAssertion {
         for (int i = 0; i < webElement.size(); i++){
             DataHelperAndWait.hoverOnElement(webElement.get(i),webDriver);
             DataHelperAndWait.waitToBeVisible(webElement.get(i),webDriver);
-            Assert.assertTrue(webElement.get(i).isDisplayed(), "This element is not displayed: "+ webElement+ " And the URL is: "+ webDriver.getCurrentUrl());
+            Assert.assertTrue(webElement.get(i).isDisplayed(), "This element is not displayed: "+ webElement);
         }
     }
     public static void checkRequiredErrorMsgIsDisplayed(WebElement webElement,WebDriver webDriver){
         if(webDriver.getCurrentUrl().contains("sporter.com/ar")){
-            WebElementsAssertion.assertionWebElementEqualText(webElement,webDriver, XmlReader.getXMLData("requiredErrorMsAr")+ " And the URL is: "+ webDriver.getCurrentUrl());
+            WebElementsAssertion.assertionWebElementEqualText(webElement,webDriver, XmlReader.getXMLData("requiredErrorMsAr"));
         }
         if(webDriver.getCurrentUrl().contains("sporter.com/en")){
-            WebElementsAssertion.assertionWebElementEqualText(webElement,webDriver, XmlReader.getXMLData("requiredErrorMsEn")+ " And the URL is: "+ webDriver.getCurrentUrl());
+            WebElementsAssertion.assertionWebElementEqualText(webElement,webDriver, XmlReader.getXMLData("requiredErrorMsEn"));
         }
 
     }

@@ -298,7 +298,7 @@ catch (Exception e){
                     XmlReader.getXMLData("StreetTwoAddressName"));
         }
         guestCheckoutCyclePage.clickOnContinueBtn();
-        DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCreditCardPaymentMethod(),webDriver);

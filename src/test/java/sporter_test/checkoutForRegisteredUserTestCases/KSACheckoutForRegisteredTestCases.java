@@ -18,6 +18,7 @@ import org.testng.annotations.Test;
 import sporter_pages.cartPages.CartPage;
 import sporter_pages.checkoutForRegisteredUserTPage.CheckoutForRegisteredPage;
 import sporter_pages.checkoutForRegisteredUserTPage.KSACheckoutForRegisteredPage;
+import sporter_pages.guestCheckoutCyclePages.EgyptGuestCheckoutCyclePage;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import sporter_pages.guestCheckoutCyclePages.KSAGuestCheckoutCyclePage;
 import sporter_pages.headerSection.HeaderSection;
@@ -81,7 +82,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         CartPage cartPage = new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
         try {
-            webDriver.manage().deleteCookieNamed("guestCartId");
+            cartPage.clearCart();
         }
         catch (Exception e){
             System.out.println("");
@@ -165,7 +166,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
 //        cartPage.removeItem();
 //        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         try {
-            webDriver.manage().deleteCookieNamed("guestCartId");
+            cartPage.clearCart();
         }
         catch (Exception e){
             System.out.println("");
@@ -206,7 +207,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
 //        cartPage.removeItem();
 //        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         try {
-            webDriver.manage().deleteCookieNamed("guestCartId");
+            cartPage.clearCart();
         }
         catch (Exception e){
             System.out.println("");
@@ -245,8 +246,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
 //        cartPage.removeItem();
 //        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         try {
-            webDriver.manage().deleteCookieNamed("guestCartId");
-        }
+cartPage.clearCart();        }
         catch (Exception e){
             System.out.println("");
         }
@@ -289,7 +289,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
 //        cartPage.removeItem();
 //        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         try {
-            webDriver.manage().deleteCookieNamed("guestCartId");
+            cartPage.clearCart();
         }
         catch (Exception e){
             System.out.println("");
@@ -356,7 +356,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
 //        cartPage.removeItem();
 //        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         try {
-            webDriver.manage().deleteCookieNamed("guestCartId");
+            cartPage.clearCart();
         }
         catch (Exception e){
             System.out.println("");
@@ -416,7 +416,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
 //        cartPage.removeItem();
 //        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         try {
-            webDriver.manage().deleteCookieNamed("guestCartId");
+            cartPage.clearCart();
         }
         catch (Exception e){
             System.out.println("");
@@ -454,7 +454,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
 //        cartPage.removeItem();
 //        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         try {
-            webDriver.manage().deleteCookieNamed("guestCartId");
+            cartPage.clearCart();
         }
         catch (Exception e){
             System.out.println("");
@@ -489,7 +489,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
 //        cartPage.removeItem();
 //        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         try {
-            webDriver.manage().deleteCookieNamed("guestCartId");
+            cartPage.clearCart();
         }
         catch (Exception e){
             System.out.println("");
@@ -514,6 +514,31 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         WebElementsAssertion.validateTheElementIsDisplayed(kSA.getPickupInStoreMethod(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(kSA.getDoorToDoorMethod(),webDriver);
 
+    }
+    @Test(groups = {"2.02 Checkout Cycle( Registered User)", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure that each of COD & Credit Card Payment methods appear correctly", priority = 25)
+    public void verifyEachOfCODAndCreditCardPaymentMethodCorrectly() {
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
+        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
+        KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
+        guestCheckoutCyclePage.navigateToCheckoutPage();
+        try{
+            DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
+        }
+        catch (Exception e){
+            registeredPage.fillInShippingInformationInputField(
+                    XmlReader.getXMLData("firstName"),
+                    XmlReader.getXMLData("lastName"),
+                    XmlReader.getXMLData("phoneNumber"),
+                    XmlReader.getXMLData("AddressName"),
+                    XmlReader.getXMLData("StreetOneAddressName"),
+                    XmlReader.getXMLData("StreetTwoAddressName"));
+        }
+        guestCheckoutCyclePage.clickOnContinueBtn();
+        DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCreditCardPaymentMethod(),webDriver);
     }
 
 }
