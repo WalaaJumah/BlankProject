@@ -96,6 +96,8 @@ public class MyAccountPage extends BasePage {
     private WebElement street2Field;
     @FindBy(xpath="//button[contains(@class,'newAddress_btn')]")
     private WebElement saveAddressBtn;
+    @FindBy(xpath="//button[contains(@class,'editAddress_btn')]")
+    private WebElement saveEditAddressBtn;
     @FindBy(id="nationalIdField")
     private WebElement nationalIdField;
     @FindBy(id="countryCode")

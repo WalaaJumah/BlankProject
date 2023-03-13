@@ -26,7 +26,7 @@ import xml_reader.XmlReader;
 public class MyAccountTestCases extends BaseTest {
     String storeCountry;
     String countryCode;
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Verify all My account options appear correctly ", priority = 1)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Verify all My account options appear correctly ", priority = 1)
     public void verifyAllMyAccountOptionsAppearCorrectly() {
         LoginPage loginPage = new LoginPage(webDriver);
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
@@ -52,7 +52,7 @@ public class MyAccountTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(myAccountPage.getMyAccountOption(), webDriver);
         WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getMyAccountURL(), webDriver);
     }
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Verify clicking on My Orders Option redirect the user to the correct Page ", priority = 3)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Verify clicking on My Orders Option redirect the user to the correct Page ", priority = 3)
     public void verifyClickingOnMyOrdersOptionsWorksCorrectly() {
         LoginPage loginPage = new LoginPage(webDriver);
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
@@ -74,14 +74,14 @@ public class MyAccountTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(myAccountPage.getMyRewardsOption(), webDriver);
         WebElementsAssertion.validateTheCurrentUrlNotContainsString(homepageLink, webDriver);
     }
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Account Information screen: Verify Email displays the correct email ", priority = 5)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Account Information screen: Verify Email displays the correct email ", priority = 5)
     public void verifyEmailFieldIsDisableAndRetrieveCorrectEmail() {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         myAccountPage.navigateToMyAccountPage();
         WebElementsAssertion.assertionElementNotEnable(myAccountPage.getEmailField(),webDriver);
         WebElementsAssertion.assertionAttributeTrueForElement(myAccountPage.getEmailField(),webDriver,"value",XmlReader.getXMLData("correctEmail2"));
     }
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Account Information screen: Verify each of First Name & Last Name field are display the correct name ", priority = 6)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Account Information screen: Verify each of First Name & Last Name field are display the correct name ", priority = 6)
     public void verifyFirstNameAndLastNameFieldRetrieveCorrectNames() {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         myAccountPage.navigateToMyAccountPage();
@@ -90,13 +90,13 @@ public class MyAccountTestCases extends BaseTest {
 //        WebElementsAssertion.assertionAttributeTrueForElement(myAccountPage.getFirstNameField(),webDriver,"value",XmlReader.getXMLData("firstName"));
 //        WebElementsAssertion.assertionAttributeTrueForElement(myAccountPage.getLastNameField(),webDriver,"value",XmlReader.getXMLData("lastName"));
     }
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Account Information screen: Verify inability to edit the email", priority = 7)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Account Information screen: Verify inability to edit the email", priority = 7)
     public void verifyEmailFieldRetrieveCorrectEmail() {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         myAccountPage.navigateToMyAccountPage();
         WebElementsAssertion.assertionElementNotEnable(myAccountPage.getEmailField(),webDriver);
     }
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Account Information screen: Verify ability to edit First Name & Last Name correctly", priority = 8)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Account Information screen: Verify ability to edit First Name & Last Name correctly", priority = 8)
     public void verifyAbilityToEditFirstNameAndLastNameCorrectly() {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         myAccountPage.navigateToMyAccountPage();
@@ -107,7 +107,7 @@ public class MyAccountTestCases extends BaseTest {
         WebElementsAssertion.assertionAttributeTrueForElement(myAccountPage.getFirstNameField(),webDriver,"value",XmlReader.getXMLData("firstName"));
         WebElementsAssertion.assertionAttributeTrueForElement(myAccountPage.getLastNameField(),webDriver,"value",XmlReader.getXMLData("lastName"));
     }
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Account Information screen: Verify ability to edit the account Information by selecting Male Gender", priority = 9)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Account Information screen: Verify ability to edit the account Information by selecting Male Gender", priority = 9)
     public void verifyAbilityToEditTheAccountInformationBySelectingMaleGender() {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         myAccountPage.navigateToMyAccountPage();
@@ -115,7 +115,7 @@ public class MyAccountTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(myAccountPage.getSaveAccountInfoBtn(),webDriver);
         myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Account Information screen: Verify ability to edit the account Information by selecting Female Gender", priority = 10)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Account Information screen: Verify ability to edit the account Information by selecting Female Gender", priority = 10)
     public void verifyAbilityToEditTheAccountInformationBySelectingFemaleGender() {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         myAccountPage.navigateToMyAccountPage();
@@ -123,7 +123,7 @@ public class MyAccountTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(myAccountPage.getSaveAccountInfoBtn(),webDriver);
         myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Account Information screen: Verify clicking On the Change Password check box will display each of Old, New, Confirm New Password fields ", priority = 11)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Account Information screen: Verify clicking On the Change Password check box will display each of Old, New, Confirm New Password fields ", priority = 11)
     public void verifyPasswordsFieldsAppearWhenClickingOnChangePasswordCheckbox() {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         myAccountPage.navigateToMyAccountPage();
@@ -132,13 +132,13 @@ public class MyAccountTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getNewPasswordField(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getConfirmNebPasswordField(), webDriver);
     }
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: NewsLetter Subscription screen: Verify ability to access NewsLetter Subscription screen correctly ", priority = 12)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: NewsLetter Subscription screen: Verify ability to access NewsLetter Subscription screen correctly ", priority = 12)
     public void verifyAbilityToAccessNewsLetterSubscriptionPage() {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         myAccountPage.navigateToNewsLetterSubscriptionPage();
         WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getGeneralSubscriptionOption(), webDriver);
     }
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: NewsLetter Subscription screen: Verify ability to subscribe with the Sporter NewsLetter correctly  ", priority = 13)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: NewsLetter Subscription screen: Verify ability to subscribe with the Sporter NewsLetter correctly  ", priority = 13)
     public void verifyAbilityToSubscribeWNewsLetterSubscriptionPage() {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         myAccountPage.navigateToNewsLetterSubscriptionPage();
@@ -152,7 +152,7 @@ public class MyAccountTestCases extends BaseTest {
             Assert.assertTrue(myAccountPage.getGeneralSubscriptionOption().getAttribute("class").contains("checkbox_inactive"));
         }
     }
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: NewsLetter Subscription screen: Verify ability to unsubscribe with the Sporter NewsLetter correctly  ", priority = 14)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: NewsLetter Subscription screen: Verify ability to unsubscribe with the Sporter NewsLetter correctly  ", priority = 14)
     public void verifyAbilityToUnSubscribeWNewsLetterSubscriptionPage() {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         myAccountPage.navigateToNewsLetterSubscriptionPage();
@@ -166,21 +166,21 @@ public class MyAccountTestCases extends BaseTest {
             Assert.assertTrue(myAccountPage.getGeneralSubscriptionOption().getAttribute("class").contains("checkbox_inactive"));
         }
     }
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Order History screen: Verify each of Order Details & invoice buttons appear correctly in the Orders History Page  ", priority = 15)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Order History screen: Verify each of Order Details & invoice buttons appear correctly in the Orders History Page  ", priority = 15)
     public void verifyEachOfOrderDetailsAndInvoiceBtnsAppearCorrectlyInOrdersPage() {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         myAccountPage.navigateToMyOrdersPage();
         WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getOrderDetailsBtn(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getInvoiceBtn(), webDriver);
     }
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Order History screen: Verify the Order Details button works correctly", priority = 16)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Order History screen: Verify the Order Details button works correctly", priority = 16)
     public void verifyOrderDetailsPageWorksCorrectly() {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         myAccountPage.navigateToMyOrdersPage();
         DataHelperAndWait.clickOnElement(myAccountPage.getOrderDetailsBtn(),webDriver);
         myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Order History screen: Verify the invoice button works correctly", priority = 17)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Order History screen: Verify the invoice button works correctly", priority = 17)
     public void verifyInvoicePageWorksCorrectly() {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         myAccountPage.navigateToMyOrdersPage();
@@ -195,7 +195,7 @@ public class MyAccountTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(myAccountPage.getProductNameInOrdersPage(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getProductName(),webDriver);
     }
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Order History screen: Verify Print Order button works correctly", priority = 19)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Order History screen: Verify Print Order button works correctly", priority = 19)
     public void verifyPrintOrderBtnWorksCorrectly() {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         myAccountPage.navigateToMyOrdersPage();
@@ -203,28 +203,28 @@ public class MyAccountTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(myAccountPage.getOrderPrintBtn(),webDriver);
         myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Order History screen: Verify Ability to access Orders Tab correctly", priority = 20)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Order History screen: Verify Ability to access Orders Tab correctly", priority = 20)
     public void verifyAbilityToAccessOrdersTabsCorrectly() {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         myAccountPage.navigateToAllOrdersPage();
         DataHelperAndWait.clickOnElement(myAccountPage.getOrdersTab(),webDriver);
         myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Order History screen: Verify Ability to access Open Orders Tab correctly", priority = 21)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Order History screen: Verify Ability to access Open Orders Tab correctly", priority = 21)
     public void verifyAbilityToAccessOpenOrdersTabsCorrectly() {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         myAccountPage.navigateToAllOrdersPage();
         DataHelperAndWait.clickOnElement(myAccountPage.getOpenOrdersTab(),webDriver);
         myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Order History screen: Verify Ability to access Canceled Orders Tab correctly", priority = 22)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Order History screen: Verify Ability to access Canceled Orders Tab correctly", priority = 22)
     public void verifyAbilityToAccessCanceledOrdersTabsCorrectly() {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         myAccountPage.navigateToAllOrdersPage();
         DataHelperAndWait.clickOnElement(myAccountPage.getCanceledOrdersTab(),webDriver);
         myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Addresses screen: Verify Ability to add new Address Correctly", priority = 23)
+    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Addresses screen: Verify Ability to add new Address Correctly", priority = 23)
     public void verifyAbilityToAddNewAddressCorrectly() {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         myAccountPage.navigateToAddressesPage();
@@ -239,7 +239,7 @@ public class MyAccountTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(myAccountPage.getSaveAddressBtn(),webDriver);
         WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getAddressedUrl(),webDriver);
     }
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Addresses screen: Verify Inability to add new Address with incorrect Phone Number format", priority = 24)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify Inability to add new Address with incorrect Phone Number format", priority = 24)
     public void verifyInabilityToAddNewAddressWithIncorrectPhoneNumberFormat() {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
@@ -257,7 +257,7 @@ public class MyAccountTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(myAccountPage.getSaveAddressBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getPhoneErrMsg(),webDriver);
     }
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Addresses screen: Verify Inability to add new Address using invalid National ID", priority = 25)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify Inability to add new Address using invalid National ID", priority = 25)
     public void verifyInabilityToAddNewAddressUsingInvalidNationalID() {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         JordanGuestCheckoutCyclePage joGuest= new JordanGuestCheckoutCyclePage(webDriver);
@@ -268,7 +268,7 @@ public class MyAccountTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(myAccountPage.getSaveAddressBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(joGuest.getNationalIdErrMsg(),webDriver);
     }
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Addresses screen: Verify Inability to add new Address without filling the mandatory fields", priority = 26)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify Inability to add new Address without filling the mandatory fields", priority = 26)
     public void verifyInabilityToAddNewAddressWithoutFillingTheMandatoryFields() {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
@@ -279,14 +279,14 @@ public class MyAccountTestCases extends BaseTest {
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(guestCheckoutCyclePage.getAddressErrMsg(), webDriver);
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(guestCheckoutCyclePage.getStreetlineOneErrMsg(), webDriver);
     }
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Addresses screen: Verify the country code retrieves correctly in the Phone Number field", priority = 27)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify the country code retrieves correctly in the Phone Number field", priority = 27)
     public void verifyCountryCodeRetrievesCorrectlyInThePhoneField() {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         myAccountPage.navigateToAddressesPage();
         DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(),webDriver);
         WebElementsAssertion.assertionWebElementEqualText(myAccountPage.getCountryCodeField(),webDriver,countryCode);
     }
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Addresses screen: Verify the country field retrieves the current country store", priority = 28)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify the country field retrieves the current country store", priority = 28)
     public void verifyCountryFieldRetrievesTheCurrentCountryStore() {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         myAccountPage.navigateToAddressesPage();
@@ -295,4 +295,63 @@ public class MyAccountTestCases extends BaseTest {
     }
 
 
+
+    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Addresses screen: Verify Ability to edit Address Correctly", priority = 29)
+    public void verifyAbilityToEditAddressCorrectly() {
+        MyAccountPage myAccountPage= new MyAccountPage(webDriver);
+        myAccountPage.navigateToAddressesPage();
+        DataHelperAndWait.clickOnElement(myAccountPage.getEditAddressBtn(),webDriver);
+        myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        myAccountPage.fillInNewAddressForm(XmlReader.getXMLData("firstName"),
+                XmlReader.getXMLData("lastName"),
+                XmlReader.getXMLData("phoneNumber"),
+                XmlReader.getXMLData("AddressName"),
+                XmlReader.getXMLData("StreetOneAddressName"),
+                XmlReader.getXMLData("StreetTwoAddressName"));
+        DataHelperAndWait.clickOnElement(myAccountPage.getSaveEditAddressBtn(),webDriver);
+        WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getAddressedUrl(),webDriver);
+    }
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify Inability to EditAddress with incorrect Phone Number format", priority = 30)
+    public void verifyInabilityToEditAddressWithIncorrectPhoneNumberFormat() {
+        MyAccountPage myAccountPage= new MyAccountPage(webDriver);
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        myAccountPage.navigateToAddressesPage();
+        DataHelperAndWait.clickOnElement(myAccountPage.getEditAddressBtn(),webDriver);
+        myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        myAccountPage.fillInNewAddressForm(
+                XmlReader.getXMLData("firstName"),
+                XmlReader.getXMLData("lastName"),
+                XmlReader.getXMLData("SmallPhoneNumber"),
+                XmlReader.getXMLData("AddressName"),
+                XmlReader.getXMLData("StreetOneAddressName"),
+                XmlReader.getXMLData("StreetTwoAddressName")
+        );
+        DataHelperAndWait.clickOnElement(myAccountPage.getSaveEditAddressBtn(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getPhoneErrMsg(),webDriver);
+    }
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify Inability to Edit Address using invalid National ID", priority = 31)
+    public void verifyInabilityToEditAddressUsingInvalidNationalID() {
+        MyAccountPage myAccountPage= new MyAccountPage(webDriver);
+        JordanGuestCheckoutCyclePage joGuest= new JordanGuestCheckoutCyclePage(webDriver);
+        myAccountPage.navigateToAddressesPage();
+        DataHelperAndWait.clickOnElement(myAccountPage.getEditAddressBtn(),webDriver);
+        myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        DataHelperAndWait.typeTextInElement(myAccountPage.getNationalIdField(), webDriver,"12");
+        DataHelperAndWait.clickOnElement(myAccountPage.getSaveEditAddressBtn(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(joGuest.getNationalIdErrMsg(),webDriver);
+    }
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify the country code retrieves correctly in the Phone Number field when editing the Address", priority = 32)
+    public void verifyCountryCodeRetrievesCorrectlyInThePhoneFieldWhenEditingTheAddress() {
+        MyAccountPage myAccountPage= new MyAccountPage(webDriver);
+        myAccountPage.navigateToAddressesPage();
+        DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(),webDriver);
+        WebElementsAssertion.assertionWebElementEqualText(myAccountPage.getCountryCodeField(),webDriver,countryCode);
+    }
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify the country field retrieves the current country store when editing the Address", priority = 33)
+    public void verifyCountryFieldRetrievesTheCurrentCountryStoreWhenEditingTheAddress() {
+        MyAccountPage myAccountPage= new MyAccountPage(webDriver);
+        myAccountPage.navigateToAddressesPage();
+        DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(),webDriver);
+        WebElementsAssertion.assertionWebElementEqualText(myAccountPage.getCountryField(),webDriver,storeCountry);
+    }
 }

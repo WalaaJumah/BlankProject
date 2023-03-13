@@ -36,4 +36,7 @@ public void switchToKsaStore(){
 }
     @Test(enabled = false)
     public void verifyInabilityToAddNewAddressUsingInvalidNationalID(){}
+    @Test(enabled = false)
+    public void verifyInabilityToEditAddressUsingInvalidNationalID(){}
+
 }

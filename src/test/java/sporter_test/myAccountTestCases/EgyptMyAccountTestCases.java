@@ -28,4 +28,6 @@ public class EgyptMyAccountTestCases extends MyAccountTestCases
     }
     @Test(enabled = false)
     public void verifyInabilityToAddNewAddressUsingInvalidNationalID(){}
+    @Test(enabled = false)
+    public void verifyInabilityToEditAddressUsingInvalidNationalID(){}
 }
