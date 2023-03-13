@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86683dee-3ff6-4652-96ae-dd8bddfbd97f" name="Changes" comment="Revet the changes on the checkout related to the cokkies" />
+    <list default="true" id="86683dee-3ff6-4652-96ae-dd8bddfbd97f" name="Changes" comment="Add Oman My Account test cases">
+      <change beforePath="$PROJECT_DIR$/src/test/resources/GenerateReport.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/GenerateReport.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -296,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678622175856</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Add Oman My Account test cases">
+      <created>1678711784189</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1678711784189</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -341,7 +350,8 @@
     <MESSAGE value="Update the Checkout classes" />
     <MESSAGE value="Update Qatar Cart Rules" />
     <MESSAGE value="Revet the changes on the checkout related to the cokkies" />
-    <option name="LAST_COMMIT_MESSAGE" value="Revet the changes on the checkout related to the cokkies" />
+    <MESSAGE value="Add Oman My Account test cases" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Oman My Account test cases" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
