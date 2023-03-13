@@ -9,6 +9,7 @@ package sporter_test.myAccountTestCases;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.KsaHomePage;
 
@@ -33,4 +34,6 @@ public void switchToKsaStore(){
     storeCountry="المملكة العربية السعودية";
     countryCode="966";
 }
+    @Test(enabled = false)
+    public void verifyInabilityToAddNewAddressUsingInvalidNationalID(){}
 }

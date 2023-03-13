@@ -8,6 +8,7 @@ package sporter_test.myAccountTestCases;
 
 import core.BasePage;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.EgyptHomePage;
 
 public class EgyptMyAccountTestCases extends MyAccountTestCases
@@ -25,4 +26,6 @@ public class EgyptMyAccountTestCases extends MyAccountTestCases
         storeCountry="Egypt";
         countryCode="20";
     }
+    @Test(enabled = false)
+    public void verifyInabilityToAddNewAddressUsingInvalidNationalID(){}
 }

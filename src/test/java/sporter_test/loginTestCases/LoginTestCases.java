@@ -71,7 +71,7 @@ public class LoginTestCases extends BaseTest {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToLoginPage();
-        loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail"), XmlReader.getXMLData("correctPassword"));
+        loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword"));
         DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
 //        DataHelperAndWait.waitForTime(3000);
         DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
@@ -82,7 +82,7 @@ public class LoginTestCases extends BaseTest {
     public void verifyInAbilityToLoginUsingCorrectEmailAndWrongPassword() {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToLoginPage();
-        loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail"), XmlReader.getXMLData("correctPassword") + "1");
+        loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword") + "1");
         DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(loginPage.getWrongCredentialsErrorMsg(), webDriver);
         if (webDriver.getCurrentUrl().contains("sporter.com/ar")) {
@@ -206,7 +206,7 @@ public class LoginTestCases extends BaseTest {
         LoginPage loginPage = new LoginPage(webDriver);
         HomePage homePage=new HomePage(webDriver);
         loginPage.navigateToLoginPage();
-        loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail"), XmlReader.getXMLData("correctPassword"));
+        loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword"));
         DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
         DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
