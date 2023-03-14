@@ -6,8 +6,17 @@
 <!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
         <listener class-name="extent_report_listner.ExtentReportListener" />
     </listeners>
-    <test name=" Sporter 2.1 Full Test2" preserve-order="true">
-        <parameter name="environment" value="https://new.sporter.com" />
+    <test name=" Sporter 2.1 Full Test on Staging" preserve-order="true">
+<!--        <parameter name="environment" value="https://new.sporter.com" />-->
+<!--        <parameter name="browser" value="chrome"/>-->
+<!--        &lt;!&ndash; <parameter name="country" value="en-qa" />&ndash;&gt;-->
+<!--        <parameter name="bogoProduct" value="/positive-nutrition-recharge-pods" />-->
+<!--        <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix" />-->
+<!--        <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/" />-->
+
+
+
+        <parameter name="environment" value="https://qa.sporter.com" />
         <parameter name="browser" value="chrome"/>
         <!-- <parameter name="country" value="en-qa" />-->
         <parameter name="bogoProduct" value="/positive-nutrition-recharge-pods" />
