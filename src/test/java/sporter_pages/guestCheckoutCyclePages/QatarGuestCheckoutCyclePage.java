@@ -27,17 +27,25 @@ public class QatarGuestCheckoutCyclePage extends  GuestCheckoutCyclePage{
     }
     @FindBy(id = "nationalIdField_errMsg")
     private WebElement nationalIdErrMsg;
-    @FindBy(xpath = "(//div[@id='_errMsg'])[5]")
-    private WebElement streetLineOneErrMsg;
-    @FindBy(xpath = "(//div[@id='_errMsg'])[6]")
-    private WebElement streetLineErrMsg;
-    @FindBy(xpath = "(//input[starts-with(@class,'input_input')])[4]")
+    @FindBy(id = "lastnameField_errMsg")
+    private WebElement lastNameErrMsg;
+    @FindBy(id = "emailField_errMsg")
+    private WebElement emailErrMsg;
+    @FindBy(xpath = "//div[starts-with(@class,'teleInput_errorMsg')]")
+    private WebElement phoneErrMsg;
+    @FindBy(id = "addressNameField_errMsg")
+    private WebElement addressErrMsg;
+    @FindBy(id = "firstnameField_errMsg")
+    private WebElement firstnameErrMsg;
+    @FindBy(id = "street1Field_errMsg")
+    private WebElement streetlineOneErrMsg;
+    @FindBy(id = "nationalIdField")
     private WebElement nationalIDField;
     @FindBy(xpath = "(//input[starts-with(@class,'input_input')])[5]")
     private WebElement addressNameField;
-    @FindBy(xpath = "(//input[starts-with(@class,'input_input')])[6]")
+    @FindBy(id = "street1Field")
     private WebElement streetLineOneField;
-    @FindBy(xpath = "(//input[starts-with(@class,'input_input')])[7]")
+    @FindBy(id = "street2Field")
     private WebElement streetLineTwoField;
 
     public void fillInShippingInformationInputField(String firstName, String lastName, String email, String phone, String streetLineOne, String streetLineTwo, String nationaLID) {

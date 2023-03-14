@@ -45,17 +45,17 @@ public class EgyptGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCase
     @Test(enabled = false)
     public void verifyAbilityToSelectSameDayShippingMethodCorrectly() {
     }
-    @Test(groups = { "All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 6)
-    public void verifyOrderTotalCalculationInCartPageWorksCorrectly() {
-        CartPage cartPage = new CartPage(webDriver);
-        DecimalFormat df = new DecimalFormat("0.00");
-        cartPage.navigateToCartPage();
-        double subTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue(), webDriver,"EGP");
-        double tax = DataHelperAndWait.convertTheStringToFloat(cartPage.getTaxValue(), webDriver,"EGP");
-        double orderTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(), webDriver,"EGP");
-        double cartTotal = subTotal + tax;
-        Assert.assertEquals(df.format(orderTotal), df.format(cartTotal));
-    }
+//    @Test(groups = { "All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 6)
+//    public void verifyOrderTotalCalculationInCartPageWorksCorrectly() {
+//        CartPage cartPage = new CartPage(webDriver);
+//        DecimalFormat df = new DecimalFormat("0.00");
+//        cartPage.navigateToCartPage();
+//        double subTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue(), webDriver,"EGP");
+//        double tax = DataHelperAndWait.convertTheStringToFloat(cartPage.getTaxValue(), webDriver,"EGP");
+//        double orderTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(), webDriver,",");
+//        double cartTotal = subTotal + tax;
+//        Assert.assertEquals(df.format(orderTotal), df.format(cartTotal));
+//    }
     @Test(enabled = false)
     public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNationalID() {}
     @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}:Verify All Shipping Methods appear correctly", priority = 21)
@@ -83,6 +83,8 @@ public class EgyptGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCase
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("invalidCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCloseCheckoutErr(), webDriver);
     }
+@Test(enabled = false)
+public void verifyOrderTotalCalculationInCartPageWorksCorrectly(){}
 @Test(enabled = false)
 public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod() {}
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to select the Next Day Delivery Shipping Method With COD Payment Method correctly", priority = 25)

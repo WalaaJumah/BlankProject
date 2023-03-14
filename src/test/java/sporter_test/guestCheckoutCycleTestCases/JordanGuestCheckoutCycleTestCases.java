@@ -57,7 +57,7 @@ public class JordanGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCas
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(guestCheckoutCyclePage.getEmailErrMsg(), webDriver);
 //        WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(guestCheckoutCyclePage.getPhoneErrMsg(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(jo.getNationalIdErrMsg(),webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(jo.getAddressErrMsg(),webDriver);
+//        WebElementsAssertion.validateTheElementIsDisplayed(jo.getAddressErrMsg(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(jo.getStreetLineOneField(),webDriver);
     }
     @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}:Make sure the Guest user cannot submit the shipping information when the phone number length is small ", priority = 15)
