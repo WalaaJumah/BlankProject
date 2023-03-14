@@ -70,7 +70,7 @@ public class QatarGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCase
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
                 XmlReader.getXMLData("SmallPhoneNumber"),
-                XmlReader.getXMLData("AddressName"),
+                //XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"),
                 XmlReader.getXMLData("nationalID")
@@ -92,7 +92,7 @@ public class QatarGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCase
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
                 XmlReader.getXMLData("phoneNumber"),
-                XmlReader.getXMLData("AddressName"),
+                //XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"),
                 XmlReader.getXMLData("nationalID")
@@ -140,7 +140,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                    XmlReader.getXMLData("lastName"),
                    XmlReader.getXMLData("correctEmail"),
                    XmlReader.getXMLData("phoneNumber"),
-                   XmlReader.getXMLData("AddressName"),
+                   //XmlReader.getXMLData("AddressName"),
                    XmlReader.getXMLData("StreetOneAddressName"),
                    XmlReader.getXMLData("StreetTwoAddressName"),
                    XmlReader.getXMLData("nationalID")
@@ -169,7 +169,7 @@ public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithV
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
                 XmlReader.getXMLData("phoneNumber"),
-                XmlReader.getXMLData("AddressName"),
+                //XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"),
                 XmlReader.getXMLData("nationalID")
@@ -195,7 +195,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
                 XmlReader.getXMLData("phoneNumber"),
-                XmlReader.getXMLData("AddressName"),
+                //XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"),
                 XmlReader.getXMLData("nationalID")
@@ -244,7 +244,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
                 XmlReader.getXMLData("phoneNumber"),
-                XmlReader.getXMLData("AddressName"),
+                //XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"),
                 XmlReader.getXMLData("nationalID")
@@ -269,7 +269,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
                 XmlReader.getXMLData("phoneNumber"),
-                XmlReader.getXMLData("AddressName"),
+                //XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"),
                 XmlReader.getXMLData("nationalID")
@@ -298,7 +298,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
                 XmlReader.getXMLData("phoneNumber"),
-                XmlReader.getXMLData("AddressName"),
+                //XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"),
                 XmlReader.getXMLData("nationalID")

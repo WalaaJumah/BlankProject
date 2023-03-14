@@ -82,7 +82,7 @@ public void verifyAbilityToSelectSameDayShippingMethodCorrectly() {}
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
                 XmlReader.getXMLData("phoneNumber"),
-                XmlReader.getXMLData("AddressName"),
+//                XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
@@ -105,7 +105,7 @@ public void verifyAbilityToSelectSameDayShippingMethodCorrectly() {}
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
                 XmlReader.getXMLData("phoneNumber"),
-                XmlReader.getXMLData("AddressName"),
+//                XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
@@ -138,7 +138,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
                 XmlReader.getXMLData("phoneNumber"),
-                XmlReader.getXMLData("AddressName"),
+//                XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
@@ -160,7 +160,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
                 XmlReader.getXMLData("phoneNumber"),
-                XmlReader.getXMLData("AddressName"),
+//                XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
@@ -205,7 +205,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
                 XmlReader.getXMLData("phoneNumber"),
-                XmlReader.getXMLData("AddressName"),
+//                XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
@@ -224,7 +224,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
                 XmlReader.getXMLData("phoneNumber"),
-                XmlReader.getXMLData("AddressName"),
+//                XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
@@ -281,7 +281,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
                 XmlReader.getXMLData("phoneNumber"),
-                XmlReader.getXMLData("AddressName"),
+//                XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );

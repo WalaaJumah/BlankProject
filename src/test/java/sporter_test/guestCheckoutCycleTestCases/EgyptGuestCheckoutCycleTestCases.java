@@ -74,7 +74,7 @@ public class EgyptGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCase
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
                 XmlReader.getXMLData("phoneNumber"),
-                XmlReader.getXMLData("AddressName"),
+//                XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
         guestCheckoutCyclePage.clickOnContinueBtn();
@@ -156,7 +156,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
                 XmlReader.getXMLData("phoneNumber"),
-                XmlReader.getXMLData("AddressName"),
+//                XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
@@ -198,7 +198,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
                 XmlReader.getXMLData("phoneNumber"),
-                XmlReader.getXMLData("AddressName"),
+//                XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
         guestCheckoutCyclePage.clickOnContinueBtn();

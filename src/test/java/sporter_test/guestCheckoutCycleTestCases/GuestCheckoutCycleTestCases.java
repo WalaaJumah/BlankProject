@@ -147,7 +147,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     @Test(groups = {"2.01 Checkout Cycle( Guest User)", "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Make sure the Guest user cannot submit the shipping information without filling the required fields empty", priority = 12)
     public void verifyTheGuestUserCannotSubmitTheShippingInformationWithoutFillingTheRequiredFields() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        guestCheckoutCyclePage.fillInShippingInformationInputField(" ", " ", " ", " ", " ", " ", "");
+        guestCheckoutCyclePage.fillInShippingInformationInputField(" ", " ", " ", " ", " ", " ");
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(guestCheckoutCyclePage.getFirstnameErrMsg(), webDriver);
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(guestCheckoutCyclePage.getLastNameErrMsg(), webDriver);
@@ -156,7 +156,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
         WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getPhoneErrMsg(), webDriver,XmlReader.getXMLData("smallLenghthPhoneErrEn"));}
         if(webDriver.getCurrentUrl().contains("sporter.com/ar")){
             WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getPhoneErrMsg(), webDriver,XmlReader.getXMLData("smallLenghthPhoneErrAr2"));}
-        WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(guestCheckoutCyclePage.getAddressErrMsg(), webDriver);
+//        WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(guestCheckoutCyclePage.getAddressErrMsg(), webDriver);
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(guestCheckoutCyclePage.getStreetlineOneErrMsg(), webDriver);
     }
     @Test(groups = {"2.01 Checkout Cycle( Guest User)", "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Make sure the County Code retrieved correctly in the Phone Field", priority = 13)
@@ -172,7 +172,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
                 XmlReader.getXMLData("SmallPhoneNumber"),
-                XmlReader.getXMLData("AddressName"),
+//                XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName")
         );
@@ -188,7 +188,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("incorrectEmailFormate"),
                 XmlReader.getXMLData("phoneNumber"),
-                XmlReader.getXMLData("AddressName"),
+//                XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName")
         );
@@ -207,7 +207,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
                 XmlReader.getXMLData("phoneNumber"),
-                XmlReader.getXMLData("AddressName"),
+//                XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"),
                 "12"
@@ -227,7 +227,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
                 XmlReader.getXMLData("phoneNumber"),
-                XmlReader.getXMLData("AddressName"),
+//                XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
@@ -311,7 +311,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
                 XmlReader.getXMLData("phoneNumber"),
-                XmlReader.getXMLData("AddressName"),
+//                XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
         guestCheckoutCyclePage.clickOnContinueBtn();
@@ -351,7 +351,7 @@ cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
                 XmlReader.getXMLData("phoneNumber"),
-                XmlReader.getXMLData("AddressName"),
+//                XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName")
         );
@@ -402,7 +402,7 @@ cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
                 XmlReader.getXMLData("phoneNumber"),
-                XmlReader.getXMLData("AddressName"),
+//                XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
         guestCheckoutCyclePage.clickOnContinueBtn();
@@ -430,7 +430,7 @@ cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
                 XmlReader.getXMLData("phoneNumber"),
-                XmlReader.getXMLData("AddressName"),
+//                XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
         guestCheckoutCyclePage.clickOnContinueBtn();

@@ -152,7 +152,7 @@ private WebElement sameDayDelivery;
    private WebElement orderTotalValueInrReviewPage;
    @FindBy(xpath = "(//span[starts-with(@class,'shippingMethod_amount')])[1]")
    private WebElement firstShippingMethodAmount;
-    public void fillInShippingInformationInputField(String firstName, String lastName, String email, String phone, String address, String streetLineOne, String streetLineTwo) {
+    public void fillInShippingInformationInputField(String firstName, String lastName, String email, String phone, String streetLineOne, String streetLineTwo) {
         DataHelperAndWait.waitToBeVisible(firstNameField ,webDriver);
         DataHelperAndWait.updateAllText(firstNameField,firstName);
         DataHelperAndWait.waitToBeVisible(lastNameField ,webDriver);
@@ -161,8 +161,8 @@ private WebElement sameDayDelivery;
         DataHelperAndWait.updateAllText(emailField,email);
         DataHelperAndWait.waitToBeVisible(phoneField ,webDriver);
         DataHelperAndWait.updateAllText(phoneField,phone);
-        DataHelperAndWait.waitToBeVisible(addressNameField ,webDriver);
-        DataHelperAndWait.updateAllText(addressNameField,address);
+//        DataHelperAndWait.waitToBeVisible(addressNameField ,webDriver);
+//        DataHelperAndWait.updateAllText(addressNameField,address);
         DataHelperAndWait.waitToBeVisible(streetLineOneField ,webDriver);
         DataHelperAndWait.updateAllText(streetLineOneField,streetLineOne);
         DataHelperAndWait.waitToBeVisible(streetLineTwoField ,webDriver);
@@ -250,7 +250,7 @@ public void navigateToShippingMethodsPage(){
             XmlReader.getXMLData("lastName"),
             XmlReader.getXMLData("correctEmail"),
             XmlReader.getXMLData("phoneNumber"),
-            XmlReader.getXMLData("AddressName"),
+//            XmlReader.getXMLData("AddressName"),
             XmlReader.getXMLData("StreetOneAddressName"),
             XmlReader.getXMLData("StreetTwoAddressName")
     );
@@ -267,7 +267,7 @@ public void AddToCartAndAccessShippingMethodsPage(){
             XmlReader.getXMLData("lastName"),
             XmlReader.getXMLData("correctEmail"),
             XmlReader.getXMLData("phoneNumber"),
-            XmlReader.getXMLData("AddressName"),
+//            XmlReader.getXMLData("AddressName"),
             XmlReader.getXMLData("StreetOneAddressName"),
             XmlReader.getXMLData("StreetTwoAddressName")
     );
@@ -283,7 +283,7 @@ public void AddToCartAndAccessShippingMethodsPage(){
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
                 XmlReader.getXMLData("phoneNumber"),
-                XmlReader.getXMLData("AddressName"),
+//                XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName")
         );

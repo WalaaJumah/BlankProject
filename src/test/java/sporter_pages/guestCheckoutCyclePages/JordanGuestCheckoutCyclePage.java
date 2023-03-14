@@ -41,7 +41,7 @@ public class JordanGuestCheckoutCyclePage extends  GuestCheckoutCyclePage{
     @FindBy(id="bestway")
     private WebElement fiveBusinessDays;
 
-    public void fillInShippingInformationInputField(String firstName, String lastName, String email, String phone, String address, String streetLineOne, String streetLineTwo, String nationalID) {
+    public void fillInShippingInformationInputField(String firstName, String lastName, String email, String phone,  String streetLineOne, String streetLineTwo, String nationalID) {
         DataHelperAndWait.waitToBeVisible(getFirstNameField() ,webDriver);
         DataHelperAndWait.updateAllText(getFirstNameField(),firstName);
         DataHelperAndWait.waitToBeVisible(getLastNameField() ,webDriver);
@@ -50,8 +50,8 @@ public class JordanGuestCheckoutCyclePage extends  GuestCheckoutCyclePage{
         DataHelperAndWait.updateAllText(getEmailField(),email);
         DataHelperAndWait.waitToBeVisible(getPhoneField() ,webDriver);
         DataHelperAndWait.updateAllText(getPhoneField(),phone);
-        DataHelperAndWait.waitToBeVisible(addressNameField ,webDriver);
-        DataHelperAndWait.updateAllText(addressNameField,address);
+//        DataHelperAndWait.waitToBeVisible(addressNameField ,webDriver);
+//        DataHelperAndWait.updateAllText(addressNameField,address);
         DataHelperAndWait.waitToBeVisible(streetLineOneField ,webDriver);
         DataHelperAndWait.updateAllText(streetLineOneField,streetLineOne);
         DataHelperAndWait.waitToBeVisible(streetLineTwoField ,webDriver);
@@ -67,7 +67,7 @@ public class JordanGuestCheckoutCyclePage extends  GuestCheckoutCyclePage{
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
                 XmlReader.getXMLData("phoneNumber"),
-                XmlReader.getXMLData("AddressName"),
+//                XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"),
                 XmlReader.getXMLData("nationalID")
@@ -84,7 +84,7 @@ public class JordanGuestCheckoutCyclePage extends  GuestCheckoutCyclePage{
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
                 XmlReader.getXMLData("phoneNumber"),
-                XmlReader.getXMLData("AddressName"),
+//                XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"),
                 XmlReader.getXMLData("nationalID")
