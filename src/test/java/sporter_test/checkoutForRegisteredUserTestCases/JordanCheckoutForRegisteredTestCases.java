@@ -106,10 +106,22 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
     public void verifyAbilityToSelect2BusinessDaysShippingMethodCorrectly() {}
     @Test(groups = {"2.02 Checkout Cycle( Registered User)", "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure that each of COD & Credit Card Payment methods appear correctly", priority = 24)
     public void verifyEachOfCODAndCreditCardPaymentMethodCorrectly() {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        JordanGuestCheckoutCyclePage jo1= new JordanGuestCheckoutCyclePage(webDriver);
-        JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
+        JordanGuestCheckoutCyclePage guestCheckoutCyclePage = new JordanGuestCheckoutCyclePage(webDriver);
+//        guestCheckoutCyclePage.viewCartAndAccessShippingMethodsPage();
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
+        JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
+        CartPage cartPage= new CartPage(webDriver);
+//        cartPage.navigateToCartPage();
+//        cartPage.removeItem();
+//        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
+        try{
+            cartPage.clearCart();}
+        catch (Exception e){
+            System.out.println("");
+        }
+
+        cartPage.addToCartAndDisplayTheCart();
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
         try{            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
         catch (Exception e){
@@ -124,7 +136,7 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
             );
         }
         guestCheckoutCyclePage.clickOnContinueBtn();
-        DataHelperAndWait.clickOnElement(jo1.getFiveBusinessDays(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFiveBusinessDays(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCreditCardPaymentMethod(),webDriver);
     }
@@ -209,8 +221,17 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
+//        cartPage.navigateToCartPage();
+//        cartPage.removeItem();
+//        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
+        try{
+            cartPage.clearCart();}
+        catch (Exception e){
+            System.out.println("");
+        }
+
+        cartPage.addToCartAndDisplayTheCart();
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
         try{            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
         catch (Exception e){
@@ -227,20 +248,10 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFiveBusinessDays(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCreditCardPaymentMethod(),webDriver);
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();//// Close the pop-up window
-//        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-//        Actions actions= new Actions(webDriver);
-//        actions.sendKeys(Keys.ENTER).perform();
-//// Switch back to the main window
-////        webDriver.switchTo().window(mainWindow);
-//        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-//        guestCheckoutCyclePage.submitSecureAndAuthenticationCheckout();
-//        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getSuccessPage(),webDriver);
-//        orderNumberCreditCard= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
-//        System.out.println(orderNumberCreditCard);
     }
 
 }

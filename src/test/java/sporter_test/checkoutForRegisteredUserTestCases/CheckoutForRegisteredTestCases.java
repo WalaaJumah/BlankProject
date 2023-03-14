@@ -202,7 +202,11 @@ catch (Exception e){
         JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
         JordanGuestCheckoutCyclePage joGuest= new JordanGuestCheckoutCyclePage(webDriver);
         checkoutForRegisteredPage.accessGuestCheckoutForm();
-        DataHelperAndWait.typeTextInElement(joGuest.getNationalIDField(), webDriver,"12");
+        try{
+        DataHelperAndWait.typeTextInElement(joGuest.getNationalIDField(), webDriver,"12");}
+        catch (Exception e){
+            System.out.println("The user already have saved address");
+        }
 //        jo.fillInShippingInformationInputField(
 //                XmlReader.getXMLData("firstName"),
 //                XmlReader.getXMLData("lastName"),
