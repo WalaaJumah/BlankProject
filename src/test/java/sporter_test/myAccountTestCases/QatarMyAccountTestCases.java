@@ -128,14 +128,16 @@ public void switchToQatarStore() {
         myAccountPage.navigateToAddressesPage();
         DataHelperAndWait.clickOnElement(myAccountPage.getEditAddressBtn(),webDriver);
         myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        myAccountPage.fillInNewAddressForm(
-                XmlReader.getXMLData("firstName"),
-                XmlReader.getXMLData("lastName"),
-                XmlReader.getXMLData("SmallPhoneNumber"),
-                XmlReader.getXMLData("AddressName"),
-                XmlReader.getXMLData("StreetOneAddressName"),
-                XmlReader.getXMLData("StreetTwoAddressName"),
-                XmlReader.getXMLData("nationalID"));
+//        myAccountPage.fillInNewAddressForm(
+//                XmlReader.getXMLData("firstName"),
+//                XmlReader.getXMLData("lastName"),
+//                XmlReader.getXMLData("SmallPhoneNumber"),
+//                XmlReader.getXMLData("AddressName"),
+//                XmlReader.getXMLData("StreetOneAddressName"),
+//                XmlReader.getXMLData("StreetTwoAddressName"),
+//                XmlReader.getXMLData("nationalID"));
+                DataHelperAndWait.waitToBeVisible(myAccountPage.getPhoneFieldInAddress() ,webDriver);
+        DataHelperAndWait.updateAllText(myAccountPage.getPhoneFieldInAddress(),XmlReader.getXMLData("SmallPhoneNumber"));
         DataHelperAndWait.clickOnElement(myAccountPage.getSaveEditAddressBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getPhoneErrMsg(),webDriver);
     }
