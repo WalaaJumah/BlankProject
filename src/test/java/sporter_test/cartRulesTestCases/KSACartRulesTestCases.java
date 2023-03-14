@@ -15,6 +15,8 @@ import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.KsaHomePage;
 import sporter_pages.productPage.ProductDetailsPage;
 
+import java.io.IOException;
+
 import static core.BasePage.BaseURL;
 
 public class KSACartRulesTestCases extends CartRulesTestCases{
@@ -37,7 +39,7 @@ public class KSACartRulesTestCases extends CartRulesTestCases{
     }
     //TODO: There's a bug here
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure that inability to add more than 3 items of the same kind to the cart", priority = 1)
-    public void verify3ItemOfTheSameKindRuleWorksCorrectly(){
+    public void verify3ItemOfTheSameKindRuleWorksCorrectly() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
@@ -50,7 +52,7 @@ public class KSACartRulesTestCases extends CartRulesTestCases{
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
     }
        @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure that inability to add more than 3 items of the same kind to the cart by increasing the quantity to 3", priority = 2)
-    public void verify3ItemOfTheSameKindRuleWorksCorrectlyWhenIncreasingTheQtyTo3(){
+    public void verify3ItemOfTheSameKindRuleWorksCorrectlyWhenIncreasingTheQtyTo3() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
            webDriver.manage().deleteCookieNamed("guestCartId");
@@ -62,7 +64,7 @@ public class KSACartRulesTestCases extends CartRulesTestCases{
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
     }
        @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure that inability to add more than 3 items of the same kind to the cart by increasing the quantity to 3 from the Cart Page", priority = 3)
-    public void verify3ItemOfTheSameKindRuleWorksCorrectlyWhenIncreasingTheQtyTo3FromCartPage(){
+    public void verify3ItemOfTheSameKindRuleWorksCorrectlyWhenIncreasingTheQtyTo3FromCartPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
            webDriver.manage().deleteCookieNamed("guestCartId");

@@ -20,6 +20,9 @@ import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.productPage.ProductDetailsPage;
 import xml_reader.XmlReader;
+
+import java.io.IOException;
+
 import static org.testng.Assert.*;
 import static org.testng.Assert.assertTrue;
 @Test(groups = "2.06 Product Details Page")
@@ -27,7 +30,7 @@ import static org.testng.Assert.assertTrue;
 public class ProductDetailsTestCases extends BaseTest {
     String storeCountry;
     @Test(groups = { "1.1 Critical Severity"},description = "{{CountryName}}:Make sure the shopper is able to keep the shopping after adding the product to the cart ", priority = 1)
-    public void keepShoppingAfterAddingToTheCart() {
+    public void keepShoppingAfterAddingToTheCart() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.keepShoppingAfterAddingToCart();
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getAddToCartBtn(),webDriver);
@@ -38,7 +41,7 @@ public class ProductDetailsTestCases extends BaseTest {
         try{
         productDetailsPage.displayOOSProduct();
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getOOSMsg(),webDriver);}
-        catch (AssertionError a){
+        catch (AssertionError | IOException a){
             System.out.println(webDriver.getCurrentUrl()+" is not found in the country: "+ productDetailsPage.storeCountry);
         }
     }
@@ -60,7 +63,7 @@ public class ProductDetailsTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getProductName(),webDriver);
     }
     @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}:Make sure that the increase quantity function works fine ", priority = 5)
-    public void verifyIncreaseQuantityButtonWorkingFine() {
+    public void verifyIncreaseQuantityButtonWorkingFine() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
         productDetailsPage.increaseTheQuantity();
@@ -85,14 +88,14 @@ public class ProductDetailsTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(productDetailsPage.getReviewToastMsgBtn(),webDriver);
     }
     @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}:Make sure that the customer is unable to submit his review without selecting any star ", priority = 9)
-    public void verifyInabilityToSubmitReviewWithoutSelectingStar() {
+    public void verifyInabilityToSubmitReviewWithoutSelectingStar() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
         productDetailsPage.submitProductReview(XmlReader.getXMLData("reviewDesc"),XmlReader.getXMLData("reviewSummary"),XmlReader.getXMLData("nickName"));
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getReviewErrorMsgRelatedToStars(),webDriver);
     }
     @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}:Make sure that the customer can submit his review when filling Review Form with Long Length", priority = 10)
-    public void verifyAbilityToFillTheReviewWIthLongLength() {
+    public void verifyAbilityToFillTheReviewWIthLongLength() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
         productDetailsPage.selectStarInReview();
@@ -101,7 +104,7 @@ public class ProductDetailsTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(productDetailsPage.getReviewToastMsgBtn(),webDriver);
     }
     @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}:Make sure that the customer can navigate to the home page using the BreadCrumb ", priority = 11)
-    public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumb() {
+    public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumb() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
         DataHelperAndWait.clickOnElement(productDetailsPage.getHomeBreadcrumbs(),webDriver);
@@ -109,7 +112,7 @@ public class ProductDetailsTestCases extends BaseTest {
         Assert.assertFalse(webDriver.getCurrentUrl().contains(productDetailsPage.productUrl));
     }
     @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}:Make sure that the product price is changed when you change the quantity ", priority = 12)
-    public void verifyTheProductPriceChangesBasedOnTheSelectedQty() {
+    public void verifyTheProductPriceChangesBasedOnTheSelectedQty() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getFinalProductPrice(),webDriver);
@@ -141,7 +144,7 @@ public class ProductDetailsTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getFreeProductLabelEn(),webDriver);
     }
     @Test(groups = { "1.4 Low Severity"},description = "{{CountryName}}:Verify that the About This product section displays correctly in the PDP", priority = 15)
-    public void verifyAboutThisProductSectionDisplaysCorrectlyInProductDetailsPage() {
+    public void verifyAboutThisProductSectionDisplaysCorrectlyInProductDetailsPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getAboutThisProductSection(),webDriver);
@@ -151,7 +154,7 @@ public class ProductDetailsTestCases extends BaseTest {
             WebElementsAssertion.assertionTextIsEqual(productDetailsPage.getAboutThisProductTitle(),webDriver, "حول هذا المنتج");}
     }
     @Test(groups = { "1.4 Low Severity"},description = "{{CountryName}}:Verify that the Supplement Facts section displays correctly in the PDP", priority = 16,enabled = false)
-    public void verifySupplementFactsSectionDisplaysCorrectlyInProductDetailsPage() {
+    public void verifySupplementFactsSectionDisplaysCorrectlyInProductDetailsPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
         assertTrue(productDetailsPage.getSupplementFactsTable().isDisplayed());
@@ -159,7 +162,7 @@ public class ProductDetailsTestCases extends BaseTest {
     }
     //      The following Test Cases handle displaying the Mega Menu from Product Page
     @Test(groups = {"All Smoke Testing Result","1.4 Low Severity"},description = "{{CountryName}}:Verify that the ShopBy Menu Is Displayed When Hovering On It From Product Details Page", priority = 17)
-    public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
+    public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
         Actions action = new Actions(webDriver);
@@ -167,7 +170,7 @@ public class ProductDetailsTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionForShopBy(),webDriver);
     }
     @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify that the Sport Supplements Menu Is Displayed When Hovering On It From Product Details Page", priority = 18)
-    public void verifySportSupplementsMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
+    public void verifySportSupplementsMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
         Actions action = new Actions(webDriver);
@@ -175,7 +178,7 @@ public class ProductDetailsTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
     @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify that the Vitamins And Health Menu Is Displayed When Hovering On It From Product Details Page", priority = 19)
-    public void verifyVitaminsAndHealthMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
+    public void verifyVitaminsAndHealthMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         productDetailsPage.displayTheProduct();
@@ -185,7 +188,7 @@ public class ProductDetailsTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
     @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify that the Healthy Food Menu Is Displayed When Hovering On It From Product Details Page", priority = 20)
-    public void verifyHealthyFoodMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
+    public void verifyHealthyFoodMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         productDetailsPage.displayTheProduct();
@@ -194,7 +197,7 @@ public class ProductDetailsTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
     @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify that the Sports Menu Is Displayed When Hovering On It From Product Details Page", priority = 23)
-    public void verifySportsMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
+    public void verifySportsMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         productDetailsPage.displayTheProduct();
@@ -203,14 +206,14 @@ public class ProductDetailsTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
     @Test(groups = { "1.1 Critical Severity"},description = "{{CountryName}}:Verify that the account Profile icon works correctly in PDP", priority = 24)
-    public void verifyAccountProfileIconWorksCorrectlyInProductDetailsPage() {
+    public void verifyAccountProfileIconWorksCorrectlyInProductDetailsPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
         DataHelperAndWait.clickOnElement(productDetailsPage.getAccountProfileIcon(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getAccountProfileOptions(), webDriver);
     }
     @Test(groups = { "1.4 Low Severity"},description = "{{CountryName}}:Verify that the Direction Of Use section displays correctly in the PDP", priority = 25,enabled = false)
-    public void verifyDirectionOfUseSectionDisplaysCorrectlyInProductDetailsPage() {
+    public void verifyDirectionOfUseSectionDisplaysCorrectlyInProductDetailsPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
 //        assertTrue(productDetailsPage.getDirectionsOfUseSection().isDisplayed());
@@ -234,21 +237,21 @@ public class ProductDetailsTestCases extends BaseTest {
 //        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getRecommendedProductsPopup(), webDriver);
     }
     @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify clicking on the By Brand Link appears in Product Name section will redirect the user to correct page ", priority = 29)
-    public void verifyClickingOnByBrandLinkAppearsInProductNameSectionRedirectUserToCorrectPage() {
+    public void verifyClickingOnByBrandLinkAppearsInProductNameSectionRedirectUserToCorrectPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
         DataHelperAndWait.clickOnElement(productDetailsPage.getProductBrandLink(),webDriver);
         productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}:Verify that Expected Delivery Date Label and its value displayed correctly", priority = 30)
-    public void verifyExpectedDeliveryDateAppearsCorrectlyAndRetrieveDateInPdp() {
+    public void verifyExpectedDeliveryDateAppearsCorrectlyAndRetrieveDateInPdp() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getExpectedDeliveryDateLabel(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getExpectedDeliveryDateValue(), webDriver);
     }
     @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify that the search button works correctly from the PDP", priority = 31)
-    public void verifySearchBtnWorksCorrectlyFromPdp() {
+    public void verifySearchBtnWorksCorrectlyFromPdp() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSearchPageTitle(), webDriver);
@@ -256,7 +259,7 @@ public class ProductDetailsTestCases extends BaseTest {
     }
     //TODO: Check the assertion
     @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Make sure that the next review page button appears in Reviews section works correctly ", priority = 32)
-    public void verifyNextReviewPageBtnAppearsInReviewsSectionWorksCorrectly() {
+    public void verifyNextReviewPageBtnAppearsInReviewsSectionWorksCorrectly() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
         DataHelperAndWait.clickOnElement(productDetailsPage.getNextReviewPageBtn(),webDriver);
@@ -271,13 +274,13 @@ public class ProductDetailsTestCases extends BaseTest {
 //        WebElementsAssertion.validateTheCurrentUrlContainsString("p=1",webDriver);
     }
     @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Make sure that the pagination control appears in Reviews section works correctly ", priority = 34)
-    public void verifyPaginationControlAppearsInReviewsSectionWorksCorrectly() {
+    public void verifyPaginationControlAppearsInReviewsSectionWorksCorrectly() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
         productDetailsPage.verifyReviewPagingWorks();
     }
     @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}:Make sure that the simple price changes when navigation between sizes for the config ", priority = 35,enabled = false)
-    public void verifySimplePriceChangesWhenNavigationBetweenSizesForTheConfig() {
+    public void verifySimplePriceChangesWhenNavigationBetweenSizesForTheConfig() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
 //        DataHelperAndWait.clickOnElement(productDetailsPage.getFirstsimple(),webDriver);
@@ -287,7 +290,7 @@ public class ProductDetailsTestCases extends BaseTest {
         Assert.assertNotEquals(firstPrice, secondPrice,"The simple price is not changes");
     }
     @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}:Make sure ability to navigate to the home page by clicking on the sporter logo from the product Details Page  ", priority = 36)
-    public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromPdp() {
+    public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromPdp() throws IOException {
         HeaderSection headerSection=new HeaderSection(webDriver);
         HomePage homePage=new HomePage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);

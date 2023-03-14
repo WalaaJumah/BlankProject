@@ -24,6 +24,8 @@ import sporter_pages.productPage.KSAProductDetailsPage;
 import sporter_pages.productPage.ProductDetailsPage;
 import xml_reader.XmlReader;
 
+import java.io.IOException;
+
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
@@ -183,7 +185,7 @@ public class EgyptProductDetailsTestCases extends ProductDetailsTestCases{
 //            WebElementsAssertion.assertionTextIsEqual(egyptProductDetailsPage.getAboutThisProductTitle(),webDriver, "حول هذا المنتج");}
 //    }
     @Test(groups = { "1.4 Low Severity"},description = "{{CountryName}}: Verify that the Supplement Facts section displays correctly in the PDP", priority = 18,enabled = false)
-    public void verifySupplementFactsSectionDisplaysCorrectlyInProductDetailsPage() {
+    public void verifySupplementFactsSectionDisplaysCorrectlyInProductDetailsPage() throws IOException {
         EgyptProductDetailsPage egyptProductDetailsPage = new EgyptProductDetailsPage(webDriver);
         egyptProductDetailsPage.displayTheProduct();
         assertTrue(egyptProductDetailsPage.getSupplementFactsTable().isDisplayed());
@@ -237,7 +239,7 @@ public class EgyptProductDetailsTestCases extends ProductDetailsTestCases{
 //        WebElementsAssertion.validateTheElementIsDisplayed(egyptProductDetailsPage.getAccountProfileOptions(), webDriver);
 //    }
     @Test(groups = { "1.4 Low Severity"},description = "{{CountryName}}: Verify that the Direction Of Use section displays correctly in the PDP", priority = 25,enabled = false)
-    public void verifyDirectionOfUseSectionDisplaysCorrectlyInProductDetailsPage() {
+    public void verifyDirectionOfUseSectionDisplaysCorrectlyInProductDetailsPage() throws IOException {
         EgyptProductDetailsPage egyptProductDetailsPage = new EgyptProductDetailsPage(webDriver);
         egyptProductDetailsPage.displayTheProduct();
 //        assertTrue(egyptProductDetailsPage.getDirectionsOfUseSection().isDisplayed());
@@ -309,7 +311,7 @@ public class EgyptProductDetailsTestCases extends ProductDetailsTestCases{
 //        egyptProductDetailsPage.verifyReviewPagingWorks();
 //    }
     @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the simple price changes when navigation between sizes for the config ", priority = 35,enabled = false)
-    public void verifySimplePriceChangesWhenNavigationBetweenSizesForTheConfig() {
+    public void verifySimplePriceChangesWhenNavigationBetweenSizesForTheConfig() throws IOException {
         EgyptProductDetailsPage egyptProductDetailsPage = new EgyptProductDetailsPage(webDriver);
         egyptProductDetailsPage.displayTheProduct();
 //        DataHelperAndWait.clickOnElement(egyptProductDetailsPage.getFirstsimple(),webDriver);

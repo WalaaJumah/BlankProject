@@ -22,13 +22,16 @@ import sporter_pages.myAccountPages.JordanMyAccountPage;
 import sporter_pages.myAccountPages.MyAccountPage;
 import sporter_pages.productPage.ProductDetailsPage;
 import xml_reader.XmlReader;
+
+import java.io.IOException;
+
 @Test(groups = "2.12 My Account Screens")
 
 public class MyAccountTestCases extends BaseTest {
     String storeCountry;
     String countryCode;
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Verify all My account options appear correctly ", priority = 1)
-    public void verifyAllMyAccountOptionsAppearCorrectly() {
+    public void verifyAllMyAccountOptionsAppearCorrectly() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         loginPage.navigateToLoginPage();
@@ -98,7 +101,7 @@ public class MyAccountTestCases extends BaseTest {
         WebElementsAssertion.assertionElementNotEnable(myAccountPage.getEmailField(),webDriver);
     }
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Account Information screen: Verify ability to edit First Name & Last Name correctly", priority = 8)
-    public void verifyAbilityToEditFirstNameAndLastNameCorrectly() {
+    public void verifyAbilityToEditFirstNameAndLastNameCorrectly() throws IOException {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         myAccountPage.navigateToMyAccountPage();
         DataHelperAndWait.updateAllText(myAccountPage.getFirstNameField(),XmlReader.getXMLData("firstName"));
@@ -109,7 +112,7 @@ public class MyAccountTestCases extends BaseTest {
         WebElementsAssertion.assertionAttributeTrueForElement(myAccountPage.getLastNameField(),webDriver,"value",XmlReader.getXMLData("lastName"));
     }
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Account Information screen: Verify ability to edit the account Information by selecting Male Gender", priority = 9)
-    public void verifyAbilityToEditTheAccountInformationBySelectingMaleGender() {
+    public void verifyAbilityToEditTheAccountInformationBySelectingMaleGender() throws IOException {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         myAccountPage.navigateToMyAccountPage();
         DataHelperAndWait.clickOnElement(myAccountPage.getMaleGender(),webDriver);
@@ -117,7 +120,7 @@ public class MyAccountTestCases extends BaseTest {
         myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Account Information screen: Verify ability to edit the account Information by selecting Female Gender", priority = 10)
-    public void verifyAbilityToEditTheAccountInformationBySelectingFemaleGender() {
+    public void verifyAbilityToEditTheAccountInformationBySelectingFemaleGender() throws IOException {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         myAccountPage.navigateToMyAccountPage();
         DataHelperAndWait.clickOnElement(myAccountPage.getFemaleGender(),webDriver);
@@ -175,14 +178,14 @@ public class MyAccountTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getInvoiceBtn(), webDriver);
     }
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Order History screen: Verify the Order Details button works correctly", priority = 16)
-    public void verifyOrderDetailsPageWorksCorrectly() {
+    public void verifyOrderDetailsPageWorksCorrectly() throws IOException {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         myAccountPage.navigateToMyOrdersPage();
         DataHelperAndWait.clickOnElement(myAccountPage.getOrderDetailsBtn(),webDriver);
         myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Order History screen: Verify the invoice button works correctly", priority = 17)
-    public void verifyInvoicePageWorksCorrectly() {
+    public void verifyInvoicePageWorksCorrectly() throws IOException {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         myAccountPage.navigateToMyOrdersPage();
         DataHelperAndWait.clickOnElement(myAccountPage.getInvoiceBtn(),webDriver);
@@ -197,7 +200,7 @@ public class MyAccountTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getProductName(),webDriver);
     }
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Order History screen: Verify Print Order button works correctly", priority = 19)
-    public void verifyPrintOrderBtnWorksCorrectly() {
+    public void verifyPrintOrderBtnWorksCorrectly() throws IOException {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         myAccountPage.navigateToMyOrdersPage();
         DataHelperAndWait.clickOnElement(myAccountPage.getOrderDetailsBtn(),webDriver);
@@ -205,28 +208,28 @@ public class MyAccountTestCases extends BaseTest {
         myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Order History screen: Verify Ability to access Orders Tab correctly", priority = 20)
-    public void verifyAbilityToAccessOrdersTabsCorrectly() {
+    public void verifyAbilityToAccessOrdersTabsCorrectly() throws IOException {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         myAccountPage.navigateToAllOrdersPage();
         DataHelperAndWait.clickOnElement(myAccountPage.getOrdersTab(),webDriver);
         myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Order History screen: Verify Ability to access Open Orders Tab correctly", priority = 21)
-    public void verifyAbilityToAccessOpenOrdersTabsCorrectly() {
+    public void verifyAbilityToAccessOpenOrdersTabsCorrectly() throws IOException {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         myAccountPage.navigateToAllOrdersPage();
         DataHelperAndWait.clickOnElement(myAccountPage.getOpenOrdersTab(),webDriver);
         myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Order History screen: Verify Ability to access Canceled Orders Tab correctly", priority = 22)
-    public void verifyAbilityToAccessCanceledOrdersTabsCorrectly() {
+    public void verifyAbilityToAccessCanceledOrdersTabsCorrectly() throws IOException {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         myAccountPage.navigateToAllOrdersPage();
         DataHelperAndWait.clickOnElement(myAccountPage.getCanceledOrdersTab(),webDriver);
         myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Addresses screen: Verify Ability to add new Address Correctly", priority = 23)
-    public void verifyAbilityToAddNewAddressCorrectly() {
+    public void verifyAbilityToAddNewAddressCorrectly() throws IOException {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         myAccountPage.navigateToAddressesPage();
         DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(),webDriver);
@@ -241,7 +244,7 @@ public class MyAccountTestCases extends BaseTest {
         WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getAddressedUrl(),webDriver);
     }
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify Inability to add new Address with incorrect Phone Number format", priority = 24)
-    public void verifyInabilityToAddNewAddressWithIncorrectPhoneNumberFormat() {
+    public void verifyInabilityToAddNewAddressWithIncorrectPhoneNumberFormat() throws IOException {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         myAccountPage.navigateToAddressesPage();
@@ -259,7 +262,7 @@ public class MyAccountTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getPhoneErrMsg(),webDriver);
     }
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify Inability to add new Address using invalid National ID", priority = 25)
-    public void verifyInabilityToAddNewAddressUsingInvalidNationalID() {
+    public void verifyInabilityToAddNewAddressUsingInvalidNationalID() throws IOException {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         JordanGuestCheckoutCyclePage joGuest= new JordanGuestCheckoutCyclePage(webDriver);
         myAccountPage.navigateToAddressesPage();
@@ -298,7 +301,7 @@ public class MyAccountTestCases extends BaseTest {
 
 
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Addresses screen: Verify Ability to edit Address Correctly", priority = 29)
-    public void verifyAbilityToEditAddressCorrectly() {
+    public void verifyAbilityToEditAddressCorrectly() throws IOException {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         myAccountPage.navigateToAddressesPage();
         DataHelperAndWait.clickOnElement(myAccountPage.getEditAddressBtn(),webDriver);
@@ -313,7 +316,7 @@ public class MyAccountTestCases extends BaseTest {
         WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getAddressedUrl(),webDriver);
     }
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify Inability to EditAddress with incorrect Phone Number format", priority = 30)
-    public void verifyInabilityToEditAddressWithIncorrectPhoneNumberFormat() {
+    public void verifyInabilityToEditAddressWithIncorrectPhoneNumberFormat() throws IOException {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         myAccountPage.navigateToAddressesPage();
@@ -331,7 +334,7 @@ public class MyAccountTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getPhoneErrMsg(),webDriver);
     }
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify Inability to Edit Address using invalid National ID", priority = 31)
-    public void verifyInabilityToEditAddressUsingInvalidNationalID() {
+    public void verifyInabilityToEditAddressUsingInvalidNationalID() throws IOException {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         JordanGuestCheckoutCyclePage joGuest= new JordanGuestCheckoutCyclePage(webDriver);
         myAccountPage.navigateToAddressesPage();

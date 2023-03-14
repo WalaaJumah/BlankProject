@@ -17,6 +17,9 @@ import org.testng.annotations.Optional;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.productPage.ProductDetailsPage;
+
+import java.io.IOException;
+
 @Getter
 public class LoginPage extends BasePage {
     ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -75,13 +78,13 @@ public class LoginPage extends BasePage {
     @FindBy(id = "FBBtn")
     private WebElement faceBookLoginOption;
 
-    public void navigateToLoginPage() {
+    public void navigateToLoginPage() throws IOException {
         webDriver.navigate().to(BaseURL + loginLink);
         if(!webDriver.getCurrentUrl().contains(loginLink))
             webDriver.navigate().to(BaseURL + loginLink);
             verifyTheDisplayedPageDoesNotHaveErrors();
     }
-    public void navigateToForgetPassword() {
+    public void navigateToForgetPassword() throws IOException {
         webDriver.navigate().to(BaseURL + forgetPasswordURL);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }

@@ -21,6 +21,7 @@ import sporter_pages.guestCheckoutCyclePages.QatarGuestCheckoutCyclePage;
 import sporter_pages.homepage_classes.QatarHomePage;
 import xml_reader.XmlReader;
 
+import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.Set;
 
@@ -127,7 +128,7 @@ public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithC
 @Test(enabled = false)
 public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod() {}
        @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With COD Payment Method ", priority = 26)
-    public void verifyAbilityToPlaceOrderWhenSelecting4_5BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod() {
+    public void verifyAbilityToPlaceOrderWhenSelecting4_5BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod() throws IOException {
            GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
            JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
            QatarGuestCheckoutCyclePage qatar= new QatarGuestCheckoutCyclePage(webDriver);
@@ -182,7 +183,7 @@ public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithV
 @Test(enabled = false)
 public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCreditCardPaymentMethod() {}
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Credit Card Payment Method ", priority = 29)
-    public void verifyAbilityToPlaceOrderWhenSelecting4_5BusinessDaysSuperExpressShippingMethodWithCreditCardPaymentMethod() {
+    public void verifyAbilityToPlaceOrderWhenSelecting4_5BusinessDaysSuperExpressShippingMethodWithCreditCardPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
@@ -279,7 +280,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(),webDriver);
     }
     @Test(groups = {"2.01 Checkout Cycle( Guest User)", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when using a Free Coupon Code ", priority = 99)
-    public void verifyAbilityToPlaceOrderWhenUsingFreeCouponCode() {
+    public void verifyAbilityToPlaceOrderWhenUsingFreeCouponCode() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);

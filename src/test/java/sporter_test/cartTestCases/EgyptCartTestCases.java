@@ -18,6 +18,8 @@ import sporter_pages.productPage.ProductDetailsPage;
 import sporter_test.AccountRegistrationTestCases.AccountRegistrationTestCases;
 import xml_reader.XmlReader;
 
+import java.io.IOException;
+
 public class EgyptCartTestCases extends CartTestCases {
     @BeforeClass(alwaysRun=true)
     public void switchToEgyptStore(){
@@ -134,7 +136,7 @@ public class EgyptCartTestCases extends CartTestCases {
         DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);
     }
     @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure to view the cart after adding more than quantity for the same product", priority = 14)
-    public void verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct() {
+    public void verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");

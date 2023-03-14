@@ -23,6 +23,7 @@ import sporter_pages.homepage_classes.JordanHomePage;
 import sporter_test.guestCheckoutCycleTestCases.GuestCheckoutCycleTestCases;
 import xml_reader.XmlReader;
 
+import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.Set;
 
@@ -202,7 +203,7 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
 //        System.out.println(orderNumberCOD);
     }
     @Test(groups = {"2.02 Checkout Cycle( Registered User)", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting 5 Business Days Super Express Shipping Method With Credit Card Payment Method ", priority = 31)
-    public void verifyAbilityToPlaceOrderWhenSelecting5BusinessDaysSuperExpressShippingMethodWithCreditCardPaymentMethod() {
+    public void verifyAbilityToPlaceOrderWhenSelecting5BusinessDaysSuperExpressShippingMethodWithCreditCardPaymentMethod() throws IOException {
         JordanGuestCheckoutCyclePage guestCheckoutCyclePage = new JordanGuestCheckoutCyclePage(webDriver);
 //        guestCheckoutCyclePage.viewCartAndAccessShippingMethodsPage();
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);

@@ -16,6 +16,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.ProtocolException;
+import java.net.URL;
+
 public class BasePage {
 
 
@@ -155,7 +160,19 @@ public class BasePage {
     public String getSourcePage(){
 //        DataHelperAndWait.waitForTime(500);
         return webDriver.getPageSource();}
-    public void verifyTheDisplayedPageDoesNotHaveErrors() {
+    public void getStatusCode(String uRL) throws IOException {
+        HttpURLConnection cn= (HttpURLConnection)new
+                URL(uRL)
+                .openConnection();
+        cn.setRequestMethod("HEAD");
+        cn.connect();
+        int c = cn.getResponseCode();
+        System.out.println("Http status code: " + c);
+        Assert.assertNotEquals(c,500,"Http status code: " + c);
+    }
+    public void verifyTheDisplayedPageDoesNotHaveErrors() throws IOException {
+        String currentURL=webDriver.getCurrentUrl();
+        System.out.println(" The current URL is: "+webDriver.getCurrentUrl());
         Assert.assertFalse(this.getTitle().equalsIgnoreCase(SporterErrorPage.pageNotFoundTitle), "Page Not Found Is Displayed and the URL is " + webDriver.getCurrentUrl());
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.productsCannotFindMsg), "The page is empty and the URL is " + webDriver.getCurrentUrl());
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.exceptionPageMsg), "An error has happened during application run. See exception log for details in page and the URL is " + webDriver.getCurrentUrl());
@@ -163,6 +180,7 @@ public class BasePage {
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.offerNotAvailableMsg), "The  offer is not available in your country page is displayed" + webDriver.getCurrentUrl());
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.pageNotFoundMsg), "Page Not Found Is Displayed and the URL is " + webDriver.getCurrentUrl());
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.productsCannotFindMsg), "This page is currently under maintenance and the URL is " + webDriver.getCurrentUrl());
+        this.getStatusCode(currentURL);
     }
     public void navigateToBogoProduct(){
             if(webDriver.getCurrentUrl().contains("ar-sa/")){
@@ -176,12 +194,14 @@ public class BasePage {
             {webDriver.navigate().to(BasePage.BaseURL+bogoProduct);
 
     }
+        System.out.println("The product URL is: "+webDriver.getCurrentUrl());
 //        DataHelperAndWait.waitForUrlContains(bogoProduct,webDriver);
     }
         public void displayBundle(){
         webDriver.navigate().to(BasePage.BaseURL+bundleUrl);
         DataHelperAndWait.waitForUrlContains(bundleUrl,webDriver);
-    }
+            System.out.println("The product URL is: "+webDriver.getCurrentUrl());
+        }
 
     public void navigateToHomePage(){
         try{

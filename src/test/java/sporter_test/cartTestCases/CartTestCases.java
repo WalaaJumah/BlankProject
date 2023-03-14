@@ -23,6 +23,7 @@ import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.productPage.ProductDetailsPage;
 import xml_reader.XmlReader;
 
+import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.List;
 
@@ -142,7 +143,7 @@ public class CartTestCases extends BaseTest {
 
     }
     @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure to view the cart after adding more than quantity for the same product", priority = 14)
-    public void verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct() {
+    public void verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         productDetailsPage.displayTheProduct();
@@ -225,7 +226,7 @@ public class CartTestCases extends BaseTest {
 //    }
     //TODO:There's a bug here, check: https://sporter1.atlassian.net/browse/NS-184/https://sporter1.atlassian.net/browse/NS-107
     @Test(groups = {"All Smoke Testing Result","1.4 Low Severity"},description = "{{CountryName}}: Verify that the The requested qty is not available message appear when the product becomes OOS", priority = 18)
-    public void verifyToDisplayRequestedQtyIsNotAvailableMsg() {
+    public void verifyToDisplayRequestedQtyIsNotAvailableMsg() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCartForOos();
         DataHelperAndWait.hoverOnElementAndClick(cartPage.getFirstQtyField(),webDriver);
@@ -474,14 +475,14 @@ public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() 
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
     @Test(groups = { "1.1 Critical Severity"},description = "{{CountryName}}:Verify that the account Profile icon works correctly in PDP", priority = 41)
-    public void verifyAccountProfileIconWorksCorrectlyInProductDetailsPage() {
+    public void verifyAccountProfileIconWorksCorrectlyInProductDetailsPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
         DataHelperAndWait.clickOnElement(productDetailsPage.getAccountProfileIcon(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getAccountProfileOptions(), webDriver);
     }
     @Test(groups = {"All Smoke Testing Result","1.4 Low Severity"},description = "{{CountryName}}: Make sure ability to navigate to the home page by clicking on the Sporter logo from the Cart Page ", priority = 42)
-    public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromCartPage() {
+    public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromCartPage() throws IOException {
         HeaderSection headerSection=new HeaderSection(webDriver);
         HomePage homePage=new HomePage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);

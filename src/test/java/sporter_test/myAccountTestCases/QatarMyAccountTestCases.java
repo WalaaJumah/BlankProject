@@ -18,6 +18,8 @@ import sporter_pages.myAccountPages.JordanMyAccountPage;
 import sporter_pages.myAccountPages.MyAccountPage;
 import xml_reader.XmlReader;
 
+import java.io.IOException;
+
 public class QatarMyAccountTestCases extends MyAccountTestCases  {
     @BeforeClass(alwaysRun = true)
 public void switchToQatarStore() {
@@ -33,7 +35,7 @@ public void switchToQatarStore() {
     storeCountry="Qatar";
     countryCode="974";}
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Addresses screen: Verify Ability to add new Address Correctly", priority = 23)
-    public void verifyAbilityToAddNewAddressCorrectly() {
+    public void verifyAbilityToAddNewAddressCorrectly() throws IOException {
         JordanMyAccountPage myAccountPage= new JordanMyAccountPage(webDriver);
         myAccountPage.navigateToAddressesPage();
         DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(),webDriver);
@@ -49,7 +51,7 @@ public void switchToQatarStore() {
         WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getAddressedUrl(),webDriver);
     }
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify Inability to add new Address with incorrect Phone Number format", priority = 24)
-    public void verifyInabilityToAddNewAddressWithIncorrectPhoneNumberFormat() {
+    public void verifyInabilityToAddNewAddressWithIncorrectPhoneNumberFormat() throws IOException {
         JordanMyAccountPage myAccountPage= new JordanMyAccountPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         myAccountPage.navigateToAddressesPage();
@@ -68,7 +70,7 @@ public void switchToQatarStore() {
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getPhoneErrMsg(),webDriver);
     }
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify Inability to add new Address using invalid National ID", priority = 25)
-    public void verifyInabilityToAddNewAddressUsingInvalidNationalID() {
+    public void verifyInabilityToAddNewAddressUsingInvalidNationalID() throws IOException {
         MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         JordanGuestCheckoutCyclePage joGuest= new JordanGuestCheckoutCyclePage(webDriver);
         myAccountPage.navigateToAddressesPage();
@@ -104,7 +106,7 @@ public void switchToQatarStore() {
         WebElementsAssertion.assertionWebElementEqualText(myAccountPage.getCountryField(),webDriver,storeCountry);
     }
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Addresses screen: Verify Ability to edit Address Correctly", priority = 29)
-    public void verifyAbilityToEditAddressCorrectly() {
+    public void verifyAbilityToEditAddressCorrectly() throws IOException {
         JordanMyAccountPage myAccountPage= new JordanMyAccountPage(webDriver);
         myAccountPage.navigateToAddressesPage();
         DataHelperAndWait.clickOnElement(myAccountPage.getEditAddressBtn(),webDriver);
@@ -120,7 +122,7 @@ public void switchToQatarStore() {
         WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getAddressedUrl(),webDriver);
     }
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify Inability to EditAddress with incorrect Phone Number format", priority = 30)
-    public void verifyInabilityToEditAddressWithIncorrectPhoneNumberFormat() {
+    public void verifyInabilityToEditAddressWithIncorrectPhoneNumberFormat() throws IOException {
         JordanMyAccountPage myAccountPage= new JordanMyAccountPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         myAccountPage.navigateToAddressesPage();

@@ -22,6 +22,7 @@ import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.productPage.ProductDetailsPage;
 import xml_reader.XmlReader;
 
+import java.io.IOException;
 import java.util.List;
 
 @Getter
@@ -175,7 +176,7 @@ private WebElement freeFromSporterLabelInProductCard;
            navigateToCartPage();
        }
    }
-     public void addToCartAndDisplayTheCartForOos(){
+     public void addToCartAndDisplayTheCartForOos() throws IOException {
        productDetailsPage.displayTheProductHaveLessQty();
        productDetailsPage.addToCart();
        productDetailsPage.viewCart();

@@ -16,6 +16,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import sporter_pages.homepage_classes.HomePage;
 
+import java.io.IOException;
 import java.util.List;
 @Getter
 public class ProductDetailsPage extends BasePage {
@@ -145,7 +146,7 @@ public class ProductDetailsPage extends BasePage {
     private WebElement closeToCartErrorPopUp;
 
     //Methods we need during testing the Product details page
-    public void displayTheProduct() {
+    public void displayTheProduct() throws IOException {
         if(webDriver.getCurrentUrl().contains("en-jo")){
             webDriver.navigate().to(BaseURL  + productUrlJordan);
         }
@@ -161,8 +162,9 @@ public class ProductDetailsPage extends BasePage {
         if(webDriver.getCurrentUrl().contains("en-ae")){
             webDriver.navigate().to(BaseURL  + productUrl);
             verifyTheDisplayedPageDoesNotHaveErrors();}
+        System.out.println("The product URL is: "+webDriver.getCurrentUrl());
     }
-        public void displayTheProductHaveLessQty() {
+        public void displayTheProductHaveLessQty() throws IOException {
             if(webDriver.getCurrentUrl().contains("en-eg")){
                 webDriver.navigate().to(BaseURL  + productUrlEgypt);
             }
@@ -184,7 +186,7 @@ public class ProductDetailsPage extends BasePage {
         DataHelperAndWait.waitToBeVisible(viewCartBtn,webDriver);
         viewCartBtn.click();
     }
-    public void keepShoppingAfterAddingToCart(){
+    public void keepShoppingAfterAddingToCart() throws IOException {
         HomePage homePage=new HomePage(webDriver);
         try{
             this.displayTheProduct( );
@@ -202,7 +204,7 @@ public class ProductDetailsPage extends BasePage {
         }}
 
 
-    public void displayOOSProduct() {
+    public void displayOOSProduct() throws IOException {
         webDriver.navigate().to(BaseURL + storeCountry + oOSProductUrl);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }

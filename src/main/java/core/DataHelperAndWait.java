@@ -5,6 +5,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.*;
@@ -281,7 +282,7 @@ public  class DataHelperAndWait  {
 
         }
 
-        public static void accessAllProductsInWidget(List<WebElement> productsList,WebElement nextOrPreviousBtnToClick,WebDriver driver,BasePage pageObj){
+        public static void accessAllProductsInWidget(List<WebElement> productsList,WebElement nextOrPreviousBtnToClick,WebDriver driver,BasePage pageObj) throws IOException {
             Assert.assertTrue( productsList.size()>0,"There's no any products in the list");
             for (int i = 0; i < productsList.size()-1; i++) {
                 if(!productsList.get(i).isDisplayed()){

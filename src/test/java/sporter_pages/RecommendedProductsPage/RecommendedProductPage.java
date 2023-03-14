@@ -18,6 +18,7 @@ import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.productPage.ProductDetailsPage;
 
+import java.io.IOException;
 import java.util.List;
 
 @Getter
@@ -60,7 +61,7 @@ public class RecommendedProductPage extends BasePage {
     private WebElement firstProductName;
 
 
-    public void displayTheRecommendedProductsPopUp(){
+    public void displayTheRecommendedProductsPopUp() throws IOException {
         productDetailsPage.displayTheProduct();
 //        DataHelperAndWait.clickOnElement(productDetailsPage.getAddToCartBtn(),webDriver);
 //        DataHelperAndWait.waitToBeVisible(productDetailsPage.getKeepShippingBtn(),webDriver);
@@ -79,19 +80,19 @@ public class RecommendedProductPage extends BasePage {
             }
         }
     }
-    public void removeProductFromCart(){
+    public void removeProductFromCart() throws IOException {
         DataHelperAndWait.clickOnElement(headerSection.getCartIcon(),webDriver);
         DataHelperAndWait.clickOnElement(headerSection.getViewCartLinkInCartPopUp(),webDriver);
         DataHelperAndWait.clickOnElement(productDetailsPage.getRemoveItem(),webDriver);
         productDetailsPage.displayTheProduct();
     }
-    public void clickOnAllListItemsAppearingInTheRecommendedPopup(List<WebElement> webElement){
+    public void clickOnAllListItemsAppearingInTheRecommendedPopup(List<WebElement> webElement) throws IOException {
         for (int i = 0; i < webElement.size(); i++){
             DataHelperAndWait.clickOnElement(webElement.get(i),webDriver);
             this.displayTheRecommendedProductsPopUp();
         }
     }
-    public  void clickOnListItemsAndAssertion(List<WebElement> webElement, WebDriver webDriver, WebElement webElementToBeAssert){
+    public  void clickOnListItemsAndAssertion(List<WebElement> webElement, WebDriver webDriver, WebElement webElementToBeAssert) throws IOException {
         for (int i = 0; i < webElement.size(); i++){
             DataHelperAndWait.hoverOnElement(webElement.get(i),webDriver);
             DataHelperAndWait.scrollToPositionZero(webDriver);
@@ -101,7 +102,7 @@ public class RecommendedProductPage extends BasePage {
             DataHelperAndWait.scrollToPositionZero(webDriver);
         }
     }
-    public void clickOnProductCard(){
+    public void clickOnProductCard() throws IOException {
         for (int i = 0; i < productImages.size(); i++){
             DataHelperAndWait.clickOnElement(productImages.get(i),webDriver);
             verifyTheDisplayedPageDoesNotHaveErrors();

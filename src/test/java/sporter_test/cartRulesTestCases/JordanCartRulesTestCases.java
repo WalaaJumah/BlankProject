@@ -15,6 +15,8 @@ import sporter_pages.cartPages.CartPage;
 import sporter_pages.homepage_classes.JordanHomePage;
 import sporter_pages.productPage.ProductDetailsPage;
 
+import java.io.IOException;
+
 import static core.BasePage.BaseURL;
 
 public class JordanCartRulesTestCases extends CartRulesTestCases{
@@ -34,7 +36,7 @@ public class JordanCartRulesTestCases extends CartRulesTestCases{
         countryCode="962";
     }
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure that inability to add more than an item of the same flavour & Size to the cart ", priority = 1)
-    public void verify2ItemOfTheSameKindRuleWorksCorrectlyWhenIncreasingTheQtyTo2FromProductPage(){
+    public void verify2ItemOfTheSameKindRuleWorksCorrectlyWhenIncreasingTheQtyTo2FromProductPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
@@ -44,7 +46,7 @@ public class JordanCartRulesTestCases extends CartRulesTestCases{
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
     }
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure that inability to add more than an item of the same flavour & Size to the cart by increasing the QTY from the cart ", priority = 2)
-    public void verify2ItemOfTheSameKindRuleWorksCorrectlyWhenIncreasingTheQtyTo2FromCartPage(){
+    public void verify2ItemOfTheSameKindRuleWorksCorrectlyWhenIncreasingTheQtyTo2FromCartPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");

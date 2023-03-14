@@ -59,21 +59,21 @@ public class WebElementsAssertion {
     }
         public static void assertionElementEnable(WebElement webElement,WebDriver webDriver){
         DataHelperAndWait.waitToBeVisible(webElement,webDriver);
-        Assert.assertTrue(webElement.isEnabled(), "The element is disable");
+        Assert.assertTrue(webElement.isEnabled(), "The element is disable"+" The URL is: "+webDriver.getCurrentUrl());
     }
           public static void assertionElementNotEnable(WebElement webElement,WebDriver webDriver){
         DataHelperAndWait.waitToBeVisible(webElement,webDriver);
-        Assert.assertFalse(webElement.isEnabled(), "The element is enable");
+        Assert.assertFalse(webElement.isEnabled(), "The element is enable"+" The URL is: "+webDriver.getCurrentUrl());
     }
 
     public static void assertionTextIsNotEqual(WebElement webElement,WebDriver webDriver, String text){
         DataHelperAndWait.waitToBeVisible(webElement,webDriver);
-        Assert.assertNotEquals(webElement.getText(),text, "The element contains : "+webElement.getText());
+        Assert.assertNotEquals(webElement.getText(),text, "The element contains : "+webElement.getText()+" The URL is: "+webDriver.getCurrentUrl());
 
     }
     public static void assertionAttributeTrueForElement(WebElement webElement,WebDriver webDriver,String attribute, String expectedAttribute){
         DataHelperAndWait.waitToBeVisible(webElement,webDriver);
-        Assert.assertEquals(webElement.getAttribute(attribute),expectedAttribute,"The "+webElement.getAttribute(attribute)+" is not equal "+ expectedAttribute);
+        Assert.assertEquals(webElement.getAttribute(attribute),expectedAttribute,"The "+webElement.getAttribute(attribute)+" is not equal "+ expectedAttribute+" The URL is: "+webDriver.getCurrentUrl());
     }
     public static void assertTheUrlEqualExpectedUrl(String actualUrl,String expectedUrl, WebDriver webDriver){
         DataHelperAndWait.waitForUrlContains(expectedUrl,webDriver);
@@ -82,12 +82,12 @@ public class WebElementsAssertion {
     public static void assertionWebElementEqualText(WebElement webElement, WebDriver webDriver, String expectedText){
         DataHelperAndWait.waitToBeVisible(webElement,webDriver);
         Assert.assertEquals(webElement.getText(),expectedText);
-        Assert.assertEquals(webElement.getText(),expectedText, "The element does not contains : "+expectedText+ "And the Actual Text is: "+webElement.getText());
+        Assert.assertEquals(webElement.getText(),expectedText, "The element does not contains : "+expectedText+ "And the Actual Text is: "+webElement.getText()+" The URL is: "+webDriver.getCurrentUrl());
 
     }
         public static void assertionWebElementConatinsText(WebElement webElement, WebDriver webDriver, String expectedText){
         DataHelperAndWait.waitToBeVisible(webElement,webDriver);
-        Assert.assertEquals(webElement.getText().contains(expectedText), "The element does not contains : "+expectedText+ "And the Actual Text is: "+webElement.getText());
+        Assert.assertEquals(webElement.getText().contains(expectedText),expectedText, "The element does not contains : "+expectedText+ "And the Actual Text is: "+webElement.getText()+" The URL is: "+webDriver.getCurrentUrl());
 
     }
 
@@ -95,7 +95,7 @@ public class WebElementsAssertion {
         for (int i = 0; i < webElement.size(); i++){
             DataHelperAndWait.hoverOnElement(webElement.get(i),webDriver);
             DataHelperAndWait.waitToBeVisible(webElement.get(i),webDriver);
-            Assert.assertTrue(webElement.get(i).isDisplayed(), "This element is not displayed: "+ webElement);
+            Assert.assertTrue(webElement.get(i).isDisplayed(), "This element is not displayed: "+ webElement+" The URL is: "+webDriver.getCurrentUrl());
         }
     }
     public static void checkRequiredErrorMsgIsDisplayed(WebElement webElement,WebDriver webDriver){

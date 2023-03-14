@@ -11,18 +11,20 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import sporter_pages.homepage_classes.HomePage;
 
+import java.io.IOException;
+
 public class EgyptProductDetailsPage extends ProductDetailsPage {
     public EgyptProductDetailsPage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
 
     }
-    public void displayTheProduct() {
+    public void displayTheProduct() throws IOException {
         webDriver.navigate().to(BaseURL + egyptDomain + productUrl);
         WebElementsAssertion.validateTheCurrentUrlContainsString(productUrl,webDriver);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
-    public void displayOOSProduct() {
+    public void displayOOSProduct() throws IOException {
         webDriver.navigate().to(BaseURL + egyptDomain + oOSProductUrl);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }

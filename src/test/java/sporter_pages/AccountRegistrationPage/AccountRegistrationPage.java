@@ -17,6 +17,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import sporter_pages.headerSection.HeaderSection;
 
+import java.io.IOException;
+
 @Getter
 public class AccountRegistrationPage extends BasePage {
     public AccountRegistrationPage(WebDriver webDriver) {
@@ -103,7 +105,7 @@ public class AccountRegistrationPage extends BasePage {
     }
 
 
-    public void navigateToRegistrationPage(){
+    public void navigateToRegistrationPage() throws IOException {
         webDriver.navigate().to(BaseURL + registerAccountLink);
         try{
             if(this.getLastNameField().isDisplayed()){

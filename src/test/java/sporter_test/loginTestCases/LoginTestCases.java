@@ -16,6 +16,8 @@ import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.loginPage.LoginPage;
 import xml_reader.XmlReader;
 
+import java.io.IOException;
+
 @Test(groups = "2.04 Login")
 public class LoginTestCases extends BaseTest {
     String storeCountry;
@@ -29,7 +31,7 @@ public class LoginTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify All fields, labels & Components appear correctly in Login page", priority = 2)
-    public void verifyAllFieldsAppearCorrectlyInLogin() {
+    public void verifyAllFieldsAppearCorrectlyInLogin() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         loginPage.navigateToLoginPage();
@@ -44,7 +46,7 @@ public class LoginTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(loginPage.getSignInWithSocialMediaLabel(), webDriver);
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to login using wrong email and the correct Error Msg appears", priority = 3)
-    public void verifyInAbilityToLoginUsingWrongEmail() {
+    public void verifyInAbilityToLoginUsingWrongEmail() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToLoginPage();
         loginPage.fillinLoginForm(DataHelperAndWait.generateRandomEmail(), XmlReader.getXMLData("correctPassword"));
@@ -66,7 +68,7 @@ public class LoginTestCases extends BaseTest {
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Ability to login correctly using valid credential", priority = 5)
-    public void verifyAbilityToLoginCorrectlyWithValidCredentials() {
+    public void verifyAbilityToLoginCorrectlyWithValidCredentials() throws IOException {
         HeaderSection header = new HeaderSection(webDriver);
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         LoginPage loginPage = new LoginPage(webDriver);
@@ -79,7 +81,7 @@ public class LoginTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(), webDriver);
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to login using correct Email & Wrong Password and the correct Error Msg appears", priority = 6)
-    public void verifyInAbilityToLoginUsingCorrectEmailAndWrongPassword() {
+    public void verifyInAbilityToLoginUsingCorrectEmailAndWrongPassword() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToLoginPage();
         loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword") + "1");
@@ -94,7 +96,7 @@ public class LoginTestCases extends BaseTest {
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Verify Inability to login without filling Email & Password fields", priority = 7)
-    public void verifyInAbilityToLoginWithoutEmailAndPassword() {
+    public void verifyInAbilityToLoginWithoutEmailAndPassword() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToLoginPage();
         DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
@@ -103,7 +105,7 @@ public class LoginTestCases extends BaseTest {
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Verify Inability to login without filling Email field only", priority = 8)
-    public void verifyInAbilityToLoginWithoutEmail() {
+    public void verifyInAbilityToLoginWithoutEmail() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToLoginPage();
         DataHelperAndWait.typeTextInElement(loginPage.getPasswordField(), webDriver, XmlReader.getXMLData("correctPassword"));
@@ -112,7 +114,7 @@ public class LoginTestCases extends BaseTest {
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Verify Inability to login without filling Password field only", priority = 9)
-    public void verifyInAbilityToLoginWithoutPassword() {
+    public void verifyInAbilityToLoginWithoutPassword() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToLoginPage();
         DataHelperAndWait.typeTextInElement(loginPage.getEmailField(), webDriver, XmlReader.getXMLData("correctEmail"));
@@ -121,7 +123,7 @@ public class LoginTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to login with wrong email format and the correct error Msg appears", priority = 10)
-    public void verifyInAbilityToLoginWithIncorrectEmailFormat() {
+    public void verifyInAbilityToLoginWithIncorrectEmailFormat() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToLoginPage();
         loginPage.fillinLoginForm(XmlReader.getXMLData("incorrectEmailFormate"), XmlReader.getXMLData("correctPassword"));
@@ -135,7 +137,7 @@ public class LoginTestCases extends BaseTest {
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Verify show password icon works correctly", priority = 11)
-    public void verifyShowPasswordIconWorksCorrectly() {
+    public void verifyShowPasswordIconWorksCorrectly() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToLoginPage();
         loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail"), XmlReader.getXMLData("correctPassword"));
@@ -160,7 +162,7 @@ public class LoginTestCases extends BaseTest {
 
     //TODO: There's a bug here & we will revisit it after fixing: https://sporter1.atlassian.net/browse/NS-56
     @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:  Verify ability to login using FaceBook account from Login Page", priority = 14)
-    public void verifyAbilityToSignInUsingFaceBook() {
+    public void verifyAbilityToSignInUsingFaceBook() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         loginPage.navigateToLoginPage();
@@ -180,7 +182,7 @@ public class LoginTestCases extends BaseTest {
 
     //TODO: There's a bug here & we will revisit it after fixing: https://sporter1.atlassian.net/browse/NS-56
     @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:  Verify ability to login using FaceBook account from FaceBook Option appearing in Account Menu", priority = 15)
-    public void verifyAbilityToSignInUsingFaceBookOptionAppearsInAccountMenu() {
+    public void verifyAbilityToSignInUsingFaceBookOptionAppearsInAccountMenu() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         HeaderSection header = new HeaderSection(webDriver);
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
@@ -200,7 +202,7 @@ public class LoginTestCases extends BaseTest {
         }
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify the system keeps the user logged in after switching the country", priority = 16)
-    public void verifyTheSystemKeepsTheCustomerLoggedInAfterSwitchingTheCountry() {
+    public void verifyTheSystemKeepsTheCustomerLoggedInAfterSwitchingTheCountry() throws IOException {
         HeaderSection header = new HeaderSection(webDriver);
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         LoginPage loginPage = new LoginPage(webDriver);
