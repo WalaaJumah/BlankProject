@@ -60,7 +60,8 @@
     </RegistartionForm>
     <CheckoutData>
         <invalidCouponCode>Hello</invalidCouponCode>
-        <FreeCouponCode>spr-128978-1</FreeCouponCode>
+        <FreeCouponCode>MISSYOU</FreeCouponCode>
+<!--        <FreeCouponCode>spr-128978-1</FreeCouponCode>-->
         <CartTitleEn>My Shopping Cart</CartTitleEn>
         <CartTitleAr>عربة التسوق</CartTitleAr>
         <smallLenghthPhoneErrEn>Text length does not satisfy specified text range</smallLenghthPhoneErrEn>

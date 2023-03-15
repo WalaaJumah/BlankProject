@@ -6,11 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="86683dee-3ff6-4652-96ae-dd8bddfbd97f" name="Changes" comment="Merge branch 'New_Sporter2.1_Without_Implicit_Wait' of https://github.com/sporter-com/QATesting into New_Sporter2.1_Without_Implicit_Wait&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/test/resources/TestExecution.xml&#10;#&#9;target/test-classes/TestExecution.xml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/guestCheckoutCyclePages/JordanGuestCheckoutCyclePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/guestCheckoutCyclePages/JordanGuestCheckoutCyclePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/guestCheckoutCyclePages/QatarGuestCheckoutCyclePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/guestCheckoutCyclePages/QatarGuestCheckoutCyclePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/guestCheckoutCyclePages/GuestCheckoutCyclePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/guestCheckoutCyclePages/GuestCheckoutCyclePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/EgyptGuestCheckoutCycleTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/EgyptGuestCheckoutCycleTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/GuestCheckoutCycleTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/GuestCheckoutCycleTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/JordanGuestCheckoutCycleTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/JordanGuestCheckoutCycleTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/KSAGuestCheckoutCycleTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/KSAGuestCheckoutCycleTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/QatarGuestCheckoutCycleTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/QatarGuestCheckoutCycleTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/GenerateReport.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/GenerateReport.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/TestData.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/TestData.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/TestExecution.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TestExecution.xml" afterDir="false" />
     </list>
@@ -175,8 +180,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/TestExecution.xml" />
-        <item itemvalue="TestNG.&lt;default&gt;" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/GenerateReport.xml" />
+        <item itemvalue="TestNG.&lt;default&gt;" />
         <item itemvalue="TestNG.G:/My Drive/IdeaProjects/sporter-web-automation/target/test-classes/TestExecution.xml" />
         <item itemvalue="TestNG.QatarHomePageTestCases.testt" />
       </list>

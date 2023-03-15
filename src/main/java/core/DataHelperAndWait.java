@@ -20,7 +20,9 @@ public  class DataHelperAndWait  {
 
     private static int WaitTime=17;
     //test21add
-
+public static void navigateToUrl(String uRL, WebDriver webDriver) {
+    webDriver.navigate().to(uRL);
+}
     public static   void waitForElement(WebElement element, WebDriver webDriver) {
         WebDriverWait wait;
         wait = new WebDriverWait(webDriver, WaitTime);

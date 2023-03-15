@@ -86,6 +86,7 @@ public void verifyAbilityToSelectSameDayShippingMethodCorrectly() {}
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
+         DataHelperAndWait.waitForTime(1000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -109,6 +110,7 @@ public void verifyAbilityToSelectSameDayShippingMethodCorrectly() {}
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
+         DataHelperAndWait.waitForTime(1000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -142,6 +144,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
+         DataHelperAndWait.waitForTime(1000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -164,6 +167,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
+         DataHelperAndWait.waitForTime(1000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -209,6 +213,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
+         DataHelperAndWait.waitForTime(1000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
     }
@@ -228,6 +233,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
+         DataHelperAndWait.waitForTime(1000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -285,6 +291,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
+         DataHelperAndWait.waitForTime(1000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -309,7 +316,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
 //                XmlReader.getXMLData("StreetOneAddressName"),
 //                XmlReader.getXMLData("ksaPhoneNumber")
 //        );
-//        guestCheckoutCyclePage.clickOnContinueBtn();
+//         DataHelperAndWait.waitForTime(1000);
 //        DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
 //        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
 //        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCreditCardPaymentMethod(),webDriver);}

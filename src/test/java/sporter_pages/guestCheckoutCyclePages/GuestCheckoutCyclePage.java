@@ -108,7 +108,7 @@ public class GuestCheckoutCyclePage extends BasePage {
     @FindBy(xpath = "///div[starts-with(@class,'paymentInfo_methods')]")
     private WebElement paymentMethodsSection;
 //TODO:Same Day Delivery https://spocan.easyredmine.com/issues/8732?jump=issues
-@FindBy(xpath = "(//div[starts-with(@class,'radioButton_circle')]/following::span[1])[2]")
+@FindBy(id = "samedaydelivery_standard")
 private WebElement sameDayDelivery;
    @FindBy(xpath = "//div[2]/div[2]/div[5]")
    private WebElement dubaiCity;
@@ -116,7 +116,7 @@ private WebElement sameDayDelivery;
    private WebElement abuDhabiCity;
    @FindBy(xpath = "//span[starts-with(@class,'teleInput_code')]")
    private WebElement countryCode;
-   @FindBy(xpath = "//div[@id='sporter_cashondelivery']//div[@id='circle']")
+   @FindBy(xpath = "//div[contains(@id,'cashondelivery')]//div[@id='circle']")
    private WebElement cODPaymentMethod;
    @FindBy(xpath = "//div[@id='checkoutcom_card_payment']//div[@id='circle']")
    private WebElement creditCardPaymentMethod;

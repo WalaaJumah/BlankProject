@@ -231,6 +231,8 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
+        //TODO: #5 This time needs to enhance in QA.Sporter.com envr
+        DataHelperAndWait.waitForTime(1000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getShippingMethodsOptionsSection(),webDriver);
     }
@@ -242,18 +244,61 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     @Test(groups = {"2.01 Checkout Cycle( Guest User)", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure that the Continue button appears in the Shipping Methods screen is disable when no shipping method is selected", priority = 19)
     public void verifyContinueBtnAppearsInShippingMethodsIsDisableWhenNoMethodSelected() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        CartPage cartPage = new CartPage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        guestCheckoutCyclePage.accessGuestCheckoutForm();
+        guestCheckoutCyclePage.fillInShippingInformationInputField(
+                XmlReader.getXMLData("firstName"),
+                XmlReader.getXMLData("lastName"),
+                XmlReader.getXMLData("correctEmail"),
+                XmlReader.getXMLData("phoneNumber"),
+//                XmlReader.getXMLData("AddressName"),
+                XmlReader.getXMLData("StreetOneAddressName"),
+                XmlReader.getXMLData("ksaPhoneNumber")
+        );
+        DataHelperAndWait.waitForTime(1000);
+        guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.assertionElementNotEnable(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
     }
     @Test(groups = {"2.01 Checkout Cycle( Guest User)","All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}:Verify Edit Shipping information button works fine", priority = 20)
     public void verifyTheEditShippingInfoBtnWorksFine() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+ CartPage cartPage = new CartPage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        guestCheckoutCyclePage.accessGuestCheckoutForm();
+        guestCheckoutCyclePage.fillInShippingInformationInputField(
+                XmlReader.getXMLData("firstName"),
+                XmlReader.getXMLData("lastName"),
+                XmlReader.getXMLData("correctEmail"),
+                XmlReader.getXMLData("phoneNumber"),
+//                XmlReader.getXMLData("AddressName"),
+                XmlReader.getXMLData("StreetOneAddressName"),
+                XmlReader.getXMLData("ksaPhoneNumber")
+        );
+        DataHelperAndWait.waitForTime(1000);
+        guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getEditShippingInfoBtn(),webDriver);
+        DataHelperAndWait.waitForTime(1000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getEditShippingInfoBtn(),webDriver);
     }
     @Test(groups = {"2.01 Checkout Cycle( Guest User)","All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}:Verify All Shipping Methods appear correctly", priority = 21)
     public void verifyAllShippingMethodsAppearCorrectly(){
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+ CartPage cartPage = new CartPage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        guestCheckoutCyclePage.accessGuestCheckoutForm();
+        guestCheckoutCyclePage.fillInShippingInformationInputField(
+                XmlReader.getXMLData("firstName"),
+                XmlReader.getXMLData("lastName"),
+                XmlReader.getXMLData("correctEmail"),
+                XmlReader.getXMLData("phoneNumber"),
+//                XmlReader.getXMLData("AddressName"),
+                XmlReader.getXMLData("StreetOneAddressName"),
+                XmlReader.getXMLData("ksaPhoneNumber")
+        );
+        DataHelperAndWait.waitForTime(1000);
+        guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver,XmlReader.getXMLData("twoBusinessDay"));
         WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getSameDayDelivery(),webDriver,XmlReader.getXMLData("sameDayDelivery"));
     }
@@ -261,6 +306,20 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
             "Cash on Delivery Service Available shipping method correctly", priority = 22)
     public void verifyAbilityToSelect2BusinessDaysShippingMethodCorrectly() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+ CartPage cartPage = new CartPage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        guestCheckoutCyclePage.accessGuestCheckoutForm();
+        guestCheckoutCyclePage.fillInShippingInformationInputField(
+                XmlReader.getXMLData("firstName"),
+                XmlReader.getXMLData("lastName"),
+                XmlReader.getXMLData("correctEmail"),
+                XmlReader.getXMLData("phoneNumber"),
+//                XmlReader.getXMLData("AddressName"),
+                XmlReader.getXMLData("StreetOneAddressName"),
+                XmlReader.getXMLData("ksaPhoneNumber")
+        );
+        DataHelperAndWait.waitForTime(1000);
+        guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(),webDriver);
@@ -268,9 +327,23 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     @Test(groups = {"2.01 Checkout Cycle( Guest User)", "All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Same Day Delivery shipping method appears only for Dubai City", priority = 79)
     public void verifySameDayShippingMethodAppearsForDubaiCityOnly() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        guestCheckoutCyclePage.navigateToShippingMethodsPage();
+ CartPage cartPage = new CartPage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        guestCheckoutCyclePage.accessGuestCheckoutForm();
+        guestCheckoutCyclePage.fillInShippingInformationInputField(
+                XmlReader.getXMLData("firstName"),
+                XmlReader.getXMLData("lastName"),
+                XmlReader.getXMLData("correctEmail"),
+                XmlReader.getXMLData("phoneNumber"),
+//                XmlReader.getXMLData("AddressName"),
+                XmlReader.getXMLData("StreetOneAddressName"),
+                XmlReader.getXMLData("ksaPhoneNumber")
+        );
+        DataHelperAndWait.waitForTime(1000);
+        guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getEditShippingInfoBtn(),webDriver);
         guestCheckoutCyclePage.SelectAbuDhabiCityCity();
+        DataHelperAndWait.waitForTime(1000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getSameDayDelivery(),webDriver);
     }
@@ -278,6 +351,20 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     @Test(groups = {"2.01 Checkout Cycle( Guest User)", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure that the customer is able to select the Same Day Delivery shipping method correctly", priority = 80)
     public void verifyAbilityToSelectSameDayShippingMethodCorrectly() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+ CartPage cartPage = new CartPage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        guestCheckoutCyclePage.accessGuestCheckoutForm();
+        guestCheckoutCyclePage.fillInShippingInformationInputField(
+                XmlReader.getXMLData("firstName"),
+                XmlReader.getXMLData("lastName"),
+                XmlReader.getXMLData("correctEmail"),
+                XmlReader.getXMLData("phoneNumber"),
+//                XmlReader.getXMLData("AddressName"),
+                XmlReader.getXMLData("StreetOneAddressName"),
+                XmlReader.getXMLData("ksaPhoneNumber")
+        );
+        DataHelperAndWait.waitForTime(1000);
+        guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getSameDayDelivery(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(),webDriver);
@@ -285,12 +372,44 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     @Test(groups = {"2.01 Checkout Cycle( Guest User)", "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure that each of COD & Credit Card Payment methods appear correctly", priority = 23)
     public void verifyEachOfCODAndCreditCardPaymentMethodCorrectly() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+ CartPage cartPage = new CartPage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        guestCheckoutCyclePage.accessGuestCheckoutForm();
+        guestCheckoutCyclePage.fillInShippingInformationInputField(
+                XmlReader.getXMLData("firstName"),
+                XmlReader.getXMLData("lastName"),
+                XmlReader.getXMLData("correctEmail"),
+                XmlReader.getXMLData("phoneNumber"),
+//                XmlReader.getXMLData("AddressName"),
+                XmlReader.getXMLData("StreetOneAddressName"),
+                XmlReader.getXMLData("ksaPhoneNumber")
+        );
+        DataHelperAndWait.waitForTime(1000);
+        guestCheckoutCyclePage.clickOnContinueBtn();
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCreditCardPaymentMethod(),webDriver);
     }
     @Test(groups = {"2.01 Checkout Cycle( Guest User)", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure that the Continue button appears in the Payment Methods screen is disable when no shipping method is selected", priority = 24)
     public void verifyContinueBtnAppearsInPaymentMethodsIsDisableWhenNoMethodSelected() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+ CartPage cartPage = new CartPage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        guestCheckoutCyclePage.accessGuestCheckoutForm();
+        guestCheckoutCyclePage.fillInShippingInformationInputField(
+                XmlReader.getXMLData("firstName"),
+                XmlReader.getXMLData("lastName"),
+                XmlReader.getXMLData("correctEmail"),
+                XmlReader.getXMLData("phoneNumber"),
+//                XmlReader.getXMLData("AddressName"),
+                XmlReader.getXMLData("StreetOneAddressName"),
+                XmlReader.getXMLData("ksaPhoneNumber")
+        );
+        DataHelperAndWait.waitForTime(1000);
+        guestCheckoutCyclePage.clickOnContinueBtn();
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         WebElementsAssertion.assertionElementNotEnable(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
     }
 //    @Test(groups = {"2.01 Checkout Cycle( Guest User)", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to select the 2 Business Days Super Express Shipping Method With COD Payment Method correctly", priority = 25)
@@ -314,13 +433,14 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
 //                XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
+        DataHelperAndWait.waitForTime(1000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(), webDriver);
-        DataHelperAndWait.waitForTime(1500);
+        DataHelperAndWait.waitForTime(11000);
 DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getSuccessPage(),webDriver);
 cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
 
@@ -328,6 +448,22 @@ cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = {"2.01 Checkout Cycle( Guest User)", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to select the 2 Business Days Super Express Shipping Method With Valid Credit Card Payment Method", priority = 28)
     public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithValidCreditCardPaymentMethod() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+ CartPage cartPage = new CartPage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        guestCheckoutCyclePage.accessGuestCheckoutForm();
+        guestCheckoutCyclePage.fillInShippingInformationInputField(
+                XmlReader.getXMLData("firstName"),
+                XmlReader.getXMLData("lastName"),
+                XmlReader.getXMLData("correctEmail"),
+                XmlReader.getXMLData("phoneNumber"),
+//                XmlReader.getXMLData("AddressName"),
+                XmlReader.getXMLData("StreetOneAddressName"),
+                XmlReader.getXMLData("ksaPhoneNumber")
+        );
+        DataHelperAndWait.waitForTime(1000);
+        guestCheckoutCyclePage.clickOnContinueBtn();
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
     }
@@ -355,6 +491,7 @@ cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName")
         );
+        DataHelperAndWait.waitForTime(1000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -368,7 +505,7 @@ cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
 //        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
 //
-////        DataHelperAndWait.waitForTime(2000);
+////        DataHelperAndWait.waitForTime(10000);
 //        String mainWindow= webDriver.getWindowHandle();
 //        Set<String> handles = webDriver.getWindowHandles();
 //// Switch to the pop-up window
@@ -405,6 +542,7 @@ cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //                XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
+        DataHelperAndWait.waitForTime(1000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -433,6 +571,7 @@ cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //                XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
+        DataHelperAndWait.waitForTime(1000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -440,7 +579,7 @@ cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
 
-//        DataHelperAndWait.waitForTime(2000);
+//        DataHelperAndWait.waitForTime(10000);
 //        String mainWindow= webDriver.getWindowHandle();
 //        Set<String> handles = webDriver.getWindowHandles();
 //// Switch to the pop-up window

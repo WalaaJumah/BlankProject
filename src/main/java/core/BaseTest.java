@@ -34,7 +34,7 @@ public class BaseTest{
     public final String aeSiteURL = "/en-ae/";
     public final String ksaSiteURL = "/en-sa/";
     public final String qatarSiteURL = "/en-qa/";
-    public final String checkoutLoginStepURL = "/en-ae/checkout/#checkout-login-step";
+    public final String checkoutLoginStepURL = "/checkout";
     public final String freeCouponeCode= "spo15";
     public final String discaountCouponeCode= "";
     public final String product = "/en-ae/optimum-gold-standard-100-whey";
