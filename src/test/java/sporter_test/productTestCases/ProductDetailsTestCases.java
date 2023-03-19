@@ -166,6 +166,7 @@ public class ProductDetailsTestCases extends BaseTest {
         productDetailsPage.displayTheProduct();
         Actions action = new Actions(webDriver);
         action.moveToElement(productDetailsPage.getShopByMenu()).perform();
+        action.moveToElement(productDetailsPage.getShopByMenu()).perform();
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSportsSupplementsInShopBy(),webDriver);
     }
     @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify that the Sport Supplements Menu Is Displayed When Hovering On It From Product Details Page", priority = 18)
@@ -173,6 +174,7 @@ public class ProductDetailsTestCases extends BaseTest {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
         Actions action = new Actions(webDriver);
+        action.moveToElement(productDetailsPage.getSportsSupplementsMenu()).perform();
         action.moveToElement(productDetailsPage.getSportsSupplementsMenu()).perform();
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
@@ -183,6 +185,7 @@ public class ProductDetailsTestCases extends BaseTest {
         productDetailsPage.displayTheProduct();
         Actions action = new Actions(webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(megaMenuPage.getVitaminsAndHealthMainMenu(), webDriver);
+        action.moveToElement(megaMenuPage.getVitaminsAndHealthMainMenu()).perform();
         action.moveToElement(megaMenuPage.getVitaminsAndHealthMainMenu()).perform();
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
@@ -201,6 +204,7 @@ public class ProductDetailsTestCases extends BaseTest {
                 MegaMenuPage megaMenuPage=new MegaMenuPage(webDriver);
         productDetailsPage.displayTheProduct();
         Actions action = new Actions(webDriver);
+        action.moveToElement(megaMenuPage.getSportsMainMenu()).perform();
         action.moveToElement(megaMenuPage.getSportsMainMenu()).perform();
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
@@ -226,12 +230,14 @@ public class ProductDetailsTestCases extends BaseTest {
     public void verifyAddToCartBtnInHeaderBarWorksCorrectly() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         DataHelperAndWait.scrollTo(productDetailsPage.getAddReviewButton(),webDriver);
+        DataHelperAndWait.waitForTime(500);
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getProductHeaderBar(), webDriver);
     }
     @Test(groups = { "1.1 Critical Severity"},description = "{{CountryName}}:Verify that the Add to Cart Button appears in the header Bar in the PDP works correctly ", priority = 28)
     public void verifyHeaderBarDisplaysCorrectlyInProductDetailsPageWhenScrollingThePage() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         DataHelperAndWait.scrollTo(productDetailsPage.getAddReviewButton(),webDriver);
+        DataHelperAndWait.waitForTime(500);
         DataHelperAndWait.clickOnElement(productDetailsPage.getAddToCartBtnInProductHeaderBar(),webDriver);
 //        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getRecommendedProductsPopup(), webDriver);
     }

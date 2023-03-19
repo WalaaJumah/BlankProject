@@ -105,7 +105,7 @@ public class HomePage extends BasePage {
     private WebElement previousButtonInTopSellerSection;
     @FindBy(id = "Trendscontainer_title")
     private WebElement trendingOnSporterHeader;
-    @FindBy(id = "trendContainer")
+    @FindBy(id = "Trendscontainer")
     private WebElement trendingOnSporterSection;
     @FindBy(id = "//div[@class='trending-swiper-button-next']/i")
     private WebElement nextBtnInTrendingOnSporterSection;
