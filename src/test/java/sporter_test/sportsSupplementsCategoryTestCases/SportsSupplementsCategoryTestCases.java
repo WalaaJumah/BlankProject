@@ -12,6 +12,7 @@ import core.WebElementsAssertion;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import sporter_pages.footerSections.FooterSection;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.productPage.ProductDetailsPage;
@@ -109,56 +110,45 @@ public class SportsSupplementsCategoryTestCases extends BaseTest {
             sportsSupplementsCategoryPage.navigateToSportsSupplementPage();
             WebElementsAssertion.validateTheElementIsDisplayed(sportsSupplementsCategoryPage.getNewsLetterSection(),webDriver);
     }
-
-    //    @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Sports Supplements Category- Verify that the search button works correctly from the Sport Supplements category page", priority = 19)
-//    public void verifySearchBtnWorksCorrectlyFromSportSupplementsCategoryPage() {
-//        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-//        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-////        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-////        aeSportSupplementsCategoryPage.navigate();
-//        productDetailsPage.searchForBundle();
-//        productDetailsPage.getSearchBtn().click();
-//        Assert.assertTrue(webDriver.getCurrentUrl().contains("search"));
-//        aeSportSupplementsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-//    }
-    //    @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}:Sports Supplements Category- Verify that the previous page button is disable when the current page is page 1 ", priority = 20)
-//    public void verifyThePreviousBtnIsDisableWhenDisplayPage1() {
-//        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-////        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-//        aeSportSupplementsCategoryPage.navigate();
-//        Assert.assertTrue(aeSportSupplementsCategoryPage.getDisabledPreviousPageBtn().isDisplayed());
-//    }
-//
-//    @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}:Sports Supplements Category- Make Sure the Pagination control works correctly", priority = 21)
-//    public void verifyThePaginationControlWorksCorrectly() {
-//        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-////        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-//        aeSportSupplementsCategoryPage.navigate();
-//        aeSportSupplementsCategoryPage.navigateToPage2();
-//        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
-//        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
-//    }
-//
-//    @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}:Sports Supplements Category- Make Sure the previous page button works correctly", priority = 22)
-//    public void verifyPreviousPageBtnWorksCorrectly() {
-//        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-//        aeSportSupplementsCategoryPage.clickOnPreviousPageBtn();
-//        Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
-//  }
-//
-//    @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}:Sports Supplements Category- Make Sure the next page button works correctly", priority = 23)
-//    public void verifyNextPageBtnWorksCorrectly() {
-//        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-//        aeSportSupplementsCategoryPage.clickOnNextPageBtn();
-//        DataHelperAndWait.waitForUrlContains("p=2",webDriver);
-//        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));
-//    }
-    //    @Test(groups = { "1.4 Low Severity"},description = "{{CountryName}}:Sports Supplements Category- Make sure all secure tabs appears correctly(100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks)", priority = 25)
-//    public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInSportSupplementsCategoryPage(){
-//        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-//        Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomSection().isDisplayed());
-//        for (int i = 0; i < aeSportSupplementsCategoryPage.getPageBottomBlocksList().size(); i++) {
-//            Assert.assertTrue(aeSportSupplementsCategoryPage.getPageBottomBlocksList().get(i).isDisplayed());
+    @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Sports Supplements Category- Verify that the search button works correctly from the Sport Supplements category page", priority = 13)
+    public void verifySearchBtnWorksCorrectlyFromSportSupplementsCategoryPage() throws IOException {
+        SportsSupplementsCategoryPage sportsSupplementsCategoryPage= new SportsSupplementsCategoryPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        sportsSupplementsCategoryPage.navigateToSportsSupplementPage();
+        DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSearchPageTitle(), webDriver);
+        productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
+    }
+    @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}:Sports Supplements Category- Make Sure the next page button works correctly", priority = 14)
+    public void verifyNextPageBtnWorksCorrectly() {
+        SportsSupplementsCategoryPage sportsSupplementsCategoryPage= new SportsSupplementsCategoryPage(webDriver);
+        sportsSupplementsCategoryPage.navigateToSportsSupplementPage();
+        if(sportsSupplementsCategoryPage.getPaginationBtns().size()>3){
+        DataHelperAndWait.clickOnElement(sportsSupplementsCategoryPage.getNextPageBtn(),webDriver);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));}
+        else{
+            System.out.println("There's only one page in the list");
+        }
+  }
+      @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}:Sports Supplements Category- Make Sure the previous page button works correctly", priority = 15)
+    public void verifyPreviousPageBtnWorksCorrectly() {
+        SportsSupplementsCategoryPage sportsSupplementsCategoryPage= new SportsSupplementsCategoryPage(webDriver);
+        sportsSupplementsCategoryPage.navigateToSportsSupplementPage();
+        if(sportsSupplementsCategoryPage.getPaginationBtns().size()>3){
+        DataHelperAndWait.clickOnElement(sportsSupplementsCategoryPage.getNextPageBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(sportsSupplementsCategoryPage.getPreviousPageBtn(),webDriver);
+        Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));}
+        else{
+            System.out.println("There's only one page in the list");
+        }
+  }
+ @Test(groups = { "1.4 Low Severity"},description = "{{CountryName}}:Sports Supplements Category- Make sure all secure tabs appears correctly(100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks)", priority = 16)
+    public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInSportSupplementsCategoryPage(){
+     SportsSupplementsCategoryPage sportsSupplementsCategoryPage= new SportsSupplementsCategoryPage(webDriver);
+     FooterSection footerSection= new FooterSection(webDriver);
+     sportsSupplementsCategoryPage.navigateToSportsSupplementPage();
+        for (int i = 0; i < footerSection.getPageBottomBlocksList().size(); i++) {
+            WebElementsAssertion.validateTheElementIsDisplayed(footerSection.getPageBottomBlocksList().get(i),webDriver);}
 //            switch (i) {
 //                case 0:
 //                    Assert.assertEquals(aeSportSupplementsCategoryPage.getSecurePaymentTitle().getText(), "100% Secure Payments");
@@ -171,18 +161,16 @@ public class SportsSupplementsCategoryTestCases extends BaseTest {
 //                    Assert.assertEquals(aeSportSupplementsCategoryPage.getFastDeliveryDescription().getText(), "Fast delivery, competitive prices and excellent services");
 //            }
 //        }
-//    }
-    //    @Test(groups = { "1.4 Low Severity"},description = "{{CountryName}}:Sports Supplements Category- Make sure that the BreadCrumb appears correctly after sorting the product ", priority = 27)
-//    public void verifyTheBreadCrumbAppearingCorrectlyAfterSortingTheProducts() {
-//        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-////        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-//        aeSportSupplementsCategoryPage.navigate();
-//        Select select = new Select(aeSportSupplementsCategoryPage.getSortByMenu());
-//        select.selectByIndex(1);
-//        DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getHomeBreadcrumbs(),webDriver);
-//        Assert.assertTrue(aeSportSupplementsCategoryPage.getHomeBreadcrumbs().isDisplayed());
-//    }
-@Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}:Sports Supplements Category- Make sure ability to navigate to the home page by clicking on the sporter logo  ", priority = 36)
+    }
+        @Test(groups = { "1.4 Low Severity"},description = "{{CountryName}}:Sports Supplements Category- Make sure that the BreadCrumb appears correctly after sorting the product ", priority = 17)
+    public void verifyTheBreadCrumbAppearingCorrectlyAfterSortingTheProducts() {
+            SportsSupplementsCategoryPage sportsSupplementsCategoryPage= new SportsSupplementsCategoryPage(webDriver);
+            HomePage homePage= new HomePage(webDriver);
+            sportsSupplementsCategoryPage.navigateToSportsSupplementPage();
+            DataHelperAndWait.clickOnElement(sportsSupplementsCategoryPage.getHomePageBreadCrumb(),webDriver);
+            WebElementsAssertion.validateTheElementIsDisplayed(homePage.getSportsSupplementsCategory(),webDriver);
+    }
+@Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}:Sports Supplements Category- Make sure ability to navigate to the home page by clicking on the sporter logo  ", priority = 18)
 public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromPdp() throws IOException {
     SportsSupplementsCategoryPage sportsSupplementsCategoryPage= new SportsSupplementsCategoryPage(webDriver);
     HeaderSection headerSection= new HeaderSection(webDriver);
@@ -191,15 +179,16 @@ public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromPdp() th
     DataHelperAndWait.clickOnElement(headerSection.getSporterLogo(),webDriver);
     WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(),webDriver);
 }
-    //    @Test(groups = "All Smoke Testing Result",description = "{{CountryName}}:Sports Supplements Category- Make Sure the ability to access all pages inside Sport Supplements Category Page  ", priority = 26)
-//    public void verifyAbilityToAccessAllPagesInsideSportSupplementsCategoryPage(){
-//        AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-////        this.verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
-//        aeSportSupplementsCategoryPage.navigate();
-//        String numberOfProductInTheList=aeSportSupplementsCategoryPage.getSearchResultValue().getText();
-//        if(DataHelperAndWait.isTheresNoPages(numberOfProductInTheList))
-//            System.out.println("There's no pages");
-//        else {
-//            DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList, aeSportSupplementsCategoryPage.getNextPageBtn(), webDriver);
-//        }}
+        @Test(groups = "All Smoke Testing Result",description = "{{CountryName}}:Sports Supplements Category- Make Sure the ability to access all pages inside Sport Supplements Category Page  ", priority = 19)
+    public void verifyAbilityToAccessAllPagesInsideSportSupplementsCategoryPage() throws IOException {
+            SportsSupplementsCategoryPage sportsSupplementsCategoryPage= new SportsSupplementsCategoryPage(webDriver);
+            sportsSupplementsCategoryPage.clickOnSportsSupplementMainMenu();
+            String numberOfProductInTheList=sportsSupplementsCategoryPage.getSearchResultValue().getText();
+        if(DataHelperAndWait.isTheresNoPages(numberOfProductInTheList))
+            System.out.println("There's no pages");
+        else {
+            DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList, sportsSupplementsCategoryPage.getNextPageBtn(), webDriver);
+        }
+
+      }
 }
