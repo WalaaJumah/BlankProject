@@ -204,7 +204,7 @@ private WebElement freeFromSporterLabelInProductCard;
        webDriver.navigate().to(BaseURL+cartURL);
        DataHelperAndWait.waitForUrlContains(cartURL,webDriver);
    }
-    public void addBundleToCartAndDisplayTheCart(){
+    public void addBundleToCartAndDisplayTheCart() throws IOException {
             productDetailsPage.displayBundle();
             productDetailsPage.addToCart();
             productDetailsPage.viewCart();

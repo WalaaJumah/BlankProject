@@ -178,7 +178,7 @@ public class CartTestCases extends BaseTest {
 //        cartPage.removeAllItems(2);
 //    }
     @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = " Cart Page- Make sure ability to add a bundle to the cart ", priority = 17)
-    public void verifyAbilityToAddBundleToCart() {
+    public void verifyAbilityToAddBundleToCart() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         WebDriverWait wait;
         productDetailsPage.displayBundle();

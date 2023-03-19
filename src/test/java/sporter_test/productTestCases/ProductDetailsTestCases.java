@@ -107,7 +107,7 @@ public class ProductDetailsTestCases extends BaseTest {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
         DataHelperAndWait.clickOnElement(productDetailsPage.getHomeBreadcrumbs(),webDriver);
-//        DataHelperAndWait.waitForTime(4000);
+        DataHelperAndWait.waitForTime(2000);
         Assert.assertFalse(webDriver.getCurrentUrl().contains(productDetailsPage.productUrl));
     }
     @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}:Make sure that the product price is changed when you change the quantity ", priority = 12)
@@ -122,7 +122,7 @@ public class ProductDetailsTestCases extends BaseTest {
         Assert.assertNotEquals(currentProductPrice, newProductPrice);
     }
     @Test(groups = { "1.1 Critical Severity"},description = "{{CountryName}}:Make sure ability to display the bundle and select all options", priority = 13)
-    public void verifyAbilityToDisplayBundleAndSelectAllOptions() {
+    public void verifyAbilityToDisplayBundleAndSelectAllOptions() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayBundle();
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getBundleMenu(),webDriver);
