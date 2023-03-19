@@ -136,8 +136,8 @@ public class BasePage {
     public static String productUrlQatarWithHighPrice3 = "/dymatize-elite-whey-7161";
     public static String productUrlQatarWithHighPrice4 = "/evl-nutrition-100-whey-protein-55126";
     public static String productUrlJordanWithHighPrice2 = "/catlog-product-view-id-6847-6773";
-    public final String bogoUrlKSA = "/catalog-pro-32569-32569";
-    public final String bogoUrlQatar = "/catalog-pro-32569-32569";
+    public final String bogoUrlKSA = "/the-pack-bcaas-flow-32569";
+    public final String bogoUrlQatar = "/catalog-pro-32569";
     public final String bogoUrlEgypt = "/cellucor-c4";
     public final String product2UrlLessQty = "/positive-nutrition-recharge-pods-53972";
     public  static String oOSProductUrl = "";

@@ -77,19 +77,19 @@ public class ProductDetailsPage extends BasePage {
     private WebElement HomeBreadcrumbs;
     @FindBy(xpath = "//div[starts-with(@class,'productHeader_otOfStocklabe')]")
     private WebElement OOSMsg;
-    @FindBy(xpath = "(//ul[starts-with(@class,'topCategoryList_container')]/li/a)[1]")
+    @FindBy(id = "shobBy")
     private WebElement shopByMenu;
     @FindBy(id = "SubCategoriesContainer")
     private WebElement subCategoriesSectionInMegaMenu;
-    @FindBy(xpath = "(//div[@id='SortCategoriesContainer']/div)[1]")
-    private WebElement subCategoriesSectionForShopBy;
+    @FindBy(id = "SortItem_Sports Supplements_span")
+    private WebElement sportsSupplementsInShopBy;
     @FindBy(xpath = "(//div[@id='currentPrice'])[2]")
     private WebElement FinalProductPrice;
     @FindBy(id = "searchInput")
     private WebElement searchField;
     @FindBy(id = "SortItem_Sales & Offers_span")
     private WebElement salesAndOffersMenu;
-    @FindBy(xpath = "(//ul[starts-with(@class,'topCategoryList_container')]/li/a)[2]")
+    @FindBy(xpath = "//li[@id='menu_3']//a")
     private WebElement SportsSupplementsMenu;
     @FindBy(xpath = "//select[starts-with(@id,'bundleOptionSelect')]")
     private WebElement bundleMenu;
@@ -144,6 +144,8 @@ public class ProductDetailsPage extends BasePage {
 
     @FindBy(id= "closeAddToCartErrBtn")
     private WebElement closeToCartErrorPopUp;
+    @FindBy(id = "(//ul[starts-with(@class,'topCategoryList_container')]/li/a)[3]")
+    private WebElement vitaminsAndHealthMainMenu;
 
     //Methods we need during testing the Product details page
     public void displayTheProduct() throws IOException {

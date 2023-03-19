@@ -16,10 +16,10 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import sporter_pages.AEMegaMenuPage;
 import sporter_pages.cartPages.CartPage;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.HomePage;
+import sporter_pages.megaMenuPages.MegaMenuPage;
 import sporter_pages.productPage.ProductDetailsPage;
 import xml_reader.XmlReader;
 
@@ -432,7 +432,7 @@ public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() 
 //    cartPage.addToCartAndDisplayTheCart();
     Actions action = new Actions(webDriver);
     action.moveToElement(productDetailsPage.getShopByMenu()).perform();
-    WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionForShopBy(),webDriver);
+    WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSportsSupplementsInShopBy(),webDriver);
 }
     @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify that the Sport Supplements Menu Is Displayed When Hovering On It From Product Details Page", priority = 37)
     public void verifySportSupplementsMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
@@ -446,32 +446,32 @@ public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() 
     @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify that the Vitamins And Health Menu Is Displayed When Hovering On It From Product Details Page", priority = 38)
     public void verifyVitaminsAndHealthMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        MegaMenuPage megaMenuPage= new MegaMenuPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         cartPage.navigateToCartPage();
         Actions action = new Actions(webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(aeMegamenuPage.getVitaminsAndHealthMainMenu(), webDriver);
-        action.moveToElement(aeMegamenuPage.getVitaminsAndHealthMainMenu()).perform();
+        WebElementsAssertion.validateTheElementIsDisplayed(megaMenuPage.getVitaminsAndHealthMainMenu(), webDriver);
+        action.moveToElement(megaMenuPage.getVitaminsAndHealthMainMenu()).perform();
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
     @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify that the Healthy Food Menu Is Displayed When Hovering On It From Product Details Page", priority = 39)
     public void verifyHealthyFoodMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        MegaMenuPage megaMenuPage= new MegaMenuPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         cartPage.navigateToCartPage();
         Actions action = new Actions(webDriver);
-        action.moveToElement(aeMegamenuPage.getHealthyFoodMainMenu()).perform();
+        action.moveToElement(megaMenuPage.getHealthyFoodMainMenu()).perform();
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
     @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify that the Sports Menu Is Displayed When Hovering On It From Product Details Page", priority = 40)
     public void verifySportsMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        MegaMenuPage megaMenuPage= new MegaMenuPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         cartPage.navigateToCartPage();
         Actions action = new Actions(webDriver);
-        action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
+        action.moveToElement(megaMenuPage.getSportsMainMenu()).perform();
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
     @Test(groups = { "1.1 Critical Severity"},description = "{{CountryName}}:Verify that the account Profile icon works correctly in PDP", priority = 41)

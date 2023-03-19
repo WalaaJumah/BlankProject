@@ -14,6 +14,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import sporter_pages.megaMenuPages.MegaMenuPage;
 
 import java.util.List;
 
@@ -23,12 +24,7 @@ public class SportsSupplementsCategoryPage extends BasePage {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
     }
-    @FindBy(id = "TopCategoryItem_3_span")
-    private WebElement sportsSupplementManinMenuInMegaMenu;
-    @FindBy(id = "TopCategoryItem_undefined")
-    private WebElement shopByMenu;
-      @FindBy(id = "SortItem_Sports Supplements_span")
-    private WebElement sportsSupplementOptionFromShopBy;
+
       //TODO: The banners are missing from the site
       @FindBy(id="missing")
       private List<WebElement> mainBanners;
@@ -53,15 +49,17 @@ public class SportsSupplementsCategoryPage extends BasePage {
 private WebElement newsLetterSection;
     public void clickOnSportsSupplementMainMenu(){
         Actions actions= new Actions(webDriver);
-        DataHelperAndWait.waitToBeVisible(this.sportsSupplementManinMenuInMegaMenu,webDriver);
-        actions.moveToElement(this.sportsSupplementManinMenuInMegaMenu).perform();
-        DataHelperAndWait.clickOnElement(this.sportsSupplementManinMenuInMegaMenu,webDriver);
+        MegaMenuPage megaMenuPage= new MegaMenuPage(webDriver);
+        DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsSupplementsMenu(),webDriver);
+        actions.moveToElement(megaMenuPage.getSportsSupplementsMenu()).perform();
+        DataHelperAndWait.clickOnElement(megaMenuPage.getSportsSupplementsMenu(),webDriver);
     }
     public void clickOnSportsSupplementFromShopByMenu(){
         Actions actions= new Actions(webDriver);
-        DataHelperAndWait.waitToBeVisible(this.shopByMenu,webDriver);
-        actions.moveToElement(this.shopByMenu).perform();
-        DataHelperAndWait.clickOnElement(this.sportsSupplementOptionFromShopBy,webDriver);
+        MegaMenuPage megaMenuPage= new MegaMenuPage(webDriver);
+        DataHelperAndWait.waitToBeVisible(megaMenuPage.getShopByMenu(),webDriver);
+        actions.moveToElement(megaMenuPage.getShopByMenu()).perform();
+        DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsSupplementsMenu(),webDriver);
     }
     public void navigateToSportsSupplementPage(){
         webDriver.navigate().to(BaseURL+sportSupplementsUrl);
