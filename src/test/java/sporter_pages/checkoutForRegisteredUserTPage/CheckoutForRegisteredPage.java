@@ -90,6 +90,7 @@ public class CheckoutForRegisteredPage extends BasePage {
                 XmlReader.getXMLData("StreetTwoAddressName")
         );
         guestCheckoutCyclePage.setSelectDubaiCityCity();
+                DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
     }
     public void AddToCartAndAccessShippingMethodsPage(){
@@ -106,6 +107,7 @@ public class CheckoutForRegisteredPage extends BasePage {
                 XmlReader.getXMLData("StreetTwoAddressName")
         );
         guestCheckoutCyclePage.setSelectDubaiCityCity();
+                DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
     }
     public void viewCartAndAccessShippingMethodsPage(){
@@ -122,12 +124,14 @@ public class CheckoutForRegisteredPage extends BasePage {
                 XmlReader.getXMLData("StreetTwoAddressName")
         );
         guestCheckoutCyclePage.setSelectDubaiCityCity();
+                DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
     }
     public void navigateToPaymentMethodScreenWithSavedAddress(){
         GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
         guestCheckoutCyclePage.accessGuestCheckoutForm();
         DataHelperAndWait.clickOnElement(this.getSavedAddressOption(),webDriver);
+                DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -156,6 +160,7 @@ public class CheckoutForRegisteredPage extends BasePage {
                     XmlReader.getXMLData("StreetOneAddressName"),
                     XmlReader.getXMLData("StreetTwoAddressName"));
         }
+                DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
 //        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
 //        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -175,6 +180,7 @@ public class CheckoutForRegisteredPage extends BasePage {
                 XmlReader.getXMLData("StreetTwoAddressName")
         );
         this.setSelectDubaiCityCity();
+                DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
     }

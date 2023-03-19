@@ -151,12 +151,15 @@ public class ProductDetailsPage extends BasePage {
     public void displayTheProduct() throws IOException {
         if(webDriver.getCurrentUrl().contains("en-jo")){
             webDriver.navigate().to(BaseURL  + productUrlJordan);
+            verifyTheDisplayedPageDoesNotHaveErrors();
         }
             if(webDriver.getCurrentUrl().contains("ar-sa")){
             webDriver.navigate().to(BaseURL  + productUrlKSA1);
+                verifyTheDisplayedPageDoesNotHaveErrors();
         }
         if(webDriver.getCurrentUrl().contains("en-eg")){
             webDriver.navigate().to(BaseURL  + productUrlEgypt);
+            verifyTheDisplayedPageDoesNotHaveErrors();
         }
         if(webDriver.getCurrentUrl().contains("en-qa")){
             webDriver.navigate().to(BaseURL  + productUrl);
