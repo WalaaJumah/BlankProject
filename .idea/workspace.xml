@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86683dee-3ff6-4652-96ae-dd8bddfbd97f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/megaMenuPages/MegaMenuPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AEMegaMenuPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/AEMegaMenuPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/productPage/ProductDetailsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/productPage/ProductDetailsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/sportsSupplementsCategoryPages/SportsSupplementsCategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/sportsSupplementsCategoryPages/SportsSupplementsCategoryPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/cartTestCases/CartTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/cartTestCases/CartTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/productTestCases/EgyptProductDetailsTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/productTestCases/EgyptProductDetailsTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/productTestCases/JordanProductDetailsTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/productTestCases/JordanProductDetailsTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/productTestCases/KSAProductDetailsTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/productTestCases/KSAProductDetailsTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/productTestCases/ProductDetailsTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/productTestCases/ProductDetailsTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/productTestCases/QatarProductDetailsTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/productTestCases/QatarProductDetailsTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/productTestCases/UAEProductDetailsTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/productTestCases/UAEProductDetailsTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/TestExecution.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TestExecution.xml" afterDir="false" />
     </list>
