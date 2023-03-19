@@ -134,7 +134,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
+       DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);

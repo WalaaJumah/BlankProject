@@ -36,7 +36,7 @@ public class SportsSupplementsCategoryPage extends BasePage {
       //TODO: Make sure to add id for each result label & it's value
     @FindBy(id="test")
     private WebElement resultLabel;
-   @FindBy(id="test")
+   @FindBy(xpath="//*[@id=\"main\"]/div[1]/div[3]/div[2]/div[1]/div[1]/span[2]")
     private WebElement searchResultValue;
    //TODO: SortBy Needs to ID
    @FindBy(id="test")
@@ -47,6 +47,13 @@ public class SportsSupplementsCategoryPage extends BasePage {
    private WebElement mainFooter;
 @FindBy(id="NewsLetter_container")
 private WebElement newsLetterSection;
+@FindBy(xpath="(//li[starts-with(@class,'pagination_arrow')])[1]")
+private WebElement previousPageBtn;
+@FindBy(xpath="(//li[starts-with(@class,'pagination_arrow')])[2]")
+private WebElement nextPageBtn;
+@FindBy(xpath="//ul[starts-with(@class,'pagination_innerPagination')]/li")
+private List<WebElement> paginationBtns;
+
     public void clickOnSportsSupplementMainMenu(){
         Actions actions= new Actions(webDriver);
         MegaMenuPage megaMenuPage= new MegaMenuPage(webDriver);
