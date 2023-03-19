@@ -43,9 +43,9 @@ public class CheckoutForRegisteredPage extends BasePage {
      private WebElement dubaiCity;
     @FindBy(id="itemToWhishListBtn")
     private WebElement addToWishListBtn;
-    @FindBy(xpath="(//a[starts-with(@class,'wItem_imgContainer')])[1]")
+    @FindBy(id="WItemsContainer")
     private WebElement addedItemToWashList;
-    @FindBy(id="(//a[starts-with(@class,'dashboardSidebar_item')])[1]")
+    @FindBy(id="MyWishlist")
     private WebElement wishListTab;
     public void setSelectDubaiCityCity(){
         GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
