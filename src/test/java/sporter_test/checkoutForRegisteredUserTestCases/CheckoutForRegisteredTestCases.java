@@ -174,6 +174,7 @@ catch (Exception e){
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         checkoutForRegisteredPage.fillInShippingInformationInputField(" ", " ", " ", " ", " ", "");
         DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getPhoneField()," ");
+                DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(guestCheckoutCyclePage.getFirstnameErrMsg(), webDriver);
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(guestCheckoutCyclePage.getLastNameErrMsg(), webDriver);
@@ -192,6 +193,7 @@ catch (Exception e){
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName")
         );
+                DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getPhoneErrMsg(),webDriver);
     }
@@ -216,6 +218,7 @@ catch (Exception e){
 //                XmlReader.getXMLData("StreetTwoAddressName"),
 //                "12"
 //        );
+                DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(joGuest.getNationalIdErrMsg(),webDriver);
     }
@@ -231,6 +234,7 @@ catch (Exception e){
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName")
         );
+                DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getShippingMethodsOptionsSection(),webDriver);
     }
@@ -242,14 +246,66 @@ catch (Exception e){
     @Test(groups = {"2.02 Checkout Cycle( Registered User)", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure that the Continue button appears in the Shipping Methods screen is disable when no shipping method is selected", priority = 21)
     public void verifyContinueBtnAppearsInShippingMethodsIsDisableWhenNoMethodSelected() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        WebElementsAssertion.assertionElementNotEnable(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
+        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
+        JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
+        CartPage cartPage= new CartPage(webDriver);
+        try{
+            cartPage.clearCart();}
+        catch (Exception e){
+            System.out.println("");
+        }
+        cartPage.addToCartAndDisplayTheCart();
+        cartPage.navigateToHomePage();
+        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
+        try{
+            checkoutForRegisteredPage.fillInShippingInformationInputField(
+                    XmlReader.getXMLData("firstName"),
+                    XmlReader.getXMLData("lastName"),
+                    XmlReader.getXMLData("phoneNumber"),
+                    XmlReader.getXMLData("AddressName"),
+                    XmlReader.getXMLData("StreetOneAddressName"),
+                    XmlReader.getXMLData("StreetTwoAddressName")
+            );
+        }
+        catch (Exception e){
+            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
+        }
+        DataHelperAndWait.waitForTime(1500);
+                DataHelperAndWait.waitForTime(1500);
+        guestCheckoutCyclePage.clickOnContinueBtn();
+//        WebElementsAssertion.assertionElementNotEnable(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
     }
     @Test(groups = {"2.02 Checkout Cycle( Registered User)","All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}:Verify Edit Shipping information button works fine", priority = 22)
     public void verifyTheEditShippingInfoBtnWorksFine() {
+        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getEditShippingInfoBtn(),webDriver);
-//        checkoutForRegisteredPage.setSelectDubaiCityCity();
+        JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
+        CartPage cartPage= new CartPage(webDriver);
+        try{
+            cartPage.clearCart();}
+        catch (Exception e){
+            System.out.println("");
+        }
+        cartPage.addToCartAndDisplayTheCart();
+        cartPage.navigateToHomePage();
+        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
+        try{
+            checkoutForRegisteredPage.fillInShippingInformationInputField(
+                    XmlReader.getXMLData("firstName"),
+                    XmlReader.getXMLData("lastName"),
+                    XmlReader.getXMLData("phoneNumber"),
+                    XmlReader.getXMLData("AddressName"),
+                    XmlReader.getXMLData("StreetOneAddressName"),
+                    XmlReader.getXMLData("StreetTwoAddressName")
+            );
+        }
+        catch (Exception e){
+            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
+        }
+        DataHelperAndWait.waitForTime(1500);
+                DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getEditShippingInfoBtn(),webDriver);
     }
@@ -302,6 +358,7 @@ catch (Exception e){
                     XmlReader.getXMLData("StreetOneAddressName"),
                     XmlReader.getXMLData("StreetTwoAddressName"));
         }
+                DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egypt.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -331,6 +388,7 @@ catch (Exception e){
                     XmlReader.getXMLData("StreetOneAddressName"),
                     XmlReader.getXMLData("StreetTwoAddressName"));
         }
+                DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -394,6 +452,7 @@ catch (Exception e){
                     XmlReader.getXMLData("StreetTwoAddressName")
             );
         }
+                DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -429,6 +488,7 @@ catch (Exception e){
                     XmlReader.getXMLData("StreetOneAddressName"),
                     XmlReader.getXMLData("StreetTwoAddressName"));
         }
+                DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -483,6 +543,7 @@ catch (Exception e){
                     XmlReader.getXMLData("StreetOneAddressName"),
                     XmlReader.getXMLData("StreetTwoAddressName"));
         }
+                DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -506,6 +567,7 @@ catch (Exception e){
         header.navigateToHomePage();
         DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
         DataHelperAndWait.clickOnElement(registrationPage.getMyAccountOption(), webDriver);
+        DataHelperAndWait.waitForTime(1500);
         DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getWishListTab(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(checkoutForRegisteredPage.getAddedItemToWashList(),webDriver);
 

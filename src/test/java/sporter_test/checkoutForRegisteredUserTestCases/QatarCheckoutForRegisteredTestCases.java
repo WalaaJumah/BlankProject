@@ -80,12 +80,41 @@ public class QatarCheckoutForRegisteredTestCases extends CheckoutForRegisteredTe
         catch (Exception e){
             DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
+        DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getShippingMethodsOptionsSection(),webDriver);
     }
     @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}:Verify All Shipping Methods appear correctly", priority = 23)
     public void verifyAllShippingMethodsAppearCorrectly(){
+        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
+        CartPage cartPage= new CartPage(webDriver);
+        try{
+            cartPage.clearCart();}
+        catch (Exception e){
+            System.out.println("");
+        }
+        cartPage.addToCartAndDisplayTheCart();
+        cartPage.navigateToHomePage();
+        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
+        try{
+            jo.fillInShippingInformationInputField(
+                    XmlReader.getXMLData("firstName"),
+                    XmlReader.getXMLData("lastName"),
+                    XmlReader.getXMLData("phoneNumber"),
+                    XmlReader.getXMLData("AddressName"),
+                    XmlReader.getXMLData("StreetOneAddressName"),
+                    XmlReader.getXMLData("StreetTwoAddressName"),
+                    XmlReader.getXMLData("nationalID")
+            );
+        }
+        catch (Exception e){
+            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
+        }
+        DataHelperAndWait.waitForTime(1500);
+        guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver,XmlReader.getXMLData("fourToFiveBusinessDays"));    }
     @Test(enabled = false)
     public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod() {}
@@ -130,6 +159,7 @@ public class QatarCheckoutForRegisteredTestCases extends CheckoutForRegisteredTe
         catch (Exception e){
             DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
+        DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -166,6 +196,7 @@ public class QatarCheckoutForRegisteredTestCases extends CheckoutForRegisteredTe
         catch (Exception e){
             DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
+        DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -204,6 +235,7 @@ public class QatarCheckoutForRegisteredTestCases extends CheckoutForRegisteredTe
         catch (Exception e){
             DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
+        DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -241,6 +273,7 @@ public class QatarCheckoutForRegisteredTestCases extends CheckoutForRegisteredTe
         }
         catch (Exception e){
                 DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);}
+        DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -290,6 +323,7 @@ public class QatarCheckoutForRegisteredTestCases extends CheckoutForRegisteredTe
         catch (Exception e){
             DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
+        DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -328,10 +362,109 @@ public class QatarCheckoutForRegisteredTestCases extends CheckoutForRegisteredTe
         catch (Exception e){
             DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
+        DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCreditCardPaymentMethod(),webDriver);
     }
-
+    @Test(groups = {"2.02 Checkout Cycle( Registered User)", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure that the Continue button appears in the Shipping Methods screen is disable when no shipping method is selected", priority = 21)
+    public void verifyContinueBtnAppearsInShippingMethodsIsDisableWhenNoMethodSelected() {
+        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
+        CartPage cartPage= new CartPage(webDriver);
+        try{
+            cartPage.clearCart();}
+        catch (Exception e){
+            System.out.println("");
+        }
+        cartPage.addToCartAndDisplayTheCart();
+        cartPage.navigateToHomePage();
+        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
+        try{
+            jo.fillInShippingInformationInputField(
+                    XmlReader.getXMLData("firstName"),
+                    XmlReader.getXMLData("lastName"),
+                    XmlReader.getXMLData("phoneNumber"),
+                    XmlReader.getXMLData("AddressName"),
+                    XmlReader.getXMLData("StreetOneAddressName"),
+                    XmlReader.getXMLData("StreetTwoAddressName"),
+                    XmlReader.getXMLData("nationalID")
+            );
+        }
+        catch (Exception e){
+            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
+        }
+        DataHelperAndWait.waitForTime(1500);
+        guestCheckoutCyclePage.clickOnContinueBtn();
+//        WebElementsAssertion.assertionElementNotEnable(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
+    }
+    @Test(groups = {"2.02 Checkout Cycle( Registered User)","All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}:Verify Edit Shipping information button works fine", priority = 22)
+    public void verifyTheEditShippingInfoBtnWorksFine() {
+        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
+        CartPage cartPage= new CartPage(webDriver);
+        try{
+            cartPage.clearCart();}
+        catch (Exception e){
+            System.out.println("");
+        }
+        cartPage.addToCartAndDisplayTheCart();
+        cartPage.navigateToHomePage();
+        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
+        try{
+            jo.fillInShippingInformationInputField(
+                    XmlReader.getXMLData("firstName"),
+                    XmlReader.getXMLData("lastName"),
+                    XmlReader.getXMLData("phoneNumber"),
+                    XmlReader.getXMLData("AddressName"),
+                    XmlReader.getXMLData("StreetOneAddressName"),
+                    XmlReader.getXMLData("StreetTwoAddressName"),
+                    XmlReader.getXMLData("nationalID")
+            );
+        }
+        catch (Exception e){
+            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
+        }
+        DataHelperAndWait.waitForTime(1500);
+        guestCheckoutCyclePage.clickOnContinueBtn();
+        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getEditShippingInfoBtn(),webDriver);
+    }
+    @Test(groups = {"2.02 Checkout Cycle( Registered User)","All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}:Make sure the Registered user cannot submit the shipping information when the phone number length is small ", priority = 17)
+    public void verifyTheRegisteredUserCannotSubmitTheShippingInformationWhenPhoneFieldHaveSmallTextLength() {
+        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
+        CartPage cartPage= new CartPage(webDriver);
+        try{
+            cartPage.clearCart();}
+        catch (Exception e){
+            System.out.println("");
+        }
+        cartPage.addToCartAndDisplayTheCart();
+        cartPage.navigateToHomePage();
+        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
+        try{
+            jo.fillInShippingInformationInputField(
+                    XmlReader.getXMLData("firstName"),
+                    XmlReader.getXMLData("lastName"),
+                    XmlReader.getXMLData("SmallPhoneNumber"),
+                    XmlReader.getXMLData("AddressName"),
+                    XmlReader.getXMLData("StreetOneAddressName"),
+                    XmlReader.getXMLData("StreetTwoAddressName"),
+                    XmlReader.getXMLData("nationalID")
+            );
+        }
+        catch (Exception e){
+            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
+        }
+        DataHelperAndWait.waitForTime(1500);
+        guestCheckoutCyclePage.clickOnContinueBtn();
+        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getPhoneErrMsg(),webDriver);
+    }
     }

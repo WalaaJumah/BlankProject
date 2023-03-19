@@ -41,11 +41,11 @@ public class CheckoutForRegisteredPage extends BasePage {
      private WebElement savedAddressOption;
      @FindBy(xpath = "//div[@id='citiesSelector']/div[2]/div[2]/div[5]")
      private WebElement dubaiCity;
-    @FindBy(xpath="(//div[@id='itemToWhishListBtn'])[1]")
+    @FindBy(id="itemToWhishListBtn")
     private WebElement addToWishListBtn;
     @FindBy(xpath="(//a[starts-with(@class,'wItem_imgContainer')])[1]")
     private WebElement addedItemToWashList;
-    @FindBy(xpath="(//a[starts-with(@class,'dashboardSidebar_item')])[1]")
+    @FindBy(id="(//a[starts-with(@class,'dashboardSidebar_item')])[1]")
     private WebElement wishListTab;
     public void setSelectDubaiCityCity(){
         GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);

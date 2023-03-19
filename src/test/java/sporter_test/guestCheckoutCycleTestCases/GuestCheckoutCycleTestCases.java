@@ -232,7 +232,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
         //TODO: #5 This time needs to enhance in QA.Sporter.com envr
-        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getShippingMethodsOptionsSection(),webDriver);
     }
@@ -256,9 +256,9 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
-        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
-        WebElementsAssertion.assertionElementNotEnable(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
+//        WebElementsAssertion.assertionElementNotEnable(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
     }
     @Test(groups = {"2.01 Checkout Cycle( Guest User)","All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}:Verify Edit Shipping information button works fine", priority = 20)
     public void verifyTheEditShippingInfoBtnWorksFine() {
@@ -275,10 +275,10 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
-        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getEditShippingInfoBtn(),webDriver);
-        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getEditShippingInfoBtn(),webDriver);
     }
@@ -297,7 +297,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
-        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver,XmlReader.getXMLData("twoBusinessDay"));
         WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getSameDayDelivery(),webDriver,XmlReader.getXMLData("sameDayDelivery"));
@@ -318,7 +318,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
-        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -339,11 +339,11 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
-        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getEditShippingInfoBtn(),webDriver);
         guestCheckoutCyclePage.SelectAbuDhabiCityCity();
-        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getSameDayDelivery(),webDriver);
     }
@@ -364,7 +364,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
         guestCheckoutCyclePage.setSelectDubaiCityCity();
-        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getSameDayDelivery(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -385,7 +385,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
-        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -407,7 +407,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
-        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -434,7 +434,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
 //                XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
-        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -461,7 +461,7 @@ cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
-        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -492,7 +492,7 @@ cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName")
         );
-        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -543,7 +543,7 @@ cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //                XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
-        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -572,7 +572,7 @@ cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //                XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
-        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);

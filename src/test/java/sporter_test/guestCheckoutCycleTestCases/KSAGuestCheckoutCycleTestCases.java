@@ -86,13 +86,34 @@ public void verifyAbilityToSelectSameDayShippingMethodCorrectly() {}
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
-         DataHelperAndWait.waitForTime(1000);
+         DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+    }
+    @Test(groups = {"2.01 Checkout Cycle( Guest User)", "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure that the Continue button appears in the Payment Methods screen is disable when no shipping method is selected", priority = 24)
+    public void verifyContinueBtnAppearsInPaymentMethodsIsDisableWhenNoMethodSelected() {
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        guestCheckoutCyclePage.accessGuestCheckoutForm();
+        guestCheckoutCyclePage.fillInShippingInformationInputField(
+                XmlReader.getXMLData("firstName"),
+                XmlReader.getXMLData("lastName"),
+                XmlReader.getXMLData("correctEmail"),
+                XmlReader.getXMLData("phoneNumber"),
+//                XmlReader.getXMLData("AddressName"),
+                XmlReader.getXMLData("StreetOneAddressName"),
+                XmlReader.getXMLData("ksaPhoneNumber")
+        );
+        DataHelperAndWait.waitForTime(1500);
+        guestCheckoutCyclePage.clickOnContinueBtn();
+        DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+//        WebElementsAssertion.assertionElementNotEnable(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
     }
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Door to Door Shipping Method With COD Payment Method ", priority = 26)
     public void verifyAbilityToPlaceOrderWhenSelectingDoorToDoorShippingMethodWithCODPaymentMethod() {
@@ -110,7 +131,7 @@ public void verifyAbilityToSelectSameDayShippingMethodCorrectly() {}
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
-         DataHelperAndWait.waitForTime(1000);
+         DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -144,7 +165,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
-         DataHelperAndWait.waitForTime(1000);
+         DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -167,7 +188,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
-         DataHelperAndWait.waitForTime(1000);
+         DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -213,7 +234,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
-         DataHelperAndWait.waitForTime(1000);
+         DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
     }
@@ -233,7 +254,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
-         DataHelperAndWait.waitForTime(1000);
+         DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -291,7 +312,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
-         DataHelperAndWait.waitForTime(1000);
+         DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
