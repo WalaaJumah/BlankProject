@@ -246,6 +246,7 @@ public class CartTestCases extends BaseTest {
     public void verifyAbilityToDisplayTheProductFromTheCartPage() {
         CartPage cartPage = new CartPage(webDriver);
         ProductDetailsPage productDetailsPage= new ProductDetailsPage(webDriver);
+        cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.clickOnElement(cartPage.getProductNameForOneProduct(),webDriver);
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductName(),webDriver);
         WebElementsAssertion.validateTheCurrentUrlNotContainsString(cartPage.cartURL,webDriver);
@@ -281,8 +282,8 @@ public class CartTestCases extends BaseTest {
     public void verifyProceedCheckoutBtnAppearsCorrectlyInCartPage() {
         CartPage cartPage = new CartPage(webDriver);
 //        cartPage.addToCartAndDisplayTheCart();
-        DataHelperAndWait.fluentWait(cartPage.getProceedCheckoutBtn(),5,webDriver);
-        DataHelperAndWait.JsExecutorToClickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+DataHelperAndWait.waitToBeClickable(cartPage.getProceedCheckoutBtn(),webDriver);
+DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
 //        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
         WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.shippingInformationUrl,webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");

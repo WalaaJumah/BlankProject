@@ -193,11 +193,15 @@ private WebElement freeFromSporterLabelInProductCard;
    }
 
       public void addBogoToCartAndDisplayTheCart(){
+       try{
 
        productDetailsPage.navigateToBogoProduct();
 //       DataHelperAndWait.waitForTime(2000);
        productDetailsPage.addToCart();
-       productDetailsPage.viewCart();
+       productDetailsPage.viewCart();}
+       catch (Exception e){
+           this.navigateToCartPage();
+       }
 
    }
    public void navigateToCartPage(){

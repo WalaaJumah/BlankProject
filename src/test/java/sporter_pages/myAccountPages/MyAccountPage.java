@@ -38,25 +38,25 @@ public class MyAccountPage extends BasePage {
     private WebElement logoutOption;
     @FindBy(id="UserIconContainer")
     private WebElement accountProfileIcon;
-    @FindBy(xpath="//button[contains(@class,'myAccount_btn')]")
+    @FindBy(id="saveProfileBtn")
     private WebElement saveAccountInfoBtn;
-    @FindBy(xpath="(//input[@id=''])[1]")
+    @FindBy(id="firstnameField")
     private WebElement firstNameField;
-    @FindBy(xpath="(//input[@id=''])[2]")
+    @FindBy(xpath="lastnameField")
     private WebElement lastNameField;
-    @FindBy(xpath="(//input[@id=''])[3]")
+    @FindBy(id="emailField")
     private WebElement emailField;
-    @FindBy(xpath="(//input[@id=''])[4]")
+    @FindBy(id="password")
     private WebElement oldPasswordField;
-    @FindBy(xpath="(//input[@id=''])[5]")
+    @FindBy(id="newPassword")
     private WebElement newPasswordField;
-   @FindBy(xpath="(//input[@id=''])[6]")
+   @FindBy(id="confirmPassword")
     private WebElement confirmNebPasswordField;
-    @FindBy(id="1")
+    @FindBy(id="genderMale")
     private WebElement maleGender;
-    @FindBy(id="2")
+    @FindBy(id="genderFemale")
     private WebElement femaleGender;
-    @FindBy(id="box")
+    @FindBy(id="changePassword")
     private WebElement changePasswordBox;
     @FindBy(id="box")
     private WebElement generalSubscriptionOption;
@@ -80,7 +80,7 @@ public class MyAccountPage extends BasePage {
     private WebElement canceledOrdersTab;
     @FindBy(xpath="//a[contains(@class,'myAddresses_addNew')]")
     private WebElement addNewAddressBtn;
-    @FindBy(xpath="(//a[contains(@class,'addressItem_link')])[1]")
+    @FindBy(xpath="(//a[@id='editLabel'])[1]")
     private WebElement editAddressBtn;
     @FindBy(id="firstnameField")
     private WebElement firstNameFieldInAddress;
