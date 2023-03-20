@@ -33,7 +33,8 @@ public class AEFooterPageTestCases extends BaseTest {
                 break;
             case "chrome":
 //                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
-                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriverV110.exe");
+                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriverV11.exe");
+//                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriverV110.exe");
                 webDriver = new ChromeDriver();
                 break;
             case "edge":
