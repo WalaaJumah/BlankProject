@@ -31,7 +31,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
             webDriver.navigate().to(BasePage.BaseURL+aeDomain);
             CloseInitialDialog();          }
     }
-    @Test(groups = {"2.10 Sports Category","All Smoke Testing Result","1.1 Critical Severity"},description = "Sports Category- Make sure clicking on the Sports Category Appears In MegaMenu Redirect User To CorrectURL", priority = 1)
+    @Test(groups = {"2.10 Sports Category","All Smoke Testing Result","1.2 High Severity"},description = "Sports Category- Make sure clicking on the Sports Category Appears In MegaMenu Redirect User To CorrectURL", priority = 1)
     public void verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         aeMegamenuPage.navigateToHomePage();
@@ -43,7 +43,7 @@ public class AeSportsCategoryTestCases extends BaseTest {
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"2.10 Sports Category","All Smoke Testing Result","1.1 Critical Severity"},description = "Sports Category- Make sure clicking on the Sports Category from ShopBy Menu Redirect User To CorrectURL", priority = 2)
+    @Test(groups = {"2.10 Sports Category","All Smoke Testing Result","1.2 High Severity"},description = "Sports Category- Make sure clicking on the Sports Category from ShopBy Menu Redirect User To CorrectURL", priority = 2)
     public void verifyClickingOnSportsCategoryFromShopByMenuRedirectUserToCorrectURL() {
         AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
         action = new Actions(webDriver);
