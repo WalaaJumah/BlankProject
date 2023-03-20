@@ -38,8 +38,8 @@ public class AeSportsCategoryTestCases extends BaseTest {
         action = new Actions(webDriver);
         action.moveToElement(aeMegamenuPage.getSportsMainMenu()).perform();
         aeMegamenuPage.getSportsMainMenu().click();
-//        DataHelperAndWait.waitForUrlContains(aeMegamenuPage.sportsUrl,webDriver,8);
-//        Assert.assertTrue(webDriver.getCurrentUrl().contains(aeMegamenuPage.sportsUrl));
+        DataHelperAndWait.waitForUrlContains(aeMegamenuPage.sportsUrl,webDriver,8);
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(aeMegamenuPage.sportsUrl));
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
@@ -51,8 +51,8 @@ public class AeSportsCategoryTestCases extends BaseTest {
         action.moveToElement(aeMegamenuPage.getShopeByMenu()).perform();
         action.moveToElement(aeMegamenuPage.getSportsOption()).perform();
         aeMegamenuPage.getSportsOption().click();
-//        Assert.assertTrue(webDriver.getCurrentUrl().contains(aeMegamenuPage.sportsUrl));
-//        Assert.assertTrue(webDriver.getCurrentUrl().contains(sportsUrl));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(aeMegamenuPage.sportsUrl));
+        Assert.assertTrue(webDriver.getCurrentUrl().contains(aeMegamenuPage.sportsUrl));
         aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
