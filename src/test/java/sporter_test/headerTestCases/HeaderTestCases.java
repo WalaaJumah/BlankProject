@@ -73,11 +73,13 @@ public class HeaderTestCases extends BaseTest {
        @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure the Cart icon appears correctly", priority = 5)
     public void verifyCartIconAppearsCorrectly() {
         HeaderSection headerSection =new HeaderSection(webDriver);
+        headerSection.navigateToHomePage();
         WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getCartIcon(),webDriver);
        }
        @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure the My Account icon appears correctly", priority = 6)
     public void verifyProfileIconAppearsCorrectly() {
         HeaderSection headerSection =new HeaderSection(webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getAccountProfileIcon(),webDriver);
+           headerSection.navigateToHomePage();
+           WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getAccountProfileIcon(),webDriver);
        }
 }

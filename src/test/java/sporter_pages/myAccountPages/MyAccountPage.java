@@ -24,7 +24,7 @@ public class MyAccountPage extends BasePage {
         PageFactory.initElements(webDriver, this);
     }
     private String myAccountURL= "/dashboard/myAccount";
-    private String recentOrdersURL= "/dashboard/recentOrders";
+    private String recentOrdersURL= "/dashboard/recent_orders";
     private String allOrdersURL= "/dashboard/allOrders";
     private String newsletterURL= "/dashboard/newsLetter";
      private String addressedUrl= "/dashboard/myAddresses";

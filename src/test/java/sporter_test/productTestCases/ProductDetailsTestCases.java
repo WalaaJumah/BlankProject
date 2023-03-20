@@ -137,9 +137,9 @@ public class ProductDetailsTestCases extends BaseTest {
         Assert.assertNotEquals(currentSelectedOptionText, newSelectedOptionText);
     }
     @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}:Verify that the system display a label on the PDP to indicate for the customer he will get a free product", priority = 14)
-    public void verifyTheresLabelInPdpToIndicateThatTheresAnOfferOnThisProduct() {
+    public void verifyTheresLabelInPdpToIndicateThatTheresAnOfferOnThisProduct() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.navigateToBogoProduct();
+        productDetailsPage.displayTheProduct();
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getFreeProductLabelEn(),webDriver);
     }
     @Test(groups = { "1.4 Low Severity"},description = "{{CountryName}}:Verify that the About This product section displays correctly in the PDP", priority = 15)
