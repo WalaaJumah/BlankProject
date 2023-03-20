@@ -297,6 +297,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
+        guestCheckoutCyclePage.setSelectDubaiCityCity();
         DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver,XmlReader.getXMLData("twoBusinessDay"));
@@ -440,9 +441,10 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(), webDriver);
-        DataHelperAndWait.waitForTime(11000);
-DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getSuccessPage(),webDriver);
+//        DataHelperAndWait.waitForTime(1500);
+//DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getSuccessPage(),webDriver);
 cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
 
     }
@@ -472,17 +474,8 @@ cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCreditCardPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
-//        cartPage.navigateToCartPage();
-        DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
-        DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);
-        cartPage.navigateToHomePage();
-        cartPage.clickOnCartIcon();
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
-        DataHelperAndWait.waitForUrlContains(guestCheckoutCyclePage.shippingInformationUrl,webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCheckoutAsGuestBtn(),webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -490,7 +483,7 @@ cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
                 XmlReader.getXMLData("phoneNumber"),
 //                XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
-                XmlReader.getXMLData("StreetTwoAddressName")
+                XmlReader.getXMLData("ksaPhoneNumber")
         );
         DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();

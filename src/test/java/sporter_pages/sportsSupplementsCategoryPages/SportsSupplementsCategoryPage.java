@@ -14,9 +14,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import sporter_pages.megaMenuPages.MegaMenuPage;
 
+import java.io.IOException;
 import java.util.List;
+
+import static org.testng.Assert.assertFalse;
 
 @Getter
 public class SportsSupplementsCategoryPage extends BasePage {
@@ -34,9 +38,9 @@ public class SportsSupplementsCategoryPage extends BasePage {
       @FindBy(id = "pathSegment_0")
       private WebElement homePageBreadCrumb;
       //TODO: Make sure to add id for each result label & it's value
-    @FindBy(id="test")
+    @FindBy(xpath="(//span[starts-with(@class,'sidebar_result')]/following-sibling::span)[2]")
     private WebElement resultLabel;
-   @FindBy(xpath="//*[@id=\"main\"]/div[1]/div[3]/div[2]/div[1]/div[1]/span[2]")
+   @FindBy(xpath="(//span[starts-with(@class,'sidebar_result')]/following-sibling::span)[1]")
     private WebElement searchResultValue;
    //TODO: SortBy Needs to ID
    @FindBy(id="test")
@@ -71,5 +75,40 @@ private List<WebElement> paginationBtns;
     public void navigateToSportsSupplementPage(){
         webDriver.navigate().to(BaseURL+sportSupplementsUrl);
         DataHelperAndWait.waitForUrlContains(sportSupplementsUrl,webDriver);
+    }
+    public void accessAllPagesInsideTheProductsListPage(String numberOfProductInTheList, WebElement element, WebDriver webDriver) throws IOException {
+        ///New
+        String numberOfProductWithOutFirstCharacter= numberOfProductInTheList.replace(")","");
+        String numberOfProductWithOutLastCharacter= numberOfProductWithOutFirstCharacter.replace("(","");
+        double numberOfProductInTheListInInt=Double.parseDouble(numberOfProductWithOutLastCharacter);
+        //End of new code
+//        double numberOfProductInTheListInInt=Double.parseDouble(numberOfProductInTheList.substring(10,numberOfProductInTheList.length()-7));
+        double numberOfThePagesInList=Math.ceil(numberOfProductInTheListInInt/24);
+        System.out.println("The number of products in the list= "+numberOfProductInTheListInInt);
+        System.out.println("The number of Pages in the list= "+numberOfThePagesInList);
+        if(numberOfThePagesInList>1){
+            int i = 2;
+            do {
+                String pageNumber = Integer.toString(i);
+                DataHelperAndWait.waitToBeClickable(element,webDriver);
+                element.click();
+//                DataHelperAndWait.waitForTime(6000);
+                DataHelperAndWait.waitForUrlContains(pageNumber,webDriver);
+                this.verifyTheDisplayedPageDoesNotHaveErrors();
+                i++;
+            }
+            while (i <= numberOfThePagesInList);
+            System.out.println("The number of pages in the list is "+i);
+        }
+        else System.out.println("There's only a page in the list");
+    }
+
+    public  static Boolean isTheresNoPages(String numberOfProductInTheList){
+        String numberOfProductWithOutItemLabel;
+            numberOfProductWithOutItemLabel= numberOfProductInTheList.replace("(","");
+            numberOfProductWithOutItemLabel= numberOfProductWithOutItemLabel.replace(")","");
+        double numberOfProductInTheListInInt=Double.parseDouble(numberOfProductWithOutItemLabel);
+        return numberOfProductInTheListInInt<=24;
+
     }
 }

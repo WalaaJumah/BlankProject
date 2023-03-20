@@ -175,19 +175,20 @@ public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromPdp() th
     SportsSupplementsCategoryPage sportsSupplementsCategoryPage= new SportsSupplementsCategoryPage(webDriver);
     HeaderSection headerSection= new HeaderSection(webDriver);
     HomePage homePage= new HomePage(webDriver);
-    sportsSupplementsCategoryPage.clickOnSportsSupplementMainMenu();
+    sportsSupplementsCategoryPage.navigateToSportsSupplementPage();
     DataHelperAndWait.clickOnElement(headerSection.getSporterLogo(),webDriver);
     WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(),webDriver);
 }
         @Test(groups = "All Smoke Testing Result",description = "{{CountryName}}:Sports Supplements Category- Make Sure the ability to access all pages inside Sport Supplements Category Page  ", priority = 19)
     public void verifyAbilityToAccessAllPagesInsideSportSupplementsCategoryPage() throws IOException {
             SportsSupplementsCategoryPage sportsSupplementsCategoryPage= new SportsSupplementsCategoryPage(webDriver);
-            sportsSupplementsCategoryPage.clickOnSportsSupplementMainMenu();
+            sportsSupplementsCategoryPage.navigateToSportsSupplementPage();
+            DataHelperAndWait.waitToBeVisible(sportsSupplementsCategoryPage.getSearchResultValue(),webDriver);
             String numberOfProductInTheList=sportsSupplementsCategoryPage.getSearchResultValue().getText();
-        if(DataHelperAndWait.isTheresNoPages(numberOfProductInTheList))
+        if(sportsSupplementsCategoryPage.isTheresNoPages(numberOfProductInTheList))
             System.out.println("There's no pages");
         else {
-            DataHelperAndWait.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList, sportsSupplementsCategoryPage.getNextPageBtn(), webDriver);
+            sportsSupplementsCategoryPage.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList, sportsSupplementsCategoryPage.getNextPageBtn(), webDriver);
         }
 
       }

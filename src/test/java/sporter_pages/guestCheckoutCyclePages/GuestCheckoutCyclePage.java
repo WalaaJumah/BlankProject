@@ -213,9 +213,10 @@ private WebElement sameDayDelivery;
 //            cartPage.navigateToCartPage();
 //            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
             cartPage.addToCartAndDisplayTheCart();
-            cartPage.navigateToHomePage();
-            cartPage.clickOnCartIcon();
-            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+//            cartPage.navigateToHomePage();
+//            cartPage.clickOnCartIcon();
+            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+//            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
 //            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
 
 
@@ -233,7 +234,7 @@ private WebElement sameDayDelivery;
     public void setSelectDubaiCityCity(){
         try{
         DataHelperAndWait.clickOnElement(cityMenu,webDriver);
-        DataHelperAndWait.clickOnElement(dubaiCity,webDriver);}
+        DataHelperAndWait.typeTextInElement(cityMenu,webDriver,"Dubai");}
         catch (Exception e){
             DataHelperAndWait.clickOnElement(cityMenu,webDriver);
             DataHelperAndWait.clickOnElement(dubaiCity,webDriver);

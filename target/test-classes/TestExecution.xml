@@ -16,9 +16,9 @@
         <classes>
             <!--            Guest Checkout -->
             <class name="sporter_test.sportsSupplementsCategoryTestCases.UAESportsSupplementsCategoryTestCases">
-                <methods>
-                    <include name="verifyAbilityToAccessAllPagesInsideSportSupplementsCategoryPage"/>
-                </methods>
+<!--                <methods>-->
+<!--                    <include name="verifyAbilityToAccessAllPagesInsideSportSupplementsCategoryPage"/>-->
+<!--                </methods>-->
             </class>
 <!--            <class name="sporter_test.guestCheckoutCycleTestCases.KSAGuestCheckoutCycleTestCases"></class>-->
 <!--            <class name="sporter_test.guestCheckoutCycleTestCases.JordanGuestCheckoutCycleTestCases"></class>-->

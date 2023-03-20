@@ -119,7 +119,9 @@ public class BasePage {
     public final  String youtubeURL = "https://www.youtube.com/user/SporterVideos";
     public final String searchUrl="catalogsearch/result/?q=";
     public static String productUrl = "/optimum-gold-standard-100-whey";
+    public static String productUrl7 = "/dymatize-iso-100";
     public static String productUrlKSA1 = "/the-pack-wild-pre-workout";
+    public static String productUrlKSA8 = "/dymatize-iso-100";
     public static String productUrlKSA2 = "/soulution-high-protein-blend-pancake-mix";
     public static String productUrlKSA3 = "/windmill-natural-vitamins-omega-3-1000mg-with-epa-dha";
     public static String productUrlKSA4 = "/webber-naturals-joint-ease-glucosamine-chondroitin";
@@ -129,6 +131,7 @@ public class BasePage {
     public static String productUrlKSAWithHighPrice2 = "/asics-gel-kayano-26-ls-graphite-grey-piedmont-grey-32131";
     public static String productUrlEgypt = "/optimum-gold-standard-100-whey";
     public static String productUrlJordan = "/optimum-gold-standard-100-whey";
+    public static String productUrlJordan7 = "/dymatize-iso-100";
     public static String productUrlJordanWithLowPrice = "/jack-links-beef-jerky-54840/";
     public static String productUrlJordanWithHighPrice = "/climaqx-gym-bag-21711";
     public static String productUrlQatarWithHighPrice = "/optimum-gold-standard-100-whey-6202";

@@ -150,11 +150,11 @@ public class ProductDetailsPage extends BasePage {
     //Methods we need during testing the Product details page
     public void displayTheProduct() throws IOException {
         if(webDriver.getCurrentUrl().contains("en-jo")){
-            webDriver.navigate().to(BaseURL  + productUrlJordan);
+            webDriver.navigate().to(BaseURL  + productUrlJordan7);
             verifyTheDisplayedPageDoesNotHaveErrors();
         }
             if(webDriver.getCurrentUrl().contains("ar-sa")){
-            webDriver.navigate().to(BaseURL  + productUrlKSA1);
+            webDriver.navigate().to(BaseURL  + productUrlKSA8);
                 verifyTheDisplayedPageDoesNotHaveErrors();
         }
         if(webDriver.getCurrentUrl().contains("en-eg")){
@@ -162,7 +162,7 @@ public class ProductDetailsPage extends BasePage {
             verifyTheDisplayedPageDoesNotHaveErrors();
         }
         if(webDriver.getCurrentUrl().contains("en-qa")){
-            webDriver.navigate().to(BaseURL  + productUrl);
+            webDriver.navigate().to(BaseURL  + productUrl7);
             verifyTheDisplayedPageDoesNotHaveErrors();}
         if(webDriver.getCurrentUrl().contains("en-ae")){
             webDriver.navigate().to(BaseURL  + productUrl);
