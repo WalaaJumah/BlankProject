@@ -18,7 +18,7 @@ import java.util.ArrayList;
 @Test(groups = "2.11 Header Section")
 public class HeaderTestCases extends BaseTest {
     String storeCountry;
-    @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Ability to access all stores using Country List appearing in the Header", priority = 1)
+    @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Ability to access all stores using Country List appearing in the Header", priority = 50)
     public void accessAllCountries(){
         HeaderSection headerSection = new HeaderSection(webDriver);
         ArrayList<String> expectedOption = new ArrayList<>() {{

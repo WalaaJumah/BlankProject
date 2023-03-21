@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86683dee-3ff6-4652-96ae-dd8bddfbd97f" name="Changes" comment=" Update Checkout test caes" />
+    <list default="true" id="86683dee-3ff6-4652-96ae-dd8bddfbd97f" name="Changes" comment=" Update Checkout test caes">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_16_2023_5_34_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_16_2023_5_34_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_16_2023_5_52_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_16_2023_5_52_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_16_2023_7_03_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_16_2023_7_03_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_19_2023_10_29_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_19_2023_10_29_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_19_2023_10_27_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_19_2023_10_27_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,7 +35,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="New_Sporter2.1_Without_Implicit_Wait" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -52,23 +59,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_directory_selection": "C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/java",
-    "last_opened_file_path": "G:/My Drive/IdeaProjects/sporter-web-automation/src/test/resources/drivers",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.keymap"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;G:/My Drive/IdeaProjects/sporter 2.1-web-automation&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\My Drive\IdeaProjects\sporter-web-automation\src\test\resources\drivers" />
       <recent name="C:\Users\w.jumaa\IdeaProjects\sporter-web-automation\src\test\resources\drivers" />
       <recent name="C:\Users\w.jumaa\IdeaProjects\sporter-web-automation\src\test\resources" />
       <recent name="C:\Users\w.jumaa\IdeaProjects\sporter-web-automation\src\main\java\sporter-pages" />
@@ -84,7 +90,43 @@
       <command value="ProductDetailsPageTestCases.verifyAbilityToDisplayBundleAndSelectAllOptions" />
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/GenerateReport.xml">
+  <component name="RunManager" selected="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/TestExecution.xml">
+    <configuration name="AeAllPagesInsideCategoriesInMegaMenuTestCases.verifyAbilityToAccessAllPagesInsideAminoAcidsCategoryRelatedToSportSupplementsCategoryPage" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="sporter-web-automation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sporter_test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sporter_test" />
+      <option name="MAIN_CLASS_NAME" value="sporter_test.AeAllPagesInsideCategoriesInMegaMenuTestCases" />
+      <option name="METHOD_NAME" value="verifyAbilityToAccessAllPagesInsideAminoAcidsCategoryRelatedToSportSupplementsCategoryPage" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AeAllPagesInsideCategoriesInMegaMenuTestCases.verifyAbilityToAccessAllPagesInsideBCAACategoryRelatedToSportSupplementsCategoryPage" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="sporter-web-automation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sporter_test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sporter_test" />
+      <option name="MAIN_CLASS_NAME" value="sporter_test.AeAllPagesInsideCategoriesInMegaMenuTestCases" />
+      <option name="METHOD_NAME" value="verifyAbilityToAccessAllPagesInsideBCAACategoryRelatedToSportSupplementsCategoryPage" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/GenerateReport.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/GenerateReport.xml" />
@@ -120,25 +162,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="G:/My Drive/IdeaProjects/sporter-web-automation/target/test-classes/TestExecution.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/target/test-classes/TestExecution.xml" />
-      <option name="TEST_OBJECT" value="SUITE" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="QatarHomePageTestCases.testt" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sporter_test.homepage_test_cases.*" />
+          <option name="PATTERN" value="sporter_test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="sporter_test" />
-      <option name="MAIN_CLASS_NAME" value="sporter_test.homepage_test_cases.QatarHomePageTestCases" />
+      <option name="MAIN_CLASS_NAME" value="sporter_test.QatarHomePageTestCases" />
       <option name="METHOD_NAME" value="testt" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -147,30 +180,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="&lt;default&gt;" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="sporter-web-automation" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="PACKAGE" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="TestNG.&lt;default&gt;" />
-      <item itemvalue="TestNG.G:/My Drive/IdeaProjects/sporter-web-automation/target/test-classes/TestExecution.xml" />
+      <item itemvalue="TestNG.AeAllPagesInsideCategoriesInMegaMenuTestCases.verifyAbilityToAccessAllPagesInsideAminoAcidsCategoryRelatedToSportSupplementsCategoryPage" />
+      <item itemvalue="TestNG.AeAllPagesInsideCategoriesInMegaMenuTestCases.verifyAbilityToAccessAllPagesInsideBCAACategoryRelatedToSportSupplementsCategoryPage" />
       <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/GenerateReport.xml" />
       <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/TestExecution.xml" />
       <item itemvalue="TestNG.QatarHomePageTestCases.testt" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/GenerateReport.xml" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/TestExecution.xml" />
-        <item itemvalue="TestNG.&lt;default&gt;" />
-        <item itemvalue="TestNG.G:/My Drive/IdeaProjects/sporter-web-automation/target/test-classes/TestExecution.xml" />
+        <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/GenerateReport.xml" />
         <item itemvalue="TestNG.QatarHomePageTestCases.testt" />
+        <item itemvalue="TestNG.AeAllPagesInsideCategoriesInMegaMenuTestCases.verifyAbilityToAccessAllPagesInsideBCAACategoryRelatedToSportSupplementsCategoryPage" />
+        <item itemvalue="TestNG.AeAllPagesInsideCategoriesInMegaMenuTestCases.verifyAbilityToAccessAllPagesInsideAminoAcidsCategoryRelatedToSportSupplementsCategoryPage" />
       </list>
     </recent_temporary>
   </component>
@@ -192,118 +215,13 @@
       <updated>1673269476056</updated>
     </task>
     <task id="LOCAL-00002" summary="test">
-      <created>1675581372308</created>
+      <created>1675883937611</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1675581372308</updated>
+      <updated>1675883937611</updated>
     </task>
-    <task id="LOCAL-00003" summary=" Adding webDriverlocaL Changes by Tobji">
-      <created>1677434290904</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1677434290906</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Remove the implicit wait">
-      <created>1677436749123</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1677436749123</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Remove the implicit wait">
-      <created>1677659565418</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1677659565418</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Remove the implicit wait">
-      <created>1678104656927</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1678104656927</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Add Cart Rules Classes">
-      <created>1678175392350</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1678175392350</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Add Cart Rules Classes">
-      <created>1678179865728</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1678179865728</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Add Cart Rules Classes">
-      <created>1678186243452</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1678186243452</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Add Cart Rules Classes">
-      <created>1678195333227</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1678195333227</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Add Cart Rules Classes">
-      <created>1678269343514</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1678269343514</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Add Cart Rules Classes">
-      <created>1678269644865</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1678269644865</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Update the Checkout classes">
-      <created>1678278716680</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1678278716680</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Update Qatar Cart Rules">
-      <created>1678614875147</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1678614875147</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Revet the changes on the checkout related to the cokkies">
-      <created>1678622175856</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1678622175856</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Add Oman My Account test cases">
-      <created>1678711784189</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1678711784189</updated>
-    </task>
-    <task id="LOCAL-00017" summary=" Update Checkout test caes">
-      <created>1679225216823</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1679225216823</updated>
-    </task>
-    <option name="localTasksCounter" value="18" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -341,16 +259,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
-    <MESSAGE value="Add Chrome Driver Version 110" />
-    <MESSAGE value=" Adding webDriverlocaL Changes by Tobji" />
-    <MESSAGE value="Remove the implicit wait" />
-    <MESSAGE value="Add Cart Rules Classes" />
-    <MESSAGE value="Update the Checkout classes" />
-    <MESSAGE value="Update Qatar Cart Rules" />
-    <MESSAGE value="Revet the changes on the checkout related to the cokkies" />
-    <MESSAGE value="Add Oman My Account test cases" />
-    <MESSAGE value=" Update Checkout test caes" />
-    <option name="LAST_COMMIT_MESSAGE" value=" Update Checkout test caes" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -359,10 +268,10 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/sporter_pages/productPage/ProductDetailsPage.java</url>
-          <line>227</line>
-          <option name="timeStamp" value="13" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/sporter_pages/KsaHomePage.java</url>
+          <line>649</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -378,8 +287,6 @@
         <watch expression="addToCartBtn" />
         <watch expression="result" />
         <watch expression="suite" />
-        <watch expression="productsInTopSellersSection" />
-        <watch expression="getWebDriver" />
       </configuration>
     </watches-manager>
   </component>
