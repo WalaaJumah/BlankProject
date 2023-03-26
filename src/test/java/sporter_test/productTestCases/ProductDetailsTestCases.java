@@ -184,9 +184,9 @@ public class ProductDetailsTestCases extends BaseTest {
         MegaMenuPage megaMenuPage=new MegaMenuPage(webDriver);
         productDetailsPage.displayTheProduct();
         Actions action = new Actions(webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(megaMenuPage.getVitaminsAndHealthMainMenu(), webDriver);
-        action.moveToElement(megaMenuPage.getVitaminsAndHealthMainMenu()).perform();
-        action.moveToElement(megaMenuPage.getVitaminsAndHealthMainMenu()).perform();
+        WebElementsAssertion.validateTheElementIsDisplayed(megaMenuPage.getVitaminsAndHealthMenu(), webDriver);
+        action.moveToElement(megaMenuPage.getVitaminsAndHealthMenu()).perform();
+        action.moveToElement(megaMenuPage.getVitaminsAndHealthMenu()).perform();
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
     @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify that the Healthy Food Menu Is Displayed When Hovering On It From Product Details Page", priority = 20)
