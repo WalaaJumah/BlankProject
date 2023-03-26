@@ -213,9 +213,14 @@ private WebElement sameDayDelivery;
 //            cartPage.navigateToCartPage();
 //            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
             cartPage.addToCartAndDisplayTheCart();
-//            cartPage.navigateToHomePage();
-//            cartPage.clickOnCartIcon();
-            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+
+            try{
+            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);}
+            catch (Exception e){
+                cartPage.navigateToHomePage();
+            cartPage.clickOnCartIcon();
+                DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+            }
 //            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
 //            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
 

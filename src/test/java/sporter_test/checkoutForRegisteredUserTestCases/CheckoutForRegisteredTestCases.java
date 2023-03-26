@@ -205,7 +205,10 @@ catch (Exception e){
         JordanGuestCheckoutCyclePage joGuest= new JordanGuestCheckoutCyclePage(webDriver);
         checkoutForRegisteredPage.accessGuestCheckoutForm();
         try{
-        DataHelperAndWait.typeTextInElement(joGuest.getNationalIDField(), webDriver,"12");}
+        DataHelperAndWait.typeTextInElement(joGuest.getNationalIDField(), webDriver,"12");
+            DataHelperAndWait.waitForTime(1500);
+            guestCheckoutCyclePage.clickOnContinueBtn();
+            WebElementsAssertion.validateTheElementIsDisplayed(joGuest.getNationalIdErrMsg(),webDriver);}
         catch (Exception e){
             System.out.println("The user already have saved address");
         }
@@ -218,9 +221,7 @@ catch (Exception e){
 //                XmlReader.getXMLData("StreetTwoAddressName"),
 //                "12"
 //        );
-                DataHelperAndWait.waitForTime(1500);
-        guestCheckoutCyclePage.clickOnContinueBtn();
-        WebElementsAssertion.validateTheElementIsDisplayed(joGuest.getNationalIdErrMsg(),webDriver);
+
     }
     @Test(groups = {"2.02 Checkout Cycle( Registered User)","All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}:Make sure the Registered user can filling the shipping information and clicking on the Continue button correctly", priority = 19)
     public void verifyTheRegisteredUserCanFillTheShippingInformationCorrectly() {
@@ -565,6 +566,7 @@ catch (Exception e){
         DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getAddToWishListBtn(),webDriver);
 //        header.navigateToHomePage();
         header.navigateToHomePage();
+        DataHelperAndWait.waitForTime(1500);
         DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
         DataHelperAndWait.clickOnElement(registrationPage.getMyAccountOption(), webDriver);
         DataHelperAndWait.waitForTime(1500);

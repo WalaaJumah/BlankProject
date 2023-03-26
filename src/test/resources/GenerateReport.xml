@@ -41,7 +41,7 @@
             <class name="sporter_test.headerTestCases.JordanHeaderTestCases"/>
             <class name="sporter_test.headerTestCases.QatarHeaderTestCases"/>
             <class name="sporter_test.headerTestCases.EgyptHeaderTestCases"/>
-<!--&lt;!&ndash;Products Page&ndash;&gt;-->
+<!--Products Page-->
             <class name="sporter_test.productTestCases.KSAProductDetailsTestCases"/>
             <class name="sporter_test.productTestCases.UAEProductDetailsTestCases"/>
             <class name="sporter_test.productTestCases.JordanProductDetailsTestCases"/>
@@ -71,6 +71,9 @@
             <class name="sporter_test.forgetPasswordTestCases.UAEForgetPasswordTestCases"/>
             <class name="sporter_test.forgetPasswordTestCases.KSAForgetPasswordTestCases"/>
             <class name="sporter_test.forgetPasswordTestCases.JordanForgetPasswordTestCases"/>
+            <class name="sporter_test.forgetPasswordTestCases.BahrainForgetPasswordTestCases"/>
+            <class name="sporter_test.forgetPasswordTestCases.OmanForgetPasswordTestCases"/>
+            <class name="sporter_test.forgetPasswordTestCases.KuwaitForgetPasswordTestCases"/>
 
 <!--            Cart-->
             <class name="sporter_test.cartTestCases.UAECartTestCases"></class>
@@ -94,11 +97,18 @@
             <class name="sporter_test.myAccountTestCases.OmanMyAccountTestCases"></class>
             <class name="sporter_test.myAccountTestCases.BahrainMyAccountTestCases"></class>
 
-            <!--            <class name="sporter_test.AccountRegistrationTestCases.AccountRegistrationTestCases">-->
-<!--                <methods>-->
-<!--                    <include name="verifyAbilityToSignUpUsingFaceBook"/>-->
-<!--                </methods>-->
-<!--            </class>-->
+            <!--           Sports Supplement Category Page-->
+            <class name="sporter_test.sportsSupplementsCategoryTestCases.BahrainSportsSupplementsCategoryTestCases"></class>
+            <class name="sporter_test.sportsSupplementsCategoryTestCases.OmanSportsSupplementsCategoryTestCases"></class>
+            <class name="sporter_test.sportsSupplementsCategoryTestCases.KuwaitSportsSupplementsCategoryTestCases"></class>
+            <class name="sporter_test.sportsSupplementsCategoryTestCases.UAESportsSupplementsCategoryTestCases"></class>
+            <class name="sporter_test.sportsSupplementsCategoryTestCases.KSASportsSupplementsCategoryTestCases"></class>
+            <class name="sporter_test.sportsSupplementsCategoryTestCases.JordanSportsSupplementsCategoryTestCases"></class>
+            <class name="sporter_test.sportsSupplementsCategoryTestCases.QatarSportsSupplementsCategoryTestCases"></class>
+            <class name="sporter_test.sportsSupplementsCategoryTestCases.EgyptSportsSupplementsCategoryTestCases"></class>
+
+
+
         </classes>
 
     </test>

@@ -68,9 +68,15 @@ private List<WebElement> paginationBtns;
     public void clickOnSportsSupplementFromShopByMenu(){
         Actions actions= new Actions(webDriver);
         MegaMenuPage megaMenuPage= new MegaMenuPage(webDriver);
+        try{
         DataHelperAndWait.waitToBeVisible(megaMenuPage.getShopByMenu(),webDriver);
         actions.moveToElement(megaMenuPage.getShopByMenu()).perform();
-        DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsSupplementsMenuFromShopBy(),webDriver);
+        DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsSupplementsMenuFromShopBy(),webDriver);}
+        catch (Exception e){
+            DataHelperAndWait.waitToBeVisible(megaMenuPage.getShopByMenu(),webDriver);
+            actions.moveToElement(megaMenuPage.getShopByMenu()).perform();
+            DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsSupplementsMenuFromShopBy(),webDriver);
+        }
     }
     public void navigateToSportsSupplementPage(){
         webDriver.navigate().to(BaseURL+sportSupplementsUrl);
