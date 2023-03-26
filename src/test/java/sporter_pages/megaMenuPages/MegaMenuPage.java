@@ -21,8 +21,8 @@ public class MegaMenuPage extends BasePage {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
     }
-    @FindBy(xpath = "//li[@id='menu_3']//a")
-    private WebElement SportsSupplementsMenu;
+    @FindBy(id = "SortItem_SPORT SUPPLEMENTS")
+    private WebElement SportsSupplementsMenuFromShopBy;
     @FindBy(id = "shobBy")
     private WebElement shopByMenu;
     @FindBy(id = "SortItem_Sports Supplements_span")
@@ -37,4 +37,6 @@ public class MegaMenuPage extends BasePage {
     private WebElement healthyFoodMainMenu;
     @FindBy(xpath = "//li[@id='menu_146']//a")
     private WebElement sportsMainMenu;
+    @FindBy(xpath = "//ul[@id='TopCategoryList']//a")
+    private List<WebElement> mainCategoriesInMegaMenu;
 }

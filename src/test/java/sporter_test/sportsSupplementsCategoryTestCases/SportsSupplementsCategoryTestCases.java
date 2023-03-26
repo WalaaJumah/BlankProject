@@ -59,7 +59,7 @@ public class SportsSupplementsCategoryTestCases extends BaseTest {
     public void verifyClickingOnHorizontalBannersAppearingInSportSupplementsLandingPageOpensCorrectly() throws IOException {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage= new SportsSupplementsCategoryPage(webDriver);
         sportsSupplementsCategoryPage.navigateToSportsSupplementPage();
-        DataHelperAndWait.waitToBeVisible(sportsSupplementsCategoryPage.getMainBanners().get(0),webDriver);
+        DataHelperAndWait.waitToBeVisible(sportsSupplementsCategoryPage.getMainBanners().get(1),webDriver);
         for (int i = 0; i < sportsSupplementsCategoryPage.getMainBanners().size(); i++) {
             DataHelperAndWait.clickOnElement(sportsSupplementsCategoryPage.getMainBanners().get(i), webDriver);
             sportsSupplementsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -96,7 +96,7 @@ public class SportsSupplementsCategoryTestCases extends BaseTest {
         Select select = new Select(sportsSupplementsCategoryPage.getSortByMenu());
         select.getFirstSelectedOption();
             WebElementsAssertion.validateTheElementIsDisplayed(sportsSupplementsCategoryPage.getManinImage(),webDriver);
-            WebElementsAssertion.validateTheElementIsDisplayed(sportsSupplementsCategoryPage.getMainBannersSection(),webDriver);
+            WebElementsAssertion.validateTheElementIsDisplayed(sportsSupplementsCategoryPage.getMainBanners().get(0),webDriver);
     }
         @Test(groups = { "1.4 Low Severity"},description = "{{CountryName}}:Sports Supplements Category- Make sure  the Sport Supplements footer appears correctly  ", priority = 11)
     public void verifySportSupplementsFooterSectionAppearsCorrectly() {
@@ -125,7 +125,7 @@ public class SportsSupplementsCategoryTestCases extends BaseTest {
         sportsSupplementsCategoryPage.navigateToSportsSupplementPage();
         if(sportsSupplementsCategoryPage.getPaginationBtns().size()>3){
         DataHelperAndWait.clickOnElement(sportsSupplementsCategoryPage.getNextPageBtn(),webDriver);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains("p=2"));}
+        WebElementsAssertion.validateTheCurrentUrlContainsString("p=2",webDriver);}
         else{
             System.out.println("There's only one page in the list");
         }

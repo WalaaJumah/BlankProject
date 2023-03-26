@@ -14,7 +14,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 import sporter_pages.megaMenuPages.MegaMenuPage;
 
 import java.io.IOException;
@@ -30,10 +29,8 @@ public class SportsSupplementsCategoryPage extends BasePage {
     }
 
       //TODO: The banners are missing from the site
-      @FindBy(id="missing")
+      @FindBy(xpath="//ul[@class='clearfix']//a")
       private List<WebElement> mainBanners;
-       @FindBy(id="missing")
-      private WebElement mainBannersSection;
 
       @FindBy(id = "pathSegment_0")
       private WebElement homePageBreadCrumb;
@@ -43,9 +40,9 @@ public class SportsSupplementsCategoryPage extends BasePage {
    @FindBy(xpath="(//span[starts-with(@class,'sidebar_result')]/following-sibling::span)[1]")
     private WebElement searchResultValue;
    //TODO: SortBy Needs to ID
-   @FindBy(id="test")
+   @FindBy(id="selectSorts")
    private WebElement SortByMenu;
-   @FindBy(id="test")
+   @FindBy(xpath="//div[starts-with(@class,'categoryHeader_imgContainer')]")
    private WebElement maninImage;
    @FindBy(id="footer_container")
    private WebElement mainFooter;
@@ -61,16 +58,19 @@ private List<WebElement> paginationBtns;
     public void clickOnSportsSupplementMainMenu(){
         Actions actions= new Actions(webDriver);
         MegaMenuPage megaMenuPage= new MegaMenuPage(webDriver);
-        DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsSupplementsMenu(),webDriver);
-        actions.moveToElement(megaMenuPage.getSportsSupplementsMenu()).perform();
-        DataHelperAndWait.clickOnElement(megaMenuPage.getSportsSupplementsMenu(),webDriver);
+        DataHelperAndWait.waitToBeVisible(megaMenuPage.getMainCategoriesInMegaMenu().get(0),webDriver);
+        actions.moveToElement(megaMenuPage.getMainCategoriesInMegaMenu().get(0)).perform();
+        DataHelperAndWait.clickOnElement(megaMenuPage.getMainCategoriesInMegaMenu().get(0),webDriver);
+//        DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsSupplementsMenu(),webDriver);
+//        actions.moveToElement(megaMenuPage.getSportsSupplementsMenu()).perform();
+//        DataHelperAndWait.clickOnElement(megaMenuPage.getSportsSupplementsMenu(),webDriver);
     }
     public void clickOnSportsSupplementFromShopByMenu(){
         Actions actions= new Actions(webDriver);
         MegaMenuPage megaMenuPage= new MegaMenuPage(webDriver);
         DataHelperAndWait.waitToBeVisible(megaMenuPage.getShopByMenu(),webDriver);
         actions.moveToElement(megaMenuPage.getShopByMenu()).perform();
-        DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsSupplementsMenu(),webDriver);
+        DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsSupplementsMenuFromShopBy(),webDriver);
     }
     public void navigateToSportsSupplementPage(){
         webDriver.navigate().to(BaseURL+sportSupplementsUrl);
