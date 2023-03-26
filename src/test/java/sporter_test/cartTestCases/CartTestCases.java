@@ -451,8 +451,8 @@ public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() 
         CartPage cartPage= new CartPage(webDriver);
         cartPage.navigateToCartPage();
         Actions action = new Actions(webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(megaMenuPage.getVitaminsAndHealthMainMenu(), webDriver);
-        action.moveToElement(megaMenuPage.getVitaminsAndHealthMainMenu()).perform();
+        WebElementsAssertion.validateTheElementIsDisplayed(megaMenuPage.getVitaminsAndHealthMenu(), webDriver);
+        action.moveToElement(megaMenuPage.getVitaminsAndHealthMenu()).perform();
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
     @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify that the Healthy Food Menu Is Displayed When Hovering On It From Product Details Page", priority = 39)
