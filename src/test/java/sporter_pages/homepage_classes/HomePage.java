@@ -83,9 +83,9 @@ public class HomePage extends BasePage {
     private WebElement allLinkInTopSellers;
     @FindBy(id = "OptionsContainerOptions_1topSeller")
     private WebElement healthyFoodLinkInTopSellers;
-    @FindBy(id = "OptionsContainerOptions_2mostSelling")
+    @FindBy(id = "OptionsContainerOptions_1topSeller")
     private WebElement vitaminsAndHealthLinkInTopSellers;
-    @FindBy(id = "OptionsContainerOptions_3mostSelling")
+    @FindBy(id = "OptionsContainerOptions_3topSeller")
     private WebElement sportswearAndAccessoriesLinkInTopSellers;
     @FindBy(id = "//ul[@class='tabs tabs67']/li[2]/a")
     private WebElement sportSupplementsActiveLink;
