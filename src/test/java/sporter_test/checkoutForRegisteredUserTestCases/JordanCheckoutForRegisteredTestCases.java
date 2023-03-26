@@ -387,13 +387,14 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
                     XmlReader.getXMLData("StreetTwoAddressName"),
                     XmlReader.getXMLData("nationalID")
             );
+            DataHelperAndWait.waitForTime(1500);
+            guestCheckoutCyclePage.clickOnContinueBtn();
+            WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getPhoneErrMsg(),webDriver);
         }
         catch (Exception e){
             DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
-        DataHelperAndWait.waitForTime(1500);
-        guestCheckoutCyclePage.clickOnContinueBtn();
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getPhoneErrMsg(),webDriver);
+
     }
 
 }
