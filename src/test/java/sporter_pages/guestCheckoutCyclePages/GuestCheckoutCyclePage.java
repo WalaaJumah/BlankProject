@@ -228,7 +228,7 @@ private WebElement sameDayDelivery;
 //            }
 //            cartPage.clickOnCartIcon();
 //            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-            DataHelperAndWait.waitForUrlContains(shippingInformationUrl,webDriver);
+//            DataHelperAndWait.waitForUrlContains(shippingInformationUrl,webDriver);
             DataHelperAndWait.clickOnElement(checkoutAsGuestBtn,webDriver);
     }
     public void setSelectDubaiCityCity(){
