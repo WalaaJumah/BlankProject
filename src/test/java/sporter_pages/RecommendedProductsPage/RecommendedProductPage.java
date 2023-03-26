@@ -49,7 +49,7 @@ public class RecommendedProductPage extends BasePage {
     private WebElement productPriceForFirstProduct;
     @FindBy(xpath = "(//div[@class='cart-button'])[1]")
     private WebElement addToCartBtnForFirstProduct;
-    @FindBy(id = "recommendProductsLabel")
+    @FindBy(id = "ThumbsUpHeader")
     private WebElement recommendedProductsTitle;
     @FindBy(xpath = "//div[@id='recommendProductsContainer']/div//div[starts-with(@class,'product_button')]")
     private List<WebElement> addToCartBtn;

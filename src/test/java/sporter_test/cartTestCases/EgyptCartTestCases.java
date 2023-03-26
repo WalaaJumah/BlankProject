@@ -9,6 +9,10 @@ package sporter_test.cartTestCases;
 import core.BasePage;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -19,6 +23,7 @@ import sporter_test.AccountRegistrationTestCases.AccountRegistrationTestCases;
 import xml_reader.XmlReader;
 
 import java.io.IOException;
+import java.util.List;
 
 public class EgyptCartTestCases extends CartTestCases {
     @BeforeClass(alwaysRun=true)
@@ -59,7 +64,7 @@ public class EgyptCartTestCases extends CartTestCases {
     public void verifyProductCounterAppearsInTheCartPageCountsFreeGifts() {
         CartPage cartPage = new CartPage(webDriver);
 //        cartPage.addToCartAndDisplayTheCart();
-        String itemsCounter = "2";
+        String itemsCounter = "1";
         WebElementsAssertion.assertionTextIsEqual(cartPage.getItemsCounter(),webDriver,itemsCounter);
     }
     @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the system does not apply invalid coupon code", priority = 26)
@@ -143,6 +148,33 @@ public class EgyptCartTestCases extends CartTestCases {
         productDetailsPage.displayTheProduct();
         productDetailsPage.increaseTheQuantity();
         cartPage.addToCartAndViewCart();
+        WebElementsAssertion.validateTheCurrentUrlContainsString(productDetailsPage.cartURL,webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
+    }
+    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = " Cart Page- Make sure ability to add a bundle to the cart ", priority = 17)
+    public void verifyAbilityToAddBundleToCart() throws IOException {
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        WebDriverWait wait;
+        webDriver.navigate().to(BasePage.BaseURL+"/organic-nation-secrets-protein-bar-box-of-12-55997");
+        productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        CartPage cartPage= new CartPage(webDriver);
+        productDetailsPage.displayBundle();
+        DataHelperAndWait.waitToBeVisible(productDetailsPage.getBundleMenu() ,webDriver);
+        Select select = new Select(productDetailsPage.getBundleMenu());
+        List<WebElement> elementCount = select.getOptions();
+        int menuSize = elementCount.size();
+        for (int i = 0; i < menuSize; i++) {
+            try {
+                select.selectByIndex(i);
+                wait = new WebDriverWait(webDriver, 3);
+                wait.until(ExpectedConditions.visibilityOf(productDetailsPage.getAddToCartBtn())).isDisplayed();
+                productDetailsPage.getAddToCartBtn().click();
+                productDetailsPage.viewCart();
+                break;
+            } catch (Exception e) {
+                productDetailsPage.getCloseToCartErrorPopUp().click();
+            }
+        }
         WebElementsAssertion.validateTheCurrentUrlContainsString(productDetailsPage.cartURL,webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
     }

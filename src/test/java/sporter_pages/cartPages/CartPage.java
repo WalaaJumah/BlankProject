@@ -157,7 +157,7 @@ private WebElement notExistCouponMsg;
 //TODO: Needs To check After solving Bogo Bug
 @FindBy(xpath = "//td[text()='FREE from SPORTER']")
 private WebElement freeFromSporter;
-@FindBy(xpath = "(//span[text()='Free'])[1]")
+@FindBy(xpath = "//div[starts-with(@class,'cartItem_freeGift')]")
 private WebElement freePrice;
 @FindBy(xpath = "div.popUp_thumbsHead__Fbo8M")
 private WebElement couponSuccessfulMsg;

@@ -121,17 +121,17 @@ public class ProductDetailsPage extends BasePage {
     private WebElement ProductHeaderBar;
     @FindBy(id = "fixedAddToCartBtn")
     private WebElement addToCartBtnInProductHeaderBar;
-    @FindBy(xpath = "//a[starts-with(@class,'productHeader_brand')]")
+    @FindBy(xpath = "//a[starts-with(@class,'ProductBrandLink_brand')]")
     private WebElement productBrandLink;
-    @FindBy(xpath = "//div[@id='expectedDeliveryDate']/span")
+    @FindBy(xpath = "(//div[@id='expectedDeliveryDate']/span)[1]")
     private WebElement expectedDeliveryDateLabel;
     @FindBy(xpath = "//div[@id='expectedDeliveryDate']/span[2]")
     private WebElement expectedDeliveryDateValue;
     @FindBy(xpath = "//ul[starts-with(@class,'pagination_innerPagination')]/li[@class='pagination_item__cHfvi']")
     private List<WebElement> pageBtnInReviewSection;
-    @FindBy(xpath = "(//li[starts-with(@class,'pagination_arrow')])[2]")
+    @FindBy(id = "nextPage")
     private WebElement nextReviewPageBtn;
-    @FindBy(xpath = "(//li[starts-with(@class,'pagination_arrow')])[1]")
+    @FindBy(id = "prevPage")
     private WebElement previousReviewPageBtn;
     @FindBy(xpath = "//div[@class='search-result-title-wrapper']")
     private WebElement searchPageTitle;
