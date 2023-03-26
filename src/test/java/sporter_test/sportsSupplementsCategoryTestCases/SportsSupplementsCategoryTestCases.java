@@ -19,7 +19,7 @@ import sporter_pages.productPage.ProductDetailsPage;
 import sporter_pages.sportsSupplementsCategoryPages.SportsSupplementsCategoryPage;
 
 import java.io.IOException;
-
+@Test(groups = "2.13 Sports Supplements Category")
 public class SportsSupplementsCategoryTestCases extends BaseTest {
     String storeCountry;
     String countryCode;

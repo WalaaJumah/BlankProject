@@ -62,6 +62,7 @@ public class BasePage {
     public final String product = "/en-ae/optimum-gold-standard-100-whey";
     public final String  womenOnlyUrl="/female/";
     public final String  sportSupplementsUrl="/sport-supplements";
+    public final String  sportUrl="/sports";
     public final String healthyFoodsUrl = "/healthy-food/";
     public final String healthVitaminsUrl = "/health-vitamins/";
     public final String trackOrderUrl = "/track";

@@ -23,12 +23,18 @@ public class MegaMenuPage extends BasePage {
     }
     @FindBy(id = "SortItem_SPORT SUPPLEMENTS")
     private WebElement SportsSupplementsMenuFromShopBy;
+    @FindBy(id = "SortItem_Vitamins & Health")
+    private WebElement vitaminsAndHealthMenuFromShopBy;
+    @FindBy(id = "SortItem_Sports ")
+    private WebElement sportsMenuFromShopBy;
+     @FindBy(id = "cat_686")
+    private WebElement vitaminsAndHealthMenu;
+     @FindBy(id = "cat_686")
+    private WebElement sportsMenu;
     @FindBy(id = "shobBy")
     private WebElement shopByMenu;
     @FindBy(id = "SortItem_Sports Supplements_span")
     private WebElement sportsSupplementsInShopBy;
-    @FindBy(xpath = "//li[@id='menu_46']//a")
-    private WebElement vitaminsAndHealthMainMenu;
     @FindBy(id = "SubCategoriesContainer")
     private WebElement subCategoriesSectionInMegaMenu;
     @FindBy(id = "TopCategoryList")
