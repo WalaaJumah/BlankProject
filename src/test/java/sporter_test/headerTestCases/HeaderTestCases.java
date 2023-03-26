@@ -67,6 +67,7 @@ public class HeaderTestCases extends BaseTest {
         HeaderSection headerSection =new HeaderSection(webDriver);
         headerSection.navigateToHomePage();
 //        WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getSearchSection(),webDriver);
+           DataHelperAndWait.waitForTime(700);
         WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getSearchField(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getSearchBtn(),webDriver);
        }
