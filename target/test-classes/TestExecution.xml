@@ -15,14 +15,14 @@
         <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/" />
         <classes>
             <!--            Guest Checkout -->
-<!--            <class name="sporter_test.sportsSupplementsCategoryTestCases.UAESportsSupplementsCategoryTestCases"/>-->
+            <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>
 <!--            <class name="sporter_test.sportsSupplementsCategoryTestCases.KSASportsSupplementsCategoryTestCases"/>-->
 <!--            <class name="sporter_test.sportsSupplementsCategoryTestCases.JordanSportsSupplementsCategoryTestCases"/>-->
 <!--            <class name="sporter_test.sportsSupplementsCategoryTestCases.QatarSportsSupplementsCategoryTestCases"/>-->
 <!--            <class name="sporter_test.sportsSupplementsCategoryTestCases.EgyptSportsSupplementsCategoryTestCases"/>-->
-            <class name="sporter_test.sportsSupplementsCategoryTestCases.OmanSportsSupplementsCategoryTestCases"/>
-            <class name="sporter_test.sportsSupplementsCategoryTestCases.KuwaitSportsSupplementsCategoryTestCases"/>
-            <class name="sporter_test.sportsSupplementsCategoryTestCases.BahrainSportsSupplementsCategoryTestCases"/>
+<!--            <class name="sporter_test.sportsSupplementsCategoryTestCases.OmanSportsSupplementsCategoryTestCases"/>-->
+<!--            <class name="sporter_test.sportsSupplementsCategoryTestCases.KuwaitSportsSupplementsCategoryTestCases"/>-->
+<!--            <class name="sporter_test.sportsSupplementsCategoryTestCases.BahrainSportsSupplementsCategoryTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.UAEHeaderTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.JordanHeaderTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.QatarHeaderTestCases"/>-->
