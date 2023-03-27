@@ -123,7 +123,7 @@ public class BasePage {
     public static String productUrl7 = "/dymatize-iso-100";
     public static String productUrlKSA1 = "/the-pack-wild-pre-workout";
     public static String productUrlKSA8 = "/dymatize-iso-100";
-    public static String productUrlKSA2 = "/soulution-high-protein-blend-pancake-mix";
+    public static String productUrlKSA2 = "/efx-karbolyn-fuel";
     public static String productUrlKSA3 = "/windmill-natural-vitamins-omega-3-1000mg-with-epa-dha";
     public static String productUrlKSA4 = "/webber-naturals-joint-ease-glucosamine-chondroitin";
     public static String productUrlKSA5 = "/sportlife-boost-focus-freshmint-gums";

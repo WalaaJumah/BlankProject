@@ -56,6 +56,7 @@ public class QatarCartRulesTestCases extends CartRulesTestCases {
         productDetailsPage.increaseTheQuantity();
         productDetailsPage.addToCart();
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
+        DataHelperAndWait.refreshPage(webDriver);
     }
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure that inability to add more than 2 items of the same flavour & Size to the cart by increasing the QTY from the cart ", priority =3)
     public void verify2ItemOfTheSameKindRuleWorksCorrectlyWhenIncreasingTheQtyTo3FromCartPage() throws IOException {
