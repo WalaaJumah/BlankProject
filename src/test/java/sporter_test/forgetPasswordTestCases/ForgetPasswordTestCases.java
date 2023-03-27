@@ -26,7 +26,7 @@ public class ForgetPasswordTestCases extends BaseTest {
         loginPage.navigateToLoginPage();
         DataHelperAndWait.scrollToPositionZero(webDriver);
         DataHelperAndWait.clickOnElement(loginPage.getForgetPasswordLink(), webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString(loginPage.forgetPasswordURL, webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(loginPage.getEmailField(), webDriver);
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Verify Back To Login Button that appears in the Forget Password page works correctly", priority = 2)

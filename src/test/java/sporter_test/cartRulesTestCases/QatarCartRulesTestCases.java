@@ -43,6 +43,7 @@ public class QatarCartRulesTestCases extends CartRulesTestCases {
         productDetailsPage.keepShopping();
         productDetailsPage.addToCart();
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
+        DataHelperAndWait.refreshPage(webDriver);
     }
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure that inability to add more than 3 items of the same kind to the cart by increasing the quantity to 3", priority = 2)
     public void verify2ItemOfTheSameKindRuleWorksCorrectlyWhenIncreasingTheQtyTo3() throws IOException {
@@ -55,6 +56,7 @@ public class QatarCartRulesTestCases extends CartRulesTestCases {
         productDetailsPage.increaseTheQuantity();
         productDetailsPage.addToCart();
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
+        DataHelperAndWait.refreshPage(webDriver);
     }
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure that inability to add more than 2 items of the same flavour & Size to the cart by increasing the QTY from the cart ", priority =3)
     public void verify2ItemOfTheSameKindRuleWorksCorrectlyWhenIncreasingTheQtyTo3FromCartPage() throws IOException {
@@ -67,7 +69,9 @@ productDetailsPage.addToCart();
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(),webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(),webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
+        DataHelperAndWait.refreshPage(webDriver);
     }
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure that inability to add more than 5 items to the cart", priority = 4)
     public void verifyInabilityToAddMoreThan5ItemsToTheCart() throws Exception {
@@ -92,6 +96,7 @@ productDetailsPage.addToCart();
         webDriver.navigate().to(BaseURL+cartPage.productUrlKSA6);
         productDetailsPage.addToCart();
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
+        DataHelperAndWait.refreshPage(webDriver);
     }
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure that inability to add more than 5 items to the cart and 3 of them with the same kind", priority = 5)
     public void verifyInabilityToAddMoreThan5ItemsToTheCartAnd3OfThemWithTheSameKind() throws Exception {
@@ -107,6 +112,7 @@ productDetailsPage.addToCart();
         productDetailsPage.increaseTheQuantity();
         productDetailsPage.addToCart();
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
+        DataHelperAndWait.refreshPage(webDriver);
     }
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure that inability to checkout when adding 2 items of the same kind to the cart & total exceed 925 QAR (Tax excluded) ", priority = 6)
     public void verifyInabilityToCheckoutOrderWhenTheTotalExceed925QARByIncreasingTheQty() throws Exception {
@@ -121,5 +127,6 @@ productDetailsPage.addToCart();
         productDetailsPage.increaseTheQuantity();
         productDetailsPage.addToCart();
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
+        DataHelperAndWait.refreshPage(webDriver);
     }
 }

@@ -121,17 +121,17 @@ public class ProductDetailsPage extends BasePage {
     private WebElement ProductHeaderBar;
     @FindBy(id = "fixedAddToCartBtn")
     private WebElement addToCartBtnInProductHeaderBar;
-    @FindBy(xpath = "//a[starts-with(@class,'productHeader_brand')]")
+    @FindBy(xpath = "//a[starts-with(@class,'ProductBrandLink_brand')]")
     private WebElement productBrandLink;
-    @FindBy(xpath = "//div[@id='expectedDeliveryDate']/span")
+    @FindBy(xpath = "(//div[@id='expectedDeliveryDate']/span)[1]")
     private WebElement expectedDeliveryDateLabel;
     @FindBy(xpath = "//div[@id='expectedDeliveryDate']/span[2]")
     private WebElement expectedDeliveryDateValue;
     @FindBy(xpath = "//ul[starts-with(@class,'pagination_innerPagination')]/li[@class='pagination_item__cHfvi']")
     private List<WebElement> pageBtnInReviewSection;
-    @FindBy(xpath = "(//li[starts-with(@class,'pagination_arrow')])[2]")
+    @FindBy(id = "nextPage")
     private WebElement nextReviewPageBtn;
-    @FindBy(xpath = "(//li[starts-with(@class,'pagination_arrow')])[1]")
+    @FindBy(id = "prevPage")
     private WebElement previousReviewPageBtn;
     @FindBy(xpath = "//div[@class='search-result-title-wrapper']")
     private WebElement searchPageTitle;
@@ -151,21 +151,26 @@ public class ProductDetailsPage extends BasePage {
     public void displayTheProduct() throws IOException {
         if(webDriver.getCurrentUrl().contains("en-jo")){
             webDriver.navigate().to(BaseURL  + productUrlJordan7);
+            DataHelperAndWait.refreshPage(webDriver);
             verifyTheDisplayedPageDoesNotHaveErrors();
         }
             if(webDriver.getCurrentUrl().contains("ar-sa")){
             webDriver.navigate().to(BaseURL  + productUrlKSA8);
+                DataHelperAndWait.refreshPage(webDriver);
                 verifyTheDisplayedPageDoesNotHaveErrors();
         }
         if(webDriver.getCurrentUrl().contains("en-eg")){
             webDriver.navigate().to(BaseURL  + productUrlEgypt);
+            DataHelperAndWait.refreshPage(webDriver);
             verifyTheDisplayedPageDoesNotHaveErrors();
         }
         if(webDriver.getCurrentUrl().contains("en-qa")){
             webDriver.navigate().to(BaseURL  + productUrl7);
+            DataHelperAndWait.refreshPage(webDriver);
             verifyTheDisplayedPageDoesNotHaveErrors();}
         if(webDriver.getCurrentUrl().contains("en-ae")){
             webDriver.navigate().to(BaseURL  + productUrl);
+            DataHelperAndWait.refreshPage(webDriver);
             verifyTheDisplayedPageDoesNotHaveErrors();}
         System.out.println("The product URL is: "+webDriver.getCurrentUrl());
     }
@@ -225,6 +230,7 @@ public class ProductDetailsPage extends BasePage {
         DataHelperAndWait.clickOnElement(oneStarReview,webDriver);
     }
     public void submitProductReview(String reviewDesc, String reviewSummary, String nickName) {
+        DataHelperAndWait.scrollTo(addReviewButton,webDriver);
         DataHelperAndWait.clickOnElement(addReviewButton,webDriver);
         DataHelperAndWait.typeTextInElement(reviewDescField,webDriver,reviewDesc);
         DataHelperAndWait.typeTextInElement(reviewSummaryField,webDriver, reviewSummary);

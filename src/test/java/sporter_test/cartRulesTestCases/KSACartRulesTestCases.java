@@ -49,7 +49,8 @@ public class KSACartRulesTestCases extends CartRulesTestCases{
         productDetailsPage.addToCart();
         productDetailsPage.keepShopping();
         productDetailsPage.addToCart();
-        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
+                WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
+        DataHelperAndWait.refreshPage(webDriver);
     }
        @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure that inability to add more than 3 items of the same kind to the cart by increasing the quantity to 3", priority = 2)
     public void verify3ItemOfTheSameKindRuleWorksCorrectlyWhenIncreasingTheQtyTo3() throws IOException {
@@ -61,7 +62,8 @@ public class KSACartRulesTestCases extends CartRulesTestCases{
         productDetailsPage.increaseTheQuantity();
         productDetailsPage.increaseTheQuantity();
         productDetailsPage.addToCart();
-        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
+                WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
+        DataHelperAndWait.refreshPage(webDriver);
     }
        @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure that inability to add more than 3 items of the same kind to the cart by increasing the quantity to 3 from the Cart Page", priority = 3)
     public void verify3ItemOfTheSameKindRuleWorksCorrectlyWhenIncreasingTheQtyTo3FromCartPage() throws IOException {
@@ -74,9 +76,9 @@ public class KSACartRulesTestCases extends CartRulesTestCases{
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(),webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(),webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(),webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
+                WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
+        DataHelperAndWait.refreshPage(webDriver);
     }
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure that inability to add more than 5 items to the cart", priority = 4)
     public void verifyInabilityToAddMoreThan5ItemsToTheCart() throws Exception {
@@ -100,7 +102,8 @@ public class KSACartRulesTestCases extends CartRulesTestCases{
         productDetailsPage.keepShopping();
         webDriver.navigate().to(BaseURL+cartPage.productUrlKSA6);
         productDetailsPage.addToCart();
-        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
+                WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
+        DataHelperAndWait.refreshPage(webDriver);
     }
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure that inability to add more than 5 items to the cart and 3 of them with the same kind", priority = 5)
     public void verifyInabilityToAddMoreThan5ItemsToTheCartAnd3OfThemWithTheSameKind() throws Exception {
@@ -115,7 +118,8 @@ public class KSACartRulesTestCases extends CartRulesTestCases{
         productDetailsPage.increaseTheQuantity();
         productDetailsPage.increaseTheQuantity();
         productDetailsPage.addToCart();
-        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
+                WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
+        DataHelperAndWait.refreshPage(webDriver);
     }
     //TODO: https://sporter1.atlassian.net/browse/NS-470
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure that inability to checkout the order when its total exceed 819 SAR (Tax excluded) ", priority = 6)
@@ -128,7 +132,8 @@ public class KSACartRulesTestCases extends CartRulesTestCases{
         productDetailsPage.keepShopping();
         webDriver.navigate().to(BaseURL+cartPage.productUrlKSAWithHighPrice2);
         productDetailsPage.addToCart();
-        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
+                WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
+        DataHelperAndWait.refreshPage(webDriver);
     }
     //TODO: https://sporter1.atlassian.net/browse/NS-470
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure that inability to checkout when adding 2 items of the same kind to the cart & total exceed 819 SAR (Tax excluded) ", priority = 7)
@@ -139,6 +144,7 @@ public class KSACartRulesTestCases extends CartRulesTestCases{
         webDriver.navigate().to(BaseURL+cartPage.productUrlKSAWithHighPrice2);
         productDetailsPage.increaseTheQuantity();
         productDetailsPage.addToCart();
-        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
+                WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
+        DataHelperAndWait.refreshPage(webDriver);
     }
 }

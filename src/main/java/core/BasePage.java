@@ -41,7 +41,7 @@ public class BasePage {
     public final String saudiDomainEnglish = "/en-sa";
     public final String registerAccountLink = "/register/signup";
     public final String loginLink = "/register/login";
-      public final String forgetPasswordURL = "/forgetPassword";
+      public final String forgetPasswordURL = "/forget_Password";
 
     public final String saudiDomainArabic = "/ar-sa";
     public final String lebanonDomain = "/en-lb";
@@ -123,12 +123,12 @@ public class BasePage {
     public static String productUrl7 = "/dymatize-iso-100";
     public static String productUrlKSA1 = "/the-pack-wild-pre-workout";
     public static String productUrlKSA8 = "/dymatize-iso-100";
-    public static String productUrlKSA2 = "/soulution-high-protein-blend-pancake-mix";
+    public static String productUrlKSA2 = "/efx-karbolyn-fuel";
     public static String productUrlKSA3 = "/windmill-natural-vitamins-omega-3-1000mg-with-epa-dha";
     public static String productUrlKSA4 = "/webber-naturals-joint-ease-glucosamine-chondroitin";
     public static String productUrlKSA5 = "/sportlife-boost-focus-freshmint-gums";
     public static String productUrlKSA6 = "/yumearth-organic-assorted-vitamin-c-lollipops-14-pops";
-    public static String productUrlKSAWithHighPrice1 = "/puma-speed-orbiter-black-nrgy-red-yellow-33980/";
+    public static String productUrlKSAWithHighPrice1 = "/puma-speed-orbiter-black-nrgy-red-yellow-33980";
     public static String productUrlKSAWithHighPrice2 = "/asics-gel-kayano-26-ls-graphite-grey-piedmont-grey-32131";
     public static String productUrlEgypt = "/optimum-gold-standard-100-whey";
     public static String productUrlJordan = "/optimum-gold-standard-100-whey";
@@ -150,7 +150,7 @@ public class BasePage {
     public final String sportsUrl = "/sports/";
     public final String toysAndGamesUrl = "/toys-and-games";
     public final String wearableTechUrl = "/wearable-tech";
-    public final String shippingInformationUrl = "/checkout/";
+    public final String shippingInformationUrl = "/checkout";
     public  static String bogoProduct="";
 
     public WebDriver webDriver;

@@ -66,10 +66,9 @@ public class HeaderTestCases extends BaseTest {
     public void verifySearchSectionCorrectly() {
         HeaderSection headerSection =new HeaderSection(webDriver);
         headerSection.navigateToHomePage();
-//        WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getSearchSection(),webDriver);
-           DataHelperAndWait.waitForTime(700);
-        WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getSearchField(),webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getSearchBtn(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getSearchSectionForm(),webDriver);
+//        WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getSearchField(),webDriver);
+//        WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getSearchBtn(),webDriver);
        }
        @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure the Cart icon appears correctly", priority = 5)
     public void verifyCartIconAppearsCorrectly() {

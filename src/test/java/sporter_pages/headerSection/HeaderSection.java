@@ -47,6 +47,9 @@ public class HeaderSection extends BasePage {
     private WebElement searchBtn;
     @FindBy(id="searchInput")
     private WebElement searchField;
+    @FindBy(xpath="//form[contains(@class,'SearchBox')]")
+    private WebElement searchSectionForm;
+
     @FindBy(xpath = "//div[@id='CountrySelector']//ul/li/a")
     private List<WebElement> countryList;
     @FindBy(id = "downArrow")

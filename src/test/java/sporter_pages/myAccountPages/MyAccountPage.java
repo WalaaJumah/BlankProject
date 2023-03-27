@@ -23,11 +23,11 @@ public class MyAccountPage extends BasePage {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
     }
-    private String myAccountURL= "/dashboard/myAccount";
+    private String myAccountURL= "/dashboard/my_account";
     private String recentOrdersURL= "/dashboard/recent_orders";
-    private String allOrdersURL= "/dashboard/allOrders";
-    private String newsletterURL= "/dashboard/newsLetter";
-     private String addressedUrl= "/dashboard/myAddresses";
+    private String allOrdersURL= "/dashboard/all_orders";
+    private String newsletterURL= "/dashboard/newsletter";
+     private String addressedUrl= "/dashboard/my_addresses";
     @FindBy(id="myAccountBtn")
     private WebElement myAccountOption;
     @FindBy(id="recentOrdersBtn")

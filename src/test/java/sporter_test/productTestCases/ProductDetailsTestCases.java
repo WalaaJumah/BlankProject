@@ -92,6 +92,7 @@ public class ProductDetailsTestCases extends BaseTest {
         productDetailsPage.displayTheProduct();
         productDetailsPage.submitProductReview(XmlReader.getXMLData("reviewDesc"),XmlReader.getXMLData("reviewSummary"),XmlReader.getXMLData("nickName"));
 //        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getReviewErrorMsgRelatedToStars(),webDriver);
+        DataHelperAndWait.refreshPage(webDriver);
     }
     @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}:Make sure that the customer can submit his review when filling Review Form with Long Length", priority = 10)
     public void verifyAbilityToFillTheReviewWIthLongLength() throws IOException {
@@ -101,14 +102,16 @@ public class ProductDetailsTestCases extends BaseTest {
         productDetailsPage.submitProductReview(XmlReader.getXMLData("reviewDescLong"),XmlReader.getXMLData("reviewSummaryLong"),XmlReader.getXMLData("nickNameLong"));
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getReviewToastMsgBtn(),webDriver);
         DataHelperAndWait.clickOnElement(productDetailsPage.getReviewToastMsgBtn(),webDriver);
+        DataHelperAndWait.refreshPage(webDriver);
     }
     @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}:Make sure that the customer can navigate to the home page using the BreadCrumb ", priority = 11)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumb() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        HomePage homePage= new HomePage(webDriver);
         productDetailsPage.displayTheProduct();
         DataHelperAndWait.clickOnElement(productDetailsPage.getHomeBreadcrumbs(),webDriver);
-        DataHelperAndWait.waitForTime(2000);
-        Assert.assertFalse(webDriver.getCurrentUrl().contains(productDetailsPage.productUrl));
+        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(),webDriver);
+
     }
     @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}:Make sure that the product price is changed when you change the quantity ", priority = 12)
     public void verifyTheProductPriceChangesBasedOnTheSelectedQty() throws IOException {
@@ -164,19 +167,21 @@ public class ProductDetailsTestCases extends BaseTest {
     public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
+        MegaMenuPage megaMenuPage= new MegaMenuPage(webDriver);
         Actions action = new Actions(webDriver);
         action.moveToElement(productDetailsPage.getShopByMenu()).perform();
         action.moveToElement(productDetailsPage.getShopByMenu()).perform();
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSportsSupplementsInShopBy(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(megaMenuPage.getSportsSupplementsMenuFromShopBy(),webDriver);
     }
     @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify that the Sport Supplements Menu Is Displayed When Hovering On It From Product Details Page", priority = 18)
     public void verifySportSupplementsMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        MegaMenuPage megaMenuPage= new MegaMenuPage(webDriver);
         productDetailsPage.displayTheProduct();
         Actions action = new Actions(webDriver);
-        action.moveToElement(productDetailsPage.getSportsSupplementsMenu()).perform();
-        action.moveToElement(productDetailsPage.getSportsSupplementsMenu()).perform();
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
+        action.moveToElement(megaMenuPage.getSportsSupplementsMenu()).perform();
+        action.moveToElement(megaMenuPage.getSportsSupplementsMenu()).perform();
+        WebElementsAssertion.validateTheElementIsDisplayed(megaMenuPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
     @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify that the Vitamins And Health Menu Is Displayed When Hovering On It From Product Details Page", priority = 19)
     public void verifyVitaminsAndHealthMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() throws IOException {
@@ -195,8 +200,9 @@ public class ProductDetailsTestCases extends BaseTest {
                 MegaMenuPage megaMenuPage=new MegaMenuPage(webDriver);
         productDetailsPage.displayTheProduct();
         Actions action = new Actions(webDriver);
-        action.moveToElement(megaMenuPage.getHealthyFoodMainMenu()).perform();
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
+        action.moveToElement(megaMenuPage.getHealthyFoodMenu()).perform();
+        action.moveToElement(megaMenuPage.getHealthyFoodMenu()).perform();
+        WebElementsAssertion.validateTheElementIsDisplayed(megaMenuPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
     @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify that the Sports Menu Is Displayed When Hovering On It From Product Details Page", priority = 23)
     public void verifySportsMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() throws IOException {
@@ -204,8 +210,8 @@ public class ProductDetailsTestCases extends BaseTest {
                 MegaMenuPage megaMenuPage=new MegaMenuPage(webDriver);
         productDetailsPage.displayTheProduct();
         Actions action = new Actions(webDriver);
-        action.moveToElement(megaMenuPage.getSportsMainMenu()).perform();
-        action.moveToElement(megaMenuPage.getSportsMainMenu()).perform();
+        action.moveToElement(megaMenuPage.getSportsMenu()).perform();
+        action.moveToElement(megaMenuPage.getSportsMenu()).perform();
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
     @Test(groups = { "1.1 Critical Severity"},description = "{{CountryName}}:Verify that the account Profile icon works correctly in PDP", priority = 24)
@@ -275,6 +281,7 @@ public class ProductDetailsTestCases extends BaseTest {
     @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Make sure that the Previous review page button appears in Reviews section works correctly ", priority = 33)
     public void verifyPreviousReviewPageBtnAppearsInReviewsSectionWorksCorrectly() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        DataHelperAndWait.clickOnElement(productDetailsPage.getNextReviewPageBtn(),webDriver);
         DataHelperAndWait.clickOnElement(productDetailsPage.getPreviousReviewPageBtn(),webDriver);
 //        WebElementsAssertion.validateTheCurrentUrlContainsString("p=1",webDriver);
     }

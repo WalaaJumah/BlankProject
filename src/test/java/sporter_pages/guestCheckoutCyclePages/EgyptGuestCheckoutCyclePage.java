@@ -25,7 +25,7 @@ public class EgyptGuestCheckoutCyclePage extends  GuestCheckoutCyclePage{
         return Float.parseFloat(elementValueWithoutSpace);
     }
 
-    @FindBy(id= "flatrate")
+    @FindBy(id= "nextdelivery")
     private WebElement nextDayMethod;
 
 }

@@ -29,6 +29,11 @@ public class MegaMenuPage extends BasePage {
     private WebElement sportsMenuFromShopBy;
      @FindBy(id = "cat_686")
     private WebElement vitaminsAndHealthMenu;
+        @FindBy(id = "cat_583")
+    private WebElement sportsSupplementsMenu;
+            @FindBy(id = "cat_618")
+    private WebElement healthyFoodMenu;
+
      @FindBy(id = "cat_686")
     private WebElement sportsMenu;
     @FindBy(id = "shobBy")
