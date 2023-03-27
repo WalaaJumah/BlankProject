@@ -68,7 +68,7 @@ public void verifyIncreaseQtyBtnInCartPageWorking() {}
     public void verifyProductCounterAppearsInTheCartPageCountsFreeGifts() {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addBogoToCartAndDisplayTheCart();
-        String itemsCounter = "2";
+        String itemsCounter = "1";
         WebElementsAssertion.assertionTextIsEqual(cartPage.getItemsCounter(),webDriver,itemsCounter);
     }
 

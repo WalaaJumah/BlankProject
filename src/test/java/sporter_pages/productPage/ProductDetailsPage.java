@@ -151,21 +151,26 @@ public class ProductDetailsPage extends BasePage {
     public void displayTheProduct() throws IOException {
         if(webDriver.getCurrentUrl().contains("en-jo")){
             webDriver.navigate().to(BaseURL  + productUrlJordan7);
+            DataHelperAndWait.refreshPage(webDriver);
             verifyTheDisplayedPageDoesNotHaveErrors();
         }
             if(webDriver.getCurrentUrl().contains("ar-sa")){
             webDriver.navigate().to(BaseURL  + productUrlKSA8);
+                DataHelperAndWait.refreshPage(webDriver);
                 verifyTheDisplayedPageDoesNotHaveErrors();
         }
         if(webDriver.getCurrentUrl().contains("en-eg")){
             webDriver.navigate().to(BaseURL  + productUrlEgypt);
+            DataHelperAndWait.refreshPage(webDriver);
             verifyTheDisplayedPageDoesNotHaveErrors();
         }
         if(webDriver.getCurrentUrl().contains("en-qa")){
             webDriver.navigate().to(BaseURL  + productUrl7);
+            DataHelperAndWait.refreshPage(webDriver);
             verifyTheDisplayedPageDoesNotHaveErrors();}
         if(webDriver.getCurrentUrl().contains("en-ae")){
             webDriver.navigate().to(BaseURL  + productUrl);
+            DataHelperAndWait.refreshPage(webDriver);
             verifyTheDisplayedPageDoesNotHaveErrors();}
         System.out.println("The product URL is: "+webDriver.getCurrentUrl());
     }

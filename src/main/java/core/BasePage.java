@@ -128,7 +128,7 @@ public class BasePage {
     public static String productUrlKSA4 = "/webber-naturals-joint-ease-glucosamine-chondroitin";
     public static String productUrlKSA5 = "/sportlife-boost-focus-freshmint-gums";
     public static String productUrlKSA6 = "/yumearth-organic-assorted-vitamin-c-lollipops-14-pops";
-    public static String productUrlKSAWithHighPrice1 = "/puma-speed-orbiter-black-nrgy-red-yellow-33980/";
+    public static String productUrlKSAWithHighPrice1 = "/puma-speed-orbiter-black-nrgy-red-yellow-33980";
     public static String productUrlKSAWithHighPrice2 = "/asics-gel-kayano-26-ls-graphite-grey-piedmont-grey-32131";
     public static String productUrlEgypt = "/optimum-gold-standard-100-whey";
     public static String productUrlJordan = "/optimum-gold-standard-100-whey";
