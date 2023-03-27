@@ -7,7 +7,10 @@
 package sporter_pages.checkoutForRegisteredUserTPage;
 
 import core.DataHelperAndWait;
+import lombok.Getter;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 import sporter_pages.cartPages.CartPage;
@@ -15,12 +18,15 @@ import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import sporter_pages.guestCheckoutCyclePages.JordanGuestCheckoutCyclePage;
 import sporter_pages.guestCheckoutCyclePages.QatarGuestCheckoutCyclePage;
 import xml_reader.XmlReader;
+@Getter
 
 public class QatarCheckoutForRegisteredPage extends CheckoutForRegisteredPage {
     public QatarCheckoutForRegisteredPage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
     }
+    @FindBy(id="flatrate")
+    private WebElement fourFiveBussinessDay;
     public void fillInShippingInformationInputField(String firstName, String lastName, String phone, String address, String streetLineOne, String streetLineTwo,String nationalID) {
         GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
         JordanGuestCheckoutCyclePage jo=new JordanGuestCheckoutCyclePage(webDriver);

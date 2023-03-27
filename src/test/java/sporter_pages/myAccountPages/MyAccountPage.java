@@ -42,7 +42,7 @@ public class MyAccountPage extends BasePage {
     private WebElement saveAccountInfoBtn;
     @FindBy(id="firstnameField")
     private WebElement firstNameField;
-    @FindBy(xpath="lastnameField")
+    @FindBy(id="lastnameField")
     private WebElement lastNameField;
     @FindBy(id="emailField")
     private WebElement emailField;

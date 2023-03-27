@@ -80,7 +80,7 @@ public class GuestCheckoutCyclePage extends BasePage {
     private WebElement continueShippingMethodsBtn;
     @FindBy(id = "submitPaymentMethodBtn")
     private WebElement continuePaymentMethodsBtn;
-    @FindBy(xpath = "//div[@id='citiesSelector']/div")
+    @FindBy(id = "citiesSelector")
     private WebElement cityMenu;
     @FindBy(id = "countrySelector")
     private WebElement countryMenu;
