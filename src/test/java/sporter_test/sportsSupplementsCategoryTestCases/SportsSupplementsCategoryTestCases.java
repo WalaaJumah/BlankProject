@@ -137,6 +137,7 @@ public class SportsSupplementsCategoryTestCases extends BaseTest {
         if(sportsSupplementsCategoryPage.getPaginationBtns().size()>3){
         DataHelperAndWait.clickOnElement(sportsSupplementsCategoryPage.getNextPageBtn(),webDriver);
         DataHelperAndWait.clickOnElement(sportsSupplementsCategoryPage.getPreviousPageBtn(),webDriver);
+        DataHelperAndWait.waitForTime(1500);
          Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));}
         else{
             System.out.println("There's only one page in the list");
