@@ -69,6 +69,7 @@ productDetailsPage.addToCart();
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(),webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(),webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
         DataHelperAndWait.refreshPage(webDriver);
     }

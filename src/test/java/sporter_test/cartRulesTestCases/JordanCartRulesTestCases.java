@@ -43,7 +43,8 @@ public class JordanCartRulesTestCases extends CartRulesTestCases{
         productDetailsPage.displayTheProduct();
         productDetailsPage.increaseTheQuantity();
         productDetailsPage.addToCart();
-        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
+                WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
+        DataHelperAndWait.refreshPage(webDriver);
     }
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure that inability to add more than an item of the same flavour & Size to the cart by increasing the QTY from the cart ", priority = 2)
     public void verify2ItemOfTheSameKindRuleWorksCorrectlyWhenIncreasingTheQtyTo2FromCartPage() throws IOException {
@@ -55,7 +56,8 @@ public class JordanCartRulesTestCases extends CartRulesTestCases{
         productDetailsPage.viewCart();
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(),webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
+                WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
+        DataHelperAndWait.refreshPage(webDriver);
     }
     //TODO:https://sporter1.atlassian.net/browse/NS-488
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure that inability to checkout the order when its total exceed 120 JOD (Tax excluded) ", priority = 3)
@@ -73,6 +75,7 @@ public class JordanCartRulesTestCases extends CartRulesTestCases{
         productDetailsPage.addToCart();
         productDetailsPage.viewCart();
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
+                WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(),webDriver);
+        DataHelperAndWait.refreshPage(webDriver);
     }
 }
