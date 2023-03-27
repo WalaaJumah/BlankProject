@@ -225,6 +225,7 @@ public class ProductDetailsPage extends BasePage {
         DataHelperAndWait.clickOnElement(oneStarReview,webDriver);
     }
     public void submitProductReview(String reviewDesc, String reviewSummary, String nickName) {
+        DataHelperAndWait.scrollTo(addReviewButton,webDriver);
         DataHelperAndWait.clickOnElement(addReviewButton,webDriver);
         DataHelperAndWait.typeTextInElement(reviewDescField,webDriver,reviewDesc);
         DataHelperAndWait.typeTextInElement(reviewSummaryField,webDriver, reviewSummary);

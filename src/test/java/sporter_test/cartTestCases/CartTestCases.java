@@ -17,6 +17,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.cartPages.CartPage;
+import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.megaMenuPages.MegaMenuPage;
@@ -282,12 +283,14 @@ public class CartTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure that the Proceed to checkout button appears in the cart page works correctly", priority = 23)
     public void verifyProceedCheckoutBtnAppearsCorrectlyInCartPage() {
         CartPage cartPage = new CartPage(webDriver);
+        GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
 //        cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.waitForTime(1500);
 DataHelperAndWait.waitToBeClickable(cartPage.getProceedCheckoutBtn(),webDriver);
 DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
 //        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.shippingInformationUrl,webDriver);
+//        WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.shippingInformationUrl,webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCheckoutAsGuestBtn(),webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
     }
 
@@ -436,7 +439,7 @@ public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() 
 //    cartPage.addToCartAndDisplayTheCart();
     Actions action = new Actions(webDriver);
     action.moveToElement(megaMenuPage.getShopByMenu()).perform();
-    WebElementsAssertion.validateTheElementIsDisplayed(megaMenuPage.getSportsSupplementsInShopBy(),webDriver);
+    WebElementsAssertion.validateTheElementIsDisplayed(megaMenuPage.getSportsSupplementsMenuFromShopBy(),webDriver);
 }
     @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify that the Sport Supplements Menu Is Displayed When Hovering On It From Product Details Page", priority = 37)
     public void verifySportSupplementsMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
@@ -456,6 +459,7 @@ public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() 
         cartPage.navigateToCartPage();
         Actions action = new Actions(webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(megaMenuPage.getVitaminsAndHealthMenu(), webDriver);
+        action.moveToElement(megaMenuPage.getVitaminsAndHealthMenu()).perform();
         action.moveToElement(megaMenuPage.getVitaminsAndHealthMenu()).perform();
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }
@@ -477,6 +481,7 @@ public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() 
         CartPage cartPage= new CartPage(webDriver);
         cartPage.navigateToCartPage();
         Actions action = new Actions(webDriver);
+        action.moveToElement(megaMenuPage.getSportsMenu()).perform();
         action.moveToElement(megaMenuPage.getSportsMenu()).perform();
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
     }

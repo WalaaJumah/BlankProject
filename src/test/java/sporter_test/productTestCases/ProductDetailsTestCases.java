@@ -92,6 +92,7 @@ public class ProductDetailsTestCases extends BaseTest {
         productDetailsPage.displayTheProduct();
         productDetailsPage.submitProductReview(XmlReader.getXMLData("reviewDesc"),XmlReader.getXMLData("reviewSummary"),XmlReader.getXMLData("nickName"));
 //        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getReviewErrorMsgRelatedToStars(),webDriver);
+        DataHelperAndWait.refreshPage(webDriver);
     }
     @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}:Make sure that the customer can submit his review when filling Review Form with Long Length", priority = 10)
     public void verifyAbilityToFillTheReviewWIthLongLength() throws IOException {
@@ -101,6 +102,7 @@ public class ProductDetailsTestCases extends BaseTest {
         productDetailsPage.submitProductReview(XmlReader.getXMLData("reviewDescLong"),XmlReader.getXMLData("reviewSummaryLong"),XmlReader.getXMLData("nickNameLong"));
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getReviewToastMsgBtn(),webDriver);
         DataHelperAndWait.clickOnElement(productDetailsPage.getReviewToastMsgBtn(),webDriver);
+        DataHelperAndWait.refreshPage(webDriver);
     }
     @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}:Make sure that the customer can navigate to the home page using the BreadCrumb ", priority = 11)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumb() throws IOException {
@@ -169,7 +171,7 @@ public class ProductDetailsTestCases extends BaseTest {
         Actions action = new Actions(webDriver);
         action.moveToElement(productDetailsPage.getShopByMenu()).perform();
         action.moveToElement(productDetailsPage.getShopByMenu()).perform();
-        WebElementsAssertion.validateTheElementIsDisplayed(megaMenuPage.getSportsSupplementsInShopBy(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(megaMenuPage.getSportsSupplementsMenuFromShopBy(),webDriver);
     }
     @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify that the Sport Supplements Menu Is Displayed When Hovering On It From Product Details Page", priority = 18)
     public void verifySportSupplementsMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() throws IOException {

@@ -18,7 +18,7 @@ import static org.testng.Assert.assertTrue;
 
 public  class DataHelperAndWait  {
 
-    private static int WaitTime=12;
+    private static int WaitTime=15;
     //test21add
 public static void navigateToUrl(String uRL, WebDriver webDriver) {
     webDriver.navigate().to(uRL);
