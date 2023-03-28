@@ -15,7 +15,7 @@
         <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/" />
         <classes>
             <!--            Guest Checkout -->
-            <class name="sporter_test.healthy_food_category_test_cases.KSAHealthyFoodTestCases"/>
+            <class name="sporter_test.healthy_food_category_test_cases.EgyptHealthyFoodTestCases"/>
 <!--            <class name="sporter_test.healthy_food_category_test_cases.OmanHealthyFoodTestCases"/>-->
 <!--            <class name="sporter_test.healthy_food_category_test_cases.QatarHealthyFoodTestCases"/>-->
 <!--            <class name="sporter_test.healthy_food_category_test_cases.KuwaitHealthyFoodTestCases"/>-->
