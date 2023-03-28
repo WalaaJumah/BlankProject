@@ -149,25 +149,27 @@ public class ProductDetailsPage extends BasePage {
 
     //Methods we need during testing the Product details page
     public void displayTheProduct() throws IOException {
-        if(webDriver.getCurrentUrl().contains("en-jo")){
-            webDriver.navigate().to(BaseURL  + productUrlJordan7);
-            verifyTheDisplayedPageDoesNotHaveErrors();
+        String productUrl1 = "";
+        String currentUrl = webDriver.getCurrentUrl();
+        if (currentUrl.contains("en-jo")) {
+            productUrl1 = productUrlJordan7;
         }
-            if(webDriver.getCurrentUrl().contains("ar-sa")){
-            webDriver.navigate().to(BaseURL  + productUrlKSA8);
-                verifyTheDisplayedPageDoesNotHaveErrors();
+        if (currentUrl.contains("ar-sa")) {
+            productUrl1 = productUrlKSA8;
         }
-        if(webDriver.getCurrentUrl().contains("en-eg")){
-            webDriver.navigate().to(BaseURL  + productUrlEgypt);
-            verifyTheDisplayedPageDoesNotHaveErrors();
+        if (currentUrl.contains("en-eg")) {
+            productUrl1 = productUrlEgypt;
         }
-        if(webDriver.getCurrentUrl().contains("en-qa")){
-            webDriver.navigate().to(BaseURL  + productUrl7);
-            verifyTheDisplayedPageDoesNotHaveErrors();}
-        if(webDriver.getCurrentUrl().contains("en-ae")){
-            webDriver.navigate().to(BaseURL  + productUrl);
-            verifyTheDisplayedPageDoesNotHaveErrors();}
-        System.out.println("The product URL is: "+webDriver.getCurrentUrl());
+        if (currentUrl.contains("en-qa")) {
+            productUrl1 = productUrl7;
+        }
+        if (currentUrl.contains("en-ae")) {
+            productUrl1 = productUrl;
+        }
+        webDriver.navigate().to(BaseURL + productUrl1);
+        DataHelperAndWait.waitForUrlContains(productUrl1,webDriver);
+        verifyTheDisplayedPageDoesNotHaveErrors();
+        System.out.println("The product URL is: " + webDriver.getCurrentUrl());
     }
         public void displayTheProductHaveLessQty() throws IOException {
             if(webDriver.getCurrentUrl().contains("en-eg")){

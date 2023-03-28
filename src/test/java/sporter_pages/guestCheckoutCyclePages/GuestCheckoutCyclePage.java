@@ -102,7 +102,7 @@ public class GuestCheckoutCyclePage extends BasePage {
     private WebElement editShippingInfoBtn;
     @FindBy(id = "oInfoEdit")
     private WebElement editShippingMethodsBtn;
-    @FindBy(xpath = "//div[starts-with(@class,'radioButton_circle')]/following::span[1]")
+    @FindBy(xpath = "(//div[@id='shippingMethod']/div)[1]")
     private WebElement twoBusinessDaysSuperExpressShipping;
 
     @FindBy(xpath = "///div[starts-with(@class,'paymentInfo_methods')]")
