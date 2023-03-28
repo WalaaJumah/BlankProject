@@ -18,6 +18,7 @@ import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.megaMenuPages.MegaMenuPage;
 import sporter_pages.productPage.ProductDetailsPage;
+import sporter_pages.sportsSupplementsCategoryPages.SportsSupplementsCategoryPage;
 import xml_reader.XmlReader;
 
 import java.io.IOException;
@@ -173,15 +174,15 @@ public class ProductDetailsTestCases extends BaseTest {
         action.moveToElement(productDetailsPage.getShopByMenu()).perform();
         WebElementsAssertion.validateTheElementIsDisplayed(megaMenuPage.getSportsSupplementsMenuFromShopBy(),webDriver);
     }
-    @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify that the Sport Supplements Menu Is Displayed When Hovering On It From Product Details Page", priority = 18)
-    public void verifySportSupplementsMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() throws IOException {
+    @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify ability to click on Sport Supplements Menu From Product Details Page", priority = 18)
+    public void verifyAbilityToClickOnSportSupplementsMenuFromProductDetailsPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         MegaMenuPage megaMenuPage= new MegaMenuPage(webDriver);
+        SportsSupplementsCategoryPage sportsSupplementsCategoryPage= new SportsSupplementsCategoryPage(webDriver);
         productDetailsPage.displayTheProduct();
-        Actions action = new Actions(webDriver);
-        action.moveToElement(megaMenuPage.getSportsSupplementsMenu()).perform();
-        action.moveToElement(megaMenuPage.getSportsSupplementsMenu()).perform();
-        WebElementsAssertion.validateTheElementIsDisplayed(megaMenuPage.getSubCategoriesSectionInMegaMenu(),webDriver);
+        sportsSupplementsCategoryPage.clickOnSportsSupplementMainMenu();
+        sportsSupplementsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.sportSupplementsUrl,webDriver);
     }
     @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify that the Vitamins And Health Menu Is Displayed When Hovering On It From Product Details Page", priority = 19)
     public void verifyVitaminsAndHealthMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() throws IOException {
