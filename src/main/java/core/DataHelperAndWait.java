@@ -2,6 +2,8 @@ package core;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.logging.LogEntries;
+import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
 
@@ -328,5 +330,11 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
         WebDriverWait wait;
         wait = new WebDriverWait(webDriver, WaitTime);
         wait.until(ExpectedConditions.invisibilityOfElementWithText(element,expectedText));
+    }
+    public static void captureJavaScriptErrors(WebDriver webDriver){
+        LogEntries jsErrors=webDriver.manage().logs().get(LogType.BROWSER);
+        System.out.println("All Java Script Error log: "+jsErrors.getAll());
+        System.out.println("First Java Script Error log: "+jsErrors.getAll().get(0));
+
     }
 }
