@@ -23,9 +23,9 @@ public class HealthyFoodPage extends BasePage {
         Actions actions= new Actions(webDriver);
         MegaMenuPage megaMenuPage= new MegaMenuPage(webDriver);
         DataHelperAndWait.waitToBeVisible(megaMenuPage.getHealthyFoodMenu(),webDriver);
-//        actions.moveToElement(megaMenuPage.getHealthyFoodMenu()).perform();
-        actions.moveToElement(megaMenuPage.getHealthyFoodMenu()).click().perform();
-//        DataHelperAndWait.clickOnElement(megaMenuPage.getHealthyFoodMenu(),webDriver);
+//        actions.moveToElement(megaMenuPage.getHealthyFoodMenu()).click().perform();
+        DataHelperAndWait.waitForTime(1500);
+        DataHelperAndWait.clickOnElement(megaMenuPage.getHealthyFoodMenu(),webDriver);
 //        DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsSupplementsMenu(),webDriver);
 //        actions.moveToElement(megaMenuPage.getSportsSupplementsMenu()).perform();
 //        DataHelperAndWait.clickOnElement(megaMenuPage.getSportsSupplementsMenu(),webDriver);

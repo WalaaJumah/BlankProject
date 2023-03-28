@@ -9,8 +9,11 @@ package sporter_test.healthy_food_category_test_cases;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.KsaHomePage;
+
+import java.io.IOException;
 
 import static core.BasePage.BaseURL;
 
@@ -32,4 +35,6 @@ public class KSAHealthyFoodTestCases extends HealthyFoodTestCases{
         storeCountry="المملكة العربية السعودية";
         countryCode="966";
     }
+    @Test(enabled = false)
+    public void verifyClickingOnHealthyFoodCategoryFromShopByMenuRedirectUserToCorrectURL() throws IOException{}
 }
