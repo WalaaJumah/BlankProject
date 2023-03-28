@@ -37,7 +37,7 @@ public class SportsSupplementsCategoryPage extends BasePage {
       //TODO: Make sure to add id for each result label & it's value
     @FindBy(xpath="(//span[starts-with(@class,'sidebar_result')]/following-sibling::span)[2]")
     private WebElement resultLabel;
-   @FindBy(xpath="(//span[starts-with(@class,'sidebar_result')]/following-sibling::span)[1]")
+   @FindBy(id="totalProductsCount")
     private WebElement searchResultValue;
    //TODO: SortBy Needs to ID
    @FindBy(id="selectSorts")
@@ -58,9 +58,9 @@ private List<WebElement> paginationBtns;
     public void clickOnSportsSupplementMainMenu(){
         Actions actions= new Actions(webDriver);
         MegaMenuPage megaMenuPage= new MegaMenuPage(webDriver);
-        DataHelperAndWait.waitToBeVisible(megaMenuPage.getMainCategoriesInMegaMenu().get(0),webDriver);
-        actions.moveToElement(megaMenuPage.getMainCategoriesInMegaMenu().get(0)).perform();
-        DataHelperAndWait.clickOnElement(megaMenuPage.getMainCategoriesInMegaMenu().get(0),webDriver);
+        DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsSupplementsMenu(),webDriver);
+        actions.moveToElement(megaMenuPage.getSportsSupplementsMenu()).perform();
+        DataHelperAndWait.clickOnElement(megaMenuPage.getSportsSupplementsMenu(),webDriver);
 //        DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsSupplementsMenu(),webDriver);
 //        actions.moveToElement(megaMenuPage.getSportsSupplementsMenu()).perform();
 //        DataHelperAndWait.clickOnElement(megaMenuPage.getSportsSupplementsMenu(),webDriver);
