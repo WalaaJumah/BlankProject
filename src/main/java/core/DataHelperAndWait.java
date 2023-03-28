@@ -3,6 +3,7 @@ package core;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.logging.LogEntries;
+import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
@@ -14,6 +15,7 @@ import java.util.*;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
+import java.util.logging.Level;
 
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
@@ -336,5 +338,16 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
         System.out.println("All Java Script Error log: "+jsErrors.getAll());
         System.out.println("First Java Script Error log: "+jsErrors.getAll().get(0));
 
+
+
+        Set<String> logtyp = webDriver.manage().logs().getAvailableLogTypes();
+        for (String s : logtyp) {
+            System.out.println(logtyp);
+        }
+        LogEntries logEntries = webDriver.manage().logs().get(LogType.BROWSER);
+        List<LogEntry> lg = logEntries.filter(Level.ALL);
+        for(LogEntry logEntry : lg) {
+            System.out.println(logEntry);
+        }
     }
 }
