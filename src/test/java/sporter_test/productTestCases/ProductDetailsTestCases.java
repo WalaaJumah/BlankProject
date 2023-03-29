@@ -203,6 +203,7 @@ public class ProductDetailsTestCases extends BaseTest {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
                 MegaMenuPage megaMenuPage=new MegaMenuPage(webDriver);
         productDetailsPage.displayTheProduct();
+        megaMenuPage.clickOnSportsMainMenu();
         megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.sportsUrl,webDriver);
     }
