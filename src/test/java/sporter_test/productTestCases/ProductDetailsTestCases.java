@@ -169,51 +169,42 @@ public class ProductDetailsTestCases extends BaseTest {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
         MegaMenuPage megaMenuPage= new MegaMenuPage(webDriver);
-        Actions action = new Actions(webDriver);
-        action.moveToElement(productDetailsPage.getShopByMenu()).perform();
-        action.moveToElement(productDetailsPage.getShopByMenu()).perform();
-        WebElementsAssertion.validateTheElementIsDisplayed(megaMenuPage.getSportsSupplementsMenuFromShopBy(),webDriver);
+        megaMenuPage.makeSureToDisplayShopByMenu();
     }
     @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify ability to click on Sport Supplements Menu From Product Details Page", priority = 18)
     public void verifyAbilityToClickOnSportSupplementsMenuFromProductDetailsPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        MegaMenuPage megaMenuPage= new MegaMenuPage(webDriver);
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage= new SportsSupplementsCategoryPage(webDriver);
         productDetailsPage.displayTheProduct();
         sportsSupplementsCategoryPage.clickOnSportsSupplementMainMenu();
         sportsSupplementsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.sportSupplementsUrl,webDriver);
     }
-    @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify that the Vitamins And Health Menu Is Displayed When Hovering On It From Product Details Page", priority = 19)
-    public void verifyVitaminsAndHealthMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() throws IOException {
+    @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify ability to click on Vitamins And Health Menu From Product Details Page", priority = 19)
+    public void verifyAbilityToClickOnVitaminsAndHealthMenuFromProductDetailsPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         MegaMenuPage megaMenuPage=new MegaMenuPage(webDriver);
         productDetailsPage.displayTheProduct();
-        Actions action = new Actions(webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(megaMenuPage.getVitaminsAndHealthMenu(), webDriver);
-        action.moveToElement(megaMenuPage.getVitaminsAndHealthMenu()).perform();
-        action.moveToElement(megaMenuPage.getVitaminsAndHealthMenu()).perform();
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
+        megaMenuPage.clickOnVitaminsAndHealthMainMenu();
+        megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl,webDriver);
     }
-    @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify that the Healthy Food Menu Is Displayed When Hovering On It From Product Details Page", priority = 20)
-    public void verifyHealthyFoodMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() throws IOException {
+    @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify ability to click on Healthy Food Menu Is Displayed From Product Details Page", priority = 20)
+    public void verifyAbilityToClickOnHealthyFoodMenuFromProductDetailsPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
                 MegaMenuPage megaMenuPage=new MegaMenuPage(webDriver);
         productDetailsPage.displayTheProduct();
-        Actions action = new Actions(webDriver);
-        action.moveToElement(megaMenuPage.getHealthyFoodMenu()).perform();
-        action.moveToElement(megaMenuPage.getHealthyFoodMenu()).perform();
-        WebElementsAssertion.validateTheElementIsDisplayed(megaMenuPage.getSubCategoriesSectionInMegaMenu(),webDriver);
+        megaMenuPage.clickOnHealthyFoodMainMenu();
+        megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthyFoodsUrl,webDriver);
     }
-    @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify that the Sports Menu Is Displayed When Hovering On It From Product Details Page", priority = 23)
-    public void verifySportsMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() throws IOException {
+    @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify ability to click on Sports Menu From Product Details Page", priority = 23)
+    public void verifyAbilityToClickOnSportsMenuIsDisplayedFromProductDetailsPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
                 MegaMenuPage megaMenuPage=new MegaMenuPage(webDriver);
         productDetailsPage.displayTheProduct();
-        Actions action = new Actions(webDriver);
-        action.moveToElement(megaMenuPage.getSportsMenu()).perform();
-        action.moveToElement(megaMenuPage.getSportsMenu()).perform();
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
+        megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.sportsUrl,webDriver);
     }
     @Test(groups = { "1.1 Critical Severity"},description = "{{CountryName}}:Verify that the account Profile icon works correctly in PDP", priority = 24)
     public void verifyAccountProfileIconWorksCorrectlyInProductDetailsPage() throws IOException {
