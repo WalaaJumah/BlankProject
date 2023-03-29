@@ -22,6 +22,7 @@ import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.megaMenuPages.MegaMenuPage;
 import sporter_pages.productPage.ProductDetailsPage;
+import sporter_pages.sportsSupplementsCategoryPages.SportsSupplementsCategoryPage;
 import xml_reader.XmlReader;
 
 import java.io.IOException;
@@ -431,59 +432,48 @@ DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
 //            webDriver.switchTo().alert().dismiss();
 //    }
 //      The following Test Cases handle displaying the Mega Menu from Product Page
-@Test(groups = {"All Smoke Testing Result","1.4 Low Severity"},description = "{{CountryName}}:Verify that the ShopBy Menu Is Displayed When Hovering On It From Product Details Page", priority = 36)
+@Test(groups = {"All Smoke Testing Result","1.4 Low Severity"},description = "{{CountryName}}:Verify that the ShopBy Menu Is Displayed When Hovering On It From cart Page", priority = 36)
 public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
-    ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
     MegaMenuPage megaMenuPage= new MegaMenuPage(webDriver);
     CartPage cartPage= new CartPage(webDriver);
-//    cartPage.addToCartAndDisplayTheCart();
-    Actions action = new Actions(webDriver);
-    action.moveToElement(megaMenuPage.getShopByMenu()).perform();
-    WebElementsAssertion.validateTheElementIsDisplayed(megaMenuPage.getSportsSupplementsMenuFromShopBy(),webDriver);
+    cartPage.navigateToCartPage();
+    megaMenuPage.makeSureToDisplayShopByMenu();
 }
-    @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify that the Sport Supplements Menu Is Displayed When Hovering On It From Product Details Page", priority = 37)
-    public void verifySportSupplementsMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+    @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify ability to click on  the Sport Supplements Menu From cart Page", priority = 37)
+    public void verifyAbilityToClickOnSportSupplementsMenuFromCartPage() throws IOException {
         CartPage cartPage= new CartPage(webDriver);
-        MegaMenuPage megaMenuPage= new MegaMenuPage(webDriver);
+        SportsSupplementsCategoryPage sportsSupplementsCategoryPage= new SportsSupplementsCategoryPage(webDriver);
         cartPage.navigateToCartPage();
-        Actions action = new Actions(webDriver);
-        action.moveToElement(megaMenuPage.getSportsSupplementsMenu()).perform();
-        WebElementsAssertion.validateTheElementIsDisplayed(megaMenuPage.getSubCategoriesSectionInMegaMenu(),webDriver);
+        sportsSupplementsCategoryPage.clickOnSportsSupplementMainMenu();
+        sportsSupplementsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.sportSupplementsUrl,webDriver);
     }
-    @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify that the Vitamins And Health Menu Is Displayed When Hovering On It From Product Details Page", priority = 38)
-    public void verifyVitaminsAndHealthMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+    @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify ability to click on  Vitamins And Health Menu From cart Page", priority = 38)
+    public void verifyAbilityToClickOnVitaminsAndHealthMenuFromCartPage() throws IOException {
         MegaMenuPage megaMenuPage= new MegaMenuPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         cartPage.navigateToCartPage();
-        Actions action = new Actions(webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(megaMenuPage.getVitaminsAndHealthMenu(), webDriver);
-        action.moveToElement(megaMenuPage.getVitaminsAndHealthMenu()).perform();
-        action.moveToElement(megaMenuPage.getVitaminsAndHealthMenu()).perform();
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
+        megaMenuPage.clickOnVitaminsAndHealthMainMenu();
+        megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl,webDriver);
     }
-    @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify that the Healthy Food Menu Is Displayed When Hovering On It From Product Details Page", priority = 39)
-    public void verifyHealthyFoodMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+    @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify ability to click on  the Healthy Food Menu From cart Page", priority = 39)
+    public void verifyAbilityToClickOnHealthyFoodMenuFromCartPage() throws IOException {
         MegaMenuPage megaMenuPage= new MegaMenuPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         cartPage.navigateToCartPage();
-        Actions action = new Actions(webDriver);
-        action.moveToElement(megaMenuPage.getHealthyFoodMenu()).perform();
-        action.moveToElement(megaMenuPage.getHealthyFoodMenu()).perform();
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
+        megaMenuPage.clickOnHealthyFoodMainMenu();
+        megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthyFoodsUrl,webDriver);
     }
-    @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify that the Sports Menu Is Displayed When Hovering On It From Product Details Page", priority = 40)
-    public void verifySportsMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+    @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify ability to click on  the Sports Menu From cart Page", priority = 40)
+    public void verifyAbilityToClickOnSportsMenuIsDisplayedFromCartPage() throws IOException {
         MegaMenuPage megaMenuPage= new MegaMenuPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         cartPage.navigateToCartPage();
-        Actions action = new Actions(webDriver);
-        action.moveToElement(megaMenuPage.getSportsMenu()).perform();
-        action.moveToElement(megaMenuPage.getSportsMenu()).perform();
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSubCategoriesSectionInMegaMenu(),webDriver);
+        megaMenuPage.clickOnSportsMainMenu();
+        megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.sportsUrl,webDriver);
     }
     @Test(groups = { "1.1 Critical Severity"},description = "{{CountryName}}:Verify that the account Profile icon works correctly in PDP", priority = 41)
     public void verifyAccountProfileIconWorksCorrectlyInProductDetailsPage() throws IOException {
