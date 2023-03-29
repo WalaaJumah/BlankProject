@@ -205,7 +205,11 @@ public class ProductDetailsTestCases extends BaseTest {
         productDetailsPage.displayTheProduct();
         megaMenuPage.clickOnSportsMainMenu();
         megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.sportsUrl,webDriver);
+        try{
+        WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.sportsUrl,webDriver);}
+        catch (Exception e){
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.sportsUrl+"/",webDriver);
+        }
     }
     @Test(groups = { "1.1 Critical Severity"},description = "{{CountryName}}:Verify that the account Profile icon works correctly in PDP", priority = 24)
     public void verifyAccountProfileIconWorksCorrectlyInProductDetailsPage() throws IOException {
