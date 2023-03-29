@@ -36,11 +36,11 @@ public class HealthyFoodPage extends BasePage {
         try{
             DataHelperAndWait.waitToBeVisible(megaMenuPage.getShopByMenu(),webDriver);
             actions.moveToElement(megaMenuPage.getShopByMenu()).perform();
-            DataHelperAndWait.waitToBeVisible(megaMenuPage.getHealthyFoodMenuFromShopBy(),webDriver);}
+            DataHelperAndWait.clickOnElement(megaMenuPage.getHealthyFoodMenuFromShopBy(),webDriver);}
         catch (Exception e){
             DataHelperAndWait.waitToBeVisible(megaMenuPage.getShopByMenu(),webDriver);
             actions.moveToElement(megaMenuPage.getShopByMenu()).perform();
-            DataHelperAndWait.waitToBeVisible(megaMenuPage.getHealthyFoodMenuFromShopBy(),webDriver);
+            DataHelperAndWait.clickOnElement(megaMenuPage.getHealthyFoodMenuFromShopBy(),webDriver);
         }
     }
     public void navigateToHealthyFoodPage(){
