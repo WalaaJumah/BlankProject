@@ -64,7 +64,7 @@ public class BasePage {
     public final String  sportSupplementsUrl="/sport-supplements";
     public final String  sportUrl="/sports";
     public final String healthyFoodsUrl = "/healthy-food";
-    public final String healthVitaminsUrl = "/health-vitamins/";
+    public final String healthVitaminsUrl = "/vitamins";
     public final String trackOrderUrl = "/track";
     public final String shippingAndDeliveryUrl = "/orders-delivery";
     public final  String refundAndReturnUrl = "/refund";
@@ -147,7 +147,7 @@ public class BasePage {
     public  static String oOSProductUrl = "";
     public  static String bundleUrl = "";
     public final String notAvailableOfferProduct = "/catalog/product/view/id/44012/s/olimp-chitosan-chromium-43840/";
-    public final String sportsUrl = "/sports/";
+    public final String sportsUrl = "/sports";
     public final String toysAndGamesUrl = "/toys-and-games";
     public final String wearableTechUrl = "/wearable-tech";
     public final String shippingInformationUrl = "/checkout";
