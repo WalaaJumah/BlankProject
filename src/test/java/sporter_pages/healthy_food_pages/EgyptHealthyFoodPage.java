@@ -15,11 +15,28 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import sporter_pages.megaMenuPages.MegaMenuPage;
 
+import javax.xml.xpath.XPath;
+
 @Getter
 public class EgyptHealthyFoodPage extends HealthyFoodPage {
+
     public EgyptHealthyFoodPage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
+    }
+
+    @FindBy(xpath = "//ul/li[@ID='cat_618']/a")
+    private WebElement healthyFoodMenu;
+
+    public void clickOnHealthyFoodMainMenu(){
+        MegaMenuPage megaMenuPage= new MegaMenuPage(webDriver);
+        DataHelperAndWait.waitToBeVisible(this.getHealthyFoodMenu(),webDriver);
+//        actions.moveToElement(megaMenuPage.getHealthyFoodMenu()).click().perform();
+        DataHelperAndWait.waitForTime(1500);
+        DataHelperAndWait.clickOnElement(this.getHealthyFoodMenu(),webDriver);
+//        DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsSupplementsMenu(),webDriver);
+//        actions.moveToElement(megaMenuPage.getSportsSupplementsMenu()).perform();
+//        DataHelperAndWait.clickOnElement(megaMenuPage.getSportsSupplementsMenu(),webDriver);
     }
 
 }
