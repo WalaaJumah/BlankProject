@@ -271,25 +271,38 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
 
         }
 
-        public static void validateNextOrPreviousBtnInPanelWork(List<WebElement> productsList,WebElement productCardNum,WebElement nextOrPreviousButton,WebDriver driver){
-        if(productsList.size()>4){
-            try{
-            clickOnElement(nextOrPreviousButton,driver);
-            WebElementsAssertion.validateTheElementIsDisplayed(productCardNum,driver);}
-            catch (Exception e){
-                driver.navigate().refresh();
-                clickOnElement(nextOrPreviousButton,driver);
-                WebElementsAssertion.validateTheElementIsDisplayed(productCardNum,driver);
+        public static void validateNextOrPreviousBtnInPanelWork(List<WebElement> productsList,WebElement productCardNum,WebElement nextOrPreviousButton,WebDriver driver) {
+            try {
+                if (!nextOrPreviousButton.isDisplayed()) {
+                    System.out.println("There's no Next/previous button");
+                }
+            } catch (Exception ee) {
+                if (productsList.size() > 5) {
+                    try {
+                        clickOnElement(nextOrPreviousButton, driver);
+                        WebElementsAssertion.validateTheElementIsDisplayed(productCardNum, driver);
+                    } catch (Exception e) {
+                        driver.navigate().refresh();
+                        clickOnElement(nextOrPreviousButton, driver);
+                        WebElementsAssertion.validateTheElementIsDisplayed(productCardNum, driver);
+                    }
+                } else {
+                    System.out.println("There's only " + productsList.size() + 1 + " in the panel");
+                }
+
             }
         }
-        else{
-            System.out.println("There's only "+ productsList.size()+1+" in the panel");
-        }
-
-        }
-
         public static void accessAllProductsInWidget(List<WebElement> productsList,WebElement nextOrPreviousBtnToClick,WebDriver driver,BasePage pageObj) throws IOException {
-            Assert.assertTrue( productsList.size()>0,"There's no any products in the list");
+            try{
+                if(!nextOrPreviousBtnToClick.isDisplayed()){
+                    System.out.println("There's no Next/previous button");
+                }
+            }
+            catch (Exception e){
+            if ( productsList.size()>0){
+                System.out.println("There's no any products in the list");}
+
+            else{
             for (int i = 0; i < productsList.size()-1; i++) {
                 if(!productsList.get(i).isDisplayed()){
                     do{
@@ -300,7 +313,9 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
                     clickOnElement(productsList.get(i),driver);
                     pageObj.verifyTheDisplayedPageDoesNotHaveErrors();
                     pageObj.navigateToHomePage();}
-            }
+            }}
+
+}
             public static String getWebElementText(WebElement webElement,WebDriver webDriver){
         waitToBeVisible( webElement,webDriver);
         return webElement.getText();

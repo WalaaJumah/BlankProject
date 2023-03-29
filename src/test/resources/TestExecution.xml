@@ -14,16 +14,11 @@
         <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix"/>
         <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
         <classes>
-            <class name="sporter_test.productTestCases.UAEProductDetailsTestCases"></class>
-            <class name="sporter_test.productTestCases.KSAProductDetailsTestCases"></class>
-            <class name="sporter_test.productTestCases.QatarProductDetailsTestCases"></class>
-            <class name="sporter_test.productTestCases.JordanProductDetailsTestCases"></class>
-            <class name="sporter_test.productTestCases.EgyptProductDetailsTestCases"></class>
-            <class name="sporter_test.cartTestCases.QatarCartTestCases"></class>
-            <class name="sporter_test.cartTestCases.UAECartTestCases"></class>
-            <class name="sporter_test.cartTestCases.JordanCartTestCases"></class>
-            <class name="sporter_test.cartTestCases.KSACartTestCases"></class>
-            <class name="sporter_test.cartTestCases.EgyptCartTestCases"></class>
+            <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>
+            <class name="sporter_test.homepage_test_cases.UAEHomePageTestCases"/>
+            <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases"/>
+            <class name="sporter_test.homepage_test_cases.QatarHomePageTestCases"/>
+            <class name="sporter_test.homepage_test_cases.EgyptHomePageTestCases"/>
 
 
         </classes>
