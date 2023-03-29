@@ -7,29 +7,19 @@
 package sporter_test.RecommendedProductsTestCases;
 
 import core.BasePage;
-import core.DataHelperAndWait;
-import core.WebElementsAssertion;
-import org.openqa.selenium.interactions.Actions;
-import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
-import sporter_pages.RecommendedProductsPage.RecommendedProductPage;
-import sporter_pages.RecommendedProductsPage.UAERecommendedProductPage;
 import sporter_pages.homepage_classes.UAEHomePage;
-import sporter_pages.productPage.ProductDetailsPage;
-import sporter_pages.productPage.UAEProductDetailsPage;
 
 //@Test(groups = "UAE Product Details Page")
 public class UAERecommendedProductTestCases extends RecommendedProductTestCases {
-    @BeforeClass(alwaysRun=true)
-    public void switchToUAEStore(){
-        UAEHomePage uaeHomePage=new UAEHomePage(webDriver);
+    @BeforeClass(alwaysRun = true)
+    public void switchToUAEStore() {
+        UAEHomePage uaeHomePage = new UAEHomePage(webDriver);
         uaeHomePage.switchCountry(uaeHomePage.getAeCountry());
-        if(webDriver.getCurrentUrl().contains(uaeHomePage.aeDomain)){
+        if (webDriver.getCurrentUrl().contains(uaeHomePage.aeDomain)) {
             System.out.println("You are in UAE Store");
-        }
-        else {
-            webDriver.navigate().to(BasePage.BaseURL+uaeHomePage.aeDomain);
+        } else {
+            webDriver.navigate().to(BasePage.BaseURL + uaeHomePage.aeDomain);
             CloseInitialDialog();
             System.out.println(webDriver.getCurrentUrl());
         }

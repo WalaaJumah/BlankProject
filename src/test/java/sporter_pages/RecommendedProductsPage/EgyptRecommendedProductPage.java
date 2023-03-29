@@ -9,7 +9,7 @@ package sporter_pages.RecommendedProductsPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class EgyptRecommendedProductPage extends RecommendedProductPage{
+public class EgyptRecommendedProductPage extends RecommendedProductPage {
     public EgyptRecommendedProductPage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);

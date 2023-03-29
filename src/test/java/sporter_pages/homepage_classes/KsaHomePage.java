@@ -7,21 +7,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.util.List;
 @Getter
 public class KsaHomePage extends HomePage {
+    public final String saudiDomain = "/en-sa";
+    DataHelperAndWait dataHelperAndWait;
+    @FindBy(xpath = "(//li[@class='countryItem_container__StFb3']/a)[3]")
+    private WebElement ksaCountry;
     public KsaHomePage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
     }
-    public final String saudiDomain = "/en-sa";
-
-    DataHelperAndWait dataHelperAndWait;
-    @FindBy(xpath ="(//li[@class='countryItem_container__StFb3']/a)[3]" )
-    private WebElement ksaCountry;
-
-
-
 
 
 }

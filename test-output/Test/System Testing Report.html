@@ -1,14 +1,15 @@
 <html>
 <head>
-<title>TestNG:   System Testing Report</title>
-<link href="../testng.css" rel="stylesheet" type="text/css" />
-<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+    <title>TestNG: System Testing Report</title>
+    <link href="../testng.css" rel="stylesheet" type="text/css"/>
+    <link href="../my-testng.css" rel="stylesheet" type="text/css"/>
 
-<style type="text/css">
+    <style type="text/css">
 .log { display: none;} 
 .stack-trace { display: none;} 
-</style>
-<script type="text/javascript">
+
+    </style>
+    <script type="text/javascript">
 <!--
 function flip(e) {
   current = e.style.display;
@@ -49,35 +50,55 @@ function toggleAllBoxes() {
 }
 
 // -->
-</script>
+
+    </script>
 
 </head>
 <body>
-<h2 align='center'> System Testing Report</h2><table border='1' align="center">
-<tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/2</td>
-</tr><tr>
-<td>Started on:</td><td>Thu Dec 29 08:13:26 EET 2022</td>
-</tr>
-<tr><td>Total time:</td><td>25 seconds (25937 ms)</td>
-</tr><tr>
-<td>Included groups:</td><td></td>
-</tr><tr>
-<td>Excluded groups:</td><td></td>
-</tr>
-</table><p/>
-<small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='sporter_test.AeProductDetailsPageTestCases.verifyOOSMessageIsDisplayed()'><b>verifyOOSMessageIsDisplayed</b><br>Test class: sporter_test.AeProductDetailsPageTestCases<br>Test method: Make sure the out of stock message appears when displaying out of stock product </td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //span[contains(text(),&quot;We&apos;re sorry for not being able to provide you with&quot;)]&apos; (tried for 5 second(s) with 500 milliseconds interval)
+<h2 align='center'> System Testing Report</h2>
+<table align="center" border='1'>
+    <tr>
+        <td>Tests passed/Failed/Skipped:</td>
+        <td>0/1/2</td>
+    </tr>
+    <tr>
+        <td>Started on:</td>
+        <td>Thu Dec 29 08:13:26 EET 2022</td>
+    </tr>
+    <tr>
+        <td>Total time:</td>
+        <td>25 seconds (25937 ms)</td>
+    </tr>
+    <tr>
+        <td>Included groups:</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Excluded groups:</td>
+        <td></td>
+    </tr>
+</table>
+<p/>
+<small><i>(Hover the method name to see the test class name)</i></small>
+<p/>
+<table border='1' class='invocation-failed' width='100%'>
+    <tr>
+        <td align='center' colspan='4'><b>FAILED TESTS</b></td>
+    </tr>
+    <tr>
+        <td><b>Test method</b></td>
+        <td><b>Attribute(s)</b></td>
+        <td width="30%"><b>Exception</b></td>
+        <td width="10%"><b>Time (seconds)</b></td>
+        <td><b>Instance</b></td>
+    </tr>
+    <tr>
+        <td title='sporter_test.AeProductDetailsPageTestCases.verifyOOSMessageIsDisplayed()'><b>verifyOOSMessageIsDisplayed</b><br>Test
+            class: sporter_test.AeProductDetailsPageTestCases<br>Test method: Make sure the out of stock message appears
+            when displaying out of stock product
+        </td>
+        <td>
+            <div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //span[contains(text(),&quot;We&apos;re sorry for not being able to provide you with&quot;)]&apos; (tried for 5 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
 	at core.DataHelperAndWait.waitToBeVisible(DataHelperAndWait.java:66)
@@ -114,8 +135,12 @@ Session ID: 67ba6e07ccd5488d9fa0e711d6d34a2d
 	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
 	... 18 more
-... Removed 15 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1933142605", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1933142605'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //span[contains(text(),&quot;We&apos;re sorry for not being able to provide you with&quot;)]&apos; (tried for 5 second(s) with 500 milliseconds interval)
+... Removed 15 stack frames</pre>
+            </div>
+            <a href='#'
+               onClick='toggleBox("stack-trace1933142605", this, "Click to show all stack frames", "Click to hide stack frames")'>Click
+                to show all stack frames</a>
+            <div class='stack-trace' id='stack-trace1933142605'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //span[contains(text(),&quot;We&apos;re sorry for not being able to provide you with&quot;)]&apos; (tried for 5 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
 	at core.DataHelperAndWait.waitToBeVisible(DataHelperAndWait.java:66)
@@ -167,21 +192,32 @@ Session ID: 67ba6e07ccd5488d9fa0e711d6d34a2d
 	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
 	... 18 more
-</pre></div></td>
-<td>6</td>
-<td>sporter_test.AeProductDetailsPageTestCases@306e95ec</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-skipped'>
-<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='sporter_test.AeProductDetailsPageTestCases.verifyOOSMessageIsDisplayed()'><b>verifyOOSMessageIsDisplayed</b><br>Test class: sporter_test.AeProductDetailsPageTestCases<br>Test method: Make sure the out of stock message appears when displaying out of stock product </td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //span[contains(text(),&quot;We&apos;re sorry for not being able to provide you with&quot;)]&apos; (tried for 5 second(s) with 500 milliseconds interval)
+</pre>
+            </div>
+        </td>
+        <td>6</td>
+        <td>sporter_test.AeProductDetailsPageTestCases@306e95ec</td>
+    </tr>
+</table>
+<p>
+<table border='1' class='invocation-skipped' width='100%'>
+    <tr>
+        <td align='center' colspan='4'><b>SKIPPED TESTS</b></td>
+    </tr>
+    <tr>
+        <td><b>Test method</b></td>
+        <td><b>Attribute(s)</b></td>
+        <td width="30%"><b>Exception</b></td>
+        <td width="10%"><b>Time (seconds)</b></td>
+        <td><b>Instance</b></td>
+    </tr>
+    <tr>
+        <td title='sporter_test.AeProductDetailsPageTestCases.verifyOOSMessageIsDisplayed()'><b>verifyOOSMessageIsDisplayed</b><br>Test
+            class: sporter_test.AeProductDetailsPageTestCases<br>Test method: Make sure the out of stock message appears
+            when displaying out of stock product
+        </td>
+        <td>
+            <div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //span[contains(text(),&quot;We&apos;re sorry for not being able to provide you with&quot;)]&apos; (tried for 5 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
 	at core.DataHelperAndWait.waitToBeVisible(DataHelperAndWait.java:66)
@@ -218,8 +254,12 @@ Session ID: 67ba6e07ccd5488d9fa0e711d6d34a2d
 	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
 	... 18 more
-... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1370838641", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1370838641'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //span[contains(text(),&quot;We&apos;re sorry for not being able to provide you with&quot;)]&apos; (tried for 5 second(s) with 500 milliseconds interval)
+... Removed 16 stack frames</pre>
+            </div>
+            <a href='#'
+               onClick='toggleBox("stack-trace1370838641", this, "Click to show all stack frames", "Click to hide stack frames")'>Click
+                to show all stack frames</a>
+            <div class='stack-trace' id='stack-trace1370838641'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //span[contains(text(),&quot;We&apos;re sorry for not being able to provide you with&quot;)]&apos; (tried for 5 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
 	at core.DataHelperAndWait.waitToBeVisible(DataHelperAndWait.java:66)
@@ -272,18 +312,29 @@ Session ID: 67ba6e07ccd5488d9fa0e711d6d34a2d
 	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
 	... 18 more
-</pre></div></td>
-<td>7</td>
-<td>sporter_test.AeProductDetailsPageTestCases@306e95ec</td></tr>
-<tr>
-<td title='sporter_test.AeProductDetailsPageTestCases.verifyInabilityToAddOosProductToTheCart()'><b>verifyInabilityToAddOosProductToTheCart</b><br>Test class: sporter_test.AeProductDetailsPageTestCases<br>Test method: Make sure the shopper is unable to add out of stock product to the cart</td>
-<td><div><pre>java.lang.Throwable: Method sporter_test.AeProductDetailsPageTestCases.verifyInabilityToAddOosProductToTheCart() on instance sporter_test.AeProductDetailsPageTestCases@306e95ec depends on not successfully finished methods 
+</pre>
+            </div>
+        </td>
+        <td>7</td>
+        <td>sporter_test.AeProductDetailsPageTestCases@306e95ec</td>
+    </tr>
+    <tr>
+        <td title='sporter_test.AeProductDetailsPageTestCases.verifyInabilityToAddOosProductToTheCart()'><b>verifyInabilityToAddOosProductToTheCart</b><br>Test
+            class: sporter_test.AeProductDetailsPageTestCases<br>Test method: Make sure the shopper is unable to add out
+            of stock product to the cart
+        </td>
+        <td>
+            <div><pre>java.lang.Throwable: Method sporter_test.AeProductDetailsPageTestCases.verifyInabilityToAddOosProductToTheCart() on instance sporter_test.AeProductDetailsPageTestCases@306e95ec depends on not successfully finished methods
 [sporter_test.AeProductDetailsPageTestCases.verifyOOSMessageIsDisplayed() on instance sporter_test.AeProductDetailsPageTestCases@306e95ec]
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:834)
-... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1876952198", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1876952198'><pre>java.lang.Throwable: Method sporter_test.AeProductDetailsPageTestCases.verifyInabilityToAddOosProductToTheCart() on instance sporter_test.AeProductDetailsPageTestCases@306e95ec depends on not successfully finished methods 
+... Removed 3 stack frames</pre>
+            </div>
+            <a href='#'
+               onClick='toggleBox("stack-trace1876952198", this, "Click to show all stack frames", "Click to hide stack frames")'>Click
+                to show all stack frames</a>
+            <div class='stack-trace' id='stack-trace1876952198'><pre>java.lang.Throwable: Method sporter_test.AeProductDetailsPageTestCases.verifyInabilityToAddOosProductToTheCart() on instance sporter_test.AeProductDetailsPageTestCases@306e95ec depends on not successfully finished methods
 [sporter_test.AeProductDetailsPageTestCases.verifyOOSMessageIsDisplayed() on instance sporter_test.AeProductDetailsPageTestCases@306e95ec]
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:150)
 	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
@@ -291,9 +342,13 @@ Session ID: 67ba6e07ccd5488d9fa0e711d6d34a2d
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:834)
-</pre></div></td>
-<td>0</td>
-<td>sporter_test.AeProductDetailsPageTestCases@306e95ec</td></tr>
-</table><p>
+</pre>
+            </div>
+        </td>
+        <td>0</td>
+        <td>sporter_test.AeProductDetailsPageTestCases@306e95ec</td>
+    </tr>
+</table>
+<p>
 </body>
 </html>

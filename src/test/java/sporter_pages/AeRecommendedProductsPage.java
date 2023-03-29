@@ -8,11 +8,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class AeRecommendedProductsPage extends BasePage {
-    public AeRecommendedProductsPage(WebDriver webDriver) {
-        super(webDriver);
-        PageFactory.initElements(webDriver, this);
-    }
-
     //declare all locators related to the Cart Page
     @FindBy(xpath = "//a[@class='close-popup close-cart-popup']")
     private WebElement recommendedProductsCloseIcon;
@@ -40,72 +35,79 @@ public class AeRecommendedProductsPage extends BasePage {
     private WebElement firstProductCard;
     @FindBy(xpath = "(//a[@class='rcmd-product-name'])[1]")
     private WebElement firstProductName;
+    public AeRecommendedProductsPage(WebDriver webDriver) {
+        super(webDriver);
+        PageFactory.initElements(webDriver, this);
+    }
 
     //Getter Methods
     public WebElement getCircleIcon() {
-        DataHelperAndWait.waitToBeVisible(circleIcon ,webDriver);
+        DataHelperAndWait.waitToBeVisible(circleIcon, webDriver);
         return circleIcon;
     }
 
     public WebElement getThumbsUpTitle() {
-        DataHelperAndWait.waitToBeVisible(thumbsUpTitle ,webDriver);
+        DataHelperAndWait.waitToBeVisible(thumbsUpTitle, webDriver);
         return thumbsUpTitle;
     }
 
     public WebElement getAddedProductToCartMsg() {
-        DataHelperAndWait.waitToBeVisible(addedProductToCartMsg ,webDriver);
+        DataHelperAndWait.waitToBeVisible(addedProductToCartMsg, webDriver);
         return addedProductToCartMsg;
     }
 
     public WebElement getRecommendedProductsTitle() {
-        DataHelperAndWait.waitToBeVisible(recommendedProductsTitle ,webDriver);
+        DataHelperAndWait.waitToBeVisible(recommendedProductsTitle, webDriver);
         return recommendedProductsTitle;
     }
 
     public WebElement getProductPrice() {
-        DataHelperAndWait.waitToBeVisible(productPrice ,webDriver);
+        DataHelperAndWait.waitToBeVisible(productPrice, webDriver);
         return productPrice;
     }
 
     public WebElement getProductImages() {
-        DataHelperAndWait.waitToBeVisible(productImages ,webDriver);
+        DataHelperAndWait.waitToBeVisible(productImages, webDriver);
         return productImages;
     }
 
     public WebElement getAddToCartBtn() {
-        DataHelperAndWait.waitToBeVisible(addToCartBtn ,webDriver);
+        DataHelperAndWait.waitToBeVisible(addToCartBtn, webDriver);
         return addToCartBtn;
     }
 
     public WebElement getProductPriceForFirstProduct() {
-        DataHelperAndWait.waitToBeVisible(productPriceForFirstProduct ,webDriver);
+        DataHelperAndWait.waitToBeVisible(productPriceForFirstProduct, webDriver);
         return productPriceForFirstProduct;
     }
 
     public WebElement getFirstProductName() {
-        DataHelperAndWait.waitToBeVisible(firstProductName ,webDriver);
+        DataHelperAndWait.waitToBeVisible(firstProductName, webDriver);
         return firstProductName;
     }
 
     //Define the main actions we need to execute our TCs
     public void clickOnRecommendedProductsCloseIcon() {
-        DataHelperAndWait.waitToBeVisible(recommendedProductsCloseIcon ,webDriver);
+        DataHelperAndWait.waitToBeVisible(recommendedProductsCloseIcon, webDriver);
         this.recommendedProductsCloseIcon.click();
     }
 
     public void clickOnAddToCart() {
-        DataHelperAndWait.waitToBeVisible(addToCart ,webDriver);
+        DataHelperAndWait.waitToBeVisible(addToCart, webDriver);
         this.addToCart.click();
     }
 
     public void clickOnAddToCartBtnForFirstProduct() {
-        DataHelperAndWait.waitToBeVisible(addToCartBtnForFirstProduct ,webDriver);
+        DataHelperAndWait.waitToBeVisible(addToCartBtnForFirstProduct, webDriver);
         this.addToCartBtnForFirstProduct.click();
     }
 
     public void clickOnFirstProductCard() {
-        DataHelperAndWait.waitToBeVisible(firstProductCard ,webDriver);
+        DataHelperAndWait.waitToBeVisible(firstProductCard, webDriver);
         this.firstProductCard.click();
     }
-    public void navigateToHomePage(){webDriver.navigate().to(BaseURL);}
+
+    public void navigateToHomePage() {
+        webDriver.navigate().to(BaseURL);
+    }
 }

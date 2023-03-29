@@ -18,13 +18,10 @@ import sporter_pages.homepage_classes.HomePage;
 
 import java.io.IOException;
 import java.util.List;
+
 @Getter
 public class ProductDetailsPage extends BasePage {
 
-    public ProductDetailsPage(WebDriver webDriver) {
-        super(webDriver);
-        PageFactory.initElements(webDriver, this);
-    }
     DataHelperAndWait dataHelperAndWait;
     //declare all locators related to the Product Details Page
     @FindBy(id = "productQty")
@@ -71,7 +68,7 @@ public class ProductDetailsPage extends BasePage {
     private WebElement reviewErrorMsgRelatedToStars;
     @FindBy(xpath = "//button[contains(@class,'popUp_btn')]")
     private WebElement reviewToastMsgBtn;
-      @FindBy(xpath = "//div[contains(@class,'popUp_popUp')]")
+    @FindBy(xpath = "//div[contains(@class,'popUp_popUp')]")
     private WebElement reviewToastMsg;
     @FindBy(id = "pathSegment_0")
     private WebElement HomeBreadcrumbs;
@@ -137,15 +134,18 @@ public class ProductDetailsPage extends BasePage {
     private WebElement searchPageTitle;
     @FindBy(xpath = "//div[@class='reviewContainer_reviewsIndicator__kU10r']")
     private WebElement reviewsPageNumber;
-    @FindBy(id= "AddToCartErrContainer")
+    @FindBy(id = "AddToCartErrContainer")
     private WebElement AddToCartErrorPopUp;
-    @FindBy(id= "removeItemBtn")
+    @FindBy(id = "removeItemBtn")
     private WebElement removeItem;
-
-    @FindBy(id= "closeAddToCartErrBtn")
+    @FindBy(id = "closeAddToCartErrBtn")
     private WebElement closeToCartErrorPopUp;
     @FindBy(id = "(//ul[starts-with(@class,'topCategoryList_container')]/li/a)[3]")
     private WebElement vitaminsAndHealthMainMenu;
+    public ProductDetailsPage(WebDriver webDriver) {
+        super(webDriver);
+        PageFactory.initElements(webDriver, this);
+    }
 
     //Methods we need during testing the Product details page
     public void displayTheProduct() throws IOException {
@@ -167,84 +167,93 @@ public class ProductDetailsPage extends BasePage {
             productUrl1 = productUrl;
         }
         webDriver.navigate().to(BaseURL + productUrl1);
-        DataHelperAndWait.waitForUrlContains(productUrl1,webDriver);
+        DataHelperAndWait.waitForUrlContains(productUrl1, webDriver);
         verifyTheDisplayedPageDoesNotHaveErrors();
         System.out.println("The product URL is: " + webDriver.getCurrentUrl());
     }
-        public void displayTheProductHaveLessQty() throws IOException {
-            if(webDriver.getCurrentUrl().contains("en-eg")){
-                webDriver.navigate().to(BaseURL  + productUrlEgypt);
-            }
-            else
-        webDriver.navigate().to(BaseURL + product2UrlLessQty);
+
+    public void displayTheProductHaveLessQty() throws IOException {
+        if (webDriver.getCurrentUrl().contains("en-eg")) {
+            webDriver.navigate().to(BaseURL + productUrlEgypt);
+        } else
+            webDriver.navigate().to(BaseURL + product2UrlLessQty);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
     public void addToCart() {
 //        DataHelperAndWait.waitForTime(2000);
-        DataHelperAndWait.waitToBeClickable(addToCartBtn2,webDriver);
+        DataHelperAndWait.waitToBeClickable(addToCartBtn2, webDriver);
         addToCartBtn.click();
     }
+
     public void keepShopping() {
-        DataHelperAndWait.clickOnElement(keepShippingBtn,webDriver);
+        DataHelperAndWait.clickOnElement(keepShippingBtn, webDriver);
     }
+
     public void viewCart() {
 //        DataHelperAndWait.waitForTime(3000);
-        DataHelperAndWait.waitToBeVisible(viewCartBtn,webDriver);
+        DataHelperAndWait.waitToBeVisible(viewCartBtn, webDriver);
         viewCartBtn.click();
     }
+
     public void keepShoppingAfterAddingToCart() throws IOException {
-        HomePage homePage=new HomePage(webDriver);
-        try{
-            this.displayTheProduct( );
-            this.addToCart( );
-            this.keepShopping( );}
-        catch (Exception e){
-            if(this.getAddToCartErrorPopUp().isDisplayed()){
-                DataHelperAndWait.clickOnElement(this.closeToCartErrorPopUp,webDriver);
+        HomePage homePage = new HomePage(webDriver);
+        try {
+            this.displayTheProduct();
+            this.addToCart();
+            this.keepShopping();
+        } catch (Exception e) {
+            if (this.getAddToCartErrorPopUp().isDisplayed()) {
+                DataHelperAndWait.clickOnElement(this.closeToCartErrorPopUp, webDriver);
                 navigateToHomePage();
-                DataHelperAndWait.clickOnElement(homePage.getProductsInTopSellersSection().get(0),webDriver);
-                this.displayTheProduct( );
-                this.addToCart( );
-                this.keepShopping( );
+                DataHelperAndWait.clickOnElement(homePage.getProductsInTopSellersSection().get(0), webDriver);
+                this.displayTheProduct();
+                this.addToCart();
+                this.keepShopping();
             }
-        }}
+        }
+    }
 
 
     public void displayOOSProduct() throws IOException {
         webDriver.navigate().to(BaseURL + storeCountry + oOSProductUrl);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
+
     public void increaseTheQuantity() {
-        DataHelperAndWait.clickOnElement(quantityField,webDriver);
-        DataHelperAndWait.clickOnElement(qtyPlusButton,webDriver);
+        DataHelperAndWait.clickOnElement(quantityField, webDriver);
+        DataHelperAndWait.clickOnElement(qtyPlusButton, webDriver);
     }
+
     public void decreaseTheQuantity() {
-        DataHelperAndWait.clickOnElement(quantityField,webDriver);
-        DataHelperAndWait.clickOnElement(qtyMinusButton,webDriver);
+        DataHelperAndWait.clickOnElement(quantityField, webDriver);
+        DataHelperAndWait.clickOnElement(qtyMinusButton, webDriver);
     }
+
     public void selectStarInReview() {
-        DataHelperAndWait.clickOnElement(oneStarReview,webDriver);
+        DataHelperAndWait.clickOnElement(oneStarReview, webDriver);
     }
+
     public void submitProductReview(String reviewDesc, String reviewSummary, String nickName) {
-        DataHelperAndWait.scrollTo(addReviewButton,webDriver);
-        DataHelperAndWait.clickOnElement(addReviewButton,webDriver);
-        DataHelperAndWait.typeTextInElement(reviewDescField,webDriver,reviewDesc);
-        DataHelperAndWait.typeTextInElement(reviewSummaryField,webDriver, reviewSummary);
-        DataHelperAndWait.typeTextInElement(nickNameField,webDriver, nickName);
-        DataHelperAndWait.clickOnElement(submitReviewButton,webDriver);
+        DataHelperAndWait.scrollTo(addReviewButton, webDriver);
+        DataHelperAndWait.clickOnElement(addReviewButton, webDriver);
+        DataHelperAndWait.typeTextInElement(reviewDescField, webDriver, reviewDesc);
+        DataHelperAndWait.typeTextInElement(reviewSummaryField, webDriver, reviewSummary);
+        DataHelperAndWait.typeTextInElement(nickNameField, webDriver, nickName);
+        DataHelperAndWait.clickOnElement(submitReviewButton, webDriver);
     }
+
     public void searchForBundle() {
-        DataHelperAndWait.clickOnElement(searchField , webDriver);
-        DataHelperAndWait.typeTextInElement(searchField,webDriver,"Box");
-        DataHelperAndWait.clickOnElement(searchBtn , webDriver);
+        DataHelperAndWait.clickOnElement(searchField, webDriver);
+        DataHelperAndWait.typeTextInElement(searchField, webDriver, "Box");
+        DataHelperAndWait.clickOnElement(searchBtn, webDriver);
     }
-    public void verifyReviewPagingWorks(){
-        try{
-            DataHelperAndWait.clickOnElement(pageBtnInReviewSection.get(1),webDriver);
-            WebElementsAssertion.validateTheCurrentUrlContainsString("p=2",webDriver);
-        }
-        catch (Exception e){
+
+    public void verifyReviewPagingWorks() {
+        try {
+            DataHelperAndWait.clickOnElement(pageBtnInReviewSection.get(1), webDriver);
+            WebElementsAssertion.validateTheCurrentUrlContainsString("p=2", webDriver);
+        } catch (Exception e) {
             System.out.println("There's no pages in the Review Section");
         }
     }

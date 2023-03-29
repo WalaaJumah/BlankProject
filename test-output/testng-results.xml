@@ -1,30 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testng-results retried="1" ignored="36" total="39" passed="0" failed="1" skipped="1">
-  <reporter-output>
-  </reporter-output>
-  <suite started-at="2022-12-29T08:13:26 EET" name=" Test" finished-at="2022-12-29T08:13:52 EET" duration-ms="25937">
-    <groups>
-    </groups>
-    <test started-at="2022-12-29T08:13:26 EET" name=" System Testing Report" finished-at="2022-12-29T08:13:52 EET" duration-ms="25937">
-      <class name="sporter_test.AeProductDetailsPageTestCases">
-        <test-method is-config="true" signature="setupBrowser(java.lang.String)[pri:0, instance:sporter_test.AeProductDetailsPageTestCases@306e95ec]" started-at="2022-12-29T08:13:27 EET" name="setupBrowser" finished-at="2022-12-29T08:13:36 EET" duration-ms="9849" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[production]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setupBrowser -->
-        <test-method retried="true" signature="verifyOOSMessageIsDisplayed()[pri:4, instance:sporter_test.AeProductDetailsPageTestCases@306e95ec]" started-at="2022-12-29T08:13:36 EET" name="verifyOOSMessageIsDisplayed" description="Make sure the out of stock message appears when displaying out of stock product " finished-at="2022-12-29T08:13:44 EET" duration-ms="7650" status="SKIP">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),"We're sorry for not being able to provide you with")]' (tried for 5 second(s) with 500 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),"We're sorry for not being able to provide you with")]' (tried for 5 second(s) with 500 milliseconds interval)
+    <reporter-output>
+    </reporter-output>
+    <suite started-at="2022-12-29T08:13:26 EET" name=" Test" finished-at="2022-12-29T08:13:52 EET" duration-ms="25937">
+        <groups>
+        </groups>
+        <test started-at="2022-12-29T08:13:26 EET" name=" System Testing Report" finished-at="2022-12-29T08:13:52 EET"
+              duration-ms="25937">
+            <class name="sporter_test.AeProductDetailsPageTestCases">
+                <test-method is-config="true"
+                             signature="setupBrowser(java.lang.String)[pri:0, instance:sporter_test.AeProductDetailsPageTestCases@306e95ec]"
+                             started-at="2022-12-29T08:13:27 EET" name="setupBrowser"
+                             finished-at="2022-12-29T08:13:36 EET" duration-ms="9849" status="PASS">
+                    <params>
+                        <param index="0">
+                            <value>
+                                <![CDATA[production]]>
+                            </value>
+                        </param>
+                    </params>
+                    <reporter-output>
+                    </reporter-output>
+                </test-method> <!-- setupBrowser -->
+                <test-method retried="true"
+                             signature="verifyOOSMessageIsDisplayed()[pri:4, instance:sporter_test.AeProductDetailsPageTestCases@306e95ec]"
+                             started-at="2022-12-29T08:13:36 EET" name="verifyOOSMessageIsDisplayed"
+                             description="Make sure the out of stock message appears when displaying out of stock product "
+                             finished-at="2022-12-29T08:13:44 EET" duration-ms="7650" status="SKIP">
+                    <exception class="org.openqa.selenium.TimeoutException">
+                        <message>
+                            <![CDATA[Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),"We're sorry for not being able to provide you with")]' (tried for 5 second(s) with 500 milliseconds interval)]]>
+                        </message>
+                        <full-stacktrace>
+                            <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),"We're sorry for not being able to provide you with")]' (tried for 5 second(s) with 500 milliseconds interval)
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
 at core.DataHelperAndWait.waitToBeVisible(DataHelperAndWait.java:66)
@@ -78,18 +86,22 @@ at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
 ... 18 more
 ]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyOOSMessageIsDisplayed -->
-        <test-method signature="verifyOOSMessageIsDisplayed()[pri:4, instance:sporter_test.AeProductDetailsPageTestCases@306e95ec]" started-at="2022-12-29T08:13:44 EET" name="verifyOOSMessageIsDisplayed" description="Make sure the out of stock message appears when displaying out of stock product " finished-at="2022-12-29T08:13:51 EET" duration-ms="6964" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),"We're sorry for not being able to provide you with")]' (tried for 5 second(s) with 500 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),"We're sorry for not being able to provide you with")]' (tried for 5 second(s) with 500 milliseconds interval)
+                        </full-stacktrace>
+                    </exception> <!-- org.openqa.selenium.TimeoutException -->
+                    <reporter-output>
+                    </reporter-output>
+                </test-method> <!-- verifyOOSMessageIsDisplayed -->
+                <test-method
+                        signature="verifyOOSMessageIsDisplayed()[pri:4, instance:sporter_test.AeProductDetailsPageTestCases@306e95ec]"
+                        started-at="2022-12-29T08:13:44 EET" name="verifyOOSMessageIsDisplayed"
+                        description="Make sure the out of stock message appears when displaying out of stock product "
+                        finished-at="2022-12-29T08:13:51 EET" duration-ms="6964" status="FAIL">
+                    <exception class="org.openqa.selenium.TimeoutException">
+                        <message>
+                            <![CDATA[Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),"We're sorry for not being able to provide you with")]' (tried for 5 second(s) with 500 milliseconds interval)]]>
+                        </message>
+                        <full-stacktrace>
+                            <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //span[contains(text(),"We're sorry for not being able to provide you with")]' (tried for 5 second(s) with 500 milliseconds interval)
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
 at core.DataHelperAndWait.waitToBeVisible(DataHelperAndWait.java:66)
@@ -142,19 +154,25 @@ at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
 ... 18 more
 ]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyOOSMessageIsDisplayed -->
-        <test-method signature="verifyInabilityToAddOosProductToTheCart()[pri:5, instance:sporter_test.AeProductDetailsPageTestCases@306e95ec]" started-at="2022-12-29T08:13:51 EET" name="verifyInabilityToAddOosProductToTheCart" description="Make sure the shopper is unable to add out of stock product to the cart" finished-at="2022-12-29T08:13:51 EET" depends-on-methods="sporter_test.AeProductDetailsPageTestCases.verifyOOSMessageIsDisplayed" duration-ms="0" status="SKIP">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method sporter_test.AeProductDetailsPageTestCases.verifyInabilityToAddOosProductToTheCart() on instance sporter_test.AeProductDetailsPageTestCases@306e95ec depends on not successfully finished methods 
+                        </full-stacktrace>
+                    </exception> <!-- org.openqa.selenium.TimeoutException -->
+                    <reporter-output>
+                    </reporter-output>
+                </test-method> <!-- verifyOOSMessageIsDisplayed -->
+                <test-method
+                        signature="verifyInabilityToAddOosProductToTheCart()[pri:5, instance:sporter_test.AeProductDetailsPageTestCases@306e95ec]"
+                        started-at="2022-12-29T08:13:51 EET" name="verifyInabilityToAddOosProductToTheCart"
+                        description="Make sure the shopper is unable to add out of stock product to the cart"
+                        finished-at="2022-12-29T08:13:51 EET"
+                        depends-on-methods="sporter_test.AeProductDetailsPageTestCases.verifyOOSMessageIsDisplayed"
+                        duration-ms="0" status="SKIP">
+                    <exception class="java.lang.Throwable">
+                        <message>
+                            <![CDATA[Method sporter_test.AeProductDetailsPageTestCases.verifyInabilityToAddOosProductToTheCart() on instance sporter_test.AeProductDetailsPageTestCases@306e95ec depends on not successfully finished methods
 [sporter_test.AeProductDetailsPageTestCases.verifyOOSMessageIsDisplayed() on instance sporter_test.AeProductDetailsPageTestCases@306e95ec]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method sporter_test.AeProductDetailsPageTestCases.verifyInabilityToAddOosProductToTheCart() on instance sporter_test.AeProductDetailsPageTestCases@306e95ec depends on not successfully finished methods 
+                        </message>
+                        <full-stacktrace>
+                            <![CDATA[java.lang.Throwable: Method sporter_test.AeProductDetailsPageTestCases.verifyInabilityToAddOosProductToTheCart() on instance sporter_test.AeProductDetailsPageTestCases@306e95ec depends on not successfully finished methods
 [sporter_test.AeProductDetailsPageTestCases.verifyOOSMessageIsDisplayed() on instance sporter_test.AeProductDetailsPageTestCases@306e95ec]
 at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:150)
 at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
@@ -163,16 +181,19 @@ at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecuto
 at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 at java.base/java.lang.Thread.run(Thread.java:834)
 ]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyInabilityToAddOosProductToTheCart -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:sporter_test.AeProductDetailsPageTestCases@306e95ec]" started-at="2022-12-29T08:13:51 EET" name="tearDown" finished-at="2022-12-29T08:13:52 EET" duration-ms="1307" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- sporter_test.AeProductDetailsPageTestCases -->
-    </test> <!--  System Testing Report -->
-  </suite> <!--  Test -->
+                        </full-stacktrace>
+                    </exception> <!-- java.lang.Throwable -->
+                    <reporter-output>
+                    </reporter-output>
+                </test-method> <!-- verifyInabilityToAddOosProductToTheCart -->
+                <test-method is-config="true"
+                             signature="tearDown()[pri:0, instance:sporter_test.AeProductDetailsPageTestCases@306e95ec]"
+                             started-at="2022-12-29T08:13:51 EET" name="tearDown" finished-at="2022-12-29T08:13:52 EET"
+                             duration-ms="1307" status="PASS">
+                    <reporter-output>
+                    </reporter-output>
+                </test-method> <!-- tearDown -->
+            </class> <!-- sporter_test.AeProductDetailsPageTestCases -->
+        </test> <!--  System Testing Report -->
+    </suite> <!--  Test -->
 </testng-results>

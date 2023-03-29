@@ -10,7 +10,7 @@ import core.BasePage;
 import org.testng.annotations.BeforeClass;
 import sporter_pages.homepage_classes.QatarHomePage;
 
-public class QatarHealthyFoodTestCases extends HealthyFoodTestCases{
+public class QatarHealthyFoodTestCases extends HealthyFoodTestCases {
     @BeforeClass(alwaysRun = true)
     public void switchToQatarStore() {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
@@ -22,6 +22,7 @@ public class QatarHealthyFoodTestCases extends HealthyFoodTestCases{
             CloseInitialDialog();
             System.out.println(webDriver.getCurrentUrl());
         }
-        storeCountry="Qatar";
-        countryCode="974";}
+        storeCountry = "Qatar";
+        countryCode = "974";
+    }
 }

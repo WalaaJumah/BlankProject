@@ -7,28 +7,21 @@
 package sporter_test.headerTestCases;
 
 import core.BasePage;
-import core.DataHelperAndWait;
-import core.WebElementsAssertion;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
-import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.EgyptHomePage;
-import xml_reader.XmlReader;
-
-import java.util.ArrayList;
 
 //@Test(groups = "2.10 Egypt Header Section")
-public class EgyptHeaderTestCases extends HeaderTestCases{
-    @BeforeClass(alwaysRun=true)
-    public void switchToEgyptStore(){
-        EgyptHomePage egyptHomePage=new EgyptHomePage(webDriver);
+public class EgyptHeaderTestCases extends HeaderTestCases {
+    @BeforeClass(alwaysRun = true)
+    public void switchToEgyptStore() {
+        EgyptHomePage egyptHomePage = new EgyptHomePage(webDriver);
         egyptHomePage.switchCountry(egyptHomePage.getEgyptCountry());
-        if(webDriver.getCurrentUrl().contains(egyptHomePage.egyptDomain)){
+        if (webDriver.getCurrentUrl().contains(egyptHomePage.egyptDomain)) {
             System.out.println("You are in Egypt Store");
+        } else {
+            webDriver.navigate().to(BasePage.BaseURL + egyptHomePage.egyptDomain);
+            CloseInitialDialog();
         }
-        else {
-            webDriver.navigate().to(BasePage.BaseURL+egyptHomePage.egyptDomain);
-            CloseInitialDialog();          }
     }
 //    @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "(Egypt Store/English Version): Ability to access all stores using Country List appearing in the Header", priority = 1)
 //    public void accessAllCountries(){ }

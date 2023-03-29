@@ -10,28 +10,24 @@ import core.BasePage;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.KsaHomePage;
-import xml_reader.XmlReader;
-
-import java.util.ArrayList;
 
 //@Test(groups = "2.08 KSA Header Section")
-public class KSAHeaderTestCases extends HeaderTestCases{
-    @BeforeClass(alwaysRun=true)
-    public void switchToKsaStore(){
-        KsaHomePage ksaHomePage=new KsaHomePage(webDriver);
-        HeaderSection headerSection =new HeaderSection(webDriver);
+public class KSAHeaderTestCases extends HeaderTestCases {
+    @BeforeClass(alwaysRun = true)
+    public void switchToKsaStore() {
+        KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
+        HeaderSection headerSection = new HeaderSection(webDriver);
         ksaHomePage.switchCountry(ksaHomePage.getKsaCountry());
-        if(webDriver.getCurrentUrl().contains(ksaHomePage.saudiDomain)){
+        if (webDriver.getCurrentUrl().contains(ksaHomePage.saudiDomain)) {
             System.out.println("You are in KSA Store");
+        } else {
+            webDriver.navigate().to(BasePage.BaseURL + ksaHomePage.saudiDomain);
+            CloseInitialDialog();
         }
-        else {
-            webDriver.navigate().to(BasePage.BaseURL+ksaHomePage.saudiDomain);
-            CloseInitialDialog();          }
-        DataHelperAndWait.clickOnElement(headerSection.getLanguageSelector(),webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage,webDriver);
+        DataHelperAndWait.clickOnElement(headerSection.getLanguageSelector(), webDriver);
+        WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage, webDriver);
         System.out.println(webDriver.getCurrentUrl());
 
     }

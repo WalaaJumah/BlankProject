@@ -10,11 +10,6 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 public class AeSportSupplementsCategoryPage extends BasePage {
-    public AeSportSupplementsCategoryPage(WebDriver webDriver) {
-        super(webDriver);
-        PageFactory.initElements(webDriver, this);
-    }
-
     //declare all locators related to the AeSportSupplementsCategoryPage
     @FindBy(id = "switcher-store-trigger")
     private WebElement countryList;
@@ -59,10 +54,8 @@ public class AeSportSupplementsCategoryPage extends BasePage {
     private WebElement NextPageBtn;
     @FindBy(xpath = "(//ul[@class='items pages-items']//li[3])[2]")
     private WebElement pageTwoBtn;
-
     @FindBy(xpath = "(//ul[@class='items pages-items']//li[3])[2]/a")
     private WebElement pageTwoBtnInPersonalCare;
-
     @FindBy(xpath = "(//ul[@class='items pages-items']//li[4])[2]")
     private WebElement pageThreeBtn;
     @FindBy(xpath = "(//a[@class='action  previous arrow-disable'])[2]")
@@ -93,197 +86,244 @@ public class AeSportSupplementsCategoryPage extends BasePage {
     private WebElement fastDeliveryTitle;
     @FindBy(xpath = "(//a[@title='100% Secure payments']//span)[3]")
     private WebElement fastDeliveryDescription;
+    public AeSportSupplementsCategoryPage(WebDriver webDriver) {
+        super(webDriver);
+        PageFactory.initElements(webDriver, this);
+    }
 
     //Getter Methods
     public WebElement getSecurePaymentDescription() {
         return securePaymentDescription;
     }
+
     public WebElement getAuthenticProductsTitle() {
         return authenticProductsTitle;
     }
+
     public WebElement getAuthenticProductsDescription() {
         return authenticProductsDescription;
     }
+
     public WebElement getFastDeliveryTitle() {
         return fastDeliveryTitle;
     }
+
     public WebElement getFastDeliveryDescription() {
         return fastDeliveryDescription;
     }
+
     public WebElement getPageBottomSection() {
         return pageBottomSection;
     }
+
     public WebElement getSecurePaymentTitle() {
         return securePaymentTitle;
     }
+
     public List<WebElement> getPageBottomBlocksList() {
         return pageBottomBlocksList;
     }
+
     public WebElement getSportSupplementsCategoryImage() {
-        DataHelperAndWait.waitToBeVisible(sportSupplementsCategoryImage ,webDriver);
+        DataHelperAndWait.waitToBeVisible(sportSupplementsCategoryImage, webDriver);
         return sportSupplementsCategoryImage;
     }
+
     public WebElement getSportSupplementsTitleInCategoryImage() {
-        DataHelperAndWait.waitToBeVisible(sportSupplementsTitleInSportSupplementsCategoryImage ,webDriver);
+        DataHelperAndWait.waitToBeVisible(sportSupplementsTitleInSportSupplementsCategoryImage, webDriver);
         return sportSupplementsTitleInSportSupplementsCategoryImage;
     }
+
     public WebElement getShopeByMenu() {
         return shopeByMenu;
     }
+
     public WebElement getSportsSupplementsOption() {
         return sportsSupplementsOption;
     }
 
     public WebElement getParagraphInSportSupplementsCategoryImage() {
-        DataHelperAndWait.waitToBeVisible(paragraphInInSportSupplementsCategoryImage ,webDriver);
+        DataHelperAndWait.waitToBeVisible(paragraphInInSportSupplementsCategoryImage, webDriver);
         return paragraphInInSportSupplementsCategoryImage;
     }
+
     public List<WebElement> getMainBannersInTheSportSupplementsScreen() {
         return mainBannersInTheSportSupplementsScreen;
     }
+
     public WebElement getSportSupplementsCategoryInHomePage() {
         return sportSupplementsCategoryInHomePage;
     }
+
     public WebElement getResultLabel() {
-        try{
-        DataHelperAndWait.waitToBeVisible(resultLabel ,webDriver);
-        return resultLabel;}
-        catch(Exception e) {
-            DataHelperAndWait.waitToBeVisible(resultLabel ,webDriver);
+        try {
+            DataHelperAndWait.waitToBeVisible(resultLabel, webDriver);
+            return resultLabel;
+        } catch (Exception e) {
+            DataHelperAndWait.waitToBeVisible(resultLabel, webDriver);
             return resultLabel;
         }
 
     }
+
     public WebElement getSearchResultValue() {
-        DataHelperAndWait.waitToBeVisible(searchResultValue ,webDriver);
+        DataHelperAndWait.waitToBeVisible(searchResultValue, webDriver);
         return searchResultValue;
     }
+
     public WebElement getSortByLabel() {
-        DataHelperAndWait.waitToBeVisible(sortByLabel ,webDriver);
+        DataHelperAndWait.waitToBeVisible(sortByLabel, webDriver);
         return sortByLabel;
     }
+
     public WebElement getSortByMenu() {
         return sortByMenu;
     }
+
     public WebElement getMainBannersInTheSportSupplementsSection() {
-        DataHelperAndWait.waitToBeVisible(mainBannersInTheSportSupplementsSection ,webDriver);
+        DataHelperAndWait.waitToBeVisible(mainBannersInTheSportSupplementsSection, webDriver);
         return mainBannersInTheSportSupplementsSection;
     }
+
     public WebElement getSportSupplementsTitleInFooterSection() {
-        DataHelperAndWait.waitToBeVisible(sportSupplementsTitleInFooterSection ,webDriver);
+        DataHelperAndWait.waitToBeVisible(sportSupplementsTitleInFooterSection, webDriver);
         return sportSupplementsTitleInFooterSection;
     }
+
     public WebElement getSportSupplementsDescriptionInFooterSection() {
-        DataHelperAndWait.waitToBeVisible(sportSupplementsDescriptionInFooterSection ,webDriver);
+        DataHelperAndWait.waitToBeVisible(sportSupplementsDescriptionInFooterSection, webDriver);
         return sportSupplementsDescriptionInFooterSection;
     }
+
     public WebElement getSportSupplementsFooterSection() {
         return sportSupplementsFooterSection;
     }
+
     public WebElement getDisabledPreviousPageBtn() {
-        DataHelperAndWait.waitToBeVisible(disabledPreviousPageBtn ,webDriver);
+        DataHelperAndWait.waitToBeVisible(disabledPreviousPageBtn, webDriver);
         return disabledPreviousPageBtn;
     }
+
     public WebElement getCountryList() {
         return countryList;
     }
+
     public WebElement getPreviousPageBtn() {
         return previousPageBtn;
     }
+
     public WebElement getNextPageBtn() {
-        try{
-        DataHelperAndWait.waitToBeVisible(NextPageBtn ,webDriver);
-        return NextPageBtn;}
-        catch (Exception e){
-            DataHelperAndWait.waitToBeVisible(NextPageBtn ,webDriver);
-            return NextPageBtn;}
+        try {
+            DataHelperAndWait.waitToBeVisible(NextPageBtn, webDriver);
+            return NextPageBtn;
+        } catch (Exception e) {
+            DataHelperAndWait.waitToBeVisible(NextPageBtn, webDriver);
+            return NextPageBtn;
+        }
     }
+
     public WebElement getPageTwoBtn() {
         return pageTwoBtn;
     }
+
     public WebElement getPageThreeBtn() {
         return pageThreeBtn;
     }
+
     public List<WebElement> getFormFiltrationSection() {
         return formFiltrationSection;
     }
+
     public WebElement getSportSupplementsMainMenu() {
         return sportSupplementsMainMenu;
     }
+
     public WebElement getPageTwoBtnInPersonalCare() {
         return pageTwoBtnInPersonalCare;
     }
+
     //Define the main actions we need to execute our TCs
     public void switchToAECountry() {
         try {
-            DataHelperAndWait.waitToBeVisible(countryList ,webDriver);
+            DataHelperAndWait.waitToBeVisible(countryList, webDriver);
             this.countryList.click();
-            DataHelperAndWait.waitToBeVisible(aeCountry ,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeCountry, webDriver);
             this.aeCountry.click();
         } catch (Exception e) {
-            DataHelperAndWait.waitToBeVisible(countryList ,webDriver);
+            DataHelperAndWait.waitToBeVisible(countryList, webDriver);
             this.countryList.click();
-            DataHelperAndWait.waitToBeVisible(aeCountry ,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeCountry, webDriver);
             this.aeCountry.click();
-    }}
+        }
+    }
+
     public void clickOnBreadcrumbHomePage() {
-        DataHelperAndWait.waitToBeVisible(homeBreadcrumbs ,webDriver);
+        DataHelperAndWait.waitToBeVisible(homeBreadcrumbs, webDriver);
         this.homeBreadcrumbs.click();
     }
 
     public void clickOnSearchBtn() {
-        DataHelperAndWait.waitToBeClickable(searchBtn ,webDriver);
+        DataHelperAndWait.waitToBeClickable(searchBtn, webDriver);
         searchBtn.click();
     }
 
     public void fillInSearchField(String text) {
-        DataHelperAndWait.waitToBeVisible(searchField ,webDriver);
+        DataHelperAndWait.waitToBeVisible(searchField, webDriver);
         searchField.sendKeys(text);
     }
 
     public void navigateToPage2() {
-        DataHelperAndWait.waitToBeVisible(pageTwoBtn ,webDriver);
+        DataHelperAndWait.waitToBeVisible(pageTwoBtn, webDriver);
         pageTwoBtn.click();
     }
+
     public void navigateToPage2InPersonalCarePage() {
-        DataHelperAndWait.waitToBeVisible(pageTwoBtnInPersonalCare ,webDriver);
+        DataHelperAndWait.waitToBeVisible(pageTwoBtnInPersonalCare, webDriver);
         pageTwoBtnInPersonalCare.click();
     }
 
     public void navigateToPage3() {
-        DataHelperAndWait.waitToBeVisible(pageThreeBtn ,webDriver);
+        DataHelperAndWait.waitToBeVisible(pageThreeBtn, webDriver);
         pageThreeBtn.click();
     }
 
     public void clickOnPreviousPageBtn() {
-        try{
-        DataHelperAndWait.waitToBeVisible(previousPageBtn ,webDriver);
-        previousPageBtn.click();}
-        catch(Exception e){        DataHelperAndWait.waitToBeVisible(previousPageBtn ,webDriver);
-            previousPageBtn.click();}
+        try {
+            DataHelperAndWait.waitToBeVisible(previousPageBtn, webDriver);
+            previousPageBtn.click();
+        } catch (Exception e) {
+            DataHelperAndWait.waitToBeVisible(previousPageBtn, webDriver);
+            previousPageBtn.click();
+        }
     }
 
     public void clickOnNextPageBtn() {
-        try{
-        DataHelperAndWait.waitToBeVisible(NextPageBtn ,webDriver);
-        NextPageBtn.click();}
-        catch(Exception e){
-            DataHelperAndWait.waitToBeVisible(NextPageBtn ,webDriver);
-            NextPageBtn.click();}
+        try {
+            DataHelperAndWait.waitToBeVisible(NextPageBtn, webDriver);
+            NextPageBtn.click();
+        } catch (Exception e) {
+            DataHelperAndWait.waitToBeVisible(NextPageBtn, webDriver);
+            NextPageBtn.click();
+        }
     }
 
     public void clickOnSeeAllBtnInFormSection() {
-        try{
-        DataHelperAndWait.waitToBeVisible(seeAllBtnInFormSection ,webDriver);
-        seeAllBtnInFormSection.click();}
-        catch (Exception e){
-            DataHelperAndWait.waitToBeVisible(seeAllBtnInFormSection ,webDriver);
-            seeAllBtnInFormSection.click();}
+        try {
+            DataHelperAndWait.waitToBeVisible(seeAllBtnInFormSection, webDriver);
+            seeAllBtnInFormSection.click();
+        } catch (Exception e) {
+            DataHelperAndWait.waitToBeVisible(seeAllBtnInFormSection, webDriver);
+            seeAllBtnInFormSection.click();
+        }
     }
+
     public WebElement getHomeBreadcrumbs() {
-        DataHelperAndWait.waitToBeVisible(homeBreadcrumbs ,webDriver);
+        DataHelperAndWait.waitToBeVisible(homeBreadcrumbs, webDriver);
         return homeBreadcrumbs;
     }
-    public void navigate(){webDriver.navigate().to(BaseURL +aeDomain+sportSupplementsUrl);}
+
+    public void navigate() {
+        webDriver.navigate().to(BaseURL + aeDomain + sportSupplementsUrl);
+    }
 
 }

@@ -13,7 +13,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.Optional;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.productPage.ProductDetailsPage;
@@ -25,12 +24,6 @@ public class LoginPage extends BasePage {
     ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
     HomePage homePage = new HomePage(webDriver);
     HeaderSection headerSection = new HeaderSection(webDriver);
-
-    public LoginPage(WebDriver webDriver) {
-        super(webDriver);
-        PageFactory.initElements(webDriver, this);
-    }
-
     //declare all locators related to the Cart Page
     @FindBy(id = "showPasswordIcon")
     private WebElement showPasswordIcon;
@@ -77,27 +70,33 @@ public class LoginPage extends BasePage {
     private WebElement signInOption;
     @FindBy(id = "FBBtn")
     private WebElement faceBookLoginOption;
+    public LoginPage(WebDriver webDriver) {
+        super(webDriver);
+        PageFactory.initElements(webDriver, this);
+    }
 
     public void navigateToLoginPage() throws IOException {
         webDriver.navigate().to(BaseURL + loginLink);
-        if(!webDriver.getCurrentUrl().contains(loginLink))
+        if (!webDriver.getCurrentUrl().contains(loginLink))
             webDriver.navigate().to(BaseURL + loginLink);
-            verifyTheDisplayedPageDoesNotHaveErrors();
+        verifyTheDisplayedPageDoesNotHaveErrors();
     }
+
     public void navigateToForgetPassword() throws IOException {
         webDriver.navigate().to(BaseURL + forgetPasswordURL);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    public void fillinLoginForm(String email,String password) {
+    public void fillinLoginForm(String email, String password) {
         DataHelperAndWait.typeTextInElement(this.emailField, webDriver, email);
         DataHelperAndWait.typeTextInElement(this.passwordField, webDriver, password);
     }
-    public void clickOnBackToLogin(){
+
+    public void clickOnBackToLogin() {
 //        DataHelperAndWait.waitForTime(2000);
-        DataHelperAndWait.waitToBeClickable(backToLoginLink,webDriver);
+        DataHelperAndWait.waitToBeClickable(backToLoginLink, webDriver);
         backToLoginLink.click();
-        DataHelperAndWait.waitToBeVisible(forgetPasswordLink,webDriver);
+        DataHelperAndWait.waitToBeVisible(forgetPasswordLink, webDriver);
 
     }
 }

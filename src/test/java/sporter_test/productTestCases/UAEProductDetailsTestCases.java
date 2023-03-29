@@ -7,21 +7,11 @@
 package sporter_test.productTestCases;
 
 import core.BasePage;
-import core.DataHelperAndWait;
-import core.WebElementsAssertion;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import sporter_pages.headerSection.HeaderSection;
-import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.homepage_classes.UAEHomePage;
-import sporter_pages.productPage.ProductDetailsPage;
-import sporter_pages.productPage.QatarProductDetailsPage;
 import sporter_pages.productPage.UAEProductDetailsPage;
-import xml_reader.XmlReader;
 
 import java.io.IOException;
 
@@ -30,21 +20,21 @@ import static org.testng.Assert.assertTrue;
 
 //@Test(groups = "UAE Product Details Page")
 
-public class UAEProductDetailsTestCases  extends ProductDetailsTestCases{
-    @BeforeClass(alwaysRun=true)
-    public void switchToUAEStore(){
-        UAEHomePage uaeHomePage=new UAEHomePage(webDriver);
+public class UAEProductDetailsTestCases extends ProductDetailsTestCases {
+    @BeforeClass(alwaysRun = true)
+    public void switchToUAEStore() {
+        UAEHomePage uaeHomePage = new UAEHomePage(webDriver);
         uaeHomePage.switchCountry(uaeHomePage.getAeCountry());
-        if(webDriver.getCurrentUrl().contains(uaeHomePage.aeDomain)){
+        if (webDriver.getCurrentUrl().contains(uaeHomePage.aeDomain)) {
             System.out.println("You are in UAE Store");
-        }
-        else {
-            webDriver.navigate().to(BasePage.BaseURL+uaeHomePage.aeDomain);
+        } else {
+            webDriver.navigate().to(BasePage.BaseURL + uaeHomePage.aeDomain);
             CloseInitialDialog();
             System.out.println(webDriver.getCurrentUrl());
         }
     }
-//    @Test(groups = { "1.1 Critical Severity"},description = "{{CountryName}}: Make sure the shopper is able to keep the shopping after adding the product to the cart ", priority = 2)
+
+    //    @Test(groups = { "1.1 Critical Severity"},description = "{{CountryName}}: Make sure the shopper is able to keep the shopping after adding the product to the cart ", priority = 2)
 //    public void keepShoppingAfterAddingToTheCart() {
 //        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
 //        uAEProductDetailsPage.keepShoppingAfterAddingToCart();
@@ -168,14 +158,15 @@ public class UAEProductDetailsTestCases  extends ProductDetailsTestCases{
 //        else {
 //            WebElementsAssertion.assertionTextIsEqual(uAEProductDetailsPage.getAboutThisProductTitle(),webDriver, "حول هذا المنتج");}
 //    }
-    @Test(groups = { "1.4 Low Severity"},description = "{{CountryName}}: Verify that the Supplement Facts section displays correctly in the PDP", priority = 18,enabled = false)
+    @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Verify that the Supplement Facts section displays correctly in the PDP", priority = 18, enabled = false)
     public void verifySupplementFactsSectionDisplaysCorrectlyInProductDetailsPage() throws IOException {
         UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
         uAEProductDetailsPage.displayTheProduct();
         assertTrue(uAEProductDetailsPage.getSupplementFactsTable().isDisplayed());
         assertEquals(uAEProductDetailsPage.getSupplementFactsTitle().getText(), "Supplement Facts");
     }
-//    //      The following Test Cases handle displaying the Mega Menu from Product Page
+
+    //    //      The following Test Cases handle displaying the Mega Menu from Product Page
 //    @Test(groups = {"All Smoke Testing Result","1.4 Low Severity"},description = "{{CountryName}}: Verify that the ShopBy Menu Is Displayed When Hovering On It From Product Details Page", priority = 19)
 //    public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
 //        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
@@ -222,18 +213,20 @@ public class UAEProductDetailsTestCases  extends ProductDetailsTestCases{
 //        DataHelperAndWait.clickOnElement(uAEProductDetailsPage.getAccountProfileIcon(),webDriver);
 //        WebElementsAssertion.validateTheElementIsDisplayed(uAEProductDetailsPage.getAccountProfileOptions(), webDriver);
 //    }
-    @Test(groups = { "1.4 Low Severity"},description = "{{CountryName}}: Verify that the Direction Of Use section displays correctly in the PDP", priority = 25,enabled = false)
+    @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Verify that the Direction Of Use section displays correctly in the PDP", priority = 25, enabled = false)
     public void verifyDirectionOfUseSectionDisplaysCorrectlyInProductDetailsPage() throws IOException {
         UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
         uAEProductDetailsPage.displayTheProduct();
 //        assertTrue(uAEProductDetailsPage.getDirectionsOfUseSection().isDisplayed());
     }
-    @Test(groups = { "1.4 Low Severity"},description = "{{CountryName}}: Verify that the About Brand section displays correctly in the PDP", priority = 26,enabled = false)
+
+    @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Verify that the About Brand section displays correctly in the PDP", priority = 26, enabled = false)
     public void verifyAboutBrandSectionDisplaysCorrectlyInProductDetailsPage() {
         UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
         assertTrue(uAEProductDetailsPage.getAboutBrandSection().isDisplayed());
     }
-//    @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}: Verify that the header Bar in the PDP appears correctly when scrolling down", priority = 27)
+
+    //    @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}: Verify that the header Bar in the PDP appears correctly when scrolling down", priority = 27)
 //    public void verifyAddToCartBtnInHeaderBarWorksCorrectly() {
 //        UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
 //        DataHelperAndWait.scrollTo(uAEProductDetailsPage.getAddReviewButton(),webDriver);
@@ -293,7 +286,7 @@ public class UAEProductDetailsTestCases  extends ProductDetailsTestCases{
 //        uAEProductDetailsPage.displayTheProduct();
 //        uAEProductDetailsPage.verifyReviewPagingWorks();
 //    }
-    @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the simple price changes when navigation between sizes for the config ", priority = 35,enabled = false)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the simple price changes when navigation between sizes for the config ", priority = 35, enabled = false)
     public void verifySimplePriceChangesWhenNavigationBetweenSizesForTheConfig() throws IOException {
         UAEProductDetailsPage uAEProductDetailsPage = new UAEProductDetailsPage(webDriver);
         uAEProductDetailsPage.displayTheProduct();
@@ -301,7 +294,7 @@ public class UAEProductDetailsTestCases  extends ProductDetailsTestCases{
         String firstPrice = uAEProductDetailsPage.getFinalProductPrice().getText();
 //        DataHelperAndWait.clickOnElement(uAEProductDetailsPage.getSecondsimple(),webDriver);
         String secondPrice = uAEProductDetailsPage.getFinalProductPrice().getText();
-        Assert.assertNotEquals(firstPrice, secondPrice,"The simple price is not changes");
+        Assert.assertNotEquals(firstPrice, secondPrice, "The simple price is not changes");
     }
 //    @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}: Make sure ability to navigate to the home page by clicking on the sporter logo from the product Details Page  ", priority = 36)
 //    public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromPdp() {
