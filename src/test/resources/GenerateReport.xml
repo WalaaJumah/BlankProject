@@ -107,7 +107,15 @@
             <class name="sporter_test.sportsSupplementsCategoryTestCases.QatarSportsSupplementsCategoryTestCases"></class>
             <class name="sporter_test.sportsSupplementsCategoryTestCases.EgyptSportsSupplementsCategoryTestCases"></class>
 
-
+            <!--           Healthy Food Category Page-->
+            <class name="sporter_test.healthy_food_category_test_cases.KSAHealthyFoodTestCases"></class>
+            <class name="sporter_test.healthy_food_category_test_cases.JordanHealthyFoodTestCases"></class>
+            <class name="sporter_test.healthy_food_category_test_cases.UAEHealthyFoodTestCases"></class>
+            <class name="sporter_test.healthy_food_category_test_cases.QatarHealthyFoodTestCases"></class>
+            <class name="sporter_test.healthy_food_category_test_cases.EgyptHealthyFoodTestCases"></class>
+            <class name="sporter_test.healthy_food_category_test_cases.KuwaitHealthyFoodTestCases"></class>
+            <class name="sporter_test.healthy_food_category_test_cases.OmanHealthyFoodTestCases"></class>
+            <class name="sporter_test.healthy_food_category_test_cases.BahrainHealthyFoodTestCases"></class>
 
         </classes>
 
