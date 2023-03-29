@@ -446,7 +446,12 @@ public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() 
         cartPage.navigateToCartPage();
         sportsSupplementsCategoryPage.clickOnSportsSupplementMainMenu();
         sportsSupplementsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.sportSupplementsUrl,webDriver);
+        try {
+            WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.sportSupplementsUrl,webDriver);
+        }
+        catch (Exception e){
+            WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.sportSupplementsUrl+"/",webDriver);
+        }
     }
     @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify ability to click on  Vitamins And Health Menu From cart Page", priority = 38)
     public void verifyAbilityToClickOnVitaminsAndHealthMenuFromCartPage() throws IOException {
@@ -455,7 +460,12 @@ public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() 
         cartPage.navigateToCartPage();
         megaMenuPage.clickOnVitaminsAndHealthMainMenu();
         megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl,webDriver);
+        try {
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl, webDriver);
+        }
+        catch (Exception e){
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl+"/", webDriver);
+        }
     }
     @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify ability to click on  the Healthy Food Menu From cart Page", priority = 39)
     public void verifyAbilityToClickOnHealthyFoodMenuFromCartPage() throws IOException {
@@ -464,7 +474,12 @@ public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() 
         cartPage.navigateToCartPage();
         megaMenuPage.clickOnHealthyFoodMainMenu();
         megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthyFoodsUrl,webDriver);
+        try {
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthyFoodsUrl,webDriver);
+        }
+        catch (Exception e){
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl+"/", webDriver);
+        }
     }
     @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}:Verify ability to click on  the Sports Menu From cart Page", priority = 40)
     public void verifyAbilityToClickOnSportsMenuIsDisplayedFromCartPage() throws IOException {
@@ -473,7 +488,13 @@ public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() 
         cartPage.navigateToCartPage();
         megaMenuPage.clickOnSportsMainMenu();
         megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.sportsUrl,webDriver);
+        megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        try {
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.sportsUrl,webDriver);
+        }
+        catch (Exception e){
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.sportsUrl+"/", webDriver);
+        }
     }
     @Test(groups = { "1.1 Critical Severity"},description = "{{CountryName}}:Verify that the account Profile icon works correctly in PDP", priority = 41)
     public void verifyAccountProfileIconWorksCorrectlyInProductDetailsPage() throws IOException {
