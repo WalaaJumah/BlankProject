@@ -334,20 +334,13 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
         wait.until(ExpectedConditions.invisibilityOfElementWithText(element,expectedText));
     }
     public static void captureJavaScriptErrors(WebDriver webDriver){
+//        LogEntries jsErrors=webDriver.manage().logs().get(LogType.BROWSER);
+//        System.out.println("All Java Script Error log: "+jsErrors.getAll());
+//        System.out.println("First Java Script Error log: "+jsErrors.getAll().get(0));
+
         LogEntries jsErrors=webDriver.manage().logs().get(LogType.BROWSER);
-        System.out.println("All Java Script Error log: "+jsErrors.getAll());
-        System.out.println("First Java Script Error log: "+jsErrors.getAll().get(0));
+for(int i=0;i<jsErrors.getAll().size()-1;i++){
+            System.out.println("Error # "+i+" : "+jsErrors.getAll().get(i));}
 
-
-
-        Set<String> logtyp = webDriver.manage().logs().getAvailableLogTypes();
-        for (String s : logtyp) {
-            System.out.println(logtyp);
-        }
-        LogEntries logEntries = webDriver.manage().logs().get(LogType.BROWSER);
-        List<LogEntry> lg = logEntries.filter(Level.ALL);
-        for(LogEntry logEntry : lg) {
-            System.out.println(logEntry);
-        }
     }
 }
