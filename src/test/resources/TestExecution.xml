@@ -15,13 +15,11 @@
         <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/" />
         <classes>
             <!--            Guest Checkout -->
-<<<<<<< HEAD
-            <class name="sporter_test.guestCheckoutCycleTestCases">
-<!--            <methods>-->
-<!--                <include name="verifyTheGuestUserCanFillTheShippingInformationCorrectly"/>-->
-<!--            </methods>-->
-            </class>
-=======
+<!--            <class name="sporter_test.guestCheckoutCycleTestCases">-->
+<!--&lt;!&ndash;            <methods>&ndash;&gt;-->
+<!--&lt;!&ndash;                <include name="verifyTheGuestUserCanFillTheShippingInformationCorrectly"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            </methods>&ndash;&gt;-->
+<!--            </class>-->
             <class name="sporter_test.productTestCases.QatarProductDetailsTestCases"/>
             <class name="sporter_test.productTestCases.UAEProductDetailsTestCases"/>
             <class name="sporter_test.productTestCases.KSAProductDetailsTestCases"/>
@@ -31,7 +29,6 @@
 <!--                <include name="verifyTheGuestUserCanFillTheShippingInformationCorrectly"/>-->
 <!--            </methods>-->
 <!--            </class>-->
->>>>>>> f2cb1ddcf2a41fffbb38d3331ec669cfdc4fae37
 <!--            <class name="sporter_test.healthy_food_category_test_cases.OmanHealthyFoodTestCases"/>-->
 <!--            <class name="sporter_test.healthy_food_category_test_cases.QatarHealthyFoodTestCases"/>-->
 <!--            <class name="sporter_test.healthy_food_category_test_cases.KuwaitHealthyFoodTestCases"/>-->
