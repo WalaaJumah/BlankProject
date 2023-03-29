@@ -108,7 +108,33 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
     public static  void JsExecutorToClickOnElement(WebElement element,WebDriver webDriver) {
         JavascriptExecutor jse = (JavascriptExecutor) webDriver;
         //Find The element
-        jse.executeScript("arguments[0].click()", element);
+        //jse.executeScript("arguments[0].click();", element);
+        jse.executeScript("arguments[0]." +
+                "focus(); arguments[0].click();", element);
+//        jse.executeScript("if(document.getElementById('submitShippingAddressBtn')!= null){ document.getElementById('submitShippingAddressBtn').click();}", element);
+    }
+    public static void HandleAlert(WebDriver driver, WebDriverWait wait) {
+        if (wait == null) {
+            wait = new WebDriverWait(driver, 5);
+        }
+
+        try {
+            Alert alert = wait.until(HandleAlertInner(driver));
+            alert.accept();
+        } catch (TimeoutException E) { /* Ignore */ }
+    }
+
+    public static ExpectedCondition<Alert> HandleAlertInner(WebDriver driver) {
+        return new ExpectedCondition<Alert>() {
+            @Override
+            public Alert apply(WebDriver driver) {
+                try {
+                    return driver.switchTo().alert();
+                } catch (NoAlertPresentException e) {
+                    return null;
+                }
+            }
+        };
     }
 
     public static  float convertTheStringToFloat(WebElement element,WebDriver webDriver,String currency) {
