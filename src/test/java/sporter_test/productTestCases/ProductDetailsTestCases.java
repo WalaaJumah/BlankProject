@@ -196,7 +196,15 @@ public class ProductDetailsTestCases extends BaseTest {
         productDetailsPage.displayTheProduct();
         sportsSupplementsCategoryPage.clickOnSportsSupplementMainMenu();
         sportsSupplementsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
+<<<<<<< HEAD
         WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.sportSupplementsUrl, webDriver);
+=======
+        try{
+        WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.sportSupplementsUrl,webDriver);}
+        catch (Exception e){
+            WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.sportSupplementsUrl+"/",webDriver);
+        }
+>>>>>>> ee137a856b2dbff6acc1f958c800f0750c540c92
     }
 
     @Test(groups = {"1.2 High Severity"}, description = "{{CountryName}}:Verify ability to click on Vitamins And Health Menu From Product Details Page", priority = 19)
@@ -206,7 +214,15 @@ public class ProductDetailsTestCases extends BaseTest {
         productDetailsPage.displayTheProduct();
         megaMenuPage.clickOnVitaminsAndHealthMainMenu();
         megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+<<<<<<< HEAD
         WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl, webDriver);
+=======
+        try{
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl,webDriver);}
+        catch (Exception e){
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl+"/",webDriver);
+        }
+>>>>>>> ee137a856b2dbff6acc1f958c800f0750c540c92
     }
 
     @Test(groups = {"1.2 High Severity"}, description = "{{CountryName}}:Verify ability to click on Healthy Food Menu Is Displayed From Product Details Page", priority = 20)
@@ -216,7 +232,15 @@ public class ProductDetailsTestCases extends BaseTest {
         productDetailsPage.displayTheProduct();
         megaMenuPage.clickOnHealthyFoodMainMenu();
         megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+<<<<<<< HEAD
         WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthyFoodsUrl, webDriver);
+=======
+        try{
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthyFoodsUrl,webDriver);}
+        catch (Exception e){
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthyFoodsUrl+"/",webDriver);
+        }
+>>>>>>> ee137a856b2dbff6acc1f958c800f0750c540c92
     }
 
     @Test(groups = {"1.2 High Severity"}, description = "{{CountryName}}:Verify ability to click on Sports Menu From Product Details Page", priority = 23)

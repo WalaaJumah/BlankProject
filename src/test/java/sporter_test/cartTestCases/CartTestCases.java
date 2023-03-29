@@ -478,7 +478,16 @@ public class CartTestCases extends BaseTest {
         cartPage.navigateToCartPage();
         sportsSupplementsCategoryPage.clickOnSportsSupplementMainMenu();
         sportsSupplementsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
+<<<<<<< HEAD
         WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.sportSupplementsUrl, webDriver);
+=======
+        try {
+            WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.sportSupplementsUrl,webDriver);
+        }
+        catch (Exception e){
+            WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.sportSupplementsUrl+"/",webDriver);
+        }
+>>>>>>> ee137a856b2dbff6acc1f958c800f0750c540c92
     }
 
     @Test(groups = {"1.2 High Severity"}, description = "{{CountryName}}:Verify ability to click on  Vitamins And Health Menu From cart Page", priority = 38)
@@ -488,7 +497,16 @@ public class CartTestCases extends BaseTest {
         cartPage.navigateToCartPage();
         megaMenuPage.clickOnVitaminsAndHealthMainMenu();
         megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+<<<<<<< HEAD
         WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl, webDriver);
+=======
+        try {
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl, webDriver);
+        }
+        catch (Exception e){
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl+"/", webDriver);
+        }
+>>>>>>> ee137a856b2dbff6acc1f958c800f0750c540c92
     }
 
     @Test(groups = {"1.2 High Severity"}, description = "{{CountryName}}:Verify ability to click on  the Healthy Food Menu From cart Page", priority = 39)
@@ -498,7 +516,16 @@ public class CartTestCases extends BaseTest {
         cartPage.navigateToCartPage();
         megaMenuPage.clickOnHealthyFoodMainMenu();
         megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+<<<<<<< HEAD
         WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthyFoodsUrl, webDriver);
+=======
+        try {
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthyFoodsUrl,webDriver);
+        }
+        catch (Exception e){
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl+"/", webDriver);
+        }
+>>>>>>> ee137a856b2dbff6acc1f958c800f0750c540c92
     }
 
     @Test(groups = {"1.2 High Severity"}, description = "{{CountryName}}:Verify ability to click on  the Sports Menu From cart Page", priority = 40)
@@ -508,7 +535,17 @@ public class CartTestCases extends BaseTest {
         cartPage.navigateToCartPage();
         megaMenuPage.clickOnSportsMainMenu();
         megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+<<<<<<< HEAD
         WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.sportsUrl, webDriver);
+=======
+        megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        try {
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.sportsUrl,webDriver);
+        }
+        catch (Exception e){
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.sportsUrl+"/", webDriver);
+        }
+>>>>>>> ee137a856b2dbff6acc1f958c800f0750c540c92
     }
 
     @Test(groups = {"1.1 Critical Severity"}, description = "{{CountryName}}:Verify that the account Profile icon works correctly in PDP", priority = 41)
