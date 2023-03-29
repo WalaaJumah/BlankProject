@@ -46,7 +46,7 @@ public class RecommendedProductPage extends BasePage {
     private WebElement addToCartBtnForFirstProduct;
     @FindBy(id = "ThumbsUpHeader")
     private WebElement recommendedProductsTitle;
-    @FindBy(xpath = "//div[@id='recommendProductsContainer']/div//div[starts-with(@class,'product_button')]")
+    @FindBy(id = "shopNow")
     private List<WebElement> addToCartBtn;
     @FindBy(xpath = "(//button[@class='custom-button blue-btn'])[2]")
     private WebElement addToCart;

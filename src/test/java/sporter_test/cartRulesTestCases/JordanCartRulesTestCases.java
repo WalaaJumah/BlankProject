@@ -43,6 +43,7 @@ public class JordanCartRulesTestCases extends CartRulesTestCases {
         productDetailsPage.displayTheProduct();
         productDetailsPage.increaseTheQuantity();
         productDetailsPage.addToCart();
+        DataHelperAndWait.waitForTime(1500);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(), webDriver);
         DataHelperAndWait.refreshPage(webDriver);
     }
@@ -56,6 +57,7 @@ public class JordanCartRulesTestCases extends CartRulesTestCases {
         productDetailsPage.addToCart();
         productDetailsPage.viewCart();
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
+        DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(), webDriver);
         DataHelperAndWait.refreshPage(webDriver);
@@ -76,6 +78,7 @@ public class JordanCartRulesTestCases extends CartRulesTestCases {
         webDriver.navigate().to(BaseURL + cartPage.productUrlJordan);
         productDetailsPage.addToCart();
         productDetailsPage.viewCart();
+        DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(), webDriver);
         DataHelperAndWait.refreshPage(webDriver);

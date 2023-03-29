@@ -43,6 +43,7 @@ public class HealthyFoodPage extends BasePage {
         } catch (Exception e) {
             DataHelperAndWait.waitToBeVisible(megaMenuPage.getShopByMenu(), webDriver);
             actions.moveToElement(megaMenuPage.getShopByMenu()).perform();
+            DataHelperAndWait.waitForTime(1500);
             DataHelperAndWait.clickOnElement(megaMenuPage.getHealthyFoodMenuFromShopBy(), webDriver);
         }
     }

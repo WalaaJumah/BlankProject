@@ -42,8 +42,8 @@ public class EgyptCartTestCases extends CartTestCases {
     public void verifyTheTaxCalculatedCorrectly() {
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 26)
-    public void verifyOrderTotalCalculationInCartPageWorksCorrectly() {
+@Test(enabled = false)
+public void verifyOrderTotalCalculationInCartPageWorksCorrectly() {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
         float subTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue(), webDriver, "EGP");

@@ -63,9 +63,15 @@ public class SportsSupplementsCategoryPage extends BasePage {
     public void clickOnSportsSupplementMainMenu() {
         Actions actions = new Actions(webDriver);
         MegaMenuPage megaMenuPage = new MegaMenuPage(webDriver);
+        try{
         DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsSupplementsMenu(), webDriver);
         actions.moveToElement(megaMenuPage.getSportsSupplementsMenu()).perform();
-        DataHelperAndWait.clickOnElement(megaMenuPage.getSportsSupplementsMenu(), webDriver);
+        DataHelperAndWait.clickOnElement(megaMenuPage.getSportsSupplementsMenu(), webDriver);}
+        catch (Exception e){
+            DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsSupplementsMenu(), webDriver);
+            actions.moveToElement(megaMenuPage.getSportsSupplementsMenu()).perform();
+            DataHelperAndWait.clickOnElement(megaMenuPage.getSportsSupplementsMenu(), webDriver);
+        }
 //        DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsSupplementsMenu(),webDriver);
 //        actions.moveToElement(megaMenuPage.getSportsSupplementsMenu()).perform();
 //        DataHelperAndWait.clickOnElement(megaMenuPage.getSportsSupplementsMenu(),webDriver);
