@@ -21,6 +21,7 @@ import java.io.IOException;
 @Test(groups = "2.04 Login")
 public class LoginTestCases extends BaseTest {
     String storeCountry;
+
     @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Ability to access login page From Account profile icon", priority = 1)
     public void verifyAbilityToAccessNewAccountRegistrationScreen() {
         HeaderSection header = new HeaderSection(webDriver);
@@ -45,6 +46,7 @@ public class LoginTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(loginPage.getFaceBookLoginBtn(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(loginPage.getSignInWithSocialMediaLabel(), webDriver);
     }
+
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to login using wrong email and the correct Error Msg appears", priority = 3)
     public void verifyInAbilityToLoginUsingWrongEmail() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
@@ -80,6 +82,7 @@ public class LoginTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
         DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(), webDriver);
     }
+
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to login using correct Email & Wrong Password and the correct Error Msg appears", priority = 6)
     public void verifyInAbilityToLoginUsingCorrectEmailAndWrongPassword() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
@@ -201,21 +204,22 @@ public class LoginTestCases extends BaseTest {
             e.getMessage();
         }
     }
+
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify the system keeps the user logged in after switching the country", priority = 16)
     public void verifyTheSystemKeepsTheCustomerLoggedInAfterSwitchingTheCountry() throws IOException {
         HeaderSection header = new HeaderSection(webDriver);
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         LoginPage loginPage = new LoginPage(webDriver);
-        HomePage homePage=new HomePage(webDriver);
+        HomePage homePage = new HomePage(webDriver);
         loginPage.navigateToLoginPage();
         loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword"));
         DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
         DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
-        DataHelperAndWait.clickOnElement(header.getCountryMenuIcon(),webDriver);
-         DataHelperAndWait.clickOnElement(header.getCountryList().get(8),webDriver);
-        DataHelperAndWait.clickOnElement(header.getSporterLogo(),webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(),webDriver);
+        DataHelperAndWait.clickOnElement(header.getCountryMenuIcon(), webDriver);
+        DataHelperAndWait.clickOnElement(header.getCountryList().get(8), webDriver);
+        DataHelperAndWait.clickOnElement(header.getSporterLogo(), webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(), webDriver);
 //        DataHelperAndWait.waitForTime(3000);
         DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);

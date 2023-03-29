@@ -10,11 +10,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
-public class UAEGuestCheckoutCyclePage extends  GuestCheckoutCyclePage{
+public class UAEGuestCheckoutCyclePage extends GuestCheckoutCyclePage {
     public UAEGuestCheckoutCyclePage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
     }
+
     @Test(enabled = false)
-    public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNationalID(){}
+    public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNationalID() {
+    }
 }

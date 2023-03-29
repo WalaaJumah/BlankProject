@@ -10,66 +10,105 @@ import core.BasePage;
 import core.DataHelperAndWait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import sporter_pages.homepage_classes.*;
+import sporter_pages.homepage_classes.EgyptHomePage;
 
 //@Test(groups = "2.05 Egypt HomePage")
 public class EgyptHomePageTestCases extends HomePageTestCases {
 
-    @BeforeClass(alwaysRun=true)
+    @BeforeClass(alwaysRun = true)
 //    @Test
-    public void switchToEgyptStore(){
-        EgyptHomePage egyptHomePage=new EgyptHomePage(webDriver);
+    public void switchToEgyptStore() {
+        EgyptHomePage egyptHomePage = new EgyptHomePage(webDriver);
         DataHelperAndWait.scrollToPositionZero(webDriver);
         egyptHomePage.switchCountry(egyptHomePage.getEgyptCountry());
         DataHelperAndWait.scrollToPositionZero(webDriver);
-        if(webDriver.getCurrentUrl().contains(egyptHomePage.egyptDomain)){
+        if (webDriver.getCurrentUrl().contains(egyptHomePage.egyptDomain)) {
             System.out.println("You are in Jordan Store");
-        }
-        else {
-            webDriver.navigate().to(BasePage.BaseURL+egyptHomePage.egyptDomain);
+        } else {
+            webDriver.navigate().to(BasePage.BaseURL + egyptHomePage.egyptDomain);
             CloseInitialDialog();
         }
     }
+
     @Test(enabled = false)
-    public void verifyHomePageUnderShopByCategoryBannersAreDisplayed() {}
+    public void verifyHomePageUnderShopByCategoryBannersAreDisplayed() {
+    }
+
     @Test(enabled = false)
-    public void verifyTopSellingStacksSectionAreDisplayed() {}
+    public void verifyTopSellingStacksSectionAreDisplayed() {
+    }
+
     @Test(enabled = false)
-    public void verifyViewAllBtnInTopSellingStacksSectionWorking() {}
+    public void verifyViewAllBtnInTopSellingStacksSectionWorking() {
+    }
+
     @Test(enabled = false)
-    public void verifyTopSellersSectionAreDisplayed() { }
+    public void verifyTopSellersSectionAreDisplayed() {
+    }
+
     @Test(enabled = false)
-    public void verifyAllLinksInTopSellersSectionAreDisplayed() {}
+    public void verifyAllLinksInTopSellersSectionAreDisplayed() {
+    }
+
     @Test(enabled = false)
-    public void verifyAbilityToClickOnAllCategoriesTabInTopSellersSection(){}
+    public void verifyAbilityToClickOnAllCategoriesTabInTopSellersSection() {
+    }
+
     @Test(enabled = false)
-    public void verifyNextBtnInTopSellerSectionWorks() { }
+    public void verifyNextBtnInTopSellerSectionWorks() {
+    }
+
     @Test(enabled = false)
-    public void verifyPreviousBtnWillAppearInTopSellersSectionOnceClickingOnNextBtn() {}
+    public void verifyPreviousBtnWillAppearInTopSellersSectionOnceClickingOnNextBtn() {
+    }
+
     @Test(enabled = false)
-    public void verifyTrendingOnSporterSectionAreDisplayed() { }
+    public void verifyTrendingOnSporterSectionAreDisplayed() {
+    }
+
     @Test(enabled = false)
-    public void verifyNewArrivalsSectionAreDisplayed() { }
+    public void verifyNewArrivalsSectionAreDisplayed() {
+    }
+
     @Test(enabled = false)
-    public void verifyAbilityToClickOnAllCategoriesTabInNewArrivalsSection(){ }
+    public void verifyAbilityToClickOnAllCategoriesTabInNewArrivalsSection() {
+    }
+
     @Test(enabled = false)
-    public void verifyPreviousAndNextBtnInNewArrivalsSectionWorksCorrectly() {}
+    public void verifyPreviousAndNextBtnInNewArrivalsSectionWorksCorrectly() {
+    }
+
     @Test(enabled = false)
-    public void verifyGotQuestionSectionIsDisplayed() {}
+    public void verifyGotQuestionSectionIsDisplayed() {
+    }
+
     @Test(enabled = false)
-    public void verifyAbilityToClickOnEmailBtnInGotQuestionSectionCorrectly() { }
+    public void verifyAbilityToClickOnEmailBtnInGotQuestionSectionCorrectly() {
+    }
+
     @Test(enabled = false)
-    public void verifyClickingOnSportswearAndAccessoriesCategoryRedirectTheUserToCorrectPage() { }
+    public void verifyClickingOnSportswearAndAccessoriesCategoryRedirectTheUserToCorrectPage() {
+    }
+
     @Test(enabled = false)
-    public void verifyClickOnTheProductsAppearingInTheTopSellingStacksSectionRedirectTheUserToCorrectUrl() { }
+    public void verifyClickOnTheProductsAppearingInTheTopSellingStacksSectionRedirectTheUserToCorrectUrl() {
+    }
+
     @Test(enabled = false)
-    public void verifyClickOnTheProductsAppearingInTheTopSellersSectionRedirectTheUserToCorrectUrl() {}
+    public void verifyClickOnTheProductsAppearingInTheTopSellersSectionRedirectTheUserToCorrectUrl() {
+    }
+
     @Test(enabled = false)
-    public void verifyClickOnTheProductsAppearingInTheNewArrivalsSectionRedirectTheUserToCorrectUrl() {}
+    public void verifyClickOnTheProductsAppearingInTheNewArrivalsSectionRedirectTheUserToCorrectUrl() {
+    }
+
     @Test(enabled = false)
-    public void verifyClickOnTheCategoriesAppearingInTheTrendingOnSporterSectionRedirectTheUserToCorrectUrl() {}
+    public void verifyClickOnTheCategoriesAppearingInTheTrendingOnSporterSectionRedirectTheUserToCorrectUrl() {
+    }
+
     @Test(enabled = false)
-    public void verifyAbilityToClickOnPhoneBtnInGotQuestionSectionCorrectly() {}
+    public void verifyAbilityToClickOnPhoneBtnInGotQuestionSectionCorrectly() {
+    }
 //    @Test(groups = { "1.3 Medium Severity"}, description = "(Egypt Store/English Version):Make sure the next button at the HomePage rotating slider section is displayed ", priority = 3)
 //    public void verifyNextArrowAtHomePageRotatingSliderIsDisplayed() {
 //        HomePage homePage = new HomePage(webDriver);

@@ -9,7 +9,7 @@ import sporter_pages.homepage_classes.QatarHomePage;
 public class QatarHomePageTestCases extends HomePageTestCases {
 
 
-//    QatarHomePage qatarHomePage;
+    //    QatarHomePage qatarHomePage;
 //The below code used when we did not define the QatarHomePageObject inside each method
 //    @BeforeClass
 //    @Override
@@ -18,20 +18,19 @@ public class QatarHomePageTestCases extends HomePageTestCases {
 //        super.setupBrowser(environment);
 //        qatarHomePage= new QatarHomePage(webDriver);
 //    }
-@BeforeClass(alwaysRun=true)
-public void switchToQatarStore(){
-    QatarHomePage qatarHomePage=new QatarHomePage(webDriver);
-    qatarHomePage.switchCountry(qatarHomePage.getQatarCountry());
-    DataHelperAndWait.scrollToPositionZero(webDriver);
-    if(webDriver.getCurrentUrl().contains(qatarHomePage.qatarDomain)){
-        System.out.println("You are in Qatar Store");
+    @BeforeClass(alwaysRun = true)
+    public void switchToQatarStore() {
+        QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
+        qatarHomePage.switchCountry(qatarHomePage.getQatarCountry());
+        DataHelperAndWait.scrollToPositionZero(webDriver);
+        if (webDriver.getCurrentUrl().contains(qatarHomePage.qatarDomain)) {
+            System.out.println("You are in Qatar Store");
+        } else {
+            webDriver.navigate().to(BasePage.BaseURL + qatarHomePage.qatarDomain);
+            CloseInitialDialog();
+            System.out.println(webDriver.getCurrentUrl());
+        }
     }
-    else {
-        webDriver.navigate().to(BasePage.BaseURL+qatarHomePage.qatarDomain);
-        CloseInitialDialog();
-        System.out.println(webDriver.getCurrentUrl());
-    }
-}
 //    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the next button at the HomePage rotating slider section is displayed ", priority = 3)
 //    public void verifyNextArrowAtHomePageRotatingSliderIsDisplayed() {
 //        HomePage homePage = new HomePage(webDriver);

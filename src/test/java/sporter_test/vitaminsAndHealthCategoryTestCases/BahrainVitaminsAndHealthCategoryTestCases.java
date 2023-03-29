@@ -11,17 +11,17 @@ import org.testng.annotations.BeforeClass;
 import sporter_pages.homepage_classes.EgyptHomePage;
 import sporter_pages.myAccountPages.BahrainMyAccountPage;
 
-public class BahrainVitaminsAndHealthCategoryTestCases extends VitaminsAndHealthCategoryTestCases{
-    @BeforeClass(alwaysRun=true)
-    public void switchToBahrainStore(){
-        BahrainMyAccountPage bahrainMyAccountPage= new BahrainMyAccountPage(webDriver);
-        EgyptHomePage egyptHomePage=new EgyptHomePage(webDriver);
+public class BahrainVitaminsAndHealthCategoryTestCases extends VitaminsAndHealthCategoryTestCases {
+    @BeforeClass(alwaysRun = true)
+    public void switchToBahrainStore() {
+        BahrainMyAccountPage bahrainMyAccountPage = new BahrainMyAccountPage(webDriver);
+        EgyptHomePage egyptHomePage = new EgyptHomePage(webDriver);
         egyptHomePage.switchCountry(bahrainMyAccountPage.getBahrainCountry());
-        if(webDriver.getCurrentUrl().contains(egyptHomePage.bahrainDomain)){
+        if (webDriver.getCurrentUrl().contains(egyptHomePage.bahrainDomain)) {
             System.out.println("You are in Bahrain Store");
+        } else {
+            webDriver.navigate().to(BasePage.BaseURL + egyptHomePage.bahrainDomain);
+            CloseInitialDialog();
         }
-        else {
-            webDriver.navigate().to(BasePage.BaseURL+egyptHomePage.bahrainDomain);
-            CloseInitialDialog();          }
     }
 }

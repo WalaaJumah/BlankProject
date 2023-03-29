@@ -18,11 +18,13 @@ public class KSAProductDetailsPage extends ProductDetailsPage {
         PageFactory.initElements(webDriver, this);
 
     }
+
     public void displayTheProduct() throws IOException {
         webDriver.navigate().to(BaseURL + saudiDomainArabic + productUrl);
-        WebElementsAssertion.validateTheCurrentUrlContainsString(productUrl,webDriver);
+        WebElementsAssertion.validateTheCurrentUrlContainsString(productUrl, webDriver);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
+
     public void displayOOSProduct() throws IOException {
         webDriver.navigate().to(BaseURL + saudiDomainArabic + oOSProductUrl);
         verifyTheDisplayedPageDoesNotHaveErrors();

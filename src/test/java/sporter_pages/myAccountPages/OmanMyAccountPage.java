@@ -11,14 +11,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
 @Getter
-public class OmanMyAccountPage extends MyAccountPage{
+public class OmanMyAccountPage extends MyAccountPage {
+    @FindBy(xpath = "(//li[@class='countryItem_container__StFb3']/a)[7]")
+    private WebElement omanCountry;
+
+
     public OmanMyAccountPage(WebDriver webDriver) {
-            super(webDriver);
-            PageFactory.initElements(webDriver, this);
-        }
-
-
-        @FindBy(xpath ="(//li[@class='countryItem_container__StFb3']/a)[7]" )
-        private WebElement omanCountry;
+        super(webDriver);
+        PageFactory.initElements(webDriver, this);
+    }
 }

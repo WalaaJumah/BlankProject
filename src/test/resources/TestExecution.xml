@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <!--<suite name=" Test" thread-count="1" >-->
-<suite name="Automation Reports"  >
+<suite name="Automation Reports">
     <listeners>
         <!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
-        <listener class-name="extent_report_listner.ExtentReportListener" />
+        <listener class-name="extent_report_listner.ExtentReportListener"/>
     </listeners>
     <test name=" Sporter 2.1 Full Test2" preserve-order="true">
-        <parameter name="environment" value="https://qa.sporter.com" />
+        <parameter name="environment" value="https://qa.sporter.com"/>
         <parameter name="browser" value="chrome"/>
         <!-- <parameter name="country" value="en-qa" />-->
-        <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32569" />
-        <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix" />
-        <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/" />
+        <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32569"/>
+        <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix"/>
+        <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
         <classes>
             <class name="sporter_test.healthy_food_category_test_cases.KSAHealthyFoodTestCases"></class>
             <class name="sporter_test.healthy_food_category_test_cases.JordanHealthyFoodTestCases"></class>
@@ -26,8 +26,6 @@
         </classes>
 
     </test>
-
-
 
 
 </suite>

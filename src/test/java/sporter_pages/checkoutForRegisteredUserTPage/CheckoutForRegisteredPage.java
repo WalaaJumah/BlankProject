@@ -19,67 +19,71 @@ import xml_reader.XmlReader;
 
 @Getter
 public class CheckoutForRegisteredPage extends BasePage {
-     @FindBy(id = "addNewAddressBtn")
+    @FindBy(id = "addNewAddressBtn")
     private WebElement addNewAddressBtn;
-     @FindBy(id = "emailInput")
-     private WebElement emailFieldInSignIn;
-     @FindBy(id = "passwordInput")
-     private WebElement passwordFieldInSignIn;
-     @FindBy(id = "forgetPasswordBtn")
-     private WebElement forgetPasswordBtn;
-     @FindBy(id = "createAccountLink")
-     private WebElement createAccountLink;
-     @FindBy(id = "FBlogin")
-     private WebElement facebookBtn;
-     @FindBy(id = "submitdBtn")
-     private WebElement sigInBtn;
-     @FindBy(id = "showPasswordIcon")
-     private WebElement showPasswordIcon;
-     @FindBy(id = "hidePasswordIcon")
-     private WebElement hidePasswordIcon;
-     @FindBy(xpath = "(//div[@id='savedAddressesContainer'])[1]")
-     private WebElement savedAddressOption;
-     @FindBy(xpath = "//div[@id='citiesSelector']/div[2]/div[2]/div[5]")
-     private WebElement dubaiCity;
-    @FindBy(id="itemToWhishListBtn")
+    @FindBy(id = "emailInput")
+    private WebElement emailFieldInSignIn;
+    @FindBy(id = "passwordInput")
+    private WebElement passwordFieldInSignIn;
+    @FindBy(id = "forgetPasswordBtn")
+    private WebElement forgetPasswordBtn;
+    @FindBy(id = "createAccountLink")
+    private WebElement createAccountLink;
+    @FindBy(id = "FBlogin")
+    private WebElement facebookBtn;
+    @FindBy(id = "submitdBtn")
+    private WebElement sigInBtn;
+    @FindBy(id = "showPasswordIcon")
+    private WebElement showPasswordIcon;
+    @FindBy(id = "hidePasswordIcon")
+    private WebElement hidePasswordIcon;
+    @FindBy(xpath = "(//div[@id='savedAddressesContainer'])[1]")
+    private WebElement savedAddressOption;
+    @FindBy(xpath = "//div[@id='citiesSelector']/div[2]/div[2]/div[5]")
+    private WebElement dubaiCity;
+    @FindBy(id = "itemToWhishListBtn")
     private WebElement addToWishListBtn;
-    @FindBy(id="WItemsContainer")
+    @FindBy(id = "WItemsContainer")
     private WebElement addedItemToWashList;
-    @FindBy(id="MyWishlist")
+    @FindBy(id = "MyWishlist")
     private WebElement wishListTab;
-    public void setSelectDubaiCityCity(){
-        GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
-        try{
-            DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCityMenu(),webDriver);
-            DataHelperAndWait.clickOnElement(dubaiCity,webDriver);}
-        catch (Exception e){
-            DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCityMenu(),webDriver);
-            DataHelperAndWait.clickOnElement(dubaiCity,webDriver);
-        }
-    }
+
     public CheckoutForRegisteredPage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
     }
+
+    public void setSelectDubaiCityCity() {
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        try {
+            DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCityMenu(), webDriver);
+            DataHelperAndWait.clickOnElement(dubaiCity, webDriver);
+        } catch (Exception e) {
+            DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCityMenu(), webDriver);
+            DataHelperAndWait.clickOnElement(dubaiCity, webDriver);
+        }
+    }
+
     public void fillInShippingInformationInputField(String firstName, String lastName, String phone, String address, String streetLineOne, String streetLineTwo) {
-        GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
-        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getFirstNameField(),webDriver);
-        DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getFirstNameField(),firstName);
-        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getLastNameField() ,webDriver);
-        DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getLastNameField(),lastName);
-        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getPhoneField() ,webDriver);
-        DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getPhoneField(),phone);
-        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getAddressNameField() ,webDriver);
-        DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getAddressNameField(),address);
-        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getStreetLineOneField() ,webDriver);
-        DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getStreetLineOneField(),streetLineOne);
-        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getStreetLineTwoField() ,webDriver);
-        DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getStreetLineTwoField(),streetLineTwo);
-        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getStreetLineTwoField() ,webDriver);
-        DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getStreetLineTwoField(),streetLineTwo);
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getFirstNameField(), webDriver);
+        DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getFirstNameField(), firstName);
+        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getLastNameField(), webDriver);
+        DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getLastNameField(), lastName);
+        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getPhoneField(), webDriver);
+        DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getPhoneField(), phone);
+        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getAddressNameField(), webDriver);
+        DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getAddressNameField(), address);
+        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getStreetLineOneField(), webDriver);
+        DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getStreetLineOneField(), streetLineOne);
+        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getStreetLineTwoField(), webDriver);
+        DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getStreetLineTwoField(), streetLineTwo);
+        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getStreetLineTwoField(), webDriver);
+        DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getStreetLineTwoField(), streetLineTwo);
     }
-    public void navigateToShippingMethodsPage(){
-        GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
+
+    public void navigateToShippingMethodsPage() {
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         guestCheckoutCyclePage.accessGuestCheckoutForm();
         this.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
@@ -90,12 +94,13 @@ public class CheckoutForRegisteredPage extends BasePage {
                 XmlReader.getXMLData("StreetTwoAddressName")
         );
         guestCheckoutCyclePage.setSelectDubaiCityCity();
-                DataHelperAndWait.waitForTime(1500);
+        DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
     }
-    public void AddToCartAndAccessShippingMethodsPage(){
-        GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
-        CartPage cartPage=new CartPage(webDriver);
+
+    public void AddToCartAndAccessShippingMethodsPage() {
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
         guestCheckoutCyclePage.accessGuestCheckoutForm();
         this.fillInShippingInformationInputField(
@@ -107,12 +112,13 @@ public class CheckoutForRegisteredPage extends BasePage {
                 XmlReader.getXMLData("StreetTwoAddressName")
         );
         guestCheckoutCyclePage.setSelectDubaiCityCity();
-                DataHelperAndWait.waitForTime(1500);
+        DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
     }
-    public void viewCartAndAccessShippingMethodsPage(){
-        GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
-        CartPage cartPage=new CartPage(webDriver);
+
+    public void viewCartAndAccessShippingMethodsPage() {
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
         guestCheckoutCyclePage.accessGuestCheckoutForm();
         this.fillInShippingInformationInputField(
@@ -124,34 +130,35 @@ public class CheckoutForRegisteredPage extends BasePage {
                 XmlReader.getXMLData("StreetTwoAddressName")
         );
         guestCheckoutCyclePage.setSelectDubaiCityCity();
-                DataHelperAndWait.waitForTime(1500);
+        DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
     }
-    public void navigateToPaymentMethodScreenWithSavedAddress(){
-        GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
+
+    public void navigateToPaymentMethodScreenWithSavedAddress() {
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         guestCheckoutCyclePage.accessGuestCheckoutForm();
-        DataHelperAndWait.clickOnElement(this.getSavedAddressOption(),webDriver);
-                DataHelperAndWait.waitForTime(1500);
+        DataHelperAndWait.clickOnElement(this.getSavedAddressOption(), webDriver);
+        DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(), webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
     }
-    public void AddToCartAndAccessShippingMethodsPageForSavedAddress(){
-        GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
-        CartPage cartPage=new CartPage(webDriver);
-        try{
-        cartPage.clearCart();}
-        catch (Exception e){
+
+    public void AddToCartAndAccessShippingMethodsPageForSavedAddress() {
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        CartPage cartPage = new CartPage(webDriver);
+        try {
+            cartPage.clearCart();
+        } catch (Exception e) {
             System.out.println("");
         }
         cartPage.addToCartAndDisplayTheCart();
         cartPage.navigateToHomePage();
-        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-        try{
-            DataHelperAndWait.clickOnElement(this.getSavedAddressOption(),webDriver);
-        }
-        catch (Exception e){
+        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
+        try {
+            DataHelperAndWait.clickOnElement(this.getSavedAddressOption(), webDriver);
+        } catch (Exception e) {
             this.fillInShippingInformationInputField(
                     XmlReader.getXMLData("firstName"),
                     XmlReader.getXMLData("lastName"),
@@ -160,17 +167,18 @@ public class CheckoutForRegisteredPage extends BasePage {
                     XmlReader.getXMLData("StreetOneAddressName"),
                     XmlReader.getXMLData("StreetTwoAddressName"));
         }
-                DataHelperAndWait.waitForTime(1500);
+        DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
 //        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
 //        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
     }
-    public void AddToCartAndAccessShippingMethodsPageForSavedAddressForDubaiCity(){
-        GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
-        CartPage cartPage=new CartPage(webDriver);
+
+    public void AddToCartAndAccessShippingMethodsPageForSavedAddressForDubaiCity() {
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(addNewAddressBtn,webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
+        DataHelperAndWait.clickOnElement(addNewAddressBtn, webDriver);
         this.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -180,15 +188,16 @@ public class CheckoutForRegisteredPage extends BasePage {
                 XmlReader.getXMLData("StreetTwoAddressName")
         );
         this.setSelectDubaiCityCity();
-                DataHelperAndWait.waitForTime(1500);
+        DataHelperAndWait.waitForTime(1500);
         guestCheckoutCyclePage.clickOnContinueBtn();
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(), webDriver);
     }
-    public void accessGuestCheckoutForm(){
+
+    public void accessGuestCheckoutForm() {
 //        webDriver.navigate().to(BaseURL+shippingInformationUrl);
         CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToHomePage();
-        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
     }
 }

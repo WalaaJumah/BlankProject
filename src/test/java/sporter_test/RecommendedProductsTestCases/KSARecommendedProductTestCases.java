@@ -9,32 +9,25 @@ package sporter_test.RecommendedProductsTestCases;
 import core.BasePage;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
-import org.openqa.selenium.interactions.Actions;
-import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
-import sporter_pages.RecommendedProductsPage.KSARecommendedProductPage;
-import sporter_pages.RecommendedProductsPage.RecommendedProductPage;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.KsaHomePage;
-import sporter_pages.productPage.KSAProductDetailsPage;
-import sporter_pages.productPage.ProductDetailsPage;
 
 //@Test(groups = "KSA Product Details Page")
 public class KSARecommendedProductTestCases extends RecommendedProductTestCases {
-    @BeforeClass(alwaysRun=true)
-    public void switchToKsaStore(){
-        KsaHomePage ksaHomePage=new KsaHomePage(webDriver);
-        HeaderSection headerSection =new HeaderSection(webDriver);
+    @BeforeClass(alwaysRun = true)
+    public void switchToKsaStore() {
+        KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
+        HeaderSection headerSection = new HeaderSection(webDriver);
         ksaHomePage.switchCountry(ksaHomePage.getKsaCountry());
-        if(webDriver.getCurrentUrl().contains(ksaHomePage.saudiDomain)){
+        if (webDriver.getCurrentUrl().contains(ksaHomePage.saudiDomain)) {
             System.out.println("You are in KSA Store");
+        } else {
+            webDriver.navigate().to(BasePage.BaseURL + ksaHomePage.saudiDomain);
+            CloseInitialDialog();
         }
-        else {
-            webDriver.navigate().to(BasePage.BaseURL+ksaHomePage.saudiDomain);
-            CloseInitialDialog();          }
-        DataHelperAndWait.clickOnElement(headerSection.getLanguageSelector(),webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage,webDriver);
+        DataHelperAndWait.clickOnElement(headerSection.getLanguageSelector(), webDriver);
+        WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage, webDriver);
         System.out.println(webDriver.getCurrentUrl());
 
     }

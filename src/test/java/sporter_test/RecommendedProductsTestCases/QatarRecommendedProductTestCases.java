@@ -7,29 +7,19 @@
 package sporter_test.RecommendedProductsTestCases;
 
 import core.BasePage;
-import core.DataHelperAndWait;
-import core.WebElementsAssertion;
-import org.openqa.selenium.interactions.Actions;
-import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
-import sporter_pages.RecommendedProductsPage.QatarRecommendedProductPage;
-import sporter_pages.RecommendedProductsPage.RecommendedProductPage;
 import sporter_pages.homepage_classes.QatarHomePage;
-import sporter_pages.productPage.ProductDetailsPage;
-import sporter_pages.productPage.QatarProductDetailsPage;
 
 //@Test(groups = "Qatar Product Details Page")
 public class QatarRecommendedProductTestCases extends RecommendedProductTestCases {
-    @BeforeClass(alwaysRun=true)
-    public void switchToQatarStore(){
-        QatarHomePage qatarHomePage=new QatarHomePage(webDriver);
+    @BeforeClass(alwaysRun = true)
+    public void switchToQatarStore() {
+        QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.switchCountry(qatarHomePage.getQatarCountry());
-        if(webDriver.getCurrentUrl().contains(qatarHomePage.qatarDomain)){
+        if (webDriver.getCurrentUrl().contains(qatarHomePage.qatarDomain)) {
             System.out.println("You are in Qatar Store");
-        }
-        else {
-            webDriver.navigate().to(BasePage.BaseURL+qatarHomePage.qatarDomain);
+        } else {
+            webDriver.navigate().to(BasePage.BaseURL + qatarHomePage.qatarDomain);
             CloseInitialDialog();
             System.out.println(webDriver.getCurrentUrl());
         }

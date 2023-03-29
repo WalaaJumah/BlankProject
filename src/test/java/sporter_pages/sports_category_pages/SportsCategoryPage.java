@@ -20,13 +20,11 @@ public class SportsCategoryPage extends BasePage {
     }
 
 
-
-
-    public void clickOnSportsMainMenu(){
-        Actions actions= new Actions(webDriver);
-        MegaMenuPage megaMenuPage= new MegaMenuPage(webDriver);
-        DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsMainMenu(),webDriver);
+    public void clickOnSportsMainMenu() {
+        Actions actions = new Actions(webDriver);
+        MegaMenuPage megaMenuPage = new MegaMenuPage(webDriver);
+        DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsMainMenu(), webDriver);
         actions.moveToElement(megaMenuPage.getSportsMainMenu()).perform();
-        DataHelperAndWait.clickOnElement(megaMenuPage.getSportsMainMenu(),webDriver);
+        DataHelperAndWait.clickOnElement(megaMenuPage.getSportsMainMenu(), webDriver);
     }
 }

@@ -19,6 +19,7 @@ import java.io.IOException;
 //TODO: Move All locators related to Forget Password from Login Class To Forget Password Class
 public class ForgetPasswordTestCases extends BaseTest {
     String storeCountry;
+
     //TODO: Forget Password test cases related to the forget password email is not included
     @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Verify Forget Password link works correctly", priority = 1)
     public void verifyForgetPasswordLinkWorksCorrectly() throws IOException {
@@ -81,8 +82,8 @@ public class ForgetPasswordTestCases extends BaseTest {
     public void verifySubmitInForgetPasswordPageWorksCorrectly() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToForgetPassword();
-        DataHelperAndWait.typeTextInElement(loginPage.getEmailField(),webDriver, XmlReader.getXMLData("correctEmail"));
-        DataHelperAndWait.clickOnElement(loginPage.getSubmitBtnInForgetPassword(),webDriver);
+        DataHelperAndWait.typeTextInElement(loginPage.getEmailField(), webDriver, XmlReader.getXMLData("correctEmail"));
+        DataHelperAndWait.clickOnElement(loginPage.getSubmitBtnInForgetPassword(), webDriver);
         if (webDriver.getCurrentUrl().contains("sporter.com/ar")) {
             WebElementsAssertion.assertionTextIsEqual(loginPage.getForgetPasswordToastMsg(), webDriver, XmlReader.getXMLData("forgetPasswordToastMsgAr"));
         }

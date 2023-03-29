@@ -10,11 +10,12 @@ import core.DataHelperAndWait;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class KSAAccountRegistrationPage  extends AccountRegistrationPage {
+public class KSAAccountRegistrationPage extends AccountRegistrationPage {
+    DataHelperAndWait dataHelperAndWait;
+
     public KSAAccountRegistrationPage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
 
     }
-    DataHelperAndWait dataHelperAndWait;
 }

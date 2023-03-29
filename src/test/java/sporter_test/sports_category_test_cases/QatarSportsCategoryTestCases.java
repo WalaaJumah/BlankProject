@@ -9,7 +9,6 @@ package sporter_test.sports_category_test_cases;
 import core.BasePage;
 import org.testng.annotations.BeforeClass;
 import sporter_pages.homepage_classes.QatarHomePage;
-import sporter_test.sportsSupplementsCategoryTestCases.SportsSupplementsCategoryTestCases;
 
 public class QatarSportsCategoryTestCases extends SportsCategoryTestCases {
     @BeforeClass(alwaysRun = true)
@@ -23,6 +22,7 @@ public class QatarSportsCategoryTestCases extends SportsCategoryTestCases {
             CloseInitialDialog();
             System.out.println(webDriver.getCurrentUrl());
         }
-        storeCountry="Qatar";
-        countryCode="974";}
+        storeCountry = "Qatar";
+        countryCode = "974";
+    }
 }

@@ -19,10 +19,16 @@
         <WomenOnlyAr>للنساء فقط</WomenOnlyAr>
         <reviewDesc>Review Description Automation</reviewDesc>
         <reviewSummary>Review Summary Automation</reviewSummary>
-        <nickName> Automation</nickName>
-        <reviewDescLong>Review Description AutomationReview Description AutomationReview Description AutomationReview Description AutomationReview Description AutomationReview Description Automation </reviewDescLong>
-        <reviewSummaryLong>Review Summary Automation Review Summary Automation Review Summary Automation Review Summary Automation Review Summary Automation Review Summary Automation Review Summary Automation </reviewSummaryLong>
-        <nickNameLong> Automation  Automation  Automation  Automation  Automation  Automation  Automation  Automation  Automation  Automation  Automation  Automation  Automation  Automation  Automation </nickNameLong>
+        <nickName>Automation</nickName>
+        <reviewDescLong>Review Description AutomationReview Description AutomationReview Description AutomationReview
+            Description AutomationReview Description AutomationReview Description Automation
+        </reviewDescLong>
+        <reviewSummaryLong>Review Summary Automation Review Summary Automation Review Summary Automation Review Summary
+            Automation Review Summary Automation Review Summary Automation Review Summary Automation
+        </reviewSummaryLong>
+        <nickNameLong>Automation Automation Automation Automation Automation Automation Automation Automation Automation
+            Automation Automation Automation Automation Automation Automation
+        </nickNameLong>
 
     </ParentData1>
     <RegistartionForm>
@@ -38,9 +44,12 @@
         <requiredErrorMsAr>هذه الخانة مطلوبة</requiredErrorMsAr>
         <emailFormatErrorEn>Please enter a valid email address (Ex: johndoe@domain.com).</emailFormatErrorEn>
         <emailFormatErrorAr>The Msg is not translate</emailFormatErrorAr>
-        <passwordShortErrorEn>Please enter 8 or more characters. Leading and trailing spaces will be ignored.</passwordShortErrorEn>
+        <passwordShortErrorEn>Please enter 8 or more characters. Leading and trailing spaces will be ignored.
+        </passwordShortErrorEn>
         <passwordShortErrorAr>The Msg is not translate</passwordShortErrorAr>
-        <passwordFormatErrorEn>Minimum of different classes of characters in password is 3. Classes of characters: Lower Case, Upper Case, Digits, Special Characters.</passwordFormatErrorEn>
+        <passwordFormatErrorEn>Minimum of different classes of characters in password is 3. Classes of characters: Lower
+            Case, Upper Case, Digits, Special Characters.
+        </passwordFormatErrorEn>
         <passwordFormatErrorAr>The Msg is not translate</passwordFormatErrorAr>
         <confirmpasswordErrorEn>Please enter the same value again.</confirmpasswordErrorEn>
         <confirmpasswordErrorAr>The Msg is not translate</confirmpasswordErrorAr>
@@ -48,11 +57,19 @@
         <forgetPasswordHeaderAr>نسيت كلمة السر ؟</forgetPasswordHeaderAr>
         <forgetPasswordSubHeaderEn>Retrieve your password here</forgetPasswordSubHeaderEn>
         <forgetPasswordSubHeaderAr>استعادة كلمة المرور من هنا</forgetPasswordSubHeaderAr>
-        <forgetPasswordDescriptionEn>Please enter your email address below. You will receive a link to reset your password.</forgetPasswordDescriptionEn>
-        <forgetPasswordDescriptionAr>يرجى إدخال عنوان البريد الالكتروني أدناه. سوف تتلقى وصلة لإعادة تعيين كلمة المرور الخاصة بك.</forgetPasswordDescriptionAr>
-        <loginErroEn>The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.</loginErroEn>
+        <forgetPasswordDescriptionEn>Please enter your email address below. You will receive a link to reset your
+            password.
+        </forgetPasswordDescriptionEn>
+        <forgetPasswordDescriptionAr>يرجى إدخال عنوان البريد الالكتروني أدناه. سوف تتلقى وصلة لإعادة تعيين كلمة المرور
+            الخاصة بك.
+        </forgetPasswordDescriptionAr>
+        <loginErroEn>The account sign-in was incorrect or your account is disabled temporarily. Please wait and try
+            again later.
+        </loginErroEn>
         <loginErroAr>The Msg is not translate</loginErroAr>
-        <forgetPasswordToastMsgEn>If there is an account associated with this Email Address you will receive an email with a link to reset your password.</forgetPasswordToastMsgEn>
+        <forgetPasswordToastMsgEn>If there is an account associated with this Email Address you will receive an email
+            with a link to reset your password.
+        </forgetPasswordToastMsgEn>
         <forgetPasswordToastMsgAr>The Msg is not translate</forgetPasswordToastMsgAr>
         <nameErrorEn>Please enter a valid Name</nameErrorEn>
         <nameErrorAr>الرجاء ادخال اسم صحيح</nameErrorAr>
@@ -61,7 +78,7 @@
     <CheckoutData>
         <invalidCouponCode>Hello</invalidCouponCode>
         <FreeCouponCode>MISSYOU</FreeCouponCode>
-<!--        <FreeCouponCode>spr-128978-1</FreeCouponCode>-->
+        <!--        <FreeCouponCode>spr-128978-1</FreeCouponCode>-->
         <CartTitleEn>My Shopping Cart</CartTitleEn>
         <CartTitleAr>عربة التسوق</CartTitleAr>
         <smallLenghthPhoneErrEn>Text length does not satisfy specified text range</smallLenghthPhoneErrEn>
@@ -73,7 +90,9 @@
         <phoneNumber>22222222</phoneNumber>
         <SmallPhoneNumber>22</SmallPhoneNumber>
         <LongPhoneNumber>3333333333333333333333</LongPhoneNumber>
-        <LongLenghthText>This text is for automation Use This text is for automation Use This text is for automation Use This text is for automation Use This text is for automation Use This text is for automation Use </LongLenghthText>
+        <LongLenghthText>This text is for automation Use This text is for automation Use This text is for automation Use
+            This text is for automation Use This text is for automation Use This text is for automation Use
+        </LongLenghthText>
         <UAECountryCode>971</UAECountryCode>
         <jordanCountryCode>962</jordanCountryCode>
         <KSACountryCode>961</KSACountryCode>
@@ -87,8 +106,8 @@
         <checkout3DSecure>Checkout1!</checkout3DSecure>
         <phoneNumberErrorEn>Please enter a valid Phone Number</phoneNumberErrorEn>
         <phoneNumberErrorAr>Needs To translate</phoneNumberErrorAr>
-<qatarPhoneNumber>55555396</qatarPhoneNumber>
-<ksaPhoneNumber>595552396</ksaPhoneNumber>
+        <qatarPhoneNumber>55555396</qatarPhoneNumber>
+        <ksaPhoneNumber>595552396</ksaPhoneNumber>
     </CheckoutData>
     <UAECheckout>
         <twoBusinessDay>2 Business Days Super Express Shipping&#xA;Cash on Delivery Service Available</twoBusinessDay>
@@ -98,7 +117,9 @@
         <fiveBusinessDays>5 Business Days Super Express Shipping</fiveBusinessDays>
     </JordanCheckout>
     <QatarCheckout>
-        <fourToFiveBusinessDays>4-5 Business Days Super Express Shipping&#xA;Online Credit or Debit Card Payment is Required</fourToFiveBusinessDays>
+        <fourToFiveBusinessDays>4-5 Business Days Super Express Shipping&#xA;Online Credit or Debit Card Payment is
+            Required
+        </fourToFiveBusinessDays>
     </QatarCheckout>
     <KSACheckout>
         <dootToDoor>خدمة التوصيل حتى باب المنزل ( خلال 4 - 5 يوم عمل ) خدمه الدفع عند الاستلام متوفره</dootToDoor>
