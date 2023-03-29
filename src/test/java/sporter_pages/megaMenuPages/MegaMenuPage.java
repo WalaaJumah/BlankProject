@@ -40,7 +40,7 @@ public class MegaMenuPage extends BasePage {
         @FindBy(id = "cat_618")
     private WebElement healthyFoodMenu;
 
-     @FindBy(id = "cat_1431")
+     @FindBy(xpath = "//ul/li[@id='cat_1431']/a")
     private WebElement sportsMenu;
     @FindBy(id = "shobBy")
     private WebElement shopByMenu;

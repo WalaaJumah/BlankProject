@@ -25,6 +25,11 @@
             <class name="sporter_test.productTestCases.KSAProductDetailsTestCases"/>
             <class name="sporter_test.productTestCases.EgyptProductDetailsTestCases"/>
             <class name="sporter_test.productTestCases.JordanProductDetailsTestCases"/>
+            <class name="sporter_test.cartTestCases.UAECartTestCases"/>
+            <class name="sporter_test.cartTestCases.JordanCartTestCases"/>
+            <class name="sporter_test.cartTestCases.KSACartTestCases"/>
+            <class name="sporter_test.cartTestCases.EgyptCartTestCases"/>
+            <class name="sporter_test.cartTestCases.QatarCartTestCases"/>
 <!--            <methods>-->
 <!--                <include name="verifyTheGuestUserCanFillTheShippingInformationCorrectly"/>-->
 <!--            </methods>-->
