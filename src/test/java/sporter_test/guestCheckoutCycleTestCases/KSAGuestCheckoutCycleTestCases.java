@@ -191,7 +191,11 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         );
          DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
-        DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
+        try{
+        DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);}
+        catch (Exception e){
+            DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
+        }
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
