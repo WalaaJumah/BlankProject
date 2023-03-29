@@ -7,9 +7,12 @@
 package sporter_pages.megaMenuPages;
 
 import core.BasePage;
+import core.DataHelperAndWait;
+import core.WebElementsAssertion;
 import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -53,4 +56,58 @@ public class MegaMenuPage extends BasePage {
     private WebElement sportsMainMenu;
     @FindBy(xpath = "//ul[@id='TopCategoryList']//a")
     private List<WebElement> mainCategoriesInMegaMenu;
+    @FindBy(id="SortCategoriesContainer")
+    private WebElement ShopBySubMenu;
+
+    public void makeSureToDisplayShopByMenu(){
+        try{
+        Actions action = new Actions(webDriver);
+        action.moveToElement(this.getShopByMenu()).perform();
+        action.moveToElement(this.getShopByMenu()).perform();
+        WebElementsAssertion.validateTheElementIsDisplayed(this.getShopBySubMenu(),webDriver);}
+        catch (Exception e){
+            Actions action = new Actions(webDriver);
+            action.moveToElement(this.getShopByMenu()).perform();
+            action.moveToElement(this.getShopByMenu()).perform();
+            WebElementsAssertion.validateTheElementIsDisplayed(this.getShopBySubMenu(),webDriver);
+        }
+    }
+    public void clickOnVitaminsAndHealthMainMenu(){
+        Actions actions= new Actions(webDriver);
+        try {
+        DataHelperAndWait.waitToBeVisible(this.vitaminsAndHealthMenu,webDriver);
+        actions.moveToElement(this.vitaminsAndHealthMenu).perform();
+        DataHelperAndWait.clickOnElement(this.vitaminsAndHealthMenu,webDriver);}
+        catch (Exception e){
+            DataHelperAndWait.waitToBeVisible(this.vitaminsAndHealthMenu,webDriver);
+            actions.moveToElement(this.vitaminsAndHealthMenu).perform();
+            DataHelperAndWait.clickOnElement(this.vitaminsAndHealthMenu,webDriver);
+        }
+    }
+    public void clickOnHealthyFoodMainMenu(){
+        Actions actions= new Actions(webDriver);
+        try {
+            DataHelperAndWait.waitToBeVisible(this.healthyFoodMenu, webDriver);
+            actions.moveToElement(this.healthyFoodMenu).perform();
+            DataHelperAndWait.clickOnElement(this.healthyFoodMenu, webDriver);
+        }
+        catch (Exception e){
+            DataHelperAndWait.waitToBeVisible(this.healthyFoodMenu, webDriver);
+            actions.moveToElement(this.healthyFoodMenu).perform();
+            DataHelperAndWait.clickOnElement(this.healthyFoodMenu, webDriver);
+        }
+    }
+    public void clickOnSportsMainMenu(){
+        Actions actions= new Actions(webDriver);
+        try{
+        DataHelperAndWait.waitToBeVisible(this.sportsMenu,webDriver);
+        actions.moveToElement(this.sportsMenu).perform();
+        DataHelperAndWait.clickOnElement(this.sportsMenu,webDriver);}
+        catch (Exception e){
+            DataHelperAndWait.waitToBeVisible(this.sportsMenu,webDriver);
+            actions.moveToElement(this.sportsMenu).perform();
+            DataHelperAndWait.clickOnElement(this.sportsMenu,webDriver);
+        }
+    }
+
 }
