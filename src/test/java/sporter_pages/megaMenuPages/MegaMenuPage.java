@@ -55,6 +55,8 @@ public class MegaMenuPage extends BasePage {
     private List<WebElement> mainCategoriesInMegaMenu;
     @FindBy(id = "SortCategoriesContainer")
     private WebElement ShopBySubMenu;
+    @FindBy(id = "cat_1343")
+    private WebElement womensOnlyMenu;
     public MegaMenuPage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
@@ -110,6 +112,31 @@ public class MegaMenuPage extends BasePage {
             DataHelperAndWait.waitToBeVisible(this.sportsMenu, webDriver);
             actions.moveToElement(this.sportsMenu).perform();
             DataHelperAndWait.clickOnElement(this.sportsMenu, webDriver);
+        }
+    }
+    public void clickOnWomensOnlyMainMenu() {
+        Actions actions = new Actions(webDriver);
+        try {
+            DataHelperAndWait.waitToBeVisible(this.womensOnlyMenu, webDriver);
+            actions.moveToElement(this.womensOnlyMenu).perform();
+            DataHelperAndWait.clickOnElement(this.womensOnlyMenu, webDriver);
+        } catch (Exception e) {
+            DataHelperAndWait.waitToBeVisible(this.womensOnlyMenu, webDriver);
+            actions.moveToElement(this.womensOnlyMenu).perform();
+            DataHelperAndWait.clickOnElement(this.womensOnlyMenu, webDriver);
+        }
+    }
+    public void clickOnWomensOnlyFromShopByMenu() {
+        Actions actions = new Actions(webDriver);
+        MegaMenuPage megaMenuPage = new MegaMenuPage(webDriver);
+        try {
+            DataHelperAndWait.waitToBeVisible(megaMenuPage.getShopByMenu(), webDriver);
+            actions.moveToElement(megaMenuPage.getShopByMenu()).perform();
+            DataHelperAndWait.waitToBeVisible(megaMenuPage.getWomensOnlyMenu(), webDriver);
+        } catch (Exception e) {
+            DataHelperAndWait.waitToBeVisible(megaMenuPage.getShopByMenu(), webDriver);
+            actions.moveToElement(megaMenuPage.getShopByMenu()).perform();
+            DataHelperAndWait.waitToBeVisible(megaMenuPage.getWomensOnlyMenu(), webDriver);
         }
     }
 

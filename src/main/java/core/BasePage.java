@@ -80,7 +80,7 @@ public class BasePage {
     public final String discaountCouponeCode = "";
     public final String outOfStockProduct = "/en-ae/healthy-food/snacks-drinks/spreads/gymqueen-smooth-peanut-butter-spread";
     public final String product = "/en-ae/optimum-gold-standard-100-whey";
-    public final String womenOnlyUrl = "/female/";
+    public final String womenOnlyUrl = "/female";
     public final String sportSupplementsUrl = "/sport-supplements";
     public final String sportUrl = "/sports";
     public final String healthyFoodsUrl = "/healthy-food";
