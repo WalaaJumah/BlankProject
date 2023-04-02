@@ -111,11 +111,11 @@ public class AEFooterPageTestCases extends BaseTest {
         aeFooterPage.fillInemailFieldInNewsletterBlock(aeFooterPage.generateRandomEmail());
         aeFooterPage.selectFemaleOptionInNewsletterBlock();
         aeFooterPage.clickOnJoinBtnInNewsletterBlock();
-        try{
+        try {
             DataHelperAndWait.waitForTime(3000);
             Assert.assertTrue(aeFooterPage.getSubscriptionSuccessfulMsg().isDisplayed());
-        Assert.assertEquals(aeFooterPage.getSubscriptionSuccessfulMsg().getText(), "Thank you for your subscription.");}
-        catch (AssertionError as){
+            Assert.assertEquals(aeFooterPage.getSubscriptionSuccessfulMsg().getText(), "Thank you for your subscription.");
+        } catch (AssertionError as) {
             aeFooterPage.navigateToHomePage();
             aeFooterPage.clearEmailField();
             aeFooterPage.fillInemailFieldInNewsletterBlock(aeFooterPage.generateRandomEmail());
@@ -124,6 +124,7 @@ public class AEFooterPageTestCases extends BaseTest {
             Assert.assertTrue(aeFooterPage.getSubscriptionSuccessfulMsg().isDisplayed());
 //            Assert.assertEquals(aeFooterPage.getSubscriptionSuccessfulMsg().getText(), "Thank you for your subscription.");}
         }
+    }
 
 
     // There's a bug here, when joining using email already joined then the system display 2 invalid messages
