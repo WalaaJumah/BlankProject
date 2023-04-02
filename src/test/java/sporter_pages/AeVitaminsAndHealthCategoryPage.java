@@ -730,6 +730,7 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
 //        this.clickOnNextIconInShopByHealthNeedSection();
 //        this.clickOnNextIconInShopByHealthNeedSection();
 //        this.clickOnNextIconInShopByHealthNeedSection();
+
 //        this.clickOnNextIconInShopByHealthNeedSection();
 //        this.clickOnNextIconInShopByHealthNeedSection();
 //        this.clickOnNextIconInShopByHealthNeedSection();

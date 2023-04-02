@@ -30,7 +30,10 @@ public class MegaMenuPage extends BasePage {
     @FindBy(id = "SortItem_Sports ")
     private WebElement sportsMenuFromShopBy;
     @FindBy(xpath = "//ul/li[@id='cat_686']/a")
+    private WebElement vitaminsAndHealthInShopByMenu;
+       @FindBy(id = "menu_47")
     private WebElement vitaminsAndHealthMenu;
+
     @FindBy(id = "cat_583")
     private WebElement sportsSupplementsMenu;
     //        @FindBy(id = "cat_618")
@@ -137,6 +140,19 @@ public class MegaMenuPage extends BasePage {
             DataHelperAndWait.waitToBeVisible(megaMenuPage.getShopByMenu(), webDriver);
             actions.moveToElement(megaMenuPage.getShopByMenu()).perform();
             DataHelperAndWait.waitToBeVisible(megaMenuPage.getWomensOnlyMenu(), webDriver);
+        }
+    }
+    public void clickOnVitaminsAndHealthFromShopByMenu() {
+        Actions actions = new Actions(webDriver);
+        MegaMenuPage megaMenuPage = new MegaMenuPage(webDriver);
+        try {
+            DataHelperAndWait.waitToBeVisible(megaMenuPage.getShopByMenu(), webDriver);
+            actions.moveToElement(megaMenuPage.getShopByMenu()).perform();
+            DataHelperAndWait.waitToBeVisible(megaMenuPage.getVitaminsAndHealthMenu(), webDriver);
+        } catch (Exception e) {
+            DataHelperAndWait.waitToBeVisible(megaMenuPage.getShopByMenu(), webDriver);
+            actions.moveToElement(megaMenuPage.getShopByMenu()).perform();
+            DataHelperAndWait.waitToBeVisible(megaMenuPage.getVitaminsAndHealthMenu(), webDriver);
         }
     }
 

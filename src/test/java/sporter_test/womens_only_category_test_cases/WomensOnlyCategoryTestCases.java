@@ -68,9 +68,9 @@ public class WomensOnlyCategoryTestCases extends BaseTest {
     }
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure all secure tabs appears correctly(100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks)", priority = 6)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInWomenOnlyCategoryPage() {
-        SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
+        WomensOnlyCategoryPage womensOnlyCategoryPage= new WomensOnlyCategoryPage(webDriver);
         FooterSection footerSection = new FooterSection(webDriver);
-        sportsSupplementsCategoryPage.navigateToSportsSupplementPage();
+        womensOnlyCategoryPage.navigateToWomenOnlyPage();
         for (int i = 0; i < footerSection.getPageBottomBlocksList().size(); i++) {
             WebElementsAssertion.validateTheElementIsDisplayed(footerSection.getPageBottomBlocksList().get(i), webDriver);
         }

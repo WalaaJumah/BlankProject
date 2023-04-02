@@ -84,7 +84,7 @@ public class BasePage {
     public final String sportSupplementsUrl = "/sport-supplements";
     public final String sportUrl = "/sports";
     public final String healthyFoodsUrl = "/healthy-food";
-    public final String healthVitaminsUrl = "/vitamins";
+    public final String healthVitaminsUrl = "/health-vitamins";
     public final String trackOrderUrl = "/track";
     public final String shippingAndDeliveryUrl = "/orders-delivery";
     public final String refundAndReturnUrl = "/refund";
