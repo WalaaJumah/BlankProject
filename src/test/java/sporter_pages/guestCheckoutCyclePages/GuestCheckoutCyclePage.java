@@ -71,8 +71,14 @@ public class GuestCheckoutCyclePage extends BasePage {
     private WebElement continueShippingMethodsBtn;
     @FindBy(id = "submitPaymentMethodBtn")
     private WebElement continuePaymentMethodsBtn;
-    @FindBy(id = "citiesSelector")
+    @FindBy(xpath = "//div[@id='citiesSelector']/div")
     private WebElement cityMenu;
+       @FindBy(xpath = "//div[@id='citiesSelector']/div[2]/div/input")
+    private WebElement citySearch;
+            @FindBy(xpath = "//div[@id='citiesSelector']/div[2]/div[2]/div[2]")
+    private WebElement duabiCity;
+
+
     @FindBy(id = "countrySelector")
     private WebElement countryMenu;
     @FindBy(id = "lastnameField_errMsg")
@@ -239,10 +245,15 @@ public class GuestCheckoutCyclePage extends BasePage {
     public void setSelectDubaiCityCity() {
         try {
             DataHelperAndWait.clickOnElement(cityMenu, webDriver);
-            DataHelperAndWait.typeTextInElement(cityMenu, webDriver, "Dubai");
+            DataHelperAndWait.clickOnElement(citySearch, webDriver);
+            DataHelperAndWait.typeTextInElement(citySearch, webDriver, "Dubai");
+            DataHelperAndWait.waitForTime(1000);
+            DataHelperAndWait.clickOnElement(duabiCity, webDriver);
+
         } catch (Exception e) {
             DataHelperAndWait.clickOnElement(cityMenu, webDriver);
-            DataHelperAndWait.clickOnElement(dubaiCity, webDriver);
+            DataHelperAndWait.typeTextInElement(citySearch, webDriver, "Dubai");
+            DataHelperAndWait.clickOnElement(duabiCity, webDriver);
         }
     }
 

@@ -351,6 +351,7 @@ catch (Exception e){
                     XmlReader.getXMLData("StreetOneAddressName"),
                     XmlReader.getXMLData("StreetTwoAddressName")
             );
+            guestCheckoutCyclePage.setSelectDubaiCityCity();
         }
         catch (Exception e){
             DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
@@ -385,6 +386,7 @@ catch (Exception e){
                     XmlReader.getXMLData("StreetOneAddressName"),
                     XmlReader.getXMLData("StreetTwoAddressName")
             );
+            guestCheckoutCyclePage.setSelectDubaiCityCity();
         }
         catch (Exception e){
             DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
@@ -526,9 +528,10 @@ catch (Exception e){
         DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);
-        cartPage.navigateToHomePage();
-        cartPage.clickOnCartIcon();
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+//        cartPage.navigateToHomePage();
+//        cartPage.clickOnCartIcon();
+//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
 //        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
         DataHelperAndWait.waitForUrlContains(guestCheckoutCyclePage.shippingInformationUrl,webDriver);
         try{
@@ -574,16 +577,18 @@ catch (Exception e){
         CartPage cartPage = new CartPage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
 //        cartPage.addToCartAndDisplayTheCart();
-        webDriver.manage().deleteCookieNamed("guestCartId");
+//        webDriver.manage().deleteCookieNamed("guestCartId");
         cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);
 //        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
 //        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-        cartPage.navigateToHomePage();
-        cartPage.clickOnCartIcon();
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+
+//        cartPage.navigateToHomePage();
+//        cartPage.clickOnCartIcon();
+//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
 //        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
         DataHelperAndWait.waitForUrlContains(guestCheckoutCyclePage.shippingInformationUrl,webDriver);
         try{
