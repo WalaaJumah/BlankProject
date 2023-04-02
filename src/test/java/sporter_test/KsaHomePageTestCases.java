@@ -87,7 +87,6 @@ public class KsaHomePageTestCases extends BaseTest {
     public void verifyClickingOnTheFirstSideBannersWorksCorrectlyInTheVitaminsAndHealthCategoryPage() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
 //        ksaHomePage.navigate();
-        String expectedUrl = ksaHomePage.getFirstSideBanner().getAttribute("href");
         DataHelperAndWait.waitToBeVisible(ksaHomePage.getFirstSideBanner(),10,webDriver);
         ksaHomePage.getFirstSideBanner().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl), "Incorrect URL is displayed " + webDriver.getCurrentUrl());

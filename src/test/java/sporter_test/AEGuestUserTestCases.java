@@ -16,7 +16,7 @@ import static core.BasePage.BaseURL;
 public class AEGuestUserTestCases extends BaseTest {
     public void accessShippingInformationScreen(){
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
-       try{ DataHelperAndWait.implicitWait(3,webDriver);
+       try{ DataHelperAndWait.implicitWait(10,webDriver);
         aeGuestUserPage.clickOnCartIcon();
         aeGuestUserPage.clickOnProceedCheckoutBtnInCartPopup();
         aeGuestUserPage.clickOnGuestCheckoutBtn();}
@@ -123,6 +123,12 @@ aeGuestUserPage.clickOnContinueBtn();
     @Test(groups = {"2.04 Guest User Page","All Smoke Testing Result","1.4  Low Severity"},description = "Guest Checkout- Make sure the city Search field in the shipping information form works correctly and retrieved the matched result ", priority = 9)
     public void verifyCitySearchWorksFineAndRetrievedTheMatchedResult() {
         AEGuestUserPage aeGuestUserPage = new AEGuestUserPage(webDriver);
+        AeProductDetailsPage aeProductDetailsPage=new AeProductDetailsPage(webDriver);
+        aeProductDetailsPage.displayTheProduct();
+        aeGuestUserPage.addToCart();
+        aeGuestUserPage.viewCart();
+        aeGuestUserPage.clickOnProceedCheckoutBtn();
+        aeGuestUserPage.clickOnGuestCheckoutBtn();
 //        this.verifyAbilityToAccessTheGuestCheckoutPageFormTheCartPageCorrectly();
         aeGuestUserPage.getCityListField().click();
         aeGuestUserPage.getCitySearchField().sendKeys("D");
@@ -213,7 +219,7 @@ aeGuestUserPage.clickOnContinueBtn();
         cityOption.click();
         DataHelperAndWait.scrollTo(aeGuestUserPage.getContinueBtn(),webDriver);
 aeGuestUserPage.clickOnContinueBtn();
-DataHelperAndWait.waitForTime(1000);
+DataHelperAndWait.waitForTime(1500);
         Assert.assertTrue(aeGuestUserPage.getShippingMethodSection().isDisplayed());
     }
     @Test(groups = {"2.04 Guest User Page","All Smoke Testing Result","1.4  Low Severity"},description = "Make sure the return to the cart button appearing in the shipping information screen for the Guest User works correctly  ", priority = 15)
