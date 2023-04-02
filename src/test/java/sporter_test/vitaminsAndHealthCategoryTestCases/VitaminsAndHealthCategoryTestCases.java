@@ -14,6 +14,7 @@ import sporter_pages.footerSections.FooterSection;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.megaMenuPages.MegaMenuPage;
+import sporter_pages.productPage.ProductDetailsPage;
 import sporter_pages.sportsSupplementsCategoryPages.SportsSupplementsCategoryPage;
 import sporter_pages.vitamins_and_health_category_pages.VitaminsAndHealthCategoryPage;
 import sporter_pages.womens_only_category_pages.WomensOnlyCategoryPage;
@@ -499,6 +500,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(vitaminsAndHealthCategoryPage.getViewAllCollagen(), webDriver);
         vitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
+
     @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Vitamins & HealthCategory from HomePage Redirect User To CorrectURL", priority = 56)
     public void verifyClickingOnVitaminsAndHealthCategoryFromHomePageRedirectUserToCorrectURL() {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
@@ -508,4 +510,22 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.healthVitaminsUrl, webDriver);
     }
 
+    @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the NewsLetter section appears correctly  ", priority = 57)
+    public void verifyNewLetterSectionAppearsCorrectly() {
+        SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
+        VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
+        vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
+        WebElementsAssertion.validateTheElementIsDisplayed(sportsSupplementsCategoryPage.getNewsLetterSection(), webDriver);
+    }
+
+    @Test(groups = {"1.2 High Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Verify that the search button works correctly from the Sport Supplements category page", priority = 58)
+    public void verifySearchBtnWorksCorrectlyFromSportSupplementsCategoryPage() throws IOException {
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
+        vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
+        DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSearchPageTitle(), webDriver);
+        productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
+
+    }
 }

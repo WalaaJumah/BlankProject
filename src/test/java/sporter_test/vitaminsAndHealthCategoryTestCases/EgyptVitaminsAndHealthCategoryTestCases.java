@@ -7,9 +7,14 @@
 package sporter_test.vitaminsAndHealthCategoryTestCases;
 
 import core.BasePage;
+import core.DataHelperAndWait;
+import core.WebElementsAssertion;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.EgyptHomePage;
+import sporter_pages.sportsSupplementsCategoryPages.SportsSupplementsCategoryPage;
+import sporter_pages.vitamins_and_health_category_pages.VitaminsAndHealthCategoryPage;
 
 import java.io.IOException;
 
@@ -26,6 +31,64 @@ public class EgyptVitaminsAndHealthCategoryTestCases extends VitaminsAndHealthCa
         }
         storeCountry = "Egypt";
         countryCode = "20";
+    }
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category Page- Make sure that the Result label and its value appear correctly ", priority = 59)
+    public void verifyResultFieldAndItsVaLueAppearInTheVitaminsAndHealthCategoryPage() {
+        SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
+        VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
+        vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
+        WebElementsAssertion.validateTheElementIsDisplayed(sportsSupplementsCategoryPage.getResultLabel(), webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(sportsSupplementsCategoryPage.getSearchResultValue(), webDriver);
+        Assert.assertNotEquals(sportsSupplementsCategoryPage.getSearchResultValue().getText(), "0", "The number of result is Zero " + " The URL is: " + webDriver.getCurrentUrl());
+    }
+
+    @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Vitamins & Health Category Category Page- Make sure that Sort By menu appears correctly ", priority = 60)
+    public void verifySortByMenuAndItsOptionsAppearCorrectly() {
+        SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
+        VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
+        vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
+        WebElementsAssertion.validateTheElementIsDisplayed(sportsSupplementsCategoryPage.getSortByMenu(), webDriver);
+    }
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category Category Page- Make Sure the next page button works correctly", priority = 61)
+    public void verifyNextPageBtnWorksCorrectly() {
+        SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
+        VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
+        vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
+        if (sportsSupplementsCategoryPage.getPaginationBtns().size() > 3) {
+            DataHelperAndWait.clickOnElement(sportsSupplementsCategoryPage.getNextPageBtn(), webDriver);
+            WebElementsAssertion.validateTheCurrentUrlContainsString("p=2", webDriver);
+        } else {
+            System.out.println("There's only one page in the list");
+        }
+    }
+
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category Category Page- Make Sure the previous page button works correctly", priority = 62)
+    public void verifyPreviousPageBtnWorksCorrectly() {
+        SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
+        VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
+        vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
+        if (sportsSupplementsCategoryPage.getPaginationBtns().size() > 3) {
+            DataHelperAndWait.clickOnElement(sportsSupplementsCategoryPage.getNextPageBtn(), webDriver);
+            DataHelperAndWait.clickOnElement(sportsSupplementsCategoryPage.getPreviousPageBtn(), webDriver);
+            DataHelperAndWait.waitForTime(2000);
+            Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
+        } else {
+            System.out.println("There's only one page in the list");
+        }
+    }
+    @Test(groups = "All Smoke Testing Result", description = "{{CountryName}}:Vitamins & Health Category Category Page- Make Sure the ability to access all pages inside Sport Supplements Category Page  ", priority = 63)
+    public void verifyAbilityToAccessAllPagesInsideVitaminsAndHealthCategoryPage() throws IOException {
+        SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
+        VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
+        vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
+        DataHelperAndWait.waitToBeVisible(sportsSupplementsCategoryPage.getSearchResultValue(), webDriver);
+        String numberOfProductInTheList = sportsSupplementsCategoryPage.getSearchResultValue().getText();
+        if (sportsSupplementsCategoryPage.isTheresNoPages(numberOfProductInTheList))
+            System.out.println("There's no pages");
+        else {
+            sportsSupplementsCategoryPage.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList, sportsSupplementsCategoryPage.getNextPageBtn(), webDriver);
+        }
+
     }
 
     @Test(enabled = false)
