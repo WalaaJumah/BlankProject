@@ -15,6 +15,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.HomePage;
+import sporter_pages.megaMenuPages.EgyptMegaMenuPage;
 import sporter_pages.megaMenuPages.MegaMenuPage;
 import sporter_pages.productPage.ProductDetailsPage;
 import sporter_pages.sportsSupplementsCategoryPages.SportsSupplementsCategoryPage;
@@ -196,9 +197,7 @@ public class ProductDetailsTestCases extends BaseTest {
         productDetailsPage.displayTheProduct();
         sportsSupplementsCategoryPage.clickOnSportsSupplementMainMenu();
         sportsSupplementsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-//<<<<<<< HEAD
-        WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.sportSupplementsUrl, webDriver);
-//=======
+
         try{
         WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.sportSupplementsUrl,webDriver);}
         catch (Exception e){
@@ -210,7 +209,7 @@ public class ProductDetailsTestCases extends BaseTest {
     @Test(groups = {"1.2 High Severity"}, description = "{{CountryName}}:Verify ability to click on Vitamins And Health Menu From Product Details Page", priority = 19)
     public void verifyAbilityToClickOnVitaminsAndHealthMenuFromProductDetailsPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        MegaMenuPage megaMenuPage = new MegaMenuPage(webDriver);
+        EgyptMegaMenuPage megaMenuPage = new EgyptMegaMenuPage(webDriver);
         productDetailsPage.displayTheProduct();
         try{
         megaMenuPage.clickOnVitaminsAndHealthMainMenu();}

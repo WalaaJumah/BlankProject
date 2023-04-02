@@ -7,10 +7,13 @@
 package sporter_test.productTestCases;
 
 import core.BasePage;
+import core.DataHelperAndWait;
+import core.WebElementsAssertion;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.EgyptHomePage;
+import sporter_pages.megaMenuPages.MegaMenuPage;
 import sporter_pages.productPage.EgyptProductDetailsPage;
 import sporter_pages.productPage.ProductDetailsPage;
 
@@ -35,7 +38,24 @@ public class EgyptProductDetailsTestCases extends ProductDetailsTestCases {
             productDetailsPage.storeCountry = "/en-eg";
         }
     }
+@Test(enabled = false)
+public void verifyAbilityToClickOnSportsMenuIsDisplayedFromProductDetailsPage() throws IOException {
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        MegaMenuPage megaMenuPage = new MegaMenuPage(webDriver);
+        productDetailsPage.displayTheProduct();
+        try{
+            megaMenuPage.clickOnSportsMainMenu();}
+        catch (Exception e){
+            DataHelperAndWait.clickOnElement(megaMenuPage.getSportsMenu(),webDriver);
+        }
 
+        megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        try {
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.sportsUrl, webDriver);
+        } catch (Exception e) {
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.sportsUrl + "/", webDriver);
+        }
+    }
     //    @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the customer can navigate to the home page using the BreadCrumb ", priority = 12)
 //    public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumb() {
 //        EgyptProductDetailsPage egyptProductDetailsPage = new EgyptProductDetailsPage(webDriver);

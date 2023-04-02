@@ -25,13 +25,13 @@ public class MegaMenuPage extends BasePage {
     private WebElement SportsSupplementsMenuFromShopBy;
     @FindBy(id = "SortItem_Vitamins & Health")
     private WebElement vitaminsAndHealthMenuFromShopBy;
-    @FindBy(id = "SortItem_HEALTHY FOOD")
+    @FindBy(id = "cat_618")
     private WebElement healthyFoodMenuFromShopBy;
     @FindBy(id = "SortItem_Sports ")
     private WebElement sportsMenuFromShopBy;
     @FindBy(xpath = "//ul/li[@id='cat_686']/a")
     private WebElement vitaminsAndHealthInShopByMenu;
-       @FindBy(id = "menu_47")
+       @FindBy(xpath = "//ul/li[@id='menu_47']/a")
     private WebElement vitaminsAndHealthMenu;
 
     @FindBy(id = "cat_583")
@@ -40,7 +40,7 @@ public class MegaMenuPage extends BasePage {
 //    private WebElement healthyFoodMenu;
     @FindBy(xpath = "//ul/li[@ID='cat_618']/a")
     private WebElement healthyFoodMenu;
-    @FindBy(xpath = "//ul/li[@id='cat_1431']/a")
+    @FindBy(xpath = "//ul/li[@id='cat_3082']/a")
     private WebElement sportsMenu;
     @FindBy(id = "shobBy")
     private WebElement shopByMenu;

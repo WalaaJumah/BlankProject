@@ -18,6 +18,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.cartPages.CartPage;
 import sporter_pages.homepage_classes.EgyptHomePage;
+import sporter_pages.megaMenuPages.EgyptMegaMenuPage;
+import sporter_pages.megaMenuPages.MegaMenuPage;
 import sporter_pages.productPage.ProductDetailsPage;
 import xml_reader.XmlReader;
 
@@ -52,6 +54,35 @@ public void verifyOrderTotalCalculationInCartPageWorksCorrectly() {
         double cartTotal = subTotal + tax;
         Assert.assertEquals(orderTotal, cartTotal);
         webDriver.manage().deleteCookieNamed("guestCartId");
+    }
+    @Test(groups = {"1.2 High Severity"}, description = "{{CountryName}}:Verify ability to click on  Vitamins And Health Menu From cart Page", priority = 38)
+    public void verifyAbilityToClickOnVitaminsAndHealthMenuFromCartPage() throws IOException {
+        EgyptMegaMenuPage megaMenuPage = new EgyptMegaMenuPage(webDriver);
+        CartPage cartPage = new CartPage(webDriver);
+        cartPage.navigateToCartPage();
+        megaMenuPage.clickOnVitaminsAndHealthMainMenu();
+        megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        try {
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl, webDriver);
+        }
+        catch (Exception e){
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl+"/", webDriver);
+        }
+    }
+@Test(enabled = false)
+public void verifyAbilityToClickOnSportsMenuIsDisplayedFromCartPage() throws IOException {
+        EgyptMegaMenuPage megaMenuPage = new EgyptMegaMenuPage(webDriver);
+        CartPage cartPage = new CartPage(webDriver);
+        cartPage.navigateToCartPage();
+        megaMenuPage.clickOnSportsMainMenu();
+        megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        try {
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.sportsUrl,webDriver);
+        }
+        catch (Exception e){
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.sportsUrl+"/", webDriver);
+        }
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.4 Low Severity"}, description = "{{CountryName}}: Make sure that the counter-number appears inside the cart pop-up works correctly", priority = 4)

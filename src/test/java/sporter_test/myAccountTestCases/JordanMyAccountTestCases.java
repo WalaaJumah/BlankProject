@@ -91,8 +91,8 @@ public class JordanMyAccountTestCases extends MyAccountTestCases {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         myAccountPage.navigateToAddressesPage();
         DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(), webDriver);
-        DataHelperAndWait.clickOnElement(myAccountPage.getSaveAddressBtn(), webDriver);
-        WebElementsAssertion.assertionElementNotEnable(myAccountPage.getEmailField(), webDriver);
+//        DataHelperAndWait.clickOnElement(myAccountPage.getSaveAddressBtn(), webDriver);
+        WebElementsAssertion.assertionElementNotEnable(myAccountPage.getSaveAddressBtn(), webDriver);
 
 //        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getPhoneErrMsg(), webDriver);
 //        WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(guestCheckoutCyclePage.getAddressErrMsg(), webDriver);

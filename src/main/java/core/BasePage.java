@@ -35,7 +35,7 @@ public class BasePage {
     public static String productUrlKSA2 = "/efx-karbolyn-fuel";
     public static String productUrlKSA3 = "/windmill-natural-vitamins-omega-3-1000mg-with-epa-dha";
     public static String productUrlKSA4 = "/webber-naturals-joint-ease-glucosamine-chondroitin";
-    public static String productUrlKSA5 = "/sportlife-boost-focus-freshmint-gums";
+    public static String productUrlKSA5 = "/optimum-platinum-hydrowhey-6220";
     public static String productUrlKSA6 = "/yumearth-organic-assorted-vitamin-c-lollipops-14-pops";
     public static String productUrlKSAWithHighPrice1 = "/puma-speed-orbiter-black-nrgy-red-yellow-33980";
     public static String productUrlKSAWithHighPrice2 = "/asics-gel-kayano-26-ls-graphite-grey-piedmont-grey-32131";
@@ -48,7 +48,7 @@ public class BasePage {
     public static String productUrlQatarWithHighPrice2 = "/dymatize-iso-100-7164";
     public static String productUrlQatarWithHighPrice3 = "/dymatize-elite-whey-7161";
     public static String productUrlQatarWithHighPrice4 = "/evl-nutrition-100-whey-protein-55126";
-    public static String productUrlJordanWithHighPrice2 = "/catlog-product-view-id-6847-6773";
+    public static String productUrlJordanWithHighPrice2 = "/optimum-serious-mass";
     public static String oOSProductUrl = "";
     public static String bundleUrl = "";
     public static String bogoProduct = "";

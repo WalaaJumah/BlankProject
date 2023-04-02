@@ -85,7 +85,7 @@ public class VitaminsAndHealthCategoryPage extends BasePage {
     private WebElement superFoodsSection;
     @FindBy(xpath = "((//div[@class='swiper-container swiper-product-slider top-seller-slider swiper-container-horizontal'])[7]//a)[1]")
     private WebElement melatoninSection;
-    @FindBy(xpath = "((//div[@class='swiper-container swiper-product-slider top-seller-slider swiper-container-horizontal'])[8]//a)[1]")
+    @FindBy(xpath = "((//div[@class='swiper-container swiper-product-slider top-seller-slider swiper-container-horizontal'])[7]//a)[1]")
     private WebElement collagenSection;
 
     @FindBy(xpath = "(//ul/li/a[@class='view-all'])[1]")
@@ -102,7 +102,7 @@ public class VitaminsAndHealthCategoryPage extends BasePage {
     private WebElement viewAllSuperFoods;
    @FindBy(xpath = "(//ul/li/a[@class='view-all'])[7]")
     private WebElement viewAllMelatonin;
-   @FindBy(xpath = "(//ul/li/a[@class='view-all'])[8]")
+   @FindBy(xpath = "(//ul/li/a[@class='view-all'])[7]")
     private WebElement viewAllCollagen;
 
 

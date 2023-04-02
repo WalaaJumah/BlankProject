@@ -368,8 +368,8 @@ public class MyAccountTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(myAccountPage.getEditAddressBtn(), webDriver);
         myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
         DataHelperAndWait.typeTextInElement(myAccountPage.getNationalIdField(), webDriver, "12");
-        DataHelperAndWait.clickOnElement(myAccountPage.getSaveEditAddressBtn(), webDriver);
-        WebElementsAssertion.assertionElementNotEnable(myAccountPage.getEmailField(), webDriver);
+//        DataHelperAndWait.clickOnElement(myAccountPage.getSaveEditAddressBtn(), webDriver);
+        WebElementsAssertion.assertionElementNotEnable(myAccountPage.getSaveEditAddressBtn(), webDriver);
 //        WebElementsAssertion.validateTheElementIsDisplayed(joGuest.getNationalIdErrMsg(), webDriver);
     }
 

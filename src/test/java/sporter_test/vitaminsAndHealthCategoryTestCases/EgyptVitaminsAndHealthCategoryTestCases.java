@@ -13,6 +13,8 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.EgyptHomePage;
+import sporter_pages.megaMenuPages.EgyptMegaMenuPage;
+import sporter_pages.megaMenuPages.MegaMenuPage;
 import sporter_pages.sportsSupplementsCategoryPages.SportsSupplementsCategoryPage;
 import sporter_pages.vitamins_and_health_category_pages.VitaminsAndHealthCategoryPage;
 
@@ -31,6 +33,21 @@ public class EgyptVitaminsAndHealthCategoryTestCases extends VitaminsAndHealthCa
         }
         storeCountry = "Egypt";
         countryCode = "20";
+    }
+    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Vitamins & Health Category Appears In MegaMenu Redirect User To CorrectURL", priority = 1)
+    public void verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL() throws IOException {
+        EgyptMegaMenuPage megaMenuPage = new EgyptMegaMenuPage(webDriver);
+        megaMenuPage.clickOnVitaminsAndHealthMainMenu();
+        megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl, webDriver);
+    }
+
+    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Vitamins & Health Category from ShopBy Menu Redirect User To CorrectURL", priority = 2)
+    public void verifyClickingOnVitaminsAndHealthCategoryFromShopByMenuRedirectUserToCorrectURL() throws IOException {
+        EgyptMegaMenuPage megaMenuPage = new EgyptMegaMenuPage(webDriver);
+        megaMenuPage.clickOnVitaminsAndHealthFromShopByMenu();
+        megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl, webDriver);
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category Page- Make sure that the Result label and its value appear correctly ", priority = 59)
     public void verifyResultFieldAndItsVaLueAppearInTheVitaminsAndHealthCategoryPage() {

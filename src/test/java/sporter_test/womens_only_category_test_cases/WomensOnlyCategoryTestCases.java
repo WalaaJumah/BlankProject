@@ -235,6 +235,7 @@ public class WomensOnlyCategoryTestCases extends BaseTest {
     public void verifyTheSupplementsForHerHaveAtLeastAProduct() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         womensOnlyCategoryPage.navigateToWomenOnlyPage();
+        DataHelperAndWait.waitForTime(1500);
         WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getSupplementForHerSection(),webDriver);
     }
 
@@ -242,18 +243,21 @@ public class WomensOnlyCategoryTestCases extends BaseTest {
     public void verifyTheWomenVitaminsHaveAtLeastAProduct() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         womensOnlyCategoryPage.navigateToWomenOnlyPage();
+        DataHelperAndWait.waitForTime(1500);
         WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getWomensVitaminsSection(),webDriver);
     }
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure the Workout In Style section have at least a product", priority = 28)
     public void verifyTheWorkOutInStyleAtLeastAProduct() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         womensOnlyCategoryPage.navigateToWomenOnlyPage();
+        DataHelperAndWait.waitForTime(1500);
         WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getWorkoutInStyleSection(),webDriver);
     }
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure the Lady-Friendly Snacks & Food section have at least a product", priority = 29)
     public void verifyTheLadyFriendlySnacksFoodAtLeastAProduct() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         womensOnlyCategoryPage.navigateToWomenOnlyPage();
+        DataHelperAndWait.waitForTime(1500);
         WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getLadyFriendlySnacksAndFoodSection(),webDriver);
     }
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure the Female Gallery section appears correctly", priority = 30)

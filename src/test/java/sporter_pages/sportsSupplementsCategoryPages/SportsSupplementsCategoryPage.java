@@ -83,11 +83,11 @@ public class SportsSupplementsCategoryPage extends BasePage {
         try {
             DataHelperAndWait.waitToBeVisible(megaMenuPage.getShopByMenu(), webDriver);
             actions.moveToElement(megaMenuPage.getShopByMenu()).perform();
-            DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsSupplementsMenuFromShopBy(), webDriver);
+            DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsSupplementsMenu(), webDriver);
         } catch (Exception e) {
             DataHelperAndWait.waitToBeVisible(megaMenuPage.getShopByMenu(), webDriver);
             actions.moveToElement(megaMenuPage.getShopByMenu()).perform();
-            DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsSupplementsMenuFromShopBy(), webDriver);
+            DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsSupplementsMenu(), webDriver);
         }
     }
 
