@@ -26,7 +26,7 @@ public class WomensOnlyCategoryPage extends BasePage {
     private WebElement RotatingSliderPagingControl;
     @FindBy(xpath = "//ol[@class='flex-control-nav flex-control-paging']/li/a")
     private List<WebElement> RotatingSliderPagingControlList;
-    @FindBy(xpath = "//div[@id='HomeHeaderContainer']/div[@id='crouselContainer']")
+    @FindBy(xpath = "//ul[@class='slides']/li[@class='flex-active-slide']/a")
     private WebElement bannerInRotatingSliderSection;
     @FindBy(xpath = "(//div[@class='nutritious-right']/a)[1]")
     private WebElement firstSideBanner;
@@ -60,6 +60,24 @@ public class WomensOnlyCategoryPage extends BasePage {
     private WebElement fashionAndStyleCategory;
   @FindBy(xpath = "(//ul[@class='trending-products']/li/div/a)[10]")
     private WebElement personalCareCategory;
+  @FindBy(xpath = "(//ul/li/a[@class='view-all'])[1]")
+    private WebElement viewAllInSupplementForHerSection;
+  @FindBy(xpath = "(//ul/li/a[@class='view-all'])[2]")
+    private WebElement viewAllInWomensVitaminsSection;
+  @FindBy(xpath = "(//ul/li/a[@class='view-all'])[3]")
+    private WebElement viewAllInWorkoutInStyleSection;
+    @FindBy(xpath = "(//ul/li/a[@class='view-all'])[4]")
+    private WebElement viewAllInLadyFriendlySnacksAndFoodSection;
+  @FindBy(xpath = "(//div[@class='swiper-container swiper-product-slider top-seller-slider swiper-container-horizontal']//a)[1]")
+    private WebElement supplementForHerSection;
+  @FindBy(xpath = "((//div[@class='swiper-container swiper-product-slider top-seller-slider swiper-container-horizontal'])[2]//a)[1]")
+    private WebElement womensVitaminsSection;
+  @FindBy(xpath = "((//div[@class='swiper-container swiper-product-slider top-seller-slider swiper-container-horizontal'])[3]//a)[1]")
+    private WebElement workoutInStyleSection;
+  @FindBy(xpath = "((//div[@class='swiper-container swiper-product-slider top-seller-slider swiper-container-horizontal'])[4]//a)[1]")
+    private WebElement ladyFriendlySnacksAndFoodSection;
+  @FindBy(xpath = "//div[@class='brand-video-header']")
+    private WebElement femaleGallerySection;
 
 
     public void navigateToWomenOnlyPage() {

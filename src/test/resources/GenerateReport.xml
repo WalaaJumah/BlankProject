@@ -117,7 +117,18 @@
             <class name="sporter_test.healthy_food_category_test_cases.OmanHealthyFoodTestCases"></class>
             <class name="sporter_test.healthy_food_category_test_cases.BahrainHealthyFoodTestCases"></class>
 
-        </classes>he con
+           <!--     Women's Only Category Page        -->
+            <class name="sporter_test.womens_only_category_test_cases.UAEWomensOnlyCategoryTestCases"/>
+            <class name="sporter_test.womens_only_category_test_cases.KSAWomensOnlyCategoryTestCases"/>
+            <class name="sporter_test.womens_only_category_test_cases.JordanWomensOnlyCategoryTestCases"/>
+            <class name="sporter_test.womens_only_category_test_cases.KuwaitWomensOnlyCategoryTestCases"/>
+            <class name="sporter_test.womens_only_category_test_cases.QatarWomensOnlyCategoryTestCases"/>
+            <class name="sporter_test.womens_only_category_test_cases.EgyptWomensOnlyCategoryTestCases"/>
+            <class name="sporter_test.womens_only_category_test_cases.BahrainWomensOnlyCategoryTestCases"/>
+            <class name="sporter_test.womens_only_category_test_cases.OmanWomensOnlyCategoryTestCases"/>
+
+
+        </classes>
 
     </test>
 
