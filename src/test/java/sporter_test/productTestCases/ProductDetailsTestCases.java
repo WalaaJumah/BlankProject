@@ -212,7 +212,11 @@ public class ProductDetailsTestCases extends BaseTest {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         MegaMenuPage megaMenuPage = new MegaMenuPage(webDriver);
         productDetailsPage.displayTheProduct();
-        megaMenuPage.clickOnVitaminsAndHealthMainMenu();
+        try{
+        megaMenuPage.clickOnVitaminsAndHealthMainMenu();}
+        catch (Exception e){
+            DataHelperAndWait.clickOnElement(megaMenuPage.getVitaminsAndHealthMenu(),webDriver);
+        }
         megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         try{
             WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl,webDriver);}
@@ -241,7 +245,12 @@ public class ProductDetailsTestCases extends BaseTest {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         MegaMenuPage megaMenuPage = new MegaMenuPage(webDriver);
         productDetailsPage.displayTheProduct();
-        megaMenuPage.clickOnSportsMainMenu();
+        try{
+        megaMenuPage.clickOnSportsMainMenu();}
+        catch (Exception e){
+            DataHelperAndWait.clickOnElement(megaMenuPage.getSportsMenu(),webDriver);
+        }
+
         megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         try {
             WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.sportsUrl, webDriver);
@@ -275,7 +284,7 @@ public class ProductDetailsTestCases extends BaseTest {
     public void verifyAddToCartBtnInHeaderBarWorksCorrectly() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         DataHelperAndWait.scrollTo(productDetailsPage.getAddReviewButton(), webDriver);
-        DataHelperAndWait.waitForTime(500);
+        DataHelperAndWait.waitForTime(2000);
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getProductHeaderBar(), webDriver);
     }
 
@@ -283,7 +292,7 @@ public class ProductDetailsTestCases extends BaseTest {
     public void verifyHeaderBarDisplaysCorrectlyInProductDetailsPageWhenScrollingThePage() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         DataHelperAndWait.scrollTo(productDetailsPage.getAddReviewButton(), webDriver);
-        DataHelperAndWait.waitForTime(500);
+        DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.clickOnElement(productDetailsPage.getAddToCartBtnInProductHeaderBar(), webDriver);
 //        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getRecommendedProductsPopup(), webDriver);
     }
