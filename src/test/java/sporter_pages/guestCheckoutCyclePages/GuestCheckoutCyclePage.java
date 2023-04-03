@@ -245,6 +245,7 @@ public class GuestCheckoutCyclePage extends BasePage {
     public void setSelectDubaiCityCity() {
         try {
             DataHelperAndWait.clickOnElement(cityMenu, webDriver);
+            DataHelperAndWait.waitForTime(1500);
             DataHelperAndWait.clickOnElement(citySearch, webDriver);
             DataHelperAndWait.typeTextInElement(citySearch, webDriver, "Dubai");
             DataHelperAndWait.waitForTime(1000);

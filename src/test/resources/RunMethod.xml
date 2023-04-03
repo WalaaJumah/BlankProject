@@ -17,7 +17,7 @@
             <!--            Guest Checkout -->
             <class name="sporter_test.guestCheckoutCycleTestCases.UAEGuestCheckoutCycleTestCases">
                 <methods>
-                    <include name="verifyAbilityToPlaceOrderWhenUsingFreeCouponCode"/>
+                    <include name="verifyAllShippingMethodsAppearCorrectly"/>
                 </methods>
             </class>
         </classes>
