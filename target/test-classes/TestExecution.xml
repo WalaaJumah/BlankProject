@@ -14,10 +14,21 @@
         <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix"/>
         <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
         <classes>
+<<<<<<< HEAD
             <class name="sporter_test.headerTestCases.OmanHeaderTestCases"/>
             <class name="sporter_test.headerTestCases.BahrainHeaderTestCases"/>
             <class name="sporter_test.headerTestCases.KuwaitHeaderTestCases"/>
 
+=======
+            <class name="sporter_test.guestCheckoutCycleTestCases.UAEGuestCheckoutCycleTestCases"/>
+<!--            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.KSAVitaminsAndHealthCategoryTestCases"/>-->
+<!--            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.QatarVitaminsAndHealthCategoryTestCases"/>-->
+<!--            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.JordanVitaminsAndHealthCategoryTestCases"/>-->
+<!--            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.EgyptVitaminsAndHealthCategoryTestCases"/>-->
+<!--            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.OmanVitaminsAndHealthCategoryTestCases"/>-->
+<!--            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.BahrainVitaminsAndHealthCategoryTestCases"/>-->
+<!--            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.KuwaitVitaminsAndHealthCategoryTestCases"/>-->
+>>>>>>> 19d5e768b4b1879c1df497ef17962e8c769b9c79
 
         </classes>
 

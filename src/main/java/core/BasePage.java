@@ -24,14 +24,17 @@ public class BasePage {
 
 
     public static String BaseURL = "https://sporter.com";
-    public static String productUrl = "/optimum-gold-standard-100-whey";
+    public static String productUrl = "/venum-gldtr-4-0-t-shirt-53531";
+//    public static String productUrl = "/optimum-gold-standard-100-whey";
 
 //    public void setStoreCountry(String storeCountry) {
 //        this.storeCountry = storeCountry;
 //    }
-    public static String productUrl7 = "/dymatize-iso-100";
+    public static String productUrl7 = "/venum-gldtr-4-0-t-shirt-53531";
+//    public static String productUrl7 = "/dymatize-iso-100";
     public static String productUrlKSA1 = "/the-pack-wild-pre-workout";
-    public static String productUrlKSA8 = "/dymatize-iso-100";
+    public static String productUrlKSA8 = "/venum-gldtr-4-0-t-shirt-53531";
+//    public static String productUrlKSA8 = "/dymatize-iso-100";
     public static String productUrlKSA2 = "/efx-karbolyn-fuel";
     public static String productUrlKSA3 = "/windmill-natural-vitamins-omega-3-1000mg-with-epa-dha";
     public static String productUrlKSA4 = "/webber-naturals-joint-ease-glucosamine-chondroitin";
