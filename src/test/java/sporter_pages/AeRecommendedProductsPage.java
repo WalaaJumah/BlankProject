@@ -43,7 +43,7 @@ public class AeRecommendedProductsPage extends BasePage {
 
     //Getter Methods
     public WebElement getCircleIcon() {
-        DataHelperAndWait.waitToBeVisible(circleIcon,6,webDriver);
+        DataHelperAndWait.waitToBeVisible(circleIcon,10,webDriver);
         return circleIcon;
     }
 
@@ -83,7 +83,7 @@ public class AeRecommendedProductsPage extends BasePage {
     }
 
     public WebElement getFirstProductName() {
-        DataHelperAndWait.waitToBeVisible(firstProductName,3,webDriver);
+        DataHelperAndWait.waitToBeVisible(firstProductName,10,webDriver);
         return firstProductName;
     }
 

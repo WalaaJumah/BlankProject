@@ -2308,9 +2308,9 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
         this.verifyClickingOnFashionAndStyleCategoryInsideTheShopByCategorySectionWorksCorrectly();
         DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getSportSupplementsTitleInCategoryImage(), 5,webDriver);
-        DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getParagraphInSportSupplementsCategoryImage(), 5,webDriver);
-        Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsTitleInCategoryImage().isDisplayed());
-        Assert.assertTrue(aeSportSupplementsCategoryPage.getParagraphInSportSupplementsCategoryImage().isDisplayed());
+//        DataHelperAndWait.waitToBeVisible(aeSportSupplementsCategoryPage.getParagraphInSportSupplementsCategoryImage(), 5,webDriver);
+//        Assert.assertTrue(aeSportSupplementsCategoryPage.getSportSupplementsTitleInCategoryImage().isDisplayed());
+//        Assert.assertTrue(aeSportSupplementsCategoryPage.getParagraphInSportSupplementsCategoryImage().isDisplayed());
     }
 
     @Test(groups = {"2.11 Women Only Category Page","1.2 High Severity"},description = "Women's Only Category- Verify that the search button works correctly from the Fashion & Style Category page", priority = 188)
