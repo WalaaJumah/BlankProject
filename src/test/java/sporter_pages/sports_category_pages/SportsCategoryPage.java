@@ -46,7 +46,22 @@ public class SportsCategoryPage extends BasePage {
     private WebElement sportsTechCategory;
     @FindBy(xpath = "(//div[@class='product-img']/a)[14]")
     private WebElement MensPersonalCareCategory;
-
+    @FindBy(xpath = "//div[@class='trending-swiper-button-next']")
+    private WebElement nextIconInShopByHealthNeedSection;
+    @FindBy(xpath = "(//ul[@class='clearfix']/li[1]/a)[1]")
+    private WebElement menCategory;
+    @FindBy(xpath = "(//ul[@class='clearfix']/li[2]/a)[1]")
+    private WebElement womenCategory;
+    @FindBy(xpath = "(//ul[@class='clearfix']/li[1]/a)[2]")
+    private WebElement sportsTechMainCategory;
+    @FindBy(xpath = "(//ul[@class='clearfix']/li[1]/a)[3]")
+    private WebElement kidsCategory;
+    @FindBy(xpath = "(//ul[@class='clearfix']/li[2]/a)[2]")
+    private WebElement sportsCategory;
+    @FindBy(xpath = "(//div[@class='trending-title']/h2)[2]")
+    private WebElement recommendedProductsTitleSection;
+    @FindBy(xpath = "(//div[@class='swiper-wrapper'])[2]")
+    private WebElement recommendedProductsSection;
     public void clickOnSportsMainMenu() {
         Actions actions = new Actions(webDriver);
         MegaMenuPage megaMenuPage = new MegaMenuPage(webDriver);
@@ -59,4 +74,37 @@ public class SportsCategoryPage extends BasePage {
         DataHelperAndWait.waitForUrlContains(sportsUrl, webDriver);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
+    public void clickOnCapsAndHatsCategory() {
+
+        do {
+            DataHelperAndWait.clickOnElement(capsAndHatCategory,webDriver);
+        }
+        while (!capsAndHatCategory.isDisplayed());
+        DataHelperAndWait.clickOnElement(capsAndHatCategory, webDriver);
+    }
+      public void clickOnBagsAndBackpacksCategory() {
+
+        do {
+            DataHelperAndWait.clickOnElement(bagsAndBackpacksCategory,webDriver);
+        }
+        while (!bagsAndBackpacksCategory.isDisplayed());
+        DataHelperAndWait.clickOnElement(bagsAndBackpacksCategory, webDriver);
+    }
+      public void clickOnSportsTechCategory() {
+
+        do {
+            DataHelperAndWait.clickOnElement(sportsTechCategory,webDriver);
+        }
+        while (!sportsTechCategory.isDisplayed());
+        DataHelperAndWait.clickOnElement(sportsTechCategory, webDriver);
+    }
+      public void clickOnMensPersonalCareCategory() {
+
+        do {
+            DataHelperAndWait.clickOnElement(getMensPersonalCareCategory(),webDriver);
+        }
+        while (!getMensPersonalCareCategory().isDisplayed());
+        DataHelperAndWait.clickOnElement(getMensPersonalCareCategory(), webDriver);
+    }
+
 }
