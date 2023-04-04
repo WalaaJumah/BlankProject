@@ -141,7 +141,7 @@ public class AeCartPage extends BasePage {
     }
 
     public WebElement getFreeFromSporterSection() {
-        DataHelperAndWait.waitToBeVisible(freeFromSporter,8,webDriver);
+        DataHelperAndWait.waitToBeVisible(freeFromSporter,15,webDriver);
         return freeFromSporter;
     }
 
