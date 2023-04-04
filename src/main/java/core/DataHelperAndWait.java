@@ -168,7 +168,7 @@ public  class DataHelperAndWait  {
     public static  void accessAllPagesInsideTheProductsListPage( String numberOfProductInTheList, WebElement element,WebDriver webDriver ){
         ///New
         String numberOfProductWithOutItemLabel= numberOfProductInTheList.replace(") Items","");
-        String numberOfProductWithOutResultLabel= numberOfProductWithOutItemLabel.substring(10);
+        String numberOfProductWithOutResultLabel= numberOfProductWithOutItemLabel.substring(15);
         double numberOfProductInTheListInInt=Double.parseDouble(numberOfProductWithOutResultLabel);
         //End of new code
 //        double numberOfProductInTheListInInt=Double.parseDouble(numberOfProductInTheList.substring(10,numberOfProductInTheList.length()-7));
@@ -177,7 +177,7 @@ public  class DataHelperAndWait  {
             int i = 2;
             do {
                 String pageNumber = Integer.toString(i);
-                DataHelperAndWait.waitToBeClickable(element,5,webDriver);
+                DataHelperAndWait.waitToBeClickable(element,15,webDriver);
                 element.click();
 //                DataHelperAndWait.waitForTime(6000);
                 DataHelperAndWait.waitForUrlContains(pageNumber,webDriver,20);
