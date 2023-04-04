@@ -33,7 +33,7 @@
             <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases"/>
             <class name="sporter_test.homepage_test_cases.QatarHomePageTestCases"/>
             <class name="sporter_test.homepage_test_cases.EgyptHomePageTestCases"/>
-            <!--            &lt;!&ndash;         Header   &ndash;&gt;-->
+                        <!--         Header   -->
 
 
             <class name="sporter_test.headerTestCases.KSAHeaderTestCases"/>
@@ -41,6 +41,9 @@
             <class name="sporter_test.headerTestCases.JordanHeaderTestCases"/>
             <class name="sporter_test.headerTestCases.QatarHeaderTestCases"/>
             <class name="sporter_test.headerTestCases.EgyptHeaderTestCases"/>
+            <class name="sporter_test.headerTestCases.OmanHeaderTestCases"/>
+            <class name="sporter_test.headerTestCases.BahrainHeaderTestCases"/>
+            <class name="sporter_test.headerTestCases.KuwaitHeaderTestCases"/>
             <!--Products Page-->
             <class name="sporter_test.productTestCases.KSAProductDetailsTestCases"/>
             <class name="sporter_test.productTestCases.UAEProductDetailsTestCases"/>
