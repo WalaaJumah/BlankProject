@@ -227,7 +227,7 @@ public class AeSportSupplementsCategoryPage extends BasePage {
             this.aeCountry.click();
     }}
     public void clickOnBreadcrumbHomePage() {
-        DataHelperAndWait.waitToBeVisible(homeBreadcrumbs, 6,webDriver);
+        DataHelperAndWait.waitToBeVisible(homeBreadcrumbs, 10,webDriver);
         this.homeBreadcrumbs.click();
     }
 

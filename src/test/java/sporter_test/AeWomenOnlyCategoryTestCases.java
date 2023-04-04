@@ -91,7 +91,7 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(groups = {"2.11 Women Only Category Page","1.3 Medium Severity"},description = "Women's Only Category- Make sure that the customer can navigate to the home page using the BreadCrumb", priority = 6)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumbAppearingInWomenOnlyCategoryPage() {
         aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
-//        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
+        this.verifyClickingOnWomenOnlyCategoryAppearsInMegaMenuRedirectUserToCorrectURL();
         aeSportSupplementsCategoryPage.clickOnBreadcrumbHomePage();
         Assert.assertEquals(webDriver.getCurrentUrl(), BaseURL + aeSiteURL);
     }
