@@ -41,7 +41,11 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
         cartPage.removeItem();
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getNoItemInCartLabel(), webDriver);
     }
-
+@Test
+public void test(){
+        webDriver.navigate().to("https://www.nahdionline.com/en/ensure-nutrivigor-vanilla-400-gm");
+//        webDriver.navigate().to("https://www.amazon.com/NUTRITION-Opti-Men-Multivitamin-Supplement-Vitamins/dp/B00K2RJAR0/ref=sr_1_11?crid=3QCTJ2FZHYQBE&keywords=supplements+for+men&qid=1680606002&sprefix=supple%2Caps%2C252&sr=8-11");
+}
     @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure to add product to the Cart from Product Details Page", priority = 3)
     public void addToCartAndViewCartFromPDP() {
         CartPage cartPage = new CartPage(webDriver);
