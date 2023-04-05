@@ -370,6 +370,7 @@ public class AeCartTestCases extends BaseTest {
 //        aeCartPage.navigateToBogoProduct();
 //        aeProductDetailsPage.addToCart();
 //        aeProductDetailsPage.viewCart();
+        DataHelperAndWait.waitForTime(1500);
         Assert.assertTrue(aeCartPage.getFreeFromSporterSection().isDisplayed());
         Assert.assertEquals(aeCartPage.getPriceInCartPage().getText(), aeCartPage.getSubTotalValue().getText());
 //        aeCartPage.clickOnRemoveItem();

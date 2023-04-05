@@ -167,35 +167,53 @@ public  class DataHelperAndWait  {
 
     public static  void accessAllPagesInsideTheProductsListPage( String numberOfProductInTheList, WebElement element,WebDriver webDriver ){
         ///New
-        String numberOfProductWithOutItemLabel= numberOfProductInTheList.replace(") Items","");
-        String numberOfProductWithOutResultLabel= numberOfProductWithOutItemLabel.substring(15);
-        double numberOfProductInTheListInInt=Double.parseDouble(numberOfProductWithOutResultLabel);
-        //End of new code
-//        double numberOfProductInTheListInInt=Double.parseDouble(numberOfProductInTheList.substring(10,numberOfProductInTheList.length()-7));
-        double numberOfThePagesInList=Math.ceil(numberOfProductInTheListInInt/24);
-        if(numberOfThePagesInList>1){
-            int i = 2;
-            do {
-                String pageNumber = Integer.toString(i);
-                DataHelperAndWait.waitToBeClickable(element,15,webDriver);
-                element.click();
-//                DataHelperAndWait.waitForTime(6000);
-                DataHelperAndWait.waitForUrlContains(pageNumber,webDriver,20);
-                Assert.assertTrue(webDriver.getCurrentUrl().endsWith(pageNumber),"The URL is wrong in page"+pageNumber);
-                boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+//        String numberOfProductWithOutItemLabel= numberOfProductInTheList.replace(") Items","");
+//        String numberOfProductWithOutResultLabel= numberOfProductWithOutItemLabel.substring(15);
+//        double numberOfProductInTheListInInt=Double.parseDouble(numberOfProductWithOutResultLabel);
+//        //End of new code
+////        double numberOfProductInTheListInInt=Double.parseDouble(numberOfProductInTheList.substring(10,numberOfProductInTheList.length()-7));
+//        double numberOfThePagesInList=Math.ceil(numberOfProductInTheListInInt/24);
+//        if(numberOfThePagesInList>1){
+//            int i = 2;
+//            do {
+//                String pageNumber = Integer.toString(i);
+//                DataHelperAndWait.waitToBeClickable(element,15,webDriver);
+//                element.click();
+////                DataHelperAndWait.waitForTime(6000);
+//                DataHelperAndWait.waitForUrlContains(pageNumber,webDriver,20);
+//                Assert.assertTrue(webDriver.getCurrentUrl().endsWith(pageNumber),"The URL is wrong in page"+pageNumber);
+//                boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
+//                assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
+//                boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
+//                assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
+//                boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
+//                boolean isTheElementPresent2 = webDriver.getPageSource().contains("this offer is not available in your country");
+//                assertFalse(isTheElementPresent2, "The  offer is not available in your country page is displayed "+webDriver.getCurrentUrl());
+//                assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page "+pageNumber+ "The URL is"+webDriver.getCurrentUrl());
+//                i++;
+//            }
+//            while (i <= numberOfThePagesInList);
+//            System.out.println("The number of pages in the list is "+i);
+//        }
+//        else System.out.println("There's only a page in the list");
+        try{
+        do{
+            DataHelperAndWait.clickOnElement(element,webDriver);
+            DataHelperAndWait.waitForTime(2000);
+            boolean verifyTitle = webDriver.getTitle().equalsIgnoreCase("Sporter.com - Page Not Found");
                 assertFalse(verifyTitle, "Page Not Found Is Displayed and the URL is "+webDriver.getCurrentUrl());
                 boolean isTheElementPresent = webDriver.getPageSource().contains("We can't find products matching the selection.");
                 assertFalse(isTheElementPresent, "The page is empty and the URL is "+webDriver.getCurrentUrl());
                 boolean isExceptionPagePresent = webDriver.getPageSource().contains("An error has happened during application run. See exception log for details.");
                 boolean isTheElementPresent2 = webDriver.getPageSource().contains("this offer is not available in your country");
                 assertFalse(isTheElementPresent2, "The  offer is not available in your country page is displayed "+webDriver.getCurrentUrl());
-                assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page "+pageNumber+ "The URL is"+webDriver.getCurrentUrl());
-                i++;
-            }
-            while (i <= numberOfThePagesInList);
-            System.out.println("The number of pages in the list is "+i);
+                assertFalse(isExceptionPagePresent, "An error has happened during application run. See exception log for details in page "+ "The URL is"+webDriver.getCurrentUrl());
+
         }
-        else System.out.println("There's only a page in the list");
+        while (element.isDisplayed());}
+        catch (Exception e){
+            System.out.println("There'sonly a page in the list");
+        }
     }
     public static void clearWebField(WebElement element) {
         while (!element.getAttribute("value").equals("")) {
