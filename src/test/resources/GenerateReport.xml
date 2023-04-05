@@ -33,7 +33,7 @@
             <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases"/>
             <class name="sporter_test.homepage_test_cases.QatarHomePageTestCases"/>
             <class name="sporter_test.homepage_test_cases.EgyptHomePageTestCases"/>
-                        <!--         Header   -->
+            <!--         Header   -->
 
 
             <class name="sporter_test.headerTestCases.KSAHeaderTestCases"/>
@@ -120,7 +120,7 @@
             <class name="sporter_test.healthy_food_category_test_cases.OmanHealthyFoodTestCases"></class>
             <class name="sporter_test.healthy_food_category_test_cases.BahrainHealthyFoodTestCases"></class>
 
-           <!--     Women's Only Category Page        -->
+            <!--     Women's Only Category Page        -->
             <class name="sporter_test.womens_only_category_test_cases.UAEWomensOnlyCategoryTestCases"/>
             <class name="sporter_test.womens_only_category_test_cases.KSAWomensOnlyCategoryTestCases"/>
             <class name="sporter_test.womens_only_category_test_cases.JordanWomensOnlyCategoryTestCases"/>
@@ -138,8 +138,15 @@
             <class name="sporter_test.vitaminsAndHealthCategoryTestCases.OmanVitaminsAndHealthCategoryTestCases"/>
             <class name="sporter_test.vitaminsAndHealthCategoryTestCases.BahrainVitaminsAndHealthCategoryTestCases"/>
             <class name="sporter_test.vitaminsAndHealthCategoryTestCases.KuwaitVitaminsAndHealthCategoryTestCases"/>
-
-
+            <!--Sports Category Page-->
+            <class name="sporter_test.sports_category_test_cases.UAESportsCategoryTestCases"></class>
+            <class name="sporter_test.sports_category_test_cases.JordanSportsCategoryTestCases"></class>
+            <class name="sporter_test.sports_category_test_cases.QatarSportsCategoryTestCases"></class>
+            <class name="sporter_test.sports_category_test_cases.KSASportsCategoryTestCases"></class>
+            <class name="sporter_test.sports_category_test_cases.EgyptSportsCategoryTestCases"></class>
+            <class name="sporter_test.sports_category_test_cases.OmanSportsCategoryTestCases"></class>
+            <class name="sporter_test.sports_category_test_cases.BahrainSportsCategoryTestCases"></class>
+            <class name="sporter_test.sports_category_test_cases.KuwaitSportsCategoryTestCases"></class>
         </classes>
 
     </test>

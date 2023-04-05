@@ -65,9 +65,9 @@ public class SportsCategoryPage extends BasePage {
     public void clickOnSportsMainMenu() {
         Actions actions = new Actions(webDriver);
         MegaMenuPage megaMenuPage = new MegaMenuPage(webDriver);
-        DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsMainMenu(), webDriver);
-        actions.moveToElement(megaMenuPage.getSportsMainMenu()).perform();
-        DataHelperAndWait.clickOnElement(megaMenuPage.getSportsMainMenu(), webDriver);
+        DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsMenu(), webDriver);
+        actions.moveToElement(megaMenuPage.getSportsMenu()).perform();
+        DataHelperAndWait.clickOnElement(megaMenuPage.getSportsMenu(), webDriver);
     }
     public void navigateToSportsPage() throws IOException {
         webDriver.navigate().to(BaseURL + sportsUrl);
@@ -77,7 +77,7 @@ public class SportsCategoryPage extends BasePage {
     public void clickOnCapsAndHatsCategory() {
 
         do {
-            DataHelperAndWait.clickOnElement(capsAndHatCategory,webDriver);
+            DataHelperAndWait.clickOnElement(nextIconInShopByHealthNeedSection,webDriver);
         }
         while (!capsAndHatCategory.isDisplayed());
         DataHelperAndWait.clickOnElement(capsAndHatCategory, webDriver);
@@ -85,7 +85,7 @@ public class SportsCategoryPage extends BasePage {
       public void clickOnBagsAndBackpacksCategory() {
 
         do {
-            DataHelperAndWait.clickOnElement(bagsAndBackpacksCategory,webDriver);
+            DataHelperAndWait.clickOnElement(nextIconInShopByHealthNeedSection,webDriver);
         }
         while (!bagsAndBackpacksCategory.isDisplayed());
         DataHelperAndWait.clickOnElement(bagsAndBackpacksCategory, webDriver);
@@ -93,7 +93,7 @@ public class SportsCategoryPage extends BasePage {
       public void clickOnSportsTechCategory() {
 
         do {
-            DataHelperAndWait.clickOnElement(sportsTechCategory,webDriver);
+            DataHelperAndWait.clickOnElement(nextIconInShopByHealthNeedSection,webDriver);
         }
         while (!sportsTechCategory.isDisplayed());
         DataHelperAndWait.clickOnElement(sportsTechCategory, webDriver);
@@ -101,10 +101,22 @@ public class SportsCategoryPage extends BasePage {
       public void clickOnMensPersonalCareCategory() {
 
         do {
-            DataHelperAndWait.clickOnElement(getMensPersonalCareCategory(),webDriver);
+            DataHelperAndWait.clickOnElement(nextIconInShopByHealthNeedSection,webDriver);
         }
         while (!getMensPersonalCareCategory().isDisplayed());
         DataHelperAndWait.clickOnElement(getMensPersonalCareCategory(), webDriver);
     }
-
+    public void clickOnSportsFromShopByMenu() {
+        Actions actions = new Actions(webDriver);
+        MegaMenuPage megaMenuPage = new MegaMenuPage(webDriver);
+        try {
+            DataHelperAndWait.waitToBeVisible(megaMenuPage.getShopByMenu(), webDriver);
+            actions.moveToElement(megaMenuPage.getShopByMenu()).perform();
+            DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsMenu(), webDriver);
+        } catch (Exception e) {
+            DataHelperAndWait.waitToBeVisible(megaMenuPage.getShopByMenu(), webDriver);
+            actions.moveToElement(megaMenuPage.getShopByMenu()).perform();
+            DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsMenu(), webDriver);
+        }
+    }
 }
