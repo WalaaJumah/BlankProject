@@ -143,7 +143,6 @@
             <class name="sporter_test.sports_category_test_cases.JordanSportsCategoryTestCases"></class>
             <class name="sporter_test.sports_category_test_cases.QatarSportsCategoryTestCases"></class>
             <class name="sporter_test.sports_category_test_cases.KSASportsCategoryTestCases"></class>
-            <class name="sporter_test.sports_category_test_cases.EgyptSportsCategoryTestCases"></class>
             <class name="sporter_test.sports_category_test_cases.OmanSportsCategoryTestCases"></class>
             <class name="sporter_test.sports_category_test_cases.BahrainSportsCategoryTestCases"></class>
             <class name="sporter_test.sports_category_test_cases.KuwaitSportsCategoryTestCases"></class>

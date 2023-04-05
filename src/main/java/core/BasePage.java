@@ -24,7 +24,7 @@ public class BasePage {
 
 
     public static String BaseURL = "https://sporter.com";
-    public static String productUrl = "/venum-gldtr-4-0-t-shirt-53531";
+    public static String productUrl = "/nutrend-100-whey-protein-53915";
 //    public static String productUrl = "/optimum-gold-standard-100-whey";
 
 //    public void setStoreCountry(String storeCountry) {

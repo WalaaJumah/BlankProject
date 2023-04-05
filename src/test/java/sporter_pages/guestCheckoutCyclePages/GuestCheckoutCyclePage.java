@@ -31,21 +31,21 @@ public class GuestCheckoutCyclePage extends BasePage {
     private WebElement logoInCheckoutMethod;
     @FindBy(id = "cMethod")
     private WebElement checkoutMethodLabel;
-    @FindBy(xpath = "(//div[contains(@class,'segmentHeader_infoLabelContainer')]/span)[2]")
+    @FindBy(id = "oInfoTitle")
     private WebElement shippingInformationLabel;
-    @FindBy(xpath = "(//div[contains(@class,'segmentHeader_infoLabelContainer')]/span)[3]")
+    @FindBy(id = "oInfoicon")
     private WebElement securedCheckoutLabel;
-    @FindBy(xpath = "(//div[contains(@class,'segmentHeader_infoLabelContainer')]/span)[4]")
+    @FindBy(id = "sMethodTitle")
     private WebElement shippingMethodLabel;
     @FindBy(id = "pInfo")
     private WebElement paymentInformationLabel;
-    @FindBy(xpath = "(//div[contains(@class,'segmentHeader_infoLabelContainer')]/span)[6]")
+    @FindBy(id = "pInfoicon")
     private WebElement orderReviewLabel;
-    @FindBy(xpath = "(//div[starts-with(@class,'checkoutMethod_methodLabel')])[1]")
+    @FindBy(id = "signInOptionLabel")
     private WebElement sigInAndCheckOutHeader;
-    @FindBy(xpath = "(//div[starts-with(@class,'checkoutMethod_methodLabel')])[2]")
+    @FindBy(id = "guestOption")
     private WebElement checkoutAsGuestHeader;
-    @FindBy(xpath = "//div[starts-with(@class,'checkoutMethod_asGuestInfo')]")
+    @FindBy(id = "guestOptionInfo")
     private WebElement checkoutAsGuestDescription;
     @FindBy(id = "value")
     private WebElement orderTotalValue;
@@ -214,6 +214,7 @@ public class GuestCheckoutCyclePage extends BasePage {
 //            DataHelperAndWait.waitForUrlContains(shippingInformationUrl,webDriver);
 //        DataHelperAndWait.clickOnElement(checkoutAsGuestBtn,webDriver);
 //            webDriver.navigate().to(BaseURL+shippingInformationUrl);
+        try{
         CartPage cartPage = new CartPage(webDriver);
 //            cartPage.navigateToCartPage();
 //            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
@@ -239,7 +240,35 @@ public class GuestCheckoutCyclePage extends BasePage {
 //            cartPage.clickOnCartIcon();
 //            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
 //            DataHelperAndWait.waitForUrlContains(shippingInformationUrl,webDriver);
-        DataHelperAndWait.clickOnElement(checkoutAsGuestBtn, webDriver);
+        DataHelperAndWait.clickOnElement(checkoutAsGuestBtn, webDriver);}
+        catch (Exception e){
+            CartPage cartPage = new CartPage(webDriver);
+//            cartPage.navigateToCartPage();
+//            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+            cartPage.addToCartAndDisplayTheCart();
+
+            try {
+                DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
+            } catch (Exception ee) {
+                cartPage.navigateToHomePage();
+                cartPage.clickOnCartIcon();
+                DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
+            }
+//            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+//            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+
+
+//            try {
+//                DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+//            }
+//            catch (Exception e){
+//                cartPage.addToCartAndDisplayTheCart();
+//            }
+//            cartPage.clickOnCartIcon();
+//            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+//            DataHelperAndWait.waitForUrlContains(shippingInformationUrl,webDriver);
+            DataHelperAndWait.clickOnElement(checkoutAsGuestBtn, webDriver);
+        }
     }
 
     public void setSelectDubaiCityCity() {
