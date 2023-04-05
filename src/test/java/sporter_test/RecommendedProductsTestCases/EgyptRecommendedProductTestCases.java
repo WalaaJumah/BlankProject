@@ -7,30 +7,23 @@
 package sporter_test.RecommendedProductsTestCases;
 
 import core.BasePage;
-import core.DataHelperAndWait;
-import core.WebElementsAssertion;
-import org.openqa.selenium.interactions.Actions;
-import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
-import sporter_pages.RecommendedProductsPage.EgyptRecommendedProductPage;
-import sporter_pages.RecommendedProductsPage.RecommendedProductPage;
 import sporter_pages.homepage_classes.EgyptHomePage;
-import sporter_pages.productPage.EgyptProductDetailsPage;
 import sporter_pages.productPage.ProductDetailsPage;
+
 //@Test(groups = "Egypt Product Details Page")
-public class EgyptRecommendedProductTestCases extends RecommendedProductTestCases{
-    @BeforeClass(alwaysRun=true)
-    public void switchToEgyptStore(){
-        EgyptHomePage egyptHomePage=new EgyptHomePage(webDriver);
-        ProductDetailsPage productDetailsPage= new ProductDetailsPage(webDriver);
+public class EgyptRecommendedProductTestCases extends RecommendedProductTestCases {
+    @BeforeClass(alwaysRun = true)
+    public void switchToEgyptStore() {
+        EgyptHomePage egyptHomePage = new EgyptHomePage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         egyptHomePage.switchCountry(egyptHomePage.getEgyptCountry());
-        if(webDriver.getCurrentUrl().contains(egyptHomePage.egyptDomain)){
+        if (webDriver.getCurrentUrl().contains(egyptHomePage.egyptDomain)) {
             System.out.println("You are in Jordan Store");
+        } else {
+            webDriver.navigate().to(BasePage.BaseURL + egyptHomePage.egyptDomain);
+            CloseInitialDialog();
         }
-        else {
-            webDriver.navigate().to(BasePage.BaseURL+egyptHomePage.egyptDomain);
-            CloseInitialDialog();          }
     }
 //    @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "{{CountryName}}: Make sure the keep shopping button appearing the Recommended products works correctly ", priority = 2)
 //    public void verifyKeepShoppingBtnWorksCorrectly() {

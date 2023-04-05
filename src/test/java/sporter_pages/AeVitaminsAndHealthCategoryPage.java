@@ -10,11 +10,6 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 public class AeVitaminsAndHealthCategoryPage extends BasePage {
-    public AeVitaminsAndHealthCategoryPage(WebDriver webDriver) {
-        super(webDriver);
-        PageFactory.initElements(webDriver, this);
-    }
-
     //declare all locators related to the AeVitaminsAndHealthCategoryPage
     @FindBy(xpath = "(//a[@href='health-vitamins'])[3]")
     private WebElement vitaminsAndHealthCategoryInHomePage;
@@ -144,13 +139,12 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
     private WebElement productCardInMultiVitaminsSection;
     @FindBy(css = "div.inner-seller-prod.wp-id-22498 > a.product-link")
     private WebElement productCardIVitaminsAZSection;
-//    @FindBy(xpath = "(//div[@class='swiper-slide'])[30]")
+    //    @FindBy(xpath = "(//div[@class='swiper-slide'])[30]")
 //    private WebElement productCardIVitaminsAZSection;
 //    @FindBy(xpath = "(//div[@class='swiper-slide'])[25]")
 //    private WebElement productCardInMineralsSection;
-      @FindBy(css = "div.inner-seller-prod.wp-id-35660 > a.product-link")
+    @FindBy(css = "div.inner-seller-prod.wp-id-35660 > a.product-link")
     private WebElement productCardInMineralsSection;
-
     @FindBy(css = "#tab-296-all296 > div.swiper-container.swiper-product-slider.top-seller-slider.swiper-container-horizontal > div > div:nth-child(3) > div > a")
     private WebElement productCardInAntioxidantsSection;
     @FindBy(xpath = "(//div[@class='inner-seller-prod wp-id-20305'])[1]")
@@ -189,44 +183,58 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
     private WebElement filtrationSection;
     @FindBy(xpath = "//div[@class='trending-sporter trending-sporter-crousal']")
     private WebElement ShopByHealthNeedSection;
+    public AeVitaminsAndHealthCategoryPage(WebDriver webDriver) {
+        super(webDriver);
+        PageFactory.initElements(webDriver, this);
+    }
 
     //Getter Methods
     public WebElement getVitaminsAndHealthCategoryInHomePage() {
-        DataHelperAndWait.waitToBeVisible(vitaminsAndHealthCategoryInHomePage ,webDriver);
+        DataHelperAndWait.waitToBeVisible(vitaminsAndHealthCategoryInHomePage, webDriver);
         return vitaminsAndHealthCategoryInHomePage;
     }
+
     public WebElement getPreviousIconInSuperFoodSection() {
-        DataHelperAndWait.waitToBeVisible(previousIconInSuperFoodSection ,webDriver);
+        DataHelperAndWait.waitToBeVisible(previousIconInSuperFoodSection, webDriver);
         return previousIconInSuperFoodSection;
     }
+
     public WebElement getProductCardInCollagenSection() {
-        DataHelperAndWait.waitToBeVisible(productCardInCollagenSection ,webDriver);
+        DataHelperAndWait.waitToBeVisible(productCardInCollagenSection, webDriver);
         return productCardInCollagenSection;
     }
+
     public WebElement getViewAllInCollagenSection() {
         return viewAllInCollagenSection;
     }
+
     public WebElement getNextIconInCollagenSection() {
-        DataHelperAndWait.waitToBeVisible(nextIconInCollagenSection ,webDriver);
+        DataHelperAndWait.waitToBeVisible(nextIconInCollagenSection, webDriver);
         return nextIconInCollagenSection;
     }
+
     public WebElement getMelatoninSectionTitle() {
         return melatoninSectionTitle;
     }
+
     public WebElement getSuperFoodSectionTitle() {
         return superFoodSectionTitle;
     }
+
     public WebElement getPreviousIconInCollagenSection() {
-        DataHelperAndWait.waitToBeVisible(previousIconInCollagenSection ,webDriver);
+        DataHelperAndWait.waitToBeVisible(previousIconInCollagenSection, webDriver);
         return previousIconInCollagenSection;
     }
+
     public WebElement getViewAllInMelatoninSection() {
         return viewAllInMelatoninSection;
     }
+
     public WebElement getNextIconInMelatoninSection() {
-        DataHelperAndWait.waitToBeVisible(nextIconInMelatoninSection ,webDriver);
+        DataHelperAndWait.waitToBeVisible(nextIconInMelatoninSection, webDriver);
         return nextIconInMelatoninSection;
     }
+
     public WebElement getCollagenSectionTitle() {
         return collagenSectionTitle;
     }
@@ -240,40 +248,50 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
     }
 
     public WebElement getFirstSideBanner() {
-        DataHelperAndWait.waitToBeVisible(firstSideBanner ,webDriver);
+        DataHelperAndWait.waitToBeVisible(firstSideBanner, webDriver);
         return firstSideBanner;
     }
+
     public WebElement getMineralsSectionTitle() {
         return mineralsSectionTitle;
     }
+
     public WebElement getSuperFoodSection() {
         return superFoodSection;
     }
+
     public WebElement getMelatoninSection() {
         return melatoninSection;
     }
+
     public WebElement getPreviousIconInMelatoninSection() {
-        DataHelperAndWait.waitToBeVisible(previousIconInMelatoninSection ,webDriver);
+        DataHelperAndWait.waitToBeVisible(previousIconInMelatoninSection, webDriver);
         return previousIconInMelatoninSection;
     }
+
     public WebElement getProductCardInMelatoninSection() {
-        DataHelperAndWait.waitToBeVisible(productCardInMelatoninSection ,webDriver);
+        DataHelperAndWait.waitToBeVisible(productCardInMelatoninSection, webDriver);
         return productCardInMelatoninSection;
     }
+
     public WebElement getNextIconInSuperFoodSection() {
-        DataHelperAndWait.waitToBeVisible(nextIconInSuperFoodSection ,webDriver);
+        DataHelperAndWait.waitToBeVisible(nextIconInSuperFoodSection, webDriver);
         return nextIconInSuperFoodSection;
     }
+
     public WebElement getAntioxidantsSectionTitle() {
         return antioxidantsSectionTitle;
     }
+
     public WebElement getNextIconInAntioxidantsSection() {
-        DataHelperAndWait.waitToBeVisible(nextIconInAntioxidantsSection ,webDriver);
+        DataHelperAndWait.waitToBeVisible(nextIconInAntioxidantsSection, webDriver);
         return nextIconInAntioxidantsSection;
     }
+
     public WebElement getAntioxidantsSection() {
         return antioxidantsSection;
     }
+
     public WebElement getViewAllInAntioxidantsSection() {
         return viewAllInAntioxidantsSection;
     }
@@ -285,37 +303,46 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
     public List<WebElement> getShopByCategoryList() {
         return shopByCategoryList;
     }
+
     public WebElement getPreviousIconInVitaminsAZSection() {
-        DataHelperAndWait.waitToBeVisible(previousIconInVitaminsAZSection ,webDriver);
+        DataHelperAndWait.waitToBeVisible(previousIconInVitaminsAZSection, webDriver);
         return previousIconInVitaminsAZSection;
     }
+
     public WebElement getProductCardInMineralsSection() {
         return productCardInMineralsSection;
     }
+
     public WebElement getProductCardInAntioxidantsSection() {
-        DataHelperAndWait.waitToBeVisible(productCardInAntioxidantsSection ,webDriver);
+        DataHelperAndWait.waitToBeVisible(productCardInAntioxidantsSection, webDriver);
         return productCardInAntioxidantsSection;
     }
+
     public WebElement getPreviousIconInAntioxidantsSection() {
-        DataHelperAndWait.waitToBeVisible(previousIconInAntioxidantsSection ,webDriver);
+        DataHelperAndWait.waitToBeVisible(previousIconInAntioxidantsSection, webDriver);
         return previousIconInAntioxidantsSection;
     }
+
     public WebElement getMineralsSection() {
         return mineralsSection;
     }
+
     public WebElement getFishOilAndOmegasFooterSection() {
-        DataHelperAndWait.waitToBeVisible(fishOilAndOmegasFooterSection ,webDriver);
+        DataHelperAndWait.waitToBeVisible(fishOilAndOmegasFooterSection, webDriver);
         return fishOilAndOmegasFooterSection;
     }
+
     public WebElement getViewAllInSuperFoodSection() {
         return viewAllInSuperFoodSection;
     }
+
     public WebElement getNextIconInMineralsSection() {
-        DataHelperAndWait.waitToBeVisible(nextIconInMineralsSection ,webDriver);
+        DataHelperAndWait.waitToBeVisible(nextIconInMineralsSection, webDriver);
         return nextIconInMineralsSection;
     }
+
     public WebElement getProductCardInSuperFoodSection() {
-        DataHelperAndWait.waitToBeVisible(productCardInSuperFoodSection ,webDriver);
+        DataHelperAndWait.waitToBeVisible(productCardInSuperFoodSection, webDriver);
         return productCardInSuperFoodSection;
     }
 
@@ -334,16 +361,20 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
     public WebElement getHerbalReferenceGuideTitle() {
         return herbalReferenceGuideTitle;
     }
+
     public WebElement getProductCardIVitaminsAZSection() {
         return productCardIVitaminsAZSection;
     }
+
     public WebElement getPreviousIconInMineralsSection() {
-        DataHelperAndWait.waitToBeVisible(previousIconInMineralsSection ,webDriver);
+        DataHelperAndWait.waitToBeVisible(previousIconInMineralsSection, webDriver);
         return previousIconInMineralsSection;
     }
+
     public List<WebElement> getHerbalReferenceGuideList() {
         return herbalReferenceGuideList;
     }
+
     public WebElement getViewAllInMineralsSection() {
         return viewAllInMineralsSection;
     }
@@ -351,28 +382,34 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
     public WebElement getShopByHealthNeedTitle() {
         return shopByHealthNeedTitle;
     }
+
     public WebElement getMultiVitaminsSectionTitle() {
         return multiVitaminsSectionTitle;
     }
+
     public WebElement getNextIconInVitaminsAZSection() {
-        DataHelperAndWait.waitToBeVisible(nextIconInVitaminsAZSection ,webDriver);
+        DataHelperAndWait.waitToBeVisible(nextIconInVitaminsAZSection, webDriver);
         return nextIconInVitaminsAZSection;
     }
+
     public WebElement getViewAllInMultiVitaminsSection() {
         return viewAllInMultiVitaminsSection;
     }
+
     public WebElement getViewAllInVitaminsAZSection() {
         return viewAllInVitaminsAZSection;
     }
+
     public WebElement getVitaminsAZSectionTitle() {
         return vitaminsAZSectionTitle;
     }
+
     public WebElement getVitaminsAZSection() {
         return vitaminsAZSection;
     }
 
     public WebElement getBeautyCategory() {
-        DataHelperAndWait.waitToBeVisible(beautyCategory ,webDriver);
+        DataHelperAndWait.waitToBeVisible(beautyCategory, webDriver);
         return beautyCategory;
     }
 
@@ -381,44 +418,45 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
     }
 
     public WebElement getBrainSupportCategory() {
-        DataHelperAndWait.waitToBeVisible(brainSupportCategory ,webDriver);
+        DataHelperAndWait.waitToBeVisible(brainSupportCategory, webDriver);
         return brainSupportCategory;
     }
 
     public WebElement getDetoxAndLiverSupportCategory() {
-        DataHelperAndWait.waitToBeVisible(detoxAndLiverSupportCategory ,webDriver);
+        DataHelperAndWait.waitToBeVisible(detoxAndLiverSupportCategory, webDriver);
         return detoxAndLiverSupportCategory;
     }
+
     public WebElement getCollagenSection() {
         return collagenSection;
     }
 
     public WebElement getDigestiveSupportCategory() {
-        DataHelperAndWait.waitToBeVisible(digestiveSupportCategory ,webDriver);
+        DataHelperAndWait.waitToBeVisible(digestiveSupportCategory, webDriver);
         return digestiveSupportCategory;
     }
 
     public WebElement getEnergyFormulasCategory() {
-        DataHelperAndWait.waitToBeVisible(energyFormulasCategory ,webDriver);
+        DataHelperAndWait.waitToBeVisible(energyFormulasCategory, webDriver);
         return energyFormulasCategory;
     }
 
     public WebElement getHairAndSkinAndNailsCategory() {
-        DataHelperAndWait.waitToBeVisible(hairAndSkinAndNailsCategory ,webDriver);
+        DataHelperAndWait.waitToBeVisible(hairAndSkinAndNailsCategory, webDriver);
         return hairAndSkinAndNailsCategory;
     }
 
     public WebElement getHeartHealthCategory() {
-        DataHelperAndWait.waitToBeVisible(heartHealthCategory ,webDriver);
+        DataHelperAndWait.waitToBeVisible(heartHealthCategory, webDriver);
         return heartHealthCategory;
     }
 
     public WebElement getImmunitySupportCategory() {
-        do{
+        do {
             this.clickOnNextIconInShopByHealthNeedSection();
         }
-        while(!immunitySupportCategory.isDisplayed());
-        DataHelperAndWait.waitToBeVisible(immunitySupportCategory ,webDriver);
+        while (!immunitySupportCategory.isDisplayed());
+        DataHelperAndWait.waitToBeVisible(immunitySupportCategory, webDriver);
         return immunitySupportCategory;
     }
 //        this.clickOnNextIconInShopByHealthNeedSection();
@@ -439,9 +477,10 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
-        DataHelperAndWait.waitToBeVisible(kidsHealthCategory ,webDriver);
+        DataHelperAndWait.waitToBeVisible(kidsHealthCategory, webDriver);
         return kidsHealthCategory;
     }
+
     public WebElement getMultiVitaminsSection() {
         return multiVitaminsSection;
     }
@@ -458,27 +497,27 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
         this.clickOnNextIconInShopByHealthNeedSection();
-        DataHelperAndWait.waitToBeVisible(mensHealthCategory ,webDriver);
+        DataHelperAndWait.waitToBeVisible(mensHealthCategory, webDriver);
         return mensHealthCategory;
     }
 
     public WebElement getSexualHealthCategory() {
-        DataHelperAndWait.waitToBeVisible(sexualHealthCategory ,webDriver);
+        DataHelperAndWait.waitToBeVisible(sexualHealthCategory, webDriver);
         return sexualHealthCategory;
     }
 
     public WebElement getSleepSupportCategory() {
-        DataHelperAndWait.waitToBeVisible(sleepSupportCategory ,webDriver);
+        DataHelperAndWait.waitToBeVisible(sleepSupportCategory, webDriver);
         return sleepSupportCategory;
     }
 
     public WebElement getDietWeightManagementCategory() {
-        DataHelperAndWait.waitToBeVisible(dietWeightManagementCategory ,webDriver);
+        DataHelperAndWait.waitToBeVisible(dietWeightManagementCategory, webDriver);
         return dietWeightManagementCategory;
     }
 
     public WebElement getWomenHealthCategory() {
-        DataHelperAndWait.waitToBeVisible(womenHealthCategory ,webDriver);
+        DataHelperAndWait.waitToBeVisible(womenHealthCategory, webDriver);
         return womenHealthCategory;
     }
 
@@ -495,15 +534,16 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
     }
 
     public WebElement getFiltrationSection() {
-        DataHelperAndWait.waitToBeVisible(filtrationSection ,webDriver);
+        DataHelperAndWait.waitToBeVisible(filtrationSection, webDriver);
         return filtrationSection;
     }
 
     public WebElement getPreviousIconInShopByHealthNeedSection() {
         return previousIconInShopByHealthNeedSection;
     }
+
     public WebElement getPreviousIconInMultiVitaminsSection() {
-        DataHelperAndWait.waitToBeVisible(previousIconInMultiVitaminsSection ,webDriver);
+        DataHelperAndWait.waitToBeVisible(previousIconInMultiVitaminsSection, webDriver);
         return previousIconInMultiVitaminsSection;
     }
 
@@ -516,50 +556,57 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
     }
 
     public WebElement getNextIconInFishOilAndOmegasSection() {
-        try{
-        DataHelperAndWait.waitToBeVisible(nextIconInFishOilAndOmegasSection ,webDriver);
-        return nextIconInFishOilAndOmegasSection;}
-        catch(Exception e){
-            DataHelperAndWait.waitToBeVisible(nextIconInFishOilAndOmegasSection ,webDriver);
+        try {
+            DataHelperAndWait.waitToBeVisible(nextIconInFishOilAndOmegasSection, webDriver);
+            return nextIconInFishOilAndOmegasSection;
+        } catch (Exception e) {
+            DataHelperAndWait.waitToBeVisible(nextIconInFishOilAndOmegasSection, webDriver);
             return nextIconInFishOilAndOmegasSection;
         }
     }
 
     public WebElement getPreviousIconInFishOilAndOmegasSection() {
-        DataHelperAndWait.waitToBeVisible(previousIconInFishOilAndOmegasSection ,webDriver);
+        DataHelperAndWait.waitToBeVisible(previousIconInFishOilAndOmegasSection, webDriver);
         return previousIconInFishOilAndOmegasSection;
     }
+
     public WebElement getViewAllInFishOilAndOmegasSection() {
         return viewAllInFishOilAndOmegasSection;
     }
+
     public WebElement getProductCardInFishOilAndOmegasSection() {
         return productCardInFishOilAndOmegasSection;
     }
+
     public WebElement getFishOilAndOmegasSectionDefaultPosition() {
-        DataHelperAndWait.waitToBeVisible(fishOilAndOmegasSectionDefaultPosition ,webDriver);
+        DataHelperAndWait.waitToBeVisible(fishOilAndOmegasSectionDefaultPosition, webDriver);
         return fishOilAndOmegasSectionDefaultPosition;
     }
+
     public WebElement getFishOilAndOmegasSectionPositionAfterClickingOnNextIcon() {
-        DataHelperAndWait.waitToBeVisible(fishOilAndOmegasSectionPositionAfterClickingOnNextIcon ,webDriver);
+        DataHelperAndWait.waitToBeVisible(fishOilAndOmegasSectionPositionAfterClickingOnNextIcon, webDriver);
         return fishOilAndOmegasSectionPositionAfterClickingOnNextIcon;
     }
+
     public WebElement getProductCardInMultiVitaminsSection() {
         return productCardInMultiVitaminsSection;
     }
+
     public WebElement getNextIconInMultiVitaminsSection() {
-        DataHelperAndWait.waitToBeVisible(nextIconInMultiVitaminsSection ,webDriver);
+        DataHelperAndWait.waitToBeVisible(nextIconInMultiVitaminsSection, webDriver);
         return nextIconInMultiVitaminsSection;
     }
+
     public WebElement getMultiVitaminsSectionDefaultPosition() {
-        DataHelperAndWait.waitToBeVisible(multiVitaminsSectionDefaultPosition ,webDriver);
+        DataHelperAndWait.waitToBeVisible(multiVitaminsSectionDefaultPosition, webDriver);
         return multiVitaminsSectionDefaultPosition;
     }
 
     //Define the main actions we need to execute our TCs
     public void clickOnNextIconInShopByHealthNeedSection() {
 //        try {
-            DataHelperAndWait.waitToBeClickable(this.nextIconInShopByHealthNeedSection ,webDriver);
-            this.nextIconInShopByHealthNeedSection.click();
+        DataHelperAndWait.waitToBeClickable(this.nextIconInShopByHealthNeedSection, webDriver);
+        this.nextIconInShopByHealthNeedSection.click();
 //        } catch (Exception e) {
 //            DataHelperAndWait.waitToBeClickable(this.nextIconInShopByHealthNeedSection ,webDriver);
 //            this.nextIconInShopByHealthNeedSection.click();
@@ -568,30 +615,30 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
 
     public void clickOnPreviousIconInShopByHealthNeedSection() {
         try {
-            DataHelperAndWait.waitToBeClickable(this.previousIconInShopByHealthNeedSection ,webDriver);
+            DataHelperAndWait.waitToBeClickable(this.previousIconInShopByHealthNeedSection, webDriver);
             this.previousIconInShopByHealthNeedSection.click();
         } catch (Exception e) {
-            DataHelperAndWait.waitToBeClickable(this.previousIconInShopByHealthNeedSection ,webDriver);
+            DataHelperAndWait.waitToBeClickable(this.previousIconInShopByHealthNeedSection, webDriver);
             this.previousIconInShopByHealthNeedSection.click();
         }
     }
 
     public void clickOnPreviousPage() {
         try {
-            DataHelperAndWait.waitToBeClickable(this.previousPageIcon ,webDriver);
+            DataHelperAndWait.waitToBeClickable(this.previousPageIcon, webDriver);
             this.previousPageIcon.click();
         } catch (Exception e) {
-            DataHelperAndWait.waitToBeClickable(this.previousPageIcon ,webDriver);
+            DataHelperAndWait.waitToBeClickable(this.previousPageIcon, webDriver);
             this.previousPageIcon.click();
         }
     }
 
     public void clickOnImmunitySupportCategory() {
-        do{
+        do {
             this.clickOnNextIconInShopByHealthNeedSection();
         }
-        while(!immunitySupportCategory.isDisplayed());
-        DataHelperAndWait.waitToBeVisible(immunitySupportCategory ,webDriver);
+        while (!immunitySupportCategory.isDisplayed());
+        DataHelperAndWait.waitToBeVisible(immunitySupportCategory, webDriver);
         this.immunitySupportCategory.click();
     }
 //        this.clickOnNextIconInShopByHealthNeedSection();
@@ -602,11 +649,11 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
 //        this.immunitySupportCategory.click();
 
     public void clickOnKidsHealthCategory() {
-        do{
+        do {
             this.clickOnNextIconInShopByHealthNeedSection();
         }
-        while(!kidsHealthCategory.isDisplayed());
-        DataHelperAndWait.waitToBeVisible(kidsHealthCategory ,webDriver);
+        while (!kidsHealthCategory.isDisplayed());
+        DataHelperAndWait.waitToBeVisible(kidsHealthCategory, webDriver);
         this.kidsHealthCategory.click();
     }
 //        this.clickOnNextIconInShopByHealthNeedSection();
@@ -628,20 +675,20 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
 //        DataHelperAndWait.waitToBeVisible(mensHealthCategory ,webDriver);
 //        this.mensHealthCategory.click();
 //    }
-        do{
+        do {
             this.clickOnNextIconInShopByHealthNeedSection();
         }
-        while(!mensHealthCategory.isDisplayed());
-        DataHelperAndWait.waitToBeVisible(mensHealthCategory ,webDriver);
+        while (!mensHealthCategory.isDisplayed());
+        DataHelperAndWait.waitToBeVisible(mensHealthCategory, webDriver);
         this.mensHealthCategory.click();
     }
 
 
     public void clickOnSexualHealthCategory() {
-        do{
+        do {
             this.clickOnNextIconInShopByHealthNeedSection();
         }
-        while(!sexualHealthCategory.isDisplayed());
+        while (!sexualHealthCategory.isDisplayed());
 
 //        this.clickOnNextIconInShopByHealthNeedSection();
 //        this.clickOnNextIconInShopByHealthNeedSection();
@@ -651,23 +698,25 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
 //        this.clickOnNextIconInShopByHealthNeedSection();
 //        this.clickOnNextIconInShopByHealthNeedSection();
 //        this.clickOnNextIconInShopByHealthNeedSection();
-        DataHelperAndWait.waitToBeVisible(sexualHealthCategory ,webDriver);
+        DataHelperAndWait.waitToBeVisible(sexualHealthCategory, webDriver);
         this.sexualHealthCategory.click();
     }
+
     public void clickOnHairSkinAndNails() {
-        do{
+        do {
             this.clickOnNextIconInShopByHealthNeedSection();
         }
-        while(!hairAndSkinAndNailsCategory.isDisplayed());
-        DataHelperAndWait.waitToBeVisible(hairAndSkinAndNailsCategory ,webDriver);
+        while (!hairAndSkinAndNailsCategory.isDisplayed());
+        DataHelperAndWait.waitToBeVisible(hairAndSkinAndNailsCategory, webDriver);
         this.hairAndSkinAndNailsCategory.click();
     }
+
     public void clickOnHeartHealthCategory() {
-        do{
+        do {
             this.clickOnNextIconInShopByHealthNeedSection();
         }
-        while(!heartHealthCategory.isDisplayed());
-        DataHelperAndWait.waitToBeVisible(heartHealthCategory ,webDriver);
+        while (!heartHealthCategory.isDisplayed());
+        DataHelperAndWait.waitToBeVisible(heartHealthCategory, webDriver);
         this.heartHealthCategory.click();
     }
 
@@ -681,6 +730,7 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
 //        this.clickOnNextIconInShopByHealthNeedSection();
 //        this.clickOnNextIconInShopByHealthNeedSection();
 //        this.clickOnNextIconInShopByHealthNeedSection();
+
 //        this.clickOnNextIconInShopByHealthNeedSection();
 //        this.clickOnNextIconInShopByHealthNeedSection();
 //        this.clickOnNextIconInShopByHealthNeedSection();
@@ -688,19 +738,20 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
 //        DataHelperAndWait.waitToBeVisible(sleepSupportCategory ,webDriver);
 //        this.sleepSupportCategory.click();
 //    }
-        do{
+        do {
             this.clickOnNextIconInShopByHealthNeedSection();
         }
-        while(!sleepSupportCategory.isDisplayed());
-        DataHelperAndWait.waitToBeVisible(sleepSupportCategory ,webDriver);
+        while (!sleepSupportCategory.isDisplayed());
+        DataHelperAndWait.waitToBeVisible(sleepSupportCategory, webDriver);
         this.sleepSupportCategory.click();
     }
 
     public void clickOnDietWeightManagementCategory() {
-        do{
-            this.clickOnPreviousIconInShopByHealthNeedSection();        }
-        while(!dietWeightManagementCategory.isDisplayed());
-        DataHelperAndWait.waitToBeVisible(dietWeightManagementCategory ,webDriver);
+        do {
+            this.clickOnPreviousIconInShopByHealthNeedSection();
+        }
+        while (!dietWeightManagementCategory.isDisplayed());
+        DataHelperAndWait.waitToBeVisible(dietWeightManagementCategory, webDriver);
         this.dietWeightManagementCategory.click();
     }
 
@@ -729,33 +780,41 @@ public class AeVitaminsAndHealthCategoryPage extends BasePage {
 //        DataHelperAndWait.waitToBeVisible(womenHealthCategory ,webDriver);
 //        this.womenHealthCategory.click();
 //    }
-        do{
+        do {
             this.clickOnPreviousIconInShopByHealthNeedSection();
         }
-        while(!womenHealthCategory.isDisplayed());
-        DataHelperAndWait.waitToBeVisible(womenHealthCategory ,webDriver);
+        while (!womenHealthCategory.isDisplayed());
+        DataHelperAndWait.waitToBeVisible(womenHealthCategory, webDriver);
         this.womenHealthCategory.click();
     }
+
     public void clickOnNextIconInFishOilAndOmegasSection() {
         try {
-            DataHelperAndWait.waitToBeClickable(this.nextIconInFishOilAndOmegasSection ,webDriver);
+            DataHelperAndWait.waitToBeClickable(this.nextIconInFishOilAndOmegasSection, webDriver);
             this.nextIconInFishOilAndOmegasSection.click();
         } catch (Exception e) {
-            DataHelperAndWait.waitToBeClickable(this.nextIconInFishOilAndOmegasSection ,webDriver);
+            DataHelperAndWait.waitToBeClickable(this.nextIconInFishOilAndOmegasSection, webDriver);
             this.nextIconInFishOilAndOmegasSection.click();
         }
 
     }
-    public void clickOnPreviousIconInFishOilAndOmegasSection(){
-        try{
-            DataHelperAndWait.waitToBeClickable(this.previousIconInFishOilAndOmegasSection ,webDriver);
-            this.previousIconInFishOilAndOmegasSection.click();}
-        catch(Exception e){
-            DataHelperAndWait.waitToBeClickable(this.previousIconInFishOilAndOmegasSection ,webDriver);
+
+    public void clickOnPreviousIconInFishOilAndOmegasSection() {
+        try {
+            DataHelperAndWait.waitToBeClickable(this.previousIconInFishOilAndOmegasSection, webDriver);
+            this.previousIconInFishOilAndOmegasSection.click();
+        } catch (Exception e) {
+            DataHelperAndWait.waitToBeClickable(this.previousIconInFishOilAndOmegasSection, webDriver);
             this.previousIconInFishOilAndOmegasSection.click();
         }
     }
-    public void navigateToHomePage(){webDriver.navigate().to(BaseURL);}
-    public void navigateToVitaminsAndHealthPage(){webDriver.navigate().to(BaseURL +aeDomain+healthVitaminsUrl);}
+
+    public void navigateToHomePage() {
+        webDriver.navigate().to(BaseURL);
+    }
+
+    public void navigateToVitaminsAndHealthPage() {
+        webDriver.navigate().to(BaseURL + aeDomain + healthVitaminsUrl);
+    }
 
 }

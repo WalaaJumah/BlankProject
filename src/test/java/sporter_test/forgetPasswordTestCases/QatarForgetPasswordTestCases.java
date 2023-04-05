@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeClass;
 import sporter_pages.homepage_classes.QatarHomePage;
 
 public class QatarForgetPasswordTestCases extends ForgetPasswordTestCases {
-    @BeforeClass(alwaysRun=true)
+    @BeforeClass(alwaysRun = true)
     public void switchToQatarStore() {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.switchCountry(qatarHomePage.getQatarCountry());

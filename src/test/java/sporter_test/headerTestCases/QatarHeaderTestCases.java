@@ -7,15 +7,8 @@
 package sporter_test.headerTestCases;
 
 import core.BasePage;
-import core.DataHelperAndWait;
-import core.WebElementsAssertion;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
-import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.QatarHomePage;
-import xml_reader.XmlReader;
-
-import java.util.ArrayList;
 
 //@Test(groups = "2.07 Qatar Header Section")
 public class QatarHeaderTestCases extends HeaderTestCases {

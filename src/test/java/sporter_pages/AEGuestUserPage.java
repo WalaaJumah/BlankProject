@@ -10,21 +10,17 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 public class AEGuestUserPage extends BasePage {
-    public AEGuestUserPage(WebDriver webDriver) {
-        super(webDriver);
-        PageFactory.initElements(webDriver, this);
-    }
     public final String firstName = "Automation";
     public final String firstNameAr = "محمد";
     public final String lastName = "User";
     public final String lastNameAr = "احمد";
-    public final  String phone = "+9712222222";
-    public final  String email = "SporterTesta@gmail.com";
-    public final  String address = "Automation Address";
+    public final String phone = "+9712222222";
+    public final String email = "SporterTesta@gmail.com";
+    public final String address = "Automation Address";
     public final String addressAr = "عنوان البيت";
-    public final  String streetLineOne = "Automation street Line 1";
+    public final String streetLineOne = "Automation street Line 1";
     public final String streetLineOneAr = "شارع خالد بن الوليد";
-    public final  String streetLineTwo = "Automation street Line 2";
+    public final String streetLineTwo = "Automation street Line 2";
     public final String streetLineTwoAr = "طريق رقم 10";
     public final String longLengthText = "Test with Long Length Test with Long Length Test with Long Length Test with Long Length Test with Long Length Test with Long Length Test with Long Length Test with Long Length Test with Long Length Test with Long Length Test with Long Length Test with Long Length 10";
     //declare all locators related to the Cart Page
@@ -34,9 +30,6 @@ public class AEGuestUserPage extends BasePage {
     private WebElement aeCountry;
     @FindBy(css = " div.checkout-total-payment > ul > li:nth-child(1) > button ")
     private WebElement proceedCheckoutBtn;
-
-
-
     @FindBy(xpath = "//a[@class='action showcart']")
     private WebElement cartIcon;
     @FindBy(id = "top-cart-btn-checkout")
@@ -124,18 +117,22 @@ public class AEGuestUserPage extends BasePage {
     private WebElement noItemInCartLabel;
     @FindBy(xpath = "//select[@name='country_id']")
     private WebElement countryField;
-
     @FindBy(xpath = "//span[@class='counter qty']")
     private WebElement counterIconOnCartBtn;
 
+    public AEGuestUserPage(WebDriver webDriver) {
+        super(webDriver);
+        PageFactory.initElements(webDriver, this);
+    }
 
     //Getter Methods
     public WebElement getRegisterAtSporterOption() {
-        DataHelperAndWait.waitToBeVisible(registerAtSporterOption ,webDriver);
+        DataHelperAndWait.waitToBeVisible(registerAtSporterOption, webDriver);
         return registerAtSporterOption;
     }
+
     public WebElement getCounterIconOnCartBtn() {
-        DataHelperAndWait.waitToBeVisible(counterIconOnCartBtn ,webDriver);
+        DataHelperAndWait.waitToBeVisible(counterIconOnCartBtn, webDriver);
         return counterIconOnCartBtn;
     }
 
@@ -144,47 +141,47 @@ public class AEGuestUserPage extends BasePage {
     }
 
     public WebElement getCityMenu() {
-        DataHelperAndWait.waitToBeVisible(cityMenu ,webDriver);
+        DataHelperAndWait.waitToBeVisible(cityMenu, webDriver);
         return cityMenu;
     }
 
     public WebElement getShippingMethodSection() {
-        DataHelperAndWait.waitToBeVisible(shippingMethodSection ,webDriver);
+        DataHelperAndWait.waitToBeVisible(shippingMethodSection, webDriver);
         return shippingMethodSection;
     }
 
     public WebElement getFirstnameRequiredFieldMsg() {
-        DataHelperAndWait.waitToBeVisible(firstnameRequiredFieldMsg ,webDriver);
+        DataHelperAndWait.waitToBeVisible(firstnameRequiredFieldMsg, webDriver);
         return firstnameRequiredFieldMsg;
     }
 
     public WebElement getLastNameRequiredFieldMsg() {
-        DataHelperAndWait.waitToBeVisible(lastNameRequiredFieldMsg ,webDriver);
+        DataHelperAndWait.waitToBeVisible(lastNameRequiredFieldMsg, webDriver);
         return lastNameRequiredFieldMsg;
     }
 
     public WebElement getemailRequiredFieldMsg() {
-        DataHelperAndWait.waitToBeVisible(emailRequiredFieldMsg ,webDriver);
+        DataHelperAndWait.waitToBeVisible(emailRequiredFieldMsg, webDriver);
         return emailRequiredFieldMsg;
     }
 
     public WebElement getPhoneRequiredFieldMsg() {
-        DataHelperAndWait.waitToBeVisible(phoneRequiredFieldMsg ,webDriver);
+        DataHelperAndWait.waitToBeVisible(phoneRequiredFieldMsg, webDriver);
         return phoneRequiredFieldMsg;
     }
 
     public WebElement getCityRequiredFieldMsg() {
-        DataHelperAndWait.waitToBeVisible(cityRequiredFieldMsg ,webDriver);
+        DataHelperAndWait.waitToBeVisible(cityRequiredFieldMsg, webDriver);
         return cityRequiredFieldMsg;
     }
 
     public WebElement getAddressRequiredFieldMsg() {
-        DataHelperAndWait.waitToBeVisible(addressRequiredFieldMsg ,webDriver);
+        DataHelperAndWait.waitToBeVisible(addressRequiredFieldMsg, webDriver);
         return addressRequiredFieldMsg;
     }
 
     public WebElement getStreetlineOneRequiredFieldMsg() {
-        DataHelperAndWait.waitToBeVisible(streetlineOneRequiredFieldMsg ,webDriver);
+        DataHelperAndWait.waitToBeVisible(streetlineOneRequiredFieldMsg, webDriver);
         return streetlineOneRequiredFieldMsg;
     }
 
@@ -193,17 +190,17 @@ public class AEGuestUserPage extends BasePage {
     }
 
     public WebElement getTitleOfGuectUserShippingInformationScreen() {
-        DataHelperAndWait.waitToBeVisible(titleOfGuectUserShippingInformationScreen ,webDriver);
+        DataHelperAndWait.waitToBeVisible(titleOfGuectUserShippingInformationScreen, webDriver);
         return titleOfGuectUserShippingInformationScreen;
     }
 
     public WebElement getCitySearchField() {
-        DataHelperAndWait.waitToBeVisible(citySearchField ,webDriver);
+        DataHelperAndWait.waitToBeVisible(citySearchField, webDriver);
         return citySearchField;
     }
 
     public WebElement getCityListField() {
-        DataHelperAndWait.waitToBeVisible(cityListField ,webDriver);
+        DataHelperAndWait.waitToBeVisible(cityListField, webDriver);
         return cityListField;
     }
 
@@ -240,21 +237,22 @@ public class AEGuestUserPage extends BasePage {
     }
 
     public WebElement getNoItemInCartLabel() {
-        DataHelperAndWait.waitToBeVisible(noItemInCartLabel ,webDriver);
+        DataHelperAndWait.waitToBeVisible(noItemInCartLabel, webDriver);
         return noItemInCartLabel;
     }
 
     public WebElement getCountryField() {
-        DataHelperAndWait.waitToBeVisible(countryField ,webDriver);
+        DataHelperAndWait.waitToBeVisible(countryField, webDriver);
         return countryField;
     }
 
     public WebElement getEmailValidationFormateMsg() {
-        DataHelperAndWait.waitToBeVisible(emailValidationFormateMsg ,webDriver);
+        DataHelperAndWait.waitToBeVisible(emailValidationFormateMsg, webDriver);
         return emailValidationFormateMsg;
     }
+
     public WebElement getCartIcon() {
-        DataHelperAndWait.waitToBeVisible(cartIcon ,webDriver);
+        DataHelperAndWait.waitToBeVisible(cartIcon, webDriver);
         return cartIcon;
     }
 
@@ -262,31 +260,31 @@ public class AEGuestUserPage extends BasePage {
     //Define the main actions we need to execute our TCs
     public void switchToAECountry() {
         try {
-            DataHelperAndWait.waitToBeVisible(countryList ,webDriver);
+            DataHelperAndWait.waitToBeVisible(countryList, webDriver);
             this.countryList.click();
-            DataHelperAndWait.waitToBeVisible(aeCountry ,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeCountry, webDriver);
             this.aeCountry.click();
         } catch (Exception e) {
-            DataHelperAndWait.waitToBeVisible(countryList ,webDriver);
+            DataHelperAndWait.waitToBeVisible(countryList, webDriver);
             this.countryList.click();
-            DataHelperAndWait.waitToBeVisible(aeCountry ,webDriver);
+            DataHelperAndWait.waitToBeVisible(aeCountry, webDriver);
             this.aeCountry.click();
         }
 
     }
 
     public void clickOnCartIcon() {
-        DataHelperAndWait.waitToBeClickable(cartIcon ,webDriver);
+        DataHelperAndWait.waitToBeClickable(cartIcon, webDriver);
         cartIcon.click();
     }
 
     public void clickOnProceedCheckoutBtnInCartPopup() {
-        DataHelperAndWait.waitToBeVisible(proceedCheckoutBtnInCartPopup ,webDriver);
+        DataHelperAndWait.waitToBeVisible(proceedCheckoutBtnInCartPopup, webDriver);
         this.proceedCheckoutBtnInCartPopup.click();
     }
 
     public void clickOnProductInHomePage() {
-        DataHelperAndWait.waitToBeVisible(productInHomePage ,webDriver);
+        DataHelperAndWait.waitToBeVisible(productInHomePage, webDriver);
         this.productInHomePage.click();
     }
 
@@ -294,113 +292,119 @@ public class AEGuestUserPage extends BasePage {
         this.productInHomePageAr.click();
     }
 
-    public void addToCart() {try{
-        DataHelperAndWait.waitToBeClickable(addToCartBtn ,webDriver);
-        this.addToCartBtn.click();}
-    catch(Exception e){
-        DataHelperAndWait.waitToBeClickable(addToCartBtn ,webDriver);
-        this.addToCartBtn.click();}
+    public void addToCart() {
+        try {
+            DataHelperAndWait.waitToBeClickable(addToCartBtn, webDriver);
+            this.addToCartBtn.click();
+        } catch (Exception e) {
+            DataHelperAndWait.waitToBeClickable(addToCartBtn, webDriver);
+            this.addToCartBtn.click();
+        }
     }
 
     public void clickOnSporterLogo() {
-        DataHelperAndWait.isDisplayed(sporterLogo ,webDriver);
+        DataHelperAndWait.isDisplayed(sporterLogo, webDriver);
         this.sporterLogo.click();
     }
 
     public void viewCart() {
-        try{
-        DataHelperAndWait.waitToBeClickable(viewCartBtn ,webDriver);
-        this.viewCartBtn.click();}
-        catch (Exception e){
+        try {
+            DataHelperAndWait.waitToBeClickable(viewCartBtn, webDriver);
+            this.viewCartBtn.click();
+        } catch (Exception e) {
             webDriver.navigate().refresh();
-            DataHelperAndWait.waitToBeClickable(viewCartBtn ,webDriver);
-            this.viewCartBtn.click();}
+            DataHelperAndWait.waitToBeClickable(viewCartBtn, webDriver);
+            this.viewCartBtn.click();
+        }
     }
 
     public void clickOnGuestCheckoutBtn() {
         try {
-            DataHelperAndWait.waitToBeClickable(guestCheckoutBtn ,webDriver);
+            DataHelperAndWait.waitToBeClickable(guestCheckoutBtn, webDriver);
             this.guestCheckoutBtn.click();
         } catch (Exception e) {
-            DataHelperAndWait.waitToBeClickable(guestCheckoutBtn ,webDriver);
+            DataHelperAndWait.waitToBeClickable(guestCheckoutBtn, webDriver);
             this.guestCheckoutBtn.click();
         }
     }
 
     public void clickOnProceedCheckoutBtn() {
-        DataHelperAndWait.waitToBeClickable(proceedCheckoutBtn ,webDriver);
+        DataHelperAndWait.waitToBeClickable(proceedCheckoutBtn, webDriver);
         this.proceedCheckoutBtn.click();
     }
 
     public void clickOnReturnToCartIcon() {
-        DataHelperAndWait.waitToBeClickable(returnToCartLink ,webDriver);
+        DataHelperAndWait.waitToBeClickable(returnToCartLink, webDriver);
         this.returnToCartLink.click();
     }
 
     public void fillInShippingInformationInputField(String firstName, String lastName, String email, String phone, String address, String streetLineOne, String streetLineTwo) {
-        DataHelperAndWait.waitToBeVisible(firstNameField ,webDriver);
-        DataHelperAndWait.updateAllText(firstNameField,firstName);
+        DataHelperAndWait.waitToBeVisible(firstNameField, webDriver);
+        DataHelperAndWait.updateAllText(firstNameField, firstName);
 //        firstNameField.sendKeys(firstName);
-        DataHelperAndWait.waitToBeVisible(lastNameField ,webDriver);
+        DataHelperAndWait.waitToBeVisible(lastNameField, webDriver);
 //        lastNameField.sendKeys(lastName);
-        DataHelperAndWait.updateAllText(lastNameField,lastName);
-        DataHelperAndWait.waitToBeVisible(emailField ,webDriver);
+        DataHelperAndWait.updateAllText(lastNameField, lastName);
+        DataHelperAndWait.waitToBeVisible(emailField, webDriver);
 //        emailField.sendKeys(email);
-        DataHelperAndWait.updateAllText(emailField,email);
-        DataHelperAndWait.waitToBeVisible(phoneField ,webDriver);
-        DataHelperAndWait.updateAllText(phoneField,phone);
+        DataHelperAndWait.updateAllText(emailField, email);
+        DataHelperAndWait.waitToBeVisible(phoneField, webDriver);
+        DataHelperAndWait.updateAllText(phoneField, phone);
 //        phoneField.sendKeys(phone);
-        DataHelperAndWait.waitToBeVisible(addressField ,webDriver);
-        DataHelperAndWait.updateAllText(addressField,address);
+        DataHelperAndWait.waitToBeVisible(addressField, webDriver);
+        DataHelperAndWait.updateAllText(addressField, address);
 //        addressField.sendKeys(address);
-        DataHelperAndWait.waitToBeVisible(streetLineOneField ,webDriver);
-        DataHelperAndWait.updateAllText(streetLineOneField,streetLineOne);
+        DataHelperAndWait.waitToBeVisible(streetLineOneField, webDriver);
+        DataHelperAndWait.updateAllText(streetLineOneField, streetLineOne);
 //        streetLineOneField.sendKeys(streetLineOne);
-        DataHelperAndWait.waitToBeVisible(streetLineTwoField ,webDriver);
-        DataHelperAndWait.updateAllText(streetLineTwoField,streetLineOne);
+        DataHelperAndWait.waitToBeVisible(streetLineTwoField, webDriver);
+        DataHelperAndWait.updateAllText(streetLineTwoField, streetLineOne);
 //        streetLineTwoField.sendKeys(streetLineTwo);
     }
 
     public void clickOnContinueBtn() {
-        try{
-        DataHelperAndWait.waitToBeVisible(continueBtn ,webDriver);
-        this.continueBtn.click();}
-        catch (Exception e){
-            DataHelperAndWait.waitToBeVisible(continueBtn ,webDriver);
+        try {
+            DataHelperAndWait.waitToBeVisible(continueBtn, webDriver);
+            this.continueBtn.click();
+        } catch (Exception e) {
+            DataHelperAndWait.waitToBeVisible(continueBtn, webDriver);
             this.continueBtn.click();
         }
     }
 
     public void switchToArabicVersion() {
-        DataHelperAndWait.waitToBeVisible(arabicLangBtn ,webDriver);
+        DataHelperAndWait.waitToBeVisible(arabicLangBtn, webDriver);
         this.arabicLangBtn.click();
-        if(webDriver.getCurrentUrl().contains("/ar")){
-        DataHelperAndWait.waitForUrlContains("/ar",webDriver );
-        }
-        else {
+        if (webDriver.getCurrentUrl().contains("/ar")) {
+            DataHelperAndWait.waitForUrlContains("/ar", webDriver);
+        } else {
             this.arabicLangBtn.click();
         }
     }
 
     public void clickOnFirstNameField() {
-        DataHelperAndWait.isDisplayed(firstNameField ,webDriver);
+        DataHelperAndWait.isDisplayed(firstNameField, webDriver);
         this.firstNameField.click();
     }
-    public void navigateToHomePage(){webDriver.navigate().to(BaseURL);}
-    public void clearShippingInformationFields(){
-        DataHelperAndWait.waitToBeVisible(firstNameField ,webDriver);
+
+    public void navigateToHomePage() {
+        webDriver.navigate().to(BaseURL);
+    }
+
+    public void clearShippingInformationFields() {
+        DataHelperAndWait.waitToBeVisible(firstNameField, webDriver);
         DataHelperAndWait.clearWebField(firstNameField);
-        DataHelperAndWait.waitToBeVisible(lastNameField ,webDriver);
+        DataHelperAndWait.waitToBeVisible(lastNameField, webDriver);
         DataHelperAndWait.clearWebField(lastNameField);
-        DataHelperAndWait.waitToBeVisible(emailField ,webDriver);
+        DataHelperAndWait.waitToBeVisible(emailField, webDriver);
         DataHelperAndWait.clearWebField(emailField);
-        DataHelperAndWait.waitToBeVisible(phoneField ,webDriver);
+        DataHelperAndWait.waitToBeVisible(phoneField, webDriver);
         DataHelperAndWait.clearWebField(phoneField);
-        DataHelperAndWait.waitToBeVisible(addressField ,webDriver);
+        DataHelperAndWait.waitToBeVisible(addressField, webDriver);
         DataHelperAndWait.clearWebField(addressField);
-        DataHelperAndWait.waitToBeVisible(streetLineOneField ,webDriver);
+        DataHelperAndWait.waitToBeVisible(streetLineOneField, webDriver);
         DataHelperAndWait.clearWebField(streetLineOneField);
-        DataHelperAndWait.waitToBeVisible(streetLineTwoField ,webDriver);
+        DataHelperAndWait.waitToBeVisible(streetLineTwoField, webDriver);
         DataHelperAndWait.clearWebField(streetLineTwoField);
 
     }

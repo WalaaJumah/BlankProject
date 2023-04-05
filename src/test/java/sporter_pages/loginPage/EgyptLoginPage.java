@@ -9,7 +9,7 @@ package sporter_pages.loginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class EgyptLoginPage extends LoginPage{
+public class EgyptLoginPage extends LoginPage {
     public EgyptLoginPage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);

@@ -8,9 +8,9 @@
         <ShopByEn>Shop By</ShopByEn>
         <ShopByAr>تسوق حسب</ShopByAr>
         <SportsSupplementsEn>Sports Supplements</SportsSupplementsEn>
-        <SportsSupplementsAr>المكملات الرياضية</SportsSupplementsAr>
+        <SportsSupplementsAr>مكمِلات رياضية</SportsSupplementsAr>
         <VitaminsAndHealthEn>Vitamins &amp; Health</VitaminsAndHealthEn>
-        <VitaminsAndHealthAr>الفيتامينات و الصحة</VitaminsAndHealthAr>
+        <VitaminsAndHealthAr>الفيتامينات والصحة</VitaminsAndHealthAr>
         <HealthyFoodEn>Healthy Food</HealthyFoodEn>
         <HealthyFoodAr>الأغذية الصحية</HealthyFoodAr>
         <SPORTSEn>SPORTS</SPORTSEn>
@@ -19,15 +19,21 @@
         <WomenOnlyAr>للنساء فقط</WomenOnlyAr>
         <reviewDesc>Review Description Automation</reviewDesc>
         <reviewSummary>Review Summary Automation</reviewSummary>
-        <nickName> Automation</nickName>
-        <reviewDescLong>Review Description AutomationReview Description AutomationReview Description AutomationReview Description AutomationReview Description AutomationReview Description Automation </reviewDescLong>
-        <reviewSummaryLong>Review Summary Automation Review Summary Automation Review Summary Automation Review Summary Automation Review Summary Automation Review Summary Automation Review Summary Automation </reviewSummaryLong>
-        <nickNameLong> Automation  Automation  Automation  Automation  Automation  Automation  Automation  Automation  Automation  Automation  Automation  Automation  Automation  Automation  Automation </nickNameLong>
+        <nickName>Automation</nickName>
+        <reviewDescLong>Review Description AutomationReview Description AutomationReview Description AutomationReview
+            Description AutomationReview Description AutomationReview Description Automation
+        </reviewDescLong>
+        <reviewSummaryLong>Review Summary Automation Review Summary Automation Review Summary Automation Review Summary
+            Automation Review Summary Automation Review Summary Automation Review Summary Automation
+        </reviewSummaryLong>
+        <nickNameLong>Automation Automation Automation Automation Automation Automation Automation Automation Automation
+            Automation Automation Automation Automation Automation Automation
+        </nickNameLong>
 
     </ParentData1>
     <RegistartionForm>
         <correctEmail>Sportertesta@gmail.com</correctEmail>
-        <correctEmail2>automation@user.com</correctEmail2>
+        <correctEmail2>Automation@user.com</correctEmail2>
         <incorrectEmailFormate>Sportertesta@gmail</incorrectEmailFormate>
         <correctPassword>@SD123456789</correctPassword>
         <shortPassword>123</shortPassword>
@@ -61,7 +67,7 @@
     <CheckoutData>
         <invalidCouponCode>Hello</invalidCouponCode>
         <FreeCouponCode>MISSYOU</FreeCouponCode>
-<!--        <FreeCouponCode>spr-128978-1</FreeCouponCode>-->
+        <!--        <FreeCouponCode>spr-128978-1</FreeCouponCode>-->
         <CartTitleEn>My Shopping Cart</CartTitleEn>
         <CartTitleAr>عربة التسوق</CartTitleAr>
         <smallLenghthPhoneErrEn>Text length does not satisfy specified text range</smallLenghthPhoneErrEn>
@@ -73,7 +79,9 @@
         <phoneNumber>22222222</phoneNumber>
         <SmallPhoneNumber>22</SmallPhoneNumber>
         <LongPhoneNumber>3333333333333333333333</LongPhoneNumber>
-        <LongLenghthText>This text is for automation Use This text is for automation Use This text is for automation Use This text is for automation Use This text is for automation Use This text is for automation Use </LongLenghthText>
+        <LongLenghthText>This text is for automation Use This text is for automation Use This text is for automation Use
+            This text is for automation Use This text is for automation Use This text is for automation Use
+        </LongLenghthText>
         <UAECountryCode>971</UAECountryCode>
         <jordanCountryCode>962</jordanCountryCode>
         <KSACountryCode>961</KSACountryCode>
@@ -87,18 +95,21 @@
         <checkout3DSecure>Checkout1!</checkout3DSecure>
         <phoneNumberErrorEn>Please enter a valid Phone Number</phoneNumberErrorEn>
         <phoneNumberErrorAr>Needs To translate</phoneNumberErrorAr>
-<qatarPhoneNumber>55555396</qatarPhoneNumber>
-<ksaPhoneNumber>595552396</ksaPhoneNumber>
+        <qatarPhoneNumber>55555396</qatarPhoneNumber>
+        <ksaPhoneNumber>595552396</ksaPhoneNumber>
     </CheckoutData>
     <UAECheckout>
-        <twoBusinessDay>2 Business Days Super Express Shipping&#xA;Cash on Delivery Service Available</twoBusinessDay>
+        <twoBusinessDay>2 Business days delivery. (2-4 days for remote areas)
+Cash on Delivery Service Available</twoBusinessDay>
         <sameDayDelivery>Same Day Delivery</sameDayDelivery>
     </UAECheckout>
     <JordanCheckout>
         <fiveBusinessDays>5 Business Days Super Express Shipping</fiveBusinessDays>
     </JordanCheckout>
     <QatarCheckout>
-        <fourToFiveBusinessDays>4-5 Business Days Super Express Shipping&#xA;Online Credit or Debit Card Payment is Required</fourToFiveBusinessDays>
+        <fourToFiveBusinessDays>4-5 Business Days Super Express Shipping&#xA;Online Credit or Debit Card Payment is
+            Required
+        </fourToFiveBusinessDays>
     </QatarCheckout>
     <KSACheckout>
         <dootToDoor>خدمة التوصيل حتى باب المنزل ( خلال 4 - 5 يوم عمل ) خدمه الدفع عند الاستلام متوفره</dootToDoor>

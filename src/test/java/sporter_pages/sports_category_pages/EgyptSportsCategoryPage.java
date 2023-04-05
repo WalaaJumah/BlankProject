@@ -9,7 +9,7 @@ package sporter_pages.sports_category_pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class EgyptSportsCategoryPage extends SportsCategoryPage{
+public class EgyptSportsCategoryPage extends SportsCategoryPage {
     public EgyptSportsCategoryPage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);

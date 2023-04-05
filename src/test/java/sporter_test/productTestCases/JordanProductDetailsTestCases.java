@@ -7,21 +7,11 @@
 package sporter_test.productTestCases;
 
 import core.BasePage;
-import core.DataHelperAndWait;
-import core.WebElementsAssertion;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import sporter_pages.headerSection.HeaderSection;
-import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.homepage_classes.JordanHomePage;
-import sporter_pages.productPage.EgyptProductDetailsPage;
 import sporter_pages.productPage.JordanProductDetailsPage;
-import sporter_pages.productPage.ProductDetailsPage;
-import xml_reader.XmlReader;
 
 import java.io.IOException;
 
@@ -30,21 +20,21 @@ import static org.testng.Assert.assertTrue;
 
 //@Test(groups = "Jordan Product Details Page")
 
-public class JordanProductDetailsTestCases  extends ProductDetailsTestCases{
-    @BeforeClass(alwaysRun=true)
-    public void switchToJordanStore(){
-        JordanHomePage jordanHomePage=new JordanHomePage(webDriver);
+public class JordanProductDetailsTestCases extends ProductDetailsTestCases {
+    @BeforeClass(alwaysRun = true)
+    public void switchToJordanStore() {
+        JordanHomePage jordanHomePage = new JordanHomePage(webDriver);
         jordanHomePage.switchCountry(jordanHomePage.getJordanCountry());
-        if(webDriver.getCurrentUrl().contains(jordanHomePage.jordanDomain)){
+        if (webDriver.getCurrentUrl().contains(jordanHomePage.jordanDomain)) {
             System.out.println("You are in Jordan Store");
-        }
-        else {
-            webDriver.navigate().to(BasePage.BaseURL+jordanHomePage.jordanDomain);
+        } else {
+            webDriver.navigate().to(BasePage.BaseURL + jordanHomePage.jordanDomain);
             CloseInitialDialog();
             System.out.println(webDriver.getCurrentUrl());
         }
     }
-//    @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the customer can navigate to the home page using the BreadCrumb ", priority = 12)
+
+    //    @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the customer can navigate to the home page using the BreadCrumb ", priority = 12)
 //    public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumb() {
 //        JordanProductDetailsPage jordanProductDetailsPage = new JordanProductDetailsPage(webDriver);
 //        jordanProductDetailsPage.displayTheProduct();
@@ -178,14 +168,15 @@ public class JordanProductDetailsTestCases  extends ProductDetailsTestCases{
 //        else {
 //            WebElementsAssertion.assertionTextIsEqual(jordanProductDetailsPage.getAboutThisProductTitle(),webDriver, "حول هذا المنتج");}
 //    }
-    @Test(groups = { "1.4 Low Severity"},description = "{{CountryName}}: Verify that the Supplement Facts section displays correctly in the PDP", priority = 18,enabled = false)
+    @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Verify that the Supplement Facts section displays correctly in the PDP", priority = 18, enabled = false)
     public void verifySupplementFactsSectionDisplaysCorrectlyInProductDetailsPage() throws IOException {
         JordanProductDetailsPage jordanProductDetailsPage = new JordanProductDetailsPage(webDriver);
         jordanProductDetailsPage.displayTheProduct();
         assertTrue(jordanProductDetailsPage.getSupplementFactsTable().isDisplayed());
         assertEquals(jordanProductDetailsPage.getSupplementFactsTitle().getText(), "Supplement Facts");
     }
-//    //      The following Test Cases handle displaying the Mega Menu from Product Page
+
+    //    //      The following Test Cases handle displaying the Mega Menu from Product Page
 //    @Test(groups = {"All Smoke Testing Result","1.4 Low Severity"},description = "{{CountryName}}: Verify that the ShopBy Menu Is Displayed When Hovering On It From Product Details Page", priority = 19)
 //    public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
 //        JordanProductDetailsPage jordanProductDetailsPage = new JordanProductDetailsPage(webDriver);
@@ -232,18 +223,20 @@ public class JordanProductDetailsTestCases  extends ProductDetailsTestCases{
 //        DataHelperAndWait.clickOnElement(jordanProductDetailsPage.getAccountProfileIcon(),webDriver);
 //        WebElementsAssertion.validateTheElementIsDisplayed(jordanProductDetailsPage.getAccountProfileOptions(), webDriver);
 //    }
-    @Test(groups = { "1.4 Low Severity"},description = "{{CountryName}}: Verify that the Direction Of Use section displays correctly in the PDP", priority = 25,enabled = false)
+    @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Verify that the Direction Of Use section displays correctly in the PDP", priority = 25, enabled = false)
     public void verifyDirectionOfUseSectionDisplaysCorrectlyInProductDetailsPage() throws IOException {
         JordanProductDetailsPage jordanProductDetailsPage = new JordanProductDetailsPage(webDriver);
         jordanProductDetailsPage.displayTheProduct();
 //        assertTrue(jordanProductDetailsPage.getDirectionsOfUseSection().isDisplayed());
     }
-    @Test(groups = { "1.4 Low Severity"},description = "{{CountryName}}: Verify that the About Brand section displays correctly in the PDP", priority = 26,enabled = false)
+
+    @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Verify that the About Brand section displays correctly in the PDP", priority = 26, enabled = false)
     public void verifyAboutBrandSectionDisplaysCorrectlyInProductDetailsPage() {
         JordanProductDetailsPage jordanProductDetailsPage = new JordanProductDetailsPage(webDriver);
         assertTrue(jordanProductDetailsPage.getAboutBrandSection().isDisplayed());
     }
-//    @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}: Verify that the header Bar in the PDP appears correctly when scrolling down", priority = 27)
+
+    //    @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}: Verify that the header Bar in the PDP appears correctly when scrolling down", priority = 27)
 //    public void verifyAddToCartBtnInHeaderBarWorksCorrectly() {
 //        JordanProductDetailsPage jordanProductDetailsPage = new JordanProductDetailsPage(webDriver);
 //        DataHelperAndWait.scrollTo(jordanProductDetailsPage.getAddReviewButton(),webDriver);
@@ -301,7 +294,7 @@ public class JordanProductDetailsTestCases  extends ProductDetailsTestCases{
 //        jordanProductDetailsPage.displayTheProduct();
 //        jordanProductDetailsPage.verifyReviewPagingWorks();
 //    }
-    @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the simple price changes when navigation between sizes for the config ", priority = 35,enabled = false)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the simple price changes when navigation between sizes for the config ", priority = 35, enabled = false)
     public void verifySimplePriceChangesWhenNavigationBetweenSizesForTheConfig() throws IOException {
         JordanProductDetailsPage jordanProductDetailsPage = new JordanProductDetailsPage(webDriver);
         jordanProductDetailsPage.displayTheProduct();
@@ -309,6 +302,6 @@ public class JordanProductDetailsTestCases  extends ProductDetailsTestCases{
         String firstPrice = jordanProductDetailsPage.getFinalProductPrice().getText();
 //        DataHelperAndWait.clickOnElement(jordanProductDetailsPage.getSecondsimple(),webDriver);
         String secondPrice = jordanProductDetailsPage.getFinalProductPrice().getText();
-        Assert.assertNotEquals(firstPrice, secondPrice,"The simple price is not changes");
+        Assert.assertNotEquals(firstPrice, secondPrice, "The simple price is not changes");
     }
 }

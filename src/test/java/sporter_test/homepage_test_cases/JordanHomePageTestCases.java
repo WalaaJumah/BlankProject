@@ -14,26 +14,31 @@ import sporter_pages.homepage_classes.JordanHomePage;
 
 //@Test(groups = "2.04 Jordan HomePage")
 public class JordanHomePageTestCases extends HomePageTestCases {
-    @BeforeClass(alwaysRun=true)
-    public void switchToJordanStore(){
-        JordanHomePage jordanHomePage=new JordanHomePage(webDriver);
+    @BeforeClass(alwaysRun = true)
+    public void switchToJordanStore() {
+        JordanHomePage jordanHomePage = new JordanHomePage(webDriver);
         jordanHomePage.switchCountry(jordanHomePage.getJordanCountry());
         DataHelperAndWait.scrollToPositionZero(webDriver);
-        if(webDriver.getCurrentUrl().contains(jordanHomePage.jordanDomain)){
+        if (webDriver.getCurrentUrl().contains(jordanHomePage.jordanDomain)) {
             System.out.println("You are in Jordan Store");
-        }
-        else {
-            webDriver.navigate().to(BasePage.BaseURL+jordanHomePage.jordanDomain);
+        } else {
+            webDriver.navigate().to(BasePage.BaseURL + jordanHomePage.jordanDomain);
             CloseInitialDialog();
             System.out.println(webDriver.getCurrentUrl());
         }
     }
+
     @Test(enabled = false)
-    public void verifyTopSellingStacksSectionAreDisplayed() {}
+    public void verifyTopSellingStacksSectionAreDisplayed() {
+    }
+
     @Test(enabled = false)
-    public void verifyViewAllBtnInTopSellingStacksSectionWorking() {}
+    public void verifyViewAllBtnInTopSellingStacksSectionWorking() {
+    }
+
     @Test(enabled = false)
-    public void verifyClickOnTheProductsAppearingInTheTopSellingStacksSectionRedirectTheUserToCorrectUrl() {}
+    public void verifyClickOnTheProductsAppearingInTheTopSellingStacksSectionRedirectTheUserToCorrectUrl() {
+    }
 //
 //    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the next button at the HomePage rotating slider section is displayed ", priority = 3)
 //    public void verifyNextArrowAtHomePageRotatingSliderIsDisplayed() {

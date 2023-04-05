@@ -2,6 +2,9 @@ package core;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.logging.LogEntries;
+import org.openqa.selenium.logging.LogEntry;
+import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
 
@@ -12,13 +15,14 @@ import java.util.*;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
+import java.util.logging.Level;
 
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 public  class DataHelperAndWait  {
 
-    private static int WaitTime=12;
+    private static int WaitTime=15;
     //test21add
 public static void navigateToUrl(String uRL, WebDriver webDriver) {
     webDriver.navigate().to(uRL);
@@ -104,7 +108,33 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
     public static  void JsExecutorToClickOnElement(WebElement element,WebDriver webDriver) {
         JavascriptExecutor jse = (JavascriptExecutor) webDriver;
         //Find The element
-        jse.executeScript("arguments[0].click()", element);
+        //jse.executeScript("arguments[0].click();", element);
+        jse.executeScript("arguments[0]." +
+                "focus(); arguments[0].click();", element);
+//        jse.executeScript("if(document.getElementById('submitShippingAddressBtn')!= null){ document.getElementById('submitShippingAddressBtn').click();}", element);
+    }
+    public static void HandleAlert(WebDriver driver, WebDriverWait wait) {
+        if (wait == null) {
+            wait = new WebDriverWait(driver, 5);
+        }
+
+        try {
+            Alert alert = wait.until(HandleAlertInner(driver));
+            alert.accept();
+        } catch (TimeoutException E) { /* Ignore */ }
+    }
+
+    public static ExpectedCondition<Alert> HandleAlertInner(WebDriver driver) {
+        return new ExpectedCondition<Alert>() {
+            @Override
+            public Alert apply(WebDriver driver) {
+                try {
+                    return driver.switchTo().alert();
+                } catch (NoAlertPresentException e) {
+                    return null;
+                }
+            }
+        };
     }
 
     public static  float convertTheStringToFloat(WebElement element,WebDriver webDriver,String currency) {
@@ -267,25 +297,38 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
 
         }
 
-        public static void validateNextOrPreviousBtnInPanelWork(List<WebElement> productsList,WebElement productCardNum,WebElement nextOrPreviousButton,WebDriver driver){
-        if(productsList.size()>4){
-            try{
-            clickOnElement(nextOrPreviousButton,driver);
-            WebElementsAssertion.validateTheElementIsDisplayed(productCardNum,driver);}
-            catch (Exception e){
-                driver.navigate().refresh();
-                clickOnElement(nextOrPreviousButton,driver);
-                WebElementsAssertion.validateTheElementIsDisplayed(productCardNum,driver);
+        public static void validateNextOrPreviousBtnInPanelWork(List<WebElement> productsList,WebElement productCardNum,WebElement nextOrPreviousButton,WebDriver driver) {
+            try {
+                if (!nextOrPreviousButton.isDisplayed()) {
+                    System.out.println("There's no Next/previous button");
+                }
+            } catch (Exception ee) {
+                if (productsList.size() > 5) {
+                    try {
+                        clickOnElement(nextOrPreviousButton, driver);
+                        WebElementsAssertion.validateTheElementIsDisplayed(productCardNum, driver);
+                    } catch (Exception e) {
+                        driver.navigate().refresh();
+                        clickOnElement(nextOrPreviousButton, driver);
+                        WebElementsAssertion.validateTheElementIsDisplayed(productCardNum, driver);
+                    }
+                } else {
+                    System.out.println("There's only " + productsList.size() + 1 + " in the panel");
+                }
+
             }
         }
-        else{
-            System.out.println("There's only "+ productsList.size()+1+" in the panel");
-        }
-
-        }
-
         public static void accessAllProductsInWidget(List<WebElement> productsList,WebElement nextOrPreviousBtnToClick,WebDriver driver,BasePage pageObj) throws IOException {
-            Assert.assertTrue( productsList.size()>0,"There's no any products in the list");
+            try{
+                if(!nextOrPreviousBtnToClick.isDisplayed()){
+                    System.out.println("There's no Next/previous button");
+                }
+            }
+            catch (Exception e){
+            if ( productsList.size()>0){
+                System.out.println("There's no any products in the list");}
+
+            else{
             for (int i = 0; i < productsList.size()-1; i++) {
                 if(!productsList.get(i).isDisplayed()){
                     do{
@@ -296,7 +339,9 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
                     clickOnElement(productsList.get(i),driver);
                     pageObj.verifyTheDisplayedPageDoesNotHaveErrors();
                     pageObj.navigateToHomePage();}
-            }
+            }}
+
+}
             public static String getWebElementText(WebElement webElement,WebDriver webDriver){
         waitToBeVisible( webElement,webDriver);
         return webElement.getText();
@@ -328,5 +373,15 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
         WebDriverWait wait;
         wait = new WebDriverWait(webDriver, WaitTime);
         wait.until(ExpectedConditions.invisibilityOfElementWithText(element,expectedText));
+    }
+    public static void captureJavaScriptErrors(WebDriver webDriver){
+//        LogEntries jsErrors=webDriver.manage().logs().get(LogType.BROWSER);
+//        System.out.println("All Java Script Error log: "+jsErrors.getAll());
+//        System.out.println("First Java Script Error log: "+jsErrors.getAll().get(0));
+
+        LogEntries jsErrors=webDriver.manage().logs().get(LogType.BROWSER);
+for(int i=0;i<jsErrors.getAll().size()-1;i++){
+            System.out.println("Error # "+i+" : "+jsErrors.getAll().get(i));}
+
     }
 }

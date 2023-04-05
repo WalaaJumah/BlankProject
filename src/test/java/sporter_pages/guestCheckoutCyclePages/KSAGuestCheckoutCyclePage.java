@@ -12,16 +12,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
+
 @Getter
-public class KSAGuestCheckoutCyclePage extends  GuestCheckoutCyclePage{
+public class KSAGuestCheckoutCyclePage extends GuestCheckoutCyclePage {
+    @FindBy(xpath = "//div[contains(@id,'pickupinstore')]")
+    private WebElement pickupInStoreMethod;
+    @FindBy(xpath = "//div[contains(@id,'ksadoortodoor')]")
+    private WebElement doorToDoorMethod;
     public KSAGuestCheckoutCyclePage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
     }
-    @FindBy(xpath = "//div[contains(@id,'pickupinstore')]")
-    private WebElement pickupInStoreMethod;
-     @FindBy(xpath = "//div[contains(@id,'ksadoortodoor')]")
-    private WebElement doorToDoorMethod;
+
     @Test(enabled = false)
-    public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNationalID(){}
+    public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNationalID() {
+    }
 }

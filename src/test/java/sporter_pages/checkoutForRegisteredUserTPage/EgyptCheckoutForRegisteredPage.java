@@ -18,22 +18,22 @@ public class EgyptCheckoutForRegisteredPage extends CheckoutForRegisteredPage {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
     }
-    public void AddToCartAndAccessShippingMethodsPageForEgypt(){
-        GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
-        CartPage cartPage=new CartPage(webDriver);
-        try{
-            cartPage.clearCart();}
-        catch (Exception e){
+
+    public void AddToCartAndAccessShippingMethodsPageForEgypt() {
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        CartPage cartPage = new CartPage(webDriver);
+        try {
+            cartPage.clearCart();
+        } catch (Exception e) {
             System.out.println("");
         }
         cartPage.addToCartAndDisplayTheCart();
         cartPage.navigateToHomePage();
-        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-        try{
-            DataHelperAndWait.clickOnElement(this.getSavedAddressOption(),webDriver);
-        }
-        catch (Exception e){
+        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
+        try {
+            DataHelperAndWait.clickOnElement(this.getSavedAddressOption(), webDriver);
+        } catch (Exception e) {
             this.fillInShippingInformationInputField(
                     XmlReader.getXMLData("firstName"),
                     XmlReader.getXMLData("lastName"),

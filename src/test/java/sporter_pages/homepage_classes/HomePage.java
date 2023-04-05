@@ -15,14 +15,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
+
 @Getter
 public class HomePage extends BasePage {
     public final String jordanDomain = "/en-jo";
-
-    public HomePage(WebDriver webDriver) {
-        super(webDriver);
-        PageFactory.initElements(webDriver, this);
-    }
     DataHelperAndWait dataHelperAndWait;
     @FindBy(id = "downArrow")
     private WebElement countryList;
@@ -85,7 +81,7 @@ public class HomePage extends BasePage {
     private WebElement healthyFoodLinkInTopSellers;
     @FindBy(id = "OptionsContainerOptions_1topSeller")
     private WebElement vitaminsAndHealthLinkInTopSellers;
-    @FindBy(id = "OptionsContainerOptions_3topSeller")
+    @FindBy(id = "OptionsContainerOptions_2topSeller")
     private WebElement sportswearAndAccessoriesLinkInTopSellers;
     @FindBy(id = "//ul[@class='tabs tabs67']/li[2]/a")
     private WebElement sportSupplementsActiveLink;
@@ -137,9 +133,8 @@ public class HomePage extends BasePage {
     private WebElement newArrivalsSportswearAndAccessoriesActiveLink;
     @FindBy(id = "ControllersrtArrow_newArrival")
     private WebElement nextBtnInNewArrivalsSection;
-       @FindBy(id = "ControllersLtArrow_mostselling")
+    @FindBy(id = "ControllersLtArrow_mostselling")
     private WebElement nextBtnInTopSellingStacksSection;
-
     @FindBy(id = "ControllersLtArrow_newArrival")
     private WebElement previousBtnInNewArrivalsSection;
     @FindBy(xpath = "(//div[@class='contactForm_container'])[1]")
@@ -192,84 +187,110 @@ public class HomePage extends BasePage {
     private WebElement NextPageBtn;
     @FindBy(xpath = "//div[@id='trendContainer']//a")
     private List<WebElement> categoriesInsideTrendingOnSporterSection;
+    public HomePage(WebDriver webDriver) {
+        super(webDriver);
+        PageFactory.initElements(webDriver, this);
+    }
 
     //Main WebElement Test Cases
     public void clickOnViewAllBtnInTopSellingStacksSection() {
-        DataHelperAndWait.clickOnElement(viewAllBtnInTopSellingStacksSection,webDriver);
+        DataHelperAndWait.clickOnElement(viewAllBtnInTopSellingStacksSection, webDriver);
     }
 
     public void clickOnAllLinkInTopSellerSection() {
-        DataHelperAndWait.clickOnElement(allLinkInTopSellers,webDriver);
+        DataHelperAndWait.clickOnElement(allLinkInTopSellers, webDriver);
     }
+
     public void clickOnSportSupplementsLinkInTopSellerSection() {
-        DataHelperAndWait.clickOnElement(sportSupplementsLinkInTopSellers,webDriver);
+        DataHelperAndWait.clickOnElement(sportSupplementsLinkInTopSellers, webDriver);
     }
 
     public void clickOnHealthyFoodLinkInTopSellerSection() {
-        DataHelperAndWait.clickOnElement(healthyFoodLinkInTopSellers,webDriver);
+        DataHelperAndWait.clickOnElement(healthyFoodLinkInTopSellers, webDriver);
     }
+
     public void clickOnVitaminsAndHealthLinkInTopSellerSection() {
-        DataHelperAndWait.clickOnElement(vitaminsAndHealthLinkInTopSellers,webDriver);
+        DataHelperAndWait.clickOnElement(vitaminsAndHealthLinkInTopSellers, webDriver);
     }
+
     public void clickOnSportswearAndAccessoriesLinkInTopSellerSection() {
-        DataHelperAndWait.clickOnElement(sportswearAndAccessoriesLinkInTopSellers,webDriver);
+        DataHelperAndWait.clickOnElement(sportswearAndAccessoriesLinkInTopSellers, webDriver);
     }
+
     public void clickOnNextButtonInTopSellerSectionInTopSellerSection() {
-        DataHelperAndWait.clickOnElement(nextButtonInTopSellerSection,webDriver);
+        DataHelperAndWait.clickOnElement(nextButtonInTopSellerSection, webDriver);
     }
+
     public void clickOnNextButtonInTrendingOnSporterSection() {
-        DataHelperAndWait.clickOnElement(nextBtnInTrendingOnSporterSection,webDriver);
+        DataHelperAndWait.clickOnElement(nextBtnInTrendingOnSporterSection, webDriver);
     }
+
     public void clickOnPreviousButtonInTrendingOnSporterSection() {
-        DataHelperAndWait.clickOnElement(previousBtnInTrendingOnSporterSection,webDriver);
+        DataHelperAndWait.clickOnElement(previousBtnInTrendingOnSporterSection, webDriver);
     }
+
     public void clickOnPreviousButtonInTopSellersSection() {
-        DataHelperAndWait.clickOnElement(previousButtonInTopSellerSection,webDriver);
+        DataHelperAndWait.clickOnElement(previousButtonInTopSellerSection, webDriver);
     }
+
     public void clickOnNextButtonInTopSellersSection() {
-        DataHelperAndWait.clickOnElement(nextButtonInTopSellerSection,webDriver);
+        DataHelperAndWait.clickOnElement(nextButtonInTopSellerSection, webDriver);
     }
+
     public void clickOnAllLinkInNewArrivalsSection() {
-        DataHelperAndWait.clickOnElement(newArrivalsAllLink,webDriver);
+        DataHelperAndWait.clickOnElement(newArrivalsAllLink, webDriver);
     }
+
     public void clickOnSportSupplementsLinkInNewArrivalsSection() {
-        DataHelperAndWait.clickOnElement(newArrivalsSpportSupplementsLink,webDriver);
+        DataHelperAndWait.clickOnElement(newArrivalsSpportSupplementsLink, webDriver);
     }
+
     public void clickOnHealthyFoodLinkInNewArrivalsSection() {
-        DataHelperAndWait.clickOnElement(newArrivalsHealthyFoodLink,webDriver);
+        DataHelperAndWait.clickOnElement(newArrivalsHealthyFoodLink, webDriver);
     }
+
     public void clickOnVitaminsAndHealthLinkInNewArrivalsSection() {
-        DataHelperAndWait.clickOnElement(newArrivalsVitaminsAndHealthLink,webDriver);
+        DataHelperAndWait.clickOnElement(newArrivalsVitaminsAndHealthLink, webDriver);
     }
+
     public void clickOnSportswearAndAccessoriesLinkInNewArrivalsSection() {
-        DataHelperAndWait.clickOnElement(newArrivalsSportWearAndAccessoriesLink,webDriver);
+        DataHelperAndWait.clickOnElement(newArrivalsSportWearAndAccessoriesLink, webDriver);
     }
+
     public void clickOnPreviousButtonInNewArrivalSection() {
-        DataHelperAndWait.clickOnElement(previousBtnInNewArrivalsSection,webDriver);
+        DataHelperAndWait.clickOnElement(previousBtnInNewArrivalsSection, webDriver);
     }
+
     public void clickOnNextButtonInNewArrivalSection() {
-        DataHelperAndWait.clickOnElement(nextBtnInNewArrivalsSection,webDriver);
+        DataHelperAndWait.clickOnElement(nextBtnInNewArrivalsSection, webDriver);
     }
+
     public void clickOnPhoneBtn() {
-        DataHelperAndWait.clickOnElement(phoneBtn,webDriver);
+        DataHelperAndWait.clickOnElement(phoneBtn, webDriver);
     }
+
     public void clickOnEmailBtn() {
-        DataHelperAndWait.clickOnElement(emailBtn,webDriver);
+        DataHelperAndWait.clickOnElement(emailBtn, webDriver);
     }
+
     public void clickOnHomePageHorizontalBanner() {
-        DataHelperAndWait.clickOnElement(homePageHorizontalBanner,webDriver);
+        DataHelperAndWait.clickOnElement(homePageHorizontalBanner, webDriver);
     }
+
     public void clickOnSportsSupplementsCategory() {
-        DataHelperAndWait.clickOnElement(sportsSupplementsCategory,webDriver);
+        DataHelperAndWait.clickOnElement(sportsSupplementsCategory, webDriver);
     }
+
     public void clickOnHealthyFoodCategory() {
-        DataHelperAndWait.clickOnElement(healthyFoodCategory,webDriver);
+        DataHelperAndWait.clickOnElement(healthyFoodCategory, webDriver);
     }
+
     public void clickOnVitaminsAndHealthCategory() {
-        DataHelperAndWait.clickOnElement(vitaminsAndHealthCategory,webDriver);
+        DataHelperAndWait.clickOnElement(vitaminsAndHealthCategory, webDriver);
     }
+
     public void clickOnSportswearAndAccessoriesCategory() {
-        DataHelperAndWait.clickOnElement(sportswearAndAccessoriesCategory,webDriver);
+        DataHelperAndWait.clickOnElement(sportswearAndAccessoriesCategory, webDriver);
     }
 
 //    public void clickOnFirstProductInTheTopSellingStacksSection(){
@@ -285,17 +306,20 @@ public class HomePage extends BasePage {
 //        }
 //    }
 
-    public void clickOnSecondProductInTheTopSellingStacksSection(){
-        DataHelperAndWait.clickOnElement(secondProductInTopSellingStacksSection,webDriver);
+    public void clickOnSecondProductInTheTopSellingStacksSection() {
+        DataHelperAndWait.clickOnElement(secondProductInTopSellingStacksSection, webDriver);
     }
-    public void clickOnThirdProductInTheTopSellingStacksSection(){
-        DataHelperAndWait.clickOnElement(thirdProductInTopSellingStacksSection,webDriver);
+
+    public void clickOnThirdProductInTheTopSellingStacksSection() {
+        DataHelperAndWait.clickOnElement(thirdProductInTopSellingStacksSection, webDriver);
     }
-    public void clickOnFourthProductInTheTopSellingStacksSection(){
-        DataHelperAndWait.clickOnElement(fourthProductInTopSellingStacksSection,webDriver);
+
+    public void clickOnFourthProductInTheTopSellingStacksSection() {
+        DataHelperAndWait.clickOnElement(fourthProductInTopSellingStacksSection, webDriver);
     }
-    public void clickOnFifthProductInTheTopSellingStacksSection(){
-        DataHelperAndWait.clickOnElement(fiveProductInTopSellingStacksSection,webDriver);
+
+    public void clickOnFifthProductInTheTopSellingStacksSection() {
+        DataHelperAndWait.clickOnElement(fiveProductInTopSellingStacksSection, webDriver);
     }
 //    public void clickOnFirstProductInTheTopSellersSection(){
 //        try{
@@ -310,35 +334,41 @@ public class HomePage extends BasePage {
 //        }
 //    }
 
-    public void clickOnSecondProductInTheTopSellersSection(){
-        DataHelperAndWait.clickOnElement(secondProductInTopSellersSection,webDriver);
-    }
-    public void clickOnThirdProductInTheTopSellersSection(){
-        DataHelperAndWait.clickOnElement(thirdProductInTopSellersSection,webDriver);
-    }
-    public void clickOnFourthProductInTheTopSellersSection(){
-        DataHelperAndWait.clickOnElement(fourthProductInTopSellersSection,webDriver);
-    }
-    public void clickOnFifthProductInTheTopSellersSection(){
-        DataHelperAndWait.clickOnElement(fiveProductInTopSellersSection,webDriver);
-    }
-    public void clickOnFirstSideBanner(){
-        DataHelperAndWait.clickOnElement(firstSideBanner,webDriver);
-    }
-    public void clickOnSecondSideBanner(){
-        DataHelperAndWait.clickOnElement(secondSideBanner,webDriver);
-    }
-    public void clickOnBannerInRotatingSliderSection(){
-        DataHelperAndWait.clickOnElement(bannerInRotatingSliderSection,webDriver);
+    public void clickOnSecondProductInTheTopSellersSection() {
+        DataHelperAndWait.clickOnElement(secondProductInTopSellersSection, webDriver);
     }
 
-    public void switchCountry(WebElement countryElement){
+    public void clickOnThirdProductInTheTopSellersSection() {
+        DataHelperAndWait.clickOnElement(thirdProductInTopSellersSection, webDriver);
+    }
+
+    public void clickOnFourthProductInTheTopSellersSection() {
+        DataHelperAndWait.clickOnElement(fourthProductInTopSellersSection, webDriver);
+    }
+
+    public void clickOnFifthProductInTheTopSellersSection() {
+        DataHelperAndWait.clickOnElement(fiveProductInTopSellersSection, webDriver);
+    }
+
+    public void clickOnFirstSideBanner() {
+        DataHelperAndWait.clickOnElement(firstSideBanner, webDriver);
+    }
+
+    public void clickOnSecondSideBanner() {
+        DataHelperAndWait.clickOnElement(secondSideBanner, webDriver);
+    }
+
+    public void clickOnBannerInRotatingSliderSection() {
+        DataHelperAndWait.clickOnElement(bannerInRotatingSliderSection, webDriver);
+    }
+
+    public void switchCountry(WebElement countryElement) {
         try {
-            DataHelperAndWait.isDisplayed(countryList ,webDriver);
+            DataHelperAndWait.isDisplayed(countryList, webDriver);
             this.countryList.click();
             countryElement.click();
         } catch (Exception e) {
-            DataHelperAndWait.isDisplayed(countryList ,webDriver);
+            DataHelperAndWait.isDisplayed(countryList, webDriver);
             this.countryList.click();
             countryElement.click();
         }

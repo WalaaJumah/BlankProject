@@ -62,8 +62,8 @@ public class UAECheckoutForRegisteredTestCases extends CheckoutForRegisteredTest
                     XmlReader.getXMLData("StreetOneAddressName"),
                     XmlReader.getXMLData("StreetTwoAddressName"));
         }
-                DataHelperAndWait.waitForTime(1500);
-                DataHelperAndWait.waitForTime(1500);
+                DataHelperAndWait.waitForTime(2000);
+                DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);

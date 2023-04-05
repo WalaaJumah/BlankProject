@@ -82,7 +82,7 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
                     XmlReader.getXMLData("nationalID")
             );
         }
-                DataHelperAndWait.waitForTime(1500);
+                DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getShippingMethodsOptionsSection(),webDriver);
     }
@@ -136,7 +136,7 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
                     XmlReader.getXMLData("nationalID")
             );
         }
-                DataHelperAndWait.waitForTime(1500);
+                DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFiveBusinessDays(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -172,7 +172,7 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
                     XmlReader.getXMLData("nationalID")
             );
         }
-                DataHelperAndWait.waitForTime(1500);
+                DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -205,7 +205,7 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
             }
         catch (Exception e){
                 DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver); }
-                DataHelperAndWait.waitForTime(1500);
+                DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(jordanGuestCheckoutCyclePage.getFiveBusinessDays(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -249,7 +249,7 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
                     XmlReader.getXMLData("nationalID")
             );
         }
-                DataHelperAndWait.waitForTime(1500);
+                DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFiveBusinessDays(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -290,7 +290,7 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
         catch (Exception e){
             DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
-        DataHelperAndWait.waitForTime(1500);
+        DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -325,7 +325,7 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
         catch (Exception e){
             DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
-        DataHelperAndWait.waitForTime(1500);
+        DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
 //        WebElementsAssertion.assertionElementNotEnable(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
     }
@@ -358,7 +358,7 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
         catch (Exception e){
             DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
-        DataHelperAndWait.waitForTime(1500);
+        DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getEditShippingInfoBtn(),webDriver);
     }
@@ -387,7 +387,7 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
                     XmlReader.getXMLData("StreetTwoAddressName"),
                     XmlReader.getXMLData("nationalID")
             );
-            DataHelperAndWait.waitForTime(1500);
+            DataHelperAndWait.waitForTime(2000);
             guestCheckoutCyclePage.clickOnContinueBtn();
             WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getPhoneErrMsg(),webDriver);
         }

@@ -9,19 +9,13 @@ package sporter_test.productTestCases;
 import core.BasePage;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.EgyptHomePage;
-import sporter_pages.homepage_classes.HomePage;
+import sporter_pages.megaMenuPages.MegaMenuPage;
 import sporter_pages.productPage.EgyptProductDetailsPage;
-import sporter_pages.productPage.KSAProductDetailsPage;
 import sporter_pages.productPage.ProductDetailsPage;
-import xml_reader.XmlReader;
 
 import java.io.IOException;
 
@@ -29,23 +23,40 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 //@Test(groups = "Egypt Product Details Page")
-public class EgyptProductDetailsTestCases extends ProductDetailsTestCases{
-    @BeforeClass(alwaysRun=true)
-    public void switchToEgyptStore(){
-        EgyptHomePage egyptHomePage=new EgyptHomePage(webDriver);
-        ProductDetailsPage productDetailsPage= new ProductDetailsPage(webDriver);
+public class EgyptProductDetailsTestCases extends ProductDetailsTestCases {
+    @BeforeClass(alwaysRun = true)
+    public void switchToEgyptStore() {
+        EgyptHomePage egyptHomePage = new EgyptHomePage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         egyptHomePage.switchCountry(egyptHomePage.getEgyptCountry());
-        if(webDriver.getCurrentUrl().contains(egyptHomePage.egyptDomain)){
+        if (webDriver.getCurrentUrl().contains(egyptHomePage.egyptDomain)) {
             System.out.println("You are in Jordan Store");
-        }
-        else {
-            webDriver.navigate().to(BasePage.BaseURL+egyptHomePage.egyptDomain);
+        } else {
+            webDriver.navigate().to(BasePage.BaseURL + egyptHomePage.egyptDomain);
             CloseInitialDialog();
 //            productDetailsPage.storeCountry="/en-eg";
-            productDetailsPage.storeCountry="/en-eg";
+            productDetailsPage.storeCountry = "/en-eg";
         }
     }
-//    @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the customer can navigate to the home page using the BreadCrumb ", priority = 12)
+@Test(enabled = false)
+public void verifyAbilityToClickOnSportsMenuIsDisplayedFromProductDetailsPage() throws IOException {
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        MegaMenuPage megaMenuPage = new MegaMenuPage(webDriver);
+        productDetailsPage.displayTheProduct();
+        try{
+            megaMenuPage.clickOnSportsMainMenu();}
+        catch (Exception e){
+            DataHelperAndWait.clickOnElement(megaMenuPage.getSportsMenu(),webDriver);
+        }
+
+        megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        try {
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.sportsUrl, webDriver);
+        } catch (Exception e) {
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.sportsUrl + "/", webDriver);
+        }
+    }
+    //    @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the customer can navigate to the home page using the BreadCrumb ", priority = 12)
 //    public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumb() {
 //        EgyptProductDetailsPage egyptProductDetailsPage = new EgyptProductDetailsPage(webDriver);
 //        egyptProductDetailsPage.displayTheProduct();
@@ -183,14 +194,15 @@ public class EgyptProductDetailsTestCases extends ProductDetailsTestCases{
 //        else {
 //            WebElementsAssertion.assertionTextIsEqual(egyptProductDetailsPage.getAboutThisProductTitle(),webDriver, "حول هذا المنتج");}
 //    }
-    @Test(groups = { "1.4 Low Severity"},description = "{{CountryName}}: Verify that the Supplement Facts section displays correctly in the PDP", priority = 18,enabled = false)
+    @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Verify that the Supplement Facts section displays correctly in the PDP", priority = 18, enabled = false)
     public void verifySupplementFactsSectionDisplaysCorrectlyInProductDetailsPage() throws IOException {
         EgyptProductDetailsPage egyptProductDetailsPage = new EgyptProductDetailsPage(webDriver);
         egyptProductDetailsPage.displayTheProduct();
         assertTrue(egyptProductDetailsPage.getSupplementFactsTable().isDisplayed());
         assertEquals(egyptProductDetailsPage.getSupplementFactsTitle().getText(), "Supplement Facts");
     }
-//    //      The following Test Cases handle displaying the Mega Menu from Product Page
+
+    //    //      The following Test Cases handle displaying the Mega Menu from Product Page
 //    @Test(groups = {"All Smoke Testing Result","1.4 Low Severity"},description = "(KSA Store/ Arabic Version): Verify that the ShopBy Menu Is Displayed When Hovering On It From Product Details Page", priority = 19)
 //    public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() {
 //        EgyptProductDetailsPage egyptProductDetailsPage = new EgyptProductDetailsPage(webDriver);
@@ -237,18 +249,20 @@ public class EgyptProductDetailsTestCases extends ProductDetailsTestCases{
 //        DataHelperAndWait.clickOnElement(egyptProductDetailsPage.getAccountProfileIcon(),webDriver);
 //        WebElementsAssertion.validateTheElementIsDisplayed(egyptProductDetailsPage.getAccountProfileOptions(), webDriver);
 //    }
-    @Test(groups = { "1.4 Low Severity"},description = "{{CountryName}}: Verify that the Direction Of Use section displays correctly in the PDP", priority = 25,enabled = false)
+    @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Verify that the Direction Of Use section displays correctly in the PDP", priority = 25, enabled = false)
     public void verifyDirectionOfUseSectionDisplaysCorrectlyInProductDetailsPage() throws IOException {
         EgyptProductDetailsPage egyptProductDetailsPage = new EgyptProductDetailsPage(webDriver);
         egyptProductDetailsPage.displayTheProduct();
 //        assertTrue(egyptProductDetailsPage.getDirectionsOfUseSection().isDisplayed());
     }
-    @Test(groups = { "1.4 Low Severity"},description = "{{CountryName}}: Verify that the About Brand section displays correctly in the PDP", priority = 26,enabled = false)
+
+    @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Verify that the About Brand section displays correctly in the PDP", priority = 26, enabled = false)
     public void verifyAboutBrandSectionDisplaysCorrectlyInProductDetailsPage() {
         EgyptProductDetailsPage egyptProductDetailsPage = new EgyptProductDetailsPage(webDriver);
         assertTrue(egyptProductDetailsPage.getAboutBrandSection().isDisplayed());
     }
-//    @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}: Verify that the header Bar in the PDP appears correctly when scrolling down", priority = 27)
+
+    //    @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}: Verify that the header Bar in the PDP appears correctly when scrolling down", priority = 27)
 //    public void verifyAddToCartBtnInHeaderBarWorksCorrectly() {
 //        EgyptProductDetailsPage egyptProductDetailsPage = new EgyptProductDetailsPage(webDriver);
 //        DataHelperAndWait.scrollTo(egyptProductDetailsPage.getAddReviewButton(),webDriver);
@@ -309,7 +323,7 @@ public class EgyptProductDetailsTestCases extends ProductDetailsTestCases{
 //        egyptProductDetailsPage.displayTheProduct();
 //        egyptProductDetailsPage.verifyReviewPagingWorks();
 //    }
-    @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}: Make sure that the simple price changes when navigation between sizes for the config ", priority = 35,enabled = false)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the simple price changes when navigation between sizes for the config ", priority = 35, enabled = false)
     public void verifySimplePriceChangesWhenNavigationBetweenSizesForTheConfig() throws IOException {
         EgyptProductDetailsPage egyptProductDetailsPage = new EgyptProductDetailsPage(webDriver);
         egyptProductDetailsPage.displayTheProduct();
@@ -317,6 +331,6 @@ public class EgyptProductDetailsTestCases extends ProductDetailsTestCases{
         String firstPrice = egyptProductDetailsPage.getFinalProductPrice().getText();
 //        DataHelperAndWait.clickOnElement(egyptProductDetailsPage.getSecondsimple(),webDriver);
         String secondPrice = egyptProductDetailsPage.getFinalProductPrice().getText();
-        Assert.assertNotEquals(firstPrice, secondPrice,"The simple price is not changes");
+        Assert.assertNotEquals(firstPrice, secondPrice, "The simple price is not changes");
     }
 }

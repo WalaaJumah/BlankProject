@@ -31,11 +31,6 @@ public class CartPage extends BasePage {
     HomePage homePage = new HomePage(webDriver);
     HeaderSection headerSection = new HeaderSection(webDriver);
     DataHelperAndWait dataHelperAndWait;
-
-    public CartPage(WebDriver webDriver) {
-        super(webDriver);
-        PageFactory.initElements(webDriver, this);
-    }
     //declare all locators related to the Cart Page
     @FindBy(id = "CartIconContainerqty")
     private WebElement itemsCounter;
@@ -48,7 +43,7 @@ public class CartPage extends BasePage {
     @FindBy(id = "closeAddToCartErrBtn")
     private WebElement closeAddToCartErrorMsg;
     //TODO: Needs to revisit after fixing the Bogo issue
-     @FindBy(id = "closeAddToCartErrBtn")
+    @FindBy(id = "closeAddToCartErrBtn")
     private WebElement freeFromSporterSection;
     @FindBy(id = "removeItemBtn")
     private WebElement removeItemBtn;
@@ -66,7 +61,7 @@ public class CartPage extends BasePage {
 //    private WebElement cartIcon;
     @FindBy(id = "CartIconInnerContainer")
     private WebElement cartIcon;
-    @FindBy(xpath="(//a[@id='cartPagelink'])[1]")
+    @FindBy(xpath = "(//a[@id='cartPagelink'])[1]")
     private WebElement viewCartInCartPopup;
     @FindBy(id = "checkoutbtn")
     private WebElement proceedCheckoutBtnInCartPopup;
@@ -85,7 +80,7 @@ public class CartPage extends BasePage {
     //TODO: To replace it with ID after added it by Moamen
 //    @FindBy(xpath = "//input[starts-with(@class,'cartInfo_input')]")
 //    private WebElement couponCodeField;
-     @FindBy(id = "couponField")
+    @FindBy(id = "couponField")
     private WebElement couponCodeField;
     //TODO: To replace it with ID after added it by Moamen
 //    @FindBy(xpath = "//button[starts-with(@class,'cartInfo_btn')]")
@@ -101,7 +96,6 @@ public class CartPage extends BasePage {
     private WebElement qtyField;
     @FindBy(xpath = "(//span[@id='cartItemQty'])[1]")
     private WebElement firstQtyField;
-
     @FindBy(css = "#cartcloseIcon > path")
     private WebElement cartCloseIcon;
     @FindBy(id = "cartitemsCount")
@@ -146,128 +140,138 @@ public class CartPage extends BasePage {
     private WebElement myShoppingCartMsg;
     @FindBy(id = "cartPageHead")
     private WebElement freeShippingLabel;
-    @FindBy(id="removeItemBtn")
+    @FindBy(id = "removeItemBtn")
     private List<WebElement> removemoreThanProduct;
-//TODO: Ask Moamen About Coupon code
-@FindBy(id = "removeCodeBtn")
-private WebElement cancelCouponCodeBtn;
-@FindBy(xpath = "//div[@data-bind='html: $parent.prepareMessageForHtml(message.text)']")
-private WebElement notExistCouponMsg;
-
-//TODO: Needs To check After solving Bogo Bug
-@FindBy(xpath = "//td[text()='FREE from SPORTER']")
-private WebElement freeFromSporter;
-@FindBy(xpath = "(//span[text()='Free'])[1]")
-private WebElement freePrice;
-@FindBy(xpath = "div.popUp_thumbsHead__Fbo8M")
-private WebElement couponSuccessfulMsg;
-@FindBy(xpath = "//button[contains(@class,'popUp_btn_')]")
-private WebElement closeCouponSuccessfulMsg;
-@FindBy(xpath = "//div[starts-with(@class,'cartItem_freeGift')]")
-private WebElement freeFromSporterLabelInProductCard;
-
-
-   public void addToCartAndDisplayTheCart(){
-       try{
-       productDetailsPage.displayTheProduct();
-       productDetailsPage.addToCart();
-       productDetailsPage.viewCart();}
-       catch (Exception e){
-           navigateToCartPage();
-       }
-   }
-     public void addToCartAndDisplayTheCartForOos() throws IOException {
-       productDetailsPage.displayTheProductHaveLessQty();
-       productDetailsPage.addToCart();
-       productDetailsPage.viewCart();
-   }
-
-      public void addToCartAndViewCart(){
-       try {
-           productDetailsPage.addToCart();
-           productDetailsPage.viewCart();
-       }
-       catch (Exception e){
-           navigateToCartPage();
-       }
-   }
-
-      public void addBogoToCartAndDisplayTheCart(){
-       try{
-
-       productDetailsPage.navigateToBogoProduct();
-//       DataHelperAndWait.waitForTime(2000);
-       productDetailsPage.addToCart();
-       productDetailsPage.viewCart();}
-       catch (Exception e){
-           this.navigateToCartPage();
-       }
-
-   }
-   public void navigateToCartPage(){
-       webDriver.navigate().to(BaseURL+cartURL);
-       DataHelperAndWait.waitForUrlContains(cartURL,webDriver);
-   }
-    public void addBundleToCartAndDisplayTheCart() throws IOException {
-            productDetailsPage.displayBundle();
-            productDetailsPage.addToCart();
-            productDetailsPage.viewCart();
+    //TODO: Ask Moamen About Coupon code
+    @FindBy(id = "removeCodeBtn")
+    private WebElement cancelCouponCodeBtn;
+    @FindBy(xpath = "//div[@data-bind='html: $parent.prepareMessageForHtml(message.text)']")
+    private WebElement notExistCouponMsg;
+    //TODO: Needs To check After solving Bogo Bug
+    @FindBy(xpath = "//td[text()='FREE from SPORTER']")
+    private WebElement freeFromSporter;
+    @FindBy(xpath = "//div[starts-with(@class,'cartItem_freeGift')]")
+    private WebElement freePrice;
+    @FindBy(xpath = "div.popUp_thumbsHead__Fbo8M")
+    private WebElement couponSuccessfulMsg;
+    @FindBy(xpath = "//button[contains(@class,'popUp_btn_')]")
+    private WebElement closeCouponSuccessfulMsg;
+    @FindBy(xpath = "(//div[starts-with(@class,'cartItem_freeGift')])[1]")
+    private WebElement freeFromSporterLabelInProductCard;
+    public CartPage(WebDriver webDriver) {
+        super(webDriver);
+        PageFactory.initElements(webDriver, this);
     }
-    public void removeItem() {
-        DataHelperAndWait.waitToBeClickable(this.removeItemBtn ,webDriver);
-        this.removeItemBtn.click();
-    }
-    public void clearCart()
-    {
-        try{
-        this.navigateToCartPage();
-        this.removeItem();}
-        catch (Exception e){
-            System.out.println("");
-        }
-    }
-    public void removeAllItems(int productNumber) {
-for(int i=1;i<=productNumber;i++){
-    DataHelperAndWait.clickOnElement(removeItemBtn,webDriver);
-//    DataHelperAndWait.waitForTime(1000);
-}
-   }
-    public static  void addBundleOptionToCart(Select select, WebDriver webDriver) {
-       ProductDetailsPage product= new ProductDetailsPage(webDriver);
+
+    public static void addBundleOptionToCart(Select select, WebDriver webDriver) {
+        ProductDetailsPage product = new ProductDetailsPage(webDriver);
         List<WebElement> elementCount = select.getOptions();
         int menuSize = elementCount.size();
         for (int i = 0; i < menuSize; i++) {
-            try{
-            select.selectByIndex(i);
-            product.addToCart();
-            break;
-            }
-            catch (Exception e){
+            try {
+                select.selectByIndex(i);
+                product.addToCart();
+                break;
+            } catch (Exception e) {
                 e.getMessage();
             }
 
         }
     }
-   public void clickOnHereLink(){
-       try{
-       DataHelperAndWait.waitToBeVisible(hereLink,webDriver);
-       hereLink.click();}
-       catch (Exception e){
-           DataHelperAndWait.hoverOnElementAndClick(hereLink,webDriver);
-           hereLink.click();
-       }
-   }
-public void getFreeGiftByCoupon(){
-    DataHelperAndWait.typeTextInElement(couponCodeField,webDriver, XmlReader.getXMLData("FreeCouponCode"));
-    DataHelperAndWait.clickOnElement(applyCouponCodeBtn,webDriver);
-}
-public void clickOnCartIcon(){
+
+    public void addToCartAndDisplayTheCart() {
+        try {
+            productDetailsPage.displayTheProduct();
+            productDetailsPage.addToCart();
+            productDetailsPage.viewCart();
+        } catch (Exception e) {
+            navigateToCartPage();
+        }
+    }
+
+    public void addToCartAndDisplayTheCartForOos() throws IOException {
+        productDetailsPage.displayTheProductHaveLessQty();
+        productDetailsPage.addToCart();
+        productDetailsPage.viewCart();
+    }
+
+    public void addToCartAndViewCart() {
+        try {
+            productDetailsPage.addToCart();
+            productDetailsPage.viewCart();
+        } catch (Exception e) {
+            navigateToCartPage();
+        }
+    }
+
+    public void addBogoToCartAndDisplayTheCart() {
+        try {
+
+            productDetailsPage.navigateToBogoProduct();
 //       DataHelperAndWait.waitForTime(2000);
-       DataHelperAndWait.clickOnElement(cartIcon,webDriver);
-}
-    public void waitTillQtyValueChanges( String expectedText){
+            productDetailsPage.addToCart();
+            productDetailsPage.viewCart();
+        } catch (Exception e) {
+            this.navigateToCartPage();
+        }
+
+    }
+
+    public void navigateToCartPage() {
+        webDriver.navigate().to(BaseURL + cartURL);
+        DataHelperAndWait.waitForUrlContains(cartURL, webDriver);
+    }
+
+    public void addBundleToCartAndDisplayTheCart() throws IOException {
+        productDetailsPage.displayBundle();
+        productDetailsPage.addToCart();
+        productDetailsPage.viewCart();
+    }
+
+    public void removeItem() {
+        DataHelperAndWait.waitToBeClickable(this.removeItemBtn, webDriver);
+        this.removeItemBtn.click();
+    }
+
+    public void clearCart() {
+        try {
+            this.navigateToCartPage();
+            this.removeItem();
+        } catch (Exception e) {
+            System.out.println("");
+        }
+    }
+
+    public void removeAllItems(int productNumber) {
+        for (int i = 1; i <= productNumber; i++) {
+            DataHelperAndWait.clickOnElement(removeItemBtn, webDriver);
+//    DataHelperAndWait.waitForTime(1000);
+        }
+    }
+
+    public void clickOnHereLink() {
+        try {
+            DataHelperAndWait.waitToBeVisible(hereLink, webDriver);
+            hereLink.click();
+        } catch (Exception e) {
+            DataHelperAndWait.hoverOnElementAndClick(hereLink, webDriver);
+            hereLink.click();
+        }
+    }
+
+    public void getFreeGiftByCoupon() {
+        DataHelperAndWait.typeTextInElement(couponCodeField, webDriver, XmlReader.getXMLData("FreeCouponCode"));
+        DataHelperAndWait.clickOnElement(applyCouponCodeBtn, webDriver);
+    }
+
+    public void clickOnCartIcon() {
+//       DataHelperAndWait.waitForTime(2000);
+        DataHelperAndWait.clickOnElement(cartIcon, webDriver);
+    }
+
+    public void waitTillQtyValueChanges(String expectedText) {
         WebDriverWait wait;
         wait = new WebDriverWait(webDriver, 8);
-        wait.until(ExpectedConditions.invisibilityOfElementWithText(By.id("cartItemQty"),expectedText));
+        wait.until(ExpectedConditions.invisibilityOfElementWithText(By.id("cartItemQty"), expectedText));
     }
 }

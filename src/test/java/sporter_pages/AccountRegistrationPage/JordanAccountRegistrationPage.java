@@ -11,10 +11,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 public class JordanAccountRegistrationPage extends AccountRegistrationPage {
+    DataHelperAndWait dataHelperAndWait;
+
     public JordanAccountRegistrationPage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
 
     }
-    DataHelperAndWait dataHelperAndWait;
 }

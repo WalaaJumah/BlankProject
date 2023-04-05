@@ -10,7 +10,7 @@ import core.BasePage;
 import org.testng.annotations.BeforeClass;
 import sporter_pages.homepage_classes.QatarHomePage;
 
-public class QatarMagentoOrderFlowTestCases extends MagentoOrderFlowTestCases{
+public class QatarMagentoOrderFlowTestCases extends MagentoOrderFlowTestCases {
     @BeforeClass(alwaysRun = true)
     public void switchToQatarStore() {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
@@ -22,7 +22,7 @@ public class QatarMagentoOrderFlowTestCases extends MagentoOrderFlowTestCases{
             CloseInitialDialog();
             System.out.println(webDriver.getCurrentUrl());
         }
-        storeCountry="Qatar";
-        countryCode="974";
+        storeCountry = "Qatar";
+        countryCode = "974";
     }
 }

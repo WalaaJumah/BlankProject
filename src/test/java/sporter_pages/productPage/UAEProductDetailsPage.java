@@ -18,9 +18,10 @@ public class UAEProductDetailsPage extends ProductDetailsPage {
         PageFactory.initElements(webDriver, this);
 
     }
+
     public void displayTheProduct() throws IOException {
         webDriver.navigate().to(BaseURL + aeDomain + productUrl);
-        WebElementsAssertion.validateTheCurrentUrlContainsString(productUrl,webDriver);
+        WebElementsAssertion.validateTheCurrentUrlContainsString(productUrl, webDriver);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
 }
