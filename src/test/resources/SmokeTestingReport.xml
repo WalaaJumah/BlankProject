@@ -52,6 +52,7 @@
             </run>
         </groups>
         <classes>
+            <class name="sporter_test.AEMegaMenuTestCases"/>g
             <class name="sporter_test.AEGuestUserTestCases"/>
             <class name="sporter_test.AeCartTestCases"/>
             <class name="sporter_test.AeRecommendedProductsTestCases"/>
@@ -63,7 +64,6 @@
             <class name="sporter_test.AeSportsCategoryTestCases"/>
             <class name="sporter_test.AeSearchPageTestCases"/>
             <class name="sporter_test.AeProductDetailsPageTestCases"/>
-            <class name="sporter_test.AEMegaMenuTestCases"/>
             <class name="sporter_test.AeHealthyFoodCategoryTestCases"/>
             <class name="sporter_test.AEFooterPageTestCases"/>
             <class name="sporter_test.AeBrandsTestCases"/>

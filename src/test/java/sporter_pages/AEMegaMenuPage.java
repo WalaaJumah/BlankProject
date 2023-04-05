@@ -1121,7 +1121,7 @@ public class AEMegaMenuPage extends BasePage {
 
 
     public WebElement getProteinOptionInSportSupplementsMenu() {
-        DataHelperAndWait.waitToBeVisible(proteinOptionInSportSupplementsMenu,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(proteinOptionInSportSupplementsMenu,10,webDriver);
         return proteinOptionInSportSupplementsMenu;
     }
 

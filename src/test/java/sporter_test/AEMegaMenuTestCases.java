@@ -1285,7 +1285,6 @@ Assert.assertTrue(aeMegamenuPage.verifyTheMegaMenuAppearsInThePage()," The MegaM
         action.moveToElement(aeMegamenuPage.getVitaminsAndHealthOption()).perform();
         action.moveToElement(aeMegamenuPage.getVitaminsForWomenOptionInVitaminsAndHealthMenu()).perform();
         String expectedUrl=aeMegamenuPage.getVitaminsForWomenOptionInVitaminsAndHealthMenu().getAttribute("href");
-//        aeMegamenuPage.getVitaminsForWomenOptionInVitaminsAndHealthMenu().click();
 //        Assert.assertTrue(webDriver.getCurrentUrl().contains(expectedUrl));
 //        Assert.assertEquals(webDriver.getCurrentUrl(), vitaminsForWomenOptionInVitaminsAndHealthUrl);
 aeMegamenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
