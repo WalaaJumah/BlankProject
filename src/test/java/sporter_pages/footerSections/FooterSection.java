@@ -7,12 +7,14 @@
 package sporter_pages.footerSections;
 
 import core.BasePage;
+import core.DataHelperAndWait;
 import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.io.IOException;
 import java.util.List;
 
 @Getter
@@ -55,5 +57,14 @@ public class FooterSection extends BasePage {
     @FindBy(xpath = "//*[@id=\"FooterLinks\"]/div[1]/div/div[8]/ul/li/a")
     private List<WebElement> contactUsList;
 
+    public void accessAllLinksInTheList(List<WebElement> elements) throws IOException {
+        for (int i = 0; i < elements.size(); i++) {
+            System.out.println("The List size is = "+elements.size());
+            DataHelperAndWait.waitToBeVisible(elements.get(i), webDriver);
+            DataHelperAndWait.clickOnElement(elements.get(i), webDriver);
+            verifyTheDisplayedPageDoesNotHaveErrors();
+            navigateToHomePage();
+        }
+    }
 
 }
