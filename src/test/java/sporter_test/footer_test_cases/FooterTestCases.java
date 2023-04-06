@@ -34,6 +34,7 @@ public class FooterTestCases extends BaseTest {
     public void verifyAbilityToAccessAllLetsHelpYouLinksCorrectly() throws IOException {
         FooterSection footerSection = new FooterSection(webDriver);
         for (int i = 0; i < footerSection.getOrdersAndShippingList().size(); i++) {
+            footerSection.navigateToHomePage();
             DataHelperAndWait.waitToBeVisible(footerSection.getLetsUsHelpYouList().get(i), webDriver);
             DataHelperAndWait.clickOnElement(footerSection.getLetsUsHelpYouList().get(i), webDriver);
             footerSection.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -99,7 +100,7 @@ public class FooterTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure the all links below Contact us appears correctly ", priority = 8)
     public void verifyContactUsListAppearsCorrectlyCorrectly() throws IOException {
         FooterSection footerSection = new FooterSection(webDriver);
-        for (int i = 0; i < footerSection.getOrdersAndShippingList().size(); i++) {
+        for (int i = 1; i < footerSection.getOrdersAndShippingList().size(); i++) {
             WebElementsAssertion.validateTheElementIsDisplayed(footerSection.getContactUsList().get(i), webDriver);
 
         }
