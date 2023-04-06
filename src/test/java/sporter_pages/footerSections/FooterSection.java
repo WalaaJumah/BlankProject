@@ -17,6 +17,10 @@ import java.util.List;
 
 @Getter
 public class FooterSection extends BasePage {
+    public FooterSection(WebDriver webDriver) {
+        super(webDriver);
+        PageFactory.initElements(webDriver, this);
+    }
 
     @FindBy(xpath = "//div[@class='footer_badges_badges']/div")
     private List<WebElement> pageBottomBlocksList;
@@ -34,8 +38,22 @@ public class FooterSection extends BasePage {
     private WebElement authenticProductsTitle;
     @FindBy(xpath = "(//a[@title='100% Secure payments']//span)[2]")
     private WebElement authenticProductsDescription;
-    public FooterSection(WebDriver webDriver) {
-        super(webDriver);
-        PageFactory.initElements(webDriver, this);
-    }
+    @FindBy(xpath = "//*[@id=\"FooterLinks\"]/div[1]/div/div[1]/ul/li/a")
+    private List<WebElement> ordersAndShippingList;
+    @FindBy(xpath = "//*[@id=\"FooterLinks\"]/div[1]/div/div[2]/ul/li/a")
+    private List<WebElement> letsUsHelpYouList;
+    @FindBy(xpath = "//*[@id=\"FooterLinks\"]/div[1]/div/div[3]/ul/li/a")
+    private List<WebElement> proteinAndFitnessList;
+    @FindBy(xpath = "//*[@id=\"FooterLinks\"]/div[1]/div/div[4]/ul/li/a")
+    private List<WebElement> vitaminsAndHealthList;
+    @FindBy(xpath = "//*[@id=\"FooterLinks\"]/div[1]/div/div[5]/ul/li/a")
+    private List<WebElement> accessoriesAndApparelList;
+    @FindBy(xpath = "//*[@id=\"FooterLinks\"]/div[1]/div/div[6]/ul/li/a")
+    private List<WebElement> mostSellingProductsList;
+    @FindBy(xpath = "//*[@id=\"FooterLinks\"]/div[1]/div/div[7]/ul/li/a")
+    private List<WebElement> getToKnowUsList;
+    @FindBy(xpath = "//*[@id=\"FooterLinks\"]/div[1]/div/div[8]/ul/li/a")
+    private List<WebElement> contactUsList;
+
+
 }

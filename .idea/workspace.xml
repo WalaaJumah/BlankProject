@@ -4,12 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09d64b6b-6a80-4af6-a4ec-61d96949d666" name="Changes" comment="Update the Generate Report xml file">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="09d64b6b-6a80-4af6-a4ec-61d96949d666" name="Changes" comment="Merge remote-tracking branch 'origin/New_Sporter2.1_Without_Implicit_Wait' into New_Sporter2.1_Without_Implicit_Wait&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/footer_test_cases/BahrainFooterTestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/footer_test_cases/EgyptFooterTestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/footer_test_cases/FooterTestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/footer_test_cases/JordanFooterTestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/footer_test_cases/KSAFooterTestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/footer_test_cases/KuwaitFooterTestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/footer_test_cases/OmanFooterTestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/footer_test_cases/QatarFooterTestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/footer_test_cases/UAEFooterTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/productPage/EgyptProductDetailsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/productPage/EgyptProductDetailsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/productTestCases/EgyptProductDetailsTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/productTestCases/EgyptProductDetailsTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/footerSections/FooterSection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/footerSections/FooterSection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/TestExecution.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -221,7 +227,21 @@
       <option name="project" value="LOCAL" />
       <updated>1675883937611</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Update the Generate Report xml file">
+      <created>1680765013236</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680765013236</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Merge remote-tracking branch 'origin/New_Sporter2.1_Without_Implicit_Wait' into New_Sporter2.1_Without_Implicit_Wait&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1680765052160</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1680765052160</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -259,7 +279,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="Update the Generate Report xml file" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/New_Sporter2.1_Without_Implicit_Wait' into New_Sporter2.1_Without_Implicit_Wait&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/New_Sporter2.1_Without_Implicit_Wait' into New_Sporter2.1_Without_Implicit_Wait&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
