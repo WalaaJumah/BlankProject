@@ -146,6 +146,16 @@
             <class name="sporter_test.sports_category_test_cases.OmanSportsCategoryTestCases"></class>
             <class name="sporter_test.sports_category_test_cases.BahrainSportsCategoryTestCases"></class>
             <class name="sporter_test.sports_category_test_cases.KuwaitSportsCategoryTestCases"></class>
+<!--            Footer Section-->
+            <class name="sporter_test.footer_test_cases.UAEFooterTestCases"></class>
+            <class name="sporter_test.footer_test_cases.EgyptFooterTestCases"></class>
+            <class name="sporter_test.footer_test_cases.JordanFooterTestCases"></class>
+            <class name="sporter_test.footer_test_cases.KSAFooterTestCases"></class>
+            <class name="sporter_test.footer_test_cases.QatarFooterTestCases"></class>
+            <class name="sporter_test.footer_test_cases.BahrainFooterTestCases"></class>
+            <class name="sporter_test.footer_test_cases.KuwaitFooterTestCases"></class>
+            <class name="sporter_test.footer_test_cases.OmanFooterTestCases"></class>
+
         </classes>
 
     </test>
