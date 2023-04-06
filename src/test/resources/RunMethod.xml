@@ -17,7 +17,7 @@
             <!--            Guest Checkout -->
             <class name="sporter_test.footer_test_cases.UAEFooterTestCases">
                 <methods>
-                    <include name="verifyContactUsListAppearsCorrectlyCorrectly"/>
+                    <include name="verifyAbilityToAccessAllGetToKnowUsCorrectly"/>
                 </methods>
             </class>
         </classes>
