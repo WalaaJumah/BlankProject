@@ -495,13 +495,14 @@ catch (Exception e){
 //        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
 //        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
         cartPage.navigateToHomePage();
-        try{
-        cartPage.clickOnCartIcon();
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);}
-        catch (Exception e){
-            cartPage.navigateToCartPage();
-            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+        try {
+            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
         }
+        catch (Exception e){
+            cartPage.clickOnCartIcon();
+                DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);}
+
+
 //        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
         try{
             DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
