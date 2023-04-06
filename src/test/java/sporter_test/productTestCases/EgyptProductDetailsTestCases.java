@@ -9,6 +9,8 @@ package sporter_test.productTestCases;
 import core.BasePage;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -84,16 +86,18 @@ public void verifyAbilityToClickOnSportsMenuIsDisplayedFromProductDetailsPage() 
 //        DataHelperAndWait.clickOnElement(egyptProductDetailsPage.getViewCartBtn(),webDriver);
 //        WebElementsAssertion.validateTheCurrentUrlContainsString(egyptProductDetailsPage.cartURL,webDriver);
 //    }
-//    @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}: Make sure the out of stock message appears when displaying out of stock product ", priority =4)
-//    public void verifyOOSMessageIsDisplayed() {
-//        try{
-//        EgyptProductDetailsPage egyptProductDetailsPage = new EgyptProductDetailsPage(webDriver);
-//        egyptProductDetailsPage.displayOOSProduct();
-//        WebElementsAssertion.validateTheElementIsDisplayed(egyptProductDetailsPage.getOOSMsg(),webDriver);}
-//        catch (AssertionError r){
-//            System.out.println("The Product is not available in this store");
-//        }
-//    }
+    @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}: Make sure the out of stock message appears when displaying out of stock product ", priority =4)
+    public void verifyOOSMessageIsDisplayed() {
+        try{
+        EgyptProductDetailsPage egyptProductDetailsPage = new EgyptProductDetailsPage(webDriver);
+        egyptProductDetailsPage.displayOOSProduct();
+        WebElementsAssertion.validateTheElementIsDisplayed(egyptProductDetailsPage.getOOSMsg(),webDriver);}
+        catch (AssertionError r){
+            System.out.println("The Product is not available in this store");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 //    @Test(groups = { "1.2 High Severity"},dependsOnMethods = "verifyOOSMessageIsDisplayed",description = "{{CountryName}}: Make sure the shopper is unable to add out of stock product to the cart", priority =5,expectedExceptions = { org.openqa.selenium.NoSuchElementException.class })
 //    public void verifyInabilityToAddOosProductToTheCart(){
 //        EgyptProductDetailsPage egyptProductDetailsPage = new EgyptProductDetailsPage(webDriver);
@@ -163,20 +167,21 @@ public void verifyAbilityToClickOnSportsMenuIsDisplayedFromProductDetailsPage() 
 //        String newProductPrice = egyptProductDetailsPage.getFinalProductPrice().getText();
 //        Assert.assertNotEquals(currentProductPrice, newProductPrice);
 //    }
-//    @Test(groups = { "1.1 Critical Severity"},description = "{{CountryName}}: Make sure ability to display the bundle and select all options", priority = 15)
-//    public void verifyAbilityToDisplayBundleAndSelectAllOptions() {
-//        EgyptProductDetailsPage egyptProductDetailsPage = new EgyptProductDetailsPage(webDriver);
-//        egyptProductDetailsPage.displayBundle();
-//        DataHelperAndWait.waitToBeVisible(egyptProductDetailsPage.getBundleMenu(),webDriver);
-//        Select select = new Select(egyptProductDetailsPage.getBundleMenu());
-//        WebElement currentSelectedOption = select.getFirstSelectedOption();
-//        String currentSelectedOptionText = currentSelectedOption.getText();
-//        System.out.println(currentSelectedOptionText);
-//        DataHelperAndWait.selectAllDropDownListOptions(select);
-//        WebElement newSelectedOption = select.getAllSelectedOptions().get(0);
-//        String newSelectedOptionText = newSelectedOption.getText();
-//        System.out.println(newSelectedOptionText);
-//        Assert.assertNotEquals(currentSelectedOptionText, newSelectedOptionText);
+    @Test(groups = { "1.1 Critical Severity"},description = "{{CountryName}}: Make sure ability to display the bundle and select all options", priority = 15)
+    public void verifyAbilityToDisplayBundleAndSelectAllOptions() throws IOException {
+        EgyptProductDetailsPage egyptProductDetailsPage = new EgyptProductDetailsPage(webDriver);
+        egyptProductDetailsPage.displayBundle();
+        DataHelperAndWait.waitToBeVisible(egyptProductDetailsPage.getBundleMenu(), webDriver);
+        Select select = new Select(egyptProductDetailsPage.getBundleMenu());
+        WebElement currentSelectedOption = select.getFirstSelectedOption();
+        String currentSelectedOptionText = currentSelectedOption.getText();
+        System.out.println(currentSelectedOptionText);
+        DataHelperAndWait.selectAllDropDownListOptions(select);
+        WebElement newSelectedOption = select.getAllSelectedOptions().get(0);
+        String newSelectedOptionText = newSelectedOption.getText();
+        System.out.println(newSelectedOptionText);
+        Assert.assertNotEquals(currentSelectedOptionText, newSelectedOptionText);
+    }
 //    }
 //    @Test(groups = { "1.2 High Severity"},description = "{{CountryName}}: Verify that the system display a label on the PDP to indicate for the customer he will get a free product", priority = 16)
 //    public void verifyTheresLabelInPdpToIndicateThatTheresAnOfferOnThisProduct() {

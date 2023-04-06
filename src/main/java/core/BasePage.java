@@ -24,16 +24,16 @@ public class BasePage {
 
 
     public static String BaseURL = "https://sporter.com";
-    public static String productUrl = "/nutrend-100-whey-protein-53915";
+    public static String productUrl = "/the-pack-bcaas-flow-32569";
 //    public static String productUrl = "/optimum-gold-standard-100-whey";
 
 //    public void setStoreCountry(String storeCountry) {
 //        this.storeCountry = storeCountry;
 //    }
-    public static String productUrl7 = "/venum-gldtr-4-0-t-shirt-53531";
+    public static String productUrl7 = "/dymatize-iso-100-7164/";
 //    public static String productUrl7 = "/dymatize-iso-100";
     public static String productUrlKSA1 = "/the-pack-wild-pre-workout";
-    public static String productUrlKSA8 = "/venum-gldtr-4-0-t-shirt-53531";
+    public static String productUrlKSA8 = "/the-pack-bcaas-flow-32569";
 //    public static String productUrlKSA8 = "/dymatize-iso-100";
     public static String productUrlKSA2 = "/efx-karbolyn-fuel";
     public static String productUrlKSA3 = "/windmill-natural-vitamins-omega-3-1000mg-with-epa-dha";
@@ -209,9 +209,9 @@ public class BasePage {
     }
 
     public void displayBundle() throws IOException {
-        webDriver.navigate().to(BasePage.BaseURL + bundleUrl);
+        webDriver.navigate().to(BasePage.BaseURL + "/organic-nation-secrets-protein-bars-box-of-12");
         this.verifyTheDisplayedPageDoesNotHaveErrors();
-        DataHelperAndWait.waitForUrlContains(bundleUrl, webDriver);
+        DataHelperAndWait.waitForUrlContains("/organic-nation-secrets-protein-bars-box-of-12", webDriver);
         System.out.println("The product URL is: " + webDriver.getCurrentUrl());
     }
 
