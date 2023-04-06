@@ -209,9 +209,9 @@ public class BasePage {
     }
 
     public void displayBundle() throws IOException {
-        webDriver.navigate().to(BasePage.BaseURL + "/organic-nation-secrets-protein-bars-box-of-12");
+        webDriver.navigate().to(BasePage.BaseURL + bundleUrl);
         this.verifyTheDisplayedPageDoesNotHaveErrors();
-        DataHelperAndWait.waitForUrlContains("/organic-nation-secrets-protein-bars-box-of-12", webDriver);
+        DataHelperAndWait.waitForUrlContains(bundleUrl, webDriver);
         System.out.println("The product URL is: " + webDriver.getCurrentUrl());
     }
 
