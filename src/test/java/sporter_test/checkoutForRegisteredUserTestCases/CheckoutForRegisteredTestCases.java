@@ -10,6 +10,7 @@ import core.BaseTest;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -360,7 +361,9 @@ catch (Exception e){
         }
         DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
-        Assert.assertFalse(guestCheckoutCyclePage.getSameDayDelivery().isDisplayed());
+        try{
+        Assert.assertFalse(guestCheckoutCyclePage.getSameDayDelivery().isDisplayed());}
+        catch (NoSuchElementException E){}
 //        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getSameDayDelivery(),webDriver);
     }
     //TODO:The Same Day Delivery is Missing
@@ -494,13 +497,8 @@ catch (Exception e){
 //        cartPage.navigateToHomePage();
 //        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
 //        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-        cartPage.navigateToHomePage();
-        try {
             DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
-        }
-        catch (Exception e){
-            cartPage.clickOnCartIcon();
-                DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);}
+
 
 
 //        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
