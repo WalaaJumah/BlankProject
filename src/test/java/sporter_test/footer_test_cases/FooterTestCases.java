@@ -66,7 +66,7 @@ public class FooterTestCases extends BaseTest {
         FooterSection footerSection = new FooterSection(webDriver);
         for (int i = 0; i < footerSection.getContactUsList().size(); i++) {
             System.out.println(footerSection.getContactUsList().size());
-            WebElementsAssertion.validateTheElementIsDisplayed(footerSection.getContactUsList().get(i+1), webDriver);
+            WebElementsAssertion.validateTheElementIsDisplayed(footerSection.getContactUsList().get(i), webDriver);
 
         }
     }
