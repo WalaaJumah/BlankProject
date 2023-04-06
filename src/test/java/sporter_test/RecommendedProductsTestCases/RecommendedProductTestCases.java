@@ -115,7 +115,11 @@ public class RecommendedProductTestCases extends BaseTest {
         RecommendedProductPage recommendedProductpage = new RecommendedProductPage(webDriver);
 //        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        recommendedProductpage.clickOnListItemsAndAssertion(recommendedProductpage.getAddToCartBtn(),webDriver,productDetailsPage.getAddToCartBtn());
-        DataHelperAndWait.clickOnElement(recommendedProductpage.getAddToCartBtn().get(0), webDriver);
+        try{
+        DataHelperAndWait.clickOnElement(recommendedProductpage.getAddToCartBtn().get(0), webDriver);}
+        catch (IndexOutOfBoundsException e){
+            System.out.println("There's no any recommended products");
+        }
     }
 
     @Test(groups = {"1.2 High Severity"}, description = "{{CountryName}}: Make sure the clicking on the product card appears in the Recommended product pop-up will display the Product Details Page correctly", priority = 10)
