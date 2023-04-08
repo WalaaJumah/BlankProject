@@ -134,6 +134,7 @@ public void verifyAbilityToClickOnSportsMenuIsDisplayedFromCartPage() throws IOE
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the system cancel the coupon code correctly", priority = 35)
     public void verifyAbilityToCancelTheCouponCode() {
         CartPage cartPage = new CartPage(webDriver);
+        cartPage.navigateToCartPage();
         DataHelperAndWait.clickOnElement(cartPage.getCancelCouponCodeBtn(), webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(), webDriver);
         DataHelperAndWait.refreshPage(webDriver);
@@ -178,7 +179,7 @@ public void verifyAbilityToClickOnSportsMenuIsDisplayedFromCartPage() throws IOE
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the system apply Free Gift coupon code correctly", priority = 34)
     public void verifyAbilityToApplyFreeGiftCouponCode() {
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.navigateToCartPage();
+        cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(), webDriver, XmlReader.getXMLData("FreeCouponCode"));
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(), webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(), webDriver);

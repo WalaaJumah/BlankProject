@@ -321,7 +321,7 @@ public class AccountRegistrationTestCases extends BaseTest {
     public void verifyInabilityToRegisterAccountWhenFillingFirstAndLastNameWithSpaces() throws IOException {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         registerPage.navigateToRegistrationPage();
-        registerPage.submitAllCreateAccountFormsCorrectly(DataHelperAndWait.generateRandomEmail(), XmlReader.getXMLData("correctPassword"), XmlReader.getXMLData("correctPassword"), XmlReader.getXMLData(" "), XmlReader.getXMLData(" "), 2);
+        registerPage.submitAllCreateAccountFormsWrongly(DataHelperAndWait.generateRandomEmail(), XmlReader.getXMLData("correctPassword"), XmlReader.getXMLData("correctPassword"), XmlReader.getXMLData("space"), XmlReader.getXMLData("space"), 2);
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(registerPage.getFirstNameErrorMs(), webDriver);
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(registerPage.getLastNameErrorMs(), webDriver);
     }

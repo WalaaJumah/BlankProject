@@ -15,9 +15,9 @@
         <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
         <classes>
             <!--            Guest Checkout -->
-            <class name="sporter_test.footer_test_cases.UAEFooterTestCases">
+            <class name="sporter_test.AccountRegistrationTestCases.EgyptAccountRegistrationTestCases">
                 <methods>
-                    <include name="verifyAbilityToAccessAllGetToKnowUsCorrectly"/>
+                    <include name="verifyInabilityToRegisterAccountWhenFillingFirstAndLastNameWithSpaces"/>
                 </methods>
             </class>
         </classes>

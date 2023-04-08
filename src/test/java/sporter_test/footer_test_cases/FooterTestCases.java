@@ -52,6 +52,7 @@ public class FooterTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result", "1.4 Low Severity"}, description = "{{CountryName}}: Make sure the customer ia able to access all links below the Most Selling Products you List correctly ", priority = 6)
     public void verifyAbilityToAccessAllMostSellingProductsCorrectly() throws IOException {
         FooterSection footerSection = new FooterSection(webDriver);
+        DataHelperAndWait.waitForTime(2000);
         footerSection.accessAllLinksInTheList(footerSection.getMostSellingProductsList());
     }
 

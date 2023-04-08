@@ -158,7 +158,25 @@ public class AccountRegistrationPage extends BasePage {
         DataHelperAndWait.waitToBeVisible(successfulMsg, webDriver);
 //        DataHelperAndWait.waitForTime(3000);
     }
-
+    public void submitAllCreateAccountFormsWrongly(String email, String password, String confirmPassword, String firstName, String lastName, int gender) {
+        DataHelperAndWait.typeTextInElement(this.getEmailField(), webDriver, email);
+        DataHelperAndWait.typeTextInElement(this.getPasswordField(), webDriver, password);
+        DataHelperAndWait.typeTextInElement(this.getConfirmPasswordField(), webDriver, password);
+        DataHelperAndWait.clickOnElement(this.getCreateAccountBtn(), webDriver);
+        DataHelperAndWait.typeTextInElement(this.getFirstNameField(), webDriver, firstName);
+        DataHelperAndWait.typeTextInElement(this.getLastNameField(), webDriver, lastName);
+        if (gender == 1) {
+            DataHelperAndWait.hoverOnElementAndClick(this.getMaleOption(), webDriver);
+        }
+        if (gender == 2) {
+            DataHelperAndWait.hoverOnElementAndClick(this.getFemaleOption(), webDriver);
+        }
+        if (gender == 0) {
+            gender = 0;
+        }
+        DataHelperAndWait.clickOnElement(this.getSubmitBtn(), webDriver);
+//        DataHelperAndWait.waitForTime(3000);
+    }
     public void fillingAllCreateAccountForms(String email, String password, String confirmPassword, String firstName, String lastName, int gender) {
         DataHelperAndWait.typeTextInElement(this.getEmailField(), webDriver, email);
         DataHelperAndWait.typeTextInElement(this.getPasswordField(), webDriver, password);

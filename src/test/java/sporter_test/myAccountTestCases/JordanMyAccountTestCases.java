@@ -119,6 +119,7 @@ public class JordanMyAccountTestCases extends MyAccountTestCases {
     public void verifyAbilityToEditAddressCorrectly() throws IOException {
         JordanMyAccountPage myAccountPage = new JordanMyAccountPage(webDriver);
         myAccountPage.navigateToAddressesPage();
+        DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.clickOnElement(myAccountPage.getEditAddressBtn(), webDriver);
         myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
         myAccountPage.fillInNewAddressForm(XmlReader.getXMLData("firstName"),
@@ -137,6 +138,7 @@ public class JordanMyAccountTestCases extends MyAccountTestCases {
         JordanMyAccountPage myAccountPage = new JordanMyAccountPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         myAccountPage.navigateToAddressesPage();
+        DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.clickOnElement(myAccountPage.getEditAddressBtn(), webDriver);
         myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //        myAccountPage.fillInNewAddressForm(

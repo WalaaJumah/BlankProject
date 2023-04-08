@@ -37,6 +37,7 @@
         <incorrectEmailFormate>Sportertesta@gmail</incorrectEmailFormate>
         <correctPassword>@SD123456789</correctPassword>
         <shortPassword>123</shortPassword>
+        <space>   </space>
         <passwordDoesNotMatchTheRules>123456789</passwordDoesNotMatchTheRules>
         <firstName>Automation</firstName>
         <lastName>User</lastName>

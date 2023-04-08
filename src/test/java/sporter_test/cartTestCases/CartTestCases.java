@@ -315,8 +315,11 @@ public class CartTestCases extends BaseTest {
         cartPage.addToCartAndDisplayTheCart();
 //        cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.waitForTime(2000);
-        DataHelperAndWait.waitToBeClickable(cartPage.getProceedCheckoutBtn(), webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
+        try{
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);}
+        catch (Exception e){
+            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
+        }
 //        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
 //        WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.shippingInformationUrl,webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCheckoutAsGuestBtn(), webDriver);

@@ -87,8 +87,7 @@ public class MegaMenuPage extends BasePage {
             DataHelperAndWait.clickOnElement(this.vitaminsAndHealthMenu, webDriver);
         } catch (Exception e) {
             DataHelperAndWait.waitToBeVisible(this.vitaminsAndHealthMenu, webDriver);
-            actions.moveToElement(this.vitaminsAndHealthMenu).perform();
-            DataHelperAndWait.clickOnElement(this.vitaminsAndHealthMenu, webDriver);
+            actions.moveToElement(this.vitaminsAndHealthMenu).click().perform();
         }
     }
 
@@ -152,8 +151,7 @@ public class MegaMenuPage extends BasePage {
             DataHelperAndWait.waitToBeVisible(megaMenuPage.getVitaminsAndHealthMenu(), webDriver);
         } catch (Exception e) {
             DataHelperAndWait.waitToBeVisible(megaMenuPage.getShopByMenu(), webDriver);
-            actions.moveToElement(megaMenuPage.getShopByMenu()).perform();
-            DataHelperAndWait.waitToBeVisible(megaMenuPage.getVitaminsAndHealthMenu(), webDriver);
+            actions.moveToElement(megaMenuPage.getShopByMenu()).click().perform();
         }
     }
 
