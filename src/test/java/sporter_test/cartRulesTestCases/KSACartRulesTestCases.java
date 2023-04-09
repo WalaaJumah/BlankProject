@@ -77,8 +77,11 @@ public class KSACartRulesTestCases extends CartRulesTestCases {
         productDetailsPage.addToCart();
         productDetailsPage.viewCart();
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
+        DataHelperAndWait.waitForTime(1500);
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
+        DataHelperAndWait.waitForTime(1500);
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
+        DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(), webDriver);
         DataHelperAndWait.refreshPage(webDriver);

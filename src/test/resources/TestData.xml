@@ -37,6 +37,7 @@
         <incorrectEmailFormate>Sportertesta@gmail</incorrectEmailFormate>
         <correctPassword>@SD123456789</correctPassword>
         <shortPassword>123</shortPassword>
+        <space>   </space>
         <passwordDoesNotMatchTheRules>123456789</passwordDoesNotMatchTheRules>
         <firstName>Automation</firstName>
         <lastName>User</lastName>
@@ -108,9 +109,7 @@ Cash on Delivery Service Available</twoBusinessDay>
         <fiveBusinessDays>5 Business Days Super Express Shipping</fiveBusinessDays>
     </JordanCheckout>
     <QatarCheckout>
-        <fourToFiveBusinessDays>4-5 Business Days Super Express Shipping&#xA;Online Credit or Debit Card Payment is
-            Required
-        </fourToFiveBusinessDays>
+        <fourToFiveBusinessDays>4-5 Business Days Super Express Shipping&#xA;Online Credit or Debit Card Payment is Required</fourToFiveBusinessDays>
     </QatarCheckout>
     <KSACheckout>
         <dootToDoor>خدمة التوصيل حتى باب المنزل ( خلال 4 - 5 يوم عمل ) خدمه الدفع عند الاستلام متوفره</dootToDoor>

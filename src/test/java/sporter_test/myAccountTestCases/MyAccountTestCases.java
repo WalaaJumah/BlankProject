@@ -365,6 +365,7 @@ public class MyAccountTestCases extends BaseTest {
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
         JordanGuestCheckoutCyclePage joGuest = new JordanGuestCheckoutCyclePage(webDriver);
         myAccountPage.navigateToAddressesPage();
+        DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.clickOnElement(myAccountPage.getEditAddressBtn(), webDriver);
         myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
         DataHelperAndWait.typeTextInElement(myAccountPage.getNationalIdField(), webDriver, "12");

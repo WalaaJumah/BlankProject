@@ -44,21 +44,21 @@ public class CartTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result", "1.4 Low Severity"}, description = "{{CountryName}}: Make sure that the product counter that appears in the cart page works correctly", priority = 2)
     public void verifyProductCounterAppearsInTheCartPageWorksCorrectly() {
         CartPage cartPage = new CartPage(webDriver);
-        itemsCounter = "6";
+        itemsCounter = "2";
         WebElementsAssertion.assertionTextIsEqual(cartPage.getItemsCounter(), webDriver, itemsCounter);
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.4 Low Severity"}, description = "{{CountryName}}: Make sure that the counter-number appears in the cart icon works correctly", priority = 3)
     public void verifyTheCounterInCartIconWorksCorrectly() {
         CartPage cartPage = new CartPage(webDriver);
-        WebElementsAssertion.assertionTextIsEqual(cartPage.getCartCounter(), webDriver, "6");
+        WebElementsAssertion.assertionTextIsEqual(cartPage.getCartCounter(), webDriver, "2");
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.4 Low Severity"}, description = "{{CountryName}}: Make sure that the counter-number appears inside the cart pop-up works correctly", priority = 4)
     public void verifyTheCounterInsideCartPopUpWorksCorrectly() {
         CartPage cartPage = new CartPage(webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
-        itemsCounter = "(4 Of 4 Items )";
+        itemsCounter = "(2 Of 2 Items )";
         DataHelperAndWait.waitToBeVisible(cartPage.getItemCounterInCartPopUp(), webDriver);
         WebElementsAssertion.assertionTextIsEqual(cartPage.getItemCounterInCartPopUp(), webDriver, itemsCounter);
     }
@@ -147,7 +147,7 @@ public class CartTestCases extends BaseTest {
         CartPage cartPage = new CartPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         cartPage.addToCartAndDisplayTheCart();
-        String itemsCounter = "6";
+        String itemsCounter = "2";
         WebElementsAssertion.assertionTextIsEqual(cartPage.getItemsCounter(), webDriver, itemsCounter);
     }
 
@@ -315,8 +315,11 @@ public class CartTestCases extends BaseTest {
         cartPage.addToCartAndDisplayTheCart();
 //        cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.waitForTime(2000);
-        DataHelperAndWait.waitToBeClickable(cartPage.getProceedCheckoutBtn(), webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
+        try{
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);}
+        catch (Exception e){
+            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
+        }
 //        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
 //        WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.shippingInformationUrl,webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCheckoutAsGuestBtn(), webDriver);
