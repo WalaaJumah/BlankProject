@@ -200,7 +200,11 @@ public class BasePage {
             webDriver.navigate().to(BaseURL + productUrlEgypt);
         } else if (webDriver.getCurrentUrl().contains("en-qa/")) {
             webDriver.navigate().to(BaseURL + bogoUrlQatar);
-        } else {
+        }
+    else if (webDriver.getCurrentUrl().contains("en-kw/")) {
+            webDriver.navigate().to(BaseURL + bogoProduct);
+        }
+        else {
             webDriver.navigate().to(BasePage.BaseURL + bogoProduct);
 
         }
