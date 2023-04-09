@@ -166,6 +166,10 @@ public class ProductDetailsPage extends BasePage {
         if (currentUrl.contains("en-ae")) {
             productUrl1 = productUrl;
         }
+        if (currentUrl.contains("en-kw")) {
+            productUrl1 = productUrl;
+        }
+
         webDriver.navigate().to(BaseURL + productUrl1);
         DataHelperAndWait.waitForUrlContains(productUrl1, webDriver);
         verifyTheDisplayedPageDoesNotHaveErrors();

@@ -102,6 +102,7 @@
         <twoBusinessDay>2 Business days delivery. (2-4 days for remote areas)
 Cash on Delivery Service Available</twoBusinessDay>
         <sameDayDelivery>Same Day Delivery</sameDayDelivery>
+        <ExpressDelevery>Express Delivery: 3-5 Days</ExpressDelevery>
     </UAECheckout>
     <JordanCheckout>
         <fiveBusinessDays>5 Business Days Super Express Shipping</fiveBusinessDays>
