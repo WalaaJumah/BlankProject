@@ -14,7 +14,7 @@ import org.openqa.selenium.support.PageFactory;
 
 @Getter
 public class EgyptGuestCheckoutCyclePage extends GuestCheckoutCyclePage {
-    @FindBy(id = "nextdelivery")
+    @FindBy(id = "matrixrate_52")
     private WebElement nextDayMethod;
 
     public EgyptGuestCheckoutCyclePage(WebDriver webDriver) {

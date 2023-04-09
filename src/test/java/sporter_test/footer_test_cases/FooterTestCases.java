@@ -19,49 +19,51 @@ import java.io.IOException;
 public class FooterTestCases extends BaseTest {
     String storeCountry;
 
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure the customer ia able to access all links below the Orders & Shipping List correctly ", priority = 1)
+    @Test(groups = {"All Smoke Testing Result", "1.4 Low Severity"}, description = "{{CountryName}}: Make sure the customer ia able to access all links below the Orders & Shipping List correctly ", priority = 1)
     public void verifyAbilityToAccessAllOrdersAndShippingLinksCorrectly() throws IOException {
         FooterSection footerSection = new FooterSection(webDriver);
         footerSection.accessAllLinksInTheList(footerSection.getOrdersAndShippingList());
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure the customer ia able to access all links below the Lets Us Help you List correctly ", priority = 2)
+    @Test(groups = {"All Smoke Testing Result", "1.4 Low Severity"}, description = "{{CountryName}}: Make sure the customer ia able to access all links below the Lets Us Help you List correctly ", priority = 2)
     public void verifyAbilityToAccessAllLetsHelpYouLinksCorrectly() throws IOException {
         FooterSection footerSection = new FooterSection(webDriver);
         footerSection.accessAllLinksInTheList(footerSection.getLetsUsHelpYouList());
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure the customer ia able to access all links below the Protein And Fitness you List correctly ", priority = 3)
+    @Test(groups = {"All Smoke Testing Result", "1.4 Low Severity"}, description = "{{CountryName}}: Make sure the customer ia able to access all links below the Protein And Fitness you List correctly ", priority = 3)
     public void verifyAbilityToAccessAllProteinAndFitnessCorrectly() throws IOException {
         FooterSection footerSection = new FooterSection(webDriver);
         footerSection.accessAllLinksInTheList(footerSection.getProteinAndFitnessList());
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure the customer ia able to access all links below the Vitamins And Health you List correctly ", priority = 4)
+    @Test(groups = {"All Smoke Testing Result", "1.4 Low Severity"}, description = "{{CountryName}}: Make sure the customer ia able to access all links below the Vitamins And Health you List correctly ", priority = 4)
     public void verifyAbilityToAccessAllVitaminsAndHealthCorrectly() throws IOException {
         FooterSection footerSection = new FooterSection(webDriver);
         footerSection.accessAllLinksInTheList(footerSection.getVitaminsAndHealthList());
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure the customer ia able to access all links below the Accessories And Apparel you List correctly ", priority = 5)
+    @Test(groups = {"All Smoke Testing Result", "1.4 Low Severity"}, description = "{{CountryName}}: Make sure the customer ia able to access all links below the Accessories And Apparel you List correctly ", priority = 5)
     public void verifyAbilityToAccessAllAccessoriesAndApparelCorrectly() throws IOException {
         FooterSection footerSection = new FooterSection(webDriver);
         footerSection.accessAllLinksInTheList(footerSection.getAccessoriesAndApparelList());
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure the customer ia able to access all links below the Most Selling Products you List correctly ", priority = 6)
+    @Test(groups = {"All Smoke Testing Result", "1.4 Low Severity"}, description = "{{CountryName}}: Make sure the customer ia able to access all links below the Most Selling Products you List correctly ", priority = 6)
     public void verifyAbilityToAccessAllMostSellingProductsCorrectly() throws IOException {
         FooterSection footerSection = new FooterSection(webDriver);
+        DataHelperAndWait.waitForTime(2000);
         footerSection.accessAllLinksInTheList(footerSection.getMostSellingProductsList());
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure the customer ia able to access all links below the Get To KnowUs you List correctly ", priority = 7)
+    @Test(groups = {"All Smoke Testing Result", "1.4 Low Severity"}, description = "{{CountryName}}: Make sure the customer ia able to access all links below the Get To KnowUs you List correctly ", priority = 7)
     public void verifyAbilityToAccessAllGetToKnowUsCorrectly() throws IOException {
         FooterSection footerSection = new FooterSection(webDriver);
+        DataHelperAndWait.waitForTime(2500);
         footerSection.accessAllLinksInTheList(footerSection.getGetToKnowUsList());
  }
 
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure the all links below Contact us appears correctly ", priority = 8)
+    @Test(groups = {"All Smoke Testing Result", "1.4 Low Severity"}, description = "{{CountryName}}: Make sure the all links below Contact us appears correctly ", priority = 8)
     public void verifyContactUsListAppearsCorrectlyCorrectly() throws IOException {
         FooterSection footerSection = new FooterSection(webDriver);
         for (int i = 0; i < footerSection.getContactUsList().size(); i++) {
