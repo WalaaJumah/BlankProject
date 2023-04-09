@@ -4117,7 +4117,7 @@ aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
 aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         //        assertEquals(webDriver.getCurrentUrl(),expectedCategoryUrl);
     }
-    @Test(groups = {"2.08 Vitamins & Health Category", "1.1 Critical Severity"},description = "Vitamins & Health Category- Make sure clicking on the product card in the MultiVitamins section works correctly ", priority = 387)
+    @Test(groups = {"2.08 Vitamins & Health Category", "1.3 Medium Severity"},description = "Vitamins & Health Category- Make sure clicking on the product card in the MultiVitamins section works correctly ", priority = 387)
     public void verifyClickingOnProductCardInsideMultiVitaminsSectionWorksCorrectly() {
         AeVitaminsAndHealthCategoryPage aeVitaminsAndHealthCategoryPage = new AeVitaminsAndHealthCategoryPage(webDriver);
         aeVitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();

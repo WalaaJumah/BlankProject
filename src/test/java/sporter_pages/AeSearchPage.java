@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import javax.xml.crypto.Data;
 import java.util.List;
 
 public class AeSearchPage extends BasePage {
@@ -117,6 +118,7 @@ public class AeSearchPage extends BasePage {
     }
 
     public WebElement getBrandsTab() {
+        DataHelperAndWait.waitForTime(2000);
         return brandsTab;
     }
     public WebElement getResetAllFiltersBtn() {

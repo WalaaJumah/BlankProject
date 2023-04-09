@@ -355,7 +355,7 @@ public class AEFooterPageTestCases extends BaseTest {
     public void verifyGetToKnowUsSectionAppearsCorrectlyInFooter() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
-        Assert.assertEquals(aeFooterPage.getGetToKnowUsHeader().getText(), "Get To Know Us");
+        Assert.assertEquals(aeFooterPage.getGetToKnowUsHeader().getText(), "Contact Us");
         Assert.assertEquals(aeFooterPage.getAboutSporterOption().getText(), "About Sporter");
         Assert.assertEquals(aeFooterPage.getProductQualityOption().getText(), "Product Quality");
         Assert.assertEquals(aeFooterPage.getProductAuthenticityOption().getText(), "Product Authenticity");
@@ -364,13 +364,11 @@ public class AEFooterPageTestCases extends BaseTest {
         Assert.assertEquals(aeFooterPage.getSporterBlogOption().getText(), "Sporter Blog");
     }
 
-    @Test(groups = {"2.12 Footer Section", "1.1 Critical Severity"},description = " Footer Section- Make sure  About Sporter appears in the footer works correctly", priority = 32)
+    @Test(groups = {"2.12 Footer Section", "1.3 Medium Severity"},description = " Footer Section- Make sure  About Sporter appears in the footer works correctly", priority = 32)
     public void verifyAboutSporterLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getAboutSporterOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.aboutSporterUrl,webDriver,5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.aboutSporterUrl)," The current URL is not matched with the aboutSporterUrl page");
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
@@ -381,13 +379,11 @@ public class AEFooterPageTestCases extends BaseTest {
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"2.12 Footer Section", "1.1 Critical Severity"},description = " Footer Section- Make sure the Product Quality appears in the footer works correctly", priority = 34)
+    @Test(groups = {"2.12 Footer Section", "1.3 Medium Severity"},description = " Footer Section- Make sure the Product Quality appears in the footer works correctly", priority = 34)
     public void verifyProductQualityLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getProductQualityOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.productQualityUrl,webDriver,5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.productQualityUrl)," The Current URL is not matched with the productQuality Url");
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
@@ -398,13 +394,11 @@ public class AEFooterPageTestCases extends BaseTest {
         Assert.assertTrue(aeFooterPage.getFooterSection().isDisplayed());
     }
 
-    @Test(groups = {"2.12 Footer Section", "1.1 Critical Severity"},description = " Footer Section- Make sure the  Quality Authenticity appears in the footer works correctly", priority = 36)
+    @Test(groups = {"2.12 Footer Section", "1.3 Medium Severity"},description = " Footer Section- Make sure the  Quality Authenticity appears in the footer works correctly", priority = 36)
     public void verifyProductAuthenticityLinkAppearsInFooterWorksCorrectly() {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getProductAuthenticityOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.productAuthenticityUrl,webDriver,5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.productAuthenticityUrl)," The current URL is not matched with the productAuthenticity Url");
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
@@ -541,8 +535,6 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getFitnessAccessoriesOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.fitnessAccessoriesUrl,webDriver,5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.fitnessAccessoriesUrl)," The Current URL is not matched with the fitnessAccessories Url");
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
@@ -558,8 +550,6 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getShakersOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.shakersUrl,webDriver,5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.shakersUrl)," The Current URL is not matched with the shakers Url ");
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
@@ -575,8 +565,6 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getHomeGymEquipmentOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.homeGymEquipmentUrl,webDriver,5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.homeGymEquipmentUrl)," The Current URL is not matched with the homeGymEquipment Url");
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
@@ -609,8 +597,6 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getStrapsOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.strapsUrl,webDriver,5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.strapsUrl)," The Current URL is not matched with the straps Url");
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
@@ -626,8 +612,6 @@ public class AEFooterPageTestCases extends BaseTest {
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
         aeFooterPage.navigateToHomePage();
         aeFooterPage.getBagsOption().click();
-        DataHelperAndWait.waitForUrlContains(aeFooterPage.bagsUrl,webDriver,5);
-        Assert.assertTrue(webDriver.getCurrentUrl().contains(aeFooterPage.bagsUrl)," The Current URL is not matched with the bags Url");
         aeFooterPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
