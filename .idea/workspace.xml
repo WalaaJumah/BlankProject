@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="09d64b6b-6a80-4af6-a4ec-61d96949d666" name="Changes" comment="Merge remote-tracking branch 'origin/New_Sporter2.1_Without_Implicit_Wait' into New_Sporter2.1_Without_Implicit_Wait&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/productTestCases/ProductDetailsTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/productTestCases/ProductDetailsTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/homepage_classes/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/homepage_classes/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/KuwaitCheckoutForRegisteredTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/KuwaitCheckoutForRegisteredTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/headerTestCases/HeaderTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/headerTestCases/HeaderTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/homepage_test_cases/HomePageTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/homepage_test_cases/HomePageTestCases.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,7 +282,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681078682146</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Merge remote-tracking branch 'origin/New_Sporter2.1_Without_Implicit_Wait' into New_Sporter2.1_Without_Implicit_Wait&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1681105478972</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1681105478972</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -319,6 +330,7 @@
     <MESSAGE value="Update the Generate Report xml file" />
     <MESSAGE value="Merge remote-tracking branch 'origin/New_Sporter2.1_Without_Implicit_Wait' into New_Sporter2.1_Without_Implicit_Wait&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/test/resources/TestExecution.xml" />
     <MESSAGE value="Add Kuwait test cases" />
+    <MESSAGE value="Update the severity for some test cases" />
     <MESSAGE value="Merge remote-tracking branch 'origin/New_Sporter2.1_Without_Implicit_Wait' into New_Sporter2.1_Without_Implicit_Wait&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/New_Sporter2.1_Without_Implicit_Wait' into New_Sporter2.1_Without_Implicit_Wait&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
   </component>

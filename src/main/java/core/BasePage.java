@@ -24,7 +24,7 @@ public class BasePage {
 
 
     public static String BaseURL = "https://sporter.com";
-    public static String productUrl = "/the-pack-bcaas-flow-32569";
+    public static String productUrl = "/the-pack-bcaas-flow-32566";
 //    public static String productUrl = "/optimum-gold-standard-100-whey";
 
 //    public void setStoreCountry(String storeCountry) {
@@ -200,7 +200,11 @@ public class BasePage {
             webDriver.navigate().to(BaseURL + productUrlEgypt);
         } else if (webDriver.getCurrentUrl().contains("en-qa/")) {
             webDriver.navigate().to(BaseURL + bogoUrlQatar);
-        } else {
+        }
+    else if (webDriver.getCurrentUrl().contains("en-kw/")) {
+            webDriver.navigate().to(BaseURL + bogoProduct);
+        }
+        else {
             webDriver.navigate().to(BasePage.BaseURL + bogoProduct);
 
         }
