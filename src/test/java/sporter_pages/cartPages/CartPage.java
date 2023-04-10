@@ -150,7 +150,7 @@ public class CartPage extends BasePage {
     //TODO: Needs To check After solving Bogo Bug
     @FindBy(xpath = "//td[text()='FREE from SPORTER']")
     private WebElement freeFromSporter;
-    @FindBy(xpath = "//div[starts-with(@class,'cartItem_freeGift')]")
+    @FindBy(xpath = "(//div[starts-with(@class,'cartItem_freeGift')])[1]")
     private WebElement freePrice;
     @FindBy(xpath = "div.popUp_thumbsHead__Fbo8M")
     private WebElement couponSuccessfulMsg;

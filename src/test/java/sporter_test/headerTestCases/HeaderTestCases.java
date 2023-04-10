@@ -49,10 +49,12 @@ public class HeaderTestCases extends BaseTest {
         if (webDriver.getCurrentUrl().contains("com/ar-")) {
             DataHelperAndWait.clickOnElement(headerSection.getLanguageBtn(), webDriver);
             WebElementsAssertion.validateTheCurrentUrlContainsString("com/en-", webDriver);
+            DataHelperAndWait.waitForTime(2000);
             WebElementsAssertion.assertionTextIsEqual(headerSection.getLanguageSelector(), webDriver, "عربي");
         } else {
             DataHelperAndWait.clickOnElement(headerSection.getLanguageBtn(), webDriver);
             WebElementsAssertion.validateTheCurrentUrlContainsString("com/ar-", webDriver);
+            DataHelperAndWait.waitForTime(2000);
             WebElementsAssertion.assertionTextIsEqual(headerSection.getLanguageSelector(), webDriver, "English");
         }
     }

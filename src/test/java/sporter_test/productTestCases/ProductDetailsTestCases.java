@@ -159,7 +159,8 @@ public class ProductDetailsTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Verify that the system display a label on the PDP to indicate for the customer he will get a free product", priority = 14)
     public void verifyTheresLabelInPdpToIndicateThatTheresAnOfferOnThisProduct() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.displayTheProduct();
+//        productDetailsPage.displayTheProduct();
+        webDriver.navigate().to("https://qa.sporter.com/the-pack-bcaas-flow-32569");
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getFreeProductLabelEn(), webDriver);
     }
 

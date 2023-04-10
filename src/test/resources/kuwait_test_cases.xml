@@ -18,14 +18,17 @@
 
             <!--            Registered Checkout-->
             <class name="sporter_test.checkoutForRegisteredUserTestCases.KuwaitCheckoutForRegisteredTestCases"></class>
+            <!--Products Page-->
+            <class name="sporter_test.productTestCases.KuwaitProductsTestCases"/>
+            <class name="sporter_test.RecommendedProductsTestCases.KuwaitRecommendedProductsTestCases"/>
 
+            <!--            Cart-->
+            <class name="sporter_test.cartTestCases.KuwaitCartTestCases"></class>
             <!--            HomePage-->
             <class name="sporter_test.homepage_test_cases.KuwaitHomePageTestCases"/>
             <!--         Header   -->
             <class name="sporter_test.headerTestCases.KuwaitHeaderTestCases"/>
-            <!--Products Page-->
-            <class name="sporter_test.productTestCases.KuwaitProductsTestCases"/>
-            <class name="sporter_test.RecommendedProductsTestCases.KuwaitRecommendedProductsTestCases"/>
+
             <!--            Register Page-->
             <class name="sporter_test.AccountRegistrationTestCases.KuwaitAccountRegistrationTestCases"/>
 
@@ -34,8 +37,6 @@
             <!--Forget Password-->
             <class name="sporter_test.forgetPasswordTestCases.KuwaitForgetPasswordTestCases"/>
 
-            <!--            Cart-->
-            <class name="sporter_test.cartTestCases.KuwaitCartTestCases"></class>
 
             <!--            Cart Rules-->
 

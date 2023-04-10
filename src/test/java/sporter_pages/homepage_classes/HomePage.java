@@ -73,15 +73,15 @@ public class HomePage extends BasePage {
     private List<WebElement> newArrivalsCategoriesTabs;
     @FindBy(id = "OptionsContainerOptions_allmostSelling")
     private WebElement viewAllBtnInTopSellingStacksSection;
-    @FindBy(id = "OptionsContainerOptions_0topSeller")
+    @FindBy(id = "OptionsContainerOptions_0mostSelling")
     private WebElement sportSupplementsLinkInTopSellers;
     @FindBy(id = "OptionsContainerOptions_allmostSelling")
     private WebElement allLinkInTopSellers;
-    @FindBy(id = "OptionsContainerOptions_1topSeller")
+    @FindBy(id = "OptionsContainerOptions_2mostSelling")
     private WebElement healthyFoodLinkInTopSellers;
-    @FindBy(id = "OptionsContainerOptions_1topSeller")
+    @FindBy(id = "OptionsContainerOptions_1mostSelling")
     private WebElement vitaminsAndHealthLinkInTopSellers;
-    @FindBy(id = "OptionsContainerOptions_2topSeller")
+    @FindBy(id = "OptionsContainerOptions_3mostSelling")
     private WebElement sportswearAndAccessoriesLinkInTopSellers;
     @FindBy(id = "//ul[@class='tabs tabs67']/li[2]/a")
     private WebElement sportSupplementsActiveLink;

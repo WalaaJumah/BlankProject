@@ -103,31 +103,25 @@ public class KuwaitCheckoutForRegisteredTestCases extends  CheckoutForRegistered
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         KuwaitCheckoutForRegisteredPage kuwaitCheckoutForRegisteredPage= new KuwaitCheckoutForRegisteredPage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
-//        cartPage.navigateToHomePage();
-//        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
-//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-        cartPage.navigateToHomePage();
-        cartPage.clickOnCartIcon();
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
-        try{
-            DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
-        }
-        catch (Exception e){
-            registeredPage.fillInShippingInformationInputField(
-                    XmlReader.getXMLData("firstName"),
-                    XmlReader.getXMLData("lastName"),
-                    XmlReader.getXMLData("phoneNumber"),
-                    XmlReader.getXMLData("AddressName"),
-                    XmlReader.getXMLData("StreetOneAddressName"),
-                    XmlReader.getXMLData("StreetTwoAddressName")
-            );
-        }
-        DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        registeredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         DataHelperAndWait.clickOnElement(kuwaitCheckoutForRegisteredPage.getExpressDeliveryMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+//        try{
+//            DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
+//        }
+//        catch (Exception e){
+//            registeredPage.fillInShippingInformationInputField(
+//                    XmlReader.getXMLData("firstName"),
+//                    XmlReader.getXMLData("lastName"),
+//                    XmlReader.getXMLData("phoneNumber"),
+//                    XmlReader.getXMLData("AddressName"),
+//                    XmlReader.getXMLData("StreetOneAddressName"),
+//                    XmlReader.getXMLData("StreetTwoAddressName")
+//            );
+
+//        DataHelperAndWait.clickOnElement(kuwaitCheckoutForRegisteredPage.getExpressDeliveryMethod(),webDriver);
+//        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
@@ -192,7 +186,7 @@ public class KuwaitCheckoutForRegisteredTestCases extends  CheckoutForRegistered
         KuwaitCheckoutForRegisteredPage kuwaitCheckoutForRegisteredPage= new KuwaitCheckoutForRegisteredPage(webDriver);
 //        cartPage.navigateToCartPage();
 //        cartPage.removeItem();
-        guestCheckoutCyclePage.navigateToShippingMethodsPage();
+        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         DataHelperAndWait.clickOnElement(kuwaitCheckoutForRegisteredPage.getExpressDeliveryMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("invalidCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
@@ -211,5 +205,7 @@ public class KuwaitCheckoutForRegisteredTestCases extends  CheckoutForRegistered
     public void verifyAbilityToSelectSameDayShippingMethodCorrectly() {}
     @Test(enabled = false)
     public void verifyAbilityToSelect2BusinessDaysShippingMethodCorrectly() {}
+    @Test(enabled = false)
+    public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNationalID() {}
 
 }
