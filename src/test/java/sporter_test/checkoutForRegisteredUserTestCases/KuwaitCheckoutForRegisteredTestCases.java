@@ -37,6 +37,7 @@ public class KuwaitCheckoutForRegisteredTestCases extends  CheckoutForRegistered
         }
         storeCountry="Kuwait";
         countryCode="965";
+        System.out.println("The URL is "+webDriver.getCurrentUrl());
     }
     @Test(groups = {"2.02 Checkout Cycle( Registered User)", "All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 9)
     public void verifyOrderTotalCalculationInCartPageWorksCorrectly() {

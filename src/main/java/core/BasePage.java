@@ -24,7 +24,7 @@ public class BasePage {
 
 
     public static String BaseURL = "https://sporter.com";
-    public static String productUrl = "/kaged-muscle-hydra-charge-15731";
+    public static String productUrl = "/the-pack-bcaas-flow-32566";
 //    public static String productUrl = "/optimum-gold-standard-100-whey";
 
 //    public void setStoreCountry(String storeCountry) {
