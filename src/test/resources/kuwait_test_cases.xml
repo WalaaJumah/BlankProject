@@ -6,7 +6,7 @@
         <!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
         <listener class-name="extent_report_listner.ExtentReportListener"/>
     </listeners>
-    <test name=" Kuwait Store" preserve-order="true">
+    <test name=" Kuwait Store/QA" preserve-order="true">
         <parameter name="environment" value="https://qa.sporter.com"/>
         <parameter name="browser" value="chrome"/>
         <!-- <parameter name="country" value="en-qa" />-->
@@ -14,16 +14,8 @@
         <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix"/>
         <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
         <classes>
-            <!--            Guest Checkout -->
-
-            <!--            Registered Checkout-->
-            <class name="sporter_test.checkoutForRegisteredUserTestCases.KuwaitCheckoutForRegisteredTestCases"></class>
             <!--Products Page-->
-            <class name="sporter_test.productTestCases.KuwaitProductsTestCases"/>
-            <class name="sporter_test.RecommendedProductsTestCases.KuwaitRecommendedProductsTestCases"/>
 
-            <!--            Cart-->
-            <class name="sporter_test.cartTestCases.KuwaitCartTestCases"></class>
             <!--            HomePage-->
             <class name="sporter_test.homepage_test_cases.KuwaitHomePageTestCases"/>
             <!--         Header   -->
@@ -61,7 +53,16 @@
             <!--            Footer Section-->
             <class name="sporter_test.footer_test_cases.KuwaitFooterTestCases"></class>
 
+            <class name="sporter_test.productTestCases.KuwaitProductsTestCases"/>
+            <class name="sporter_test.RecommendedProductsTestCases.KuwaitRecommendedProductsTestCases"/>
+            <!--            Guest Checkout -->
 
+            <!--            Registered Checkout-->
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.KuwaitCheckoutForRegisteredTestCases"></class>
+
+
+            <!--            Cart-->
+            <class name="sporter_test.cartTestCases.KuwaitCartTestCases"></class>
         </classes>
 
     </test>
