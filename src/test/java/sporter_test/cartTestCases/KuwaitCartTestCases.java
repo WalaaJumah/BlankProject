@@ -9,12 +9,14 @@ package sporter_test.cartTestCases;
 import core.BasePage;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.cartPages.CartPage;
 import sporter_pages.homepage_classes.EgyptHomePage;
 import sporter_pages.myAccountPages.KuwaitMyAccountPage;
 
 public class KuwaitCartTestCases extends CartTestCases{
+    @BeforeClass(alwaysRun = true)
     public void switchToKuwaitStore() {
         KuwaitMyAccountPage kuwaitMyAccountPage = new KuwaitMyAccountPage(webDriver);
         EgyptHomePage egyptHomePage = new EgyptHomePage(webDriver);
