@@ -57,4 +57,22 @@ public class HeaderSection extends BasePage {
 
     }
 
+    @FindBy(id = "switcher-store-trigger")
+    private WebElement countryListInStg;
+    @FindBy(xpath = "//ul[@class='dropdown switcher-dropdown']/li[6]")
+    private WebElement kuwaitCountryInStg;
+
+    public void switchToKuwaitCountryInStg() {
+
+        try {
+            DataHelperAndWait.waitToBeVisible(countryListInStg, webDriver);
+            this.countryListInStg.click();
+            DataHelperAndWait.waitToBeVisible(kuwaitCountryInStg, webDriver);
+            this.kuwaitCountryInStg.click();
+        } catch (Exception e) {
+            DataHelperAndWait.waitToBeVisible(countryListInStg, webDriver);
+            this.countryListInStg.click();
+            DataHelperAndWait.waitToBeVisible(kuwaitCountryInStg, webDriver);
+            this.kuwaitCountryInStg.click();
+        }}
 }
