@@ -16,6 +16,7 @@ import sporter_pages.cartPages.CartPage;
 import sporter_pages.checkoutForRegisteredUserTPage.CheckoutForRegisteredPage;
 import sporter_pages.checkoutForRegisteredUserTPage.KuwaitCheckoutForRegisteredPage;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
+import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.EgyptHomePage;
 import sporter_pages.myAccountPages.KuwaitMyAccountPage;
 import xml_reader.XmlReader;
@@ -26,18 +27,24 @@ import java.text.DecimalFormat;
 public class KuwaitCheckoutForRegisteredTestCases extends  CheckoutForRegisteredTestCases{
     @BeforeClass(alwaysRun = true)
     public void switchToKuwaitStore() {
-        KuwaitMyAccountPage kuwaitMyAccountPage = new KuwaitMyAccountPage(webDriver);
-        EgyptHomePage egyptHomePage = new EgyptHomePage(webDriver);
-        egyptHomePage.switchCountry(kuwaitMyAccountPage.getKuwaitCountry());
-        if (webDriver.getCurrentUrl().contains(egyptHomePage.kuwaitDomain)) {
-            System.out.println("You are in Kuwait Store");
-        } else {
-            webDriver.navigate().to(BasePage.BaseURL + egyptHomePage.kuwaitDomain);
-            CloseInitialDialog();
-        }
-        storeCountry="Kuwait";
-        countryCode="965";
-        System.out.println("The URL is "+webDriver.getCurrentUrl());
+//        KuwaitMyAccountPage kuwaitMyAccountPage = new KuwaitMyAccountPage(webDriver);
+//        EgyptHomePage egyptHomePage = new EgyptHomePage(webDriver);
+//        egyptHomePage.switchCountry(kuwaitMyAccountPage.getKuwaitCountry());
+//        if (webDriver.getCurrentUrl().contains(egyptHomePage.kuwaitDomain)) {
+//            System.out.println("You are in Kuwait Store");
+//        } else {
+//            webDriver.navigate().to(BasePage.BaseURL + egyptHomePage.kuwaitDomain);
+//            CloseInitialDialog();
+//        }
+//        storeCountry="Kuwait";
+//        countryCode="965";
+//        System.out.println("The URL is "+webDriver.getCurrentUrl());
+
+
+
+        HeaderSection h= new HeaderSection(webDriver);
+        h.switchToKuwaitCountryInStg();
+        this.CloseInitialDialog();
     }
     @Test(groups = {"2.02 Checkout Cycle( Registered User)", "All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 9)
     public void verifyOrderTotalCalculationInCartPageWorksCorrectly() {
