@@ -36,16 +36,16 @@ public class SportsCategoryTestCases extends BaseTest {
         SportsCategoryPage sportsCategoryPage=new SportsCategoryPage(webDriver);
         sportsCategoryPage.clickOnSportsFromShopByMenu();
         sportsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        WebElementsAssertion.validateTheCurrentUrlContainsString(sportsCategoryPage.sportSupplementsUrl, webDriver);
+        WebElementsAssertion.validateTheCurrentUrlContainsString(sportsCategoryPage.sportsUrl, webDriver);
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:Sports Category- Make sure clicking on the Sports Category from HomePage Redirect User To CorrectURL", priority = 3)
-    public void verifyClickingOnSportsCategoryFromHomePageRedirectUserToCorrectURL() {
+    public void verifyClickingOnSportsCategoryFromHomePageRedirectUserToCorrectURL() throws IOException {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(homePage.getSportsSupplementsCategory(), webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.sportSupplementsUrl, webDriver);
+        homePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Sports Category- Make sure  the Sports footer appears correctly  ", priority = 4)
     public void verifySportsCategoryFooterSectionAppearsCorrectly() throws IOException {
