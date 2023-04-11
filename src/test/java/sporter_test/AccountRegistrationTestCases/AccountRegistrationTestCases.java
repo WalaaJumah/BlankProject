@@ -55,7 +55,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getSignInLink(), webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}:  Verify Show Password icon works correctly", priority = 4)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:  Verify Show Password icon works correctly", priority = 4)
     public void verifyShowPasswordIconWorksCorrectly() throws IOException {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         registerPage.navigateToRegistrationPage();
@@ -66,7 +66,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         WebElementsAssertion.assertionAttributeTrueForElement(registerPage.getConfirmPasswordField(), webDriver, "type", "text");
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}:  Verify Hide Password icon works correctly", priority = 5)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:  Verify Hide Password icon works correctly", priority = 5)
     public void verifyHidePasswordIconWorksCorrectly() {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         DataHelperAndWait.clickOnElement(registerPage.getHidePasswordIcon(), webDriver);
@@ -113,7 +113,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getEmailErrorMs(), webDriver);
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:  Verify the system redirect the customer to Personal information form after clicking on the Create Account Button", priority = 10)
+    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"}, description = "{{CountryName}}:  Verify the system redirect the customer to Personal information form after clicking on the Create Account Button", priority = 10)
     public void verifyPersonalInfoFormAppearsAfterClickingOnCreateAccountBtn() throws IOException {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         registerPage.navigateToRegistrationPage();
@@ -158,7 +158,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(), webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:  Verify Inability to register new account without filling Email Field", priority = 13)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}:  Verify Inability to register new account without filling Email Field", priority = 13)
     public void verifyInabilityToRegisterAccountWithoutFillingEmailField() throws IOException {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         HeaderSection header = new HeaderSection(webDriver);
@@ -169,7 +169,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(registerPage.getEmailErrorMs(), webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:  Verify Inability to register new account without filling Password Field", priority = 14)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}:  Verify Inability to register new account without filling Password Field", priority = 14)
     public void verifyInabilityToRegisterAccountWithoutFillingPasswordField() throws IOException {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         registerPage.navigateToRegistrationPage();
@@ -210,7 +210,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:  Verify Inability to register new account when the entered password is not match with the password rule", priority = 17)
+    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"}, description = "{{CountryName}}:  Verify Inability to register new account when the entered password is not match with the password rule", priority = 17)
     public void verifyInabilityToRegisterAccountUsingPasswordHaveIncorrectRule() throws IOException {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         registerPage.navigateToRegistrationPage();
@@ -240,7 +240,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:  Verify Inability to register new account when the password entered in Confirm Password field with the password you entered in the Password field", priority = 19)
+    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"}, description = "{{CountryName}}:  Verify Inability to register new account when the password entered in Confirm Password field with the password you entered in the Password field", priority = 19)
     public void verifyInabilityToRegisterAccountUsingWrongConfirmedPassword() throws IOException {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         registerPage.navigateToRegistrationPage();
@@ -267,7 +267,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getConfirmPasswordErrorMsg(), webDriver);
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:  Verify Inability to register a new account without filling the First and Last Name", priority = 21)
+    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"}, description = "{{CountryName}}:  Verify Inability to register a new account without filling the First and Last Name", priority = 21)
     public void verifyInabilityToRegisterAccountWithoutFillingFirstAndLastName() throws IOException {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         registerPage.navigateToRegistrationPage();
@@ -279,7 +279,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(registerPage.getFirstNameErrorMs(), webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:  Verify ability to register a new account without selecting the gender", priority = 22)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}:  Verify ability to register a new account without selecting the gender", priority = 22)
     public void verifyAbilityToRegisterAccountWithoutSelectingTheGender() throws IOException {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         HeaderSection header = new HeaderSection(webDriver);
@@ -298,7 +298,7 @@ public class AccountRegistrationTestCases extends BaseTest {
     }
 
     //TODO: To be revisit after fixing https://sporter1.atlassian.net/browse/NS-56
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:  Verify Sign-up using facebook works correctly", priority = 23)
+    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:  Verify Sign-up using facebook works correctly", priority = 23)
     public void verifySignUpUsingFaceBookWorks() throws IOException {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         registerPage.navigateToRegistrationPage();
@@ -341,7 +341,7 @@ public class AccountRegistrationTestCases extends BaseTest {
     }
 
     //TODO: There's a bug here & we will revisit it after fixing: https://sporter1.atlassian.net/browse/NS-56
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:  Verify ability to sign up using FaceBook account", priority = 27)
+    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:  Verify ability to sign up using FaceBook account", priority = 27)
     public void verifyAbilityToSignUpUsingFaceBook() throws IOException {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         registerPage.navigateToRegistrationPage();

@@ -47,7 +47,7 @@ public class LoginTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(loginPage.getSignInWithSocialMediaLabel(), webDriver);
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to login using wrong email and the correct Error Msg appears", priority = 3)
+    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"}, description = "{{CountryName}}: Verify Inability to login using wrong email and the correct Error Msg appears", priority = 3)
     public void verifyInAbilityToLoginUsingWrongEmail() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToLoginPage();
@@ -139,7 +139,7 @@ public class LoginTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Verify show password icon works correctly", priority = 11)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Verify show password icon works correctly", priority = 11)
     public void verifyShowPasswordIconWorksCorrectly() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToLoginPage();
@@ -148,7 +148,7 @@ public class LoginTestCases extends BaseTest {
         WebElementsAssertion.assertionAttributeTrueForElement(loginPage.getPasswordField(), webDriver, "type", "text");
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Verify hide password icon works correctly", priority = 12)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify hide password icon works correctly", priority = 12)
     public void verifyHidePasswordIconWorksCorrectly() {
         LoginPage loginPage = new LoginPage(webDriver);
         DataHelperAndWait.clickOnElement(loginPage.getHidePasswordIcon(), webDriver);
@@ -164,7 +164,7 @@ public class LoginTestCases extends BaseTest {
     }
 
     //TODO: There's a bug here & we will revisit it after fixing: https://sporter1.atlassian.net/browse/NS-56
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:  Verify ability to login using FaceBook account from Login Page", priority = 14)
+    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:  Verify ability to login using FaceBook account from Login Page", priority = 14)
     public void verifyAbilityToSignInUsingFaceBook() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
@@ -184,7 +184,7 @@ public class LoginTestCases extends BaseTest {
     }
 
     //TODO: There's a bug here & we will revisit it after fixing: https://sporter1.atlassian.net/browse/NS-56
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:  Verify ability to login using FaceBook account from FaceBook Option appearing in Account Menu", priority = 15)
+    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:  Verify ability to login using FaceBook account from FaceBook Option appearing in Account Menu", priority = 15)
     public void verifyAbilityToSignInUsingFaceBookOptionAppearsInAccountMenu() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         HeaderSection header = new HeaderSection(webDriver);

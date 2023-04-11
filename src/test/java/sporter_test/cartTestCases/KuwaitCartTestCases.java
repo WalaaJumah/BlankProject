@@ -31,20 +31,20 @@ public class KuwaitCartTestCases extends CartTestCases{
         storeCountry="Kuwait";
         System.out.println(webDriver.getCurrentUrl());
     }
-    @Test(groups = {"All Smoke Testing Result", "1.4 Low Severity"},enabled = false, description = "{{CountryName}}: Make sure that the product counter that appears in the cart page works correctly", priority = 2)
+    @Test(groups = { "1.4 Low Severity"},enabled = false, description = "{{CountryName}}: Make sure that the product counter that appears in the cart page works correctly", priority = 2)
     public void verifyProductCounterAppearsInTheCartPageWorksCorrectly() {
         CartPage cartPage = new CartPage(webDriver);
         itemsCounter = "1";
         WebElementsAssertion.assertionTextIsEqual(cartPage.getItemsCounter(), webDriver, itemsCounter);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.4 Low Severity"},enabled = false, description = "{{CountryName}}: Make sure that the counter-number appears in the cart icon works correctly", priority = 3)
+    @Test(groups = {"1.4 Low Severity"},enabled = false, description = "{{CountryName}}: Make sure that the counter-number appears in the cart icon works correctly", priority = 3)
     public void verifyTheCounterInCartIconWorksCorrectly() {
         CartPage cartPage = new CartPage(webDriver);
         WebElementsAssertion.assertionTextIsEqual(cartPage.getCartCounter(), webDriver, "1");
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.4 Low Severity"},enabled = false, description = "{{CountryName}}: Make sure that the counter-number appears inside the cart pop-up works correctly", priority = 4)
+    @Test(groups = { "1.4 Low Severity"},enabled = false, description = "{{CountryName}}: Make sure that the counter-number appears inside the cart pop-up works correctly", priority = 4)
     public void verifyTheCounterInsideCartPopUpWorksCorrectly() {
         CartPage cartPage = new CartPage(webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
@@ -53,7 +53,7 @@ public class KuwaitCartTestCases extends CartTestCases{
         WebElementsAssertion.assertionTextIsEqual(cartPage.getItemCounterInCartPopUp(), webDriver, itemsCounter);
     }
     //TODO: Needs to recheck
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Free Gift is removed from the cart when you remove the product For Bogo", priority = 11)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Free Gift is removed from the cart when you remove the product For Bogo", priority = 11)
     public void verifyTheFreeGiftIsRemovedWhenRemovingTheProductForBogo() {
         CartPage cartPage = new CartPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
@@ -64,7 +64,7 @@ public class KuwaitCartTestCases extends CartTestCases{
         catch (Exception e){}
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 24)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 24)
     public void verifyOrderTotalCalculationInCartPageWorksCorrectly() {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
@@ -75,7 +75,7 @@ public class KuwaitCartTestCases extends CartTestCases{
         Assert.assertEquals(orderTotal, cartTotal);
         webDriver.manage().deleteCookieNamed("guestCartId");
     }
-    @Test(enabled = false,groups = {"All Smoke Testing Result", "1.4 Low Severity"}, description = "{{CountryName}}: Make sure that the product counter that appears in the cart page counts the free gift correctly", priority = 12)
+    @Test(enabled = false,groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Make sure that the product counter that appears in the cart page counts the free gift correctly", priority = 12)
     public void verifyProductCounterAppearsInTheCartPageCountsFreeGifts() {
         CartPage cartPage = new CartPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");

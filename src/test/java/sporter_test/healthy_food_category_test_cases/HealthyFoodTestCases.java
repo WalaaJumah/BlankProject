@@ -55,7 +55,7 @@ public class HealthyFoodTestCases extends BaseTest {
         WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.healthyFoodsUrl, webDriver);
     }
 
-    @Test(groups = {"1.2 High Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure the Horizontal Banners appear correctly", priority = 5)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure the Horizontal Banners appear correctly", priority = 5)
     public void verifyTheHorizontalBannersAppearCorrectlyInHealthyFoodLandingPage() {
         HealthyFoodPage healthyFoodPage = new HealthyFoodPage(webDriver);
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
@@ -66,7 +66,7 @@ public class HealthyFoodTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure clicking on the Horizontal Banners works correctly ", priority = 6)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure clicking on the Horizontal Banners works correctly ", priority = 6)
     public void verifyClickingOnHorizontalBannersAppearingInHealthyFoodLandingPageOpensCorrectly() throws IOException {
         HealthyFoodPage healthyFoodPage = new HealthyFoodPage(webDriver);
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
@@ -135,7 +135,7 @@ public class HealthyFoodTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(sportsSupplementsCategoryPage.getNewsLetterSection(), webDriver);
     }
 
-    @Test(groups = {"1.2 High Severity"}, description = "{{CountryName}}:Healthy Food Category- Verify that the search button works correctly from the Healthy Food category page", priority = 13)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Healthy Food Category- Verify that the search button works correctly from the Healthy Food category page", priority = 13)
     public void verifySearchBtnWorksCorrectlyFromHealthyFoodCategoryPage() throws IOException {
         HealthyFoodPage healthyFoodPage = new HealthyFoodPage(webDriver);
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
@@ -197,7 +197,7 @@ public class HealthyFoodTestCases extends BaseTest {
 //        }
     }
 
-    @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure that the BreadCrumb appears correctly after sorting the product ", priority = 17)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure that the BreadCrumb appears correctly after sorting the product ", priority = 17)
     public void verifyTheBreadCrumbAppearingCorrectlyAfterSortingTheProducts() {
         HealthyFoodPage healthyFoodPage = new HealthyFoodPage(webDriver);
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
@@ -207,7 +207,7 @@ public class HealthyFoodTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getSportsSupplementsCategory(), webDriver);
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure ability to navigate to the home page by clicking on the sporter logo  ", priority = 18)
+    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure ability to navigate to the home page by clicking on the sporter logo  ", priority = 18)
     public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromPdp() throws IOException {
         HealthyFoodPage healthyFoodPage = new HealthyFoodPage(webDriver);
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
@@ -218,7 +218,7 @@ public class HealthyFoodTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(), webDriver);
     }
 
-    @Test(groups = "All Smoke Testing Result", description = "{{CountryName}}:Healthy Food Category- Make Sure the ability to access all pages inside Healthy Food Category Page  ", priority = 19)
+    @Test(groups = "1.3 Medium Severity", description = "{{CountryName}}:Healthy Food Category- Make Sure the ability to access all pages inside Healthy Food Category Page  ", priority = 19)
     public void verifyAbilityToAccessAllPagesInsideHealthyFoodCategoryPage() throws IOException {
         HealthyFoodPage healthyFoodPage = new HealthyFoodPage(webDriver);
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);

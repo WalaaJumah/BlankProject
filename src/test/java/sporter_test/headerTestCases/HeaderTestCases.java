@@ -59,7 +59,7 @@ public class HeaderTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.4 Low Severity"}, description = "{{CountryName}}: Make sure the Customer Service label & Phone Number appearing correctly", priority = 3)
+    @Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure the Customer Service label & Phone Number appearing correctly", priority = 3)
     public void verifyCustomerServiceAppearingCorrectly() {
         HeaderSection headerSection = new HeaderSection(webDriver);
         if (webDriver.getCurrentUrl().contains("com/ar-"))
