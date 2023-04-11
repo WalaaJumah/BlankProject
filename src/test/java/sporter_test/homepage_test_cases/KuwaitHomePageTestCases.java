@@ -7,11 +7,13 @@
 package sporter_test.homepage_test_cases;
 
 import core.BasePage;
+import org.testng.annotations.BeforeClass;
 import sporter_pages.homepage_classes.EgyptHomePage;
 import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.myAccountPages.KuwaitMyAccountPage;
 
 public class KuwaitHomePageTestCases extends HomePageTestCases {
+    @BeforeClass(alwaysRun = true)
     public void switchToKuwaitStore() {
         KuwaitMyAccountPage kuwaitMyAccountPage = new KuwaitMyAccountPage(webDriver);
         EgyptHomePage egyptHomePage = new EgyptHomePage(webDriver);
