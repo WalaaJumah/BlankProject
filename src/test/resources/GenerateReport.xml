@@ -27,12 +27,15 @@
             <class name="sporter_test.checkoutForRegisteredUserTestCases.QatarCheckoutForRegisteredTestCases"></class>
             <class name="sporter_test.checkoutForRegisteredUserTestCases.KSACheckoutForRegisteredTestCases"></class>
             <class name="sporter_test.checkoutForRegisteredUserTestCases.EgyptCheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.UAECheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.KuwaitCheckoutForRegisteredTestCases"></class>
             <!--            HomePage-->
             <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>
             <class name="sporter_test.homepage_test_cases.UAEHomePageTestCases"/>
             <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases"/>
             <class name="sporter_test.homepage_test_cases.QatarHomePageTestCases"/>
             <class name="sporter_test.homepage_test_cases.EgyptHomePageTestCases"/>
+            <class name="sporter_test.homepage_test_cases.KuwaitHomePageTestCases"/>
             <!--         Header   -->
 
 
@@ -50,17 +53,20 @@
             <class name="sporter_test.productTestCases.JordanProductDetailsTestCases"/>
             <class name="sporter_test.productTestCases.QatarProductDetailsTestCases"/>
             <class name="sporter_test.productTestCases.EgyptProductDetailsTestCases"/>
+            <class name="sporter_test.productTestCases.KuwaitProductsTestCases"/>
             <class name="sporter_test.RecommendedProductsTestCases.KSARecommendedProductTestCases"/>
             <class name="sporter_test.RecommendedProductsTestCases.UAERecommendedProductTestCases"/>
             <class name="sporter_test.RecommendedProductsTestCases.JordanRecommendedProductTestCases"/>
             <class name="sporter_test.RecommendedProductsTestCases.QatarRecommendedProductTestCases"/>
             <class name="sporter_test.RecommendedProductsTestCases.EgyptRecommendedProductTestCases"/>
+            <class name="sporter_test.RecommendedProductsTestCases.KuwaitRecommendedProductsTestCases"/>
             <!--            Register Page-->
             <class name="sporter_test.AccountRegistrationTestCases.EgyptAccountRegistrationTestCases"/>
             <class name="sporter_test.AccountRegistrationTestCases.KSAAccountRegistrationTestCases"/>
             <class name="sporter_test.AccountRegistrationTestCases.UAEAccountRegistrationTestCases"/>
             <class name="sporter_test.AccountRegistrationTestCases.JordanAccountRegistrationTestCases"/>
             <class name="sporter_test.AccountRegistrationTestCases.QatarAccountRegistrationTestCases"/>
+            <class name="sporter_test.AccountRegistrationTestCases.KuwaitAccountRegistrationTestCases"/>
 
             <!--Login-->
             <class name="sporter_test.loginTestCases.EgyptLoginTestCases"/>
@@ -68,6 +74,7 @@
             <class name="sporter_test.loginTestCases.UAELoginTestCases"/>
             <class name="sporter_test.loginTestCases.KSALoginTestCases"/>
             <class name="sporter_test.loginTestCases.QatarLoginTestCases"/>
+            <class name="sporter_test.loginTestCases.KuwaitLoginTestCases"/>
             <!--Forget Password-->
             <class name="sporter_test.forgetPasswordTestCases.QatarForgetPasswordTestCases"/>
             <class name="sporter_test.forgetPasswordTestCases.EgyptForgetPasswordTestCases"/>
@@ -84,6 +91,7 @@
             <class name="sporter_test.cartTestCases.JordanCartTestCases"></class>
             <class name="sporter_test.cartTestCases.EgyptCartTestCases"></class>
             <class name="sporter_test.cartTestCases.QatarCartTestCases"></class>
+            <class name="sporter_test.cartTestCases.KuwaitCartTestCases"></class>
             <!--            Cart Rules-->
 
             <class name="sporter_test.cartRulesTestCases.QatarCartRulesTestCases"></class>
