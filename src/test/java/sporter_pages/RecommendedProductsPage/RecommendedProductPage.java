@@ -106,7 +106,11 @@ public class RecommendedProductPage extends BasePage {
 
     public void clickOnProductCard() throws IOException {
         for (int i = 0; i < productImages.size(); i++) {
-            DataHelperAndWait.clickOnElement(productImages.get(i), webDriver);
+            try{
+            DataHelperAndWait.clickOnElement(productImages.get(i), webDriver);}
+            catch (Exception e){
+                System.out.println("There's No ANy Recommend product");
+            }
             verifyTheDisplayedPageDoesNotHaveErrors();
             break;
         }

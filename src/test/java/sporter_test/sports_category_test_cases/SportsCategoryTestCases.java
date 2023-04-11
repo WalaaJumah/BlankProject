@@ -31,7 +31,7 @@ public class SportsCategoryTestCases extends BaseTest {
         WebElementsAssertion.validateTheCurrentUrlContainsString(sportsCategoryPage.sportUrl, webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:Sports Category- Make sure clicking on the Sports Category from ShopBy Menu Redirect User To CorrectURL", priority = 2)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Category- Make sure clicking on the Sports Category from ShopBy Menu Redirect User To CorrectURL", priority = 2)
     public void verifyClickingOnSportsCategoryFromShopByMenuRedirectUserToCorrectURL() throws IOException {
         SportsCategoryPage sportsCategoryPage=new SportsCategoryPage(webDriver);
         sportsCategoryPage.clickOnSportsFromShopByMenu();
@@ -39,7 +39,7 @@ public class SportsCategoryTestCases extends BaseTest {
         WebElementsAssertion.validateTheCurrentUrlContainsString(sportsCategoryPage.sportsUrl, webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:Sports Category- Make sure clicking on the Sports Category from HomePage Redirect User To CorrectURL", priority = 3)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Category- Make sure clicking on the Sports Category from HomePage Redirect User To CorrectURL", priority = 3)
     public void verifyClickingOnSportsCategoryFromHomePageRedirectUserToCorrectURL() throws IOException {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         HomePage homePage = new HomePage(webDriver);
@@ -86,7 +86,7 @@ public class SportsCategoryTestCases extends BaseTest {
             womensOnlyCategoryPage.navigateToWomenOnlyPage();
         }
     }
-    @Test(groups = {"1.1 Critical Severity"}, description = "{{CountryName}}:Sports Category- Make sure the Sports side Banners is displayed ", priority = 8)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Category- Make sure the Sports side Banners is displayed ", priority = 8)
     public void verifySportsSideBannerIsDisplayed() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         SportsCategoryPage sportsCategoryPage= new SportsCategoryPage(webDriver);
@@ -112,7 +112,7 @@ public class SportsCategoryTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(womensOnlyCategoryPage.getSecondSideBanner(), webDriver);
         womensOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Sports Category- Make sure the Trending in Sports section is displayed correctly", priority = 11)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Category- Make sure the Trending in Sports section is displayed correctly", priority = 11)
     public void verifyTrendingOnSportsSectionAppearsCorrectly() throws IOException {
         SportsCategoryPage sportsCategoryPage = new SportsCategoryPage(webDriver);
         sportsCategoryPage.navigateToSportsPage();
@@ -154,35 +154,35 @@ public class SportsCategoryTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(sportsCategoryPage.getBoxingAndMMACategory(),webDriver);
         sportsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Sports Category- Make sure clicking on the Caps And Hats category works correctly", priority = 17)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Category- Make sure clicking on the Caps And Hats category works correctly", priority = 17)
     public void verifyClickingOnCapsAndHatsCategoryWorksCorrectly() throws IOException {
         SportsCategoryPage sportsCategoryPage = new SportsCategoryPage(webDriver);
         sportsCategoryPage.navigateToSportsPage();
         sportsCategoryPage.clickOnCapsAndHatsCategory();
         sportsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Sports Category- Make sure clicking on the Bags And Backpacks category works correctly", priority = 18)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Category- Make sure clicking on the Bags And Backpacks category works correctly", priority = 18)
     public void verifyClickingOnBagsAndBackpacksCategoryWorksCorrectly() throws IOException {
         SportsCategoryPage sportsCategoryPage = new SportsCategoryPage(webDriver);
         sportsCategoryPage.navigateToSportsPage();
         sportsCategoryPage.clickOnBagsAndBackpacksCategory();
         sportsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Sports Category- Make sure clicking on the Sports Tech category works correctly", priority = 19)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Category- Make sure clicking on the Sports Tech category works correctly", priority = 19)
     public void verifyClickingOnSportsTechCategoryWorksCorrectly() throws IOException {
         SportsCategoryPage sportsCategoryPage = new SportsCategoryPage(webDriver);
         sportsCategoryPage.navigateToSportsPage();
         sportsCategoryPage.clickOnSportsTechCategory();
         sportsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Sports Category- Make sure clicking on the Mens Personal Care category works correctly", priority = 20)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Category- Make sure clicking on the Mens Personal Care category works correctly", priority = 20)
     public void verifyClickingOnMensPersonalCareCategoryWorksCorrectly() throws IOException {
         SportsCategoryPage sportsCategoryPage = new SportsCategoryPage(webDriver);
         sportsCategoryPage.navigateToSportsPage();
         sportsCategoryPage.clickOnMensPersonalCareCategory();
         sportsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Sports Category- Make sure clicking on the Sports category works correctly", priority = 21)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Category- Make sure clicking on the Sports category works correctly", priority = 21)
     public void verifyClickingOnSportsCategoryWorksCorrectly() throws IOException {
         SportsCategoryPage sportsCategoryPage = new SportsCategoryPage(webDriver);
         sportsCategoryPage.navigateToSportsPage();
@@ -217,7 +217,7 @@ public class SportsCategoryTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(sportsCategoryPage.getSportsTechMainCategory(),webDriver);
         sportsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Sports Category- Make sure the Recommended Products section is displayed correctly", priority = 26)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Category- Make sure the Recommended Products section is displayed correctly", priority = 26)
     public void verifyRecommendedProductsSectionAppearsCorrectly() throws IOException {
         SportsCategoryPage sportsCategoryPage = new SportsCategoryPage(webDriver);
         sportsCategoryPage.navigateToSportsPage();

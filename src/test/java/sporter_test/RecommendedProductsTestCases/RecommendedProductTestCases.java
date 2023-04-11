@@ -20,14 +20,14 @@ import java.io.IOException;
 public class RecommendedProductTestCases extends BaseTest {
     String storeCountry;
 
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure the keep shopping button appearing the Recommended products works correctly ", priority = 1)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the keep shopping button appearing the Recommended products works correctly ", priority = 1)
     public void verifyKeepShoppingBtnWorksCorrectly() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.keepShoppingAfterAddingToCart();
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getAddToCartBtn(), webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure the Recommended product pop-up will hide after clicking on the Keep Shopping Button", priority = 2)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Recommended product pop-up will hide after clicking on the Keep Shopping Button", priority = 2)
     public void verifyRecommendedProductsPopUpisHiddenAfterClickingOnTheKeepShoppingBtn() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         RecommendedProductPage recommendedProductpage = new RecommendedProductPage(webDriver);
@@ -35,7 +35,7 @@ public class RecommendedProductTestCases extends BaseTest {
         recommendedProductpage.removeProductFromCart();
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure the view Cart button appearing the Recommended products works correctly ", priority = 3)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the view Cart button appearing the Recommended products works correctly ", priority = 3)
     public void verifyViewCartWorksBtnCorrectly() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.addToCart();
@@ -43,7 +43,7 @@ public class RecommendedProductTestCases extends BaseTest {
         WebElementsAssertion.validateTheCurrentUrlContainsString(productDetailsPage.cartURL, webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure the Recommended product pop-up will hide after clicking on the View Cart Button", priority = 4)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Recommended product pop-up will hide after clicking on the View Cart Button", priority = 4)
     public void verifyRecommendedProductsPopUpisHiddenAfterClickingOnTheViewBtn() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getRemoveItem(), webDriver);
@@ -122,7 +122,7 @@ public class RecommendedProductTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"1.2 High Severity"}, description = "{{CountryName}}: Make sure the clicking on the product card appears in the Recommended product pop-up will display the Product Details Page correctly", priority = 10)
+    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure the clicking on the product card appears in the Recommended product pop-up will display the Product Details Page correctly", priority = 10)
     public void verifyClickingOnProductCardInTheRecommendedPopupWillDisplayThePdp() throws IOException {
         RecommendedProductPage recommendedProductpage = new RecommendedProductPage(webDriver);
         recommendedProductpage.clickOnProductCard();

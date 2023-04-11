@@ -31,7 +31,7 @@ import static org.testng.Assert.assertTrue;
 public class ProductDetailsTestCases extends BaseTest {
     String storeCountry;
 
-    @Test(groups = {"1.1 Critical Severity"}, description = "{{CountryName}}:Make sure the shopper is able to keep the shopping after adding the product to the cart ", priority = 1)
+    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:Make sure the shopper is able to keep the shopping after adding the product to the cart ", priority = 1)
     public void keepShoppingAfterAddingToTheCart() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.keepShoppingAfterAddingToCart();
@@ -49,7 +49,7 @@ public class ProductDetailsTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"1.2 High Severity"}, dependsOnMethods = "verifyOOSMessageIsDisplayed", description = "{{CountryName}}:Make sure the shopper is unable to add out of stock product to the cart", priority = 3)
+    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, dependsOnMethods = "verifyOOSMessageIsDisplayed", description = "{{CountryName}}:Make sure the shopper is unable to add out of stock product to the cart", priority = 3)
     public void verifyInabilityToAddOosProductToTheCart() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         try {
@@ -83,7 +83,7 @@ public class ProductDetailsTestCases extends BaseTest {
 //        WebElementsAssertion.assertionAttributeTrueForElement(productDetailsPage.getQuantityField(),webDriver,"value","1");
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}:Make sure that the customer can submit his review successfully ", priority = 7)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:Make sure that the customer can submit his review successfully ", priority = 7)
     public void verifyAbilityToSubmitTheProductReview() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.selectStarInReview();
@@ -140,7 +140,7 @@ public class ProductDetailsTestCases extends BaseTest {
         Assert.assertNotEquals(currentProductPrice, newProductPrice);
     }
 
-    @Test(groups = {"1.1 Critical Severity"}, description = "{{CountryName}}:Make sure ability to display the bundle and select all options", priority = 13)
+    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Make sure ability to display the bundle and select all options", priority = 13)
     public void verifyAbilityToDisplayBundleAndSelectAllOptions() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayBundle();
@@ -185,7 +185,7 @@ public class ProductDetailsTestCases extends BaseTest {
     }
 
     //      The following Test Cases handle displaying the Mega Menu from Product Page
-    @Test(groups = {"All Smoke Testing Result", "1.4 Low Severity"}, description = "{{CountryName}}:Verify that the ShopBy Menu Is Displayed When Hovering On It From Product Details Page", priority = 17)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:Verify that the ShopBy Menu Is Displayed When Hovering On It From Product Details Page", priority = 17)
     public void verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
@@ -193,7 +193,7 @@ public class ProductDetailsTestCases extends BaseTest {
         megaMenuPage.makeSureToDisplayShopByMenu();
     }
 
-    @Test(groups = {"1.2 High Severity"}, description = "{{CountryName}}:Verify ability to click on Sport Supplements Menu From Product Details Page", priority = 18)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Verify ability to click on Sport Supplements Menu From Product Details Page", priority = 18)
     public void verifyAbilityToClickOnSportSupplementsMenuFromProductDetailsPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
@@ -209,7 +209,7 @@ public class ProductDetailsTestCases extends BaseTest {
 
     }
 
-    @Test(groups = {"1.2 High Severity"}, description = "{{CountryName}}:Verify ability to click on Vitamins And Health Menu From Product Details Page", priority = 19)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Verify ability to click on Vitamins And Health Menu From Product Details Page", priority = 19)
     public void verifyAbilityToClickOnVitaminsAndHealthMenuFromProductDetailsPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         EgyptMegaMenuPage megaMenuPage = new EgyptMegaMenuPage(webDriver);
@@ -227,7 +227,7 @@ public class ProductDetailsTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"1.2 High Severity"}, description = "{{CountryName}}:Verify ability to click on Healthy Food Menu Is Displayed From Product Details Page", priority = 20)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Verify ability to click on Healthy Food Menu Is Displayed From Product Details Page", priority = 20)
     public void verifyAbilityToClickOnHealthyFoodMenuFromProductDetailsPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         MegaMenuPage megaMenuPage = new MegaMenuPage(webDriver);
@@ -242,7 +242,7 @@ public class ProductDetailsTestCases extends BaseTest {
 
     }
 
-    @Test(groups = {"1.2 High Severity"}, description = "{{CountryName}}:Verify ability to click on Sports Menu From Product Details Page", priority = 23)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Verify ability to click on Sports Menu From Product Details Page", priority = 23)
     public void verifyAbilityToClickOnSportsMenuIsDisplayedFromProductDetailsPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         MegaMenuPage megaMenuPage = new MegaMenuPage(webDriver);
@@ -261,7 +261,7 @@ public class ProductDetailsTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"1.1 Critical Severity"}, description = "{{CountryName}}:Verify that the account Profile icon works correctly in PDP", priority = 24)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Verify that the account Profile icon works correctly in PDP", priority = 24)
     public void verifyAccountProfileIconWorksCorrectlyInProductDetailsPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
@@ -290,7 +290,7 @@ public class ProductDetailsTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getProductHeaderBar(), webDriver);
     }
 
-    @Test(groups = {"1.1 Critical Severity"}, description = "{{CountryName}}:Verify that the Add to Cart Button appears in the header Bar in the PDP works correctly ", priority = 28)
+    @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Verify that the Add to Cart Button appears in the header Bar in the PDP works correctly ", priority = 28)
     public void verifyHeaderBarDisplaysCorrectlyInProductDetailsPageWhenScrollingThePage() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         DataHelperAndWait.scrollTo(productDetailsPage.getAddReviewButton(), webDriver);
@@ -299,7 +299,7 @@ public class ProductDetailsTestCases extends BaseTest {
 //        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getRecommendedProductsPopup(), webDriver);
     }
 
-    @Test(groups = {"1.2 High Severity"}, description = "{{CountryName}}:Verify clicking on the By Brand Link appears in Product Name section will redirect the user to correct page ", priority = 29)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Verify clicking on the By Brand Link appears in Product Name section will redirect the user to correct page ", priority = 29)
     public void verifyClickingOnByBrandLinkAppearsInProductNameSectionRedirectUserToCorrectPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
@@ -315,7 +315,7 @@ public class ProductDetailsTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getExpectedDeliveryDateValue(), webDriver);
     }
 
-    @Test(groups = {"1.2 High Severity"}, description = "{{CountryName}}:Verify that the search button works correctly from the PDP", priority = 31)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Verify that the search button works correctly from the PDP", priority = 31)
     public void verifySearchBtnWorksCorrectlyFromPdp() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
@@ -324,7 +324,7 @@ public class ProductDetailsTestCases extends BaseTest {
     }
 
     //TODO: Check the assertion
-    @Test(groups = {"1.2 High Severity"}, description = "{{CountryName}}:Make sure that the next review page button appears in Reviews section works correctly ", priority = 32)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure that the next review page button appears in Reviews section works correctly ", priority = 32)
     public void verifyNextReviewPageBtnAppearsInReviewsSectionWorksCorrectly() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
@@ -334,7 +334,7 @@ public class ProductDetailsTestCases extends BaseTest {
 
     //There's bug here
     //TODO: Check the assertion
-    @Test(groups = {"1.2 High Severity"}, description = "{{CountryName}}:Make sure that the Previous review page button appears in Reviews section works correctly ", priority = 33)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure that the Previous review page button appears in Reviews section works correctly ", priority = 33)
     public void verifyPreviousReviewPageBtnAppearsInReviewsSectionWorksCorrectly() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         DataHelperAndWait.clickOnElement(productDetailsPage.getNextReviewPageBtn(), webDriver);
@@ -342,7 +342,7 @@ public class ProductDetailsTestCases extends BaseTest {
 //        WebElementsAssertion.validateTheCurrentUrlContainsString("p=1",webDriver);
     }
 
-    @Test(groups = {"1.2 High Severity"}, description = "{{CountryName}}:Make sure that the pagination control appears in Reviews section works correctly ", priority = 34)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure that the pagination control appears in Reviews section works correctly ", priority = 34)
     public void verifyPaginationControlAppearsInReviewsSectionWorksCorrectly() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();

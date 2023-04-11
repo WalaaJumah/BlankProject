@@ -34,7 +34,7 @@ public class EgyptVitaminsAndHealthCategoryTestCases extends VitaminsAndHealthCa
         storeCountry = "Egypt";
         countryCode = "20";
     }
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Vitamins & Health Category Appears In MegaMenu Redirect User To CorrectURL", priority = 1)
+    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Vitamins & Health Category Appears In MegaMenu Redirect User To CorrectURL", priority = 1)
     public void verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL() throws IOException {
         EgyptMegaMenuPage megaMenuPage = new EgyptMegaMenuPage(webDriver);
         megaMenuPage.clickOnVitaminsAndHealthMainMenu();
@@ -42,7 +42,7 @@ public class EgyptVitaminsAndHealthCategoryTestCases extends VitaminsAndHealthCa
         WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl, webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Vitamins & Health Category from ShopBy Menu Redirect User To CorrectURL", priority = 2)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Vitamins & Health Category from ShopBy Menu Redirect User To CorrectURL", priority = 2)
     public void verifyClickingOnVitaminsAndHealthCategoryFromShopByMenuRedirectUserToCorrectURL() throws IOException {
         EgyptMegaMenuPage megaMenuPage = new EgyptMegaMenuPage(webDriver);
         megaMenuPage.clickOnVitaminsAndHealthFromShopByMenu();
@@ -93,7 +93,7 @@ public class EgyptVitaminsAndHealthCategoryTestCases extends VitaminsAndHealthCa
             System.out.println("There's only one page in the list");
         }
     }
-    @Test(groups = "All Smoke Testing Result", description = "{{CountryName}}:Vitamins & Health Category Category Page- Make Sure the ability to access all pages inside Sport Supplements Category Page  ", priority = 63)
+    @Test(groups = "1.3 Medium Severity", description = "{{CountryName}}:Vitamins & Health Category Category Page- Make Sure the ability to access all pages inside Sport Supplements Category Page  ", priority = 63)
     public void verifyAbilityToAccessAllPagesInsideVitaminsAndHealthCategoryPage() throws IOException {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);

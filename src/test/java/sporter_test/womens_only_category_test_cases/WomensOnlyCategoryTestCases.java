@@ -33,7 +33,7 @@ public class WomensOnlyCategoryTestCases extends BaseTest {
         WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.womenOnlyUrl, webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure clicking on the Women's Only Category from ShopBy Menu Redirect User To CorrectURL", priority = 2)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure clicking on the Women's Only Category from ShopBy Menu Redirect User To CorrectURL", priority = 2)
     public void verifyClickingOnWomenOnlyCategoryFromShopByMenuRedirectUserToCorrectURL() throws IOException {
         MegaMenuPage megaMenuPage= new MegaMenuPage(webDriver);
         megaMenuPage.clickOnWomensOnlyFromShopByMenu();
@@ -96,7 +96,7 @@ public class WomensOnlyCategoryTestCases extends BaseTest {
             womensOnlyCategoryPage.navigateToWomenOnlyPage();
         }
     }
-    @Test(groups = {"1.1 Critical Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure the Women's Only side Banners is displayed ", priority = 9)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure the Women's Only side Banners is displayed ", priority = 9)
     public void verifyWomenOnlySideBannerIsDisplayed() {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         womensOnlyCategoryPage.navigateToWomenOnlyPage();
@@ -231,7 +231,7 @@ public class WomensOnlyCategoryTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(womensOnlyCategoryPage.getPersonalCareCategory(), webDriver);
         womensOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure the Supplements For Her section have at least a product", priority = 26)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure the Supplements For Her section have at least a product", priority = 26)
     public void verifyTheSupplementsForHerHaveAtLeastAProduct() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         womensOnlyCategoryPage.navigateToWomenOnlyPage();
@@ -239,55 +239,55 @@ public class WomensOnlyCategoryTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getSupplementForHerSection(),webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure the Women's Vitamins section have at least a product", priority = 27)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure the Women's Vitamins section have at least a product", priority = 27)
     public void verifyTheWomenVitaminsHaveAtLeastAProduct() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         womensOnlyCategoryPage.navigateToWomenOnlyPage();
         DataHelperAndWait.waitForTime(1500);
         WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getWomensVitaminsSection(),webDriver);
     }
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure the Workout In Style section have at least a product", priority = 28)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure the Workout In Style section have at least a product", priority = 28)
     public void verifyTheWorkOutInStyleAtLeastAProduct() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         womensOnlyCategoryPage.navigateToWomenOnlyPage();
         DataHelperAndWait.waitForTime(1500);
         WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getWorkoutInStyleSection(),webDriver);
     }
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure the Lady-Friendly Snacks & Food section have at least a product", priority = 29)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure the Lady-Friendly Snacks & Food section have at least a product", priority = 29)
     public void verifyTheLadyFriendlySnacksFoodAtLeastAProduct() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         womensOnlyCategoryPage.navigateToWomenOnlyPage();
         DataHelperAndWait.waitForTime(1500);
         WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getLadyFriendlySnacksAndFoodSection(),webDriver);
     }
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure the Female Gallery section appears correctly", priority = 30)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure the Female Gallery section appears correctly", priority = 30)
     public void verifyTheFemaleGallerySectionAppearsCorrectly() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         womensOnlyCategoryPage.navigateToWomenOnlyPage();
         WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getFemaleGallerySection(),webDriver);
     }
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure clicking On View All Button from the Supplements For Her section works Correctly", priority = 31)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure clicking On View All Button from the Supplements For Her section works Correctly", priority = 31)
     public void verifyClickingOnViewAllBtnFromSupplementsForHerSectionWorksCorrectly() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         womensOnlyCategoryPage.navigateToWomenOnlyPage();
         DataHelperAndWait.clickOnElement(womensOnlyCategoryPage.getViewAllInSupplementForHerSection(),webDriver);
         womensOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
   }
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure clicking On View All Button from the Workout In Style section works Correctly", priority = 32)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure clicking On View All Button from the Workout In Style section works Correctly", priority = 32)
     public void verifyClickingOnViewAllBtnFromWorkoutInStyleSectionWorksCorrectly() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         womensOnlyCategoryPage.navigateToWomenOnlyPage();
         DataHelperAndWait.clickOnElement(womensOnlyCategoryPage.getViewAllInWorkoutInStyleSection(),webDriver);
         womensOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
   }
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure clicking On View All Button from the Women's Vitamins section works Correctly", priority = 33)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure clicking On View All Button from the Women's Vitamins section works Correctly", priority = 33)
     public void verifyClickingOnViewAllBtnFromnWomensVitaminsSectionWorksCorrectly() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         womensOnlyCategoryPage.navigateToWomenOnlyPage();
         DataHelperAndWait.clickOnElement(womensOnlyCategoryPage.getViewAllInWomensVitaminsSection(),webDriver);
         womensOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
   }
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure clicking On View All Button from the Lady Friendly Snacks And Food section works Correctly", priority = 34)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure clicking On View All Button from the Lady Friendly Snacks And Food section works Correctly", priority = 34)
     public void verifyClickingOnViewAllBtnFromnLadyFriendlySnacksAndFoodSectionWorksCorrectly() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         womensOnlyCategoryPage.navigateToWomenOnlyPage();
