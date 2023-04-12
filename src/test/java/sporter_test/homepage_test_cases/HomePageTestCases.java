@@ -139,6 +139,7 @@ public class HomePageTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure the Top Selling Stacks section is displayed ", priority = 15)
     public void verifyTopSellingStacksSectionAreDisplayed() {
         HomePage homePage = new HomePage(webDriver);
+        homePage.navigateToHomePage();
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getTopSellingStacksHeader(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getTopSellingStacksSections(), webDriver);
     }
