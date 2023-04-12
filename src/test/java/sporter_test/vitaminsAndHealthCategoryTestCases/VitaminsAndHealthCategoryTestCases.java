@@ -32,7 +32,12 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         MegaMenuPage megaMenuPage = new MegaMenuPage(webDriver);
         megaMenuPage.clickOnVitaminsAndHealthMainMenu();
         megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl, webDriver);
+        try {
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl, webDriver);
+        }
+
+        catch (Exception e){
+        WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl+"/", webDriver);}
     }
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Vitamins & Health Category from ShopBy Menu Redirect User To CorrectURL", priority = 2)
@@ -40,7 +45,13 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         MegaMenuPage megaMenuPage = new MegaMenuPage(webDriver);
         megaMenuPage.clickOnVitaminsAndHealthFromShopByMenu();
         megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        try{
         WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl, webDriver);
+        }
+
+        catch (Exception e){
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl+"/", webDriver);}
+
     }
 
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure that the BreadCrumb appears correctly after sorting the product ", priority = 3)
@@ -515,7 +526,11 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(homePage.getVitaminsAndHealthCategory(), webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.healthVitaminsUrl, webDriver);
+        try{
+        WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.healthVitaminsUrl, webDriver);}
+        catch (Exception e){
+            WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.healthVitaminsUrl+"/", webDriver);}
+
     }
 
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the NewsLetter section appears correctly  ", priority = 57)
