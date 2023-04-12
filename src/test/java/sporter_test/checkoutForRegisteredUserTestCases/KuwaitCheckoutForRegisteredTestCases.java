@@ -47,7 +47,7 @@ public class KuwaitCheckoutForRegisteredTestCases extends  CheckoutForRegistered
 //        h.switchToKuwaitCountryInStg();
 //        this.CloseInitialDialog();
     }
-    @Test(groups = { "All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 9)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 9)
     public void verifyOrderTotalCalculationInCartPageWorksCorrectly() {
         CartPage cartPage = new CartPage(webDriver);
         DecimalFormat df = new DecimalFormat("0.00");
@@ -112,7 +112,7 @@ public class KuwaitCheckoutForRegisteredTestCases extends  CheckoutForRegistered
 //        System.out.println("The order Number= "+orderNumber);
         //        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure ability to select the Express Delivery 3_5 Days Shipping Method With Valid Credit Card Payment Method", priority = 28)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the Express Delivery 3_5 Days Shipping Method With Valid Credit Card Payment Method", priority = 28)
     public void verifyAbilityToSelectTheExpressDelivery3_5DaysShippingMethodWithValidCreditCardPaymentMethod() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
@@ -141,7 +141,7 @@ public class KuwaitCheckoutForRegisteredTestCases extends  CheckoutForRegistered
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
     }
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure ability to select the Express Delivery 3_5 Shipping Method With COD Payment Method correctly", priority = 29)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the Express Delivery 3_5 Shipping Method With COD Payment Method correctly", priority = 29)
     public void verifyAbilityToSelectTheExpressDelivery3_5ShippingMethodWithCODPaymentMethod() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);

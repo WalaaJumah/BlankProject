@@ -31,14 +31,14 @@ import static org.testng.Assert.assertTrue;
 public class ProductDetailsTestCases extends BaseTest {
     String storeCountry;
 
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:Make sure the shopper is able to keep the shopping after adding the product to the cart ", priority = 1)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure the shopper is able to keep the shopping after adding the product to the cart ", priority = 1)
     public void keepShoppingAfterAddingToTheCart() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.keepShoppingAfterAddingToCart();
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getAddToCartBtn(), webDriver);
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure the out of stock message appears when displaying out of stock product ", priority = 2)
+    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"}, description = "{{CountryName}}:Make sure the out of stock message appears when displaying out of stock product ", priority = 2)
     public void verifyOOSMessageIsDisplayed() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         try {

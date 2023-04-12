@@ -22,7 +22,7 @@ import java.io.IOException;
 public class LoginTestCases extends BaseTest {
     String storeCountry;
 
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Ability to access login page From Account profile icon", priority = 1)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Ability to access login page From Account profile icon", priority = 1)
     public void verifyAbilityToAccessNewAccountRegistrationScreen() {
         HeaderSection header = new HeaderSection(webDriver);
         LoginPage loginPage = new LoginPage(webDriver);
@@ -184,7 +184,7 @@ public class LoginTestCases extends BaseTest {
     }
 
     //TODO: There's a bug here & we will revisit it after fixing: https://sporter1.atlassian.net/browse/NS-56
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:  Verify ability to login using FaceBook account from FaceBook Option appearing in Account Menu", priority = 15)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:  Verify ability to login using FaceBook account from FaceBook Option appearing in Account Menu", priority = 15)
     public void verifyAbilityToSignInUsingFaceBookOptionAppearsInAccountMenu() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         HeaderSection header = new HeaderSection(webDriver);

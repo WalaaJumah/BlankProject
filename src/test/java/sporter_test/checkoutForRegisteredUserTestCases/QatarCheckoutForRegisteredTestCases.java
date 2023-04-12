@@ -40,7 +40,7 @@ public class QatarCheckoutForRegisteredTestCases extends CheckoutForRegisteredTe
         }
         storeCountry="Qatar";
         countryCode="974";}
-    @Test(groups = { "All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 9)
+    @Test(groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 9)
     public void verifyOrderTotalCalculationInCartPageWorksCorrectly() {
         CartPage cartPage = new CartPage(webDriver);
         DecimalFormat df = new DecimalFormat("0.00");
@@ -165,7 +165,7 @@ public class QatarCheckoutForRegisteredTestCases extends CheckoutForRegisteredTe
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCreditCardPaymentMethod(),webDriver);
     }
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure ability to select the 4-5 Business Days Super Express Shipping Method With COD Payment Method correctly", priority = 27)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the 4-5 Business Days Super Express Shipping Method With COD Payment Method correctly", priority = 27)
     public void verifyAbilityToSelectThe4_5BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod() {
         QatarCheckoutForRegisteredPage qa= new QatarCheckoutForRegisteredPage(webDriver);
         qa.AddToCartAndAccessShippingMethodsPageForSavedAddress();
@@ -292,7 +292,7 @@ public class QatarCheckoutForRegisteredTestCases extends CheckoutForRegisteredTe
         orderNumberCOD= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
         System.out.println(orderNumberCOD);
     }
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure ability to select the 4_5 Business Days Super Express Shipping Method With Valid Credit Card Payment Method", priority = 31)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the 4_5 Business Days Super Express Shipping Method With Valid Credit Card Payment Method", priority = 31)
     public void verifyAbilityToSelectThe4_5BusinessDaysSuperExpressShippingMethodWithValidCreditCardPaymentMethod() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         QatarCheckoutForRegisteredPage qa= new QatarCheckoutForRegisteredPage(webDriver);

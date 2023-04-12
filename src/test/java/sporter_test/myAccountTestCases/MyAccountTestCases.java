@@ -26,20 +26,29 @@ public class MyAccountTestCases extends BaseTest {
     String storeCountry;
     String countryCode;
 
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Verify all My account options appear correctly ", priority = 1)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Verify all My account options appear correctly ", priority = 1)
     public void verifyAllMyAccountOptionsAppearCorrectly() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
         loginPage.navigateToLoginPage();
         loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword"));
         DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
-        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.waitForTime(2000);
+        try{
         DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
 //        DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyAccountOption(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyOrdersOption(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyRewardsOption(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getLogoutOption(), webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getLogoutOption(), webDriver);}
+        catch (Exception e){
+            DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
+//        DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
+            WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyAccountOption(), webDriver);
+            WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyOrdersOption(), webDriver);
+            WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyRewardsOption(), webDriver);
+            WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getLogoutOption(), webDriver);
+        }
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Verify clicking on My Account Option redirect the user to the correct Page ", priority = 2)
@@ -150,7 +159,7 @@ public class MyAccountTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getGeneralSubscriptionOption(), webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: NewsLetter Subscription screen: Verify ability to subscribe with the Sporter NewsLetter correctly  ", priority = 13)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: NewsLetter Subscription screen: Verify ability to subscribe with the Sporter NewsLetter correctly  ", priority = 13)
     public void verifyAbilityToSubscribeWNewsLetterSubscriptionPage() {
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
         myAccountPage.navigateToNewsLetterSubscriptionPage();

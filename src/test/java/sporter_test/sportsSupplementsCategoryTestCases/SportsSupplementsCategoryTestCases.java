@@ -30,7 +30,11 @@ public class SportsSupplementsCategoryTestCases extends BaseTest {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         sportsSupplementsCategoryPage.clickOnSportsSupplementMainMenu();
         sportsSupplementsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.sportSupplementsUrl, webDriver);
+        try{
+            WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.sportSupplementsUrl, webDriver);}
+        catch (Exception e){
+            WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.sportSupplementsUrl, webDriver);
+        }
     }
 
     //TODO: Needs to recheck on KSA after solve the webelement ID in Arabic By Moamen
@@ -39,7 +43,12 @@ public class SportsSupplementsCategoryTestCases extends BaseTest {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         sportsSupplementsCategoryPage.clickOnSportsSupplementFromShopByMenu();
         sportsSupplementsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        try{
         WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.sportSupplementsUrl, webDriver);
+    }
+        catch (Exception e){
+        WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.sportSupplementsUrl, webDriver);
+    }
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Supplements Category- Make sure clicking on the Sports Supplements Category from HomePage Redirect User To CorrectURL", priority = 4)
@@ -73,7 +82,7 @@ public class SportsSupplementsCategoryTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.4 Low Severity"}, description = "{{CountryName}}:Sports Supplements Category- Make sure that the customer can navigate to the home page using the BreadCrumb ", priority = 7)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Supplements Category- Make sure that the customer can navigate to the home page using the BreadCrumb ", priority = 7)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumb() {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         sportsSupplementsCategoryPage.navigateToSportsSupplementPage();

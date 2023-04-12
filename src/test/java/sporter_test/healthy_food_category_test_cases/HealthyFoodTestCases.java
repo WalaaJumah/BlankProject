@@ -52,7 +52,12 @@ public class HealthyFoodTestCases extends BaseTest {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(homePage.getHealthyFoodCategory(), webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.healthyFoodsUrl, webDriver);
+        try {
+            WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.healthyFoodsUrl, webDriver);
+        }
+        catch (Exception e){
+            WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.healthyFoodsUrl, webDriver);
+        }
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure the Horizontal Banners appear correctly", priority = 5)
@@ -79,7 +84,7 @@ public class HealthyFoodTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.4 Low Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure that the customer can navigate to the home page using the BreadCrumb ", priority = 7)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure that the customer can navigate to the home page using the BreadCrumb ", priority = 7)
     public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumb() {
         HealthyFoodPage healthyFoodPage = new HealthyFoodPage(webDriver);
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
@@ -207,7 +212,7 @@ public class HealthyFoodTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getSportsSupplementsCategory(), webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure ability to navigate to the home page by clicking on the sporter logo  ", priority = 18)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure ability to navigate to the home page by clicking on the sporter logo  ", priority = 18)
     public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromPdp() throws IOException {
         HealthyFoodPage healthyFoodPage = new HealthyFoodPage(webDriver);
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);

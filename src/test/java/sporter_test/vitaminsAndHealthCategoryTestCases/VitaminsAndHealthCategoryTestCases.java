@@ -32,7 +32,12 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         MegaMenuPage megaMenuPage = new MegaMenuPage(webDriver);
         megaMenuPage.clickOnVitaminsAndHealthMainMenu();
         megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl, webDriver);
+        try {
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl, webDriver);
+        }
+
+        catch (Exception e){
+        WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl+"/", webDriver);}
     }
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Vitamins & Health Category from ShopBy Menu Redirect User To CorrectURL", priority = 2)
@@ -40,7 +45,13 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         MegaMenuPage megaMenuPage = new MegaMenuPage(webDriver);
         megaMenuPage.clickOnVitaminsAndHealthFromShopByMenu();
         megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        try{
         WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl, webDriver);
+        }
+
+        catch (Exception e){
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl+"/", webDriver);}
+
     }
 
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure that the BreadCrumb appears correctly after sorting the product ", priority = 3)
@@ -153,7 +164,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         vitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Vitamins A_Z Category redirect the user to the correct page", priority = 14)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Vitamins A_Z Category redirect the user to the correct page", priority = 14)
     public void verifyClickingOnTheVitaminsA_ZCategoryRedirectTheUserToCorrectPage() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
@@ -162,7 +173,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         vitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Minerals Category redirect the user to the correct page", priority = 15)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Minerals Category redirect the user to the correct page", priority = 15)
     public void verifyClickingOnTheMineralsCategoryRedirectTheUserToCorrectPage() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
@@ -180,7 +191,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         vitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Super Foods Category redirect the user to the correct page", priority = 17)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Super Foods Category redirect the user to the correct page", priority = 17)
     public void verifyClickingOnTheSuperFoodCategoryRedirectTheUserToCorrectPage() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
@@ -189,7 +200,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         vitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Collagen Category redirect the user to the correct page", priority = 18)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Collagen Category redirect the user to the correct page", priority = 18)
     public void verifyClickingOnTheCollagenCategoryRedirectTheUserToCorrectPage() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
@@ -270,7 +281,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         vitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Brain Support Category redirect the user to the correct page", priority = 27)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Brain Support Category redirect the user to the correct page", priority = 27)
     public void verifyClickingOnTheBrainSupportCategoryRedirectTheUserToCorrectPage() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
@@ -279,7 +290,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         vitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Detox And Liver Support Category redirect the user to the correct page", priority = 28)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Detox And Liver Support Category redirect the user to the correct page", priority = 28)
     public void verifyClickingOnTheDetoxAndLiverSupportCategoryRedirectTheUserToCorrectPage() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
@@ -288,7 +299,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         vitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Digestive Support Category redirect the user to the correct page", priority = 29)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Digestive Support Category redirect the user to the correct page", priority = 29)
     public void verifyClickingOnTheDigestiveSupportCategoryRedirectTheUserToCorrectPage() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
@@ -515,7 +526,11 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(homePage.getVitaminsAndHealthCategory(), webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.healthVitaminsUrl, webDriver);
+        try{
+        WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.healthVitaminsUrl, webDriver);}
+        catch (Exception e){
+            WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.healthVitaminsUrl+"/", webDriver);}
+
     }
 
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the NewsLetter section appears correctly  ", priority = 57)

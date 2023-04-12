@@ -32,7 +32,7 @@ public class HomePageTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getPreviousArrowInHomePageRotatingSlider(), webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the pagination control appears on the HomePage rotating slider is displayed", priority = 5)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the pagination control appears on the HomePage rotating slider is displayed", priority = 5)
     public void verifyPaginationControlOnHomePageRotatingSliderIsDisplayed() {
         HomePage homePage = new HomePage(webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getHomePageRotatingSliderPagingControl(), webDriver);
@@ -53,7 +53,7 @@ public class HomePageTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure the HomePage side Banners is displayed ", priority = 7)
+    @Test(groups = { "1.2 High Severity"}, description = "{{CountryName}}: Make sure the HomePage side Banners is displayed ", priority = 7)
     public void verifyHomePageSideBannerIsDisplayed() {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
@@ -100,7 +100,7 @@ public class HomePageTestCases extends BaseTest {
         homePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure the Shop By Category section is displayed ", priority = 12)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Shop By Category section is displayed ", priority = 12)
     public void verifyShopByCategoryIsDisplayed() {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
@@ -161,7 +161,7 @@ public class HomePageTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getTopSellerSections(), webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that all links appear correctly in the Top Sellers section ", priority = 18)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that all links appear correctly in the Top Sellers section ", priority = 18)
     public void verifyAllLinksInTopSellersSectionAreDisplayed() {
         HomePage homePage = new HomePage(webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getAllLinkInTopSellers(), webDriver);
@@ -224,7 +224,7 @@ public class HomePageTestCases extends BaseTest {
     }
 
     //ToDo:Needs to recheck
-    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that previous and next button in the New Arrivals Section works correctly", priority = 36)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that previous and next button in the New Arrivals Section works correctly", priority = 36)
     public void verifyPreviousAndNextBtnInNewArrivalsSectionWorksCorrectly() {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();

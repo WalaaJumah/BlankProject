@@ -135,7 +135,7 @@ public class WomensOnlyCategoryTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(womensOnlyCategoryPage.getWomensDailyVitaminsCategory(), webDriver);
         womensOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-        @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure clicking on the Lady-Friendly Snacks & Food Category redirect the user to the correct page", priority = 14)
+        @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure clicking on the Lady-Friendly Snacks & Food Category redirect the user to the correct page", priority = 14)
     public void verifyClickingOnTheLadyFriendlySnacksFoodCategoryRedirectTheUserToCorrectPage() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         womensOnlyCategoryPage.navigateToWomenOnlyPage();
@@ -143,7 +143,7 @@ public class WomensOnlyCategoryTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(womensOnlyCategoryPage.getLadyFriendlySnacksAndFoodCategory(), webDriver);
         womensOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-        @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure clicking on the Makeup & Beauty Category redirect the user to the correct page", priority = 15)
+        @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure clicking on the Makeup & Beauty Category redirect the user to the correct page", priority = 15)
     public void verifyClickingOnTheMakeupAndBeautyCategoryRedirectTheUserToCorrectPage() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         womensOnlyCategoryPage.navigateToWomenOnlyPage();
@@ -175,7 +175,7 @@ public class WomensOnlyCategoryTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(womensOnlyCategoryPage.getMoodSupportCategory(), webDriver);
         womensOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-        @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure clicking on the Detox & cleanse Category redirect the user to the correct page", priority = 19)
+        @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure clicking on the Detox & cleanse Category redirect the user to the correct page", priority = 19)
     public void verifyClickingOnTheDetoxAndCleanseCategoryRedirectTheUserToCorrectPage() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         womensOnlyCategoryPage.navigateToWomenOnlyPage();
@@ -183,7 +183,7 @@ public class WomensOnlyCategoryTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(womensOnlyCategoryPage.getDetoxAndCleanseCategory(), webDriver);
         womensOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-        @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure clicking on the PMS Relief Category redirect the user to the correct page", priority = 20)
+        @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure clicking on the PMS Relief Category redirect the user to the correct page", priority = 20)
     public void verifyClickingOnThePMSReliefCategoryRedirectTheUserToCorrectPage() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         womensOnlyCategoryPage.navigateToWomenOnlyPage();
@@ -199,7 +199,7 @@ public class WomensOnlyCategoryTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(womensOnlyCategoryPage.getEnergyAndEnduranceCategory(), webDriver);
         womensOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-        @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure clicking on the Prenatal Care Category redirect the user to the correct page", priority = 22)
+        @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure clicking on the Prenatal Care Category redirect the user to the correct page", priority = 22)
     public void verifyClickingOnThePrenatalCareCategoryRedirectTheUserToCorrectPage() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         womensOnlyCategoryPage.navigateToWomenOnlyPage();
@@ -207,7 +207,7 @@ public class WomensOnlyCategoryTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(womensOnlyCategoryPage.getPrenatalCareCategory(), webDriver);
         womensOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-        @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure clicking on the Muscle And Weight Gain Category redirect the user to the correct page", priority = 23)
+        @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure clicking on the Muscle And Weight Gain Category redirect the user to the correct page", priority = 23)
     public void verifyClickingOnTheMuscleAndWeightGainCategoryRedirectTheUserToCorrectPage() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         womensOnlyCategoryPage.navigateToWomenOnlyPage();

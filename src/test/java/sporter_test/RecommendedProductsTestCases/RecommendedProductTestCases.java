@@ -27,7 +27,7 @@ public class RecommendedProductTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getAddToCartBtn(), webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Recommended product pop-up will hide after clicking on the Keep Shopping Button", priority = 2)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Recommended product pop-up will hide after clicking on the Keep Shopping Button", priority = 2)
     public void verifyRecommendedProductsPopUpisHiddenAfterClickingOnTheKeepShoppingBtn() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         RecommendedProductPage recommendedProductpage = new RecommendedProductPage(webDriver);
@@ -43,7 +43,7 @@ public class RecommendedProductTestCases extends BaseTest {
         WebElementsAssertion.validateTheCurrentUrlContainsString(productDetailsPage.cartURL, webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Recommended product pop-up will hide after clicking on the View Cart Button", priority = 4)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Recommended product pop-up will hide after clicking on the View Cart Button", priority = 4)
     public void verifyRecommendedProductsPopUpisHiddenAfterClickingOnTheViewBtn() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getRemoveItem(), webDriver);
