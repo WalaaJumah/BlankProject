@@ -39,7 +39,11 @@ public class EgyptVitaminsAndHealthCategoryTestCases extends VitaminsAndHealthCa
         EgyptMegaMenuPage megaMenuPage = new EgyptMegaMenuPage(webDriver);
         megaMenuPage.clickOnVitaminsAndHealthMainMenu();
         megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl, webDriver);
+        try {
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl, webDriver);
+        }
+        catch (Exception e){
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl+"/", webDriver);}
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Vitamins & Health Category from ShopBy Menu Redirect User To CorrectURL", priority = 2)
@@ -47,7 +51,11 @@ public class EgyptVitaminsAndHealthCategoryTestCases extends VitaminsAndHealthCa
         EgyptMegaMenuPage megaMenuPage = new EgyptMegaMenuPage(webDriver);
         megaMenuPage.clickOnVitaminsAndHealthFromShopByMenu();
         megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl, webDriver);
+        try {
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl, webDriver);
+        }
+        catch (Exception e){
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl+"/", webDriver);}
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category Page- Make sure that the Result label and its value appear correctly ", priority = 59)
     public void verifyResultFieldAndItsVaLueAppearInTheVitaminsAndHealthCategoryPage() {

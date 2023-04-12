@@ -30,7 +30,11 @@ public class SportsSupplementsCategoryTestCases extends BaseTest {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         sportsSupplementsCategoryPage.clickOnSportsSupplementMainMenu();
         sportsSupplementsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.sportSupplementsUrl, webDriver);
+        try{
+            WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.sportSupplementsUrl, webDriver);}
+        catch (Exception e){
+            WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.sportSupplementsUrl, webDriver);
+        }
     }
 
     //TODO: Needs to recheck on KSA after solve the webelement ID in Arabic By Moamen
@@ -39,7 +43,12 @@ public class SportsSupplementsCategoryTestCases extends BaseTest {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         sportsSupplementsCategoryPage.clickOnSportsSupplementFromShopByMenu();
         sportsSupplementsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        try{
         WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.sportSupplementsUrl, webDriver);
+    }
+        catch (Exception e){
+        WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.sportSupplementsUrl, webDriver);
+    }
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:Sports Supplements Category- Make sure clicking on the Sports Supplements Category from HomePage Redirect User To CorrectURL", priority = 4)
