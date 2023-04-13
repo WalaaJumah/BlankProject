@@ -51,16 +51,25 @@ public class MyAccountTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Verify clicking on My Account Option redirect the user to the correct Page ", priority = 2)
+    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Verify clicking on My Account Option redirect the user to the correct Page ", priority = 2)
     public void verifyClickingOnMyAccountOptionsWorksCorrectly() {
         LoginPage loginPage = new LoginPage(webDriver);
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
+        try{
         myAccountPage.navigateToHomePage();
-        DataHelperAndWait.waitForTime(1500);
+        DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
 //        DataHelperAndWait.hoverOnElementAndClick(myAccountPage.getAccountProfileIcon(), webDriver);
         DataHelperAndWait.clickOnElement(myAccountPage.getMyAccountOption(), webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getMyAccountURL(), webDriver);
+        WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getMyAccountURL(), webDriver);}
+        catch (Exception e){
+            myAccountPage.navigateToHomePage();
+            DataHelperAndWait.waitForTime(2000);
+            DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
+//        DataHelperAndWait.hoverOnElementAndClick(myAccountPage.getAccountProfileIcon(), webDriver);
+            DataHelperAndWait.clickOnElement(myAccountPage.getMyAccountOption(), webDriver);
+            WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getMyAccountURL(), webDriver);
+        }
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Verify clicking on My Orders Option redirect the user to the correct Page ", priority = 3)

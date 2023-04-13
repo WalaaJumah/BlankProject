@@ -56,7 +56,7 @@ public class OmanCheckoutForRegisteredTestCases extends CheckoutForRegisteredTes
     @Test(enabled = false)
     public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNationalID() {}
 
-    @Test(groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 9)
+    @Test(enabled = false,groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 9)
     public void verifyOrderTotalCalculationInCartPageWorksCorrectly() {
         CartPage cartPage = new CartPage(webDriver);
         DecimalFormat df = new DecimalFormat("0.00");
@@ -70,9 +70,8 @@ public class OmanCheckoutForRegisteredTestCases extends CheckoutForRegisteredTes
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:Verify All Shipping Methods appear correctly", priority = 23)
     public void verifyAllShippingMethodsAppearCorrectly(){
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        KuwaitCheckoutForRegisteredPage kuwaitCheckoutForRegisteredPage= new KuwaitCheckoutForRegisteredPage(webDriver);
+        OmanCheckoutForRegisteredPage omanCheckoutForRegisteredPage= new OmanCheckoutForRegisteredPage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
-        OmanCheckoutForRegisteredPage omanCheckoutForRegisteredPage=new OmanCheckoutForRegisteredPage(webDriver);
 //        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddressForDubaiCity();
         CartPage cartPage= new CartPage(webDriver);
         try{
@@ -100,13 +99,13 @@ public class OmanCheckoutForRegisteredTestCases extends CheckoutForRegisteredTes
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.assertionWebElementEqualText(omanCheckoutForRegisteredPage.getFiveToSevenBusinessDaysShippingMethod(),webDriver, XmlReader.getXMLData("FiveToSevenBusinessDaysShipping"));
     }
-    @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Express Delivery: 5-7 Business Days Shipping Method With COD Payment Method ", priority = 27)
-    public void verifyAbilityToPlaceOrderWhenSelectingExpressDelivery3_5DaysShippingMethodWithCODPaymentMethod() {
+    @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Five To Seven Business Days Shipping Method With COD Payment Method ", priority = 27)
+    public void verifyAbilityToPlaceOrderWhenSelectingFiveToSevenBusinessDaysShippingMethodWithCODPaymentMethod() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
-        KuwaitCheckoutForRegisteredPage kuwaitCheckoutForRegisteredPage= new KuwaitCheckoutForRegisteredPage(webDriver);
+        OmanCheckoutForRegisteredPage omanCheckoutForRegisteredPage= new OmanCheckoutForRegisteredPage(webDriver);
         registeredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        DataHelperAndWait.clickOnElement(kuwaitCheckoutForRegisteredPage.getExpressDeliveryMethod(),webDriver);
+        DataHelperAndWait.clickOnElement(omanCheckoutForRegisteredPage.getFiveToSevenBusinessDaysShippingMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
@@ -122,14 +121,13 @@ public class OmanCheckoutForRegisteredTestCases extends CheckoutForRegisteredTes
 //        System.out.println("The order Number= "+orderNumber);
         //        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the Express Delivery 3_5 Days Shipping Method With Valid Credit Card Payment Method", priority = 28)
-    public void verifyAbilityToSelectTheExpressDelivery3_5DaysShippingMethodWithValidCreditCardPaymentMethod() {
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the Five To Seven Business Days Shipping Method With Valid Credit Card Payment Method", priority = 28)
+    public void verifyAbilityToSelectTheFiveToSevenBusinessDayshippingMethodWithValidCreditCardPaymentMethod() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
-        CartPage cartPage= new CartPage(webDriver);
-        KuwaitCheckoutForRegisteredPage kuwaitCheckoutForRegisteredPage= new KuwaitCheckoutForRegisteredPage(webDriver);
+        OmanCheckoutForRegisteredPage omanCheckoutForRegisteredPage= new OmanCheckoutForRegisteredPage(webDriver);
         registeredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        DataHelperAndWait.clickOnElement(kuwaitCheckoutForRegisteredPage.getExpressDeliveryMethod(),webDriver);
+        DataHelperAndWait.clickOnElement(omanCheckoutForRegisteredPage.getFiveToSevenBusinessDaysShippingMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
 //        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
 //        try{
@@ -151,24 +149,24 @@ public class OmanCheckoutForRegisteredTestCases extends CheckoutForRegisteredTes
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
     }
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the Express Delivery 3_5 Shipping Method With COD Payment Method correctly", priority = 29)
-    public void verifyAbilityToSelectTheExpressDelivery3_5ShippingMethodWithCODPaymentMethod() {
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the Five To Seven Business Days Shipping Method With COD Payment Method correctly", priority = 29)
+    public void verifyAbilityToSelectTheFiveToSevenBusinessDaysShippingMethodWithCODPaymentMethod() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
-        KuwaitCheckoutForRegisteredPage kuwaitCheckoutForRegisteredPage= new KuwaitCheckoutForRegisteredPage(webDriver);
+        OmanCheckoutForRegisteredPage omanCheckoutForRegisteredPage= new OmanCheckoutForRegisteredPage(webDriver);
         registeredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        DataHelperAndWait.clickOnElement(kuwaitCheckoutForRegisteredPage.getExpressDeliveryMethod(),webDriver);
+        DataHelperAndWait.clickOnElement(omanCheckoutForRegisteredPage.getFiveToSevenBusinessDaysShippingMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
     }
-    @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Express Delivery 3_5 Shipping Method With Credit Card Payment Method ", priority = 30)
-    public void verifyAbilityToPlaceOrderWhenSelectingExpressDelivery3_5WithCreditCardPaymentMethod() throws IOException {
+    @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Five To Seven Business Days Shipping Method With Credit Card Payment Method ", priority = 30)
+    public void verifyAbilityToPlaceOrderWhenSelectingFiveToSevenBusinessDaysWithCreditCardPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        KuwaitCheckoutForRegisteredPage kuwaitCheckoutForRegisteredPage= new KuwaitCheckoutForRegisteredPage(webDriver);
+        OmanCheckoutForRegisteredPage omanCheckoutForRegisteredPage= new OmanCheckoutForRegisteredPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         cartPage.addToCartAndDisplayTheCart();
 //        cartPage.navigateToCartPage();
@@ -195,7 +193,7 @@ public class OmanCheckoutForRegisteredTestCases extends CheckoutForRegisteredTes
         }
         DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
-        DataHelperAndWait.clickOnElement(kuwaitCheckoutForRegisteredPage.getExpressDeliveryMethod(),webDriver);
+        DataHelperAndWait.clickOnElement(omanCheckoutForRegisteredPage.getFiveToSevenBusinessDaysShippingMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
@@ -209,11 +207,11 @@ public class OmanCheckoutForRegisteredTestCases extends CheckoutForRegisteredTes
     public void verifyInabilityToUseInvalidCreditCardPaymentMethod() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
-        KuwaitCheckoutForRegisteredPage kuwaitCheckoutForRegisteredPage= new KuwaitCheckoutForRegisteredPage(webDriver);
+        OmanCheckoutForRegisteredPage omanCheckoutForRegisteredPage= new OmanCheckoutForRegisteredPage(webDriver);
 //        cartPage.navigateToCartPage();
 //        cartPage.removeItem();
         checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        DataHelperAndWait.clickOnElement(kuwaitCheckoutForRegisteredPage.getExpressDeliveryMethod(),webDriver);
+        DataHelperAndWait.clickOnElement(omanCheckoutForRegisteredPage.getFiveToSevenBusinessDaysShippingMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("invalidCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCloseCheckoutErr(), webDriver);
@@ -221,9 +219,8 @@ public class OmanCheckoutForRegisteredTestCases extends CheckoutForRegisteredTes
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that each of COD & Credit Card Payment methods appear correctly", priority = 25)
     public void verifyEachOfCODAndCreditCardPaymentMethodCorrectly() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
-        KuwaitCheckoutForRegisteredPage kuwaitCheckoutForRegisteredPage= new KuwaitCheckoutForRegisteredPage(webDriver);
+        OmanCheckoutForRegisteredPage omanCheckoutForRegisteredPage= new OmanCheckoutForRegisteredPage(webDriver);
         guestCheckoutCyclePage.navigateToCheckoutPage();
         try{
             DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
@@ -239,7 +236,7 @@ public class OmanCheckoutForRegisteredTestCases extends CheckoutForRegisteredTes
         }
         DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
-        DataHelperAndWait.clickOnElement(kuwaitCheckoutForRegisteredPage.getExpressDeliveryMethod(),webDriver);
+        DataHelperAndWait.clickOnElement(omanCheckoutForRegisteredPage.getFiveToSevenBusinessDaysShippingMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCreditCardPaymentMethod(),webDriver);

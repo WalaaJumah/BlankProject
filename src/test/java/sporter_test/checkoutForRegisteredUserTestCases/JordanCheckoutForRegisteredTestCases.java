@@ -243,7 +243,13 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
         }
 
         cartPage.addToCartAndDisplayTheCart();
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+        try{
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);}
+        catch (Exception e){
+            cartPage.navigateToHomePage();
+            DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
+            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
+        }
         try{            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
         catch (Exception e){
