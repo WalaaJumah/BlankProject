@@ -21,7 +21,7 @@ public class ForgetPasswordTestCases extends BaseTest {
     String storeCountry;
 
     //TODO: Forget Password test cases related to the forget password email is not included
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Verify Forget Password link works correctly", priority = 1)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Verify Forget Password link works correctly", priority = 1)
     public void verifyForgetPasswordLinkWorksCorrectly() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToLoginPage();
@@ -78,7 +78,7 @@ public class ForgetPasswordTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Verify Submit button in the Forget Password Page works correctly", priority = 6)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Verify Submit button in the Forget Password Page works correctly", priority = 6)
     public void verifySubmitInForgetPasswordPageWorksCorrectly() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToForgetPassword();
