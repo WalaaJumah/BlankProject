@@ -20,7 +20,7 @@
         </groups>
         <classes>
 ommitcommi
-            <!--            Guest Checkout -->
+            <!--            Guest Checkout -->omm
             <class name="sporter_test.guestCheckoutCycleTestCases.UAEGuestCheckoutCycleTestCases"></class>
             <class name="sporter_test.guestCheckoutCycleTestCases.KSAGuestCheckoutCycleTestCases"></class>
             <!--            <class name="sporter_test.guestCheckoutCycleTestCases.JordanGuestCheckoutCycleTestCases"></class>-->
