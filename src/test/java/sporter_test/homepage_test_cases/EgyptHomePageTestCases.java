@@ -43,41 +43,8 @@ public class EgyptHomePageTestCases extends HomePageTestCases {
     }
 
     @Test(enabled = false)
-    public void verifyTopSellersSectionAreDisplayed() {
-    }
-
-    @Test(enabled = false)
-    public void verifyAllLinksInTopSellersSectionAreDisplayed() {
-    }
-
-    @Test(enabled = false)
-    public void verifyAbilityToClickOnAllCategoriesTabInTopSellersSection() {
-    }
-
-    @Test(enabled = false)
-    public void verifyNextBtnInTopSellerSectionWorks() {
-    }
-
-    @Test(enabled = false)
-    public void verifyPreviousBtnWillAppearInTopSellersSectionOnceClickingOnNextBtn() {
-    }
-
-    @Test(enabled = false)
     public void verifyTrendingOnSporterSectionAreDisplayed() {
     }
-
-    @Test(enabled = false)
-    public void verifyNewArrivalsSectionAreDisplayed() {
-    }
-
-    @Test(enabled = false)
-    public void verifyAbilityToClickOnAllCategoriesTabInNewArrivalsSection() {
-    }
-
-    @Test(enabled = false)
-    public void verifyPreviousAndNextBtnInNewArrivalsSectionWorksCorrectly() {
-    }
-
     @Test(enabled = false)
     public void verifyGotQuestionSectionIsDisplayed() {
     }
@@ -93,14 +60,14 @@ public class EgyptHomePageTestCases extends HomePageTestCases {
     @Test(enabled = false)
     public void verifyClickOnTheProductsAppearingInTheTopSellingStacksSectionRedirectTheUserToCorrectUrl() {
     }
-
     @Test(enabled = false)
-    public void verifyClickOnTheProductsAppearingInTheTopSellersSectionRedirectTheUserToCorrectUrl() {
+    public void verifyPreviousAndNextBtnInNewArrivalsSectionWorksCorrectly() {
     }
-
-    @Test(enabled = false)
-    public void verifyClickOnTheProductsAppearingInTheNewArrivalsSectionRedirectTheUserToCorrectUrl() {
+        @Test(enabled = false)
+    public void verifyPreviousBtnWillAppearInTopSellersSectionOnceClickingOnNextBtn() {
     }
+        @Test(enabled = false)
+    public void verifyNextBtnInTopSellerSectionWorks(){}
 
     @Test(enabled = false)
     public void verifyClickOnTheCategoriesAppearingInTheTrendingOnSporterSectionRedirectTheUserToCorrectUrl() {

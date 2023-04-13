@@ -35,6 +35,9 @@ public class HomePage extends BasePage {
     private List<WebElement> homePageRotatingSliderPagingList;
     @FindBy(id = "AdvertiseContainersecond")
     private List<WebElement> homePageUnderShopByCategoryBanners;
+      @FindBy(xpath = "//div[@id='AdvertiseContainersecond']//a")
+    private List<WebElement> underShopByCategoryBanners;
+
     @FindBy(xpath = "//ul[@id='TopCategoryList']/li[1]")
     private WebElement shopByOption;
     @FindBy(xpath = "//ul[@id='TopCategoryList']/li[2]")
@@ -73,15 +76,15 @@ public class HomePage extends BasePage {
     private List<WebElement> newArrivalsCategoriesTabs;
     @FindBy(id = "OptionsContainerOptions_allmostSelling")
     private WebElement viewAllBtnInTopSellingStacksSection;
-    @FindBy(id = "OptionsContainerOptions_0mostSelling")
+    @FindBy(id = "OptionsContainerOptions_0topSeller")
     private WebElement sportSupplementsLinkInTopSellers;
     @FindBy(id = "OptionsContainerOptions_allmostSelling")
     private WebElement allLinkInTopSellers;
-    @FindBy(id = "OptionsContainerOptions_2mostSelling")
+    @FindBy(id = "OptionsContainerOptions_2topSeller")
     private WebElement healthyFoodLinkInTopSellers;
-    @FindBy(id = "OptionsContainerOptions_1mostSelling")
+    @FindBy(id = "OptionsContainerOptions_1topSeller")
     private WebElement vitaminsAndHealthLinkInTopSellers;
-    @FindBy(id = "OptionsContainerOptions_3mostSelling")
+    @FindBy(id = "OptionsContainerOptions_3topSeller")
     private WebElement sportswearAndAccessoriesLinkInTopSellers;
     @FindBy(id = "//ul[@class='tabs tabs67']/li[2]/a")
     private WebElement sportSupplementsActiveLink;

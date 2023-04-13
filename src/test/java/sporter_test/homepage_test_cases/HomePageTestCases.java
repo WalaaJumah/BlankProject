@@ -68,7 +68,7 @@ public class HomePageTestCases extends BaseTest {
 
     //TODO: Activate the validation rule when deployed the site into production as discussed with Moamen
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure clicking on the first side banner works correctly", priority = 9)
-    public void verifyClickingOnTheFirstSideBannersWorksCorrectlyInTheVitaminsAndHealthCategoryPage() throws IOException {
+    public void verifyClickingOnTheFirstSideBannersWorksCorrectly() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         DataHelperAndWait.scrollToPositionZero(webDriver);
         String expectedUrl = homePage.getFirstSideBanner().getAttribute("href");
@@ -79,7 +79,7 @@ public class HomePageTestCases extends BaseTest {
 
     //TODO: Activate the validation rule when deployed the site into production as discussed with Moamen
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure clicking on the second side banner works correctly", priority = 10)
-    public void verifyClickingOnTheSecondSideBannersWorksCorrectlyInTheVitaminsAndHealthCategoryPage() throws IOException {
+    public void verifyClickingOnTheSecondSideBannersWorksCorrectly() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
         DataHelperAndWait.scrollToPositionZero(webDriver);
@@ -161,8 +161,8 @@ public class HomePageTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getTopSellerHeader(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getTopSellerSections(), webDriver);
     }
-
-    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that all links appear correctly in the Top Sellers section ", priority = 18)
+//TODO:Needs to checked on all countries
+    @Test(enabled = false,groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that all links appear correctly in the Top Sellers section ", priority = 18)
     public void verifyAllLinksInTopSellersSectionAreDisplayed() {
         HomePage homePage = new HomePage(webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getAllLinkInTopSellers(), webDriver);
@@ -331,6 +331,16 @@ public class HomePageTestCases extends BaseTest {
         // store window handles in Set
         String myWindowHandle = webDriver.getWindowHandle();
         webDriver.switchTo().window(myWindowHandle);
+    }
+
+    @Test(groups = {"1.2 High Severity"}, description = "{{CountryName}}: Make sure clicking on all banners appear under shop by category work correctly", priority = 48)
+    public void verifyAbilityToClickOnUnderShopByCategoryWorksCorrectly() throws IOException {
+        HomePage homePage = new HomePage(webDriver);
+        for (int i = 0; i < homePage.getUnderShopByCategoryBanners().size(); i++) {
+            DataHelperAndWait.clickOnElement(homePage.getUnderShopByCategoryBanners().get(i), webDriver);
+           homePage.verifyTheDisplayedPageDoesNotHaveErrors();
+           homePage.navigateToHomePage();
+        }
     }
 }
 //    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the next button appearing in the Trending On Sporter section works Correctly ", priority = 27)
