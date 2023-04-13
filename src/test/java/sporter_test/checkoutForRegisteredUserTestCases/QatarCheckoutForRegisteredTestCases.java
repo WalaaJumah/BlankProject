@@ -222,6 +222,11 @@ public class QatarCheckoutForRegisteredTestCases extends CheckoutForRegisteredTe
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
         try{
+            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
+
+        }
+        catch (Exception e){
+
             jo.fillInShippingInformationInputField(
                     XmlReader.getXMLData("firstName"),
                     XmlReader.getXMLData("lastName"),
@@ -231,9 +236,6 @@ public class QatarCheckoutForRegisteredTestCases extends CheckoutForRegisteredTe
                     XmlReader.getXMLData("StreetTwoAddressName"),
                     XmlReader.getXMLData("nationalID")
             );
-        }
-        catch (Exception e){
-            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
         DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
