@@ -47,7 +47,7 @@ public class LoginTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(loginPage.getSignInWithSocialMediaLabel(), webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"}, description = "{{CountryName}}: Verify Inability to login using wrong email and the correct Error Msg appears", priority = 3)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to login using wrong email and the correct Error Msg appears", priority = 3)
     public void verifyInAbilityToLoginUsingWrongEmail() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToLoginPage();
@@ -107,7 +107,7 @@ public class LoginTestCases extends BaseTest {
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(loginPage.getPasswordErrorMsg(), webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Verify Inability to login without filling Email field only", priority = 8)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to login without filling Email field only", priority = 8)
     public void verifyInAbilityToLoginWithoutEmail() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToLoginPage();
@@ -116,7 +116,7 @@ public class LoginTestCases extends BaseTest {
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(loginPage.getEmailErrorMsg(), webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Verify Inability to login without filling Password field only", priority = 9)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to login without filling Password field only", priority = 9)
     public void verifyInAbilityToLoginWithoutPassword() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToLoginPage();

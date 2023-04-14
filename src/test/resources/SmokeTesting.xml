@@ -6,7 +6,7 @@
         <!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
         <listener class-name="extent_report_listner.ExtentReportListener"/>
     </listeners>
-    <test name=" Sporter 2.1 Full Test2" preserve-order="true">
+    <test name=" Sporter 2.1 Smoke Testing" preserve-order="true">
         <parameter name="environment" value="https://qa.sporter.com"/>
         <parameter name="browser" value="chrome"/>
         <!-- <parameter name="country" value="en-qa" />-->
@@ -34,6 +34,8 @@
             <class name="sporter_test.checkoutForRegisteredUserTestCases.EgyptCheckoutForRegisteredTestCases"></class>
             <class name="sporter_test.checkoutForRegisteredUserTestCases.UAECheckoutForRegisteredTestCases"></class>
             <class name="sporter_test.checkoutForRegisteredUserTestCases.KuwaitCheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.OmanCheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.BahrainCheckoutForRegisteredTestCases"></class>
             <!--            HomePage-->
             <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>
             <class name="sporter_test.homepage_test_cases.UAEHomePageTestCases"/>
@@ -78,6 +80,8 @@
             <class name="sporter_test.AccountRegistrationTestCases.JordanAccountRegistrationTestCases"/>
             <class name="sporter_test.AccountRegistrationTestCases.QatarAccountRegistrationTestCases"/>
             <class name="sporter_test.AccountRegistrationTestCases.KuwaitAccountRegistrationTestCases"/>
+            <class name="sporter_test.AccountRegistrationTestCases.OmanAccountRegistrationTestCases"/>
+            <class name="sporter_test.AccountRegistrationTestCases.BahrainAccountRegistrationTestCases"/>
 
             <!--Login-->
             <class name="sporter_test.loginTestCases.EgyptLoginTestCases"/>

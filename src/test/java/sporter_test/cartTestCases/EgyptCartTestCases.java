@@ -197,7 +197,7 @@ public void verifyAbilityToClickOnSportsMenuIsDisplayedFromCartPage() throws IOE
         webDriver.manage().deleteCookieNamed("guestCartId");
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = " Cart Page- Make sure ability to add a bundle to the cart ", priority = 17)
+    @Test(groups = {"1.3 Medium Severity"}, description = " Cart Page- Make sure ability to add a bundle to the cart ", priority = 17)
     public void verifyAbilityToAddBundleToCart() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         WebDriverWait wait;

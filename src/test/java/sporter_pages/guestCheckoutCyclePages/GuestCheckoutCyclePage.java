@@ -359,6 +359,7 @@ public class GuestCheckoutCyclePage extends BasePage {
         DataHelperAndWait.updateAllText(this.getCreditCardCVV(), cvv);
         webDriver.switchTo().defaultContent();
         DataHelperAndWait.clickOnElement(this.getContinuePaymentMethodsBtn(), webDriver);
+        DataHelperAndWait.waitForTime(1000);
     }
 
     public void submitSecureAndAuthenticationCheckout() {
