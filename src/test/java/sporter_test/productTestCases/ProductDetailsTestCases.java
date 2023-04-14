@@ -38,7 +38,7 @@ public class ProductDetailsTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getAddToCartBtn(), webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"}, description = "{{CountryName}}:Make sure the out of stock message appears when displaying out of stock product ", priority = 2)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure the out of stock message appears when displaying out of stock product ", priority = 2)
     public void verifyOOSMessageIsDisplayed() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         try {
@@ -49,7 +49,7 @@ public class ProductDetailsTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, dependsOnMethods = "verifyOOSMessageIsDisplayed", description = "{{CountryName}}:Make sure the shopper is unable to add out of stock product to the cart", priority = 3)
+    @Test(groups = {"1.3 Medium Severity"}, dependsOnMethods = "verifyOOSMessageIsDisplayed", description = "{{CountryName}}:Make sure the shopper is unable to add out of stock product to the cart", priority = 3)
     public void verifyInabilityToAddOosProductToTheCart() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         try {

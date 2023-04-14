@@ -267,7 +267,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getConfirmPasswordErrorMsg(), webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"}, description = "{{CountryName}}:  Verify Inability to register a new account without filling the First and Last Name", priority = 21)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:  Verify Inability to register a new account without filling the First and Last Name", priority = 21)
     public void verifyInabilityToRegisterAccountWithoutFillingFirstAndLastName() throws IOException {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         registerPage.navigateToRegistrationPage();

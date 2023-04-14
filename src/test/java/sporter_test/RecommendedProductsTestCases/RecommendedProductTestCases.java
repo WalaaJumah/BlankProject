@@ -123,7 +123,7 @@ public class RecommendedProductTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure the clicking on the product card appears in the Recommended product pop-up will display the Product Details Page correctly", priority = 10)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the clicking on the product card appears in the Recommended product pop-up will display the Product Details Page correctly", priority = 10)
     public void verifyClickingOnProductCardInTheRecommendedPopupWillDisplayThePdp() throws IOException {
         RecommendedProductPage recommendedProductpage = new RecommendedProductPage(webDriver);
         recommendedProductpage.clickOnProductCard();
