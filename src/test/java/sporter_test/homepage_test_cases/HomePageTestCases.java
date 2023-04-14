@@ -144,7 +144,7 @@ public class HomePageTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getTopSellingStacksSections(), webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "{{CountryName}}: Make sure clicking on the view all button from the Top Selling Stacks section works correctly ", priority = 16)
+    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}: Make sure clicking on the view all button from the Top Selling Stacks section works correctly ", priority = 16)
     public void verifyViewAllBtnInTopSellingStacksSectionWorking() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         String expectedUrl = homePage.getViewAllBtnInTopSellingStacksSection().getAttribute("href");

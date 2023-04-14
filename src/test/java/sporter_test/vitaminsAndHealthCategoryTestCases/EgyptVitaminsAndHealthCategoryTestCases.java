@@ -34,7 +34,8 @@ public class EgyptVitaminsAndHealthCategoryTestCases extends VitaminsAndHealthCa
         storeCountry = "Egypt";
         countryCode = "20";
     }
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Vitamins & Health Category Appears In MegaMenu Redirect User To CorrectURL", priority = 1)
+    //TODO:Needs to check on Egypt store
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Vitamins & Health Category Appears In MegaMenu Redirect User To CorrectURL", priority = 1)
     public void verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL() throws IOException {
         EgyptMegaMenuPage megaMenuPage = new EgyptMegaMenuPage(webDriver);
         megaMenuPage.clickOnVitaminsAndHealthMainMenu();

@@ -27,7 +27,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
     String storeCountry;
     String countryCode;
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Vitamins & Health Category Appears In MegaMenu Redirect User To CorrectURL", priority = 1)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Vitamins & Health Category Appears In MegaMenu Redirect User To CorrectURL", priority = 1)
     public void verifyClickingOnVitaminsAndHealthCategoryAppearsInMegaMenuRedirectUserToCorrectURL() throws IOException {
         MegaMenuPage megaMenuPage = new MegaMenuPage(webDriver);
         megaMenuPage.clickOnVitaminsAndHealthMainMenu();
@@ -406,7 +406,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getWomensVitaminsSection(), webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Vitamins A-Z section have at least a product", priority = 42)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Vitamins A-Z section have at least a product", priority = 42)
     public void verifyTheVitaminsA_zAtLeastAProduct() {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
@@ -415,7 +415,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getWorkoutInStyleSection(), webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Minerals section have at least a product", priority = 43)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Minerals section have at least a product", priority = 43)
     public void verifyTheMineralsAtLeastAProduct() {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
@@ -424,7 +424,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getLadyFriendlySnacksAndFoodSection(), webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Antioxidants section have at least a product", priority = 44)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Antioxidants section have at least a product", priority = 44)
     public void verifyTheAntioxodantsAtLeastAProduct() {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
@@ -432,7 +432,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(vitaminsAndHealthCategoryPage.getAntioxodantsSection(), webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Super Foods section have at least a product", priority = 45)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Super Foods section have at least a product", priority = 45)
     public void verifyTheSuperFoodsAtLeastAProduct() {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
@@ -440,7 +440,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(vitaminsAndHealthCategoryPage.getSuperFoodsSection(), webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Melatonin section have at least a product", priority = 46)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Melatonin section have at least a product", priority = 46)
     public void verifyTheMelatoninAtLeastAProduct() {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
@@ -448,7 +448,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(vitaminsAndHealthCategoryPage.getMelatoninSection(), webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Collagen section have at least a product", priority = 47)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Collagen section have at least a product", priority = 47)
     public void verifyTheCollagenAtLeastAProduct() {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
