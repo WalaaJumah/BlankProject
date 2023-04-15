@@ -155,25 +155,25 @@ public class ProductDetailsPage extends BasePage {
             productUrl1 = productUrlJordan7;
         }
         if (currentUrl.contains("ar-sa")) {
-            productUrl1 = productUrlKSA8;
+            productUrl1 = productUrl9;
         }
         if (currentUrl.contains("en-eg")) {
             productUrl1 = productUrlEgypt;
         }
         if (currentUrl.contains("en-qa")) {
-            productUrl1 = productUrl7;
+            productUrl1 = productUrl9;
         }
         if (currentUrl.contains("en-ae")) {
-            productUrl1 = productUrl;
+            productUrl1 = productUrl9;
         }
         if (currentUrl.contains("en-kw")) {
-            productUrl1 = productUrl;
+            productUrl1 = productUrl9;
         }
         if (currentUrl.contains("en-bh")) {
-            productUrl1 = productUrl;
+            productUrl1 = productUrl9;
         }
         if (currentUrl.contains("en-om")) {
-            productUrl1 = productUrl;
+            productUrl1 = productUrl9;
         }
 
 

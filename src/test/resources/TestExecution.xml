@@ -4,7 +4,7 @@
 <suite name="Automation Reports">
     <listeners>
         <!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
-<!--        <listener class-name="extent_report_listner.ExtentReportListener"/>-->
+        <!--        <listener class-name="extent_report_listner.ExtentReportListener" />-->
     </listeners>
     <test name=" Sporter 2.1 Full Test2" preserve-order="true">
         <parameter name="environment" value="https://qa.sporter.com"/>
@@ -12,22 +12,15 @@
         <!-- <parameter name="country" value="en-qa" />-->
         <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32569"/>
         <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix"/>
-        <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6"/>
+        <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
         <classes>
-            <class name="sporter_test.cartTestCases.BahrainCartTestCases"></class>
-            <class name="sporter_test.cartTestCases.OmanCartTestCases"></class>
-
-
-            <!--            <class name="sporter_test.footer_test_cases.EgyptFooterTestCases"></class>-->
-<!--            <class name="sporter_test.footer_test_cases.QatarFooterTestCases"></class>-->
-<!--            <class name="sporter_test.footer_test_cases.OmanFooterTestCases"></class>-->
-<!--            <class name="sporter_test.guestCheckoutCycleTestCases.KSAGuestCheckoutCycleTestCases"></class>-->
-<!--            <class name="sporter_test.guestCheckoutCycleTestCases.JordanGuestCheckoutCycleTestCases"></class>-->
-<!--            <class name="sporter_test.guestCheckoutCycleTestCases.QatarGuestCheckoutCycleTestCases"></class>-->
-<!--            <class name="sporter_test.guestCheckoutCycleTestCases.EgyptGuestCheckoutCycleTestCases"></class>-->
-
+            <!--            Guest Checkout -->
+            <class name="sporter_test.myAccountTestCases.BahrainMyAccountTestCases">
+<!--                <methods>-->
+<!--                    <include name="verifyInabilityToRegisterAccountWhenFillingFirstAndLastNameWithSpaces"/>-->
+<!--                </methods>-->
+            </class>
         </classes>
-
     </test>
 
 
