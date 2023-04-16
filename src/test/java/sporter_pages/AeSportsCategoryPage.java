@@ -83,7 +83,7 @@ public class AeSportsCategoryPage  extends BasePage {
     }
 
     public WebElement getYogaApparelCategory() {
-        DataHelperAndWait.waitToBeVisible(yogaApparelCategory,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(yogaApparelCategory,10,webDriver);
         return yogaApparelCategory;
     }
 
@@ -201,7 +201,7 @@ public class AeSportsCategoryPage  extends BasePage {
         do{
             aeVitaminsAndHealthCategoryPage.clickOnNextIconInShopByHealthNeedSection();        }
         while(!personalCareApparelCategory.isDisplayed());
-        DataHelperAndWait.waitToBeVisible(personalCareApparelCategory,5,webDriver);
+        DataHelperAndWait.waitToBeVisible(personalCareApparelCategory,10,webDriver);
         this.personalCareApparelCategory.click();
     }
 //        aeVitaminsAndHealthCategoryPage= new AeVitaminsAndHealthCategoryPage(webDriver);

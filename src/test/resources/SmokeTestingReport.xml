@@ -52,7 +52,7 @@
             </run>
         </groups>
         <classes>
-            <class name="sporter_test.AEMegaMenuTestCases"/>g
+            <class name="sporter_test.AEMegaMenuTestCases"/>
             <class name="sporter_test.AEGuestUserTestCases"/>
             <class name="sporter_test.AeCartTestCases"/>
             <class name="sporter_test.AeRecommendedProductsTestCases"/>
