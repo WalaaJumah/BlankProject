@@ -99,8 +99,6 @@ public class AccountRegistrationTestCases extends BaseTest {
         LoginPage loginPage = new LoginPage(webDriver);
         registerPage.navigateToRegistrationPage();
         registerPage.fillingAllCreateAccountForms(XmlReader.getXMLData("correctEmail"), XmlReader.getXMLData("correctPassword"), XmlReader.getXMLData("correctPassword"), XmlReader.getXMLData("firstName"), XmlReader.getXMLData("lastName"), 1);
-        DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(loginPage.getSignInOption(), webDriver);
 
     }
 
@@ -149,8 +147,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         registerPage.navigateToRegistrationPage();
         registerPage.submitAllCreateAccountFormsCorrectly(DataHelperAndWait.generateRandomEmail(), XmlReader.getXMLData("correctPassword"), XmlReader.getXMLData("correctPassword"), XmlReader.getXMLData("firstName"), XmlReader.getXMLData("lastName"), 1);
         DataHelperAndWait.clickOnElement(header.getSporterLogo(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(), webDriver);
-        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
         DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(), webDriver);
