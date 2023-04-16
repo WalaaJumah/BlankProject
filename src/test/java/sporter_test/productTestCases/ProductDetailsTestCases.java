@@ -160,7 +160,8 @@ public class ProductDetailsTestCases extends BaseTest {
     public void verifyTheresLabelInPdpToIndicateThatTheresAnOfferOnThisProduct() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        productDetailsPage.displayTheProduct();
-        webDriver.navigate().to("https://qa.sporter.com/the-pack-bcaas-flow-32569");
+//        webDriver.navigate().to("https://qa.sporter.com/the-pack-bcaas-flow-32569");
+        productDetailsPage.navigateToBogoProduct();
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getFreeProductLabelEn(), webDriver);
     }
 

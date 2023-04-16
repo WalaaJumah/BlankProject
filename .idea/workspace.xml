@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09d64b6b-6a80-4af6-a4ec-61d96949d666" name="Changes" comment="Merge remote-tracking branch 'origin/New_Sporter2.1_Without_Implicit_Wait' into New_Sporter2.1_Without_Implicit_Wait&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/test/java/sporter_test/checkoutForRegisteredUserTestCases/CheckoutForRegisteredTestCases.java&#10;#&#9;src/test/resources/TestExecution.xml">
-      <change beforePath="$PROJECT_DIR$/src/test/resources/GenerateReport.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/GenerateReport.xml" afterDir="false" />
+    <list default="true" id="09d64b6b-6a80-4af6-a4ec-61d96949d666" name="Changes" comment="Add all stores test cases to xml file">
+      <change afterPath="$PROJECT_DIR$/src/test/resources/PreRunningTestCasesGroup.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/productTestCases/ProductDetailsTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/productTestCases/ProductDetailsTestCases.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +87,7 @@
       <command value="ProductDetailsPageTestCases.verifyAbilityToDisplayBundleAndSelectAllOptions" />
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/TestExecution.xml">
+  <component name="RunManager" selected="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/GenerateReport.xml">
     <configuration name="C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/RunMethod.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/RunMethod.xml" />
@@ -160,8 +162,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/TestExecution.xml" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/GenerateReport.xml" />
+        <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/resources/TestExecution.xml" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/SmokeTesting.xml" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/kuwait_test_cases.xml" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/RunMethod.xml" />
@@ -402,7 +404,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681628319303</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Add all stores test cases to xml file">
+      <created>1681632521317</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1681632521317</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Add all stores test cases to xml file">
+      <created>1681632541597</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1681632541597</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -454,7 +470,8 @@
     <MESSAGE value="Add Bharain Checkout test caees" />
     <MESSAGE value="Add Bahrain Checkout test cases" />
     <MESSAGE value="Merge remote-tracking branch 'origin/New_Sporter2.1_Without_Implicit_Wait' into New_Sporter2.1_Without_Implicit_Wait&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/test/java/sporter_test/checkoutForRegisteredUserTestCases/CheckoutForRegisteredTestCases.java&#10;#&#9;src/test/resources/TestExecution.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/New_Sporter2.1_Without_Implicit_Wait' into New_Sporter2.1_Without_Implicit_Wait&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/test/java/sporter_test/checkoutForRegisteredUserTestCases/CheckoutForRegisteredTestCases.java&#10;#&#9;src/test/resources/TestExecution.xml" />
+    <MESSAGE value="Add all stores test cases to xml file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add all stores test cases to xml file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
