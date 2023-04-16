@@ -7,7 +7,7 @@
         <listener class-name="extent_report_listner.ExtentReportListener"/>
     </listeners>
     <test name=" Sporter 2.1 Smoke Testing" preserve-order="true">
-        <parameter name="environment" value="https://qa.sporter.com"/>
+        <parameter name="environment" value="https://stores.sporter.com/en-kw"/>
         <parameter name="browser" value="chrome"/>
         <!-- <parameter name="country" value="en-qa" />-->
         <parameter name="bogoProduct" value="/sporter-mass-gainer-55040"/>
@@ -117,7 +117,7 @@
             <class name="sporter_test.cartRulesTestCases.JordanCartRulesTestCases"></class>
             <class name="sporter_test.cartRulesTestCases.KSACartRulesTestCases"></class>
 
-            <!--            My Account test cases-->mmit
+            <!--            My Account test cases-->
             <class name="sporter_test.myAccountTestCases.UAEMyAccountTestCases"></class>
             <class name="sporter_test.myAccountTestCases.KSAMyAccountTestCases"></class>
             <class name="sporter_test.myAccountTestCases.JordanMyAccountTestCases"></class>
