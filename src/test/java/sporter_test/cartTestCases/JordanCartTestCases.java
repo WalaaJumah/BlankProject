@@ -46,7 +46,7 @@ public class JordanCartTestCases extends CartTestCases {
     public void verifyOrderTotalCalculationInCartPageWorksCorrectly() {
         CartPage cartPage = new CartPage(webDriver);
 //        cartPage.addToCartAndDisplayTheCart();
-        cartPage.navigateToCartPage();
+        cartPage.addToCartAndDisplayTheCart();
         float subTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue(), webDriver, "JOD");
         float tax = DataHelperAndWait.convertTheStringToFloat(cartPage.getTaxValue(), webDriver, "JOD");
         float orderTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(), webDriver, "JOD");

@@ -372,9 +372,10 @@ public class CartTestCases extends BaseTest {
     }
 
     //TODO: Should be revisit after solving https://sporter1.atlassian.net/browse/NS-189
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure inability to apply coupon code without filling the code", priority = 27)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure inability to apply coupon code without filling the code", priority = 27)
     public void verifyInabilityToApplyCouponCodeWithoutFillingTheCode() {
         CartPage cartPage = new CartPage(webDriver);
+        cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.clearWebField(cartPage.getCouponCodeField());
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(), webDriver);
 //        DataHelperAndWait.isDisplayed(cartPage.getRequiredCouponMsg() ,webDriver);
