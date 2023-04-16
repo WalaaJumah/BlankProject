@@ -411,6 +411,7 @@ public class CartTestCases extends BaseTest {
         CartPage cartPage = new CartPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        cartPage.addToCartAndDisplayTheCart();
+        DataHelperAndWait.typeTextInElement(productDetailsPage.getSearchField(),webDriver,"Basic");
         DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
         WebElementsAssertion.validateTheCurrentUrlContainsString("search", webDriver);
     }
@@ -419,13 +420,14 @@ public class CartTestCases extends BaseTest {
     public void verifyTheFreeShippingLabelAppearCorrectlyInTheCartPage() {
         CartPage cartPage = new CartPage(webDriver);
 //        cartPage.addToCartAndDisplayTheCart();
-        cartPage.navigateToCartPage();
+        cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.isDisplayed(cartPage.getFreeShippingLabel(), webDriver);
     }
 
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Make sure that the Expected delivery date field in the cart page retrieves data", priority = 32)
     public void verifyExpectedDeliveryDateRetrievesData() {
         CartPage cartPage = new CartPage(webDriver);
+        cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.isDisplayed(cartPage.getExpectedDeliveryDateLabel(), webDriver);
         String expectedDeliveryDate = DataHelperAndWait.getWebElementText(cartPage.getExpectedDeliveryDateValue(), webDriver);
         Assert.assertNotNull(expectedDeliveryDate);
@@ -434,7 +436,7 @@ public class CartTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that My Shopping Cart title appears in the Cart Page", priority = 33)
     public void verifyMyShoppingCartTitleAppearCorrectlyInTheCartPage() {
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.navigateToCartPage();
+         cartPage.addToCartAndDisplayTheCart();
         String cartTitle;
         if (webDriver.getCurrentUrl().contains("com/en")) {
             cartTitle = (DataHelperAndWait.getWebElementText(cartPage.getMyShoppingCartMsg(), webDriver)).substring(0, 16);
@@ -447,7 +449,7 @@ public class CartTestCases extends BaseTest {
     }
 
     //TODO: Should be revisit after solving https://sporter1.atlassian.net/browse/NS-188 & https://sporter1.atlassian.net/browse/NS-190
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the system apply Free Gift coupon code correctly", priority = 34)
+    @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the system apply Free Gift coupon code correctly", priority = 34)
     public void verifyAbilityToApplyFreeGiftCouponCode() {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();

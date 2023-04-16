@@ -45,7 +45,7 @@ public class CartPage extends BasePage {
     //TODO: Needs to revisit after fixing the Bogo issue
     @FindBy(id = "closeAddToCartErrBtn")
     private WebElement freeFromSporterSection;
-    @FindBy(id = "removeItemBtn")
+    @FindBy(xpath = "(//div[@id='removeItemBtn'])[1]")
     private WebElement removeItemBtn;
     @FindBy(id = "cartItemPrice")
     private List<WebElement> priceInCartPage;
@@ -230,8 +230,7 @@ public class CartPage extends BasePage {
 
     public void removeItem() {
         DataHelperAndWait.waitToBeClickable(this.removeItemBtn, webDriver);
-        this.removeItemBtn.click();
-    }
+        this.removeItemBtn.click();}
 
     public void clearCart() {
         try {

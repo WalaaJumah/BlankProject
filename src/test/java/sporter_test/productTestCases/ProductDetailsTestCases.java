@@ -319,7 +319,9 @@ public class ProductDetailsTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Verify that the search button works correctly from the PDP", priority = 31)
     public void verifySearchBtnWorksCorrectlyFromPdp() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        DataHelperAndWait.typeTextInElement(productDetailsPage.getSearchField(),webDriver,"Basic");
         DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
+
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSearchPageTitle(), webDriver);
         productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }

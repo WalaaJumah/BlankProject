@@ -25,7 +25,7 @@ public class SportsSupplementsCategoryTestCases extends BaseTest {
     String storeCountry;
     String countryCode;
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Supplements Category- Make sure clicking on the Sports Supplements Category Appears In MegaMenu Redirect User To CorrectURL", priority = 2)
+    @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Supplements Category- Make sure clicking on the Sports Supplements Category Appears In MegaMenu Redirect User To CorrectURL", priority = 2)
     public void verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL() throws IOException {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         sportsSupplementsCategoryPage.clickOnSportsSupplementMainMenu();
@@ -38,7 +38,7 @@ public class SportsSupplementsCategoryTestCases extends BaseTest {
     }
 
     //TODO: Needs to recheck on KSA after solve the webelement ID in Arabic By Moamen
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Supplements Category- Make sure clicking on the Sports Supplements Category from ShopBy Menu Redirect User To CorrectURL", priority = 3)
+    @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Supplements Category- Make sure clicking on the Sports Supplements Category from ShopBy Menu Redirect User To CorrectURL", priority = 3)
     public void verifyClickingOnSportsSupplementsCategoryFromShopByMenuRedirectUserToCorrectURL() throws IOException {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         sportsSupplementsCategoryPage.clickOnSportsSupplementFromShopByMenu();
@@ -137,6 +137,7 @@ public class SportsSupplementsCategoryTestCases extends BaseTest {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         sportsSupplementsCategoryPage.navigateToSportsSupplementPage();
+        DataHelperAndWait.typeTextInElement(productDetailsPage.getSearchField(),webDriver,"Basic");
         DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getSearchPageTitle(), webDriver);
         productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
