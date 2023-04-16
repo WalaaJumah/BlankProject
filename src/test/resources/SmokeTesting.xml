@@ -117,7 +117,7 @@
             <class name="sporter_test.cartRulesTestCases.JordanCartRulesTestCases"></class>
             <class name="sporter_test.cartRulesTestCases.KSACartRulesTestCases"></class>
 
-            <!--            My Account test cases-->
+            <!--            My Account test cases-->mmit
             <class name="sporter_test.myAccountTestCases.UAEMyAccountTestCases"></class>
             <class name="sporter_test.myAccountTestCases.KSAMyAccountTestCases"></class>
             <class name="sporter_test.myAccountTestCases.JordanMyAccountTestCases"></class>
