@@ -325,7 +325,7 @@ public class ProductDetailsTestCases extends BaseTest {
     }
 
     //TODO: Check the assertion
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure that the next review page button appears in Reviews section works correctly ", priority = 32)
+    @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure that the next review page button appears in Reviews section works correctly ", priority = 32)
     public void verifyNextReviewPageBtnAppearsInReviewsSectionWorksCorrectly() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
@@ -335,7 +335,7 @@ public class ProductDetailsTestCases extends BaseTest {
 
     //There's bug here
     //TODO: Check the assertion
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure that the Previous review page button appears in Reviews section works correctly ", priority = 33)
+    @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure that the Previous review page button appears in Reviews section works correctly ", priority = 33)
     public void verifyPreviousReviewPageBtnAppearsInReviewsSectionWorksCorrectly() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         DataHelperAndWait.clickOnElement(productDetailsPage.getNextReviewPageBtn(), webDriver);

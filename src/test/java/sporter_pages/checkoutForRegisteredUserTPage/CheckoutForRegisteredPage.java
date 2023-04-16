@@ -41,7 +41,7 @@ public class CheckoutForRegisteredPage extends BasePage {
     private WebElement savedAddressOption;
     @FindBy(xpath = "//div[@id='citiesSelector']/div[2]/div[2]/div[5]")
     private WebElement dubaiCity;
-    @FindBy(id = "itemToWhishListBtn")
+    @FindBy(xpath = "(//div[@id='itemToWhishListBtn'])[1]")
     private WebElement addToWishListBtn;
     @FindBy(id = "WItemsContainer")
     private WebElement addedItemToWashList;

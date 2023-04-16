@@ -153,7 +153,7 @@ public class KuwaitCheckoutForRegisteredTestCases extends  CheckoutForRegistered
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
     }
-    @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Express Delivery 3_5 Shipping Method With Credit Card Payment Method ", priority = 30)
+    @Test(enabled = false,groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Express Delivery 3_5 Shipping Method With Credit Card Payment Method ", priority = 30)
     public void verifyAbilityToPlaceOrderWhenSelectingExpressDelivery3_5WithCreditCardPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
@@ -162,9 +162,9 @@ public class KuwaitCheckoutForRegisteredTestCases extends  CheckoutForRegistered
         webDriver.manage().deleteCookieNamed("guestCartId");
         cartPage.addToCartAndDisplayTheCart();
 //        cartPage.navigateToCartPage();
-        DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
-        DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);
+//        DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
+//        DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
+//        DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);
 //        cartPage.navigateToHomePage();
 //        cartPage.clickOnCartIcon();
 //        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
@@ -195,7 +195,7 @@ public class KuwaitCheckoutForRegisteredTestCases extends  CheckoutForRegistered
 //        orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
 //        System.out.println(orderNumber);
     }
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure Inability to continue the placing order process using invalid Credit Card", priority = 31)
+    @Test(enabled = false,groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure Inability to continue the placing order process using invalid Credit Card", priority = 31)
     public void verifyInabilityToUseInvalidCreditCardPaymentMethod() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);

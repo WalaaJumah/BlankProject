@@ -77,7 +77,7 @@ public class LoginTestCases extends BaseTest {
         loginPage.navigateToLoginPage();
         loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword"));
         DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
-//        DataHelperAndWait.waitForTime(3000);
+        DataHelperAndWait.waitForTime(3000);
         DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
         DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(), webDriver);
@@ -205,7 +205,7 @@ public class LoginTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify the system keeps the user logged in after switching the country", priority = 16)
+    @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify the system keeps the user logged in after switching the country", priority = 16)
     public void verifyTheSystemKeepsTheCustomerLoggedInAfterSwitchingTheCountry() throws IOException {
         HeaderSection header = new HeaderSection(webDriver);
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);

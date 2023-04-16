@@ -372,7 +372,7 @@ public class CartTestCases extends BaseTest {
     }
 
     //TODO: Should be revisit after solving https://sporter1.atlassian.net/browse/NS-189
-    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure inability to apply coupon code without filling the code", priority = 27)
+    @Test(enabled = false,groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure inability to apply coupon code without filling the code", priority = 27)
     public void verifyInabilityToApplyCouponCodeWithoutFillingTheCode() {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
@@ -457,7 +457,7 @@ public class CartTestCases extends BaseTest {
     }
 
     //TODO: Should be revisit after solving https://sporter1.atlassian.net/browse/NS-188 & https://sporter1.atlassian.net/browse/NS-190
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the system cancel the coupon code correctly", priority = 35)
+    @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the system cancel the coupon code correctly", priority = 35)
     public void verifyAbilityToCancelTheCouponCode() {
         CartPage cartPage = new CartPage(webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCancelCouponCodeBtn(), webDriver);

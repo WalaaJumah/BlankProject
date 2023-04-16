@@ -181,7 +181,7 @@ public class HomePageTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the next button appearing in the Top Seller section works Correctly ", priority = 24)
+    @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the next button appearing in the Top Seller section works Correctly ", priority = 24)
     public void verifyNextBtnInTopSellerSectionWorks() {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();

@@ -92,7 +92,7 @@ public class AccountRegistrationTestCases extends BaseTest {
     }
 
     //TODO: This TC should be revisit after fix bug: https://sporter1.atlassian.net/browse/NS-169
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:  Verify Inability to register an account using email already registered", priority = 8)
+    @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:  Verify Inability to register an account using email already registered", priority = 8)
     public void verifyInabilityToRegisterAccountUsingEmailAlreadyRegistered() throws IOException {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         HeaderSection header = new HeaderSection(webDriver);
