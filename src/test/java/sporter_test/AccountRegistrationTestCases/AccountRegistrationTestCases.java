@@ -139,7 +139,7 @@ public class AccountRegistrationTestCases extends BaseTest {
 //        DataHelperAndWait.waitForTime(3000);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:  Verify Ability to register new account correctly with Male Gender", priority = 12)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:  Verify Ability to register new account correctly with Male Gender", priority = 12)
     public void verifyAbilityToRegisterAccountCorrectlyWhenSelectingMaleGender() throws IOException {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         HeaderSection header = new HeaderSection(webDriver);
