@@ -23,7 +23,7 @@ public class SportsCategoryTestCases extends BaseTest {
     String storeCountry;
     String countryCode;
 
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:Sports Category- Make sure clicking on the Sports Category Appears In MegaMenu Redirect User To CorrectURL", priority = 1)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Category- Make sure clicking on the Sports Category Appears In MegaMenu Redirect User To CorrectURL", priority = 1)
     public void verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL() throws IOException {
         SportsCategoryPage sportsCategoryPage = new SportsCategoryPage(webDriver);
         sportsCategoryPage.clickOnSportsMainMenu();
