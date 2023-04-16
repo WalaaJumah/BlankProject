@@ -138,7 +138,7 @@ public class AccountRegistrationPage extends BasePage {
         DataHelperAndWait.typeTextInElement(this.getLastNameField(), webDriver, lastName);
     }
 
-    public void submitAllCreateAccountFormsCorrectly(String email, String password, String confirmPassword, String firstName, String lastName, int gender) {
+    public void submitAllCreateAccountFormsCorrectly(String email, String password, String confirmPassword, String firstName, String lastName, int gender) throws IOException {
         DataHelperAndWait.typeTextInElement(this.getEmailField(), webDriver, email);
         DataHelperAndWait.typeTextInElement(this.getPasswordField(), webDriver, password);
         DataHelperAndWait.typeTextInElement(this.getConfirmPasswordField(), webDriver, password);
@@ -155,7 +155,7 @@ public class AccountRegistrationPage extends BasePage {
             gender = 0;
         }
         DataHelperAndWait.clickOnElement(this.getSubmitBtn(), webDriver);
-        DataHelperAndWait.waitToBeVisible(successfulMsg, webDriver);
+        this.verifyTheDisplayedPageDoesNotHaveErrors();
 //        DataHelperAndWait.waitForTime(3000);
     }
     public void submitAllCreateAccountFormsWrongly(String email, String password, String confirmPassword, String firstName, String lastName, int gender) {

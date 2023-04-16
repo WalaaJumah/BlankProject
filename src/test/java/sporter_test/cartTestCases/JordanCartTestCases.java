@@ -83,7 +83,7 @@ public class JordanCartTestCases extends CartTestCases {
     public void verifyAllPaymentMethodAppearingTheCartPage() {
         CartPage cartPage = new CartPage(webDriver);
 //        cartPage.addToCartAndDisplayTheCart();
-        cartPage.navigateToCartPage();
+        cartPage.addToCartAndDisplayTheCart();
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getWeAcceptLabel(), webDriver);
 //        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCODOption(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCreditCardOption(), webDriver);

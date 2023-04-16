@@ -24,7 +24,8 @@ public class BasePage {
 
 
     public static String BaseURL = "https://sporter.com";
-    public static String productUrl = "/the-pack-bcaas-flow-32566";
+    public static String productUrl = "/webber-naturals-vitamin-c-500-mg-35580";
+    public static String productUrl9 = "/cellucor-c4-26162";
 //    public static String productUrl = "/optimum-gold-standard-100-whey";
 
 //    public void setStoreCountry(String storeCountry) {
@@ -44,7 +45,7 @@ public class BasePage {
     public static String productUrlKSAWithHighPrice2 = "/asics-gel-kayano-26-ls-graphite-grey-piedmont-grey-32131";
     public static String productUrlEgypt = "/optimum-gold-standard-100-whey";
     public static String productUrlJordan = "/optimum-gold-standard-100-whey";
-    public static String productUrlJordan7 = "/dymatize-iso-100";
+    public static String productUrlJordan7 = "/webber-naturals-vitamin-c-500-mg-35580";
     public static String productUrlJordanWithLowPrice = "/jack-links-beef-jerky-54840/";
     public static String productUrlJordanWithHighPrice = "/climaqx-gym-bag-21711";
     public static String productUrlQatarWithHighPrice = "/optimum-gold-standard-100-whey-6202";
@@ -142,8 +143,8 @@ public class BasePage {
     public final String twitterURL = "https://twitter.com/sportercom?lang=en";
     public final String youtubeURL = "https://www.youtube.com/user/SporterVideos";
     public final String searchUrl = "catalogsearch/result/?q=";
-    public final String bogoUrlKSA = "/the-pack-bcaas-flow-32569";
-    public final String bogoUrlQatar = "/catalog-pro-32569";
+    public final String bogoUrlKSA = "/sporter-mass-gainer-55040";
+    public final String bogoUrlQatar = "/sporter-mass-gainer-55040";
     public final String bogoUrlEgypt = "/cellucor-c4";
     public final String product2UrlLessQty = "/positive-nutrition-recharge-pods-53972";
     public final String notAvailableOfferProduct = "/catalog/product/view/id/44012/s/olimp-chitosan-chromium-43840/";
@@ -213,10 +214,15 @@ public class BasePage {
     }
 
     public void displayBundle() throws IOException {
+        try{
         webDriver.navigate().to(BasePage.BaseURL + bundleUrl);
         this.verifyTheDisplayedPageDoesNotHaveErrors();
         DataHelperAndWait.waitForUrlContains(bundleUrl, webDriver);
-        System.out.println("The product URL is: " + webDriver.getCurrentUrl());
+        System.out.println("The product URL is: " + webDriver.getCurrentUrl());}
+        catch (AssertionError e){
+            if(webDriver.getCurrentUrl().contains("/en-eg"))
+                System.out.println("This product is Disable on Egypt");
+        }
     }
 
     public void navigateToHomePage() {

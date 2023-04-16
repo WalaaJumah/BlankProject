@@ -26,7 +26,7 @@ public class MyAccountTestCases extends BaseTest {
     String storeCountry;
     String countryCode;
 
-    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Verify all My account options appear correctly ", priority = 1)
+    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Verify all My account options appear correctly ", priority = 1)
     public void verifyAllMyAccountOptionsAppearCorrectly() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);

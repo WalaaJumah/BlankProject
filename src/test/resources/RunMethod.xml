@@ -10,16 +10,73 @@
         <parameter name="environment" value="https://qa.sporter.com"/>
         <parameter name="browser" value="chrome"/>
         <!-- <parameter name="country" value="en-qa" />-->
-        <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32569"/>
+        <parameter name="bogoProduct" value="/sporter-mass-gainer-55040"/>
         <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix"/>
         <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
         <classes>
             <!--            Guest Checkout -->
-            <class name="sporter_test.AccountRegistrationTestCases.EgyptAccountRegistrationTestCases">
+            <class name="sporter_test.productTestCases.KuwaitProductsTestCases">
                 <methods>
-                    <include name="verifyInabilityToRegisterAccountWhenFillingFirstAndLastNameWithSpaces"/>
+                    <include name="keepShoppingAfterAddingToTheCart"/>
                 </methods>
             </class>
+                 <class name="sporter_test.cartTestCases.KuwaitCartTestCases">
+                <methods>
+                    <include name="verifyTheFreeGiftIsDoesNotHavePrice"/>
+                </methods>
+            </class>
+                   <class name="sporter_test.productTestCases.BahrainProductDetailsTestCases">
+                <methods>
+                    <include name="keepShoppingAfterAddingToTheCart"/>
+                </methods>
+            </class>
+                 <class name="sporter_test.cartTestCases.BahrainCartTestCases">
+                <methods>
+                    <include name="verifyTheFreeGiftIsDoesNotHavePrice"/>
+                </methods>
+            </class>
+                         <class name="sporter_test.productTestCases.JordanProductDetailsTestCases">
+                <methods>
+                    <include name="keepShoppingAfterAddingToTheCart"/>
+                </methods>
+            </class>
+                 <class name="sporter_test.cartTestCases.JordanCartTestCases">
+                <methods>
+                    <include name="verifyTheFreeGiftIsDoesNotHavePrice"/>
+                </methods>
+            </class>
+                         <class name="sporter_test.productTestCases.UAEProductDetailsTestCases">
+                <methods>
+                    <include name="keepShoppingAfterAddingToTheCart"/>
+                </methods>
+            </class>
+                 <class name="sporter_test.cartTestCases.UAECartTestCases">
+                <methods>
+                    <include name="verifyTheFreeGiftIsDoesNotHavePrice"/>
+                </methods>
+            </class>
+                               <class name="sporter_test.productTestCases.EgyptProductDetailsTestCases">
+                <methods>
+                    <include name="keepShoppingAfterAddingToTheCart"/>
+                </methods>
+            </class>
+                 <class name="sporter_test.cartTestCases.EgyptCartTestCases">
+                <methods>
+                    <include name="verifyTheFreeGiftIsDoesNotHavePrice"/>
+                </methods>
+            </class>
+                                      <class name="sporter_test.productTestCases.OmanProductDetailsTestCases">
+                <methods>
+                    <include name="keepShoppingAfterAddingToTheCart"/>
+                </methods>
+            </class>
+                 <class name="sporter_test.cartTestCases.OmanCartTestCases">
+                <methods>
+                    <include name="verifyTheFreeGiftIsDoesNotHavePrice"/>
+                </methods>
+            </class>
+
+
         </classes>
     </test>
 
