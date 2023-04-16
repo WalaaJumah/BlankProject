@@ -13,9 +13,14 @@
         <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32569"/>
         <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix"/>
         <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
+        <groups>
+            <run>
+                <include name="All Smoke Testing Result"/>
+            </run>
+        </groups>
         <classes>
             <!--            Guest Checkout -->
-            <class name="sporter_test.myAccountTestCases.BahrainMyAccountTestCases">
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.OmanCheckoutForRegisteredTestCases">
 <!--                <methods>-->
 <!--                    <include name="verifyInabilityToRegisterAccountWhenFillingFirstAndLastNameWithSpaces"/>-->
 <!--                </methods>-->
