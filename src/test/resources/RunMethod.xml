@@ -20,61 +20,61 @@
                     <include name="keepShoppingAfterAddingToTheCart"/>
                 </methods>
             </class>
-                 <class name="sporter_test.cartTestCases.KuwaitCartTestCases">
-                <methods>
-                    <include name="verifyTheFreeGiftIsDoesNotHavePrice"/>
-                </methods>
-            </class>
-                   <class name="sporter_test.productTestCases.BahrainProductDetailsTestCases">
-                <methods>
-                    <include name="keepShoppingAfterAddingToTheCart"/>
-                </methods>
-            </class>
-                 <class name="sporter_test.cartTestCases.BahrainCartTestCases">
-                <methods>
-                    <include name="verifyTheFreeGiftIsDoesNotHavePrice"/>
-                </methods>
-            </class>
-                         <class name="sporter_test.productTestCases.JordanProductDetailsTestCases">
-                <methods>
-                    <include name="keepShoppingAfterAddingToTheCart"/>
-                </methods>
-            </class>
-                 <class name="sporter_test.cartTestCases.JordanCartTestCases">
-                <methods>
-                    <include name="verifyTheFreeGiftIsDoesNotHavePrice"/>
-                </methods>
-            </class>
-                         <class name="sporter_test.productTestCases.UAEProductDetailsTestCases">
-                <methods>
-                    <include name="keepShoppingAfterAddingToTheCart"/>
-                </methods>
-            </class>
-                 <class name="sporter_test.cartTestCases.UAECartTestCases">
-                <methods>
-                    <include name="verifyTheFreeGiftIsDoesNotHavePrice"/>
-                </methods>
-            </class>
-                               <class name="sporter_test.productTestCases.EgyptProductDetailsTestCases">
-                <methods>
-                    <include name="keepShoppingAfterAddingToTheCart"/>
-                </methods>
-            </class>
-                 <class name="sporter_test.cartTestCases.EgyptCartTestCases">
-                <methods>
-                    <include name="verifyTheFreeGiftIsDoesNotHavePrice"/>
-                </methods>
-            </class>
-                                      <class name="sporter_test.productTestCases.OmanProductDetailsTestCases">
-                <methods>
-                    <include name="keepShoppingAfterAddingToTheCart"/>
-                </methods>
-            </class>
-                 <class name="sporter_test.cartTestCases.OmanCartTestCases">
-                <methods>
-                    <include name="verifyTheFreeGiftIsDoesNotHavePrice"/>
-                </methods>
-            </class>
+<!--                 <class name="sporter_test.cartTestCases.KuwaitCartTestCases">-->
+<!--                <methods>-->
+<!--                    <include name="verifyTheFreeGiftIsDoesNotHavePrice"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--                   <class name="sporter_test.productTestCases.BahrainProductDetailsTestCases">-->
+<!--                <methods>-->
+<!--                    <include name="keepShoppingAfterAddingToTheCart"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--                 <class name="sporter_test.cartTestCases.BahrainCartTestCases">-->
+<!--                <methods>-->
+<!--                    <include name="verifyTheFreeGiftIsDoesNotHavePrice"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--                         <class name="sporter_test.productTestCases.JordanProductDetailsTestCases">-->
+<!--                <methods>-->
+<!--                    <include name="keepShoppingAfterAddingToTheCart"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--                 <class name="sporter_test.cartTestCases.JordanCartTestCases">-->
+<!--                <methods>-->
+<!--                    <include name="verifyTheFreeGiftIsDoesNotHavePrice"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--                         <class name="sporter_test.productTestCases.UAEProductDetailsTestCases">-->
+<!--                <methods>-->
+<!--                    <include name="keepShoppingAfterAddingToTheCart"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--                 <class name="sporter_test.cartTestCases.UAECartTestCases">-->
+<!--                <methods>-->
+<!--                    <include name="verifyTheFreeGiftIsDoesNotHavePrice"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--                               <class name="sporter_test.productTestCases.EgyptProductDetailsTestCases">-->
+<!--                <methods>-->
+<!--                    <include name="keepShoppingAfterAddingToTheCart"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--                 <class name="sporter_test.cartTestCases.EgyptCartTestCases">-->
+<!--                <methods>-->
+<!--                    <include name="verifyTheFreeGiftIsDoesNotHavePrice"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--                                      <class name="sporter_test.productTestCases.OmanProductDetailsTestCases">-->
+<!--                <methods>-->
+<!--                    <include name="keepShoppingAfterAddingToTheCart"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--                 <class name="sporter_test.cartTestCases.OmanCartTestCases">-->
+<!--                <methods>-->
+<!--                    <include name="verifyTheFreeGiftIsDoesNotHavePrice"/>-->
+<!--                </methods>-->
+<!--            </class>-->
 
 
         </classes>

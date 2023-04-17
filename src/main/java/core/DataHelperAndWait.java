@@ -189,6 +189,15 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
         ((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView(false);", element);
         DataHelperAndWait.waitToBeVisible(element,webDriver);
     }
+     public static  void scrollToEnd(WebDriver webDriver) {
+         JavascriptExecutor js = (JavascriptExecutor) webDriver;
+         js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+}
+     public static  void scrollToTop(WebDriver webDriver) {
+         JavascriptExecutor js = (JavascriptExecutor) webDriver;
+         js.executeScript("window.scrollBy(0,-350)", "");
+}
+
 
     public static  void scrollToPositionZero(WebDriver webDriver) {
         ((JavascriptExecutor) webDriver).executeScript("window.scroll(0,0)", "");
