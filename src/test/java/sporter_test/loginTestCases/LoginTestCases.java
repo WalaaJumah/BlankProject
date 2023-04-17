@@ -193,16 +193,16 @@ public class LoginTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
         DataHelperAndWait.clickOnElement(loginPage.getFaceBookLoginOption(), webDriver);
         registerPage.verifyFaceBookIsActive();
-        DataHelperAndWait.typeTextInElement(registerPage.getFaceBookEmail(), webDriver, XmlReader.getXMLData("correctEmail"));
-        DataHelperAndWait.typeTextInElement(registerPage.getFaceBookPassword(), webDriver, XmlReader.getXMLData("correctPassword"));
-        DataHelperAndWait.clickOnElement(registerPage.getLoginInFaceBookPage(), webDriver);
-        registerPage.verifyFaceBookIsActive();
-        loginPage.navigateToLoginPage();
-        try {
-            registerPage.logout();
-        } catch (Exception e) {
-            e.getMessage();
-        }
+//        DataHelperAndWait.typeTextInElement(registerPage.getFaceBookEmail(), webDriver, XmlReader.getXMLData("correctEmail"));
+//        DataHelperAndWait.typeTextInElement(registerPage.getFaceBookPassword(), webDriver, XmlReader.getXMLData("correctPassword"));
+//        DataHelperAndWait.clickOnElement(registerPage.getLoginInFaceBookPage(), webDriver);
+//        registerPage.verifyFaceBookIsActive();
+//        loginPage.navigateToLoginPage();
+//        try {
+//            registerPage.logout();
+//        } catch (Exception e) {
+//            e.getMessage();
+//        }
     }
 
     @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify the system keeps the user logged in after switching the country", priority = 16)

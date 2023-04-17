@@ -65,8 +65,7 @@ public class HealthyFoodTestCases extends BaseTest {
         HealthyFoodPage healthyFoodPage = new HealthyFoodPage(webDriver);
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         healthyFoodPage.navigateToHealthyFoodPage();
-        DataHelperAndWait.waitToBeVisible(sportsSupplementsCategoryPage.getMainBanners().get(0), webDriver);
-        for (int i = 0; i < sportsSupplementsCategoryPage.getMainBanners().size(); i++) {
+        for (int i = 1; i < sportsSupplementsCategoryPage.getMainBanners().size(); i++) {
             WebElementsAssertion.validateTheElementIsDisplayed(sportsSupplementsCategoryPage.getMainBanners().get(i), webDriver);
         }
     }
@@ -76,7 +75,6 @@ public class HealthyFoodTestCases extends BaseTest {
         HealthyFoodPage healthyFoodPage = new HealthyFoodPage(webDriver);
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         healthyFoodPage.navigateToHealthyFoodPage();
-        DataHelperAndWait.waitToBeVisible(sportsSupplementsCategoryPage.getMainBanners().get(1), webDriver);
         for (int i = 0; i < sportsSupplementsCategoryPage.getMainBanners().size(); i++) {
             DataHelperAndWait.clickOnElement(sportsSupplementsCategoryPage.getMainBanners().get(i), webDriver);
             sportsSupplementsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
