@@ -82,7 +82,7 @@ public class ForgetPasswordTestCases extends BaseTest {
     public void verifySubmitInForgetPasswordPageWorksCorrectly() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToForgetPassword();
-        DataHelperAndWait.typeTextInElement(loginPage.getEmailField(), webDriver, XmlReader.getXMLData("correctEmail"));
+        DataHelperAndWait.typeTextInElement(loginPage.getEmailField(), webDriver, XmlReader.getXMLData("correctEmail2"));
         DataHelperAndWait.clickOnElement(loginPage.getSubmitBtnInForgetPassword(), webDriver);
         if (webDriver.getCurrentUrl().contains("sporter.com/ar")) {
             WebElementsAssertion.assertionTextIsEqual(loginPage.getForgetPasswordToastMsg(), webDriver, XmlReader.getXMLData("forgetPasswordToastMsgAr"));

@@ -6,14 +6,18 @@
         <!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
         <listener class-name="extent_report_listner.ExtentReportListener"/>
     </listeners>
-    <test name=" Sporter 2.1 Full Testing-Kuwait" preserve-order="true">
+    <test name=" Sporter 2.1 Smoke Testing-Kuwait" preserve-order="true">
         <parameter name="environment" value="https://stores.sporter.com/en-kw"/>
         <parameter name="browser" value="chrome"/>
         <!-- <parameter name="country" value="en-qa" />-->
         <parameter name="bogoProduct" value="/sporter-mass-gainer-55040"/>
         <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix"/>
         <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
-
+        <groups>
+            <run>
+                <include name="All Smoke Testing Result"/>
+            </run>
+        </groups>
         <classes>
 
 <!--            &lt;!&ndash;            Guest Checkout &ndash;&gt;-->
