@@ -3,6 +3,7 @@
 <!--<suite name=" Test" thread-count="1" >-->
 <suite name="Automation Reports">
     <listeners>
+<!--        git update-index-->
         <!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
 <!--        <listener class-name="extent_report_listner.ExtentReportListener"/>-->
     </listeners>
