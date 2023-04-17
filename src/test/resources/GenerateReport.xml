@@ -147,7 +147,7 @@
             <class name="sporter_test.womens_only_category_test_cases.JordanWomensOnlyCategoryTestCases"/>
             <class name="sporter_test.womens_only_category_test_cases.KuwaitWomensOnlyCategoryTestCases"/>
             <class name="sporter_test.womens_only_category_test_cases.QatarWomensOnlyCategoryTestCases"/>
-<!--            <class name="sporter_test.womens_only_category_test_cases.EgyptWomensOnlyCategoryTestCases"/>-->
+            <class name="sporter_test.womens_only_category_test_cases.EgyptWomensOnlyCategoryTestCases"/>
             <class name="sporter_test.womens_only_category_test_cases.BahrainWomensOnlyCategoryTestCases"/>
             <class name="sporter_test.womens_only_category_test_cases.OmanWomensOnlyCategoryTestCases"/>
             <!--     Vitamins & Health Category Page        -->
