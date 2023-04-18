@@ -24,7 +24,7 @@ public class BasePage {
 
 
     public static String BaseURL = "https://sporter.com";
-    public static String productUrl = "/webber-naturals-vitamin-c-500-mg-35580";
+    public static String productUrl = "/optimum-gold-standard-100-whey-6202/";
     public static String productUrl9 = "/cellucor-c4-26162";
 //    public static String productUrl = "/optimum-gold-standard-100-whey";
 
@@ -45,7 +45,7 @@ public class BasePage {
     public static String productUrlKSAWithHighPrice2 = "/asics-gel-kayano-26-ls-graphite-grey-piedmont-grey-32131";
     public static String productUrlEgypt = "/optimum-gold-standard-100-whey";
     public static String productUrlJordan = "/optimum-gold-standard-100-whey";
-    public static String productUrlJordan7 = "/webber-naturals-vitamin-c-500-mg-35580";
+    public static String productUrlJordan7 = "/optimum-gold-standard-100-whey";
     public static String productUrlJordanWithLowPrice = "/jack-links-beef-jerky-54840/";
     public static String productUrlJordanWithHighPrice = "/climaqx-gym-bag-21711";
     public static String productUrlQatarWithHighPrice = "/optimum-gold-standard-100-whey-6202";

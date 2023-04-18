@@ -37,7 +37,7 @@ public class CheckoutForRegisteredPage extends BasePage {
     private WebElement showPasswordIcon;
     @FindBy(id = "hidePasswordIcon")
     private WebElement hidePasswordIcon;
-    @FindBy(xpath = "(//div[@id='savedAddressesContainer'])[1]")
+    @FindBy(xpath = "(//div[@id='savedAddressesContainer']//div)[1]")
     private WebElement savedAddressOption;
     @FindBy(xpath = "//div[@id='citiesSelector']/div[2]/div[2]/div[5]")
     private WebElement dubaiCity;

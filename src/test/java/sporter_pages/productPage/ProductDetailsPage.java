@@ -82,7 +82,7 @@ public class ProductDetailsPage extends BasePage {
     private WebElement sportsSupplementsInShopBy;
     @FindBy(xpath = "(//div[@id='currentPrice'])[2]")
     private WebElement FinalProductPrice;
-    @FindBy(id = "searchInput")
+    @FindBy(xpath = "//input[contains(@class,'searchInput')]")
     private WebElement searchField;
     @FindBy(id = "SortItem_Sales & Offers_span")
     private WebElement salesAndOffersMenu;

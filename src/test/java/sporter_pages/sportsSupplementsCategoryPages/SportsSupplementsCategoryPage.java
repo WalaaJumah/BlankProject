@@ -22,7 +22,7 @@ import java.util.List;
 @Getter
 public class SportsSupplementsCategoryPage extends BasePage {
     //TODO: The banners are missing from the site
-    @FindBy(xpath = "//ul[@class='clearfix']//a")
+    @FindBy(xpath = "//div[@id='categorySubImages']//a")
     private List<WebElement> mainBanners;
     @FindBy(id = "pathSegment_0")
     private WebElement homePageBreadCrumb;

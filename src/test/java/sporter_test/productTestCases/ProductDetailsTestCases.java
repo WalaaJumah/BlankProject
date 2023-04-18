@@ -124,6 +124,7 @@ public class ProductDetailsTestCases extends BaseTest {
         HomePage homePage = new HomePage(webDriver);
         productDetailsPage.displayTheProduct();
         DataHelperAndWait.clickOnElement(productDetailsPage.getHomeBreadcrumbs(), webDriver);
+        DataHelperAndWait.waitForTime(1500);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(), webDriver);
 
     }

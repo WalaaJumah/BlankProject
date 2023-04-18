@@ -262,9 +262,14 @@ catch (Exception e){
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
-        cartPage.navigateToHomePage();
-        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
+        try{
+            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+        }
+        catch (Exception e) {
+            cartPage.navigateToHomePage();
+            DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
+            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
+        }
         try {
             DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(), webDriver);
         }
