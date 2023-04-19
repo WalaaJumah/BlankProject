@@ -152,6 +152,7 @@ public class CheckoutForRegisteredPage extends BasePage {
         } catch (Exception e) {
             System.out.println("");
         }
+        cartPage.addToCartAndDisplayTheCart();
         cartPage.proceedToCheckout();
         try {
             DataHelperAndWait.clickOnElement(this.getSavedAddressOption(), webDriver);

@@ -1,10 +1,8 @@
 package core;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
@@ -91,7 +89,10 @@ public class BaseTest {
                 //This Statement will run always
                 System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
 //                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriverVersion110.exe");
-                //This if we need to run the Script using the Normal WebDriver
+
+//                ChromeOptions chromeOptions=new ChromeOptions();
+//                chromeOptions.setPageLoadStrategy(PageLoadStrategy.NONE);
+//                webDriver = new ChromeDriver(chromeOptions);
                 webDriver = new ChromeDriver();
 
 
