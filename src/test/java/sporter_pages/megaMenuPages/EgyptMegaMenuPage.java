@@ -19,7 +19,7 @@ public class EgyptMegaMenuPage extends MegaMenuPage {
     @FindBy(xpath = "//li[@id='cat_618']/a")
     private WebElement healthyFoodMenu;
 
-    @FindBy(xpath = "//ul/li[@id='menu_47']/a")
+    @FindBy(xpath = "//ul/li[@id='cat_686']/a")
     private WebElement vitaminsAndHealthMenu;
     public EgyptMegaMenuPage(WebDriver webDriver) {
         super(webDriver);

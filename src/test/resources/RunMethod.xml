@@ -12,13 +12,15 @@
         <!-- <parameter name="country" value="en-qa" />-->
         <parameter name="bogoProduct" value="/sporter-mass-gainer-55040"/>
         <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix"/>
+        w
         <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
         <classes>
             <!--            Guest Checkout -->
-            <class name="sporter_test.productTestCases.KuwaitProductsTestCases">
-                <methods>
-                    <include name="keepShoppingAfterAddingToTheCart"/>
-                </methods>
+            <class name="sporter_test.productTestCases.EgyptProductDetailsTestCases">
+<!--                <methods>-->
+<!--                    <include name="verifyAbilityToLoginCorrectlyWithValidCredentials"/>-->
+<!--                    <include name="verifyTheRegisteredUserCanFillTheShippingInformationCorrectly"/>-->
+<!--                </methods>-->
             </class>
 <!--                 <class name="sporter_test.cartTestCases.KuwaitCartTestCases">-->
 <!--                <methods>-->

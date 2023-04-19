@@ -152,10 +152,7 @@ public class CheckoutForRegisteredPage extends BasePage {
         } catch (Exception e) {
             System.out.println("");
         }
-        cartPage.addToCartAndDisplayTheCart();
-        cartPage.navigateToHomePage();
-        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
+        cartPage.proceedToCheckout();
         try {
             DataHelperAndWait.clickOnElement(this.getSavedAddressOption(), webDriver);
         } catch (Exception e) {

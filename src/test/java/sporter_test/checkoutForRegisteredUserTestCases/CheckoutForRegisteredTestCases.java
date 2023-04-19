@@ -183,8 +183,10 @@ catch (Exception e){
     }
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the email field is disable and retrieved the customer email correctly", priority = 15)
     public void verifyTheEmailFieldRetrievedIsDisableAndDisplayTheCustomerEmail() {
+        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         try{
+            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getAddNewAddressBtn(),webDriver);
         WebElementsAssertion.assertionElementNotEnable(guestCheckoutCyclePage.getEmailField(), webDriver);
         WebElementsAssertion.assertionAttributeTrueForElement(guestCheckoutCyclePage.getEmailField(), webDriver,"value",XmlReader.getXMLData("correctEmail2"));}
         catch (Exception e){
@@ -364,9 +366,13 @@ catch (Exception e){
             System.out.println("");
         }
         cartPage.addToCartAndDisplayTheCart();
+        try{
+            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+        }
+        catch (Exception e){
         cartPage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);}
         WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver,XmlReader.getXMLData("twoBusinessDay"));
         WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getSameDayDelivery(),webDriver,XmlReader.getXMLData("sameDayDelivery"));
     }
@@ -427,9 +433,7 @@ catch (Exception e){
             System.out.println("");
         }
         cartPage.addToCartAndDisplayTheCart();
-        cartPage.navigateToHomePage();
-        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
+        cartPage.proceedToCheckout();
         try{
             checkoutForRegisteredPage.fillInShippingInformationInputField(
                     XmlReader.getXMLData("firstName"),
@@ -478,11 +482,18 @@ catch (Exception e){
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Continue button appears in the Payment Methods screen is disable when no shipping method is selected", priority = 26)
     public void verifyContinueBtnAppearsInPaymentMethodsIsDisableWhenNoMethodSelected() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        EgyptGuestCheckoutCyclePage egyptGuestCheckoutCyclePage= new EgyptGuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
+        cartPage.clearCart();
+        cartPage.addToCartAndDisplayTheCart();
+        try{
+            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+        }
+        catch (Exception e){
         cartPage.navigateToHomePage();
         cartPage.clickOnCartIcon();
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);}
         //TODO: recheck the button after Moamen Solve ot
 //        cartPage.navigateToCartPage();
 //        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
@@ -500,8 +511,8 @@ catch (Exception e){
         }
                 DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(egyptGuestCheckoutCyclePage.getNextDayMethod(),webDriver);
+//        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
 
 //        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
 //        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -578,16 +589,10 @@ catch (Exception e){
         CartPage cartPage = new CartPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         cartPage.addToCartAndDisplayTheCart();
-//        cartPage.navigateToCartPage();
         DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);
-//        cartPage.navigateToHomePage();
-//        cartPage.clickOnCartIcon();
-//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
-//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
-        DataHelperAndWait.waitForUrlContains(guestCheckoutCyclePage.shippingInformationUrl,webDriver);
+        cartPage.proceedToCheckout();
         try{
             DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
         }

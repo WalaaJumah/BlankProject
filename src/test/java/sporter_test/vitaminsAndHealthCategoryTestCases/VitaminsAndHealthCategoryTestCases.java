@@ -393,7 +393,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
-        DataHelperAndWait.waitForTime(3000);
+        DataHelperAndWait.waitForTime(2000);
         WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getSupplementForHerSection(), webDriver);
     }
 
@@ -402,7 +402,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
-        DataHelperAndWait.waitForTime(3000);
+        DataHelperAndWait.waitForTime(2000);
         WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getWomensVitaminsSection(), webDriver);
     }
 

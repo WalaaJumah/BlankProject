@@ -67,7 +67,7 @@ public class EgyptGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCase
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure Inability to continue the placing order process using invalid Credit Card", priority = 27)
     public void verifyInabilityToUseInvalidCreditCardPaymentMethod() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-//        guestCheckoutCyclePage.viewCartAndAccessShippingMethodsPage();
+        EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
@@ -80,9 +80,9 @@ public class EgyptGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCase
                 XmlReader.getXMLData("StreetTwoAddressName"));
         DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("invalidCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
+        egypt.submitCreditCard(XmlReader.getXMLData("invalidCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCloseCheckoutErr(), webDriver);
     }
 @Test(enabled = false)
@@ -121,7 +121,8 @@ public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithV
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the Next Day Delivery Shipping Method With Valid Credit Card Payment Method", priority = 28)
     public void verifyAbilityToSelectTheNextDayDeliveryShippingMethodWithValidCreditCardPaymentMethod() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
+        EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
+        egypt.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
     }
@@ -151,7 +152,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
 ////        orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
 ////        System.out.println(orderNumber);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
+        EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         guestCheckoutCyclePage.accessGuestCheckoutForm();
@@ -166,9 +167,9 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         );
         DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
+        egypt.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();

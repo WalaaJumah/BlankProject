@@ -64,6 +64,10 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
     public void verifyTheRegisteredUserCanFillTheShippingInformationCorrectly() {
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        CartPage cartPage=new CartPage(webDriver);
+        cartPage.clearCart();
+        cartPage.addToCartAndDisplayTheCart();
+cartPage.proceedToCheckout();
         try{
             DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
@@ -82,7 +86,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getShippingMethodsOptionsSection(),webDriver);
     }
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when using a Free Coupon Code ", priority = 90)
-    public void verifyAbilityToPlaceOrderWhenUsingFreeCouponCode() {
+    public void verifyAbilityToPlaceOrderWhenUsingFreeCouponCode() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage=new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
@@ -114,6 +118,50 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
             );
         }
                 DataHelperAndWait.waitForTime(2000);
+        guestCheckoutCyclePage.clickOnContinueBtn();
+        DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        guestCheckoutCyclePage.verifyTheDisplayedPageDoesNotHaveErrors();
+//        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getSuccessPage(),webDriver);
+//        orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
+//        System.out.println(orderNumber);
+    }
+    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure the system display the Quote ID for the user after checkout the order", priority = 100)
+    public void verifyTheSystemDisplayTheQuoteIdForTheUserAfterCheckoutTheOrderUsingCouponeCode() throws IOException {
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        CheckoutForRegisteredPage checkoutForRegisteredPage=new CheckoutForRegisteredPage(webDriver);
+        CartPage cartPage = new CartPage(webDriver);
+        KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
+        try {
+            cartPage.clearCart();
+        }
+        catch (Exception e){
+            System.out.println("");
+        }
+        cartPage.addToCartAndDisplayTheCart();
+        DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
+        DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);
+        cartPage.navigateToHomePage();
+        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+        try{
+            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
+        }
+        catch (Exception e){
+            checkoutForRegisteredPage.fillInShippingInformationInputField(
+                    XmlReader.getXMLData("firstName"),
+                    XmlReader.getXMLData("lastName"),
+                    XmlReader.getXMLData("ksaPhoneNumber"),
+                    XmlReader.getXMLData("AddressName"),
+                    XmlReader.getXMLData("StreetOneAddressName"),
+                    XmlReader.getXMLData("StreetTwoAddressName")
+            );
+        }
+        DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);

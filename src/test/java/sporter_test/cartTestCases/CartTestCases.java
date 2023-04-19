@@ -407,19 +407,19 @@ public class CartTestCases extends BaseTest {
 
     //TODO: https://sporter1.atlassian.net/browse/NS-28
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Verify that the search button works correctly from the Cart Page", priority = 30)
-    public void verifySearchBtnWorksCorrectlyFromCartPage() {
+    public void verifySearchBtnWorksCorrectlyFromCartPage() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-//        cartPage.addToCartAndDisplayTheCart();
+        cartPage.navigateToCartPage();
         DataHelperAndWait.typeTextInElement(productDetailsPage.getSearchField(),webDriver,"Basic");
         DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString("search", webDriver);
+        WebElementsAssertion.validateTheCurrentUrlContainsString("search",webDriver);
+        productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Make sure that Make sure that complete your order, to get 100% GENUINE PRODUCTS and SUPER DELIVERY WITHIN 2 WORKING DAYS label appears in the Cart Page", priority = 31)
     public void verifyTheFreeShippingLabelAppearCorrectlyInTheCartPage() {
         CartPage cartPage = new CartPage(webDriver);
-//        cartPage.addToCartAndDisplayTheCart();
         cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.isDisplayed(cartPage.getFreeShippingLabel(), webDriver);
     }

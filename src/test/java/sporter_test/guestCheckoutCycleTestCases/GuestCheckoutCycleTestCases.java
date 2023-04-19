@@ -13,6 +13,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.cartPages.CartPage;
+import sporter_pages.guestCheckoutCyclePages.EgyptGuestCheckoutCyclePage;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import sporter_pages.guestCheckoutCyclePages.JordanGuestCheckoutCyclePage;
 import sporter_pages.guestCheckoutCyclePages.KSAGuestCheckoutCyclePage;
@@ -381,7 +382,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that each of COD & Credit Card Payment methods appear correctly", priority = 23)
     public void verifyEachOfCODAndCreditCardPaymentMethodCorrectly() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
- CartPage cartPage = new CartPage(webDriver);
+        EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
@@ -398,7 +399,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCreditCardPaymentMethod(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getCreditCardPaymentMethod(),webDriver);
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Continue button appears in the Payment Methods screen is disable when no shipping method is selected", priority = 24)
     public void verifyContinueBtnAppearsInPaymentMethodsIsDisableWhenNoMethodSelected() {

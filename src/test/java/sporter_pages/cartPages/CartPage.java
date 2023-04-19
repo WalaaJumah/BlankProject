@@ -273,4 +273,16 @@ public class CartPage extends BasePage {
         wait = new WebDriverWait(webDriver, 8);
         wait.until(ExpectedConditions.invisibilityOfElementWithText(By.id("cartItemQty"), expectedText));
     }
+
+    public void proceedToCheckout(){
+        try{
+            DataHelperAndWait.clickOnElement(this.getProceedCheckoutBtn(),webDriver);
+        }
+        catch (Exception e){
+            navigateToHomePage();
+            DataHelperAndWait.clickOnElement(this.cartIcon,webDriver);
+            DataHelperAndWait.clickOnElement(this.proceedCheckoutBtnInCartPopup,webDriver);
+
+        }
+    }
 }

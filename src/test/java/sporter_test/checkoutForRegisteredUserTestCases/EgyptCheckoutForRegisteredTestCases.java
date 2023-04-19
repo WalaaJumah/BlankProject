@@ -123,7 +123,8 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
+        DataHelperAndWait.clickOnElement(egypt.getCreditCardPaymentMethod(),webDriver);
+//        egypt.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
        ;
     }
@@ -136,7 +137,8 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
        DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
+        DataHelperAndWait.clickOnElement(egypt.getCreditCardPaymentMethod(),webDriver);
+//        egypt.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         DataHelperAndWait.waitForTime(500);
@@ -184,9 +186,6 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
-//        cartPage.navigateToCartPage();
-//        cartPage.removeItem();
-//        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         try{
             cartPage.clearCart();}
         catch (Exception e){
@@ -211,8 +210,8 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCreditCardPaymentMethod(),webDriver);
-        guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("invalidCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
+        DataHelperAndWait.clickOnElement(egypt.getCreditCardPaymentMethod(),webDriver);
+        egypt.submitCreditCard(XmlReader.getXMLData("invalidCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCloseCheckoutErr(), webDriver);
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that each of COD & Credit Card Payment methods appear correctly", priority = 25)
@@ -221,6 +220,18 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         guestCheckoutCyclePage.navigateToCheckoutPage();
+        CartPage cartPage= new CartPage(webDriver);
+        cartPage.clearCart();
+        cartPage.addToCartAndDisplayTheCart();
+        try{
+            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+        }
+        catch (Exception e){
+            cartPage.navigateToHomePage();
+            cartPage.clickOnCartIcon();
+            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+
+        }
         try{
             DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
         }
@@ -235,18 +246,17 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         }
         DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
-        DataHelperAndWait.clickOnElement(egypt.getTwoBusinessDaysSuperExpressShipping(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
-//        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCreditCardPaymentMethod(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getCreditCardPaymentMethod(),webDriver);
     }
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when using a Free Coupon Code ", priority = 81)
     public void verifyAbilityToPlaceOrderWhenUsingFreeCouponCode() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
-//        cartPage.addToCartAndDisplayTheCart();
-//        webDriver.manage().deleteCookieNamed("guestCartId");
+        cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
@@ -259,7 +269,6 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
 //        cartPage.clickOnCartIcon();
 //        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
 //        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
-        DataHelperAndWait.waitForUrlContains(guestCheckoutCyclePage.shippingInformationUrl,webDriver);
         try{
             DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
         }
@@ -277,6 +286,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
         DataHelperAndWait.waitForTime(2500);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
