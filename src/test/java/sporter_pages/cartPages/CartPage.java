@@ -68,9 +68,9 @@ public class CartPage extends BasePage {
     //TODO: To replace it with ID after added it by Moamen
     @FindBy(xpath = "//div[@id='cartPageContainer']//a")
     private WebElement hereLink;
-    @FindBy(id = "decreaseQtyBtn")
+    @FindBy(xpath = "(//div[@id='decreaseQtyBtn'])[1]")
     private WebElement decreaseQtyBtn;
-    @FindBy(id = "increaseQtyBtn")
+    @FindBy(xpath = "(//div[@id='increaseQtyBtn'])[1]")
     private WebElement increaseQtyBtn;
     //TODO: To replace it with ID after added it by Moamen
 //    @FindBy(xpath = "//div[@id='toCheckoutContainer']/a/button")
@@ -116,7 +116,7 @@ public class CartPage extends BasePage {
     private List<WebElement> productImg;
     @FindBy(xpath = "//div[starts-with(@id,'cartItemImage')]")
     private WebElement productImgForOneProduct;
-    @FindBy(xpath = "//a[starts-with(@class,'cartItem_itemName')]")
+    @FindBy(xpath = "(//a[starts-with(@class,'cartItem_itemName')])[1]")
     private WebElement productNameForOneProduct;
     @FindBy(xpath = "//div[starts-with(@id,'itemToWhishListBtn')]")
     private List<WebElement> moveToWishList;

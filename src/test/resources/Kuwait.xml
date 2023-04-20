@@ -5,7 +5,7 @@
     <listeners>
         <!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
         <listener class-name="extent_report_listner.ExtentReportListener"/>
-    </listeners>
+    </listeners> "
     <test name=" Sporter 2.1 Smoke Testing-Kuwait" preserve-order="true">
         <parameter name="environment" value="https://stores.sporter.com/en-kw"/>
         <parameter name="browser" value="chrome"/>

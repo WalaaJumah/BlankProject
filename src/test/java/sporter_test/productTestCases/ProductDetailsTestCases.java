@@ -13,6 +13,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import sporter_pages.cartPages.CartPage;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.megaMenuPages.EgyptMegaMenuPage;
@@ -70,8 +71,10 @@ public class ProductDetailsTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Make sure that the increase quantity function works fine ", priority = 5)
     public void verifyIncreaseQuantityButtonWorkingFine() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        CartPage cartPage= new CartPage(webDriver);
         productDetailsPage.displayTheProduct();
         productDetailsPage.increaseTheQuantity();
+        cartPage.waitTillQtyValueChanges("2");
         WebElementsAssertion.assertionAttributeTrueForElement(productDetailsPage.getQuantityField(), webDriver, "value", "2");
     }
 
