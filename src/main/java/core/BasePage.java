@@ -23,7 +23,7 @@ import java.net.URL;
 public class BasePage {
 
 
-    public static String BaseURL = "https://sporter.com";
+    public static String BaseURL = "";
     public static String productUrl = "/optimum-gold-standard-100-whey-6202/";
     public static String productUrl9 = "/cellucor-c4-26162";
 //    public static String productUrl = "/optimum-gold-standard-100-whey";
@@ -191,6 +191,7 @@ public class BasePage {
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.offerNotAvailableMsg), "The  offer is not available in your country page is displayed" + webDriver.getCurrentUrl());
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.pageNotFoundMsg), "Page Not Found Is Displayed and the URL is " + webDriver.getCurrentUrl());
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.productsCannotFindMsg), "This page is currently under maintenance and the URL is " + webDriver.getCurrentUrl());
+        Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.generatedContentErrorMsg), "We're sorry, an error has occurred while generating this content and the URL is " + webDriver.getCurrentUrl());
         this.getStatusCode(currentURL);
     }
 

@@ -90,10 +90,10 @@ public class BaseTest {
                 System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
 //                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriverVersion110.exe");
 
-//                ChromeOptions chromeOptions=new ChromeOptions();
-//                chromeOptions.setPageLoadStrategy(PageLoadStrategy.NONE);
-//                webDriver = new ChromeDriver(chromeOptions);
-                webDriver = new ChromeDriver();
+                ChromeOptions chromeOptions=new ChromeOptions();
+                chromeOptions.setPageLoadStrategy(PageLoadStrategy.EAGER);
+                webDriver = new ChromeDriver(chromeOptions);
+//                webDriver = new ChromeDriver();
 
 
                 //Chrome headless
