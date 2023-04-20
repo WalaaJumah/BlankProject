@@ -91,7 +91,7 @@ public class BaseTest {
 //                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriverVersion110.exe");
 
                 ChromeOptions chromeOptions=new ChromeOptions();
-                chromeOptions.setPageLoadStrategy(PageLoadStrategy.EAGER);
+                chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
                 webDriver = new ChromeDriver(chromeOptions);
 //                webDriver = new ChromeDriver();
 

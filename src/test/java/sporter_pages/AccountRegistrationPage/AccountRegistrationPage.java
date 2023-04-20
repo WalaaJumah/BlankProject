@@ -107,9 +107,11 @@ public class AccountRegistrationPage extends BasePage {
 
     public void navigateToRegistrationPage() throws IOException {
         webDriver.navigate().to(BaseURL + registerAccountLink);
+        verifyTheDisplayedPageDoesNotHaveErrors();
         try {
             if (this.getLastNameField().isDisplayed()) {
                 webDriver.navigate().refresh();
+                verifyTheDisplayedPageDoesNotHaveErrors();
             }
         } catch (Exception e) {
             e.getMessage();
