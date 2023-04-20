@@ -14,6 +14,8 @@ public class SporterErrorPage extends BasePage {
     public static final String pageNotFoundMsg = "The page you requested was not found on this store. You can go to homepage or search here";
     public static final String productsCannotFindMsg = "We can't find products matching the selection.";
     public static final String generatedContentErrorMsg = "We're sorry, an error has occurred while generating this content.";
+    public static final String error503 = "Error 503 Backend fetch failed";
+    public static final String backendError = "Backend fetch failed";
     public static final String pageUnderMaintenanceMsg = "This page is currently under maintenance";
     public static final String exceptionPageMsg = "An error has happened during application run. See exception log for details.";
     public static final String exceptionPageMsg2 = "An error occurred on client";
