@@ -68,6 +68,7 @@ public class CartTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Verify increase quantity button from Cart page works successfully", priority = 5)
     public void verifyIncreaseQtyBtnInCartPageWorking() {
         CartPage cartPage = new CartPage(webDriver);
+        cartPage.navigateToCartPage();
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
 //        DataHelperAndWait.waitForTime(500);
         cartPage.waitTillQtyValueChanges("2");
@@ -83,6 +84,7 @@ public class CartTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Verify ability to Decrease the product quantity from Cart page from the Cart Page works successfully", priority = 6)
     public void verifyDecreaseQtyBtnInCartPageWorking() {
         CartPage cartPage = new CartPage(webDriver);
+        cartPage.navigateToCartPage();
         DataHelperAndWait.clickOnElement(cartPage.getDecreaseQtyBtn(), webDriver);
         cartPage.waitTillQtyValueChanges("1");
 //        try{
@@ -97,6 +99,7 @@ public class CartTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure that the view Cart button appearing in the Cart pop-up works correctly", priority = 7)
     public void verifyAbilityToViewCartFromCartIcon() {
         CartPage cartPage = new CartPage(webDriver);
+        cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getViewCartInCartPopup(), webDriver);
         WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.cartURL, webDriver);
@@ -119,6 +122,8 @@ public class CartTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Verify ability to remove the product from the cart successfully", priority = 9)
     public void verifyAbilityToRemoveProductFromCart() {
         CartPage cartPage = new CartPage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        cartPage.navigateToCartPage();
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getNoItemInCartLabel(), webDriver);
     }
 
