@@ -62,12 +62,13 @@ public class SportsCategoryPage extends BasePage {
     private WebElement recommendedProductsTitleSection;
     @FindBy(xpath = "(//div[@class='swiper-wrapper'])[2]")
     private WebElement recommendedProductsSection;
-    public void clickOnSportsMainMenu() {
+    public void clickOnSportsMainMenu() throws IOException {
         Actions actions = new Actions(webDriver);
         MegaMenuPage megaMenuPage = new MegaMenuPage(webDriver);
         DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsMenu(), webDriver);
         actions.moveToElement(megaMenuPage.getSportsMenu()).perform();
         DataHelperAndWait.clickOnElement(megaMenuPage.getSportsMenu(), webDriver);
+        verifyTheDisplayedPageDoesNotHaveErrors();
     }
     public void navigateToSportsPage() throws IOException {
         webDriver.navigate().to(BaseURL + sportsUrl);
@@ -106,17 +107,19 @@ public class SportsCategoryPage extends BasePage {
         while (!getMensPersonalCareCategory().isDisplayed());
         DataHelperAndWait.clickOnElement(getMensPersonalCareCategory(), webDriver);
     }
-    public void clickOnSportsFromShopByMenu() {
+    public void clickOnSportsFromShopByMenu() throws IOException {
         Actions actions = new Actions(webDriver);
         MegaMenuPage megaMenuPage = new MegaMenuPage(webDriver);
         try {
             DataHelperAndWait.waitToBeVisible(megaMenuPage.getShopByMenu(), webDriver);
             actions.moveToElement(megaMenuPage.getShopByMenu()).perform();
             DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsMenu(), webDriver);
+            verifyTheDisplayedPageDoesNotHaveErrors();
         } catch (Exception e) {
             DataHelperAndWait.waitToBeVisible(megaMenuPage.getShopByMenu(), webDriver);
             actions.moveToElement(megaMenuPage.getShopByMenu()).perform();
             DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsMenu(), webDriver);
+            verifyTheDisplayedPageDoesNotHaveErrors();
         }
     }
 }

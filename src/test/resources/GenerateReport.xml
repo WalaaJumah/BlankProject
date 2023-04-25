@@ -8,7 +8,7 @@
     </listeners>
     <test name=" Sporter 2.1 Full Test" preserve-order="true">
         <parameter name="environment" value="https://qa.sporter.com"/>
-        <parameter name="browser" value="chrome"/>" Upd
+        <parameter name="browser" value="chrome"/>
         <!-- <parameter name="country" value="en-qa" />-->
         <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32569"/>
         <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix"/>
