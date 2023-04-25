@@ -13,13 +13,15 @@ import sporter_pages.cartPages.CartPage;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import xml_reader.XmlReader;
 
+import java.io.IOException;
+
 public class EgyptCheckoutForRegisteredPage extends CheckoutForRegisteredPage {
     public EgyptCheckoutForRegisteredPage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
     }
 
-    public void AddToCartAndAccessShippingMethodsPageForEgypt() {
+    public void AddToCartAndAccessShippingMethodsPageForEgypt() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         try {

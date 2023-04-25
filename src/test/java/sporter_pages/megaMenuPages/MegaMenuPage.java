@@ -16,6 +16,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.io.IOException;
 import java.util.List;
 
 @Getter
@@ -65,83 +66,95 @@ public class MegaMenuPage extends BasePage {
         PageFactory.initElements(webDriver, this);
     }
 
-    public void makeSureToDisplayShopByMenu() {
+    public void makeSureToDisplayShopByMenu() throws IOException {
         try {
             Actions action = new Actions(webDriver);
             action.moveToElement(this.getShopByMenu()).perform();
             action.moveToElement(this.getShopByMenu()).perform();
             WebElementsAssertion.validateTheElementIsDisplayed(this.getShopBySubMenu(), webDriver);
+            verifyTheDisplayedPageDoesNotHaveErrors();
         } catch (Exception e) {
             Actions action = new Actions(webDriver);
             action.moveToElement(this.getShopByMenu()).perform();
             action.moveToElement(this.getShopByMenu()).perform();
             WebElementsAssertion.validateTheElementIsDisplayed(this.getShopBySubMenu(), webDriver);
+            verifyTheDisplayedPageDoesNotHaveErrors();
         }
     }
 
-    public void clickOnVitaminsAndHealthMainMenu() {
+    public void clickOnVitaminsAndHealthMainMenu() throws IOException {
         Actions actions = new Actions(webDriver);
         try {
             DataHelperAndWait.waitToBeVisible(this.vitaminsAndHealthMenu, webDriver);
             actions.moveToElement(this.vitaminsAndHealthMenu).perform();
             DataHelperAndWait.clickOnElement(this.vitaminsAndHealthMenu, webDriver);
+            verifyTheDisplayedPageDoesNotHaveErrors();
         } catch (Exception e) {
             DataHelperAndWait.waitToBeVisible(this.vitaminsAndHealthMenu, webDriver);
             DataHelperAndWait.JsExecutorToClickOnElement(this.vitaminsAndHealthMenu,webDriver);
+            verifyTheDisplayedPageDoesNotHaveErrors();
         }
     }
 
-    public void clickOnHealthyFoodMainMenu() {
+    public void clickOnHealthyFoodMainMenu() throws IOException {
         Actions actions = new Actions(webDriver);
         try {
             DataHelperAndWait.waitToBeVisible(this.healthyFoodMenu, webDriver);
             actions.moveToElement(this.healthyFoodMenu).perform();
             DataHelperAndWait.clickOnElement(this.healthyFoodMenu, webDriver);
+            verifyTheDisplayedPageDoesNotHaveErrors();
         } catch (Exception e) {
             DataHelperAndWait.waitToBeVisible(this.healthyFoodMenu, webDriver);
             actions.moveToElement(this.healthyFoodMenu).perform();
             DataHelperAndWait.clickOnElement(this.healthyFoodMenu, webDriver);
+            verifyTheDisplayedPageDoesNotHaveErrors();
         }
     }
 
-    public void clickOnSportsMainMenu() {
+    public void clickOnSportsMainMenu() throws IOException {
         Actions actions = new Actions(webDriver);
         try {
             DataHelperAndWait.waitToBeVisible(this.sportsMenu, webDriver);
             actions.moveToElement(this.sportsMenu).perform();
             DataHelperAndWait.clickOnElement(this.sportsMenu, webDriver);
+            verifyTheDisplayedPageDoesNotHaveErrors();
         } catch (Exception e) {
             DataHelperAndWait.waitToBeVisible(this.sportsMenu, webDriver);
             actions.moveToElement(this.sportsMenu).perform();
             DataHelperAndWait.clickOnElement(this.sportsMenu, webDriver);
+            verifyTheDisplayedPageDoesNotHaveErrors();
         }
     }
-    public void clickOnWomensOnlyMainMenu() {
+    public void clickOnWomensOnlyMainMenu() throws IOException {
         Actions actions = new Actions(webDriver);
         try {
             DataHelperAndWait.waitToBeVisible(this.womensOnlyMenu, webDriver);
             actions.moveToElement(this.womensOnlyMenu).perform();
             DataHelperAndWait.clickOnElement(this.womensOnlyMenu, webDriver);
+            verifyTheDisplayedPageDoesNotHaveErrors();
         } catch (Exception e) {
             DataHelperAndWait.waitToBeVisible(this.womensOnlyMenu, webDriver);
             actions.moveToElement(this.womensOnlyMenu).perform();
             DataHelperAndWait.clickOnElement(this.womensOnlyMenu, webDriver);
+            verifyTheDisplayedPageDoesNotHaveErrors();
         }
     }
-    public void clickOnWomensOnlyFromShopByMenu() {
+    public void clickOnWomensOnlyFromShopByMenu() throws IOException {
         Actions actions = new Actions(webDriver);
         MegaMenuPage megaMenuPage = new MegaMenuPage(webDriver);
         try {
             DataHelperAndWait.waitToBeVisible(megaMenuPage.getShopByMenu(), webDriver);
             actions.moveToElement(megaMenuPage.getShopByMenu()).perform();
             DataHelperAndWait.waitToBeVisible(megaMenuPage.getWomensOnlyMenu(), webDriver);
+            verifyTheDisplayedPageDoesNotHaveErrors();
         } catch (Exception e) {
             DataHelperAndWait.waitToBeVisible(megaMenuPage.getShopByMenu(), webDriver);
             actions.moveToElement(megaMenuPage.getShopByMenu()).perform();
             DataHelperAndWait.waitToBeVisible(megaMenuPage.getWomensOnlyMenu(), webDriver);
+            verifyTheDisplayedPageDoesNotHaveErrors();
         }
     }
-    public void clickOnVitaminsAndHealthFromShopByMenu() {
+    public void clickOnVitaminsAndHealthFromShopByMenu() throws IOException {
         Actions actions = new Actions(webDriver);
         MegaMenuPage megaMenuPage = new MegaMenuPage(webDriver);
         try {
@@ -149,9 +162,11 @@ public class MegaMenuPage extends BasePage {
             actions.moveToElement(megaMenuPage.getShopByMenu()).perform();
             DataHelperAndWait.waitForTime(1000);
             DataHelperAndWait.waitToBeVisible(megaMenuPage.getVitaminsAndHealthMenu(), webDriver);
+            verifyTheDisplayedPageDoesNotHaveErrors();
         } catch (Exception e) {
             DataHelperAndWait.waitToBeVisible(megaMenuPage.getShopByMenu(), webDriver);
             actions.moveToElement(megaMenuPage.getShopByMenu()).click().perform();
+            verifyTheDisplayedPageDoesNotHaveErrors();
         }
     }
 

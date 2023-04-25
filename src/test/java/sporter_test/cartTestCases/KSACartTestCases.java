@@ -51,7 +51,7 @@ public class KSACartTestCases extends CartTestCases {
 //        cartPage.removeItem();
 //    }
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 26)
-    public void verifyOrderTotalCalculationInCartPageWorksCorrectly() {
+    public void verifyOrderTotalCalculationInCartPageWorksCorrectly() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
         float subTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue(), webDriver, "SAR");
@@ -77,7 +77,7 @@ public class KSACartTestCases extends CartTestCases {
 
     //TODO: This test case should be revisit after solving: https://sporter1.atlassian.net/browse/NS-120 & https://sporter1.atlassian.net/browse/NS-42
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Make sure that the product counter that appears in the cart page counts the free gift correctly", priority = 12)
-    public void verifyProductCounterAppearsInTheCartPageCountsFreeGifts() {
+    public void verifyProductCounterAppearsInTheCartPageCountsFreeGifts() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         cartPage.addBogoToCartAndDisplayTheCart();
@@ -90,7 +90,7 @@ public class KSACartTestCases extends CartTestCases {
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the system does not apply invalid coupon code", priority = 26)
-    public void verifyInabilityToApplyInvalidCouponCode() {
+    public void verifyInabilityToApplyInvalidCouponCode() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(), webDriver, XmlReader.getXMLData("invalidCouponCode"));
@@ -104,7 +104,7 @@ public class KSACartTestCases extends CartTestCases {
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the product price is changed when you change the quantity from the Cart Page", priority = 8)
-    public void verifyProductPriceChangesWhenChangingTheProductQtyFromTheCartPage() {
+    public void verifyProductPriceChangesWhenChangingTheProductQtyFromTheCartPage() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToCartPage();
         String currentProductPrice = DataHelperAndWait.getWebElementText(cartPage.getProductPriceTotal(), webDriver);

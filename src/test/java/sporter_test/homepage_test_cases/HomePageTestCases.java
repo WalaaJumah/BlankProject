@@ -54,7 +54,7 @@ public class HomePageTestCases extends BaseTest {
     }
 
     @Test(groups = { "1.2 High Severity"}, description = "{{CountryName}}: Make sure the HomePage side Banners is displayed ", priority = 7)
-    public void verifyHomePageSideBannerIsDisplayed() {
+    public void verifyHomePageSideBannerIsDisplayed() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getHomePageSideBanner(), webDriver);
@@ -101,7 +101,7 @@ public class HomePageTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Shop By Category section is displayed ", priority = 12)
-    public void verifyShopByCategoryIsDisplayed() {
+    public void verifyShopByCategoryIsDisplayed() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getShopByCategoryHeader(), webDriver);
@@ -137,7 +137,7 @@ public class HomePageTestCases extends BaseTest {
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure the Top Selling Stacks section is displayed ", priority = 15)
-    public void verifyTopSellingStacksSectionAreDisplayed() {
+    public void verifyTopSellingStacksSectionAreDisplayed() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getTopSellingStacksHeader(), webDriver);
@@ -155,7 +155,7 @@ public class HomePageTestCases extends BaseTest {
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure the Top Sellers sections are displayed ", priority = 17)
-    public void verifyTopSellersSectionAreDisplayed() {
+    public void verifyTopSellersSectionAreDisplayed() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getTopSellerHeader(), webDriver);
@@ -182,7 +182,7 @@ public class HomePageTestCases extends BaseTest {
     }
 
     @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the next button appearing in the Top Seller section works Correctly ", priority = 24)
-    public void verifyNextBtnInTopSellerSectionWorks() {
+    public void verifyNextBtnInTopSellerSectionWorks() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
         DataHelperAndWait.validateNextOrPreviousBtnInPanelWork(homePage.getProductsInTopSellersSection(), homePage.getProductsInTopSellersSection().get(5), homePage.getNextButtonInTopSellerSection(), webDriver);
@@ -226,7 +226,7 @@ public class HomePageTestCases extends BaseTest {
 
     //ToDo:Needs to recheck
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that previous and next button in the New Arrivals Section works correctly", priority = 36)
-    public void verifyPreviousAndNextBtnInNewArrivalsSectionWorksCorrectly() {
+    public void verifyPreviousAndNextBtnInNewArrivalsSectionWorksCorrectly() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
         try {
@@ -324,7 +324,7 @@ public class HomePageTestCases extends BaseTest {
     }
 
     @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"}, description = "{{CountryName}}: Make sure clicking on phone button from the Got A Question section works correctly ", priority = 47)
-    public void verifyAbilityToClickOnPhoneBtnInGotQuestionSectionCorrectly() {
+    public void verifyAbilityToClickOnPhoneBtnInGotQuestionSectionCorrectly() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
         homePage.clickOnPhoneBtn();

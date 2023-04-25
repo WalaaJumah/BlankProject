@@ -47,7 +47,7 @@ public class HealthyFoodTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure clicking on the Healthy Food Category from HomePage Redirect User To CorrectURL", priority = 4)
-    public void verifyClickingOnHealthyFoodCategoryFromHomePageRedirectUserToCorrectURL() {
+    public void verifyClickingOnHealthyFoodCategoryFromHomePageRedirectUserToCorrectURL() throws IOException {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
@@ -61,7 +61,7 @@ public class HealthyFoodTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure the Horizontal Banners appear correctly", priority = 5)
-    public void verifyTheHorizontalBannersAppearCorrectlyInHealthyFoodLandingPage() {
+    public void verifyTheHorizontalBannersAppearCorrectlyInHealthyFoodLandingPage() throws IOException {
         HealthyFoodPage healthyFoodPage = new HealthyFoodPage(webDriver);
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         healthyFoodPage.navigateToHealthyFoodPage();
@@ -83,7 +83,7 @@ public class HealthyFoodTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure that the customer can navigate to the home page using the BreadCrumb ", priority = 7)
-    public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumb() {
+    public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumb() throws IOException {
         HealthyFoodPage healthyFoodPage = new HealthyFoodPage(webDriver);
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         healthyFoodPage.navigateToHealthyFoodPage();
@@ -93,7 +93,7 @@ public class HealthyFoodTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Healthy Food Category Page- Make sure that the Result label and its value appear correctly ", priority = 8)
-    public void verifyResultFieldAndItsVaLueAppearInTheHealthyFoodCategoryPage() {
+    public void verifyResultFieldAndItsVaLueAppearInTheHealthyFoodCategoryPage() throws IOException {
         HealthyFoodPage healthyFoodPage = new HealthyFoodPage(webDriver);
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         healthyFoodPage.navigateToHealthyFoodPage();
@@ -103,7 +103,7 @@ public class HealthyFoodTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Healthy Food Category Page- Make sure that Sort By menu appears correctly ", priority = 9)
-    public void verifySortByMenuAndItsOptionsAppearCorrectly() {
+    public void verifySortByMenuAndItsOptionsAppearCorrectly() throws IOException {
         HealthyFoodPage healthyFoodPage = new HealthyFoodPage(webDriver);
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         healthyFoodPage.navigateToHealthyFoodPage();
@@ -112,7 +112,7 @@ public class HealthyFoodTestCases extends BaseTest {
     }
 //TODO:Needs to recheck
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure each of the Healthy Food category image and Horizontal Banners appearing after sorting the products  ", priority = 10)
-    public void verifyHealthyFoodCategoryImageAndHorizontalBannersAppearingAfterSortingTheProducts() {
+    public void verifyHealthyFoodCategoryImageAndHorizontalBannersAppearingAfterSortingTheProducts() throws IOException {
         HealthyFoodPage healthyFoodPage = new HealthyFoodPage(webDriver);
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         healthyFoodPage.navigateToHealthyFoodPage();
@@ -123,7 +123,7 @@ public class HealthyFoodTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure  the Healthy Food footer appears correctly  ", priority = 11)
-    public void verifyHealthyFoodFooterSectionAppearsCorrectly() {
+    public void verifyHealthyFoodFooterSectionAppearsCorrectly() throws IOException {
         HealthyFoodPage healthyFoodPage = new HealthyFoodPage(webDriver);
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         healthyFoodPage.navigateToHealthyFoodPage();
@@ -131,7 +131,7 @@ public class HealthyFoodTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure the NewsLetter section appears correctly  ", priority = 12)
-    public void verifyNewLetterSectionAppearsCorrectly() {
+    public void verifyNewLetterSectionAppearsCorrectly() throws IOException {
         HealthyFoodPage healthyFoodPage = new HealthyFoodPage(webDriver);
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         healthyFoodPage.navigateToHealthyFoodPage();
@@ -151,7 +151,7 @@ public class HealthyFoodTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Healthy Food Category- Make Sure the next page button works correctly", priority = 14)
-    public void verifyNextPageBtnWorksCorrectly() {
+    public void verifyNextPageBtnWorksCorrectly() throws IOException {
         HealthyFoodPage healthyFoodPage = new HealthyFoodPage(webDriver);
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         healthyFoodPage.navigateToHealthyFoodPage();
@@ -164,7 +164,7 @@ public class HealthyFoodTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Healthy Food Category- Make Sure the previous page button works correctly", priority = 15)
-    public void verifyPreviousPageBtnWorksCorrectly() {
+    public void verifyPreviousPageBtnWorksCorrectly() throws IOException {
         HealthyFoodPage healthyFoodPage = new HealthyFoodPage(webDriver);
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         healthyFoodPage.navigateToHealthyFoodPage();
@@ -181,7 +181,7 @@ public class HealthyFoodTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure all secure tabs appears correctly(100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks)", priority = 16)
-    public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInHealthyFoodCategoryPage() {
+    public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInHealthyFoodCategoryPage() throws IOException {
         HealthyFoodPage healthyFoodPage = new HealthyFoodPage(webDriver);
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         FooterSection footerSection = new FooterSection(webDriver);
@@ -204,7 +204,7 @@ public class HealthyFoodTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure that the BreadCrumb appears correctly after sorting the product ", priority = 17)
-    public void verifyTheBreadCrumbAppearingCorrectlyAfterSortingTheProducts() {
+    public void verifyTheBreadCrumbAppearingCorrectlyAfterSortingTheProducts() throws IOException {
         HealthyFoodPage healthyFoodPage = new HealthyFoodPage(webDriver);
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         HomePage homePage = new HomePage(webDriver);

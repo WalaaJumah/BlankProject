@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 import sporter_pages.headerSection.HeaderSection;
 import xml_reader.XmlReader;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 //TODO: Add Country to the test case description
@@ -21,7 +22,7 @@ public class HeaderTestCases extends BaseTest {
     String storeCountry;
 
     @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Ability to access all stores using Country List appearing in the Header", priority = 50)
-    public void accessAllCountries() {
+    public void accessAllCountries() throws IOException {
         HeaderSection headerSection = new HeaderSection(webDriver);
         ArrayList<String> expectedOption = new ArrayList<>() {{
             add("/en-ae");
@@ -40,6 +41,7 @@ public class HeaderTestCases extends BaseTest {
         for (int i = 0; i < headerSection.getCountryList().size(); i++) {
             headerSection.getCountryList().get(i).click();
             DataHelperAndWait.clickOnElement(headerSection.getCountryMenuIcon(), webDriver);
+            headerSection.verifyTheDisplayedPageDoesNotHaveErrors();
         }
     }
 
@@ -69,7 +71,7 @@ public class HeaderTestCases extends BaseTest {
     }
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Search section appears correctly", priority = 4)
-    public void verifySearchSectionCorrectly() {
+    public void verifySearchSectionCorrectly() throws IOException {
         HeaderSection headerSection = new HeaderSection(webDriver);
         headerSection.navigateToHomePage();
         WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getSearchSectionForm(), webDriver);
@@ -78,14 +80,14 @@ public class HeaderTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Cart icon appears correctly", priority = 5)
-    public void verifyCartIconAppearsCorrectly() {
+    public void verifyCartIconAppearsCorrectly() throws IOException {
         HeaderSection headerSection = new HeaderSection(webDriver);
         headerSection.navigateToHomePage();
         WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getCartIcon(), webDriver);
     }
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the My Account icon appears correctly", priority = 6)
-    public void verifyProfileIconAppearsCorrectly() {
+    public void verifyProfileIconAppearsCorrectly() throws IOException {
         HeaderSection headerSection = new HeaderSection(webDriver);
         headerSection.navigateToHomePage();
         WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getAccountProfileIcon(), webDriver);

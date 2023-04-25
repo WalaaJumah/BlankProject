@@ -15,6 +15,8 @@ import org.openqa.selenium.support.PageFactory;
 import sporter_pages.cartPages.CartPage;
 import xml_reader.XmlReader;
 
+import java.io.IOException;
+
 @Getter
 public class JordanGuestCheckoutCyclePage extends GuestCheckoutCyclePage {
     @FindBy(id = "nationalIdField_errMsg")
@@ -66,7 +68,7 @@ public class JordanGuestCheckoutCyclePage extends GuestCheckoutCyclePage {
 
     }
 
-    public void navigateToShippingMethodsPage() {
+    public void navigateToShippingMethodsPage() throws IOException {
         this.accessGuestCheckoutForm();
         this.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
@@ -82,7 +84,7 @@ public class JordanGuestCheckoutCyclePage extends GuestCheckoutCyclePage {
         this.clickOnContinueBtn();
     }
 
-    public void viewCartAndAccessShippingMethodsPage() {
+    public void viewCartAndAccessShippingMethodsPage() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToCartPage();
         this.accessGuestCheckoutForm();

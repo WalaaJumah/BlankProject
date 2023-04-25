@@ -228,7 +228,7 @@ public class BasePage {
         }
     }
 
-    public void navigateToHomePage() {
+    public void navigateToHomePage() throws IOException {
         try {
             WebElement btnCloseElement = webDriver.findElement(By.xpath("//button[@class='button_btn__zg_G5 changeStorePopUp_btn__sggmr']/span"));
 //            DataHelperAndWait.waitForTime(2000);
@@ -256,6 +256,7 @@ public class BasePage {
 
 
         webDriver.navigate().to(BaseURL);
+        verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
 

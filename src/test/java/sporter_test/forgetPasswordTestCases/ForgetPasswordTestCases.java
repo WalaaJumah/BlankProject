@@ -84,6 +84,7 @@ public class ForgetPasswordTestCases extends BaseTest {
         loginPage.navigateToForgetPassword();
         DataHelperAndWait.typeTextInElement(loginPage.getEmailField(), webDriver, XmlReader.getXMLData("correctEmail2"));
         DataHelperAndWait.clickOnElement(loginPage.getSubmitBtnInForgetPassword(), webDriver);
+        loginPage.verifyTheDisplayedPageDoesNotHaveErrors();
         if (webDriver.getCurrentUrl().contains("sporter.com/ar")) {
             WebElementsAssertion.assertionTextIsEqual(loginPage.getForgetPasswordToastMsg(), webDriver, XmlReader.getXMLData("forgetPasswordToastMsgAr"));
         }

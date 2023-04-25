@@ -14,6 +14,8 @@ import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import sporter_pages.guestCheckoutCyclePages.JordanGuestCheckoutCyclePage;
 import xml_reader.XmlReader;
 
+import java.io.IOException;
+
 public class JordanCheckoutForRegisteredPage extends CheckoutForRegisteredPage {
     public JordanCheckoutForRegisteredPage(WebDriver webDriver) {
         super(webDriver);
@@ -39,7 +41,7 @@ public class JordanCheckoutForRegisteredPage extends CheckoutForRegisteredPage {
 
     }
 
-    public void navigateToShippingMethodsPage() {
+    public void navigateToShippingMethodsPage() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         guestCheckoutCyclePage.accessGuestCheckoutForm();
         this.fillInShippingInformationInputField(
@@ -55,7 +57,7 @@ public class JordanCheckoutForRegisteredPage extends CheckoutForRegisteredPage {
         guestCheckoutCyclePage.clickOnContinueBtn();
     }
 
-    public void viewCartAndAccessShippingMethodsPage() {
+    public void viewCartAndAccessShippingMethodsPage() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         cartPage.navigateToCartPage();
@@ -73,7 +75,7 @@ public class JordanCheckoutForRegisteredPage extends CheckoutForRegisteredPage {
         guestCheckoutCyclePage.clickOnContinueBtn();
     }
 
-    public void AddToCartAndAccessShippingMethodsPageForSavedAddress() {
+    public void AddToCartAndAccessShippingMethodsPageForSavedAddress() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();

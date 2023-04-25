@@ -19,6 +19,8 @@ import org.openqa.selenium.support.PageFactory;
 import sporter_pages.cartPages.CartPage;
 import xml_reader.XmlReader;
 
+import java.io.IOException;
+
 @Getter
 public class GuestCheckoutCyclePage extends BasePage {
     String checkOutComUrl = "checkout.com";
@@ -182,7 +184,7 @@ public class GuestCheckoutCyclePage extends BasePage {
         }
     }
 
-    public void navigateToCheckoutPage() {
+    public void navigateToCheckoutPage() throws IOException {
 //        webDriver.navigate().to(BaseURL+shippingInformationUrl);
 //        DataHelperAndWait.waitForUrlContains(shippingInformationUrl,webDriver);
         CartPage cartPage = new CartPage(webDriver);
@@ -194,7 +196,7 @@ public class GuestCheckoutCyclePage extends BasePage {
 //        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
     }
 
-    public void accessGuestCheckoutForm() {
+    public void accessGuestCheckoutForm() throws IOException {
 ////        webDriver.navigate().to(BaseURL+shippingInformationUrl);
 //            CartPage cartPage = new CartPage(webDriver);
 ////            cartPage.navigateToCartPage();
@@ -292,7 +294,7 @@ public class GuestCheckoutCyclePage extends BasePage {
         DataHelperAndWait.clickOnElement(abuDhabiCity, webDriver);
     }
 
-    public void navigateToShippingMethodsPage() {
+    public void navigateToShippingMethodsPage() throws IOException {
         this.accessGuestCheckoutForm();
         this.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
@@ -307,7 +309,7 @@ public class GuestCheckoutCyclePage extends BasePage {
         this.clickOnContinueBtn();
     }
 
-    public void AddToCartAndAccessShippingMethodsPage() {
+    public void AddToCartAndAccessShippingMethodsPage() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
         this.accessGuestCheckoutForm();
@@ -324,7 +326,7 @@ public class GuestCheckoutCyclePage extends BasePage {
         this.clickOnContinueBtn();
     }
 
-    public void viewCartAndAccessShippingMethodsPage() {
+    public void viewCartAndAccessShippingMethodsPage() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
         this.accessGuestCheckoutForm();

@@ -52,7 +52,7 @@ public class MyAccountTestCases extends BaseTest {
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Verify clicking on My Account Option redirect the user to the correct Page ", priority = 2)
-    public void verifyClickingOnMyAccountOptionsWorksCorrectly() {
+    public void verifyClickingOnMyAccountOptionsWorksCorrectly() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
         try{
@@ -73,7 +73,7 @@ public class MyAccountTestCases extends BaseTest {
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Verify clicking on My Orders Option redirect the user to the correct Page ", priority = 3)
-    public void verifyClickingOnMyOrdersOptionsWorksCorrectly() {
+    public void verifyClickingOnMyOrdersOptionsWorksCorrectly() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
         myAccountPage.navigateToHomePage();
@@ -84,7 +84,7 @@ public class MyAccountTestCases extends BaseTest {
     }
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Verify clicking on My Rewards Option redirect the user to the correct Page ", priority = 4)
-    public void verifyClickingOnMyRewardsOptionsWorksCorrectly() {
+    public void verifyClickingOnMyRewardsOptionsWorksCorrectly() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
         myAccountPage.navigateToHomePage();

@@ -16,6 +16,8 @@ import sporter_pages.cartPages.CartPage;
 import sporter_pages.homepage_classes.EgyptHomePage;
 import sporter_pages.myAccountPages.BahrainMyAccountPage;
 
+import java.io.IOException;
+
 public class BahrainCartTestCases extends CartTestCases{
     @BeforeClass(alwaysRun = true)
     public void switchToBahrainStore() {
@@ -30,7 +32,7 @@ public class BahrainCartTestCases extends CartTestCases{
         }
     }
     @Test(enabled = false,groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 24)
-    public void verifyOrderTotalCalculationInCartPageWorksCorrectly() {
+    public void verifyOrderTotalCalculationInCartPageWorksCorrectly() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
         float subTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue(), webDriver, "BHD");
@@ -41,7 +43,7 @@ public class BahrainCartTestCases extends CartTestCases{
         webDriver.manage().deleteCookieNamed("guestCartId");
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that all payment methods are appear correctly in the Cart page", priority = 21)
-    public void verifyAllPaymentMethodAppearingTheCartPage() {
+    public void verifyAllPaymentMethodAppearingTheCartPage() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         cartPage.addToCartAndDisplayTheCart();

@@ -57,7 +57,7 @@ public class OmanCheckoutForRegisteredTestCases extends CheckoutForRegisteredTes
     public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNationalID() {}
 
     @Test(enabled = false,groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 9)
-    public void verifyOrderTotalCalculationInCartPageWorksCorrectly() {
+    public void verifyOrderTotalCalculationInCartPageWorksCorrectly() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         DecimalFormat df = new DecimalFormat("0.00");
         cartPage.navigateToCartPage();
@@ -68,7 +68,7 @@ public class OmanCheckoutForRegisteredTestCases extends CheckoutForRegisteredTes
         Assert.assertEquals(df.format(orderTotal), df.format(cartTotal));
     }
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:Verify All Shipping Methods appear correctly", priority = 23)
-    public void verifyAllShippingMethodsAppearCorrectly(){
+    public void verifyAllShippingMethodsAppearCorrectly() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         OmanCheckoutForRegisteredPage omanCheckoutForRegisteredPage= new OmanCheckoutForRegisteredPage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
@@ -100,7 +100,7 @@ public class OmanCheckoutForRegisteredTestCases extends CheckoutForRegisteredTes
         WebElementsAssertion.assertionWebElementEqualText(omanCheckoutForRegisteredPage.getFiveToSevenBusinessDaysShippingMethod(),webDriver, XmlReader.getXMLData("FiveToSevenBusinessDaysShipping"));
     }
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Five To Seven Business Days Shipping Method With COD Payment Method ", priority = 27)
-    public void verifyAbilityToPlaceOrderWhenSelectingFiveToSevenBusinessDaysShippingMethodWithCODPaymentMethod() {
+    public void verifyAbilityToPlaceOrderWhenSelectingFiveToSevenBusinessDaysShippingMethodWithCODPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         OmanCheckoutForRegisteredPage omanCheckoutForRegisteredPage= new OmanCheckoutForRegisteredPage(webDriver);
@@ -122,7 +122,7 @@ public class OmanCheckoutForRegisteredTestCases extends CheckoutForRegisteredTes
         //        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the Five To Seven Business Days Shipping Method With Valid Credit Card Payment Method", priority = 28)
-    public void verifyAbilityToSelectTheFiveToSevenBusinessDayshippingMethodWithValidCreditCardPaymentMethod() {
+    public void verifyAbilityToSelectTheFiveToSevenBusinessDayshippingMethodWithValidCreditCardPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         OmanCheckoutForRegisteredPage omanCheckoutForRegisteredPage= new OmanCheckoutForRegisteredPage(webDriver);
@@ -150,7 +150,7 @@ public class OmanCheckoutForRegisteredTestCases extends CheckoutForRegisteredTes
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the Five To Seven Business Days Shipping Method With COD Payment Method correctly", priority = 29)
-    public void verifyAbilityToSelectTheFiveToSevenBusinessDaysShippingMethodWithCODPaymentMethod() {
+    public void verifyAbilityToSelectTheFiveToSevenBusinessDaysShippingMethodWithCODPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         OmanCheckoutForRegisteredPage omanCheckoutForRegisteredPage= new OmanCheckoutForRegisteredPage(webDriver);
@@ -204,7 +204,7 @@ public class OmanCheckoutForRegisteredTestCases extends CheckoutForRegisteredTes
 //        System.out.println(orderNumber);
     }
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure Inability to continue the placing order process using invalid Credit Card", priority = 31)
-    public void verifyInabilityToUseInvalidCreditCardPaymentMethod() {
+    public void verifyInabilityToUseInvalidCreditCardPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         OmanCheckoutForRegisteredPage omanCheckoutForRegisteredPage= new OmanCheckoutForRegisteredPage(webDriver);
@@ -217,7 +217,7 @@ public class OmanCheckoutForRegisteredTestCases extends CheckoutForRegisteredTes
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCloseCheckoutErr(), webDriver);
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that each of COD & Credit Card Payment methods appear correctly", priority = 25)
-    public void verifyEachOfCODAndCreditCardPaymentMethodCorrectly() {
+    public void verifyEachOfCODAndCreditCardPaymentMethodCorrectly() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         OmanCheckoutForRegisteredPage omanCheckoutForRegisteredPage= new OmanCheckoutForRegisteredPage(webDriver);

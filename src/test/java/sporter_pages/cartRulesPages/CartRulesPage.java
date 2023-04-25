@@ -15,6 +15,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import sporter_pages.cartPages.CartPage;
 
+import java.io.IOException;
+
 @Getter
 public class CartRulesPage extends CartPage {
     private String removeItemBtn11 = "(//div[@id='removeItemBtn'])";
@@ -24,7 +26,7 @@ public class CartRulesPage extends CartPage {
         PageFactory.initElements(webDriver, this);
     }
 
-    public void clearCart() {
+    public void clearCart() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         this.navigateToCartPage();
 

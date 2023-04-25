@@ -14,6 +14,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import sporter_pages.megaMenuPages.MegaMenuPage;
 
+import java.io.IOException;
+
 @Getter
 public class HealthyFoodPage extends BasePage {
     public HealthyFoodPage(WebDriver webDriver) {
@@ -21,35 +23,40 @@ public class HealthyFoodPage extends BasePage {
         PageFactory.initElements(webDriver, this);
     }
 
-    public void clickOnHealthyFoodMainMenu() {
+    public void clickOnHealthyFoodMainMenu() throws IOException {
         Actions actions = new Actions(webDriver);
         MegaMenuPage megaMenuPage = new MegaMenuPage(webDriver);
         DataHelperAndWait.waitToBeVisible(megaMenuPage.getHealthyFoodMenu(), webDriver);
 //        actions.moveToElement(megaMenuPage.getHealthyFoodMenu()).click().perform();
         DataHelperAndWait.waitForTime(1500);
         DataHelperAndWait.clickOnElement(megaMenuPage.getHealthyFoodMenu(), webDriver);
+        megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //        DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsSupplementsMenu(),webDriver);
 //        actions.moveToElement(megaMenuPage.getSportsSupplementsMenu()).perform();
 //        DataHelperAndWait.clickOnElement(megaMenuPage.getSportsSupplementsMenu(),webDriver);
     }
 
-    public void clickOnHealthyFoodFromShopByMenu() {
+    public void clickOnHealthyFoodFromShopByMenu() throws IOException {
         Actions actions = new Actions(webDriver);
         MegaMenuPage megaMenuPage = new MegaMenuPage(webDriver);
         try {
             DataHelperAndWait.waitToBeVisible(megaMenuPage.getShopByMenu(), webDriver);
             actions.moveToElement(megaMenuPage.getShopByMenu()).perform();
             DataHelperAndWait.clickOnElement(megaMenuPage.getHealthyFoodMenuFromShopBy(), webDriver);
+            megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         } catch (Exception e) {
             DataHelperAndWait.waitToBeVisible(megaMenuPage.getShopByMenu(), webDriver);
             actions.moveToElement(megaMenuPage.getShopByMenu()).perform();
             DataHelperAndWait.waitForTime(1500);
             DataHelperAndWait.clickOnElement(megaMenuPage.getHealthyFoodMenuFromShopBy(), webDriver);
+            megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
         }
     }
 
-    public void navigateToHealthyFoodPage() {
+    public void navigateToHealthyFoodPage() throws IOException {
         webDriver.navigate().to(BaseURL + healthyFoodsUrl);
+        verifyTheDisplayedPageDoesNotHaveErrors();
         DataHelperAndWait.waitForUrlContains(healthyFoodsUrl, webDriver);
+        verifyTheDisplayedPageDoesNotHaveErrors();
     }
 }

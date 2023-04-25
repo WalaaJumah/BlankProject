@@ -17,6 +17,8 @@ import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import sporter_pages.guestCheckoutCyclePages.JordanGuestCheckoutCyclePage;
 import xml_reader.XmlReader;
 
+import java.io.IOException;
+
 @Getter
 
 public class QatarCheckoutForRegisteredPage extends CheckoutForRegisteredPage {
@@ -49,7 +51,7 @@ public class QatarCheckoutForRegisteredPage extends CheckoutForRegisteredPage {
         DataHelperAndWait.updateAllText(jo.getNationalIDField(), nationalID);
     }
 
-    public void AddToCartAndAccessShippingMethodsPageForSavedAddress() {
+    public void AddToCartAndAccessShippingMethodsPageForSavedAddress() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         QatarCheckoutForRegisteredPage qa = new QatarCheckoutForRegisteredPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);

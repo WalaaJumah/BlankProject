@@ -178,6 +178,7 @@ public class ProductDetailsPage extends BasePage {
 
 
         webDriver.navigate().to(BaseURL + productUrl1);
+        verifyTheDisplayedPageDoesNotHaveErrors();
         DataHelperAndWait.waitForUrlContains(productUrl1, webDriver);
         verifyTheDisplayedPageDoesNotHaveErrors();
         System.out.println("The product URL is: " + webDriver.getCurrentUrl());
@@ -186,6 +187,7 @@ public class ProductDetailsPage extends BasePage {
     public void displayTheProductHaveLessQty() throws IOException {
         if (webDriver.getCurrentUrl().contains("en-eg")) {
             webDriver.navigate().to(BaseURL + productUrlEgypt);
+            verifyTheDisplayedPageDoesNotHaveErrors();
         } else
             webDriver.navigate().to(BaseURL + product2UrlLessQty);
         verifyTheDisplayedPageDoesNotHaveErrors();

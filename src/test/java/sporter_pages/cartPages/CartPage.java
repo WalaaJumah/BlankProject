@@ -179,7 +179,7 @@ public class CartPage extends BasePage {
         }
     }
 
-    public void addToCartAndDisplayTheCart() {
+    public void addToCartAndDisplayTheCart() throws IOException {
         try {
             productDetailsPage.displayTheProduct();
             productDetailsPage.addToCart();
@@ -195,7 +195,7 @@ public class CartPage extends BasePage {
         productDetailsPage.viewCart();
     }
 
-    public void addToCartAndViewCart() {
+    public void addToCartAndViewCart() throws IOException {
         try {
             productDetailsPage.addToCart();
             productDetailsPage.viewCart();
@@ -204,7 +204,7 @@ public class CartPage extends BasePage {
         }
     }
 
-    public void addBogoToCartAndDisplayTheCart() {
+    public void addBogoToCartAndDisplayTheCart() throws IOException {
         try {
 
             productDetailsPage.navigateToBogoProduct();
@@ -217,9 +217,11 @@ public class CartPage extends BasePage {
 
     }
 
-    public void navigateToCartPage() {
+    public void navigateToCartPage() throws IOException {
         webDriver.navigate().to(BaseURL + cartURL);
+        verifyTheDisplayedPageDoesNotHaveErrors();
         DataHelperAndWait.waitForUrlContains(cartURL, webDriver);
+
     }
 
     public void addBundleToCartAndDisplayTheCart() throws IOException {
@@ -232,7 +234,7 @@ public class CartPage extends BasePage {
         DataHelperAndWait.waitToBeClickable(this.removeItemBtn, webDriver);
         this.removeItemBtn.click();}
 
-    public void clearCart() {
+    public void clearCart() throws IOException {
         try {
             this.navigateToCartPage();
             this.removeItem();
@@ -274,7 +276,7 @@ public class CartPage extends BasePage {
         wait.until(ExpectedConditions.invisibilityOfElementWithText(By.id("cartItemQty"), expectedText));
     }
 
-    public void proceedToCheckout(){
+    public void proceedToCheckout() throws IOException {
         try{
             DataHelperAndWait.clickOnElement(this.getProceedCheckoutBtn(),webDriver);
         }

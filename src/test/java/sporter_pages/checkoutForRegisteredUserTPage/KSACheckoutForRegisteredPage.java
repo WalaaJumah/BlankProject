@@ -13,13 +13,15 @@ import sporter_pages.cartPages.CartPage;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import xml_reader.XmlReader;
 
+import java.io.IOException;
+
 public class KSACheckoutForRegisteredPage extends CheckoutForRegisteredPage {
     public KSACheckoutForRegisteredPage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
     }
 
-    public void AddToCartAndAccessShippingMethodsPageForSavedAddressForDubaiCity() {
+    public void AddToCartAndAccessShippingMethodsPageForSavedAddressForDubaiCity() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
@@ -51,7 +53,7 @@ public class KSACheckoutForRegisteredPage extends CheckoutForRegisteredPage {
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(), webDriver);
     }
 
-    public void AddToCartAndAccessShippingMethodsPageForSavedAddress() {
+    public void AddToCartAndAccessShippingMethodsPageForSavedAddress() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
@@ -73,7 +75,7 @@ public class KSACheckoutForRegisteredPage extends CheckoutForRegisteredPage {
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
     }
 
-    public void viewCartAndAccessShippingMethodsPage() {
+    public void viewCartAndAccessShippingMethodsPage() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
@@ -89,7 +91,7 @@ public class KSACheckoutForRegisteredPage extends CheckoutForRegisteredPage {
         guestCheckoutCyclePage.clickOnContinueBtn();
     }
 
-    public void navigateToShippingMethodsPage() {
+    public void navigateToShippingMethodsPage() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         guestCheckoutCyclePage.accessGuestCheckoutForm();
         this.fillInShippingInformationInputField(
@@ -104,7 +106,7 @@ public class KSACheckoutForRegisteredPage extends CheckoutForRegisteredPage {
         guestCheckoutCyclePage.clickOnContinueBtn();
     }
 
-    public void AddToCartAndAccessShippingMethodsPage() {
+    public void AddToCartAndAccessShippingMethodsPage() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();

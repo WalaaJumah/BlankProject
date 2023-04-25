@@ -70,12 +70,15 @@ public class JordanCartRulesTestCases extends CartRulesTestCases {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         webDriver.navigate().to(BaseURL + cartPage.productUrlJordanWithHighPrice);
+        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         productDetailsPage.addToCart();
         productDetailsPage.keepShopping();
         webDriver.navigate().to(BaseURL + cartPage.productUrlJordanWithHighPrice2);
+        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         productDetailsPage.addToCart();
         productDetailsPage.keepShopping();
         webDriver.navigate().to(BaseURL + cartPage.productUrlJordan);
+        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         productDetailsPage.addToCart();
         productDetailsPage.viewCart();
         DataHelperAndWait.waitForTime(2000);

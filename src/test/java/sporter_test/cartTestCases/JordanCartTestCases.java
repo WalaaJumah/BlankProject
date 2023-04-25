@@ -16,6 +16,8 @@ import sporter_pages.cartPages.CartPage;
 import sporter_pages.homepage_classes.JordanHomePage;
 import sporter_pages.productPage.ProductDetailsPage;
 
+import java.io.IOException;
+
 public class JordanCartTestCases extends CartTestCases {
     @BeforeClass(alwaysRun = true)
     public void switchToJordanStore() {
@@ -43,7 +45,7 @@ public class JordanCartTestCases extends CartTestCases {
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 26)
-    public void verifyOrderTotalCalculationInCartPageWorksCorrectly() {
+    public void verifyOrderTotalCalculationInCartPageWorksCorrectly() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
 //        cartPage.addToCartAndDisplayTheCart();
         cartPage.addToCartAndDisplayTheCart();
@@ -72,7 +74,7 @@ public class JordanCartTestCases extends CartTestCases {
     }
 
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Make sure that the product counter that appears in the cart page counts the free gift correctly", priority = 11)
-    public void verifyProductCounterAppearsInTheCartPageCountsFreeGifts() {
+    public void verifyProductCounterAppearsInTheCartPageCountsFreeGifts() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addBogoToCartAndDisplayTheCart();
         String itemsCounter = "1";
@@ -84,7 +86,7 @@ public class JordanCartTestCases extends CartTestCases {
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that all payment methods are appear correctly in the Cart page", priority = 21)
-    public void verifyAllPaymentMethodAppearingTheCartPage() {
+    public void verifyAllPaymentMethodAppearingTheCartPage() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
 //        cartPage.addToCartAndDisplayTheCart();
         cartPage.addToCartAndDisplayTheCart();
@@ -95,7 +97,7 @@ public class JordanCartTestCases extends CartTestCases {
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure that the view Cart button appearing in the Cart pop-up works correctly", priority = 7)
-    public void verifyAbilityToViewCartFromCartIcon() {
+    public void verifyAbilityToViewCartFromCartIcon() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
@@ -104,7 +106,7 @@ public class JordanCartTestCases extends CartTestCases {
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Verify ability to display the product from the Cart Page works successfully", priority = 19)
-    public void verifyAbilityToDisplayTheProductFromTheCartPage() {
+    public void verifyAbilityToDisplayTheProductFromTheCartPage() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getProductNameForOneProduct(), webDriver);

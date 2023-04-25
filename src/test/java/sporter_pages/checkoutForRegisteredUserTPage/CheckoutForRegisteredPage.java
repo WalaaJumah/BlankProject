@@ -17,6 +17,8 @@ import sporter_pages.cartPages.CartPage;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import xml_reader.XmlReader;
 
+import java.io.IOException;
+
 @Getter
 public class CheckoutForRegisteredPage extends BasePage {
     @FindBy(id = "addNewAddressBtn")
@@ -82,7 +84,7 @@ public class CheckoutForRegisteredPage extends BasePage {
         DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getStreetLineTwoField(), streetLineTwo);
     }
 
-    public void navigateToShippingMethodsPage() {
+    public void navigateToShippingMethodsPage() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         guestCheckoutCyclePage.accessGuestCheckoutForm();
         this.fillInShippingInformationInputField(
@@ -98,25 +100,7 @@ public class CheckoutForRegisteredPage extends BasePage {
         guestCheckoutCyclePage.clickOnContinueBtn();
     }
 
-    public void AddToCartAndAccessShippingMethodsPage() {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CartPage cartPage = new CartPage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
-        this.fillInShippingInformationInputField(
-                XmlReader.getXMLData("firstName"),
-                XmlReader.getXMLData("lastName"),
-                XmlReader.getXMLData("phoneNumber"),
-                XmlReader.getXMLData("AddressName"),
-                XmlReader.getXMLData("StreetOneAddressName"),
-                XmlReader.getXMLData("StreetTwoAddressName")
-        );
-        guestCheckoutCyclePage.setSelectDubaiCityCity();
-        DataHelperAndWait.waitForTime(1500);
-        guestCheckoutCyclePage.clickOnContinueBtn();
-    }
-
-    public void viewCartAndAccessShippingMethodsPage() {
+    public void AddToCartAndAccessShippingMethodsPage() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
@@ -134,7 +118,25 @@ public class CheckoutForRegisteredPage extends BasePage {
         guestCheckoutCyclePage.clickOnContinueBtn();
     }
 
-    public void navigateToPaymentMethodScreenWithSavedAddress() {
+    public void viewCartAndAccessShippingMethodsPage() throws IOException {
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        CartPage cartPage = new CartPage(webDriver);
+        cartPage.addToCartAndDisplayTheCart();
+        guestCheckoutCyclePage.accessGuestCheckoutForm();
+        this.fillInShippingInformationInputField(
+                XmlReader.getXMLData("firstName"),
+                XmlReader.getXMLData("lastName"),
+                XmlReader.getXMLData("phoneNumber"),
+                XmlReader.getXMLData("AddressName"),
+                XmlReader.getXMLData("StreetOneAddressName"),
+                XmlReader.getXMLData("StreetTwoAddressName")
+        );
+        guestCheckoutCyclePage.setSelectDubaiCityCity();
+        DataHelperAndWait.waitForTime(1500);
+        guestCheckoutCyclePage.clickOnContinueBtn();
+    }
+
+    public void navigateToPaymentMethodScreenWithSavedAddress() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         guestCheckoutCyclePage.accessGuestCheckoutForm();
         DataHelperAndWait.clickOnElement(this.getSavedAddressOption(), webDriver);
@@ -144,7 +146,7 @@ public class CheckoutForRegisteredPage extends BasePage {
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
     }
 
-    public void AddToCartAndAccessShippingMethodsPageForSavedAddress() {
+    public void AddToCartAndAccessShippingMethodsPageForSavedAddress() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         try {
@@ -171,7 +173,7 @@ public class CheckoutForRegisteredPage extends BasePage {
 //        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
     }
 
-    public void AddToCartAndAccessShippingMethodsPageForSavedAddressForDubaiCity() {
+    public void AddToCartAndAccessShippingMethodsPageForSavedAddressForDubaiCity() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
@@ -191,7 +193,7 @@ public class CheckoutForRegisteredPage extends BasePage {
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(), webDriver);
     }
 
-    public void accessGuestCheckoutForm() {
+    public void accessGuestCheckoutForm() throws IOException {
 //        webDriver.navigate().to(BaseURL+shippingInformationUrl);
         CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToHomePage();
