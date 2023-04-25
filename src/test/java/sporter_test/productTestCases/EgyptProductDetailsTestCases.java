@@ -15,6 +15,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.EgyptHomePage;
+import sporter_pages.megaMenuPages.EgyptMegaMenuPage;
 import sporter_pages.megaMenuPages.MegaMenuPage;
 import sporter_pages.productPage.EgyptProductDetailsPage;
 import sporter_pages.productPage.ProductDetailsPage;
@@ -58,7 +59,23 @@ public void verifyAbilityToClickOnSportsMenuIsDisplayedFromProductDetailsPage() 
             WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.sportsUrl + "/", webDriver);
         }
     }
-
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Verify ability to click on Vitamins And Health Menu From Product Details Page", priority = 19)
+    public void verifyAbilityToClickOnVitaminsAndHealthMenuFromProductDetailsPage() throws IOException {
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        EgyptMegaMenuPage megaMenuPage = new EgyptMegaMenuPage(webDriver);
+        productDetailsPage.displayTheProduct();
+        try{
+            megaMenuPage.clickOnVitaminsAndHealthMainMenu();}
+        catch (Exception e){
+            DataHelperAndWait.JsExecutorToClickOnElement(megaMenuPage.getVitaminsAndHealthMenu(),webDriver);
+        }
+        megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        try{
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl,webDriver);}
+        catch (Exception e){
+            WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl+"/",webDriver);
+        }
+    }
     @Test(groups = { "1.3 Medium Severity"},description = "{{CountryName}}: Make sure the out of stock message appears when displaying out of stock product ", priority =4)
     public void verifyOOSMessageIsDisplayed() {
         try{

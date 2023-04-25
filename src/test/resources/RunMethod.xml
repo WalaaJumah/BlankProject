@@ -16,12 +16,18 @@
         <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
         <classes>
             <!--            Guest Checkout -->
-            <class name="sporter_test.productTestCases.EgyptProductDetailsTestCases">
-<!--                <methods>-->
-<!--                    <include name="verifyAbilityToLoginCorrectlyWithValidCredentials"/>-->
-<!--                    <include name="verifyTheRegisteredUserCanFillTheShippingInformationCorrectly"/>-->
-<!--                </methods>-->
+
+                        <class name="sporter_test.cartTestCases.EgyptCartTestCases">
+                <methods>
+                    <include name="verifyShopByMenuIsDisplayedWhenHoveringOnItFromProductDetailsPage"/>
+                    <include name="verifyAbilityToClickOnSportSupplementsMenuFromCartPage"/>
+                    <include name="verifyAbilityToClickOnVitaminsAndHealthMenuFromCartPage"/>
+                    <include name="verifyAbilityToClickOnHealthyFoodMenuFromCartPage"/>
+                    <include name="verifyAbilityToClickOnSportsMenuIsDisplayedFromCartPage"/>
+                </methods>
             </class>
+
+
 <!--                 <class name="sporter_test.cartTestCases.KuwaitCartTestCases">-->
 <!--                <methods>-->
 <!--                    <include name="verifyTheFreeGiftIsDoesNotHavePrice"/>-->

@@ -35,7 +35,8 @@ public class MegaMenuPage extends BasePage {
        @FindBy(xpath = "//ul/li[@id='menu_47']/a")
     private WebElement vitaminsAndHealthMenu;
 
-    @FindBy(id = "cat_583")
+//    @FindBy(id = "cat_583")
+    @FindBy(xpath = "//ul/li[@id='cat_583']/a")
     private WebElement sportsSupplementsMenu;
     //        @FindBy(id = "cat_618")
 //    private WebElement healthyFoodMenu;
@@ -91,7 +92,8 @@ public class MegaMenuPage extends BasePage {
             verifyTheDisplayedPageDoesNotHaveErrors();
         } catch (Exception e) {
             DataHelperAndWait.waitToBeVisible(this.vitaminsAndHealthMenu, webDriver);
-            DataHelperAndWait.JsExecutorToClickOnElement(this.vitaminsAndHealthMenu,webDriver);
+            actions.moveToElement(this.vitaminsAndHealthMenu).perform();
+            DataHelperAndWait.clickOnElement(this.vitaminsAndHealthMenu, webDriver);
             verifyTheDisplayedPageDoesNotHaveErrors();
         }
     }

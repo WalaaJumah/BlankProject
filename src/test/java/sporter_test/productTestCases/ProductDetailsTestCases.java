@@ -226,14 +226,9 @@ public class ProductDetailsTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Verify ability to click on Vitamins And Health Menu From Product Details Page", priority = 19)
     public void verifyAbilityToClickOnVitaminsAndHealthMenuFromProductDetailsPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        EgyptMegaMenuPage megaMenuPage = new EgyptMegaMenuPage(webDriver);
+        MegaMenuPage megaMenuPage = new MegaMenuPage(webDriver);
         productDetailsPage.displayTheProduct();
-        try{
-        megaMenuPage.clickOnVitaminsAndHealthMainMenu();}
-        catch (Exception e){
-            DataHelperAndWait.JsExecutorToClickOnElement(megaMenuPage.getVitaminsAndHealthMenu(),webDriver);
-        }
-        megaMenuPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        megaMenuPage.clickOnVitaminsAndHealthMainMenu();
         try{
             WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl,webDriver);}
         catch (Exception e){
