@@ -91,8 +91,9 @@ public class SportsSupplementsCategoryPage extends BasePage {
         }
     }
 
-    public void navigateToSportsSupplementPage() {
+    public void navigateToSportsSupplementPage() throws IOException {
         webDriver.navigate().to(BaseURL + sportSupplementsUrl);
+       verifyTheDisplayedPageDoesNotHaveErrors();
         DataHelperAndWait.waitForUrlContains(sportSupplementsUrl, webDriver);
     }
 

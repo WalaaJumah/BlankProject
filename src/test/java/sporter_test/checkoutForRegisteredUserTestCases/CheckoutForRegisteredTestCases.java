@@ -485,15 +485,8 @@ catch (Exception e){
         EgyptGuestCheckoutCyclePage egyptGuestCheckoutCyclePage= new EgyptGuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
-        cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
-        try{
-            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
-        }
-        catch (Exception e){
-        cartPage.navigateToHomePage();
-        cartPage.clickOnCartIcon();
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);}
+        cartPage.proceedToCheckout();
         //TODO: recheck the button after Moamen Solve ot
 //        cartPage.navigateToCartPage();
 //        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
@@ -512,13 +505,13 @@ catch (Exception e){
                 DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egyptGuestCheckoutCyclePage.getNextDayMethod(),webDriver);
-//        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
 
 //        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
 //        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
 //        WebElementsAssertion.assertionElementNotEnable(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
 
-//        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCreditCardPaymentMethod(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(),webDriver);
     }
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the 2 Business Days Super Express Shipping Method With COD Payment Method correctly", priority = 29)
     public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod() throws IOException {

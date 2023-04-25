@@ -55,7 +55,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure that the BreadCrumb appears correctly after sorting the product ", priority = 3)
-    public void verifyTheBreadCrumbAppearingCorrectlyAfterSortingTheProducts() {
+    public void verifyTheBreadCrumbAppearingCorrectlyAfterSortingTheProducts() throws IOException {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         HomePage homePage = new HomePage(webDriver);
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
@@ -75,7 +75,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure  the Vitamins & Health footer appears correctly  ", priority = 5)
-    public void verifyVitaminsAndHealthFooterSectionAppearsCorrectly() {
+    public void verifyVitaminsAndHealthFooterSectionAppearsCorrectly() throws IOException {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
@@ -83,7 +83,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure all secure tabs appears correctly(100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks)", priority = 6)
-    public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInVitaminsAndHealthCategoryPage() {
+    public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInVitaminsAndHealthCategoryPage() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         FooterSection footerSection = new FooterSection(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
@@ -93,7 +93,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the pagination control appears on the Vitamins & Health rotating slider is displayed", priority = 7)
-    public void verifyPaginationControlOnVitaminsAndHealthRotatingSliderIsDisplayed() {
+    public void verifyPaginationControlOnVitaminsAndHealthRotatingSliderIsDisplayed() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
@@ -118,7 +118,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Vitamins & Health side Banners is displayed ", priority = 9)
-    public void verifyVitaminsAndHealthSideBannerIsDisplayed() {
+    public void verifyVitaminsAndHealthSideBannerIsDisplayed() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
@@ -389,7 +389,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Fish Oil & Omegas section have at least a product", priority = 40)
-    public void verifyTheFishOilAndOmegasHaveAtLeastAProduct() {
+    public void verifyTheFishOilAndOmegasHaveAtLeastAProduct() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
@@ -398,7 +398,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Multivitamins section have at least a product", priority = 41)
-    public void verifyTheMultivitaminsHaveAtLeastAProduct() {
+    public void verifyTheMultivitaminsHaveAtLeastAProduct() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
@@ -407,7 +407,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
     }
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Vitamins A-Z section have at least a product", priority = 42)
-    public void verifyTheVitaminsA_zAtLeastAProduct() {
+    public void verifyTheVitaminsA_zAtLeastAProduct() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
@@ -416,7 +416,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
     }
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Minerals section have at least a product", priority = 43)
-    public void verifyTheMineralsAtLeastAProduct() {
+    public void verifyTheMineralsAtLeastAProduct() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
@@ -425,7 +425,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
     }
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Antioxidants section have at least a product", priority = 44)
-    public void verifyTheAntioxodantsAtLeastAProduct() {
+    public void verifyTheAntioxodantsAtLeastAProduct() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         DataHelperAndWait.waitForTime(2000);
@@ -433,7 +433,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
     }
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Super Foods section have at least a product", priority = 45)
-    public void verifyTheSuperFoodsAtLeastAProduct() {
+    public void verifyTheSuperFoodsAtLeastAProduct() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         DataHelperAndWait.waitForTime(2000);
@@ -441,7 +441,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Melatonin section have at least a product", priority = 46)
-    public void verifyTheMelatoninAtLeastAProduct() {
+    public void verifyTheMelatoninAtLeastAProduct() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         DataHelperAndWait.waitForTime(3000);
@@ -449,7 +449,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Collagen section have at least a product", priority = 47)
-    public void verifyTheCollagenAtLeastAProduct() {
+    public void verifyTheCollagenAtLeastAProduct() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         DataHelperAndWait.waitForTime(3000);
@@ -534,7 +534,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the NewsLetter section appears correctly  ", priority = 57)
-    public void verifyNewLetterSectionAppearsCorrectly() {
+    public void verifyNewLetterSectionAppearsCorrectly() throws IOException {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();

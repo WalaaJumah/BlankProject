@@ -61,7 +61,7 @@ public class SportsSupplementsCategoryTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Supplements Category- Make sure the Horizontal Banners appear correctly", priority = 5)
-    public void verifyTheHorizontalBannersAppearCorrectlyInSportSupplementsLandingPage() {
+    public void verifyTheHorizontalBannersAppearCorrectlyInSportSupplementsLandingPage() throws IOException {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         sportsSupplementsCategoryPage.navigateToSportsSupplementPage();
         DataHelperAndWait.waitToBeVisible(sportsSupplementsCategoryPage.getMainBanners().get(0), webDriver);
@@ -83,7 +83,7 @@ public class SportsSupplementsCategoryTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Supplements Category- Make sure that the customer can navigate to the home page using the BreadCrumb ", priority = 7)
-    public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumb() {
+    public void verifyAbilityToNavigateToHomePageUsingTheBreadCrumb() throws IOException {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         sportsSupplementsCategoryPage.navigateToSportsSupplementPage();
         HomePage homePage = new HomePage(webDriver);
@@ -92,7 +92,7 @@ public class SportsSupplementsCategoryTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Supplements Category Page- Make sure that the Result label and its value appear correctly ", priority = 8)
-    public void verifyResultFieldAndItsVaLueAppearInTheSportSupplementsCategoryPage() {
+    public void verifyResultFieldAndItsVaLueAppearInTheSportSupplementsCategoryPage() throws IOException {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         sportsSupplementsCategoryPage.navigateToSportsSupplementPage();
         WebElementsAssertion.validateTheElementIsDisplayed(sportsSupplementsCategoryPage.getResultLabel(), webDriver);
@@ -101,7 +101,7 @@ public class SportsSupplementsCategoryTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Sports Supplements Category Page- Make sure that Sort By menu appears correctly ", priority = 9)
-    public void verifySortByMenuAndItsOptionsAppearCorrectly() {
+    public void verifySortByMenuAndItsOptionsAppearCorrectly() throws IOException {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         sportsSupplementsCategoryPage.navigateToSportsSupplementPage();
         WebElementsAssertion.validateTheElementIsDisplayed(sportsSupplementsCategoryPage.getSortByMenu(), webDriver);
@@ -109,7 +109,7 @@ public class SportsSupplementsCategoryTestCases extends BaseTest {
     }
 //TODO: Neess to check
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Supplements Category- Make sure each of the Sport Supplements category image and Horizontal Banners appearing after sorting the products  ", priority = 10)
-    public void verifySportSupplementsCategoryImageAndHorizontalBannersAppearingAfterSortingTheProducts() {
+    public void verifySportSupplementsCategoryImageAndHorizontalBannersAppearingAfterSortingTheProducts() throws IOException {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         sportsSupplementsCategoryPage.navigateToSportsSupplementPage();
         Select select = new Select(sportsSupplementsCategoryPage.getSortByMenu());
@@ -119,14 +119,14 @@ public class SportsSupplementsCategoryTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Sports Supplements Category- Make sure  the Sport Supplements footer appears correctly  ", priority = 11)
-    public void verifySportSupplementsFooterSectionAppearsCorrectly() {
+    public void verifySportSupplementsFooterSectionAppearsCorrectly() throws IOException {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         sportsSupplementsCategoryPage.navigateToSportsSupplementPage();
         WebElementsAssertion.validateTheElementIsDisplayed(sportsSupplementsCategoryPage.getMainFooter(), webDriver);
     }
 
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Sports Supplements Category- Make sure the NewsLetter section appears correctly  ", priority = 12)
-    public void verifyNewLetterSectionAppearsCorrectly() {
+    public void verifyNewLetterSectionAppearsCorrectly() throws IOException {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         sportsSupplementsCategoryPage.navigateToSportsSupplementPage();
         WebElementsAssertion.validateTheElementIsDisplayed(sportsSupplementsCategoryPage.getNewsLetterSection(), webDriver);
@@ -144,7 +144,7 @@ public class SportsSupplementsCategoryTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Supplements Category- Make Sure the next page button works correctly", priority = 14)
-    public void verifyNextPageBtnWorksCorrectly() {
+    public void verifyNextPageBtnWorksCorrectly() throws IOException {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         sportsSupplementsCategoryPage.navigateToSportsSupplementPage();
         if (sportsSupplementsCategoryPage.getPaginationBtns().size() > 3) {
@@ -156,7 +156,7 @@ public class SportsSupplementsCategoryTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Supplements Category- Make Sure the previous page button works correctly", priority = 15)
-    public void verifyPreviousPageBtnWorksCorrectly() {
+    public void verifyPreviousPageBtnWorksCorrectly() throws IOException {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         sportsSupplementsCategoryPage.navigateToSportsSupplementPage();
         if (sportsSupplementsCategoryPage.getPaginationBtns().size() > 3) {
@@ -170,7 +170,7 @@ public class SportsSupplementsCategoryTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Sports Supplements Category- Make sure all secure tabs appears correctly(100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks)", priority = 16)
-    public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInSportSupplementsCategoryPage() {
+    public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInSportSupplementsCategoryPage() throws IOException {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         FooterSection footerSection = new FooterSection(webDriver);
         sportsSupplementsCategoryPage.navigateToSportsSupplementPage();
@@ -192,7 +192,7 @@ public class SportsSupplementsCategoryTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Sports Supplements Category- Make sure that the BreadCrumb appears correctly after sorting the product ", priority = 17)
-    public void verifyTheBreadCrumbAppearingCorrectlyAfterSortingTheProducts() {
+    public void verifyTheBreadCrumbAppearingCorrectlyAfterSortingTheProducts() throws IOException {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         HomePage homePage = new HomePage(webDriver);
         sportsSupplementsCategoryPage.navigateToSportsSupplementPage();

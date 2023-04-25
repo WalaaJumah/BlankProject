@@ -14,6 +14,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.io.IOException;
 import java.util.List;
 
 @Getter
@@ -80,8 +81,9 @@ public class WomensOnlyCategoryPage extends BasePage {
     private WebElement femaleGallerySection;
 
 
-    public void navigateToWomenOnlyPage() {
+    public void navigateToWomenOnlyPage() throws IOException {
         webDriver.navigate().to(BaseURL + womenOnlyUrl);
+        verifyTheDisplayedPageDoesNotHaveErrors();
         DataHelperAndWait.waitForUrlContains(womenOnlyUrl, webDriver);
     }
 }

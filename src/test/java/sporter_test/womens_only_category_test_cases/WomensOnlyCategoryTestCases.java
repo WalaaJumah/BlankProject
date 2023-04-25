@@ -41,7 +41,7 @@ public class WomensOnlyCategoryTestCases extends BaseTest {
         WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.womenOnlyUrl, webDriver);
     }
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure that the BreadCrumb appears correctly after sorting the product ", priority = 3)
-    public void verifyTheBreadCrumbAppearingCorrectlyAfterSortingTheProducts() {
+    public void verifyTheBreadCrumbAppearingCorrectlyAfterSortingTheProducts() throws IOException {
        WomensOnlyCategoryPage womensOnlyCategoryPage= new WomensOnlyCategoryPage(webDriver);
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         HomePage homePage = new HomePage(webDriver);
@@ -60,14 +60,14 @@ public class WomensOnlyCategoryTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(), webDriver);
     }
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure  the Women's Only footer appears correctly  ", priority = 5)
-    public void verifyWomenOnlyFooterSectionAppearsCorrectly() {
+    public void verifyWomenOnlyFooterSectionAppearsCorrectly() throws IOException {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         WomensOnlyCategoryPage womensOnlyCategoryPage= new WomensOnlyCategoryPage(webDriver);
         womensOnlyCategoryPage.navigateToWomenOnlyPage();
         WebElementsAssertion.validateTheElementIsDisplayed(sportsSupplementsCategoryPage.getMainFooter(), webDriver);
     }
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure all secure tabs appears correctly(100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks)", priority = 6)
-    public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInWomenOnlyCategoryPage() {
+    public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInWomenOnlyCategoryPage() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage= new WomensOnlyCategoryPage(webDriver);
         FooterSection footerSection = new FooterSection(webDriver);
         womensOnlyCategoryPage.navigateToWomenOnlyPage();
@@ -76,7 +76,7 @@ public class WomensOnlyCategoryTestCases extends BaseTest {
         }
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure the pagination control appears on the Women's Only rotating slider is displayed", priority = 7)
-    public void verifyPaginationControlOnWomenOnlyRotatingSliderIsDisplayed() {
+    public void verifyPaginationControlOnWomenOnlyRotatingSliderIsDisplayed() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage= new WomensOnlyCategoryPage(webDriver);
         womensOnlyCategoryPage.navigateToWomenOnlyPage();
         WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getRotatingSliderPagingControl(), webDriver);
@@ -97,7 +97,7 @@ public class WomensOnlyCategoryTestCases extends BaseTest {
         }
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure the Women's Only side Banners is displayed ", priority = 9)
-    public void verifyWomenOnlySideBannerIsDisplayed() {
+    public void verifyWomenOnlySideBannerIsDisplayed() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         womensOnlyCategoryPage.navigateToWomenOnlyPage();
         WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getFirstSideBanner(), webDriver);
