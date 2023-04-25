@@ -60,7 +60,7 @@ public class ProductDetailsTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Make sure to display the product from search screen", priority = 4)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}:Make sure to display the product from search screen", priority = 4)
     public void verifyAbilityToDisplayTheProductFromSearchScreen() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
