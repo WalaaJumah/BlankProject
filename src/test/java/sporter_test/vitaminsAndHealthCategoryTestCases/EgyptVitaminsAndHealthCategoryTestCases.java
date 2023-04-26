@@ -59,7 +59,7 @@ public class EgyptVitaminsAndHealthCategoryTestCases extends VitaminsAndHealthCa
             WebElementsAssertion.validateTheCurrentUrlContainsString(megaMenuPage.healthVitaminsUrl+"/", webDriver);}
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category Page- Make sure that the Result label and its value appear correctly ", priority = 59)
-    public void verifyResultFieldAndItsVaLueAppearInTheVitaminsAndHealthCategoryPage() {
+    public void verifyResultFieldAndItsVaLueAppearInTheVitaminsAndHealthCategoryPage() throws IOException {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
@@ -69,14 +69,14 @@ public class EgyptVitaminsAndHealthCategoryTestCases extends VitaminsAndHealthCa
     }
 
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Vitamins & Health Category Category Page- Make sure that Sort By menu appears correctly ", priority = 60)
-    public void verifySortByMenuAndItsOptionsAppearCorrectly() {
+    public void verifySortByMenuAndItsOptionsAppearCorrectly() throws IOException {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         WebElementsAssertion.validateTheElementIsDisplayed(sportsSupplementsCategoryPage.getSortByMenu(), webDriver);
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category Category Page- Make Sure the next page button works correctly", priority = 61)
-    public void verifyNextPageBtnWorksCorrectly() {
+    public void verifyNextPageBtnWorksCorrectly() throws IOException {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
@@ -89,7 +89,7 @@ public class EgyptVitaminsAndHealthCategoryTestCases extends VitaminsAndHealthCa
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category Category Page- Make Sure the previous page button works correctly", priority = 62)
-    public void verifyPreviousPageBtnWorksCorrectly() {
+    public void verifyPreviousPageBtnWorksCorrectly() throws IOException {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
