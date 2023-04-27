@@ -61,9 +61,10 @@ public class ProductDetailsTestCases extends BaseTest {
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}:Make sure to display the product from search screen", priority = 4)
-    public void verifyAbilityToDisplayTheProductFromSearchScreen() {
+    public void verifyAbilityToDisplayTheProductFromSearchScreen() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
+        productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
         DataHelperAndWait.clickOnElement(productDetailsPage.getProductCard(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getProductName(), webDriver);
     }
