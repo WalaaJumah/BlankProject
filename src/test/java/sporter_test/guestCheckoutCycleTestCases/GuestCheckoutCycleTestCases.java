@@ -142,7 +142,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
         WebElementsAssertion.assertionTextIsEqual(guestCheckoutCyclePage.getCountryMenu(), webDriver, storeCountry);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Make sure the Guest user cannot submit the shipping information without filling the required fields empty", priority = 12)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure the Guest user cannot submit the shipping information without filling the required fields empty", priority = 12)
     public void verifyTheGuestUserCannotSubmitTheShippingInformationWithoutFillingTheRequiredFields() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         guestCheckoutCyclePage.accessGuestCheckoutForm();
@@ -535,7 +535,7 @@ cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //        System.out.println(orderNumber);
     }
 
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure Inability to continue the placing order process using invalid Credit Card", priority = 27)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure Inability to continue the placing order process using invalid Credit Card", priority = 27)
     public void verifyInabilityToUseInvalidCreditCardPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);

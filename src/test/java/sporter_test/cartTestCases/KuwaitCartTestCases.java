@@ -66,7 +66,7 @@ public class KuwaitCartTestCases extends CartTestCases{
         catch (Exception e){}
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 24)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 24)
     public void verifyOrderTotalCalculationInCartPageWorksCorrectly() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();

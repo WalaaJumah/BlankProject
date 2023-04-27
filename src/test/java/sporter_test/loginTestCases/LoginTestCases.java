@@ -98,7 +98,7 @@ public class LoginTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Verify Inability to login without filling Email & Password fields", priority = 7)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to login without filling Email & Password fields", priority = 7)
     public void verifyInAbilityToLoginWithoutEmailAndPassword() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToLoginPage();
@@ -155,7 +155,7 @@ public class LoginTestCases extends BaseTest {
         WebElementsAssertion.assertionAttributeTrueForElement(loginPage.getPasswordField(), webDriver, "type", "password");
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Verify Create Account Link works correctly", priority = 13)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Create Account Link works correctly", priority = 13)
     public void verifyCreateAccountLinkWorksCorrectly() {
         LoginPage loginPage = new LoginPage(webDriver);
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);

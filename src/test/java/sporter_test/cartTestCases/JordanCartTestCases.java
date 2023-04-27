@@ -44,7 +44,7 @@ public class JordanCartTestCases extends CartTestCases {
     public void verifyTheTaxCalculatedCorrectly() {
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 26)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 26)
     public void verifyOrderTotalCalculationInCartPageWorksCorrectly() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
 //        cartPage.addToCartAndDisplayTheCart();

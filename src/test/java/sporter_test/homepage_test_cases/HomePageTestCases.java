@@ -154,7 +154,7 @@ public class HomePageTestCases extends BaseTest {
 
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure the Top Sellers sections are displayed ", priority = 17)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Top Sellers sections are displayed ", priority = 17)
     public void verifyTopSellersSectionAreDisplayed() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
@@ -237,7 +237,7 @@ public class HomePageTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.4 Low Severity"}, description = "{{CountryName}}: Make sure the Got A Question section is displayed ", priority = 37)
+    @Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure the Got A Question section is displayed ", priority = 37)
     public void verifyGotQuestionSectionIsDisplayed() {
         HomePage homePage = new HomePage(webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getGetQuestionBlock(), webDriver);
@@ -323,7 +323,7 @@ public class HomePageTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"}, description = "{{CountryName}}: Make sure clicking on phone button from the Got A Question section works correctly ", priority = 47)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure clicking on phone button from the Got A Question section works correctly ", priority = 47)
     public void verifyAbilityToClickOnPhoneBtnInGotQuestionSectionCorrectly() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();

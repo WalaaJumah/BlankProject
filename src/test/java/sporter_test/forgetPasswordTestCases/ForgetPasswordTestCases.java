@@ -78,7 +78,7 @@ public class ForgetPasswordTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Verify Submit button in the Forget Password Page works correctly", priority = 6)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Submit button in the Forget Password Page works correctly", priority = 6)
     public void verifySubmitInForgetPasswordPageWorksCorrectly() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToForgetPassword();

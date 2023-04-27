@@ -37,7 +37,7 @@ public class UAECheckoutForRegisteredTestCases extends CheckoutForRegisteredTest
     }
      @Test(enabled = false)
      public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNationalID() {}
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure Inability to continue the placing order process using invalid Credit Card", priority = 31)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure Inability to continue the placing order process using invalid Credit Card", priority = 31)
     public void verifyInabilityToUseInvalidCreditCardPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);

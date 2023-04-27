@@ -103,7 +103,7 @@ public void verifyAbilityToClickOnSportsMenuIsDisplayedFromCartPage() throws IOE
         WebElementsAssertion.assertionTextIsEqual(cartPage.getItemsCounter(), webDriver, itemsCounter);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the system does not apply invalid coupon code", priority = 26)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the system does not apply invalid coupon code", priority = 26)
     public void verifyInabilityToApplyInvalidCouponCode() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();

@@ -144,7 +144,7 @@ public class ProductDetailsTestCases extends BaseTest {
         Assert.assertNotEquals(currentProductPrice, newProductPrice);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Make sure ability to display the bundle and select all options", priority = 13)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure ability to display the bundle and select all options", priority = 13)
     public void verifyAbilityToDisplayBundleAndSelectAllOptions() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayBundle();

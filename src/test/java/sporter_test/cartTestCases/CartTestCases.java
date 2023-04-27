@@ -96,7 +96,7 @@ public class CartTestCases extends BaseTest {
     }
 
 
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure that the view Cart button appearing in the Cart pop-up works correctly", priority = 7)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the view Cart button appearing in the Cart pop-up works correctly", priority = 7)
     public void verifyAbilityToViewCartFromCartIcon() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
@@ -169,7 +169,7 @@ public class CartTestCases extends BaseTest {
 
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure to view the cart after adding more than quantity for the same product", priority = 14)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure to view the cart after adding more than quantity for the same product", priority = 14)
     public void verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
@@ -180,7 +180,7 @@ public class CartTestCases extends BaseTest {
         webDriver.manage().deleteCookieNamed("guestCartId");
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure to view the cart after adding more than products to it", priority = 15)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure to view the cart after adding more than products to it", priority = 15)
     public void verifyAbilityToViewTheCartAfterAddingMoreThanProducts() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();

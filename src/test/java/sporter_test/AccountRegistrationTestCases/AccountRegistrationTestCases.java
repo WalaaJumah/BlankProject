@@ -75,7 +75,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         WebElementsAssertion.assertionAttributeTrueForElement(registerPage.getConfirmPasswordField(), webDriver, "type", "password");
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:  Verify Sign in button appears in the Create Account screen works correctly", priority = 6)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:  Verify Sign in button appears in the Create Account screen works correctly", priority = 6)
     public void verifySignInBtnInCreateAccountScreenWorksCorrectly() throws IOException {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         registerPage.navigateToRegistrationPage();
@@ -155,7 +155,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(), webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}:  Verify Inability to register new account without filling Email Field", priority = 13)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:  Verify Inability to register new account without filling Email Field", priority = 13)
     public void verifyInabilityToRegisterAccountWithoutFillingEmailField() throws IOException {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         HeaderSection header = new HeaderSection(webDriver);
@@ -166,7 +166,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(registerPage.getEmailErrorMs(), webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}:  Verify Inability to register new account without filling Password Field", priority = 14)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:  Verify Inability to register new account without filling Password Field", priority = 14)
     public void verifyInabilityToRegisterAccountWithoutFillingPasswordField() throws IOException {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         registerPage.navigateToRegistrationPage();

@@ -104,7 +104,7 @@ public class MyAccountTestCases extends BaseTest {
         WebElementsAssertion.assertionAttributeTrueForElement(myAccountPage.getEmailField(), webDriver, "value", XmlReader.getXMLData("correctEmail2"));
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Account Information screen: Verify each of First Name & Last Name field are display the correct name ", priority = 6)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Account Information screen: Verify each of First Name & Last Name field are display the correct name ", priority = 6)
     public void verifyFirstNameAndLastNameFieldRetrieveCorrectNames() {
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
         myAccountPage.navigateToMyAccountPage();
@@ -121,7 +121,7 @@ public class MyAccountTestCases extends BaseTest {
         WebElementsAssertion.assertionElementNotEnable(myAccountPage.getEmailField(), webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Account Information screen: Verify ability to edit First Name & Last Name correctly", priority = 8)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Account Information screen: Verify ability to edit First Name & Last Name correctly", priority = 8)
     public void verifyAbilityToEditFirstNameAndLastNameCorrectly() throws IOException {
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
         myAccountPage.navigateToMyAccountPage();
@@ -198,7 +198,7 @@ public class MyAccountTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Order History screen: Verify each of Order Details & invoice buttons appear correctly in the Orders History Page  ", priority = 15)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Order History screen: Verify each of Order Details & invoice buttons appear correctly in the Orders History Page  ", priority = 15)
     public void verifyEachOfOrderDetailsAndInvoiceBtnsAppearCorrectlyInOrdersPage() {
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
         myAccountPage.navigateToMyOrdersPage();
@@ -341,7 +341,7 @@ public class MyAccountTestCases extends BaseTest {
     }
 
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Addresses screen: Verify Ability to edit Address Correctly", priority = 29)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify Ability to edit Address Correctly", priority = 29)
     public void verifyAbilityToEditAddressCorrectly() throws IOException {
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
         myAccountPage.navigateToAddressesPage();
