@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="86683dee-3ff6-4652-96ae-dd8bddfbd97f" name="Changes" comment=" Update smoke testing test cases">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/BahrainCheckoutForRegisteredTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/BahrainCheckoutForRegisteredTestCases.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/OmanCheckoutForRegisteredTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/OmanCheckoutForRegisteredTestCases.java" afterDir="false" />
+>>>>>>> ec59ca0b76b332479a93213eb4057cea5d7a21f9
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +93,7 @@
       <command value="ProductDetailsPageTestCases.verifyAbilityToDisplayBundleAndSelectAllOptions" />
     </option>
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/BahrainStore/BahrainSmokeTesting.xml">
     <configuration name="C:/Users/User/IdeaProjects/QATesting/src/test/resources/BahrainStore/BahrainSmokeTesting.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
@@ -100,6 +105,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+=======
+  <component name="RunManager" selected="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/OmanStore/OmanSmoke.xml">
+>>>>>>> ec59ca0b76b332479a93213eb4057cea5d7a21f9
     <configuration name="C:/Users/User/IdeaProjects/QATesting/src/test/resources/Kuwait.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/Kuwait.xml" />
@@ -140,16 +148,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/OmanStore/OmanSmoke.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="sporter-web-automation" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/OmanStore/OmanSmoke.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/BahrainStore/BahrainSmokeTesting.xml" />
       <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/Jordan/JordanSmokeTesting.xml" />
+      <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/OmanStore/OmanSmoke.xml" />
       <item itemvalue="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/PreRunningTestCasesGroup.xml" />
       <item itemvalue="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/SmokeTesting.xml" />
       <item itemvalue="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/Kuwait.xml" />
     </list>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
         <item itemvalue="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/BahrainStore/BahrainSmokeTesting.xml" />
+=======
+        <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/OmanStore/OmanSmoke.xml" />
+>>>>>>> ec59ca0b76b332479a93213eb4057cea5d7a21f9
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/Jordan/JordanSmokeTesting.xml" />
         <item itemvalue="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/SmokeTesting.xml" />
         <item itemvalue="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/PreRunningTestCasesGroup.xml" />
