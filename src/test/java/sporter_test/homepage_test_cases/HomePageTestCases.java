@@ -201,8 +201,9 @@ public class HomePageTestCases extends BaseTest {
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure the Trending On Sporter sections are displayed ", priority = 26)
-    public void verifyTrendingOnSporterSectionAreDisplayed() {
+    public void verifyTrendingOnSporterSectionAreDisplayed() throws IOException {
         HomePage homePage = new HomePage(webDriver);
+        homePage.navigateToHomePage();
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getTrendingOnSporterHeader(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getTrendingOnSporterSection(), webDriver);
     }
@@ -248,6 +249,7 @@ public class HomePageTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the clicking on email button from the Got A Question section works correctly ", priority = 38)
     public void verifyAbilityToClickOnEmailBtnInGotQuestionSectionCorrectly() throws IOException {
         HomePage homePage = new HomePage(webDriver);
+        homePage.navigateToHomePage();
         homePage.clickOnEmailBtn();
         WebElementsAssertion.validateTheCurrentUrlContainsString(homePage.contactUsUrl, webDriver);
         homePage.verifyTheDisplayedPageDoesNotHaveErrors();
