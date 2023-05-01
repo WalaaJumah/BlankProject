@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86683dee-3ff6-4652-96ae-dd8bddfbd97f" name="Changes" comment=" Update smoke testing test cases">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/OmanStore/OmanSmoke.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/Kuwait.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Kuwait Store/Kuwait.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/KuwaitFulTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Kuwait Store/KuwaitFulTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/BahrainStore/BahrainSmokeTesting.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
