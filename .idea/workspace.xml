@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86683dee-3ff6-4652-96ae-dd8bddfbd97f" name="Changes" comment=" Update smoke testing test cases">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/BahrainStore/BahrainSmokeTesting.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/Sporter2.1OnProdution/ProductionSporter2.1SmokeReport.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,11 +77,11 @@
       <recent name="C:\Users\w.jumaa\IdeaProjects\sporter-web-automation\src\main\java\sporter-pages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\w.jumaa\IdeaProjects\QATesting\src\test\resources\Sporter2.1OnProdution" />
       <recent name="C:\Users\w.jumaa\IdeaProjects\QATesting\src\test\resources\Kuwait Store" />
       <recent name="C:\Users\w.jumaa\IdeaProjects\QATesting\src\test\resources" />
       <recent name="C:\Users\w.jumaa\IdeaProjects\QATesting\src\test\resources\Jordan" />
       <recent name="G:\My Drive\IdeaProjects\sporter-web-automation\src\test\resources\drivers" />
-      <recent name="C:\Users\w.jumaa\IdeaProjects\sporter-web-automation\src\test\resources\drivers" />
     </key>
   </component>
   <component name="RunAnythingCache">
