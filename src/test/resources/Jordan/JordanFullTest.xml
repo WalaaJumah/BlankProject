@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!--<suite name=" Test" thread-count="1" >-->
+<suite name="Automation Reports">
+    <listeners>
+        <!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
+        <listener class-name="extent_report_listner.ExtentReportListener"/>
+    </listeners>
+    <test name=" Sporter 2.1 Smoke Testing on Jordan" preserve-order="true">
+        <parameter name="environment" value="https://qa.sporter.com/"/>
+        <parameter name="browser" value="chrome"/>
+        <!-- <parameter name="country" value="en-qa" />-->
+        <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32569"/>
+        <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix"/>
+        <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
+        <classes>
+            <class name="sporter_test.cartRulesTestCases.JordanCartRulesTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.JordanCheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases"/>
+            <class name="sporter_test.headerTestCases.JordanHeaderTestCases"/>
+            <class name="sporter_test.productTestCases.JordanProductDetailsTestCases"/>
+            <class name="sporter_test.RecommendedProductsTestCases.JordanRecommendedProductTestCases"/>
+            <class name="sporter_test.AccountRegistrationTestCases.JordanAccountRegistrationTestCases"/>
+            <class name="sporter_test.loginTestCases.JordanLoginTestCases"/>
+            <class name="sporter_test.forgetPasswordTestCases.JordanForgetPasswordTestCases"/>
+            <class name="sporter_test.cartTestCases.JordanCartTestCases"></class>
+            <class name="sporter_test.myAccountTestCases.JordanMyAccountTestCases"></class>
+            <class name="sporter_test.sportsSupplementsCategoryTestCases.JordanSportsSupplementsCategoryTestCases"></class>
+            <class name="sporter_test.healthy_food_category_test_cases.JordanHealthyFoodTestCases"></class>
+            <class name="sporter_test.womens_only_category_test_cases.JordanWomensOnlyCategoryTestCases"/>
+            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.JordanVitaminsAndHealthCategoryTestCases"/>
+            <class name="sporter_test.sports_category_test_cases.JordanSportsCategoryTestCases"></class>
+            <class name="sporter_test.footer_test_cases.JordanFooterTestCases"></class>
+        </classes>
+
+    </test>
+
+
+
+</suite>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
