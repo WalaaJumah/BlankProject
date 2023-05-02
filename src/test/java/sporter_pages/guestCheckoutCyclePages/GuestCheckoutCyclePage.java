@@ -51,6 +51,9 @@ public class GuestCheckoutCyclePage extends BasePage {
     private WebElement checkoutAsGuestDescription;
     @FindBy(id = "value")
     private WebElement orderTotalValue;
+      @FindBy(xpath = "(//*[@id=\"value\"])[8]")
+    private WebElement grandTotalValue;
+
     @FindBy(id = "registerGuestCheckBox")
     private WebElement registerAtSporterOption;
     @FindBy(id = "firstnameField")

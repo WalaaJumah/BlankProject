@@ -16,8 +16,8 @@
         <classes>
             <class name="sporter_test.guestCheckoutCycleTestCases.EgyptGuestCheckoutCycleTestCases">
                 <methods>
-                    <include name="test"/>
-                    <include name="verifyAbilityToPlaceOrderWhenSelectingNextDayDeliveryShippingMethodWithCreditCardPaymentMethod"/>
+                    <include name="verifyTheOrderTotalAppearsInGeideaGateWayIsMatchedWithOriginalOrderTotal"/>
+
                 </methods>
             </class>
 

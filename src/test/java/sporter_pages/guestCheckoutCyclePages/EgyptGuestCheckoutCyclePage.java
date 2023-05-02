@@ -94,6 +94,21 @@ public class EgyptGuestCheckoutCyclePage extends GuestCheckoutCyclePage {
         DataHelperAndWait.waitToBeVisible(this.getAuthenticationResultMenu(), webDriver);
         DataHelperAndWait.clickOnElement(this.getSubmitEmulator(), webDriver);
     }
+    public void submitInValidCreditCardCorrectly() {
+        DataHelperAndWait.waitToBeVisible(this.getGeideaPopUpFrame(), webDriver);
+        webDriver.switchTo().frame(1);
+        DataHelperAndWait.waitToBeVisible(this.getDebitCreditCardOption(), webDriver);
+        DataHelperAndWait.clickOnElement(this.getDebitCreditCardOption(), webDriver);
+        DataHelperAndWait.clickOnElement(this.nextButtonInGediaaPopUp, webDriver);
+        DataHelperAndWait.waitToBeVisible(this.getCreditCardNumber(), webDriver);
+        DataHelperAndWait.updateAllText(this.getCreditCardNumber(), XmlReader.getXMLData("invalidCreditCard"));
+        DataHelperAndWait.waitToBeVisible(this.getCardExpiryField(), webDriver);
+        DataHelperAndWait.updateAllText(this.getCardExpiryField(),XmlReader.getXMLData("creditCardDate") );
+        DataHelperAndWait.waitToBeVisible(this.getCvvField(), webDriver);
+        DataHelperAndWait.updateAllText(this.getCvvField(), XmlReader.getXMLData("testCVV"));
+        DataHelperAndWait.waitToBeVisible(this.getCardOwnerNameField(), webDriver);
+        DataHelperAndWait.updateAllText(this.getCardOwnerNameField(), XmlReader.getXMLData("firstName"));
+    }
     public void submitCreditCardWithDifferentAuthentication(String authenticationOption ) {
 //DataHelperAndWait.waitForTime(3000);
         DataHelperAndWait.waitToBeVisible(this.getGeideaPopUpFrame(), webDriver);
