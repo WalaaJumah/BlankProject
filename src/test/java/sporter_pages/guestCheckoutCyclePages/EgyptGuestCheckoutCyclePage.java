@@ -94,7 +94,7 @@ public class EgyptGuestCheckoutCyclePage extends GuestCheckoutCyclePage {
         DataHelperAndWait.waitToBeVisible(this.getAuthenticationResultMenu(), webDriver);
         DataHelperAndWait.clickOnElement(this.getSubmitEmulator(), webDriver);
     }
-    public void submitCreditCardWithDifferentAuthentication() {
+    public void submitCreditCardWithDifferentAuthentication(String authenticationOption ) {
 //DataHelperAndWait.waitForTime(3000);
         DataHelperAndWait.waitToBeVisible(this.getGeideaPopUpFrame(), webDriver);
         webDriver.switchTo().frame(1);
@@ -115,6 +115,35 @@ public class EgyptGuestCheckoutCyclePage extends GuestCheckoutCyclePage {
         DataHelperAndWait.waitToBeVisible(this.aCSEmulatorFrame, webDriver);
         webDriver.switchTo().frame("redirectTo3ds1Frame");
         DataHelperAndWait.waitToBeVisible(this.getACSEmulatorScreen(), webDriver);
+        switch (authenticationOption){
+            case "(N) Authentication Failed":
+                this.selectAuthenticationFailed();
+                break;
+
+               case "(X or U) Authentication Not Available":
+                this.selectAuthenticationNotAvailable();
+                break;
+
+                case "(M) Authentication Attempted":
+                this.selectAuthenticationAttempted();
+                break;
+                     case "(P) Error Parsing Authentication Response":
+                this.selectAuthenticationErrorResponse();
+                break;
+
+                           case "(S) Invalid Signature on Authentication Response":
+                this.selectAuthenticationInvalidSignature();
+                break;
+                                  case "(I) MPI Processing Error":
+                this.selectAuthenticationMPI();
+                break;
+                                          case "(M) Authentication Attempted (No CAVV)":
+                this.selectAuthenticationNoCAVV();
+                break;
+
+
+        }
+
         DataHelperAndWait.waitToBeVisible(this.getAuthenticationResultMenu(), webDriver);
         DataHelperAndWait.clickOnElement(this.getSubmitEmulator(), webDriver);
     }
