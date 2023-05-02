@@ -7,7 +7,7 @@
         <listener class-name="extent_report_listner.ExtentReportListener"/>
     </listeners>
     <test name=" Sporter 2.1 Smoke Testing " preserve-order="true">
-        <parameter name="environment" value="https://qa.sporter.com/"/>
+        <parameter name="environment" value="https://stores.sporter.com"/>
         <parameter name="browser" value="chrome"/>
         <!-- <parameter name="country" value="en-qa" />-->
         <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32569"/>
@@ -19,9 +19,13 @@
             </run>
         </groups>
         <classes>
+<!--            Checkout-->
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.JordanCheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.BahrainCheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.OmanCheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.KuwaitCheckoutForRegisteredTestCases"></class>
 <!-- Jordan Store-->
             <class name="sporter_test.cartRulesTestCases.JordanCartRulesTestCases"></class>
-            <class name="sporter_test.checkoutForRegisteredUserTestCases.JordanCheckoutForRegisteredTestCases"></class>
             <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases"/>
             <class name="sporter_test.headerTestCases.JordanHeaderTestCases"/>
             <class name="sporter_test.productTestCases.JordanProductDetailsTestCases"/>
@@ -39,7 +43,7 @@
             <class name="sporter_test.footer_test_cases.JordanFooterTestCases"></class>
 
 <!-- Bahrain Store-->
-            <class name="sporter_test.checkoutForRegisteredUserTestCases.BahrainCheckoutForRegisteredTestCases"></class>
+
             <class name="sporter_test.homepage_test_cases.BahrainHomePageTestCases"/>
             <class name="sporter_test.headerTestCases.BahrainHeaderTestCases"/>
             <class name="sporter_test.productTestCases.BahrainProductDetailsTestCases"/>
@@ -58,7 +62,7 @@
 
 <!-- Oman Store-->
 
-            <class name="sporter_test.checkoutForRegisteredUserTestCases.OmanCheckoutForRegisteredTestCases"></class>
+
             <class name="sporter_test.homepage_test_cases.OmanHomePageTestCases"/>
             <class name="sporter_test.headerTestCases.OmanHeaderTestCases"/>
             <class name="sporter_test.productTestCases.OmanProductDetailsTestCases"/>
@@ -78,7 +82,7 @@
 
 <!-- Kuwait Store-->
 
-            <class name="sporter_test.checkoutForRegisteredUserTestCases.KuwaitCheckoutForRegisteredTestCases"></class>
+
             <class name="sporter_test.homepage_test_cases.KuwaitHomePageTestCases"/>
             <class name="sporter_test.headerTestCases.KuwaitHeaderTestCases"/>
             <class name="sporter_test.productTestCases.KuwaitProductsTestCases"/>
