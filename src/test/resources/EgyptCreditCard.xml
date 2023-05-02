@@ -29,12 +29,29 @@
                     <include name="verifyInabilityToPlaceOrderUsingGeideaWhenSelectingNoCAVVOptionFromGediaPaymentPage"/>
                     <include name="verifyTheOrderTotalAppearsInGeideaGateWayIsMatchedWithOriginalOrderTotal"/>
                     <include name="verifyTheOrderIsNotPlacedWhenMakeInterputionDuringCheckoutOrderUsingGeidea"/>
+                    <include name="verifyAbilityToPlaceOrderWhenSelectingNextDayDeliveryShippingMethodWithCreditCardPaymentMethodInArabicVersion"/>
 
                 </methods>
             </class>
 
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.EgyptCheckoutForRegisteredTestCases">
+            <methods>
+                <include name="verifyAbilityToPlaceOrderWhenSelectingNextDayDeliveryWithCreditCardPaymentMethod"/>
+                <include name="verifyInabilityToUseInvalidCreditCardPaymentMethod"/>
+                <include name="verifyInabilityToPlaceOrderUsingGeideaWhenSelectingAuthenticationFailedOptionFromGediaPaymentPage"/>
+                <include name="verifyInabilityToPlaceOrderUsingGeideaWhenSelectingAuthenticationNotAvailableOptionFromGediaPaymentPage"/>
+                <include name="verifyInabilityToPlaceOrderUsingGeideaWhenSelectingAuthenticationAttemptedOptionFromGediaPaymentPage"/>
+                <include name="verifyInabilityToPlaceOrderUsingGeideaWhenSelectingErrorParsingAuthenticationResponseOptionFromGediaPaymentPage"/>
+                <include name="verifyInabilityToPlaceOrderUsingGeideaWhenSelectingInvalidSignatureOnAuthenticationResponseOptionFromGediaPaymentPage"/>
+                <include name="verifyInabilityToPlaceOrderUsingGeideaWhenSelectingMPIProcessingErrorOptionFromGediaPaymentPage"/>
+                <include name="verifyInabilityToPlaceOrderUsingGeideaWhenSelectingNoCAVVOptionFromGediaPaymentPage"/>
+                <include name="verifyTheOrderTotalAppearsInGeideaGateWayIsMatchedWithOriginalOrderTotal"/>
+                <include name="verifyTheOrderIsNotPlacedWhenMakeInterputionDuringCheckoutOrderUsingGeidea"/>
+                <include name="verifyAbilityToPlaceOrderWhenSelectingNextDayDeliveryShippingMethodWithCreditCardPaymentMethodInArabicVersion"/>
+            </methods>
+            </class>
 
-        </classes>
+        </>
 
     </test>
 
