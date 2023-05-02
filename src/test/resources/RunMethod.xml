@@ -16,6 +16,7 @@
         <classes>
             <class name="sporter_test.guestCheckoutCycleTestCases.EgyptGuestCheckoutCycleTestCases">
                 <methods>
+                    <include name="test"/>
                     <include name="verifyAbilityToPlaceOrderWhenSelectingNextDayDeliveryShippingMethodWithCreditCardPaymentMethod"/>
                 </methods>
             </class>
