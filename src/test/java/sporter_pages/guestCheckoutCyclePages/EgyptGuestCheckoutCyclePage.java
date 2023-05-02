@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 import xml_reader.XmlReader;
 
 @Getter
@@ -93,9 +94,73 @@ public class EgyptGuestCheckoutCyclePage extends GuestCheckoutCyclePage {
         DataHelperAndWait.waitToBeVisible(this.getAuthenticationResultMenu(), webDriver);
         DataHelperAndWait.clickOnElement(this.getSubmitEmulator(), webDriver);
     }
+    public void submitCreditCardWithDifferentAuthentication() {
+//DataHelperAndWait.waitForTime(3000);
+        DataHelperAndWait.waitToBeVisible(this.getGeideaPopUpFrame(), webDriver);
+        webDriver.switchTo().frame(1);
+        DataHelperAndWait.waitToBeVisible(this.getDebitCreditCardOption(), webDriver);
+        DataHelperAndWait.clickOnElement(this.getDebitCreditCardOption(), webDriver);
+        DataHelperAndWait.clickOnElement(this.nextButtonInGediaaPopUp, webDriver);
+        DataHelperAndWait.waitToBeVisible(this.getCreditCardNumber(), webDriver);
+        DataHelperAndWait.updateAllText(this.getCreditCardNumber(), XmlReader.getXMLData("testCreditCard"));
+        DataHelperAndWait.waitToBeVisible(this.getCardExpiryField(), webDriver);
+        DataHelperAndWait.updateAllText(this.getCardExpiryField(),XmlReader.getXMLData("creditCardDate") );
+        DataHelperAndWait.waitToBeVisible(this.getCvvField(), webDriver);
+        DataHelperAndWait.updateAllText(this.getCvvField(), XmlReader.getXMLData("testCVV"));
+        DataHelperAndWait.waitToBeVisible(this.getCardOwnerNameField(), webDriver);
+        DataHelperAndWait.updateAllText(this.getCardOwnerNameField(), XmlReader.getXMLData("firstName"));
+//        webDriver.switchTo().defaultContent();
+        DataHelperAndWait.clickOnElement(this.getPayBtn(), webDriver);
+//        DataHelperAndWait.waitForTime(6000);
+        DataHelperAndWait.waitToBeVisible(this.aCSEmulatorFrame, webDriver);
+        webDriver.switchTo().frame("redirectTo3ds1Frame");
+        DataHelperAndWait.waitToBeVisible(this.getACSEmulatorScreen(), webDriver);
+        DataHelperAndWait.waitToBeVisible(this.getAuthenticationResultMenu(), webDriver);
+        DataHelperAndWait.clickOnElement(this.getSubmitEmulator(), webDriver);
+    }
+    public void selectAuthenticationFailed(){
+        DataHelperAndWait.waitToBeVisible(this.getAuthenticationResultMenu(), webDriver);
+        Select auth= new Select(this.getAuthenticationResultMenu());
+        auth.selectByValue("(N) Authentication Failed");
+    }
+    public void selectAuthenticationNotAvailable(){
+        DataHelperAndWait.waitToBeVisible(this.getAuthenticationResultMenu(), webDriver);
+        Select auth= new Select(this.getAuthenticationResultMenu());
+        auth.selectByValue("(X or U) Authentication Not Available");
+    }
+    public void selectAuthenticationAttempted(){
+        DataHelperAndWait.waitToBeVisible(this.getAuthenticationResultMenu(), webDriver);
+        Select auth= new Select(this.getAuthenticationResultMenu());
+        auth.selectByValue("(M) Authentication Attempted");
+    }
+    public void selectAuthenticationErrorResponse(){
+        DataHelperAndWait.waitToBeVisible(this.getAuthenticationResultMenu(), webDriver);
+        Select auth= new Select(this.getAuthenticationResultMenu());
+        auth.selectByValue("(P) Error Parsing Authentication Response");
+    }
+    public void selectAuthenticationInvalidSignature(){
+        DataHelperAndWait.waitToBeVisible(this.getAuthenticationResultMenu(), webDriver);
+        Select auth= new Select(this.getAuthenticationResultMenu());
+        auth.selectByValue("(S) Invalid Signature on Authentication Response");
+    }
+    public void selectAuthenticationMPI(){
+        DataHelperAndWait.waitToBeVisible(this.getAuthenticationResultMenu(), webDriver);
+        Select auth= new Select(this.getAuthenticationResultMenu());
+        auth.selectByValue("(I) MPI Processing Error");
+    }
+    public void selectAuthenticationNoCAVV(){
+        DataHelperAndWait.waitToBeVisible(this.getAuthenticationResultMenu(), webDriver);
+        Select auth= new Select(this.getAuthenticationResultMenu());
+        auth.selectByValue("(M) Authentication Attempted (No CAVV)");
+    }
+
     public void selectCreditCardMethod() {
         DataHelperAndWait.clickOnElement(this.getCreditCardPaymentMethod(), webDriver);
         DataHelperAndWait.clickOnElement(this.getContinuePaymentMethodsBtn(), webDriver);
+
+    }
+
+    public void navigateToGeideaPortal(){
 
     }
 
