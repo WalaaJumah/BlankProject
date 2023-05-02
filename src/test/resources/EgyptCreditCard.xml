@@ -30,6 +30,7 @@
                     <include name="verifyTheOrderTotalAppearsInGeideaGateWayIsMatchedWithOriginalOrderTotal"/>
                     <include name="verifyTheOrderIsNotPlacedWhenMakeInterputionDuringCheckoutOrderUsingGeidea"/>
                     <include name="verifyAbilityToPlaceOrderWhenSelectingNextDayDeliveryShippingMethodWithCreditCardPaymentMethodInArabicVersion"/>
+                    <include name="verifyAbilityToPlaceOrderWhenSelectingNextDayDeliveryShippingMethodWithCreditCardPaymentMethodUsingCouponCode"/>
 
                 </methods>
             </class>
@@ -48,11 +49,10 @@
                 <include name="verifyTheOrderTotalAppearsInGeideaGateWayIsMatchedWithOriginalOrderTotal"/>
                 <include name="verifyTheOrderIsNotPlacedWhenMakeInterputionDuringCheckoutOrderUsingGeidea"/>
                 <include name="verifyAbilityToPlaceOrderWhenSelectingNextDayDeliveryShippingMethodWithCreditCardPaymentMethodInArabicVersion"/>
+                <include name="verifyAbilityToPlaceOrderWhenSelectingNextDayDeliveryShippingMethodWithCreditCardPaymentMethodUsingCouponCode"/>
             </methods>
             </class>
-
-        </>
-
+        </classes>
     </test>
 
 

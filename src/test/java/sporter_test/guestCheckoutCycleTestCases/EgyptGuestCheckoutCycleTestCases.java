@@ -632,5 +632,41 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         DataHelperAndWait.waitToBeVisible(egypt.getGoToMerchentWebSite(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getSuccessPage(),webDriver);
     }
+    @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Next Day Delivery Shipping Method With Credit Card Payment Method when using the coupon code", priority = 70)
+    public void verifyAbilityToPlaceOrderWhenSelectingNextDayDeliveryShippingMethodWithCreditCardPaymentMethodUsingCouponCode() throws IOException {
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
+        CartPage cartPage = new CartPage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        cartPage.addToCartAndDisplayTheCart();
+        DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
+        DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCheckoutAsGuestBtn(),webDriver);
+        guestCheckoutCyclePage.fillInShippingInformationInputField(
+                XmlReader.getXMLData("firstName"),
+                XmlReader.getXMLData("lastName"),
+                XmlReader.getXMLData("correctEmail"),
+                XmlReader.getXMLData("phoneNumber"),
+//                XmlReader.getXMLData("AddressName"),
+                XmlReader.getXMLData("StreetOneAddressName"),
+                XmlReader.getXMLData("ksaPhoneNumber")
+        );
+        DataHelperAndWait.waitForTime(2000);
+        guestCheckoutCyclePage.clickOnContinueBtn();
+        DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        egypt.selectCreditCardMethod();
+        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        egypt.submitCreditCardCorrectly();
+        DataHelperAndWait.waitForTime(4000);
+        webDriver.switchTo().frame(1);
+        DataHelperAndWait.waitToBeVisible(egypt.getGoToMerchentWebSite(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getSuccessPage(),webDriver);
+    }
+
 }
 
