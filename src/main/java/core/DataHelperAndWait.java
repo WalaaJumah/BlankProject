@@ -22,7 +22,7 @@ import static org.testng.Assert.assertTrue;
 
 public  class DataHelperAndWait  {
 
-    private static int WaitTime=15;
+    private static int WaitTime=20;
     //test21add
 public static void navigateToUrl(String uRL, WebDriver webDriver) {
     webDriver.navigate().to(uRL);
@@ -179,6 +179,10 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
         } catch (Exception e) {
             return false;
         }
+    }
+    public static void waitTillFrameVisible(WebDriver webDriver, WebElement frame){
+     WebDriverWait wait = new WebDriverWait(webDriver,WaitTime);
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frame));
     }
     public static  void uploadImage(WebElement element, String imageName) {
         String path;
