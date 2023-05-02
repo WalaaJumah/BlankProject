@@ -149,38 +149,39 @@ public class EgyptGuestCheckoutCyclePage extends GuestCheckoutCyclePage {
     }
     public void selectAuthenticationFailed(){
         DataHelperAndWait.waitToBeVisible(this.getAuthenticationResultMenu(), webDriver);
+        DataHelperAndWait.clickOnElement(this.getAuthenticationResultMenu(), webDriver);
         Select auth= new Select(this.getAuthenticationResultMenu());
-        auth.selectByValue("(N) Authentication Failed");
+        auth.selectByVisibleText("(N) Authentication Failed");
     }
     public void selectAuthenticationNotAvailable(){
         DataHelperAndWait.waitToBeVisible(this.getAuthenticationResultMenu(), webDriver);
         Select auth= new Select(this.getAuthenticationResultMenu());
-        auth.selectByValue("(X or U) Authentication Not Available");
+        auth.selectByVisibleText("(X or U) Authentication Not Available");
     }
     public void selectAuthenticationAttempted(){
         DataHelperAndWait.waitToBeVisible(this.getAuthenticationResultMenu(), webDriver);
         Select auth= new Select(this.getAuthenticationResultMenu());
-        auth.selectByValue("(M) Authentication Attempted");
+        auth.selectByVisibleText("(M) Authentication Attempted");
     }
     public void selectAuthenticationErrorResponse(){
         DataHelperAndWait.waitToBeVisible(this.getAuthenticationResultMenu(), webDriver);
         Select auth= new Select(this.getAuthenticationResultMenu());
-        auth.selectByValue("(P) Error Parsing Authentication Response");
+        auth.selectByVisibleText("(P) Error Parsing Authentication Response");
     }
     public void selectAuthenticationInvalidSignature(){
         DataHelperAndWait.waitToBeVisible(this.getAuthenticationResultMenu(), webDriver);
         Select auth= new Select(this.getAuthenticationResultMenu());
-        auth.selectByValue("(S) Invalid Signature on Authentication Response");
+        auth.selectByVisibleText("(S) Invalid Signature on Authentication Response");
     }
     public void selectAuthenticationMPI(){
         DataHelperAndWait.waitToBeVisible(this.getAuthenticationResultMenu(), webDriver);
         Select auth= new Select(this.getAuthenticationResultMenu());
-        auth.selectByValue("(I) MPI Processing Error");
+        auth.selectByVisibleText("(I) MPI Processing Error");
     }
     public void selectAuthenticationNoCAVV(){
         DataHelperAndWait.waitToBeVisible(this.getAuthenticationResultMenu(), webDriver);
         Select auth= new Select(this.getAuthenticationResultMenu());
-        auth.selectByValue("(M) Authentication Attempted (No CAVV)");
+        auth.selectByVisibleText("(M) Authentication Attempted (No CAVV)");
     }
 
     public void selectCreditCardMethod() {
