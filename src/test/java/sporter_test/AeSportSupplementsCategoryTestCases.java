@@ -24,6 +24,8 @@ public class AeSportSupplementsCategoryTestCases extends BaseTest {
 @Test(groups = "All Smoke Testing Result",description = "Sports Supplements Category- Switching to UAE store", priority = 1)
 public void switchToUaeStore(){
     AeSportSupplementsCategoryPage aeSportSupplementsCategoryPage = new AeSportSupplementsCategoryPage(webDriver);
+    webDriver.navigate().to("https://www.sporter.com/en-ae");
+
     aeSportSupplementsCategoryPage.switchToAECountry();
     if(webDriver.getCurrentUrl().contains(aeSportSupplementsCategoryPage.aeDomain)){
         System.out.println("You are in UAE Store");

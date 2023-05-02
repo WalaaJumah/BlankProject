@@ -26,6 +26,8 @@ public class QatarHomePageTestCases extends BaseTest {
     public void switchToQatarStore() {
 //        qatarHomePage.webDriver=this.webDriver;
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
+        webDriver.navigate().to("https://www.sporter.com/en-ae");
+
         qatarHomePage.switchToQatarCountry();
         if(webDriver.getCurrentUrl().contains(qatarHomePage.qatarDomain)){
             System.out.println("You are in Qatar Store");

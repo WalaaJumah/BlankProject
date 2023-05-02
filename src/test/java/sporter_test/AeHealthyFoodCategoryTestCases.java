@@ -26,6 +26,8 @@ public class AeHealthyFoodCategoryTestCases extends BaseTest {
     @Test(groups = "All Smoke Testing Result",description = "Healthy Food Category- Switching to UAE store", priority = 1)
     public void switchToUaeStore(){
         AeHealthyFoodCategoryPage aeHealthyFoodCategoryPage = new AeHealthyFoodCategoryPage(webDriver);
+        webDriver.navigate().to("https://www.sporter.com/en-ae");
+
         aeHealthyFoodCategoryPage.switchToAECountry();
         if(webDriver.getCurrentUrl().contains(aeHealthyFoodCategoryPage.aeDomain)){
             System.out.println("You are in UAE Store");

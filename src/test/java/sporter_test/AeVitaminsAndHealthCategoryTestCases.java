@@ -30,6 +30,8 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
     @Test(groups = "All Smoke Testing Result",description = "Vitamins & Health Category Page- Switching to UAE store", priority = 1)
     public void switchToUaeStore () {
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
+        webDriver.navigate().to("https://www.sporter.com/en-ae");
+
         aeWomenOnlyCategoryPage.switchToAECountry();
         if(webDriver.getCurrentUrl().contains(aeWomenOnlyCategoryPage.aeDomain)){
             System.out.println("You are in UAE Store");

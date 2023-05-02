@@ -12,6 +12,8 @@ public class AeRecommendedProductsTestCases extends BaseTest {
     @Test(groups = "All Smoke Testing Result",description = "Recommended Products Pop-up- Switching to the UAE Store", priority = 1)
     public void switchToAeStore() {
         AeProductDetailsPage aeProductDetailsPage = new AeProductDetailsPage(webDriver);
+        webDriver.navigate().to("https://www.sporter.com/en-ae");
+
         aeProductDetailsPage.switchToAECountry();
         if(webDriver.getCurrentUrl().contains(aeProductDetailsPage.aeDomain)){
             System.out.println("You are in UAE Store");

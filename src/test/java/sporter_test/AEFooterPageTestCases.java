@@ -54,6 +54,8 @@ public class AEFooterPageTestCases extends BaseTest {
     @Test(groups = {"2.12 Footer Section", "All Smoke Testing Result"},description = " Footer Section- Switching to UAE store", priority = 1)
     public void switchToUaeStore(){
         AEFooterPage aeFooterPage = new AEFooterPage(webDriver);
+        webDriver.navigate().to("https://www.sporter.com/en-ae");
+
         aeFooterPage.switchToAECountry();
         if(webDriver.getCurrentUrl().contains(aeFooterPage.aeDomain)){
             System.out.println("You are in UAE Store");

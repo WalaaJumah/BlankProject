@@ -20,9 +20,12 @@ import sporter_pages.QatarHomePage;
 import java.util.ArrayList;
 
 public class AccessAllStoresCountriesTestCases extends BaseTest {
-    @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "Ability to access all stores", priority = 1)
+    @Test(groups = {"1.1 Critical Severity"},description = "Ability to access all stores", priority = 1)
     public void accessAllCountries(){
+
         AccessAllStoresCountriesPage accessAllStoresCountriesPage = new AccessAllStoresCountriesPage(webDriver);
+        webDriver.navigate().to("https://www.sporter.com/en-ae");
+
         ArrayList<String> expectedOption = new ArrayList<>() {{
             add("/en-ae");
             add("/en-sa");

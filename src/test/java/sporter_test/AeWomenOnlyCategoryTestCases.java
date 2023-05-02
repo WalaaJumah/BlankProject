@@ -31,6 +31,8 @@ public class AeWomenOnlyCategoryTestCases extends BaseTest {
     @Test(groups = "All Smoke Testing Result",description = "Women's Only Category- Switching to UAE store", priority = 1)
     public void switchToUaeStore(){
         AeWomenOnlyCategoryPage aeWomenOnlyCategoryPage = new AeWomenOnlyCategoryPage(webDriver);
+        webDriver.navigate().to("https://www.sporter.com/en-ae");
+
         aeWomenOnlyCategoryPage.switchToAECountry();
         if(webDriver.getCurrentUrl().contains(aeWomenOnlyCategoryPage.aeDomain)){
             System.out.println("You are in UAE Store");

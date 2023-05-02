@@ -23,6 +23,7 @@ public class AEMegaMenuTestCases extends BaseTest {
     public void switchToUaeStore() {
 //        qatarHomePage.webDriver=this.webDriver;
          AEMegaMenuPage aeMegamenuPage = new AEMegaMenuPage(webDriver);
+        webDriver.navigate().to("https://www.sporter.com/en-ae");
         aeMegamenuPage.switchToAECountry();
         if(webDriver.getCurrentUrl().contains(aeMegamenuPage.aeDomain)){
             System.out.println("You are in UAE Store");

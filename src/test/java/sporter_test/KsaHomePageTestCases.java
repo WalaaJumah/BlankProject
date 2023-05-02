@@ -14,6 +14,8 @@ public class KsaHomePageTestCases extends BaseTest {
     @Test(groups = "All Smoke Testing Result",description = "KSA HomePage- Switching to the KSA Store", priority = 1)
     public void switchToKsaStore() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
+        webDriver.navigate().to("https://www.sporter.com/en-ae");
+
         ksaHomePage.switchToKsaCountry();
         if(webDriver.getCurrentUrl().contains(ksaHomePage.saudiDomain)){
             System.out.println("You are in UAE Store");

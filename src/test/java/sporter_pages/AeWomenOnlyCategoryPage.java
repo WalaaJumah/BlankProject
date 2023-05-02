@@ -267,6 +267,7 @@ catch (Exception e){
     }
     public void navigateToWomenOnlyPage(){webDriver.navigate().to(BaseURL +aeDomain+womenOnlyUrl);}
     public void switchToAECountry() {
+
         try {
             DataHelperAndWait.waitToBeVisible(countryList, 5,webDriver);
             this.countryList.click();
