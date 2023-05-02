@@ -161,7 +161,7 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
         String  date2 = simpleDateFormat2.format(new Date());
         Random randomGenerator = new Random();
         int randomInt = randomGenerator.nextInt(1000);
-        return "AutomationUser"+ randomInt +date2+"@gmail.com";
+        return "Victor"+ randomInt +date2+"@gmail.com";
     }
     public static  void selectFromDropDownList(String element, List<WebElement> list) {
         for (WebElement option : list) {

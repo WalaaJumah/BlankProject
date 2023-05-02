@@ -17,29 +17,28 @@
         <SPORTSAr>رياضة</SPORTSAr>
         <WomenOnlyEn>Women's Only</WomenOnlyEn>
         <WomenOnlyAr>للنساء فقط</WomenOnlyAr>
-        <reviewDesc>Review Description Automation</reviewDesc>
-        <reviewSummary>Review Summary Automation</reviewSummary>
-        <nickName>Automation</nickName>
-        <reviewDescLong>Review Description AutomationReview Description AutomationReview Description AutomationReview
-            Description AutomationReview Description AutomationReview Description Automation
+        <reviewDesc>Review Description </reviewDesc>
+        <reviewSummary>Review Summary </reviewSummary>
+        <nickName>Victor</nickName>
+        <reviewDescLong>Review Description Victor Review Description Automation Review Description  Review
+            Description Review Description Review Description
         </reviewDescLong>
-        <reviewSummaryLong>Review Summary Automation Review Summary Automation Review Summary Automation Review Summary
-            Automation Review Summary Automation Review Summary Automation Review Summary Automation
+        <reviewSummaryLong>Review Summary  Review Summary  Review SummaryReview Summary
+             Review Summary  Review Summary  Review Summary
         </reviewSummaryLong>
-        <nickNameLong>Automation Automation Automation Automation Automation Automation Automation Automation Automation
-            Automation Automation Automation Automation Automation Automation
+        <nickNameLong>Victor  VictorVictorVictorVictorVictorVictorVictorVictor Victor VictorVictor Victor Victor
         </nickNameLong>
 
     </ParentData1>
     <RegistartionForm>
         <correctEmail>Sportertesta@gmail.com</correctEmail>
-        <correctEmail2>Automation1@user.com</correctEmail2>
+        <correctEmail2>VictorAt1@gmail.com</correctEmail2>
         <incorrectEmailFormate>Sportertesta@gmail</incorrectEmailFormate>
         <correctPassword>@SD123456789</correctPassword>
         <shortPassword>123</shortPassword>
         <space>   </space>
         <passwordDoesNotMatchTheRules>123456789</passwordDoesNotMatchTheRules>
-        <firstName>Automation</firstName>
+        <firstName>Victor</firstName>
         <lastName>User</lastName>
         <requiredErrorMsEn>This is a required field.</requiredErrorMsEn>
         <requiredErrorMsAr>هذه الخانة مطلوبة</requiredErrorMsAr>
