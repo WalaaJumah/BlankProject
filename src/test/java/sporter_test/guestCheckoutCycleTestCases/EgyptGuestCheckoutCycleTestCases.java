@@ -560,6 +560,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         DataHelperAndWait.waitToBeVisible(egypt.getDebitCreditCardOption(), webDriver);
         DataHelperAndWait.clickOnElement(egypt.getDebitCreditCardOption(), webDriver);
         DataHelperAndWait.clickOnElement(egypt.getNextButtonInGediaaPopUp(), webDriver);
+        DataHelperAndWait.waitToBeVisible(egypt.getPayBtn(),webDriver);
         String totalGeidea=DataHelperAndWait.extractDigitsFromString(egypt.getPayBtn(),webDriver);
         Assert.assertEquals(totalGeidea,sporterTotal);
     }
