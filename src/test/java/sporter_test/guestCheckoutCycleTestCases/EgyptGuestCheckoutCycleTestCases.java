@@ -411,7 +411,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         egypt.submitCreditCardWithDifferentAuthentication("(M) Authentication Attempted");
-        DataHelperAndWait.waitForTime(2500);
+                DataHelperAndWait.waitForTime(3500);
         webDriver.switchTo().frame(1);
         WebElementsAssertion.validateTheElementIsDisplayed(egypt.getGeideaError(),webDriver);
     }
@@ -440,7 +440,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         egypt.submitCreditCardWithDifferentAuthentication("(P) Error Parsing Authentication Response");
-        DataHelperAndWait.waitForTime(2500);
+                DataHelperAndWait.waitForTime(3500);
         webDriver.switchTo().frame(1);
         WebElementsAssertion.validateTheElementIsDisplayed(egypt.getGeideaError(),webDriver);
     }
@@ -469,7 +469,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         egypt.submitCreditCardWithDifferentAuthentication("(S) Invalid Signature on Authentication Response");
-        DataHelperAndWait.waitForTime(2500);
+                DataHelperAndWait.waitForTime(3500);
         webDriver.switchTo().frame(1);
         WebElementsAssertion.validateTheElementIsDisplayed(egypt.getGeideaError(),webDriver);
     }
@@ -498,7 +498,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         egypt.submitCreditCardWithDifferentAuthentication("(I) MPI Processing Error");
-        DataHelperAndWait.waitForTime(2500);
+        DataHelperAndWait.waitForTime(3500);
         webDriver.switchTo().frame(1);
         WebElementsAssertion.validateTheElementIsDisplayed(egypt.getGeideaError(),webDriver);
     }
@@ -527,7 +527,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         egypt.submitCreditCardWithDifferentAuthentication("(M) Authentication Attempted (No CAVV)");
-        DataHelperAndWait.waitForTime(2500);
+                DataHelperAndWait.waitForTime(3500);
         webDriver.switchTo().frame(1);
         WebElementsAssertion.validateTheElementIsDisplayed(egypt.getGeideaError(),webDriver);
     }
