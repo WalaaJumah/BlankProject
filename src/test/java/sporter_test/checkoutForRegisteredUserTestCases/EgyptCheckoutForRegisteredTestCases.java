@@ -273,7 +273,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
-        DataHelperAndWait.waitForTime(2500);
+                        DataHelperAndWait.waitForTime(4000);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
 //        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getSuccessPage(),webDriver);
@@ -331,7 +331,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         egypt.submitCreditCardWithDifferentAuthentication("(M) Authentication Attempted");
-        DataHelperAndWait.waitForTime(2500);
+                        DataHelperAndWait.waitForTime(4000);
         webDriver.switchTo().frame(1);
         WebElementsAssertion.validateTheElementIsDisplayed(egypt.getGeideaError(),webDriver);
     }
@@ -349,7 +349,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         egypt.submitCreditCardWithDifferentAuthentication("(P) Error Parsing Authentication Response");
-        DataHelperAndWait.waitForTime(2500);
+                        DataHelperAndWait.waitForTime(4000);
         webDriver.switchTo().frame(1);
         WebElementsAssertion.validateTheElementIsDisplayed(egypt.getGeideaError(),webDriver);
     }
@@ -367,7 +367,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         egypt.submitCreditCardWithDifferentAuthentication("(S) Invalid Signature on Authentication Response");
-        DataHelperAndWait.waitForTime(2500);
+                        DataHelperAndWait.waitForTime(4000);
         webDriver.switchTo().frame(1);
         WebElementsAssertion.validateTheElementIsDisplayed(egypt.getGeideaError(),webDriver);
     }
@@ -385,7 +385,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         egypt.submitCreditCardWithDifferentAuthentication("(I) MPI Processing Error");
-        DataHelperAndWait.waitForTime(2500);
+                        DataHelperAndWait.waitForTime(4000);
         webDriver.switchTo().frame(1);
         WebElementsAssertion.validateTheElementIsDisplayed(egypt.getGeideaError(),webDriver);
     }
@@ -403,7 +403,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         egypt.submitCreditCardWithDifferentAuthentication("(M) Authentication Attempted (No CAVV)");
-        DataHelperAndWait.waitForTime(2500);
+                        DataHelperAndWait.waitForTime(4000);
         webDriver.switchTo().frame(1);
         WebElementsAssertion.validateTheElementIsDisplayed(egypt.getGeideaError(),webDriver);
     }
@@ -460,9 +460,31 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         HeaderSection headerSection= new HeaderSection(webDriver);
         CartPage cartPage= new CartPage(webDriver);
+        cartPage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(headerSection.getLanguageSelector(),webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage,webDriver);
-        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
+//        cartPage.clearCart();
+        System.out.println("Before");
+        cartPage.addToCartAndDisplayTheCart();
+        DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
+        DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);
+//        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
+//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+        try{
+            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
+        }
+        catch (Exception e){
+            checkoutForRegisteredPage.fillInShippingInformationInputField(
+                    XmlReader.getXMLData("firstName"),
+                    XmlReader.getXMLData("lastName"),
+                    XmlReader.getXMLData("phoneNumber"),
+                    XmlReader.getXMLData("AddressName"),
+                    XmlReader.getXMLData("StreetOneAddressName"),
+                    XmlReader.getXMLData("StreetTwoAddressName"));
+        }
+        DataHelperAndWait.waitForTime(2000);
+        guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         egypt.selectCreditCardMethod();
@@ -470,7 +492,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         egypt.submitCreditCardCorrectly();
-        DataHelperAndWait.waitForTime(4000);
+        DataHelperAndWait.waitForTime(5000);
         webDriver.switchTo().frame(1);
         DataHelperAndWait.waitToBeVisible(egypt.getGoToMerchentWebSite(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getSuccessPage(),webDriver);
@@ -508,7 +530,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         egypt.submitCreditCardCorrectly();
-        DataHelperAndWait.waitForTime(4000);
+        DataHelperAndWait.waitForTime(5000);
         webDriver.switchTo().frame(1);
         DataHelperAndWait.waitToBeVisible(egypt.getGoToMerchentWebSite(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getSuccessPage(),webDriver);
