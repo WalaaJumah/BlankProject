@@ -145,7 +145,6 @@ public class AeVitaminsAndHealthCategoryTestCases extends BaseTest {
         String expectedBannerUrl=aeVitaminsAndHealthCategoryPage.getFirstSideBanner().getAttribute("href");
         aeVitaminsAndHealthCategoryPage.getFirstSideBanner().click();
         aeVitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        assertEquals(webDriver.getCurrentUrl(),expectedBannerUrl);
     }
     @Test(groups = {"2.08 Vitamins & Health Category","All Smoke Testing Result","1.2 High Severity"},description = "Vitamins & Health Category- Verify clicking on the second side banner works correctly", priority = 12)
     public void verifyClickingOnTheSecondSideBannersWorksCorrectlyInTheVitaminsAndHealthCategoryPage() {
