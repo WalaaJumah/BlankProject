@@ -44,6 +44,7 @@ public class MyAccountTestCases extends BaseTest {
         catch (Exception e){
             DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
 //        DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
+            DataHelperAndWait.waitForTime(1500);
             WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyAccountOption(), webDriver);
             WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyOrdersOption(), webDriver);
             WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyRewardsOption(), webDriver);

@@ -90,6 +90,7 @@ public class JordanCartTestCases extends CartTestCases {
         CartPage cartPage = new CartPage(webDriver);
 //        cartPage.addToCartAndDisplayTheCart();
         cartPage.addToCartAndDisplayTheCart();
+        DataHelperAndWait.waitForTime(1000);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getWeAcceptLabel(), webDriver);
 //        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCODOption(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCreditCardOption(), webDriver);

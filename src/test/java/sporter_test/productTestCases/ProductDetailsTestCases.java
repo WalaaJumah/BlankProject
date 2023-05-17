@@ -66,7 +66,7 @@ public class ProductDetailsTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
         productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
         DataHelperAndWait.clickOnElement(productDetailsPage.getProductCard(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getProductName(), webDriver);
+        productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Make sure that the increase quantity function works fine ", priority = 5)

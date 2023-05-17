@@ -548,7 +548,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         DataHelperAndWait.typeTextInElement(productDetailsPage.getSearchField(),webDriver,"Basic");
         DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString("search",webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getProductCard(),webDriver);
         productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
 
     }
