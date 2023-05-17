@@ -87,7 +87,7 @@ public class BaseTest {
                 break;
             case "chrome":
                 //This Statement will run always
-                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver113.exe");
 //                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriverVersion110.exe");
 
 //                ChromeOptions chromeOptions=new ChromeOptions();

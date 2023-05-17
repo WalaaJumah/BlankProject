@@ -212,6 +212,7 @@ public class ProductDetailsPage extends BasePage {
     public void keepShoppingAfterAddingToCart() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         try {
+
             this.displayTheProduct();
             this.addToCart();
             this.keepShopping();
