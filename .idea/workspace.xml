@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86683dee-3ff6-4652-96ae-dd8bddfbd97f" name="Changes" comment=" Update smoke testing test cases">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/drivers/chromedriver113.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/productPage/ProductDetailsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/productPage/ProductDetailsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/CheckoutForRegisteredTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/CheckoutForRegisteredTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/drivers/chromedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/drivers/chromedriver.exe" afterDir="false" />
-=======
->>>>>>> 375b86dc6d780edb1a511705246dbc84236fd42b
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,9 +88,7 @@
       <command value="ProductDetailsPageTestCases.verifyAbilityToDisplayBundleAndSelectAllOptions" />
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/Jordan/JordanFullTest.xml"/>
-=======
-  <component name="RunManager" selected="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/Kuwait Store/KuwaitFulTest.xml">
+  <component name="RunManager" selected="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/Jordan/JordanFullTest.xml">
     <configuration name="C:/Users/User/IdeaProjects/QATesting/src/test/resources/Kuwait Store/KuwaitFulTest.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/Kuwait Store/KuwaitFulTest.xml" />
@@ -108,7 +99,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
->>>>>>> 375b86dc6d780edb1a511705246dbc84236fd42b
     <configuration name="C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/EgyptCreditCard.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/EgyptCreditCard.xml" />
@@ -161,9 +151,7 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/Jordan/JordanFullTest.xml" />
-=======
       <item itemvalue="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/Kuwait Store/KuwaitFulTest.xml" />
->>>>>>> 375b86dc6d780edb1a511705246dbc84236fd42b
       <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/EgyptCreditCard.xml" />
       <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/GenerateReport.xml" />
       <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/RunMethod.xml" />
@@ -172,13 +160,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/Jordan/JordanFullTest.xml" />
-=======
         <item itemvalue="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/Kuwait Store/KuwaitFulTest.xml" />
->>>>>>> 375b86dc6d780edb1a511705246dbc84236fd42b
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/Sporter2.1OnProdution/ProductionSporter2.1SmokeReport.xml" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/GenerateReport.xml" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/EgyptCreditCard.xml" />
-        <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/RunMethod.xml" />
       </list>
     </recent_temporary>
   </component>

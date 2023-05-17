@@ -103,6 +103,7 @@ public class AccountRegistrationPage extends BasePage {
     public void verifyFaceBookIsActive() throws IOException {
         verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.facebookError), "FaceBook is inactive " + webDriver.getCurrentUrl());
+        Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.facebookError2), "FaceBook is unavailable " + webDriver.getCurrentUrl());
     }
 
 
