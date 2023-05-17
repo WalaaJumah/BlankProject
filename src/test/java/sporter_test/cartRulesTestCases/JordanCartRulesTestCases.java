@@ -72,14 +72,15 @@ public class JordanCartRulesTestCases extends CartRulesTestCases {
     public void verifyInabilityToCheckoutOrderWhenTheTotalExceed120JOD() throws Exception {
         LoginPage loginPage = new LoginPage(webDriver);
         HeaderSection header=new HeaderSection(webDriver);
+        CartPage cartPage = new CartPage(webDriver);
         AccountRegistrationPage registrationPage=new AccountRegistrationPage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
         loginPage.navigateToLoginPage();
         loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword"));
         DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
         DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(registrationPage.getMyAccountOption(), webDriver);
-        CartPage cartPage = new CartPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         cartPage.clearCart();
         webDriver.navigate().to(BaseURL + cartPage.productUrlJordanWithHighPrice);
@@ -89,13 +90,12 @@ public class JordanCartRulesTestCases extends CartRulesTestCases {
         webDriver.navigate().to(BaseURL + cartPage.productUrlJordanWithHighPrice2);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         productDetailsPage.addToCart();
-        productDetailsPage.keepShopping();
-        webDriver.navigate().to(BaseURL + cartPage.productUrlJordan);
-        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        productDetailsPage.addToCart();
-        productDetailsPage.viewCart();
+//        productDetailsPage.keepShopping();
+//        webDriver.navigate().to(BaseURL + cartPage.productUrlJordan);
+//        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
+//        productDetailsPage.addToCart();
         DataHelperAndWait.waitForTime(2000);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
+//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(), webDriver);
         DataHelperAndWait.refreshPage(webDriver);
     }

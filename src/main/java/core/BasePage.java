@@ -47,7 +47,7 @@ public class BasePage {
     public static String productUrlJordan = "/optimum-gold-standard-100-whey";
     public static String productUrlJordan7 = "/optimum-gold-standard-100-whey";
     public static String productUrlJordanWithLowPrice = "/jack-links-beef-jerky-54840/";
-    public static String productUrlJordanWithHighPrice = "/climaqx-gym-bag-21711";
+    public static String productUrlJordanWithHighPrice = "/dymatize-elite-casein-7520/";
     public static String productUrlQatarWithHighPrice = "/optimum-gold-standard-100-whey-6202";
     public static String productUrlQatarWithHighPrice2 = "/dymatize-iso-100-7164";
     public static String productUrlQatarWithHighPrice3 = "/dymatize-elite-whey-7161";
