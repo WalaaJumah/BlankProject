@@ -108,6 +108,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         registerPage.navigateToRegistrationPage();
         registerPage.fillInCreateAccountForm(XmlReader.getXMLData("correctEmail"), XmlReader.getXMLData("correctPassword"), XmlReader.getXMLData("correctPassword"));
         DataHelperAndWait.clickOnElement(registerPage.getCreateAccountBtn(), webDriver);
+        DataHelperAndWait.waitForTime(1000);
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getEmailErrorMs(), webDriver);
     }
 
