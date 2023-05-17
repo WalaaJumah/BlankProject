@@ -50,7 +50,7 @@ public class ProductDetailsPage extends BasePage {
     private List<WebElement> productFlavor;
     @FindBy(id = "SearchButton")
     private WebElement searchBtn;
-    @FindBy(id = "//a[@data-position='1']/div[@class= 'result-thumbnail product-image-wrapper']")
+    @FindBy(id = "selectSorts")
     private WebElement productCard;
     @FindBy(id = "star0")
     private WebElement oneStarReview;
