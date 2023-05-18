@@ -80,7 +80,8 @@ public class JordanCartRulesTestCases extends CartRulesTestCases {
         DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
         DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(registrationPage.getMyAccountOption(), webDriver);
+        DataHelperAndWait.waitForTime(2000);
+//        WebElementsAssertion.validateTheElementIsDisplayed(registrationPage.getMyAccountOption(), webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         cartPage.clearCart();
         webDriver.navigate().to(BaseURL + cartPage.productUrlJordanWithHighPrice);

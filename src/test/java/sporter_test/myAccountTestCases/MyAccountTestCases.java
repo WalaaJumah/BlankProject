@@ -36,15 +36,16 @@ public class MyAccountTestCases extends BaseTest {
         DataHelperAndWait.waitForTime(2000);
         try{
         DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
-//        DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
+            DataHelperAndWait.waitForTime(2000);
         WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyAccountOption(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyOrdersOption(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyRewardsOption(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getLogoutOption(), webDriver);}
         catch (Exception e){
+            webDriver.navigate().refresh();
             DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
-//        DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
-            DataHelperAndWait.waitForTime(1500);
+            webDriver.navigate().refresh();
+            DataHelperAndWait.waitForTime(4000);
             WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyAccountOption(), webDriver);
             WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyOrdersOption(), webDriver);
             WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyRewardsOption(), webDriver);
