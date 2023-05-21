@@ -63,7 +63,7 @@ public class CheckoutForRegisteredTestCases extends BaseTest
 //        DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
 //        DataHelperAndWait.clickOnElement(registrationPage.getLogoutOption(), webDriver);
     }
-    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"}, description = "{{CountryName}}: Ability to login correctly from Sign In Page using valid credential", priority = 2)
+    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"}, description = "{{CountryName}}: Ability to login correctly from Sign In Page using valid credential", priority = 500)
     public void verifyAbilityToLoginCorrectlyWithValidCredentials() throws IOException {
         HeaderSection header = new HeaderSection(webDriver);
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);

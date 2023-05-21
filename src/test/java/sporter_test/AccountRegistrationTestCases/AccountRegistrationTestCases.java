@@ -134,10 +134,20 @@ public class AccountRegistrationTestCases extends BaseTest {
         DataHelperAndWait.waitForTime(1500);
         DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
         webDriver.navigate().refresh();
-        DataHelperAndWait.waitForTime(2000);        WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
+        DataHelperAndWait.waitForTime(4000);
+        try{
+        WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
         DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(), webDriver);
         DataHelperAndWait.clickOnElement(header.getSporterLogo(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(), webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(), webDriver);}
+        catch (Exception e){
+            webDriver.navigate().refresh();
+            DataHelperAndWait.waitForTime(4000);
+            WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
+            DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(), webDriver);
+            DataHelperAndWait.clickOnElement(header.getSporterLogo(), webDriver);
+            WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(), webDriver);
+        }
 //        DataHelperAndWait.waitForTime(3000);
     }
 

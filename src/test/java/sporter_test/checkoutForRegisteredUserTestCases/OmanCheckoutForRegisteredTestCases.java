@@ -99,7 +99,7 @@ public class OmanCheckoutForRegisteredTestCases extends CheckoutForRegisteredTes
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.assertionWebElementEqualText(omanCheckoutForRegisteredPage.getFiveToSevenBusinessDaysShippingMethod(),webDriver, XmlReader.getXMLData("FiveToSevenBusinessDaysShipping"));
     }
-    @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Five To Seven Business Days Shipping Method With COD Payment Method ", priority = 27)
+    @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Five To Seven Business Days Shipping Method With COD Payment Method ", priority = 502)
     public void verifyAbilityToPlaceOrderWhenSelectingFiveToSevenBusinessDaysShippingMethodWithCODPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
@@ -161,7 +161,7 @@ public class OmanCheckoutForRegisteredTestCases extends CheckoutForRegisteredTes
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
     }
-    @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Five To Seven Business Days Shipping Method With Credit Card Payment Method ", priority = 30)
+    @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Five To Seven Business Days Shipping Method With Credit Card Payment Method ", priority = 503)
     public void verifyAbilityToPlaceOrderWhenSelectingFiveToSevenBusinessDaysWithCreditCardPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);

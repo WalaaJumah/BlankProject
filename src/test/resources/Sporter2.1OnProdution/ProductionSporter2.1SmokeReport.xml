@@ -19,11 +19,7 @@
             </run>
         </groups>
         <classes>
-<!--            Checkout-->
-            <class name="sporter_test.checkoutForRegisteredUserTestCases.JordanCheckoutForRegisteredTestCases"></class>
-            <class name="sporter_test.checkoutForRegisteredUserTestCases.BahrainCheckoutForRegisteredTestCases"></class>
-            <class name="sporter_test.checkoutForRegisteredUserTestCases.OmanCheckoutForRegisteredTestCases"></class>
-            <class name="sporter_test.checkoutForRegisteredUserTestCases.KuwaitCheckoutForRegisteredTestCases"></class>
+
 <!-- Jordan Store-->
             <class name="sporter_test.cartRulesTestCases.JordanCartRulesTestCases"></class>
             <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases"/>
@@ -99,7 +95,11 @@
             <class name="sporter_test.sports_category_test_cases.KuwaitSportsCategoryTestCases"></class>
             <class name="sporter_test.footer_test_cases.KuwaitFooterTestCases"></class>
 
-
+            <!--            Checkout-->
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.JordanCheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.BahrainCheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.OmanCheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.KuwaitCheckoutForRegisteredTestCases"></class>
         </classes>
 
     </test>

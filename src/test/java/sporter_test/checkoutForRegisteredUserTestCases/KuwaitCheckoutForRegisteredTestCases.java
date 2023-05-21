@@ -90,7 +90,7 @@ public class KuwaitCheckoutForRegisteredTestCases extends  CheckoutForRegistered
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.assertionWebElementEqualText(kuwaitCheckoutForRegisteredPage.getExpressDeliveryMethod(),webDriver, XmlReader.getXMLData("ExpressDelevery"));
     }
-    @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Express Delivery: 3-5 Days Shipping Method With COD Payment Method ", priority = 27)
+    @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Express Delivery: 3-5 Days Shipping Method With COD Payment Method ", priority = 504)
     public void verifyAbilityToPlaceOrderWhenSelectingExpressDelivery3_5DaysShippingMethodWithCODPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);

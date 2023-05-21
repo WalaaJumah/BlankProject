@@ -226,7 +226,7 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
 //        orderNumberCOD= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
 //        System.out.println(orderNumberCOD);
     }
-    @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting 5 Business Days Super Express Shipping Method With Credit Card Payment Method ", priority = 31)
+    @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting 5 Business Days Super Express Shipping Method With Credit Card Payment Method ", priority = 501)
     public void verifyAbilityToPlaceOrderWhenSelecting5BusinessDaysSuperExpressShippingMethodWithCreditCardPaymentMethod() throws IOException {
         JordanGuestCheckoutCyclePage guestCheckoutCyclePage = new JordanGuestCheckoutCyclePage(webDriver);
 //        guestCheckoutCyclePage.viewCartAndAccessShippingMethodsPage();
