@@ -26,7 +26,7 @@ public class EgyptProductDetailsPage extends ProductDetailsPage {
     }
 
     public void displayOOSProduct() throws IOException {
-        webDriver.navigate().to(BaseURL + egyptDomain + "/now-zma");
+        webDriver.navigate().to(BaseURL + egyptDomain + "/organic-nation-guilt-free-chocolate-spread/");
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
 }

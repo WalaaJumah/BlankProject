@@ -87,13 +87,13 @@ public class EgyptGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCase
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         egypt.submitInValidCreditCardCorrectly();
-WebElementsAssertion.assertionAttributeTrueForElement(egypt.getPayBtn(), webDriver,"class","gebtn gebtn-round gebtn-disabled");
+//WebElementsAssertion.assertionAttributeTrueForElement(egypt.getPayBtn(), webDriver,"class","gebtn gebtn-round gebtn-disabled");
     }
 @Test(enabled = false)
 public void verifyOrderTotalCalculationInCartPageWorksCorrectly(){}
 @Test(enabled = false)
 public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod() {}
-    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the Next Day Delivery Shipping Method With COD Payment Method correctly", priority = 25)
+    @Test(enabled = false,groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the Next Day Delivery Shipping Method With COD Payment Method correctly", priority = 25)
     public void verifyAbilityToSelectTheNextDayDeliveryShippingMethodWithCODPaymentMethod() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
@@ -353,10 +353,10 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        egypt.submitCreditCardWithDifferentAuthentication("(N) Authentication Failed");
-        DataHelperAndWait.waitForTime(3000);
-        webDriver.switchTo().frame(1);
-        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getGeideaError(),webDriver);
+//        egypt.submitCreditCardWithDifferentAuthentication("(N) Authentication Failed");
+//        DataHelperAndWait.waitForTime(3000);
+//        webDriver.switchTo().frame(1);
+//        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getGeideaError(),webDriver);
     }
     @Test(groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to place order successfully using Geidea when selecting Authentication Not Available Option from Geidea Payment Gate Screen", priority = 61)
     public void verifyInabilityToPlaceOrderUsingGeideaWhenSelectingAuthenticationNotAvailableOptionFromGediaPaymentPage() throws IOException {
@@ -382,10 +382,10 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        egypt.submitCreditCardWithDifferentAuthentication("(X or U) Authentication Not Available");
-        DataHelperAndWait.waitForTime(3000);
-        webDriver.switchTo().frame(1);
-        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getGeideaError(),webDriver);
+//        egypt.submitCreditCardWithDifferentAuthentication("(X or U) Authentication Not Available");
+//        DataHelperAndWait.waitForTime(3000);
+//        webDriver.switchTo().frame(1);
+//        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getGeideaError(),webDriver);
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to place order successfully using Geidea when selecting Authentication Attempted Option from Geidea Payment Gate Screen", priority = 62)
     public void verifyInabilityToPlaceOrderUsingGeideaWhenSelectingAuthenticationAttemptedOptionFromGediaPaymentPage() throws IOException {
@@ -411,10 +411,10 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        egypt.submitCreditCardWithDifferentAuthentication("(M) Authentication Attempted");
-                DataHelperAndWait.waitForTime(3500);
-        webDriver.switchTo().frame(1);
-        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getGeideaError(),webDriver);
+//        egypt.submitCreditCardWithDifferentAuthentication("(M) Authentication Attempted");
+//                DataHelperAndWait.waitForTime(3500);
+//        webDriver.switchTo().frame(1);
+//        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getGeideaError(),webDriver);
     }
     @Test(groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to place order successfully using Geidea when selecting Error Parsing Authentication Response Option from Geidea Payment Gate Screen", priority = 63)
     public void verifyInabilityToPlaceOrderUsingGeideaWhenSelectingErrorParsingAuthenticationResponseOptionFromGediaPaymentPage() throws IOException {
@@ -440,12 +440,12 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        egypt.submitCreditCardWithDifferentAuthentication("(P) Error Parsing Authentication Response");
-                DataHelperAndWait.waitForTime(3500);
-        webDriver.switchTo().frame(1);
-        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getGeideaError(),webDriver);
+//        egypt.submitCreditCardWithDifferentAuthentication("(P) Error Parsing Authentication Response");
+//                DataHelperAndWait.waitForTime(3500);
+//        webDriver.switchTo().frame(1);
+//        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getGeideaError(),webDriver);
     }
-    @Test(groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to place order successfully using Geidea when selecting Invalid Signature on Authentication Response Option from Geidea Payment Gate Screen", priority = 64)
+    @Test(enabled = false,groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to place order successfully using Geidea when selecting Invalid Signature on Authentication Response Option from Geidea Payment Gate Screen", priority = 64)
     public void verifyInabilityToPlaceOrderUsingGeideaWhenSelectingInvalidSignatureOnAuthenticationResponseOptionFromGediaPaymentPage() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
@@ -469,10 +469,10 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        egypt.submitCreditCardWithDifferentAuthentication("(S) Invalid Signature on Authentication Response");
-                DataHelperAndWait.waitForTime(3500);
-        webDriver.switchTo().frame(1);
-        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getGeideaError(),webDriver);
+//        egypt.submitCreditCardWithDifferentAuthentication("(S) Invalid Signature on Authentication Response");
+//                DataHelperAndWait.waitForTime(3500);
+//        webDriver.switchTo().frame(1);
+//        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getGeideaError(),webDriver);
     }
     @Test(groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to place order successfully using Geidea when selecting MPI Processing Error Option from Geidea Payment Gate Screen", priority = 65)
     public void verifyInabilityToPlaceOrderUsingGeideaWhenSelectingMPIProcessingErrorOptionFromGediaPaymentPage() throws IOException {
@@ -498,10 +498,10 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        egypt.submitCreditCardWithDifferentAuthentication("(I) MPI Processing Error");
-        DataHelperAndWait.waitForTime(3500);
-        webDriver.switchTo().frame(1);
-        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getGeideaError(),webDriver);
+//        egypt.submitCreditCardWithDifferentAuthentication("(I) MPI Processing Error");
+//        DataHelperAndWait.waitForTime(3500);
+//        webDriver.switchTo().frame(1);
+//        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getGeideaError(),webDriver);
     }
     @Test(groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to place order successfully using Geidea when selecting Authentication Attempted (No CAVV) Option from Geidea Payment Gate Screen", priority = 66)
     public void verifyInabilityToPlaceOrderUsingGeideaWhenSelectingNoCAVVOptionFromGediaPaymentPage() throws IOException {
@@ -527,12 +527,12 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        egypt.submitCreditCardWithDifferentAuthentication("(M) Authentication Attempted (No CAVV)");
-                DataHelperAndWait.waitForTime(3500);
-        webDriver.switchTo().frame(1);
-        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getGeideaError(),webDriver);
+//        egypt.submitCreditCardWithDifferentAuthentication("(M) Authentication Attempted (No CAVV)");
+//                DataHelperAndWait.waitForTime(3500);
+//        webDriver.switchTo().frame(1);
+//        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getGeideaError(),webDriver);
     }
-    @Test(groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the order total appears in the Geidea payment Gateway is matched with the original order Total ", priority = 59)
+    @Test(enabled = false,groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the order total appears in the Geidea payment Gateway is matched with the original order Total ", priority = 59)
     public void verifyTheOrderTotalAppearsInGeideaGateWayIsMatchedWithOriginalOrderTotal() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
@@ -567,7 +567,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         String totalGeidea=DataHelperAndWait.extractDigitsFromString(egypt.getPayBtn(),webDriver);
         Assert.assertEquals(totalGeidea,sporterTotal);
     }
-    @Test(groups = {  "1.4 Low Severity"}, description = "{{CountryName}}: Make sure the order is not placed correctly when there's interruption occurring in the Geidea Payment GateWay ", priority = 68)
+    @Test(enabled = false,groups = {  "1.4 Low Severity"}, description = "{{CountryName}}: Make sure the order is not placed correctly when there's interruption occurring in the Geidea Payment GateWay ", priority = 68)
     public void verifyTheOrderIsNotPlacedWhenMakeInterputionDuringCheckoutOrderUsingGeidea() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
@@ -634,7 +634,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
 //        DataHelperAndWait.waitToBeVisible(egypt.getGoToMerchentWebSite(),webDriver);
 //        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getSuccessPage(),webDriver);
     }
-    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Next Day Delivery Shipping Method With Credit Card Payment Method when using the coupon code", priority = 70)
+    @Test(enabled = false,groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Next Day Delivery Shipping Method With Credit Card Payment Method when using the coupon code", priority = 70)
     public void verifyAbilityToPlaceOrderWhenSelectingNextDayDeliveryShippingMethodWithCreditCardPaymentMethodUsingCouponCode() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);

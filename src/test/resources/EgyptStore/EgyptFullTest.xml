@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<!--<suite name=" Test" thread-count="1" >-->
+<!--<suite name=" Test" thread-count="1" >--> -am
 <suite name="Automation Reports">
     <listeners>
         <!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
         <listener class-name="extent_report_listner.ExtentReportListener"/>
     </listeners>
     <test name=" Sporter 2.1 Full Testing on Egypt" preserve-order="true">
-        <parameter name="environment" value="https://qa.sporter.com/en-eg"/>
+        <parameter name="environment" value="https://stores.sporter.com/en-eg"/>
         <parameter name="browser" value="chrome"/>
         <!-- <parameter name="country" value="en-qa" />-->
         <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32569"/>
