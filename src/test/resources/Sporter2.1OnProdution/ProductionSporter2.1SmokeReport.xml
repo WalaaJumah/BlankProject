@@ -100,6 +100,24 @@
             <class name="sporter_test.checkoutForRegisteredUserTestCases.BahrainCheckoutForRegisteredTestCases"></class>
             <class name="sporter_test.checkoutForRegisteredUserTestCases.OmanCheckoutForRegisteredTestCases"></class>
             <class name="sporter_test.checkoutForRegisteredUserTestCases.KuwaitCheckoutForRegisteredTestCases"></class>
+
+
+<!--        Egypt store-->
+        <class name="sporter_test.checkoutForRegisteredUserTestCases.EgyptCheckoutForRegisteredTestCases"/>
+        <class name="sporter_test.guestCheckoutCycleTestCases.EgyptGuestCheckoutCycleTestCases"/>
+        <class name="sporter_test.homepage_test_cases.EgyptHomePageTestCases"/>
+        <class name="sporter_test.headerTestCases.EgyptHeaderTestCases"/>
+        <class name="sporter_test.productTestCases.EgyptProductDetailsTestCases"/>
+        <class name="sporter_test.RecommendedProductsTestCases.EgyptRecommendedProductTestCases"/>
+        <class name="sporter_test.AccountRegistrationTestCases.EgyptAccountRegistrationTestCases"/>
+        <class name="sporter_test.loginTestCases.EgyptLoginTestCases"/>
+        <class name="sporter_test.forgetPasswordTestCases.EgyptForgetPasswordTestCases"/>
+        <class name="sporter_test.cartTestCases.EgyptCartTestCases"/>
+        <class name="sporter_test.myAccountTestCases.EgyptMyAccountTestCases"/>
+        <class name="sporter_test.sportsSupplementsCategoryTestCases.EgyptSportsSupplementsCategoryTestCases"/>
+        <class name="sporter_test.healthy_food_category_test_cases.EgyptHealthyFoodTestCases"/>
+        <class name="sporter_test.vitaminsAndHealthCategoryTestCases.EgyptVitaminsAndHealthCategoryTestCases"/>
+        <class name="sporter_test.footer_test_cases.EgyptFooterTestCases"/>
         </classes>
 
     </test>

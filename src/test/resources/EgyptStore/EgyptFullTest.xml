@@ -15,11 +15,9 @@
         <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
         <classes>
             <class name="sporter_test.homepage_test_cases.EgyptHomePageTestCases"/>
-
-            <class name="sporter_test.checkoutForRegisteredUserTestCases.EgyptCheckoutForRegisteredTestCases"></class>
-            <class name="sporter_test.guestCheckoutCycleTestCases.EgyptGuestCheckoutCycleTestCases"></class>
-            <class name="sporter_test.homepage_test_cases.EgyptHomePageTestCases"/>
-            <class name="sporter_test.headerTestCases.EgyptHeaderTestCases"/>
+            <class name="sporter_test.sportsSupplementsCategoryTestCases.EgyptSportsSupplementsCategoryTestCases"></class>
+            <class name="sporter_test.healthy_food_category_test_cases.EgyptHealthyFoodTestCases"></class>
+            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.EgyptVitaminsAndHealthCategoryTestCases"/>
             <class name="sporter_test.productTestCases.EgyptProductDetailsTestCases"/>
             <class name="sporter_test.RecommendedProductsTestCases.EgyptRecommendedProductTestCases"/>
             <class name="sporter_test.AccountRegistrationTestCases.EgyptAccountRegistrationTestCases"/>
@@ -27,9 +25,12 @@
             <class name="sporter_test.forgetPasswordTestCases.EgyptForgetPasswordTestCases"/>
             <class name="sporter_test.cartTestCases.EgyptCartTestCases"></class>
             <class name="sporter_test.myAccountTestCases.EgyptMyAccountTestCases"></class>
-            <class name="sporter_test.sportsSupplementsCategoryTestCases.EgyptSportsSupplementsCategoryTestCases"></class>
-            <class name="sporter_test.healthy_food_category_test_cases.EgyptHealthyFoodTestCases"></class>
-            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.EgyptVitaminsAndHealthCategoryTestCases"/>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.EgyptCheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.guestCheckoutCycleTestCases.EgyptGuestCheckoutCycleTestCases"></class>
+            <class name="sporter_test.homepage_test_cases.EgyptHomePageTestCases"/>
+            <class name="sporter_test.headerTestCases.EgyptHeaderTestCases"/>
+
+
             <class name="sporter_test.footer_test_cases.EgyptFooterTestCases"></class>
         </classes>
 
