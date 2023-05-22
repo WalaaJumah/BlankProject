@@ -21,10 +21,13 @@ import sporter_pages.guestCheckoutCyclePages.EgyptGuestCheckoutCyclePage;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.EgyptHomePage;
+import sporter_pages.loginPage.LoginPage;
+import sporter_pages.productPage.ProductDetailsPage;
 import xml_reader.XmlReader;
 
 import java.io.IOException;
 import java.text.DecimalFormat;
+import java.util.Locale;
 import java.util.Set;
 
 public class EgyptCheckoutForRegisteredTestCases  extends CheckoutForRegisteredTestCases {
@@ -205,8 +208,15 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
-        guestCheckoutCyclePage.navigateToCheckoutPage();
+        ProductDetailsPage productDetailsPage= new ProductDetailsPage(webDriver);
+        LoginPage loginPage= new LoginPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
+        loginPage.navigateToLoginPage();
+        DataHelperAndWait.waitForTime(2000);
+        loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword"));
+        DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
+        DataHelperAndWait.waitForTime(2000);
+        guestCheckoutCyclePage.navigateToCheckoutPage();
         cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         try{
