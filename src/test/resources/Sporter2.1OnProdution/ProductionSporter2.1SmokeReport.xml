@@ -65,7 +65,6 @@
             <class name="sporter_test.RecommendedProductsTestCases.OmanRecommendedProductTestCases"/>
             <class name="sporter_test.AccountRegistrationTestCases.OmanAccountRegistrationTestCases"/>
             <class name="sporter_test.loginTestCases.OmanLoginTestCases"/>
-            <class name="sporter_test.loginTestCases.OmanLoginTestCases"/>
             <class name="sporter_test.cartTestCases.OmanCartTestCases"></class>
             <class name="sporter_test.myAccountTestCases.OmanMyAccountTestCases"></class>
             <class name="sporter_test.sportsSupplementsCategoryTestCases.OmanSportsSupplementsCategoryTestCases"></class>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!--<suite name=" Test" thread-count="1" >-->
+<suite name="Automation Reports">
+    <listeners>
+        <!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
+        <listener class-name="extent_report_listner.ExtentReportListener"/>
+    </listeners>
+    <test name=" Sporter 2.1 Full Testing on KSA" preserve-order="true">
+        <parameter name="environment" value="https://qa.sporter.com/en-sa"/>
+        <parameter name="browser" value="chrome"/>
+        <!-- <parameter name="country" value="en-qa" />-->
+        <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32569"/>
+        <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix"/>
+        <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
+        <classes>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.KSACheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.guestCheckoutCycleTestCases.KSAGuestCheckoutCycleTestCases"></class>
+            <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases"/>
+            <class name="sporter_test.headerTestCases.KSAHeaderTestCases"/>
+            <class name="sporter_test.productTestCases.KSAProductDetailsTestCases"/>
+            <class name="sporter_test.RecommendedProductsTestCases.KSARecommendedProductTestCases"/>
+            <class name="sporter_test.AccountRegistrationTestCases.KSAAccountRegistrationTestCases"/>
+            <class name="sporter_test.loginTestCases.KSALoginTestCases"/>
+            <class name="sporter_test.cartTestCases.KSACartTestCases"></class>
+            <class name="sporter_test.myAccountTestCases.KSAMyAccountTestCases"></class>
+            <class name="sporter_test.sportsSupplementsCategoryTestCases.KSASportsSupplementsCategoryTestCases"></class>
+            <class name="sporter_test.healthy_food_category_test_cases.KSAHealthyFoodTestCases"></class>
+            <class name="sporter_test.womens_only_category_test_cases.KSAWomensOnlyCategoryTestCases"/>
+            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.KSAVitaminsAndHealthCategoryTestCases"/>
+            <class name="sporter_test.sports_category_test_cases.KSASportsCategoryTestCases"></class>
+            <class name="sporter_test.footer_test_cases.KSAFooterTestCases"></class>
+        </classes>
+
+    </test>
+
+
+
+</suite>
