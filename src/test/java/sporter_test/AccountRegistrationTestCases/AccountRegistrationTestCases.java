@@ -105,6 +105,7 @@ public class AccountRegistrationTestCases extends BaseTest {
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:  Verify the Error Msg related to the Email AAlready Used appears in the correct screen", priority = 9)
     public void verifyWhenRegisterAccountUsingEmailAlreadyRegisteredTheErrorMsgAppearsInCorrectScreen() throws IOException {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
+        webDriver.manage().deleteAllCookies();
         registerPage.navigateToRegistrationPage();
         registerPage.fillInCreateAccountForm(XmlReader.getXMLData("correctEmail"), XmlReader.getXMLData("correctPassword"), XmlReader.getXMLData("correctPassword"));
         DataHelperAndWait.clickOnElement(registerPage.getCreateAccountBtn(), webDriver);
@@ -155,6 +156,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         HeaderSection header = new HeaderSection(webDriver);
         HomePage homePage = new HomePage(webDriver);
+        webDriver.manage().deleteAllCookies();
         registerPage.navigateToRegistrationPage();
         registerPage.submitAllCreateAccountFormsCorrectly(DataHelperAndWait.generateRandomEmail(), XmlReader.getXMLData("correctPassword"), XmlReader.getXMLData("correctPassword"), XmlReader.getXMLData("firstName"), XmlReader.getXMLData("lastName"), 1);
         DataHelperAndWait.clickOnElement(header.getSporterLogo(), webDriver);
@@ -170,6 +172,7 @@ public class AccountRegistrationTestCases extends BaseTest {
     public void verifyInabilityToRegisterAccountWithoutFillingEmailField() throws IOException {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         HeaderSection header = new HeaderSection(webDriver);
+        webDriver.manage().deleteAllCookies();
         registerPage.navigateToRegistrationPage();
         registerPage.fillInCreateAccountForm(" ", XmlReader.getXMLData("correctPassword"), XmlReader.getXMLData("correctPassword"));
         DataHelperAndWait.clickOnElement(registerPage.getCreateAccountBtn(), webDriver);
@@ -180,6 +183,7 @@ public class AccountRegistrationTestCases extends BaseTest {
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:  Verify Inability to register new account without filling Password Field", priority = 14)
     public void verifyInabilityToRegisterAccountWithoutFillingPasswordField() throws IOException {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
+        webDriver.manage().deleteAllCookies();
         registerPage.navigateToRegistrationPage();
         registerPage.fillInCreateAccountForm(XmlReader.getXMLData("correctEmail"), "", XmlReader.getXMLData("correctPassword"));
         DataHelperAndWait.clickOnElement(registerPage.getCreateAccountBtn(), webDriver);
