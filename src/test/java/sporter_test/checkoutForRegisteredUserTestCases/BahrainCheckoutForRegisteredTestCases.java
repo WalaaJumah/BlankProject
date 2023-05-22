@@ -125,7 +125,7 @@ public class BahrainCheckoutForRegisteredTestCases extends CheckoutForRegistered
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
     }
-    @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Three Business Days Shipping Method With Credit Card Payment Method ", priority = 30)
+    @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Three Business Days Shipping Method With Credit Card Payment Method ", priority = 503)
     public void verifyAbilityToPlaceOrderWhenSelectingThreeBusinessDaysWithCreditCardPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);

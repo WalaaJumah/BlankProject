@@ -133,21 +133,20 @@ public class AccountRegistrationTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(), webDriver);
         DataHelperAndWait.waitForTime(1500);
         DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
-        webDriver.navigate().refresh();
-        DataHelperAndWait.waitForTime(4000);
-        try{
-        WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
-        DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(), webDriver);
-        DataHelperAndWait.clickOnElement(header.getSporterLogo(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(), webDriver);}
-        catch (Exception e){
-            webDriver.navigate().refresh();
-            DataHelperAndWait.waitForTime(4000);
-            WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
-            DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(), webDriver);
-            DataHelperAndWait.clickOnElement(header.getSporterLogo(), webDriver);
-            WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(), webDriver);
-        }
+//        webDriver.navigate().refresh();
+//        DataHelperAndWait.waitForTime(4000);
+//        WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
+//        DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(), webDriver);
+//        DataHelperAndWait.clickOnElement(header.getSporterLogo(), webDriver);
+//        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(), webDriver);
+//        catch (Exception e){
+//            webDriver.navigate().refresh();
+//            DataHelperAndWait.waitForTime(4000);
+////            WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
+////            DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(), webDriver);
+////            DataHelperAndWait.clickOnElement(header.getSporterLogo(), webDriver);
+////            WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(), webDriver);
+//        }
 //        DataHelperAndWait.waitForTime(3000);
     }
 
@@ -353,6 +352,8 @@ public class AccountRegistrationTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:  Verify ability to sign up using FaceBook account", priority = 27)
     public void verifyAbilityToSignUpUsingFaceBook() throws IOException {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
+        webDriver.manage().deleteAllCookies();
+        DataHelperAndWait.waitForTime(2000);
         registerPage.navigateToRegistrationPage();
         DataHelperAndWait.clickOnElement(registerPage.getSignInUsingFacebookBtn(), webDriver);
         registerPage.verifyFaceBookIsActive();

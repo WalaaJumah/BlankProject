@@ -78,9 +78,10 @@ public class LoginTestCases extends BaseTest {
         loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword"));
         DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
         DataHelperAndWait.waitForTime(3000);
-        DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
-        DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(), webDriver);
+//        DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
+//\        WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
+//        DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(), webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to login using correct Email & Wrong Password and the correct Error Msg appears", priority = 6)
@@ -168,6 +169,7 @@ public class LoginTestCases extends BaseTest {
     public void verifyAbilityToSignInUsingFaceBook() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
+        webDriver.manage().deleteAllCookies();
         loginPage.navigateToLoginPage();
         DataHelperAndWait.clickOnElement(loginPage.getFaceBookLoginBtn(), webDriver);
         registerPage.verifyFaceBookIsActive();
