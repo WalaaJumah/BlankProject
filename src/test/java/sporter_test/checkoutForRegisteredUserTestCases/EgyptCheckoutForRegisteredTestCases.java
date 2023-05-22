@@ -89,7 +89,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         CartPage cartPage= new CartPage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
-        cartPage.clearCart();
+//        cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
         try{
