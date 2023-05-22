@@ -312,4 +312,6 @@ public class EgyptVitaminsAndHealthCategoryTestCases extends VitaminsAndHealthCa
     @Test(enabled = false)
     public void verifyClickingOnViewAllBtnFromCollagenSectionWorksCorrectly() throws IOException {
     }
-}
+    @Test(enabled = false)
+    public void verifyClickingOnVitaminsAndHealthCategoryFromHomePageRedirectUserToCorrectURL() throws IOException {
+    }}
