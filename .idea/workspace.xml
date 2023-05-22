@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86683dee-3ff6-4652-96ae-dd8bddfbd97f" name="Changes" comment="test">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/KSAStore/KSAFullTest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/KSAStore/KSASmoke.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/QatarStore/QatarFull.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/QatarStore/QatarSmoke.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/UAEStore/UAEFullTest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/UAEStore/UAESmoke.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/OmanStore/OmanSmoke.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/OmanStore/OmanSmoke.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/Sporter2.1OnProdution/ProductionSporter2.1SmokeReport.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Sporter2.1OnProdution/ProductionSporter2.1SmokeReport.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +71,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\IdeaProjects\QATesting\src\test\resources" />
       <recent name="C:\Users\w.jumaa\IdeaProjects\sporter-web-automation\src\test\resources\drivers" />
       <recent name="C:\Users\w.jumaa\IdeaProjects\sporter-web-automation\src\test\resources" />
       <recent name="C:\Users\w.jumaa\IdeaProjects\sporter-web-automation\src\main\java\sporter-pages" />
