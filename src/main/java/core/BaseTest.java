@@ -124,6 +124,7 @@ try{
                 throw new Exception("Browser is not correct");
         }
         webDriver.manage().window().maximize();
+        webDriver.navigate().to("https://www.sporter.com");
 //        webDriver.navigate().to(environment);
         webDriver.navigate().to(environment+"/"+country);
         this.CloseInitialDialog();
