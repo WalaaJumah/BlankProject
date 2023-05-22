@@ -39,4 +39,6 @@ public class EgyptHealthyFoodTestCases extends HealthyFoodTestCases {
         sportsSupplementsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         WebElementsAssertion.validateTheCurrentUrlContainsString(egyptHealthyFoodPage.healthyFoodsUrl, webDriver);
     }
+@Test(enabled = false)    public void verifyClickingOnHealthyFoodCategoryFromHomePageRedirectUserToCorrectURL() throws IOException {
+    }
 }
