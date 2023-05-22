@@ -17,7 +17,7 @@ import xml_reader.XmlReader;
 
 @Getter
 public class EgyptGuestCheckoutCyclePage extends GuestCheckoutCyclePage {
-    @FindBy(id = "matrixrate_52")
+    @FindBy(id = "matrixrate_free")
     private WebElement nextDayMethod;
     @FindBy(xpath = "//div[@id='geidea_payment']//div[@id='circle']")
     private WebElement creditCardPaymentMethod;
