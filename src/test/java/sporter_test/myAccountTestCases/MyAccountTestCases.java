@@ -154,7 +154,7 @@ public class MyAccountTestCases extends BaseTest {
         myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Account Information screen: Verify clicking On the Change Password check box will display each of Old, New, Confirm New Password fields ", priority = 11)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Account Information screen: Verify clicking On the Change Password check box will display each of Old, New, Confirm New Password fields ", priority = 11)
     public void verifyPasswordsFieldsAppearWhenClickingOnChangePasswordCheckbox() {
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
         myAccountPage.navigateToMyAccountPage();
