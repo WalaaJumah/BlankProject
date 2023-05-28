@@ -16,6 +16,7 @@ import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.loginPage.LoginPage;
 import xml_reader.XmlReader;
 
+import javax.xml.crypto.Data;
 import java.io.IOException;
 
 @Test(groups = "2.04 Login")
@@ -171,6 +172,7 @@ public class LoginTestCases extends BaseTest {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         webDriver.manage().deleteAllCookies();
         loginPage.navigateToLoginPage();
+        DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.clickOnElement(loginPage.getFaceBookLoginBtn(), webDriver);
         registerPage.verifyFaceBookIsActive();
         DataHelperAndWait.typeTextInElement(registerPage.getFaceBookEmail(), webDriver, XmlReader.getXMLData("correctEmail"));

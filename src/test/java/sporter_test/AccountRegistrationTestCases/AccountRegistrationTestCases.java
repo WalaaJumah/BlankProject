@@ -359,6 +359,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         webDriver.manage().deleteAllCookies();
         DataHelperAndWait.waitForTime(2000);
         registerPage.navigateToRegistrationPage();
+        DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.clickOnElement(registerPage.getSignInUsingFacebookBtn(), webDriver);
         registerPage.verifyFaceBookIsActive();
         DataHelperAndWait.typeTextInElement(registerPage.getFaceBookEmail(), webDriver, XmlReader.getXMLData("correctEmail"));
