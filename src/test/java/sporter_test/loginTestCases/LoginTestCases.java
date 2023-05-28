@@ -88,6 +88,7 @@ public class LoginTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to login using correct Email & Wrong Password and the correct Error Msg appears", priority = 6)
     public void verifyInAbilityToLoginUsingCorrectEmailAndWrongPassword() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
+        webDriver.manage().deleteAllCookies();
         loginPage.navigateToLoginPage();
         loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword") + "1");
         DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
@@ -103,6 +104,7 @@ public class LoginTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to login without filling Email & Password fields", priority = 7)
     public void verifyInAbilityToLoginWithoutEmailAndPassword() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
+        webDriver.manage().deleteAllCookies();
         loginPage.navigateToLoginPage();
         DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
         WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(loginPage.getEmailErrorMsg(), webDriver);
@@ -112,6 +114,7 @@ public class LoginTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to login without filling Email field only", priority = 8)
     public void verifyInAbilityToLoginWithoutEmail() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
+        webDriver.manage().deleteAllCookies();
         loginPage.navigateToLoginPage();
         DataHelperAndWait.typeTextInElement(loginPage.getPasswordField(), webDriver, XmlReader.getXMLData("correctPassword"));
         DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
@@ -121,6 +124,7 @@ public class LoginTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to login without filling Password field only", priority = 9)
     public void verifyInAbilityToLoginWithoutPassword() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
+        webDriver.manage().deleteAllCookies();
         loginPage.navigateToLoginPage();
         DataHelperAndWait.typeTextInElement(loginPage.getEmailField(), webDriver, XmlReader.getXMLData("correctEmail"));
         DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
@@ -130,6 +134,7 @@ public class LoginTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to login with wrong email format and the correct error Msg appears", priority = 10)
     public void verifyInAbilityToLoginWithIncorrectEmailFormat() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
+        webDriver.manage().deleteAllCookies();
         loginPage.navigateToLoginPage();
         loginPage.fillinLoginForm(XmlReader.getXMLData("incorrectEmailFormate"), XmlReader.getXMLData("correctPassword"));
         DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
@@ -144,6 +149,7 @@ public class LoginTestCases extends BaseTest {
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Verify show password icon works correctly", priority = 11)
     public void verifyShowPasswordIconWorksCorrectly() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
+        webDriver.manage().deleteAllCookies();
         loginPage.navigateToLoginPage();
         loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail"), XmlReader.getXMLData("correctPassword"));
         DataHelperAndWait.clickOnElement(loginPage.getShowPasswordIcon(), webDriver);
@@ -179,12 +185,7 @@ public class LoginTestCases extends BaseTest {
         DataHelperAndWait.typeTextInElement(registerPage.getFaceBookPassword(), webDriver, XmlReader.getXMLData("correctPassword"));
         DataHelperAndWait.clickOnElement(registerPage.getLoginInFaceBookPage(), webDriver);
 //        registerPage.verifyFaceBookIsActive();
-        loginPage.navigateToLoginPage();
-        try {
-            registerPage.logout();
-        } catch (Exception e) {
-            e.getMessage();
-        }
+
     }
 
     //TODO: There's a bug here & we will revisit it after fixing: https://sporter1.atlassian.net/browse/NS-56
@@ -193,6 +194,7 @@ public class LoginTestCases extends BaseTest {
         LoginPage loginPage = new LoginPage(webDriver);
         HeaderSection header = new HeaderSection(webDriver);
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
+        webDriver.manage().deleteAllCookies();
         loginPage.navigateToLoginPage();
         DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
         DataHelperAndWait.clickOnElement(loginPage.getFaceBookLoginOption(), webDriver);
@@ -215,6 +217,7 @@ public class LoginTestCases extends BaseTest {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         LoginPage loginPage = new LoginPage(webDriver);
         HomePage homePage = new HomePage(webDriver);
+        webDriver.manage().deleteAllCookies();
         loginPage.navigateToLoginPage();
         loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword"));
         DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
