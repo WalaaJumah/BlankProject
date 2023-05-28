@@ -186,6 +186,7 @@ catch (Exception e){
       CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
       registeredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
       try {
+                    if(registeredPage.getSavedAddressOption().isDisplayed())
           System.out.println("A saved address is selected");
       }
       catch (Exception e){
@@ -197,7 +198,9 @@ catch (Exception e){
     public void verifyTheEmailFieldRetrievedIsDisableAndDisplayTheCustomerEmail() {
         CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        try{System.out.println("A saved address is selected");
+        try{
+            if(checkoutForRegisteredPage.getSavedAddressOption().isDisplayed())
+          System.out.println("A saved address is selected");
 }
         catch (Exception e){
             DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getAddNewAddressBtn(),webDriver);
@@ -210,13 +213,12 @@ catch (Exception e){
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         try{
-            System.out.println("A saved address is selected");
-
-}
-        catch (Exception e){
             checkoutForRegisteredPage.fillInShippingInformationInputField(" ", " ", " ", " ", " ", "");
             DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getPhoneField()," ");
             WebElementsAssertion.assertionElementNotEnable(guestCheckoutCyclePage.getContinueShippingInfoBtn(),webDriver);
+}
+        catch (Exception e){
+          System.out.println("A saved address is selected");
         }
 
 //                DataHelperAndWait.waitForTime(2000);
@@ -243,7 +245,8 @@ catch (Exception e){
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getPhoneErrMsg(),webDriver);}
         catch (Exception e){
-            System.out.println("A saved address is selected");
+                      if(checkoutForRegisteredPage.getSavedAddressOption().isDisplayed())
+          System.out.println("A saved address is selected");
         }
     }
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:Make sure the Registered user cannot submit the shipping information using incorrect National ID", priority = 18)
