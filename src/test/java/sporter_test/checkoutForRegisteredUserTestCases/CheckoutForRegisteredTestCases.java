@@ -213,12 +213,14 @@ catch (Exception e){
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         try{
+            if(checkoutForRegisteredPage.getSavedAddressOption().isDisplayed())
+                System.out.println("A saved address is selected");
+
+}
+        catch (Exception e){
             checkoutForRegisteredPage.fillInShippingInformationInputField(" ", " ", " ", " ", " ", "");
             DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getPhoneField()," ");
             WebElementsAssertion.assertionElementNotEnable(guestCheckoutCyclePage.getContinueShippingInfoBtn(),webDriver);
-}
-        catch (Exception e){
-          System.out.println("A saved address is selected");
         }
 
 //                DataHelperAndWait.waitForTime(2000);
