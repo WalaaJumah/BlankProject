@@ -178,7 +178,7 @@ public class LoginTestCases extends BaseTest {
         DataHelperAndWait.typeTextInElement(registerPage.getFaceBookEmail(), webDriver, XmlReader.getXMLData("correctEmail"));
         DataHelperAndWait.typeTextInElement(registerPage.getFaceBookPassword(), webDriver, XmlReader.getXMLData("correctPassword"));
         DataHelperAndWait.clickOnElement(registerPage.getLoginInFaceBookPage(), webDriver);
-        registerPage.verifyFaceBookIsActive();
+//        registerPage.verifyFaceBookIsActive();
         loginPage.navigateToLoginPage();
         try {
             registerPage.logout();

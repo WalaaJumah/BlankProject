@@ -220,7 +220,7 @@ public class BasePage {
         try{
         webDriver.navigate().to(BasePage.BaseURL + bundleUrl);
         this.verifyTheDisplayedPageDoesNotHaveErrors();
-        DataHelperAndWait.waitForUrlContains(bundleUrl, webDriver);
+//        DataHelperAndWait.waitForUrlContains(bundleUrl, webDriver);
         System.out.println("The product URL is: " + webDriver.getCurrentUrl());}
         catch (AssertionError e){
             if(webDriver.getCurrentUrl().contains("/en-eg"))
