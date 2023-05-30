@@ -174,16 +174,31 @@ public class LoginTestCases extends BaseTest {
     //TODO: There's a bug here & we will revisit it after fixing: https://sporter1.atlassian.net/browse/NS-56
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:  Verify ability to login using FaceBook account from Login Page", priority = 14)
     public void verifyAbilityToSignInUsingFaceBook() throws IOException {
-        LoginPage loginPage = new LoginPage(webDriver);
-        AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
-        webDriver.manage().deleteAllCookies();
-        loginPage.navigateToLoginPage();
-        DataHelperAndWait.waitForTime(2000);
-        DataHelperAndWait.clickOnElement(loginPage.getFaceBookLoginBtn(), webDriver);
-        registerPage.verifyFaceBookIsActive();
-        DataHelperAndWait.typeTextInElement(registerPage.getFaceBookEmail(), webDriver, XmlReader.getXMLData("correctEmail"));
-        DataHelperAndWait.typeTextInElement(registerPage.getFaceBookPassword(), webDriver, XmlReader.getXMLData("correctPassword"));
-        DataHelperAndWait.clickOnElement(registerPage.getLoginInFaceBookPage(), webDriver);
+        try {
+            LoginPage loginPage = new LoginPage(webDriver);
+            AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
+            webDriver.manage().deleteAllCookies();
+            loginPage.navigateToLoginPage();
+            DataHelperAndWait.waitForTime(2000);
+            DataHelperAndWait.clickOnElement(loginPage.getFaceBookLoginBtn(), webDriver);
+            registerPage.verifyFaceBookIsActive();
+            DataHelperAndWait.typeTextInElement(registerPage.getFaceBookEmail(), webDriver, XmlReader.getXMLData("correctEmail"));
+            DataHelperAndWait.typeTextInElement(registerPage.getFaceBookPassword(), webDriver, XmlReader.getXMLData("correctPassword"));
+            DataHelperAndWait.clickOnElement(registerPage.getLoginInFaceBookPage(), webDriver);
+        }
+        catch (Exception e){
+            LoginPage loginPage = new LoginPage(webDriver);
+            AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
+            try{registerPage.logout();}catch (Exception e1){}
+            webDriver.manage().deleteAllCookies();
+            loginPage.navigateToLoginPage();
+            DataHelperAndWait.waitForTime(2000);
+            DataHelperAndWait.clickOnElement(loginPage.getFaceBookLoginBtn(), webDriver);
+            registerPage.verifyFaceBookIsActive();
+            DataHelperAndWait.typeTextInElement(registerPage.getFaceBookEmail(), webDriver, XmlReader.getXMLData("correctEmail"));
+            DataHelperAndWait.typeTextInElement(registerPage.getFaceBookPassword(), webDriver, XmlReader.getXMLData("correctPassword"));
+            DataHelperAndWait.clickOnElement(registerPage.getLoginInFaceBookPage(), webDriver);
+        }
 //        registerPage.verifyFaceBookIsActive();
 
     }
