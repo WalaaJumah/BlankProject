@@ -43,7 +43,7 @@ public class LoginPage extends BasePage {
     private WebElement newToSporterLabel;
     @FindBy(id = "FBLabel")
     private WebElement signInWithSocialMediaLabel;
-    @FindBy(id = "FBIcon")
+    @FindBy(id = "FBlogin")
     private WebElement faceBookLoginBtn;
     //TODO:To revisit after fixing the id by Moamen
     @FindBy(id = "backToLogin")

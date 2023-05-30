@@ -128,6 +128,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         HeaderSection header = new HeaderSection(webDriver);
         HomePage homePage = new HomePage(webDriver);
+
         registerPage.navigateToRegistrationPage();
         registerPage.submitAllCreateAccountFormsCorrectly(DataHelperAndWait.generateRandomEmail(), XmlReader.getXMLData("correctPassword"), XmlReader.getXMLData("correctPassword"), XmlReader.getXMLData("firstName"), XmlReader.getXMLData("lastName"), 2);
         DataHelperAndWait.clickOnElement(header.getSporterLogo(), webDriver);
@@ -356,6 +357,7 @@ public class AccountRegistrationTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:  Verify ability to sign up using FaceBook account", priority = 27)
     public void verifyAbilityToSignUpUsingFaceBook() throws IOException {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
+        try{registerPage.logout();}catch (Exception e3){}
         webDriver.manage().deleteAllCookies();
         webDriver.manage().deleteAllCookies();
         DataHelperAndWait.waitForTime(2000);
