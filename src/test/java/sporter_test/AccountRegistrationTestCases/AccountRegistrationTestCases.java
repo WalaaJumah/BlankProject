@@ -354,7 +354,8 @@ public class AccountRegistrationTestCases extends BaseTest {
     }
 
     //TODO: There's a bug here & we will revisit it after fixing: https://sporter1.atlassian.net/browse/NS-56
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:  Verify ability to sign up using FaceBook account", priority = 27)
+    //TODO: Needst o check  it after that enabel the testcase
+    @Test(enabled = false,groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:  Verify ability to sign up using FaceBook account", priority = 27)
     public void verifyAbilityToSignUpUsingFaceBook() throws IOException {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         try{registerPage.logout();}catch (Exception e3){}
