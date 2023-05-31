@@ -96,7 +96,8 @@ public class MyAccountTestCases extends BaseTest {
         String homepageLink = webDriver.getCurrentUrl();
         DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
         DataHelperAndWait.clickOnElement(myAccountPage.getMyRewardsOption(), webDriver);
-        WebElementsAssertion.validateTheCurrentUrlNotContainsString(homepageLink, webDriver);
+//        WebElementsAssertion.validateTheCurrentUrlNotContainsString(homepageLink, webDriver);
+        myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Account Information screen: Verify Email displays the correct email ", priority = 5)

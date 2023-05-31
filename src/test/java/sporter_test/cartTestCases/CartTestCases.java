@@ -428,7 +428,7 @@ public class CartTestCases extends BaseTest {
         CartPage cartPage = new CartPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         cartPage.navigateToCartPage();
-        DataHelperAndWait.typeTextInElement(productDetailsPage.getSearchField(),webDriver,"Basic");
+        DataHelperAndWait.typeTextInElement(productDetailsPage.getSearchField(),webDriver,"optimum");
         DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getProductCard(),webDriver );
         productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
