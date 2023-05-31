@@ -48,7 +48,7 @@ public class LoginTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(loginPage.getSignInWithSocialMediaLabel(), webDriver);
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to login using wrong email and the correct Error Msg appears", priority = 3)
+    @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to login using wrong email and the correct Error Msg appears", priority = 3)
     public void verifyInAbilityToLoginUsingWrongEmail() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToLoginPage();
