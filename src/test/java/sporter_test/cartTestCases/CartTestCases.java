@@ -390,6 +390,9 @@ public class CartTestCases extends BaseTest {
     public void verifyInabilityToApplyCouponCodeWithoutFillingTheCode() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
+        DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(), webDriver, XmlReader.getXMLData("invalidCouponCode"));
+        DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(), webDriver);
+        DataHelperAndWait.clickOnElement(cartPage.getCloseAddToCartErrorMsg(), webDriver);
         DataHelperAndWait.clearWebField(cartPage.getCouponCodeField());
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(), webDriver);
 //        DataHelperAndWait.isDisplayed(cartPage.getRequiredCouponMsg() ,webDriver);
