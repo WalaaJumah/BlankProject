@@ -94,7 +94,7 @@ public class CartPage extends BasePage {
     private List<WebElement> qtyFieldList;
     @FindBy(id = "cartItemQty")
     private WebElement qtyField;
-    @FindBy(xpath = "(//span[@id='cartItemQty'])[1]")
+    @FindBy(xpath = "(//input[@id='cartItemQty'])[1]")
     private WebElement firstQtyField;
     @FindBy(css = "#cartcloseIcon > path")
     private WebElement cartCloseIcon;
