@@ -71,6 +71,7 @@ public class HomePageTestCases extends BaseTest {
     public void verifyClickingOnTheFirstSideBannersWorksCorrectly() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         DataHelperAndWait.scrollToPositionZero(webDriver);
+        homePage.navigateToHomePage();
         String expectedUrl = homePage.getFirstSideBanner().getAttribute("href");
         homePage.clickOnFirstSideBanner();
 //        WebElementsAssertion.validateTheCurrentUrlContainsString(expectedUrl, webDriver);
