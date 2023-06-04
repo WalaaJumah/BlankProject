@@ -10,8 +10,10 @@ import core.BasePage;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.KsaHomePage;
+import xml_reader.XmlReader;
 
 //@Test(groups = "2.08 KSA Header Section")
 public class KSAHeaderTestCases extends HeaderTestCases {
@@ -43,4 +45,12 @@ public class KSAHeaderTestCases extends HeaderTestCases {
 //    public void verifyCartIconAppearsCorrectly() {}
 //    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "(KSA Store/Arabic Version): Make sure the My Account icon appears correctly", priority = 6)
 //    public void verifyProfileIconAppearsCorrectly()  {}
+@Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure the Customer Service label & Phone Number appearing correctly", priority = 3)
+public void verifyCustomerServiceAppearingCorrectly() {
+    HeaderSection headerSection = new HeaderSection(webDriver);
+    if (webDriver.getCurrentUrl().contains("com/ar-"))
+        WebElementsAssertion.assertionTextIsEqual(headerSection.getCustomerServiceLabel(), webDriver, XmlReader.getXMLData("CustomerServiceArLabelForKSA"));
+    else
+        WebElementsAssertion.assertionTextIsEqual(headerSection.getCustomerServiceLabel(), webDriver, XmlReader.getXMLData("CustomerServiceEnLabelForKSA"));
+}
 }

@@ -22,12 +22,14 @@ public class FooterTestCases extends BaseTest {
     @Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure the customer ia able to access all links below the Orders & Shipping List correctly ", priority = 1)
     public void verifyAbilityToAccessAllOrdersAndShippingLinksCorrectly() throws IOException {
         FooterSection footerSection = new FooterSection(webDriver);
+        footerSection.navigateToHomePage();
         footerSection.accessAllLinksInTheList(footerSection.getOrdersAndShippingList());
     }
 
     @Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure the customer ia able to access all links below the Lets Us Help you List correctly ", priority = 2)
     public void verifyAbilityToAccessAllLetsHelpYouLinksCorrectly() throws IOException {
         FooterSection footerSection = new FooterSection(webDriver);
+        footerSection.navigateToHomePage();
         footerSection.accessAllLinksInTheList(footerSection.getLetsUsHelpYouList());
     }
 
