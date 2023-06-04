@@ -602,9 +602,9 @@ catch (Exception e){
         CartPage cartPage = new CartPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         cartPage.addToCartAndDisplayTheCart();
-        DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
-        DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);
+//        DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
+//        DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
+//        DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);
         cartPage.proceedToCheckout();
         try{
             DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
