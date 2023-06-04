@@ -5,29 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86683dee-3ff6-4652-96ae-dd8bddfbd97f" name="Changes" comment=" Update smoke testing test cases">
+      <change afterPath="$PROJECT_DIR$/src/test/resources/RunTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AccountRegistrationTestCases/UAEAccountRegistrationTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AccountRegistrationTestCases/UAEAccountRegistrationTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/RecommendedProductsTestCases/UAERecommendedProductTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/RecommendedProductsTestCases/UAERecommendedProductTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/cartRulesTestCases/UAECartRulesTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/cartRulesTestCases/UAECartRulesTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/cartTestCases/UAECartTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/cartTestCases/UAECartTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/CheckoutForRegisteredTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/CheckoutForRegisteredTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/UAECheckoutForRegisteredTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/UAECheckoutForRegisteredTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/footer_test_cases/UAEFooterTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/footer_test_cases/UAEFooterTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/forgetPasswordTestCases/UAEForgetPasswordTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/forgetPasswordTestCases/UAEForgetPasswordTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/UAEGuestCheckoutCycleTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/UAEGuestCheckoutCycleTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/headerTestCases/UAEHeaderTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/headerTestCases/UAEHeaderTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/healthy_food_category_test_cases/UAEHealthyFoodTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/healthy_food_category_test_cases/UAEHealthyFoodTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/homepage_test_cases/UAEHomePageTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/homepage_test_cases/UAEHomePageTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/loginTestCases/UAELoginTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/loginTestCases/UAELoginTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/magentoOrderFlowTestCases/UAEMagentoOrderFlowTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/magentoOrderFlowTestCases/UAEMagentoOrderFlowTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/myAccountTestCases/UAEMyAccountTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/myAccountTestCases/UAEMyAccountTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/productTestCases/UAEProductDetailsTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/productTestCases/UAEProductDetailsTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/sportsSupplementsCategoryTestCases/UAESportsSupplementsCategoryTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/sportsSupplementsCategoryTestCases/UAESportsSupplementsCategoryTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/sports_category_test_cases/UAESportsCategoryTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/sports_category_test_cases/UAESportsCategoryTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/vitaminsAndHealthCategoryTestCases/UAEVitaminsAndHealthCategoryTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/vitaminsAndHealthCategoryTestCases/UAEVitaminsAndHealthCategoryTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/womens_only_category_test_cases/UAEWomensOnlyCategoryTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/womens_only_category_test_cases/UAEWomensOnlyCategoryTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/UAEStore/UAEFullTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/UAEStore/UAEFullTest.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,21 +55,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/java&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/IdeaProjects/QATesting/src/test/resources&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Git.Branch.Popup.ShowAllRemotes": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_directory_selection": "C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/java",
+    "last_opened_file_path": "C:/Users/User/IdeaProjects/QATesting/src/test/resources",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\User\IdeaProjects\QATesting\src\test\resources" />
@@ -111,7 +90,7 @@
       <command value="ProductDetailsPageTestCases.verifyAbilityToDisplayBundleAndSelectAllOptions" />
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/UAEStore/UAEFullTest.xml">
+  <component name="RunManager" selected="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/RunTest.xml">
     <configuration name="C:/Users/User/IdeaProjects/QATesting/src/test/resources/PreRunningTestCasesGroup.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/PreRunningTestCasesGroup.xml" />
@@ -122,9 +101,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="C:/Users/User/IdeaProjects/QATesting/src/test/resources/QatarStore/QatarFull.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="C:/Users/User/IdeaProjects/QATesting/src/test/resources/SmokeTesting.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/QatarStore/QatarFull.xml" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/SmokeTesting.xml" />
       <option name="TEST_OBJECT" value="SUITE" />
       <properties />
       <listeners />
@@ -132,9 +111,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="C:/Users/User/IdeaProjects/QATesting/src/test/resources/SmokeTesting.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/RunTest.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/SmokeTesting.xml" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/RunTest.xml" />
       <option name="TEST_OBJECT" value="SUITE" />
       <properties />
       <listeners />
@@ -163,19 +142,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/RunTest.xml" />
       <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/UAEStore/UAEFullTest.xml" />
       <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/UAEStore/UAESmoke.xml" />
       <item itemvalue="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/PreRunningTestCasesGroup.xml" />
       <item itemvalue="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/SmokeTesting.xml" />
-      <item itemvalue="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/QatarStore/QatarFull.xml" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/UAEStore/UAEFullTest.xml" />
+        <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/RunTest.xml" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/UAEStore/UAESmoke.xml" />
+        <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/UAEStore/UAEFullTest.xml" />
         <item itemvalue="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/SmokeTesting.xml" />
         <item itemvalue="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/PreRunningTestCasesGroup.xml" />
-        <item itemvalue="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/QatarStore/QatarFull.xml" />
       </list>
     </recent_temporary>
   </component>
