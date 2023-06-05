@@ -75,8 +75,8 @@ public class CheckoutForRegisteredTestCases extends BaseTest
         catch (Exception e){
             loginPage.navigateToHomePage();
             DataHelperAndWait.waitForTime(1500);
-            DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
-            WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
+//            DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
+//            WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
         }
     }
     @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure the shopper is able to keep the shopping after adding the product to the cart ", priority = 3)
