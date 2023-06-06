@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="703f3cbf-2229-4aab-b38b-006e919c208e" name="Changes" comment=" Update Smoketestt.xml">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="4cc95732-25cc-415a-acca-362cf2afbff2" name="Changes" comment=" Update Smoketestt.xml">
+      <change beforePath="$PROJECT_DIR$/src/test/resources/Sporter2.1OnProdution/ProductionSporter2.1SmokeReport.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Sporter2.1OnProdution/ProductionSporter2.1SmokeReport.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +89,7 @@
       <command value="ProductDetailsPageTestCases.verifyAbilityToDisplayBundleAndSelectAllOptions" />
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/OmanStore/OmanSmoke.xml">
+  <component name="RunManager" selected="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/Sporter2.1OnProdution/ProductionSporter2.1SmokeReport.xml">
     <configuration name="C:/Users/User/IdeaProjects/QATesting/src/test/resources/Kuwait Store/Kuwait.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/Kuwait Store/Kuwait.xml" />
@@ -103,6 +103,16 @@
     <configuration name="C:/Users/User/IdeaProjects/QATesting/src/test/resources/QatarStore/QatarSmoke.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/QatarStore/QatarSmoke.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="C:/Users/User/IdeaProjects/QATesting/src/test/resources/Sporter2.1OnProdution/ProductionSporter2.1SmokeReport.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="sporter-web-automation" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/Sporter2.1OnProdution/ProductionSporter2.1SmokeReport.xml" />
       <option name="TEST_OBJECT" value="SUITE" />
       <properties />
       <listeners />
@@ -130,30 +140,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/UAEStore/UAESmoke.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="sporter-web-automation" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/UAEStore/UAESmoke.xml" />
-      <option name="TEST_OBJECT" value="SUITE" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
+      <item itemvalue="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/Sporter2.1OnProdution/ProductionSporter2.1SmokeReport.xml" />
       <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/OmanStore/OmanSmoke.xml" />
       <item itemvalue="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/Kuwait Store/Kuwait.xml" />
       <item itemvalue="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/QatarStore/QatarSmoke.xml" />
       <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/UAEStore/UAEFullTest.xml" />
-      <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/UAEStore/UAESmoke.xml" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/Sporter2.1OnProdution/ProductionSporter2.1SmokeReport.xml" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/OmanStore/OmanSmoke.xml" />
         <item itemvalue="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/Kuwait Store/Kuwait.xml" />
         <item itemvalue="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/QatarStore/QatarSmoke.xml" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/UAEStore/UAEFullTest.xml" />
-        <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/UAEStore/UAESmoke.xml" />
       </list>
     </recent_temporary>
   </component>
@@ -488,11 +488,11 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/sporter_web_automation$C__Users_w_jumaa_IdeaProjects_sporter_web_automation_src_test_resources_SmokeTest_xml.ic" NAME="$PROJECT_DIR$/src/test/resources/SmokeTest.xml Coverage Results" MODIFIED="1657796388803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/sporter_web_automation$C__Users_w_jumaa_IdeaProjects_sporter_web_automation_src_test_resources_TestExecution_xml.ic" NAME="$PROJECT_DIR$/src/test/resources/TestExecution.xml Coverage Results" MODIFIED="1671601245197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>sporter_pages.AeCartPage</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/sporter_web_automation$Test.ic" NAME="Test Coverage Results" MODIFIED="1672294404497" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/sporter_web_automation$C__Users_w_jumaa_IdeaProjects_sporter_web_automation_src_test_resources_SmokeTest_xml.ic" NAME="$PROJECT_DIR$/src/test/resources/SmokeTest.xml Coverage Results" MODIFIED="1657796388803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/sporter_web_automation$AeSportSupplementsCategoryTestCases_verifySportSupplementsCategoryImageAndHorizontalBannersAppearingAfterSortingTheProducts.ic" NAME="AeSportSupplementsCategoryTestCases.verifySportSupplementsCategoryImageAndHorizontalBannersAppearingAfterSortingTheProducts Coverage Results" MODIFIED="1666869381864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>sporter_test.*</FILTER>
     </SUITE>
