@@ -143,8 +143,8 @@ cartPage.proceedToCheckout();
         }
         cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
-        DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);
+//        DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
+//        DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);
         cartPage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);

@@ -31,6 +31,7 @@ public class HealthyFoodTestCases extends BaseTest {
     public void verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL() throws IOException {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         HealthyFoodPage healthyFoodPage = new HealthyFoodPage(webDriver);
+        healthyFoodPage.navigateToHomePage();
 
         healthyFoodPage.clickOnHealthyFoodMainMenu();
         sportsSupplementsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
