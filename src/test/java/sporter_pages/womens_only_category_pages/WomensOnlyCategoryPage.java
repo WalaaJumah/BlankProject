@@ -69,13 +69,13 @@ public class WomensOnlyCategoryPage extends BasePage {
     private WebElement viewAllInWorkoutInStyleSection;
     @FindBy(xpath = "(//ul/li/a[@class='view-all'])[4]")
     private WebElement viewAllInLadyFriendlySnacksAndFoodSection;
-  @FindBy(xpath = "(//div[@class='swiper-container swiper-product-slider top-seller-slider swiper-container-horizontal']//a)[1]")
+  @FindBy(id = "tab-264-all264")
     private WebElement supplementForHerSection;
-  @FindBy(xpath = "((//div[@class='swiper-container swiper-product-slider top-seller-slider swiper-container-horizontal'])[2]//a)[1]")
+  @FindBy(id = "tab-265-all265")
     private WebElement womensVitaminsSection;
-  @FindBy(xpath = "((//div[@class='swiper-container swiper-product-slider top-seller-slider swiper-container-horizontal'])[3]//a)[1]")
+  @FindBy(id = "tab-266-all266")
     private WebElement workoutInStyleSection;
-  @FindBy(xpath = "((//div[@class='swiper-container swiper-product-slider top-seller-slider swiper-container-horizontal'])[4]//a)[1]")
+  @FindBy(id = "tab-267-all267")
     private WebElement ladyFriendlySnacksAndFoodSection;
   @FindBy(xpath = "//div[@class='brand-video-header']")
     private WebElement femaleGallerySection;

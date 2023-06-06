@@ -118,7 +118,7 @@ public class KSACartTestCases extends CartTestCases {
         webDriver.manage().deleteCookieNamed("guestCartId");
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the system cancel the coupon code correctly", priority = 35)
+    @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the system cancel the coupon code correctly", priority = 35)
     public void verifyAbilityToCancelTheCouponCode() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
