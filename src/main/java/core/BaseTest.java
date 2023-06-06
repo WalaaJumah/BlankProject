@@ -107,7 +107,7 @@ public class BaseTest {
 //                options.addArguments("disable-gpu");
 //                options.addArguments("window-size=1200,1100");
 //                webDriver = new ChromeDriver(options);
-                webDriver.navigate().to("https://stores.sporter.com/en-ae");
+                webDriver.navigate().to("https://www.sporter.com");
 
                 break;
             case "edge":
