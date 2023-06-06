@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60975b66-0618-4e30-859c-57b9201eff0f" name="Changes" comment=" Update Smoketestt.xml">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/Kuwait Store/Kuwait.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Kuwait Store/Kuwait.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/QatarStore/QatarSmoke.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/QatarStore/QatarSmoke.xml" afterDir="false" />
-    </list>
+    <list default="true" id="60975b66-0618-4e30-859c-57b9201eff0f" name="Changes" comment=" Update Smoketestt.xml" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
