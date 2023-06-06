@@ -14,7 +14,7 @@ public class UAESportsCategoryTestCases extends SportsCategoryTestCases {
     @BeforeClass(alwaysRun = true)
     public void switchToUAEStore() {
         UAEHomePage uaeHomePage = new UAEHomePage(webDriver);
-        //uaeHomePage.switchCountry(uaeHomePage.getAeCountry());
+        uaeHomePage.switchCountry(uaeHomePage.getAeCountry());
         if (webDriver.getCurrentUrl().contains(uaeHomePage.aeDomain)) {
             System.out.println("You are in UAE Store");
         } else {
