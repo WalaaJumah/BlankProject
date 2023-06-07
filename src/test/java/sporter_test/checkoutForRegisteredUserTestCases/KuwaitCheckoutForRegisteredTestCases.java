@@ -107,7 +107,8 @@ public class KuwaitCheckoutForRegisteredTestCases extends  CheckoutForRegistered
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(), webDriver);
 
         }
-        DataHelperAndWait.waitForTime(2000);
+        guestCheckoutCyclePage.verifyTheDisplayedPageDoesNotHaveErrors();
+        DataHelperAndWait.waitForTime(3000);
         DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getSuccessPage(),webDriver);
        orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
         System.out.println("The order Number= "+orderNumber);

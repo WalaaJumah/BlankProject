@@ -19,8 +19,7 @@
             </run>
         </groups>
         <classes>
-            <class name="sporter_test.checkoutForRegisteredUserTestCases.UAECheckoutForRegisteredTestCases"></class>
-            <class name="sporter_test.guestCheckoutCycleTestCases.UAEGuestCheckoutCycleTestCases"></class>
+
             <class name="sporter_test.homepage_test_cases.UAEHomePageTestCases"/>
             <class name="sporter_test.headerTestCases.UAEHeaderTestCases"/>
             <class name="sporter_test.productTestCases.UAEProductDetailsTestCases"/>
@@ -44,8 +43,6 @@
             <class name="sporter_test.sports_category_test_cases.KSASportsCategoryTestCases"></class>
             <class name="sporter_test.healthy_food_category_test_cases.KSAHealthyFoodTestCases"></class>
             <class name="sporter_test.AccountRegistrationTestCases.KSAAccountRegistrationTestCases"/>
-            <class name="sporter_test.checkoutForRegisteredUserTestCases.KSACheckoutForRegisteredTestCases"></class>
-            <class name="sporter_test.guestCheckoutCycleTestCases.KSAGuestCheckoutCycleTestCases"></class>
             <class name="sporter_test.productTestCases.KSAProductDetailsTestCases"/>
             <class name="sporter_test.RecommendedProductsTestCases.KSARecommendedProductTestCases"/>
 
@@ -164,10 +161,12 @@
             <class name="sporter_test.checkoutForRegisteredUserTestCases.BahrainCheckoutForRegisteredTestCases"></class>
             <class name="sporter_test.checkoutForRegisteredUserTestCases.OmanCheckoutForRegisteredTestCases"></class>
             <class name="sporter_test.checkoutForRegisteredUserTestCases.KuwaitCheckoutForRegisteredTestCases"></class>
-
-
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.UAECheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.guestCheckoutCycleTestCases.UAEGuestCheckoutCycleTestCases"></class>
             <class name="sporter_test.checkoutForRegisteredUserTestCases.EgyptCheckoutForRegisteredTestCases"/>
             <class name="sporter_test.guestCheckoutCycleTestCases.EgyptGuestCheckoutCycleTestCases"/>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.KSACheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.guestCheckoutCycleTestCases.KSAGuestCheckoutCycleTestCases"></class>
 
         </classes>
 
