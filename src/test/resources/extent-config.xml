@@ -28,7 +28,7 @@
 
 
         <!-- report headline - displayed at top-nav, after reportHeadline -->
-        <reportHeadline>Report (https://stores.sporter.com)</reportHeadline>
+        <reportHeadline>Report (https://www.sporter.com)</reportHeadline>
 
         <!-- global date format override -->
         <!-- defaults to yyyy-MM-dd -->
