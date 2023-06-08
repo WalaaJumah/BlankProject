@@ -216,11 +216,15 @@ public class CartTestCases extends BaseTest {
     public void verifyAbilityToAddBundleToCart() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         WebDriverWait wait;
-        productDetailsPage.displayBundle();
-        DataHelperAndWait.waitToBeVisible(productDetailsPage.getBundleMenu(), webDriver);
-        CartPage cartPage = new CartPage(webDriver);
-        productDetailsPage.displayBundle();
-        DataHelperAndWait.waitToBeVisible(productDetailsPage.getBundleMenu(), webDriver);
+        try {
+            productDetailsPage.displayBundle();
+            DataHelperAndWait.waitToBeVisible(productDetailsPage.getBundleMenu(), webDriver);
+            CartPage cartPage = new CartPage(webDriver);
+        }
+        catch (Exception e) {
+            productDetailsPage.displayBundle();
+            DataHelperAndWait.waitToBeVisible(productDetailsPage.getBundleMenu(), webDriver);
+        }
         Select select = new Select(productDetailsPage.getBundleMenu());
         List<WebElement> elementCount = select.getOptions();
         int menuSize = elementCount.size();
