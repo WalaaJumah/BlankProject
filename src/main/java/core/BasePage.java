@@ -190,7 +190,7 @@ public class BasePage {
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.exceptionPageMsg2), "An error occurred on client and the URL is " + webDriver.getCurrentUrl());
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.offerNotAvailableMsg), "The  offer is not available in your country page is displayed" + webDriver.getCurrentUrl());
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.pageNotFoundMsg), "Page Not Found Is Displayed and the URL is " + webDriver.getCurrentUrl());
-        Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.productsCannotFindMsg), "This page is currently under maintenance and the URL is " + webDriver.getCurrentUrl());
+        Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.productsCannotFindMsg), "This page is Empty and the URL is " + webDriver.getCurrentUrl());
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.generatedContentErrorMsg), "We're sorry, an error has occurred while generating this content and the URL is " + webDriver.getCurrentUrl());
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.backendError), "503 error and the URL is " + webDriver.getCurrentUrl());
         Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.error503), "Backend fetch failed and the URL is " + webDriver.getCurrentUrl());
