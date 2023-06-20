@@ -412,7 +412,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         DataHelperAndWait.waitForTime(3000);
-        WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getWorkoutInStyleSection(), webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(vitaminsAndHealthCategoryPage.getVitaminsAZSection(), webDriver);
     }
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Minerals section have at least a product", priority = 43)
@@ -421,7 +421,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         DataHelperAndWait.waitForTime(2000);
-        WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getLadyFriendlySnacksAndFoodSection(), webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(vitaminsAndHealthCategoryPage.getMineralsSection(), webDriver);
     }
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Antioxidants section have at least a product", priority = 44)

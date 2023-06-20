@@ -29,8 +29,14 @@ public class VitaminsAndHealthCategoryPage extends BasePage {
     private WebElement multiVitaminsCategory;
     @FindBy(xpath = "(//ul[@class='swiper-wrapper clearfix']//a[2])[3]")
     private WebElement vitaminsAZCategory;
+       @FindBy(id = "tab-294-all294")
+    private WebElement vitaminsAZSection;
+
     @FindBy(xpath = "(//ul[@class='swiper-wrapper clearfix']//a[2])[4]")
     private WebElement mineralsCategory;
+       @FindBy(id = "tab-295-all295")
+    private WebElement mineralsSection;
+
     @FindBy(xpath = "(//ul[@class='swiper-wrapper clearfix']//a[2])[5]")
     private WebElement antioxidantsCategory;
     @FindBy(xpath = "(//ul[@class='swiper-wrapper clearfix']//a[2])[6]")
@@ -81,13 +87,13 @@ public class VitaminsAndHealthCategoryPage extends BasePage {
     private WebElement womenHealthCategory;
     @FindBy(xpath = "//div[@class='trending-swiper-button-next']")
     private WebElement nextIconInShopByHealthNeedSection;
-    @FindBy(xpath = "((//div[@class='swiper-container swiper-product-slider top-seller-slider swiper-container-horizontal'])[5]//a)[1]")
+    @FindBy(id = "tab-296-all296")
     private WebElement antioxodantsSection;
-    @FindBy(xpath = "((//div[@class='swiper-container swiper-product-slider top-seller-slider swiper-container-horizontal'])[6]//a)[1]")
+    @FindBy(id = "tab-297-all297")
     private WebElement superFoodsSection;
-    @FindBy(xpath = "((//div[@class='swiper-container swiper-product-slider top-seller-slider swiper-container-horizontal'])[7]//a)[1]")
+    @FindBy(id = "tab-298-all298")
     private WebElement melatoninSection;
-    @FindBy(xpath = "((//div[@class='swiper-container swiper-product-slider top-seller-slider swiper-container-horizontal'])[7]//a)[1]")
+    @FindBy(id = "tab-299-all299")
     private WebElement collagenSection;
 
     @FindBy(xpath = "(//ul/li/a[@class='view-all'])[1]")
