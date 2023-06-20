@@ -247,7 +247,7 @@ public class HomePageTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getEmailBtn(), webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure the clicking on email button from the Got A Question section works correctly ", priority = 38)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the clicking on email button from the Got A Question section works correctly ", priority = 38)
     public void verifyAbilityToClickOnEmailBtnInGotQuestionSectionCorrectly() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
