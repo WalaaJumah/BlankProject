@@ -209,7 +209,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         vitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Melatonin Category redirect the user to the correct page", priority = 19)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure clicking on the Melatonin Category redirect the user to the correct page", priority = 19)
     public void verifyClickingOnTheMelatoninCategoryRedirectTheUserToCorrectPage() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
