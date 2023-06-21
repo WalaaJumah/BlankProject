@@ -18,6 +18,7 @@ public class SporterErrorPage extends BasePage {
     public static final String locationError = "Sorry But There is No Available Shipping Methods For your Location";
     public static final String backendError = "Backend fetch failed";
     public static final String pageUnderMaintenanceMsg = "This page is currently under maintenance";
+    public static final String gatewayTimeOut = "Gateway time-out";
     public static final String exceptionPageMsg = "An error has happened during application run. See exception log for details";
     public static final String exceptionPageMsg2 = "An error occurred on client";
     public static final String offerNotAvailableMsg = "this offer is not available in your country";
