@@ -13,7 +13,9 @@
         <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32569"/>
         <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix"/>
         <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
+
         <classes>
+            <class name="sporter_test.myAccountTestCases.KSAMyAccountTestCases"></class>
 
             <class name="sporter_test.homepage_test_cases.UAEHomePageTestCases"/>
             <class name="sporter_test.headerTestCases.UAEHeaderTestCases"/>
@@ -43,7 +45,6 @@
 
             <class name="sporter_test.loginTestCases.KSALoginTestCases"/>
             <class name="sporter_test.cartTestCases.KSACartTestCases"></class>
-            <class name="sporter_test.myAccountTestCases.KSAMyAccountTestCases"></class>
             <!-- Jordan Store-->
             <class name="sporter_test.cartRulesTestCases.JordanCartRulesTestCases"></class>
             <class name="sporter_test.homepage_test_cases.JordanHomePageTestCases"/>
