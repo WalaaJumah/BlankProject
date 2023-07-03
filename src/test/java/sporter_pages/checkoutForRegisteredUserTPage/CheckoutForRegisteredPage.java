@@ -150,25 +150,49 @@ public class CheckoutForRegisteredPage extends BasePage {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         try {
-            cartPage.clearCart();
-        } catch (Exception e) {
-            System.out.println("");
+            try {
+                cartPage.clearCart();
+            } catch (Exception e) {
+                System.out.println("");
+            }
+            cartPage.addToCartAndDisplayTheCart();
+            cartPage.proceedToCheckout();
+            try {
+                DataHelperAndWait.clickOnElement(this.getSavedAddressOption(), webDriver);
+            } catch (Exception e) {
+                this.fillInShippingInformationInputField(
+                        XmlReader.getXMLData("firstName"),
+                        XmlReader.getXMLData("lastName"),
+                        XmlReader.getXMLData("phoneNumber"),
+                        XmlReader.getXMLData("AddressName"),
+                        XmlReader.getXMLData("StreetOneAddressName"),
+                        XmlReader.getXMLData("StreetTwoAddressName"));
+            }
+            DataHelperAndWait.waitForTime(1500);
+            guestCheckoutCyclePage.clickOnContinueBtn();
         }
-        cartPage.addToCartAndDisplayTheCart();
-        cartPage.proceedToCheckout();
-        try {
-            DataHelperAndWait.clickOnElement(this.getSavedAddressOption(), webDriver);
-        } catch (Exception e) {
-            this.fillInShippingInformationInputField(
-                    XmlReader.getXMLData("firstName"),
-                    XmlReader.getXMLData("lastName"),
-                    XmlReader.getXMLData("phoneNumber"),
-                    XmlReader.getXMLData("AddressName"),
-                    XmlReader.getXMLData("StreetOneAddressName"),
-                    XmlReader.getXMLData("StreetTwoAddressName"));
+        catch (Exception ee){
+            try {
+                cartPage.clearCart();
+            } catch (Exception e) {
+                System.out.println("");
+            }
+            cartPage.addToCartAndDisplayTheCart();
+            cartPage.proceedToCheckout();
+            try {
+                DataHelperAndWait.clickOnElement(this.getSavedAddressOption(), webDriver);
+            } catch (Exception e) {
+                this.fillInShippingInformationInputField(
+                        XmlReader.getXMLData("firstName"),
+                        XmlReader.getXMLData("lastName"),
+                        XmlReader.getXMLData("phoneNumber"),
+                        XmlReader.getXMLData("AddressName"),
+                        XmlReader.getXMLData("StreetOneAddressName"),
+                        XmlReader.getXMLData("StreetTwoAddressName"));
+            }
+            DataHelperAndWait.waitForTime(1500);
+            guestCheckoutCyclePage.clickOnContinueBtn();
         }
-        DataHelperAndWait.waitForTime(1500);
-        guestCheckoutCyclePage.clickOnContinueBtn();
 //        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
 //        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
     }
