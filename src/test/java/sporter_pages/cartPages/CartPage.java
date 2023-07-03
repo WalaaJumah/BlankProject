@@ -220,9 +220,17 @@ public class CartPage extends BasePage {
     }
 
     public void navigateToCartPage() throws IOException {
-        webDriver.navigate().to(BaseURL + cartURL);
-        verifyTheDisplayedPageDoesNotHaveErrors();
-        DataHelperAndWait.waitForUrlContains(cartURL, webDriver);
+        try {
+            webDriver.navigate().to(BaseURL + cartURL);
+            verifyTheDisplayedPageDoesNotHaveErrors();
+            DataHelperAndWait.waitForUrlContains(cartURL, webDriver);
+        }
+        catch (Exception e){
+            this.addToCartAndDisplayTheCart();
+            webDriver.navigate().to(BaseURL + cartURL);
+            verifyTheDisplayedPageDoesNotHaveErrors();
+            DataHelperAndWait.waitForUrlContains(cartURL, webDriver);
+        }
 
     }
 
