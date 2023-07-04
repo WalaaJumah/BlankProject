@@ -167,40 +167,76 @@ public class OmanCheckoutForRegisteredTestCases extends CheckoutForRegisteredTes
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         OmanCheckoutForRegisteredPage omanCheckoutForRegisteredPage= new OmanCheckoutForRegisteredPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        cartPage.addToCartAndDisplayTheCart();
+        try {
+            webDriver.manage().deleteCookieNamed("guestCartId");
+            cartPage.addToCartAndDisplayTheCart();
 //        cartPage.navigateToCartPage();
 //        cartPage.navigateToHomePage();
 //        cartPage.clickOnCartIcon();
 //        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
 //        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
-        DataHelperAndWait.waitForUrlContains(guestCheckoutCyclePage.shippingInformationUrl,webDriver);
-        try{
-            DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
-        }
-        catch (Exception e){
-            registeredPage.fillInShippingInformationInputField(
-                    XmlReader.getXMLData("firstName"),
-                    XmlReader.getXMLData("lastName"),
-                    XmlReader.getXMLData("phoneNumber"),
-                    XmlReader.getXMLData("AddressName"),
-                    XmlReader.getXMLData("StreetOneAddressName"),
-                    XmlReader.getXMLData("StreetTwoAddressName"));
-        }
-        DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
-        DataHelperAndWait.clickOnElement(omanCheckoutForRegisteredPage.getFiveToSevenBusinessDaysShippingMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
-        DataHelperAndWait.waitForTime(2000);
+            DataHelperAndWait.waitForUrlContains(guestCheckoutCyclePage.shippingInformationUrl, webDriver);
+            try {
+                DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(), webDriver);
+            } catch (Exception e) {
+                registeredPage.fillInShippingInformationInputField(
+                        XmlReader.getXMLData("firstName"),
+                        XmlReader.getXMLData("lastName"),
+                        XmlReader.getXMLData("phoneNumber"),
+                        XmlReader.getXMLData("AddressName"),
+                        XmlReader.getXMLData("StreetOneAddressName"),
+                        XmlReader.getXMLData("StreetTwoAddressName"));
+            }
+            DataHelperAndWait.waitForTime(2000);
+            guestCheckoutCyclePage.clickOnContinueBtn();
+            DataHelperAndWait.clickOnElement(omanCheckoutForRegisteredPage.getFiveToSevenBusinessDaysShippingMethod(), webDriver);
+            DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
+            guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"), XmlReader.getXMLData("creditCardDate"), XmlReader.getXMLData("testCVV"));
+            DataHelperAndWait.waitForTime(2000);
 
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
+            WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(), webDriver);
+            DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(), webDriver);
+            cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getSuccessPage(),webDriver);
 //        orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
 //        System.out.println(orderNumber);
+        }
+        catch (Exception ee){
+            webDriver.manage().deleteCookieNamed("guestCartId");
+            cartPage.addToCartAndDisplayTheCart();
+//        cartPage.navigateToCartPage();
+//        cartPage.navigateToHomePage();
+//        cartPage.clickOnCartIcon();
+//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
+//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+            DataHelperAndWait.waitForUrlContains(guestCheckoutCyclePage.shippingInformationUrl, webDriver);
+            try {
+                DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(), webDriver);
+            } catch (Exception e) {
+                registeredPage.fillInShippingInformationInputField(
+                        XmlReader.getXMLData("firstName"),
+                        XmlReader.getXMLData("lastName"),
+                        XmlReader.getXMLData("phoneNumber"),
+                        XmlReader.getXMLData("AddressName"),
+                        XmlReader.getXMLData("StreetOneAddressName"),
+                        XmlReader.getXMLData("StreetTwoAddressName"));
+            }
+            DataHelperAndWait.waitForTime(2000);
+            guestCheckoutCyclePage.clickOnContinueBtn();
+            DataHelperAndWait.clickOnElement(omanCheckoutForRegisteredPage.getFiveToSevenBusinessDaysShippingMethod(), webDriver);
+            DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
+            guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"), XmlReader.getXMLData("creditCardDate"), XmlReader.getXMLData("testCVV"));
+            DataHelperAndWait.waitForTime(2000);
+
+            WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(), webDriver);
+            DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(), webDriver);
+            cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
+//        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getSuccessPage(),webDriver);
+//        orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
+//        System.out.println(orderNumber);
+        }
     }
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure Inability to continue the placing order process using invalid Credit Card", priority = 31)
     public void verifyInabilityToUseInvalidCreditCardPaymentMethod() throws IOException {
