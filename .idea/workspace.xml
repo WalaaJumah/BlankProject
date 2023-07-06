@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4cc95732-25cc-415a-acca-362cf2afbff2" name="Changes" comment=" Update Smoketestt.xml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/error_helper/SporterErrorPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/error_helper/SporterErrorPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/sports_category_test_cases/SportsCategoryTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/sports_category_test_cases/SportsCategoryTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/Sporter2.1OnProdution/ProductionSporter2.1SmokeReport.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Sporter2.1OnProdution/ProductionSporter2.1SmokeReport.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

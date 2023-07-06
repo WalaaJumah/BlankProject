@@ -7,10 +7,15 @@
 package error_helper;
 
 import core.BasePage;
+import core.WebElementsAssertion;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class SporterErrorPage extends BasePage {
     public static final String pageNotFoundTitle = "Sporter.com - Page Not Found";
+    public static final String pageNotFoundAr = "نحن نعتذر";
+    public static final String pageNotFoundEn = "we are sorry";
     public static final String pageNotFoundMsg = "The page you requested was not found on this store. You can go to homepage or search here";
     public static final String productsCannotFindMsg = "We can't find products matching the selection";
     public static final String generatedContentErrorMsg = "We're sorry, an error has occurred while generating this content";
@@ -28,6 +33,7 @@ public class SporterErrorPage extends BasePage {
     public SporterErrorPage(WebDriver webDriver) {
         super(webDriver);
     }
+
 
 
 }

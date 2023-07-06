@@ -83,7 +83,7 @@ public class SportsCategoryTestCases extends BaseTest {
             DataHelperAndWait.clickOnElement(womensOnlyCategoryPage.getRotatingSliderPagingControlList().get(i), webDriver);
             DataHelperAndWait.clickOnElement(womensOnlyCategoryPage.getBannerInRotatingSliderSection(), webDriver);
             womensOnlyCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-            womensOnlyCategoryPage.navigateToWomenOnlyPage();
+            sportsCategoryPage.navigateToSportsPage();
         }
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Category- Make sure the Sports side Banners is displayed ", priority = 8)
