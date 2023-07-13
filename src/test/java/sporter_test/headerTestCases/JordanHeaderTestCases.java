@@ -7,8 +7,12 @@
 package sporter_test.headerTestCases;
 
 import core.BasePage;
+import core.WebElementsAssertion;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.JordanHomePage;
+import xml_reader.XmlReader;
 
 //@Test(groups = "2.09 Jordan Header Section")
 
@@ -37,4 +41,12 @@ public class JordanHeaderTestCases extends HeaderTestCases {
 //    public void verifyCartIconAppearsCorrectly() {}
 //    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"},description = "(Jordan Store/English Version): Make sure the My Account icon appears correctly", priority = 6)
 //    public void verifyProfileIconAppearsCorrectly() {}
+@Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure the Customer Service label & Phone Number appearing correctly", priority = 3)
+public void verifyCustomerServiceAppearingCorrectly() {
+    HeaderSection headerSection = new HeaderSection(webDriver);
+    if (webDriver.getCurrentUrl().contains("com/ar-"))
+        WebElementsAssertion.assertionTextIsEqual(headerSection.getCustomerServiceLabel(), webDriver, XmlReader.getXMLData("CustomerServiceArLabelJordan"));
+    else
+        WebElementsAssertion.assertionTextIsEqual(headerSection.getCustomerServiceLabel(), webDriver, XmlReader.getXMLData("CustomerServiceEnLabel"));
+}
 }

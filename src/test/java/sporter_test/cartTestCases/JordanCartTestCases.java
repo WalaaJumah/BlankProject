@@ -114,6 +114,7 @@ catch (Exception e){
     public void verifyAbilityToDisplayTheProductFromTheCartPage() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        cartPage.addToCartAndDisplayTheCartForOos();
         DataHelperAndWait.clickOnElement(cartPage.getProductNameForOneProduct(), webDriver);
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductName(), webDriver);
         WebElementsAssertion.validateTheCurrentUrlNotContainsString(cartPage.cartURL, webDriver);

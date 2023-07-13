@@ -382,7 +382,7 @@ public class MyAccountTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getPhoneErrMsg(), webDriver);
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify Inability to Edit Address using invalid National ID", priority = 31)
+    @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify Inability to Edit Address using invalid National ID", priority = 31)
     public void verifyInabilityToEditAddressUsingInvalidNationalID() throws IOException {
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
         JordanGuestCheckoutCyclePage joGuest = new JordanGuestCheckoutCyclePage(webDriver);

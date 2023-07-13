@@ -65,8 +65,9 @@ public class JordanMyAccountTestCases extends MyAccountTestCases {
                 XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
-        DataHelperAndWait.clickOnElement(myAccountPage.getSaveAddressBtn(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getPhoneErrMsg(), webDriver);
+        WebElementsAssertion.assertionElementNotEnable((myAccountPage.getSaveAddressBtn()),webDriver);
+//        DataHelperAndWait.clickOnElement(myAccountPage.getSaveAddressBtn(), webDriver);
+//        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getPhoneErrMsg(), webDriver);
     }
 
     @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify Inability to add new Address using invalid National ID", priority = 25)

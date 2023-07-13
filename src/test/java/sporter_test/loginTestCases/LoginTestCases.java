@@ -67,7 +67,7 @@ public class LoginTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:  Verify Have Account tab is Active By Default when access Login Page", priority = 4)
     public void verifyHaveAccountTabActiveByDefault() {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
-        WebElementsAssertion.assertionAttributeTrueForElement(registerPage.getHaveAnAccountTab(), webDriver, "active", "1");
+        WebElementsAssertion.assertionAttributeTrueForElement(registerPage.getHaveAnAccountTab(), webDriver, "is-active", "1");
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Ability to login correctly using valid credential", priority = 5)

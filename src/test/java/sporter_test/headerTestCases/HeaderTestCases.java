@@ -65,7 +65,7 @@ public class HeaderTestCases extends BaseTest {
     public void verifyCustomerServiceAppearingCorrectly() {
         HeaderSection headerSection = new HeaderSection(webDriver);
         if (webDriver.getCurrentUrl().contains("com/ar-"))
-            WebElementsAssertion.assertionTextIsEqual(headerSection.getCustomerServiceLabel(), webDriver, XmlReader.getXMLData("CustomerServiceArLabelJordan"));
+            WebElementsAssertion.assertionTextIsEqual(headerSection.getCustomerServiceLabel(), webDriver, XmlReader.getXMLData("CustomerServiceArLabel"));
         else
             WebElementsAssertion.assertionTextIsEqual(headerSection.getCustomerServiceLabel(), webDriver, XmlReader.getXMLData("CustomerServiceEnLabel"));
     }
