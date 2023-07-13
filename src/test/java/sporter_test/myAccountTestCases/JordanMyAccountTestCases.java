@@ -47,8 +47,7 @@ public class JordanMyAccountTestCases extends MyAccountTestCases {
                 XmlReader.getXMLData("phoneNumber"),
                 XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
-                XmlReader.getXMLData("StreetTwoAddressName"),
-                XmlReader.getXMLData("nationalID"));
+                XmlReader.getXMLData("StreetTwoAddressName"));
         DataHelperAndWait.clickOnElement(myAccountPage.getSaveAddressBtn(), webDriver);
         WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getAddressedUrl(), webDriver);
     }
@@ -60,20 +59,17 @@ public class JordanMyAccountTestCases extends MyAccountTestCases {
         myAccountPage.navigateToAddressesPage();
         DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(), webDriver);
         myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        myAccountPage.fillInNewAddressForm(
-                XmlReader.getXMLData("firstName"),
+        myAccountPage.fillInNewAddressForm(XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
-                XmlReader.getXMLData("SmallPhoneNumber"),
+                XmlReader.getXMLData("phoneNumber"),
                 XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
-                XmlReader.getXMLData("StreetTwoAddressName"),
-                XmlReader.getXMLData("nationalID")
-        );
+                XmlReader.getXMLData("StreetTwoAddressName"));
         DataHelperAndWait.clickOnElement(myAccountPage.getSaveAddressBtn(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getPhoneErrMsg(), webDriver);
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify Inability to add new Address using invalid National ID", priority = 25)
+    @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify Inability to add new Address using invalid National ID", priority = 25)
     public void verifyInabilityToAddNewAddressUsingInvalidNationalID() throws IOException {
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
         JordanGuestCheckoutCyclePage joGuest = new JordanGuestCheckoutCyclePage(webDriver);
@@ -127,8 +123,7 @@ public class JordanMyAccountTestCases extends MyAccountTestCases {
                 XmlReader.getXMLData("phoneNumber"),
                 XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
-                XmlReader.getXMLData("StreetTwoAddressName"),
-                XmlReader.getXMLData("nationalID"));
+                XmlReader.getXMLData("StreetTwoAddressName"));
         DataHelperAndWait.clickOnElement(myAccountPage.getSaveEditAddressBtn(), webDriver);
         WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getAddressedUrl(), webDriver);
     }

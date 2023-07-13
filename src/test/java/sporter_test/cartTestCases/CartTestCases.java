@@ -270,7 +270,7 @@ public class CartTestCases extends BaseTest {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCartForOos();
         DataHelperAndWait.hoverOnElementAndClick(cartPage.getFirstQtyField(), webDriver);
-        cartPage.getFirstQtyField().sendKeys("9");
+        cartPage.getFirstQtyField().sendKeys("100");
 //        DataHelperAndWait.typeTextInElement(cartPage.getFirstQtyField(),webDriver,"9");
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
         DataHelperAndWait.isDisplayed(cartPage.getCloseAddToCartErrorMsg(), webDriver);

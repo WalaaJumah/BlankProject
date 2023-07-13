@@ -28,6 +28,9 @@ public class SportsCategoryPage extends BasePage {
     private WebElement trendingInSportsSectionTitle;
     @FindBy(xpath = "//div[@class='swiper-container swiper-container-horizontal trending']")
     private WebElement trendingInSportsSection;
+        @FindBy(xpath = "//div[@class='swiper-container swiper-container-horizontal trending swiper-container-rtl']")
+    private WebElement trendingInSportsArabicSection;
+
     @FindBy(xpath = "(//div[@class='product-img']/a)[6]")
     private WebElement mensApparelCategory;
     @FindBy(xpath = "(//div[@class='product-img']/a)[7]")

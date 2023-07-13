@@ -26,6 +26,7 @@ public class SportsCategoryTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Category- Make sure clicking on the Sports Category Appears In MegaMenu Redirect User To CorrectURL", priority = 1)
     public void verifyClickingOnSportsCategoryAppearsInMegaMenuRedirectUserToCorrectURL() throws IOException {
         SportsCategoryPage sportsCategoryPage = new SportsCategoryPage(webDriver);
+        sportsCategoryPage.navigateToHomePage();
         sportsCategoryPage.clickOnSportsMainMenu();
         sportsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         WebElementsAssertion.validateTheCurrentUrlContainsString(sportsCategoryPage.sportUrl, webDriver);
@@ -34,6 +35,7 @@ public class SportsCategoryTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Category- Make sure clicking on the Sports Category from ShopBy Menu Redirect User To CorrectURL", priority = 2)
     public void verifyClickingOnSportsCategoryFromShopByMenuRedirectUserToCorrectURL() throws IOException {
         SportsCategoryPage sportsCategoryPage=new SportsCategoryPage(webDriver);
+        sportsCategoryPage.navigateToHomePage();
         sportsCategoryPage.clickOnSportsFromShopByMenu();
         sportsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
         WebElementsAssertion.validateTheCurrentUrlContainsString(sportsCategoryPage.sportsUrl, webDriver);
@@ -116,8 +118,15 @@ public class SportsCategoryTestCases extends BaseTest {
     public void verifyTrendingOnSportsSectionAppearsCorrectly() throws IOException {
         SportsCategoryPage sportsCategoryPage = new SportsCategoryPage(webDriver);
         sportsCategoryPage.navigateToSportsPage();
+        DataHelperAndWait.waitForTime(2000);
         WebElementsAssertion.validateTheElementIsDisplayed(sportsCategoryPage.getTrendingInSportsSectionTitle(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(sportsCategoryPage.getTrendingInSportsSection(), webDriver);
+        try {
+            WebElementsAssertion.validateTheElementIsDisplayed(sportsCategoryPage.getTrendingInSportsSection(), webDriver);
+        }
+        catch (Exception e){
+            WebElementsAssertion.validateTheElementIsDisplayed(sportsCategoryPage.getTrendingInSportsArabicSection(), webDriver);
+
+        }
     }
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Sports Category- Make sure clicking on the Mens Apparel works correctly", priority = 12)
     public void verifyClickingOnMensApparelCategoryWorksCorrectly() throws IOException {

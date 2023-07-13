@@ -88,7 +88,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         registerPage.navigateToRegistrationPage();
         DataHelperAndWait.clickOnElement(registerPage.getHaveAnAccountTab(), webDriver);
-        WebElementsAssertion.assertionAttributeTrueForElement(registerPage.getHaveAnAccountTab(), webDriver, "active", "1");
+        WebElementsAssertion.assertionAttributeTrueForElement(registerPage.getHaveAnAccountTab(), webDriver, "is-active", "1");
     }
 
     //TODO: This TC should be revisit after fix bug: https://sporter1.atlassian.net/browse/NS-169

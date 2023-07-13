@@ -72,7 +72,7 @@ public class ProductDetailsPage extends BasePage {
     private WebElement reviewToastMsg;
     @FindBy(id = "pathSegment_0")
     private WebElement HomeBreadcrumbs;
-    @FindBy(xpath = "//div[starts-with(@class,'productHeader_otOfStocklabe')]")
+    @FindBy(xpath = "//div[starts-with(@class,'outOfStockAlert_otOfStocklabel')]")
     private WebElement OOSMsg;
     @FindBy(id = "shobBy")
     private WebElement shopByMenu;
