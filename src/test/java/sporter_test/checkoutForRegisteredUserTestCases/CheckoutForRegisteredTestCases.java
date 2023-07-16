@@ -594,7 +594,8 @@ catch (Exception e){
 //        cartPage.navigateToHomePage();
 //        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
 //        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
+        cartPage.proceedToCheckout();
+//            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
 
 
 

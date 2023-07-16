@@ -44,7 +44,8 @@ public class QatarCheckoutForRegisteredTestCases extends CheckoutForRegisteredTe
     public void verifyOrderTotalCalculationInCartPageWorksCorrectly() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         DecimalFormat df = new DecimalFormat("0.00");
-        cartPage.navigateToCartPage();
+        cartPage.clearCart();
+        cartPage.addToCartAndDisplayTheCart();
         double subTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue(), webDriver,"QAR");
         double tax = DataHelperAndWait.convertTheStringToFloat(cartPage.getTaxValue(), webDriver,"QAR");
         double orderTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(), webDriver,"QAR");
