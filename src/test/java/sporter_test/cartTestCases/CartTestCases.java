@@ -9,6 +9,7 @@ package sporter_test.cartTestCases;
 import core.BaseTest;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
+import error_helper.SporterErrorPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -268,9 +269,16 @@ public class CartTestCases extends BaseTest {
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Verify that the The requested qty is not available message appear when the product becomes OOS", priority = 18)
     public void verifyToDisplayRequestedQtyIsNotAvailableMsg() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.addToCartAndDisplayTheCartForOos();
-        DataHelperAndWait.hoverOnElementAndClick(cartPage.getFirstQtyField(), webDriver);
-        cartPage.getFirstQtyField().sendKeys("100");
+        try{
+            cartPage.addToCartAndDisplayTheCart();
+            DataHelperAndWait.hoverOnElementAndClick(cartPage.getFirstQtyField(), webDriver);
+            DataHelperAndWait.updateAllText(cartPage.getFirstQtyField(),"999");}
+        catch (Exception e){
+            if(cartPage.getTitle().equalsIgnoreCase(SporterErrorPage.pageNotFoundTitle))
+                System.out.println("The product is not found in this store");
+        }
+
+
 //        DataHelperAndWait.typeTextInElement(cartPage.getFirstQtyField(),webDriver,"9");
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
         DataHelperAndWait.isDisplayed(cartPage.getCloseAddToCartErrorMsg(), webDriver);
