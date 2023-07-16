@@ -80,7 +80,7 @@ public class GuestCheckoutCyclePage extends BasePage {
     private WebElement cityMenu;
        @FindBy(xpath = "//div[@id='citiesSelector']/div[2]/div/input")
     private WebElement citySearch;
-            @FindBy(xpath = "//div[@id='citiesSelector']/div[2]/div[2]/div[2]")
+            @FindBy(xpath = "(.//*[normalize-space(text()) and normalize-space(.)='Select City'])[1]/following::div[1]")
     private WebElement duabiCity;
 
 

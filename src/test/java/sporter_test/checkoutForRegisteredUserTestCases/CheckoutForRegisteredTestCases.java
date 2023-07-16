@@ -29,6 +29,7 @@ import xml_reader.XmlReader;
 
 import java.io.IOException;
 import java.text.DecimalFormat;
+import java.time.LocalTime;
 import java.util.Set;
 
 @Test(groups = "2.02 Checkout Cycle( Registered User)")
@@ -454,36 +455,48 @@ catch (Exception e){
     //TODO:The Same Day Delivery is Missing
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the customer is able to select the Same Day Delivery shipping method correctly", priority = 80)
     public void verifyAbilityToSelectSameDayShippingMethodCorrectly() throws IOException {
+        // Get the current time
+        LocalTime currentTime = LocalTime.now();
+
+        // Set the target time to 2:00 PM
+        LocalTime targetTime = LocalTime.of(14, 0);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        try{
-            cartPage.clearCart();}
-        catch (Exception e){
-            System.out.println("");
+        // Set the target times to 2:00 AM and 2:00 PM
+        LocalTime targetTimeAM = LocalTime.of(2, 0);
+        LocalTime targetTimePM = LocalTime.of(14, 0);
+        if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM))
+        {
+            System.out.println(currentTime);
+            System.out.println("Current time is before 2:00 PM");
+            try {
+                cartPage.clearCart();
+            } catch (Exception e) {
+                System.out.println("");
+            }
+            cartPage.addToCartAndDisplayTheCart();
+            cartPage.proceedToCheckout();
+                DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getAddNewAddressBtn(),webDriver);
+                checkoutForRegisteredPage.fillInShippingInformationInputField(
+                        XmlReader.getXMLData("firstName"),
+                        XmlReader.getXMLData("lastName"),
+                        XmlReader.getXMLData("phoneNumber"),
+                        XmlReader.getXMLData("AddressName"),
+                        XmlReader.getXMLData("StreetOneAddressName"),
+                        XmlReader.getXMLData("StreetTwoAddressName")
+                );
+
+                guestCheckoutCyclePage.setSelectDubaiCityCity();
+            DataHelperAndWait.waitForTime(2000);
+            guestCheckoutCyclePage.clickOnContinueBtn();
+            DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getSameDayDelivery(), webDriver);
+            DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
+            WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
         }
-        cartPage.addToCartAndDisplayTheCart();
-        cartPage.proceedToCheckout();
-        try{
-            checkoutForRegisteredPage.fillInShippingInformationInputField(
-                    XmlReader.getXMLData("firstName"),
-                    XmlReader.getXMLData("lastName"),
-                    XmlReader.getXMLData("phoneNumber"),
-                    XmlReader.getXMLData("AddressName"),
-                    XmlReader.getXMLData("StreetOneAddressName"),
-                    XmlReader.getXMLData("StreetTwoAddressName")
-            );
-            guestCheckoutCyclePage.setSelectDubaiCityCity();
+        else{
+            System.out.println("Current time is after or equal to 2:00 PM");
         }
-        catch (Exception e){
-            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
-        }
-        DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getSameDayDelivery(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(),webDriver);
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that each of COD & Credit Card Payment methods appear correctly", priority = 25)
     public void verifyEachOfCODAndCreditCardPaymentMethodCorrectly() throws IOException {
