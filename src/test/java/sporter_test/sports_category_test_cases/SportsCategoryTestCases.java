@@ -34,11 +34,20 @@ public class SportsCategoryTestCases extends BaseTest {
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Category- Make sure clicking on the Sports Category from ShopBy Menu Redirect User To CorrectURL", priority = 2)
     public void verifyClickingOnSportsCategoryFromShopByMenuRedirectUserToCorrectURL() throws IOException {
-        SportsCategoryPage sportsCategoryPage=new SportsCategoryPage(webDriver);
-        sportsCategoryPage.navigateToHomePage();
-        sportsCategoryPage.clickOnSportsFromShopByMenu();
-        sportsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        WebElementsAssertion.validateTheCurrentUrlContainsString(sportsCategoryPage.sportsUrl, webDriver);
+        try {
+            SportsCategoryPage sportsCategoryPage = new SportsCategoryPage(webDriver);
+            sportsCategoryPage.navigateToHomePage();
+            sportsCategoryPage.clickOnSportsFromShopByMenu();
+            sportsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
+            WebElementsAssertion.validateTheCurrentUrlContainsString(sportsCategoryPage.sportsUrl, webDriver);
+        }
+        catch (Exception e){
+            SportsCategoryPage sportsCategoryPage = new SportsCategoryPage(webDriver);
+            sportsCategoryPage.navigateToHomePage();
+            sportsCategoryPage.clickOnSportsFromShopByMenu();
+            sportsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
+            WebElementsAssertion.validateTheCurrentUrlContainsString(sportsCategoryPage.sportsUrl, webDriver);
+        }
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Category- Make sure clicking on the Sports Category from HomePage Redirect User To CorrectURL", priority = 3)

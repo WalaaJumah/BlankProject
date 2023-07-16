@@ -115,13 +115,17 @@ public class SportsCategoryPage extends BasePage {
         MegaMenuPage megaMenuPage = new MegaMenuPage(webDriver);
         try {
             DataHelperAndWait.waitToBeVisible(megaMenuPage.getShopByMenu(), webDriver);
-            actions.moveToElement(megaMenuPage.getSportsMenuFromShopBy()).perform();
-            DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsMenuFromShopBy(), webDriver);
+            actions.moveToElement(megaMenuPage.getShopByMenu()).perform();
+
+//            DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsMenuFromShopBy(), webDriver);
+            actions.moveToElement(megaMenuPage.getSportsMenuFromShopBy()).click().perform();
             verifyTheDisplayedPageDoesNotHaveErrors();
         } catch (Exception e) {
             DataHelperAndWait.waitToBeVisible(megaMenuPage.getShopByMenu(), webDriver);
-            actions.moveToElement(megaMenuPage.getSportsMenuFromShopBy()).perform();
-            DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsMenuFromShopBy(), webDriver);
+            actions.moveToElement(megaMenuPage.getShopByMenu()).perform();
+
+//            DataHelperAndWait.waitToBeVisible(megaMenuPage.getSportsMenuFromShopBy(), webDriver);
+            actions.moveToElement(megaMenuPage.getSportsMenuFromShopBy()).click().perform();
             verifyTheDisplayedPageDoesNotHaveErrors();
         }
     }
