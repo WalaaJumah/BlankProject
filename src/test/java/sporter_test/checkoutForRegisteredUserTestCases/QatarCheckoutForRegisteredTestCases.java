@@ -164,8 +164,13 @@ public class QatarCheckoutForRegisteredTestCases extends CheckoutForRegisteredTe
             System.out.println("");
         }
         cartPage.addToCartAndDisplayTheCart();
-        cartPage.navigateToHomePage();
-        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
+        try {
+            cartPage.navigateToHomePage();
+            DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
+        }
+catch (Exception ee){
+            cartPage.navigateToCartPage();
+}
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
         try{
             DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
