@@ -73,7 +73,11 @@ public class EgyptVitaminsAndHealthCategoryTestCases extends VitaminsAndHealthCa
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
-        WebElementsAssertion.validateTheElementIsDisplayed(sportsSupplementsCategoryPage.getSortByMenu(), webDriver);
+        try{
+        WebElementsAssertion.validateTheElementIsDisplayed(sportsSupplementsCategoryPage.getSortByMenu(), webDriver);}
+        catch (Exception e){
+            DataHelperAndWait.waitToBeVisible(sportsSupplementsCategoryPage.getSortByMenu(), webDriver);
+        }
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category Category Page- Make Sure the next page button works correctly", priority = 61)
     public void verifyNextPageBtnWorksCorrectly() throws IOException {

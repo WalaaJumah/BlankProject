@@ -19,11 +19,12 @@
 <!--            </run>-->
 <!--        </groups>-->
         <classes>
-            <class name="sporter_test.cartTestCases.UAECartTestCases">
-                <methods>
-                    <include name="verifyToDisplayRequestedQtyIsNotAvailableMsg"></include>
+            <class name="sporter_test.cartTestCases.EgyptCartTestCases">
+<!--                <methods>-->
+<!--                    <include name="verifyProductPriceChangesWhenChangingTheProductQtyFromTheCartPage"></include>-->
+<!--                    <include name="verifyAbilityToAddBundleToCart"></include>-->
 
-                    </methods>
+<!--                    </methods>-->
             </class>
 
 

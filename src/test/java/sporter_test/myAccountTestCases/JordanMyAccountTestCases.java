@@ -61,7 +61,7 @@ public class JordanMyAccountTestCases extends MyAccountTestCases {
         myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
         myAccountPage.fillInNewAddressForm(XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
-                XmlReader.getXMLData("phoneNumber"),
+                XmlReader.getXMLData("SmallPhoneNumber"),
                 XmlReader.getXMLData("AddressName"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));

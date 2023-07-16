@@ -225,8 +225,9 @@ public class BasePage {
 //        DataHelperAndWait.waitForUrlContains(bundleUrl, webDriver);
         System.out.println("The product URL is: " + webDriver.getCurrentUrl());}
         catch (AssertionError e){
-            if(webDriver.getCurrentUrl().contains("/en-eg"))
+            if(webDriver.getCurrentUrl().contains("/en-eg")) {
                 System.out.println("This product is Disable on Egypt");
+            }
         }
     }
 

@@ -86,7 +86,7 @@ public class MyAccountTestCases extends BaseTest {
         WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getRecentOrdersURL(), webDriver);
     }
 
-    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Verify clicking on My Rewards Option redirect the user to the correct Page ", priority = 4)
+    @Test(groups = { "1.2 High Severity"}, description = "{{CountryName}}: Verify clicking on My Rewards Option redirect the user to the correct Page ", priority = 4)
     public void verifyClickingOnMyRewardsOptionsWorksCorrectly() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);

@@ -236,7 +236,11 @@ public class WomensOnlyCategoryTestCases extends BaseTest {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         womensOnlyCategoryPage.navigateToWomenOnlyPage();
         DataHelperAndWait.waitForTime(2000);
-        WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getSupplementForHerSection(),webDriver);
+        if(webDriver.getCurrentUrl().contains(".com/ar-"))
+        WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getSupplementForHerSectionAr(),webDriver);
+        else
+            WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getSupplementForHerSection(),webDriver);
+
     }
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure the Women's Vitamins section have at least a product", priority = 27)
@@ -244,20 +248,29 @@ public class WomensOnlyCategoryTestCases extends BaseTest {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         womensOnlyCategoryPage.navigateToWomenOnlyPage();
         DataHelperAndWait.waitForTime(2000);
-        WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getWomensVitaminsSection(),webDriver);
+        if(webDriver.getCurrentUrl().contains(".com/ar-"))
+            WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getWomensVitaminsSectionAR(),webDriver);
+        else
+            WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getWomensVitaminsSection(),webDriver);
     }
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure the Workout In Style section have at least a product", priority = 28)
     public void verifyTheWorkOutInStyleAtLeastAProduct() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         womensOnlyCategoryPage.navigateToWomenOnlyPage();
         DataHelperAndWait.waitForTime(2000);
-        WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getWorkoutInStyleSection(),webDriver);
+        if(webDriver.getCurrentUrl().contains(".com/ar-"))
+            WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getWorkoutInStyleSectionAr(),webDriver);
+        else
+            WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getWorkoutInStyleSection(),webDriver);
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure the Lady-Friendly Snacks & Food section have at least a product", priority = 29)
     public void verifyTheLadyFriendlySnacksFoodAtLeastAProduct() throws IOException {
         WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         womensOnlyCategoryPage.navigateToWomenOnlyPage();
         DataHelperAndWait.waitForTime(2000);
+        if(webDriver.getCurrentUrl().contains(".com/ar-"))
+            WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getLadyFriendlySnacksAndFoodSectionAr(),webDriver);
+        else
         WebElementsAssertion.validateTheElementIsDisplayed(womensOnlyCategoryPage.getLadyFriendlySnacksAndFoodSection(),webDriver);
     }
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:Women's Only Category- Make sure the Female Gallery section appears correctly", priority = 30)

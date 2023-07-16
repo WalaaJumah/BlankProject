@@ -268,6 +268,7 @@ public class CartTestCases extends BaseTest {
     //TODO:There's a bug here, check: https://sporter1.atlassian.net/browse/NS-184/https://sporter1.atlassian.net/browse/NS-107
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Verify that the The requested qty is not available message appear when the product becomes OOS", priority = 18)
     public void verifyToDisplayRequestedQtyIsNotAvailableMsg() throws IOException {
+        webDriver.manage().deleteCookieNamed("guestCartId");
         CartPage cartPage = new CartPage(webDriver);
         try{
             cartPage.addToCartAndDisplayTheCart();

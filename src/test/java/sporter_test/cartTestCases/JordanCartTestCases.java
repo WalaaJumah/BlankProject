@@ -112,9 +112,10 @@ catch (Exception e){
 
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Verify ability to display the product from the Cart Page works successfully", priority = 19)
     public void verifyAbilityToDisplayTheProductFromTheCartPage() throws IOException {
+        webDriver.manage().deleteCookieNamed("guestCartId");
         CartPage cartPage = new CartPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        cartPage.addToCartAndDisplayTheCartForOos();
+        cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.clickOnElement(cartPage.getProductNameForOneProduct(), webDriver);
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductName(), webDriver);
         WebElementsAssertion.validateTheCurrentUrlNotContainsString(cartPage.cartURL, webDriver);

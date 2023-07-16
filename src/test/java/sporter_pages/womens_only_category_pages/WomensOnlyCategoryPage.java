@@ -71,12 +71,23 @@ public class WomensOnlyCategoryPage extends BasePage {
     private WebElement viewAllInLadyFriendlySnacksAndFoodSection;
   @FindBy(id = "tab-257-all257")
     private WebElement supplementForHerSection;
+    @FindBy(id = "tab-264-all264")
+    private WebElement supplementForHerSectionAr;
+
   @FindBy(id = "tab-258-all258")
     private WebElement womensVitaminsSection;
+   @FindBy(id = "tab-265-all265")
+    private WebElement womensVitaminsSectionAR;
+
   @FindBy(id = "tab-259-all259")
     private WebElement workoutInStyleSection;
+    @FindBy(id = "tab-266-all266")
+    private WebElement workoutInStyleSectionAr;
+
   @FindBy(id = "tab-260-all260")
     private WebElement ladyFriendlySnacksAndFoodSection;
+   @FindBy(id = "tab-267-all267")
+    private WebElement ladyFriendlySnacksAndFoodSectionAr;
   @FindBy(xpath = "//div[@class='brand-video-header']")
     private WebElement femaleGallerySection;
 

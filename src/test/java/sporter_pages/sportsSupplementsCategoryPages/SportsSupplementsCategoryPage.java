@@ -27,7 +27,7 @@ public class SportsSupplementsCategoryPage extends BasePage {
     @FindBy(id = "pathSegment_0")
     private WebElement homePageBreadCrumb;
     //TODO: Make sure to add id for each result label & it's value
-    @FindBy(xpath = "(//span[starts-with(@class,'hitsSidebar_result')]/following-sibling::span)[2]")
+    @FindBy(id = "totalProductsLabel")
     private WebElement resultLabel;
     @FindBy(id = "totalProductsCount")
     private WebElement searchResultValue;

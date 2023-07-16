@@ -541,14 +541,19 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(sportsSupplementsCategoryPage.getNewsLetterSection(), webDriver);
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Verify that the search button works correctly from the Sport Supplements category page", priority = 58)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Verify that the search button works correctly from the Vitamins & Health category page", priority = 58)
     public void verifySearchBtnWorksCorrectlyFromSportSupplementsCategoryPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         DataHelperAndWait.typeTextInElement(productDetailsPage.getSearchField(),webDriver,"Basic");
         DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getProductCard(),webDriver);
+        DataHelperAndWait.waitForTime(1000);
+        try{
+        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getProductCard(),webDriver);}
+        catch (Exception e){
+            DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductCard(),webDriver);
+        }
         productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
 
     }
