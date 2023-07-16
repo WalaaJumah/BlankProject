@@ -22,6 +22,7 @@ import xml_reader.XmlReader;
 
 import java.io.IOException;
 import java.text.DecimalFormat;
+import java.time.LocalTime;
 
 @Test(groups = "2.01 Checkout Cycle( Guest User)")
 public class GuestCheckoutCycleTestCases extends BaseTest {
@@ -287,24 +288,52 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     }
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:Verify All Shipping Methods appear correctly", priority = 21)
     public void verifyAllShippingMethodsAppearCorrectly() throws IOException {
+        // Get the current time
+        LocalTime currentTime = LocalTime.now();
+
+        // Set the target time to 2:00 PM
+        LocalTime targetTime = LocalTime.of(14, 0);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
- CartPage cartPage = new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
-                XmlReader.getXMLData("firstName"),
-                XmlReader.getXMLData("lastName"),
-                XmlReader.getXMLData("correctEmail"),
-                XmlReader.getXMLData("phoneNumber"),
+        // Set the target times to 2:00 AM and 2:00 PM
+        LocalTime targetTimeAM = LocalTime.of(2, 0);
+        LocalTime targetTimePM = LocalTime.of(14, 0);
+        if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM)) {
+            CartPage cartPage = new CartPage(webDriver);
+            webDriver.manage().deleteCookieNamed("guestCartId");
+            guestCheckoutCyclePage.accessGuestCheckoutForm();
+            guestCheckoutCyclePage.fillInShippingInformationInputField(
+                    XmlReader.getXMLData("firstName"),
+                    XmlReader.getXMLData("lastName"),
+                    XmlReader.getXMLData("correctEmail"),
+                    XmlReader.getXMLData("phoneNumber"),
 //                XmlReader.getXMLData("AddressName"),
-                XmlReader.getXMLData("StreetOneAddressName"),
-                XmlReader.getXMLData("ksaPhoneNumber")
-        );
-        guestCheckoutCyclePage.setSelectDubaiCityCity();
-        DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
-        WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver,XmlReader.getXMLData("twoBusinessDay"));
-        WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getSameDayDelivery(),webDriver,XmlReader.getXMLData("sameDayDelivery"));
+                    XmlReader.getXMLData("StreetOneAddressName"),
+                    XmlReader.getXMLData("ksaPhoneNumber")
+            );
+            guestCheckoutCyclePage.setSelectDubaiCityCity();
+            DataHelperAndWait.waitForTime(2000);
+            guestCheckoutCyclePage.clickOnContinueBtn();
+            WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(), webDriver, XmlReader.getXMLData("twoBusinessDay"));
+            WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getSameDayDelivery(), webDriver, XmlReader.getXMLData("sameDayDelivery"));
+        }
+        else{
+            CartPage cartPage = new CartPage(webDriver);
+            webDriver.manage().deleteCookieNamed("guestCartId");
+            guestCheckoutCyclePage.accessGuestCheckoutForm();
+            guestCheckoutCyclePage.fillInShippingInformationInputField(
+                    XmlReader.getXMLData("firstName"),
+                    XmlReader.getXMLData("lastName"),
+                    XmlReader.getXMLData("correctEmail"),
+                    XmlReader.getXMLData("phoneNumber"),
+//                XmlReader.getXMLData("AddressName"),
+                    XmlReader.getXMLData("StreetOneAddressName"),
+                    XmlReader.getXMLData("ksaPhoneNumber")
+            );
+            guestCheckoutCyclePage.setSelectDubaiCityCity();
+            DataHelperAndWait.waitForTime(2000);
+            guestCheckoutCyclePage.clickOnContinueBtn();
+            WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(), webDriver, XmlReader.getXMLData("twoBusinessDay"));
+        }
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the customer is able to select the 2 Business Days Super Express Shipping\n" +
             "Cash on Delivery Service Available shipping method correctly", priority = 22)
@@ -359,25 +388,34 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     //TODO:The Same Day Delivery is Missing
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the customer is able to select the Same Day Delivery shipping method correctly", priority = 80)
     public void verifyAbilityToSelectSameDayShippingMethodCorrectly() throws IOException {
+        LocalTime currentTime = LocalTime.now();
+
+        // Set the target time to 2:00 PM
+        LocalTime targetTime = LocalTime.of(14, 0);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
- CartPage cartPage = new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
-                XmlReader.getXMLData("firstName"),
-                XmlReader.getXMLData("lastName"),
-                XmlReader.getXMLData("correctEmail"),
-                XmlReader.getXMLData("phoneNumber"),
+        CartPage cartPage= new CartPage(webDriver);
+        // Set the target times to 2:00 AM and 2:00 PM
+        LocalTime targetTimeAM = LocalTime.of(2, 0);
+        LocalTime targetTimePM = LocalTime.of(14, 0);
+        if (!currentTime.isAfter(targetTimeAM)) {
+            webDriver.manage().deleteCookieNamed("guestCartId");
+            guestCheckoutCyclePage.accessGuestCheckoutForm();
+            guestCheckoutCyclePage.fillInShippingInformationInputField(
+                    XmlReader.getXMLData("firstName"),
+                    XmlReader.getXMLData("lastName"),
+                    XmlReader.getXMLData("correctEmail"),
+                    XmlReader.getXMLData("phoneNumber"),
 //                XmlReader.getXMLData("AddressName"),
-                XmlReader.getXMLData("StreetOneAddressName"),
-                XmlReader.getXMLData("ksaPhoneNumber")
-        );
-        guestCheckoutCyclePage.setSelectDubaiCityCity();
-        DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getSameDayDelivery(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(),webDriver);
+                    XmlReader.getXMLData("StreetOneAddressName"),
+                    XmlReader.getXMLData("ksaPhoneNumber")
+            );
+            guestCheckoutCyclePage.setSelectDubaiCityCity();
+            DataHelperAndWait.waitForTime(2000);
+            guestCheckoutCyclePage.clickOnContinueBtn();
+            DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getSameDayDelivery(), webDriver);
+            DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
+            WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
+        }
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that each of COD & Credit Card Payment methods appear correctly", priority = 23)
     public void verifyEachOfCODAndCreditCardPaymentMethodCorrectly() throws IOException {
