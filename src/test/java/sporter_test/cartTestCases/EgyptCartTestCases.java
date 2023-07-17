@@ -122,12 +122,14 @@ public void verifyAbilityToClickOnSportsMenuIsDisplayedFromCartPage() throws IOE
         webDriver.manage().deleteCookieNamed("guestCartId");
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
+        DataHelperAndWait.waitToBeVisible(cartPage.getProductPriceTotal(),webDriver);
         String currentProductPrice = DataHelperAndWait.getWebElementText(cartPage.getProductPriceTotal(), webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
         cartPage.waitTillQtyValueChanges("2");
 //        DataHelperAndWait.clickOnElement(cartPage.getDecreaseQtyBtn(), webDriver);
 //        cartPage.waitTillQtyValueChanges("2");
         DataHelperAndWait.waitForTime(2500);
+        DataHelperAndWait.waitToBeVisible(cartPage.getProductPriceTotal(),webDriver);
         String newProductPrice = DataHelperAndWait.getWebElementText(cartPage.getProductPriceTotal(), webDriver);
         Assert.assertNotEquals(currentProductPrice, newProductPrice);
         webDriver.manage().deleteCookieNamed("guestCartId");

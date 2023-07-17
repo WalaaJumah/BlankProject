@@ -546,7 +546,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
-        DataHelperAndWait.typeTextInElement(productDetailsPage.getSearchField(),webDriver,"Basic");
+        DataHelperAndWait.typeTextInElement(productDetailsPage.getSearchField(),webDriver,"whey");
         DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
         DataHelperAndWait.waitForTime(1000);
         try{
