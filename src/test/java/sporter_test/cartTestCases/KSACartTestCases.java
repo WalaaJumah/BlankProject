@@ -63,8 +63,11 @@ public class KSACartTestCases extends CartTestCases {
     }
 
     @Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure that the counter-number appears inside the cart pop-up works correctly", priority = 4)
-    public void verifyTheCounterInsideCartPopUpWorksCorrectly() {
+    public void verifyTheCounterInsideCartPopUpWorksCorrectly() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        cartPage.addToCartAndDisplayTheCart();
+        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
         itemsCounter = "(1 من 1 الاصناف )";
         DataHelperAndWait.waitToBeVisible(cartPage.getItemCounterInCartPopUp(), webDriver);

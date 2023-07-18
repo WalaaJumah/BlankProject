@@ -58,7 +58,7 @@ public class CartTestCases extends BaseTest {
     }
     //TODO:Needs To Be rechecked
     @Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure that the counter-number appears inside the cart pop-up works correctly", priority = 4)
-    public void verifyTheCounterInsideCartPopUpWorksCorrectly() {
+    public void verifyTheCounterInsideCartPopUpWorksCorrectly() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
         itemsCounter = "(2 Of 2 Items )";
@@ -69,7 +69,8 @@ public class CartTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Verify increase quantity button from Cart page works successfully", priority = 5)
     public void verifyIncreaseQtyBtnInCartPageWorking() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.navigateToCartPage();
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
 //        DataHelperAndWait.waitForTime(500);
 //        cartPage.waitTillQtyValueChanges("2");
@@ -99,11 +100,11 @@ public class CartTestCases extends BaseTest {
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the view Cart button appearing in the Cart pop-up works correctly", priority = 7)
     public void verifyAbilityToViewCartFromCartIcon() throws IOException {
+        webDriver.manage().deleteCookieNamed("guestCartId");
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
+        cartPage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
-        DataHelperAndWait.waitToBeVisible(cartPage.getViewCartInCartPopup(),webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getViewCartInCartPopup(), webDriver);
         WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.cartURL, webDriver);
     }

@@ -59,7 +59,7 @@ public class CartPage extends BasePage {
     //TODO: To replace it with ID after added it by Moamen
 //    @FindBy(css = "#FaShoppingCart > path")
 //    private WebElement cartIcon;
-    @FindBy(id = "FaShoppingCart")
+    @FindBy(id = "CartIconContainer")
     private WebElement cartIcon;
     @FindBy(id = "cartPagelink")
     private WebElement viewCartInCartPopup;
@@ -98,7 +98,7 @@ public class CartPage extends BasePage {
     private WebElement firstQtyField;
     @FindBy(css = "#cartcloseIcon > path")
     private WebElement cartCloseIcon;
-    @FindBy(id = "cartitemsCount")
+    @FindBy(id = "FaShoppingCart")
     private WebElement itemCounterInCartPopUp;
     //TODO: To replace it with ID after added it by Moamen
     //TODO: There's a bug here due to the Msg is missing
