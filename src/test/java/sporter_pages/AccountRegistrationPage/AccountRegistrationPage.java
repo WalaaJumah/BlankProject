@@ -144,6 +144,7 @@ public class AccountRegistrationPage extends BasePage {
     }
 
     public void submitAllCreateAccountFormsCorrectly(String email, String password, String confirmPassword, String firstName, String lastName, int gender) throws IOException {
+        DataHelperAndWait.waitToBeVisible(this.getEmailField(),webDriver);
         DataHelperAndWait.typeTextInElement(this.getEmailField(), webDriver, email);
         DataHelperAndWait.typeTextInElement(this.getPasswordField(), webDriver, password);
         DataHelperAndWait.typeTextInElement(this.getConfirmPasswordField(), webDriver, password);

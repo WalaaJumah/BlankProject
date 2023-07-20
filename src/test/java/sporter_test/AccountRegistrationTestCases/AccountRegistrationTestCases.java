@@ -158,6 +158,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         HeaderSection header = new HeaderSection(webDriver);
         HomePage homePage = new HomePage(webDriver);
         webDriver.manage().deleteAllCookies();
+        registerPage.navigateToHomePage();
         registerPage.navigateToRegistrationPage();
         registerPage.submitAllCreateAccountFormsCorrectly(DataHelperAndWait.generateRandomEmail(), XmlReader.getXMLData("correctPassword"), XmlReader.getXMLData("correctPassword"), XmlReader.getXMLData("firstName"), XmlReader.getXMLData("lastName"), 1);
         DataHelperAndWait.clickOnElement(header.getSporterLogo(), webDriver);
