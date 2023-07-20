@@ -6,18 +6,18 @@
         <!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
         <listener class-name="extent_report_listner.ExtentReportListener"/>
     </listeners>
-    <test name=" Full Stg Smoke Testing " preserve-order="true">
-        <parameter name="environment" value="https://stg.sporter.com"/>
+    <test name=" Production Smoke Testing " preserve-order="true">
+        <parameter name="environment" value="https://www.sporter.com"/>
         <parameter name="browser" value="chrome"/>
         <!-- <parameter name="country" value="en-qa" />-->
         <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32569"/>
         <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix"/>
         <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
-<!--        <groups>-->
-<!--            <run>-->
-<!--                <include name="All Smoke Testing Result"/>-->
-<!--            </run>-->
-<!--        </groups>-->
+        <groups>
+            <run>
+                <include name="All Smoke Testing Result"/>
+            </run>
+        </groups>
         <classes>
             <class name="sporter_test.cartTestCases.KSACartTestCases"></class>
             <class name="sporter_test.cartTestCases.BahrainCartTestCases"></class>
