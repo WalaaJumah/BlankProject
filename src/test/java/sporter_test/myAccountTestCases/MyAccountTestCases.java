@@ -79,11 +79,24 @@ public class MyAccountTestCases extends BaseTest {
     public void verifyClickingOnMyOrdersOptionsWorksCorrectly() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
-        myAccountPage.navigateToHomePage();
-        DataHelperAndWait.waitForTime(1500);
-        DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
-        DataHelperAndWait.clickOnElement(myAccountPage.getMyOrdersOption(), webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getRecentOrdersURL(), webDriver);
+        try {
+            webDriver.manage().deleteAllCookies();
+            webDriver.manage().deleteAllCookies();
+            myAccountPage.navigateToHomePage();
+            DataHelperAndWait.waitForTime(1500);
+            DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
+            DataHelperAndWait.clickOnElement(myAccountPage.getMyOrdersOption(), webDriver);
+            WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getRecentOrdersURL(), webDriver);
+        }
+catch (Exception w){
+    webDriver.manage().deleteAllCookies();
+    webDriver.manage().deleteAllCookies();
+    myAccountPage.navigateToHomePage();
+    DataHelperAndWait.waitForTime(1500);
+    DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
+    DataHelperAndWait.clickOnElement(myAccountPage.getMyOrdersOption(), webDriver);
+    WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getRecentOrdersURL(), webDriver);
+}
     }
 
     @Test(groups = { "1.2 High Severity"}, description = "{{CountryName}}: Verify clicking on My Rewards Option redirect the user to the correct Page ", priority = 4)

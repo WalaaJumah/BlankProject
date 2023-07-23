@@ -74,7 +74,8 @@ public class JordanCartRulesTestCases extends CartRulesTestCases {
         HeaderSection header=new HeaderSection(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         AccountRegistrationPage registrationPage=new AccountRegistrationPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
+        webDriver.manage().deleteAllCookies();
+        webDriver.manage().deleteAllCookies();
         loginPage.navigateToLoginPage();
         loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword"));
         DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
