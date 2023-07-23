@@ -108,9 +108,8 @@
 Cash on Delivery Service Available</twoBusinessDay>
         <sameDayDelivery>Same Day Delivery</sameDayDelivery>
         <ExpressDelevery>Express Delivery: 3-5 Days</ExpressDelevery>
-        <FiveToSevenBusinessDaysShipping>5-7 Business Days Super Express Shipping (Online Credit or Debit Card Payment is Required)</FiveToSevenBusinessDaysShipping>
-        <ThreeBusinessDaysShipping>3 Business Days Super Express Shipping
-Online Credit or Debit Card Payment is Required</ThreeBusinessDaysShipping>
+        <FiveToSevenBusinessDaysShipping>5-7 Business Days Super Express Shipping</FiveToSevenBusinessDaysShipping>
+        <ThreeBusinessDaysShipping>3 Business Days Super Express Shipping</ThreeBusinessDaysShipping>
     </UAECheckout>
     <JordanCheckout>
         <fiveBusinessDays>5 Business Days Super Express Shipping</fiveBusinessDays>

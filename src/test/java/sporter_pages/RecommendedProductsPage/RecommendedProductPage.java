@@ -80,9 +80,10 @@ public class RecommendedProductPage extends BasePage {
     }
 
     public void removeProductFromCart() throws IOException {
-        DataHelperAndWait.clickOnElement(headerSection.getCartIcon(), webDriver);
-        DataHelperAndWait.clickOnElement(headerSection.getViewCartLinkInCartPopUp(), webDriver);
-        DataHelperAndWait.clickOnElement(productDetailsPage.getRemoveItem(), webDriver);
+//        DataHelperAndWait.clickOnElement(headerSection.getCartIcon(), webDriver);
+//        DataHelperAndWait.clickOnElement(headerSection.getViewCartLinkInCartPopUp(), webDriver);
+//        DataHelperAndWait.clickOnElement(productDetailsPage.getRemoveItem(), webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
         productDetailsPage.displayTheProduct();
     }
 

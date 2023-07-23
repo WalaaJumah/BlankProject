@@ -47,12 +47,12 @@ public class BasePage {
     public static String productUrlJordan = "/optimum-gold-standard-100-whey";
     public static String productUrlJordan7 = "/optimum-gold-standard-100-whey";
     public static String productUrlJordanWithLowPrice = "/jack-links-beef-jerky-54840/";
-    public static String productUrlJordanWithHighPrice = "/dymatize-elite-casein-7520/";
+    public static String productUrlJordanWithHighPrice = "/dymatize-iso-100-7164/";
     public static String productUrlQatarWithHighPrice = "/optimum-gold-standard-100-whey-6202";
     public static String productUrlQatarWithHighPrice2 = "/dymatize-iso-100-7164";
     public static String productUrlQatarWithHighPrice3 = "/dymatize-elite-whey-7161";
     public static String productUrlQatarWithHighPrice4 = "/evl-nutrition-100-whey-protein-55126";
-    public static String productUrlJordanWithHighPrice2 = "/optimum-serious-mass";
+    public static String productUrlJordanWithHighPrice2 = "/personal-records-supplements-larry-wheels-series-isolate-protein-57809/";
     public static String oOSProductUrl = "";
     public static String bundleUrl = "";
     public static String bogoProduct = "";

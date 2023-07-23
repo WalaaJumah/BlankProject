@@ -91,6 +91,10 @@ public class MyAccountTestCases extends BaseTest {
 catch (Exception w){
     webDriver.manage().deleteAllCookies();
     webDriver.manage().deleteAllCookies();
+    loginPage.navigateToLoginPage();
+    loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword"));
+    DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
+    DataHelperAndWait.waitForTime(2000);
     myAccountPage.navigateToHomePage();
     DataHelperAndWait.waitForTime(1500);
     DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
