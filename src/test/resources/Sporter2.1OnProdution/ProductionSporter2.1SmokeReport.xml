@@ -20,6 +20,11 @@
 <!--        </groups>-->
         <classes>
             <class name="sporter_test.cartRulesTestCases.KSACartRulesTestCases"></class>
+
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.KuwaitCheckoutForRegisteredTestCases"></class>
+
+            <class name="sporter_test.myAccountTestCases.QatarMyAccountTestCases"></class>
+
             <class name="sporter_test.cartRulesTestCases.QatarCartRulesTestCases"></class>
 
             <class name="sporter_test.cartRulesTestCases.JordanCartRulesTestCases"></class>
@@ -41,7 +46,6 @@
 
             <class name="sporter_test.checkoutForRegisteredUserTestCases.BahrainCheckoutForRegisteredTestCases"></class>
             <class name="sporter_test.checkoutForRegisteredUserTestCases.OmanCheckoutForRegisteredTestCases"></class>
-            <class name="sporter_test.checkoutForRegisteredUserTestCases.KuwaitCheckoutForRegisteredTestCases"></class>
             <class name="sporter_test.checkoutForRegisteredUserTestCases.EgyptCheckoutForRegisteredTestCases"/>
             <class name="sporter_test.guestCheckoutCycleTestCases.EgyptGuestCheckoutCycleTestCases"/>
             <class name="sporter_test.checkoutForRegisteredUserTestCases.KSACheckoutForRegisteredTestCases"></class>
@@ -131,6 +135,7 @@
             <class name="sporter_test.loginTestCases.OmanLoginTestCases"/>
             <class name="sporter_test.cartTestCases.OmanCartTestCases"></class>
             <class name="sporter_test.myAccountTestCases.OmanMyAccountTestCases"></class>
+
             <class name="sporter_test.sportsSupplementsCategoryTestCases.OmanSportsSupplementsCategoryTestCases"></class>
             <class name="sporter_test.healthy_food_category_test_cases.OmanHealthyFoodTestCases"></class>
             <class name="sporter_test.womens_only_category_test_cases.OmanWomensOnlyCategoryTestCases"/>
@@ -181,7 +186,6 @@
             <class name="sporter_test.AccountRegistrationTestCases.QatarAccountRegistrationTestCases"/>
             <class name="sporter_test.loginTestCases.QatarLoginTestCases"/>
             <class name="sporter_test.cartTestCases.QatarCartTestCases"></class>
-            <class name="sporter_test.myAccountTestCases.QatarMyAccountTestCases"></class>
             <class name="sporter_test.sportsSupplementsCategoryTestCases.QatarSportsSupplementsCategoryTestCases"></class>
             <class name="sporter_test.healthy_food_category_test_cases.QatarHealthyFoodTestCases"></class>
             <class name="sporter_test.womens_only_category_test_cases.QatarWomensOnlyCategoryTestCases"/>
