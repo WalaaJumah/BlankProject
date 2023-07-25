@@ -76,14 +76,10 @@ public class KSACartRulesTestCases extends CartRulesTestCases {
         productDetailsPage.displayTheProduct();
         productDetailsPage.addToCart();
         productDetailsPage.viewCart();
-        DataHelperAndWait.waitForTime(3000);
-        DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
-        DataHelperAndWait.waitForTime(2500);
-        DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
-        DataHelperAndWait.waitForTime(2500);
+        DataHelperAndWait.waitToBeVisible(cartPage.getQtyField(),webDriver);
+        DataHelperAndWait.updateAllText(cartPage.getQtyField(),"4");
+                DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
 
-        DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
-        DataHelperAndWait.waitForTime(2500);
 
 //        DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
 //        DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
@@ -152,6 +148,7 @@ public class KSACartRulesTestCases extends CartRulesTestCases {
         productDetailsPage.displayTheProduct();
         productDetailsPage.addToCart();
         productDetailsPage.viewCart();
+        DataHelperAndWait.waitForTime(2500);
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
         DataHelperAndWait.waitForTime(2500);
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
