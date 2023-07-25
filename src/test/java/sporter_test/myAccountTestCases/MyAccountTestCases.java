@@ -80,8 +80,6 @@ public class MyAccountTestCases extends BaseTest {
         LoginPage loginPage = new LoginPage(webDriver);
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
         try {
-            webDriver.manage().deleteAllCookies();
-            webDriver.manage().deleteAllCookies();
             myAccountPage.navigateToHomePage();
             DataHelperAndWait.waitForTime(1500);
             DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
@@ -89,8 +87,6 @@ public class MyAccountTestCases extends BaseTest {
             WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getRecentOrdersURL(), webDriver);
         }
 catch (Exception w){
-    webDriver.manage().deleteAllCookies();
-    webDriver.manage().deleteAllCookies();
     loginPage.navigateToLoginPage();
     loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword"));
     DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
