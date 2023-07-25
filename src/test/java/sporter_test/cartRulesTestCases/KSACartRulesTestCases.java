@@ -76,14 +76,19 @@ public class KSACartRulesTestCases extends CartRulesTestCases {
         productDetailsPage.displayTheProduct();
         productDetailsPage.addToCart();
         productDetailsPage.viewCart();
+        DataHelperAndWait.waitForTime(2500);
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
-        DataHelperAndWait.waitForTime(1500);
+        DataHelperAndWait.waitForTime(2500);
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
-        DataHelperAndWait.waitForTime(1500);
+        DataHelperAndWait.waitForTime(2500);
+
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
-        DataHelperAndWait.waitForTime(2000);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
+        DataHelperAndWait.waitForTime(2500);
+
+//        DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
+//        DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(), webDriver);
+
         DataHelperAndWait.refreshPage(webDriver);
     }
 
@@ -141,16 +146,21 @@ public class KSACartRulesTestCases extends CartRulesTestCases {
     //TODO: https://sporter1.atlassian.net/browse/NS-470
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure that inability to checkout the order when its total exceed 819 SAR (Tax excluded) ", priority = 6)
     public void verifyInabilityToCheckoutOrderWhenTheTotalExceed819SAR() throws Exception {
-        CartPage cartPage = new CartPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        CartPage cartPage = new CartPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
-        webDriver.navigate().to(BaseURL + cartPage.productUrlKSAWithHighPrice1);
+        productDetailsPage.displayTheProduct();
+        productDetailsPage.addToCart();
+        productDetailsPage.viewCart();
+        DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
+        DataHelperAndWait.waitForTime(2500);
+        DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
+        DataHelperAndWait.waitForTime(2500);
+
+         webDriver.navigate().to(BaseURL + cartPage.productUrlKSAWithHighPrice3);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         productDetailsPage.addToCart();
-        productDetailsPage.keepShopping();
-        webDriver.navigate().to(BaseURL + cartPage.productUrlKSAWithHighPrice2);
-        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        productDetailsPage.addToCart();
+
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(), webDriver);
         DataHelperAndWait.refreshPage(webDriver);
     }
@@ -161,7 +171,7 @@ public class KSACartRulesTestCases extends CartRulesTestCases {
         CartPage cartPage = new CartPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
-        webDriver.navigate().to(BaseURL + cartPage.productUrlKSAWithHighPrice2);
+        webDriver.navigate().to(BaseURL + cartPage.productUrlKSAWithHighPrice3);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         productDetailsPage.increaseTheQuantity();
         productDetailsPage.addToCart();

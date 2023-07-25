@@ -38,11 +38,12 @@ public class BasePage {
 //    public static String productUrlKSA8 = "/dymatize-iso-100";
     public static String productUrlKSA2 = "/efx-karbolyn-fuel";
     public static String productUrlKSA3 = "/windmill-natural-vitamins-omega-3-1000mg-with-epa-dha";
-    public static String productUrlKSA4 = "/webber-naturals-joint-ease-glucosamine-chondroitin";
-    public static String productUrlKSA5 = "/optimum-platinum-hydrowhey-6220";
+    public static String productUrlKSA4 = "/evl-nutrition-bcaa-5000-capsules-13934/";
+    public static String productUrlKSA5 = "/natrol-omega-3-fish-oil-1000mg-22835/";
     public static String productUrlKSA6 = "/yumearth-organic-assorted-vitamin-c-lollipops-14-pops";
     public static String productUrlKSAWithHighPrice1 = "/puma-speed-orbiter-black-nrgy-red-yellow-33980";
-    public static String productUrlKSAWithHighPrice2 = "/asics-gel-kayano-26-ls-graphite-grey-piedmont-grey-32131";
+    public static String productUrlKSAWithHighPrice2 = "/puma-speed-orbiter-black-nrgy-red-yellow-33764/";
+    public static String productUrlKSAWithHighPrice3 = "/muscletech-nitro-tech-performance-series-16114/";
     public static String productUrlEgypt = "/optimum-gold-standard-100-whey";
     public static String productUrlJordan = "/optimum-gold-standard-100-whey";
     public static String productUrlJordan7 = "/optimum-gold-standard-100-whey";
@@ -52,7 +53,7 @@ public class BasePage {
     public static String productUrlQatarWithHighPrice2 = "/dymatize-iso-100-7164";
     public static String productUrlQatarWithHighPrice3 = "/dymatize-elite-whey-7161";
     public static String productUrlQatarWithHighPrice4 = "/evl-nutrition-100-whey-protein-55126";
-    public static String productUrlJordanWithHighPrice2 = "/personal-records-supplements-larry-wheels-series-isolate-protein-57809/";
+    public static String productUrlJordanWithHighPrice2 = "/dymatize-elite-casein-7519/";
     public static String oOSProductUrl = "";
     public static String bundleUrl = "";
     public static String bogoProduct = "";
