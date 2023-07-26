@@ -88,7 +88,9 @@ public class QatarCartTestCases extends CartTestCases {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToCartPage();
         String currentProductPrice = DataHelperAndWait.getWebElementText(cartPage.getProductPriceTotal(), webDriver);
+        DataHelperAndWait.waitToBeVisible(cartPage.getDecreaseQtyBtn(), webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getDecreaseQtyBtn(), webDriver);
+        DataHelperAndWait.waitToBeVisible(cartPage.getIncreaseQtyBtn(), webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
         cartPage.waitTillQtyValueChanges("2");
         DataHelperAndWait.waitForTime(500);

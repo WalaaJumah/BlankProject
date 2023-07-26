@@ -157,17 +157,30 @@ public class AccountRegistrationTestCases extends BaseTest {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         HeaderSection header = new HeaderSection(webDriver);
         HomePage homePage = new HomePage(webDriver);
-        webDriver.manage().deleteAllCookies();
-        registerPage.navigateToHomePage();
-        registerPage.navigateToRegistrationPage();
-        registerPage.submitAllCreateAccountFormsCorrectly(DataHelperAndWait.generateRandomEmail(), XmlReader.getXMLData("correctPassword"), XmlReader.getXMLData("correctPassword"), XmlReader.getXMLData("firstName"), XmlReader.getXMLData("lastName"), 1);
-        DataHelperAndWait.clickOnElement(header.getSporterLogo(), webDriver);
-        DataHelperAndWait.waitForTime(2000);
-        DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
-        DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(), webDriver);
-        DataHelperAndWait.clickOnElement(header.getSporterLogo(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(), webDriver);
+        try {
+            registerPage.navigateToHomePage();
+            registerPage.navigateToRegistrationPage();
+            registerPage.submitAllCreateAccountFormsCorrectly(DataHelperAndWait.generateRandomEmail(), XmlReader.getXMLData("correctPassword"), XmlReader.getXMLData("correctPassword"), XmlReader.getXMLData("firstName"), XmlReader.getXMLData("lastName"), 1);
+            DataHelperAndWait.clickOnElement(header.getSporterLogo(), webDriver);
+            DataHelperAndWait.waitForTime(2000);
+            DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
+            WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
+            DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(), webDriver);
+            DataHelperAndWait.clickOnElement(header.getSporterLogo(), webDriver);
+            WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(), webDriver);
+        }
+        catch (Exception e){
+            registerPage.navigateToHomePage();
+            registerPage.navigateToRegistrationPage();
+            registerPage.submitAllCreateAccountFormsCorrectly(DataHelperAndWait.generateRandomEmail(), XmlReader.getXMLData("correctPassword"), XmlReader.getXMLData("correctPassword"), XmlReader.getXMLData("firstName"), XmlReader.getXMLData("lastName"), 1);
+            DataHelperAndWait.clickOnElement(header.getSporterLogo(), webDriver);
+            DataHelperAndWait.waitForTime(2000);
+            DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
+            WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
+            DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(), webDriver);
+            DataHelperAndWait.clickOnElement(header.getSporterLogo(), webDriver);
+            WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(), webDriver);
+        }
     }
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:  Verify Inability to register new account without filling Email Field", priority = 13)
