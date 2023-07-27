@@ -44,11 +44,10 @@ public class KSACartRulesTestCases extends CartRulesTestCases {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
-        productDetailsPage.keepShoppingAfterAddingToCart();
-        productDetailsPage.addToCart();
-        productDetailsPage.keepShopping();
-        productDetailsPage.addToCart();
-        productDetailsPage.keepShopping();
+        productDetailsPage.displayTheProduct();
+
+        DataHelperAndWait.waitToBeVisible(productDetailsPage.getQuantityField(),webDriver);
+        DataHelperAndWait.updateAllText(productDetailsPage.getQuantityField(),"4");
         productDetailsPage.addToCart();
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(), webDriver);
         DataHelperAndWait.refreshPage(webDriver);

@@ -99,7 +99,7 @@ catch (Exception w){
 }
     }
 
-    @Test(groups = { "1.2 High Severity"}, description = "{{CountryName}}: Verify clicking on My Rewards Option redirect the user to the correct Page ", priority = 4)
+    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Verify clicking on My Rewards Option redirect the user to the correct Page ", priority = 4)
     public void verifyClickingOnMyRewardsOptionsWorksCorrectly() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);

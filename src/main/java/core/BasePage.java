@@ -53,7 +53,7 @@ public class BasePage {
     public static String productUrlQatarWithHighPrice2 = "/dymatize-iso-100-7164";
     public static String productUrlQatarWithHighPrice3 = "/dymatize-elite-whey-7161";
     public static String productUrlQatarWithHighPrice4 = "/evl-nutrition-100-whey-protein-55126";
-    public static String productUrlJordanWithHighPrice2 = "/dymatize-elite-casein-7519/";
+    public static String productUrlJordanWithHighPrice2 = "/personal-records-supplements-larry-wheels-series-isolate-protein-57809/";
     public static String oOSProductUrl = "";
     public static String bundleUrl = "";
     public static String bogoProduct = "";
