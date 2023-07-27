@@ -11,7 +11,8 @@ import org.testng.annotations.BeforeClass;
 import sporter_pages.homepage_classes.EgyptHomePage;
 import sporter_pages.myAccountPages.BahrainMyAccountPage;
 
-public class BahrainAccountRegistrationTestCases extends AccountRegistrationTestCases{    @BeforeClass(alwaysRun = true)
+public class BahrainAccountRegistrationTestCases extends AccountRegistrationTestCases{
+@BeforeClass(alwaysRun = true)
 public void switchToBahrainStore() {
     BahrainMyAccountPage bahrainMyAccountPage = new BahrainMyAccountPage(webDriver);
     EgyptHomePage egyptHomePage = new EgyptHomePage(webDriver);
