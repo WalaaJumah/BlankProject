@@ -60,6 +60,7 @@ public class BasePage {
     public final String aeDomain = "/en-ae";
     public final String omanDomain = "/en-om";
     public final String bahrainDomain = "/en-bh";
+    public final String iraqDomain = "/en-iq";
     public final String kuwaitDomain = "/en-kw";
     public final String egyptDomain = "/en-eg";
     public final String jordanDomain = "/en-jo";
