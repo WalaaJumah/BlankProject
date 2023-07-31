@@ -1,5 +1,6 @@
 package core;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -86,16 +87,15 @@ public class BaseTest {
 //                webDriver = new FirefoxDriver(options);
                 break;
             case "chrome":
+                //Selenium Version 3
                 //This Statement will run always
-                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver114.exe");
+//                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver114.exe");
 //                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriverVersion110.exe");
 
 //                ChromeOptions chromeOptions=new ChromeOptions();
 //                chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
 //                webDriver = new ChromeDriver(chromeOptions);
-                webDriver = new ChromeDriver();
-
-
+//                webDriver = new ChromeDriver();
                 //Chrome headless
 //                ChromeOptions opt = new ChromeOptions();
 //                opt.addArguments("headless");
@@ -107,6 +107,13 @@ public class BaseTest {
 //                options.addArguments("disable-gpu");
 //                options.addArguments("window-size=1200,1100");
 //                webDriver = new ChromeDriver(options);
+//                webDriver.navigate().to("https://www.sporter.com");
+
+                //Selenium Version4.10
+                WebDriverManager.chromedriver().setup();
+                ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.setPageLoadStrategy(PageLoadStrategy.NONE);
+                webDriver = new ChromeDriver(chromeOptions);
                 webDriver.navigate().to("https://www.sporter.com");
 
                 break;

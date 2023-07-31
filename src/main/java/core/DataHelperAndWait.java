@@ -23,13 +23,15 @@ import static org.testng.Assert.assertTrue;
 public  class DataHelperAndWait  {
 
     private static int WaitTime=26;
+
+
     //test21add
 public static void navigateToUrl(String uRL, WebDriver webDriver) {
     webDriver.navigate().to(uRL);
 }
     public static   void waitForElement(WebElement element, WebDriver webDriver) {
         WebDriverWait wait;
-        wait = new WebDriverWait(webDriver, WaitTime);
+        wait = new WebDriverWait(webDriver, Duration.ofSeconds(WaitTime));
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
@@ -43,7 +45,7 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
 
     public static  boolean isDisplayed(WebElement element, WebDriver webDriver) {
         WebDriverWait wait;
-        wait = new WebDriverWait(webDriver, WaitTime);
+        wait = new WebDriverWait(webDriver, Duration.ofSeconds(WaitTime));
         return wait.until(ExpectedConditions.visibilityOf(element)).isDisplayed();
     }
     public static  boolean isPresent(WebElement webElement,WebDriver webDriver) {
@@ -62,19 +64,19 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
 
     public static  void waitToBeClickable(WebElement element, WebDriver webDriver) {
         WebDriverWait wait;
-        wait = new WebDriverWait(webDriver, WaitTime);
+        wait = new WebDriverWait(webDriver, Duration.ofSeconds(WaitTime));
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
     public static  void waitToBePresent(String Xpath, WebDriver webDriver) {
         WebDriverWait wait;
-        wait = new WebDriverWait(webDriver, WaitTime);
+        wait = new WebDriverWait(webDriver, Duration.ofSeconds(WaitTime));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Xpath)));
     }
 
     public static  void waitToBeVisible(WebElement element, WebDriver webDriver) {
         WebDriverWait wait;
-        wait = new WebDriverWait(webDriver, WaitTime);
+        wait = new WebDriverWait(webDriver, Duration.ofSeconds(WaitTime));
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
@@ -115,7 +117,7 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
     }
     public static void HandleAlert(WebDriver driver, WebDriverWait wait) {
         if (wait == null) {
-            wait = new WebDriverWait(driver, 5);
+            wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         }
 
         try {
@@ -181,7 +183,7 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
         }
     }
     public static void waitTillFrameVisible(WebDriver webDriver, WebElement frame){
-     WebDriverWait wait = new WebDriverWait(webDriver,WaitTime);
+     WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(WaitTime));
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frame));
     }
     public static  void uploadImage(WebElement element, String imageName) {
@@ -227,7 +229,7 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
         }
     }
     public static  void waitForUrlContains(String expectedString, WebDriver driver) {
-        WebDriverWait wait = new WebDriverWait(driver, WaitTime);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(WaitTime));
         ExpectedCondition<Boolean> urlIsCorrect = arg0 ->    driver.getCurrentUrl().contains(expectedString);
         wait.until(urlIsCorrect);
     }
@@ -384,7 +386,7 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
     }
     public static void waitTillTextChanges(By element,WebDriver webDriver, String expectedText){
         WebDriverWait wait;
-        wait = new WebDriverWait(webDriver, WaitTime);
+        wait = new WebDriverWait(webDriver, Duration.ofSeconds(WaitTime));
         wait.until(ExpectedConditions.invisibilityOfElementWithText(element,expectedText));
     }
     public static void captureJavaScriptErrors(WebDriver webDriver){

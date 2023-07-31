@@ -27,6 +27,7 @@ import xml_reader.XmlReader;
 
 import java.io.IOException;
 import java.text.DecimalFormat;
+import java.time.Duration;
 import java.util.List;
 
 @Test(groups = "2.08 Cart Page")
@@ -233,7 +234,7 @@ public class CartTestCases extends BaseTest {
         for (int i = 0; i < menuSize; i++) {
             try {
                 select.selectByIndex(i);
-                wait = new WebDriverWait(webDriver, 3);
+                wait = new WebDriverWait(webDriver, Duration.ofSeconds(3));
                 wait.until(ExpectedConditions.visibilityOf(productDetailsPage.getAddToCartBtn())).isDisplayed();
                 productDetailsPage.getAddToCartBtn().click();
                 productDetailsPage.viewCart();

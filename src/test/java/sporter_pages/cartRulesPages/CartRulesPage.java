@@ -16,6 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import sporter_pages.cartPages.CartPage;
 
 import java.io.IOException;
+import java.time.Duration;
 
 @Getter
 public class CartRulesPage extends CartPage {
@@ -40,7 +41,7 @@ public class CartRulesPage extends CartPage {
     public void clearAllItems(int productNumber) {
         String removeItemBtn1 = "(//div[@id='removeItemBtn'])";
         WebDriverWait wait;
-        wait = new WebDriverWait(webDriver, 20);
+        wait = new WebDriverWait(webDriver, Duration.ofSeconds(20));
         for (int i = 1; i <= productNumber; i++) {
             wait.until(ExpectedConditions.visibilityOf(webDriver.findElement(By.xpath(removeItemBtn1 + "[" + i + "]")))).click();
             DataHelperAndWait.waitForTime(2000);

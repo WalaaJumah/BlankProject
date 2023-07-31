@@ -23,6 +23,7 @@ import sporter_pages.productPage.ProductDetailsPage;
 import xml_reader.XmlReader;
 
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 
 @Getter
@@ -282,7 +283,7 @@ public class CartPage extends BasePage {
 
     public void waitTillQtyValueChanges(String expectedText) {
         WebDriverWait wait;
-        wait = new WebDriverWait(webDriver, 8);
+        wait = new WebDriverWait(webDriver, Duration.ofSeconds(8));
         wait.until(ExpectedConditions.invisibilityOfElementWithText(By.id("cartItemQty"), expectedText));
     }
 

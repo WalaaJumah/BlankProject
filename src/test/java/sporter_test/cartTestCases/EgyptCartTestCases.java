@@ -24,6 +24,7 @@ import sporter_pages.productPage.ProductDetailsPage;
 import xml_reader.XmlReader;
 
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 
 public class EgyptCartTestCases extends CartTestCases {
@@ -231,7 +232,7 @@ public void verifyAbilityToClickOnSportsMenuIsDisplayedFromCartPage() throws IOE
             for (int i = 0; i < menuSize; i++) {
                 try {
                     select.selectByIndex(i);
-                    wait = new WebDriverWait(webDriver, 3);
+                    wait = new WebDriverWait(webDriver, Duration.ofSeconds(3));
                     wait.until(ExpectedConditions.visibilityOf(productDetailsPage.getAddToCartBtn())).isDisplayed();
                     productDetailsPage.getAddToCartBtn().click();
                     productDetailsPage.viewCart();

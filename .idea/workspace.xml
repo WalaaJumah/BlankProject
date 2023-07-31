@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="afb02993-c62a-444a-89fa-77aad142808c" name="Changes" comment="AUT-420 Upgrad TestNG Dependancy" />
+    <list default="true" id="afb02993-c62a-444a-89fa-77aad142808c" name="Changes" comment="AUT-420 Upgrad TestNG Dependancy">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/cartPages/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/cartPages/CartPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/cartRulesPages/CartRulesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/cartRulesPages/CartRulesPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/cartTestCases/CartTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/cartTestCases/CartTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/cartTestCases/EgyptCartTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/cartTestCases/EgyptCartTestCases.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,9 +26,6 @@
         <option value="Class" />
       </list>
     </option>
-  </component>
-  <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="origin/AUT-420-Upgrad-TestNG-to-the-latest-version-7.8.0" />
   </component>
   <component name="Git.Pull.Settings">
     <option name="OPTIONS">
@@ -151,10 +157,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/Sporter2.1OnProdution/UAEAndKSASmoke.xml" />
         <item itemvalue="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/Sporter2.1OnProdution/ProductionSporter2.1SmokeReport.xml" />
-        <item itemvalue="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/RunTest.xml" />
         <item itemvalue="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/PreRunningTestCasesGroup.xml" />
+        <item itemvalue="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/RunTest.xml" />
+        <item itemvalue="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/Sporter2.1OnProdution/UAEAndKSASmoke.xml" />
         <item itemvalue="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/BahrainStore/BahrainSmokeTesting.xml" />
       </list>
     </recent_temporary>
@@ -163,7 +169,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4cc95732-25cc-415a-acca-362cf2afbff2" name="Changes" comment=" Update Smoketestt.xml" />
+      <changelist id="afb02993-c62a-444a-89fa-77aad142808c" name="Changes" comment="AUT-420 Upgrad TestNG Dependancy" />
       <created>1657318838187</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -400,14 +406,7 @@
       <option name="project" value="LOCAL" />
       <updated>1681634980163</updated>
     </task>
-    <task id="LOCAL-00034" summary="AUT-420 Upgrad TestNG Dependancy">
-      <created>1690788831766</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1690788831766</updated>
-    </task>
-    <option name="localTasksCounter" value="35" />
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -462,9 +461,7 @@
     <MESSAGE value="Update some test cases" />
     <MESSAGE value=" Update smoke testing test cases" />
     <MESSAGE value=" Update Smoketestt.xml" />
-    <MESSAGE value="s" />
-    <MESSAGE value="AUT-420 Upgrad TestNG Dependancy" />
-    <option name="LAST_COMMIT_MESSAGE" value="AUT-420 Upgrad TestNG Dependancy" />
+    <option name="LAST_COMMIT_MESSAGE" value=" Update Smoketestt.xml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
