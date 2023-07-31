@@ -4,21 +4,22 @@
  * @classDescription
  */
 
-package sporter_test.cartRulesTestCases;
+package sporter_test.footer_test_cases;
 
 import core.BasePage;
 import lombok.Getter;
 import org.testng.annotations.BeforeClass;
 import sporter_pages.homepage_classes.IraqHomePage;
-import sporter_test.AccountRegistrationTestCases.AccountRegistrationTestCases;
+
 @Getter
-public class IraqCartRulesTestCases extends CartRulesTestCases {
+public class IraqFooterTestCases extends FooterTestCases{
+
     @BeforeClass(alwaysRun = true)
-    public void IraqCartRulesTestCases() {
+    public void switchToIraqStore() {
         IraqHomePage iraqHomePage = new IraqHomePage(webDriver);
         iraqHomePage.switchCountry(iraqHomePage.getIraqCountry());
         if (webDriver.getCurrentUrl().contains(iraqHomePage.iraqDomain)) {
-            System.out.println("You are in IraqCheckoutForRegisteredTestCases Store");
+            System.out.println("You are in IraqMyAccountTestCases Store");
         } else {
             webDriver.navigate().to(BasePage.BaseURL + iraqHomePage.iraqDomain);
             CloseInitialDialog();

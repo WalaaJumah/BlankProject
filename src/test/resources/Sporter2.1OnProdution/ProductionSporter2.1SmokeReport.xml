@@ -19,6 +19,9 @@
             </run>
         </groups>
         <classes>
+            <class name="sporter_test.sports_category_test_cases.UAESportsCategoryTestCases"></class>
+            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.UAEVitaminsAndHealthCategoryTestCases"/>
+            <class name="sporter_test.womens_only_category_test_cases.UAEWomensOnlyCategoryTestCases"/>
 
             <class name="sporter_test.cartRulesTestCases.KSACartRulesTestCases"></class>
 
