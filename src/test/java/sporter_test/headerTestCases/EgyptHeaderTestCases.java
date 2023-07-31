@@ -24,7 +24,7 @@ public class EgyptHeaderTestCases extends HeaderTestCases {
             System.out.println("You are in Egypt Store");
         } else {
             webDriver.navigate().to(BasePage.BaseURL + egyptHomePage.egyptDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
         }
     }
 //    @Test(groups = {"All Smoke Testing Result","1.1 Critical Severity"},description = "(Egypt Store/English Version): Ability to access all stores using Country List appearing in the Header", priority = 1)

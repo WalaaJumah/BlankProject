@@ -37,7 +37,7 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
         }
         else {
             webDriver.navigate().to(BasePage.BaseURL+jordanHomePage.jordanDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
             System.out.println(webDriver.getCurrentUrl());
         }
         storeCountry="Jordan";

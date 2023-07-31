@@ -62,7 +62,7 @@ public class GuestCheckoutCyclePage extends BasePage {
     private WebElement lastNameField;
     @FindBy(id = "emailField")
     private WebElement emailField;
-    @FindBy(xpath = "//input[starts-with(@class,'teleInput_input')]")
+    @FindBy(id = "phoneNumber")
     private WebElement phoneField;
     @FindBy(id = "addressNameField")
     private WebElement addressNameField;

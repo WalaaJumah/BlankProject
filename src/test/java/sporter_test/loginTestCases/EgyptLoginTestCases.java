@@ -19,7 +19,7 @@ public class EgyptLoginTestCases extends LoginTestCases {
             System.out.println("You are in Egypt Store");
         } else {
             webDriver.navigate().to(BasePage.BaseURL + egyptHomePage.egyptDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
         }
     }
 }

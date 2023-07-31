@@ -20,7 +20,7 @@ public class EgyptMyAccountTestCases extends MyAccountTestCases {
             System.out.println("You are in Egypt Store");
         } else {
             webDriver.navigate().to(BasePage.BaseURL + egyptHomePage.egyptDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
         }
         storeCountry = "Egypt";
         countryCode = "20";

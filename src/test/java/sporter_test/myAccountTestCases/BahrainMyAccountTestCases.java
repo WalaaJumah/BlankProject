@@ -22,7 +22,7 @@ public class BahrainMyAccountTestCases extends MyAccountTestCases {
             System.out.println("You are in Bahrain Store");
         } else {
             webDriver.navigate().to(BasePage.BaseURL + egyptHomePage.bahrainDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
         }
         storeCountry = "Bahrain";
         countryCode = "973";

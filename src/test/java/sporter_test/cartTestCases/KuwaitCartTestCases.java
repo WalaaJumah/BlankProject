@@ -28,7 +28,7 @@ public class KuwaitCartTestCases extends CartTestCases{
             System.out.println("You are in Kuwait Store");
         } else {
             webDriver.navigate().to(BasePage.BaseURL + egyptHomePage.kuwaitDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
         }
         storeCountry="Kuwait";
         System.out.println(webDriver.getCurrentUrl());

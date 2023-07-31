@@ -21,7 +21,7 @@ public class IraqCartRulesTestCases extends CartRulesTestCases {
             System.out.println("You are in IraqCheckoutForRegisteredTestCases Store");
         } else {
             webDriver.navigate().to(BasePage.BaseURL + iraqHomePage.iraqDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
         }
     }
 }

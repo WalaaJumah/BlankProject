@@ -21,7 +21,7 @@ public class UAEHeaderTestCases extends HeaderTestCases {
             System.out.println("You are in UAE Store");
         } else {
             webDriver.navigate().to(BasePage.BaseURL + uaeHomePage.aeDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
             System.out.println(webDriver.getCurrentUrl());
         }
     }

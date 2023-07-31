@@ -19,7 +19,7 @@ public class QatarHealthyFoodTestCases extends HealthyFoodTestCases {
             System.out.println("You are in Qatar Store");
         } else {
             webDriver.navigate().to(BasePage.BaseURL + qatarHomePage.qatarDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
             System.out.println(webDriver.getCurrentUrl());
         }
         storeCountry = "Qatar";

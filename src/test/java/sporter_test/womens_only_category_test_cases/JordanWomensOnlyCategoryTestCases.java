@@ -20,7 +20,7 @@ public class JordanWomensOnlyCategoryTestCases extends WomensOnlyCategoryTestCas
             System.out.println("You are in Jordan Store");
         } else {
             webDriver.navigate().to(BasePage.BaseURL + jordanHomePage.jordanDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
             System.out.println(webDriver.getCurrentUrl());
         }
         storeCountry = "Jordan";

@@ -27,7 +27,7 @@ public class OmanCartTestCases extends CartTestCases{
             System.out.println("You are in Oman Store");
         } else {
             webDriver.navigate().to(BasePage.BaseURL + egyptHomePage.omanDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
         }
     }
     @Test(enabled = false,groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 24)

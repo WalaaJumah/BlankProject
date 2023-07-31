@@ -27,7 +27,7 @@ public class KSASportsSupplementsCategoryTestCases extends SportsSupplementsCate
             System.out.println("You are in KSA Store");
         } else {
             webDriver.navigate().to(BaseURL + ksaHomePage.saudiDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
         }
         DataHelperAndWait.clickOnElement(headerSection.getLanguageSelector(), webDriver);
         WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage, webDriver);

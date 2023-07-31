@@ -22,7 +22,7 @@ public class KuwaitWomensOnlyCategoryTestCases extends WomensOnlyCategoryTestCas
             System.out.println("You are in Kuwait Store");
         } else {
             webDriver.navigate().to(BasePage.BaseURL + egyptHomePage.kuwaitDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
         }
     }
 }
