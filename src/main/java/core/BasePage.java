@@ -39,7 +39,7 @@ public class BasePage {
     public static String productUrlKSA2 = "/efx-karbolyn-fuel";
     public static String productUrlKSA3 = "/windmill-natural-vitamins-omega-3-1000mg-with-epa-dha";
     public static String productUrlKSA4 = "/evl-nutrition-bcaa-5000-capsules-13934/";
-    public static String productUrlKSA5 = "/natrol-omega-3-fish-oil-1000mg-22835/";
+    public static String productUrlKSA5 = "/novo-protein-chips-box-of-6/";
     public static String productUrlKSA6 = "/yumearth-organic-assorted-vitamin-c-lollipops-14-pops";
     public static String productUrlKSAWithHighPrice1 = "/puma-speed-orbiter-black-nrgy-red-yellow-33980";
     public static String productUrlKSAWithHighPrice2 = "/puma-speed-orbiter-black-nrgy-red-yellow-33764/";

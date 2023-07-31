@@ -44,12 +44,25 @@ public class HomePageTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure clicking on the banners inside the rotating slider section works correctly", priority = 6)
     public void verifyClickingOnTheBannersInsideTheHomePageRotatingSliderWillRedirectTheUserToCorrectPage() throws IOException {
         HomePage homePage = new HomePage(webDriver);
-        for (int i = 0; i < homePage.getHomePageRotatingSliderPagingList().size(); i++) {
-            DataHelperAndWait.scrollToPositionZero(webDriver);
-            DataHelperAndWait.clickOnElement(homePage.getHomePageRotatingSliderPagingList().get(i), webDriver);
-            homePage.clickOnBannerInRotatingSliderSection();
-            homePage.verifyTheDisplayedPageDoesNotHaveErrors();
+        try {
             homePage.navigateToHomePage();
+            for (int i = 0; i < homePage.getHomePageRotatingSliderPagingList().size(); i++) {
+                DataHelperAndWait.scrollToPositionZero(webDriver);
+                DataHelperAndWait.clickOnElement(homePage.getHomePageRotatingSliderPagingList().get(i), webDriver);
+                homePage.clickOnBannerInRotatingSliderSection();
+                homePage.verifyTheDisplayedPageDoesNotHaveErrors();
+                homePage.navigateToHomePage();
+            }
+        }
+        catch (Exception e){
+            homePage.navigateToHomePage();
+            for (int i = 0; i < homePage.getHomePageRotatingSliderPagingList().size(); i++) {
+                DataHelperAndWait.scrollToPositionZero(webDriver);
+                DataHelperAndWait.clickOnElement(homePage.getHomePageRotatingSliderPagingList().get(i), webDriver);
+                homePage.clickOnBannerInRotatingSliderSection();
+                homePage.verifyTheDisplayedPageDoesNotHaveErrors();
+                homePage.navigateToHomePage();
+            }
         }
     }
 
