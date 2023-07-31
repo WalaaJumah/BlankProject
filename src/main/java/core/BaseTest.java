@@ -5,7 +5,9 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
@@ -79,12 +81,19 @@ public class BaseTest {
 //    Check if parameter passed from TestNG is 'firefox'
 
             case "firefox":
-                System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver.exe");
-                webDriver = new FirefoxDriver();
-                //FirefoxDriver headless
+                //Selenium 3.151
+//                System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver.exe");
+//                webDriver = new FirefoxDriver();
+//                //FirefoxDriver headless
 //                FirefoxOptions options  = new FirefoxOptions();
 //                options.addArguments("headless");
 //                webDriver = new FirefoxDriver(options);
+
+                //selenium 4.10
+                WebDriverManager.firefoxdriver().setup();
+                FirefoxOptions firefoxOptions = new FirefoxOptions();
+                firefoxOptions.setPageLoadStrategy(PageLoadStrategy.NONE);
+                webDriver = new FirefoxDriver(firefoxOptions);
                 break;
             case "chrome":
                 //Selenium Version 3
@@ -115,11 +124,26 @@ public class BaseTest {
                 chromeOptions.setPageLoadStrategy(PageLoadStrategy.NONE);
                 webDriver = new ChromeDriver(chromeOptions);
                 webDriver.navigate().to("https://www.sporter.com");
+                //**Chrome Headless
+//                WebDriverManager.chromedriver().setup();
+//                ChromeOptions chromeOptions = new ChromeOptions();
+//                 chromeOptions.addArguments("headless");
+//                 chromeOptions.addArguments("disable-gpu");
+//                  chromeOptions.addArguments("window-size=1200,1100");
+//                chromeOptions.setPageLoadStrategy(PageLoadStrategy.EAGER);
+//                webDriver = new ChromeDriver(chromeOptions);
+//                webDriver.manage().window().maximize();
 
                 break;
             case "edge":
-                System.setProperty("webdriver.edge.driver", "src/test/resources/drivers/msedgedriver.exe");
-                webDriver = new EdgeDriver();
+                //Selenium 3
+//                System.setProperty("webdriver.edge.driver", "src/test/resources/drivers/msedgedriver.exe");
+//                webDriver = new EdgeDriver();
+//                Selenium 4.10
+                WebDriverManager.edgedriver().setup();
+                EdgeOptions edgeOptions = new EdgeOptions();
+                edgeOptions.setPageLoadStrategy(PageLoadStrategy.NONE);
+                webDriver = new EdgeDriver(edgeOptions);
                 break;
             default:
 ////If no browser passed throw exception
