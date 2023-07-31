@@ -5,67 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="afb02993-c62a-444a-89fa-77aad142808c" name="Changes" comment=" Update Smoketestt.xml">
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/RecommendedProductsPage/IraqRecommendedProductPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/cartPages/IraqCartPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/cartRulesPages/IraqCartRulesPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/checkoutForRegisteredUserTPage/IraqCheckoutForRegisteredPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/forgetPasswordPage/IraqForgetPasswordPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/guestCheckoutCyclePages/IraqGuestCheckoutCyclePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/headerSection/IraqHeaderSection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/healthy_food_pages/IraqHealthyFoodPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/loginPage/IraqLoginPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/myAccountPages/IraqMyAccountPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/productPage/IraqProductDetailsPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/sportsSupplementsCategoryPages/IraqSportsSupplementsCategoryPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/sports_category_pages/IraqSportsCategoryPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/vitamins_and_health_category_pages/IraqVitaminsAndHealthCategoryPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/womens_only_category_pages/IraqWomensOnlyCategoryPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/RecommendedProductsTestCases/IraqRecommendedProductTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/cartTestCases/IraqCartTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/IraqCheckoutForRegisteredTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/footer_test_cases/IraqFooterTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/forgetPasswordTestCases/IraqForgetPasswordTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/IraqGuestCheckoutCycleTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/headerTestCases/IraqHeaderTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/healthy_food_category_test_cases/IraqHealthyFoodTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/homepage_test_cases/IraqHomePageTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/loginTestCases/IraqLoginTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/myAccountTestCases/IraqMyAccountTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/productTestCases/IraqProductDetailsTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/sportsSupplementsCategoryTestCases/IraqSportsSupplementsCategoryTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/sports_category_test_cases/IraqSportsCategoryTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/vitaminsAndHealthCategoryTestCases/IraqVitaminsAndHealthCategoryTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/womens_only_category_test_cases/IraqWomensOnlyCategoryTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AEFooterPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AEGuestUserPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AEMegaMenuPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AeAllPagesInsideCategoriesInMegaMenuPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AeBrandsPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AeCartPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AeHealthyFoodCategoryPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AeRecommendedProductsPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AeSearchPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AeSportSupplementsCategoryPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AeSportsCategoryPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AeVitaminsAndHealthCategoryPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AeWomenOnlyCategoryPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AEFooterPageTestCases.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AEGuestUserTestCases.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AEMegaMenuTestCases.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AccountRegistrationTestCases/IraqAccountRegistrationTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AccountRegistrationTestCases/IraqAccountRegistrationTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeAllPagesInsideCategoriesInMegaMenuTestCases.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeBrandsTestCases.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeCartTestCases.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeHealthyFoodCategoryTestCases.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeRecommendedProductsTestCases.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeSearchPageTestCases.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeSportSupplementsCategoryTestCases.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeSportsCategoryTestCases.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeVitaminsAndHealthCategoryTestCases.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AeWomenOnlyCategoryTestCases.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/cartRulesTestCases/IraqCartRulesTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/cartRulesTestCases/IraqCartRulesTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/Sporter2.1OnProdution/ProductionSporter2.1SmokeReport.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Sporter2.1OnProdution/ProductionSporter2.1SmokeReport.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +31,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="New_Sporter2.1_Without_Implicit_Wait" />
+        <entry key="$PROJECT_DIR$" value="Release25" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
