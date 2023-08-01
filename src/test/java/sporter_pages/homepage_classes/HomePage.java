@@ -373,6 +373,7 @@ public class HomePage extends BasePage {
             this.countryList.click();
             countryElement.click();
         } catch (Exception e) {
+            webDriver.navigate().refresh();
             DataHelperAndWait.isDisplayed(countryList, webDriver);
             this.countryList.click();
             countryElement.click();

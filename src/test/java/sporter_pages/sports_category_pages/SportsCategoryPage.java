@@ -74,9 +74,16 @@ public class SportsCategoryPage extends BasePage {
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
     public void navigateToSportsPage() throws IOException {
-        webDriver.navigate().to(BaseURL + sportsUrl);
-        DataHelperAndWait.waitForUrlContains(sportsUrl, webDriver);
-        verifyTheDisplayedPageDoesNotHaveErrors();
+        try {
+            webDriver.navigate().to(BaseURL + sportsUrl);
+            DataHelperAndWait.waitForUrlContains(sportsUrl, webDriver);
+            verifyTheDisplayedPageDoesNotHaveErrors();
+        }
+        catch(Exception e){
+            webDriver.navigate().to(BaseURL + sportsUrl);
+            DataHelperAndWait.waitForUrlContains(sportsUrl, webDriver);
+            verifyTheDisplayedPageDoesNotHaveErrors();
+        }
     }
     public void clickOnCapsAndHatsCategory() {
 
