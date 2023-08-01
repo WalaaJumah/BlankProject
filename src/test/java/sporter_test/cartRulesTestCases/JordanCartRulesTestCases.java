@@ -56,6 +56,7 @@ public class JordanCartRulesTestCases extends CartRulesTestCases {
     public void verify2ItemOfTheSameKindRuleWorksCorrectlyWhenIncreasingTheQtyTo2FromCartPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
+        try{
         webDriver.manage().deleteCookieNamed("guestCartId");
         productDetailsPage.displayTheProduct();
         productDetailsPage.addToCart();
@@ -66,6 +67,21 @@ public class JordanCartRulesTestCases extends CartRulesTestCases {
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(), webDriver);
         DataHelperAndWait.refreshPage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");}
+        catch (Exception E){
+            webDriver.manage().deleteCookieNamed("guestCartId");
+            productDetailsPage.displayTheProduct();
+            productDetailsPage.addToCart();
+            productDetailsPage.viewCart();
+            DataHelperAndWait.waitToBeVisible(cartPage.getIncreaseQtyBtn(), webDriver);
+            DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
+            DataHelperAndWait.waitForTime(2000);
+            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
+            WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(), webDriver);
+            DataHelperAndWait.refreshPage(webDriver);
+            webDriver.manage().deleteCookieNamed("guestCartId");
+        }
+
     }
 
     //TODO:https://sporter1.atlassian.net/browse/NS-488

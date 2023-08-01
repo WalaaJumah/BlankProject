@@ -14,7 +14,8 @@ import org.openqa.selenium.support.PageFactory;
 
 @Getter
 public class EgyptHomePage extends HomePage {
-    @FindBy(xpath = "(//li[@class='countryItem_container__StFb3']/a)[2]")
+//    @FindBy(xpath = "((//li[@class='countryItem_container__StFb3']/a)[2]")
+    @FindBy(xpath = "//li[@id='CountryItem_EG']/a")
     private WebElement egyptCountry;
 
     public EgyptHomePage(WebDriver webDriver) {

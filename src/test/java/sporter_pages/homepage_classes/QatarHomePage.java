@@ -10,7 +10,8 @@ import org.openqa.selenium.support.PageFactory;
 public class QatarHomePage extends HomePage {
 
     public final String qatarDomain = "/en-qa";
-    @FindBy(xpath = "(//li[@class='countryItem_container__StFb3']/a)[8]")
+//    @FindBy(xpath = "(//li[@class='countryItem_container__StFb3']/a)[8]")
+@FindBy(xpath = "//li[@id='CountryItem_QA']/a")
     private WebElement qatarCountry;
 
     public QatarHomePage(WebDriver webDriver) {

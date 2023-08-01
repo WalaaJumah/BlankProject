@@ -11,7 +11,8 @@ import org.openqa.selenium.support.PageFactory;
 public class KsaHomePage extends HomePage {
     public final String saudiDomain = "/en-sa";
     DataHelperAndWait dataHelperAndWait;
-    @FindBy(xpath = "(//li[@class='countryItem_container__StFb3']/a)[3]")
+    @FindBy(xpath = "//li[@id='CountryItem_SA']/a")
+    //    @FindBy(xpath = "(//li[@class='countryItem_container__StFb3']/a)[3]")
     private WebElement ksaCountry;
     public KsaHomePage(WebDriver webDriver) {
         super(webDriver);

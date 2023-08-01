@@ -14,7 +14,8 @@ import org.openqa.selenium.support.PageFactory;
 
 @Getter
 public class OmanMyAccountPage extends MyAccountPage {
-    @FindBy(xpath = "(//li[@class='countryItem_container__StFb3']/a)[7]")
+//    @FindBy(xpath = "(//li[@class='countryItem_container__StFb3']/a)[7]")
+    @FindBy(xpath = "//li[@id='CountryItem_OM']/a")
     private WebElement omanCountry;
 
 
