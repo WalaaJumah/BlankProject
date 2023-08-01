@@ -40,6 +40,7 @@ public class RecommendedProductTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the view Cart button appearing the Recommended products works correctly ", priority = 3)
     public void verifyViewCartWorksBtnCorrectly() {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
         productDetailsPage.addToCart();
         DataHelperAndWait.clickOnElement(productDetailsPage.getViewCartBtn(), webDriver);
         WebElementsAssertion.validateTheCurrentUrlContainsString(productDetailsPage.cartURL, webDriver);
@@ -55,6 +56,7 @@ public class RecommendedProductTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure to close the Recommended products pop up correctly", priority = 5)
     public void verifyCloseRecommendedPopupCorrectly() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
         RecommendedProductPage recommendedProductpage = new RecommendedProductPage(webDriver);
         recommendedProductpage.displayTheRecommendedProductsPopUp();
         DataHelperAndWait.clickOnElement(recommendedProductpage.getRecommendedProductsCloseIcon(), webDriver);
@@ -72,6 +74,7 @@ public class RecommendedProductTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure all components appear correctly in  Recommended products like keep shopping and view cart and products list and titles", priority = 7)
     public void verifyAllRecommendedPopupComponentsIsExist() throws IOException {
         RecommendedProductPage recommendedProductpage = new RecommendedProductPage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
         recommendedProductpage.displayTheRecommendedProductsPopUp();
         //Make sure the check circle icon is displayed
         WebElementsAssertion.validateTheElementIsDisplayed(recommendedProductpage.getCircleIcon(), webDriver);
@@ -86,7 +89,6 @@ public class RecommendedProductTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the name of product added to the Cart displayed correctly in the Recommended product pop-up", priority = 8)
     public void verifyTheNameOfProductAddedToCatDisplayedInTheRecommendedPopup() {
         RecommendedProductPage recommendedProductpage = new RecommendedProductPage(webDriver);
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         DataHelperAndWait.waitToBeVisible(recommendedProductpage.getAddedProductToCartMsg(), webDriver);
     }
 
