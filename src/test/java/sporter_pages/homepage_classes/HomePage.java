@@ -9,6 +9,7 @@ package sporter_pages.homepage_classes;
 import core.BasePage;
 import core.DataHelperAndWait;
 import lombok.Getter;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -369,11 +370,13 @@ public class HomePage extends BasePage {
 
     public void switchCountry(WebElement countryElement) {
         try {
+            WebElement countryList=webDriver.findElement(By.id("downArrow"));
             DataHelperAndWait.isDisplayed(countryList, webDriver);
             this.countryList.click();
             countryElement.click();
         } catch (Exception e) {
             webDriver.navigate().refresh();
+            WebElement countryList=webDriver.findElement(By.id("downArrow"));
             DataHelperAndWait.isDisplayed(countryList, webDriver);
             this.countryList.click();
             countryElement.click();
