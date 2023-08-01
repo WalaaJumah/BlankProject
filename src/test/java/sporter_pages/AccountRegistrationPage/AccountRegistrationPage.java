@@ -61,9 +61,9 @@ public class AccountRegistrationPage extends BasePage {
     private WebElement firstNameField;
     @FindBy(id = "lastNameInput")
     private WebElement lastNameField;
-    @FindBy(id = "1")
+    @FindBy(id = "maleOption")
     private WebElement maleOption;
-    @FindBy(id = "2")
+    @FindBy(id = "femaleOption")
     private WebElement femaleOption;
     @FindBy(id = "firstNameInput_errMsg")
     private WebElement firstNameErrorMs;
@@ -108,6 +108,7 @@ public class AccountRegistrationPage extends BasePage {
 
 
     public void navigateToRegistrationPage() throws IOException {
+        webDriver.manage().deleteAllCookies();
         webDriver.navigate().to(BaseURL + registerAccountLink);
         DataHelperAndWait.waitForTime(2000);
         verifyTheDisplayedPageDoesNotHaveErrors();

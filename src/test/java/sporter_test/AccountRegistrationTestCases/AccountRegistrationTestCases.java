@@ -311,6 +311,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         HeaderSection header = new HeaderSection(webDriver);
         HomePage homePage = new HomePage(webDriver);
+        webDriver.manage().deleteAllCookies();
         registerPage.navigateToRegistrationPage();
         registerPage.submitAllCreateAccountFormsCorrectly(DataHelperAndWait.generateRandomEmail(), XmlReader.getXMLData("correctPassword"), XmlReader.getXMLData("correctPassword"), XmlReader.getXMLData("firstName"), XmlReader.getXMLData("lastName"), 0);
         DataHelperAndWait.clickOnElement(header.getSporterLogo(), webDriver);
@@ -319,6 +320,8 @@ public class AccountRegistrationTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
         DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(), webDriver);
+        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.waitToBeVisible(header.getSporterLogo(), webDriver);
         DataHelperAndWait.clickOnElement(header.getSporterLogo(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(), webDriver);
 //        DataHelperAndWait.waitForTime(3000);
@@ -328,6 +331,7 @@ public class AccountRegistrationTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:  Verify Sign-up using facebook works correctly", priority = 23)
     public void verifySignUpUsingFaceBookWorks() throws IOException {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
+        webDriver.manage().deleteAllCookies();
         registerPage.navigateToRegistrationPage();
         DataHelperAndWait.clickOnElement(registerPage.getSignInUsingFacebookBtn(), webDriver);
         registerPage.verifyFaceBookIsActive();
