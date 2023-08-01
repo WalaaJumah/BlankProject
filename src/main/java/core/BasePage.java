@@ -54,7 +54,7 @@ public class BasePage {
     public static String productUrlQatarWithHighPrice2 = "/dymatize-iso-100-7164";
     public static String productUrlQatarWithHighPrice3 = "/dymatize-elite-whey-7161";
     public static String productUrlQatarWithHighPrice4 = "/evl-nutrition-100-whey-protein-55126";
-    public static String productUrlJordanWithHighPrice2 = "/personal-records-supplements-larry-wheels-series-isolate-protein-57809/";
+    public static String productUrlJordanWithHighPrice2 = "/evl-nutrition-stacked-protein-55117";
     public static String oOSProductUrl = "";
     public static String bundleUrl = "";
     public static String bogoProduct = "";
@@ -187,19 +187,37 @@ public class BasePage {
     public void verifyTheDisplayedPageDoesNotHaveErrors() throws IOException {
         String currentURL = webDriver.getCurrentUrl();
         System.out.println(" The current URL is: " + webDriver.getCurrentUrl());
-        Assert.assertFalse(this.getTitle().equalsIgnoreCase(SporterErrorPage.pageNotFoundTitle), "Page Not Found Is Displayed and the URL is " + webDriver.getCurrentUrl());
-        Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.productsCannotFindMsg), "The page is empty and the URL is " + webDriver.getCurrentUrl());
-        Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.exceptionPageMsg), "An error has happened during application run. See exception log for details in page and the URL is " + webDriver.getCurrentUrl());
-        Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.exceptionPageMsg2), "An error occurred on client and the URL is " + webDriver.getCurrentUrl());
-        Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.offerNotAvailableMsg), "The  offer is not available in your country page is displayed" + webDriver.getCurrentUrl());
-        Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.pageNotFoundMsg), "Page Not Found Is Displayed and the URL is " + webDriver.getCurrentUrl());
-        Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.productsCannotFindMsg), "This page is Empty and the URL is " + webDriver.getCurrentUrl());
-        Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.generatedContentErrorMsg), "We're sorry, an error has occurred while generating this content and the URL is " + webDriver.getCurrentUrl());
-        Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.backendError), "503 error and the URL is " + webDriver.getCurrentUrl());
-        Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.error503), "Backend fetch failed and the URL is " + webDriver.getCurrentUrl());
-        Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.pageUnderMaintenanceMsg), "Backend fetch failed and the URL is " + webDriver.getCurrentUrl());
-        Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.gatewayTimeOut),  "Gateway TimeOut Error" + webDriver.getCurrentUrl());
-        this.getStatusCode(currentURL);
+        try {
+            Assert.assertFalse(this.getTitle().equalsIgnoreCase(SporterErrorPage.pageNotFoundTitle), "Page Not Found Is Displayed and the URL is " + webDriver.getCurrentUrl());
+            Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.productsCannotFindMsg), "The page is empty and the URL is " + webDriver.getCurrentUrl());
+            Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.exceptionPageMsg), "An error has happened during application run. See exception log for details in page and the URL is " + webDriver.getCurrentUrl());
+            Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.exceptionPageMsg2), "An error occurred on client and the URL is " + webDriver.getCurrentUrl());
+            Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.offerNotAvailableMsg), "The  offer is not available in your country page is displayed" + webDriver.getCurrentUrl());
+            Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.pageNotFoundMsg), "Page Not Found Is Displayed and the URL is " + webDriver.getCurrentUrl());
+            Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.productsCannotFindMsg), "This page is Empty and the URL is " + webDriver.getCurrentUrl());
+            Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.generatedContentErrorMsg), "We're sorry, an error has occurred while generating this content and the URL is " + webDriver.getCurrentUrl());
+            Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.backendError), "503 error and the URL is " + webDriver.getCurrentUrl());
+            Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.error503), "Backend fetch failed and the URL is " + webDriver.getCurrentUrl());
+            Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.pageUnderMaintenanceMsg), "Backend fetch failed and the URL is " + webDriver.getCurrentUrl());
+            Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.gatewayTimeOut), "Gateway TimeOut Error" + webDriver.getCurrentUrl());
+            this.getStatusCode(currentURL);
+        }
+        catch (Exception e){
+            webDriver.navigate().refresh();
+            Assert.assertFalse(this.getTitle().equalsIgnoreCase(SporterErrorPage.pageNotFoundTitle), "Page Not Found Is Displayed and the URL is " + webDriver.getCurrentUrl());
+            Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.productsCannotFindMsg), "The page is empty and the URL is " + webDriver.getCurrentUrl());
+            Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.exceptionPageMsg), "An error has happened during application run. See exception log for details in page and the URL is " + webDriver.getCurrentUrl());
+            Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.exceptionPageMsg2), "An error occurred on client and the URL is " + webDriver.getCurrentUrl());
+            Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.offerNotAvailableMsg), "The  offer is not available in your country page is displayed" + webDriver.getCurrentUrl());
+            Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.pageNotFoundMsg), "Page Not Found Is Displayed and the URL is " + webDriver.getCurrentUrl());
+            Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.productsCannotFindMsg), "This page is Empty and the URL is " + webDriver.getCurrentUrl());
+            Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.generatedContentErrorMsg), "We're sorry, an error has occurred while generating this content and the URL is " + webDriver.getCurrentUrl());
+            Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.backendError), "503 error and the URL is " + webDriver.getCurrentUrl());
+            Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.error503), "Backend fetch failed and the URL is " + webDriver.getCurrentUrl());
+            Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.pageUnderMaintenanceMsg), "Backend fetch failed and the URL is " + webDriver.getCurrentUrl());
+            Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.gatewayTimeOut), "Gateway TimeOut Error" + webDriver.getCurrentUrl());
+            this.getStatusCode(currentURL);
+        }
     }
 
     public void navigateToBogoProduct() {
