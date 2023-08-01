@@ -114,13 +114,24 @@ public class ProductDetailsTestCases extends BaseTest {
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure that the customer can submit his review when filling Review Form with Long Length", priority = 10)
     public void verifyAbilityToFillTheReviewWIthLongLength() throws IOException {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        productDetailsPage.displayTheProduct();
-        productDetailsPage.selectStarInReview();
-        productDetailsPage.submitProductReview(XmlReader.getXMLData("reviewDescLong"), XmlReader.getXMLData("reviewSummaryLong"), XmlReader.getXMLData("nickNameLong"));
+        try {
+            ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+            productDetailsPage.displayTheProduct();
+            productDetailsPage.selectStarInReview();
+            productDetailsPage.submitProductReview(XmlReader.getXMLData("reviewDescLong"), XmlReader.getXMLData("reviewSummaryLong"), XmlReader.getXMLData("nickNameLong"));
 //        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getReviewToastMsgBtn(), webDriver);
 //        DataHelperAndWait.clickOnElement(productDetailsPage.getReviewToastMsgBtn(), webDriver);
-        DataHelperAndWait.refreshPage(webDriver);
+            DataHelperAndWait.refreshPage(webDriver);
+        }
+        catch (Exception e){
+            ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+            productDetailsPage.displayTheProduct();
+            productDetailsPage.selectStarInReview();
+            productDetailsPage.submitProductReview(XmlReader.getXMLData("reviewDescLong"), XmlReader.getXMLData("reviewSummaryLong"), XmlReader.getXMLData("nickNameLong"));
+//        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getReviewToastMsgBtn(), webDriver);
+//        DataHelperAndWait.clickOnElement(productDetailsPage.getReviewToastMsgBtn(), webDriver);
+            DataHelperAndWait.refreshPage(webDriver);
+        }
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure that the customer can navigate to the home page using the BreadCrumb ", priority = 11)

@@ -178,6 +178,7 @@ public class AccountRegistrationTestCases extends BaseTest {
             DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
             WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
             DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(), webDriver);
+            DataHelperAndWait.waitForTime(1000);
             DataHelperAndWait.waitToBeVisible(header.getSporterLogo(), webDriver);
             DataHelperAndWait.clickOnElement(header.getSporterLogo(), webDriver);
             WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(), webDriver);
