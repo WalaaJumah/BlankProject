@@ -21,7 +21,7 @@ public class OmanProductDetailsTestCases extends ProductDetailsTestCases{
             System.out.println("You are in Oman Store");
         } else {
             webDriver.navigate().to(BasePage.BaseURL + egyptHomePage.omanDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
         }
         storeCountry = "Oman";
     }

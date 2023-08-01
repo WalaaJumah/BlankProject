@@ -21,7 +21,7 @@ public class IraqHomePageTestCases extends HomePageTestCases{
             System.out.println("You are in IraqMyAccountTestCases Store");
         } else {
             webDriver.navigate().to(BasePage.BaseURL + iraqHomePage.iraqDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
         }
     }
 }

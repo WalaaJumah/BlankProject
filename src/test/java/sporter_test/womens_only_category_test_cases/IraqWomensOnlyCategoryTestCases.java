@@ -22,7 +22,7 @@ public class IraqWomensOnlyCategoryTestCases extends WomensOnlyCategoryTestCases
             System.out.println("You are in IraqForgetPasswordPage Store");
         } else {
             webDriver.navigate().to(BasePage.BaseURL + iraqHomePage.iraqDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
         }
     }
 }

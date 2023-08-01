@@ -22,7 +22,7 @@ public class OmanFooterTestCases extends FooterTestCases {
             System.out.println("You are in Oman Store");
         } else {
             webDriver.navigate().to(BasePage.BaseURL + egyptHomePage.omanDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
         }
     }
 }

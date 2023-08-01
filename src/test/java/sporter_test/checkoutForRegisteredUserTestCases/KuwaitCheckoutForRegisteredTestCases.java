@@ -35,7 +35,7 @@ public class KuwaitCheckoutForRegisteredTestCases extends  CheckoutForRegistered
             System.out.println("You are in Kuwait Store");
         } else {
             webDriver.navigate().to(BasePage.BaseURL + egyptHomePage.kuwaitDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
         }
         storeCountry="Kuwait";
         countryCode="965";
@@ -45,7 +45,7 @@ public class KuwaitCheckoutForRegisteredTestCases extends  CheckoutForRegistered
 
 //        HeaderSection h= new HeaderSection(webDriver);
 //        h.switchToKuwaitCountryInStg();
-//        this.CloseInitialDialog();
+//        this.//CloseInitialDialog();
     }
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 9)
     public void verifyOrderTotalCalculationInCartPageWorksCorrectly() throws IOException {

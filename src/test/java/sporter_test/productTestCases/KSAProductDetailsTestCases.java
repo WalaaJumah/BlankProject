@@ -33,7 +33,7 @@ public class KSAProductDetailsTestCases extends ProductDetailsTestCases {
             System.out.println("You are in KSA Store");
         } else {
             webDriver.navigate().to(BasePage.BaseURL + ksaHomePage.saudiDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
         }
         DataHelperAndWait.clickOnElement(headerSection.getLanguageSelector(), webDriver);
         System.out.println(webDriver.getCurrentUrl());

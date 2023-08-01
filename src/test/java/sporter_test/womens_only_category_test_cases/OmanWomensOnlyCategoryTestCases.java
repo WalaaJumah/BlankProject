@@ -22,7 +22,7 @@ public class OmanWomensOnlyCategoryTestCases extends WomensOnlyCategoryTestCases
             System.out.println("You are in Oman Store");
         } else {
             webDriver.navigate().to(BasePage.BaseURL + egyptHomePage.omanDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
         }
     }
 }

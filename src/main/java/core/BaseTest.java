@@ -76,92 +76,70 @@ public class BaseTest {
         BasePage.bogoProduct = bogoProduct;
         BasePage.oOSProductUrl = oOSProduct;
         BasePage.bundleUrl = bundleProductUrl;
-        //This ChromeWebDriver 108
-        switch (browser) {
-//    Check if parameter passed from TestNG is 'firefox'
-
-            case "firefox":
-                //Selenium 3.151
-//                System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver.exe");
-//                webDriver = new FirefoxDriver();
-//                //FirefoxDriver headless
-//                FirefoxOptions options  = new FirefoxOptions();
-//                options.addArguments("headless");
-//                webDriver = new FirefoxDriver(options);
-
-                //selenium 4.10
-                WebDriverManager.firefoxdriver().setup();
-                FirefoxOptions firefoxOptions = new FirefoxOptions();
-                firefoxOptions.setPageLoadStrategy(PageLoadStrategy.NONE);
-                webDriver = new FirefoxDriver(firefoxOptions);
-                break;
-            case "chrome":
-                //Selenium Version 3
-                //This Statement will run always
-//                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver114.exe");
-//                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriverVersion110.exe");
-
-//                ChromeOptions chromeOptions=new ChromeOptions();
-//                chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-//                webDriver = new ChromeDriver(chromeOptions);
-//                webDriver = new ChromeDriver();
-                //Chrome headless
-//                ChromeOptions opt = new ChromeOptions();
-//                opt.addArguments("headless");
-//                 webDriver = new ChromeDriver(opt);
-
-                //Chrome Headless from https://stackoverflow.com/questions/45562750/elementnotvisibleexception-when-use-headless-chrome-browser
-//                ChromeOptions options = new ChromeOptions();
-//                options.addArguments("headless");
-//                options.addArguments("disable-gpu");
-//                options.addArguments("window-size=1200,1100");
-//                webDriver = new ChromeDriver(options);
-//                webDriver.navigate().to("https://www.sporter.com");
-
-                //Selenium Version4.10
-                WebDriverManager.chromedriver().setup();
-                ChromeOptions chromeOptions = new ChromeOptions();
-                chromeOptions.setPageLoadStrategy(PageLoadStrategy.NONE);
-                webDriver = new ChromeDriver(chromeOptions);
-                webDriver.navigate().to("https://www.sporter.com");
-                //**Chrome Headless
-//                WebDriverManager.chromedriver().setup();
-//                ChromeOptions chromeOptions = new ChromeOptions();
-//                 chromeOptions.addArguments("headless");
-//                 chromeOptions.addArguments("disable-gpu");
-//                  chromeOptions.addArguments("window-size=1200,1100");
-//                chromeOptions.setPageLoadStrategy(PageLoadStrategy.EAGER);
-//                webDriver = new ChromeDriver(chromeOptions);
-//                webDriver.manage().window().maximize();
-
-                break;
-            case "edge":
-                //Selenium 3
-//                System.setProperty("webdriver.edge.driver", "src/test/resources/drivers/msedgedriver.exe");
-//                webDriver = new EdgeDriver();
-//                Selenium 4.10
-                WebDriverManager.edgedriver().setup();
-                EdgeOptions edgeOptions = new EdgeOptions();
-                edgeOptions.setPageLoadStrategy(PageLoadStrategy.NONE);
-                webDriver = new EdgeDriver(edgeOptions);
-                break;
-            default:
+        try {
+            switch (browser) {
+                case "firefox":
+                    //selenium 4.10
+                    WebDriverManager.firefoxdriver().setup();
+                    FirefoxOptions firefoxOptions = new FirefoxOptions();
+                    firefoxOptions.setPageLoadStrategy(PageLoadStrategy.NONE);
+                    webDriver = new FirefoxDriver(firefoxOptions);
+                    break;
+                case "chrome":
+                    //Selenium Version4.10
+                    WebDriverManager.chromedriver().setup();
+                    ChromeOptions chromeOptions = new ChromeOptions();
+                    chromeOptions.setPageLoadStrategy(PageLoadStrategy.NONE);
+                    webDriver = new ChromeDriver(chromeOptions);
+                    webDriver.navigate().to("https://www.sporter.com");
+                    break;
+                case "edge":
+                    WebDriverManager.edgedriver().setup();
+                    EdgeOptions edgeOptions = new EdgeOptions();
+                    edgeOptions.setPageLoadStrategy(PageLoadStrategy.NONE);
+                    webDriver = new EdgeDriver(edgeOptions);
+                    break;
+                default:
 ////If no browser passed throw exception
-                throw new Exception("Browser is not correct");
+                    throw new Exception("Browser is not correct");
+            }
+            webDriver.manage().window().maximize();
+            webDriver.navigate().to(environment + "/" + country);
+//            this.//CloseInitialDialog();
         }
-        webDriver.manage().window().maximize();
-//        webDriver.navigate().to(environment);
-        webDriver.navigate().to(environment + "/" + country);
-        this.CloseInitialDialog();
+        catch (Exception e){
+            tearDown();
+            switch (browser) {
+                case "firefox":
+                    //selenium 4.10
+                    WebDriverManager.firefoxdriver().setup();
+                    FirefoxOptions firefoxOptions = new FirefoxOptions();
+                    firefoxOptions.setPageLoadStrategy(PageLoadStrategy.NONE);
+                    webDriver = new FirefoxDriver(firefoxOptions);
+                    break;
+                case "chrome":
+                    //Selenium Version4.10
+                    WebDriverManager.chromedriver().setup();
+                    ChromeOptions chromeOptions = new ChromeOptions();
+                    chromeOptions.setPageLoadStrategy(PageLoadStrategy.NONE);
+                    webDriver = new ChromeDriver(chromeOptions);
+                    webDriver.navigate().to("https://www.sporter.com");
+                    break;
+                case "edge":
+                    WebDriverManager.edgedriver().setup();
+                    EdgeOptions edgeOptions = new EdgeOptions();
+                    edgeOptions.setPageLoadStrategy(PageLoadStrategy.NONE);
+                    webDriver = new EdgeDriver(edgeOptions);
+                    break;
+                default:
+////If no browser passed throw exception
+                    throw new Exception("Browser is not correct");
+            }
+            webDriver.manage().window().maximize();
+            webDriver.navigate().to(environment + "/" + country);
+//            this.//CloseInitialDialog();
+        }
     }
-
-
-//    @BeforeGroups(groups = "All Smoke Testing Result")
-//    @Parameters({"environment"})
-//
-//    public void setupBrowserForGroup(String environment) throws Exception {
-//        this.setupBrowser( environment);}
-
     @AfterClass(alwaysRun = true)
     public void tearDown() {
         if (webDriver != null)

@@ -21,7 +21,7 @@ public class IraqHealthyFoodTestCases extends HealthyFoodTestCases{
             System.out.println("You are in IraqMyAccountTestCases Store");
         } else {
             webDriver.navigate().to(BasePage.BaseURL + iraqHomePage.iraqDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
         }
     }
 }

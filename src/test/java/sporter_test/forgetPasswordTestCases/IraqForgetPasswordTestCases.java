@@ -22,7 +22,7 @@ public class IraqForgetPasswordTestCases extends ForgetPasswordTestCases{
             System.out.println("You are in IraqMyAccountTestCases Store");
         } else {
             webDriver.navigate().to(BasePage.BaseURL + iraqHomePage.iraqDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
         }
     }
 }

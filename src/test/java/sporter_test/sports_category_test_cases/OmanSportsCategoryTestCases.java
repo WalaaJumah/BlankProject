@@ -21,7 +21,7 @@ public class OmanSportsCategoryTestCases extends SportsCategoryTestCases {
             System.out.println("You are in Oman Store");
         } else {
             webDriver.navigate().to(BasePage.BaseURL + egyptHomePage.omanDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
         }
     }
 }

@@ -19,7 +19,7 @@ public class EgyptForgetPasswordTestCases extends ForgetPasswordTestCases {
             System.out.println("You are in Egypt Store");
         } else {
             webDriver.navigate().to(BasePage.BaseURL + egyptHomePage.egyptDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
         }
     }
 }

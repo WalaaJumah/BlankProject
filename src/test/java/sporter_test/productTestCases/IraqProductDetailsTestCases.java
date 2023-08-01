@@ -21,7 +21,7 @@ public class IraqProductDetailsTestCases extends ProductDetailsTestCases{
             System.out.println("You are in IraqForgetPasswordPage Store");
         } else {
             webDriver.navigate().to(BasePage.BaseURL + iraqHomePage.iraqDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
         }
     }
 

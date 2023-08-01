@@ -21,7 +21,7 @@ public class OmanSportsSupplementsCategoryTestCases extends SportsSupplementsCat
             System.out.println("You are in Oman Store");
         } else {
             webDriver.navigate().to(BasePage.BaseURL + egyptHomePage.omanDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
         }
     }
 }

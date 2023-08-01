@@ -40,7 +40,8 @@ public class KSACheckoutForRegisteredTestCases extends CheckoutForRegisteredTest
         }
         else {
             webDriver.navigate().to(BasePage.BaseURL+ksaHomePage.saudiDomain);
-            CloseInitialDialog();          }
+            //CloseInitialDialog();
+             }
         DataHelperAndWait.clickOnElement(headerSection.getLanguageSelector(),webDriver);
         WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage,webDriver);
         System.out.println(webDriver.getCurrentUrl());

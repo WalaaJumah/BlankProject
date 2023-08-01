@@ -21,7 +21,7 @@ public class OmanAccountRegistrationTestCases extends AccountRegistrationTestCas
             System.out.println("You are in Oman Store");
         } else {
             webDriver.navigate().to(BasePage.BaseURL + egyptHomePage.omanDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
         }
     }
 }

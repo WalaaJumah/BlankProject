@@ -27,7 +27,7 @@ public class QatarCartTestCases extends CartTestCases {
             System.out.println("You are in Qatar Store");
         } else {
             webDriver.navigate().to(BasePage.BaseURL + qatarHomePage.qatarDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
             System.out.println(webDriver.getCurrentUrl());
         }
 

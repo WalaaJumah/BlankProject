@@ -22,7 +22,7 @@ public class IraqVitaminsAndHealthCategoryTestCases extends VitaminsAndHealthCat
             System.out.println("You are in IraqForgetPasswordPage Store");
         } else {
             webDriver.navigate().to(BasePage.BaseURL + iraqHomePage.iraqDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
         }
     }
 }

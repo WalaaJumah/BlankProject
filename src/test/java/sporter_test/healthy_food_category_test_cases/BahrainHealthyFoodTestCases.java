@@ -21,7 +21,7 @@ public class BahrainHealthyFoodTestCases extends HealthyFoodTestCases {
             System.out.println("You are in Bahrain Store");
         } else {
             webDriver.navigate().to(BasePage.BaseURL + egyptHomePage.bahrainDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
         }
     }
 }

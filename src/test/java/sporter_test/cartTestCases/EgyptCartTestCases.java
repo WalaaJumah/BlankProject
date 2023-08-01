@@ -36,7 +36,7 @@ public class EgyptCartTestCases extends CartTestCases {
             System.out.println("You are in Egypt Store");
         } else {
             webDriver.navigate().to(BasePage.BaseURL + egyptHomePage.egyptDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
         }
 
     }

@@ -24,7 +24,7 @@ public class KSARecommendedProductTestCases extends RecommendedProductTestCases 
             System.out.println("You are in KSA Store");
         } else {
             webDriver.navigate().to(BasePage.BaseURL + ksaHomePage.saudiDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
         }
         DataHelperAndWait.clickOnElement(headerSection.getLanguageSelector(), webDriver);
         WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage, webDriver);

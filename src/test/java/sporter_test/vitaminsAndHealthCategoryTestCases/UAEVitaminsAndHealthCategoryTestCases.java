@@ -19,7 +19,7 @@ public class UAEVitaminsAndHealthCategoryTestCases extends VitaminsAndHealthCate
             System.out.println("You are in UAE Store");
         } else {
             webDriver.navigate().to(BasePage.BaseURL + uaeHomePage.aeDomain);
-            CloseInitialDialog();
+            //CloseInitialDialog();
             System.out.println(webDriver.getCurrentUrl());
         }
         storeCountry = "United Arab Emirates";
