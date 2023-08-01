@@ -14,11 +14,11 @@
         <parameter name="oOSProduct" value="/rip-van-protien-wafles-box-of-12/"/>
         <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
         <classes>
-<!--            <class name="sporter_test.checkoutForRegisteredUserTestCases.QatarCheckoutForRegisteredTestCases"></class>-->
-<!--            <class name="sporter_test.homepage_test_cases.QatarHomePageTestCases"/>-->
-<!--            <class name="sporter_test.headerTestCases.QatarHeaderTestCases"/>-->
-<!--            <class name="sporter_test.productTestCases.QatarProductDetailsTestCases"/>-->
-<!--            <class name="sporter_test.RecommendedProductsTestCases.QatarRecommendedProductTestCases"/>-->
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.QatarCheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.homepage_test_cases.QatarHomePageTestCases"/>
+            <class name="sporter_test.headerTestCases.QatarHeaderTestCases"/>
+            <class name="sporter_test.productTestCases.QatarProductDetailsTestCases"/>
+            <class name="sporter_test.RecommendedProductsTestCases.QatarRecommendedProductTestCases"/>
             <class name="sporter_test.AccountRegistrationTestCases.QatarAccountRegistrationTestCases"/>
             <class name="sporter_test.loginTestCases.QatarLoginTestCases"/>
             <class name="sporter_test.cartTestCases.QatarCartTestCases"></class>
