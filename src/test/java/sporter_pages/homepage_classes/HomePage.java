@@ -370,14 +370,18 @@ public class HomePage extends BasePage {
 
     public void switchCountry(WebElement countryElement) {
         try {
+            DataHelperAndWait.waitTillPageFullyLoaded(webDriver,20);
             WebElement countryList=webDriver.findElement(By.id("downArrow"));
+            DataHelperAndWait.waitTillPageFullyLoaded(webDriver,20);
             DataHelperAndWait.isDisplayed(countryList, webDriver);
             this.countryList.click();
             countryElement.click();
         } catch (Exception e) {
             webDriver.navigate().refresh();
+            DataHelperAndWait.waitTillPageFullyLoaded(webDriver,20);
             WebElement countryList=webDriver.findElement(By.id("downArrow"));
             DataHelperAndWait.isDisplayed(countryList, webDriver);
+            DataHelperAndWait.waitTillPageFullyLoaded(webDriver,20);
             this.countryList.click();
             countryElement.click();
         }

@@ -34,7 +34,18 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
         wait = new WebDriverWait(webDriver, Duration.ofSeconds(WaitTime));
         wait.until(ExpectedConditions.visibilityOf(element));
     }
-
+    public static String getPageReadyState(WebDriver webDriver1) {
+        Object readyState = ((JavascriptExecutor) webDriver1).executeScript("return document.readyState");
+        if (readyState != null) {
+            return readyState.toString();
+//                  return readyState;
+        }
+        return "";
+    }
+    public static void waitTillPageFullyLoaded(WebDriver webDriver, int WaitTime) {
+        new WebDriverWait(webDriver, Duration.ofSeconds(WaitTime)).until(
+                webDriver1 -> getPageReadyState(webDriver).equals("complete"));
+    }
     public static  void waitForTime(int milis) {
         try {
             Thread.sleep(milis);
