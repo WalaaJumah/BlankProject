@@ -90,7 +90,7 @@ public class GuestCheckoutCyclePage extends BasePage {
     private WebElement lastNameErrMsg;
     @FindBy(id = "emailField_errMsg")
     private WebElement emailErrMsg;
-    @FindBy(xpath = "//div[starts-with(@class,'teleInput_errorMsg')]")
+    @FindBy(id = "telephoneInputErrMsg")
     private WebElement phoneErrMsg;
     @FindBy(id = "addressNameField_errMsg")
     private WebElement addressErrMsg;
@@ -115,7 +115,7 @@ public class GuestCheckoutCyclePage extends BasePage {
     private WebElement dubaiCity;
     @FindBy(xpath = "//div[2]/div[2]/div[2]/div[2]")
     private WebElement abuDhabiCity;
-    @FindBy(xpath = "//span[starts-with(@class,'teleInput_code')]")
+    @FindBy(id = "countryCode")
     private WebElement countryCode;
     @FindBy(xpath = "//div[contains(@id,'cashondelivery')]//div[@id='circle']")
     private WebElement cODPaymentMethod;

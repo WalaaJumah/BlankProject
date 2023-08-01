@@ -287,7 +287,7 @@ catch (Exception w){
         myAccountPage.navigateToAddressesPage();
         DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(), webDriver);
         myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        myAccountPage.fillInNewAddressForm(XmlReader.getXMLData("firstName"),
+      myAccountPage.fillInNewAddressForm(XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("phoneNumber"),
                 XmlReader.getXMLData("AddressName"),
