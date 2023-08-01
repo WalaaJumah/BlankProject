@@ -114,7 +114,7 @@ public class ProductDetailsPage extends BasePage {
     private WebElement accountProfileOptions;
     @FindBy(id = "productTitle")
     private WebElement productName;
-    @FindBy(id = "FixedAddtoCart")
+    @FindBy(id = "fixedAddToCartBtn")
     private WebElement ProductHeaderBar;
     @FindBy(id = "fixedAddToCartBtn")
     private WebElement addToCartBtnInProductHeaderBar;
