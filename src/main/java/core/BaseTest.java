@@ -35,7 +35,7 @@ public class BaseTest {
     public final String staging2SiteURL = "https://staging2.sporter.com";
     public final String cartURL = "/checkout/cart/";
     public final String aeSiteURL = "/en-ae/";
-    public final String ksaSiteURL = "/en-sa/";
+    public final String ksaSiteURL = "/ar-sa/";
     public final String qatarSiteURL = "/en-qa/";
     public final String checkoutLoginStepURL = "/checkout";
     public final String freeCouponeCode = "spo15";

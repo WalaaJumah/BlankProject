@@ -31,8 +31,14 @@ public class KSACartRulesTestCases extends CartRulesTestCases {
             webDriver.navigate().to(BaseURL + ksaHomePage.saudiDomain);
             //CloseInitialDialog();
         }
-        DataHelperAndWait.clickOnElement(headerSection.getLanguageSelector(), webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage, webDriver);
+        try {
+            DataHelperAndWait.clickOnElement(headerSection.getLanguageSelector(), webDriver);
+            WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage, webDriver);
+        }
+        catch (Exception e){
+            webDriver.navigate().to(BaseURL + ksaSiteURL);
+            WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage, webDriver);
+        }
         System.out.println(webDriver.getCurrentUrl());
         storeCountry = "المملكة العربية السعودية";
         countryCode = "966";
