@@ -178,6 +178,7 @@ public class AccountRegistrationTestCases extends BaseTest {
             DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
             WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
             DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(), webDriver);
+            DataHelperAndWait.waitToBeVisible(header.getSporterLogo(), webDriver);
             DataHelperAndWait.clickOnElement(header.getSporterLogo(), webDriver);
             WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(), webDriver);
         }
@@ -333,6 +334,7 @@ public class AccountRegistrationTestCases extends BaseTest {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         webDriver.manage().deleteAllCookies();
         registerPage.navigateToRegistrationPage();
+        DataHelperAndWait.waitToBeVisible(registerPage.getSignInUsingFacebookBtn(), webDriver);
         DataHelperAndWait.clickOnElement(registerPage.getSignInUsingFacebookBtn(), webDriver);
         registerPage.verifyFaceBookIsActive();
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getFaceBookEmail(), webDriver);

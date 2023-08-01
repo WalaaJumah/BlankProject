@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54b7969d-5526-4dae-ab86-68f6f5665bb6" name="Changes" comment="AUT-420 Upgrad TestNG Dependancy">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/AccountRegistrationPage/AccountRegistrationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/AccountRegistrationPage/AccountRegistrationPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/AccountRegistrationTestCases/AccountRegistrationTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/AccountRegistrationTestCases/AccountRegistrationTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/productTestCases/ProductDetailsTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/productTestCases/ProductDetailsTestCases.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
