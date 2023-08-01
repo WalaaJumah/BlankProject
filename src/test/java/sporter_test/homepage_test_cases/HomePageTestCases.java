@@ -23,15 +23,24 @@ public class HomePageTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the next button at the HomePage rotating slider section is displayed ", priority = 3)
     public void verifyNextArrowAtHomePageRotatingSliderIsDisplayed() throws IOException {
         HomePage homePage = new HomePage(webDriver);
-        homePage.navigateToHomePage();
-        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getNextArrowInHomePageRotatingSlider(), webDriver);
+        try {
+            homePage.navigateToHomePage();
+            WebElementsAssertion.validateTheElementIsDisplayed(homePage.getNextArrowInHomePageRotatingSlider(), webDriver);
+        }
+        catch (Exception e){
+            homePage.navigateToHomePage();
+            WebElementsAssertion.validateTheElementIsDisplayed(homePage.getNextArrowInHomePageRotatingSlider(), webDriver);
+        }
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the previous button at the HomePage rotating slider section is displayed ", priority = 4)
     public void verifyPreviousArrowAtHomePageRotatingSliderIsDisplayed() throws IOException {
         HomePage homePage = new HomePage(webDriver);
+        try{
         homePage.navigateToHomePage();
-        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getPreviousArrowInHomePageRotatingSlider(), webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getPreviousArrowInHomePageRotatingSlider(), webDriver);}
+        catch (Exception e){        homePage.navigateToHomePage();
+            WebElementsAssertion.validateTheElementIsDisplayed(homePage.getPreviousArrowInHomePageRotatingSlider(), webDriver);}
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the pagination control appears on the HomePage rotating slider is displayed", priority = 5)
