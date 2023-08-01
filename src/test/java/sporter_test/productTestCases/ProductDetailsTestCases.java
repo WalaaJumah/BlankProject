@@ -293,16 +293,18 @@ public class ProductDetailsTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Verify that the header Bar in the PDP appears correctly when scrolling down", priority = 27)
-    public void verifyAddToCartBtnInHeaderBarWorksCorrectly() {
+    public void verifyAddToCartBtnInHeaderBarWorksCorrectly() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        productDetailsPage.displayTheProduct();
         DataHelperAndWait.scrollDown(webDriver);
         DataHelperAndWait.waitForTime(2000);
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getProductHeaderBar(), webDriver);
     }
 
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Verify that the Add to Cart Button appears in the header Bar in the PDP works correctly ", priority = 28)
-    public void verifyHeaderBarDisplaysCorrectlyInProductDetailsPageWhenScrollingThePage() {
+    public void verifyHeaderBarDisplaysCorrectlyInProductDetailsPageWhenScrollingThePage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        productDetailsPage.displayTheProduct();
         DataHelperAndWait.scrollDown(webDriver);
         DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.clickOnElement(productDetailsPage.getAddToCartBtnInProductHeaderBar(), webDriver);

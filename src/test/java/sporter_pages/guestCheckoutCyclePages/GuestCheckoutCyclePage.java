@@ -62,7 +62,7 @@ public class GuestCheckoutCyclePage extends BasePage {
     private WebElement lastNameField;
     @FindBy(id = "emailField")
     private WebElement emailField;
-    @FindBy(xpath = "//input[starts-with(@class,'teleInput_input')]")
+    @FindBy(id = "phoneNumber")
     private WebElement phoneField;
     @FindBy(id = "addressNameField")
     private WebElement addressNameField;
@@ -90,7 +90,7 @@ public class GuestCheckoutCyclePage extends BasePage {
     private WebElement lastNameErrMsg;
     @FindBy(id = "emailField_errMsg")
     private WebElement emailErrMsg;
-    @FindBy(xpath = "//div[starts-with(@class,'teleInput_errorMsg')]")
+    @FindBy(id = "telephoneInputErrMsg")
     private WebElement phoneErrMsg;
     @FindBy(id = "addressNameField_errMsg")
     private WebElement addressErrMsg;
@@ -347,15 +347,9 @@ public class GuestCheckoutCyclePage extends BasePage {
     }
 
     public void submitCreditCard(String creditNumber, String cardDate, String cvv) {
-//    DataHelperAndWait.clickOnElement(this.getCreditCardPaymentMethod(),webDriver);
-//    webDriver.switchTo().frame(this.getCreditCardIFrame());
-//    DataHelperAndWait.typeTextInElement(this.getCreditCardNumber(), webDriver,creditNumber);
-//    DataHelperAndWait.typeTextInElement(this.getCreditCardDate(), webDriver,cardDate);
-//    DataHelperAndWait.typeTextInElement(this.getCreditCardCVV(), webDriver,cvv);
-//    webDriver.switchTo().defaultContent();
-//    DataHelperAndWait.clickOnElement(this.getContinuePaymentMethodsBtn(), webDriver);
         DataHelperAndWait.clickOnElement(this.getCreditCardPaymentMethod(), webDriver);
         webDriver.switchTo().frame(this.getCreditCardIFrame());
+        DataHelperAndWait.waitForTime(2500);
         DataHelperAndWait.waitToBeVisible(this.getCreditCardNumber(), webDriver);
         DataHelperAndWait.updateAllText(this.getCreditCardNumber(), creditNumber);
         DataHelperAndWait.waitToBeVisible(this.getCreditCardDate(), webDriver);

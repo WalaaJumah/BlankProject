@@ -205,8 +205,8 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
 }
      public static  void scrollDown(WebDriver webDriver) {
          JavascriptExecutor js = (JavascriptExecutor) webDriver;
-         js.executeScript("window.scrollBy(0,350)", "");
-         js.executeScript("window.scrollBy(0,350)", "");
+         js.executeScript("window.scrollBy(0,500)", "");
+         js.executeScript("window.scrollBy(0,500)", "");
 }
 
 
