@@ -32,12 +32,16 @@ public class KSAProductDetailsTestCases extends ProductDetailsTestCases {
         if (webDriver.getCurrentUrl().contains(ksaHomePage.saudiDomain)) {
             System.out.println("You are in KSA Store");
         } else {
-            webDriver.navigate().to(BasePage.BaseURL + ksaHomePage.saudiDomain);
+            webDriver.navigate().to(BasePage.BaseURL +BasePage.ksaDomainArabic);
             //CloseInitialDialog();
         }
-        DataHelperAndWait.clickOnElement(headerSection.getLanguageSelector(), webDriver);
-        System.out.println(webDriver.getCurrentUrl());
-        WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage, webDriver);
+        try {
+            WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage, webDriver);
+        }
+        catch (Exception e){
+            webDriver.navigate().to(BasePage.BaseURL +BasePage.ksaDomainArabic);
+            WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage, webDriver);
+        }
         System.out.println(webDriver.getCurrentUrl());
 
     }

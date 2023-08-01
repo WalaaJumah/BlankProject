@@ -13,12 +13,15 @@
         <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32569"/>
         <parameter name="oOSProduct" value="/rip-van-protien-wafles-box-of-12/"/>
         <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
-        <groups>
-            <run>
-                <include name="All Smoke Testing Result"/>
-            </run>
-        </groups>
+<!--        <groups>-->
+<!--            <run>-->
+<!--                <include name="All Smoke Testing Result"/>-->
+<!--            </run>-->
+<!--        </groups>-->
         <classes>
+            <class name="sporter_test.productTestCases.KSAProductDetailsTestCases"/>
+            <class name="sporter_test.cartRulesTestCases.JordanCartRulesTestCases"></class>
+
             <class name="sporter_test.sports_category_test_cases.UAESportsCategoryTestCases"></class>
             <class name="sporter_test.vitaminsAndHealthCategoryTestCases.UAEVitaminsAndHealthCategoryTestCases"/>
             <class name="sporter_test.womens_only_category_test_cases.UAEWomensOnlyCategoryTestCases"/>
@@ -26,7 +29,6 @@
             <class name="sporter_test.cartRulesTestCases.KSACartRulesTestCases"></class>
 
             <class name="sporter_test.cartRulesTestCases.QatarCartRulesTestCases"></class>
-            <class name="sporter_test.cartRulesTestCases.JordanCartRulesTestCases"></class>
 
 
 
@@ -47,7 +49,7 @@
             <class name="sporter_test.RecommendedProductsTestCases.JordanRecommendedProductTestCases"/>
             <class name="sporter_test.productTestCases.JordanProductDetailsTestCases"/>
 
-            <class name="sporter_test.productTestCases.KSAProductDetailsTestCases"/>
+
 
 
             <class name="sporter_test.RecommendedProductsTestCases.OmanRecommendedProductTestCases"/>

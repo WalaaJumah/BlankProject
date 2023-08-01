@@ -21,14 +21,16 @@ public class HomePageTestCases extends BaseTest {
     String storeCountry;
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the next button at the HomePage rotating slider section is displayed ", priority = 3)
-    public void verifyNextArrowAtHomePageRotatingSliderIsDisplayed() {
+    public void verifyNextArrowAtHomePageRotatingSliderIsDisplayed() throws IOException {
         HomePage homePage = new HomePage(webDriver);
+        homePage.navigateToHomePage();
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getNextArrowInHomePageRotatingSlider(), webDriver);
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the previous button at the HomePage rotating slider section is displayed ", priority = 4)
-    public void verifyPreviousArrowAtHomePageRotatingSliderIsDisplayed() {
+    public void verifyPreviousArrowAtHomePageRotatingSliderIsDisplayed() throws IOException {
         HomePage homePage = new HomePage(webDriver);
+        homePage.navigateToHomePage();
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getPreviousArrowInHomePageRotatingSlider(), webDriver);
     }
 

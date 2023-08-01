@@ -25,6 +25,7 @@ public class BasePage {
 
     public static String BaseURL = "";
     public static String productUrl = "/optimum-gold-standard-100-whey-6202";
+    public static String ksaDomainArabic = "/ar-sa";
     public static String productUrl9 = "/cellucor-c4-26162";
 //    public static String productUrl = "/optimum-gold-standard-100-whey";
 

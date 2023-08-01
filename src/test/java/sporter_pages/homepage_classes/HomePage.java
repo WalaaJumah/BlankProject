@@ -20,6 +20,7 @@ import java.util.List;
 @Getter
 public class HomePage extends BasePage {
     public final String jordanDomain = "/en-jo";
+    public final String kSAArabicDomain = "/ar-jo";
     DataHelperAndWait dataHelperAndWait;
     @FindBy(id = "downArrow")
     private WebElement countryList;

@@ -6,6 +6,7 @@
 
 package sporter_test.myAccountTestCases;
 
+import core.BasePage;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
 import org.testng.annotations.BeforeClass;
@@ -24,11 +25,16 @@ public class KSAMyAccountTestCases extends MyAccountTestCases {
         if (webDriver.getCurrentUrl().contains(ksaHomePage.saudiDomain)) {
             System.out.println("You are in KSA Store");
         } else {
-            webDriver.navigate().to(BaseURL + ksaHomePage.saudiDomain);
+            webDriver.navigate().to(BasePage.BaseURL +BasePage.ksaDomainArabic);
             //CloseInitialDialog();
         }
-        DataHelperAndWait.clickOnElement(headerSection.getLanguageSelector(), webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage, webDriver);
+        try {
+            WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage, webDriver);
+        }
+        catch (Exception e){
+            webDriver.navigate().to(BasePage.BaseURL +BasePage.ksaDomainArabic);
+            WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage, webDriver);
+        }
         System.out.println(webDriver.getCurrentUrl());
         storeCountry = "المملكة العربية السعودية";
         countryCode = "966";

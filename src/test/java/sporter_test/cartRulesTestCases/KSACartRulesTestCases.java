@@ -6,6 +6,7 @@
 
 package sporter_test.cartRulesTestCases;
 
+import core.BasePage;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
 import org.testng.annotations.BeforeClass;
@@ -28,15 +29,14 @@ public class KSACartRulesTestCases extends CartRulesTestCases {
         if (webDriver.getCurrentUrl().contains(ksaHomePage.saudiDomain)) {
             System.out.println("You are in KSA Store");
         } else {
-            webDriver.navigate().to(BaseURL + ksaHomePage.saudiDomain);
+            webDriver.navigate().to(BasePage.BaseURL +BasePage.ksaDomainArabic);
             //CloseInitialDialog();
         }
         try {
-            DataHelperAndWait.clickOnElement(headerSection.getLanguageSelector(), webDriver);
             WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage, webDriver);
         }
         catch (Exception e){
-            webDriver.navigate().to(BaseURL + ksaSiteURL);
+            webDriver.navigate().to(BasePage.BaseURL +BasePage.ksaDomainArabic);
             WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage, webDriver);
         }
         System.out.println(webDriver.getCurrentUrl());
