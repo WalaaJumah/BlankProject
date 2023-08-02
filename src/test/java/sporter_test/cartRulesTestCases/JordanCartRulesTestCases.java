@@ -62,7 +62,8 @@ public class JordanCartRulesTestCases extends CartRulesTestCases {
         productDetailsPage.addToCart();
         productDetailsPage.viewCart();
         DataHelperAndWait.waitToBeVisible(cartPage.getIncreaseQtyBtn(), webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
+            DataHelperAndWait.waitForTime(2000);
+            DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
         DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(), webDriver);

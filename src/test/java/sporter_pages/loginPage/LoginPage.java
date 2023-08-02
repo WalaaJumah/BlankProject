@@ -76,6 +76,7 @@ public class LoginPage extends BasePage {
     }
 
     public void navigateToLoginPage() throws IOException {
+        webDriver.manage().deleteAllCookies();
         webDriver.navigate().to(BaseURL + loginLink);
         verifyTheDisplayedPageDoesNotHaveErrors();
         if (!webDriver.getCurrentUrl().contains(loginLink))

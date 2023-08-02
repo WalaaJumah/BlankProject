@@ -195,6 +195,7 @@ public class ProductDetailsPage extends BasePage {
 
     public void addToCart() {
 //        DataHelperAndWait.waitForTime(2000);
+        DataHelperAndWait.waitToBeVisible(addToCartBtn2, webDriver);
         DataHelperAndWait.waitToBeClickable(addToCartBtn2, webDriver);
         addToCartBtn.click();
     }

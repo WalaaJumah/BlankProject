@@ -289,6 +289,7 @@ public class CartPage extends BasePage {
 
     public void proceedToCheckout() throws IOException {
         try{
+            DataHelperAndWait.waitToBeVisible(this.getProceedCheckoutBtn(),webDriver);
             DataHelperAndWait.clickOnElement(this.getProceedCheckoutBtn(),webDriver);
         }
         catch (Exception e){
