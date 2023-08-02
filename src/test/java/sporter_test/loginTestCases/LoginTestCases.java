@@ -89,6 +89,7 @@ public class LoginTestCases extends BaseTest {
     public void verifyInAbilityToLoginUsingCorrectEmailAndWrongPassword() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         webDriver.manage().deleteAllCookies();
+        webDriver.manage().deleteAllCookies();
         loginPage.navigateToLoginPage();
         loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword") + "1");
         DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);

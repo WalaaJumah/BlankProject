@@ -88,9 +88,10 @@ public class BaseTest {
                 case "chrome":
                     //Selenium Version4.10
                     WebDriverManager.chromedriver().setup();
-                    ChromeOptions chromeOptions = new ChromeOptions();
-                    chromeOptions.setPageLoadStrategy(PageLoadStrategy.NONE);
-                    webDriver = new ChromeDriver(chromeOptions);
+//                    ChromeOptions chromeOptions = new ChromeOptions();
+//                    chromeOptions.setPageLoadStrategy(PageLoadStrategy.NONE);
+//                    webDriver = new ChromeDriver(chromeOptions);
+                    webDriver = new ChromeDriver();
                     webDriver.navigate().to("https://www.sporter.com");
                     break;
                 case "edge":
