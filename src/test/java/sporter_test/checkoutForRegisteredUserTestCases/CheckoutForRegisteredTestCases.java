@@ -84,15 +84,13 @@ public class CheckoutForRegisteredTestCases extends BaseTest
     public void verifyAbilityToRemoveProductFromCart() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToCartPage();
-        try{
-            cartPage.clearCart();}
-        catch (Exception e){
-        }
+        cartPage.clearCart();
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getNoItemInCartLabel(), webDriver);
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure to add product to the Cart from Product Details Page", priority = 5)
     public void addToCartAndViewCartFromPDP() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
+        cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.cartURL, webDriver);
     }
@@ -108,10 +106,9 @@ public class CheckoutForRegisteredTestCases extends BaseTest
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that all payment methods are appear correctly in the Cart page", priority = 8)
     public void verifyAllPaymentMethodAppearingTheCartPage() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
+        cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
-//        cartPage.navigateToCartPage();
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getWeAcceptLabel(), webDriver);
-//        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCODOption(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCreditCardOption(), webDriver);
     }
     @Test(enabled = false,groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 9)
@@ -143,8 +140,8 @@ public class CheckoutForRegisteredTestCases extends BaseTest
     @Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure the system fills the store country by default in the country field in the shipping information form", priority = 13)
     public void verifyTheCountryRetrievedInCountryFieldBasedOnStoreCountry() throws IOException {
         CartPage cartPage= new CartPage(webDriver);
+        cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
-//            WebElementsAssertion.assertionTextIsEqual(guestCheckoutCyclePage.getCountryMenu(), webDriver, storeCountry);
 
     }
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Add new Address button in the shipping information form works correctly", priority = 12)
@@ -251,6 +248,7 @@ catch (Exception e){
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
+        cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         try{
             DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
@@ -288,10 +286,7 @@ catch (Exception e){
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        try{
-            cartPage.clearCart();}
-        catch (Exception e){
-        }
+            cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         try{
             checkoutForRegisteredPage.fillInShippingInformationInputField(
@@ -315,6 +310,7 @@ catch (Exception e){
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
+        cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         cartPage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
@@ -342,7 +338,7 @@ catch (Exception e){
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
+        cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         cartPage.proceedToCheckout();
         try{
@@ -374,10 +370,7 @@ catch (Exception e){
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        try{
-            cartPage.clearCart();}
-        catch (Exception e){
-        }
+        cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         cartPage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
@@ -479,12 +472,14 @@ catch (Exception e){
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
+        cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         cartPage.proceedToCheckout();
         //TODO: recheck the button after Moamen Solve ot
 //        cartPage.navigateToCartPage();
 //        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
         try{
+            DataHelperAndWait.waitToBeVisible(registeredPage.getSavedAddressOption(),webDriver);
             DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
         }
         catch (Exception e){
