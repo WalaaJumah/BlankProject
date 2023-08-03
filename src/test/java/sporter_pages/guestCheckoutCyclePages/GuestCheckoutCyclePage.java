@@ -177,10 +177,12 @@ public class GuestCheckoutCyclePage extends BasePage {
     }
 
     public void clickOnContinueBtn() {
+        DataHelperAndWait.waitToBeVisible(continueShippingInfoBtn,webDriver);
         DataHelperAndWait.scrollTo(continueShippingInfoBtn, webDriver);
 
         try {
             DataHelperAndWait.waitToBeVisible(continueShippingInfoBtn, webDriver);
+            DataHelperAndWait.waitToBeVisible(continueShippingInfoBtn,webDriver);
             this.continueShippingInfoBtn.click();
         } catch (Exception e) {
             DataHelperAndWait.hoverOnElementAndClick(continueShippingInfoBtn, webDriver);

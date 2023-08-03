@@ -120,6 +120,7 @@ public class KSACartTestCases extends CartTestCases {
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
         cartPage.waitTillQtyValueChanges("2");
         DataHelperAndWait.waitForTime(500);
+        DataHelperAndWait.waitToBeVisible(cartPage.getProductPriceTotal(), webDriver);
         String newProductPrice = DataHelperAndWait.getWebElementText(cartPage.getProductPriceTotal(), webDriver);
         //TODO: Needs to recheck
 //        Assert.assertNotEquals(currentProductPrice, newProductPrice);

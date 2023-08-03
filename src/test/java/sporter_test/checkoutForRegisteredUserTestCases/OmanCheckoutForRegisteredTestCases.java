@@ -97,6 +97,7 @@ public class OmanCheckoutForRegisteredTestCases extends CheckoutForRegisteredTes
         }
         DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
+        DataHelperAndWait.waitToBeVisible(omanCheckoutForRegisteredPage.getFiveToSevenBusinessDaysShippingMethod(),webDriver);
         WebElementsAssertion.assertionWebElementEqualText(omanCheckoutForRegisteredPage.getFiveToSevenBusinessDaysShippingMethod(),webDriver, XmlReader.getXMLData("FiveToSevenBusinessDaysShipping"));
     }
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Five To Seven Business Days Shipping Method With COD Payment Method ", priority = 502)

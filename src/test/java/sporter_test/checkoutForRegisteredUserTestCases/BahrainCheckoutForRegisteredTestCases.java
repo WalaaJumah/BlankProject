@@ -93,7 +93,9 @@ public class BahrainCheckoutForRegisteredTestCases extends CheckoutForRegistered
                     XmlReader.getXMLData("StreetTwoAddressName"));
         }
         DataHelperAndWait.waitForTime(2000);
+        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getContinueShippingInfoBtn(),webDriver);
         guestCheckoutCyclePage.clickOnContinueBtn();
+        DataHelperAndWait.waitToBeVisible(omanCheckoutForRegisteredPage.getFiveToSevenBusinessDaysShippingMethod(),webDriver);
         WebElementsAssertion.assertionWebElementEqualText(omanCheckoutForRegisteredPage.getFiveToSevenBusinessDaysShippingMethod(),webDriver, XmlReader.getXMLData("ThreeBusinessDaysShipping"));
     }
 
@@ -103,6 +105,7 @@ public class BahrainCheckoutForRegisteredTestCases extends CheckoutForRegistered
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         OmanCheckoutForRegisteredPage omanCheckoutForRegisteredPage= new OmanCheckoutForRegisteredPage(webDriver);
         registeredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
+        DataHelperAndWait.waitToBeVisible(omanCheckoutForRegisteredPage.getFiveToSevenBusinessDaysShippingMethod(),webDriver);
         DataHelperAndWait.clickOnElement(omanCheckoutForRegisteredPage.getFiveToSevenBusinessDaysShippingMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
 //        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
@@ -203,6 +206,7 @@ public class BahrainCheckoutForRegisteredTestCases extends CheckoutForRegistered
                     XmlReader.getXMLData("StreetTwoAddressName"));
         }
         DataHelperAndWait.waitForTime(2000);
+        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getContinueShippingInfoBtn(),webDriver);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(omanCheckoutForRegisteredPage.getFiveToSevenBusinessDaysShippingMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
