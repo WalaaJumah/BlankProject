@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!--<suite name=" Test" thread-count="1" >-->
+<suite name="Automation Reports">
+    <listeners>
+        <!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
+<!--        <listener class-name="extent_report_listner.ExtentReportListener"/>-->
+    </listeners>
+    <test name=" Sporter 2.1 Full Testing on Qatar" preserve-order="true">
+        <parameter name="environment" value="https://stores.sporter.com/en-qa"/>
+        <parameter name="browser" value="chrome"/>
+        <!-- <parameter name="country" value="en-qa" />-->
+        <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32569"/>
+        <parameter name="oOSProduct" value="/rip-van-protien-wafles-box-of-12/"/>
+        <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
+        <classes>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.QatarCheckoutForRegisteredTestCases">
+                <methods>
+                    <include name="verifyAbilityToLoginCorrectlyWithValidCredentials"/>
+                    <include name="verifyAbilityToPlaceOrderWhenSelecting2_4BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod"/>
+                    <include name="verifyInabilityToUseInvalidCreditCardPaymentMethod"/>
+
+                </methods>
+            </class>
+
+<!--            <class name="sporter_test.checkoutForRegisteredUserTestCases.EgyptCheckoutForRegisteredTestCases">-->
+<!--            <methods>-->
+<!--                <include name="verifyAbilityToLoginCorrectlyWithValidCredentials"/>-->
+<!--                <include name="verifyAbilityToPlaceOrderWhenSelectingNextDayDeliveryWithCreditCardPaymentMethod"/>-->
+<!--            </methods>-->
+<!--            </class>-->
+
+        </classes>
+
+    </test>
+
+
+
+</suite>
