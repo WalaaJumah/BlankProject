@@ -3,12 +3,128 @@
     <TestData1>368</TestData1>
     <TestData2>368</TestData2>
     <ParentData1>
-        <value1>40-42</value1>
-        <value2>44-46</value2>
-        <value3>48-50</value3>
-        <value4>52-54</value4>
-        <value5>56-58</value5>
+        <CustomerServiceEnLabel>Customer Service: +971 4 88 30 300</CustomerServiceEnLabel>
+        <CustomerServiceEnLabelForKSA>Customer Service: +966 115102770</CustomerServiceEnLabelForKSA>
+        <CustomerServiceArLabel>خدمة العملاء: + 971 4 88 30 300</CustomerServiceArLabel>
+        <CustomerServiceArLabelJordan>خدمة العملاء: +962 6 200 5775</CustomerServiceArLabelJordan>
+        <CustomerServiceArLabeEgypt>خدمة العملاء: +20 2212 934 44</CustomerServiceArLabeEgypt>
+        <CustomerServiceArLabeQatar>خدمة العملاء: +962 6 200 5775</CustomerServiceArLabeQatar>
+        <CustomerServiceArLabelForKSA>خدمة العملاء: +966 115102770</CustomerServiceArLabelForKSA>
+        <ShopByEn>Shop By</ShopByEn>
+        <ShopByAr>تسوق حسب</ShopByAr>
+        <SportsSupplementsEn>Sport Supplements</SportsSupplementsEn>
+        <SportsSupplementsAr>مكمِلات رياضية</SportsSupplementsAr>
+        <VitaminsAndHealthEn>Vitamins &amp; Health</VitaminsAndHealthEn>
+        <VitaminsAndHealthAr>الفيتامينات والصحة</VitaminsAndHealthAr>
+        <HealthyFoodEn>Healthy Food</HealthyFoodEn>
+        <HealthyFoodAr>الأغذية الصحية</HealthyFoodAr>
+        <SPORTSEn>SPORTS</SPORTSEn>
+        <SPORTSAr>رياضة</SPORTSAr>
+        <WomenOnlyEn>Women's Only</WomenOnlyEn>
+        <WomenOnlyAr>للنساء فقط</WomenOnlyAr>
+        <reviewDesc>Review Description </reviewDesc>
+        <reviewSummary>Review Summary </reviewSummary>
+        <nickName>Victor</nickName>
+        <reviewDescLong>Review Description Victor Review Description Automation Review Description  Review
+            Description Review Description Review Description
+        </reviewDescLong>
+        <reviewSummaryLong>Review Summary  Review Summary  Review SummaryReview Summary
+             Review Summary  Review Summary  Review Summary
+        </reviewSummaryLong>
+        <nickNameLong>Victor  VictorVictorVictorVictorVictorVictorVictorVictor Victor VictorVictor Victor Victor
+        </nickNameLong>
+
     </ParentData1>
+    <RegistartionForm>
+        <correctEmail>Sportertesta@gmail.com</correctEmail>
+        <correctEmail2>VictorAt1@gmail.com</correctEmail2>
+        <incorrectEmailFormate>Sportertesta@gmail</incorrectEmailFormate>
+        <correctPassword>@SD123456789</correctPassword>
+        <shortPassword>123</shortPassword>
+        <space>   </space>
+        <passwordDoesNotMatchTheRules>123456789</passwordDoesNotMatchTheRules>
+        <firstName>Victor</firstName>
+        <lastName>User</lastName>
+        <requiredErrorMsEn>This is a required field.</requiredErrorMsEn>
+        <requiredErrorMsAr>هذه الخانة مطلوبة</requiredErrorMsAr>
+        <emailFormatErrorEn>Please enter a valid email address (Ex: johndoe@domain.com).</emailFormatErrorEn>
+        <emailFormatErrorAr>The Msg is not translate</emailFormatErrorAr>
+        <passwordShortErrorEn>Please enter 8 or more characters. Leading and trailing spaces will be ignored.</passwordShortErrorEn>
+        <passwordShortErrorAr>The Msg is not translate</passwordShortErrorAr>
+        <passwordFormatErrorEn>Minimum of different classes of characters in password is 3. Classes of characters: Lower Case, Upper Case, Digits, Special Characters.</passwordFormatErrorEn>
+        <passwordFormatErrorAr>The Msg is not translate</passwordFormatErrorAr>
+        <confirmpasswordErrorEn>Please enter the same value again.</confirmpasswordErrorEn>
+        <confirmpasswordErrorAr>The Msg is not translate</confirmpasswordErrorAr>
+        <forgetPasswordHeaderEn>Forgot Your Password?</forgetPasswordHeaderEn>
+        <forgetPasswordHeaderAr>نسيت كلمة السر ؟</forgetPasswordHeaderAr>
+        <forgetPasswordSubHeaderEn>Retrieve your password here</forgetPasswordSubHeaderEn>
+        <forgetPasswordSubHeaderAr>استعادة كلمة المرور من هنا</forgetPasswordSubHeaderAr>
+        <forgetPasswordDescriptionEn>Please enter your email address below. You will receive a link to reset your password.</forgetPasswordDescriptionEn>
+        <forgetPasswordDescriptionAr>يرجى إدخال عنوان البريد الالكتروني أدناه. سوف تتلقى وصلة لإعادة تعيين كلمة المرور الخاصة بك.</forgetPasswordDescriptionAr>
+        <loginErroEn>The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.</loginErroEn>
+        <loginErroAr>The Msg is not translate</loginErroAr>
+        <forgetPasswordToastMsgEn>If there is an account associated with this Email Address you will receive an email with a link to reset your password.</forgetPasswordToastMsgEn>
+        <forgetPasswordToastMsgAr>The Msg is not translate</forgetPasswordToastMsgAr>
+        <nameErrorEn>Please enter a valid Name</nameErrorEn>
+        <nameErrorAr>الرجاء ادخال اسم صحيح</nameErrorAr>
+
+    </RegistartionForm>
+    <CheckoutData>
+        <invalidCouponCode>Hello</invalidCouponCode>
+        <FreeCouponCode>MISSYOU</FreeCouponCode>
+        <!--        <FreeCouponCode>spr-128978-1</FreeCouponCode>-->
+        <CartTitleEn>My Shopping Cart</CartTitleEn>
+        <CartTitleAr>عربة التسوق</CartTitleAr>
+        <smallLenghthPhoneErrEn>Text length does not satisfy specified text range</smallLenghthPhoneErrEn>
+        <smallLenghthPhoneErrAr>Text length does not satisfy specified text range</smallLenghthPhoneErrAr>
+        <smallLenghthPhoneErrAr2>يرجى ادخال رقم صحيح</smallLenghthPhoneErrAr2>
+        <AddressName>Automation Address</AddressName>
+        <StreetOneAddressName>Automation Street 1 Address</StreetOneAddressName>
+        <StreetTwoAddressName>Automation Street 2 Address</StreetTwoAddressName>
+        <phoneNumber>22222222</phoneNumber>
+        <SmallPhoneNumber>22</SmallPhoneNumber>
+        <LongPhoneNumber>3333333333333333333333</LongPhoneNumber>
+        <LongLenghthText>This text is for automation Use This text is for automation Use This text is for automation Use
+            This text is for automation Use This text is for automation Use This text is for automation Use
+        </LongLenghthText>
+        <UAECountryCode>971</UAECountryCode>
+        <jordanCountryCode>962</jordanCountryCode>
+        <KSACountryCode>961</KSACountryCode>
+        <qatarCountryCode>961</qatarCountryCode>
+        <egyptCountryCode>961</egyptCountryCode>
+        <nationalID>1234567891</nationalID>
+        <testCreditCard>4242 4242 4242 4242</testCreditCard>
+        <invalidCreditCard>4242 4242 4242 41</invalidCreditCard>
+        <testCVV>257</testCVV>
+        <creditCardDate>1225</creditCardDate>
+        <checkout3DSecure>Checkout1!</checkout3DSecure>
+        <phoneNumberErrorEn>Please enter a valid Phone Number</phoneNumberErrorEn>
+        <phoneNumberErrorAr>Needs To translate</phoneNumberErrorAr>
+        <qatarPhoneNumber>55555396</qatarPhoneNumber>
+        <ksaPhoneNumber>595552396</ksaPhoneNumber>
+    </CheckoutData>
+    <UAECheckout>
+        <twoBusinessDay>2 Business days delivery. (2-4 days for remote areas)
+Cash on Delivery Service Available</twoBusinessDay>
+        <sameDayDelivery>Same Day Delivery</sameDayDelivery>
+        <ExpressDelevery>Express Delivery: 3-5 Days</ExpressDelevery>
+        <FiveToSevenBusinessDaysShipping>5-7 Business Days Super Express Shipping</FiveToSevenBusinessDaysShipping>
+        <ThreeBusinessDaysShipping>3 Business Days Super Express Shipping</ThreeBusinessDaysShipping>
+    </UAECheckout>
+    <JordanCheckout>
+        <fiveBusinessDays>5 Business Days Super Express Shipping</fiveBusinessDays>
+    </JordanCheckout>
+    <QatarCheckout>
+        <fourToFiveBusinessDays>4-5 Business Days Super Express Shipping</fourToFiveBusinessDays>
+    </QatarCheckout>
+    <KSACheckout>
+        <dootToDoor>خدمة التوصيل حتى باب المنزل ( خلال 4 - 5 يوم عمل ) خدمه الدفع عند الاستلام متوفره</dootToDoor>
+        <pickupShipping>Pickup In Store</pickupShipping>
+    </KSACheckout>
+    <EgyptCheckout>
+        <nextDayDelivery>Next day delivery</nextDayDelivery>
+    </EgyptCheckout>
+
     <shippingAddress>
         <addressId>13523</addressId>
         <addressArea>amman</addressArea>
@@ -27,4 +143,5 @@
         <addressBiuldingName>building 1</addressBiuldingName>
         <addressFullContactName>Muna Abuyounes</addressFullContactName>
     </shippingAddress>
+
 </Data>
