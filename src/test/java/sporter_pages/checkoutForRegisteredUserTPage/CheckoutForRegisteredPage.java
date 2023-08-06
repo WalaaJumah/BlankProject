@@ -201,7 +201,7 @@ public class CheckoutForRegisteredPage extends BasePage {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
+        cartPage.proceedToCheckout();
         DataHelperAndWait.clickOnElement(addNewAddressBtn, webDriver);
         this.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),

@@ -283,7 +283,7 @@ public class CartTestCases extends BaseTest {
 
 
 //        DataHelperAndWait.typeTextInElement(cartPage.getFirstQtyField(),webDriver,"9");
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
+        cartPage.proceedToCheckout();
         DataHelperAndWait.isDisplayed(cartPage.getCloseAddToCartErrorMsg(), webDriver);
     }
     //TODO:There's a bug here, check: https://sporter1.atlassian.net/browse/NS-184/https://sporter1.atlassian.net/browse/NS-107
@@ -352,13 +352,12 @@ public class CartTestCases extends BaseTest {
 //        cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.waitForTime(2000);
         try{
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);}
+        cartPage.proceedToCheckout();}
         catch (Exception e){
             cartPage.navigateToCartPage();
             DataHelperAndWait.waitForTime(2000);
-            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
+            cartPage.proceedToCheckout();
         }
-//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
 //        WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.shippingInformationUrl,webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getSigInAndCheckOutHeader(), webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");

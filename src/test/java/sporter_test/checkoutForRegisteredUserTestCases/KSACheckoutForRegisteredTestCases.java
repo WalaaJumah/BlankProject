@@ -407,7 +407,6 @@ cartPage.clearCart();        }
 //        KSACheckoutForRegisteredPage ksa= new KSACheckoutForRegisteredPage(webDriver);
 //        CartPage cartPage= new CartPage(webDriver);
 //        cartPage.addToCartAndDisplayTheCart();
-//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
 //                DataHelperAndWait.waitForTime(2000);
 //        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getSameDayDelivery(),webDriver);
 //        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -569,7 +568,7 @@ cartPage.clearCart();        }
 
         cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.waitForTime(500);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+        cartPage.proceedToCheckout();
         try{            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
         catch (Exception e){

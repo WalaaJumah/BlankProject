@@ -84,7 +84,7 @@ public class QatarCartRulesTestCases extends CartRulesTestCases {
             productDetailsPage.viewCart();
             DataHelperAndWait.waitToBeVisible(cartPage.getQtyField(),webDriver);
             DataHelperAndWait.updateAllText(cartPage.getQtyField(), "4");
-            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
+            cartPage.proceedToCheckout();
             WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(), webDriver);
             DataHelperAndWait.refreshPage(webDriver);
         }
@@ -95,7 +95,7 @@ public class QatarCartRulesTestCases extends CartRulesTestCases {
             productDetailsPage.viewCart();
             DataHelperAndWait.waitToBeVisible(cartPage.getQtyField(),webDriver);
             DataHelperAndWait.updateAllText(cartPage.getQtyField(),"4");
-            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+            cartPage.proceedToCheckout();
             WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(), webDriver);
             DataHelperAndWait.refreshPage(webDriver);
         }

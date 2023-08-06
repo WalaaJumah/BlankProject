@@ -123,7 +123,6 @@ public class KuwaitCheckoutForRegisteredTestCases extends  CheckoutForRegistered
         registeredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         DataHelperAndWait.clickOnElement(kuwaitCheckoutForRegisteredPage.getExpressDeliveryMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
 //        try{
 //            DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
 //        }
@@ -169,8 +168,7 @@ public class KuwaitCheckoutForRegisteredTestCases extends  CheckoutForRegistered
 //        cartPage.navigateToHomePage();
 //        cartPage.clickOnCartIcon();
 //        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
-//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+        cartPage.proceedToCheckout();
         DataHelperAndWait.waitForUrlContains(guestCheckoutCyclePage.shippingInformationUrl,webDriver);
         try{
             DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);

@@ -104,7 +104,6 @@ public class BahrainCheckoutForRegisteredTestCases extends CheckoutForRegistered
         DataHelperAndWait.waitToBeVisible(omanCheckoutForRegisteredPage.getFiveToSevenBusinessDaysShippingMethod(),webDriver);
         DataHelperAndWait.clickOnElement(omanCheckoutForRegisteredPage.getFiveToSevenBusinessDaysShippingMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
 //        try{
 //            DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
 //        }
@@ -136,14 +135,13 @@ public class BahrainCheckoutForRegisteredTestCases extends CheckoutForRegistered
 //        cartPage.clickOnCartIcon();
 //        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
         try {
-            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
+            cartPage.proceedToCheckout();
         }
         catch (Exception e){
             cartPage.navigateToCartPage();
-            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
+            cartPage.proceedToCheckout();
 
         }
-//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
         DataHelperAndWait.waitForUrlContains(guestCheckoutCyclePage.shippingInformationUrl,webDriver);
         try{
             DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);

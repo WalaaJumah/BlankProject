@@ -126,7 +126,6 @@ public class CheckoutForRegisteredTestCases extends BaseTest
 //    public void verifyProceedCheckoutBtnAppearingInCartPageWorksCorrectly() {
 //        CartPage cartPage = new CartPage(webDriver);
 //
-//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
 //        WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.shippingInformationUrl, webDriver);
 //    }
     @Test(enabled = false,groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Proceed to checkout button appearing in the Cart pop-up works correctly", priority = 11)
@@ -251,7 +250,7 @@ catch (Exception e){
         cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         try{
-            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+            cartPage.proceedToCheckout();
         }
         catch (Exception e) {
             cartPage.navigateToHomePage();
@@ -477,7 +476,6 @@ catch (Exception e){
         cartPage.proceedToCheckout();
         //TODO: recheck the button after Moamen Solve ot
 //        cartPage.navigateToCartPage();
-//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
         try{
             DataHelperAndWait.waitToBeVisible(registeredPage.getSavedAddressOption(),webDriver);
             DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
@@ -539,11 +537,6 @@ catch (Exception e){
 //        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
 //        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
         cartPage.proceedToCheckout();
-//            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
-
-
-
-//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
         try{
             DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
         }
@@ -619,12 +612,10 @@ catch (Exception e){
         DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);
 //        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
 //        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+        cartPage.proceedToCheckout();
 
 //        cartPage.navigateToHomePage();
 //        cartPage.clickOnCartIcon();
-//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
         DataHelperAndWait.waitForUrlContains(guestCheckoutCyclePage.shippingInformationUrl,webDriver);
         try{
             DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);

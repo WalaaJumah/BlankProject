@@ -198,14 +198,12 @@ public class GuestCheckoutCyclePage extends BasePage {
         cartPage.clickOnCartIcon();
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
         //TODO: CHECK pROCEED TO CHECKOUT AFTER SOLVED IT BY MOAMEN
-//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
     }
 
     public void accessGuestCheckoutForm() throws IOException {
 ////        webDriver.navigate().to(BaseURL+shippingInformationUrl);
 //            CartPage cartPage = new CartPage(webDriver);
 ////            cartPage.navigateToCartPage();
-////            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
 //            cartPage.addToCartAndDisplayTheCart();
 //            cartPage.clickOnCartIcon();
 //            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
@@ -224,18 +222,16 @@ public class GuestCheckoutCyclePage extends BasePage {
         try{
         CartPage cartPage = new CartPage(webDriver);
 //            cartPage.navigateToCartPage();
-//            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
         cartPage.addToCartAndDisplayTheCart();
 
         try {
-            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
+            cartPage.proceedToCheckout();
         } catch (Exception e) {
             cartPage.navigateToHomePage();
             cartPage.clickOnCartIcon();
             DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
         }
 //            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-//            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
 
 
 //            try {
@@ -251,19 +247,16 @@ public class GuestCheckoutCyclePage extends BasePage {
         catch (Exception e){
             CartPage cartPage = new CartPage(webDriver);
 //            cartPage.navigateToCartPage();
-//            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
             cartPage.addToCartAndDisplayTheCart();
 
             try {
-                DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
+                cartPage.proceedToCheckout();
             } catch (Exception ee) {
                 cartPage.navigateToHomePage();
                 cartPage.clickOnCartIcon();
                 DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
             }
 //            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-//            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
-
 
 //            try {
 //                DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);

@@ -90,7 +90,6 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
         cartPage.clickOnCartIcon();
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
         //TODO: Needs to recheck after solving it ny mamen
-        //DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
         WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.shippingInformationUrl, webDriver);
     }
 
@@ -607,8 +606,7 @@ cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //        cartPage.navigateToHomePage();
 //        cartPage.clickOnCartIcon();
 //        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
-//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+        cartPage.proceedToCheckout();
         DataHelperAndWait.waitForUrlContains(guestCheckoutCyclePage.shippingInformationUrl,webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCheckoutAsGuestBtn(),webDriver);
         guestCheckoutCyclePage.fillInShippingInformationInputField(

@@ -83,7 +83,7 @@ public class KSACartRulesTestCases extends CartRulesTestCases {
         productDetailsPage.viewCart();
         DataHelperAndWait.waitToBeVisible(cartPage.getQtyField(),webDriver);
         DataHelperAndWait.updateAllText(cartPage.getQtyField(),"4");
-                DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
+                cartPage.proceedToCheckout();
 
 
 //        DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);

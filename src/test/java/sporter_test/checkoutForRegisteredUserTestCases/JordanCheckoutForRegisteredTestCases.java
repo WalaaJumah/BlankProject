@@ -126,7 +126,7 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
         }
 
         cartPage.addToCartAndDisplayTheCart();
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+        cartPage.proceedToCheckout();
         try{            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
         catch (Exception e){
@@ -161,7 +161,7 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
         }
 
         cartPage.addToCartAndDisplayTheCart();
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+        cartPage.proceedToCheckout();
         try{            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
         catch (Exception e){
@@ -194,13 +194,13 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
         DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);}
+        cartPage.proceedToCheckout();}
         catch (Exception e){
             cartPage.navigateToCartPage();
             DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
             DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
             DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);
-            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+            cartPage.proceedToCheckout();
         }
         try{
             jo.fillInShippingInformationInputField(
@@ -244,7 +244,7 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
 
         cartPage.addToCartAndDisplayTheCart();
         try{
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);}
+        cartPage.proceedToCheckout();}
         catch (Exception e){
             cartPage.navigateToHomePage();
             DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);

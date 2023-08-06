@@ -56,7 +56,7 @@ public class QatarCheckoutForRegisteredPage extends CheckoutForRegisteredPage {
         QatarCheckoutForRegisteredPage qa = new QatarCheckoutForRegisteredPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
+        cartPage.proceedToCheckout();
         try {
             this.fillInShippingInformationInputField(
                     XmlReader.getXMLData("firstName"),

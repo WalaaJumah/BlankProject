@@ -250,13 +250,13 @@ catch (Exception ee){
         DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);}
+        cartPage.proceedToCheckout();}
         catch (Exception e){
             cartPage.navigateToCartPage();
             DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
             DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
             DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);
-            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(),webDriver);
+            cartPage.proceedToCheckout();
         }
         try {
             jo.fillInShippingInformationInputField(

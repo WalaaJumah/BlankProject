@@ -79,7 +79,7 @@ public class JordanCheckoutForRegisteredPage extends CheckoutForRegisteredPage {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
+        cartPage.proceedToCheckout();
         try {
             this.fillInShippingInformationInputField(
                     XmlReader.getXMLData("firstName"),

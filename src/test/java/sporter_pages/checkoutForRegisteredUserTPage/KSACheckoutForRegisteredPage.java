@@ -26,7 +26,7 @@ public class KSACheckoutForRegisteredPage extends CheckoutForRegisteredPage {
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
+        cartPage.proceedToCheckout();
         try {
             this.fillInShippingInformationInputField(
                     XmlReader.getXMLData("firstName"),
@@ -57,7 +57,7 @@ public class KSACheckoutForRegisteredPage extends CheckoutForRegisteredPage {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtn(), webDriver);
+        cartPage.proceedToCheckout();
         try {
             this.fillInShippingInformationInputField(
                     XmlReader.getXMLData("firstName"),
