@@ -59,7 +59,6 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         CartPage cartPage= new CartPage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
-        cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         cartPage.proceedToCheckout();
         try{
@@ -90,7 +89,6 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         CartPage cartPage= new CartPage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
-//        cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         cartPage.proceedToCheckout();
         try{
@@ -173,12 +171,6 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
-        try{
-            cartPage.clearCart();}
-        catch (Exception e){
-            System.out.println("");
-        }
-
         cartPage.addToCartAndDisplayTheCart();
         cartPage.proceedToCheckout();
         try{            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
@@ -209,16 +201,8 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
-        ProductDetailsPage productDetailsPage= new ProductDetailsPage(webDriver);
-        LoginPage loginPage= new LoginPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-//        loginPage.navigateToLoginPage();
-//        DataHelperAndWait.waitForTime(2000);
-//        loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword"));
-//        DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
-//        DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.navigateToCheckoutPage();
-        cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         try{
             cartPage.proceedToCheckout();
@@ -253,7 +237,6 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
-        cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
@@ -513,7 +496,6 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         CartPage cartPage= new CartPage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
-        cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);

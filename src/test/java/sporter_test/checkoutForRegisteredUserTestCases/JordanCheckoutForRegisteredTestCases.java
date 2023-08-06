@@ -65,11 +65,6 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        try{
-            cartPage.clearCart();}
-        catch (Exception e){
-            System.out.println("");
-        }
         cartPage.addToCartAndDisplayTheCart();
         cartPage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
@@ -112,19 +107,9 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that each of COD & Credit Card Payment methods appear correctly", priority = 24)
     public void verifyEachOfCODAndCreditCardPaymentMethodCorrectly() throws IOException {
         JordanGuestCheckoutCyclePage guestCheckoutCyclePage = new JordanGuestCheckoutCyclePage(webDriver);
-//        guestCheckoutCyclePage.viewCartAndAccessShippingMethodsPage();
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-//        cartPage.navigateToCartPage();
-//        cartPage.removeItem();
-//        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        try{
-            cartPage.clearCart();}
-        catch (Exception e){
-            System.out.println("");
-        }
-
         cartPage.addToCartAndDisplayTheCart();
         cartPage.proceedToCheckout();
         try{            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
@@ -151,15 +136,6 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-//        cartPage.navigateToCartPage();
-//        cartPage.removeItem();
-//        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        try{
-            cartPage.clearCart();}
-        catch (Exception e){
-            System.out.println("");
-        }
-
         cartPage.addToCartAndDisplayTheCart();
         cartPage.proceedToCheckout();
         try{            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
@@ -229,19 +205,9 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting 5 Business Days Super Express Shipping Method With Credit Card Payment Method ", priority = 501)
     public void verifyAbilityToPlaceOrderWhenSelecting5BusinessDaysSuperExpressShippingMethodWithCreditCardPaymentMethod() throws IOException {
         JordanGuestCheckoutCyclePage guestCheckoutCyclePage = new JordanGuestCheckoutCyclePage(webDriver);
-//        guestCheckoutCyclePage.viewCartAndAccessShippingMethodsPage();
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-//        cartPage.navigateToCartPage();
-//        cartPage.removeItem();
-//        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        try{
-            cartPage.clearCart();}
-        catch (Exception e){
-            System.out.println("");
-        }
-
         cartPage.addToCartAndDisplayTheCart();
         try{
         cartPage.proceedToCheckout();}
@@ -279,11 +245,6 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
         CartPage cartPage= new CartPage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
-        try{
-            cartPage.clearCart();}
-        catch (Exception e){
-            System.out.println("");
-        }
         cartPage.addToCartAndDisplayTheCart();
         cartPage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
@@ -313,11 +274,6 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        try{
-            cartPage.clearCart();}
-        catch (Exception e){
-            System.out.println("");
-        }
         cartPage.addToCartAndDisplayTheCart();
         cartPage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
@@ -345,11 +301,6 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        try{
-            cartPage.clearCart();}
-        catch (Exception e){
-            System.out.println("");
-        }
         cartPage.addToCartAndDisplayTheCart();
         cartPage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
@@ -378,11 +329,6 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        try{
-            cartPage.clearCart();}
-        catch (Exception e){
-            System.out.println("");
-        }
         cartPage.addToCartAndDisplayTheCart();
         cartPage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
