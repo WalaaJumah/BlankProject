@@ -5,10 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d2129b1-daed-434d-a525-27daaeb11fec" name="Changes" comment=" Update some test cases">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/checkoutForRegisteredUserTPage/JordanCheckoutForRegisteredPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/checkoutForRegisteredUserTPage/JordanCheckoutForRegisteredPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/myAccountPages/JordanMyAccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/myAccountPages/JordanMyAccountPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/myAccountPages/QatarMyAccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/myAccountPages/QatarMyAccountPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/Sporter2.1OnProdution/ProductionSporter2.1SmokeReport.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Sporter2.1OnProdution/ProductionSporter2.1SmokeReport.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
