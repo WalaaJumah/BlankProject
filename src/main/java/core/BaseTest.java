@@ -92,7 +92,8 @@ public class BaseTest {
 //                    chromeOptions.setPageLoadStrategy(PageLoadStrategy.NONE);
 //                    webDriver = new ChromeDriver(chromeOptions);
                     webDriver = new ChromeDriver();
-                    webDriver.navigate().to("https://www.sporter.com");
+                    webDriver.navigate().to(BasePage.BaseURL);
+//                    webDriver.navigate().to("https://www.sporter.com");
                     break;
                 case "edge":
                     WebDriverManager.edgedriver().setup();
