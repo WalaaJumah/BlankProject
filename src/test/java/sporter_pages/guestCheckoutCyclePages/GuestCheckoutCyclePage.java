@@ -117,7 +117,7 @@ public class GuestCheckoutCyclePage extends BasePage {
     private WebElement dubaiCity;
     @FindBy(xpath = "//div[2]/div[2]/div[2]/div[2]")
     private WebElement abuDhabiCity;
-    @FindBy(xpath = "//span[starts-with(@class,'teleInput_code')]")
+    @FindBy(id = "countryCode")
     private WebElement countryCode;
     @FindBy(xpath = "//div[contains(@id,'cashondelivery')]//div[@id='circle']")
     private WebElement cODPaymentMethod;

@@ -50,7 +50,8 @@ public class QatarMyAccountTestCases extends MyAccountTestCases {
                 XmlReader.getXMLData("StreetTwoAddressName"),
                 XmlReader.getXMLData("nationalID"));
         DataHelperAndWait.clickOnElement(myAccountPage.getSaveAddressBtn(), webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getAddressedUrl(), webDriver);
+//        WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getAddressedUrl(), webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getAddNewAddressBtn(),webDriver);
     }
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify Inability to add new Address with incorrect Phone Number format", priority = 24)
@@ -128,7 +129,8 @@ public class QatarMyAccountTestCases extends MyAccountTestCases {
                 XmlReader.getXMLData("StreetTwoAddressName"),
                 XmlReader.getXMLData("nationalID"));
         DataHelperAndWait.clickOnElement(myAccountPage.getSaveEditAddressBtn(), webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getAddressedUrl(), webDriver);
+//        WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getAddressedUrl(), webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getAddNewAddressBtn(),webDriver);
     }
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify Inability to EditAddress with incorrect Phone Number format", priority = 30)

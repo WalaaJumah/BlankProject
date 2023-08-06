@@ -294,7 +294,8 @@ catch (Exception w){
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
         DataHelperAndWait.clickOnElement(myAccountPage.getSaveAddressBtn(), webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getAddressedUrl(), webDriver);
+//        WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getAddressedUrl(), webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getAddNewAddressBtn(),webDriver);
     }
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify Inability to add new Address with incorrect Phone Number format", priority = 24)
@@ -371,7 +372,8 @@ catch (Exception w){
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
         DataHelperAndWait.clickOnElement(myAccountPage.getSaveEditAddressBtn(), webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getAddressedUrl(), webDriver);
+//        WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getAddressedUrl(), webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getAddNewAddressBtn(),webDriver);
     }
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify Inability to EditAddress with incorrect Phone Number format", priority = 30)
