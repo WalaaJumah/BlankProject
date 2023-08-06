@@ -65,11 +65,6 @@ public class KuwaitCheckoutForRegisteredTestCases extends  CheckoutForRegistered
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
 //        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddressForDubaiCity();
         CartPage cartPage= new CartPage(webDriver);
-        try{
-            cartPage.clearCart();}
-        catch (Exception e){
-            System.out.println("");
-        }
         cartPage.addToCartAndDisplayTheCart();
         cartPage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);

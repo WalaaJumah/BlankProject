@@ -82,6 +82,7 @@ public class CheckoutForRegisteredPage extends BasePage {
         DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getStreetLineTwoField(), streetLineTwo);
         DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getStreetLineTwoField(), webDriver);
         DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getStreetLineTwoField(), streetLineTwo);
+        guestCheckoutCyclePage.selectCity();
     }
 
     public void navigateToShippingMethodsPage() throws IOException {

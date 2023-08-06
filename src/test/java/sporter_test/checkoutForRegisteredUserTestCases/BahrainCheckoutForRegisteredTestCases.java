@@ -71,7 +71,6 @@ public class BahrainCheckoutForRegisteredTestCases extends CheckoutForRegistered
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
 //        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddressForDubaiCity();
         CartPage cartPage= new CartPage(webDriver);
-            cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         cartPage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);

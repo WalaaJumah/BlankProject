@@ -70,7 +70,6 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage=new CartPage(webDriver);
-        cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
 cartPage.proceedToCheckout();
         try{
@@ -96,12 +95,6 @@ cartPage.proceedToCheckout();
         CheckoutForRegisteredPage checkoutForRegisteredPage=new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
-        try {
-            cartPage.clearCart();
-        }
-        catch (Exception e){
-            System.out.println("");
-        }
         cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
@@ -140,12 +133,6 @@ cartPage.proceedToCheckout();
         CheckoutForRegisteredPage checkoutForRegisteredPage=new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
-        try {
-            cartPage.clearCart();
-        }
-        catch (Exception e){
-            System.out.println("");
-        }
         cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
 //        DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
@@ -183,15 +170,6 @@ cartPage.proceedToCheckout();
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
-//        cartPage.navigateToCartPage();
-//        cartPage.removeItem();
-//        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        try{
-            cartPage.clearCart();}
-        catch (Exception e){
-            System.out.println("");
-        }
-
         cartPage.addToCartAndDisplayTheCart();
         cartPage.navigateToHomePage();
                 DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
@@ -223,16 +201,6 @@ cartPage.proceedToCheckout();
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
-//        cartPage.navigateToCartPage();
-//        cartPage.removeItem();
-//        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        try {
-            cartPage.clearCart();
-        }
-        catch (Exception e){
-            System.out.println("");
-        }
-
         cartPage.addToCartAndDisplayTheCart();
         cartPage.navigateToHomePage();
                 DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
@@ -265,16 +233,6 @@ cartPage.proceedToCheckout();
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
-//        cartPage.navigateToCartPage();
-//        cartPage.removeItem();
-//        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        try {
-            cartPage.clearCart();
-        }
-        catch (Exception e){
-            System.out.println("");
-        }
-
         cartPage.addToCartAndDisplayTheCart();
         cartPage.navigateToHomePage();
                 DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
@@ -305,15 +263,6 @@ cartPage.proceedToCheckout();
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
-//        cartPage.navigateToCartPage();
-//        cartPage.removeItem();
-//        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        try {
-cartPage.clearCart();        }
-        catch (Exception e){
-            System.out.println("");
-        }
-
         cartPage.addToCartAndDisplayTheCart();
         cartPage.navigateToHomePage();
                 DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
@@ -349,16 +298,6 @@ cartPage.clearCart();        }
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
-//        cartPage.navigateToCartPage();
-//        cartPage.removeItem();
-//        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        try {
-            cartPage.clearCart();
-        }
-        catch (Exception e){
-            System.out.println("");
-        }
-
         cartPage.addToCartAndDisplayTheCart();
         cartPage.navigateToHomePage();
                 DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
@@ -417,16 +356,6 @@ cartPage.clearCart();        }
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
-//        cartPage.navigateToCartPage();
-//        cartPage.removeItem();
-//        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        try {
-            cartPage.clearCart();
-        }
-        catch (Exception e){
-            System.out.println("");
-        }
-
         cartPage.addToCartAndDisplayTheCart();
         cartPage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
@@ -481,16 +410,6 @@ cartPage.clearCart();        }
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
-//        cartPage.navigateToCartPage();
-//        cartPage.removeItem();
-//        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        try {
-            cartPage.clearCart();
-        }
-        catch (Exception e){
-            System.out.println("");
-        }
-
         cartPage.addToCartAndDisplayTheCart();
         cartPage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
@@ -520,16 +439,6 @@ cartPage.clearCart();        }
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
-//        cartPage.navigateToCartPage();
-//        cartPage.removeItem();
-//        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        try {
-            cartPage.clearCart();
-        }
-        catch (Exception e){
-            System.out.println("");
-        }
-
         cartPage.addToCartAndDisplayTheCart();
         cartPage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
@@ -556,16 +465,6 @@ cartPage.clearCart();        }
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
-//        cartPage.navigateToCartPage();
-//        cartPage.removeItem();
-//        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        try {
-            cartPage.clearCart();
-        }
-        catch (Exception e){
-            System.out.println("");
-        }
-
         cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.waitForTime(500);
         cartPage.proceedToCheckout();

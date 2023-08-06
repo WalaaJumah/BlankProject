@@ -44,11 +44,6 @@ public class UAECheckoutForRegisteredTestCases extends CheckoutForRegisteredTest
 //        guestCheckoutCyclePage.viewCartAndAccessShippingMethodsPage();
         try {
             CartPage cartPage = new CartPage(webDriver);
-            try {
-                cartPage.clearCart();
-            } catch (Exception e) {
-                System.out.println("");
-            }
             cartPage.addToCartAndDisplayTheCart();
             cartPage.navigateToHomePage();
             DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);

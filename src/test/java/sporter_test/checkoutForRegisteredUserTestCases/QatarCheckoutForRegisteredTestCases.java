@@ -44,7 +44,6 @@ public class QatarCheckoutForRegisteredTestCases extends CheckoutForRegisteredTe
     public void verifyOrderTotalCalculationInCartPageWorksCorrectly() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         DecimalFormat df = new DecimalFormat("0.00");
-        cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         double subTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue(), webDriver,"QAR");
         double tax = DataHelperAndWait.convertTheStringToFloat(cartPage.getTaxValue(), webDriver,"QAR");
@@ -159,11 +158,6 @@ public class QatarCheckoutForRegisteredTestCases extends CheckoutForRegisteredTe
         CartPage cartPage= new CartPage(webDriver);
         JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
-        try{
-            cartPage.clearCart();}
-        catch (Exception e){
-            System.out.println("");
-        }
         cartPage.addToCartAndDisplayTheCart();
         try {
             cartPage.navigateToHomePage();
@@ -297,11 +291,6 @@ catch (Exception ee){
         CartPage cartPage= new CartPage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
-        try{
-            cartPage.clearCart();}
-        catch (Exception e){
-            System.out.println("");
-        }
         cartPage.addToCartAndDisplayTheCart();
         cartPage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
@@ -338,11 +327,6 @@ catch (Exception ee){
         CartPage cartPage= new CartPage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
-        try{
-            cartPage.clearCart();}
-        catch (Exception e){
-            System.out.println("");
-        }
         cartPage.addToCartAndDisplayTheCart();
         cartPage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);

@@ -40,6 +40,7 @@ public class CheckoutForRegisteredTestCases extends BaseTest
     public void verifyTheProductsKeepInCartAfterSignedIn() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
+        DataHelperAndWait.waitToBeVisible(cartPage.getItemsCounter(),webDriver);
         int oldCartCounter=DataHelperAndWait.convertTheStringToInt(cartPage.getItemsCounter(),webDriver);
         DataHelperAndWait.waitForTime(2000);
         int newCartCounter=DataHelperAndWait.convertTheStringToInt(cartPage.getItemsCounter(),webDriver);
@@ -90,7 +91,6 @@ public class CheckoutForRegisteredTestCases extends BaseTest
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure to add product to the Cart from Product Details Page", priority = 5)
     public void addToCartAndViewCartFromPDP() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.cartURL, webDriver);
     }
@@ -106,7 +106,6 @@ public class CheckoutForRegisteredTestCases extends BaseTest
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that all payment methods are appear correctly in the Cart page", priority = 8)
     public void verifyAllPaymentMethodAppearingTheCartPage() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getWeAcceptLabel(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCreditCardOption(), webDriver);
@@ -139,14 +138,12 @@ public class CheckoutForRegisteredTestCases extends BaseTest
     @Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure the system fills the store country by default in the country field in the shipping information form", priority = 13)
     public void verifyTheCountryRetrievedInCountryFieldBasedOnStoreCountry() throws IOException {
         CartPage cartPage= new CartPage(webDriver);
-        cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
 
     }
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Add new Address button in the shipping information form works correctly", priority = 12)
     public void verifyTheAddNewAddressButtonWorksCorrectly() throws IOException {
         CartPage cartPage= new CartPage(webDriver);
-        cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         cartPage.proceedToCheckout();
 try{    GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
@@ -205,7 +202,6 @@ catch (Exception e){
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         cartPage.proceedToCheckout();
 
@@ -247,7 +243,6 @@ catch (Exception e){
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         try{
             cartPage.proceedToCheckout();
@@ -285,7 +280,6 @@ catch (Exception e){
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-            cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         try{
             checkoutForRegisteredPage.fillInShippingInformationInputField(
@@ -309,7 +303,6 @@ catch (Exception e){
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         cartPage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
@@ -337,7 +330,6 @@ catch (Exception e){
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         cartPage.proceedToCheckout();
         try{
@@ -369,7 +361,6 @@ catch (Exception e){
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         cartPage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
@@ -413,11 +404,6 @@ catch (Exception e){
         {
             System.out.println(currentTime);
             System.out.println("Current time is before 2:00 PM");
-            try {
-                cartPage.clearCart();
-            } catch (Exception e) {
-                System.out.println("");
-            }
             cartPage.addToCartAndDisplayTheCart();
             cartPage.proceedToCheckout();
                 DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getAddNewAddressBtn(),webDriver);
@@ -471,7 +457,6 @@ catch (Exception e){
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
-        cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         cartPage.proceedToCheckout();
         //TODO: recheck the button after Moamen Solve ot
