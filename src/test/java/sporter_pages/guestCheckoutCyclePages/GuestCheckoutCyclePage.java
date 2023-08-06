@@ -51,7 +51,7 @@ public class GuestCheckoutCyclePage extends BasePage {
     private WebElement checkoutAsGuestDescription;
     @FindBy(id = "value")
     private WebElement orderTotalValue;
-      @FindBy(xpath = "(//*[@id=\"value\"])[8]")
+    @FindBy(xpath = "(//*[@id=\"value\"])[8]")
     private WebElement grandTotalValue;
 
     @FindBy(id = "registerGuestCheckBox")
@@ -78,10 +78,12 @@ public class GuestCheckoutCyclePage extends BasePage {
     private WebElement continuePaymentMethodsBtn;
     @FindBy(xpath = "//div[@id='citiesSelector']/div")
     private WebElement cityMenu;
-       @FindBy(xpath = "//div[@id='citiesSelector']/div[2]/div/input")
+    @FindBy(xpath = "//div[@id='citiesSelector']/div[2]/div/input")
     private WebElement citySearch;
-            @FindBy(xpath = "(.//*[normalize-space(text()) and normalize-space(.)='Select City'])[1]/following::div[1]")
+    @FindBy(xpath = "(.//*[normalize-space(text()) and normalize-space(.)='Select City'])[1]/following::div[1]")
     private WebElement duabiCity;
+    @FindBy(xpath = "//div[@id='citiesSelector']/div[2]/div[2]/div[2]")
+    private WebElement firstCity;
 
 
     @FindBy(id = "countrySelector")
@@ -153,6 +155,7 @@ public class GuestCheckoutCyclePage extends BasePage {
     private WebElement orderTotalValueInrReviewPage;
     @FindBy(xpath = "(//span[starts-with(@class,'shippingMethod_amount')])[1]")
     private WebElement firstShippingMethodAmount;
+
     public GuestCheckoutCyclePage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
@@ -174,15 +177,16 @@ public class GuestCheckoutCyclePage extends BasePage {
         DataHelperAndWait.updateAllText(streetLineOneField, streetLineOne);
         DataHelperAndWait.waitToBeVisible(streetLineTwoField, webDriver);
         DataHelperAndWait.updateAllText(streetLineTwoField, streetLineTwo);
+        this.selectCity();
     }
 
     public void clickOnContinueBtn() {
-        DataHelperAndWait.waitToBeVisible(continueShippingInfoBtn,webDriver);
+        DataHelperAndWait.waitToBeVisible(continueShippingInfoBtn, webDriver);
         DataHelperAndWait.scrollTo(continueShippingInfoBtn, webDriver);
 
         try {
             DataHelperAndWait.waitToBeVisible(continueShippingInfoBtn, webDriver);
-            DataHelperAndWait.waitToBeVisible(continueShippingInfoBtn,webDriver);
+            DataHelperAndWait.waitToBeVisible(continueShippingInfoBtn, webDriver);
             this.continueShippingInfoBtn.click();
         } catch (Exception e) {
             DataHelperAndWait.hoverOnElementAndClick(continueShippingInfoBtn, webDriver);
@@ -201,52 +205,19 @@ public class GuestCheckoutCyclePage extends BasePage {
     }
 
     public void accessGuestCheckoutForm() throws IOException {
-////        webDriver.navigate().to(BaseURL+shippingInformationUrl);
-//            CartPage cartPage = new CartPage(webDriver);
-////            cartPage.navigateToCartPage();
-//            cartPage.addToCartAndDisplayTheCart();
-//            cartPage.clickOnCartIcon();
-//            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-//
-////            try {
-////                DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-////            }
-////            catch (Exception e){
-////                cartPage.addToCartAndDisplayTheCart();
-////            }
-////            cartPage.clickOnCartIcon();
-////            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-//            DataHelperAndWait.waitForUrlContains(shippingInformationUrl,webDriver);
-//        DataHelperAndWait.clickOnElement(checkoutAsGuestBtn,webDriver);
-//            webDriver.navigate().to(BaseURL+shippingInformationUrl);
-        try{
-        CartPage cartPage = new CartPage(webDriver);
-//            cartPage.navigateToCartPage();
-        cartPage.addToCartAndDisplayTheCart();
-
         try {
-            cartPage.proceedToCheckout();
-        } catch (Exception e) {
-            cartPage.navigateToHomePage();
-            cartPage.clickOnCartIcon();
-            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
-        }
-//            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-
-
-//            try {
-//                DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-//            }
-//            catch (Exception e){
-//                cartPage.addToCartAndDisplayTheCart();
-//            }
-//            cartPage.clickOnCartIcon();
-//            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-//            DataHelperAndWait.waitForUrlContains(shippingInformationUrl,webDriver);
-        DataHelperAndWait.clickOnElement(checkoutAsGuestBtn, webDriver);}
-        catch (Exception e){
             CartPage cartPage = new CartPage(webDriver);
-//            cartPage.navigateToCartPage();
+            cartPage.addToCartAndDisplayTheCart();
+            try {
+                cartPage.proceedToCheckout();
+            } catch (Exception e) {
+                cartPage.navigateToHomePage();
+                cartPage.clickOnCartIcon();
+                DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
+            }
+            DataHelperAndWait.clickOnElement(checkoutAsGuestBtn, webDriver);
+        } catch (Exception e) {
+            CartPage cartPage = new CartPage(webDriver);
             cartPage.addToCartAndDisplayTheCart();
 
             try {
@@ -256,18 +227,22 @@ public class GuestCheckoutCyclePage extends BasePage {
                 cartPage.clickOnCartIcon();
                 DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
             }
-//            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-
-//            try {
-//                DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-//            }
-//            catch (Exception e){
-//                cartPage.addToCartAndDisplayTheCart();
-//            }
-//            cartPage.clickOnCartIcon();
-//            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-//            DataHelperAndWait.waitForUrlContains(shippingInformationUrl,webDriver);
             DataHelperAndWait.clickOnElement(checkoutAsGuestBtn, webDriver);
+        }
+    }
+
+    public void selectCity() {
+        try {
+            DataHelperAndWait.clickOnElement(cityMenu, webDriver);
+            DataHelperAndWait.waitForTime(1500);
+            DataHelperAndWait.waitForTime(1000);
+            DataHelperAndWait.clickOnElement(firstCity, webDriver);
+        }
+        catch (Exception e){
+            DataHelperAndWait.clickOnElement(cityMenu, webDriver);
+            DataHelperAndWait.waitForTime(1500);
+            DataHelperAndWait.waitForTime(1000);
+            DataHelperAndWait.clickOnElement(firstCity, webDriver);
         }
     }
 
