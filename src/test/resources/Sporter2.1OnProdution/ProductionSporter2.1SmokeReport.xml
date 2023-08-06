@@ -20,6 +20,9 @@
 <!--        </groups>-->
         <classes>
             <class name="sporter_test.myAccountTestCases.QatarMyAccountTestCases"></class>
+            <class name="sporter_test.myAccountTestCases.UAEMyAccountTestCases"></class>
+            <class name="sporter_test.myAccountTestCases.JordanMyAccountTestCases"></class>
+
             <class name="sporter_test.checkoutForRegisteredUserTestCases.BahrainCheckoutForRegisteredTestCases"></class>
             <class name="sporter_test.checkoutForRegisteredUserTestCases.OmanCheckoutForRegisteredTestCases"></class>
             <class name="sporter_test.guestCheckoutCycleTestCases.EgyptGuestCheckoutCycleTestCases"/>
@@ -54,7 +57,6 @@
             <class name="sporter_test.sports_category_test_cases.UAESportsCategoryTestCases"></class>
             <class name="sporter_test.vitaminsAndHealthCategoryTestCases.UAEVitaminsAndHealthCategoryTestCases"/>
             <class name="sporter_test.womens_only_category_test_cases.UAEWomensOnlyCategoryTestCases"/>
-            <class name="sporter_test.myAccountTestCases.UAEMyAccountTestCases"></class>
             <class name="sporter_test.productTestCases.JordanProductDetailsTestCases"/>
 
             <class name="sporter_test.cartTestCases.UAECartTestCases"></class>
@@ -82,7 +84,6 @@
             <class name="sporter_test.AccountRegistrationTestCases.JordanAccountRegistrationTestCases"/>
             <class name="sporter_test.loginTestCases.JordanLoginTestCases"/>
             <class name="sporter_test.forgetPasswordTestCases.JordanForgetPasswordTestCases"/>
-            <class name="sporter_test.myAccountTestCases.JordanMyAccountTestCases"></class>
             <class name="sporter_test.sportsSupplementsCategoryTestCases.JordanSportsSupplementsCategoryTestCases"></class>
             <class name="sporter_test.healthy_food_category_test_cases.JordanHealthyFoodTestCases"></class>
             <class name="sporter_test.womens_only_category_test_cases.JordanWomensOnlyCategoryTestCases"/>

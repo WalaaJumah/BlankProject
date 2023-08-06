@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="2d2129b1-daed-434d-a525-27daaeb11fec" name="Changes" comment=" Update some test cases">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/myAccountPages/MyAccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/myAccountPages/MyAccountPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/myAccountTestCases/JordanMyAccountTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/myAccountTestCases/JordanMyAccountTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/myAccountTestCases/MyAccountTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/myAccountTestCases/MyAccountTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/myAccountTestCases/QatarMyAccountTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/myAccountTestCases/QatarMyAccountTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/checkoutForRegisteredUserTPage/JordanCheckoutForRegisteredPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/checkoutForRegisteredUserTPage/JordanCheckoutForRegisteredPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/myAccountPages/JordanMyAccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/myAccountPages/JordanMyAccountPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/myAccountPages/QatarMyAccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/myAccountPages/QatarMyAccountPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/Sporter2.1OnProdution/ProductionSporter2.1SmokeReport.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Sporter2.1OnProdution/ProductionSporter2.1SmokeReport.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -471,11 +470,6 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/sporter_test/myAccountTestCases/QatarMyAccountTestCases.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
