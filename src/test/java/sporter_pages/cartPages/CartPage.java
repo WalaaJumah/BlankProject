@@ -182,6 +182,7 @@ public class CartPage extends BasePage {
 
     public void addToCartAndDisplayTheCart() throws IOException {
         try {
+            clearCart();
             productDetailsPage.displayTheProduct();
             System.out.println("After Didsplay Product");
 
