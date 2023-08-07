@@ -19,12 +19,11 @@
 <!--            </run>-->
 <!--        </groups>-->
         <classes>
-            <class name="sporter_test.cartTestCases.EgyptCartTestCases">
-<!--                <methods>-->
-<!--                    <include name="verifyProductPriceChangesWhenChangingTheProductQtyFromTheCartPage"></include>-->
-<!--                    <include name="verifyAbilityToAddBundleToCart"></include>-->
+            <class name="sporter_test.tabby_payment_method_test_cases.UAETabbyPaymentMethodTestCases">
+                <methods>
+                    <include name="verifyTabbyPaymentMethodMethodCorrectlyForGuestUser"></include>
 
-<!--                    </methods>-->
+                    </methods>
             </class>
 
 
