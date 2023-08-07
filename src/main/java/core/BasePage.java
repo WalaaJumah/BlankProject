@@ -27,16 +27,10 @@ public class BasePage {
     public static String productUrl = "/optimum-gold-standard-100-whey-6202";
     public static String ksaDomainArabic = "/ar-sa";
     public static String productUrl9 = "/cellucor-c4-26162";
-//    public static String productUrl = "/optimum-gold-standard-100-whey";
 
-//    public void setStoreCountry(String storeCountry) {
-//        this.storeCountry = storeCountry;
-//    }
     public static String productUrl7 = "/dymatize-iso-100-7164/";
-//    public static String productUrl7 = "/dymatize-iso-100";
     public static String productUrlKSA1 = "/the-pack-wild-pre-workout";
     public static String productUrlKSA8 = "/the-pack-bcaas-flow-32569";
-//    public static String productUrlKSA8 = "/dymatize-iso-100";
     public static String productUrlKSA2 = "/efx-karbolyn-fuel";
     public static String productUrlKSA3 = "/windmill-natural-vitamins-omega-3-1000mg-with-epa-dha";
     public static String productUrlKSA4 = "/evl-nutrition-bcaa-5000-capsules-13934/";
