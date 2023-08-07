@@ -22,7 +22,7 @@ import xml_reader.XmlReader;
 
 import java.io.IOException;
 
-@Test(groups = "2.12 My Account Screens")
+@Test(groups = "2.19 Tabby Payment Method")
 
 public class TabbyPaymentMethodTestCases extends BaseTest {
     String storeCountry;
