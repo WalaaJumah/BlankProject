@@ -25,8 +25,6 @@ import java.util.List;
 @Getter
 public class GuestCheckoutCyclePage extends BasePage {
     String checkOutComUrl = "checkout.com";
-    String tabbySubUrl = ".tabby";
-    String tabbySuccessInstallmentsSubUrl = "success-installments?";
     DataHelperAndWait dataHelperAndWait;
     @FindBy(id = "placeOrderSideBtn")
     private WebElement placeOrderBtn;
