@@ -71,6 +71,10 @@ public class TabbyPaymentPage extends BasePage {
     private WebElement otpField;
     @FindBy(xpath = "//div[@data-test='warning.general_rejection']")
     private WebElement tabbyRejectionTranaction;
+    @FindBy(xpath = "//button[@data-test='choose-another-payment-method']")
+    private WebElement backToStoreBtnInRejectionPage;
+    @FindBy(id = "AddToCartErrMsg")
+    private WebElement transactionFailedError;
 
     public void SelectTabbyInstallmentsMethod(){
         GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
