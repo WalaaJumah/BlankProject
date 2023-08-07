@@ -8,6 +8,7 @@ package sporter_pages.tabby_payment_method_pages;
 
 import core.BasePage;
 import core.DataHelperAndWait;
+import core.WebElementsAssertion;
 import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -68,6 +69,8 @@ public class TabbyPaymentPage extends BasePage {
     private WebElement editBtnInPaymentMethodInfoLabel;
     @FindBy(xpath = "//input[@autocomplete='one-time-code']")
     private WebElement otpField;
+    @FindBy(xpath = "//div[@data-test='warning.general_rejection']")
+    private WebElement tabbyRejectionTranaction;
 
     public void SelectTabbyInstallmentsMethod(){
         GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
@@ -106,7 +109,7 @@ public void submitEmailAndPhoneNumberInPositiveFlow(){
 
 
 }
-    public void submitEmailAndPhoneNumberInNegativeFlow(){
+    public void submitTabbyInfoWithNegativeFlow(){
         DataHelperAndWait.waitToBeVisible(emailFieldInTabbyPage,webDriver);
         DataHelperAndWait.updateAllText(emailFieldInTabbyPage,XmlReader.getXMLData("tabbyNegativeEmail"));
         DataHelperAndWait.waitToBeVisible(phoneFieldInTabbyPage,webDriver);
@@ -116,6 +119,9 @@ public void submitEmailAndPhoneNumberInPositiveFlow(){
         DataHelperAndWait.waitToBeVisible(otpField,webDriver);
         DataHelperAndWait.updateAllText(phoneFieldInTabbyPage,XmlReader.getXMLData("tabbyNegativeOTP"));
         DataHelperAndWait.waitToBeVisible(cardNumberFieldInTabbyPage,webDriver);
+        fillInTheCardInfo();
+        WebElementsAssertion.validateTheElementIsDisplayed(tabbyRejectionTranaction,webDriver);
+
     }
 
 public void fillInTheCardInfo(){
