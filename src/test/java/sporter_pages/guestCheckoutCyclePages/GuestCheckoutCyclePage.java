@@ -152,7 +152,7 @@ public class GuestCheckoutCyclePage extends BasePage {
     private WebElement checkoutForm;
     @FindBy(xpath = "//iframe[@frameborder='0']")
     private WebElement checkoutIFrame;
-    @FindBy(xpath = "(//div[starts-with(@class,'orderReview_total')]/span)[1]")
+    @FindBy(xpath = "(//div[@id='grand_total'])[1]/div/span[@id='value']")
     private WebElement orderTotalFieldInrReviewPage;
     @FindBy(xpath = "(//div[starts-with(@class,'orderReview_total')]/span)[2]")
     private WebElement orderTotalValueInrReviewPage;
