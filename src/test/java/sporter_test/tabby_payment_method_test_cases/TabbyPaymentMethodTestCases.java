@@ -145,12 +145,13 @@ public class TabbyPaymentMethodTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-
         double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(tabbyPaymentPage.getOrderAmountInTabbyPage(),webDriver,"AED");
         DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         DataHelperAndWait.waitToBeVisible(tabbyPaymentPage.getTabbyHeaderTitle(),webDriver);
         double InstallmentsAmountsTotal=tabbyPaymentPage.calculateInstallmentsAmount("AED");
+        System.out.println("GrandTotal"+GrandTotal);
+        System.out.println("InstallmentsAmountsTotal"+InstallmentsAmountsTotal);
         Assert.assertEquals(GrandTotal,InstallmentsAmountsTotal);
     }
 
