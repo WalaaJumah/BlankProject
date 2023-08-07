@@ -75,7 +75,8 @@ public class TabbyPaymentPage extends BasePage {
     private WebElement backToStoreBtnInRejectionPage;
     @FindBy(id = "AddToCartErrMsg")
     private WebElement transactionFailedError;
-
+    @FindBy(xpath = "(//div[@id='grand_total'])[1]/div/span[@id='value']")
+    private WebElement orderTotalFieldInrReviewPage;
     public void SelectTabbyInstallmentsMethod(){
         GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
         DataHelperAndWait.waitToBeVisible(tabbyInstallmentsPaymentMethod,webDriver);
@@ -125,6 +126,7 @@ public void submitEmailAndPhoneNumberInPositiveFlow(){
         DataHelperAndWait.waitToBeVisible(cardNumberFieldInTabbyPage,webDriver);
         fillInTheCardInfo();
         WebElementsAssertion.validateTheElementIsDisplayed(tabbyRejectionTranaction,webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(transactionFailedError,webDriver);
 
     }
 

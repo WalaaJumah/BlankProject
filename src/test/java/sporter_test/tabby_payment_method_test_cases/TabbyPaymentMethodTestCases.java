@@ -27,6 +27,7 @@ import java.io.IOException;
 public class TabbyPaymentMethodTestCases extends BaseTest {
     String storeCountry;
     String countryCode;
+    String currency;
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: GuestUser- Make sure that the tabby Payment method appear correctly", priority = 1)
     public void verifyTabbyPaymentMethodMethodCorrectlyForGuestUser() throws IOException {
@@ -69,7 +70,8 @@ public class TabbyPaymentMethodTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         tabbyPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
         tabbyPaymentPage.fillInTheCardInfo();
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -95,7 +97,8 @@ public class TabbyPaymentMethodTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         tabbyPaymentPage.submitTabbyInfoWithNegativeFlow();
     }
 
@@ -119,7 +122,8 @@ public class TabbyPaymentMethodTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         tabbyPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
         tabbyPaymentPage.fillInTheCardInfo();
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -129,6 +133,36 @@ public class TabbyPaymentMethodTestCases extends BaseTest {
         System.out.println(orderNumber);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
+    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure the Installments Amounts In Tabby Page Are Matched With The Grand Total", priority = 100)
+    public void verifyInstallmentsAmountsInTabbyPageAreMatchedWithTheGrandTotalForGuestUser() throws IOException {
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        CartPage cartPage= new CartPage(webDriver);
+        TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        guestCheckoutCyclePage.accessGuestCheckoutForm();
+        guestCheckoutCyclePage.fillInShippingInformationInputField(
+                XmlReader.getXMLData("firstName"),
+                XmlReader.getXMLData("lastName"),
+                XmlReader.getXMLData("correctEmail"),
+                XmlReader.getXMLData("phoneNumber"),
+//                XmlReader.getXMLData("AddressName"),
+                XmlReader.getXMLData("StreetOneAddressName"),
+                XmlReader.getXMLData("StreetTwoAddressName"));
+        DataHelperAndWait.waitForTime(2000);
+        guestCheckoutCyclePage.clickOnContinueBtn();
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        tabbyPaymentPage.SelectTabbyInstallmentsMethod();
+
+        double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(tabbyPaymentPage.getOrderAmountInTabbyPage(),webDriver,"AED");
+        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.waitToBeVisible(tabbyPaymentPage.getTabbyHeaderTitle(),webDriver);
+        double InstallmentsAmountsTotal=tabbyPaymentPage.calculateInstallmentsAmount("AED");
+        Assert.assertEquals(GrandTotal,InstallmentsAmountsTotal);
+
+    }
+
 }
 
 
