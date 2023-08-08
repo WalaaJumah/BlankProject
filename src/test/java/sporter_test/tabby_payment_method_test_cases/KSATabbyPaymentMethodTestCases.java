@@ -49,7 +49,7 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         countryCode = "966";
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: GuestUser- Make sure that the tabby Payment method appear correctly", priority = 1)
-    public void verifyTabbyPaymentMethodMethodCorrectlyForGuestUser() throws IOException {
+    public void verifyTabbyPaymentMethodMethodCorrectlyForGuestUser() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
@@ -70,7 +70,7 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         WebElementsAssertion.validateTheElementIsDisplayed(tabbyPaymentPage.getTabbyInstallmentsPaymentMethod(),webDriver);
     }
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:GuestUser- Make sure ability to place Order successfully when Selecting Door To Door Shipping Method With tabby Payment Method ", priority = 2)
-    public void verifyAbilityToPlaceOrderWhenSelectingDoorToDoorShippingMethodWithTabbyPaymentMethodForGuestUser() throws IOException, InterruptedException {
+    public void verifyAbilityToPlaceOrderWhenSelectingDoorToDoorShippingMethodWithTabbyPaymentMethodForGuestUser() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
@@ -96,7 +96,7 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     }
 
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:GuestUser- Make sure inability to place Order successfully when Selecting Door To Door Shipping Method With tabby Payment Method using Negative Flow ", priority = 3)
-    public void verifyAbilityToPlaceOrderWhenSelectingDoorToDoorShippingMethodWithTabbyPaymentMethodWithNegativeFlowForGuestUser() throws IOException {
+    public void verifyAbilityToPlaceOrderWhenSelectingDoorToDoorShippingMethodWithTabbyPaymentMethodWithNegativeFlowForGuestUser() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
@@ -120,7 +120,7 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     }
 
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure the Installments Amounts In Tabby Page Are Matched With The Grand Total In Case Door To Door Shipping Method", priority = 4)
-    public void verifyInstallmentsAmountsInTabbyPageAreMatchedWithTheGrandTotalForGuestUserInCaseDoorToDoorShippingMethod() throws IOException {
+    public void verifyInstallmentsAmountsInTabbyPageAreMatchedWithTheGrandTotalForGuestUserInCaseDoorToDoorShippingMethod() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
@@ -148,7 +148,7 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     }
 
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure Ability to back to Sporter after clicking on the Return To store from Tabby Page", priority = 5)
-    public void verifyAbilityToBackToSporterAfterClickingOnBackToStoreFromTabbyForGuestUser() throws IOException, InterruptedException {
+    public void verifyAbilityToBackToSporterAfterClickingOnBackToStoreFromTabbyForGuestUser() throws Exception, InterruptedException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
@@ -174,7 +174,7 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     }
 
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:GuestUser- Make sure ability to place Order successfully when Selecting PickUpInStore Shipping Method With tabby Payment Method ", priority = 6)
-    public void verifyAbilityToPlaceOrderWhenSelectingPickUpInStoreShippingMethodWithTabbyPaymentMethodForGuestUser() throws IOException, InterruptedException {
+    public void verifyAbilityToPlaceOrderWhenSelectingPickUpInStoreShippingMethodWithTabbyPaymentMethodForGuestUser() throws Exception, InterruptedException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
@@ -200,7 +200,7 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     }
 
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:GuestUser- Make sure inability to place Order successfully when Selecting PickUpInStore Shipping Method With tabby Payment Method using Negative Flow ", priority = 7)
-    public void verifyAbilityToPlaceOrderWhenSelectingPickUpInStoreShippingMethodWithTabbyPaymentMethodWithNegativeFlowForGuestUser() throws IOException {
+    public void verifyAbilityToPlaceOrderWhenSelectingPickUpInStoreShippingMethodWithTabbyPaymentMethodWithNegativeFlowForGuestUser() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
@@ -224,7 +224,7 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     }
 
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure the Installments Amounts In Tabby Page Are Matched With The Grand Total In Case PickUpInStore Shipping Method", priority = 8)
-    public void verifyInstallmentsAmountsInTabbyPageAreMatchedWithTheGrandTotalForGuestUserInCasePickUpInStoreShippingMethod() throws IOException {
+    public void verifyInstallmentsAmountsInTabbyPageAreMatchedWithTheGrandTotalForGuestUserInCasePickUpInStoreShippingMethod() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
@@ -258,7 +258,7 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     // Registered User
 
     @Test(groups = {"All Smoke Testing Result","1.2 High Severity"}, description = "{{CountryName}}: Ability to login correctly from Sign In Page using valid credential", priority = 9)
-    public void verifyAbilityToLoginCorrectlyWithValidCredentials() throws IOException {
+    public void verifyAbilityToLoginCorrectlyWithValidCredentials() throws Exception {
         HeaderSection header = new HeaderSection(webDriver);
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         LoginPage loginPage = new LoginPage(webDriver);
@@ -279,7 +279,7 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     }
 
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when Selecting Door To Door Shipping Method With tabby Payment Method ", priority = 10)
-    public void verifyAbilityToPlaceOrderWhenSelectingDoorToDoorShippingMethodWithTabbyPaymentMethodForRegisteredUser() throws IOException, InterruptedException {
+    public void verifyAbilityToPlaceOrderWhenSelectingDoorToDoorShippingMethodWithTabbyPaymentMethodForRegisteredUser() throws Exception, InterruptedException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
@@ -296,7 +296,7 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     }
 
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure inability to place Order successfully when Selecting Door To Door Shipping Method With tabby Payment Method using Negative Flow ", priority = 11)
-    public void verifyAbilityToPlaceOrderWhenSelectingDoorToDoorShippingMethodWithTabbyPaymentMethodWithNegativeFlowForRegisteredUser() throws IOException {
+    public void verifyAbilityToPlaceOrderWhenSelectingDoorToDoorShippingMethodWithTabbyPaymentMethodWithNegativeFlowForRegisteredUser() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
@@ -311,7 +311,7 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
 
 
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure Ability to back to Sporter after clicking on the Return To store from Tabby Page", priority = 12)
-    public void verifyAbilityToBackToSporterAfterClickingOnBackToStoreFromTabbyForRegisteredUser() throws IOException, InterruptedException {
+    public void verifyAbilityToBackToSporterAfterClickingOnBackToStoreFromTabbyForRegisteredUser() throws Exception, InterruptedException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
@@ -328,7 +328,7 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     }
 
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when Selecting PickUpInStore Shipping Method With tabby Payment Method ", priority = 13)
-    public void verifyAbilityToPlaceOrderWhenSelectingPickUpInStoreShippingMethodWithTabbyPaymentMethodForRegisteredUser() throws IOException, InterruptedException {
+    public void verifyAbilityToPlaceOrderWhenSelectingPickUpInStoreShippingMethodWithTabbyPaymentMethodForRegisteredUser() throws Exception, InterruptedException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
@@ -345,7 +345,7 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     }
 
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure inability to place Order successfully when Selecting PickUpInStore Shipping Method With tabby Payment Method using Negative Flow ", priority = 14)
-    public void verifyAbilityToPlaceOrderWhenSelectingPickUpInStoreShippingMethodWithTabbyPaymentMethodWithNegativeFlowForRegisteredUser() throws IOException {
+    public void verifyAbilityToPlaceOrderWhenSelectingPickUpInStoreShippingMethodWithTabbyPaymentMethodWithNegativeFlowForRegisteredUser() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);

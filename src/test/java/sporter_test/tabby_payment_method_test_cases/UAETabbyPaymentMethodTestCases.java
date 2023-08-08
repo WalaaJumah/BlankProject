@@ -43,7 +43,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     }
     //Guest User
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: GuestUser- Make sure that the tabby Payment method appear correctly", priority = 1)
-    public void verifyTabbyPaymentMethodMethodCorrectlyForGuestUser() throws IOException {
+    public void verifyTabbyPaymentMethodMethodCorrectlyForGuestUser() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
@@ -63,7 +63,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         WebElementsAssertion.validateTheElementIsDisplayed(tabbyPaymentPage.getTabbyInstallmentsPaymentMethod(),webDriver);
     }
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:GuestUser- Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With tabby Payment Method ", priority = 2)
-    public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTabbyPaymentMethodForGuestUser() throws IOException, InterruptedException {
+    public void zverifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTabbyPaymentMethodForGuestUser() throws Exception, InterruptedException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
@@ -88,7 +88,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     }
 
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:GuestUser- Make sure inability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With tabby Payment Method using Negative Flow ", priority = 3)
-    public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTabbyPaymentMethodWithNegativeFlowForGuestUser() throws IOException {
+    public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTabbyPaymentMethodWithNegativeFlowForGuestUser() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
@@ -111,7 +111,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     }
 
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure the Installments Amounts In Tabby Page Are Matched With The Grand Total", priority = 4)
-    public void verifyInstallmentsAmountsInTabbyPageAreMatchedWithTheGrandTotalForGuestUser() throws IOException {
+    public void verifyInstallmentsAmountsInTabbyPageAreMatchedWithTheGrandTotalForGuestUser() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
@@ -138,7 +138,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     }
 
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure Ability to back to Sporter after clicking on the Return To store from Tabby Page", priority = 5)
-    public void verifyAbilityToBackToSporterAfterClickingOnBackToStoreFromTabbyForGuestUser() throws IOException, InterruptedException {
+    public void verifyAbilityToBackToSporterAfterClickingOnBackToStoreFromTabbyForGuestUser() throws Exception, InterruptedException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
@@ -163,7 +163,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
 
     }
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:GuestUser- Make sure ability to place Order successfully when selecting Same Day Express Shipping Method With tabby Payment Method ", priority = 6)
-    public void verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTabbyPaymentMethodForGuestUser() throws IOException, InterruptedException {
+    public void verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTabbyPaymentMethodForGuestUser() throws Exception, InterruptedException {
 // Get the current time
         LocalTime currentTime = LocalTime.now();
 
@@ -206,7 +206,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     }
 
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:GuestUser- Make sure inability to place Order successfully when selecting Same Day Express Shipping Method With tabby Payment Method using Negative Flow ", priority = 7)
-    public void verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTabbyPaymentMethodWithNegativeFlowForGuestUser() throws IOException {
+    public void verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTabbyPaymentMethodWithNegativeFlowForGuestUser() throws Exception {
         LocalTime currentTime = LocalTime.now();
         // Set the target time to 2:00 PM
         LocalTime targetTime = LocalTime.of(14, 0);
@@ -245,7 +245,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     }
     //TODO: Add custom annotation To Pass Test Case ID
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure the system display the Quote ID for the user after checkout the order with Selecting 2Business Days Super Express Shipping Method using tabby payment", priority = 8)
-    public void verifyTheSystemDisplayTheQuoteIdForTheUserAfterCheckoutTheOrderWithSelecting2BusinessDaysSuperExpressShippingMethodForGuestUser() throws IOException, InterruptedException {
+    public void verifyTheSystemDisplayTheQuoteIdForTheUserAfterCheckoutTheOrderWithSelecting2BusinessDaysSuperExpressShippingMethodForGuestUser() throws Exception, InterruptedException {
         LocalTime currentTime = LocalTime.now();
         // Set the target time to 2:00 PM
         LocalTime targetTime = LocalTime.of(14, 0);
@@ -289,7 +289,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         }
 
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure the Installments Amounts In Tabby Page Are Matched With The Grand Total For Same Day Shipping Method", priority = 9)
-    public void verifyInstallmentsAmountsInTabbyPageAreMatchedWithTheGrandTotalForSameDayShippingMethodForGuestUser() throws IOException, InterruptedException {
+    public void verifyInstallmentsAmountsInTabbyPageAreMatchedWithTheGrandTotalForSameDayShippingMethodForGuestUser() throws Exception, InterruptedException {
         LocalTime currentTime = LocalTime.now();
         // Set the target time to 2:00 PM
         LocalTime targetTime = LocalTime.of(14, 0);
@@ -333,7 +333,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         }
     }
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:GuestUser- Make sure ability  to place Order for the second time After clicking on Back from Bowser in the Tabby page ", priority = 10)
-    public void verifyAbilityToPlaceOrderForSecondTimeAfterClickingOnBackBtnInBrowserFromTabbyPage() throws IOException, InterruptedException {
+    public void verifyAbilityToPlaceOrderForSecondTimeAfterClickingOnBackBtnInBrowserFromTabbyPage() throws Exception, InterruptedException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
@@ -382,7 +382,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     }
     // Registered User
     @Test(groups = {"All Smoke Testing Result","1.2 High Severity"}, description = "{{CountryName}}: Ability to login correctly from Sign In Page using valid credential", priority = 11)
-    public void verifyAbilityToLoginCorrectlyWithValidCredentials() throws IOException {
+    public void verifyAbilityToLoginCorrectlyWithValidCredentials() throws Exception {
         HeaderSection header = new HeaderSection(webDriver);
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         LoginPage loginPage = new LoginPage(webDriver);
@@ -402,7 +402,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         }
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: RegisteredUser- Make sure that the tabby Payment method appear correctly", priority = 12)
-    public void verifyTabbyPaymentMethodMethodCorrectlyForRegisteredUser() throws IOException {
+    public void verifyTabbyPaymentMethodMethodCorrectlyForRegisteredUser() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
@@ -412,7 +412,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         WebElementsAssertion.validateTheElementIsDisplayed(tabbyPaymentPage.getTabbyInstallmentsPaymentMethod(),webDriver);
     }
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With tabby Payment Method ", priority = 13)
-    public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTabbyPaymentMethodForRegisteredUser() throws IOException, InterruptedException {
+    public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTabbyPaymentMethodForRegisteredUser() throws Exception, InterruptedException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
@@ -428,7 +428,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     }
 
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure inability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With tabby Payment Method using Negative Flow ", priority = 14)
-    public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTabbyPaymentMethodWithNegativeFlowForRegisteredUser() throws IOException {
+    public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTabbyPaymentMethodWithNegativeFlowForRegisteredUser() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
@@ -441,7 +441,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     }
 
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure the Installments Amounts In Tabby Page Are Matched With The Grand Total", priority = 15)
-    public void verifyInstallmentsAmountsInTabbyPageAreMatchedWithTheGrandTotalForRegisteredUser() throws IOException {
+    public void verifyInstallmentsAmountsInTabbyPageAreMatchedWithTheGrandTotalForRegisteredUser() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
@@ -459,7 +459,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     }
 
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure Ability to back to Sporter after clicking on the Return To store from Tabby Page", priority = 16)
-    public void verifyAbilityToBackToSporterAfterClickingOnBackToStoreFromTabbyForRegisteredUser() throws IOException, InterruptedException {
+    public void verifyAbilityToBackToSporterAfterClickingOnBackToStoreFromTabbyForRegisteredUser() throws Exception, InterruptedException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
@@ -474,7 +474,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
 
     }
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting Same Day Express Shipping Method With tabby Payment Method ", priority = 17)
-    public void verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTabbyPaymentMethodForRegisteredUser() throws IOException, InterruptedException {
+    public void verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTabbyPaymentMethodForRegisteredUser() throws Exception, InterruptedException {
 // Get the current time
         LocalTime currentTime = LocalTime.now();
 
@@ -507,7 +507,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     }
 
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure inability to place Order successfully when selecting Same Day Express Shipping Method With tabby Payment Method using Negative Flow ", priority = 18)
-    public void verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTabbyPaymentMethodWithNegativeFlowForRegisteredUser() throws IOException {
+    public void verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTabbyPaymentMethodWithNegativeFlowForRegisteredUser() throws Exception {
         LocalTime currentTime = LocalTime.now();
         // Set the target time to 2:00 PM
         LocalTime targetTime = LocalTime.of(14, 0);
@@ -536,7 +536,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     }
     //TODO: Add custom annotation To Pass Test Case ID
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure the system display the Quote ID for the user after checkout the order with Selecting 2Business Days Super Express Shipping Method using tabby payment", priority = 19)
-    public void verifyTheSystemDisplayTheQuoteIdForTheUserAfterCheckoutTheOrderWithSelecting2BusinessDaysSuperExpressShippingMethodForRegisteredUser() throws IOException, InterruptedException {
+    public void verifyTheSystemDisplayTheQuoteIdForTheUserAfterCheckoutTheOrderWithSelecting2BusinessDaysSuperExpressShippingMethodForRegisteredUser() throws Exception, InterruptedException {
         LocalTime currentTime = LocalTime.now();
         // Set the target time to 2:00 PM
         LocalTime targetTime = LocalTime.of(14, 0);
@@ -570,7 +570,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     }
 
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure the Installments Amounts In Tabby Page Are Matched With The Grand Total For Same Day Shipping Method", priority = 20)
-    public void verifyInstallmentsAmountsInTabbyPageAreMatchedWithTheGrandTotalForSameDayShippingMethodForRegisteredUser() throws IOException, InterruptedException {
+    public void verifyInstallmentsAmountsInTabbyPageAreMatchedWithTheGrandTotalForSameDayShippingMethodForRegisteredUser() throws Exception, InterruptedException {
         LocalTime currentTime = LocalTime.now();
         // Set the target time to 2:00 PM
         LocalTime targetTime = LocalTime.of(14, 0);

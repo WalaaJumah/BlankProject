@@ -294,10 +294,9 @@ public class CartPage extends BasePage {
             DataHelperAndWait.clickOnElement(this.getProceedCheckoutBtn(),webDriver);
         }
         catch (Exception e){
-            navigateToHomePage();
-            DataHelperAndWait.clickOnElement(this.cartIcon,webDriver);
-            DataHelperAndWait.clickOnElement(this.proceedCheckoutBtnInCartPopup,webDriver);
-
+           DataHelperAndWait.scrollTo(proceedCheckoutBtn,webDriver);
+            DataHelperAndWait.waitToBeVisible(this.getProceedCheckoutBtn(),webDriver);
+            DataHelperAndWait.clickOnElement(this.getProceedCheckoutBtn(),webDriver);
         }
     }
 }

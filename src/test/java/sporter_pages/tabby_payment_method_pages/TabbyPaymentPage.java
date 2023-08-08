@@ -10,10 +10,7 @@ import core.BasePage;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
 import lombok.Getter;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -87,22 +84,15 @@ public class TabbyPaymentPage extends BasePage {
     private WebElement confirmBack;
        @FindBy(id = "mui-7-helper-text")
     private WebElement ExpiryDateError;
-       @FindBy(id = "closeAddToCartErrBtn")
+       @FindBy(xpath = "//div[starts-with(@class,'popUp_container')]//div[@id='AddToCartErrContainer']")
     private WebElement errorMsgInPaymentMethod;
 
-    public void SelectTabbyInstallmentsMethod() throws IOException {
+    public void SelectTabbyInstallmentsMethod() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
         DataHelperAndWait.waitToBeVisible(tabbyInstallmentsPaymentMethod,webDriver);
         DataHelperAndWait.clickOnElement(tabbyInstallmentsPaymentMethod,webDriver);
         DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
-        try {
-            WebElement error = webDriver.findElement(By.id("closeAddToCartErrBtn"));
-            if (error != null && error.isDisplayed()) {
-                throw new AssertionError("Error When selecting the Payment Method");
-            }
-        } catch (NoSuchElementException ex) {
-        }
     }
     public void addToCartAndDisplayTheCart() throws IOException {
         ProductDetailsPage productDetailsPage= new ProductDetailsPage(webDriver);
@@ -156,7 +146,7 @@ public void clickOnFinalPlaceOrderBtn(){
         }
 
 }
-    public void selectTabbyInstallmentsMethodFromEditPage() throws IOException {
+    public void selectTabbyInstallmentsMethodFromEditPage() throws Exception {
     DataHelperAndWait.waitToBeVisible(editBtnInPaymentMethodInfoLabel,webDriver);
     DataHelperAndWait.clickOnElement(editBtnInPaymentMethodInfoLabel,webDriver);
     SelectTabbyInstallmentsMethod();
