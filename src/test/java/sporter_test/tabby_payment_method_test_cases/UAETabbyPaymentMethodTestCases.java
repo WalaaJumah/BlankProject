@@ -380,16 +380,6 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         tabbyPaymentPage.fillInTheCardInfo();
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-
-
-
-
-
-
-
-
-
-
     // Registered User
     @Test(groups = {"All Smoke Testing Result","1.2 High Severity"}, description = "{{CountryName}}: Ability to login correctly from Sign In Page using valid credential", priority = 11)
     public void verifyAbilityToLoginCorrectlyWithValidCredentials() throws IOException {
