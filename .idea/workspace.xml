@@ -6,6 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="afb02993-c62a-444a-89fa-77aad142808c" name="Changes" comment=" Update Smoketestt.xml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/tabby_payment_method_test_cases/BahrainTabbyPaymentMethodTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/tabby_payment_method_test_cases/BahrainTabbyPaymentMethodTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/tabby_payment_method_test_cases/KSATabbyPaymentMethodTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/tabby_payment_method_test_cases/KSATabbyPaymentMethodTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/tabby_payment_method_test_cases/KuwaitTabbyPaymentMethodTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/tabby_payment_method_test_cases/KuwaitTabbyPaymentMethodTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/tabby_payment_method_test_cases/QatarTabbyPaymentMethodTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/tabby_payment_method_test_cases/QatarTabbyPaymentMethodTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/tabby_payment_method_test_cases/UAETabbyPaymentMethodTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/tabby_payment_method_test_cases/UAETabbyPaymentMethodTestCases.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
