@@ -197,7 +197,56 @@ public class CheckoutForRegisteredPage extends BasePage {
 //        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
 //        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
     }
-
+    public void AddToCartAndAccessShippingMethodsPageForSavedAddressForDubai() throws IOException {
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        CartPage cartPage = new CartPage(webDriver);
+        try {
+            try {
+                cartPage.clearCart();
+            } catch (Exception e) {
+                System.out.println("");
+            }
+            cartPage.addToCartAndDisplayTheCart();
+            cartPage.proceedToCheckout();
+            try {
+                DataHelperAndWait.clickOnElement(this.getSavedAddressOption(), webDriver);
+            } catch (Exception e) {
+                guestCheckoutCyclePage.fillInShippingInformationInputFieldWithDubai(
+                        XmlReader.getXMLData("firstName"),
+                        XmlReader.getXMLData("lastName"),
+                        XmlReader.getXMLData("phoneNumber"),
+                        XmlReader.getXMLData("AddressName"),
+                        XmlReader.getXMLData("StreetOneAddressName"),
+                        XmlReader.getXMLData("StreetTwoAddressName"));
+            }
+            DataHelperAndWait.waitForTime(1500);
+            guestCheckoutCyclePage.clickOnContinueBtn();
+        }
+        catch (Exception ee){
+            try {
+                cartPage.clearCart();
+            } catch (Exception e) {
+                System.out.println("");
+            }
+            cartPage.addToCartAndDisplayTheCart();
+            cartPage.proceedToCheckout();
+            try {
+                DataHelperAndWait.clickOnElement(this.getSavedAddressOption(), webDriver);
+            } catch (Exception e) {
+                this.fillInShippingInformationInputField(
+                        XmlReader.getXMLData("firstName"),
+                        XmlReader.getXMLData("lastName"),
+                        XmlReader.getXMLData("phoneNumber"),
+                        XmlReader.getXMLData("AddressName"),
+                        XmlReader.getXMLData("StreetOneAddressName"),
+                        XmlReader.getXMLData("StreetTwoAddressName"));
+            }
+            DataHelperAndWait.waitForTime(1500);
+            guestCheckoutCyclePage.clickOnContinueBtn();
+        }
+//        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
+//        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+    }
     public void AddToCartAndAccessShippingMethodsPageForSavedAddressForDubaiCity() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);

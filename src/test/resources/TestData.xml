@@ -151,7 +151,7 @@ Cash on Delivery Service Available</twoBusinessDay>
         <tabbyPositiveOTP>8888</tabbyPositiveOTP>
         <tabbyNegativeOTP>8888</tabbyNegativeOTP>
         <tabbyPositiveCard>4111111111111111</tabbyPositiveCard>
-        <tabbyPositiveCardDate>1230</tabbyPositiveCardDate>
+        <tabbyPositiveCardDate>1231</tabbyPositiveCardDate>
         <tabbyPositiveCVV>123</tabbyPositiveCVV>
 
     </TabbyPayment>

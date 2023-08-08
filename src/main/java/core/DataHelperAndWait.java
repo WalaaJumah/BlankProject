@@ -428,7 +428,35 @@ for(int i=0;i<jsErrors.getAll().size()-1;i++){
         return Double.parseDouble(elementValueWithoutSpace);
 
     }
+    public static void slowType(WebElement element, String text, WebDriver webDriver) throws IOException, InterruptedException {
+        try {
+            waitToBeVisible(element, webDriver);
+            for (char c : text.toCharArray()) {
+                String character = String.valueOf(c);
+                element.sendKeys(character);
 
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        } catch (Exception e) {
+           clearWebField(element);
+           waitToBeVisible(element, webDriver);
+            for (char c : text.toCharArray()) {
+                String character = String.valueOf(c);
+                element.sendKeys(character);
+
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e1) {
+                    e.printStackTrace();
+                }
+
+            }
+        }
+    }
     public static String extractNegativeNumberFromString(WebElement element, WebDriver webDriver) {
         try {
             if (element.isDisplayed()) {

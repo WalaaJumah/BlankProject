@@ -17,6 +17,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import sporter_pages.cartPages.CartPage;
+import sporter_pages.checkoutForRegisteredUserTPage.CheckoutForRegisteredPage;
 import xml_reader.XmlReader;
 
 import java.io.IOException;
@@ -81,7 +82,7 @@ public class GuestCheckoutCyclePage extends BasePage {
     private WebElement cityMenu;
     @FindBy(xpath = "//div[@id='citiesSelector']/div[2]/div/input")
     private WebElement citySearch;
-    @FindBy(xpath = "(.//*[normalize-space(text()) and normalize-space(.)='Select City'])[1]/following::div[1]")
+    @FindBy(xpath = "//*/text()[normalize-space(.)='Dubai']/parent::*")
     private WebElement duabiCity;
     @FindBy(xpath = "//div[@id='citiesSelector']/div[2]/div[2]/div[2]")
     private WebElement firstCity;
@@ -179,6 +180,23 @@ public class GuestCheckoutCyclePage extends BasePage {
         DataHelperAndWait.updateAllText(streetLineTwoField, streetLineTwo);
         this.selectCity();
     }
+    public void fillInShippingInformationInputFieldWithDubai(String firstName, String lastName, String email, String phone, String streetLineOne, String streetLineTwo) {
+        DataHelperAndWait.waitToBeVisible(firstNameField, webDriver);
+        DataHelperAndWait.updateAllText(firstNameField, firstName);
+        DataHelperAndWait.waitToBeVisible(lastNameField, webDriver);
+        DataHelperAndWait.updateAllText(lastNameField, lastName);
+        DataHelperAndWait.waitToBeVisible(emailField, webDriver);
+        DataHelperAndWait.updateAllText(emailField, email);
+        DataHelperAndWait.waitToBeVisible(phoneField, webDriver);
+        DataHelperAndWait.updateAllText(phoneField, phone);
+//        DataHelperAndWait.waitToBeVisible(addressNameField ,webDriver);
+//        DataHelperAndWait.updateAllText(addressNameField,address);
+        DataHelperAndWait.waitToBeVisible(streetLineOneField, webDriver);
+        DataHelperAndWait.updateAllText(streetLineOneField, streetLineOne);
+        DataHelperAndWait.waitToBeVisible(streetLineTwoField, webDriver);
+        DataHelperAndWait.updateAllText(streetLineTwoField, streetLineTwo);
+        setSelectDubaiCityCity();
+    }
 
     public void clickOnContinueBtn() {
         DataHelperAndWait.waitToBeVisible(continueShippingInfoBtn, webDriver);
@@ -234,13 +252,11 @@ public class GuestCheckoutCyclePage extends BasePage {
     public void selectCity() {
         try {
             DataHelperAndWait.clickOnElement(cityMenu, webDriver);
-            DataHelperAndWait.waitForTime(1500);
-            DataHelperAndWait.waitForTime(1000);
+            DataHelperAndWait.waitToBeVisible(firstCity, webDriver);
             DataHelperAndWait.clickOnElement(firstCity, webDriver);
         } catch (Exception e) {
             DataHelperAndWait.clickOnElement(cityMenu, webDriver);
-            DataHelperAndWait.waitForTime(1500);
-            DataHelperAndWait.waitForTime(1000);
+            DataHelperAndWait.waitToBeVisible(firstCity, webDriver);
             DataHelperAndWait.clickOnElement(firstCity, webDriver);
         }
     }

@@ -20,10 +20,13 @@
 <!--        </groups>-->
         <classes>
             <class name="sporter_test.tabby_payment_method_test_cases.UAETabbyPaymentMethodTestCases">
-                <methods>
-                    <include name="verifyTabbyPaymentMethodMethodCorrectlyForGuestUser"></include>
+<!--                <methods>-->
+<!--                    <include name="verifyAbilityToLoginCorrectlyWithValidCredentials"></include>-->
+<!--                    <include name="verifyTabbyPaymentMethodMethodCorrectlyForRegisteredUser"></include>-->
+<!--                    <include name="verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTabbyPaymentMethodForRegisteredUser"></include>-->
+<!--                    <include name="verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTabbyPaymentMethodWithNegativeFlowForRegisteredUser"></include>-->
 
-                    </methods>
+<!--                    </methods>-->
             </class>
 
 

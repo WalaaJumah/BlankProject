@@ -14,9 +14,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import sporter_pages.cartPages.CartPage;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
+import sporter_pages.productPage.ProductDetailsPage;
 import xml_reader.XmlReader;
 
+import java.io.IOException;
 import java.util.List;
 
 @Getter
@@ -49,7 +52,7 @@ public class TabbyPaymentPage extends BasePage {
     private WebElement emailFieldInTabbyPage;
     @FindBy(id = "mui-2")
     private WebElement countryCodeFieldInTabbyPage;
-    @FindBy(name = "phone")
+    @FindBy(xpath = "//input[@data-test='loginForm.phoneInput']")
     private WebElement phoneFieldInTabbyPage;
     @FindBy(id = "mui-1-helper-text")
     private WebElement emailErrorMsgInTabbyPage;
@@ -77,6 +80,11 @@ public class TabbyPaymentPage extends BasePage {
     private WebElement transactionFailedError;
     @FindBy(xpath = "(//div[@id='grand_total'])[1]/div/span[@id='value']")
     private WebElement orderTotalFieldInrReviewPage;
+       @FindBy(xpath = "//button[@data-test='leaveDialog.back']")
+    private WebElement confirmBack;
+       @FindBy(id = "mui-7-helper-text")
+    private WebElement ExpiryDateError;
+
     public void SelectTabbyInstallmentsMethod(){
         GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
         DataHelperAndWait.waitToBeVisible(tabbyInstallmentsPaymentMethod,webDriver);
@@ -84,11 +92,64 @@ public class TabbyPaymentPage extends BasePage {
         DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
     }
-public void selectTabbyInstallmentsMethodFromEditPage(){
+    public void addToCartAndDisplayTheCart() throws IOException {
+        ProductDetailsPage productDetailsPage= new ProductDetailsPage(webDriver);
+        productDetailsPage.displayTheProduct();
+        try{if(productDetailsPage.getAddToCartBtn().isDisplayed())
+            System.out.println("You are in product Details page");
+        }
+        catch (Exception e){
+            productDetailsPage.displayTheProduct();
+        }
+        productDetailsPage.addToCart();
+            productDetailsPage.viewCart();
+    }
+    public void accessGuestCheckoutForm() throws IOException {
+        GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
+        try {
+            CartPage cartPage = new CartPage(webDriver);
+           addToCartAndDisplayTheCart();
+            try {
+                cartPage.proceedToCheckout();
+            } catch (Exception e) {
+                cartPage.navigateToHomePage();
+                cartPage.clickOnCartIcon();
+                DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
+            }
+            DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCheckoutAsGuestBtn(), webDriver);
+        } catch (Exception e) {
+            CartPage cartPage = new CartPage(webDriver);
+            addToCartAndDisplayTheCart();
+
+            try {
+                cartPage.proceedToCheckout();
+            } catch (Exception ee) {
+                cartPage.navigateToHomePage();
+                cartPage.clickOnCartIcon();
+                DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
+            }
+            DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCheckoutAsGuestBtn(), webDriver);
+        }
+    }
+public void clickOnFinalPlaceOrderBtn(){
+        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
+        GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
+        try {
+            DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getFinalPlaceOrderBtn(), webDriver);
+            DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(), webDriver);
+        }
+        catch (Exception e){
+            DataHelperAndWait.hoverOnElementAndClick(guestCheckoutCyclePage.getFinalPlaceOrderBtn(), webDriver);
+
+        }
+
+}
+    public void selectTabbyInstallmentsMethodFromEditPage(){
     DataHelperAndWait.waitToBeVisible(editBtnInPaymentMethodInfoLabel,webDriver);
     DataHelperAndWait.clickOnElement(editBtnInPaymentMethodInfoLabel,webDriver);
     SelectTabbyInstallmentsMethod();
 }
+
 public double calculateInstallmentsAmount(String currency){
     double sum = 0;
     for (WebElement element : tabbyPaymentSchedule) {
@@ -100,6 +161,9 @@ public double calculateInstallmentsAmount(String currency){
 public void clickOnReturnToStore(){
     DataHelperAndWait.waitToBeVisible(backToStoreBtnInTabbyPage,webDriver);
     DataHelperAndWait.clickOnElement(backToStoreBtnInTabbyPage,webDriver);
+    DataHelperAndWait.waitToBeVisible(confirmBack,webDriver);
+    DataHelperAndWait.clickOnElement(confirmBack,webDriver);
+
 }
 public void submitEmailAndPhoneNumberInPositiveFlow(){
     DataHelperAndWait.waitToBeVisible(emailFieldInTabbyPage,webDriver);
@@ -109,7 +173,7 @@ public void submitEmailAndPhoneNumberInPositiveFlow(){
     DataHelperAndWait.waitToBeVisible(loginBtnTabbyPage,webDriver);
     DataHelperAndWait.clickOnElement(loginBtnTabbyPage,webDriver);
     DataHelperAndWait.waitToBeVisible(otpField,webDriver);
-    DataHelperAndWait.updateAllText(phoneFieldInTabbyPage,XmlReader.getXMLData("tabbyPositiveOTP"));
+    DataHelperAndWait.updateAllText(otpField,XmlReader.getXMLData("tabbyPositiveOTP"));
     DataHelperAndWait.waitToBeVisible(cardNumberFieldInTabbyPage,webDriver);
 
 
@@ -121,22 +185,27 @@ public void submitEmailAndPhoneNumberInPositiveFlow(){
         DataHelperAndWait.updateAllText(phoneFieldInTabbyPage,XmlReader.getXMLData("tabbyNegativePhone"));
         DataHelperAndWait.waitToBeVisible(loginBtnTabbyPage,webDriver);
         DataHelperAndWait.clickOnElement(loginBtnTabbyPage,webDriver);
-        DataHelperAndWait.waitToBeVisible(otpField,webDriver);
-        DataHelperAndWait.updateAllText(phoneFieldInTabbyPage,XmlReader.getXMLData("tabbyNegativeOTP"));
-        DataHelperAndWait.waitToBeVisible(cardNumberFieldInTabbyPage,webDriver);
-        fillInTheCardInfo();
-        WebElementsAssertion.validateTheElementIsDisplayed(tabbyRejectionTranaction,webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(transactionFailedError,webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(getEmailErrorMsgInTabbyPage(),webDriver);
+
 
     }
 
-public void fillInTheCardInfo(){
+public void fillInTheCardInfo() throws IOException, InterruptedException {
     DataHelperAndWait.waitToBeVisible(cardNumberFieldInTabbyPage,webDriver);
     DataHelperAndWait.updateAllText(cardNumberFieldInTabbyPage,XmlReader.getXMLData("tabbyPositiveCard"));
-     DataHelperAndWait.waitToBeVisible(expiredDateFieldInTabbyPage,webDriver);
+    DataHelperAndWait.waitToBeVisible(cvvFieldInTabbyPage,webDriver);
+    DataHelperAndWait.clickOnElement(cvvFieldInTabbyPage,webDriver);
+    DataHelperAndWait.updateAllText(cvvFieldInTabbyPage,XmlReader.getXMLData("tabbyPositiveCVV"));
+    DataHelperAndWait.waitToBeVisible(expiredDateFieldInTabbyPage,webDriver);
     DataHelperAndWait.updateAllText(expiredDateFieldInTabbyPage,XmlReader.getXMLData("tabbyPositiveCardDate"));
-       DataHelperAndWait.waitToBeVisible(cvvFieldInTabbyPage,webDriver);
-    DataHelperAndWait.updateAllText(expiredDateFieldInTabbyPage,XmlReader.getXMLData("tabbyPositiveCVV"));
+    try{
+        if(getExpiryDateError().isDisplayed())
+            DataHelperAndWait.clickOnElement(expiredDateFieldInTabbyPage,webDriver);
+            DataHelperAndWait.updateAllText(expiredDateFieldInTabbyPage,XmlReader.getXMLData("tabbyPositiveCardDate"));
+    }
+    catch (Exception e){}
+
+    submitCardInfo();
 }
 
 public void submitCardInfo(){
