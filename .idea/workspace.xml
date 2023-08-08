@@ -4,13 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="afb02993-c62a-444a-89fa-77aad142808c" name="Changes" comment=" Update Smoketestt.xml">
+    <list default="true" id="2d2129b1-daed-434d-a525-27daaeb11fec" name="Changes" comment=" Update Smoketestt.xml">
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/tamara_payment_method_pages/BahrainTamaraPaymentPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/tamara_payment_method_pages/KSATamaraPaymentPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/tamara_payment_method_pages/KuwaitTamaraPaymentPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/tamara_payment_method_pages/QatarTamaraPaymentPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/tamara_payment_method_pages/TamaraPaymentPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/tamara_payment_method_pages/UAETamaraPaymentPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/tamara_payment_method_test_cases/BahrainTamaraPaymentMethodTestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/tamara_payment_method_test_cases/KSATamaraPaymentMethodTestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/tamara_payment_method_test_cases/KuwaitTamaraPaymentMethodTestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/tamara_payment_method_test_cases/QatarTamaraPaymentMethodTestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/tamara_payment_method_test_cases/TamaraPaymentMethodTestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sporter_test/tamara_payment_method_test_cases/UAETamaraPaymentMethodTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/tabby_payment_method_test_cases/BahrainTabbyPaymentMethodTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/tabby_payment_method_test_cases/BahrainTabbyPaymentMethodTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/tabby_payment_method_test_cases/KSATabbyPaymentMethodTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/tabby_payment_method_test_cases/KSATabbyPaymentMethodTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/tabby_payment_method_test_cases/KuwaitTabbyPaymentMethodTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/tabby_payment_method_test_cases/KuwaitTabbyPaymentMethodTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/tabby_payment_method_test_cases/QatarTabbyPaymentMethodTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/tabby_payment_method_test_cases/QatarTabbyPaymentMethodTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/tabby_payment_method_test_cases/UAETabbyPaymentMethodTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/tabby_payment_method_test_cases/UAETabbyPaymentMethodTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/Kuwait Store/Kuwait.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Kuwait Store/Kuwait.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/Kuwait Store/KuwaitFulTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Kuwait Store/KuwaitFulTest.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +78,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_directory_selection": "C:/Users/w.jumaa/IdeaProjects/sporter-web-automation/src/test/java",
-    "last_opened_file_path": "C:/Users/w.jumaa/IdeaProjects/price_comparison_tool",
+    "last_opened_file_path": "C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/java/sporter_pages/tamara_payment_method_pages",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -79,11 +88,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\w.jumaa\IdeaProjects\QATesting\src\test\java\sporter_pages\tamara_payment_method_pages" />
+      <recent name="C:\Users\w.jumaa\IdeaProjects\QATesting\src\test\java\sporter_test\tamara_payment_method_test_cases" />
+      <recent name="C:\Users\w.jumaa\IdeaProjects\QATesting\src\test\java\sporter_test" />
       <recent name="C:\Users\w.jumaa\IdeaProjects\QATesting\src\test\java\sporter_pages\tabby_payment_method_pages" />
       <recent name="C:\Users\w.jumaa\IdeaProjects\QATesting\src\test\java\tabby_payment_method" />
-      <recent name="C:\Users\User\IdeaProjects\QATesting\src\test\resources\drivers" />
-      <recent name="C:\Users\User\IdeaProjects\QATesting\src\test\resources" />
-      <recent name="C:\Users\w.jumaa\IdeaProjects\sporter-web-automation\src\test\resources\drivers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\w.jumaa\IdeaProjects\QATesting\src\test\resources\drivers" />
