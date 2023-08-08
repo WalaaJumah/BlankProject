@@ -42,7 +42,7 @@ public class BahrainTabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCa
         storeCountry = "Bahrain";
         countryCode = "973";
     }
-    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"}, description = "{{CountryName}}: Ability to login correctly from Sign In Page using valid credential", priority = 1)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Ability to login correctly from Sign In Page using valid credential", priority = 1)
     public void verifyAbilityToLoginCorrectlyWithValidCredentials() throws Exception {
         HeaderSection header = new HeaderSection(webDriver);
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
@@ -73,7 +73,7 @@ public class BahrainTabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCa
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(tabbyPaymentPage.getTabbyInstallmentsPaymentMethod(),webDriver);
     }
-    @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when Selecting 2_4 Business Days Super Express Shipping Method With tabby Payment Method ", priority = 3)
+    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when Selecting 2_4 Business Days Super Express Shipping Method With tabby Payment Method ", priority = 3)
     public void verifyAbilityToPlaceOrderWhenWhenSelecting2_4BusinessDaysSuperExpressShippingMethodWithTabbyPaymentMethodForRegisteredUser() throws Exception, InterruptedException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
@@ -90,7 +90,7 @@ public class BahrainTabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCa
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure inability to place Order successfully when Selecting 2_4 Business Days Super Express Shipping Method With tabby Payment Method using Negative Flow ", priority = 4)
+    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure inability to place Order successfully when Selecting 2_4 Business Days Super Express Shipping Method With tabby Payment Method using Negative Flow ", priority = 4)
     public void verifyAbilityToPlaceOrderWhenWhenSelecting2_4BusinessDaysSuperExpressShippingMethodWithTabbyPaymentMethodWithNegativeFlowForRegisteredUser() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
@@ -104,7 +104,7 @@ public class BahrainTabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCa
         tabbyPaymentPage.submitTabbyInfoWithNegativeFlow();
     }
 
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure the Installments Amounts In Tabby Page Are Matched With The Grand Total", priority = 5)
+    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure the Installments Amounts In Tabby Page Are Matched With The Grand Total", priority = 5)
     public void verifyInstallmentsAmountsInTabbyPageAreMatchedWithTheGrandTotalForRegisteredUser() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
@@ -123,7 +123,7 @@ public class BahrainTabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCa
         Assert.assertEquals(GrandTotal,InstallmentsAmountsTotal);
     }
 
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure Ability to back to Sporter after clicking on the Return To store from Tabby Page", priority = 6)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure Ability to back to Sporter after clicking on the Return To store from Tabby Page", priority = 6)
     public void verifyAbilityToBackToSporterAfterClickingOnBackToStoreFromTabbyForRegisteredUser() throws Exception, InterruptedException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
@@ -139,7 +139,7 @@ public class BahrainTabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCa
         WebElementsAssertion.validateTheElementIsDisplayed(tabbyPaymentPage.getTransactionFailedError(),webDriver);
 
     }
-    @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:GuestUser- Make sure ability  to place Order for the second time After clicking on Back from Bowser in the Tabby page ", priority = 7)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:GuestUser- Make sure ability  to place Order for the second time After clicking on Back from Bowser in the Tabby page ", priority = 7)
     public void verifyAbilityToPlaceOrderForSecondTimeAfterClickingOnBackBtnInBrowserFromTabbyPage() throws Exception, InterruptedException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
