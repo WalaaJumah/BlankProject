@@ -151,11 +151,11 @@ public class CheckoutForRegisteredPage extends BasePage {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         try {
-            try {
-                cartPage.clearCart();
-            } catch (Exception e) {
-                System.out.println("");
-            }
+//            try {
+//                cartPage.clearCart();
+//            } catch (Exception e) {
+//                System.out.println("");
+//            }
             cartPage.addToCartAndDisplayTheCart();
             cartPage.proceedToCheckout();
             try {

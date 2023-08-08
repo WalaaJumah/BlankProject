@@ -19,7 +19,7 @@
 <!--            </run>-->
 <!--        </groups>-->
         <classes>
-            <class name="sporter_test.tabby_payment_method_test_cases.UAETabbyPaymentMethodTestCases">
+            <class name="sporter_test.tabby_payment_method_test_cases.KSATabbyPaymentMethodTestCases">
 <!--                <methods>-->
 <!--                    <include name="verifyAbilityToLoginCorrectlyWithValidCredentials"></include>-->
 <!--                    <include name="verifyTabbyPaymentMethodMethodCorrectlyForRegisteredUser"></include>-->
