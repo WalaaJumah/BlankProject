@@ -19,7 +19,14 @@
 <!--            </run>-->
 <!--        </groups>-->
         <classes>
-            <class name="sporter_test.tabby_payment_method_test_cases.KSATabbyPaymentMethodTestCases">
+            <class name="sporter_test.tabby_payment_method_test_cases.QatarTabbyPaymentMethodTestCases"/>
+
+            <class name="sporter_test.tabby_payment_method_test_cases.UAETabbyPaymentMethodTestCases"/>
+
+
+            <class name="sporter_test.tabby_payment_method_test_cases.KSATabbyPaymentMethodTestCases"/>
+            <class name="sporter_test.tabby_payment_method_test_cases.BahrainTabbyPaymentMethodTestCases"/>
+            <class name="sporter_test.tabby_payment_method_test_cases.KuwaitTabbyPaymentMethodTestCases"/>
 <!--                <methods>-->
 <!--                    <include name="verifyAbilityToLoginCorrectlyWithValidCredentials"></include>-->
 <!--                    <include name="verifyTabbyPaymentMethodMethodCorrectlyForRegisteredUser"></include>-->
@@ -27,7 +34,6 @@
 <!--                    <include name="verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTabbyPaymentMethodWithNegativeFlowForRegisteredUser"></include>-->
 
 <!--                    </methods>-->
-            </class>
 
 
         </classes>

@@ -213,7 +213,6 @@ public class BasePage {
             this.getStatusCode(currentURL);
         }
     }
-
     public void navigateToBogoProduct() {
         if (webDriver.getCurrentUrl().contains("ar-sa/")) {
             webDriver.navigate().to(BaseURL + bogoUrlKSA);

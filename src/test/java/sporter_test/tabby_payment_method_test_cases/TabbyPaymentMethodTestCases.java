@@ -9,6 +9,7 @@ package sporter_test.tabby_payment_method_test_cases;
 import core.BaseTest;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
+import error_helper.SporterErrorPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.cartPages.CartPage;

@@ -114,10 +114,10 @@ public class KuwaitTabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCas
          DataHelperAndWait.clickOnElement(kuwaitCheckoutForRegisteredPage.getExpressDeliveryMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver,"BHD");
+        double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver,"KWD");
         tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
         DataHelperAndWait.waitToBeVisible(tabbyPaymentPage.getTabbyHeaderTitle(),webDriver);
-        double InstallmentsAmountsTotal=tabbyPaymentPage.calculateInstallmentsAmount("BHD");
+        double InstallmentsAmountsTotal=tabbyPaymentPage.calculateInstallmentsAmount("KWD");
         System.out.println("GrandTotal"+GrandTotal);
         System.out.println("InstallmentsAmountsTotal"+InstallmentsAmountsTotal);
         Assert.assertEquals(GrandTotal,InstallmentsAmountsTotal);

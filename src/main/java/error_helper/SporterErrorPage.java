@@ -14,6 +14,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class SporterErrorPage extends BasePage {
     public static final String pageNotFoundTitle = "Sporter.com - Page Not Found";
+    public static final String cartErrorForTabbyMethod = "can not use this payment method";
     public static final String pageNotFoundAr = "نحن نعتذر";
     public static final String pageNotFoundEn = "we are sorry";
     public static final String pageNotFoundMsg = "The page you requested was not found on this store. You can go to homepage or search here";
