@@ -155,5 +155,13 @@ Cash on Delivery Service Available</twoBusinessDay>
         <tabbyPositiveCVV>123</tabbyPositiveCVV>
 
     </TabbyPayment>
+    <TamaraPayment>
+        <UAEPhoneNumber>521352121</UAEPhoneNumber>
+        <KSAPhoneNumber>521352121</KSAPhoneNumber>
+        <tamaraPositiveCard>4242424242424242</tamaraPositiveCard>
+        <tamaraPositiveCardDate>1231</tamaraPositiveCardDate>
+        <tamaraPositiveCVV>100</tamaraPositiveCVV>
+
+    </TamaraPayment>
 
 </Data>

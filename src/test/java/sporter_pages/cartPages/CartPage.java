@@ -17,6 +17,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.productPage.ProductDetailsPage;
@@ -289,14 +290,17 @@ public class CartPage extends BasePage {
     }
 
     public void proceedToCheckout() throws IOException {
-        try{
+        GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
+//        try{
             DataHelperAndWait.waitToBeVisible(this.getProceedCheckoutBtn(),webDriver);
             DataHelperAndWait.clickOnElement(this.getProceedCheckoutBtn(),webDriver);
-        }
-        catch (Exception e){
-           DataHelperAndWait.scrollTo(proceedCheckoutBtn,webDriver);
-            DataHelperAndWait.waitToBeVisible(this.getProceedCheckoutBtn(),webDriver);
-            DataHelperAndWait.clickOnElement(this.getProceedCheckoutBtn(),webDriver);
-        }
+            DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getContinueShippingInfoBtn(),webDriver);
+//
+//        }
+//        catch (Exception e){
+//           webDriver.navigate().refresh();
+//            DataHelperAndWait.waitToBeVisible(this.getProceedCheckoutBtn(),webDriver);
+//            DataHelperAndWait.clickOnElement(this.getProceedCheckoutBtn(),webDriver);
+//        }
     }
 }

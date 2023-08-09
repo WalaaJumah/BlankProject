@@ -19,7 +19,7 @@ import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.UAEHomePage;
 import sporter_pages.loginPage.LoginPage;
-import sporter_pages.tabby_payment_method_pages.TabbyPaymentPage;
+import sporter_pages.tamara_payment_method_pages.TamaraPaymentPage;
 import xml_reader.XmlReader;
 
 import java.time.LocalTime;
@@ -40,17 +40,17 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         countryCode = "971";
     }
     //Guest User
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: GuestUser- Make sure that the tabby Payment method appear correctly", priority = 1)
-    public void verifyTabbyPaymentMethodMethodCorrectlyForGuestUser() throws Exception {
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: GuestUser- Make sure that the Tamara Payment method appear correctly", priority = 1)
+    public void verifyTamaraPaymentMethodMethodCorrectlyForGuestUser() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
+        TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
-        tabbyPaymentPage.accessGuestCheckoutForm();
+        tamaraPaymentPage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
-                XmlReader.getXMLData("phoneNumber"),
+                XmlReader.getXMLData("UAEPhoneNumber"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
@@ -58,224 +58,140 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(tabbyPaymentPage.getTabbyInstallmentsPaymentMethod(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(tamaraPaymentPage.getTamaraInstallmentsPaymentMethod(),webDriver);
     }
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With tabby Payment Method ", priority = 2)
-    public void zverifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTabbyPaymentMethodForGuestUser() throws Exception, InterruptedException {
+    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Tamara Payment Method ", priority = 2)
+    public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTamaraPaymentMethodForGuestUser() throws Exception, InterruptedException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
+        TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
-        tabbyPaymentPage.accessGuestCheckoutForm();
+        tamaraPaymentPage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
-                XmlReader.getXMLData("phoneNumber"),
+                XmlReader.getXMLData("UAEPhoneNumber"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
         DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
-        tabbyPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
-        tabbyPaymentPage.fillInTheCardInfo();
+        tamaraPaymentPage.SelectTamaraInstallmentsMethod();
+        tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
+        tamaraPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
+        tamaraPaymentPage.fillInTheCardInfo();
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
-
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure inability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With tabby Payment Method using Negative Flow ", priority = 3)
-    public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTabbyPaymentMethodWithNegativeFlowForGuestUser() throws Exception {
+    
+    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure the Installments Amounts In Tamara Page Are Matched With The Grand Total", priority = 4)
+    public void verifyInstallmentsAmountsInTamaraPageAreMatchedWithTheGrandTotalForGuestUser() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
+        TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        tabbyPaymentPage.accessGuestCheckoutForm();
+        tamaraPaymentPage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
-                XmlReader.getXMLData("phoneNumber"),
+                XmlReader.getXMLData("UAEPhoneNumber"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
         DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
-        tabbyPaymentPage.submitTabbyInfoWithNegativeFlow();
-    }
-
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure the Installments Amounts In Tabby Page Are Matched With The Grand Total", priority = 4)
-    public void verifyInstallmentsAmountsInTabbyPageAreMatchedWithTheGrandTotalForGuestUser() throws Exception {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        tabbyPaymentPage.accessGuestCheckoutForm();
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
-                XmlReader.getXMLData("firstName"),
-                XmlReader.getXMLData("lastName"),
-                XmlReader.getXMLData("correctEmail"),
-                XmlReader.getXMLData("phoneNumber"),
-                XmlReader.getXMLData("StreetOneAddressName"),
-                XmlReader.getXMLData("StreetTwoAddressName"));
-        DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver,"AED");
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
-        DataHelperAndWait.waitToBeVisible(tabbyPaymentPage.getTabbyHeaderTitle(),webDriver);
-        double InstallmentsAmountsTotal=tabbyPaymentPage.calculateInstallmentsAmount("AED");
+        tamaraPaymentPage.SelectTamaraInstallmentsMethod();
+        double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver,"د.إ");
+        tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
+        tamaraPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
+        DataHelperAndWait.waitToBeVisible(tamaraPaymentPage.getTamaraHeaderInPaymentSchedulePage(),webDriver);
+        double InstallmentsAmountsTotal=tamaraPaymentPage.calculateInstallmentsAmount("د.إ");
         System.out.println("GrandTotal"+GrandTotal);
         System.out.println("InstallmentsAmountsTotal"+InstallmentsAmountsTotal);
         Assert.assertEquals(GrandTotal,InstallmentsAmountsTotal);
     }
 
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure Ability to back to Sporter after clicking on the Return To store from Tabby Page", priority = 5)
-    public void verifyAbilityToBackToSporterAfterClickingOnBackToStoreFromTabbyForGuestUser() throws Exception, InterruptedException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CartPage cartPage= new CartPage(webDriver);
-        TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        tabbyPaymentPage.accessGuestCheckoutForm();
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
-                XmlReader.getXMLData("firstName"),
-                XmlReader.getXMLData("lastName"),
-                XmlReader.getXMLData("correctEmail"),
-                XmlReader.getXMLData("phoneNumber"),
-                XmlReader.getXMLData("StreetOneAddressName"),
-                XmlReader.getXMLData("StreetTwoAddressName"));
-        DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
-        DataHelperAndWait.waitToBeVisible(tabbyPaymentPage.getTabbyPage(),webDriver);
-        tabbyPaymentPage.clickOnReturnToStore();
-        WebElementsAssertion.validateTheElementIsDisplayed(tabbyPaymentPage.getTransactionFailedError(),webDriver);
 
-    }
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure ability to place Order successfully when selecting Same Day Express Shipping Method With tabby Payment Method ", priority = 6)
-    public void verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTabbyPaymentMethodForGuestUser() throws Exception, InterruptedException {
+    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure ability to place Order successfully when selecting Same Day Express Shipping Method With Tamara Payment Method ", priority = 6)
+    public void verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTamaraPaymentMethodForGuestUser() throws Exception, InterruptedException {
 // Get the current time
         LocalTime currentTime = LocalTime.now();
 
         // Set the target time to 2:00 PM
-        LocalTime targetTime = LocalTime.of(14, 0);
+        LocalTime targetTime = LocalTime.of(12, 0);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
+        TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         // Set the target times to 2:00 AM and 2:00 PM
         LocalTime targetTimeAM = LocalTime.of(2, 0);
-        LocalTime targetTimePM = LocalTime.of(14, 0);
+        LocalTime targetTimePM = LocalTime.of(12, 0);
         if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM))
         {
             System.out.println(currentTime);
             System.out.println("Current time is before 2:00 PM");
-            tabbyPaymentPage.accessGuestCheckoutForm();
+            tamaraPaymentPage.accessGuestCheckoutForm();
         webDriver.manage().deleteCookieNamed("guestCartId");
-        tabbyPaymentPage.accessGuestCheckoutForm();
+        tamaraPaymentPage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputFieldWithDubai(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
-                XmlReader.getXMLData("phoneNumber"),
+                XmlReader.getXMLData("UAEPhoneNumber"),
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
         DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getSameDayDelivery(), webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
-        tabbyPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
-        tabbyPaymentPage.fillInTheCardInfo();
+        tamaraPaymentPage.SelectTamaraInstallmentsMethod();
+        tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
+        tamaraPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
+        tamaraPaymentPage.fillInTheCardInfo();
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         }
         else{
             System.out.println("Current time is after or equal to 2:00 PM");
         }
     }
-
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure inability to place Order successfully when selecting Same Day Express Shipping Method With tabby Payment Method using Negative Flow ", priority = 7)
-    public void verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTabbyPaymentMethodWithNegativeFlowForGuestUser() throws Exception {
-        LocalTime currentTime = LocalTime.now();
-        // Set the target time to 2:00 PM
-        LocalTime targetTime = LocalTime.of(14, 0);
-        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
-        CartPage cartPage= new CartPage(webDriver);
-        // Set the target times to 2:00 AM and 2:00 PM
-        LocalTime targetTimeAM = LocalTime.of(2, 0);
-        LocalTime targetTimePM = LocalTime.of(14, 0);
-        if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM)){
-            System.out.println(currentTime);
-            System.out.println("Current time is before 2:00 PM");
-            tabbyPaymentPage.accessGuestCheckoutForm();
-            webDriver.manage().deleteCookieNamed("guestCartId");
-            tabbyPaymentPage.accessGuestCheckoutForm();
-            guestCheckoutCyclePage.fillInShippingInformationInputFieldWithDubai(
-                    XmlReader.getXMLData("firstName"),
-                    XmlReader.getXMLData("lastName"),
-                    XmlReader.getXMLData("correctEmail"),
-                    XmlReader.getXMLData("phoneNumber"),
-                    XmlReader.getXMLData("StreetOneAddressName"),
-                    XmlReader.getXMLData("StreetTwoAddressName"));
-            DataHelperAndWait.waitForTime(2000);
-            guestCheckoutCyclePage.clickOnContinueBtn();
-            DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getSameDayDelivery(), webDriver);
-            DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-            tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-            tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
-            tabbyPaymentPage.submitTabbyInfoWithNegativeFlow();
-        }
-        else{
-            System.out.println("Current time is after or equal to 2:00 PM");
-        }
-
-    }
+    
     //TODO: Add custom annotation To Pass Test Case ID
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure the system display the Quote ID for the user after checkout the order with Selecting 2Business Days Super Express Shipping Method using tabby payment", priority = 8)
+    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure the system display the Quote ID for the user after checkout the order with Selecting 2Business Days Super Express Shipping Method using Tamara Payment", priority = 8)
     public void verifyTheSystemDisplayTheQuoteIdForTheUserAfterCheckoutTheOrderWithSelecting2BusinessDaysSuperExpressShippingMethodForGuestUser() throws Exception, InterruptedException {
         LocalTime currentTime = LocalTime.now();
         // Set the target time to 2:00 PM
-        LocalTime targetTime = LocalTime.of(14, 0);
+        LocalTime targetTime = LocalTime.of(12, 0);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
+        TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         // Set the target times to 2:00 AM and 2:00 PM
         LocalTime targetTimeAM = LocalTime.of(2, 0);
-        LocalTime targetTimePM = LocalTime.of(14, 0);
+        LocalTime targetTimePM = LocalTime.of(12, 0);
         if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM))
             {
                 System.out.println(currentTime);
                 System.out.println("Current time is before 2:00 PM");
-                tabbyPaymentPage.accessGuestCheckoutForm();
+                tamaraPaymentPage.accessGuestCheckoutForm();
                 webDriver.manage().deleteCookieNamed("guestCartId");
-                tabbyPaymentPage.accessGuestCheckoutForm();
+                tamaraPaymentPage.accessGuestCheckoutForm();
                 guestCheckoutCyclePage.fillInShippingInformationInputFieldWithDubai(
                         XmlReader.getXMLData("firstName"),
                         XmlReader.getXMLData("lastName"),
                         XmlReader.getXMLData("correctEmail"),
-                        XmlReader.getXMLData("phoneNumber"),
+                        XmlReader.getXMLData("UAEPhoneNumber"),
                         XmlReader.getXMLData("StreetOneAddressName"),
                         XmlReader.getXMLData("StreetTwoAddressName"));
                 DataHelperAndWait.waitForTime(2000);
                 guestCheckoutCyclePage.clickOnContinueBtn();
                 DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getSameDayDelivery(), webDriver);
                 DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-                tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-                tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
-                tabbyPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
-                tabbyPaymentPage.fillInTheCardInfo();
+                tamaraPaymentPage.SelectTamaraInstallmentsMethod();
+                tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
+                tamaraPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
+                tamaraPaymentPage.fillInTheCardInfo();
                 cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
                 String orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
                 System.out.println(orderNumber);
@@ -286,42 +202,42 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
             }
         }
 
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure the Installments Amounts In Tabby Page Are Matched With The Grand Total For Same Day Shipping Method", priority = 9)
-    public void verifyInstallmentsAmountsInTabbyPageAreMatchedWithTheGrandTotalForSameDayShippingMethodForGuestUser() throws Exception, InterruptedException {
+    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure the Installments Amounts In Tamara Page Are Matched With The Grand Total For Same Day Shipping Method", priority = 9)
+    public void verifyInstallmentsAmountsInTamaraPageAreMatchedWithTheGrandTotalForSameDayShippingMethodForGuestUser() throws Exception, InterruptedException {
         LocalTime currentTime = LocalTime.now();
         // Set the target time to 2:00 PM
-        LocalTime targetTime = LocalTime.of(14, 0);
+        LocalTime targetTime = LocalTime.of(12, 0);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
+        TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         // Set the target times to 2:00 AM and 2:00 PM
         LocalTime targetTimeAM = LocalTime.of(2, 0);
-        LocalTime targetTimePM = LocalTime.of(14, 0);
+        LocalTime targetTimePM = LocalTime.of(12, 0);
         if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM))
         {
             System.out.println(currentTime);
             System.out.println("Current time is before 2:00 PM");
-            tabbyPaymentPage.accessGuestCheckoutForm();
+            tamaraPaymentPage.accessGuestCheckoutForm();
             webDriver.manage().deleteCookieNamed("guestCartId");
-            tabbyPaymentPage.accessGuestCheckoutForm();
+            tamaraPaymentPage.accessGuestCheckoutForm();
             guestCheckoutCyclePage.fillInShippingInformationInputFieldWithDubai(
                     XmlReader.getXMLData("firstName"),
                     XmlReader.getXMLData("lastName"),
                     XmlReader.getXMLData("correctEmail"),
-                    XmlReader.getXMLData("phoneNumber"),
+                    XmlReader.getXMLData("UAEPhoneNumber"),
                     XmlReader.getXMLData("StreetOneAddressName"),
                     XmlReader.getXMLData("StreetTwoAddressName"));
             DataHelperAndWait.waitForTime(2000);
             guestCheckoutCyclePage.clickOnContinueBtn();
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getSameDayDelivery(), webDriver);
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-            tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-            tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
-            double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver,"AED");
-            tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
-            DataHelperAndWait.waitToBeVisible(tabbyPaymentPage.getTabbyHeaderTitle(),webDriver);
-            double InstallmentsAmountsTotal=tabbyPaymentPage.calculateInstallmentsAmount("AED");
+            tamaraPaymentPage.SelectTamaraInstallmentsMethod();
+            tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
+            double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver,"د.إ");
+            tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
+            DataHelperAndWait.waitToBeVisible(tamaraPaymentPage.getTamaraHeaderInPaymentSchedulePage(),webDriver);
+            double InstallmentsAmountsTotal=tamaraPaymentPage.calculateInstallmentsAmount("د.إ");
             System.out.println("GrandTotal"+GrandTotal);
             System.out.println("InstallmentsAmountsTotal"+InstallmentsAmountsTotal);
             Assert.assertEquals(GrandTotal,InstallmentsAmountsTotal);
@@ -329,54 +245,6 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         else{
             System.out.println("Current time is after or equal to 2:00 PM");
         }
-    }
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure ability  to place Order for the second time After clicking on Back from Bowser in the Tabby page ", priority = 10)
-    public void verifyAbilityToPlaceOrderForSecondTimeAfterClickingOnBackBtnInBrowserFromTabbyPage() throws Exception, InterruptedException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CartPage cartPage= new CartPage(webDriver);
-        TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        tabbyPaymentPage.accessGuestCheckoutForm();
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
-                XmlReader.getXMLData("firstName"),
-                XmlReader.getXMLData("lastName"),
-                XmlReader.getXMLData("correctEmail"),
-                XmlReader.getXMLData("phoneNumber"),
-                XmlReader.getXMLData("StreetOneAddressName"),
-                XmlReader.getXMLData("StreetTwoAddressName"));
-        DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
-        DataHelperAndWait.waitToBeVisible(tabbyPaymentPage.getTabbyPage(),webDriver);
-        webDriver.navigate().back();
-        DataHelperAndWait.waitToBeVisible(cartPage.getProceedCheckoutBtn(),webDriver);
-        try {
-            cartPage.proceedToCheckout();
-        } catch (Exception e) {
-            cartPage.navigateToHomePage();
-            cartPage.clickOnCartIcon();
-            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
-        }
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCheckoutAsGuestBtn(), webDriver);
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
-                XmlReader.getXMLData("firstName"),
-                XmlReader.getXMLData("lastName"),
-                XmlReader.getXMLData("correctEmail"),
-                XmlReader.getXMLData("phoneNumber"),
-                XmlReader.getXMLData("StreetOneAddressName"),
-                XmlReader.getXMLData("StreetTwoAddressName"));
-        DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
-        tabbyPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
-        tabbyPaymentPage.fillInTheCardInfo();
-        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     // Registered User
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Ability to login correctly from Sign In Page using valid credential", priority = 11)
@@ -399,92 +267,65 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
             WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
         }
     }
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: RegisteredUser- Make sure that the tabby Payment method appear correctly", priority = 12)
-    public void verifyTabbyPaymentMethodMethodCorrectlyForRegisteredUser() throws Exception {
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: RegisteredUser- Make sure that the Tamara Payment method appear correctly", priority = 12)
+    public void verifyTamaraPaymentMethodMethodCorrectlyForRegisteredUser() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
-        TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
-        registeredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
+        TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
+        tamaraPaymentPage.AddToCartAndAccessShippingMethodsPage(XmlReader.getXMLData("UAEPhoneNumber"));
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(tabbyPaymentPage.getTabbyInstallmentsPaymentMethod(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(tamaraPaymentPage.getTamaraInstallmentsPaymentMethod(),webDriver);
     }
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With tabby Payment Method ", priority = 13)
-    public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTabbyPaymentMethodForRegisteredUser() throws Exception, InterruptedException {
+    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Tamara Payment Method ", priority = 13)
+    public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTamaraPaymentMethodForRegisteredUser() throws Exception, InterruptedException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
+        TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
-        registeredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
+        tamaraPaymentPage.AddToCartAndAccessShippingMethodsPage(XmlReader.getXMLData("UAEPhoneNumber"));
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
-        tabbyPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
-        tabbyPaymentPage.fillInTheCardInfo();
+        tamaraPaymentPage.SelectTamaraInstallmentsMethod();
+        tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
+        tamaraPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
+        tamaraPaymentPage.fillInTheCardInfo();
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure inability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With tabby Payment Method using Negative Flow ", priority = 14)
-    public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTabbyPaymentMethodWithNegativeFlowForRegisteredUser() throws Exception {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
-        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
-        registeredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
-        tabbyPaymentPage.submitTabbyInfoWithNegativeFlow();
-    }
 
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure the Installments Amounts In Tabby Page Are Matched With The Grand Total", priority = 15)
-    public void verifyInstallmentsAmountsInTabbyPageAreMatchedWithTheGrandTotalForRegisteredUser() throws Exception {
+    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure the Installments Amounts In Tamara Page Are Matched With The Grand Total", priority = 15)
+    public void verifyInstallmentsAmountsInTamaraPageAreMatchedWithTheGrandTotalForRegisteredUser() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
+        TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
-        registeredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
+        tamaraPaymentPage.AddToCartAndAccessShippingMethodsPage(XmlReader.getXMLData("UAEPhoneNumber"));
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver,"AED");
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
-        DataHelperAndWait.waitToBeVisible(tabbyPaymentPage.getTabbyHeaderTitle(),webDriver);
-        double InstallmentsAmountsTotal=tabbyPaymentPage.calculateInstallmentsAmount("AED");
+        tamaraPaymentPage.SelectTamaraInstallmentsMethod();
+        double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver,"د.إ");
+        tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
+        DataHelperAndWait.waitToBeVisible(tamaraPaymentPage.getTamaraHeaderInPaymentSchedulePage(),webDriver);
+        double InstallmentsAmountsTotal=tamaraPaymentPage.calculateInstallmentsAmount("د.إ");
         System.out.println("GrandTotal"+GrandTotal);
         System.out.println("InstallmentsAmountsTotal"+InstallmentsAmountsTotal);
         Assert.assertEquals(GrandTotal,InstallmentsAmountsTotal);
     }
-
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure Ability to back to Sporter after clicking on the Return To store from Tabby Page", priority = 16)
-    public void verifyAbilityToBackToSporterAfterClickingOnBackToStoreFromTabbyForRegisteredUser() throws Exception, InterruptedException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
-        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
-        registeredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
-        DataHelperAndWait.waitToBeVisible(tabbyPaymentPage.getTabbyPage(),webDriver);
-        tabbyPaymentPage.clickOnReturnToStore();
-        WebElementsAssertion.validateTheElementIsDisplayed(tabbyPaymentPage.getTransactionFailedError(),webDriver);
-
-    }
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting Same Day Express Shipping Method With tabby Payment Method ", priority = 17)
-    public void verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTabbyPaymentMethodForRegisteredUser() throws Exception, InterruptedException {
+    
+    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting Same Day Express Shipping Method With Tamara Payment Method ", priority = 17)
+    public void verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTamaraPaymentMethodForRegisteredUser() throws Exception, InterruptedException {
 // Get the current time
         LocalTime currentTime = LocalTime.now();
 
         // Set the target time to 2:00 PM
-        LocalTime targetTime = LocalTime.of(14, 0);
+        LocalTime targetTime = LocalTime.of(12, 0);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
+        TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         // Set the target times to 2:00 AM and 2:00 PM
         LocalTime targetTimeAM = LocalTime.of(2, 0);
-        LocalTime targetTimePM = LocalTime.of(14, 0);
+        LocalTime targetTimePM = LocalTime.of(12, 0);
         if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM))
         {
             System.out.println(currentTime);
@@ -493,58 +334,30 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
             registeredPage.AddToCartAndAccessShippingMethodsPageForSavedAddressForDubai();
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getSameDayDelivery(), webDriver);
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-            tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-            tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
-            tabbyPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
-            tabbyPaymentPage.fillInTheCardInfo();
+            tamaraPaymentPage.SelectTamaraInstallmentsMethod();
+            tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
+            tamaraPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
+            tamaraPaymentPage.fillInTheCardInfo();
             cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         }
         else{
             System.out.println("Current time is after or equal to 2:00 PM");
         }
     }
-
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure inability to place Order successfully when selecting Same Day Express Shipping Method With tabby Payment Method using Negative Flow ", priority = 18)
-    public void verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTabbyPaymentMethodWithNegativeFlowForRegisteredUser() throws Exception {
-        LocalTime currentTime = LocalTime.now();
-        // Set the target time to 2:00 PM
-        LocalTime targetTime = LocalTime.of(14, 0);
-        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
-        CartPage cartPage= new CartPage(webDriver);
-        // Set the target times to 2:00 AM and 2:00 PM
-        LocalTime targetTimeAM = LocalTime.of(2, 0);
-        LocalTime targetTimePM = LocalTime.of(14, 0);
-        if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM)){
-            System.out.println(currentTime);
-            System.out.println("Current time is before 2:00 PM");
-            CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
-            registeredPage.AddToCartAndAccessShippingMethodsPageForSavedAddressForDubai();
-            DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getSameDayDelivery(), webDriver);
-            DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-            tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-            tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
-            tabbyPaymentPage.submitTabbyInfoWithNegativeFlow();
-        }
-        else{
-            System.out.println("Current time is after or equal to 2:00 PM");
-        }
-
-    }
+    
     //TODO: Add custom annotation To Pass Test Case ID
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure the system display the Quote ID for the user after checkout the order with Selecting 2Business Days Super Express Shipping Method using tabby payment", priority = 19)
+    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure the system display the Quote ID for the user after checkout the order with Selecting 2Business Days Super Express Shipping Method using Tamara Payment", priority = 19)
     public void verifyTheSystemDisplayTheQuoteIdForTheUserAfterCheckoutTheOrderWithSelecting2BusinessDaysSuperExpressShippingMethodForRegisteredUser() throws Exception, InterruptedException {
         LocalTime currentTime = LocalTime.now();
         // Set the target time to 2:00 PM
-        LocalTime targetTime = LocalTime.of(14, 0);
+        LocalTime targetTime = LocalTime.of(12, 0);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
+        TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         // Set the target times to 2:00 AM and 2:00 PM
         LocalTime targetTimeAM = LocalTime.of(2, 0);
-        LocalTime targetTimePM = LocalTime.of(14, 0);
+        LocalTime targetTimePM = LocalTime.of(12, 0);
         if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM))
         {
             System.out.println(currentTime);
@@ -553,10 +366,10 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
             registeredPage.AddToCartAndAccessShippingMethodsPageForSavedAddressForDubai();
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getSameDayDelivery(), webDriver);
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-            tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-            tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
-            tabbyPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
-            tabbyPaymentPage.fillInTheCardInfo();
+            tamaraPaymentPage.SelectTamaraInstallmentsMethod();
+            tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
+            tamaraPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
+            tamaraPaymentPage.fillInTheCardInfo();
             cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
             String orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
             System.out.println(orderNumber);
@@ -567,18 +380,18 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         }
     }
 
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure the Installments Amounts In Tabby Page Are Matched With The Grand Total For Same Day Shipping Method", priority = 20)
-    public void verifyInstallmentsAmountsInTabbyPageAreMatchedWithTheGrandTotalForSameDayShippingMethodForRegisteredUser() throws Exception, InterruptedException {
+    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure the Installments Amounts In Tamara Page Are Matched With The Grand Total For Same Day Shipping Method", priority = 20)
+    public void verifyInstallmentsAmountsInTamaraPageAreMatchedWithTheGrandTotalForSameDayShippingMethodForRegisteredUser() throws Exception, InterruptedException {
         LocalTime currentTime = LocalTime.now();
         // Set the target time to 2:00 PM
-        LocalTime targetTime = LocalTime.of(14, 0);
+        LocalTime targetTime = LocalTime.of(12, 0);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
+        TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         // Set the target times to 2:00 AM and 2:00 PM
         LocalTime targetTimeAM = LocalTime.of(2, 0);
-        LocalTime targetTimePM = LocalTime.of(14, 0);
+        LocalTime targetTimePM = LocalTime.of(12, 0);
         if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM))
         {
             System.out.println(currentTime);
@@ -587,12 +400,12 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
             registeredPage.AddToCartAndAccessShippingMethodsPageForSavedAddressForDubai();
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getSameDayDelivery(), webDriver);
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-            tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-            tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
-            double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver,"AED");
-            tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
-            DataHelperAndWait.waitToBeVisible(tabbyPaymentPage.getTabbyHeaderTitle(),webDriver);
-            double InstallmentsAmountsTotal=tabbyPaymentPage.calculateInstallmentsAmount("AED");
+            tamaraPaymentPage.SelectTamaraInstallmentsMethod();
+            tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
+            double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver,"د.إ");
+            tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
+            DataHelperAndWait.waitToBeVisible(tamaraPaymentPage.getTamaraHeaderInPaymentSchedulePage(),webDriver);
+            double InstallmentsAmountsTotal=tamaraPaymentPage.calculateInstallmentsAmount("د.إ");
             System.out.println("GrandTotal"+GrandTotal);
             System.out.println("InstallmentsAmountsTotal"+InstallmentsAmountsTotal);
             Assert.assertEquals(GrandTotal,InstallmentsAmountsTotal);

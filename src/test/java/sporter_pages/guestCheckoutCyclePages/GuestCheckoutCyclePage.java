@@ -348,32 +348,12 @@ public class GuestCheckoutCyclePage extends BasePage {
     }
 
     public void submitSecureAndAuthenticationCheckout() {
-        // Switch to the new window that has been opened for 3D Secure 2 authentication
-//    String parentWindowHandle = webDriver.getWindowHandle();
-//    for (String windowHandle : webDriver.getWindowHandles()) {
-//        if (!windowHandle.equals(parentWindowHandle)) {
-//            webDriver.switchTo().window(windowHandle);
-//            break;
-//        }
-//    }
-//    // Switch back to the original window and complete checkout process
-//    webDriver.switchTo().window(parentWindowHandle);
         DataHelperAndWait.waitForUrlContains(checkOutComUrl, webDriver);
-//    DataHelperAndWait.waitToBeVisible(this.secureAnd2Authentication,webDriver);
-//    Actions actions= new Actions(webDriver);
-//    actions.sendKeys(Keys.TAB).perform();
-//    actions.sendKeys(Keys.ENTER).perform();
-//    actions.moveToElement(this.getSecureAnd2Authentication());
-//    this.secureAnd2Authentication.click();
-//    this.secureAnd2Authentication.sendKeys(XmlReader.getXMLData("checkout3DSecure"));
         webDriver.switchTo().frame(checkoutIFrame);
-//    actions.moveToElement(this.getSecureAnd2Authentication()).sendKeys(XmlReader.getXMLData("checkout3DSecure")).perform();
         DataHelperAndWait.typeTextInElement(this.getSecureAnd2Authentication(), webDriver, XmlReader.getXMLData("checkout3DSecure"));
-//    DataHelperAndWait.waitForTime(3000);
         webDriver.switchTo().defaultContent();
         Actions actions = new Actions(webDriver);
         actions.sendKeys(Keys.ENTER).perform();
-//    DataHelperAndWait.clickOnElement(this.getSecureAnd2AuthenticationSubmitBtn(),webDriver);
     }
 
     public void validateTheShippingMethodAmount(WebElement shippingFee, WebElement shippingMethod) {

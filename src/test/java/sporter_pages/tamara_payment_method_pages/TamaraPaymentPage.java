@@ -8,13 +8,13 @@ package sporter_pages.tamara_payment_method_pages;
 
 import core.BasePage;
 import core.DataHelperAndWait;
-import core.WebElementsAssertion;
 import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import sporter_pages.cartPages.CartPage;
+import sporter_pages.checkoutForRegisteredUserTPage.CheckoutForRegisteredPage;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import sporter_pages.productPage.ProductDetailsPage;
 import xml_reader.XmlReader;
@@ -28,69 +28,50 @@ public class TamaraPaymentPage extends BasePage {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
     }
-    String tabbySubUrl = ".tabby";
+    String tabbySubUrl = ".tamara.";
+       String checkoutSubUrl = ".checkout.com";
+
     String tabbySuccessInstallmentsSubUrl = "success-installments?";
-    @FindBy(xpath = "//div[@id='tabby_installments']//div[@id='circle']")
-    private WebElement tabbyInstallmentsPaymentMethod;
-    @FindBy(id = "tabby-checkout")
-    private WebElement tabbyPage;
-    @FindBy(xpath = "//div[@data-test='header.languageSwitcher']")
-    private WebElement tabbyLanguageSwitcher;
-    @FindBy(xpath = "//div[@data-test='order.amount']")
-    private WebElement orderAmountInTabbyPage;
-    @FindBy(xpath = "//div[@data-test='order.dueToday']")
-    private WebElement dueTodayInTabbyPage;
-    @FindBy(xpath = "//div[@data-test='payments-schedule-title']")
-    private WebElement tabbyHeaderTitle;
-    @FindBy(xpath = "//div[@data-test='paymentSchedule.paymentRowCount']")
-    private List<WebElement> tabbyPaymentSchedule;
-    @FindBy(xpath = "//SPAN[@data-test='backToStore']")
-    private WebElement backToStoreBtnInTabbyPage;
-    @FindBy(xpath = "//button[@data-test='loginForm.continue']")
-    private WebElement loginBtnTabbyPage;
-    @FindBy(name = "email")
-    private WebElement emailFieldInTabbyPage;
-    @FindBy(id = "mui-2")
-    private WebElement countryCodeFieldInTabbyPage;
-    @FindBy(xpath = "//input[@data-test='loginForm.phoneInput']")
-    private WebElement phoneFieldInTabbyPage;
-    @FindBy(id = "mui-1-helper-text")
-    private WebElement emailErrorMsgInTabbyPage;
-    @FindBy(id = "mui-3-helper-text")
-    private WebElement phoneErrorMsgInTabbyPage;
-    @FindBy(id = "mui-6")
-    private WebElement cardNumberFieldInTabbyPage;
-    @FindBy(id = "mui-7")
-    private WebElement expiredDateFieldInTabbyPage;
-    @FindBy(id = "mui-8")
-    private WebElement cvvFieldInTabbyPage;
-    @FindBy(xpath = "//div[@id='payment-widget-pay-button']/button")
-    private WebElement payBtnInTabbyPage;
-    @FindBy(id = "pInfoData")
-    private WebElement paymentMethodInfoLabel;
+    @FindBy(xpath = "//div[@id='tamara_pay_by_instalments']//div[@id='circle']")
+    private WebElement tamaraInstallmentsPaymentMethod;
+    @FindBy(xpath = "(//div[starts-with(@class,'tamara-login-title')])[2]")
+    private WebElement tamaraPage;
+       @FindBy(xpath = "//button[@qa-btn='otpContinue']")
+    private WebElement submitOTPBtn;
+       @FindBy(xpath = "(//div[contains(@class,'tamara-base-header')])[2]")
+    private WebElement tamaraHeaderInPaymentSchedulePage;
+    @FindBy(xpath = "//div[starts-with(@class,'d-flex justify-space-between')]/div[2]")
+    private List<WebElement> tamaraPaymentSchedule;
+    @FindBy(xpath = "//input[starts-with(@id,'input')]")
+    private WebElement phoneFieldInTamaraPage;
+    @FindBy(xpath = "//div[@class='me-3 text-end primary--text text-amount']")
+    private WebElement orderAmountInTamaraPage;
+      @FindBy(id = "cardNumber")
+    private WebElement cardNumberFrame;
+      @FindBy(id = "expiryDate")
+    private WebElement expiryDateFrame;
+      @FindBy(id = "cvv")
+    private WebElement cvvFrame;
+
+    @FindBy(id = "checkout-frames-card-number")
+    private WebElement cardNumberFieldInTamaraPage;
+    @FindBy(id = "checkout-frames-expiry-date")
+    private WebElement expiredDateFieldInTamaraPage;
+    @FindBy(id = "checkout-frames-cvv")
+    private WebElement cvvFieldInTamaraPage;
+    @FindBy(xpath = "(//button[contains(@class,'v-btn v-btn')])[2]")
+    private WebElement payBtnInTamaraPage;
+        @FindBy(xpath = "//button[@qa-btn='loginContinue']")
+    private WebElement submitPhoneNUmberBtn;
+        @FindBy(xpath = "//div[@class='payment-method__add-new-card-button__icon']")
+    private WebElement addNewCardBtn;
+
     @FindBy(id = "pInfoEdit")
     private WebElement editBtnInPaymentMethodInfoLabel;
-    @FindBy(xpath = "//input[@autocomplete='one-time-code']")
-    private WebElement otpField;
-    @FindBy(xpath = "//div[@data-test='warning.general_rejection']")
-    private WebElement tabbyRejectionTranaction;
-    @FindBy(xpath = "//button[@data-test='choose-another-payment-method']")
-    private WebElement backToStoreBtnInRejectionPage;
-    @FindBy(id = "AddToCartErrMsg")
-    private WebElement transactionFailedError;
-    @FindBy(xpath = "(//div[@id='grand_total'])[1]/div/span[@id='value']")
-    private WebElement orderTotalFieldInrReviewPage;
-       @FindBy(xpath = "//button[@data-test='leaveDialog.back']")
-    private WebElement confirmBack;
-       @FindBy(id = "mui-7-helper-text")
-    private WebElement ExpiryDateError;
-       @FindBy(xpath = "//div[starts-with(@class,'popUp_container')]//div[@id='AddToCartErrContainer']")
-    private WebElement errorMsgInPaymentMethod;
-
-    public void SelectTabbyInstallmentsMethod() throws Exception {
+    public void SelectTamaraInstallmentsMethod() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
-        DataHelperAndWait.waitToBeVisible(tabbyInstallmentsPaymentMethod,webDriver);
-        DataHelperAndWait.clickOnElement(tabbyInstallmentsPaymentMethod,webDriver);
+        DataHelperAndWait.waitToBeVisible(tamaraInstallmentsPaymentMethod,webDriver);
+        DataHelperAndWait.clickOnElement(tamaraInstallmentsPaymentMethod,webDriver);
         DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
     }
@@ -146,74 +127,90 @@ public void clickOnFinalPlaceOrderBtn(){
         }
 
 }
-    public void selectTabbyInstallmentsMethodFromEditPage() throws Exception {
+    public void selectTamaraInstallmentsMethodFromEditPage() throws Exception {
     DataHelperAndWait.waitToBeVisible(editBtnInPaymentMethodInfoLabel,webDriver);
     DataHelperAndWait.clickOnElement(editBtnInPaymentMethodInfoLabel,webDriver);
-    SelectTabbyInstallmentsMethod();
+    SelectTamaraInstallmentsMethod();
 }
 
 public double calculateInstallmentsAmount(String currency){
     double sum = 0;
-    for (WebElement element : tabbyPaymentSchedule) {
+    for (WebElement element : tamaraPaymentSchedule) {
         double number=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(element,webDriver,currency);
         sum += number;
     }
     return sum;
 }
-public void clickOnReturnToStore(){
-    DataHelperAndWait.waitToBeVisible(backToStoreBtnInTabbyPage,webDriver);
-    DataHelperAndWait.clickOnElement(backToStoreBtnInTabbyPage,webDriver);
-    DataHelperAndWait.waitToBeVisible(confirmBack,webDriver);
-    DataHelperAndWait.clickOnElement(confirmBack,webDriver);
-
-}
 public void submitEmailAndPhoneNumberInPositiveFlow(){
-    DataHelperAndWait.waitToBeVisible(emailFieldInTabbyPage,webDriver);
-    DataHelperAndWait.updateAllText(emailFieldInTabbyPage,XmlReader.getXMLData("tabbyPositiveEmail"));
-    DataHelperAndWait.waitToBeVisible(phoneFieldInTabbyPage,webDriver);
-    DataHelperAndWait.updateAllText(phoneFieldInTabbyPage,XmlReader.getXMLData("tabbyPositivePhone"));
-    DataHelperAndWait.waitToBeVisible(loginBtnTabbyPage,webDriver);
-    DataHelperAndWait.clickOnElement(loginBtnTabbyPage,webDriver);
-    DataHelperAndWait.waitToBeVisible(otpField,webDriver);
-    DataHelperAndWait.updateAllText(otpField,XmlReader.getXMLData("tabbyPositiveOTP"));
-    DataHelperAndWait.waitToBeVisible(cardNumberFieldInTabbyPage,webDriver);
-
-
+    DataHelperAndWait.waitToBeVisible(phoneFieldInTamaraPage,webDriver);
+    DataHelperAndWait.updateAllText(phoneFieldInTamaraPage,XmlReader.getXMLData("tabbyPositivePhone"));
+    DataHelperAndWait.waitToBeVisible(submitPhoneNUmberBtn,webDriver);
+    DataHelperAndWait.clickOnElement(submitPhoneNUmberBtn,webDriver);
+    DataHelperAndWait.waitToBeVisible(submitOTPBtn,webDriver);
+    DataHelperAndWait.clickOnElement(submitOTPBtn,webDriver);
 }
-    public void submitTabbyInfoWithNegativeFlow(){
-        DataHelperAndWait.waitToBeVisible(emailFieldInTabbyPage,webDriver);
-        DataHelperAndWait.updateAllText(emailFieldInTabbyPage,XmlReader.getXMLData("tabbyNegativeEmail"));
-        DataHelperAndWait.waitToBeVisible(phoneFieldInTabbyPage,webDriver);
-        DataHelperAndWait.updateAllText(phoneFieldInTabbyPage,XmlReader.getXMLData("tabbyNegativePhone"));
-        DataHelperAndWait.waitToBeVisible(loginBtnTabbyPage,webDriver);
-        DataHelperAndWait.clickOnElement(loginBtnTabbyPage,webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(getEmailErrorMsgInTabbyPage(),webDriver);
 
-
-    }
 
 public void fillInTheCardInfo() throws IOException, InterruptedException {
-    DataHelperAndWait.waitToBeVisible(cardNumberFieldInTabbyPage,webDriver);
-    DataHelperAndWait.updateAllText(cardNumberFieldInTabbyPage,XmlReader.getXMLData("tabbyPositiveCard"));
-    DataHelperAndWait.waitToBeVisible(cvvFieldInTabbyPage,webDriver);
-    DataHelperAndWait.clickOnElement(cvvFieldInTabbyPage,webDriver);
-    DataHelperAndWait.updateAllText(cvvFieldInTabbyPage,XmlReader.getXMLData("tabbyPositiveCVV"));
-    DataHelperAndWait.waitToBeVisible(expiredDateFieldInTabbyPage,webDriver);
-    DataHelperAndWait.updateAllText(expiredDateFieldInTabbyPage,XmlReader.getXMLData("tabbyPositiveCardDate"));
-    try{
-        if(getExpiryDateError().isDisplayed())
-            DataHelperAndWait.clickOnElement(expiredDateFieldInTabbyPage,webDriver);
-            DataHelperAndWait.updateAllText(expiredDateFieldInTabbyPage,XmlReader.getXMLData("tabbyPositiveCardDate"));
+    DataHelperAndWait.waitToBeVisible(addNewCardBtn,webDriver);
+    DataHelperAndWait.clickOnElement(addNewCardBtn,webDriver);
+    DataHelperAndWait.waitForTime(2000);
+    webDriver.switchTo().frame(cardNumberFrame);
+    DataHelperAndWait.waitToBeVisible(cardNumberFieldInTamaraPage,webDriver);
+    DataHelperAndWait.clickOnElement(cardNumberFieldInTamaraPage,webDriver);
+    DataHelperAndWait.updateAllText(cardNumberFieldInTamaraPage,XmlReader.getXMLData("tamaraPositiveCard"));
+    webDriver.switchTo().defaultContent();
+    DataHelperAndWait.waitForTime(2000);
+    webDriver.switchTo().frame(cvvFrame);
+    DataHelperAndWait.waitToBeVisible(cvvFieldInTamaraPage,webDriver);
+    DataHelperAndWait.clickOnElement(cvvFieldInTamaraPage,webDriver);
+    DataHelperAndWait.updateAllText(cvvFieldInTamaraPage,XmlReader.getXMLData("tamaraPositiveCVV"));
+    webDriver.switchTo().defaultContent();
+    DataHelperAndWait.waitForTime(2000);
+    webDriver.switchTo().frame(expiryDateFrame);
+    DataHelperAndWait.waitToBeVisible(expiredDateFieldInTamaraPage,webDriver);
+    DataHelperAndWait.updateAllText(expiredDateFieldInTamaraPage,XmlReader.getXMLData("tamaraPositiveCardDate"));
+    webDriver.switchTo().defaultContent();
+    DataHelperAndWait.waitToBeVisible(payBtnInTamaraPage,webDriver);
+    DataHelperAndWait.clickOnElement(payBtnInTamaraPage,webDriver);
+}
+public void fillInShippingInformationInputField(String firstName, String lastName, String email, String phone, String streetLineOne, String streetLineTwo) {
+GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
+DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
+        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getFirstNameField(), webDriver);
+        DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getFirstNameField(), firstName);
+        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getLastNameField(), webDriver);
+        DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getLastNameField(), lastName);
+        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getPhoneField(), webDriver);
+        DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getPhoneField(), phone);
+        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getStreetLineOneField(), webDriver);
+        DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getStreetLineOneField(), streetLineOne);
+        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getStreetLineTwoField(), webDriver);
+        DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getStreetLineTwoField(), streetLineTwo);
+        guestCheckoutCyclePage.selectCity();
     }
-    catch (Exception e){}
+    public void AddToCartAndAccessShippingMethodsPage(String PhoneNumber) throws IOException {
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
+        CartPage cartPage = new CartPage(webDriver);
+            cartPage.addToCartAndDisplayTheCart();
+            cartPage.proceedToCheckout();
+            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getAddNewAddressBtn(),webDriver);
+            this.fillInShippingInformationInputField(
+                    XmlReader.getXMLData("firstName"),
+                    XmlReader.getXMLData("lastName"),
+                    XmlReader.getXMLData("phoneNumber"),
+                    PhoneNumber,
+                    XmlReader.getXMLData("StreetOneAddressName"),
+                    XmlReader.getXMLData("StreetTwoAddressName"));
 
-    submitCardInfo();
-}
+            DataHelperAndWait.waitForTime(1500);
+            guestCheckoutCyclePage.clickOnContinueBtn();
 
-public void submitCardInfo(){
-    DataHelperAndWait.waitToBeVisible(payBtnInTabbyPage,webDriver);
-    DataHelperAndWait.clickOnElement(payBtnInTabbyPage,webDriver);
-    DataHelperAndWait.waitForUrlContains(tabbySuccessInstallmentsSubUrl,webDriver);
+            cartPage.addToCartAndDisplayTheCart();
+            cartPage.proceedToCheckout();
+            DataHelperAndWait.waitForTime(1500);
+            guestCheckoutCyclePage.clickOnContinueBtn();
 
-}
+    }
 }

@@ -13,31 +13,19 @@
         <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32569"/>
         <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix"/>
         <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
-        <groups>
-            <run>
-                <include name="All Smoke Testing Result"/>
-            </run>
-        </groups>
+
         <classes>
-            <class name="sporter_test.tabby_payment_method_test_cases.QatarTabbyPaymentMethodTestCases"/>
-
-            <class name="sporter_test.tabby_payment_method_test_cases.UAETabbyPaymentMethodTestCases"/>
+            <class name="sporter_test.tamara_payment_method_test_cases.UAETamaraPaymentMethodTestCases">
 
 
+                <methods>
+                    <include name="verifyAbilityToLoginCorrectlyWithValidCredentials"></include>
+                    <include name="verifyTamaraPaymentMethodMethodCorrectlyForRegisteredUser"></include>
 
 
-            <class name="sporter_test.tabby_payment_method_test_cases.KSATabbyPaymentMethodTestCases"/>
-            <class name="sporter_test.tabby_payment_method_test_cases.BahrainTabbyPaymentMethodTestCases"/>
-            <class name="sporter_test.tabby_payment_method_test_cases.KuwaitTabbyPaymentMethodTestCases"/>
-<!--                <methods>-->
-<!--                    <include name="verifyAbilityToLoginCorrectlyWithValidCredentials"></include>-->
-<!--                    <include name="verifyTabbyPaymentMethodMethodCorrectlyForRegisteredUser"></include>-->
-<!--                    <include name="verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTabbyPaymentMethodForRegisteredUser"></include>-->
-<!--                    <include name="verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTabbyPaymentMethodWithNegativeFlowForRegisteredUser"></include>-->
+                    </methods>
 
-<!--                    </methods>-->
-
-
+            </class>
         </classes>
 
     </test>
