@@ -134,6 +134,7 @@ public void clickOnFinalPlaceOrderBtn(){
 }
 
 public double calculateInstallmentsAmount(String currency){
+    DataHelperAndWait.waitForTime(2000);
     double sum = 0;
     for (WebElement element : tamaraPaymentSchedule) {
         double number=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(element,webDriver,currency);

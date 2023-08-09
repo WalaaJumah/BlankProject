@@ -19,8 +19,8 @@
 
 
                 <methods>
-                    <include name="verifyAbilityToLoginCorrectlyWithValidCredentials"></include>
-                    <include name="verifyTamaraPaymentMethodMethodCorrectlyForRegisteredUser"></include>
+                    <include name="verifyInstallmentsAmountsInTamaraPageAreMatchedWithTheGrandTotalForGuestUser"></include>
+<!--                    <include name="verifyTamaraPaymentMethodMethodCorrectlyForRegisteredUser"></include>-->
 
 
                     </methods>

@@ -22,6 +22,7 @@ import sporter_pages.loginPage.LoginPage;
 import sporter_pages.tamara_payment_method_pages.TamaraPaymentPage;
 import xml_reader.XmlReader;
 
+import javax.xml.crypto.Data;
 import java.time.LocalTime;
 
 public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCases {
@@ -103,7 +104,8 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tamaraPaymentPage.SelectTamaraInstallmentsMethod();
-        double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver,"د.إ");
+        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver);
+        double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver,"AED");
         tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
         tamaraPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
         DataHelperAndWait.waitToBeVisible(tamaraPaymentPage.getTamaraHeaderInPaymentSchedulePage(),webDriver);
@@ -234,7 +236,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
             tamaraPaymentPage.SelectTamaraInstallmentsMethod();
             tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
-            double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver,"د.إ");
+            double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver,"AED");
             tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
             DataHelperAndWait.waitToBeVisible(tamaraPaymentPage.getTamaraHeaderInPaymentSchedulePage(),webDriver);
             double InstallmentsAmountsTotal=tamaraPaymentPage.calculateInstallmentsAmount("د.إ");
@@ -303,7 +305,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tamaraPaymentPage.SelectTamaraInstallmentsMethod();
-        double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver,"د.إ");
+        double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver,"AED");
         tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
         DataHelperAndWait.waitToBeVisible(tamaraPaymentPage.getTamaraHeaderInPaymentSchedulePage(),webDriver);
         double InstallmentsAmountsTotal=tamaraPaymentPage.calculateInstallmentsAmount("د.إ");
@@ -402,7 +404,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
             tamaraPaymentPage.SelectTamaraInstallmentsMethod();
             tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
-            double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver,"د.إ");
+            double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver,"AED");
             tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
             DataHelperAndWait.waitToBeVisible(tamaraPaymentPage.getTamaraHeaderInPaymentSchedulePage(),webDriver);
             double InstallmentsAmountsTotal=tamaraPaymentPage.calculateInstallmentsAmount("د.إ");
