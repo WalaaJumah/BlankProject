@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d2129b1-daed-434d-a525-27daaeb11fec" name="Changes" comment=" Add Tabby test cases">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/cartPages/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/cartPages/CartPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/guestCheckoutCyclePages/GuestCheckoutCyclePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/guestCheckoutCyclePages/GuestCheckoutCyclePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/tamara_payment_method_pages/BahrainTamaraPaymentPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/tamara_payment_method_pages/KuwaitTamaraPaymentPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/tamara_payment_method_pages/QatarTamaraPaymentPage.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/tamara_payment_method_pages/TamaraPaymentPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/tamara_payment_method_pages/TamaraPaymentPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/tamara_payment_method_test_cases/BahrainTamaraPaymentMethodTestCases.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/tamara_payment_method_test_cases/KuwaitTamaraPaymentMethodTestCases.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/tamara_payment_method_test_cases/QatarTamaraPaymentMethodTestCases.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/tamara_payment_method_test_cases/UAETamaraPaymentMethodTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/tamara_payment_method_test_cases/UAETamaraPaymentMethodTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RunTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RunTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/TestData.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/TestData.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

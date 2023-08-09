@@ -190,6 +190,7 @@ DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
         guestCheckoutCyclePage.selectCity();
     }
     public void AddToCartAndAccessShippingMethodsPage(String PhoneNumber) throws IOException {
+        System.out.println("hiiii");
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
@@ -204,11 +205,6 @@ DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
                     XmlReader.getXMLData("StreetOneAddressName"),
                     XmlReader.getXMLData("StreetTwoAddressName"));
 
-            DataHelperAndWait.waitForTime(1500);
-            guestCheckoutCyclePage.clickOnContinueBtn();
-
-            cartPage.addToCartAndDisplayTheCart();
-            cartPage.proceedToCheckout();
             DataHelperAndWait.waitForTime(1500);
             guestCheckoutCyclePage.clickOnContinueBtn();
 
