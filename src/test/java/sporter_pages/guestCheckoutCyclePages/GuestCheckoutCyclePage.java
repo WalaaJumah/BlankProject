@@ -392,5 +392,11 @@ public class GuestCheckoutCyclePage extends BasePage {
         }
 
     }
+    public void IsQouteIDisDisplayed() throws IOException {
+        DataHelperAndWait.waitForTime(3000);
+        verifyTheDisplayedPageDoesNotHaveErrors();
+        String orderNumber= DataHelperAndWait.extractDigitsFromString(successPage,webDriver);
+        System.out.println(orderNumber);
+    }
 
 }

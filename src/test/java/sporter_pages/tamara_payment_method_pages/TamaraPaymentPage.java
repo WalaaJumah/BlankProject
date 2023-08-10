@@ -225,8 +225,6 @@ public void AddNewCardAndSubmitIt() throws IOException, InterruptedException {
                 payBtnInTamaraPage.click();
                 DataHelperAndWait.waitForTime(2000);
                 break;
-
-
         }
 
     }
@@ -322,14 +320,7 @@ DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
         productDetailsPage.addToCart();
         productDetailsPage.viewCart();
     }
-    public void IsQouteIDisDisplayed() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
-        DataHelperAndWait.waitForTime(3000);
-        guestCheckoutCyclePage.verifyTheDisplayedPageDoesNotHaveErrors();
-        String orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
-        System.out.println(orderNumber);
 
-    }
     public void addToCartAndAccessTamaraDashboard() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
