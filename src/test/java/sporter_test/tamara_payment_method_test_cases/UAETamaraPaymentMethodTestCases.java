@@ -269,8 +269,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
         tamaraPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
         tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(0);
-        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
-    }
+        tamaraPaymentPage.IsQouteIDisDisplayed();    }
 
 
     //********************************************************************************************************
