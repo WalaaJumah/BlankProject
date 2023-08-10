@@ -309,4 +309,26 @@ DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
         submitEmailAndPhoneNumberInPositiveFlow();
         DataHelperAndWait.waitForTime(2500);
     }
+
+    public void addToCartAndAccessTamaraDashboardForSameDayShipping() throws Exception {
+        GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        displayProductAndAddToCart();
+        accessShippingFormForGuestViaURL();
+        guestCheckoutCyclePage.fillInShippingInformationInputFieldWithDubai(
+                XmlReader.getXMLData("firstName"),
+                XmlReader.getXMLData("lastName"),
+                XmlReader.getXMLData("correctEmail"),
+                XmlReader.getXMLData("UAEPhoneNumber"),
+                XmlReader.getXMLData("StreetOneAddressName"),
+                XmlReader.getXMLData("StreetTwoAddressName"));
+        DataHelperAndWait.waitForTime(2000);
+        guestCheckoutCyclePage.clickOnContinueBtn();
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getSameDayDelivery(), webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
+        SelectTamaraInstallmentsMethod();
+        clickOnFinalPlaceOrderBtn();
+        submitEmailAndPhoneNumberInPositiveFlow();
+        DataHelperAndWait.waitForTime(2500);
+    }
 }
