@@ -281,9 +281,9 @@ DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
     public void AddToCartAndAccessShippingMethodsPageForRegistered(String PhoneNumber) throws IOException {
         System.out.println("hiiii");
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        CartPage cartPage= new CartPage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
-        CartPage cartPage = new CartPage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
+        displayProductAndAddToCart();
         cartPage.proceedToCheckout();
         DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getAddNewAddressBtn(),webDriver);
         this.fillInShippingInformationInputFieldForRegistered(
