@@ -182,13 +182,11 @@ public class CartPage extends BasePage {
     }
 
     public void addToCartAndDisplayTheCart() throws IOException {
-
+        if(IsEmptyCart()) {
             productDetailsPage.displayTheProduct();
-            System.out.println("After Didsplay Product");
-
             productDetailsPage.addToCart();
             productDetailsPage.viewCart();
-
+        }
     }
 
     public void addToCartAndDisplayTheCartForOos() throws IOException {
