@@ -20,6 +20,7 @@ import sporter_pages.productPage.ProductDetailsPage;
 import xml_reader.XmlReader;
 
 import java.io.IOException;
+import java.time.LocalTime;
 import java.util.List;
 
 @Getter
@@ -311,24 +312,34 @@ DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
     }
 
     public void addToCartAndAccessTamaraDashboardForSameDayShipping() throws Exception {
-        GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        displayProductAndAddToCart();
-        accessShippingFormForGuestViaURL();
-        guestCheckoutCyclePage.fillInShippingInformationInputFieldWithDubai(
-                XmlReader.getXMLData("firstName"),
-                XmlReader.getXMLData("lastName"),
-                XmlReader.getXMLData("correctEmail"),
-                XmlReader.getXMLData("UAEPhoneNumber"),
-                XmlReader.getXMLData("StreetOneAddressName"),
-                XmlReader.getXMLData("StreetTwoAddressName"));
-        DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getSameDayDelivery(), webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
-        SelectTamaraInstallmentsMethod();
-        clickOnFinalPlaceOrderBtn();
-        submitEmailAndPhoneNumberInPositiveFlow();
-        DataHelperAndWait.waitForTime(2500);
+        LocalTime currentTime = LocalTime.now();
+        LocalTime targetTime = LocalTime.of(12, 0);
+        LocalTime targetTimeAM = LocalTime.of(12, 0);
+        LocalTime targetTimePM = LocalTime.of(12, 0);
+        if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM)) {
+            GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+            webDriver.manage().deleteCookieNamed("guestCartId");
+            displayProductAndAddToCart();
+            accessShippingFormForGuestViaURL();
+            guestCheckoutCyclePage.fillInShippingInformationInputFieldWithDubai(
+                    XmlReader.getXMLData("firstName"),
+                    XmlReader.getXMLData("lastName"),
+                    XmlReader.getXMLData("correctEmail"),
+                    XmlReader.getXMLData("UAEPhoneNumber"),
+                    XmlReader.getXMLData("StreetOneAddressName"),
+                    XmlReader.getXMLData("StreetTwoAddressName"));
+            DataHelperAndWait.waitForTime(2000);
+            guestCheckoutCyclePage.clickOnContinueBtn();
+            DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getSameDayDelivery(), webDriver);
+            DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
+            SelectTamaraInstallmentsMethod();
+            clickOnFinalPlaceOrderBtn();
+            submitEmailAndPhoneNumberInPositiveFlow();
+            DataHelperAndWait.waitForTime(2500);
+        }
+        else {
+            System.out.println("Current time is after or equal to 2:00 PM");
+        }
     }
+
 }
