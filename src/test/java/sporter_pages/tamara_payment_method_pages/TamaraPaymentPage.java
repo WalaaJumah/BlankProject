@@ -199,19 +199,19 @@ public void AddNewCardAndSubmitIt() throws IOException, InterruptedException {
                 webDriver.switchTo().defaultContent();
                 DataHelperAndWait.waitForTime(2000);
                 payBtnInTamaraPage.click();
-                DataHelperAndWait.waitForTime(5000);
+                DataHelperAndWait.waitForTime(12000);
             case 1:
                 DataHelperAndWait.typeTextInElement(this.getCvvInCardsList().get(cardNumberInTheList),webDriver,"257");
                 webDriver.switchTo().defaultContent();
                 DataHelperAndWait.waitForTime(2000);
                 payBtnInTamaraPage.click();
-                DataHelperAndWait.waitForTime(5000);
+                DataHelperAndWait.waitForTime(12000);
             case 2:
                 DataHelperAndWait.typeTextInElement(this.getCvvInCardsList().get(cardNumberInTheList),webDriver,"100");
                 webDriver.switchTo().defaultContent();
                 DataHelperAndWait.waitForTime(2000);
                 payBtnInTamaraPage.click();
-                DataHelperAndWait.waitForTime(5000);
+                DataHelperAndWait.waitForTime(12000);
 
             case 3:
                 DataHelperAndWait.typeTextInElement(this.getCvvInCardsList().get(cardNumberInTheList),webDriver,"956");
@@ -219,7 +219,7 @@ public void AddNewCardAndSubmitIt() throws IOException, InterruptedException {
                 DataHelperAndWait.waitForTime(2000);
                 DataHelperAndWait.waitToBeClickable(payBtnInTamaraPage,webDriver);
                 payBtnInTamaraPage.click();
-                DataHelperAndWait.waitForTime(5000);
+                DataHelperAndWait.waitForTime(12000);
 
 
         }
