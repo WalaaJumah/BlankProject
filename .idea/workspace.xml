@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2d2129b1-daed-434d-a525-27daaeb11fec" name="Changes" comment=" Add Tabby test cases">
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/tamara_payment_method_test_cases/UAETamaraPaymentMethodTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/tamara_payment_method_test_cases/UAETamaraPaymentMethodTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/RunTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RunTest.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -473,12 +474,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/sporter_pages/tamara_payment_method_pages/TamaraPaymentPage.java</url>
-          <line>282</line>
+          <line>283</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/sporter_pages/tamara_payment_method_pages/TamaraPaymentPage.java</url>
-          <line>191</line>
+          <line>192</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>

@@ -18,12 +18,12 @@
             <class name="sporter_test.tamara_payment_method_test_cases.UAETamaraPaymentMethodTestCases">
 
 
-<!--                <methods>-->
-<!--                    <include name="verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTamaraPaymentMethodUsing3DSCardForGuestUser"></include>-->
-<!--&lt;!&ndash;                    <include name="verifyTamaraPaymentMethodMethodCorrectlyForRegisteredUser"></include>&ndash;&gt;-->
+                <methods>
+                    <include name="verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTamaraPaymentMethodUsing3DSCardForGuestUser"></include>
+<!--                    <include name="verifyTamaraPaymentMethodMethodCorrectlyForRegisteredUser"></include>-->
 
 
-<!--                    </methods>-->
+                    </methods>
 
             </class>
         </classes>

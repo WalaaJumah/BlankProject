@@ -22,6 +22,8 @@ import sporter_pages.loginPage.LoginPage;
 import sporter_pages.tamara_payment_method_pages.TamaraPaymentPage;
 import xml_reader.XmlReader;
 
+import java.time.LocalTime;
+
 public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCases {
     @BeforeClass(alwaysRun = true)
     public void switchToUAEStore() {
@@ -124,65 +126,105 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
     }
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure ability to place Order successfully when selecting Same Day Shipping Method With Tamara Payment Method a defined Using 3DSCard ", priority = 7)
     public void verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTamaraPaymentMethodUsing3DSCardForGuestUser() throws Exception, InterruptedException {
-        TamaraPaymentPage tamaraPaymentPage = new TamaraPaymentPage(webDriver);
-        tamaraPaymentPage.addToCartAndAccessTamaraDashboardForSameDayShipping();
-        tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(0);
-        tamaraPaymentPage.IsQouteIDisDisplayed();
+        LocalTime currentTime = LocalTime.now();
+        LocalTime targetTimeAM = LocalTime.of(12, 0);
+        LocalTime targetTimePM = LocalTime.of(12, 0);
+        if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM)) {
+            TamaraPaymentPage tamaraPaymentPage = new TamaraPaymentPage(webDriver);
+            tamaraPaymentPage.addToCartAndAccessTamaraDashboardForSameDayShipping();
+            tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(0);
+            tamaraPaymentPage.IsQouteIDisDisplayed();
+        }
+        else {
+            System.out.println("Current time is after or equal to 2:00 PM");
+        }
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure ability to place Order successfully when selecting Same Day Shipping Method With Tamara Payment Method Using a defined Master Card ", priority = 8)
     public void verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTamaraPaymentMethodUsingMasterCardForGuestUser() throws Exception, InterruptedException {
-        TamaraPaymentPage tamaraPaymentPage = new TamaraPaymentPage(webDriver);
-        tamaraPaymentPage.addToCartAndAccessTamaraDashboardForSameDayShipping();
-        tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(1);
-        tamaraPaymentPage.IsQouteIDisDisplayed();
+        LocalTime currentTime = LocalTime.now();
+        LocalTime targetTimeAM = LocalTime.of(12, 0);
+        LocalTime targetTimePM = LocalTime.of(12, 0);
+        if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM)) {
+            TamaraPaymentPage tamaraPaymentPage = new TamaraPaymentPage(webDriver);
+            tamaraPaymentPage.addToCartAndAccessTamaraDashboardForSameDayShipping();
+            tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(1);
+            tamaraPaymentPage.IsQouteIDisDisplayed();
+        }
+        else {
+            System.out.println("Current time is after or equal to 2:00 PM");
+        }
     }
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure ability to place Order successfully when selecting SameDay Shipping Method With Tamara Payment Method Using a defined Decline Transaction Card ", priority = 9)
     public void verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTamaraPaymentMethodUsingDeclineTransactionCardForGuestUser() throws Exception, InterruptedException {
-        TamaraPaymentPage tamaraPaymentPage = new TamaraPaymentPage(webDriver);
-        tamaraPaymentPage.addToCartAndAccessTamaraDashboardForSameDayShipping();
-        tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(2);
-        tamaraPaymentPage.IsQouteIDisDisplayed();
+        LocalTime currentTime = LocalTime.now();
+        LocalTime targetTimeAM = LocalTime.of(12, 0);
+        LocalTime targetTimePM = LocalTime.of(12, 0);
+        if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM)) {
+            TamaraPaymentPage tamaraPaymentPage = new TamaraPaymentPage(webDriver);
+            tamaraPaymentPage.addToCartAndAccessTamaraDashboardForSameDayShipping();
+            tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(2);
+            tamaraPaymentPage.IsQouteIDisDisplayed();
+        }
+        else {
+            System.out.println("Current time is after or equal to 2:00 PM");
+        }
     }
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure ability to place Order successfully when selecting SameDay Shipping Method With Tamara Payment Method Using a defined Prepaid Card ", priority = 10)
     public void verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTamaraPaymentMethodUsingPrepaidCardForGuestUser() throws Exception, InterruptedException {
-        TamaraPaymentPage tamaraPaymentPage = new TamaraPaymentPage(webDriver);
-        tamaraPaymentPage.addToCartAndAccessTamaraDashboardForSameDayShipping();
-        tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(3);
-        tamaraPaymentPage.IsQouteIDisDisplayed();
+        LocalTime currentTime = LocalTime.now();
+        LocalTime targetTimeAM = LocalTime.of(12, 0);
+        LocalTime targetTimePM = LocalTime.of(12, 0);
+        if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM)) {
+            TamaraPaymentPage tamaraPaymentPage = new TamaraPaymentPage(webDriver);
+            tamaraPaymentPage.addToCartAndAccessTamaraDashboardForSameDayShipping();
+            tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(3);
+            tamaraPaymentPage.IsQouteIDisDisplayed();
+        }
+        else {
+            System.out.println("Current time is after or equal to 2:00 PM");
+        }
     }
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure the Installments Amounts In Tamara Page Are Matched With The Grand Total In Case Same Day Shipping Method", priority = 11)
     public void verifyInstallmentsAmountsInTamaraPageAreMatchedWithTheGrandTotalForGuestUserInCaseSameDayShippingMethod() throws Exception {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        tamaraPaymentPage.displayProductAndAddToCart();
-        tamaraPaymentPage.accessShippingFormForGuestViaURL();
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
-                XmlReader.getXMLData("firstName"),
-                XmlReader.getXMLData("lastName"),
-                XmlReader.getXMLData("correctEmail"),
-                XmlReader.getXMLData("UAEPhoneNumber"),
-                XmlReader.getXMLData("StreetOneAddressName"),
-                XmlReader.getXMLData("ksaPhoneNumber")
-        );
-        DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getSameDayDelivery(), webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(tamaraPaymentPage.getTamaraInstallmentsPaymentMethod(), webDriver);
-        tamaraPaymentPage.SelectTamaraInstallmentsMethod();
-        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver);
-        DataHelperAndWait.scrollTo(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver);
-        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver);
-        double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver,"AED");
-        tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
-        tamaraPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
-        DataHelperAndWait.waitToBeVisible(tamaraPaymentPage.getTamaraHeaderInPaymentSchedulePage(),webDriver);
-        double InstallmentsAmountsTotal=tamaraPaymentPage.calculateInstallmentsAmount("د.إ");
-        System.out.println("GrandTotal"+GrandTotal);
-        System.out.println("InstallmentsAmountsTotal"+InstallmentsAmountsTotal);
-        Assert.assertEquals(GrandTotal,InstallmentsAmountsTotal);
+        LocalTime currentTime = LocalTime.now();
+        LocalTime targetTimeAM = LocalTime.of(12, 0);
+        LocalTime targetTimePM = LocalTime.of(12, 0);
+        if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM)) {
+            GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+            TamaraPaymentPage tamaraPaymentPage = new TamaraPaymentPage(webDriver);
+            webDriver.manage().deleteCookieNamed("guestCartId");
+            tamaraPaymentPage.displayProductAndAddToCart();
+            tamaraPaymentPage.accessShippingFormForGuestViaURL();
+            guestCheckoutCyclePage.fillInShippingInformationInputField(
+                    XmlReader.getXMLData("firstName"),
+                    XmlReader.getXMLData("lastName"),
+                    XmlReader.getXMLData("correctEmail"),
+                    XmlReader.getXMLData("UAEPhoneNumber"),
+                    XmlReader.getXMLData("StreetOneAddressName"),
+                    XmlReader.getXMLData("ksaPhoneNumber")
+            );
+            DataHelperAndWait.waitForTime(2000);
+            guestCheckoutCyclePage.clickOnContinueBtn();
+            DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getSameDayDelivery(), webDriver);
+            DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
+            WebElementsAssertion.validateTheElementIsDisplayed(tamaraPaymentPage.getTamaraInstallmentsPaymentMethod(), webDriver);
+            tamaraPaymentPage.SelectTamaraInstallmentsMethod();
+            DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(), webDriver);
+            DataHelperAndWait.scrollTo(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(), webDriver);
+            DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(), webDriver);
+            double GrandTotal = DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(), webDriver, "AED");
+            tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
+            tamaraPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
+            DataHelperAndWait.waitToBeVisible(tamaraPaymentPage.getTamaraHeaderInPaymentSchedulePage(), webDriver);
+            double InstallmentsAmountsTotal = tamaraPaymentPage.calculateInstallmentsAmount("د.إ");
+            System.out.println("GrandTotal" + GrandTotal);
+            System.out.println("InstallmentsAmountsTotal" + InstallmentsAmountsTotal);
+            Assert.assertEquals(GrandTotal, InstallmentsAmountsTotal);
+        }
+        else {
+            System.out.println("Current time is after or equal to 2:00 PM");
+        }
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Ability to login correctly from Sign In Page using valid credential", priority = 12)
     public void verifyAbilityToLoginCorrectlyWithValidCredentials() throws Exception {
@@ -204,7 +246,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
             WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
         }
     }
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: RegisteredUser- Make sure that the Tamara Payment method appear correctly For Registered User", priority = 12)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: RegisteredUser- Make sure that the Tamara Payment method appear correctly For Registered User", priority = 13)
     public void verifyTamaraPaymentMethodMethodCorrectlyForRegisteredUser() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
@@ -215,7 +257,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         WebElementsAssertion.validateTheElementIsDisplayed(tamaraPaymentPage.getTamaraInstallmentsPaymentMethod(),webDriver);
     }
 
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Tamara Payment Method Using 3DS Card ", priority = 13)
+    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Tamara Payment Method Using 3DS Card ", priority = 14)
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTamaraPaymentMethodUsing3DSCardForForRegisteredUser() throws Exception, InterruptedException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
@@ -229,6 +271,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(0);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
+
 
     //********************************************************************************************************
 

@@ -312,11 +312,6 @@ DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
     }
 
     public void addToCartAndAccessTamaraDashboardForSameDayShipping() throws Exception {
-        LocalTime currentTime = LocalTime.now();
-        LocalTime targetTime = LocalTime.of(12, 0);
-        LocalTime targetTimeAM = LocalTime.of(12, 0);
-        LocalTime targetTimePM = LocalTime.of(12, 0);
-        if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM)) {
             GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
             webDriver.manage().deleteCookieNamed("guestCartId");
             displayProductAndAddToCart();
@@ -336,10 +331,6 @@ DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
             clickOnFinalPlaceOrderBtn();
             submitEmailAndPhoneNumberInPositiveFlow();
             DataHelperAndWait.waitForTime(2500);
-        }
-        else {
-            System.out.println("Current time is after or equal to 2:00 PM");
-        }
     }
 
 }
