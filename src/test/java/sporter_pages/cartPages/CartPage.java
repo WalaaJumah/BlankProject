@@ -68,7 +68,7 @@ public class CartPage extends BasePage {
     @FindBy(id = "checkoutbtn")
     private WebElement proceedCheckoutBtnInCartPopup;
     //TODO: To replace it with ID after added it by Moamen
-    @FindBy(xpath = "//div[@id='cartPageContainer']//a")
+    @FindBy(xpath = "//a[starts-with(@class,'cartPage_link')]")
     private WebElement hereLink;
     @FindBy(xpath = "(//div[@id='decreaseQtyBtn'])[1]")
     private WebElement decreaseQtyBtn;
@@ -182,16 +182,13 @@ public class CartPage extends BasePage {
     }
 
     public void addToCartAndDisplayTheCart() throws IOException {
-        try {
-            clearCart();
+
             productDetailsPage.displayTheProduct();
             System.out.println("After Didsplay Product");
 
             productDetailsPage.addToCart();
             productDetailsPage.viewCart();
-        } catch (Exception e) {
-            navigateToCartPage();
-        }
+
     }
 
     public void addToCartAndDisplayTheCartForOos() throws IOException {
@@ -235,6 +232,20 @@ public class CartPage extends BasePage {
             DataHelperAndWait.waitForUrlContains(cartURL, webDriver);
         }
 
+    }
+
+    public boolean IsEmptyCart()
+    {
+        try {
+            if(hereLink == null)
+                return false;
+
+            return hereLink.isDisplayed() ;
+
+        }catch (Exception e)
+        {
+            return false;
+        }
     }
 
     public void addBundleToCartAndDisplayTheCart() throws IOException {

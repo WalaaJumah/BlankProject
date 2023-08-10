@@ -22,7 +22,8 @@ import java.net.URL;
 
 public class BasePage {
 
-
+    private String pageTitle = null;
+    private String pageSource = null;
     public static String BaseURL = "";
     public static String productUrl = "/optimum-gold-standard-100-whey-6202";
     public static String ksaDomainArabic = "/ar-sa";
@@ -157,16 +158,30 @@ public class BasePage {
         this.webDriver = webDriver;
     }
 
-    public String getTitle() {
-//        DataHelperAndWait.waitForTime(500);
-        return webDriver.getTitle();
+//    public String getTitle() {
+////        DataHelperAndWait.waitForTime(500);
+//        return webDriver.getTitle();
+//    }
+//
+//    public String getSourcePage() {
+////        DataHelperAndWait.waitForTime(500);
+//        return webDriver.getPageSource();
+//    }
+public String getTitle() {
+//        WaitHelper.waitForTime(500);
+    if (pageTitle == null) {
+        pageTitle = webDriver.getTitle();
     }
+    return pageTitle;
+}
 
     public String getSourcePage() {
-//        DataHelperAndWait.waitForTime(500);
-        return webDriver.getPageSource();
+//        WaitHelper.waitForTime(500);
+        if (pageSource == null) {
+            pageSource = webDriver.getPageSource();
+        }
+        return pageSource;
     }
-
     public void getStatusCode(String uRL) throws IOException {
         HttpURLConnection cn = (HttpURLConnection) new
                 URL(uRL)
