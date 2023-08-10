@@ -163,7 +163,7 @@ public class ProductDetailsPage extends BasePage {
         if (currentUrl.contains("en-qa")) {
             productUrl1 = productUrl;
         }
-        if (currentUrl.contains("en-ae")) {
+        if (currentUrl.contains("-ae")) {
             productUrl1 = productUrl;
         }
         if (currentUrl.contains("en-kw")) {
