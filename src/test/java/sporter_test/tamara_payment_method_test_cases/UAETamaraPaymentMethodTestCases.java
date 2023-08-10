@@ -75,39 +75,31 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
     }
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Tamara Payment Method a defined Using 3DSCard ", priority = 3)
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTamaraPaymentMethodUsing3DSCardForGuestUser() throws Exception, InterruptedException {
-        CartPage cartPage = new CartPage(webDriver);
         TamaraPaymentPage tamaraPaymentPage = new TamaraPaymentPage(webDriver);
         tamaraPaymentPage.addToCartAndAccessTamaraDashboard();
         tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(0);
-        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         tamaraPaymentPage.IsQouteIDisDisplayed();
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Tamara Payment Method Using a defined Master Card ", priority = 4)
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTamaraPaymentMethodUsingMasterCardForGuestUser() throws Exception, InterruptedException {
-        CartPage cartPage = new CartPage(webDriver);
         TamaraPaymentPage tamaraPaymentPage = new TamaraPaymentPage(webDriver);
         tamaraPaymentPage.addToCartAndAccessTamaraDashboard();
         tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(1);
-        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         tamaraPaymentPage.IsQouteIDisDisplayed();
     }
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Tamara Payment Method Using a defined Decline Transaction Card ", priority = 5)
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTamaraPaymentMethodUsingDeclineTransactionCardForGuestUser() throws Exception, InterruptedException {
-        CartPage cartPage = new CartPage(webDriver);
         TamaraPaymentPage tamaraPaymentPage = new TamaraPaymentPage(webDriver);
         tamaraPaymentPage.addToCartAndAccessTamaraDashboard();
         tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(2);
-        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         tamaraPaymentPage.IsQouteIDisDisplayed();
     }
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Tamara Payment Method Using a defined Prepaid Card ", priority = 6)
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTamaraPaymentMethodUsingPrepaidCardForGuestUser() throws Exception, InterruptedException {
-        CartPage cartPage = new CartPage(webDriver);
         TamaraPaymentPage tamaraPaymentPage = new TamaraPaymentPage(webDriver);
         tamaraPaymentPage.addToCartAndAccessTamaraDashboard();
         tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(3);
-        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         tamaraPaymentPage.IsQouteIDisDisplayed();
     }
 

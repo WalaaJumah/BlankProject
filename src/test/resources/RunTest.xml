@@ -3,7 +3,7 @@
 <!--<suite name=" Test" thread-count="1" >-->
 <suite name="Automation Reports">
     <listeners>
-                <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>
+<!--                <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
 <!--        <listener class-name="extent_report_listner.ExtentReportListener"/>-->
     </listeners>
     <test name=" Tabby Payment Method" preserve-order="true">
@@ -18,12 +18,12 @@
             <class name="sporter_test.tamara_payment_method_test_cases.UAETamaraPaymentMethodTestCases">
 
 
-<!--                <methods>-->
-<!--                    <include name="verifyInstallmentsAmountsInTamaraPageAreMatchedWithTheGrandTotalForGuestUser"></include>-->
-<!--&lt;!&ndash;                    <include name="verifyTamaraPaymentMethodMethodCorrectlyForRegisteredUser"></include>&ndash;&gt;-->
+                <methods>
+                    <include name="verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTamaraPaymentMethodUsing3DSCardForGuestUser"></include>
+<!--                    <include name="verifyTamaraPaymentMethodMethodCorrectlyForRegisteredUser"></include>-->
 
 
-<!--                    </methods>-->
+                    </methods>
 
             </class>
         </classes>
