@@ -18,12 +18,12 @@
             <class name="sporter_test.tamara_payment_method_test_cases.UAETamaraPaymentMethodTestCases">
 
 
-                <methods>
-                    <include name="verifyInstallmentsAmountsInTamaraPageAreMatchedWithTheGrandTotalForGuestUser"></include>
-<!--                    <include name="verifyTamaraPaymentMethodMethodCorrectlyForRegisteredUser"></include>-->
+<!--                <methods>-->
+<!--                    <include name="verifyInstallmentsAmountsInTamaraPageAreMatchedWithTheGrandTotalForGuestUser"></include>-->
+<!--&lt;!&ndash;                    <include name="verifyTamaraPaymentMethodMethodCorrectlyForRegisteredUser"></include>&ndash;&gt;-->
 
 
-                    </methods>
+<!--                    </methods>-->
 
             </class>
         </classes>

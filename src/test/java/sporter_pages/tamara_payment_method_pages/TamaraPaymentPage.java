@@ -42,6 +42,11 @@ public class TamaraPaymentPage extends BasePage {
     private WebElement tamaraHeaderInPaymentSchedulePage;
     @FindBy(xpath = "//div[starts-with(@class,'d-flex justify-space-between')]/div[2]")
     private List<WebElement> tamaraPaymentSchedule;
+      @FindBy(xpath = "//div[starts-with(@class,'v-text-field')]/input")
+    private List<WebElement> cvvInCardsList;
+      @FindBy(xpath = "//div[starts-with(@class,'v-radio')]")
+    private List<WebElement> cardsList;
+
     @FindBy(xpath = "//input[starts-with(@id,'input')]")
     private WebElement phoneFieldInTamaraPage;
     @FindBy(xpath = "//div[@class='me-3 text-end primary--text text-amount']")
@@ -65,6 +70,8 @@ public class TamaraPaymentPage extends BasePage {
     private WebElement submitPhoneNUmberBtn;
         @FindBy(xpath = "//div[@class='payment-method__add-new-card-button__icon']")
     private WebElement addNewCardBtn;
+        @FindBy(xpath = "//*[@id='tamara-checkout-body-content']/div[2]")
+    private WebElement tamerSuccessfulLoader;
 
     @FindBy(id = "pInfoEdit")
     private WebElement editBtnInPaymentMethodInfoLabel;
