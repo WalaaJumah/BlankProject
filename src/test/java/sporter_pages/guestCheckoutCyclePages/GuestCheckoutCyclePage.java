@@ -197,7 +197,23 @@ public class GuestCheckoutCyclePage extends BasePage {
         DataHelperAndWait.updateAllText(streetLineTwoField, streetLineTwo);
         setSelectDubaiCityCity();
     }
-
+    public void fillInShippingInformationInputFieldWithDubaiForRegisteredUser(String firstName, String lastName, String email, String phone, String streetLineOne, String streetLineTwo, String address) {
+        DataHelperAndWait.waitToBeVisible(firstNameField, webDriver);
+        DataHelperAndWait.updateAllText(firstNameField, firstName);
+        DataHelperAndWait.waitToBeVisible(lastNameField, webDriver);
+        DataHelperAndWait.updateAllText(lastNameField, lastName);
+        DataHelperAndWait.waitToBeVisible(emailField, webDriver);
+        DataHelperAndWait.updateAllText(emailField, email);
+        DataHelperAndWait.waitToBeVisible(phoneField, webDriver);
+        DataHelperAndWait.updateAllText(phoneField, phone);
+        DataHelperAndWait.waitToBeVisible(addressNameField ,webDriver);
+        DataHelperAndWait.updateAllText(addressNameField,address);
+        DataHelperAndWait.waitToBeVisible(streetLineOneField, webDriver);
+        DataHelperAndWait.updateAllText(streetLineOneField, streetLineOne);
+        DataHelperAndWait.waitToBeVisible(streetLineTwoField, webDriver);
+        DataHelperAndWait.updateAllText(streetLineTwoField, streetLineTwo);
+        setSelectDubaiCityCity();
+    }
     public void clickOnContinueBtn() {
         DataHelperAndWait.waitToBeVisible(continueShippingInfoBtn, webDriver);
         DataHelperAndWait.scrollTo(continueShippingInfoBtn, webDriver);

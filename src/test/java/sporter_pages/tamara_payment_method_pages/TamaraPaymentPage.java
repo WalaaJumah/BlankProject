@@ -241,6 +241,23 @@ DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
         DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getStreetLineTwoField(), streetLineTwo);
         guestCheckoutCyclePage.selectCity();
     }
+    public void fillInShippingInformationInputFieldForRegistered(String firstName, String lastName, String email, String phone, String streetLineOne, String streetLineTwo,String AddressName) {
+        GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
+        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
+        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getFirstNameField(), webDriver);
+        DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getFirstNameField(), firstName);
+        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getLastNameField(), webDriver);
+        DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getLastNameField(), lastName);
+        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getPhoneField(), webDriver);
+        DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getPhoneField(), phone);
+        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getStreetLineOneField(), webDriver);
+        DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getStreetLineOneField(), streetLineOne);
+        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getStreetLineTwoField(), webDriver);
+        DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getStreetLineTwoField(), streetLineTwo);
+        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getAddressNameField(), webDriver);
+        DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getAddressNameField(), streetLineTwo);
+        guestCheckoutCyclePage.selectCity();
+    }
     public void AddToCartAndAccessShippingMethodsPage(String PhoneNumber) throws IOException {
         System.out.println("hiiii");
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
@@ -259,6 +276,27 @@ DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
 
             DataHelperAndWait.waitForTime(1500);
             guestCheckoutCyclePage.clickOnContinueBtn();
+
+    }
+    public void AddToCartAndAccessShippingMethodsPageForRegistered(String PhoneNumber) throws IOException {
+        System.out.println("hiiii");
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
+        CartPage cartPage = new CartPage(webDriver);
+        cartPage.addToCartAndDisplayTheCart();
+        cartPage.proceedToCheckout();
+        DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getAddNewAddressBtn(),webDriver);
+        this.fillInShippingInformationInputFieldForRegistered(
+                XmlReader.getXMLData("firstName"),
+                XmlReader.getXMLData("lastName"),
+                XmlReader.getXMLData("phoneNumber"),
+                PhoneNumber,
+                XmlReader.getXMLData("StreetOneAddressName"),
+                XmlReader.getXMLData("StreetTwoAddressName"),
+                XmlReader.getXMLData("AddressName") );
+
+        DataHelperAndWait.waitForTime(1500);
+        guestCheckoutCyclePage.clickOnContinueBtn();
 
     }
     public void navigateToCheckoutPageViaLink(){

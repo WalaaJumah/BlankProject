@@ -19,8 +19,9 @@
 
 
                 <methods>
-                    <include name="verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTamaraPaymentMethodUsing3DSCardForGuestUser"></include>
-<!--                    <include name="verifyTamaraPaymentMethodMethodCorrectlyForRegisteredUser"></include>-->
+                    <include name="verifyAbilityToLoginCorrectlyWithValidCredentials"></include>
+                    <include name="verifyTamaraPaymentMethodMethodCorrectlyForRegisteredUser"></include>
+                    <include name="verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTamaraPaymentMethodUsing3DSCardForForRegisteredUser"></include>
 
 
                     </methods>
