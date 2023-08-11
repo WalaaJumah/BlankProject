@@ -190,8 +190,9 @@ public void AddNewCardAndSubmitIt() throws IOException, InterruptedException {
     DataHelperAndWait.waitToBeVisible(expiredDateFieldInTamaraPage,webDriver);
     DataHelperAndWait.updateAllText(expiredDateFieldInTamaraPage,XmlReader.getXMLData("tamaraPositiveCardDate"));
     webDriver.switchTo().defaultContent();
-    DataHelperAndWait.waitToBeVisible(payBtnInTamaraPage,webDriver);
-    DataHelperAndWait.clickOnElement(payBtnInTamaraPage,webDriver);
+    DataHelperAndWait.waitForTime(2000);
+    payBtnInTamaraPage.click();
+    DataHelperAndWait.waitForTime(2000);
 }
     public void SelectDefinedCardAndSubmitTheCard(int cardNumberInTheList) throws IOException, InterruptedException {
         DataHelperAndWait.waitToBeVisible(this.getTamaraHeaderInPaymentSchedulePage(),webDriver);
