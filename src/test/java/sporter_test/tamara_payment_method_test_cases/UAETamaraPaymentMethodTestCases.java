@@ -37,7 +37,11 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         storeCountry = "United Arab Emirates";
         countryCode = "971";
     }
-
+    public final int ThreeCard=0;
+    public final int MasterCard=1;
+    public final int DeclineTransactionCard=2;
+    public final int PrepaidCard=3;
+    
     //Guest User
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: GuestUser- Make sure that the Tamara Payment method appear correctly", priority = 1)
     public void verifyTamaraPaymentMethodMethodCorrectlyForGuestUser() throws Exception {
@@ -84,11 +88,11 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver);
         DataHelperAndWait.scrollTo(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver);
         DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver);
-        double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver,"AED");
+        double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver,tamaraPaymentPage.aeEnglishCurrency);
         tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
         tamaraPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
         DataHelperAndWait.waitToBeVisible(tamaraPaymentPage.getTamaraHeaderInPaymentSchedulePage(),webDriver);
-        double InstallmentsAmountsTotal=tamaraPaymentPage.calculateInstallmentsAmount("د.إ");
+        double InstallmentsAmountsTotal=tamaraPaymentPage.calculateInstallmentsAmount(tamaraPaymentPage.aeArabicCurrency);
         System.out.println("GrandTotal"+GrandTotal);
         System.out.println("InstallmentsAmountsTotal"+InstallmentsAmountsTotal);
         Assert.assertEquals(GrandTotal,InstallmentsAmountsTotal);
@@ -97,7 +101,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTamaraPaymentMethodUsing3DSCardForGuestUser() throws Exception, InterruptedException {
         TamaraPaymentPage tamaraPaymentPage = new TamaraPaymentPage(webDriver);
         tamaraPaymentPage.addToCartAndAccessTamaraDashboard();
-        tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(0);
+        tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(ThreeCard);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         guestCheckoutCyclePage.IsQouteIDisDisplayed();
     }
@@ -106,7 +110,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTamaraPaymentMethodUsingMasterCardForGuestUser() throws Exception, InterruptedException {
         TamaraPaymentPage tamaraPaymentPage = new TamaraPaymentPage(webDriver);
         tamaraPaymentPage.addToCartAndAccessTamaraDashboard();
-        tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(1);
+        tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(MasterCard);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         guestCheckoutCyclePage.IsQouteIDisDisplayed();
     }
@@ -114,7 +118,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTamaraPaymentMethodUsingDeclineTransactionCardForGuestUser() throws Exception, InterruptedException {
         TamaraPaymentPage tamaraPaymentPage = new TamaraPaymentPage(webDriver);
         tamaraPaymentPage.addToCartAndAccessTamaraDashboard();
-        tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(2);
+        tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(DeclineTransactionCard);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         guestCheckoutCyclePage.IsQouteIDisDisplayed();
     }
@@ -122,7 +126,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTamaraPaymentMethodUsingPrepaidCardForGuestUser() throws Exception, InterruptedException {
         TamaraPaymentPage tamaraPaymentPage = new TamaraPaymentPage(webDriver);
         tamaraPaymentPage.addToCartAndAccessTamaraDashboard();
-        tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(3);
+        tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(PrepaidCard);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         guestCheckoutCyclePage.IsQouteIDisDisplayed();
     }
@@ -134,7 +138,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM)) {
             TamaraPaymentPage tamaraPaymentPage = new TamaraPaymentPage(webDriver);
             tamaraPaymentPage.addToCartAndAccessTamaraDashboardForSameDayShipping();
-            tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(0);
+            tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(ThreeCard);
             GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
             guestCheckoutCyclePage.IsQouteIDisDisplayed();
         }
@@ -151,7 +155,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM)) {
             TamaraPaymentPage tamaraPaymentPage = new TamaraPaymentPage(webDriver);
             tamaraPaymentPage.addToCartAndAccessTamaraDashboardForSameDayShipping();
-            tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(1);
+            tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(MasterCard);
             GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
             guestCheckoutCyclePage.IsQouteIDisDisplayed();
         }
@@ -167,7 +171,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM)) {
             TamaraPaymentPage tamaraPaymentPage = new TamaraPaymentPage(webDriver);
             tamaraPaymentPage.addToCartAndAccessTamaraDashboardForSameDayShipping();
-            tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(2);
+            tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(DeclineTransactionCard);
             GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
             guestCheckoutCyclePage.IsQouteIDisDisplayed();
         }
@@ -183,7 +187,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM)) {
             TamaraPaymentPage tamaraPaymentPage = new TamaraPaymentPage(webDriver);
             tamaraPaymentPage.addToCartAndAccessTamaraDashboardForSameDayShipping();
-            tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(3);
+            tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(PrepaidCard);
             GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
             guestCheckoutCyclePage.IsQouteIDisDisplayed();
         }
@@ -219,11 +223,11 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
             DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(), webDriver);
             DataHelperAndWait.scrollTo(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(), webDriver);
             DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(), webDriver);
-            double GrandTotal = DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(), webDriver, "AED");
+            double GrandTotal = DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(), webDriver, tamaraPaymentPage.aeEnglishCurrency);
             tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
             tamaraPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
             DataHelperAndWait.waitToBeVisible(tamaraPaymentPage.getTamaraHeaderInPaymentSchedulePage(), webDriver);
-            double InstallmentsAmountsTotal = tamaraPaymentPage.calculateInstallmentsAmount("د.إ");
+            double InstallmentsAmountsTotal = tamaraPaymentPage.calculateInstallmentsAmount(tamaraPaymentPage.aeArabicCurrency);
             System.out.println("GrandTotal" + GrandTotal);
             System.out.println("InstallmentsAmountsTotal" + InstallmentsAmountsTotal);
             Assert.assertEquals(GrandTotal, InstallmentsAmountsTotal);
@@ -272,7 +276,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         tamaraPaymentPage.SelectTamaraInstallmentsMethod();
         tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
         tamaraPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
-        tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(0);
+        tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(ThreeCard);
 guestCheckoutCyclePage.IsQouteIDisDisplayed();
     }
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Tamara Payment Method Using Master Card ", priority = 15)
@@ -285,7 +289,7 @@ guestCheckoutCyclePage.IsQouteIDisDisplayed();
         tamaraPaymentPage.SelectTamaraInstallmentsMethod();
         tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
         tamaraPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
-        tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(1);
+        tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(MasterCard);
         guestCheckoutCyclePage.IsQouteIDisDisplayed();
     }
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Tamara Payment Method Using Decline Transaction Card ", priority = 16)
@@ -298,7 +302,7 @@ guestCheckoutCyclePage.IsQouteIDisDisplayed();
         tamaraPaymentPage.SelectTamaraInstallmentsMethod();
         tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
         tamaraPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
-        tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(2);
+        tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(DeclineTransactionCard);
         guestCheckoutCyclePage.IsQouteIDisDisplayed();
     }
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Tamara Payment Method Using Prepaid Card  ", priority = 17)
@@ -312,7 +316,7 @@ guestCheckoutCyclePage.IsQouteIDisDisplayed();
         tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
         if(BasePage.BaseURL.equalsIgnoreCase("https://www.sporter.com")) {
             tamaraPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
-            tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(2);
+            tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(DeclineTransactionCard);
             guestCheckoutCyclePage.IsQouteIDisDisplayed();
         }
     }
@@ -325,7 +329,7 @@ guestCheckoutCyclePage.IsQouteIDisDisplayed();
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
         tamaraPaymentPage.addToCartAndAccessTamaraDashboardForSameDayShippingForRegisteredUser();
-        tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(0);
+        tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(ThreeCard);
         guestCheckoutCyclePage.IsQouteIDisDisplayed();
 //        }
 //        else
@@ -340,7 +344,7 @@ guestCheckoutCyclePage.IsQouteIDisDisplayed();
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
         tamaraPaymentPage.addToCartAndAccessTamaraDashboardForSameDayShippingForRegisteredUser();
-        tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(1);
+        tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(MasterCard);
         guestCheckoutCyclePage.IsQouteIDisDisplayed();        }
         else
             System.out.println("Same Day Delivery is off in the current time");
@@ -354,7 +358,7 @@ guestCheckoutCyclePage.IsQouteIDisDisplayed();
             GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
             TamaraPaymentPage tamaraPaymentPage = new TamaraPaymentPage(webDriver);
             tamaraPaymentPage.addToCartAndAccessTamaraDashboardForSameDayShippingForRegisteredUser();
-            tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(2);
+            tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(DeclineTransactionCard);
             guestCheckoutCyclePage.IsQouteIDisDisplayed();
         }
         else

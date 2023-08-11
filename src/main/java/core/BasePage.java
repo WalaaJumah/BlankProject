@@ -54,6 +54,8 @@ public class BasePage {
     public static String bundleUrl = "";
     public static String bogoProduct = "";
     public final String aeDomain = "/en-ae";
+    public final String aeArabicCurrency = "د.إ";
+    public final String aeEnglishCurrency = "AED";
     public final String omanDomain = "/en-om";
     public final String bahrainDomain = "/en-bh";
     public final String iraqDomain = "/en-iq";
