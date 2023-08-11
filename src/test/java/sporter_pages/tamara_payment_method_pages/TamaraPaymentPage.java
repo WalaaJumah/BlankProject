@@ -195,6 +195,7 @@ public void AddNewCardAndSubmitIt() throws IOException, InterruptedException {
     DataHelperAndWait.waitForTime(2000);
 }
     public void SelectDefinedCardAndSubmitTheCard(int cardNumberInTheList) throws IOException, InterruptedException {
+        GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
         DataHelperAndWait.waitToBeVisible(this.getTamaraHeaderInPaymentSchedulePage(),webDriver);
         DataHelperAndWait.waitForTime(2500);
         try {
@@ -236,7 +237,8 @@ public void AddNewCardAndSubmitIt() throws IOException, InterruptedException {
         catch (Exception e){
             AddNewCardAndSubmitIt();
         }
-
+        if(guestCheckoutCyclePage.ifSecureAndAuthenticationIsRequired())
+            guestCheckoutCyclePage.submitSecureAndAuthenticationCheckout();
     }
 public void fillInShippingInformationInputField(String firstName, String lastName, String email, String phone, String streetLineOne, String streetLineTwo) {
 GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);

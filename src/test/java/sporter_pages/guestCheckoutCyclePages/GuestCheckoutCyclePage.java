@@ -369,7 +369,12 @@ public class GuestCheckoutCyclePage extends BasePage {
         Actions actions = new Actions(webDriver);
         actions.sendKeys(Keys.ENTER).perform();
     }
-
+public boolean ifSecureAndAuthenticationIsRequired(){
+            if(webDriver.getCurrentUrl().contains(checkOutComUrl))
+return true;
+else
+            return false;
+}
     public void validateTheShippingMethodAmount(WebElement shippingFee, WebElement shippingMethod) {
         if (shippingMethod.getText().equalsIgnoreCase(XmlReader.getXMLData("twoBusinessDay"))) {
             WebElementsAssertion.assertionWebElementEqualText(shippingFee, webDriver, "10 AED");
@@ -391,7 +396,7 @@ public class GuestCheckoutCyclePage extends BasePage {
 
     }
     public void IsQouteIDisDisplayed() throws IOException {
-        DataHelperAndWait.waitForTime(3000);
+        DataHelperAndWait.waitForTime(4000);
         verifyTheDisplayedPageDoesNotHaveErrors();
         String orderNumber= DataHelperAndWait.extractDigitsFromString(successPage,webDriver);
         System.out.println(orderNumber);
