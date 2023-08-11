@@ -318,18 +318,18 @@ guestCheckoutCyclePage.IsQouteIDisDisplayed();
     }
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting Same Day Shipping Method With Tamara Payment Method Using 3DS Card ", priority = 18)
     public void verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTamaraPaymentMethodUsing3DSCardForForRegisteredUser() throws Exception, InterruptedException {
-        LocalTime currentTime = LocalTime.now();
-        LocalTime targetTimeAM = LocalTime.of(12, 0);
-        LocalTime targetTimePM = LocalTime.of(12, 0);
-        if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM)) {
+//        LocalTime currentTime = LocalTime.now();
+//        LocalTime targetTimeAM = LocalTime.of(12, 0);
+//        LocalTime targetTimePM = LocalTime.of(12, 0);
+//        if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM)) {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
         tamaraPaymentPage.addToCartAndAccessTamaraDashboardForSameDayShippingForRegisteredUser();
         tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(0);
         guestCheckoutCyclePage.IsQouteIDisDisplayed();
-        }
-        else
-            System.out.println("Same Day Delivery is off in the current time");
+//        }
+//        else
+//            System.out.println("Same Day Delivery is off in the current time");
     }
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting Same Day Shipping Method With Tamara Payment Method Using Master Card ", priority = 19)
     public void verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTamaraPaymentMethodUsingMasterCardForForRegisteredUser() throws Exception, InterruptedException {
