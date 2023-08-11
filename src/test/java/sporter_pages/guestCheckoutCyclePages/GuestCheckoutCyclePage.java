@@ -364,6 +364,8 @@ public class GuestCheckoutCyclePage extends BasePage {
     public void submitSecureAndAuthenticationCheckout() {
         DataHelperAndWait.waitForUrlContains(checkOutComUrl, webDriver);
         webDriver.switchTo().frame(checkoutIFrame);
+        webDriver.switchTo().frame(checkoutIFrame);
+        DataHelperAndWait.clickOnElement(this.getSecureAnd2Authentication(), webDriver);
         DataHelperAndWait.typeTextInElement(this.getSecureAnd2Authentication(), webDriver, XmlReader.getXMLData("checkout3DSecure"));
         webDriver.switchTo().defaultContent();
         Actions actions = new Actions(webDriver);
