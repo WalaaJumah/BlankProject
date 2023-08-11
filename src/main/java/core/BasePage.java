@@ -22,7 +22,8 @@ import java.net.URL;
 
 public class BasePage {
 
-
+    private String pageTitle = null;
+    private String pageSource = null;
     public static String BaseURL = "";
     public static String productUrl = "/optimum-gold-standard-100-whey-6202";
     public static String ksaDomainArabic = "/ar-sa";
@@ -53,6 +54,10 @@ public class BasePage {
     public static String bundleUrl = "";
     public static String bogoProduct = "";
     public final String aeDomain = "/en-ae";
+    public final String aeArabicCurrency = "د.إ";
+    public final String aeEnglishCurrency = "AED";
+    public final String kSAEnglishCurrency = "SAR";
+    public final String kSAArabicCurrency = "ر.س";
     public final String omanDomain = "/en-om";
     public final String bahrainDomain = "/en-bh";
     public final String iraqDomain = "/en-iq";
@@ -157,16 +162,30 @@ public class BasePage {
         this.webDriver = webDriver;
     }
 
-    public String getTitle() {
-//        DataHelperAndWait.waitForTime(500);
-        return webDriver.getTitle();
+//    public String getTitle() {
+////        DataHelperAndWait.waitForTime(500);
+//        return webDriver.getTitle();
+//    }
+//
+//    public String getSourcePage() {
+////        DataHelperAndWait.waitForTime(500);
+//        return webDriver.getPageSource();
+//    }
+public String getTitle() {
+//        WaitHelper.waitForTime(500);
+    if (pageTitle == null) {
+        pageTitle = webDriver.getTitle();
     }
+    return pageTitle;
+}
 
     public String getSourcePage() {
-//        DataHelperAndWait.waitForTime(500);
-        return webDriver.getPageSource();
+//        WaitHelper.waitForTime(500);
+        if (pageSource == null) {
+            pageSource = webDriver.getPageSource();
+        }
+        return pageSource;
     }
-
     public void getStatusCode(String uRL) throws IOException {
         HttpURLConnection cn = (HttpURLConnection) new
                 URL(uRL)
