@@ -197,7 +197,21 @@ public class GuestCheckoutCyclePage extends BasePage {
         DataHelperAndWait.updateAllText(streetLineTwoField, streetLineTwo);
         setSelectDubaiCityCity();
     }
-
+    public void fillInShippingInformationInputFieldWithDubaiForRegisteredUser(String firstName, String lastName,  String phone, String streetLineOne, String streetLineTwo, String address) {
+        DataHelperAndWait.waitToBeVisible(firstNameField, webDriver);
+        DataHelperAndWait.updateAllText(firstNameField, firstName);
+        DataHelperAndWait.waitToBeVisible(lastNameField, webDriver);
+        DataHelperAndWait.updateAllText(lastNameField, lastName);
+        DataHelperAndWait.waitToBeVisible(phoneField, webDriver);
+        DataHelperAndWait.updateAllText(phoneField, phone);
+        DataHelperAndWait.waitToBeVisible(addressNameField ,webDriver);
+        DataHelperAndWait.updateAllText(addressNameField,address);
+        DataHelperAndWait.waitToBeVisible(streetLineOneField, webDriver);
+        DataHelperAndWait.updateAllText(streetLineOneField, streetLineOne);
+        DataHelperAndWait.waitToBeVisible(streetLineTwoField, webDriver);
+        DataHelperAndWait.updateAllText(streetLineTwoField, streetLineTwo);
+        setSelectDubaiCityCity();
+    }
     public void clickOnContinueBtn() {
         DataHelperAndWait.waitToBeVisible(continueShippingInfoBtn, webDriver);
         DataHelperAndWait.scrollTo(continueShippingInfoBtn, webDriver);
@@ -348,34 +362,21 @@ public class GuestCheckoutCyclePage extends BasePage {
     }
 
     public void submitSecureAndAuthenticationCheckout() {
-        // Switch to the new window that has been opened for 3D Secure 2 authentication
-//    String parentWindowHandle = webDriver.getWindowHandle();
-//    for (String windowHandle : webDriver.getWindowHandles()) {
-//        if (!windowHandle.equals(parentWindowHandle)) {
-//            webDriver.switchTo().window(windowHandle);
-//            break;
-//        }
-//    }
-//    // Switch back to the original window and complete checkout process
-//    webDriver.switchTo().window(parentWindowHandle);
         DataHelperAndWait.waitForUrlContains(checkOutComUrl, webDriver);
-//    DataHelperAndWait.waitToBeVisible(this.secureAnd2Authentication,webDriver);
-//    Actions actions= new Actions(webDriver);
-//    actions.sendKeys(Keys.TAB).perform();
-//    actions.sendKeys(Keys.ENTER).perform();
-//    actions.moveToElement(this.getSecureAnd2Authentication());
-//    this.secureAnd2Authentication.click();
-//    this.secureAnd2Authentication.sendKeys(XmlReader.getXMLData("checkout3DSecure"));
         webDriver.switchTo().frame(checkoutIFrame);
-//    actions.moveToElement(this.getSecureAnd2Authentication()).sendKeys(XmlReader.getXMLData("checkout3DSecure")).perform();
+        webDriver.switchTo().frame(checkoutIFrame);
+        DataHelperAndWait.clickOnElement(this.getSecureAnd2Authentication(), webDriver);
         DataHelperAndWait.typeTextInElement(this.getSecureAnd2Authentication(), webDriver, XmlReader.getXMLData("checkout3DSecure"));
-//    DataHelperAndWait.waitForTime(3000);
         webDriver.switchTo().defaultContent();
         Actions actions = new Actions(webDriver);
         actions.sendKeys(Keys.ENTER).perform();
-//    DataHelperAndWait.clickOnElement(this.getSecureAnd2AuthenticationSubmitBtn(),webDriver);
     }
-
+public boolean ifSecureAndAuthenticationIsRequired(){
+            if(webDriver.getCurrentUrl().contains(checkOutComUrl))
+return true;
+else
+            return false;
+}
     public void validateTheShippingMethodAmount(WebElement shippingFee, WebElement shippingMethod) {
         if (shippingMethod.getText().equalsIgnoreCase(XmlReader.getXMLData("twoBusinessDay"))) {
             WebElementsAssertion.assertionWebElementEqualText(shippingFee, webDriver, "10 AED");
@@ -395,6 +396,12 @@ public class GuestCheckoutCyclePage extends BasePage {
             WebElementsAssertion.assertionWebElementEqualText(shippingFee, webDriver, "Free Shipping");
         }
 
+    }
+    public void IsQouteIDisDisplayed() throws IOException {
+        DataHelperAndWait.waitForTime(4000);
+        verifyTheDisplayedPageDoesNotHaveErrors();
+        String orderNumber= DataHelperAndWait.extractDigitsFromString(successPage,webDriver);
+        System.out.println(orderNumber);
     }
 
 }

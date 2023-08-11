@@ -135,7 +135,6 @@ public class CartTestCases extends BaseTest {
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Verify that Here Link appear after clearing the items from the Cart works successfully", priority = 10)
     public void verifyHereLinkInCartPageWorking() {
         CartPage cartPage = new CartPage(webDriver);
-        HomePage homePage = new HomePage(webDriver);
 //        cartPage.addToCartAndDisplayTheCart();
 //        cartPage.removeItem();
         DataHelperAndWait.waitForTime(2000);

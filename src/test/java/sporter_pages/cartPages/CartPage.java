@@ -17,6 +17,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.productPage.ProductDetailsPage;
@@ -67,7 +68,7 @@ public class CartPage extends BasePage {
     @FindBy(id = "checkoutbtn")
     private WebElement proceedCheckoutBtnInCartPopup;
     //TODO: To replace it with ID after added it by Moamen
-    @FindBy(xpath = "//div[@id='cartPageContainer']//a")
+    @FindBy(xpath = "//a[starts-with(@class,'cartPage_link')]")
     private WebElement hereLink;
     @FindBy(xpath = "(//div[@id='decreaseQtyBtn'])[1]")
     private WebElement decreaseQtyBtn;
@@ -181,15 +182,10 @@ public class CartPage extends BasePage {
     }
 
     public void addToCartAndDisplayTheCart() throws IOException {
-        try {
-            clearCart();
+        if(IsEmptyCart()) {
             productDetailsPage.displayTheProduct();
-            System.out.println("After Didsplay Product");
-
             productDetailsPage.addToCart();
             productDetailsPage.viewCart();
-        } catch (Exception e) {
-            navigateToCartPage();
         }
     }
 
@@ -234,6 +230,20 @@ public class CartPage extends BasePage {
             DataHelperAndWait.waitForUrlContains(cartURL, webDriver);
         }
 
+    }
+
+    public boolean IsEmptyCart()
+    {
+        try {
+            if(hereLink == null)
+                return false;
+
+            return hereLink.isDisplayed() ;
+
+        }catch (Exception e)
+        {
+            return false;
+        }
     }
 
     public void addBundleToCartAndDisplayTheCart() throws IOException {
@@ -289,14 +299,17 @@ public class CartPage extends BasePage {
     }
 
     public void proceedToCheckout() throws IOException {
-        try{
+        GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
+//        try{
             DataHelperAndWait.waitToBeVisible(this.getProceedCheckoutBtn(),webDriver);
             DataHelperAndWait.clickOnElement(this.getProceedCheckoutBtn(),webDriver);
-        }
-        catch (Exception e){
-           DataHelperAndWait.scrollTo(proceedCheckoutBtn,webDriver);
-            DataHelperAndWait.waitToBeVisible(this.getProceedCheckoutBtn(),webDriver);
-            DataHelperAndWait.clickOnElement(this.getProceedCheckoutBtn(),webDriver);
-        }
+            DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getContinueShippingInfoBtn(),webDriver);
+//
+//        }
+//        catch (Exception e){
+//           webDriver.navigate().refresh();
+//            DataHelperAndWait.waitToBeVisible(this.getProceedCheckoutBtn(),webDriver);
+//            DataHelperAndWait.clickOnElement(this.getProceedCheckoutBtn(),webDriver);
+//        }
     }
 }
