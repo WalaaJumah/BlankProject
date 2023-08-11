@@ -191,7 +191,7 @@ public void AddNewCardAndSubmitIt() throws IOException, InterruptedException {
 }
     public void SelectDefinedCardAndSubmitTheCard(int cardNumberInTheList) throws IOException, InterruptedException {
         DataHelperAndWait.waitToBeVisible(this.getTamaraHeaderInPaymentSchedulePage(),webDriver);
-        DataHelperAndWait.waitForTime(2000);
+        DataHelperAndWait.waitForTime(2500);
         DataHelperAndWait.waitToBeVisible(this.getCardsList().get(cardNumberInTheList),webDriver);
         DataHelperAndWait.clickOnElement(this.getCardsList().get(cardNumberInTheList),webDriver);
         DataHelperAndWait.waitToBeVisible(this.getCvvInCardsList().get(cardNumberInTheList),webDriver);
@@ -281,7 +281,6 @@ DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
 
     }
     public void AddToCartAndAccessShippingMethodsPageForRegistered(String PhoneNumber) throws IOException {
-        System.out.println("hiiii");
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
@@ -364,6 +363,30 @@ DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
             clickOnFinalPlaceOrderBtn();
             submitEmailAndPhoneNumberInPositiveFlow();
             DataHelperAndWait.waitForTime(2500);
+    }
+    public void addToCartAndAccessTamaraDashboardForSameDayShippingForRegisteredUser() throws Exception {
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        CartPage cartPage= new CartPage(webDriver);
+        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
+        displayProductAndAddToCart();
+        cartPage.proceedToCheckout();
+        DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getAddNewAddressBtn(),webDriver);
+        guestCheckoutCyclePage.fillInShippingInformationInputFieldWithDubaiForRegisteredUser(
+                XmlReader.getXMLData("firstName"),
+                XmlReader.getXMLData("lastName"),
+                XmlReader.getXMLData("UAEPhoneNumber"),
+                XmlReader.getXMLData("AddressName"),
+                XmlReader.getXMLData("StreetOneAddressName"),
+                XmlReader.getXMLData("StreetTwoAddressName"));
+
+        DataHelperAndWait.waitForTime(2000);
+        guestCheckoutCyclePage.clickOnContinueBtn();
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getSameDayDelivery(), webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
+        SelectTamaraInstallmentsMethod();
+        clickOnFinalPlaceOrderBtn();
+        submitEmailAndPhoneNumberInPositiveFlow();
+        DataHelperAndWait.waitForTime(2500);
     }
 
 }

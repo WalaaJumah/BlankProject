@@ -13,8 +13,6 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.AccountRegistrationPage.AccountRegistrationPage;
-import sporter_pages.cartPages.CartPage;
-import sporter_pages.checkoutForRegisteredUserTPage.CheckoutForRegisteredPage;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.UAEHomePage;
@@ -257,7 +255,6 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: RegisteredUser- Make sure that the Tamara Payment method appear correctly For Registered User", priority = 13)
     public void verifyTamaraPaymentMethodMethodCorrectlyForRegisteredUser() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
         tamaraPaymentPage.AddToCartAndAccessShippingMethodsPageForRegistered(XmlReader.getXMLData("UAEPhoneNumber"));
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
@@ -268,7 +265,6 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Tamara Payment Method Using 3DS Card ", priority = 14)
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTamaraPaymentMethodUsing3DSCardForForRegisteredUser() throws Exception, InterruptedException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CartPage cartPage= new CartPage(webDriver);
         TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
         tamaraPaymentPage.AddToCartAndAccessShippingMethodsPageForRegistered(XmlReader.getXMLData("UAEPhoneNumber"));
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
@@ -278,6 +274,91 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         tamaraPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
         tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(0);
 guestCheckoutCyclePage.IsQouteIDisDisplayed();
+    }
+    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Tamara Payment Method Using Master Card ", priority = 15)
+    public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTamaraPaymentMethodUsingMasterCardForForRegisteredUser() throws Exception, InterruptedException {
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
+        tamaraPaymentPage.AddToCartAndAccessShippingMethodsPageForRegistered(XmlReader.getXMLData("UAEPhoneNumber"));
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        tamaraPaymentPage.SelectTamaraInstallmentsMethod();
+        tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
+        tamaraPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
+        tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(1);
+        guestCheckoutCyclePage.IsQouteIDisDisplayed();
+    }
+    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Tamara Payment Method Using Decline Transaction Card ", priority = 16)
+    public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTamaraPaymentMethodUsingDeclineTransactionCardForForRegisteredUser() throws Exception, InterruptedException {
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
+        tamaraPaymentPage.AddToCartAndAccessShippingMethodsPageForRegistered(XmlReader.getXMLData("UAEPhoneNumber"));
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        tamaraPaymentPage.SelectTamaraInstallmentsMethod();
+        tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
+        tamaraPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
+        tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(2);
+        guestCheckoutCyclePage.IsQouteIDisDisplayed();
+    }
+    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Tamara Payment Method Using Prepaid Card  ", priority = 17)
+    public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTamaraPaymentMethodUsingDPrepaidCardForForRegisteredUser() throws Exception, InterruptedException {
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
+        tamaraPaymentPage.AddToCartAndAccessShippingMethodsPageForRegistered(XmlReader.getXMLData("UAEPhoneNumber"));
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        tamaraPaymentPage.SelectTamaraInstallmentsMethod();
+        tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
+        if(BasePage.BaseURL.equalsIgnoreCase("https://www.sporter.com")) {
+            tamaraPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
+            tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(2);
+            guestCheckoutCyclePage.IsQouteIDisDisplayed();
+        }
+    }
+    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting Same Day Shipping Method With Tamara Payment Method Using 3DS Card ", priority = 18)
+    public void verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTamaraPaymentMethodUsing3DSCardForForRegisteredUser() throws Exception, InterruptedException {
+        LocalTime currentTime = LocalTime.now();
+        LocalTime targetTimeAM = LocalTime.of(12, 0);
+        LocalTime targetTimePM = LocalTime.of(12, 0);
+        if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM)) {
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
+        tamaraPaymentPage.addToCartAndAccessTamaraDashboardForSameDayShippingForRegisteredUser();
+        tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(0);
+        guestCheckoutCyclePage.IsQouteIDisDisplayed();
+        }
+        else
+            System.out.println("Same Day Delivery is off in the current time");
+    }
+    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting Same Day Shipping Method With Tamara Payment Method Using Master Card ", priority = 19)
+    public void verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTamaraPaymentMethodUsingMasterCardForForRegisteredUser() throws Exception, InterruptedException {
+        LocalTime currentTime = LocalTime.now();
+        LocalTime targetTimeAM = LocalTime.of(12, 0);
+        LocalTime targetTimePM = LocalTime.of(12, 0);
+        if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM)) {
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
+        tamaraPaymentPage.addToCartAndAccessTamaraDashboardForSameDayShippingForRegisteredUser();
+        tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(1);
+        guestCheckoutCyclePage.IsQouteIDisDisplayed();        }
+        else
+            System.out.println("Same Day Delivery is off in the current time");
+    }
+    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting Same day Shipping Method With Tamara Payment Method Using Decline Transaction Card ", priority = 20)
+    public void verifyAbilityToPlaceOrderWhenSameDayExpressShippingMethodWithTamaraPaymentMethodUsingDeclineTransactionCardForForRegisteredUser() throws Exception, InterruptedException {
+        LocalTime currentTime = LocalTime.now();
+        LocalTime targetTimeAM = LocalTime.of(12, 0);
+        LocalTime targetTimePM = LocalTime.of(12, 0);
+        if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM)) {
+            GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+            TamaraPaymentPage tamaraPaymentPage = new TamaraPaymentPage(webDriver);
+            tamaraPaymentPage.addToCartAndAccessTamaraDashboardForSameDayShippingForRegisteredUser();
+            tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(2);
+            guestCheckoutCyclePage.IsQouteIDisDisplayed();
+        }
+        else
+            System.out.println("Same Day Delivery is off in the current time");
     }
 
 
