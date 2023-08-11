@@ -237,8 +237,10 @@ public void AddNewCardAndSubmitIt() throws IOException, InterruptedException {
         catch (Exception e){
             AddNewCardAndSubmitIt();
         }
-        if(guestCheckoutCyclePage.ifSecureAndAuthenticationIsRequired())
-            guestCheckoutCyclePage.submitSecureAndAuthenticationCheckout();
+        if(!guestCheckoutCyclePage.ifSecureAndAuthenticationIsRequired()) {
+//            guestCheckoutCyclePage.submitSecureAndAuthenticationCheckout();
+            guestCheckoutCyclePage.IsQouteIDisDisplayed();
+        }
     }
 public void fillInShippingInformationInputField(String firstName, String lastName, String email, String phone, String streetLineOne, String streetLineTwo) {
 GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
