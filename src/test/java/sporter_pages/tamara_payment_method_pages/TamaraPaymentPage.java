@@ -35,6 +35,10 @@ public class TamaraPaymentPage extends BasePage {
        String tamaraCheckoutSubUrl = ".tamara.co/checkout?";
 
     String tabbySuccessInstallmentsSubUrl = "success-installments?";
+    public final int ThreeCard=0;
+    public final int MasterCard=1;
+    public final int DeclineTransactionCard=2;
+    public final int PrepaidCard=3;
     @FindBy(xpath = "//div[@id='tamara_pay_by_instalments']//div[@id='circle']")
     private WebElement tamaraInstallmentsPaymentMethod;
     @FindBy(xpath = "(//div[starts-with(@class,'tamara-login-title')])[2]")
