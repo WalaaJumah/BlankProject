@@ -6,6 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="2d2129b1-daed-434d-a525-27daaeb11fec" name="Changes" comment="Merge remote-tracking branch 'origin/AUT-444-Handle-MH-360-Buy-Now-Pay-Later-Tamara' into Release26Changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/cartPages/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/cartPages/CartPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/guestCheckoutCyclePages/GuestCheckoutCyclePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/guestCheckoutCyclePages/GuestCheckoutCyclePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/tamara_payment_method_pages/TamaraPaymentPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/tamara_payment_method_pages/TamaraPaymentPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/RunTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RunTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/TestData.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/TestData.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -472,11 +477,6 @@
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/sporter_pages/guestCheckoutCyclePages/GuestCheckoutCyclePage.java</url>
-          <line>163</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/sporter_pages/checkoutForRegisteredUserTPage/CheckoutForRegisteredPage.java</url>
           <line>57</line>
           <option name="timeStamp" value="26" />
@@ -509,6 +509,7 @@
         <watch expression="payBtnInTamaraPage" />
         <watch expression="getCardsList" />
         <watch expression="cardNumberInTheList" />
+        <watch expression="guestCheckoutCyclePage.ifSecureAndAuthenticationIsRequired()" />
       </configuration>
     </watches-manager>
   </component>
@@ -521,11 +522,11 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/sporter_web_automation$C__Users_w_jumaa_IdeaProjects_sporter_web_automation_src_test_resources_SmokeTest_xml.ic" NAME="$PROJECT_DIR$/src/test/resources/SmokeTest.xml Coverage Results" MODIFIED="1657796388803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/sporter_web_automation$C__Users_w_jumaa_IdeaProjects_sporter_web_automation_src_test_resources_TestExecution_xml.ic" NAME="$PROJECT_DIR$/src/test/resources/TestExecution.xml Coverage Results" MODIFIED="1671601245197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>sporter_pages.AeCartPage</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/sporter_web_automation$Test.ic" NAME="Test Coverage Results" MODIFIED="1672294404497" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/sporter_web_automation$C__Users_w_jumaa_IdeaProjects_sporter_web_automation_src_test_resources_SmokeTest_xml.ic" NAME="$PROJECT_DIR$/src/test/resources/SmokeTest.xml Coverage Results" MODIFIED="1657796388803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/sporter_web_automation$AeSportSupplementsCategoryTestCases_verifySportSupplementsCategoryImageAndHorizontalBannersAppearingAfterSortingTheProducts.ic" NAME="AeSportSupplementsCategoryTestCases.verifySportSupplementsCategoryImageAndHorizontalBannersAppearingAfterSortingTheProducts Coverage Results" MODIFIED="1666869381864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>sporter_test.*</FILTER>
     </SUITE>

@@ -300,6 +300,8 @@ public class CartPage extends BasePage {
 
     public void proceedToCheckout() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
+        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
+        DataHelperAndWait.waitForTime(1000);
 //        try{
             DataHelperAndWait.waitToBeVisible(this.getProceedCheckoutBtn(),webDriver);
             DataHelperAndWait.clickOnElement(this.getProceedCheckoutBtn(),webDriver);

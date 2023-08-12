@@ -87,12 +87,6 @@ public class TamaraPaymentPage extends BasePage {
     private WebElement editBtnInPaymentMethodInfoLabel;
     public void SelectTamaraInstallmentsMethod() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
-        try{
-            tamaraInstallmentsPaymentMethod.isDisplayed();
-        }
-        catch (Exception e){;
-            throw new RuntimeException("Tamara Method is missing");
-        }
         DataHelperAndWait.waitToBeVisible(tamaraInstallmentsPaymentMethod,webDriver);
         DataHelperAndWait.clickOnElement(tamaraInstallmentsPaymentMethod,webDriver);
         DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
@@ -243,10 +237,8 @@ public void AddNewCardAndSubmitIt() throws IOException, InterruptedException {
         catch (Exception e){
             AddNewCardAndSubmitIt();
         }
-        if(!guestCheckoutCyclePage.ifSecureAndAuthenticationIsRequired()) {
-//            guestCheckoutCyclePage.submitSecureAndAuthenticationCheckout();
             guestCheckoutCyclePage.IsQouteIDisDisplayed();
-        }
+
     }
 public void fillInShippingInformationInputField(String firstName, String lastName, String email, String phone, String streetLineOne, String streetLineTwo) {
 GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
@@ -271,7 +263,7 @@ DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
         DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getLastNameField(), webDriver);
         DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getLastNameField(), lastName);
         DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getPhoneField(), webDriver);
-        DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getPhoneField(), phone);
+        DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getPhoneField(), XmlReader.getXMLData("UAEPhoneNumber2"));
         DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getStreetLineOneField(), webDriver);
         DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getStreetLineOneField(), streetLineOne);
         DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getStreetLineTwoField(), webDriver);
@@ -310,7 +302,7 @@ DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
         this.fillInShippingInformationInputFieldForRegistered(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
-                XmlReader.getXMLData("phoneNumber"),
+                XmlReader.getXMLData("UAEPhoneNumber2"),
                 PhoneNumber,
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"),

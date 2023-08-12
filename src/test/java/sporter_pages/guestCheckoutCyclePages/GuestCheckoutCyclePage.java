@@ -371,13 +371,7 @@ public class GuestCheckoutCyclePage extends BasePage {
         Actions actions = new Actions(webDriver);
         actions.sendKeys(Keys.ENTER).perform();
     }
-public boolean ifSecureAndAuthenticationIsRequired(){
-        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,500);
-            if(webDriver.getCurrentUrl().contains("sandbox.checkout.com/"))
-return true;
-else
-            return false;
-}
+
     public void validateTheShippingMethodAmount(WebElement shippingFee, WebElement shippingMethod) {
         if (shippingMethod.getText().equalsIgnoreCase(XmlReader.getXMLData("twoBusinessDay"))) {
             WebElementsAssertion.assertionWebElementEqualText(shippingFee, webDriver, "10 AED");
@@ -399,10 +393,12 @@ else
 
     }
     public void IsQouteIDisDisplayed() throws IOException {
-        DataHelperAndWait.waitForTime(4000);
+        DataHelperAndWait.waitForTime(5000);
         verifyTheDisplayedPageDoesNotHaveErrors();
+        System.out.println("CurrentURL is: "+webDriver.getCurrentUrl());
+        if(!(webDriver.getCurrentUrl().contains("sandbox.checkout.com/"))){
         String orderNumber= DataHelperAndWait.extractDigitsFromString(successPage,webDriver);
-        System.out.println(orderNumber);
+        System.out.println(orderNumber);}
     }
 
 }
