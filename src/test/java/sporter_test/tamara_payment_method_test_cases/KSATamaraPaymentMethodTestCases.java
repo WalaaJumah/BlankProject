@@ -77,8 +77,8 @@ public class KSATamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
     public void verifyInstallmentsAmountsInTamaraPageAreMatchedWithTheGrandTotalForGuestUserInCaseDoorToDoorSuperExpressShippingMethod() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        tamaraPaymentPage.displayProductAndAddToCart();
+//        webDriver.manage().deleteCookieNamed("guestCartId");
+//        tamaraPaymentPage.displayProductAndAddToCart();
         tamaraPaymentPage.accessShippingFormForGuestViaURL();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
@@ -112,7 +112,7 @@ public class KSATamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         KSATamaraPaymentPage tamaraPaymentPage = new KSATamaraPaymentPage(webDriver);
         tamaraPaymentPage.addToCartAndAccessTamaraDashboardForDooToDoor();
         tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(tamaraPaymentPage.ThreeCard);
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         //guestCheckoutCyclePage.IsQouteIDisDisplayed();
     }
 
@@ -121,7 +121,7 @@ public class KSATamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         KSATamaraPaymentPage tamaraPaymentPage = new KSATamaraPaymentPage(webDriver);
         tamaraPaymentPage.addToCartAndAccessTamaraDashboardForDooToDoor();
         tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(tamaraPaymentPage.MasterCard);
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         //guestCheckoutCyclePage.IsQouteIDisDisplayed();
     }
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure ability to place Order successfully when selecting Door To Door Shipping Method With Tamara Payment Method Using a defined Decline Transaction Card ", priority = 5)
@@ -129,7 +129,7 @@ public class KSATamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         KSATamaraPaymentPage tamaraPaymentPage = new KSATamaraPaymentPage(webDriver);
         tamaraPaymentPage.addToCartAndAccessTamaraDashboardForDooToDoor();
         tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(tamaraPaymentPage.DeclineTransactionCard);
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         //guestCheckoutCyclePage.IsQouteIDisDisplayed();
     }
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure ability to place Order successfully when selecting Door To Door Shipping Method With Tamara Payment Method Using a defined Prepaid Card ", priority = 6)
@@ -137,7 +137,7 @@ public class KSATamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         KSATamaraPaymentPage tamaraPaymentPage = new KSATamaraPaymentPage(webDriver);
         tamaraPaymentPage.addToCartAndAccessTamaraDashboardForDooToDoor();
         tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(tamaraPaymentPage.PrepaidCard);
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         //guestCheckoutCyclePage.IsQouteIDisDisplayed();
     }
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure ability to place Order successfully when Selecting PickUp In Store Shipping Method With Tamara Payment Method a defined Using 3DSCard ", priority = 7)
@@ -145,7 +145,7 @@ public class KSATamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         KSATamaraPaymentPage tamaraPaymentPage = new KSATamaraPaymentPage(webDriver);
         tamaraPaymentPage.addToCartAndAccessTamaraDashboardForPickUpInStore();
         tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(tamaraPaymentPage.getThreeCard());
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         //guestCheckoutCyclePage.IsQouteIDisDisplayed();
     }
 
@@ -154,7 +154,7 @@ public class KSATamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         KSATamaraPaymentPage tamaraPaymentPage = new KSATamaraPaymentPage(webDriver);
         tamaraPaymentPage.addToCartAndAccessTamaraDashboardForPickUpInStore();
         tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(tamaraPaymentPage.MasterCard);
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         //guestCheckoutCyclePage.IsQouteIDisDisplayed();
     }
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure ability to place Order successfully when selecting SameDay Shipping Method With Tamara Payment Method Using a defined Decline Transaction Card ", priority = 9)
@@ -162,7 +162,7 @@ public class KSATamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         KSATamaraPaymentPage tamaraPaymentPage = new KSATamaraPaymentPage(webDriver);
         tamaraPaymentPage.addToCartAndAccessTamaraDashboardForPickUpInStore();
         tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(tamaraPaymentPage.DeclineTransactionCard);
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         //guestCheckoutCyclePage.IsQouteIDisDisplayed();
     }
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure ability to place Order successfully when selecting SameDay Shipping Method With Tamara Payment Method Using a defined Prepaid Card ", priority = 10)
@@ -170,7 +170,7 @@ public class KSATamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         KSATamaraPaymentPage tamaraPaymentPage = new KSATamaraPaymentPage(webDriver);
         tamaraPaymentPage.addToCartAndAccessTamaraDashboardForPickUpInStore();
         tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(tamaraPaymentPage.PrepaidCard);
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         //guestCheckoutCyclePage.IsQouteIDisDisplayed();
     }
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure the Installments Amounts In Tamara Page Are Matched With The Grand Total In Case Pick Up In Store Shipping Method", priority = 11)

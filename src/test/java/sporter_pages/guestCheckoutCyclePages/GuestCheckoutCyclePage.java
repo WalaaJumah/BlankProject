@@ -372,7 +372,8 @@ public class GuestCheckoutCyclePage extends BasePage {
         actions.sendKeys(Keys.ENTER).perform();
     }
 public boolean ifSecureAndAuthenticationIsRequired(){
-            if(webDriver.getCurrentUrl().contains(checkOutComUrl))
+        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,500);
+            if(webDriver.getCurrentUrl().contains("sandbox.checkout.com/"))
 return true;
 else
             return false;
