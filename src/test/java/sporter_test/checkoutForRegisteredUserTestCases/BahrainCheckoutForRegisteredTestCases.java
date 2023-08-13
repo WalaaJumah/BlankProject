@@ -103,21 +103,6 @@ public class BahrainCheckoutForRegisteredTestCases extends CheckoutForRegistered
         DataHelperAndWait.waitToBeVisible(omanCheckoutForRegisteredPage.getFiveToSevenBusinessDaysShippingMethod(),webDriver);
         DataHelperAndWait.clickOnElement(omanCheckoutForRegisteredPage.getFiveToSevenBusinessDaysShippingMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-//        try{
-//            DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
-//        }
-//        catch (Exception e){
-//            registeredPage.fillInShippingInformationInputField(
-//                    XmlReader.getXMLData("firstName"),
-//                    XmlReader.getXMLData("lastName"),
-//                    XmlReader.getXMLData("phoneNumber"),
-//                    XmlReader.getXMLData("AddressName"),
-//                    XmlReader.getXMLData("StreetOneAddressName"),
-//                    XmlReader.getXMLData("StreetTwoAddressName")
-//            );
-
-//        DataHelperAndWait.clickOnElement(kuwaitCheckoutForRegisteredPage.getExpressDeliveryMethod(),webDriver);
-//        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
     }
@@ -129,18 +114,7 @@ public class BahrainCheckoutForRegisteredTestCases extends CheckoutForRegistered
         OmanCheckoutForRegisteredPage omanCheckoutForRegisteredPage= new OmanCheckoutForRegisteredPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         cartPage.addToCartAndDisplayTheCart();
-//        cartPage.navigateToCartPage();
-//        cartPage.navigateToHomePage();
-//        cartPage.clickOnCartIcon();
-//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-        try {
             cartPage.proceedToCheckout();
-        }
-        catch (Exception e){
-            cartPage.navigateToCartPage();
-            cartPage.proceedToCheckout();
-
-        }
         DataHelperAndWait.waitForUrlContains(guestCheckoutCyclePage.shippingInformationUrl,webDriver);
         try{
             DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
@@ -172,8 +146,6 @@ public class BahrainCheckoutForRegisteredTestCases extends CheckoutForRegistered
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         OmanCheckoutForRegisteredPage omanCheckoutForRegisteredPage= new OmanCheckoutForRegisteredPage(webDriver);
-//        cartPage.navigateToCartPage();
-//        cartPage.removeItem();
         checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         DataHelperAndWait.clickOnElement(omanCheckoutForRegisteredPage.getFiveToSevenBusinessDaysShippingMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
