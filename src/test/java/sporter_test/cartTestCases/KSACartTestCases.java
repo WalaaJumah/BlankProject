@@ -115,7 +115,6 @@ public class KSACartTestCases extends CartTestCases {
     public void verifyProductPriceChangesWhenChangingTheProductQtyFromTheCartPage() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToCartPage();
-        String currentProductPrice = DataHelperAndWait.getWebElementText(cartPage.getProductPriceTotal(), webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getDecreaseQtyBtn(), webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
         cartPage.waitTillQtyValueChanges("2");
