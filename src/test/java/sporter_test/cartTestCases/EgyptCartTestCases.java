@@ -96,7 +96,7 @@ public void verifyAbilityToClickOnSportsMenuIsDisplayedFromCartPage() throws IOE
     public void verifyAbilityToViewCartFromCartIcon() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
-        DataHelperAndWait.waitForTime(1500);
+        DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.waitToBeVisible(cartPage.getCartIcon(),webDriver);
         cartPage.getCartIcon().click();
         cartPage.getViewCartInCartPopup().click();
