@@ -33,12 +33,11 @@ public class OmanCartTestCases extends CartTestCases{
     @Test(enabled = false,groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 24)
     public void verifyOrderTotalCalculationInCartPageWorksCorrectly() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         float subTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue(), webDriver, "OMR");
         float tax = DataHelperAndWait.convertTheStringToFloat(cartPage.getTaxValue(), webDriver, "OMR");
         float orderTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(), webDriver, "OMR");
         double cartTotal = subTotal + tax;
         Assert.assertEquals(orderTotal, cartTotal);
-        webDriver.manage().deleteCookieNamed("guestCartId");
     }
 }
