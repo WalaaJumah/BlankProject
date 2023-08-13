@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="464478ea-1e3f-4255-9918-5850b13a0bd5" name="Changes" comment="Merge remote-tracking branch 'origin/AUT-444-Handle-MH-360-Buy-Now-Pay-Later-Tamara' into Release26Changes">
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/CheckoutForRegisteredTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/CheckoutForRegisteredTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/KSACheckoutForRegisteredTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/KSACheckoutForRegisteredTestCases.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
