@@ -307,7 +307,10 @@ public class CartPage extends BasePage {
     public void proceedToCheckout() throws IOException {
         this.waitTillCartSpinnerDisappear(webDriver);
         DataHelperAndWait.waitToBeVisible(this.getProceedCheckoutBtn(),webDriver);
-           this.getProceedCheckoutBtn().click();
+        this.waitTillCartSpinnerDisappear(webDriver);
+        this.getProceedCheckoutBtn().click();
+        this.waitTillCartSpinnerDisappear(webDriver);
+
 //            DataHelperAndWait.clickOnElement(this.getProceedCheckoutBtn(),webDriver);
 //            DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getContinueShippingInfoBtn(),webDriver);
 //
