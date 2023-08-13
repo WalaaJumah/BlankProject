@@ -267,12 +267,8 @@ public class CartPage extends BasePage {
         this.waitTillCartSpinnerDisappear(webDriver);    }
 
     public void clearCart() throws IOException {
-        try {
-            this.navigateToCartPage();
+        if(IsEmptyCart())
             this.removeItem();
-        } catch (Exception e) {
-            System.out.println("");
-        }
     }
 
     public void removeAllItems(int productNumber) {
