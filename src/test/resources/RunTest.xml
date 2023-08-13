@@ -23,13 +23,13 @@
 <!--            <class name="sporter_test.tamara_payment_method_test_cases.KSATamaraPaymentMethodTestCases"/>-->
 
 
-<!--                <methods>-->
-<!--                    <include name="verifyAbilityToDisplayTheProductFromTheCartPage"></include>-->
-<!--&lt;!&ndash;                    <include name="verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTamaraPaymentMethodUsing3DSCardForForRegisteredUser"></include>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <include name="verifyClickingOnTheSecondSideBannersWorksCorrectly"></include>&ndash;&gt;-->
+                <methods>
+                    <include name="verifyInabilityToUseInvalidCreditCardPaymentMethod"></include>
+<!--                    <include name="verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTamaraPaymentMethodUsing3DSCardForForRegisteredUser"></include>-->
+<!--                    <include name="verifyClickingOnTheSecondSideBannersWorksCorrectly"></include>-->
 
 
-<!--                    </methods>-->
+                    </methods>
 
             </class>
         </classes>
