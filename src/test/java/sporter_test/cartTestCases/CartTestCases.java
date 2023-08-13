@@ -83,7 +83,7 @@ public class CartTestCases extends BaseTest {
     public void verifyAbilityToViewCartFromCartIcon() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
-//        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
+DataHelperAndWait.waitToBeVisible(cartPage.getCartIcon(),webDriver);
         cartPage.getCartIcon().click();
         cartPage.getViewCartInCartPopup().click();
 //        DataHelperAndWait.clickOnElement(cartPage.getViewCartInCartPopup(), webDriver);
