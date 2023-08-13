@@ -92,7 +92,17 @@ public void verifyAbilityToClickOnSportsMenuIsDisplayedFromCartPage() throws IOE
         CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
     }
-
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the view Cart button appearing in the Cart pop-up works correctly", priority = 7)
+    public void verifyAbilityToViewCartFromCartIcon() throws IOException {
+        CartPage cartPage = new CartPage(webDriver);
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        DataHelperAndWait.waitForTime(1500);
+        DataHelperAndWait.waitToBeVisible(cartPage.getCartIcon(),webDriver);
+        cartPage.getCartIcon().click();
+        cartPage.getViewCartInCartPopup().click();
+//        DataHelperAndWait.clickOnElement(cartPage.getViewCartInCartPopup(), webDriver);
+        WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.cartURL, webDriver);
+    }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the system does not apply invalid coupon code", priority = 26)
     public void verifyInabilityToApplyInvalidCouponCode() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
