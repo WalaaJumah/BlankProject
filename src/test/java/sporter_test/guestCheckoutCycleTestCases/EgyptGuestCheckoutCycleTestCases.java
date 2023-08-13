@@ -117,10 +117,10 @@ public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithC
 public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithValidCreditCardPaymentMethod() {}
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the Next Day Delivery Shipping Method With Valid Credit Card Payment Method", priority = 28)
     public void verifyAbilityToSelectTheNextDayDeliveryShippingMethodWithValidCreditCardPaymentMethod() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
+        egypt.accessGuestCheckoutForm();
+        egypt.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -130,22 +130,22 @@ public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithV
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
         DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        egypt.clickOnContinueBtn();
             DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(), webDriver);
-            DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
+            DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(), webDriver);
             egypt.selectCreditCardMethod();
-            WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(), webDriver);
+            WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(), webDriver);
 
     }
 @Test(enabled = false)
 public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCreditCardPaymentMethod() {}
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Next Day Delivery Shipping Method With Credit Card Payment Method ", priority = 29)
     public void verifyAbilityToPlaceOrderWhenSelectingNextDayDeliveryShippingMethodWithCreditCardPaymentMethod() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
+        egypt.accessGuestCheckoutForm();
+        egypt.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -155,12 +155,12 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
         DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        egypt.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         egypt.selectCreditCardMethod();
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //        egypt.submitCreditCardCorrectly();
 //        DataHelperAndWait.waitForTime(3000);
@@ -189,10 +189,10 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that each of COD & Credit Card Payment methods appear correctly", priority = 23)
     public void verifyEachOfCODAndCreditCardPaymentMethodCorrectly() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
+        egypt.accessGuestCheckoutForm();
+        egypt.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -202,19 +202,19 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
         DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
+        egypt.clickOnContinueBtn();
+        DataHelperAndWait.clickOnElement(egypt.getTwoBusinessDaysSuperExpressShipping(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getCODPaymentMethod(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(egypt.getCreditCardPaymentMethod(),webDriver);
     }
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With COD Payment Method ", priority = 26)
     public void verifyAbilityToPlaceOrderWhenSelectingNextDaysSuperExpressShippingMethodWithCODPaymentMethod() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         EgyptGuestCheckoutCyclePage egyptGuestCheckoutCyclePage= new EgyptGuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
+        egyptGuestCheckoutCyclePage.accessGuestCheckoutForm();
+        egyptGuestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -223,12 +223,12 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
         DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        egyptGuestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egyptGuestCheckoutCyclePage.getNextDayMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(), webDriver);
+        DataHelperAndWait.clickOnElement(egyptGuestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(egyptGuestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
+        DataHelperAndWait.clickOnElement(egyptGuestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
+        DataHelperAndWait.clickOnElement(egyptGuestCheckoutCyclePage.getFinalPlaceOrderBtn(), webDriver);
         DataHelperAndWait.waitForTime(2000);
 //        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getSuccessPage(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -236,11 +236,11 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
     }
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure the system display the Quote ID for the user after checkout the order", priority = 100)
     public void verifyTheSystemDisplayTheQuoteIdForTheUserAfterCheckoutTheOrder() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         EgyptGuestCheckoutCyclePage egyptGuestCheckoutCyclePage= new EgyptGuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
+        egyptGuestCheckoutCyclePage.accessGuestCheckoutForm();
+        egyptGuestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -249,18 +249,18 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
         DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        egyptGuestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egyptGuestCheckoutCyclePage.getNextDayMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(), webDriver);
+        DataHelperAndWait.clickOnElement(egyptGuestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(egyptGuestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
+        DataHelperAndWait.clickOnElement(egyptGuestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
+        DataHelperAndWait.clickOnElement(egyptGuestCheckoutCyclePage.getFinalPlaceOrderBtn(), webDriver);
         DataHelperAndWait.waitForTime(2000);
-        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getSuccessPage(),webDriver);
+        DataHelperAndWait.waitToBeVisible(egyptGuestCheckoutCyclePage.getSuccessPage(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();}
     @Test(enabled = false,groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when using a Free Coupon Code ", priority = 99)
     public void verifyAbilityToPlaceOrderWhenUsingFreeCouponCode() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         EgyptGuestCheckoutCyclePage egyptGuestCheckoutCyclePage= new EgyptGuestCheckoutCyclePage(webDriver);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
@@ -272,8 +272,8 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
 //        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
         cartPage.proceedToCheckout();
 //        DataHelperAndWait.waitForUrlContains(guestCheckoutCyclePage.shippingInformationUrl,webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCheckoutAsGuestBtn(),webDriver);
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
+        DataHelperAndWait.clickOnElement(egyptGuestCheckoutCyclePage.getCheckoutAsGuestBtn(),webDriver);
+        egyptGuestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -282,12 +282,12 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
         DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        egyptGuestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egyptGuestCheckoutCyclePage.getNextDayMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(), webDriver);
+        DataHelperAndWait.clickOnElement(egyptGuestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(egyptGuestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
+        DataHelperAndWait.clickOnElement(egyptGuestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
+        DataHelperAndWait.clickOnElement(egyptGuestCheckoutCyclePage.getFinalPlaceOrderBtn(), webDriver);
         DataHelperAndWait.waitForTime(2000);
 
 //        DataHelperAndWait.waitForTime(10000);
@@ -315,11 +315,11 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
 
     @Test(groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to place order successfully using Geidea when selecting Authentication Failed Option from Geidea Payment Gate Screen  ", priority = 60)
     public void verifyInabilityToPlaceOrderUsingGeideaWhenSelectingAuthenticationFailedOptionFromGediaPaymentPage() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
+        egypt.accessGuestCheckoutForm();
+        egypt.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -329,12 +329,12 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
         DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        egypt.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         egypt.selectCreditCardMethod();
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //        egypt.submitCreditCardWithDifferentAuthentication("(N) Authentication Failed");
 //        DataHelperAndWait.waitForTime(3000);
@@ -343,11 +343,11 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
     }
     @Test(groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to place order successfully using Geidea when selecting Authentication Not Available Option from Geidea Payment Gate Screen", priority = 61)
     public void verifyInabilityToPlaceOrderUsingGeideaWhenSelectingAuthenticationNotAvailableOptionFromGediaPaymentPage() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
+        egypt.accessGuestCheckoutForm();
+        egypt.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -357,12 +357,12 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
         DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        egypt.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         egypt.selectCreditCardMethod();
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //        egypt.submitCreditCardWithDifferentAuthentication("(X or U) Authentication Not Available");
 //        DataHelperAndWait.waitForTime(3000);
@@ -371,11 +371,11 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to place order successfully using Geidea when selecting Authentication Attempted Option from Geidea Payment Gate Screen", priority = 62)
     public void verifyInabilityToPlaceOrderUsingGeideaWhenSelectingAuthenticationAttemptedOptionFromGediaPaymentPage() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
+        egypt.accessGuestCheckoutForm();
+        egypt.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -385,12 +385,12 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
         DataHelperAndWait.waitForTime(3000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        egypt.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         egypt.selectCreditCardMethod();
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //        egypt.submitCreditCardWithDifferentAuthentication("(M) Authentication Attempted");
 //                DataHelperAndWait.waitForTime(3500);
@@ -399,11 +399,11 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
     }
     @Test(groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to place order successfully using Geidea when selecting Error Parsing Authentication Response Option from Geidea Payment Gate Screen", priority = 63)
     public void verifyInabilityToPlaceOrderUsingGeideaWhenSelectingErrorParsingAuthenticationResponseOptionFromGediaPaymentPage() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
+        egypt.accessGuestCheckoutForm();
+        egypt.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -413,12 +413,12 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
         DataHelperAndWait.waitForTime(3000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        egypt.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         egypt.selectCreditCardMethod();
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //        egypt.submitCreditCardWithDifferentAuthentication("(P) Error Parsing Authentication Response");
 //                DataHelperAndWait.waitForTime(3500);
@@ -427,11 +427,11 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
     }
     @Test(enabled = false,groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to place order successfully using Geidea when selecting Invalid Signature on Authentication Response Option from Geidea Payment Gate Screen", priority = 64)
     public void verifyInabilityToPlaceOrderUsingGeideaWhenSelectingInvalidSignatureOnAuthenticationResponseOptionFromGediaPaymentPage() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
+        egypt.accessGuestCheckoutForm();
+        egypt.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -441,12 +441,12 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
         DataHelperAndWait.waitForTime(3000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        egypt.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         egypt.selectCreditCardMethod();
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //        egypt.submitCreditCardWithDifferentAuthentication("(S) Invalid Signature on Authentication Response");
 //                DataHelperAndWait.waitForTime(3500);
@@ -455,11 +455,11 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
     }
     @Test(groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to place order successfully using Geidea when selecting MPI Processing Error Option from Geidea Payment Gate Screen", priority = 65)
     public void verifyInabilityToPlaceOrderUsingGeideaWhenSelectingMPIProcessingErrorOptionFromGediaPaymentPage() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
+        egypt.accessGuestCheckoutForm();
+        egypt.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -469,12 +469,12 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
         DataHelperAndWait.waitForTime(3000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        egypt.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         egypt.selectCreditCardMethod();
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //        egypt.submitCreditCardWithDifferentAuthentication("(I) MPI Processing Error");
 //        DataHelperAndWait.waitForTime(3500);
@@ -483,11 +483,11 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
     }
     @Test(groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to place order successfully using Geidea when selecting Authentication Attempted (No CAVV) Option from Geidea Payment Gate Screen", priority = 66)
     public void verifyInabilityToPlaceOrderUsingGeideaWhenSelectingNoCAVVOptionFromGediaPaymentPage() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
+        egypt.accessGuestCheckoutForm();
+        egypt.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -497,12 +497,12 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
         DataHelperAndWait.waitForTime(3000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        egypt.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         egypt.selectCreditCardMethod();
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //        egypt.submitCreditCardWithDifferentAuthentication("(M) Authentication Attempted (No CAVV)");
 //                DataHelperAndWait.waitForTime(3500);
@@ -511,12 +511,12 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
     }
     @Test(enabled = false,groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the order total appears in the Geidea payment Gateway is matched with the original order Total ", priority = 59)
     public void verifyTheOrderTotalAppearsInGeideaGateWayIsMatchedWithOriginalOrderTotal() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         String sporterTotal;
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
+        egypt.accessGuestCheckoutForm();
+        egypt.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -526,13 +526,13 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
         DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        egypt.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         egypt.selectCreditCardMethod();
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        sporterTotal=DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getGrandTotalValue(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(),webDriver);
+        sporterTotal=DataHelperAndWait.extractDigitsFromString(egypt.getGrandTotalValue(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         DataHelperAndWait.waitToBeVisible(egypt.getGeideaPopUpFrame(), webDriver);
         webDriver.switchTo().frame(1);
@@ -545,11 +545,11 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
     }
     @Test(enabled = false,groups = {  "1.4 Low Severity"}, description = "{{CountryName}}: Make sure the order is not placed correctly when there's interruption occurring in the Geidea Payment GateWay ", priority = 68)
     public void verifyTheOrderIsNotPlacedWhenMakeInterputionDuringCheckoutOrderUsingGeidea() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
+        egypt.accessGuestCheckoutForm();
+        egypt.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -559,12 +559,12 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
         DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        egypt.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         egypt.selectCreditCardMethod();
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         DataHelperAndWait.waitToBeVisible(egypt.getGeideaPopUpFrame(), webDriver);
         webDriver.switchTo().frame(1);
@@ -577,16 +577,16 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
     }
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully Using Geidea when using Arabic Version ", priority = 69)
     public void verifyAbilityToPlaceOrderWhenSelectingNextDayDeliveryShippingMethodWithCreditCardPaymentMethodInArabicVersion() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         HeaderSection headerSection= new HeaderSection(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(headerSection.getLanguageSelector(),webDriver);
         WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage,webDriver);
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
+        egypt.accessGuestCheckoutForm();
         DataHelperAndWait.waitForTime(1000);
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
+        egypt.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -596,22 +596,17 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
         DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        egypt.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         egypt.selectCreditCardMethod();
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-//        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
-//        egypt.submitCreditCardCorrectly();
-//        DataHelperAndWait.waitForTime(3000);
-//        webDriver.switchTo().frame(1);
-//        DataHelperAndWait.waitToBeVisible(egypt.getGoToMerchentWebSite(),webDriver);
-//        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getSuccessPage(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getFinalPlaceOrderBtn(),webDriver);
+
     }
     @Test(enabled = false,groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Next Day Delivery Shipping Method With Credit Card Payment Method when using the coupon code", priority = 70)
     public void verifyAbilityToPlaceOrderWhenSelectingNextDayDeliveryShippingMethodWithCreditCardPaymentMethodUsingCouponCode() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
@@ -619,8 +614,8 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);
         cartPage.proceedToCheckout();
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCheckoutAsGuestBtn(),webDriver);
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
+        DataHelperAndWait.clickOnElement(egypt.getCheckoutAsGuestBtn(),webDriver);
+        egypt.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -630,18 +625,18 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
         DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        egypt.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         egypt.selectCreditCardMethod();
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         egypt.submitCreditCardCorrectly();
         DataHelperAndWait.waitForTime(3000);
         webDriver.switchTo().frame(1);
         DataHelperAndWait.waitToBeVisible(egypt.getGoToMerchentWebSite(),webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getSuccessPage(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getSuccessPage(),webDriver);
     }
 
 }

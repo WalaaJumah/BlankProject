@@ -244,6 +244,7 @@ public class GuestCheckoutCyclePage extends BasePage {
             CartPage cartPage = new CartPage(webDriver);
             cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
             cartPage.proceedToCheckout();
+        cartPage.waitTillCartSpinnerDisappear(webDriver);
             DataHelperAndWait.clickOnElement(checkoutAsGuestBtn, webDriver);
     }
 
@@ -387,6 +388,5 @@ public class GuestCheckoutCyclePage extends BasePage {
 public void waitTillLoaderComplete(){
     WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(50));
     wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(this.cartLoaderXpath)));
-
 }
 }

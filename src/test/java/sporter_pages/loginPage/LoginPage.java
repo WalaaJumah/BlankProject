@@ -89,7 +89,7 @@ public class LoginPage extends BasePage {
     }
     public  void waitTillCartSpinnerDisappear(WebDriver webDriver) {
         WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(50));
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(this.loginLoader)));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(this.pageLoader)));
 
     }
 public void clickOnLoginBtn(){

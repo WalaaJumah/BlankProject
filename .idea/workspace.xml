@@ -4,8 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="464478ea-1e3f-4255-9918-5850b13a0bd5" name="Changes" comment="Merge remote-tracking branch 'origin/AUT-444-Handle-MH-360-Buy-Now-Pay-Later-Tamara' into Release26Changes">
+    <list default="true" id="464478ea-1e3f-4255-9918-5850b13a0bd5" name="Changes" comment="s">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/guestCheckoutCyclePages/GuestCheckoutCyclePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/guestCheckoutCyclePages/GuestCheckoutCyclePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/loginPage/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/loginPage/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/CheckoutForRegisteredTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/CheckoutForRegisteredTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/KSACheckoutForRegisteredTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/KSACheckoutForRegisteredTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/EgyptGuestCheckoutCycleTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/EgyptGuestCheckoutCycleTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/KSAGuestCheckoutCycleTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/KSAGuestCheckoutCycleTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/myAccountTestCases/MyAccountTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/myAccountTestCases/MyAccountTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/myAccountTestCases/QatarMyAccountTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/myAccountTestCases/QatarMyAccountTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/RunTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RunTest.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -481,11 +492,6 @@
           <line>65</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/sporter_pages/cartPages/CartPage.java</url>
-          <line>188</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
@@ -517,11 +523,11 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/sporter_web_automation$C__Users_w_jumaa_IdeaProjects_sporter_web_automation_src_test_resources_SmokeTest_xml.ic" NAME="$PROJECT_DIR$/src/test/resources/SmokeTest.xml Coverage Results" MODIFIED="1657796388803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/sporter_web_automation$C__Users_w_jumaa_IdeaProjects_sporter_web_automation_src_test_resources_TestExecution_xml.ic" NAME="$PROJECT_DIR$/src/test/resources/TestExecution.xml Coverage Results" MODIFIED="1671601245197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>sporter_pages.AeCartPage</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/sporter_web_automation$Test.ic" NAME="Test Coverage Results" MODIFIED="1672294404497" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/sporter_web_automation$C__Users_w_jumaa_IdeaProjects_sporter_web_automation_src_test_resources_SmokeTest_xml.ic" NAME="$PROJECT_DIR$/src/test/resources/SmokeTest.xml Coverage Results" MODIFIED="1657796388803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/sporter_web_automation$AeSportSupplementsCategoryTestCases_verifySportSupplementsCategoryImageAndHorizontalBannersAppearingAfterSortingTheProducts.ic" NAME="AeSportSupplementsCategoryTestCases.verifySportSupplementsCategoryImageAndHorizontalBannersAppearingAfterSortingTheProducts Coverage Results" MODIFIED="1666869381864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>sporter_test.*</FILTER>
     </SUITE>

@@ -20,7 +20,7 @@ import static org.testng.Assert.assertTrue;
 
 public  class DataHelperAndWait  {
 
-    private static int WaitTime=50;
+    private static int WaitTime=51;
 
 
     //test21add

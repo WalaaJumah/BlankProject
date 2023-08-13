@@ -14,18 +14,22 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.time.Duration;
 
 public class BasePage {
 
     private String pageTitle = null;
     private String pageSource = null;
     public String cartLoaderXpath = "//div[starts-with(@class,'loading_container')]";
-    public String loginLoader = "//div[starts-with(@class,'spinner_container')]";
+    public String pageLoader = "//div[starts-with(@class,'spinner_container')]";
+    public String loadingLayout = "//div[starts-with(@class,'loading_container')]";
     public static String BaseURL = "";
     public static String productUrl = "/optimum-gold-standard-100-whey-6202";
     public static String ksaDomainArabic = "/ar-sa";
@@ -296,7 +300,14 @@ public String getTitle() {
         webDriver.navigate().to(BaseURL);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
+    public void waitTillLoaderComplete(){
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(50));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(this.loadingLayout)));
+    }
+    public  void waitTillCartSpinnerDisappear(WebDriver webDriver) {
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(50));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(this.pageLoader)));
 
-
+    }
 }
 

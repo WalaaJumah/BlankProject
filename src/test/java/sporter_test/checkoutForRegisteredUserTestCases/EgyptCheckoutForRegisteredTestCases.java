@@ -318,6 +318,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        guestCheckoutCyclePage.waitTillLoaderComplete();
         egypt.selectCreditCardMethod();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);

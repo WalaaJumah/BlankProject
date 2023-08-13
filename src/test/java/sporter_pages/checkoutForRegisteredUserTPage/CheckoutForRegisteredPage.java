@@ -197,6 +197,8 @@ public class CheckoutForRegisteredPage extends BasePage {
             }
             DataHelperAndWait.waitForTime(1500);
             _guestCheckoutCyclePage.clickOnContinueBtn();
+            _guestCheckoutCyclePage.waitTillLoaderComplete();
+
         }
 //        DataHelperAndWait.clickOnElement(_guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
 //        DataHelperAndWait.clickOnElement(_guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
