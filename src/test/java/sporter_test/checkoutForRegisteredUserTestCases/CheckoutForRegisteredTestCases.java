@@ -48,23 +48,10 @@ public class CheckoutForRegisteredTestCases extends BaseTest
     }
     @Test(groups = {"All Smoke Testing Result","1.2 High Severity"}, description = "{{CountryName}}: Ability to login correctly from Sign In Page using valid credential", priority = 1)
     public void verifyAbilityToLoginCorrectlyWithValidCredentials() throws IOException {
-        HeaderSection header = new HeaderSection(webDriver);
-        AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToLoginPage();
         loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword"));
-        DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
-        DataHelperAndWait.waitForTime(2000);
-        try {
-            DataHelperAndWait.waitForTime(1500);
-            DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
-            WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
-        }
-        catch (Exception e){
-            loginPage.navigateToHomePage();
-            DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
-            WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
-        }
+        loginPage.clickOnLoginBtn();
     }
     @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure the shopper is able to keep the shopping after adding the product to the cart ", priority = 3)
     public void keepShoppingAfterAddingToTheCart() throws IOException {

@@ -94,7 +94,8 @@ public class LoginPage extends BasePage {
     }
 public void clickOnLoginBtn(){
         DataHelperAndWait.clickOnElement(loginBtn,webDriver);
-    waitTillCartSpinnerDisappear(webDriver);
+        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
+    DataHelperAndWait.waitToBeVisible(homePage.getSecondSideBanner(),webDriver);
 
 
 }
