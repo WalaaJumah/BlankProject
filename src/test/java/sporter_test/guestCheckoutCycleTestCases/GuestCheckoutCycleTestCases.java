@@ -80,18 +80,6 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
         Assert.assertEquals(df.format(orderTotal), df.format(cartTotal));
     }
 
-    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Proceed to checkout button appears in the cart page works correctly", priority = 4)
-    public void verifyProceedCheckoutBtnAppearingInCartPageWorksCorrectly() throws IOException {
-        CartPage cartPage = new CartPage(webDriver);
-        DataHelperAndWait.scrollToPositionZero(webDriver);
-        cartPage.navigateToCartPage();
-        cartPage.navigateToHomePage();
-        cartPage.clickOnCartIcon();
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-        //TODO: Needs to recheck after solving it ny mamen
-        WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.shippingInformationUrl, webDriver);
-    }
-
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Proceed to checkout button appearing in the Cart pop-up works correctly", priority = 7)
     public void verifyProceedCheckoutBtnAppearingInCartPopUpWorksCorrectly() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
