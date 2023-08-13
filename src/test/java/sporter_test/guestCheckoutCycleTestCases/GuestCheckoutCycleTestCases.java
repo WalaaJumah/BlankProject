@@ -40,14 +40,14 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Verify ability to remove the product from the cart successfully", priority = 2)
     public void verifyAbilityToRemoveProductFromCart() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.navigateToCartPage();
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         cartPage.removeItem();
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getNoItemInCartLabel(), webDriver);
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure to add product to the Cart from Product Details Page", priority = 3)
     public void addToCartAndViewCartFromPDP() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.cartURL, webDriver);
     }
 
@@ -105,10 +105,6 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure All sections appear correctly in the Checkout Method screen", priority = 8)
     public void verifyAllFieldsAppearCorrectlyInCheckoutMethodScreen() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CartPage cartPage = new CartPage(webDriver);
-//        cartPage.navigateToHomePage();
-//        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
-//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCheckoutMethodLabel(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCheckoutAsGuestHeader(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCheckoutAsGuestDescription(), webDriver);
@@ -201,8 +197,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
+guestCheckoutCyclePage.accessGuestCheckoutForm();
         jo.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -221,8 +216,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
+guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -248,8 +242,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     public void verifyContinueBtnAppearsInShippingMethodsIsDisableWhenNoMethodSelected() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
+guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -267,8 +260,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     public void verifyTheEditShippingInfoBtnWorksFine() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
  CartPage cartPage = new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
+guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -339,8 +331,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     public void verifyAbilityToSelect2BusinessDaysShippingMethodCorrectly() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
  CartPage cartPage = new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
+guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -360,8 +351,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     public void verifySameDayShippingMethodAppearsForDubaiCityOnly() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
  CartPage cartPage = new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
+guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -420,8 +410,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     public void verifyEachOfCODAndCreditCardPaymentMethodCorrectly() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
+guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -442,8 +431,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     public void verifyContinueBtnAppearsInPaymentMethodsIsDisableWhenNoMethodSelected() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
  CartPage cartPage = new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
+guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -470,8 +458,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
+guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -497,8 +484,7 @@ cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithValidCreditCardPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
  CartPage cartPage = new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
+guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -519,8 +505,7 @@ cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCreditCardPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
+guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -576,8 +561,7 @@ cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyInabilityToUseInvalidCreditCardPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
+guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -650,8 +634,7 @@ cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyTheSystemDisplayTheQuoteIdForTheUserAfterCheckoutTheOrder() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
+guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
