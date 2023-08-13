@@ -19,12 +19,12 @@
 <!--                    </run>-->
 <!--                </groups>-->
         <classes>
-            <class name="sporter_test.cartTestCases.JordanCartTestCases">
+            <class name="sporter_test.cartTestCases.EgyptCartTestCases">
 <!--            <class name="sporter_test.tamara_payment_method_test_cases.KSATamaraPaymentMethodTestCases"/>-->
 
 
 <!--                <methods>-->
-<!--                    <include name="verifyProceedCheckoutBtnAppearsCorrectlyInCartPage"></include>-->
+<!--                    <include name="verifyAbilityToDisplayTheProductFromTheCartPage"></include>-->
 <!--&lt;!&ndash;                    <include name="verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTamaraPaymentMethodUsing3DSCardForForRegisteredUser"></include>&ndash;&gt;-->
 <!--&lt;!&ndash;                    <include name="verifyClickingOnTheSecondSideBannersWorksCorrectly"></include>&ndash;&gt;-->
 

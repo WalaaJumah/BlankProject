@@ -152,4 +152,16 @@ public void verifyAbilityToClickOnSportsMenuIsDisplayedFromCartPage() throws IOE
             webDriver.manage().deleteCookieNamed("guestCartId");}
 
     }
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Verify ability to display the product from the Cart Page works successfully", priority = 19)
+    public void verifyAbilityToDisplayTheProductFromTheCartPage() throws IOException {
+        CartPage cartPage = new CartPage(webDriver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        cartPage.waitTillCartSpinnerDisappear(webDriver);
+        DataHelperAndWait.waitForTime(2000);
+        DataHelperAndWait.waitToBeClickable(cartPage.getProductNameForOneProduct(), webDriver);
+        cartPage.getProductNameForOneProduct().click();
+//        DataHelperAndWait.clickOnElement(cartPage.getProductNameForOneProduct(), webDriver);
+        DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductName(), webDriver);
+    }
 }
