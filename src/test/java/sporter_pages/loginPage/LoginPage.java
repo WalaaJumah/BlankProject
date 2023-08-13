@@ -9,15 +9,19 @@ package sporter_pages.loginPage;
 import core.BasePage;
 import core.DataHelperAndWait;
 import lombok.Getter;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.productPage.ProductDetailsPage;
 
 import java.io.IOException;
+import java.time.Duration;
 
 @Getter
 public class LoginPage extends BasePage {
@@ -83,7 +87,17 @@ public class LoginPage extends BasePage {
             webDriver.navigate().to(BaseURL + loginLink);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
+    public  void waitTillCartSpinnerDisappear(WebDriver webDriver) {
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(50));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(this.loginLoader)));
 
+    }
+public void clickOnLoginBtn(){
+        DataHelperAndWait.clickOnElement(loginBtn,webDriver);
+    waitTillCartSpinnerDisappear(webDriver);
+
+
+}
     public void navigateToForgetPassword() throws IOException {
         webDriver.navigate().to(BaseURL + forgetPasswordURL);
         verifyTheDisplayedPageDoesNotHaveErrors();

@@ -19,7 +19,7 @@
 <!--                    </run>-->
 <!--                </groups>-->
         <classes>
-            <class name="sporter_test.checkoutForRegisteredUserTestCases.BahrainCheckoutForRegisteredTestCases">
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.EgyptCheckoutForRegisteredTestCases">
 <!--            <class name="sporter_test.tamara_payment_method_test_cases.KSATamaraPaymentMethodTestCases"/>-->
 
 
