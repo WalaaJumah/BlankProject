@@ -24,6 +24,7 @@ public class BasePage {
 
     private String pageTitle = null;
     private String pageSource = null;
+    public String cartLoaderXpath = "//div[starts-with(@class,'loading_container')]";
     public static String BaseURL = "";
     public static String productUrl = "/optimum-gold-standard-100-whey-6202";
     public static String ksaDomainArabic = "/ar-sa";

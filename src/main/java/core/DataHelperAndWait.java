@@ -57,6 +57,8 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
         wait = new WebDriverWait(webDriver, Duration.ofSeconds(WaitTime));
         return wait.until(ExpectedConditions.visibilityOf(element)).isDisplayed();
     }
+
+
     public static  boolean isPresent(WebElement webElement,WebDriver webDriver) {
         try{
             return webElement.isDisplayed();

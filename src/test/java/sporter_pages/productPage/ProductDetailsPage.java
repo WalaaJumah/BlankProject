@@ -10,13 +10,17 @@ import core.BasePage;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
 import lombok.Getter;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import sporter_pages.homepage_classes.HomePage;
 
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 
 @Getter
@@ -36,6 +40,8 @@ public class ProductDetailsPage extends BasePage {
     private WebElement addToCartBtn2;
     @FindBy(id = "popup-block")
     private WebElement cartPopUp;
+    @FindBy(xpath = "//span[starts-with(@class,'spinner_loader')]")
+    private WebElement cartSpinner;
     @FindBy(id = "keepShoppingBtn")
     private WebElement keepShippingBtn;
     @FindBy(id = "ThumbsUpContainer")
@@ -199,7 +205,11 @@ public class ProductDetailsPage extends BasePage {
         DataHelperAndWait.waitToBeClickable(addToCartBtn2, webDriver);
         addToCartBtn.click();
     }
+    public   void waitTillCartSpinnerDisappear(WebDriver webDriver) {
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(50));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(this.cartLoaderXpath)));
 
+    }
     public void keepShopping() {
         DataHelperAndWait.clickOnElement(keepShippingBtn, webDriver);
     }
@@ -208,7 +218,7 @@ public class ProductDetailsPage extends BasePage {
 //        DataHelperAndWait.waitForTime(3000);
         DataHelperAndWait.waitToBeVisible(viewCartBtn, webDriver);
         viewCartBtn.click();
-    }
+        this.waitTillCartSpinnerDisappear(webDriver);    }
 
     public void keepShoppingAfterAddingToCart() throws IOException {
         HomePage homePage = new HomePage(webDriver);

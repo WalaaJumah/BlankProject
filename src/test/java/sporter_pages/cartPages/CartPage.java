@@ -30,8 +30,6 @@ import java.util.List;
 @Getter
 public class CartPage extends BasePage {
     ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-    HomePage homePage = new HomePage(webDriver);
-    HeaderSection headerSection = new HeaderSection(webDriver);
     DataHelperAndWait dataHelperAndWait;
     //declare all locators related to the Cart Page
     @FindBy(id = "CartIconContainerqty")
@@ -58,6 +56,8 @@ public class CartPage extends BasePage {
     private WebElement noItemInCartLabel;
     @FindBy(id = "CartIconContainerqty")
     private WebElement cartCounter;
+    @FindBy(xpath = "//span[starts-with(@class,'spinner_loader')]")
+    private WebElement cartSpinner;
     //TODO: To replace it with ID after added it by Moamen
 //    @FindBy(css = "#FaShoppingCart > path")
 //    private WebElement cartIcon;
@@ -180,7 +180,11 @@ public class CartPage extends BasePage {
 
         }
     }
+    public  void waitTillCartSpinnerDisappear(WebDriver webDriver) {
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(50));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(this.cartLoaderXpath)));
 
+    }
     public void addToCartAndDisplayTheCart() throws IOException {
         if(IsEmptyCart()) {
             productDetailsPage.displayTheProduct();
@@ -188,7 +192,10 @@ public class CartPage extends BasePage {
             productDetailsPage.viewCart();
         }
     }
-
+    public void navigateToCartOrAddProductToItInCaseTheCartIsEmpty() throws IOException {
+        if(IsEmptyCart())
+            addToCartAndDisplayTheCart();
+    }
     public void addToCartAndDisplayTheCartForOos() throws IOException {
         productDetailsPage.displayTheProductHaveLessQty();
         productDetailsPage.addToCart();
@@ -222,6 +229,7 @@ public class CartPage extends BasePage {
             webDriver.navigate().to(BaseURL + cartURL);
             verifyTheDisplayedPageDoesNotHaveErrors();
             DataHelperAndWait.waitForUrlContains(cartURL, webDriver);
+            this.waitTillCartSpinnerDisappear(webDriver);
         }
         catch (Exception e){
             this.addToCartAndDisplayTheCart();
@@ -232,8 +240,8 @@ public class CartPage extends BasePage {
 
     }
 
-    public boolean IsEmptyCart()
-    {
+    public boolean IsEmptyCart() throws IOException {
+        navigateToCartPage();
         try {
             if(hereLink == null)
                 return false;
@@ -253,8 +261,10 @@ public class CartPage extends BasePage {
     }
 
     public void removeItem() {
+        this.waitTillCartSpinnerDisappear(webDriver);
         DataHelperAndWait.waitToBeClickable(this.removeItemBtn, webDriver);
-        this.removeItemBtn.click();}
+        this.removeItemBtn.click();
+        this.waitTillCartSpinnerDisappear(webDriver);    }
 
     public void clearCart() throws IOException {
         try {
@@ -299,13 +309,11 @@ public class CartPage extends BasePage {
     }
 
     public void proceedToCheckout() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
-        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
-        DataHelperAndWait.waitForTime(1000);
-//        try{
-            DataHelperAndWait.waitToBeVisible(this.getProceedCheckoutBtn(),webDriver);
-            DataHelperAndWait.clickOnElement(this.getProceedCheckoutBtn(),webDriver);
-            DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getContinueShippingInfoBtn(),webDriver);
+        this.waitTillCartSpinnerDisappear(webDriver);
+        DataHelperAndWait.waitToBeVisible(this.getProceedCheckoutBtn(),webDriver);
+           this.getProceedCheckoutBtn().click();
+//            DataHelperAndWait.clickOnElement(this.getProceedCheckoutBtn(),webDriver);
+//            DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getContinueShippingInfoBtn(),webDriver);
 //
 //        }
 //        catch (Exception e){
@@ -313,5 +321,13 @@ public class CartPage extends BasePage {
 //            DataHelperAndWait.waitToBeVisible(this.getProceedCheckoutBtn(),webDriver);
 //            DataHelperAndWait.clickOnElement(this.getProceedCheckoutBtn(),webDriver);
 //        }
+    }
+    public void increaseQty() {
+        DataHelperAndWait.clickOnElement(getIncreaseQtyBtn(), webDriver);
+        waitTillCartSpinnerDisappear(webDriver);
+    }
+    public void decreaseQty(){
+        DataHelperAndWait.clickOnElement(getDecreaseQtyBtn(), webDriver);
+        waitTillCartSpinnerDisappear(webDriver);
     }
 }
