@@ -47,8 +47,8 @@ public class EgyptCartTestCases extends CartTestCases {
 
 @Test(enabled = false)
 public void verifyOrderTotalCalculationInCartPageWorksCorrectly() throws IOException {
-        CartPage cartPage = new CartPage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
+    CartPage cartPage = new CartPage(webDriver);
+    cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         float subTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue(), webDriver, "EGP");
         float tax = DataHelperAndWait.convertTheStringToFloat(cartPage.getTaxValue(), webDriver, "EGP");
         float orderTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(), webDriver, "EGP");
@@ -89,9 +89,6 @@ public void verifyAbilityToClickOnSportsMenuIsDisplayedFromCartPage() throws IOE
     @Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure that the counter-number appears inside the cart pop-up works correctly", priority = 4)
     public void verifyTheCounterInsideCartPopUpWorksCorrectly() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        cartPage.addToCartAndDisplayTheCart();
-        cartPage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
         itemsCounter = "(1 Of 1 Items )";
         DataHelperAndWait.waitToBeVisible(cartPage.getItemCounterInCartPopUp(), webDriver);
@@ -102,17 +99,13 @@ public void verifyAbilityToClickOnSportsMenuIsDisplayedFromCartPage() throws IOE
     @Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure that the product counter that appears in the cart page counts the free gift correctly", priority = 12)
     public void verifyProductCounterAppearsInTheCartPageCountsFreeGifts() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        cartPage.addToCartAndDisplayTheCart();
-        cartPage.navigateToHomePage();
-        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);        String itemsCounter = "1";
-        WebElementsAssertion.assertionTextIsEqual(cartPage.getItemsCounter(), webDriver, itemsCounter);
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the system does not apply invalid coupon code", priority = 26)
     public void verifyInabilityToApplyInvalidCouponCode() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(), webDriver, XmlReader.getXMLData("invalidCouponCode"));
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(), webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCloseAddToCartErrorMsg(), webDriver);
@@ -121,92 +114,6 @@ public void verifyAbilityToClickOnSportsMenuIsDisplayedFromCartPage() throws IOE
 
     @Test(enabled = false)
     public void verifyAbilityToViewTheCartAfterAddingMoreThanSimpleOfTheSameConfig() {
-    }
-
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the product price is changed when you change the quantity from the Cart Page", priority = 8)
-    public void verifyProductPriceChangesWhenChangingTheProductQtyFromTheCartPage() throws IOException {
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        CartPage cartPage = new CartPage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
-        DataHelperAndWait.waitToBeVisible(cartPage.getProductPriceTotal(),webDriver);
-        String currentProductPrice = DataHelperAndWait.getWebElementText(cartPage.getProductPriceTotal(), webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
-        cartPage.waitTillQtyValueChanges("2");
-//        DataHelperAndWait.clickOnElement(cartPage.getDecreaseQtyBtn(), webDriver);
-//        cartPage.waitTillQtyValueChanges("2");
-        DataHelperAndWait.waitForTime(2500);
-        DataHelperAndWait.waitToBeVisible(cartPage.getProductPriceTotal(),webDriver);
-        String newProductPrice = DataHelperAndWait.getWebElementText(cartPage.getProductPriceTotal(), webDriver);
-        Assert.assertNotEquals(currentProductPrice, newProductPrice);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-    }
-
-    @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the system cancel the coupon code correctly", priority = 35)
-    public void verifyAbilityToCancelTheCouponCode() throws IOException {
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        CartPage cartPage = new CartPage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
-        DataHelperAndWait.clickOnElement(cartPage.getCancelCouponCodeBtn(), webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(), webDriver);
-        DataHelperAndWait.refreshPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-//        cartPage.removeItem();
-    }
-
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure to view the cart after adding more than products to it", priority = 15)
-    public void verifyAbilityToViewTheCartAfterAddingMoreThanProducts() throws IOException {
-        CartPage cartPage = new CartPage(webDriver);
-        cartPage.navigateToCartPage();
-//        cartPage.removeItem();
-        cartPage.addToCartAndDisplayTheCart();
-        cartPage.addBogoToCartAndDisplayTheCart();
-        WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.cartURL, webDriver);
-    }
-
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Verify ability to display the product from the Cart Page works successfully", priority = 19)
-    public void verifyAbilityToDisplayTheProductFromTheCartPage() throws IOException {
-        CartPage cartPage = new CartPage(webDriver);
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        cartPage.navigateToCartPage();
-        DataHelperAndWait.clickOnElement(cartPage.getProductNameForOneProduct(), webDriver);
-        DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductName(), webDriver);
-        WebElementsAssertion.validateTheCurrentUrlNotContainsString(cartPage.cartURL, webDriver);
-        cartPage.navigateToCartPage();
-        webDriver.manage().deleteCookieNamed("guestCartId");
-    }
-
-    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Free Gift does not have a price", priority = 22)
-    public void verifyTheFreeGiftIsDoesNotHavePrice() throws IOException {
-        CartPage cartPage = new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        cartPage.addBogoToCartAndDisplayTheCart();
-        try {
-            WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getFreePrice(), webDriver);
-            webDriver.manage().deleteCookieNamed("guestCartId");
-        } catch (Exception e) {
-            webDriver.manage().deleteCookieNamed("guestCartId");
-        }
-    }
-
-    @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the system apply Free Gift coupon code correctly", priority = 34)
-    public void verifyAbilityToApplyFreeGiftCouponCode() throws IOException {
-        CartPage cartPage = new CartPage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
-        DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(), webDriver, XmlReader.getXMLData("FreeCouponCode"));
-        DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(), webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(), webDriver);
-    }
-
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure to view the cart after adding more than quantity for the same product", priority = 14)
-    public void verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct() throws IOException {
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        CartPage cartPage = new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        productDetailsPage.displayTheProduct();
-        productDetailsPage.increaseTheQuantity();
-        cartPage.addToCartAndViewCart();
-        WebElementsAssertion.validateTheCurrentUrlContainsString(productDetailsPage.cartURL, webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = " Cart Page- Make sure ability to add a bundle to the cart ", priority = 17)
