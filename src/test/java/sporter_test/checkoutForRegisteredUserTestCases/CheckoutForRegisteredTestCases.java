@@ -129,15 +129,12 @@ catch (Exception e){
     public void verifyTheCorrectCountyCodeRetrievedCorrectlyInPhoneField() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
       CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
-      registeredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-      try {
-                    if(registeredPage.getSavedAddressOption().isDisplayed())
-          System.out.println("A saved address is selected");
-      }
-      catch (Exception e){
+      CartPage cartPage= new CartPage(webDriver);
+      cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+      cartPage.proceedToCheckout();
+          DataHelperAndWait.clickOnElement(registeredPage.getAddNewAddressBtn(),webDriver);
           WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getCountryCode(), webDriver, countryCode);
 
-      }
     }
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the email field is disable and retrieved the customer email correctly", priority = 15)
     public void verifyTheEmailFieldRetrievedIsDisableAndDisplayTheCustomerEmail() {
