@@ -13,7 +13,11 @@
         <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32569"/>
         <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix"/>
         <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
-
+                <groups>
+                    <run>
+                        <include name="All Smoke Testing Result"/>
+                    </run>
+                </groups>
         <classes>
             <class name="sporter_test.cartTestCases.KSACartTestCases">
 <!--            <class name="sporter_test.tamara_payment_method_test_cases.KSATamaraPaymentMethodTestCases"/>-->
