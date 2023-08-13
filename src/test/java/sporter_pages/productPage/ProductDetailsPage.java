@@ -182,8 +182,8 @@ public class ProductDetailsPage extends BasePage {
             productUrl1 = productUrl;
         }
 
-
         webDriver.navigate().to(BaseURL + productUrl1);
+        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
         verifyTheDisplayedPageDoesNotHaveErrors();
         DataHelperAndWait.waitForUrlContains(productUrl1, webDriver);
         verifyTheDisplayedPageDoesNotHaveErrors();
@@ -223,7 +223,6 @@ public class ProductDetailsPage extends BasePage {
     public void keepShoppingAfterAddingToCart() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         try {
-
             this.displayTheProduct();
             this.addToCart();
             this.keepShopping();
