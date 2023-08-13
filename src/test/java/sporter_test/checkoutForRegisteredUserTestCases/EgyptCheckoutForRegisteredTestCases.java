@@ -59,7 +59,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         CartPage cartPage= new CartPage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         cartPage.proceedToCheckout();
         try{
             DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
@@ -89,7 +89,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         CartPage cartPage= new CartPage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         cartPage.proceedToCheckout();
         try{
             DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
@@ -171,7 +171,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         cartPage.proceedToCheckout();
         try{            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
@@ -203,16 +203,8 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         guestCheckoutCyclePage.navigateToCheckoutPage();
-        cartPage.addToCartAndDisplayTheCart();
-        try{
-            cartPage.proceedToCheckout();
-        }
-        catch (Exception e){
-            cartPage.navigateToHomePage();
-            cartPage.clickOnCartIcon();
-            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-
-        }
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        cartPage.proceedToCheckout();
         try{
             DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
         }
@@ -237,7 +229,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);
@@ -458,7 +450,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         DataHelperAndWait.clickOnElement(headerSection.getLanguageSelector(),webDriver);
 //        cartPage.clearCart();
         System.out.println("Before");
-        cartPage.addToCartAndDisplayTheCart();
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
 //        DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
 //        DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
 //        DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);
@@ -497,7 +489,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         CartPage cartPage= new CartPage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);
