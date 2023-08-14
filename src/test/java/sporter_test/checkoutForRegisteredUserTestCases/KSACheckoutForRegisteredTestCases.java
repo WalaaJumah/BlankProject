@@ -22,26 +22,19 @@ import java.io.IOException;
 import java.text.DecimalFormat;
 
 public class KSACheckoutForRegisteredTestCases extends CheckoutForRegisteredTestCases{
-    @BeforeClass(alwaysRun=true)
-    public void switchToKsaStore(){
-        KsaHomePage ksaHomePage=new KsaHomePage(webDriver);
+    @BeforeClass(alwaysRun = true)
+    public void switchToKsaStore() {
+        KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.switchCountry(ksaHomePage.getKsaCountry());
-        if(webDriver.getCurrentUrl().contains(ksaHomePage.saudiDomain)){
-            System.out.println("You are in KSA Store");
-        } else {
+        if (!webDriver.getCurrentUrl().contains(ksaHomePage.saudiDomain)) {
             webDriver.navigate().to(BasePage.BaseURL +BasePage.ksaDomainArabic);
-            //CloseInitialDialog();
         }
-        try {
-            WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage, webDriver);
-        }
-        catch (Exception e){
+        if(!webDriver.getCurrentUrl().contains(websiteArabicLanguage)) {
             webDriver.navigate().to(BasePage.BaseURL +BasePage.ksaDomainArabic);
             WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage, webDriver);
         }
-        System.out.println(webDriver.getCurrentUrl());
-        storeCountry="المملكة العربية السعودية";
-        countryCode="966";
+        storeCountry = "المملكة العربية السعودية";
+        countryCode = "966";
     }
     @Test(groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 9)
     public void verifyOrderTotalCalculationInCartPageWorksCorrectly() throws IOException {
