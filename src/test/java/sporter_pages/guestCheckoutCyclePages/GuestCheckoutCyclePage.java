@@ -270,7 +270,7 @@ public class GuestCheckoutCyclePage extends BasePage {
             DataHelperAndWait.clickOnElement(duabiCity, webDriver);
 
         } catch (Exception e) {
-            DataHelperAndWait.clickOnElement(cityMenu, webDriver);
+            cityMenu.click();
             DataHelperAndWait.typeTextInElement(citySearch, webDriver, "Dubai");
             DataHelperAndWait.clickOnElement(duabiCity, webDriver);
         }
