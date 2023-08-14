@@ -19,18 +19,18 @@
 <!--                    </run>-->
 <!--                </groups>-->
         <classes>
-            <class name="sporter_test.myAccountTestCases.QatarMyAccountTestCases">
+            <class name="sporter_test.tamara_payment_method_test_cases.UAETamaraPaymentMethodTestCases">
 <!--            <class name="sporter_test.tamara_payment_method_test_cases.KSATamaraPaymentMethodTestCases"/>-->
 
 
-                <methods>
-                    <include name="verifyAllMyAccountOptionsAppearCorrectly"></include>
-                    <include name="verifyInabilityToAddNewAddressWithIncorrectPhoneNumberFormat"></include>
-<!--                    <include name="verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTamaraPaymentMethodUsing3DSCardForForRegisteredUser"></include>-->
-<!--                    <include name="verifyClickingOnTheSecondSideBannersWorksCorrectly"></include>-->
+<!--                <methods>-->
+<!--                    <include name="verifyAllMyAccountOptionsAppearCorrectly"></include>-->
+<!--                    <include name="verifyInabilityToAddNewAddressWithIncorrectPhoneNumberFormat"></include>-->
+<!--&lt;!&ndash;                    <include name="verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTamaraPaymentMethodUsing3DSCardForForRegisteredUser"></include>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="verifyClickingOnTheSecondSideBannersWorksCorrectly"></include>&ndash;&gt;-->
 
 
-                    </methods>
+<!--                    </methods>-->
 
             </class>
         </classes>

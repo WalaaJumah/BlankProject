@@ -474,4 +474,17 @@ for(int i=0;i<jsErrors.getAll().size()-1;i++){
         }
         return "";
     }
+    public boolean IsElementPresent(WebElement element) throws IOException {
+
+        try {
+            if(element == null)
+                return false;
+
+            return element.isDisplayed() ;
+
+        }catch (Exception e)
+        {
+            return false;
+        }
+    }
 }

@@ -254,7 +254,7 @@ public class GuestCheckoutCyclePage extends BasePage {
             DataHelperAndWait.waitToBeVisible(firstCity, webDriver);
             DataHelperAndWait.clickOnElement(firstCity, webDriver);
         } catch (Exception e) {
-            DataHelperAndWait.clickOnElement(cityMenu, webDriver);
+            cityMenu.click();
             DataHelperAndWait.waitToBeVisible(firstCity, webDriver);
             DataHelperAndWait.clickOnElement(firstCity, webDriver);
         }
