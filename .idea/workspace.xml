@@ -7,7 +7,9 @@
     <list default="true" id="464478ea-1e3f-4255-9918-5850b13a0bd5" name="Changes" comment=" Update Guest User">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/guestCheckoutCyclePages/GuestCheckoutCyclePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/guestCheckoutCyclePages/GuestCheckoutCyclePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/KSACheckoutForRegisteredTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/KSACheckoutForRegisteredTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/GuestCheckoutCycleTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/GuestCheckoutCycleTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/JordanGuestCheckoutCycleTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/JordanGuestCheckoutCycleTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/QatarGuestCheckoutCycleTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/QatarGuestCheckoutCycleTestCases.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

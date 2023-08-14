@@ -219,7 +219,7 @@ public class GuestCheckoutCyclePage extends BasePage {
         DataHelperAndWait.updateAllText(streetLineTwoField, streetLineTwo);
         setSelectDubaiCityCity();
     }
-    public void clickOnContinueBtn() {
+    public void clickOnContinueBtn() throws IOException {
         DataHelperAndWait.waitToBeVisible(continueShippingInfoBtn, webDriver);
         DataHelperAndWait.scrollTo(continueShippingInfoBtn, webDriver);
 
@@ -232,6 +232,8 @@ public class GuestCheckoutCyclePage extends BasePage {
             DataHelperAndWait.hoverOnElementAndClick(continueShippingInfoBtn, webDriver);
             waitTillLoaderComplete();
         }
+        if(DataHelperAndWait.IsElementPresent(closeCheckoutErr))
+            throw new AssertionError("Sorry But There is No Available Shipping Methods For your Location error");
     }
 
     public void navigateToCheckoutPage() throws IOException {

@@ -61,7 +61,7 @@ public class QatarGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCase
 //        WebElementsAssertion.validateTheElementIsDisplayed(qa.getStreetlineOneErrMsg(),webDriver);
     }
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:Make sure the Guest user cannot submit the shipping information when the phone number length is small ", priority = 15)
-    public void verifyTheGuestUserCannotSubmitTheShippingInformationWhenPhoneFieldHaveSmallTextLength() {
+    public void verifyTheGuestUserCannotSubmitTheShippingInformationWhenPhoneFieldHaveSmallTextLength() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         QatarGuestCheckoutCyclePage qa= new QatarGuestCheckoutCyclePage(webDriver);
         qa.fillInShippingInformationInputField(

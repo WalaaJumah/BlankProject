@@ -147,7 +147,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
         WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getCountryCode(),webDriver,countryCode);
     }
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:Make sure the Guest user cannot submit the shipping information when the phone number length is small ", priority = 14)
-    public void verifyTheGuestUserCannotSubmitTheShippingInformationWhenPhoneFieldHaveSmallTextLength() {
+    public void verifyTheGuestUserCannotSubmitTheShippingInformationWhenPhoneFieldHaveSmallTextLength() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
@@ -162,7 +162,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getPhoneErrMsg(),webDriver);
     }
       @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:Make sure the Guest user cannot submit the shipping information using invalid email format", priority = 15)
-    public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidEmailFormat() {
+    public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidEmailFormat() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
 //        guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
