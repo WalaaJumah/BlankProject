@@ -238,7 +238,12 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
 //        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         EgyptGuestCheckoutCyclePage egyptGuestCheckoutCyclePage= new EgyptGuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        egyptGuestCheckoutCyclePage.accessGuestCheckoutForm();
+        try {
+            egyptGuestCheckoutCyclePage.accessGuestCheckoutForm();
+        }
+        catch (Exception e){
+            egyptGuestCheckoutCyclePage.accessGuestCheckoutForm();
+        }
         egyptGuestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
