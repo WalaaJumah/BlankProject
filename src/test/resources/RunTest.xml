@@ -7,7 +7,7 @@
 <!--        <listener class-name="extent_report_listner.ExtentReportListener"/>-->
     </listeners>
     <test name=" Tamara Payment Method" preserve-order="true">
-        <parameter name="environment" value="https://STG.sporter.com"/>
+        <parameter name="environment" value="https://stg.sporter.com"/>
         <parameter name="browser" value="chrome"/>
         <!-- <parameter name="country" value="en-qa" />-->
         <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32569"/>
@@ -19,7 +19,8 @@
 <!--                    </run>-->
 <!--                </groups>-->
         <classes>
-            <class name="sporter_test.tamara_payment_method_test_cases.UAETamaraPaymentMethodTestCases">
+<!--            <class name="sporter_test.tamara_payment_method_test_cases.UAETamaraPaymentMethodTestCases">-->
+            <class name="sporter_test.tamara_payment_method_test_cases.KSATamaraPaymentMethodTestCases">
 <!--            <class name="sporter_test.tamara_payment_method_test_cases.KSATamaraPaymentMethodTestCases"/>-->
 
 

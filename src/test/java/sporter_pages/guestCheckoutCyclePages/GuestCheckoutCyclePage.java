@@ -82,8 +82,11 @@ public class GuestCheckoutCyclePage extends BasePage {
     private WebElement continueShippingMethodsBtn;
     @FindBy(id = "submitPaymentMethodBtn")
     private WebElement continuePaymentMethodsBtn;
-    @FindBy(xpath = "//div[@id='citiesSelector']/div")
+    @FindBy(id = "citiesSelector")
     private WebElement cityMenu;
+//    @FindBy(xpath = "//div[@id='citiesSelector']/div")
+//    private WebElement cityMenu;
+
     @FindBy(xpath = "//div[@id='citiesSelector']/div[2]/div/input")
     private WebElement citySearch;
     @FindBy(xpath = "//*/text()[normalize-space(.)='Dubai']/parent::*")
@@ -250,7 +253,9 @@ public class GuestCheckoutCyclePage extends BasePage {
 
     public void selectCity() {
         try {
-            DataHelperAndWait.clickOnElement(cityMenu, webDriver);
+            DataHelperAndWait.waitToBeVisible(cityMenu, webDriver);
+            DataHelperAndWait.waitForTime(300);
+            cityMenu.click();
             DataHelperAndWait.waitToBeVisible(firstCity, webDriver);
             DataHelperAndWait.clickOnElement(firstCity, webDriver);
         } catch (Exception e) {

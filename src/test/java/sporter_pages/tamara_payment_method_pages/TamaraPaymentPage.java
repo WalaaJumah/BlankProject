@@ -86,11 +86,16 @@ public class TamaraPaymentPage extends BasePage {
     @FindBy(id = "pInfoEdit")
     private WebElement editBtnInPaymentMethodInfoLabel;
     public void SelectTamaraInstallmentsMethod() throws Exception {
-        GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
-        DataHelperAndWait.waitToBeVisible(tamaraInstallmentsPaymentMethod,webDriver);
-        DataHelperAndWait.clickOnElement(tamaraInstallmentsPaymentMethod,webDriver);
-        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
-       guestCheckoutCyclePage.getContinuePaymentMethodsBtn().click();
+        if(DataHelperAndWait.IsElementPresent(tamaraInstallmentsPaymentMethod)) {
+            GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+            DataHelperAndWait.waitToBeVisible(tamaraInstallmentsPaymentMethod, webDriver);
+            DataHelperAndWait.clickOnElement(tamaraInstallmentsPaymentMethod, webDriver);
+            DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
+            guestCheckoutCyclePage.getContinuePaymentMethodsBtn().click();
+            guestCheckoutCyclePage.waitTillLoaderComplete();
+        }
+        else
+            throw new AssertionError("Tamara Payment is missing");
     }
     public void addToCartAndDisplayTheCart() throws IOException {
         ProductDetailsPage productDetailsPage= new ProductDetailsPage(webDriver);
@@ -137,9 +142,11 @@ public void clickOnFinalPlaceOrderBtn(){
         try {
             DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getFinalPlaceOrderBtn(), webDriver);
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(), webDriver);
+            guestCheckoutCyclePage.waitTillCartSpinnerDisappear(webDriver);
         }
         catch (Exception e){
             DataHelperAndWait.hoverOnElementAndClick(guestCheckoutCyclePage.getFinalPlaceOrderBtn(), webDriver);
+            guestCheckoutCyclePage.waitTillCartSpinnerDisappear(webDriver);
 
         }
 
@@ -349,6 +356,7 @@ DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(), webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
+        guestCheckoutCyclePage.waitTillLoaderComplete();
         SelectTamaraInstallmentsMethod();
       clickOnFinalPlaceOrderBtn();
         submitEmailAndPhoneNumberInPositiveFlow();
@@ -371,6 +379,7 @@ DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
             guestCheckoutCyclePage.clickOnContinueBtn();
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getSameDayDelivery(), webDriver);
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
+        guestCheckoutCyclePage.waitTillLoaderComplete();
             SelectTamaraInstallmentsMethod();
             clickOnFinalPlaceOrderBtn();
             submitEmailAndPhoneNumberInPositiveFlow();
@@ -395,6 +404,7 @@ DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getSameDayDelivery(), webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
+        guestCheckoutCyclePage.waitTillLoaderComplete();
         SelectTamaraInstallmentsMethod();
         clickOnFinalPlaceOrderBtn();
         submitEmailAndPhoneNumberInPositiveFlow();

@@ -205,7 +205,6 @@ public String getTitle() {
 
     public void verifyTheDisplayedPageDoesNotHaveErrors() throws IOException {
         String currentURL = webDriver.getCurrentUrl();
-        System.out.println(" The current URL is: " + webDriver.getCurrentUrl());
         try {
             Assert.assertFalse(this.getTitle().equalsIgnoreCase(SporterErrorPage.pageNotFoundTitle), "Page Not Found Is Displayed and the URL is " + webDriver.getCurrentUrl());
             Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.productsCannotFindMsg), "The page is empty and the URL is " + webDriver.getCurrentUrl());

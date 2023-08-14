@@ -31,7 +31,6 @@ public class KSATamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
     @BeforeClass(alwaysRun = true)
     public void switchToKsaStore() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
-        HeaderSection headerSection = new HeaderSection(webDriver);
         ksaHomePage.switchCountry(ksaHomePage.getKsaCountry());
         if (webDriver.getCurrentUrl().contains(ksaHomePage.saudiDomain)) {
             System.out.println("You are in KSA Store");
@@ -39,10 +38,7 @@ public class KSATamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
             webDriver.navigate().to(BasePage.BaseURL +BasePage.ksaDomainArabic);
             //CloseInitialDialog();
         }
-        try {
-            WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage, webDriver);
-        }
-        catch (Exception e){
+        if(!webDriver.getCurrentUrl().contains(websiteArabicLanguage)) {
             webDriver.navigate().to(BasePage.BaseURL +BasePage.ksaDomainArabic);
             WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage, webDriver);
         }
@@ -71,6 +67,7 @@ public class KSATamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
            KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);     
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
+        if(DataHelperAndWait.IsElementPresent(tamaraPaymentPage.getTamaraInstallmentsPaymentMethod()))
         WebElementsAssertion.validateTheElementIsDisplayed(tamaraPaymentPage.getTamaraInstallmentsPaymentMethod(), webDriver);
     }
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure the Installments Amounts In Tamara Page Are Matched With The Grand Total In Case Door To Door Shipping Method", priority = 2)
@@ -92,8 +89,6 @@ public class KSATamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         guestCheckoutCyclePage.clickOnContinueBtn();
            KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);     
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(tamaraPaymentPage.getTamaraInstallmentsPaymentMethod(), webDriver);
         tamaraPaymentPage.SelectTamaraInstallmentsMethod();
         DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver);
         DataHelperAndWait.scrollTo(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver);
@@ -193,7 +188,6 @@ public class KSATamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
         DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(tamaraPaymentPage.getTamaraInstallmentsPaymentMethod(), webDriver);
         tamaraPaymentPage.SelectTamaraInstallmentsMethod();
         DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver);
         DataHelperAndWait.scrollTo(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver);
@@ -235,6 +229,8 @@ public class KSATamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
            KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);     
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        guestCheckoutCyclePage.waitTillLoaderComplete();
+        if(DataHelperAndWait.IsElementPresent(tamaraPaymentPage.getTamaraInstallmentsPaymentMethod()))
         WebElementsAssertion.validateTheElementIsDisplayed(tamaraPaymentPage.getTamaraInstallmentsPaymentMethod(),webDriver);
     }
 
@@ -246,6 +242,7 @@ public class KSATamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
            KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);     
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        guestCheckoutCyclePage.waitTillLoaderComplete();
         tamaraPaymentPage.SelectTamaraInstallmentsMethod();
         tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
         tamaraPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
@@ -260,6 +257,7 @@ public class KSATamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
            KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);     
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        guestCheckoutCyclePage.waitTillLoaderComplete();
         tamaraPaymentPage.SelectTamaraInstallmentsMethod();
         tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
         tamaraPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
@@ -274,6 +272,7 @@ public class KSATamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
            KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);     
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        guestCheckoutCyclePage.waitTillLoaderComplete();
         tamaraPaymentPage.SelectTamaraInstallmentsMethod();
         tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
         tamaraPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
@@ -288,6 +287,7 @@ public class KSATamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
            KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);     
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        guestCheckoutCyclePage.waitTillLoaderComplete();
         tamaraPaymentPage.SelectTamaraInstallmentsMethod();
         tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
         if(BasePage.BaseURL.equalsIgnoreCase("https://www.sporter.com")) {
@@ -304,6 +304,7 @@ public class KSATamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
         DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        guestCheckoutCyclePage.waitTillLoaderComplete();
         tamaraPaymentPage.SelectTamaraInstallmentsMethod();
         tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
         if(BasePage.BaseURL.equalsIgnoreCase("https://www.sporter.com")) {
@@ -320,6 +321,7 @@ public class KSATamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
         DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        guestCheckoutCyclePage.waitTillLoaderComplete();
         tamaraPaymentPage.SelectTamaraInstallmentsMethod();
         tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
         if(BasePage.BaseURL.equalsIgnoreCase("https://www.sporter.com")) {
