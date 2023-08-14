@@ -227,8 +227,10 @@ public class GuestCheckoutCyclePage extends BasePage {
             DataHelperAndWait.waitToBeVisible(continueShippingInfoBtn, webDriver);
             DataHelperAndWait.waitToBeVisible(continueShippingInfoBtn, webDriver);
             this.continueShippingInfoBtn.click();
+            waitTillLoaderComplete();
         } catch (Exception e) {
             DataHelperAndWait.hoverOnElementAndClick(continueShippingInfoBtn, webDriver);
+            waitTillLoaderComplete();
         }
     }
 
