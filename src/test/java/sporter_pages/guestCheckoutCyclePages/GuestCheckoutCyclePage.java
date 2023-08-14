@@ -259,7 +259,7 @@ public class GuestCheckoutCyclePage extends BasePage {
     public void selectCity() {
         try {
             DataHelperAndWait.waitToBeVisible(cityMenu, webDriver);
-            DataHelperAndWait.waitForTime(300);
+            DataHelperAndWait.waitForTime(400);
             cityMenu.click();
             DataHelperAndWait.waitToBeVisible(firstCity, webDriver);
             DataHelperAndWait.clickOnElement(firstCity, webDriver);
