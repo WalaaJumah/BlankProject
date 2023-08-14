@@ -25,6 +25,7 @@ public class LoginTestCases extends BaseTest {
     public void verifyAbilityToAccessNewAccountRegistrationScreen() {
         HeaderSection header = new HeaderSection(webDriver);
         LoginPage loginPage = new LoginPage(webDriver);
+        DataHelperAndWait.waitToBeVisible(header.getAccountProfileIcon(), webDriver);
         DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
         DataHelperAndWait.clickOnElement(loginPage.getSignInOption(), webDriver);
         WebElementsAssertion.validateTheCurrentUrlContainsString(loginPage.loginLink, webDriver);
