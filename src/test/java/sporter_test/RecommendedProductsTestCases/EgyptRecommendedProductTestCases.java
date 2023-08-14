@@ -16,7 +16,6 @@ public class EgyptRecommendedProductTestCases extends RecommendedProductTestCase
     @BeforeClass(alwaysRun = true)
     public void switchToEgyptStore() {
         EgyptHomePage egyptHomePage = new EgyptHomePage(webDriver);
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         egyptHomePage.switchCountry(egyptHomePage.getEgyptCountry());
         if (webDriver.getCurrentUrl().contains(egyptHomePage.egyptDomain)) {
             System.out.println("You are in Jordan Store");

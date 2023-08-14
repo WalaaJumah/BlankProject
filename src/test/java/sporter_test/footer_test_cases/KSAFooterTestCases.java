@@ -7,10 +7,8 @@
 package sporter_test.footer_test_cases;
 
 import core.BasePage;
-import core.DataHelperAndWait;
 import core.WebElementsAssertion;
 import org.testng.annotations.BeforeClass;
-import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.KsaHomePage;
 
 public class KSAFooterTestCases extends FooterTestCases {

@@ -9,21 +9,16 @@ package sporter_test.guestCheckoutCycleTestCases;
 import core.BasePage;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.cartPages.CartPage;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import sporter_pages.guestCheckoutCyclePages.JordanGuestCheckoutCyclePage;
-import sporter_pages.guestCheckoutCyclePages.QatarGuestCheckoutCyclePage;
 import sporter_pages.homepage_classes.JordanHomePage;
 import xml_reader.XmlReader;
-
 import java.io.IOException;
 import java.text.DecimalFormat;
-import java.util.Set;
 
 public class JordanGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCases{
     @BeforeClass(alwaysRun=true)
@@ -50,7 +45,6 @@ public class JordanGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCas
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Make sure the Guest user cannot submit the shipping information without filling the required fields empty", priority = 13)
     public void verifyTheGuestUserCannotSubmitTheShippingInformationWithoutFillingTheRequiredFields() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
         guestCheckoutCyclePage.fillInShippingInformationInputField(" ", " ", " ", " ", " ", " ");
         DataHelperAndWait.waitForTime(1000);
         WebElementsAssertion.assertionElementNotEnable(guestCheckoutCyclePage.getContinueShippingInfoBtn(),webDriver);
@@ -67,7 +61,6 @@ public class JordanGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCas
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:Make sure the Guest user cannot submit the shipping information when the phone number length is small ", priority = 15)
     public void verifyTheGuestUserCannotSubmitTheShippingInformationWhenPhoneFieldHaveSmallTextLength() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -84,7 +77,6 @@ public class JordanGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCas
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:Make sure the Guest user can filling the shipping information and clicking on the Continue button correctly", priority = 17)
     public void verifyTheGuestUserCanFillTheShippingInformationCorrectly() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         cartPage.navigateToCartPage();
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
@@ -106,8 +98,6 @@ public class JordanGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCas
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that each of COD & Credit Card Payment methods appear correctly", priority = 22)
     public void verifyEachOfCODAndCreditCardPaymentMethodCorrectly() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        QatarGuestCheckoutCyclePage qatar= new QatarGuestCheckoutCyclePage(webDriver);
-        CartPage cartPage = new CartPage(webDriver);
         JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         guestCheckoutCyclePage.accessGuestCheckoutForm();
@@ -146,8 +136,6 @@ public class JordanGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCas
     public void verifyAllShippingMethodsAppearCorrectly() throws IOException {
         JordanGuestCheckoutCyclePage jordanGuestCheckoutCyclePage= new JordanGuestCheckoutCyclePage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        QatarGuestCheckoutCyclePage qatar= new QatarGuestCheckoutCyclePage(webDriver);
-        JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
@@ -174,8 +162,6 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the 2 Business Days Super Express Shipping Method With Valid Credit Card Payment Method", priority = 28)
     public void verifyAbilityToSelectThe5BusinessDaysSuperExpressShippingMethodWithValidCreditCardPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        QatarGuestCheckoutCyclePage qatar= new QatarGuestCheckoutCyclePage(webDriver);
-        CartPage cartPage = new CartPage(webDriver);
         JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         guestCheckoutCyclePage.accessGuestCheckoutForm();
@@ -251,10 +237,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
 public void verifyAbilityToSelect2BusinessDaysShippingMethodCorrectly() {}
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the customer is able to select the 5 Business Days Super Express shipping method correctly", priority = 22)
     public void verifyAbilityToSelect5BusinessDaysShippingMethodCorrectly() throws IOException {
-         JordanGuestCheckoutCyclePage jordanGuestCheckoutCyclePage= new JordanGuestCheckoutCyclePage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        QatarGuestCheckoutCyclePage qatar= new QatarGuestCheckoutCyclePage(webDriver);
-        CartPage cartPage = new CartPage(webDriver);
         JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         guestCheckoutCyclePage.fillInShippingInformationInputField(
@@ -275,8 +258,6 @@ public void verifyAbilityToSelect2BusinessDaysShippingMethodCorrectly() {}
     public void verifyInabilityToUseInvalidCreditCardPaymentMethod() throws IOException {
         JordanGuestCheckoutCyclePage guestCheckoutCyclePage = new JordanGuestCheckoutCyclePage(webDriver);
 //        guestCheckoutCyclePage.viewCartAndAccessShippingMethodsPage();
-        JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
-        CartPage cartPage= new CartPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
@@ -351,7 +332,6 @@ public void verifyAbilityToSelect2BusinessDaysShippingMethodCorrectly() {}
     @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}:Verify Edit Shipping information button works fine", priority = 20)
     public void verifyTheEditShippingInfoBtnWorksFine() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
@@ -373,7 +353,6 @@ public void verifyAbilityToSelect2BusinessDaysShippingMethodCorrectly() {}
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Continue button appears in the Payment Methods screen is disable when no shipping method is selected", priority = 24)
     public void verifyContinueBtnAppearsInPaymentMethodsIsDisableWhenNoMethodSelected() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        QatarGuestCheckoutCyclePage qatar= new QatarGuestCheckoutCyclePage(webDriver);
         JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         guestCheckoutCyclePage.accessGuestCheckoutForm();
@@ -395,8 +374,6 @@ public void verifyAbilityToSelect2BusinessDaysShippingMethodCorrectly() {}
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Continue button appears in the Shipping Methods screen is disable when no shipping method is selected", priority = 19)
     public void verifyContinueBtnAppearsInShippingMethodsIsDisableWhenNoMethodSelected() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CartPage cartPage = new CartPage(webDriver);
-        JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(

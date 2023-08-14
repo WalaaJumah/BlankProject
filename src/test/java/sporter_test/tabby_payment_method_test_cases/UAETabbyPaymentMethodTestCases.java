@@ -15,15 +15,12 @@ import org.testng.annotations.Test;
 import sporter_pages.AccountRegistrationPage.AccountRegistrationPage;
 import sporter_pages.cartPages.CartPage;
 import sporter_pages.checkoutForRegisteredUserTPage.CheckoutForRegisteredPage;
-import sporter_pages.guestCheckoutCyclePages.EgyptGuestCheckoutCyclePage;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.UAEHomePage;
 import sporter_pages.loginPage.LoginPage;
 import sporter_pages.tabby_payment_method_pages.TabbyPaymentPage;
 import xml_reader.XmlReader;
-
-import java.io.IOException;
 import java.time.LocalTime;
 
 public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases {
@@ -140,7 +137,6 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure Ability to back to Sporter after clicking on the Return To store from Tabby Page", priority = 5)
     public void verifyAbilityToBackToSporterAfterClickingOnBackToStoreFromTabbyForGuestUser() throws Exception, InterruptedException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CartPage cartPage= new CartPage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         tabbyPaymentPage.accessGuestCheckoutForm();
@@ -168,8 +164,6 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         LocalTime currentTime = LocalTime.now();
 
         // Set the target time to 2:00 PM
-        LocalTime targetTime = LocalTime.of(14, 0);
-        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
@@ -209,11 +203,8 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     public void verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTabbyPaymentMethodWithNegativeFlowForGuestUser() throws Exception {
         LocalTime currentTime = LocalTime.now();
         // Set the target time to 2:00 PM
-        LocalTime targetTime = LocalTime.of(14, 0);
-        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
-        CartPage cartPage= new CartPage(webDriver);
         // Set the target times to 2:00 AM and 2:00 PM
         LocalTime targetTimeAM = LocalTime.of(2, 0);
         LocalTime targetTimePM = LocalTime.of(14, 0);
@@ -248,8 +239,6 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     public void verifyTheSystemDisplayTheQuoteIdForTheUserAfterCheckoutTheOrderWithSelecting2BusinessDaysSuperExpressShippingMethodForGuestUser() throws Exception, InterruptedException {
         LocalTime currentTime = LocalTime.now();
         // Set the target time to 2:00 PM
-        LocalTime targetTime = LocalTime.of(14, 0);
-        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
@@ -292,11 +281,8 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     public void verifyInstallmentsAmountsInTabbyPageAreMatchedWithTheGrandTotalForSameDayShippingMethodForGuestUser() throws Exception, InterruptedException {
         LocalTime currentTime = LocalTime.now();
         // Set the target time to 2:00 PM
-        LocalTime targetTime = LocalTime.of(14, 0);
-        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
-        CartPage cartPage= new CartPage(webDriver);
         // Set the target times to 2:00 AM and 2:00 PM
         LocalTime targetTimeAM = LocalTime.of(2, 0);
         LocalTime targetTimePM = LocalTime.of(14, 0);
@@ -479,8 +465,6 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         LocalTime currentTime = LocalTime.now();
 
         // Set the target time to 2:00 PM
-        LocalTime targetTime = LocalTime.of(14, 0);
-        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
@@ -510,11 +494,8 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     public void verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTabbyPaymentMethodWithNegativeFlowForRegisteredUser() throws Exception {
         LocalTime currentTime = LocalTime.now();
         // Set the target time to 2:00 PM
-        LocalTime targetTime = LocalTime.of(14, 0);
-        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
-        CartPage cartPage= new CartPage(webDriver);
         // Set the target times to 2:00 AM and 2:00 PM
         LocalTime targetTimeAM = LocalTime.of(2, 0);
         LocalTime targetTimePM = LocalTime.of(14, 0);
@@ -539,8 +520,6 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     public void verifyTheSystemDisplayTheQuoteIdForTheUserAfterCheckoutTheOrderWithSelecting2BusinessDaysSuperExpressShippingMethodForRegisteredUser() throws Exception, InterruptedException {
         LocalTime currentTime = LocalTime.now();
         // Set the target time to 2:00 PM
-        LocalTime targetTime = LocalTime.of(14, 0);
-        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
@@ -573,11 +552,8 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     public void verifyInstallmentsAmountsInTabbyPageAreMatchedWithTheGrandTotalForSameDayShippingMethodForRegisteredUser() throws Exception, InterruptedException {
         LocalTime currentTime = LocalTime.now();
         // Set the target time to 2:00 PM
-        LocalTime targetTime = LocalTime.of(14, 0);
-        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
-        CartPage cartPage= new CartPage(webDriver);
         // Set the target times to 2:00 AM and 2:00 PM
         LocalTime targetTimeAM = LocalTime.of(2, 0);
         LocalTime targetTimePM = LocalTime.of(14, 0);

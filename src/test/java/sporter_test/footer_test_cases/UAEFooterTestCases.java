@@ -9,7 +9,6 @@ package sporter_test.footer_test_cases;
 import core.BasePage;
 import org.testng.annotations.BeforeClass;
 import sporter_pages.homepage_classes.UAEHomePage;
-import sporter_test.headerTestCases.HeaderTestCases;
 
 public class UAEFooterTestCases extends FooterTestCases {
     @BeforeClass(alwaysRun = true)

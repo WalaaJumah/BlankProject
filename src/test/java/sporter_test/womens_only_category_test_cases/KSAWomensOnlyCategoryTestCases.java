@@ -7,14 +7,9 @@
 package sporter_test.womens_only_category_test_cases;
 
 import core.BasePage;
-import core.DataHelperAndWait;
 import core.WebElementsAssertion;
 import org.testng.annotations.BeforeClass;
-import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.KsaHomePage;
-import sporter_test.sportsSupplementsCategoryTestCases.SportsSupplementsCategoryTestCases;
-
-import static core.BasePage.BaseURL;
 
 public class KSAWomensOnlyCategoryTestCases extends WomensOnlyCategoryTestCases {
     @BeforeClass(alwaysRun = true)

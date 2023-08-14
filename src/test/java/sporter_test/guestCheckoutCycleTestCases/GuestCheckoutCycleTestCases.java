@@ -12,10 +12,8 @@ import core.WebElementsAssertion;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.cartPages.CartPage;
-import sporter_pages.guestCheckoutCyclePages.EgyptGuestCheckoutCyclePage;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import sporter_pages.guestCheckoutCyclePages.JordanGuestCheckoutCyclePage;
-import sporter_pages.guestCheckoutCyclePages.KSAGuestCheckoutCyclePage;
 import sporter_pages.productPage.ProductDetailsPage;
 import xml_reader.XmlReader;
 

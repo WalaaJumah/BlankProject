@@ -14,7 +14,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.EgyptHomePage;
 import sporter_pages.megaMenuPages.EgyptMegaMenuPage;
-import sporter_pages.megaMenuPages.MegaMenuPage;
 import sporter_pages.sportsSupplementsCategoryPages.SportsSupplementsCategoryPage;
 import sporter_pages.vitamins_and_health_category_pages.VitaminsAndHealthCategoryPage;
 
@@ -306,16 +305,16 @@ public class EgyptVitaminsAndHealthCategoryTestCases extends VitaminsAndHealthCa
     }
 
     @Test(enabled = false)
-    public void verifyClickingOnViewAllBtnFromSuperFoodsSectionWorksCorrectly() throws IOException {
+    public void verifyClickingOnViewAllBtnFromSuperFoodsSectionWorksCorrectly()  {
     }
 
     @Test(enabled = false)
-    public void verifyClickingOnViewAllBtnFromMelatoninSectionWorksCorrectly() throws IOException {
+    public void verifyClickingOnViewAllBtnFromMelatoninSectionWorksCorrectly()  {
     }
 
     @Test(enabled = false)
-    public void verifyClickingOnViewAllBtnFromCollagenSectionWorksCorrectly() throws IOException {
+    public void verifyClickingOnViewAllBtnFromCollagenSectionWorksCorrectly() {
     }
     @Test(enabled = false)
-    public void verifyClickingOnVitaminsAndHealthCategoryFromHomePageRedirectUserToCorrectURL() throws IOException {
+    public void verifyClickingOnVitaminsAndHealthCategoryFromHomePageRedirectUserToCorrectURL()  {
     }}

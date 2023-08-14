@@ -35,7 +35,6 @@ public class CheckoutForRegisteredTestCases extends BaseTest
     String countryCode;
     String orderNumberCOD;
     String orderNumber;
-    String orderNumberCreditCard;
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Validate the system keeps the products in the Cart after login  ", priority = 2)
     public void verifyTheProductsKeepInCartAfterSignedIn() throws IOException {
         CartPage cartPage = new CartPage(webDriver);

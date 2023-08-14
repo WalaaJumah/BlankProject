@@ -7,15 +7,10 @@
 package sporter_test.myAccountTestCases;
 
 import core.BasePage;
-import core.DataHelperAndWait;
 import core.WebElementsAssertion;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.KsaHomePage;
-
-import static core.BasePage.BaseURL;
-
 public class KSAMyAccountTestCases extends MyAccountTestCases {
     @BeforeClass(alwaysRun = true)
     public void switchToKsaStore() {

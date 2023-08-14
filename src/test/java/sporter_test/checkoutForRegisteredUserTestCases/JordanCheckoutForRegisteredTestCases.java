@@ -9,8 +9,6 @@ package sporter_test.checkoutForRegisteredUserTestCases;
 import core.BasePage;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -20,7 +18,6 @@ import sporter_pages.checkoutForRegisteredUserTPage.JordanCheckoutForRegisteredP
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import sporter_pages.guestCheckoutCyclePages.JordanGuestCheckoutCyclePage;
 import sporter_pages.homepage_classes.JordanHomePage;
-import sporter_test.guestCheckoutCycleTestCases.GuestCheckoutCycleTestCases;
 import xml_reader.XmlReader;
 
 import java.io.IOException;
@@ -56,7 +53,6 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
         try{
             cartPage.clearCart();}
         catch (Exception e){
-            System.out.println("");
         }
     }
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:Make sure the Guest user can filling the shipping information and clicking on the Continue button correctly", priority = 19)

@@ -10,7 +10,6 @@ import core.BasePage;
 import org.testng.annotations.BeforeClass;
 import sporter_pages.homepage_classes.EgyptHomePage;
 import sporter_pages.myAccountPages.OmanMyAccountPage;
-import sporter_test.sportsSupplementsCategoryTestCases.SportsSupplementsCategoryTestCases;
 
 public class OmanWomensOnlyCategoryTestCases extends WomensOnlyCategoryTestCases {
     @BeforeClass(alwaysRun = true)

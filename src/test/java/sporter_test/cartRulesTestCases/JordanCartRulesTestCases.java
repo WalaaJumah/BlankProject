@@ -11,13 +11,9 @@ import core.DataHelperAndWait;
 import core.WebElementsAssertion;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import sporter_pages.AccountRegistrationPage.AccountRegistrationPage;
 import sporter_pages.cartPages.CartPage;
-import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.JordanHomePage;
-import sporter_pages.loginPage.LoginPage;
 import sporter_pages.productPage.ProductDetailsPage;
-import xml_reader.XmlReader;
 
 import java.io.IOException;
 
@@ -88,8 +84,6 @@ public class JordanCartRulesTestCases extends CartRulesTestCases {
     //TODO:https://sporter1.atlassian.net/browse/NS-488
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure that inability to checkout the order when its total exceed 120 JOD (Tax excluded) ", priority = 3)
     public void verifyInabilityToCheckoutOrderWhenTheTotalExceed120JOD() throws Exception {
-        LoginPage loginPage = new LoginPage(webDriver);
-        HeaderSection header=new HeaderSection(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
 //        loginPage.navigateToLoginPage();

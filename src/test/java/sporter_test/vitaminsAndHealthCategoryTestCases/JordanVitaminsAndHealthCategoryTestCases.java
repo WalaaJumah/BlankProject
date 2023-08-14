@@ -13,7 +13,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.JordanHomePage;
 import sporter_pages.vitamins_and_health_category_pages.JordanVitaminsAndHealthCategoryPage;
-import sporter_pages.vitamins_and_health_category_pages.VitaminsAndHealthCategoryPage;
 
 import java.io.IOException;
 

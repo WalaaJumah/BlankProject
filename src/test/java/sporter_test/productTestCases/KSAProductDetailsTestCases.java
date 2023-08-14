@@ -7,17 +7,13 @@
 package sporter_test.productTestCases;
 
 import core.BasePage;
-import core.DataHelperAndWait;
 import core.WebElementsAssertion;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.KsaHomePage;
 import sporter_pages.productPage.KSAProductDetailsPage;
-
 import java.io.IOException;
-
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 

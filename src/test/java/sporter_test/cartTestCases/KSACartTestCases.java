@@ -13,9 +13,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.cartPages.CartPage;
-import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.KsaHomePage;
-import sporter_pages.productPage.ProductDetailsPage;
 import xml_reader.XmlReader;
 
 import java.io.IOException;

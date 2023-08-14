@@ -408,7 +408,6 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Vitamins A-Z section have at least a product", priority = 42)
     public void verifyTheVitaminsA_zAtLeastAProduct() throws IOException {
-        WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         DataHelperAndWait.waitForTime(3000);
@@ -417,7 +416,6 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Minerals section have at least a product", priority = 43)
     public void verifyTheMineralsAtLeastAProduct() throws IOException {
-        WomensOnlyCategoryPage womensOnlyCategoryPage = new WomensOnlyCategoryPage(webDriver);
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         DataHelperAndWait.waitForTime(2000);

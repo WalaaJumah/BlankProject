@@ -7,13 +7,9 @@
 package sporter_test.vitaminsAndHealthCategoryTestCases;
 
 import core.BasePage;
-import core.DataHelperAndWait;
 import core.WebElementsAssertion;
 import org.testng.annotations.BeforeClass;
-import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.KsaHomePage;
-
-import static core.BasePage.BaseURL;
 
 public class KSAVitaminsAndHealthCategoryTestCases extends VitaminsAndHealthCategoryTestCases {
     @BeforeClass(alwaysRun = true)

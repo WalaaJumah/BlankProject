@@ -57,7 +57,6 @@ public class JordanMyAccountTestCases extends MyAccountTestCases {
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify Inability to add new Address with incorrect Phone Number format", priority = 24)
     public void verifyInabilityToAddNewAddressWithIncorrectPhoneNumberFormat() throws IOException {
         JordanMyAccountPage myAccountPage = new JordanMyAccountPage(webDriver);
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         myAccountPage.navigateToAddressesPage();
         DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(), webDriver);
         myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -87,7 +86,6 @@ public class JordanMyAccountTestCases extends MyAccountTestCases {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify Inability to add new Address without filling the mandatory fields", priority = 26)
     public void verifyInabilityToAddNewAddressWithoutFillingTheMandatoryFields() {
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         myAccountPage.navigateToAddressesPage();
         DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(), webDriver);
 //        DataHelperAndWait.clickOnElement(myAccountPage.getSaveAddressBtn(), webDriver);

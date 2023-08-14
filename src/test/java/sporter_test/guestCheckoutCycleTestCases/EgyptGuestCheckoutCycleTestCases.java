@@ -17,7 +17,6 @@ import sporter_pages.guestCheckoutCyclePages.EgyptGuestCheckoutCyclePage;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.EgyptHomePage;
-import sporter_pages.loginPage.LoginPage;
 import xml_reader.XmlReader;
 
 import java.io.IOException;

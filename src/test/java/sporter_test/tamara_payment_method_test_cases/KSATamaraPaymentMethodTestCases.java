@@ -13,20 +13,14 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.AccountRegistrationPage.AccountRegistrationPage;
-import sporter_pages.cartPages.CartPage;
-import sporter_pages.checkoutForRegisteredUserTPage.CheckoutForRegisteredPage;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import sporter_pages.guestCheckoutCyclePages.KSAGuestCheckoutCyclePage;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.KsaHomePage;
 import sporter_pages.loginPage.LoginPage;
-import sporter_pages.tabby_payment_method_pages.TabbyPaymentPage;
 import sporter_pages.tamara_payment_method_pages.KSATamaraPaymentPage;
 import sporter_pages.tamara_payment_method_pages.TamaraPaymentPage;
 import xml_reader.XmlReader;
-
-import java.time.LocalTime;
-
 public class KSATamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCases {
     @BeforeClass(alwaysRun = true)
     public void switchToKsaStore() {

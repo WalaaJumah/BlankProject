@@ -17,10 +17,7 @@ import sporter_pages.checkoutForRegisteredUserTPage.CheckoutForRegisteredPage;
 import sporter_pages.checkoutForRegisteredUserTPage.JordanCheckoutForRegisteredPage;
 import sporter_pages.checkoutForRegisteredUserTPage.QatarCheckoutForRegisteredPage;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
-import sporter_pages.guestCheckoutCyclePages.JordanGuestCheckoutCyclePage;
-import sporter_pages.guestCheckoutCyclePages.QatarGuestCheckoutCyclePage;
 import sporter_pages.homepage_classes.QatarHomePage;
-import sporter_test.guestCheckoutCycleTestCases.GuestCheckoutCycleTestCases;
 import xml_reader.XmlReader;
 
 import java.io.IOException;
@@ -278,7 +275,6 @@ catch (Exception ee){
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the 4_5 Business Days Super Express Shipping Method With Valid Credit Card Payment Method", priority = 31)
     public void verifyAbilityToSelectThe4_5BusinessDaysSuperExpressShippingMethodWithValidCreditCardPaymentMethod() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        QatarCheckoutForRegisteredPage qa= new QatarCheckoutForRegisteredPage(webDriver);
 //        qa.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
@@ -287,7 +283,6 @@ catch (Exception ee){
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure Inability to continue the placing order process using invalid Credit Card", priority = 30)
     public void verifyInabilityToUseInvalidCreditCardPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        QatarCheckoutForRegisteredPage qa= new QatarCheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);

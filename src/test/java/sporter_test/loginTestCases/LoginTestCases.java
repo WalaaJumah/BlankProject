@@ -15,8 +15,6 @@ import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.loginPage.LoginPage;
 import xml_reader.XmlReader;
-
-import javax.xml.crypto.Data;
 import java.io.IOException;
 
 @Test(groups = "2.04 Login")
@@ -72,8 +70,6 @@ public class LoginTestCases extends BaseTest {
 
     @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Ability to login correctly using valid credential", priority = 5)
     public void verifyAbilityToLoginCorrectlyWithValidCredentials() throws IOException {
-        HeaderSection header = new HeaderSection(webDriver);
-        AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToLoginPage();
         loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword"));
