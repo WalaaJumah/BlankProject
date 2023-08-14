@@ -184,19 +184,19 @@ public class CheckoutForRegisteredPage extends BasePage {
             }
             DataHelperAndWait.waitForTime(1500);
             _guestCheckoutCyclePage.clickOnContinueBtn();
-            try {
-                DataHelperAndWait.clickOnElement(this.getSavedAddressOption(), webDriver);
-            } catch (Exception e) {
-                this.fillInShippingInformationInputField(
-                        XmlReader.getXMLData("firstName"),
-                        XmlReader.getXMLData("lastName"),
-                        XmlReader.getXMLData("phoneNumber"),
-                        XmlReader.getXMLData("AddressName"),
-                        XmlReader.getXMLData("StreetOneAddressName"),
-                        XmlReader.getXMLData("StreetTwoAddressName"));
-            }
-            DataHelperAndWait.waitForTime(1500);
-            _guestCheckoutCyclePage.clickOnContinueBtn();
+//            try {
+//                DataHelperAndWait.clickOnElement(this.getSavedAddressOption(), webDriver);
+//            } catch (Exception e) {
+//                this.fillInShippingInformationInputField(
+//                        XmlReader.getXMLData("firstName"),
+//                        XmlReader.getXMLData("lastName"),
+//                        XmlReader.getXMLData("phoneNumber"),
+//                        XmlReader.getXMLData("AddressName"),
+//                        XmlReader.getXMLData("StreetOneAddressName"),
+//                        XmlReader.getXMLData("StreetTwoAddressName"));
+//            }
+//            DataHelperAndWait.waitForTime(1500);
+//            _guestCheckoutCyclePage.clickOnContinueBtn();
             _guestCheckoutCyclePage.waitTillLoaderComplete();
 
         }
