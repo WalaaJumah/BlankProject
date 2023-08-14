@@ -197,7 +197,7 @@ public class SportsSupplementsCategoryTestCases extends BaseTest {
         HomePage homePage = new HomePage(webDriver);
         sportsSupplementsCategoryPage.navigateToSportsSupplementPage();
         DataHelperAndWait.clickOnElement(sportsSupplementsCategoryPage.getHomePageBreadCrumb(), webDriver);
-        DataHelperAndWait.waitForTime(1500);
+        sportsSupplementsCategoryPage.waitTillLoaderComplete();
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getSportsSupplementsCategory(), webDriver);
     }
 
