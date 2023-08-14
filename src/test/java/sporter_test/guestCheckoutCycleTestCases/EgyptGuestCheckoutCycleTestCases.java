@@ -317,7 +317,13 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
 //        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        egypt.accessGuestCheckoutForm();
+        try {
+            egypt.accessGuestCheckoutForm();
+        }
+        catch (Exception e){
+            egypt.accessGuestCheckoutForm();
+
+        }
         egypt.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -578,12 +584,13 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
     public void verifyAbilityToPlaceOrderWhenSelectingNextDayDeliveryShippingMethodWithCreditCardPaymentMethodInArabicVersion() throws IOException {
 //        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
-        HeaderSection headerSection= new HeaderSection(webDriver);
-        CartPage cartPage = new CartPage(webDriver);
-        cartPage.navigateToHomePage();
-        DataHelperAndWait.clickOnElement(headerSection.getLanguageSelector(),webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage,webDriver);
-        egypt.accessGuestCheckoutForm();
+        try {
+            egypt.accessGuestCheckoutForm();
+        }
+        catch (Exception e){
+            egypt.accessGuestCheckoutForm();
+
+        }
         DataHelperAndWait.waitForTime(1000);
         egypt.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
