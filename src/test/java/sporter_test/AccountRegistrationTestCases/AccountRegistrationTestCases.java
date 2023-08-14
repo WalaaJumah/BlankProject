@@ -13,7 +13,6 @@ import org.testng.annotations.Test;
 import sporter_pages.AccountRegistrationPage.AccountRegistrationPage;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.HomePage;
-import sporter_pages.loginPage.LoginPage;
 import xml_reader.XmlReader;
 
 import java.io.IOException;
@@ -95,8 +94,6 @@ public class AccountRegistrationTestCases extends BaseTest {
     @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:  Verify Inability to register an account using email already registered", priority = 8)
     public void verifyInabilityToRegisterAccountUsingEmailAlreadyRegistered() throws IOException {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
-        HeaderSection header = new HeaderSection(webDriver);
-        LoginPage loginPage = new LoginPage(webDriver);
         registerPage.navigateToRegistrationPage();
         registerPage.fillingAllCreateAccountForms(XmlReader.getXMLData("correctEmail"), XmlReader.getXMLData("correctPassword"), XmlReader.getXMLData("correctPassword"), XmlReader.getXMLData("firstName"), XmlReader.getXMLData("lastName"), 1);
 
@@ -188,7 +185,6 @@ public class AccountRegistrationTestCases extends BaseTest {
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:  Verify Inability to register new account without filling Email Field", priority = 13)
     public void verifyInabilityToRegisterAccountWithoutFillingEmailField() throws IOException {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
-        HeaderSection header = new HeaderSection(webDriver);
         webDriver.manage().deleteAllCookies();
         registerPage.navigateToRegistrationPage();
         registerPage.fillInCreateAccountForm(" ", XmlReader.getXMLData("correctPassword"), XmlReader.getXMLData("correctPassword"));

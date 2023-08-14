@@ -8,13 +8,11 @@ package sporter_test.cartTestCases;
 
 import core.BasePage;
 import core.DataHelperAndWait;
-import core.WebElementsAssertion;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.cartPages.CartPage;
 import sporter_pages.homepage_classes.QatarHomePage;
-import xml_reader.XmlReader;
 
 import java.io.IOException;
 

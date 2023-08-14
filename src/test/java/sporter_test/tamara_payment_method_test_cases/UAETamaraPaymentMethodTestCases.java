@@ -100,7 +100,6 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         TamaraPaymentPage tamaraPaymentPage = new TamaraPaymentPage(webDriver);
         tamaraPaymentPage.addToCartAndAccessTamaraDashboard();
         tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(tamaraPaymentPage.ThreeCard);
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         //guestCheckoutCyclePage.IsQouteIDisDisplayed();
     }
 

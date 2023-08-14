@@ -8,7 +8,6 @@ package sporter_test.headerTestCases;
 
 import core.BasePage;
 import org.testng.annotations.BeforeClass;
-import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.EgyptHomePage;
 import sporter_pages.myAccountPages.OmanMyAccountPage;
 

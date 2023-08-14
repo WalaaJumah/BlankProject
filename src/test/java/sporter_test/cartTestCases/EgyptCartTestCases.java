@@ -130,7 +130,6 @@ public void verifyAbilityToClickOnSportsMenuIsDisplayedFromCartPage() throws IOE
             }
         }
         catch (Exception e){}
-        CartPage cartPage = new CartPage(webDriver);
         try{
         productDetailsPage.displayBundle();}
         catch (Exception e){DataHelperAndWait.waitToBeVisible(productDetailsPage.getBundleMenu(), webDriver);

@@ -16,7 +16,6 @@ import org.testng.annotations.Test;
 import sporter_pages.cartPages.CartPage;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.HomePage;
-import sporter_pages.megaMenuPages.EgyptMegaMenuPage;
 import sporter_pages.megaMenuPages.MegaMenuPage;
 import sporter_pages.productPage.ProductDetailsPage;
 import sporter_pages.sportsSupplementsCategoryPages.SportsSupplementsCategoryPage;

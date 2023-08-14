@@ -7,10 +7,8 @@
 package sporter_test.RecommendedProductsTestCases;
 
 import core.BasePage;
-import core.DataHelperAndWait;
 import core.WebElementsAssertion;
 import org.testng.annotations.BeforeClass;
-import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.KsaHomePage;
 
 //@Test(groups = "KSA Product Details Page")

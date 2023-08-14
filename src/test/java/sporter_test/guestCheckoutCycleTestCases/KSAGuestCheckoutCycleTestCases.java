@@ -9,24 +9,16 @@ package sporter_test.guestCheckoutCycleTestCases;
 import core.BasePage;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.cartPages.CartPage;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
-import sporter_pages.guestCheckoutCyclePages.JordanGuestCheckoutCyclePage;
 import sporter_pages.guestCheckoutCyclePages.KSAGuestCheckoutCyclePage;
-import sporter_pages.guestCheckoutCyclePages.QatarGuestCheckoutCyclePage;
-import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.KsaHomePage;
 import xml_reader.XmlReader;
-
 import java.io.IOException;
 import java.text.DecimalFormat;
-import java.util.Set;
 
 public class KSAGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCases{
     @BeforeClass(alwaysRun = true)

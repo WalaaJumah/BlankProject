@@ -143,7 +143,6 @@ public class HealthyFoodTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Healthy Food Category- Verify that the search button works correctly from the Healthy Food category page", priority = 13)
     public void verifySearchBtnWorksCorrectlyFromHealthyFoodCategoryPage() throws IOException {
         HealthyFoodPage healthyFoodPage = new HealthyFoodPage(webDriver);
-        SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         healthyFoodPage.navigateToHealthyFoodPage();
         DataHelperAndWait.typeTextInElement(productDetailsPage.getSearchField(),webDriver,"Basic");
@@ -185,7 +184,6 @@ public class HealthyFoodTestCases extends BaseTest {
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure all secure tabs appears correctly(100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks)", priority = 16)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInHealthyFoodCategoryPage() throws IOException {
         HealthyFoodPage healthyFoodPage = new HealthyFoodPage(webDriver);
-        SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         FooterSection footerSection = new FooterSection(webDriver);
         healthyFoodPage.navigateToHealthyFoodPage();
         for (int i = 0; i < footerSection.getPageBottomBlocksList().size(); i++) {
@@ -218,7 +216,6 @@ public class HealthyFoodTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure ability to navigate to the home page by clicking on the sporter logo  ", priority = 18)
     public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromPdp() throws IOException {
         HealthyFoodPage healthyFoodPage = new HealthyFoodPage(webDriver);
-        SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         HeaderSection headerSection = new HeaderSection(webDriver);
         HomePage homePage = new HomePage(webDriver);
         healthyFoodPage.navigateToHealthyFoodPage();
