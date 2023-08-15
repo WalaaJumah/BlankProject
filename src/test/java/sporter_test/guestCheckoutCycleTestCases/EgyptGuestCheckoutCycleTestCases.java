@@ -254,7 +254,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         DataHelperAndWait.clickOnElement(egyptGuestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
         DataHelperAndWait.clickOnElement(egyptGuestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
         DataHelperAndWait.clickOnElement(egyptGuestCheckoutCyclePage.getFinalPlaceOrderBtn(), webDriver);
-        DataHelperAndWait.waitForTime(2000);
+        egyptGuestCheckoutCyclePage.waitTillCartSpinnerDisappear(webDriver);
         DataHelperAndWait.waitToBeVisible(egyptGuestCheckoutCyclePage.getSuccessPage(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();}
     @Test(enabled = false,groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when using a Free Coupon Code ", priority = 99)
