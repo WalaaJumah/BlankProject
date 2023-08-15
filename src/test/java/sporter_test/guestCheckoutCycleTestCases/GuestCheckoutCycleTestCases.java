@@ -254,6 +254,7 @@ guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getEditShippingInfoBtn(),webDriver);
         DataHelperAndWait.waitForTime(2000);
+        guestCheckoutCyclePage.selectCity();
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getEditShippingInfoBtn(),webDriver);
     }

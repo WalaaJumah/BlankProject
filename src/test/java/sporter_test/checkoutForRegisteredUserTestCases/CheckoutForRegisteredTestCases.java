@@ -117,7 +117,7 @@ public class CheckoutForRegisteredTestCases extends BaseTest
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         cartPage.proceedToCheckout();
 try{    GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver);
+        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver,guestCheckoutCyclePage);
         DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getAddNewAddressBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFirstNameField(), webDriver);}
 catch (Exception e){
@@ -127,7 +127,7 @@ catch (Exception e){
   @Test(groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}:Make sure the County Code retrieved correctly in the Phone Field", priority = 14)
     public void verifyTheCorrectCountyCodeRetrievedCorrectlyInPhoneField() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-      CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
+      CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver,guestCheckoutCyclePage);
       CartPage cartPage= new CartPage(webDriver);
       cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
       cartPage.proceedToCheckout();
@@ -137,8 +137,8 @@ catch (Exception e){
     }
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the email field is disable and retrieved the customer email correctly", priority = 15)
     public void verifyTheEmailFieldRetrievedIsDisableAndDisplayTheCustomerEmail() {
-        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver,guestCheckoutCyclePage);
         try{
             DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
 }
@@ -151,7 +151,7 @@ catch (Exception e){
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:Make sure the Registered user cannot submit the shipping information without filling the required fields empty", priority = 16)
     public void verifyTheRegisteredUserCannotSubmitTheShippingInformationWithoutFillingTheRequiredFields() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
+        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver,guestCheckoutCyclePage);
         try{
             DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
 }
@@ -164,7 +164,7 @@ catch (Exception e){
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:Make sure the Registered user cannot submit the shipping information when the phone number length is small ", priority = 17)
     public void verifyTheRegisteredUserCannotSubmitTheShippingInformationWhenPhoneFieldHaveSmallTextLength() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver);
+        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver,guestCheckoutCyclePage);
         CartPage cartPage= new CartPage(webDriver);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         cartPage.proceedToCheckout();
@@ -189,7 +189,7 @@ catch (Exception e){
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:Make sure the Registered user cannot submit the shipping information using incorrect National ID", priority = 18)
     public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNationalID() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver);
+        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver,guestCheckoutCyclePage);
         JordanGuestCheckoutCyclePage joGuest= new JordanGuestCheckoutCyclePage(webDriver);
         checkoutForRegisteredPage.accessGuestCheckoutForm();
         try{
@@ -204,8 +204,8 @@ catch (Exception e){
     }
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:Make sure the Registered user can filling the shipping information and clicking on the Continue button correctly", priority = 19)
     public void verifyTheRegisteredUserCanFillTheShippingInformationCorrectly() throws IOException {
-        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver,guestCheckoutCyclePage);
         CartPage cartPage= new CartPage(webDriver);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
             cartPage.proceedToCheckout();
@@ -235,7 +235,7 @@ catch (Exception e){
     @Test(enabled = false,groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Continue button appears in the Shipping Methods screen is disable when no shipping method is selected", priority = 21)
     public void verifyContinueBtnAppearsInShippingMethodsIsDisableWhenNoMethodSelected() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
+        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver,guestCheckoutCyclePage);
         CartPage cartPage= new CartPage(webDriver);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         try{
@@ -257,8 +257,8 @@ catch (Exception e){
     }
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:Verify Edit Shipping information button works fine", priority = 22)
     public void verifyTheEditShippingInfoBtnWorksFine() throws IOException {
-        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver,guestCheckoutCyclePage);
         CartPage cartPage= new CartPage(webDriver);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         cartPage.navigateToHomePage();
@@ -285,7 +285,7 @@ catch (Exception e){
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:Verify All Shipping Methods appear correctly", priority = 23)
     public void verifyAllShippingMethodsAppearCorrectly() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
+        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver,guestCheckoutCyclePage);
         CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         cartPage.proceedToCheckout();
@@ -307,8 +307,8 @@ catch (Exception e){
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Same Day Delivery shipping method appears only for Dubai City", priority = 79)
     public void verifySameDayShippingMethodAppearsForDubaiCityOnly() throws IOException {
-        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver,guestCheckoutCyclePage);
         CartPage cartPage= new CartPage(webDriver);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         cartPage.navigateToHomePage();
@@ -339,8 +339,8 @@ catch (Exception e){
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the customer is able to select the Same Day Delivery shipping method correctly", priority = 80)
     public void verifyAbilityToSelectSameDayShippingMethodCorrectly() throws IOException {
         LocalTime currentTime = LocalTime.now();
-        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver,guestCheckoutCyclePage);
         CartPage cartPage= new CartPage(webDriver);
         // Set the target times to 2:00 AM and 2:00 PM
         LocalTime targetTimeAM = LocalTime.of(2, 0);
@@ -376,7 +376,7 @@ catch (Exception e){
     public void verifyEachOfCODAndCreditCardPaymentMethodCorrectly() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
+        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver,guestCheckoutCyclePage);
         guestCheckoutCyclePage.navigateToCheckoutPage();
         try{
             DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
@@ -401,7 +401,7 @@ catch (Exception e){
     public void verifyContinueBtnAppearsInPaymentMethodsIsDisableWhenNoMethodSelected() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
+        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver,guestCheckoutCyclePage);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         cartPage.proceedToCheckout();
         //TODO: recheck the button after Moamen Solve ot
@@ -433,7 +433,7 @@ catch (Exception e){
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the 2 Business Days Super Express Shipping Method With COD Payment Method correctly", priority = 29)
     public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
+        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver,guestCheckoutCyclePage);
         registeredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
@@ -443,7 +443,7 @@ catch (Exception e){
     @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With COD Payment Method ", priority = 27)
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
+        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver,guestCheckoutCyclePage);
         CartPage cartPage= new CartPage(webDriver);
         registeredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
@@ -463,7 +463,7 @@ catch (Exception e){
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the 2 Business Days Super Express Shipping Method With Valid Credit Card Payment Method", priority = 28)
     public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithValidCreditCardPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
+        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver,guestCheckoutCyclePage);
         CartPage cartPage= new CartPage(webDriver);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         cartPage.proceedToCheckout();
@@ -490,7 +490,7 @@ catch (Exception e){
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Credit Card Payment Method ", priority = 30)
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCreditCardPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
+        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver,guestCheckoutCyclePage);
         CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
 //        DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
@@ -531,7 +531,7 @@ catch (Exception e){
     public void verifyAbilityToPlaceOrderWhenUsingFreeCouponCode() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
+        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver,guestCheckoutCyclePage);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
