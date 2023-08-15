@@ -60,7 +60,6 @@ public class KuwaitCheckoutForRegisteredTestCases extends  CheckoutForRegistered
     public void verifyAllShippingMethodsAppearCorrectly() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         KuwaitCheckoutForRegisteredPage kuwaitCheckoutForRegisteredPage= new KuwaitCheckoutForRegisteredPage(webDriver);
-        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
 //        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddressForDubaiCity();
         CartPage cartPage= new CartPage(webDriver);
         cartPage.addToCartAndDisplayTheCart();
@@ -68,10 +67,10 @@ public class KuwaitCheckoutForRegisteredTestCases extends  CheckoutForRegistered
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
         try{
-            DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
+            DataHelperAndWait.clickOnElement(kuwaitCheckoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
         catch (Exception e){
-            registeredPage.fillInShippingInformationInputField(
+            kuwaitCheckoutForRegisteredPage.fillInShippingInformationInputField(
                     XmlReader.getXMLData("firstName"),
                     XmlReader.getXMLData("lastName"),
                     XmlReader.getXMLData("phoneNumber"),
@@ -86,9 +85,8 @@ public class KuwaitCheckoutForRegisteredTestCases extends  CheckoutForRegistered
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Express Delivery: 3-5 Days Shipping Method With COD Payment Method ", priority = 504)
     public void verifyAbilityToPlaceOrderWhenSelectingExpressDelivery3_5DaysShippingMethodWithCODPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         KuwaitCheckoutForRegisteredPage kuwaitCheckoutForRegisteredPage= new KuwaitCheckoutForRegisteredPage(webDriver);
-        registeredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
+        kuwaitCheckoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         DataHelperAndWait.clickOnElement(kuwaitCheckoutForRegisteredPage.getExpressDeliveryMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
@@ -110,9 +108,8 @@ public class KuwaitCheckoutForRegisteredTestCases extends  CheckoutForRegistered
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the Express Delivery 3_5 Days Shipping Method With Valid Credit Card Payment Method", priority = 28)
     public void verifyAbilityToSelectTheExpressDelivery3_5DaysShippingMethodWithValidCreditCardPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         KuwaitCheckoutForRegisteredPage kuwaitCheckoutForRegisteredPage= new KuwaitCheckoutForRegisteredPage(webDriver);
-        registeredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
+        kuwaitCheckoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         DataHelperAndWait.clickOnElement(kuwaitCheckoutForRegisteredPage.getExpressDeliveryMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
 //        try{
@@ -136,9 +133,8 @@ public class KuwaitCheckoutForRegisteredTestCases extends  CheckoutForRegistered
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the Express Delivery 3_5 Shipping Method With COD Payment Method correctly", priority = 29)
     public void verifyAbilityToSelectTheExpressDelivery3_5ShippingMethodWithCODPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         KuwaitCheckoutForRegisteredPage kuwaitCheckoutForRegisteredPage= new KuwaitCheckoutForRegisteredPage(webDriver);
-        registeredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
+        kuwaitCheckoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         DataHelperAndWait.clickOnElement(kuwaitCheckoutForRegisteredPage.getExpressDeliveryMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         DataHelperAndWait.waitForTime(2000);
@@ -148,7 +144,6 @@ public class KuwaitCheckoutForRegisteredTestCases extends  CheckoutForRegistered
     @Test(enabled = false,groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Express Delivery 3_5 Shipping Method With Credit Card Payment Method ", priority = 30)
     public void verifyAbilityToPlaceOrderWhenSelectingExpressDelivery3_5WithCreditCardPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         KuwaitCheckoutForRegisteredPage kuwaitCheckoutForRegisteredPage= new KuwaitCheckoutForRegisteredPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
@@ -163,10 +158,10 @@ public class KuwaitCheckoutForRegisteredTestCases extends  CheckoutForRegistered
         cartPage.proceedToCheckout();
         DataHelperAndWait.waitForUrlContains(guestCheckoutCyclePage.shippingInformationUrl,webDriver);
         try{
-            DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
+            DataHelperAndWait.clickOnElement(kuwaitCheckoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
         catch (Exception e){
-            registeredPage.fillInShippingInformationInputField(
+            kuwaitCheckoutForRegisteredPage.fillInShippingInformationInputField(
                     XmlReader.getXMLData("firstName"),
                     XmlReader.getXMLData("lastName"),
                     XmlReader.getXMLData("phoneNumber"),
@@ -189,11 +184,8 @@ public class KuwaitCheckoutForRegisteredTestCases extends  CheckoutForRegistered
     @Test(enabled = false,groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure Inability to continue the placing order process using invalid Credit Card", priority = 31)
     public void verifyInabilityToUseInvalidCreditCardPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         KuwaitCheckoutForRegisteredPage kuwaitCheckoutForRegisteredPage= new KuwaitCheckoutForRegisteredPage(webDriver);
-//        cartPage.navigateToCartPage();
-//        cartPage.removeItem();
-        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
+        kuwaitCheckoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         DataHelperAndWait.clickOnElement(kuwaitCheckoutForRegisteredPage.getExpressDeliveryMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("invalidCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
@@ -202,14 +194,13 @@ public class KuwaitCheckoutForRegisteredTestCases extends  CheckoutForRegistered
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that each of COD & Credit Card Payment methods appear correctly", priority = 25)
     public void verifyEachOfCODAndCreditCardPaymentMethodCorrectly() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         KuwaitCheckoutForRegisteredPage kuwaitCheckoutForRegisteredPage= new KuwaitCheckoutForRegisteredPage(webDriver);
         guestCheckoutCyclePage.navigateToCheckoutPage();
         try{
-            DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
+            DataHelperAndWait.clickOnElement(kuwaitCheckoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
         catch (Exception e){
-            registeredPage.fillInShippingInformationInputField(
+            kuwaitCheckoutForRegisteredPage.fillInShippingInformationInputField(
                     XmlReader.getXMLData("firstName"),
                     XmlReader.getXMLData("lastName"),
                     XmlReader.getXMLData("phoneNumber"),
