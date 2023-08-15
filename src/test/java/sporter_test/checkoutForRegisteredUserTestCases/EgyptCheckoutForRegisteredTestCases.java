@@ -16,8 +16,6 @@ import sporter_pages.cartPages.CartPage;
 import sporter_pages.checkoutForRegisteredUserTPage.CheckoutForRegisteredPage;
 import sporter_pages.checkoutForRegisteredUserTPage.EgyptCheckoutForRegisteredPage;
 import sporter_pages.guestCheckoutCyclePages.EgyptGuestCheckoutCyclePage;
-import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
-import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.EgyptHomePage;
 import xml_reader.XmlReader;
 import java.io.IOException;
@@ -27,12 +25,8 @@ public class EgyptCheckoutForRegisteredTestCases  extends CheckoutForRegisteredT
     public void switchToEgyptStore(){
         EgyptHomePage egyptHomePage=new EgyptHomePage(webDriver);
         egyptHomePage.switchCountry(egyptHomePage.getEgyptCountry());
-        if(webDriver.getCurrentUrl().contains(egyptHomePage.egyptDomain)){
-            System.out.println("You are in Egypt Store");
-        }
-        else {
+        if(!webDriver.getCurrentUrl().contains(egyptHomePage.egyptDomain)){
             webDriver.navigate().to(BasePage.BaseURL+egyptHomePage.egyptDomain);
-            //CloseInitialDialog();
              }
         storeCountry="Egypt";
        countryCode="20";
@@ -48,8 +42,8 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the Next Day Delivery With COD Payment Method correctly", priority = 27)
     public void verifyAbilityToSelectTheNextDayDeliveryWithCODPaymentMethod() throws IOException {
         CartPage cartPage= new CartPage(webDriver);
-        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
+        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver,egypt);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         cartPage.proceedToCheckout();
         try{
@@ -77,7 +71,8 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Next Day Delivery With COD Payment Method ", priority = 28)
     public void verifyAbilityToPlaceOrderWhenSelectingNextDaySuperExpressShippingMethodWithCODPaymentMethod() throws IOException {
         CartPage cartPage= new CartPage(webDriver);
-        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
+        EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
+        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver,egypt);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         cartPage.proceedToCheckout();
         try{
@@ -92,7 +87,6 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
                     XmlReader.getXMLData("StreetOneAddressName"),
                     XmlReader.getXMLData("StreetTwoAddressName"));
         }
-        EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         DataHelperAndWait.waitForTime(2000);
         egypt.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
@@ -109,21 +103,20 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
     public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithValidCreditCardPaymentMethod() {}
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the Next Day Delivery With Valid Credit Card Payment Method", priority = 29)
     public void verifyAbilityToSelectTheNextDayDeliveryWithValidCreditCardPaymentMethod() throws IOException {
-        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver);
-        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
+        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver,egypt);
+        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getCreditCardPaymentMethod(),webDriver);
 //        egypt.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
-//        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
     }
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Next Day Delivery With Credit Card Payment Method ", priority = 30)
     public void verifyAbilityToPlaceOrderWhenSelectingNextDayDeliveryWithCreditCardPaymentMethod() throws IOException {
-        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver);
+        EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
+        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver,egypt);
         CartPage cartPage= new CartPage(webDriver);
         checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
        DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         egypt.selectCreditCardMethod();
@@ -151,7 +144,8 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
     public void verifyAbilityToSelectSameDayShippingMethodCorrectly() {}
     @Test(groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure Inability to continue the placing order process using invalid Credit Card", priority = 31)
     public void verifyInabilityToUseInvalidCreditCardPaymentMethod() throws IOException {
-        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
+        EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
+        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver,egypt);
         CartPage cartPage= new CartPage(webDriver);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         cartPage.proceedToCheckout();
@@ -168,7 +162,6 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
             );
         }
                 DataHelperAndWait.waitForTime(2000);
-        EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         egypt.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
@@ -182,7 +175,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that each of COD & Credit Card Payment methods appear correctly", priority = 25)
     public void verifyEachOfCODAndCreditCardPaymentMethodCorrectly() throws IOException {
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
+        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver,egypt);
         CartPage cartPage= new CartPage(webDriver);
         egypt.navigateToCheckoutPage();
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
@@ -208,9 +201,9 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
     }
     @Test(enabled = false,groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when using a Free Coupon Code ", priority = 81)
     public void verifyAbilityToPlaceOrderWhenUsingFreeCouponCode() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        EgyptGuestCheckoutCyclePage guestCheckoutCyclePage = new EgyptGuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
+        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver,guestCheckoutCyclePage);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
@@ -252,7 +245,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
     public void verifyInabilityToPlaceOrderUsingGeideaWhenSelectingAuthenticationFailedOptionFromGediaPaymentPage() throws IOException {
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver);
+        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver,egypt);
         checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
@@ -269,7 +262,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
     public void verifyInabilityToPlaceOrderUsingGeideaWhenSelectingAuthenticationNotAvailableOptionFromGediaPaymentPage() throws IOException {
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver);
+        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver,egypt);
         checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
@@ -286,7 +279,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
     public void verifyInabilityToPlaceOrderUsingGeideaWhenSelectingAuthenticationAttemptedOptionFromGediaPaymentPage() throws IOException {
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver);
+        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver,egypt);
         checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
@@ -303,7 +296,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
     public void verifyInabilityToPlaceOrderUsingGeideaWhenSelectingErrorParsingAuthenticationResponseOptionFromGediaPaymentPage() throws IOException {
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver);
+        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver,egypt);
         checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
@@ -319,15 +312,14 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
     }
     @Test(groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to place order successfully using Geidea when selecting Invalid Signature on Authentication Response Option from Geidea Payment Gate Screen", priority = 64)
     public void verifyInabilityToPlaceOrderUsingGeideaWhenSelectingInvalidSignatureOnAuthenticationResponseOptionFromGediaPaymentPage() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver,guestCheckoutCyclePage);
-        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
+        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver,egypt);
+        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         egypt.selectCreditCardMethod();
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getFinalPlaceOrderBtn(),webDriver);
 //        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //        egypt.submitCreditCardWithDifferentAuthentication("(S) Invalid Signature on Authentication Response");
 //                        DataHelperAndWait.waitForTime(3000);
@@ -337,9 +329,9 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
     @Test(groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to place order successfully using Geidea when selecting MPI Processing Error Option from Geidea Payment Gate Screen", priority = 65)
     public void verifyInabilityToPlaceOrderUsingGeideaWhenSelectingMPIProcessingErrorOptionFromGediaPaymentPage() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver);
-        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
+        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver,egypt);
+        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         egypt.selectCreditCardMethod();
@@ -353,27 +345,22 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
     }
     @Test(groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to place order successfully using Geidea when selecting Authentication Attempted (No CAVV) Option from Geidea Payment Gate Screen", priority = 66)
     public void verifyInabilityToPlaceOrderUsingGeideaWhenSelectingNoCAVVOptionFromGediaPaymentPage() throws IOException {
-        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver);
-        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
+        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver,egypt);
+        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         egypt.selectCreditCardMethod();
         WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getFinalPlaceOrderBtn(),webDriver);
-//        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
-//        egypt.submitCreditCardWithDifferentAuthentication("(M) Authentication Attempted (No CAVV)");
-//                        DataHelperAndWait.waitForTime(3000);
-//        webDriver.switchTo().frame(1);
-//        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getGeideaError(),webDriver);
     }
     @Test(enabled = false,groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the order total appears in the Geidea payment Gateway is matched with the original order Total ", priority = 59)
     public void verifyTheOrderTotalAppearsInGeideaGateWayIsMatchedWithOriginalOrderTotal() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-        String sporterTotal;
-        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver);
-        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
+        String sporterTotal;
+        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver,egypt);
+        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         egypt.selectCreditCardMethod();
@@ -393,9 +380,9 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
     @Test(groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the order is not placed correctly when there's interruption occurring in the Geidea Payment GateWay ", priority = 68)
     public void verifyTheOrderIsNotPlacedWhenMakeInterputionDuringCheckoutOrderUsingGeidea() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver);
-        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
+        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver,egypt);
+        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         egypt.selectCreditCardMethod();
@@ -413,12 +400,9 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
     }
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully Using Geidea when using Arabic Version ", priority = 69)
     public void verifyAbilityToPlaceOrderWhenSelectingNextDayDeliveryShippingMethodWithCreditCardPaymentMethodInArabicVersion() throws IOException {
-        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver);
-        HeaderSection headerSection= new HeaderSection(webDriver);
+        EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
+        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver,egypt);
         CartPage cartPage= new CartPage(webDriver);
-        cartPage.navigateToHomePage();
-        DataHelperAndWait.clickOnElement(headerSection.getLanguageSelector(),webDriver);
-        System.out.println("Before");
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         cartPage.proceedToCheckout();
         try{
@@ -433,7 +417,6 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
                     XmlReader.getXMLData("StreetOneAddressName"),
                     XmlReader.getXMLData("StreetTwoAddressName"));
         }
-        EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         DataHelperAndWait.waitForTime(2000);
         egypt.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
@@ -446,10 +429,9 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
     }
     @Test(enabled = false, groups= { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Next Day Delivery Shipping Method With Credit Card Payment Method when using the coupon code", priority = 70)
     public void verifyAbilityToPlaceOrderWhenSelectingNextDayDeliveryShippingMethodWithCreditCardPaymentMethodUsingCouponCode() throws IOException {
-        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
-        CartPage cartPage= new CartPage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
-        GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
+        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver,egypt);
+        CartPage cartPage= new CartPage(webDriver);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
@@ -468,11 +450,11 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
                     XmlReader.getXMLData("StreetTwoAddressName"));
         }
         DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        egypt.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(egypt.getNextDayMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         egypt.selectCreditCardMethod();
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getFinalPlaceOrderBtn(),webDriver);
     }
 }

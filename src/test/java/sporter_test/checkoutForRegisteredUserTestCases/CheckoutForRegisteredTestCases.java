@@ -140,8 +140,7 @@ catch (Exception e){
         CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         try{
-            if(checkoutForRegisteredPage.getSavedAddressOption().isDisplayed())
-          System.out.println("A saved address is selected");
+            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
 }
         catch (Exception e){
             DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getAddNewAddressBtn(),webDriver);
@@ -154,9 +153,7 @@ catch (Exception e){
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         try{
-            if(checkoutForRegisteredPage.getSavedAddressOption().isDisplayed())
-                System.out.println("A saved address is selected");
-
+            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
 }
         catch (Exception e){
             checkoutForRegisteredPage.fillInShippingInformationInputField(" ", " ", " ", " ", " ", "");
@@ -173,20 +170,20 @@ catch (Exception e){
         cartPage.proceedToCheckout();
 
         try{
-        checkoutForRegisteredPage.fillInShippingInformationInputField(
-                XmlReader.getXMLData("firstName"),
-                XmlReader.getXMLData("lastName"),
-                XmlReader.getXMLData("SmallPhoneNumber"),
-                XmlReader.getXMLData("AddressName"),
-                XmlReader.getXMLData("StreetOneAddressName"),
-                XmlReader.getXMLData("StreetTwoAddressName")
-        );
-                DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getPhoneErrMsg(),webDriver);}
+            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
+        }
         catch (Exception e){
-                      if(checkoutForRegisteredPage.getSavedAddressOption().isDisplayed())
-          System.out.println("A saved address is selected");
+            checkoutForRegisteredPage.fillInShippingInformationInputField(
+                    XmlReader.getXMLData("firstName"),
+                    XmlReader.getXMLData("lastName"),
+                    XmlReader.getXMLData("SmallPhoneNumber"),
+                    XmlReader.getXMLData("AddressName"),
+                    XmlReader.getXMLData("StreetOneAddressName"),
+                    XmlReader.getXMLData("StreetTwoAddressName")
+            );
+            DataHelperAndWait.waitForTime(2000);
+            guestCheckoutCyclePage.clickOnContinueBtn();
+            WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getPhoneErrMsg(),webDriver);
         }
     }
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:Make sure the Registered user cannot submit the shipping information using incorrect National ID", priority = 18)
@@ -242,6 +239,9 @@ catch (Exception e){
         CartPage cartPage= new CartPage(webDriver);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         try{
+            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
+        }
+        catch (Exception e){
             checkoutForRegisteredPage.fillInShippingInformationInputField(
                     XmlReader.getXMLData("firstName"),
                     XmlReader.getXMLData("lastName"),
@@ -250,9 +250,6 @@ catch (Exception e){
                     XmlReader.getXMLData("StreetOneAddressName"),
                     XmlReader.getXMLData("StreetTwoAddressName")
             );
-        }
-        catch (Exception e){
-            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
         DataHelperAndWait.waitForTime(2000);
                 DataHelperAndWait.waitForTime(2000);
@@ -318,6 +315,9 @@ catch (Exception e){
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
         try{
+            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
+        }
+        catch (Exception e){
             checkoutForRegisteredPage.fillInShippingInformationInputField(
                     XmlReader.getXMLData("firstName"),
                     XmlReader.getXMLData("lastName"),
@@ -327,9 +327,6 @@ catch (Exception e){
                     XmlReader.getXMLData("StreetTwoAddressName")
             );
             guestCheckoutCyclePage.setSelectDubaiCityCity();
-        }
-        catch (Exception e){
-            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
         DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();

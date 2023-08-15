@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="464478ea-1e3f-4255-9918-5850b13a0bd5" name="Changes" comment=" Update Smoketestt.xml">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/CheckoutForRegisteredTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/CheckoutForRegisteredTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/EgyptCheckoutForRegisteredTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/EgyptCheckoutForRegisteredTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/Sporter2.1OnProdution/ProductionSporter2.1SmokeReport.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Sporter2.1OnProdution/ProductionSporter2.1SmokeReport.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -468,21 +471,6 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/CheckoutForRegisteredTestCases.java</url>
-          <line>205</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/sporter_pages/checkoutForRegisteredUserTPage/CheckoutForRegisteredPage.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/sporter_pages/checkoutForRegisteredUserTPage/CheckoutForRegisteredPage.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
