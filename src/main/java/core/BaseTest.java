@@ -94,6 +94,14 @@ public class BaseTest {
                     webDriver = new ChromeDriver();
                     webDriver.navigate().to(BasePage.BaseURL);
 //                    webDriver.navigate().to("https://www.sporter.com");
+                    /**
+                     ChromeOptions options = new ChromeOptions();
+                     options.addArguments("headless");
+                     options.addArguments("disable-gpu");
+                     options.addArguments("window-size=1200,1100");
+                     webDriver = new ChromeDriver(options);
+                     webDriver.navigate().to("https://www.sporter.com");
+                     **/
                     break;
                 case "edge":
                     WebDriverManager.edgedriver().setup();
