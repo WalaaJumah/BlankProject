@@ -29,23 +29,20 @@ public class HealthyFoodTestCases extends BaseTest {
 
     @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure clicking on the Healthy Food Category Appears In MegaMenu Redirect User To CorrectURL", priority = 2)
     public void verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL() throws IOException {
-        SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         HealthyFoodPage healthyFoodPage = new HealthyFoodPage(webDriver);
         healthyFoodPage.navigateToHomePage();
-
         healthyFoodPage.clickOnHealthyFoodMainMenu();
-        sportsSupplementsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        healthyFoodPage.verifyTheDisplayedPageDoesNotHaveErrors();
         WebElementsAssertion.validateTheCurrentUrlContainsString(healthyFoodPage.healthyFoodsUrl, webDriver);
     }
 
     //TODO: Needs to recheck on KSA after solve the webelement ID in Arabic By Moamen
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure clicking on the Healthy Food Category from ShopBy Menu Redirect User To CorrectURL", priority = 3)
     public void verifyClickingOnHealthyFoodCategoryFromShopByMenuRedirectUserToCorrectURL() throws IOException {
-        SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         HealthyFoodPage healthyFoodPage = new HealthyFoodPage(webDriver);
         healthyFoodPage.clickOnHealthyFoodFromShopByMenu();
-        sportsSupplementsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.healthyFoodsUrl, webDriver);
+        healthyFoodPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        WebElementsAssertion.validateTheCurrentUrlContainsString(healthyFoodPage.healthyFoodsUrl, webDriver);
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure clicking on the Healthy Food Category from HomePage Redirect User To CorrectURL", priority = 4)
