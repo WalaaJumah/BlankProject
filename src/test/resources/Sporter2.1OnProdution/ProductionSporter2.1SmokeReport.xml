@@ -4,7 +4,7 @@
 <suite name="Automation Reports">
     <listeners>
         <!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
-        <listener class-name="extent_report_listner.ExtentReportListener"/>
+<!--        <listener class-name="extent_report_listner.ExtentReportListener"/>-->
     </listeners>
     <test name=" qa1  Full  Testing Release 26 Enh" preserve-order="true">
         <parameter name="environment" value="https://qa1.sporter.com"/>
