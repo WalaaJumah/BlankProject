@@ -205,8 +205,5 @@ public class EgyptGuestCheckoutCyclePage extends GuestCheckoutCyclePage {
 
     }
 
-    public void navigateToGeideaPortal(){
-
-    }
 
 }

@@ -20,12 +20,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import sporter_pages.cartPages.CartPage;
-import sporter_pages.checkoutForRegisteredUserTPage.CheckoutForRegisteredPage;
 import xml_reader.XmlReader;
-
 import java.io.IOException;
 import java.time.Duration;
-import java.util.List;
 
 @Getter
 public class GuestCheckoutCyclePage extends BasePage {
