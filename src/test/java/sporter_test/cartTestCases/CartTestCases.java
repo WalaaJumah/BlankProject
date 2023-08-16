@@ -253,6 +253,7 @@ DataHelperAndWait.waitToBeVisible(cartPage.getCartIcon(),webDriver);
         CartPage cartPage = new CartPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        DataHelperAndWait.waitForTime(1500);
         cartPage.waitTillCartSpinnerDisappear(webDriver);
         DataHelperAndWait.waitToBeClickable(cartPage.getProductNameForOneProduct(), webDriver);
         cartPage.getProductNameForOneProduct().click();
