@@ -249,8 +249,13 @@ public class GuestCheckoutCyclePage extends BasePage {
             cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
             cartPage.proceedToCheckout();
         cartPage.waitTillCartSpinnerDisappear(webDriver);
+        try {
             DataHelperAndWait.waitToBeVisible(checkoutAsGuestBtn, webDriver);
             DataHelperAndWait.clickOnElement(checkoutAsGuestBtn, webDriver);
+        }
+        catch (Exception e){
+            checkoutAsGuestBtn.click();
+        }
     }
 
     public void selectCity() {
