@@ -157,28 +157,28 @@ public class ProductDetailsPage extends BasePage {
     public void displayTheProduct() throws IOException {
         String productUrl1 = "";
         String currentUrl = webDriver.getCurrentUrl();
-        if (currentUrl.contains("en-jo")) {
+        if (currentUrl.contains("-jo")) {
             productUrl1 = productUrlJordan7;
         }
-        if (currentUrl.contains("ar-sa")) {
+        if (currentUrl.contains("-sa")) {
             productUrl1 = productUrl;
         }
         if (currentUrl.contains("eg")) {
             productUrl1 = productUrlEgypt;
         }
-        if (currentUrl.contains("en-qa")) {
+        if (currentUrl.contains("-qa")) {
             productUrl1 = productUrl;
         }
         if (currentUrl.contains("-ae")) {
             productUrl1 = productUrl;
         }
-        if (currentUrl.contains("en-kw")) {
+        if (currentUrl.contains("-kw")) {
             productUrl1 = productUrl;
         }
-        if (currentUrl.contains("en-bh")) {
+        if (currentUrl.contains("-bh")) {
             productUrl1 = productUrl;
         }
-        if (currentUrl.contains("en-om")) {
+        if (currentUrl.contains("-om")) {
             productUrl1 = productUrl;
         }
 
