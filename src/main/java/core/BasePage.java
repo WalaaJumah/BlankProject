@@ -36,7 +36,7 @@ public class BasePage {
     public static String productUrl9 = "/cellucor-c4-26162";
 
     public static String productUrl7 = "/dymatize-iso-100-7164/";
-    public static String productUrlKSA1 = "/the-pack-wild-pre-workout";
+    public static String productUrlKSA1 = "/muscletech-nitro-tech-performance-series-16114/";
     public static String productUrlKSA8 = "/the-pack-bcaas-flow-32569";
     public static String productUrlKSA2 = "/efx-karbolyn-fuel";
     public static String productUrlKSA3 = "/windmill-natural-vitamins-omega-3-1000mg-with-epa-dha";
@@ -46,7 +46,7 @@ public class BasePage {
     public static String productUrlKSAWithHighPrice1 = "/puma-speed-orbiter-black-nrgy-red-yellow-33980";
     public static String productUrlKSAWithHighPrice2 = "/puma-speed-orbiter-black-nrgy-red-yellow-33764/";
     public static String productUrlKSAWithHighPrice3 = "/muscletech-nitro-tech-performance-series-16114/";
-    public static String productUrlEgypt = "/optimum-gold-standard-100-whey-6202/";
+    public static String productUrlEgypt = "/optimum-gold-standard-100-whey-6198/";
     public static String productUrlJordan = "/optimum-gold-standard-100-whey";
     public static String productUrlJordan7 = "/optimum-gold-standard-100-whey";
     public static String productUrlJordanWithLowPrice = "/jack-links-beef-jerky-54840/";
