@@ -40,7 +40,7 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         storeCountry = "المملكة العربية السعودية";
         countryCode = "966";
     }
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: GuestUser- Make sure that the tabby Payment method appear correctly", priority = 1)
+    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"}, description = "{{CountryName}}: GuestUser- Make sure that the tabby Payment method appear correctly", priority = 1)
     public void verifyTabbyPaymentMethodMethodCorrectlyForGuestUser() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
