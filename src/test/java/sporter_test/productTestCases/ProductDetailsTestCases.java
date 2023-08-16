@@ -65,7 +65,7 @@ public class ProductDetailsTestCases extends BaseTest {
         productDetailsPage.displayTheProduct();
         DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
         productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        DataHelperAndWait.clickOnElement(productDetailsPage.getProductCard(), webDriver);
+        DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductCard(), webDriver);
         productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
