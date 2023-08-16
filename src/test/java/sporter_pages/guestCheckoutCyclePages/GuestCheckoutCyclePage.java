@@ -10,16 +10,19 @@ import core.BasePage;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
 import lombok.Getter;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import sporter_pages.cartPages.CartPage;
 import xml_reader.XmlReader;
-
 import java.io.IOException;
+import java.time.Duration;
 
 @Getter
 public class GuestCheckoutCyclePage extends BasePage {
@@ -51,7 +54,7 @@ public class GuestCheckoutCyclePage extends BasePage {
     private WebElement checkoutAsGuestDescription;
     @FindBy(id = "value")
     private WebElement orderTotalValue;
-      @FindBy(xpath = "(//*[@id=\"value\"])[8]")
+    @FindBy(xpath = "(//*[@id=\"value\"])[8]")
     private WebElement grandTotalValue;
 
     @FindBy(id = "registerGuestCheckBox")
@@ -76,12 +79,17 @@ public class GuestCheckoutCyclePage extends BasePage {
     private WebElement continueShippingMethodsBtn;
     @FindBy(id = "submitPaymentMethodBtn")
     private WebElement continuePaymentMethodsBtn;
-    @FindBy(xpath = "//div[@id='citiesSelector']/div")
+    @FindBy(id = "citiesSelector")
     private WebElement cityMenu;
-       @FindBy(xpath = "//div[@id='citiesSelector']/div[2]/div/input")
+//    @FindBy(xpath = "//div[@id='citiesSelector']/div")
+//    private WebElement cityMenu;
+
+    @FindBy(xpath = "//div[@id='citiesSelector']/div[2]/div/input")
     private WebElement citySearch;
-            @FindBy(xpath = "(.//*[normalize-space(text()) and normalize-space(.)='Select City'])[1]/following::div[1]")
+    @FindBy(xpath = "//*/text()[normalize-space(.)='Dubai']/parent::*")
     private WebElement duabiCity;
+    @FindBy(xpath = "//div[@id='citiesSelector']/div[2]/div[2]/div[2]")
+    private WebElement firstCity;
 
 
     @FindBy(id = "countrySelector")
@@ -147,7 +155,7 @@ public class GuestCheckoutCyclePage extends BasePage {
     private WebElement checkoutForm;
     @FindBy(xpath = "//iframe[@frameborder='0']")
     private WebElement checkoutIFrame;
-    @FindBy(xpath = "(//div[starts-with(@class,'orderReview_total')]/span)[1]")
+    @FindBy(xpath = "(//div[@id='grand_total'])[1]/div/span[@id='value']")
     private WebElement orderTotalFieldInrReviewPage;
     @FindBy(xpath = "(//div[starts-with(@class,'orderReview_total')]/span)[2]")
     private WebElement orderTotalValueInrReviewPage;
@@ -174,19 +182,55 @@ public class GuestCheckoutCyclePage extends BasePage {
         DataHelperAndWait.updateAllText(streetLineOneField, streetLineOne);
         DataHelperAndWait.waitToBeVisible(streetLineTwoField, webDriver);
         DataHelperAndWait.updateAllText(streetLineTwoField, streetLineTwo);
+        this.selectCity();
     }
-
-    public void clickOnContinueBtn() {
-        DataHelperAndWait.waitToBeVisible(continueShippingInfoBtn,webDriver);
+    public void fillInShippingInformationInputFieldWithDubai(String firstName, String lastName, String email, String phone, String streetLineOne, String streetLineTwo) {
+        DataHelperAndWait.waitToBeVisible(firstNameField, webDriver);
+        DataHelperAndWait.updateAllText(firstNameField, firstName);
+        DataHelperAndWait.waitToBeVisible(lastNameField, webDriver);
+        DataHelperAndWait.updateAllText(lastNameField, lastName);
+        DataHelperAndWait.waitToBeVisible(emailField, webDriver);
+        DataHelperAndWait.updateAllText(emailField, email);
+        DataHelperAndWait.waitToBeVisible(phoneField, webDriver);
+        DataHelperAndWait.updateAllText(phoneField, phone);
+//        DataHelperAndWait.waitToBeVisible(addressNameField ,webDriver);
+//        DataHelperAndWait.updateAllText(addressNameField,address);
+        DataHelperAndWait.waitToBeVisible(streetLineOneField, webDriver);
+        DataHelperAndWait.updateAllText(streetLineOneField, streetLineOne);
+        DataHelperAndWait.waitToBeVisible(streetLineTwoField, webDriver);
+        DataHelperAndWait.updateAllText(streetLineTwoField, streetLineTwo);
+        setSelectDubaiCityCity();
+    }
+    public void fillInShippingInformationInputFieldWithDubaiForRegisteredUser(String firstName, String lastName,  String phone, String streetLineOne, String streetLineTwo, String address) {
+        DataHelperAndWait.waitToBeVisible(firstNameField, webDriver);
+        DataHelperAndWait.updateAllText(firstNameField, firstName);
+        DataHelperAndWait.waitToBeVisible(lastNameField, webDriver);
+        DataHelperAndWait.updateAllText(lastNameField, lastName);
+        DataHelperAndWait.waitToBeVisible(phoneField, webDriver);
+        DataHelperAndWait.updateAllText(phoneField, phone);
+        DataHelperAndWait.waitToBeVisible(addressNameField ,webDriver);
+        DataHelperAndWait.updateAllText(addressNameField,address);
+        DataHelperAndWait.waitToBeVisible(streetLineOneField, webDriver);
+        DataHelperAndWait.updateAllText(streetLineOneField, streetLineOne);
+        DataHelperAndWait.waitToBeVisible(streetLineTwoField, webDriver);
+        DataHelperAndWait.updateAllText(streetLineTwoField, streetLineTwo);
+        setSelectDubaiCityCity();
+    }
+    public void clickOnContinueBtn() throws IOException {
+        DataHelperAndWait.waitToBeVisible(continueShippingInfoBtn, webDriver);
         DataHelperAndWait.scrollTo(continueShippingInfoBtn, webDriver);
 
         try {
             DataHelperAndWait.waitToBeVisible(continueShippingInfoBtn, webDriver);
-            DataHelperAndWait.waitToBeVisible(continueShippingInfoBtn,webDriver);
+            DataHelperAndWait.waitToBeVisible(continueShippingInfoBtn, webDriver);
             this.continueShippingInfoBtn.click();
+            waitTillLoaderComplete();
         } catch (Exception e) {
             DataHelperAndWait.hoverOnElementAndClick(continueShippingInfoBtn, webDriver);
+            waitTillLoaderComplete();
         }
+        if(DataHelperAndWait.IsElementPresent(closeCheckoutErr))
+            throw new AssertionError("Sorry But There is No Available Shipping Methods For your Location error");
     }
 
     public void navigateToCheckoutPage() throws IOException {
@@ -201,73 +245,30 @@ public class GuestCheckoutCyclePage extends BasePage {
     }
 
     public void accessGuestCheckoutForm() throws IOException {
-////        webDriver.navigate().to(BaseURL+shippingInformationUrl);
-//            CartPage cartPage = new CartPage(webDriver);
-////            cartPage.navigateToCartPage();
-//            cartPage.addToCartAndDisplayTheCart();
-//            cartPage.clickOnCartIcon();
-//            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-//
-////            try {
-////                DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-////            }
-////            catch (Exception e){
-////                cartPage.addToCartAndDisplayTheCart();
-////            }
-////            cartPage.clickOnCartIcon();
-////            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-//            DataHelperAndWait.waitForUrlContains(shippingInformationUrl,webDriver);
-//        DataHelperAndWait.clickOnElement(checkoutAsGuestBtn,webDriver);
-//            webDriver.navigate().to(BaseURL+shippingInformationUrl);
-        try{
-        CartPage cartPage = new CartPage(webDriver);
-//            cartPage.navigateToCartPage();
-        cartPage.addToCartAndDisplayTheCart();
-
-        try {
-            cartPage.proceedToCheckout();
-        } catch (Exception e) {
-            cartPage.navigateToHomePage();
-            cartPage.clickOnCartIcon();
-            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
-        }
-//            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-
-
-//            try {
-//                DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-//            }
-//            catch (Exception e){
-//                cartPage.addToCartAndDisplayTheCart();
-//            }
-//            cartPage.clickOnCartIcon();
-//            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-//            DataHelperAndWait.waitForUrlContains(shippingInformationUrl,webDriver);
-        DataHelperAndWait.clickOnElement(checkoutAsGuestBtn, webDriver);}
-        catch (Exception e){
             CartPage cartPage = new CartPage(webDriver);
-//            cartPage.navigateToCartPage();
-            cartPage.addToCartAndDisplayTheCart();
-
-            try {
-                cartPage.proceedToCheckout();
-            } catch (Exception ee) {
-                cartPage.navigateToHomePage();
-                cartPage.clickOnCartIcon();
-                DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
-            }
-//            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-
-//            try {
-//                DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-//            }
-//            catch (Exception e){
-//                cartPage.addToCartAndDisplayTheCart();
-//            }
-//            cartPage.clickOnCartIcon();
-//            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-//            DataHelperAndWait.waitForUrlContains(shippingInformationUrl,webDriver);
+            cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+            cartPage.proceedToCheckout();
+        cartPage.waitTillCartSpinnerDisappear(webDriver);
+        try {
+            DataHelperAndWait.waitToBeVisible(checkoutAsGuestBtn, webDriver);
             DataHelperAndWait.clickOnElement(checkoutAsGuestBtn, webDriver);
+        }
+        catch (Exception e){
+            checkoutAsGuestBtn.click();
+        }
+    }
+
+    public void selectCity() {
+        try {
+            DataHelperAndWait.waitToBeVisible(cityMenu, webDriver);
+            DataHelperAndWait.waitForTime(400);
+            cityMenu.click();
+            DataHelperAndWait.waitToBeVisible(firstCity, webDriver);
+            DataHelperAndWait.clickOnElement(firstCity, webDriver);
+        } catch (Exception e) {
+            cityMenu.click();
+            DataHelperAndWait.waitToBeVisible(firstCity, webDriver);
+            DataHelperAndWait.clickOnElement(firstCity, webDriver);
         }
     }
 
@@ -281,7 +282,7 @@ public class GuestCheckoutCyclePage extends BasePage {
             DataHelperAndWait.clickOnElement(duabiCity, webDriver);
 
         } catch (Exception e) {
-            DataHelperAndWait.clickOnElement(cityMenu, webDriver);
+            cityMenu.click();
             DataHelperAndWait.typeTextInElement(citySearch, webDriver, "Dubai");
             DataHelperAndWait.clickOnElement(duabiCity, webDriver);
         }
@@ -358,32 +359,14 @@ public class GuestCheckoutCyclePage extends BasePage {
     }
 
     public void submitSecureAndAuthenticationCheckout() {
-        // Switch to the new window that has been opened for 3D Secure 2 authentication
-//    String parentWindowHandle = webDriver.getWindowHandle();
-//    for (String windowHandle : webDriver.getWindowHandles()) {
-//        if (!windowHandle.equals(parentWindowHandle)) {
-//            webDriver.switchTo().window(windowHandle);
-//            break;
-//        }
-//    }
-//    // Switch back to the original window and complete checkout process
-//    webDriver.switchTo().window(parentWindowHandle);
         DataHelperAndWait.waitForUrlContains(checkOutComUrl, webDriver);
-//    DataHelperAndWait.waitToBeVisible(this.secureAnd2Authentication,webDriver);
-//    Actions actions= new Actions(webDriver);
-//    actions.sendKeys(Keys.TAB).perform();
-//    actions.sendKeys(Keys.ENTER).perform();
-//    actions.moveToElement(this.getSecureAnd2Authentication());
-//    this.secureAnd2Authentication.click();
-//    this.secureAnd2Authentication.sendKeys(XmlReader.getXMLData("checkout3DSecure"));
         webDriver.switchTo().frame(checkoutIFrame);
-//    actions.moveToElement(this.getSecureAnd2Authentication()).sendKeys(XmlReader.getXMLData("checkout3DSecure")).perform();
+        webDriver.switchTo().frame(checkoutIFrame);
+        DataHelperAndWait.clickOnElement(this.getSecureAnd2Authentication(), webDriver);
         DataHelperAndWait.typeTextInElement(this.getSecureAnd2Authentication(), webDriver, XmlReader.getXMLData("checkout3DSecure"));
-//    DataHelperAndWait.waitForTime(3000);
         webDriver.switchTo().defaultContent();
         Actions actions = new Actions(webDriver);
         actions.sendKeys(Keys.ENTER).perform();
-//    DataHelperAndWait.clickOnElement(this.getSecureAnd2AuthenticationSubmitBtn(),webDriver);
     }
 
     public void validateTheShippingMethodAmount(WebElement shippingFee, WebElement shippingMethod) {
@@ -406,5 +389,16 @@ public class GuestCheckoutCyclePage extends BasePage {
         }
 
     }
-
+    public void IsQouteIDisDisplayed() throws IOException {
+        DataHelperAndWait.waitForTime(5000);
+        verifyTheDisplayedPageDoesNotHaveErrors();
+        System.out.println("CurrentURL is: "+webDriver.getCurrentUrl());
+        if(!(webDriver.getCurrentUrl().contains("sandbox.checkout.com/"))){
+        String orderNumber= DataHelperAndWait.extractDigitsFromString(successPage,webDriver);
+        System.out.println(orderNumber);}
+    }
+public void waitTillLoaderComplete(){
+    WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(50));
+    wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(this.cartLoaderXpath)));
+}
 }

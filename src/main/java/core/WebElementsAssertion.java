@@ -56,8 +56,12 @@ public class WebElementsAssertion {
     }
 
     public static void assertionTextIsEqual(WebElement webElement, WebDriver webDriver, String text) {
-        DataHelperAndWait.waitToBeVisible(webElement, webDriver);
-        Assert.assertEquals(webElement.getText(), text, "The element contains : " + webElement.getText() + "And the URL is: " + webDriver.getCurrentUrl());
+        if(webElement==null)
+            throw new RuntimeException("The element is null:"+webElement);
+            else {
+            DataHelperAndWait.waitToBeVisible(webElement, webDriver);
+            Assert.assertEquals(webElement.getText(), text, "The element contains : " + webElement.getText() + "And the URL is: " + webDriver.getCurrentUrl());
+        }
 
     }
 

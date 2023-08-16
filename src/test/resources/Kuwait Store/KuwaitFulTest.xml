@@ -114,14 +114,14 @@
             <!--            <class name="sporter_test.cartRulesTestCases.KSACartRulesTestCases"></class>-->
 
             <!--            My Account test cases-->
-            <!--            <class name="sporter_test.myAccountTestCases.UAEMyAccountTestCases"></class>-->
-            <!--            <class name="sporter_test.myAccountTestCases.KSAMyAccountTestCases"></class>-->
+            <!--            <class name="sporter_test.myAccountTestCases.UAETamaraPaymentMethodTestCases"></class>-->
+            <!--            <class name="sporter_test.myAccountTestCases.KSATamaraPaymentMethodTestCases"></class>-->
             <!--            <class name="sporter_test.myAccountTestCases.JordanMyAccountTestCases"></class>-->
-            <!--            <class name="sporter_test.myAccountTestCases.QatarMyAccountTestCases"></class>-->
+            <!--            <class name="sporter_test.myAccountTestCases.QatarTamaraPaymentMethodTestCases"></class>-->
             <!--            <class name="sporter_test.myAccountTestCases.EgyptMyAccountTestCases"></class>-->
             <class name="sporter_test.myAccountTestCases.KuwaitMyAccountTestCases"></class>
             <!--            <class name="sporter_test.myAccountTestCases.OmanMyAccountTestCases"></class>-->
-            <!--            <class name="sporter_test.myAccountTestCases.BahrainMyAccountTestCases"></class>-->
+            <!--            <class name="sporter_test.myAccountTestCases.BahrainTamaraPaymentMethodTestCases"></class>-->
 
             <!--           Sports Supplement Category Page-->
             <!--            <class name="sporter_test.sportsSupplementsCategoryTestCases.BahrainSportsSupplementsCategoryTestCases"></class>-->

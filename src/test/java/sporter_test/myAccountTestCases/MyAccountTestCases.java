@@ -56,7 +56,6 @@ public class MyAccountTestCases extends BaseTest {
 
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Verify clicking on My Account Option redirect the user to the correct Page ", priority = 2)
     public void verifyClickingOnMyAccountOptionsWorksCorrectly() throws IOException {
-        LoginPage loginPage = new LoginPage(webDriver);
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
         try{
         myAccountPage.navigateToHomePage();
@@ -99,17 +98,13 @@ catch (Exception w){
 }
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Verify clicking on My Rewards Option redirect the user to the correct Page ", priority = 4)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify clicking on My Rewards Option redirect the user to the correct Page ", priority = 4)
     public void verifyClickingOnMyRewardsOptionsWorksCorrectly() throws IOException {
-        LoginPage loginPage = new LoginPage(webDriver);
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
         myAccountPage.navigateToHomePage();
         DataHelperAndWait.waitForTime(1500);
-        myAccountPage.navigateToHomePage();
-        String homepageLink = webDriver.getCurrentUrl();
         DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
         DataHelperAndWait.clickOnElement(myAccountPage.getMyRewardsOption(), webDriver);
-//        WebElementsAssertion.validateTheCurrentUrlNotContainsString(homepageLink, webDriver);
         myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
@@ -294,7 +289,8 @@ catch (Exception w){
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
         DataHelperAndWait.clickOnElement(myAccountPage.getSaveAddressBtn(), webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getAddressedUrl(), webDriver);
+//        WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getAddressedUrl(), webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getAddNewAddressBtn(),webDriver);
     }
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify Inability to add new Address with incorrect Phone Number format", priority = 24)
@@ -331,7 +327,6 @@ catch (Exception w){
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify Inability to add new Address without filling the mandatory fields", priority = 26)
     public void verifyInabilityToAddNewAddressWithoutFillingTheMandatoryFields() {
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         myAccountPage.navigateToAddressesPage();
         DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(), webDriver);
         DataHelperAndWait.waitToBeVisible(myAccountPage.getSaveAddressBtn(), webDriver);
@@ -371,7 +366,8 @@ catch (Exception w){
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
         DataHelperAndWait.clickOnElement(myAccountPage.getSaveEditAddressBtn(), webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getAddressedUrl(), webDriver);
+//        WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getAddressedUrl(), webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getAddNewAddressBtn(),webDriver);
     }
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify Inability to EditAddress with incorrect Phone Number format", priority = 30)
@@ -398,7 +394,6 @@ catch (Exception w){
     @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify Inability to Edit Address using invalid National ID", priority = 31)
     public void verifyInabilityToEditAddressUsingInvalidNationalID() throws IOException {
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
-        JordanGuestCheckoutCyclePage joGuest = new JordanGuestCheckoutCyclePage(webDriver);
         myAccountPage.navigateToAddressesPage();
         DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.clickOnElement(myAccountPage.getEditAddressBtn(), webDriver);

@@ -12,6 +12,7 @@ import org.openqa.selenium.support.PageFactory;
 import sporter_pages.cartPages.CartPage;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import sporter_pages.guestCheckoutCyclePages.JordanGuestCheckoutCyclePage;
+import sporter_pages.myAccountPages.QatarMyAccountPage;
 import xml_reader.XmlReader;
 
 import java.io.IOException;
@@ -38,7 +39,11 @@ public class JordanCheckoutForRegisteredPage extends CheckoutForRegisteredPage {
         DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getStreetLineTwoField(), streetLineTwo);
         DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getNationalIDField(), webDriver);
         DataHelperAndWait.updateAllText(guestCheckoutCyclePage.getNationalIDField(), nationalID);
-
+        guestCheckoutCyclePage.selectCity();
+        if(webDriver.getCurrentUrl().contains("-qa/")){
+            QatarMyAccountPage qatarMyAccountPage= new QatarMyAccountPage(webDriver);
+            qatarMyAccountPage.selectFirstOptionInAreaMenu();
+        }
     }
 
     public void navigateToShippingMethodsPage() throws IOException {
@@ -81,6 +86,10 @@ public class JordanCheckoutForRegisteredPage extends CheckoutForRegisteredPage {
         cartPage.addToCartAndDisplayTheCart();
         cartPage.proceedToCheckout();
         try {
+            DataHelperAndWait.clickOnElement(this.getSavedAddressOption(), webDriver);
+
+
+        } catch (Exception e) {
             this.fillInShippingInformationInputField(
                     XmlReader.getXMLData("firstName"),
                     XmlReader.getXMLData("lastName"),
@@ -91,8 +100,6 @@ public class JordanCheckoutForRegisteredPage extends CheckoutForRegisteredPage {
                     XmlReader.getXMLData("nationalID")
 
             );
-        } catch (Exception e) {
-            DataHelperAndWait.clickOnElement(this.getSavedAddressOption(), webDriver);
         }
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(), webDriver);

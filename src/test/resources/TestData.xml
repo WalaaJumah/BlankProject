@@ -143,5 +143,26 @@ Cash on Delivery Service Available</twoBusinessDay>
         <addressBiuldingName>building 1</addressBiuldingName>
         <addressFullContactName>Muna Abuyounes</addressFullContactName>
     </shippingAddress>
+    <TabbyPayment>
+        <tabbyPositiveEmail>card.success@tabby.ai</tabbyPositiveEmail>
+        <tabbyNegativeEmail>otp.rejected@tabby.ai</tabbyNegativeEmail>
+        <tabbyPositivePhone>500000001</tabbyPositivePhone>
+        <tabbyNegativePhone>500000001</tabbyNegativePhone>
+        <tabbyPositiveOTP>8888</tabbyPositiveOTP>
+        <tabbyNegativeOTP>8888</tabbyNegativeOTP>
+        <tabbyPositiveCard>4111111111111111</tabbyPositiveCard>
+        <tabbyPositiveCardDate>1231</tabbyPositiveCardDate>
+        <tabbyPositiveCVV>123</tabbyPositiveCVV>
+
+    </TabbyPayment>
+    <TamaraPayment>
+        <UAEPhoneNumber>536741259</UAEPhoneNumber>
+        <UAEPhoneNumber2>545879631</UAEPhoneNumber2>
+        <KSAPhoneNumber>575369741</KSAPhoneNumber>
+        <tamaraPositiveCard>4242424242424242</tamaraPositiveCard>
+        <tamaraPositiveCardDate>1231</tamaraPositiveCardDate>
+        <tamaraPositiveCVV>100</tamaraPositiveCVV>
+
+    </TamaraPayment>
 
 </Data>

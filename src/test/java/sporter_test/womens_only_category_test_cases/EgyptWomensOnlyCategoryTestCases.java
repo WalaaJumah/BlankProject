@@ -12,7 +12,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.homepage_classes.EgyptHomePage;
 import sporter_pages.megaMenuPages.MegaMenuPage;
-import sporter_test.sportsSupplementsCategoryTestCases.SportsSupplementsCategoryTestCases;
 
 import java.io.IOException;
 //TODO: We can access the category using the URL noting that the main menu is missing

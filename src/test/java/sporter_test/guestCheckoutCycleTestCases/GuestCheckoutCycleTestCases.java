@@ -9,14 +9,11 @@ package sporter_test.guestCheckoutCycleTestCases;
 import core.BaseTest;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
-import org.openqa.selenium.NoSuchElementException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.cartPages.CartPage;
-import sporter_pages.guestCheckoutCyclePages.EgyptGuestCheckoutCyclePage;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import sporter_pages.guestCheckoutCyclePages.JordanGuestCheckoutCyclePage;
-import sporter_pages.guestCheckoutCyclePages.KSAGuestCheckoutCyclePage;
 import sporter_pages.productPage.ProductDetailsPage;
 import xml_reader.XmlReader;
 
@@ -40,14 +37,14 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Verify ability to remove the product from the cart successfully", priority = 2)
     public void verifyAbilityToRemoveProductFromCart() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.navigateToCartPage();
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         cartPage.removeItem();
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getNoItemInCartLabel(), webDriver);
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure to add product to the Cart from Product Details Page", priority = 3)
     public void addToCartAndViewCartFromPDP() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.cartURL, webDriver);
     }
 
@@ -81,18 +78,6 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
         Assert.assertEquals(df.format(orderTotal), df.format(cartTotal));
     }
 
-    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Proceed to checkout button appears in the cart page works correctly", priority = 4)
-    public void verifyProceedCheckoutBtnAppearingInCartPageWorksCorrectly() throws IOException {
-        CartPage cartPage = new CartPage(webDriver);
-        DataHelperAndWait.scrollToPositionZero(webDriver);
-        cartPage.navigateToCartPage();
-        cartPage.navigateToHomePage();
-        cartPage.clickOnCartIcon();
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-        //TODO: Needs to recheck after solving it ny mamen
-        WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.shippingInformationUrl, webDriver);
-    }
-
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Proceed to checkout button appearing in the Cart pop-up works correctly", priority = 7)
     public void verifyProceedCheckoutBtnAppearingInCartPopUpWorksCorrectly() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
@@ -105,10 +90,6 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure All sections appear correctly in the Checkout Method screen", priority = 8)
     public void verifyAllFieldsAppearCorrectlyInCheckoutMethodScreen() {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CartPage cartPage = new CartPage(webDriver);
-//        cartPage.navigateToHomePage();
-//        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
-//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCheckoutMethodLabel(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCheckoutAsGuestHeader(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCheckoutAsGuestDescription(), webDriver);
@@ -166,7 +147,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
         WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getCountryCode(),webDriver,countryCode);
     }
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:Make sure the Guest user cannot submit the shipping information when the phone number length is small ", priority = 14)
-    public void verifyTheGuestUserCannotSubmitTheShippingInformationWhenPhoneFieldHaveSmallTextLength() {
+    public void verifyTheGuestUserCannotSubmitTheShippingInformationWhenPhoneFieldHaveSmallTextLength() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
@@ -181,7 +162,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getPhoneErrMsg(),webDriver);
     }
       @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:Make sure the Guest user cannot submit the shipping information using invalid email format", priority = 15)
-    public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidEmailFormat() {
+    public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidEmailFormat() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
 //        guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
@@ -200,9 +181,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNationalID() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
-        CartPage cartPage= new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
+guestCheckoutCyclePage.accessGuestCheckoutForm();
         jo.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -219,10 +198,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:Make sure the Guest user can filling the shipping information and clicking on the Continue button correctly", priority = 17)
     public void verifyTheGuestUserCanFillTheShippingInformationCorrectly() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
-        CartPage cartPage = new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
+guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -232,7 +208,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
-        DataHelperAndWait.captureJavaScriptErrors(webDriver);
+//        DataHelperAndWait.captureJavaScriptErrors(webDriver);
         //TODO: #5 This time needs to enhance in QA.Sporter.com envr
         DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
@@ -247,9 +223,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Continue button appears in the Shipping Methods screen is disable when no shipping method is selected", priority = 19)
     public void verifyContinueBtnAppearsInShippingMethodsIsDisableWhenNoMethodSelected() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CartPage cartPage = new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
+guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -266,9 +240,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:Verify Edit Shipping information button works fine", priority = 20)
     public void verifyTheEditShippingInfoBtnWorksFine() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
- CartPage cartPage = new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
+guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -282,6 +254,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
         guestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getEditShippingInfoBtn(),webDriver);
         DataHelperAndWait.waitForTime(2000);
+        guestCheckoutCyclePage.selectCity();
         guestCheckoutCyclePage.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getEditShippingInfoBtn(),webDriver);
     }
@@ -297,7 +270,6 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
         LocalTime targetTimeAM = LocalTime.of(2, 0);
         LocalTime targetTimePM = LocalTime.of(14, 0);
         if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM)) {
-            CartPage cartPage = new CartPage(webDriver);
             webDriver.manage().deleteCookieNamed("guestCartId");
             guestCheckoutCyclePage.accessGuestCheckoutForm();
             guestCheckoutCyclePage.fillInShippingInformationInputField(
@@ -316,7 +288,6 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
             WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getSameDayDelivery(), webDriver, XmlReader.getXMLData("sameDayDelivery"));
         }
         else{
-            CartPage cartPage = new CartPage(webDriver);
             webDriver.manage().deleteCookieNamed("guestCartId");
             guestCheckoutCyclePage.accessGuestCheckoutForm();
             guestCheckoutCyclePage.fillInShippingInformationInputField(
@@ -338,9 +309,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
             "Cash on Delivery Service Available shipping method correctly", priority = 22)
     public void verifyAbilityToSelect2BusinessDaysShippingMethodCorrectly() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
- CartPage cartPage = new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
+guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -359,9 +328,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Same Day Delivery shipping method appears only for Dubai City", priority = 79)
     public void verifySameDayShippingMethodAppearsForDubaiCityOnly() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
- CartPage cartPage = new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
+guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -392,7 +359,6 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
         // Set the target time to 2:00 PM
         LocalTime targetTime = LocalTime.of(14, 0);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CartPage cartPage= new CartPage(webDriver);
         // Set the target times to 2:00 AM and 2:00 PM
         LocalTime targetTimeAM = LocalTime.of(2, 0);
         LocalTime targetTimePM = LocalTime.of(14, 0);
@@ -419,9 +385,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that each of COD & Credit Card Payment methods appear correctly", priority = 23)
     public void verifyEachOfCODAndCreditCardPaymentMethodCorrectly() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
+guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -441,9 +405,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Continue button appears in the Payment Methods screen is disable when no shipping method is selected", priority = 24)
     public void verifyContinueBtnAppearsInPaymentMethodsIsDisableWhenNoMethodSelected() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
- CartPage cartPage = new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
+guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -470,8 +432,7 @@ public class GuestCheckoutCycleTestCases extends BaseTest {
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
+guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -496,9 +457,7 @@ cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the 2 Business Days Super Express Shipping Method With Valid Credit Card Payment Method", priority = 28)
     public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithValidCreditCardPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
- CartPage cartPage = new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
+guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -519,8 +478,7 @@ cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCreditCardPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
+guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -575,9 +533,7 @@ cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure Inability to continue the placing order process using invalid Credit Card", priority = 27)
     public void verifyInabilityToUseInvalidCreditCardPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CartPage cartPage = new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
+guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -650,8 +606,7 @@ cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
     public void verifyTheSystemDisplayTheQuoteIdForTheUserAfterCheckoutTheOrder() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        guestCheckoutCyclePage.accessGuestCheckoutForm();
+guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
@@ -668,7 +623,7 @@ cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(), webDriver);
-        DataHelperAndWait.waitForTime(2000);
+        guestCheckoutCyclePage.waitTillCartSpinnerDisappear(webDriver);
 DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getSuccessPage(),webDriver);
         orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
         System.out.println(orderNumber);

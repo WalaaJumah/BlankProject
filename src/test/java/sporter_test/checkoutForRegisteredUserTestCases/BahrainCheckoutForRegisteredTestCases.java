@@ -68,19 +68,17 @@ public class BahrainCheckoutForRegisteredTestCases extends CheckoutForRegistered
     public void verifyAllShippingMethodsAppearCorrectly() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         OmanCheckoutForRegisteredPage omanCheckoutForRegisteredPage= new OmanCheckoutForRegisteredPage(webDriver);
-        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
 //        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddressForDubaiCity();
         CartPage cartPage= new CartPage(webDriver);
-            cartPage.clearCart();
         cartPage.addToCartAndDisplayTheCart();
         cartPage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
         try{
-            DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
+            DataHelperAndWait.clickOnElement(omanCheckoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
         catch (Exception e){
-            registeredPage.fillInShippingInformationInputField(
+            omanCheckoutForRegisteredPage.fillInShippingInformationInputField(
                     XmlReader.getXMLData("firstName"),
                     XmlReader.getXMLData("lastName"),
                     XmlReader.getXMLData("phoneNumber"),
@@ -98,56 +96,28 @@ public class BahrainCheckoutForRegisteredTestCases extends CheckoutForRegistered
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the Three Business Days Shipping Method With Valid Credit Card Payment Method", priority = 28)
     public void verifyAbilityToSelectTheThreeBusinessDayshippingMethodWithValidCreditCardPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         OmanCheckoutForRegisteredPage omanCheckoutForRegisteredPage= new OmanCheckoutForRegisteredPage(webDriver);
-        registeredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
+        omanCheckoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         DataHelperAndWait.waitToBeVisible(omanCheckoutForRegisteredPage.getFiveToSevenBusinessDaysShippingMethod(),webDriver);
         DataHelperAndWait.clickOnElement(omanCheckoutForRegisteredPage.getFiveToSevenBusinessDaysShippingMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-//        try{
-//            DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
-//        }
-//        catch (Exception e){
-//            registeredPage.fillInShippingInformationInputField(
-//                    XmlReader.getXMLData("firstName"),
-//                    XmlReader.getXMLData("lastName"),
-//                    XmlReader.getXMLData("phoneNumber"),
-//                    XmlReader.getXMLData("AddressName"),
-//                    XmlReader.getXMLData("StreetOneAddressName"),
-//                    XmlReader.getXMLData("StreetTwoAddressName")
-//            );
-
-//        DataHelperAndWait.clickOnElement(kuwaitCheckoutForRegisteredPage.getExpressDeliveryMethod(),webDriver);
-//        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
     }
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Three Business Days Shipping Method With Credit Card Payment Method ", priority = 503)
     public void verifyAbilityToPlaceOrderWhenSelectingThreeBusinessDaysWithCreditCardPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         OmanCheckoutForRegisteredPage omanCheckoutForRegisteredPage= new OmanCheckoutForRegisteredPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         cartPage.addToCartAndDisplayTheCart();
-//        cartPage.navigateToCartPage();
-//        cartPage.navigateToHomePage();
-//        cartPage.clickOnCartIcon();
-//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-        try {
             cartPage.proceedToCheckout();
-        }
-        catch (Exception e){
-            cartPage.navigateToCartPage();
-            cartPage.proceedToCheckout();
-
-        }
         DataHelperAndWait.waitForUrlContains(guestCheckoutCyclePage.shippingInformationUrl,webDriver);
         try{
-            DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
+            DataHelperAndWait.clickOnElement(omanCheckoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
         catch (Exception e){
-            registeredPage.fillInShippingInformationInputField(
+            omanCheckoutForRegisteredPage.fillInShippingInformationInputField(
                     XmlReader.getXMLData("firstName"),
                     XmlReader.getXMLData("lastName"),
                     XmlReader.getXMLData("phoneNumber"),
@@ -171,11 +141,8 @@ public class BahrainCheckoutForRegisteredTestCases extends CheckoutForRegistered
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure Inability to continue the placing order process using invalid Credit Card", priority = 31)
     public void verifyInabilityToUseInvalidCreditCardPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         OmanCheckoutForRegisteredPage omanCheckoutForRegisteredPage= new OmanCheckoutForRegisteredPage(webDriver);
-//        cartPage.navigateToCartPage();
-//        cartPage.removeItem();
-        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
+        omanCheckoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         DataHelperAndWait.clickOnElement(omanCheckoutForRegisteredPage.getFiveToSevenBusinessDaysShippingMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("invalidCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
@@ -184,14 +151,13 @@ public class BahrainCheckoutForRegisteredTestCases extends CheckoutForRegistered
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that each of COD & Credit Card Payment methods appear correctly", priority = 25)
     public void verifyEachOfCODAndCreditCardPaymentMethodCorrectly() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         OmanCheckoutForRegisteredPage omanCheckoutForRegisteredPage= new OmanCheckoutForRegisteredPage(webDriver);
         guestCheckoutCyclePage.navigateToCheckoutPage();
         try{
-            DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
+            DataHelperAndWait.clickOnElement(omanCheckoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
         catch (Exception e){
-            registeredPage.fillInShippingInformationInputField(
+            omanCheckoutForRegisteredPage.fillInShippingInformationInputField(
                     XmlReader.getXMLData("firstName"),
                     XmlReader.getXMLData("lastName"),
                     XmlReader.getXMLData("phoneNumber"),

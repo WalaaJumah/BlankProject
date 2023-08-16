@@ -9,48 +9,32 @@ package sporter_test.checkoutForRegisteredUserTestCases;
 import core.BasePage;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.cartPages.CartPage;
 import sporter_pages.checkoutForRegisteredUserTPage.CheckoutForRegisteredPage;
-import sporter_pages.checkoutForRegisteredUserTPage.KSACheckoutForRegisteredPage;
-import sporter_pages.guestCheckoutCyclePages.EgyptGuestCheckoutCyclePage;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import sporter_pages.guestCheckoutCyclePages.KSAGuestCheckoutCyclePage;
-import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.KsaHomePage;
 import xml_reader.XmlReader;
-
 import java.io.IOException;
 import java.text.DecimalFormat;
-import java.util.Set;
 
 public class KSACheckoutForRegisteredTestCases extends CheckoutForRegisteredTestCases{
-    @BeforeClass(alwaysRun=true)
-    public void switchToKsaStore(){
-        KsaHomePage ksaHomePage=new KsaHomePage(webDriver);
-        HeaderSection headerSection =new HeaderSection(webDriver);
+    @BeforeClass(alwaysRun = true)
+    public void switchToKsaStore() {
+        KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.switchCountry(ksaHomePage.getKsaCountry());
-        if(webDriver.getCurrentUrl().contains(ksaHomePage.saudiDomain)){
-            System.out.println("You are in KSA Store");
-        } else {
+        if (!webDriver.getCurrentUrl().contains(ksaHomePage.saudiDomain)) {
             webDriver.navigate().to(BasePage.BaseURL +BasePage.ksaDomainArabic);
-            //CloseInitialDialog();
         }
-        try {
-            WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage, webDriver);
-        }
-        catch (Exception e){
+        if(!webDriver.getCurrentUrl().contains(websiteArabicLanguage)) {
             webDriver.navigate().to(BasePage.BaseURL +BasePage.ksaDomainArabic);
             WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage, webDriver);
         }
-        System.out.println(webDriver.getCurrentUrl());
-        storeCountry="المملكة العربية السعودية";
-        countryCode="966";
+        storeCountry = "المملكة العربية السعودية";
+        countryCode = "966";
     }
     @Test(groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 9)
     public void verifyOrderTotalCalculationInCartPageWorksCorrectly() throws IOException {
@@ -70,8 +54,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage=new CartPage(webDriver);
-        cartPage.clearCart();
-        cartPage.addToCartAndDisplayTheCart();
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
 cartPage.proceedToCheckout();
         try{
             DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
@@ -92,17 +75,11 @@ cartPage.proceedToCheckout();
     }
     @Test(enabled = false,groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when using a Free Coupon Code ", priority = 90)
     public void verifyAbilityToPlaceOrderWhenUsingFreeCouponCode() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage=new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
-        try {
-            cartPage.clearCart();
-        }
-        catch (Exception e){
-            System.out.println("");
-        }
-        cartPage.addToCartAndDisplayTheCart();
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);
@@ -123,36 +100,29 @@ cartPage.proceedToCheckout();
             );
         }
                 DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        kSA.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        guestCheckoutCyclePage.verifyTheDisplayedPageDoesNotHaveErrors();
+        DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
+        kSA.waitTillLoaderComplete();
+        DataHelperAndWait.clickOnElement(kSA.getCODPaymentMethod(),webDriver);
+        DataHelperAndWait.clickOnElement(kSA.getContinuePaymentMethodsBtn(), webDriver);
+        kSA.waitTillLoaderComplete();
+        DataHelperAndWait.clickOnElement(kSA.getFinalPlaceOrderBtn(),webDriver);
+        kSA.waitTillCartSpinnerDisappear(webDriver);
+        kSA.verifyTheDisplayedPageDoesNotHaveErrors();
 //        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getSuccessPage(),webDriver);
 //        orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
 //        System.out.println(orderNumber);
     }
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure the system display the Quote ID for the user after checkout the order", priority = 100)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the system display the Quote ID for the user after checkout the order", priority = 100)
     public void verifyTheSystemDisplayTheQuoteIdForTheUserAfterCheckoutTheOrderUsingCouponeCode() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage=new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
-        try {
-            cartPage.clearCart();
-        }
-        catch (Exception e){
-            System.out.println("");
-        }
-        cartPage.addToCartAndDisplayTheCart();
-        DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
-//        DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
-//        DataHelperAndWait.clickOnElement(cartPage.getCloseCouponSuccessfulMsg(),webDriver);
-        cartPage.navigateToHomePage();
-        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        cartPage.proceedToCheckout();
+
         try{
             DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
@@ -167,35 +137,28 @@ cartPage.proceedToCheckout();
             );
         }
         DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        kSA.clickOnContinueBtn();
+        kSA.waitTillLoaderComplete();
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getSuccessPage(),webDriver);
-        orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
+        DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
+        kSA.waitTillLoaderComplete();
+        DataHelperAndWait.clickOnElement(kSA.getCODPaymentMethod(),webDriver);
+        DataHelperAndWait.clickOnElement(kSA.getContinuePaymentMethodsBtn(), webDriver);
+        kSA.waitTillLoaderComplete();
+        DataHelperAndWait.clickOnElement(kSA.getFinalPlaceOrderBtn(),webDriver);
+        kSA.waitTillCartSpinnerDisappear(webDriver);
+        DataHelperAndWait.waitToBeVisible(kSA.getSuccessPage(),webDriver);
+        orderNumber= DataHelperAndWait.extractDigitsFromString(kSA.getSuccessPage(),webDriver);
         System.out.println(orderNumber);
     }
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure Inability to continue the placing order process using invalid Credit Card", priority = 29)
     public void verifyInabilityToUseInvalidCreditCardPaymentMethod() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
-//        cartPage.navigateToCartPage();
-//        cartPage.removeItem();
-//        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        try{
-            cartPage.clearCart();}
-        catch (Exception e){
-            System.out.println("");
-        }
-
-        cartPage.addToCartAndDisplayTheCart();
-        cartPage.navigateToHomePage();
-                DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        cartPage.proceedToCheckout();
         try{            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
         catch (Exception e){
@@ -209,34 +172,25 @@ cartPage.proceedToCheckout();
             );
         }
                 DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        kSA.clickOnContinueBtn();
+        kSA.waitTillLoaderComplete();
         DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCreditCardPaymentMethod(),webDriver);
-        guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("invalidCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCloseCheckoutErr(), webDriver);
+        kSA.waitTillLoaderComplete();
+        DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
+        kSA.waitTillLoaderComplete();
+        DataHelperAndWait.clickOnElement(kSA.getCreditCardPaymentMethod(),webDriver);
+        kSA.submitCreditCard(XmlReader.getXMLData("invalidCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
+        DataHelperAndWait.clickOnElement(kSA.getCloseCheckoutErr(), webDriver);
     }
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the Door To Door Shipping Method With Valid Credit Card Payment Method", priority = 30)
     public void verifyAbilityToSelectTheDoorToDoorShippingMethodWithValidCreditCardPaymentMethod() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
-//        cartPage.navigateToCartPage();
-//        cartPage.removeItem();
-//        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        try {
-            cartPage.clearCart();
-        }
-        catch (Exception e){
-            System.out.println("");
-        }
-
-        cartPage.addToCartAndDisplayTheCart();
-        cartPage.navigateToHomePage();
-                DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        cartPage.proceedToCheckout();
         try{            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
         catch (Exception e){
@@ -250,35 +204,23 @@ cartPage.proceedToCheckout();
             );
         }
                 DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        kSA.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCreditCardPaymentMethod(),webDriver);
-        guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(kSA.getCreditCardPaymentMethod(),webDriver);
+        kSA.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
+        WebElementsAssertion.validateTheElementIsDisplayed(kSA.getFinalPlaceOrderBtn(),webDriver);
     }
 
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the Door To Door Shipping Method With COD Payment Method correctly", priority = 27)
     public void verifyAbilityToSelectTheDoorToDoorShippingMethodWithCODPaymentMethod() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
-//        cartPage.navigateToCartPage();
-//        cartPage.removeItem();
-//        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        try {
-            cartPage.clearCart();
-        }
-        catch (Exception e){
-            System.out.println("");
-        }
-
-        cartPage.addToCartAndDisplayTheCart();
-        cartPage.navigateToHomePage();
-                DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        cartPage.proceedToCheckout();
         try{            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
         catch (Exception e){
@@ -292,32 +234,21 @@ cartPage.proceedToCheckout();
             );
         }
                 DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        kSA.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(kSA.getCODPaymentMethod(),webDriver);
+        DataHelperAndWait.clickOnElement(kSA.getContinuePaymentMethodsBtn(), webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(kSA.getFinalPlaceOrderBtn(),webDriver);
     }
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Door To Door Shipping Method With COD Payment Method ", priority = 28)
     public void verifyAbilityToPlaceOrderWhenSelectingDoorToDoorShippingMethodWithCODPaymentMethod() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
-//        cartPage.navigateToCartPage();
-//        cartPage.removeItem();
-//        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        try {
-cartPage.clearCart();        }
-        catch (Exception e){
-            System.out.println("");
-        }
-
-        cartPage.addToCartAndDisplayTheCart();
-        cartPage.navigateToHomePage();
-                DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        cartPage.proceedToCheckout();
         try{            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
         catch (Exception e){
@@ -331,13 +262,13 @@ cartPage.clearCart();        }
             );
         }
                 DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        kSA.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(kSA.getCODPaymentMethod(),webDriver);
+        DataHelperAndWait.clickOnElement(kSA.getContinuePaymentMethodsBtn(), webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(kSA.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(kSA.getFinalPlaceOrderBtn(),webDriver);
 //        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getSuccessPage(),webDriver);
 //        orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
 //        System.out.println("The order Number= "+orderNumber);
@@ -345,24 +276,12 @@ cartPage.clearCart();        }
 
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Door To Door Shipping Method With Credit Card Payment Method ", priority = 78)
     public void verifyAbilityToPlaceOrderWhenSelectingDoorToDoorShippingMethodWithCreditCardPaymentMethod() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
-//        cartPage.navigateToCartPage();
-//        cartPage.removeItem();
-//        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        try {
-            cartPage.clearCart();
-        }
-        catch (Exception e){
-            System.out.println("");
-        }
-
-        cartPage.addToCartAndDisplayTheCart();
-        cartPage.navigateToHomePage();
-                DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        cartPage.proceedToCheckout();
         try{            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
         catch (Exception e){
@@ -376,12 +295,13 @@ cartPage.clearCart();        }
             );
         }
                 DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        kSA.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
+        kSA.waitTillLoaderComplete();
+        kSA.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
+        WebElementsAssertion.validateTheElementIsDisplayed(kSA.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(kSA.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getSuccessPage(),webDriver);
 //        orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
@@ -413,24 +333,12 @@ cartPage.clearCart();        }
 //        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);}
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting pickUp in Store Method With Credit Card Payment Method ", priority = 82)
     public void verifyAbilityToPlaceOrderWhenSelectingPickUpInStoreShippingMethodWithCreditCardPaymentMethod() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
-//        cartPage.navigateToCartPage();
-//        cartPage.removeItem();
-//        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        try {
-            cartPage.clearCart();
-        }
-        catch (Exception e){
-            System.out.println("");
-        }
-
-        cartPage.addToCartAndDisplayTheCart();
-        cartPage.navigateToHomePage();
-        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        cartPage.proceedToCheckout();
         try{            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
         catch (Exception e){
@@ -444,12 +352,13 @@ cartPage.clearCart();        }
             );
         }
                 DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        kSA.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
+        DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
+        kSA.waitTillLoaderComplete();
+        kSA.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
 //        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(kSA.getFinalPlaceOrderBtn(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
 
 //        String mainWindow= webDriver.getWindowHandle();
@@ -477,97 +386,11 @@ cartPage.clearCart();        }
     }
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the pickUp in Store Shipping Method With Valid Credit Card Payment Method", priority = 81)
     public void verifyAbilityToSelectThePickUpInStoreShippingMethodWithValidCreditCardPaymentMethod() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
-//        cartPage.navigateToCartPage();
-//        cartPage.removeItem();
-//        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        try {
-            cartPage.clearCart();
-        }
-        catch (Exception e){
-            System.out.println("");
-        }
-
-        cartPage.addToCartAndDisplayTheCart();
-        cartPage.navigateToHomePage();
-        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-        try{            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
-        }
-        catch (Exception e){
-            checkoutForRegisteredPage.fillInShippingInformationInputField(
-                    XmlReader.getXMLData("firstName"),
-                    XmlReader.getXMLData("lastName"),
-                    XmlReader.getXMLData("phoneNumber"),
-                    XmlReader.getXMLData("AddressName"),
-                    XmlReader.getXMLData("StreetOneAddressName"),
-                    XmlReader.getXMLData("StreetTwoAddressName")
-            );
-        }
-                DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
-        DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-    }
-    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the customer is able to select the PickUp in store shipping method correctly", priority = 80)
-    public void verifyAbilityToSelectPickUpInStoreShippingMethodCorrectly() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
-        CartPage cartPage= new CartPage(webDriver);
-        KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
-//        cartPage.navigateToCartPage();
-//        cartPage.removeItem();
-//        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        try {
-            cartPage.clearCart();
-        }
-        catch (Exception e){
-            System.out.println("");
-        }
-
-        cartPage.addToCartAndDisplayTheCart();
-        cartPage.navigateToHomePage();
-        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(),webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(),webDriver);
-        try{            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
-        }
-        catch (Exception e){
-            checkoutForRegisteredPage.fillInShippingInformationInputField(
-                    XmlReader.getXMLData("firstName"),
-                    XmlReader.getXMLData("lastName"),
-                    XmlReader.getXMLData("phoneNumber"),
-                    XmlReader.getXMLData("AddressName"),
-                    XmlReader.getXMLData("StreetOneAddressName"),
-                    XmlReader.getXMLData("StreetTwoAddressName")
-            );
-        }
-                DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
-        DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
-    }
-    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:Verify All Shipping Methods appear correctly", priority = 23)
-    public void verifyAllShippingMethodsAppearCorrectly() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
-        CartPage cartPage= new CartPage(webDriver);
-        KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
-//        cartPage.navigateToCartPage();
-//        cartPage.removeItem();
-//        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        try {
-            cartPage.clearCart();
-        }
-        catch (Exception e){
-            System.out.println("");
-        }
-
-        cartPage.addToCartAndDisplayTheCart();
-        DataHelperAndWait.waitForTime(500);
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         cartPage.proceedToCheckout();
         try{            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
@@ -582,18 +405,70 @@ cartPage.clearCart();        }
             );
         }
                 DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        kSA.clickOnContinueBtn();
+        DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
+        DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
+        kSA.waitTillLoaderComplete();
+        kSA.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
+        WebElementsAssertion.validateTheElementIsDisplayed(kSA.getFinalPlaceOrderBtn(),webDriver);
+    }
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the customer is able to select the PickUp in store shipping method correctly", priority = 80)
+    public void verifyAbilityToSelectPickUpInStoreShippingMethodCorrectly() throws IOException {
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
+        CartPage cartPage= new CartPage(webDriver);
+        KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        cartPage.proceedToCheckout();
+        try{            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
+        }
+        catch (Exception e){
+            checkoutForRegisteredPage.fillInShippingInformationInputField(
+                    XmlReader.getXMLData("firstName"),
+                    XmlReader.getXMLData("lastName"),
+                    XmlReader.getXMLData("phoneNumber"),
+                    XmlReader.getXMLData("AddressName"),
+                    XmlReader.getXMLData("StreetOneAddressName"),
+                    XmlReader.getXMLData("StreetTwoAddressName")
+            );
+        }
+                DataHelperAndWait.waitForTime(2000);
+        kSA.clickOnContinueBtn();
+        kSA.waitTillLoaderComplete();
+        DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
+    }
+    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:Verify All Shipping Methods appear correctly", priority = 23)
+    public void verifyAllShippingMethodsAppearCorrectly() throws IOException {
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
+        CartPage cartPage= new CartPage(webDriver);
+        KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        cartPage.proceedToCheckout();
+        try{            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
+        }
+        catch (Exception e){
+            checkoutForRegisteredPage.fillInShippingInformationInputField(
+                    XmlReader.getXMLData("firstName"),
+                    XmlReader.getXMLData("lastName"),
+                    XmlReader.getXMLData("phoneNumber"),
+                    XmlReader.getXMLData("AddressName"),
+                    XmlReader.getXMLData("StreetOneAddressName"),
+                    XmlReader.getXMLData("StreetTwoAddressName")
+            );
+        }
+                DataHelperAndWait.waitForTime(2000);
+        kSA.clickOnContinueBtn();
         WebElementsAssertion.validateTheElementIsDisplayed(kSA.getPickupInStoreMethod(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(kSA.getDoorToDoorMethod(),webDriver);
 
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that each of COD & Credit Card Payment methods appear correctly", priority = 25)
     public void verifyEachOfCODAndCreditCardPaymentMethodCorrectly() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
+//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
-        guestCheckoutCyclePage.navigateToCheckoutPage();
+        kSA.navigateToCheckoutPage();
         try{
             DataHelperAndWait.clickOnElement(registeredPage.getSavedAddressOption(),webDriver);
         }
@@ -607,11 +482,12 @@ cartPage.clearCart();        }
                     XmlReader.getXMLData("StreetTwoAddressName"));
         }
                 DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        kSA.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCreditCardPaymentMethod(),webDriver);
+        DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
+        kSA.waitTillLoaderComplete();
+        WebElementsAssertion.validateTheElementIsDisplayed(kSA.getCODPaymentMethod(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(kSA.getCreditCardPaymentMethod(),webDriver);
     }
 
 }

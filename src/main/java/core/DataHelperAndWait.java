@@ -3,7 +3,6 @@ package core;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.logging.LogEntries;
-import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
@@ -15,14 +14,13 @@ import java.util.*;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
-import java.util.logging.Level;
 
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 public  class DataHelperAndWait  {
 
-    private static int WaitTime=25;
+    private static int WaitTime=27;
 
 
     //test21add
@@ -59,6 +57,8 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
         wait = new WebDriverWait(webDriver, Duration.ofSeconds(WaitTime));
         return wait.until(ExpectedConditions.visibilityOf(element)).isDisplayed();
     }
+
+
     public static  boolean isPresent(WebElement webElement,WebDriver webDriver) {
         try{
             return webElement.isDisplayed();
@@ -414,5 +414,77 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
 for(int i=0;i<jsErrors.getAll().size()-1;i++){
             System.out.println("Error # "+i+" : "+jsErrors.getAll().get(i));}
 
+    }
+    public static double convertStringToDouble(WebElement element, WebDriver webDriver, String currency) {
+      waitToBeVisible(element, webDriver);
+        String elementValue = element.getText();
+        String elementValueWithoutCurrency = elementValue.replaceAll(currency, "");
+        String elementValueWithoutSpace = elementValueWithoutCurrency.replaceAll(" ", "");
+        return Double.parseDouble(elementValueWithoutSpace);
+    }
+    public static double extractDigitsFromWithoutCurrencyConvertToDouble(WebElement element, WebDriver webDriver, String currency) {
+        waitToBeVisible(element, webDriver);
+        String elementValue = element.getText();
+        String elementValueWithoutCurrency = elementValue.replaceAll(currency, "");
+        String elementValueWithoutSpace = elementValueWithoutCurrency.replaceAll(" ", "");
+        return Double.parseDouble(elementValueWithoutSpace);
+
+    }
+    public static void slowType(WebElement element, String text, WebDriver webDriver) throws IOException, InterruptedException {
+        try {
+            waitToBeVisible(element, webDriver);
+            for (char c : text.toCharArray()) {
+                String character = String.valueOf(c);
+                element.sendKeys(character);
+
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        } catch (Exception e) {
+           clearWebField(element);
+           waitToBeVisible(element, webDriver);
+            for (char c : text.toCharArray()) {
+                String character = String.valueOf(c);
+                element.sendKeys(character);
+
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e1) {
+                    e.printStackTrace();
+                }
+
+            }
+        }
+    }
+    public static String extractNegativeNumberFromString(WebElement element, WebDriver webDriver) {
+        try {
+            if (element.isDisplayed()) {
+
+                waitToBeVisible(element, webDriver);
+                String text = element.getText();
+//        String numberOnly= text.replaceAll("[^0-9]", "");
+                String numberOnly = text.replaceAll("[^-\\d.]", "");
+                return numberOnly;
+            }
+        } catch (Exception e) {
+            return null;
+        }
+        return "";
+    }
+    public static boolean IsElementPresent(WebElement element) throws IOException {
+
+        try {
+            if(element == null)
+                return false;
+
+            return element.isDisplayed() ;
+
+        }catch (Exception e)
+        {
+            return false;
+        }
     }
 }

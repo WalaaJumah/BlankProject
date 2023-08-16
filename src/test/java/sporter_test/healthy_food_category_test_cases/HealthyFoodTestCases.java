@@ -29,23 +29,20 @@ public class HealthyFoodTestCases extends BaseTest {
 
     @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure clicking on the Healthy Food Category Appears In MegaMenu Redirect User To CorrectURL", priority = 2)
     public void verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL() throws IOException {
-        SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         HealthyFoodPage healthyFoodPage = new HealthyFoodPage(webDriver);
         healthyFoodPage.navigateToHomePage();
-
         healthyFoodPage.clickOnHealthyFoodMainMenu();
-        sportsSupplementsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        healthyFoodPage.verifyTheDisplayedPageDoesNotHaveErrors();
         WebElementsAssertion.validateTheCurrentUrlContainsString(healthyFoodPage.healthyFoodsUrl, webDriver);
     }
 
     //TODO: Needs to recheck on KSA after solve the webelement ID in Arabic By Moamen
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure clicking on the Healthy Food Category from ShopBy Menu Redirect User To CorrectURL", priority = 3)
     public void verifyClickingOnHealthyFoodCategoryFromShopByMenuRedirectUserToCorrectURL() throws IOException {
-        SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         HealthyFoodPage healthyFoodPage = new HealthyFoodPage(webDriver);
         healthyFoodPage.clickOnHealthyFoodFromShopByMenu();
-        sportsSupplementsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.healthyFoodsUrl, webDriver);
+        healthyFoodPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        WebElementsAssertion.validateTheCurrentUrlContainsString(healthyFoodPage.healthyFoodsUrl, webDriver);
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure clicking on the Healthy Food Category from HomePage Redirect User To CorrectURL", priority = 4)
@@ -143,7 +140,6 @@ public class HealthyFoodTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Healthy Food Category- Verify that the search button works correctly from the Healthy Food category page", priority = 13)
     public void verifySearchBtnWorksCorrectlyFromHealthyFoodCategoryPage() throws IOException {
         HealthyFoodPage healthyFoodPage = new HealthyFoodPage(webDriver);
-        SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         healthyFoodPage.navigateToHealthyFoodPage();
         DataHelperAndWait.typeTextInElement(productDetailsPage.getSearchField(),webDriver,"Basic");
@@ -185,7 +181,6 @@ public class HealthyFoodTestCases extends BaseTest {
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure all secure tabs appears correctly(100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks)", priority = 16)
     public void verifyAll3BlocksExistInThaPageBottomSectionAppearsCorrectlyInHealthyFoodCategoryPage() throws IOException {
         HealthyFoodPage healthyFoodPage = new HealthyFoodPage(webDriver);
-        SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         FooterSection footerSection = new FooterSection(webDriver);
         healthyFoodPage.navigateToHealthyFoodPage();
         for (int i = 0; i < footerSection.getPageBottomBlocksList().size(); i++) {
@@ -218,7 +213,6 @@ public class HealthyFoodTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure ability to navigate to the home page by clicking on the sporter logo  ", priority = 18)
     public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromPdp() throws IOException {
         HealthyFoodPage healthyFoodPage = new HealthyFoodPage(webDriver);
-        SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         HeaderSection headerSection = new HeaderSection(webDriver);
         HomePage homePage = new HomePage(webDriver);
         healthyFoodPage.navigateToHealthyFoodPage();

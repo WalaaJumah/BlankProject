@@ -47,8 +47,7 @@ public class JordanCartTestCases extends CartTestCases {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 26)
     public void verifyOrderTotalCalculationInCartPageWorksCorrectly() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-//        cartPage.addToCartAndDisplayTheCart();
-        cartPage.addToCartAndDisplayTheCart();
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         float subTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue(), webDriver, "JOD");
         float tax = DataHelperAndWait.convertTheStringToFloat(cartPage.getTaxValue(), webDriver, "JOD");
         float orderTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(), webDriver, "JOD");
@@ -66,9 +65,10 @@ public class JordanCartTestCases extends CartTestCases {
     }
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Free Gift is removed from the cart when you remove the product For Bogo", priority = 12)
-    public void verifyTheFreeGiftIsRemovedWhenRemovingTheProductForBogo() {
+    public void verifyTheFreeGiftIsRemovedWhenRemovingTheProductForBogo() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
+        cartPage.addBogoToCartAndDisplayTheCart();
         try {
             WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getFreeFromSporterLabelInProductCard(), webDriver);
             WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getNoItemInCartLabel(), webDriver);
@@ -92,35 +92,8 @@ catch (Exception e){
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that all payment methods are appear correctly in the Cart page", priority = 21)
     public void verifyAllPaymentMethodAppearingTheCartPage() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-//        cartPage.addToCartAndDisplayTheCart();
-        cartPage.addToCartAndDisplayTheCart();
-        DataHelperAndWait.waitForTime(1000);
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getWeAcceptLabel(), webDriver);
-//        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCODOption(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCreditCardOption(), webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
     }
-
-    @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure that the view Cart button appearing in the Cart pop-up works correctly", priority = 7)
-    public void verifyAbilityToViewCartFromCartIcon() throws IOException {
-        CartPage cartPage = new CartPage(webDriver);
-        cartPage.navigateToHomePage();
-        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getViewCartInCartPopup(), webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.cartURL, webDriver);
-    }
-
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Verify ability to display the product from the Cart Page works successfully", priority = 19)
-    public void verifyAbilityToDisplayTheProductFromTheCartPage() throws IOException {
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        CartPage cartPage = new CartPage(webDriver);
-        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
-        DataHelperAndWait.clickOnElement(cartPage.getProductNameForOneProduct(), webDriver);
-        DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductName(), webDriver);
-        WebElementsAssertion.validateTheCurrentUrlNotContainsString(cartPage.cartURL, webDriver);
-        cartPage.navigateToCartPage();
-        webDriver.manage().deleteCookieNamed("guestCartId");
-    }
-
 }

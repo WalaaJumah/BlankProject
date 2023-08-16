@@ -14,38 +14,39 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.time.Duration;
 
 public class BasePage {
 
-
+    private String pageTitle = null;
+    private String pageSource = null;
+    public String cartLoaderXpath = "//div[starts-with(@class,'loading_container')]";
+    public String pageLoader = "//div[starts-with(@class,'spinner_container')]";
+    public String loadingLayout = "//div[starts-with(@class,'loading_container')]";
     public static String BaseURL = "";
     public static String productUrl = "/optimum-gold-standard-100-whey-6202";
     public static String ksaDomainArabic = "/ar-sa";
     public static String productUrl9 = "/cellucor-c4-26162";
-//    public static String productUrl = "/optimum-gold-standard-100-whey";
 
-//    public void setStoreCountry(String storeCountry) {
-//        this.storeCountry = storeCountry;
-//    }
     public static String productUrl7 = "/dymatize-iso-100-7164/";
-//    public static String productUrl7 = "/dymatize-iso-100";
-    public static String productUrlKSA1 = "/the-pack-wild-pre-workout";
+    public static String productUrlKSA1 = "/fade-fit-protein-munchies-54805/";
     public static String productUrlKSA8 = "/the-pack-bcaas-flow-32569";
-//    public static String productUrlKSA8 = "/dymatize-iso-100";
-    public static String productUrlKSA2 = "/efx-karbolyn-fuel";
-    public static String productUrlKSA3 = "/windmill-natural-vitamins-omega-3-1000mg-with-epa-dha";
+    public static String productUrlKSA2 = "/organic-larder-corn-in-brine-25129/";
+    public static String productUrlKSA3 = "/ellas-kitchen-organic-mangoes-puree-baby-pouch-58615/";
     public static String productUrlKSA4 = "/evl-nutrition-bcaa-5000-capsules-13934/";
     public static String productUrlKSA5 = "/novo-protein-chips-box-of-6/";
     public static String productUrlKSA6 = "/yumearth-organic-assorted-vitamin-c-lollipops-14-pops";
     public static String productUrlKSAWithHighPrice1 = "/puma-speed-orbiter-black-nrgy-red-yellow-33980";
     public static String productUrlKSAWithHighPrice2 = "/puma-speed-orbiter-black-nrgy-red-yellow-33764/";
     public static String productUrlKSAWithHighPrice3 = "/muscletech-nitro-tech-performance-series-16114/";
-    public static String productUrlEgypt = "/optimum-serious-mass-6230";
+    public static String productUrlEgypt = "/optimum-serious-mass-6230/";
     public static String productUrlJordan = "/optimum-gold-standard-100-whey";
     public static String productUrlJordan7 = "/optimum-gold-standard-100-whey";
     public static String productUrlJordanWithLowPrice = "/jack-links-beef-jerky-54840/";
@@ -59,6 +60,10 @@ public class BasePage {
     public static String bundleUrl = "";
     public static String bogoProduct = "";
     public final String aeDomain = "/en-ae";
+    public final String aeArabicCurrency = "د.إ";
+    public final String aeEnglishCurrency = "AED";
+    public final String kSAEnglishCurrency = "SAR";
+    public final String kSAArabicCurrency = "ر.س";
     public final String omanDomain = "/en-om";
     public final String bahrainDomain = "/en-bh";
     public final String iraqDomain = "/en-iq";
@@ -163,16 +168,30 @@ public class BasePage {
         this.webDriver = webDriver;
     }
 
-    public String getTitle() {
-//        DataHelperAndWait.waitForTime(500);
-        return webDriver.getTitle();
+//    public String getTitle() {
+////        DataHelperAndWait.waitForTime(500);
+//        return webDriver.getTitle();
+//    }
+//
+//    public String getSourcePage() {
+////        DataHelperAndWait.waitForTime(500);
+//        return webDriver.getPageSource();
+//    }
+public String getTitle() {
+//        WaitHelper.waitForTime(500);
+    if (pageTitle == null) {
+        pageTitle = webDriver.getTitle();
     }
+    return pageTitle;
+}
 
     public String getSourcePage() {
-//        DataHelperAndWait.waitForTime(500);
-        return webDriver.getPageSource();
+//        WaitHelper.waitForTime(500);
+        if (pageSource == null) {
+            pageSource = webDriver.getPageSource();
+        }
+        return pageSource;
     }
-
     public void getStatusCode(String uRL) throws IOException {
         HttpURLConnection cn = (HttpURLConnection) new
                 URL(uRL)
@@ -186,7 +205,6 @@ public class BasePage {
 
     public void verifyTheDisplayedPageDoesNotHaveErrors() throws IOException {
         String currentURL = webDriver.getCurrentUrl();
-        System.out.println(" The current URL is: " + webDriver.getCurrentUrl());
         try {
             Assert.assertFalse(this.getTitle().equalsIgnoreCase(SporterErrorPage.pageNotFoundTitle), "Page Not Found Is Displayed and the URL is " + webDriver.getCurrentUrl());
             Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.productsCannotFindMsg), "The page is empty and the URL is " + webDriver.getCurrentUrl());
@@ -219,7 +237,10 @@ public class BasePage {
             this.getStatusCode(currentURL);
         }
     }
-
+    public void checkIfProductOOS()  {
+            Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.OOSMsgEn), "The product is OOS " + webDriver.getCurrentUrl());
+            Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.OOSMsgAr), "The product is OOS " + webDriver.getCurrentUrl());
+    }
     public void navigateToBogoProduct() {
         if (webDriver.getCurrentUrl().contains("ar-sa/")) {
             webDriver.navigate().to(BaseURL + bogoUrlKSA);
@@ -282,7 +303,14 @@ public class BasePage {
         webDriver.navigate().to(BaseURL);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
+    public void waitTillLoaderComplete(){
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(50));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(this.loadingLayout)));
+    }
+    public  void waitTillCartSpinnerDisappear(WebDriver webDriver) {
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(50));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(this.pageLoader)));
 
-
+    }
 }
 

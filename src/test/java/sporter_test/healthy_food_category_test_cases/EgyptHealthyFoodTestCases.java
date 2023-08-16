@@ -33,10 +33,9 @@ public class EgyptHealthyFoodTestCases extends HealthyFoodTestCases {
 
     @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure clicking on the Healthy Food Category Appears In MegaMenu Redirect User To CorrectURL", priority = 2)
     public void verifyClickingOnHealthyFoodCategoryAppearsInMegaMenuRedirectUserToCorrectURL() throws IOException {
-        SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         EgyptHealthyFoodPage egyptHealthyFoodPage = new EgyptHealthyFoodPage(webDriver);
         egyptHealthyFoodPage.clickOnHealthyFoodMainMenu();
-        sportsSupplementsCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        egyptHealthyFoodPage.verifyTheDisplayedPageDoesNotHaveErrors();
         WebElementsAssertion.validateTheCurrentUrlContainsString(egyptHealthyFoodPage.healthyFoodsUrl, webDriver);
     }
 @Test(enabled = false)    public void verifyClickingOnHealthyFoodCategoryFromHomePageRedirectUserToCorrectURL() throws IOException {

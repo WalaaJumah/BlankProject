@@ -7,20 +7,24 @@
 package sporter_pages.checkoutForRegisteredUserTPage;
 
 import core.DataHelperAndWait;
+import lombok.Getter;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import sporter_pages.cartPages.CartPage;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import xml_reader.XmlReader;
 
 import java.io.IOException;
-
+@Getter
 public class EgyptCheckoutForRegisteredPage extends CheckoutForRegisteredPage {
     public EgyptCheckoutForRegisteredPage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
     }
-
+    @FindBy(id = "matrixrate_free")
+    private WebElement nextDayMethod;
     public void AddToCartAndAccessShippingMethodsPageForEgypt() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);

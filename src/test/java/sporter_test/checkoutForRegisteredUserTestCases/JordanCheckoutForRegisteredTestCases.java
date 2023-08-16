@@ -9,8 +9,6 @@ package sporter_test.checkoutForRegisteredUserTestCases;
 import core.BasePage;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -20,7 +18,6 @@ import sporter_pages.checkoutForRegisteredUserTPage.JordanCheckoutForRegisteredP
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import sporter_pages.guestCheckoutCyclePages.JordanGuestCheckoutCyclePage;
 import sporter_pages.homepage_classes.JordanHomePage;
-import sporter_test.guestCheckoutCycleTestCases.GuestCheckoutCycleTestCases;
 import xml_reader.XmlReader;
 
 import java.io.IOException;
@@ -32,12 +29,8 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
     public void switchToJordanStore(){
         JordanHomePage jordanHomePage=new JordanHomePage(webDriver);
         jordanHomePage.switchCountry(jordanHomePage.getJordanCountry());
-        if(webDriver.getCurrentUrl().contains(jordanHomePage.jordanDomain)){
-            System.out.println("You are in Jordan Store");
-        }
-        else {
+        if(!webDriver.getCurrentUrl().contains(jordanHomePage.jordanDomain)){
             webDriver.navigate().to(BasePage.BaseURL+jordanHomePage.jordanDomain);
-            //CloseInitialDialog();
             System.out.println(webDriver.getCurrentUrl());
         }
         storeCountry="Jordan";
@@ -56,25 +49,16 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
         try{
             cartPage.clearCart();}
         catch (Exception e){
-            System.out.println("");
         }
     }
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:Make sure the Guest user can filling the shipping information and clicking on the Continue button correctly", priority = 19)
     public void verifyTheRegisteredUserCanFillTheShippingInformationCorrectly() throws IOException {
-        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        try{
-            cartPage.clearCart();}
-        catch (Exception e){
-            System.out.println("");
-        }
-        cartPage.addToCartAndDisplayTheCart();
-        cartPage.navigateToHomePage();
-        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
-        try{            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        cartPage.proceedToCheckout();
+        try{            DataHelperAndWait.clickOnElement(jo.getSavedAddressOption(),webDriver);
         }
         catch (Exception e){
             jo.fillInShippingInformationInputField(
@@ -112,22 +96,11 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that each of COD & Credit Card Payment methods appear correctly", priority = 24)
     public void verifyEachOfCODAndCreditCardPaymentMethodCorrectly() throws IOException {
         JordanGuestCheckoutCyclePage guestCheckoutCyclePage = new JordanGuestCheckoutCyclePage(webDriver);
-//        guestCheckoutCyclePage.viewCartAndAccessShippingMethodsPage();
-        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-//        cartPage.navigateToCartPage();
-//        cartPage.removeItem();
-//        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        try{
-            cartPage.clearCart();}
-        catch (Exception e){
-            System.out.println("");
-        }
-
-        cartPage.addToCartAndDisplayTheCart();
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         cartPage.proceedToCheckout();
-        try{            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
+        try{            DataHelperAndWait.clickOnElement(jo.getSavedAddressOption(),webDriver);
         }
         catch (Exception e){
             jo.fillInShippingInformationInputField(
@@ -148,21 +121,11 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure Inability to continue the placing order process using invalid Credit Card", priority = 30)
     public void verifyInabilityToUseInvalidCreditCardPaymentMethod() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-//        cartPage.navigateToCartPage();
-//        cartPage.removeItem();
-//        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        try{
-            cartPage.clearCart();}
-        catch (Exception e){
-            System.out.println("");
-        }
-
-        cartPage.addToCartAndDisplayTheCart();
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         cartPage.proceedToCheckout();
-        try{            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
+        try{            DataHelperAndWait.clickOnElement(jo.getSavedAddressOption(),webDriver);
         }
         catch (Exception e){
             jo.fillInShippingInformationInputField(
@@ -184,12 +147,10 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
     }
     @Test(enabled = false,groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when using a Free Coupon Code ", priority = 81)
     public void verifyAbilityToPlaceOrderWhenUsingFreeCouponCode() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         JordanGuestCheckoutCyclePage jordanGuestCheckoutCyclePage= new JordanGuestCheckoutCyclePage(webDriver);
         JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
-        CheckoutForRegisteredPage checkoutForRegisteredPage= new CheckoutForRegisteredPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         try{
         DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
@@ -213,14 +174,14 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
        
             }
         catch (Exception e){
-                DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver); }
+                DataHelperAndWait.clickOnElement(jo.getSavedAddressOption(),webDriver); }
                 DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        jordanGuestCheckoutCyclePage.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(jordanGuestCheckoutCyclePage.getFiveBusinessDays(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCreditCardPaymentMethod(),webDriver);
-        guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(jordanGuestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(jordanGuestCheckoutCyclePage.getCreditCardPaymentMethod(),webDriver);
+        jordanGuestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
+        DataHelperAndWait.clickOnElement(jordanGuestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
 //        guestCheckoutCyclePage.submitSecureAndAuthenticationCheckout();
 //        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getSuccessPage(),webDriver);
 //        orderNumberCOD= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
@@ -229,28 +190,12 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting 5 Business Days Super Express Shipping Method With Credit Card Payment Method ", priority = 501)
     public void verifyAbilityToPlaceOrderWhenSelecting5BusinessDaysSuperExpressShippingMethodWithCreditCardPaymentMethod() throws IOException {
         JordanGuestCheckoutCyclePage guestCheckoutCyclePage = new JordanGuestCheckoutCyclePage(webDriver);
-//        guestCheckoutCyclePage.viewCartAndAccessShippingMethodsPage();
-        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-//        cartPage.navigateToCartPage();
-//        cartPage.removeItem();
-//        checkoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
-        try{
-            cartPage.clearCart();}
-        catch (Exception e){
-            System.out.println("");
-        }
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        cartPage.proceedToCheckout();
 
-        cartPage.addToCartAndDisplayTheCart();
-        try{
-        cartPage.proceedToCheckout();}
-        catch (Exception e){
-            cartPage.navigateToHomePage();
-            DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
-            DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
-        }
-        try{            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
+        try{            DataHelperAndWait.clickOnElement(jo.getSavedAddressOption(),webDriver);
         }
         catch (Exception e){
             jo.fillInShippingInformationInputField(
@@ -273,19 +218,9 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Continue button appears in the Payment Methods screen is disable when no shipping method is selected", priority = 25)
     public void verifyContinueBtnAppearsInPaymentMethodsIsDisableWhenNoMethodSelected() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-//        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
-//        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-//        WebElementsAssertion.assertionElementNotEnable(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
-        try{
-            cartPage.clearCart();}
-        catch (Exception e){
-            System.out.println("");
-        }
-        cartPage.addToCartAndDisplayTheCart();
-        cartPage.navigateToHomePage();
+       cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
         try{
@@ -299,7 +234,7 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
        
         }
         catch (Exception e){
-            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
+            DataHelperAndWait.clickOnElement(jo.getSavedAddressOption(),webDriver);
         }
         DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
@@ -309,19 +244,11 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
     }
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Continue button appears in the Shipping Methods screen is disable when no shipping method is selected", priority = 21)
     public void verifyContinueBtnAppearsInShippingMethodsIsDisableWhenNoMethodSelected() throws IOException {
-        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        try{
-            cartPage.clearCart();}
-        catch (Exception e){
-            System.out.println("");
-        }
-        cartPage.addToCartAndDisplayTheCart();
-        cartPage.navigateToHomePage();
-        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        cartPage.proceedToCheckout();
         try{
             jo.fillInShippingInformationInputField(
                     XmlReader.getXMLData("firstName"),
@@ -333,29 +260,20 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
        
         }
         catch (Exception e){
-            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
+            DataHelperAndWait.clickOnElement(jo.getSavedAddressOption(),webDriver);
         }
         DataHelperAndWait.waitForTime(2000);
         guestCheckoutCyclePage.clickOnContinueBtn();
-//        WebElementsAssertion.assertionElementNotEnable(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
     }
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:Verify Edit Shipping information button works fine", priority = 22)
     public void verifyTheEditShippingInfoBtnWorksFine() throws IOException {
-        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        cartPage.proceedToCheckout();
         try{
-            cartPage.clearCart();}
-        catch (Exception e){
-            System.out.println("");
-        }
-        cartPage.addToCartAndDisplayTheCart();
-        cartPage.navigateToHomePage();
-        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
-        try{
-            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
+            DataHelperAndWait.clickOnElement(jo.getSavedAddressOption(),webDriver);
         }
         catch (Exception e){
 
@@ -374,19 +292,11 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
     }
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:Make sure the Registered user cannot submit the shipping information when the phone number length is small ", priority = 17)
     public void verifyTheRegisteredUserCannotSubmitTheShippingInformationWhenPhoneFieldHaveSmallTextLength() throws IOException {
-        CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        try{
-            cartPage.clearCart();}
-        catch (Exception e){
-            System.out.println("");
-        }
-        cartPage.addToCartAndDisplayTheCart();
-        cartPage.navigateToHomePage();
-        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        cartPage.proceedToCheckout();
         try{
             jo.fillInShippingInformationInputField(
                     XmlReader.getXMLData("firstName"),
@@ -400,7 +310,7 @@ public class JordanCheckoutForRegisteredTestCases extends CheckoutForRegisteredT
             WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getPhoneErrMsg(),webDriver);
         }
         catch (Exception e){
-            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
+            DataHelperAndWait.clickOnElement(jo.getSavedAddressOption(),webDriver);
         }
 
     }

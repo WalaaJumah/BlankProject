@@ -12,7 +12,6 @@ import core.WebElementsAssertion;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.cartPages.CartPage;
-import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.KsaHomePage;
 import sporter_pages.productPage.ProductDetailsPage;
 
@@ -24,22 +23,14 @@ public class KSACartRulesTestCases extends CartRulesTestCases {
     @BeforeClass(alwaysRun = true)
     public void switchToKsaStore() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
-        HeaderSection headerSection = new HeaderSection(webDriver);
         ksaHomePage.switchCountry(ksaHomePage.getKsaCountry());
-        if (webDriver.getCurrentUrl().contains(ksaHomePage.saudiDomain)) {
-            System.out.println("You are in KSA Store");
-        } else {
+        if (!webDriver.getCurrentUrl().contains(ksaHomePage.saudiDomain)) {
             webDriver.navigate().to(BasePage.BaseURL +BasePage.ksaDomainArabic);
-            //CloseInitialDialog();
         }
-        try {
-            WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage, webDriver);
-        }
-        catch (Exception e){
+        if(!webDriver.getCurrentUrl().contains(websiteArabicLanguage)) {
             webDriver.navigate().to(BasePage.BaseURL +BasePage.ksaDomainArabic);
             WebElementsAssertion.validateTheCurrentUrlContainsString(websiteArabicLanguage, webDriver);
         }
-        System.out.println(webDriver.getCurrentUrl());
         storeCountry = "المملكة العربية السعودية";
         countryCode = "966";
     }

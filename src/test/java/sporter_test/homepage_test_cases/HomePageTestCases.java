@@ -96,9 +96,7 @@ public class HomePageTestCases extends BaseTest {
         HomePage homePage = new HomePage(webDriver);
         DataHelperAndWait.scrollToPositionZero(webDriver);
         homePage.navigateToHomePage();
-        String expectedUrl = homePage.getFirstSideBanner().getAttribute("href");
         homePage.clickOnFirstSideBanner();
-//        WebElementsAssertion.validateTheCurrentUrlContainsString(expectedUrl, webDriver);
         homePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
@@ -108,9 +106,7 @@ public class HomePageTestCases extends BaseTest {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
         DataHelperAndWait.scrollToPositionZero(webDriver);
-        String expectedUrl = homePage.getSecondSideBanner().getAttribute("href");
         homePage.clickOnSecondSideBanner();
-//        WebElementsAssertion.validateTheCurrentUrlContainsString(expectedUrl, webDriver);
         homePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
@@ -119,7 +115,7 @@ public class HomePageTestCases extends BaseTest {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getHomePageHorizontalBanner(), webDriver);
-        String expectedUrl = homePage.getHomePageHorizontalBanner().getAttribute("href");
+//        String expectedUrl = homePage.getHomePageHorizontalBanner().getAttribute("href");
         homePage.clickOnHomePageHorizontalBanner();
 //        WebElementsAssertion.validateTheCurrentUrlContainsString(expectedUrl, webDriver);
         homePage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -172,7 +168,7 @@ public class HomePageTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}: Make sure clicking on the view all button from the Top Selling Stacks section works correctly ", priority = 16)
     public void verifyViewAllBtnInTopSellingStacksSectionWorking() throws IOException {
         HomePage homePage = new HomePage(webDriver);
-        String expectedUrl = homePage.getViewAllBtnInTopSellingStacksSection().getAttribute("href");
+//        String expectedUrl = homePage.getViewAllBtnInTopSellingStacksSection().getAttribute("href");
         homePage.clickOnViewAllBtnInTopSellingStacksSection();
 //        WebElementsAssertion.validateTheCurrentUrlContainsString(expectedUrl, webDriver);
         homePage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -342,7 +338,7 @@ public class HomePageTestCases extends BaseTest {
             System.out.println("There's no any products in the list");
         } else {
             for (int i = 0; i < homePage.getCategoriesInsideTrendingOnSporterSection().size(); i++) {
-                String expectedUrl = homePage.getCategoriesInsideTrendingOnSporterSection().get(i).getAttribute("href");
+//                String expectedUrl = homePage.getCategoriesInsideTrendingOnSporterSection().get(i).getAttribute("href");
                 DataHelperAndWait.clickOnElement(homePage.getCategoriesInsideTrendingOnSporterSection().get(i), webDriver);
                 homePage.verifyTheDisplayedPageDoesNotHaveErrors();
                 homePage.navigateToHomePage();

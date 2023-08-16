@@ -10,7 +10,6 @@ import core.BasePage;
 import org.testng.annotations.BeforeClass;
 import sporter_pages.homepage_classes.EgyptHomePage;
 import sporter_pages.myAccountPages.KuwaitMyAccountPage;
-import sporter_test.headerTestCases.HeaderTestCases;
 
 public class KuwaitFooterTestCases extends FooterTestCases {
     @BeforeClass(alwaysRun = true)

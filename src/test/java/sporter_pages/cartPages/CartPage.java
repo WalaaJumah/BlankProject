@@ -17,6 +17,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.productPage.ProductDetailsPage;
@@ -29,8 +30,6 @@ import java.util.List;
 @Getter
 public class CartPage extends BasePage {
     ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-    HomePage homePage = new HomePage(webDriver);
-    HeaderSection headerSection = new HeaderSection(webDriver);
     DataHelperAndWait dataHelperAndWait;
     //declare all locators related to the Cart Page
     @FindBy(id = "CartIconContainerqty")
@@ -57,6 +56,8 @@ public class CartPage extends BasePage {
     private WebElement noItemInCartLabel;
     @FindBy(id = "CartIconContainerqty")
     private WebElement cartCounter;
+    @FindBy(xpath = "//span[starts-with(@class,'spinner_loader')]")
+    private WebElement cartSpinner;
     //TODO: To replace it with ID after added it by Moamen
 //    @FindBy(css = "#FaShoppingCart > path")
 //    private WebElement cartIcon;
@@ -67,7 +68,7 @@ public class CartPage extends BasePage {
     @FindBy(id = "checkoutbtn")
     private WebElement proceedCheckoutBtnInCartPopup;
     //TODO: To replace it with ID after added it by Moamen
-    @FindBy(xpath = "//div[@id='cartPageContainer']//a")
+    @FindBy(xpath = "//a[starts-with(@class,'cartPage_link')]")
     private WebElement hereLink;
     @FindBy(xpath = "(//div[@id='decreaseQtyBtn'])[1]")
     private WebElement decreaseQtyBtn;
@@ -179,20 +180,22 @@ public class CartPage extends BasePage {
 
         }
     }
+    public  void waitTillCartSpinnerDisappear(WebDriver webDriver) {
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(50));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(this.cartLoaderXpath)));
 
+    }
     public void addToCartAndDisplayTheCart() throws IOException {
-        try {
-            clearCart();
+        if(IsEmptyCart()) {
             productDetailsPage.displayTheProduct();
-            System.out.println("After Didsplay Product");
-
             productDetailsPage.addToCart();
             productDetailsPage.viewCart();
-        } catch (Exception e) {
-            navigateToCartPage();
         }
     }
-
+    public void navigateToCartOrAddProductToItInCaseTheCartIsEmpty() throws IOException {
+        if(IsEmptyCart())
+            addToCartAndDisplayTheCart();
+    }
     public void addToCartAndDisplayTheCartForOos() throws IOException {
         productDetailsPage.displayTheProductHaveLessQty();
         productDetailsPage.addToCart();
@@ -226,6 +229,7 @@ public class CartPage extends BasePage {
             webDriver.navigate().to(BaseURL + cartURL);
             verifyTheDisplayedPageDoesNotHaveErrors();
             DataHelperAndWait.waitForUrlContains(cartURL, webDriver);
+            this.waitTillCartSpinnerDisappear(webDriver);
         }
         catch (Exception e){
             this.addToCartAndDisplayTheCart();
@@ -236,6 +240,20 @@ public class CartPage extends BasePage {
 
     }
 
+    public boolean IsEmptyCart() throws IOException {
+        navigateToCartPage();
+        try {
+            if(hereLink == null)
+                return false;
+
+            return hereLink.isDisplayed() ;
+
+        }catch (Exception e)
+        {
+            return false;
+        }
+    }
+
     public void addBundleToCartAndDisplayTheCart() throws IOException {
         productDetailsPage.displayBundle();
         productDetailsPage.addToCart();
@@ -243,16 +261,14 @@ public class CartPage extends BasePage {
     }
 
     public void removeItem() {
+        this.waitTillCartSpinnerDisappear(webDriver);
         DataHelperAndWait.waitToBeClickable(this.removeItemBtn, webDriver);
-        this.removeItemBtn.click();}
+        this.removeItemBtn.click();
+        this.waitTillCartSpinnerDisappear(webDriver);    }
 
     public void clearCart() throws IOException {
-        try {
-            this.navigateToCartPage();
+        if(IsEmptyCart())
             this.removeItem();
-        } catch (Exception e) {
-            System.out.println("");
-        }
     }
 
     public void removeAllItems(int productNumber) {
@@ -289,15 +305,28 @@ public class CartPage extends BasePage {
     }
 
     public void proceedToCheckout() throws IOException {
-        try{
-            DataHelperAndWait.waitToBeVisible(this.getProceedCheckoutBtn(),webDriver);
-            DataHelperAndWait.clickOnElement(this.getProceedCheckoutBtn(),webDriver);
-        }
-        catch (Exception e){
-            navigateToHomePage();
-            DataHelperAndWait.clickOnElement(this.cartIcon,webDriver);
-            DataHelperAndWait.clickOnElement(this.proceedCheckoutBtnInCartPopup,webDriver);
+        this.waitTillCartSpinnerDisappear(webDriver);
+        DataHelperAndWait.waitToBeVisible(this.getProceedCheckoutBtn(),webDriver);
+        this.waitTillCartSpinnerDisappear(webDriver);
+        this.getProceedCheckoutBtn().click();
+        this.waitTillCartSpinnerDisappear(webDriver);
 
-        }
+//            DataHelperAndWait.clickOnElement(this.getProceedCheckoutBtn(),webDriver);
+//            DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getContinueShippingInfoBtn(),webDriver);
+//
+//        }
+//        catch (Exception e){
+//           webDriver.navigate().refresh();
+//            DataHelperAndWait.waitToBeVisible(this.getProceedCheckoutBtn(),webDriver);
+//            DataHelperAndWait.clickOnElement(this.getProceedCheckoutBtn(),webDriver);
+//        }
+    }
+    public void increaseQty() {
+        DataHelperAndWait.clickOnElement(getIncreaseQtyBtn(), webDriver);
+        waitTillCartSpinnerDisappear(webDriver);
+    }
+    public void decreaseQty(){
+        DataHelperAndWait.clickOnElement(getDecreaseQtyBtn(), webDriver);
+        waitTillCartSpinnerDisappear(webDriver);
     }
 }

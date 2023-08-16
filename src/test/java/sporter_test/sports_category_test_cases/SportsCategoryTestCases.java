@@ -52,7 +52,6 @@ public class SportsCategoryTestCases extends BaseTest {
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Category- Make sure clicking on the Sports Category from HomePage Redirect User To CorrectURL", priority = 3)
     public void verifyClickingOnSportsCategoryFromHomePageRedirectUserToCorrectURL() throws IOException {
-        SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(homePage.getSportsSupplementsCategory(), webDriver);

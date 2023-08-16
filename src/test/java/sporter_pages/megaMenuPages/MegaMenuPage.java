@@ -88,7 +88,8 @@ public class MegaMenuPage extends BasePage {
         try {
             DataHelperAndWait.waitToBeVisible(this.vitaminsAndHealthMenu, webDriver);
             actions.moveToElement(this.vitaminsAndHealthMenu).perform();
-            DataHelperAndWait.clickOnElement(this.vitaminsAndHealthMenu, webDriver);
+           this.vitaminsAndHealthMenu.click();
+//            DataHelperAndWait.clickOnElement(this.vitaminsAndHealthMenu, webDriver);
             verifyTheDisplayedPageDoesNotHaveErrors();
         } catch (Exception e) {
             DataHelperAndWait.waitToBeVisible(this.vitaminsAndHealthMenu, webDriver);

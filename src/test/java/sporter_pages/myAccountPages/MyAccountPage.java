@@ -13,6 +13,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 
 @Getter
 public class MyAccountPage extends BasePage {
@@ -128,6 +129,7 @@ public class MyAccountPage extends BasePage {
     }
 
     public void fillInNewAddressForm(String firstName, String lastName, String phone, String addressName, String streetLineOne, String streetLineTwo) {
+        GuestCheckoutCyclePage guestCheckoutCyclePage=new GuestCheckoutCyclePage(webDriver);
         DataHelperAndWait.waitToBeVisible(this.getFirstNameFieldInAddress(), webDriver);
         DataHelperAndWait.updateAllText(this.getFirstNameFieldInAddress(), firstName);
         DataHelperAndWait.waitToBeVisible(this.getLastNameFieldInAddress(), webDriver);
@@ -140,5 +142,6 @@ public class MyAccountPage extends BasePage {
         DataHelperAndWait.updateAllText(this.getStreet1Field(), streetLineOne);
         DataHelperAndWait.waitToBeVisible(this.getStreet2Field(), webDriver);
         DataHelperAndWait.updateAllText(this.getStreet2Field(), streetLineTwo);
+        guestCheckoutCyclePage.selectCity();
     }
 }
