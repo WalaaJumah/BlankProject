@@ -60,7 +60,7 @@ public class KSATamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         if(DataHelperAndWait.IsElementPresent(tamaraPaymentPage.getTamaraInstallmentsPaymentMethod()))
         WebElementsAssertion.validateTheElementIsDisplayed(tamaraPaymentPage.getTamaraInstallmentsPaymentMethod(), webDriver);
     }
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure the Installments Amounts In Tamara Page Are Matched With The Grand Total In Case Door To Door Shipping Method", priority = 2)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:GuestUser- Make sure the Installments Amounts In Tamara Page Are Matched With The Grand Total In Case Door To Door Shipping Method", priority = 2)
     public void verifyInstallmentsAmountsInTamaraPageAreMatchedWithTheGrandTotalForGuestUserInCaseDoorToDoorSuperExpressShippingMethod() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
@@ -158,7 +158,7 @@ public class KSATamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
 //        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         //guestCheckoutCyclePage.IsQouteIDisDisplayed();
     }
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure the Installments Amounts In Tamara Page Are Matched With The Grand Total In Case Pick Up In Store Shipping Method", priority = 11)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:GuestUser- Make sure the Installments Amounts In Tamara Page Are Matched With The Grand Total In Case Pick Up In Store Shipping Method", priority = 11)
     public void verifyInstallmentsAmountsInTamaraPageAreMatchedWithTheGrandTotalForGuestUserInCasePickUpInStoreShippingMethod() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
@@ -224,7 +224,7 @@ public class KSATamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         WebElementsAssertion.validateTheElementIsDisplayed(tamaraPaymentPage.getTamaraInstallmentsPaymentMethod(),webDriver);
     }
 
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting Door to Door Shipping Method With Tamara Payment Method Using 3DS Card ", priority = 14)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting Door to Door Shipping Method With Tamara Payment Method Using 3DS Card ", priority = 14)
     public void verifyAbilityToPlaceOrderWhenSelectingDoorToDoorShippingMethodWithTamaraPaymentMethodUsing3DSCardForForRegisteredUser() throws Exception, InterruptedException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
@@ -239,7 +239,7 @@ public class KSATamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(tamaraPaymentPage.ThreeCard);
         //guestCheckoutCyclePage.IsQouteIDisDisplayed();
     }
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting Door to Door Shipping Method With Tamara Payment Method Using Master Card ", priority = 15)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting Door to Door Shipping Method With Tamara Payment Method Using Master Card ", priority = 15)
     public void verifyAbilityToPlaceOrderWhenSelectingDoorToDoorShippingMethodWithTamaraPaymentMethodUsingMasterCardForForRegisteredUser() throws Exception, InterruptedException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
@@ -254,7 +254,7 @@ public class KSATamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(tamaraPaymentPage.MasterCard);
         //guestCheckoutCyclePage.IsQouteIDisDisplayed();
     }
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting Door to Door Shipping Method With Tamara Payment Method Using Decline Transaction Card ", priority = 16)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting Door to Door Shipping Method With Tamara Payment Method Using Decline Transaction Card ", priority = 16)
     public void verifyAbilityToPlaceOrderWhenSelectingDoorToDoorShippingMethodWithTamaraPaymentMethodUsingDeclineTransactionCardForForRegisteredUser() throws Exception, InterruptedException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
@@ -269,7 +269,7 @@ public class KSATamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(tamaraPaymentPage.DeclineTransactionCard);
         //guestCheckoutCyclePage.IsQouteIDisDisplayed();
     }
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting Door to Door Shipping Method With Tamara Payment Method Using Prepaid Card  ", priority = 17)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting Door to Door Shipping Method With Tamara Payment Method Using Prepaid Card  ", priority = 17)
     public void verifyAbilityToPlaceOrderWhenSelectingDoorToDoorShippingMethodWithTamaraPaymentMethodUsingDPrepaidCardForForRegisteredUser() throws Exception, InterruptedException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
@@ -286,7 +286,7 @@ public class KSATamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
             //guestCheckoutCyclePage.IsQouteIDisDisplayed();
         }
     }
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when Selecting PickUp In Store Shipping Method With Tamara Payment Method Using 3DS Card ", priority = 18)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when Selecting PickUp In Store Shipping Method With Tamara Payment Method Using 3DS Card ", priority = 18)
     public void verifyAbilityToPlaceOrderWhenSelectingPickUpInStoreShippingMethodWithTamaraPaymentMethodUsing3DSCardForForRegisteredUser() throws Exception, InterruptedException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
@@ -303,7 +303,7 @@ public class KSATamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
             //guestCheckoutCyclePage.IsQouteIDisDisplayed();
         }
     }
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when Selecting PickUp In Store Shipping Method With Tamara Payment Method Using Master Card ", priority = 19)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when Selecting PickUp In Store Shipping Method With Tamara Payment Method Using Master Card ", priority = 19)
     public void verifyAbilityToPlaceOrderWhenSelectingPickUpInStoreShippingMethodWithTamaraPaymentMethodUsingMasterCardForForRegisteredUser() throws Exception, InterruptedException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
@@ -320,7 +320,7 @@ public class KSATamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
             //guestCheckoutCyclePage.IsQouteIDisDisplayed();
         }
     }
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when Selecting PickUp In Store Shipping Method With Tamara Payment Method Using Decline Transaction Card ", priority = 20)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when Selecting PickUp In Store Shipping Method With Tamara Payment Method Using Decline Transaction Card ", priority = 20)
     public void verifyAbilityToPlaceOrderWhenSameDayExpressShippingMethodWithTamaraPaymentMethodUsingDeclineTransactionCardForForRegisteredUser() throws Exception, InterruptedException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TamaraPaymentPage tamaraPaymentPage = new TamaraPaymentPage(webDriver);

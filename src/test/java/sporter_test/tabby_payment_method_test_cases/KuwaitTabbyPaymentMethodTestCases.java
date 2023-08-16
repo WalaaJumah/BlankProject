@@ -71,7 +71,7 @@ public class KuwaitTabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCas
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(tabbyPaymentPage.getTabbyInstallmentsPaymentMethod(),webDriver);
     }
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when Selecting Express Delivery 3_5 Days Shipping Method With tabby Payment Method ", priority = 3)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when Selecting Express Delivery 3_5 Days Shipping Method With tabby Payment Method ", priority = 3)
     public void verifyAbilityToPlaceOrderWhenWhenSelectingExpressDelivery3_5DaysShippingMethodWithTabbyPaymentMethodForRegisteredUser() throws Exception, InterruptedException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
@@ -88,7 +88,7 @@ public class KuwaitTabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCas
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure inability to place Order successfully when Selecting Express Delivery 3_5 Days Shipping Method With tabby Payment Method using Negative Flow ", priority = 4)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure inability to place Order successfully when Selecting Express Delivery 3_5 Days Shipping Method With tabby Payment Method using Negative Flow ", priority = 4)
     public void verifyAbilityToPlaceOrderWhenWhenSelectingExpressDelivery3_5DaysShippingMethodWithTabbyPaymentMethodWithNegativeFlowForRegisteredUser() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
@@ -102,7 +102,7 @@ public class KuwaitTabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCas
         tabbyPaymentPage.submitTabbyInfoWithNegativeFlow();
     }
 
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure the Installments Amounts In Tabby Page Are Matched With The Grand Total", priority = 5)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure the Installments Amounts In Tabby Page Are Matched With The Grand Total", priority = 5)
     public void verifyInstallmentsAmountsInTabbyPageAreMatchedWithTheGrandTotalForRegisteredUser() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);

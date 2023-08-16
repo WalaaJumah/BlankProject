@@ -62,7 +62,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
 
         WebElementsAssertion.validateTheElementIsDisplayed(tamaraPaymentPage.getTamaraInstallmentsPaymentMethod(), webDriver);
     }
-        @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure the Installments Amounts In Tamara Page Are Matched With The Grand Total In Case 2Business Days Super Express Shipping Method", priority = 2)
+        @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:GuestUser- Make sure the Installments Amounts In Tamara Page Are Matched With The Grand Total In Case 2Business Days Super Express Shipping Method", priority = 2)
     public void verifyInstallmentsAmountsInTamaraPageAreMatchedWithTheGrandTotalForGuestUserInCase2BusinessDaysSuperExpressShippingMethod() throws Exception {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
@@ -192,7 +192,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
             System.out.println("Current time is after or equal to 2:00 PM");
         }
     }
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure the Installments Amounts In Tamara Page Are Matched With The Grand Total In Case Same Day Shipping Method", priority = 11)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:GuestUser- Make sure the Installments Amounts In Tamara Page Are Matched With The Grand Total In Case Same Day Shipping Method", priority = 11)
     public void verifyInstallmentsAmountsInTamaraPageAreMatchedWithTheGrandTotalForGuestUserInCaseSameDayShippingMethod() throws Exception {
         LocalTime currentTime = LocalTime.now();
         LocalTime targetTimeAM = LocalTime.of(23, 0);
@@ -263,7 +263,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         WebElementsAssertion.validateTheElementIsDisplayed(tamaraPaymentPage.getTamaraInstallmentsPaymentMethod(),webDriver);
     }
 
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Tamara Payment Method Using 3DS Card ", priority = 14)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Tamara Payment Method Using 3DS Card ", priority = 14)
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTamaraPaymentMethodUsing3DSCardForForRegisteredUser() throws Exception, InterruptedException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
@@ -276,7 +276,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(tamaraPaymentPage.ThreeCard);
 //guestCheckoutCyclePage.IsQouteIDisDisplayed();
     }
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Tamara Payment Method Using Master Card ", priority = 15)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Tamara Payment Method Using Master Card ", priority = 15)
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTamaraPaymentMethodUsingMasterCardForForRegisteredUser() throws Exception, InterruptedException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
@@ -289,7 +289,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(tamaraPaymentPage.MasterCard);
         //guestCheckoutCyclePage.IsQouteIDisDisplayed();
     }
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Tamara Payment Method Using Decline Transaction Card ", priority = 16)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Tamara Payment Method Using Decline Transaction Card ", priority = 16)
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTamaraPaymentMethodUsingDeclineTransactionCardForForRegisteredUser() throws Exception, InterruptedException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
@@ -302,7 +302,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(tamaraPaymentPage.DeclineTransactionCard);
         //guestCheckoutCyclePage.IsQouteIDisDisplayed();
     }
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Tamara Payment Method Using Prepaid Card  ", priority = 17)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Tamara Payment Method Using Prepaid Card  ", priority = 17)
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTamaraPaymentMethodUsingDPrepaidCardForForRegisteredUser() throws Exception, InterruptedException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
@@ -317,7 +317,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
             //guestCheckoutCyclePage.IsQouteIDisDisplayed();
         }
     }
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting Same Day Shipping Method With Tamara Payment Method Using 3DS Card ", priority = 18)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting Same Day Shipping Method With Tamara Payment Method Using 3DS Card ", priority = 18)
     public void verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTamaraPaymentMethodUsing3DSCardForForRegisteredUser() throws Exception, InterruptedException {
 //        LocalTime currentTime = LocalTime.now();
 //        LocalTime targetTimeAM = LocalTime.of(23, 0);
@@ -332,7 +332,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
 //        else
 //            System.out.println("Same Day Delivery is off in the current time");
     }
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting Same Day Shipping Method With Tamara Payment Method Using Master Card ", priority = 19)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting Same Day Shipping Method With Tamara Payment Method Using Master Card ", priority = 19)
     public void verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTamaraPaymentMethodUsingMasterCardForForRegisteredUser() throws Exception, InterruptedException {
         LocalTime currentTime = LocalTime.now();
         LocalTime targetTimeAM = LocalTime.of(23, 0);
@@ -347,7 +347,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         else
             System.out.println("Same Day Delivery is off in the current time");
     }
-    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting Same day Shipping Method With Tamara Payment Method Using Decline Transaction Card ", priority = 20)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting Same day Shipping Method With Tamara Payment Method Using Decline Transaction Card ", priority = 20)
     public void verifyAbilityToPlaceOrderWhenSameDayExpressShippingMethodWithTamaraPaymentMethodUsingDeclineTransactionCardForForRegisteredUser() throws Exception, InterruptedException {
         LocalTime currentTime = LocalTime.now();
         LocalTime targetTimeAM = LocalTime.of(23, 0);
