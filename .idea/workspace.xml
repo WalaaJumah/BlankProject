@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="464478ea-1e3f-4255-9918-5850b13a0bd5" name="Changes" comment=" Update Smoketestt.xml">
+    <list default="true" id="464478ea-1e3f-4255-9918-5850b13a0bd5" name="Changes" comment=" Update the Display product URL">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/QatarStore/QatarFull.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/QatarStore/QatarFull.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/RunTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RunTest.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -403,7 +404,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681634980163</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary=" Update the Display product URL">
+      <created>1692177244925</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1692177244925</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -457,10 +465,11 @@
     <MESSAGE value="Merge remote-tracking branch 'origin/New_Sporter2.1_Without_Implicit_Wait' into New_Sporter2.1_Without_Implicit_Wait&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/test/java/sporter_test/checkoutForRegisteredUserTestCases/CheckoutForRegisteredTestCases.java&#10;#&#9;src/test/resources/TestExecution.xml" />
     <MESSAGE value="Update some test cases" />
     <MESSAGE value=" Update smoke testing test cases" />
-    <MESSAGE value=" Update Smoketestt.xml" />
     <MESSAGE value="Merge remote-tracking branch 'origin/AUT-444-Handle-MH-360-Buy-Now-Pay-Later-Tamara' into Release26Changes" />
     <MESSAGE value=" Update Guest User" />
-    <option name="LAST_COMMIT_MESSAGE" value=" Update Guest User" />
+    <MESSAGE value=" Update Smoketestt.xml" />
+    <MESSAGE value=" Update the Display product URL" />
+    <option name="LAST_COMMIT_MESSAGE" value=" Update the Display product URL" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

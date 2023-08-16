@@ -242,22 +242,21 @@ public String getTitle() {
             Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.OOSMsgAr), "The product is OOS " + webDriver.getCurrentUrl());
     }
     public void navigateToBogoProduct() {
-        if (webDriver.getCurrentUrl().contains("ar-sa/")) {
+        if (webDriver.getCurrentUrl().contains("-sa/")) {
             webDriver.navigate().to(BaseURL + bogoUrlKSA);
-        } else if (webDriver.getCurrentUrl().contains("en-eg/")) {
+        } else if (webDriver.getCurrentUrl().contains("-eg/")) {
             webDriver.navigate().to(BaseURL + productUrlEgypt);
-        } else if (webDriver.getCurrentUrl().contains("en-qa/")) {
+        } else if (webDriver.getCurrentUrl().contains("-qa/")) {
             webDriver.navigate().to(BaseURL + bogoUrlQatar);
         }
-    else if (webDriver.getCurrentUrl().contains("en-kw/")) {
+    else if (webDriver.getCurrentUrl().contains("-kw/")) {
             webDriver.navigate().to(BaseURL + bogoProduct);
         }
         else {
             webDriver.navigate().to(BasePage.BaseURL + bogoProduct);
 
         }
-        System.out.println("The product URL is: " + webDriver.getCurrentUrl());
-//        DataHelperAndWait.waitForUrlContains(bogoProduct,webDriver);
+        checkIfProductOOS();
     }
 
     public void displayBundle() throws IOException {

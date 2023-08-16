@@ -245,6 +245,7 @@ public class ProductDetailsPage extends BasePage {
     public void increaseTheQuantity() {
         DataHelperAndWait.clickOnElement(quantityField, webDriver);
         DataHelperAndWait.clickOnElement(qtyPlusButton, webDriver);
+        this.waitTillCartSpinnerDisappear(webDriver);
     }
 
     public void decreaseTheQuantity() {
