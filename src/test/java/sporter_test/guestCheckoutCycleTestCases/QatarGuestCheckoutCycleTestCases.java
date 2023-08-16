@@ -151,7 +151,6 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
     public void verifyAbilityToPlaceOrderWhenSelecting4_5BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod() throws IOException {
            JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
            QatarGuestCheckoutCyclePage qatar= new QatarGuestCheckoutCyclePage(webDriver);
-           CartPage cartPage= new CartPage(webDriver);
            qatar.accessGuestCheckoutForm();
            jo.fillInShippingInformationInputField(
                    XmlReader.getXMLData("firstName"),
@@ -171,7 +170,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
            DataHelperAndWait.clickOnElement(qatar.getContinuePaymentMethodsBtn(),webDriver);
            WebElementsAssertion.validateTheElementIsDisplayed(qatar.getFinalPlaceOrderBtn(),webDriver);
            DataHelperAndWait.clickOnElement(qatar.getFinalPlaceOrderBtn(),webDriver);
-           cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
+           jo.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
 @Test(enabled = false)
@@ -203,7 +202,6 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Credit Card Payment Method ", priority = 29)
     public void verifyAbilityToPlaceOrderWhenSelecting4_5BusinessDaysSuperExpressShippingMethodWithCreditCardPaymentMethod() throws IOException {
         JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
-        CartPage cartPage= new CartPage(webDriver);
         QatarGuestCheckoutCyclePage qatar= new QatarGuestCheckoutCyclePage(webDriver);
         jo.accessGuestCheckoutForm();
         jo.fillInShippingInformationInputField(
@@ -223,7 +221,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         jo.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
         WebElementsAssertion.validateTheElementIsDisplayed(jo.getFinalPlaceOrderBtn(),webDriver);
         DataHelperAndWait.clickOnElement(jo.getFinalPlaceOrderBtn(),webDriver);
-        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        jo.verifyTheDisplayedPageDoesNotHaveErrors();
 
 //        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
 //        DataHelperAndWait.waitForTime(2000);
@@ -431,7 +429,6 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
     }
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure the system display the Quote ID for the user after checkout the order", priority = 100)
     public void verifyTheSystemDisplayTheQuoteIdForTheUserAfterCheckoutTheOrder() throws IOException {
-        CartPage cartPage= new CartPage(webDriver);
         JordanGuestCheckoutCyclePage jo= new JordanGuestCheckoutCyclePage(webDriver);
         jo.accessGuestCheckoutForm();
         jo.fillInShippingInformationInputField(
@@ -456,6 +453,6 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         DataHelperAndWait.waitToBeVisible(jo.getSuccessPage(),webDriver);
         orderNumber= DataHelperAndWait.extractDigitsFromString(jo.getSuccessPage(),webDriver);
         System.out.println(orderNumber);
-        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        jo.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 }
