@@ -237,10 +237,9 @@ public String getTitle() {
             this.getStatusCode(currentURL);
         }
     }
-    public void checkIfProductOOS() throws IOException {
+    public void checkIfProductOOS()  {
             Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.OOSMsgEn), "The product is OOS " + webDriver.getCurrentUrl());
             Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.OOSMsgAr), "The product is OOS " + webDriver.getCurrentUrl());
-
     }
     public void navigateToBogoProduct() {
         if (webDriver.getCurrentUrl().contains("ar-sa/")) {

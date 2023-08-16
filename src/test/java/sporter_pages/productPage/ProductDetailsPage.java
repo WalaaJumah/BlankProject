@@ -185,9 +185,7 @@ public class ProductDetailsPage extends BasePage {
         webDriver.navigate().to(BaseURL + productUrl1);
         DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
         verifyTheDisplayedPageDoesNotHaveErrors();
-        DataHelperAndWait.waitForUrlContains(productUrl1, webDriver);
-        verifyTheDisplayedPageDoesNotHaveErrors();
-        System.out.println("The product URL is: " + webDriver.getCurrentUrl());
+        checkIfProductOOS();
     }
 
     public void displayTheProductHaveLessQty() throws IOException {
