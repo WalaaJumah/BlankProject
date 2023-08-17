@@ -52,12 +52,10 @@ public class HeaderTestCases extends BaseTest {
             WebElementsAssertion.assertionTextIsEqual(headerSection.getCustomerServiceLabel(), webDriver, XmlReader.getXMLData("CustomerServiceEnLabel"));
     }
 
-    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Search section appears correctly", priority = 6)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Search section appears correctly", priority = 7)
     public void verifySearchSectionCorrectly() throws IOException {
         HeaderSection headerSection = new HeaderSection(webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getSearchSectionForm(), webDriver);
-//        WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getSearchField(),webDriver);
-//        WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getSearchBtn(),webDriver);
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Cart icon appears correctly", priority = 4)
@@ -70,6 +68,11 @@ public class HeaderTestCases extends BaseTest {
     public void verifyProfileIconAppearsCorrectly() throws IOException {
         HeaderSection headerSection = new HeaderSection(webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getAccountProfileIcon(), webDriver);
+    }
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Sporter Logo appears correctly", priority = 6)
+    public void verifySporterLogoAppearsCorrectly() throws IOException {
+        HeaderSection headerSection = new HeaderSection(webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getSporterLogo(), webDriver);
     }
 
 }

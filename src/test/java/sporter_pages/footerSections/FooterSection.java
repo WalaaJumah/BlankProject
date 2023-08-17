@@ -56,6 +56,10 @@ public class FooterSection extends BasePage {
     private List<WebElement> getToKnowUsList;
     @FindBy(xpath = "//*[@id=\"FooterLinks\"]/div[1]/div/div[8]/ul/li/a")
     private List<WebElement> contactUsList;
+    @FindBy(xpath = "//div[contains(@class,'copyRight')]")
+    private WebElement copyRightLabel;
+    @FindBy(xpath = "//div[contains(@class,'socialLinks')]")
+    private WebElement socialMediaSection;
 
     public void accessAllLinksInTheList(List<WebElement> elements) throws IOException {
         for (int i = 0; i < elements.size(); i++) {
