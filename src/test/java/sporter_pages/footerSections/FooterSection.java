@@ -63,7 +63,6 @@ public class FooterSection extends BasePage {
 
     public void accessAllLinksInTheList(List<WebElement> elements) throws IOException {
         for (int i = 0; i < elements.size(); i++) {
-            System.out.println("The List size is = "+elements.size());
             DataHelperAndWait.waitToBeVisible(elements.get(i), webDriver);
             DataHelperAndWait.clickOnElement(elements.get(i), webDriver);
             verifyTheDisplayedPageDoesNotHaveErrors();
