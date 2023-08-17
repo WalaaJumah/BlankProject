@@ -35,12 +35,12 @@ public class MyAccountTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
         DataHelperAndWait.waitForTime(2000);
         try{
-        DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
+            DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
             DataHelperAndWait.waitForTime(2000);
-        WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyAccountOption(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyOrdersOption(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyRewardsOption(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getLogoutOption(), webDriver);}
+            WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyAccountOption(), webDriver);
+            WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyOrdersOption(), webDriver);
+            WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyRewardsOption(), webDriver);
+            WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getLogoutOption(), webDriver);}
         catch (Exception e){
             webDriver.navigate().refresh();
             DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
@@ -58,12 +58,12 @@ public class MyAccountTestCases extends BaseTest {
     public void verifyClickingOnMyAccountOptionsWorksCorrectly() throws IOException {
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
         try{
-        myAccountPage.navigateToHomePage();
-        DataHelperAndWait.waitForTime(2000);
-        DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
+            myAccountPage.navigateToHomePage();
+            DataHelperAndWait.waitForTime(2000);
+            DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
 //        DataHelperAndWait.hoverOnElementAndClick(myAccountPage.getAccountProfileIcon(), webDriver);
-        DataHelperAndWait.clickOnElement(myAccountPage.getMyAccountOption(), webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getMyAccountURL(), webDriver);}
+            DataHelperAndWait.clickOnElement(myAccountPage.getMyAccountOption(), webDriver);
+            WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getMyAccountURL(), webDriver);}
         catch (Exception e){
             myAccountPage.navigateToHomePage();
             DataHelperAndWait.waitForTime(2000);
@@ -85,17 +85,17 @@ public class MyAccountTestCases extends BaseTest {
             DataHelperAndWait.clickOnElement(myAccountPage.getMyOrdersOption(), webDriver);
             WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getRecentOrdersURL(), webDriver);
         }
-catch (Exception w){
-    loginPage.navigateToLoginPage();
-    loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword"));
-    DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
-    DataHelperAndWait.waitForTime(2000);
-    myAccountPage.navigateToHomePage();
-    DataHelperAndWait.waitForTime(1500);
-    DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
-    DataHelperAndWait.clickOnElement(myAccountPage.getMyOrdersOption(), webDriver);
-    WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getRecentOrdersURL(), webDriver);
-}
+        catch (Exception w){
+            loginPage.navigateToLoginPage();
+            loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword"));
+            DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
+            DataHelperAndWait.waitForTime(2000);
+            myAccountPage.navigateToHomePage();
+            DataHelperAndWait.waitForTime(1500);
+            DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
+            DataHelperAndWait.clickOnElement(myAccountPage.getMyOrdersOption(), webDriver);
+            WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getRecentOrdersURL(), webDriver);
+        }
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify clicking on My Rewards Option redirect the user to the correct Page ", priority = 4)
