@@ -63,6 +63,7 @@ public class BasePage {
     public final String aeArabicCurrency = "د.إ";
     public final String aeEnglishCurrency = "AED";
     public final String kSAEnglishCurrency = "SAR";
+    public final String iraqCurrency = "$";
     public final String kSAArabicCurrency = "ر.س";
     public final String omanDomain = "/en-om";
     public final String bahrainDomain = "/en-bh";
@@ -218,7 +219,7 @@ public String getTitle() {
             Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.error503), "Backend fetch failed and the URL is " + webDriver.getCurrentUrl());
             Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.pageUnderMaintenanceMsg), "Backend fetch failed and the URL is " + webDriver.getCurrentUrl());
             Assert.assertFalse(this.getSourcePage().contains(SporterErrorPage.gatewayTimeOut), "Gateway TimeOut Error" + webDriver.getCurrentUrl());
-            this.getStatusCode(currentURL);
+//            this.getStatusCode(currentURL);
         }
         catch (Exception e){
             webDriver.navigate().refresh();

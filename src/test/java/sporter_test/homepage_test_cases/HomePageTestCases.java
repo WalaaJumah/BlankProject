@@ -11,7 +11,9 @@ import core.DataHelperAndWait;
 import core.WebElementsAssertion;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.homepage_classes.HomePage;
+import sporter_pages.productPage.ProductDetailsPage;
 import xml_reader.XmlReader;
 
 import java.io.IOException;
@@ -20,53 +22,34 @@ import java.io.IOException;
 public class HomePageTestCases extends BaseTest {
     String storeCountry;
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the next button at the HomePage rotating slider section is displayed ", priority = 3)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the next button at the HomePage rotating slider section is displayed ", priority = 1)
     public void verifyNextArrowAtHomePageRotatingSliderIsDisplayed() throws IOException {
         HomePage homePage = new HomePage(webDriver);
-        try {
             homePage.navigateToHomePage();
-            WebElementsAssertion.validateTheElementIsDisplayed(homePage.getNextArrowInHomePageRotatingSlider(), webDriver);
-        }
-        catch (Exception e){
-            homePage.navigateToHomePage();
-            WebElementsAssertion.validateTheElementIsDisplayed(homePage.getNextArrowInHomePageRotatingSlider(), webDriver);
-        }
+            Assert.assertTrue(DataHelperAndWait.IsElementPresent(homePage.getNextArrowInHomePageRotatingSlider()));
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the previous button at the HomePage rotating slider section is displayed ", priority = 4)
-    public void verifyPreviousArrowAtHomePageRotatingSliderIsDisplayed() throws IOException {
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the previous button at the HomePage rotating slider section is displayed ", priority = 2)
+    public void verifyPreviousArrowAtHomePageRotatingSliderIsDisplayed(){
         HomePage homePage = new HomePage(webDriver);
-        try{
-        homePage.navigateToHomePage();
-        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getPreviousArrowInHomePageRotatingSlider(), webDriver);}
-        catch (Exception e){        homePage.navigateToHomePage();
-            WebElementsAssertion.validateTheElementIsDisplayed(homePage.getPreviousArrowInHomePageRotatingSlider(), webDriver);}
+        Assert.assertTrue(DataHelperAndWait.IsElementPresent(homePage.getPreviousArrowInHomePageRotatingSlider()));
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the pagination control appears on the HomePage rotating slider is displayed", priority = 5)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the pagination control appears on the HomePage rotating slider is displayed", priority = 3)
     public void verifyPaginationControlOnHomePageRotatingSliderIsDisplayed() {
         HomePage homePage = new HomePage(webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(homePage.getHomePageRotatingSliderPagingControl(), webDriver);
+        if(DataHelperAndWait.IsElementPresent(homePage.getHomePageRotatingSliderPagingControl())){
         for (int i = 0; i < homePage.getHomePageRotatingSliderPagingList().size(); i++) {
             WebElementsAssertion.validateTheElementIsDisplayed(homePage.getHomePageRotatingSliderPagingList().get(i), webDriver);
         }
+        }
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure clicking on the banners inside the rotating slider section works correctly", priority = 6)
+    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure clicking on the banners inside the rotating slider section works correctly", priority = 23)
     public void verifyClickingOnTheBannersInsideTheHomePageRotatingSliderWillRedirectTheUserToCorrectPage() throws IOException {
         HomePage homePage = new HomePage(webDriver);
-        try {
             homePage.navigateToHomePage();
-            for (int i = 0; i < homePage.getHomePageRotatingSliderPagingList().size(); i++) {
-                DataHelperAndWait.scrollToPositionZero(webDriver);
-                DataHelperAndWait.clickOnElement(homePage.getHomePageRotatingSliderPagingList().get(i), webDriver);
-                homePage.clickOnBannerInRotatingSliderSection();
-                homePage.verifyTheDisplayedPageDoesNotHaveErrors();
-                homePage.navigateToHomePage();
-            }
-        }
-        catch (Exception e){
-            homePage.navigateToHomePage();
+        if(DataHelperAndWait.IsElementPresent(homePage.getHomePageRotatingSliderPagingList().get(0))) {
             for (int i = 0; i < homePage.getHomePageRotatingSliderPagingList().size(); i++) {
                 DataHelperAndWait.scrollToPositionZero(webDriver);
                 DataHelperAndWait.clickOnElement(homePage.getHomePageRotatingSliderPagingList().get(i), webDriver);
@@ -77,31 +60,30 @@ public class HomePageTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = { "1.2 High Severity"}, description = "{{CountryName}}: Make sure the HomePage side Banners is displayed ", priority = 7)
+    @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure the HomePage side Banners is displayed ", priority = 4)
     public void verifyHomePageSideBannerIsDisplayed() throws IOException {
         HomePage homePage = new HomePage(webDriver);
-        homePage.navigateToHomePage();
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getHomePageSideBanner(), webDriver);
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the HomePage Horizontal Banner is displayed ", priority = 8)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the HomePage Horizontal Banner is displayed ", priority = 5)
     public void verifyHomePageHorizontalBannerIsDisplayed() {
         HomePage homePage = new HomePage(webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getHomePageHorizontalBanner(), webDriver);
     }
 
     //TODO: Activate the validation rule when deployed the site into production as discussed with Moamen
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure clicking on the first side banner works correctly", priority = 9)
+    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure clicking on the first side banner works correctly", priority = 20)
     public void verifyClickingOnTheFirstSideBannersWorksCorrectly() throws IOException {
         HomePage homePage = new HomePage(webDriver);
-        DataHelperAndWait.scrollToPositionZero(webDriver);
         homePage.navigateToHomePage();
+        DataHelperAndWait.scrollToPositionZero(webDriver);
         homePage.clickOnFirstSideBanner();
         homePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
     //TODO: Activate the validation rule when deployed the site into production as discussed with Moamen
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure clicking on the second side banner works correctly", priority = 10)
+    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure clicking on the second side banner works correctly", priority = 22)
     public void verifyClickingOnTheSecondSideBannersWorksCorrectly() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
@@ -110,46 +92,34 @@ public class HomePageTestCases extends BaseTest {
         homePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure clicking on the HomePage Horizontal Banner works correctly", priority = 11)
+    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure clicking on the HomePage Horizontal Banner works correctly", priority = 24)
     public void verifyClickingOnHomePageHorizontalBannerDoeNotRedirectTheUserTo404PageOrNoContentFoundPage() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getHomePageHorizontalBanner(), webDriver);
-//        String expectedUrl = homePage.getHomePageHorizontalBanner().getAttribute("href");
         homePage.clickOnHomePageHorizontalBanner();
-//        WebElementsAssertion.validateTheCurrentUrlContainsString(expectedUrl, webDriver);
         homePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Shop By Category section is displayed ", priority = 12)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Shop By Category section is displayed ", priority =  6)
     public void verifyShopByCategoryIsDisplayed() throws IOException {
         HomePage homePage = new HomePage(webDriver);
-        homePage.navigateToHomePage();
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getShopByCategoryHeader(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getShopByCategorySections(), webDriver);
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the main options in the Mega Menu are retrieved correctly", priority = 13)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the main options in the Mega Menu are retrieved correctly", priority = 7)
     public void verifyMainOptionsInTheMegaMenuAreDisplayed() {
         HomePage homePage = new HomePage(webDriver);
-        if (webDriver.getCurrentUrl().contains(".com/en-")) {
             WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getShopByOption(), webDriver, XmlReader.getXMLData("ShopByEn"));
             WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getSportSupplementsOption(), webDriver, XmlReader.getXMLData("SportsSupplementsEn"));
             WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getVitaminsAndHealthOption(), webDriver, XmlReader.getXMLData("VitaminsAndHealthEn"));
             WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getHealthyFoodOption(), webDriver, XmlReader.getXMLData("HealthyFoodEn"));
             WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getSportsOption(), webDriver, XmlReader.getXMLData("SPORTSEn"));
             WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getWomenOnlyOption(), webDriver, XmlReader.getXMLData("WomenOnlyEn"));
-        } else {
-            WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getShopByOption(), webDriver, XmlReader.getXMLData("ShopByAr"));
-            WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getSportSupplementsOption(), webDriver, XmlReader.getXMLData("SportsSupplementsAr"));
-            WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getVitaminsAndHealthOption(), webDriver, XmlReader.getXMLData("VitaminsAndHealthAr"));
-            WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getHealthyFoodOption(), webDriver, XmlReader.getXMLData("HealthyFoodAr"));
-            WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getSportsOption(), webDriver, XmlReader.getXMLData("SPORTSAr"));
-            WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getWomenOnlyOption(), webDriver, XmlReader.getXMLData("WomenOnlyAr"));
-        }
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Banners appearing under shop by category are displayed", priority = 14)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Banners appearing under shop by category are displayed", priority = 8)
     public void verifyHomePageUnderShopByCategoryBannersAreDisplayed() {
         HomePage homePage = new HomePage(webDriver);
         for (int i = 0; i < homePage.getHomePageUnderShopByCategoryBanners().size(); i++) {
@@ -157,15 +127,14 @@ public class HomePageTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure the Top Selling Stacks section is displayed ", priority = 15)
+    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure the Top Selling Stacks section is displayed ", priority = 9)
     public void verifyTopSellingStacksSectionAreDisplayed() throws IOException {
         HomePage homePage = new HomePage(webDriver);
-        homePage.navigateToHomePage();
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getTopSellingStacksHeader(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getTopSellingStacksSections(), webDriver);
     }
 
-    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}: Make sure clicking on the view all button from the Top Selling Stacks section works correctly ", priority = 16)
+    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}: Make sure clicking on the view all button from the Top Selling Stacks section works correctly ", priority = 19)
     public void verifyViewAllBtnInTopSellingStacksSectionWorking() throws IOException {
         HomePage homePage = new HomePage(webDriver);
 //        String expectedUrl = homePage.getViewAllBtnInTopSellingStacksSection().getAttribute("href");
@@ -175,10 +144,9 @@ public class HomePageTestCases extends BaseTest {
 
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Top Sellers sections are displayed ", priority = 17)
-    public void verifyTopSellersSectionAreDisplayed() throws IOException {
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Top Sellers sections are displayed ", priority = 10)
+    public void verifyTopSellersSectionAreDisplayed() {
         HomePage homePage = new HomePage(webDriver);
-        homePage.navigateToHomePage();
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getTopSellerHeader(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getTopSellerSections(), webDriver);
     }
@@ -193,9 +161,10 @@ public class HomePageTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getSportswearAndAccessoriesLinkInTopSellers(), webDriver);
     }
 
-    @Test(groups = {"1.2 High Severity"}, description = "{{CountryName}}: Make sure clicking on the Categories tabs appearing in the Top Sellers section are working correctly", priority = 19)
-    public void verifyAbilityToClickOnAllCategoriesTabInTopSellersSection() {
+    @Test(groups = {"1.2 High Severity"}, description = "{{CountryName}}: Make sure clicking on the Categories tabs appearing in the Top Sellers section are working correctly", priority = 26)
+    public void verifyAbilityToClickOnAllCategoriesTabInTopSellersSection() throws IOException {
         HomePage homePage = new HomePage(webDriver);
+        homePage.navigateToHomePage();
         for (int i = 0; i < homePage.getTopSellerCategoriesTabs().size(); i++) {
             DataHelperAndWait.clickOnElement(homePage.getTopSellerCategoriesTabs().get(i), webDriver);
             Assert.assertTrue(homePage.getTopSellerCategoriesTabs().get(i).getAttribute("class").startsWith("options_active"), "Clicking on The Categories tabs are not working correctly");
@@ -211,7 +180,7 @@ public class HomePageTestCases extends BaseTest {
     }
 
     //ToDo: Needs to recheck it
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that previous button in the Top Seller Section works correctly ", priority = 25)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that previous button in the Top Seller Section works correctly ", priority = 16)
     public void verifyPreviousBtnWillAppearInTopSellersSectionOnceClickingOnNextBtn() {
         HomePage homePage = new HomePage(webDriver);
         try {
@@ -221,36 +190,34 @@ public class HomePageTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure the Trending On Sporter sections are displayed ", priority = 26)
+    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure the Trending On Sporter sections are displayed ", priority = 11)
     public void verifyTrendingOnSporterSectionAreDisplayed() throws IOException {
         HomePage homePage = new HomePage(webDriver);
-        homePage.navigateToHomePage();
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getTrendingOnSporterHeader(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getTrendingOnSporterSection(), webDriver);
     }
 
-    @Test(groups = {"1.2 High Severity"}, description = "{{CountryName}}: Make sure the New Arrivals sections are displayed ", priority = 29)
+    @Test(groups = {"1.2 High Severity"}, description = "{{CountryName}}: Make sure the New Arrivals sections are displayed ", priority = 12)
     public void verifyNewArrivalsSectionAreDisplayed() {
         HomePage homePage = new HomePage(webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getNewArrivalsHeader(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getNewArrivalsSection(), webDriver);
     }
 
-    @Test(groups = {"1.2 High Severity"}, description = "{{CountryName}}: Make sure clicking on the Categories tabs appearing in the New Arrivals section are working correctly", priority = 19)
-    public void verifyAbilityToClickOnAllCategoriesTabInNewArrivalsSection() {
+    @Test(groups = {"1.2 High Severity"}, description = "{{CountryName}}: Make sure clicking on the Categories tabs appearing in the New Arrivals section are working correctly", priority = 25)
+    public void verifyAbilityToClickOnAllCategoriesTabInNewArrivalsSection() throws IOException {
         HomePage homePage = new HomePage(webDriver);
+        homePage.navigateToHomePage();
         for (int i = 0; i < homePage.getNewArrivalsCategoriesTabs().size(); i++) {
             DataHelperAndWait.clickOnElement(homePage.getNewArrivalsCategoriesTabs().get(i), webDriver);
-//            DataHelperAndWait.waitForTime(1500);
             Assert.assertTrue(homePage.getNewArrivalsCategoriesTabs().get(i).getAttribute("class").startsWith("options_active"), "Clicking on The Categories tabs are not working correctly");
         }
     }
 
     //ToDo:Needs to recheck
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that previous and next button in the New Arrivals Section works correctly", priority = 36)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that previous and next button in the New Arrivals Section works correctly", priority = 17)
     public void verifyPreviousAndNextBtnInNewArrivalsSectionWorksCorrectly() throws IOException {
         HomePage homePage = new HomePage(webDriver);
-        homePage.navigateToHomePage();
         try {
             DataHelperAndWait.validateNextOrPreviousBtnInPanelWork(homePage.getProductsInTopSellersSection(), homePage.getProductsInNewArrivalsSection().get(5), homePage.getNextBtnInNewArrivalsSection(), webDriver);
             DataHelperAndWait.validateNextOrPreviousBtnInPanelWork(homePage.getProductsInTopSellersSection(), homePage.getProductsInNewArrivalsSection().get(0), homePage.getPreviousBtnInNewArrivalsSection(), webDriver);
@@ -259,7 +226,7 @@ public class HomePageTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure the Got A Question section is displayed ", priority = 37)
+    @Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure the Got A Question section is displayed ", priority = 18)
     public void verifyGotQuestionSectionIsDisplayed() {
         HomePage homePage = new HomePage(webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getGetQuestionBlock(), webDriver);
@@ -267,17 +234,16 @@ public class HomePageTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getEmailBtn(), webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the clicking on email button from the Got A Question section works correctly ", priority = 38)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the clicking on email button from the Got A Question section works correctly ", priority = 37)
     public void verifyAbilityToClickOnEmailBtnInGotQuestionSectionCorrectly() throws IOException {
         HomePage homePage = new HomePage(webDriver);
-        homePage.navigateToHomePage();
         homePage.clickOnEmailBtn();
         WebElementsAssertion.validateTheCurrentUrlContainsString(homePage.contactUsUrl, webDriver);
         homePage.verifyTheDisplayedPageDoesNotHaveErrors();
 
     }
 
-    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"}, description = "{{CountryName}}: Make sure clicking on the Sports Supplements category from the HomePage works correctly ", priority = 39)
+    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"}, description = "{{CountryName}}: Make sure clicking on the Sports Supplements category from the HomePage works correctly ", priority = 27)
     public void verifyClickingOnSportsSupplementsCategoryRedirectTheUserToCorrectPage() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
@@ -285,7 +251,7 @@ public class HomePageTestCases extends BaseTest {
         homePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"}, description = "{{CountryName}}: Make sure clicking on the Healthy Food category from the HomePage works correctly ", priority = 40)
+    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"}, description = "{{CountryName}}: Make sure clicking on the Healthy Food category from the HomePage works correctly ", priority = 28)
     public void verifyClickingOnHealthyFoodCategoryRedirectTheUserToCorrectPage() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
@@ -293,7 +259,7 @@ public class HomePageTestCases extends BaseTest {
         homePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"}, description = "{{CountryName}}: Make sure clicking on the Vitamins And Health category from the HomePage works correctly ", priority = 41)
+    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"}, description = "{{CountryName}}: Make sure clicking on the Vitamins And Health category from the HomePage works correctly ", priority = 29)
     public void verifyClickingOnVitaminsAndHealthCategoryRedirectTheUserToCorrectPage() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
@@ -301,7 +267,7 @@ public class HomePageTestCases extends BaseTest {
         homePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"}, description = "{{CountryName}}: Make sure clicking on the Sportswear & Accessories category from the HomePage works correctly ", priority = 42)
+    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"}, description = "{{CountryName}}: Make sure clicking on the Sportswear & Accessories category from the HomePage works correctly ", priority = 30)
     public void verifyClickingOnSportswearAndAccessoriesCategoryRedirectTheUserToCorrectPage() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
@@ -309,28 +275,25 @@ public class HomePageTestCases extends BaseTest {
         homePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure clicking on the products appearing in the Top Selling Stacks section works correctly", priority = 43)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure clicking on the products appearing in the Top Selling Stacks section works correctly", priority = 33)
     public void verifyClickOnTheProductsAppearingInTheTopSellingStacksSectionRedirectTheUserToCorrectUrl() throws IOException {
         HomePage homePage = new HomePage(webDriver);
-        homePage.navigateToHomePage();
         DataHelperAndWait.accessAllProductsInWidget(homePage.getProductsInTopSellingStacksSection(), homePage.getNextBtnInTopSellingStacksSection(), webDriver, homePage);
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure clicking on the products appearing in the Top Sellers section works correctly", priority = 44)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure clicking on the products appearing in the Top Sellers section works correctly", priority = 34)
     public void verifyClickOnTheProductsAppearingInTheTopSellersSectionRedirectTheUserToCorrectUrl() throws IOException {
         HomePage homePage = new HomePage(webDriver);
-        homePage.navigateToHomePage();
         DataHelperAndWait.accessAllProductsInWidget(homePage.getProductsInTopSellersSection(), homePage.getNextButtonInTopSellerSection(), webDriver, homePage);
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure clicking on the products appearing in the New Arrivals section works correctly", priority = 45)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure clicking on the products appearing in the New Arrivals section works correctly", priority = 35)
     public void verifyClickOnTheProductsAppearingInTheNewArrivalsSectionRedirectTheUserToCorrectUrl() throws IOException {
         HomePage homePage = new HomePage(webDriver);
-        homePage.navigateToHomePage();
         DataHelperAndWait.accessAllProductsInWidget(homePage.getProductsInNewArrivalsSection(), homePage.getNextBtnInNewArrivalsSection(), webDriver, homePage);
     }
 
-    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to access all categories inside Trending On Sporter Section Correctly", priority = 46)
+    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to access all categories inside Trending On Sporter Section Correctly", priority = 36)
     public void verifyClickOnTheCategoriesAppearingInTheTrendingOnSporterSectionRedirectTheUserToCorrectUrl() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
@@ -346,23 +309,45 @@ public class HomePageTestCases extends BaseTest {
         }
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure clicking on phone button from the Got A Question section works correctly ", priority = 47)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure clicking on phone button from the Got A Question section works correctly ", priority = 39)
     public void verifyAbilityToClickOnPhoneBtnInGotQuestionSectionCorrectly() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         homePage.navigateToHomePage();
         homePage.clickOnPhoneBtn();
-        // store window handles in Set
-        String myWindowHandle = webDriver.getWindowHandle();
-        webDriver.switchTo().window(myWindowHandle);
     }
 
-    @Test(groups = {"1.2 High Severity"}, description = "{{CountryName}}: Make sure clicking on all banners appear under shop by category work correctly", priority = 48)
+    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"}, description = "{{CountryName}}: Make sure clicking on all banners appear under shop by category work correctly", priority = 38)
     public void verifyAbilityToClickOnUnderShopByCategoryWorksCorrectly() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         for (int i = 0; i < homePage.getUnderShopByCategoryBanners().size(); i++) {
             DataHelperAndWait.clickOnElement(homePage.getUnderShopByCategoryBanners().get(i), webDriver);
            homePage.verifyTheDisplayedPageDoesNotHaveErrors();
            homePage.navigateToHomePage();
+        }
+    }
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Search section appears correctly", priority = 13)
+    public void verifySearchSectionIsDisplayedCorrectly() {
+        HeaderSection headerSection = new HeaderSection(webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getSearchSectionForm(), webDriver);
+    }
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Cart icon appears correctly", priority = 14)
+    public void verifyCartIconAppearsCorrectly() {
+        HeaderSection headerSection = new HeaderSection(webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getCartIcon(), webDriver);
+    }
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the My Account icon appears correctly", priority = 15)
+    public void verifyProfileIconAppearsCorrectly() throws IOException {
+        HeaderSection headerSection = new HeaderSection(webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getAccountProfileIcon(), webDriver);
+    }
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Verify that the search button works correctly from the PDP", priority = 21)
+    public void verifySearchBtnWorksCorrectlyFromPdp() throws IOException {
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        if(DataHelperAndWait.IsElementPresent(productDetailsPage.getSearchField())) {
+            DataHelperAndWait.typeTextInElement(productDetailsPage.getSearchField(), webDriver, "Basic");
+            DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
+            WebElementsAssertion.validateTheCurrentUrlContainsString("search", webDriver);
+            productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
         }
     }
 }

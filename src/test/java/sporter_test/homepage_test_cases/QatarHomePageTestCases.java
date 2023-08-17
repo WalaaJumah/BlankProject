@@ -7,17 +7,6 @@ import sporter_pages.homepage_classes.QatarHomePage;
 
 //@Test(groups = "2.02 Qatar HomePage")
 public class QatarHomePageTestCases extends HomePageTestCases {
-
-
-    //    QatarHomePage qatarHomePage;
-//The below code used when we did not define the QatarHomePageObject inside each method
-//    @BeforeClass
-//    @Override
-//    @Parameters({"environment"})
-//    public void setupBrowser( String environment) throws Exception {
-//        super.setupBrowser(environment);
-//        qatarHomePage= new QatarHomePage(webDriver);
-//    }
     @BeforeClass(alwaysRun = true)
     public void switchToQatarStore() {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);

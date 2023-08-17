@@ -10,6 +10,7 @@ import core.BasePage;
 import core.DataHelperAndWait;
 import lombok.Getter;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -36,6 +37,7 @@ public class HomePage extends BasePage {
     private WebElement homePageRotatingSlider;
     @FindBy(xpath = "//div[@id='crouselContainer']//div[@class='swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal']/span")
     private List<WebElement> homePageRotatingSliderPagingList;
+
     @FindBy(id = "AdvertiseContainersecond")
     private List<WebElement> homePageUnderShopByCategoryBanners;
       @FindBy(xpath = "//div[@id='AdvertiseContainersecond']//a")
@@ -273,6 +275,8 @@ public class HomePage extends BasePage {
 
     public void clickOnPhoneBtn() {
         DataHelperAndWait.clickOnElement(phoneBtn, webDriver);
+        phoneBtn.sendKeys(Keys.ESCAPE);
+        phoneBtn.sendKeys(Keys.ESCAPE);
     }
 
     public void clickOnEmailBtn() {

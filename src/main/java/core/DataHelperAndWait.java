@@ -474,7 +474,7 @@ for(int i=0;i<jsErrors.getAll().size()-1;i++){
         }
         return "";
     }
-    public static boolean IsElementPresent(WebElement element) throws IOException {
+    public static boolean IsElementPresent(WebElement element) {
 
         try {
             if(element == null)
