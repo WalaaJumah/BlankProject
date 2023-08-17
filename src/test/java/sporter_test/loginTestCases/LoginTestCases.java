@@ -74,13 +74,9 @@ public class LoginTestCases extends BaseTest {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToLoginPage();
         loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword"));
-        DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
-        DataHelperAndWait.waitForTime(3000);
-//        DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
-//\        WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
-//        DataHelperAndWait.clickOnElement(registerPage.getLogoutOption(), webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-    }
+        loginPage.clickOnLoginBtn();
+
+ }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to login using correct Email & Wrong Password and the correct Error Msg appears", priority = 6)
     public void verifyInAbilityToLoginUsingCorrectEmailAndWrongPassword() throws IOException {
