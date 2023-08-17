@@ -123,7 +123,7 @@ public class HomePageTestCases extends BaseTest {
             WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getShopByOption(), webDriver, XmlReader.getXMLData("ShopByAr"));
             WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getSportSupplementsOption(), webDriver, XmlReader.getXMLData("SportsSupplementsAr"));
             WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getVitaminsAndHealthOption(), webDriver, XmlReader.getXMLData("VitaminsAndHealthAr"));
-            WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getHealthyFoodOption(), webDriver, XmlReader.getXMLData("VitaminsAndHealthAr"));
+            WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getHealthyFoodOption(), webDriver, XmlReader.getXMLData("HealthyFoodAr"));
             WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getSportsOption(), webDriver, XmlReader.getXMLData("SPORTSAr"));
             WebElementsAssertion.assertionTextEqualsForElementAttribute(homePage.getWomenOnlyOption(), webDriver, XmlReader.getXMLData("WomenOnlyAr"));
         }
