@@ -20,7 +20,7 @@
 <!--                </groups>-->
         <classes>
 <!--            <class name="sporter_test.tamara_payment_method_test_cases.UAETamaraPaymentMethodTestCases">-->
-            <class name="sporter_test.homepage_test_cases.">
+            <class name="sporter_test.homepage_test_cases.KsaHomePageTestCases">
 <!--            <class name="sporter_test.tamara_payment_method_test_cases.KSATamaraPaymentMethodTestCases"/>-->
 
 
