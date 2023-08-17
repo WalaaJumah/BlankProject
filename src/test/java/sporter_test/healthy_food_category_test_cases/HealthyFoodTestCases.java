@@ -93,11 +93,8 @@ public class HealthyFoodTestCases extends BaseTest {
         if (sportsSupplementsCategoryPage.getPaginationBtns().size() > 3) {
             DataHelperAndWait.clickOnElement(sportsSupplementsCategoryPage.getNextPageBtn(), webDriver);
             sportsSupplementsCategoryPage.waitTillLoaderComplete();
-            DataHelperAndWait.waitForTime(1500);
             DataHelperAndWait.clickOnElement(sportsSupplementsCategoryPage.getPreviousPageBtn(), webDriver);
-            sportsSupplementsCategoryPage.waitTillLoaderComplete();
-            DataHelperAndWait.waitForTime(1500);
-            Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
+            WebElementsAssertion.validateTheCurrentUrlContainsString("p=2", webDriver);
         } else {
             System.out.println("There's only one page in the list");
         }
