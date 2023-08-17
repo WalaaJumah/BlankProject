@@ -18,11 +18,8 @@ public class IraqFooterTestCases extends FooterTestCases{
     public void switchToIraqStore() {
         IraqHomePage iraqHomePage = new IraqHomePage(webDriver);
         iraqHomePage.switchCountry(iraqHomePage.getIraqCountry());
-        if (webDriver.getCurrentUrl().contains(iraqHomePage.iraqDomain)) {
-            System.out.println("You are in IraqMyAccountTestCases Store");
-        } else {
+        if (!webDriver.getCurrentUrl().contains(iraqHomePage.iraqDomain)) {
             webDriver.navigate().to(BasePage.BaseURL + iraqHomePage.iraqDomain);
-            //CloseInitialDialog();
         }
     }
 }

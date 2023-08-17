@@ -18,11 +18,8 @@ public class IraqWomensOnlyCategoryTestCases extends WomensOnlyCategoryTestCases
     public void switchToIraqStore() {
         IraqHomePage iraqHomePage = new IraqHomePage(webDriver);
         iraqHomePage.switchCountry(iraqHomePage.getIraqCountry());
-        if (webDriver.getCurrentUrl().contains(iraqHomePage.iraqDomain)) {
-            System.out.println("You are in IraqForgetPasswordPage Store");
-        } else {
+        if (!webDriver.getCurrentUrl().contains(iraqHomePage.iraqDomain)) {
             webDriver.navigate().to(BasePage.BaseURL + iraqHomePage.iraqDomain);
-            //CloseInitialDialog();
         }
     }
 }
