@@ -55,14 +55,19 @@ public class LoginTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(loginPage.getFaceBookLoginBtn(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(loginPage.getSignInWithSocialMediaLabel(), webDriver);
     }
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to navigate to the home page by clicking on the sporter logo  ", priority = 4)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:  Verify Have Account tab is Active By Default when access Login Page", priority = 4)
+    public void verifyHaveAccountTabActiveByDefault() {
+        AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
+        WebElementsAssertion.assertionAttributeTrueForElement(registerPage.getHaveAnAccountTab(), webDriver, "is-active", "1");
+    }
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to navigate to the home page by clicking on the sporter logo  ", priority = 5)
     public void verifyAbilityToNavigateToHomePageByClickingOnSporterLogoFromPdp() throws IOException {
         HeaderSection headerSection = new HeaderSection(webDriver);
         HomePage homePage = new HomePage(webDriver);
         DataHelperAndWait.clickOnElement(headerSection.getSporterLogo(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(), webDriver);
     }
-    @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to login using wrong email and the correct Error Msg appears", priority = 5)
+    @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify Inability to login using wrong email and the correct Error Msg appears", priority = 6)
     public void verifyInAbilityToLoginUsingWrongEmail() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToLoginPage();
@@ -77,13 +82,6 @@ public class LoginTestCases extends BaseTest {
             WebElementsAssertion.assertionTextIsEqual(loginPage.getWrongCredentialsErrorMsg(), webDriver, XmlReader.getXMLData("loginErroEn"));
         }
     }
-
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:  Verify Have Account tab is Active By Default when access Login Page", priority = 6)
-    public void verifyHaveAccountTabActiveByDefault() {
-        AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
-        WebElementsAssertion.assertionAttributeTrueForElement(registerPage.getHaveAnAccountTab(), webDriver, "is-active", "1");
-    }
-
     @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Ability to login correctly using valid credential", priority = 7)
     public void verifyAbilityToLoginCorrectlyWithValidCredentials() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
@@ -234,7 +232,7 @@ public class LoginTestCases extends BaseTest {
 //        }
     }
 
-    @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify the system keeps the user logged in after switching the country", priority = 18)
+    @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify the system keeps the user logged in after switching the country", priority = 15)
     public void verifyTheSystemKeepsTheCustomerLoggedInAfterSwitchingTheCountry() throws IOException {
         HeaderSection header = new HeaderSection(webDriver);
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
