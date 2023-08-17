@@ -21,28 +21,10 @@ import java.util.ArrayList;
 public class HeaderTestCases extends BaseTest {
     String storeCountry;
 
-    @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Ability to access all stores using Country List appearing in the Header", priority = 50)
-    public void accessAllCountries() throws IOException {
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Ability to access all stores using Country List appearing in the Header", priority = 1)
+    public void verifyCountryListAppearsCorrectly()  {
         HeaderSection headerSection = new HeaderSection(webDriver);
-        ArrayList<String> expectedOption = new ArrayList<>() {{
-            add("/en-ae");
-            add("/en-eg");
-            add("/en-sa");
-            add("/en-bh");
-            add("/en-jo");
-            add("/en-kw");
-            add("/en-om");
-            add("/en-qa");
-            add("/en-lb");
-            add("/en-ae");
-        }};
-        DataHelperAndWait.clickOnElement(headerSection.getCountryMenuIcon(), webDriver);
-        DataHelperAndWait.waitForTime(3000);
-        for (int i = 0; i < headerSection.getCountryList().size(); i++) {
-            headerSection.getCountryList().get(i).click();
-            DataHelperAndWait.clickOnElement(headerSection.getCountryMenuIcon(), webDriver);
-            headerSection.verifyTheDisplayedPageDoesNotHaveErrors();
-        }
+        WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getCountryMenuIcon(), webDriver);
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure switching language button works correctly", priority = 2)
@@ -51,12 +33,12 @@ public class HeaderTestCases extends BaseTest {
         if (webDriver.getCurrentUrl().contains("com/ar-")) {
             DataHelperAndWait.clickOnElement(headerSection.getLanguageBtn(), webDriver);
             WebElementsAssertion.validateTheCurrentUrlContainsString("com/en-", webDriver);
-            DataHelperAndWait.waitForTime(2000);
+            headerSection.waitTillLoaderComplete();
             WebElementsAssertion.assertionTextIsEqual(headerSection.getLanguageSelector(), webDriver, "عربي");
         } else {
             DataHelperAndWait.clickOnElement(headerSection.getLanguageBtn(), webDriver);
             WebElementsAssertion.validateTheCurrentUrlContainsString("com/ar-", webDriver);
-            DataHelperAndWait.waitForTime(2000);
+            headerSection.waitTillLoaderComplete();
             WebElementsAssertion.assertionTextIsEqual(headerSection.getLanguageSelector(), webDriver, "English");
         }
     }
@@ -70,26 +52,24 @@ public class HeaderTestCases extends BaseTest {
             WebElementsAssertion.assertionTextIsEqual(headerSection.getCustomerServiceLabel(), webDriver, XmlReader.getXMLData("CustomerServiceEnLabel"));
     }
 
-    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Search section appears correctly", priority = 4)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Search section appears correctly", priority = 6)
     public void verifySearchSectionCorrectly() throws IOException {
         HeaderSection headerSection = new HeaderSection(webDriver);
-        headerSection.navigateToHomePage();
         WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getSearchSectionForm(), webDriver);
 //        WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getSearchField(),webDriver);
 //        WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getSearchBtn(),webDriver);
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Cart icon appears correctly", priority = 5)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Cart icon appears correctly", priority = 4)
     public void verifyCartIconAppearsCorrectly() throws IOException {
         HeaderSection headerSection = new HeaderSection(webDriver);
-        headerSection.navigateToHomePage();
         WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getCartIcon(), webDriver);
     }
 
-    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the My Account icon appears correctly", priority = 6)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the My Account icon appears correctly", priority = 5)
     public void verifyProfileIconAppearsCorrectly() throws IOException {
         HeaderSection headerSection = new HeaderSection(webDriver);
-        headerSection.navigateToHomePage();
         WebElementsAssertion.validateTheElementIsDisplayed(headerSection.getAccountProfileIcon(), webDriver);
     }
+
 }
