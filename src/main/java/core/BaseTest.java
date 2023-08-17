@@ -92,8 +92,7 @@ public class BaseTest {
 //                    chromeOptions.setPageLoadStrategy(PageLoadStrategy.NONE);
 //                    webDriver = new ChromeDriver(chromeOptions);
                     webDriver = new ChromeDriver();
-                    webDriver.navigate().to(BasePage.BaseURL);
-//                    webDriver.navigate().to("https://www.sporter.com");
+//                    webDriver.navigate().to(BasePage.BaseURL);
                     /**
                      ChromeOptions options = new ChromeOptions();
                      options.addArguments("headless");
@@ -114,7 +113,8 @@ public class BaseTest {
                     throw new Exception("Browser is not correct");
             }
             webDriver.manage().window().maximize();
-            webDriver.navigate().to(environment + "/" + country);
+            webDriver.navigate().to(BasePage.BaseURL);
+//            webDriver.navigate().to(environment + "/" + country);
 //            this.//CloseInitialDialog();
         }
         catch (Exception e){
