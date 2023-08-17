@@ -24,7 +24,13 @@ import java.io.IOException;
 public class SportsSupplementsCategoryTestCases extends BaseTest {
     String storeCountry;
     String countryCode;
-
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Supplements Category- Make sure clicking on the Sports Supplements Category from HomePage Redirect User To CorrectURL", priority = 4)
+    public void verifyClickingOnSportsSupplementsCategoryFromHomePageRedirectUserToCorrectURL() {
+        SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
+        HomePage homePage = new HomePage(webDriver);
+        DataHelperAndWait.clickOnElement(homePage.getSportsSupplementsCategory(), webDriver);
+        WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.sportSupplementsUrl, webDriver);
+    }
     @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Supplements Category- Make sure clicking on the Sports Supplements Category Appears In MegaMenu Redirect User To CorrectURL", priority = 2)
     public void verifyClickingOnSportsSupplementsCategoryAppearsInMegaMenuRedirectUserToCorrectURL() throws IOException {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
@@ -51,14 +57,7 @@ public class SportsSupplementsCategoryTestCases extends BaseTest {
     }
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Supplements Category- Make sure clicking on the Sports Supplements Category from HomePage Redirect User To CorrectURL", priority = 4)
-    public void verifyClickingOnSportsSupplementsCategoryFromHomePageRedirectUserToCorrectURL() throws IOException {
-        SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
-        HomePage homePage = new HomePage(webDriver);
-        homePage.navigateToHomePage();
-        DataHelperAndWait.clickOnElement(homePage.getSportsSupplementsCategory(), webDriver);
-        WebElementsAssertion.validateTheCurrentUrlContainsString(sportsSupplementsCategoryPage.sportSupplementsUrl, webDriver);
-    }
+
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Sports Supplements Category- Make sure the Horizontal Banners appear correctly", priority = 5)
     public void verifyTheHorizontalBannersAppearCorrectlyInSportSupplementsLandingPage() throws IOException {
@@ -217,11 +216,9 @@ public class SportsSupplementsCategoryTestCases extends BaseTest {
         sportsSupplementsCategoryPage.navigateToSportsSupplementPage();
         DataHelperAndWait.waitToBeVisible(sportsSupplementsCategoryPage.getSearchResultValue(), webDriver);
         String numberOfProductInTheList = sportsSupplementsCategoryPage.getSearchResultValue().getText();
-        if (sportsSupplementsCategoryPage.isTheresNoPages(numberOfProductInTheList))
-            System.out.println("There's no pages");
-        else {
+        if (!sportsSupplementsCategoryPage.isTheresNoPages(numberOfProductInTheList))
             sportsSupplementsCategoryPage.accessAllPagesInsideTheProductsListPage(numberOfProductInTheList, sportsSupplementsCategoryPage.getNextPageBtn(), webDriver);
-        }
+
 
     }
 }
