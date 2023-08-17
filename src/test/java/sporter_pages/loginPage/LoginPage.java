@@ -81,6 +81,7 @@ public class LoginPage extends BasePage {
 
     public void navigateToLoginPage() throws IOException {
         webDriver.manage().deleteCookieNamed("guestCartId");
+        webDriver.manage().deleteCookieNamed("uid");
         webDriver.navigate().to(BaseURL + loginLink);
         verifyTheDisplayedPageDoesNotHaveErrors();
         if (!webDriver.getCurrentUrl().contains(loginLink))

@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4cc95732-25cc-415a-acca-362cf2afbff2" name="Changes" comment=" Update the Display product URL">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/loginPage/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/loginPage/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/loginTestCases/LoginTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/loginTestCases/LoginTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/RunTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RunTest.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -477,6 +479,12 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/test/java/sporter_pages/loginPage/LoginPage.java</url>
+          <line>73</line>
+          <properties field="signInOption" class="sporter_pages.loginPage.LoginPage" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>

@@ -19,13 +19,25 @@
 <!--                    </run>-->
 <!--                </groups>-->
         <classes>
-<!--            <class name="sporter_test.tamara_payment_method_test_cases.UAETamaraPaymentMethodTestCases">-->
-            <class name="sporter_test.healthy_food_category_test_cases.IraqHealthyFoodTestCases"/>
-            <class name="sporter_test.sportsSupplementsCategoryTestCases.IraqSportsSupplementsCategoryTestCases"/>
-            <class name="sporter_test.homepage_test_cases.IraqHomePageTestCases"/>
-            <class name="sporter_test.footer_test_cases.IraqFooterTestCases"/>
-            <class name="sporter_test.headerTestCases.IraqHeaderTestCases"/>
-            <class name="sporter_test.forgetPasswordTestCases.IraqForgetPasswordTestCases"/>
+<!--            <class name="sporter_test.healthy_food_category_test_cases.IraqHealthyFoodTestCases"/>-->
+<!--            <class name="sporter_test.sportsSupplementsCategoryTestCases.IraqSportsSupplementsCategoryTestCases"/>-->
+<!--            <class name="sporter_test.homepage_test_cases.IraqHomePageTestCases"/>-->
+<!--            <class name="sporter_test.footer_test_cases.IraqFooterTestCases"/>-->
+<!--            <class name="sporter_test.headerTestCases.IraqHeaderTestCases"/>-->
+<!--            <class name="sporter_test.forgetPasswordTestCases.IraqForgetPasswordTestCases"/>-->
+            <class name="sporter_test.loginTestCases.IraqLoginTestCases"/>
+
+
+
+
+
+
+            
+
+
+
+
+
 <!--            <class name="sporter_test.tamara_payment_method_test_cases.KSATamaraPaymentMethodTestCases"/>-->
 
 
