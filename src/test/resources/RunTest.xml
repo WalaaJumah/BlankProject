@@ -20,9 +20,7 @@
 <!--                </groups>-->
         <classes>
 <!--            <class name="sporter_test.tamara_payment_method_test_cases.UAETamaraPaymentMethodTestCases">-->
-            <class name="sporter_test.sportsSupplementsCategoryTestCases.IraqSportsSupplementsCategoryTestCases"/>
-            <class name="sporter_test.sportsSupplementsCategoryTestCases.UAESportsSupplementsCategoryTestCases"/>
-            <class name="sporter_test.sportsSupplementsCategoryTestCases.KSASportsSupplementsCategoryTestCases">
+            <class name="sporter_test.healthy_food_category_test_cases.IraqHealthyFoodTestCases"/>
 <!--            <class name="sporter_test.tamara_payment_method_test_cases.KSATamaraPaymentMethodTestCases"/>-->
 
 
@@ -35,7 +33,6 @@
 
 <!--                    </methods>-->
 
-            </class>
         </classes>
 
     </test>

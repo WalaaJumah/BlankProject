@@ -46,6 +46,8 @@ public class SportsSupplementsCategoryPage extends BasePage {
     private WebElement nextPageBtn;
     @FindBy(xpath = "//ul[starts-with(@class,'pagination_innerPagination')]/li")
     private List<WebElement> paginationBtns;
+    @FindBy(id = "ShopByCategoryItemBtn0")
+    private WebElement sportsSupplementsCategoryFromHomePage;
     public SportsSupplementsCategoryPage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
