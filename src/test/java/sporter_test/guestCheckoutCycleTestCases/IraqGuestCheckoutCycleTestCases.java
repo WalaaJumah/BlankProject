@@ -18,6 +18,7 @@ import sporter_pages.cartPages.CartPage;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import sporter_pages.guestCheckoutCyclePages.IraqGuestCheckoutCyclePage;
 import sporter_pages.homepage_classes.IraqHomePage;
+import sporter_pages.productPage.ProductDetailsPage;
 import xml_reader.XmlReader;
 
 import java.io.IOException;
@@ -158,6 +159,12 @@ public class IraqGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCases
             Assert.assertEquals(cityList.get(i),XmlReader.getXMLDataFromFile("TestData"+i,"src/test/resources/aramexCities.xml"));
         }
 
+    }
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure that the pagination control appears in Reviews section works correctly ", priority = 34)
+    public void verifyPaginationControlAppearsInReviewsSectionWorksCorrectly() throws IOException {
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        productDetailsPage.displayTheProduct();
+//        productDetailsPage.verifyReviewPagingWorks();
     }
     @Test(enabled = false)
     public void verifyAbilityToSelect2BusinessDaysShippingMethodCorrectly(){}

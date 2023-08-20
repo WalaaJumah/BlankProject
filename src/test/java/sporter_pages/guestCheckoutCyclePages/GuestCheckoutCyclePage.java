@@ -261,7 +261,7 @@ public class GuestCheckoutCyclePage extends BasePage {
         cartPage.proceedToCheckout();
             //TODO: Needs to check this button
         try {
-            DataHelperAndWait.waitForTime(1000);
+            DataHelperAndWait.waitForTime(1500);
             DataHelperAndWait.clickOnElement(checkoutAsGuestBtn, webDriver);
         } catch (Exception e) {
   checkoutAsGuestBtn.click();

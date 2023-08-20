@@ -21,6 +21,8 @@ public class IraqMyAccountTestCases extends MyAccountTestCases{
         if (!webDriver.getCurrentUrl().contains(iraqHomePage.iraqDomain)) {
             webDriver.navigate().to(BasePage.BaseURL + iraqHomePage.iraqDomain);
         }
+        storeCountry="Iraq";
+        countryCode="964";
     }
     @Test(enabled = false)
     public void verifyInabilityToAddNewAddressUsingInvalidNationalID() {

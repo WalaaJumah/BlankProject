@@ -243,8 +243,12 @@ public class CartPage extends BasePage {
     public boolean IsEmptyCart() throws IOException {
         navigateToCartPage();
         try {
-            if(hereLink == null)
+            //TODO: Needs to review after solving cart loading issue https://sporter1.atlassian.net/browse/MH-398
+            if(hereLink == null) {
+                DataHelperAndWait.waitForTime(2000);
+                if(hereLink == null)
                 return false;
+            }
 
             return hereLink.isDisplayed() ;
 
