@@ -4,7 +4,7 @@
 <suite name="Automation Reports">
     <listeners>
         <!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
-<!--        <listener class-name="extent_report_listner.ExtentReportListener"/>-->
+        <!--        <listener class-name="extent_report_listner.ExtentReportListener"/>-->
     </listeners>
     <test name=" Iraq  Full Test Stg" preserve-order="true">
         <parameter name="environment" value="https://stg.sporter.com"/>
@@ -28,7 +28,7 @@
             <class name="sporter_test.sportsSupplementsCategoryTestCases.IraqSportsSupplementsCategoryTestCases"></class>
             <class name="sporter_test.healthy_food_category_test_cases.IraqHealthyFoodTestCases"></class>
             <class name="sporter_test.womens_only_category_test_cases.IraqWomensOnlyCategoryTestCases"/>
-<!--            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.IraqVitaminsAndHealthCategoryTestCases"/>-->
+            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.IraqVitaminsAndHealthCategoryTestCases"/>
             <class name="sporter_test.sports_category_test_cases.IraqSportsCategoryTestCases"></class>
             <class name="sporter_test.footer_test_cases.IraqFooterTestCases"></class>
             <class name="sporter_test.forgetPasswordTestCases.IraqForgetPasswordTestCases"></class>
