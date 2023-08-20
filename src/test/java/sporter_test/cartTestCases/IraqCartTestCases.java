@@ -52,7 +52,7 @@ public class IraqCartTestCases extends CartTestCases {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         float subTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue(), webDriver, cartPage.iraqCurrency);
-        float tax = subTotal * (float) (0.15);
+        float tax = 0;
         float expectedCartTotal = subTotal + tax;
         float actualCartTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(), webDriver, cartPage.iraqCurrency);
         Assert.assertEquals(df.format(actualCartTotal), df.format(expectedCartTotal));
