@@ -80,7 +80,8 @@ public class CartTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the view Cart button appearing in the Cart pop-up works correctly", priority = 7)
     public void verifyAbilityToViewCartFromCartIcon() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+//        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        cartPage.navigateToHomePage();
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getViewCartInCartPopup(), webDriver);
 
