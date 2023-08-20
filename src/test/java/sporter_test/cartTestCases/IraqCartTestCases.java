@@ -18,6 +18,7 @@ import sporter_pages.homepage_classes.IraqHomePage;
 import sporter_test.cartRulesTestCases.CartRulesTestCases;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 
 @Getter
 public class IraqCartTestCases extends CartTestCases {
@@ -45,5 +46,16 @@ public class IraqCartTestCases extends CartTestCases {
         float orderTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(), webDriver, cartPage.iraqCurrency);
         double cartTotal = subTotal + tax;
         Assert.assertEquals(orderTotal, cartTotal);
+    }
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the tax calculate correctly", priority = 29, enabled = false)
+    public void verifyTheTaxCalculatedCorrectly() throws IOException {
+        DecimalFormat df = new DecimalFormat("0.00");
+        CartPage cartPage = new CartPage(webDriver);
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        float subTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue(), webDriver, cartPage.iraqCurrency);
+        float tax = subTotal * (float) (0.15);
+        float expectedCartTotal = subTotal + tax;
+        float actualCartTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(), webDriver, cartPage.iraqCurrency);
+        Assert.assertEquals(df.format(actualCartTotal), df.format(expectedCartTotal));
     }
 }
