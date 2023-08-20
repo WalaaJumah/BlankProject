@@ -18,7 +18,7 @@
             <class name="sporter_test.homepage_test_cases.QatarHomePageTestCases"/>
             <class name="sporter_test.headerTestCases.QatarHeaderTestCases"/>
 <!--            <class name="sporter_test.productTestCases.QatarProductDetailsTestCases"/>-->
-<!--            <class name="sporter_test.RecommendedProductsTestCases.QatarRecommendedProductTestCases"/>-->
+            <class name="sporter_test.RecommendedProductsTestCases.QatarRecommendedProductTestCases"/>
             <class name="sporter_test.AccountRegistrationTestCases.QatarAccountRegistrationTestCases"/>
             <class name="sporter_test.loginTestCases.QatarLoginTestCases"/>
             <class name="sporter_test.cartTestCases.QatarCartTestCases"></class>

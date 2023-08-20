@@ -275,12 +275,13 @@ public class ProductDetailsPage extends BasePage {
         DataHelperAndWait.clickOnElement(searchBtn, webDriver);
     }
 
-    public void verifyReviewPagingWorks() {
-        try {
+    public void verifyReviewPagingWorks() throws IOException {
+//        try {
             DataHelperAndWait.clickOnElement(pageBtnInReviewSection.get(1), webDriver);
-            WebElementsAssertion.validateTheCurrentUrlContainsString("p=2", webDriver);
-        } catch (Exception e) {
-            System.out.println("There's no pages in the Review Section");
-        }
+            verifyTheDisplayedPageDoesNotHaveErrors();
+//            WebElementsAssertion.validateTheCurrentUrlContainsString("p=2", webDriver);
+//        } catch (Exception e) {
+//            System.out.println("There's no pages in the Review Section");
+//        }
     }
 }

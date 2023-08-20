@@ -10,7 +10,7 @@
         <parameter name="environment" value="https://stg.sporter.com"/>
         <parameter name="browser" value="chrome"/>
         <!-- <parameter name="country" value="en-qa" />-->
-        <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32569"/>
+        <parameter name="bogoProduct" value="/catalog-pro-32569-32569/"/>
         <parameter name="oOSProduct" value="/catalina-crunch-keto-friendly-crunch-mix"/>
         <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
 <!--                <groups>-->
@@ -25,17 +25,17 @@
 <!--            <class name="sporter_test.footer_test_cases.IraqFooterTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.IraqHeaderTestCases"/>-->
 <!--            <class name="sporter_test.forgetPasswordTestCases.IraqForgetPasswordTestCases"/>-->
-            <class name="sporter_test.footer_test_cases.IraqFooterTestCases">
+            <class name="sporter_test.productTestCases.IraqProductDetailsTestCases">
 
-            <methods>
-                <include name="verifyAbilityToAccessAllAccessoriesAndApparelCorrectly"></include>
-<!--                <include name="verifyAbilityToAccessAllMostSellingProductsCorrectly"></include>-->
-                <!--                    <include name="verifyInabilityToAddNewAddressWithIncorrectPhoneNumberFormat"></include>-->
-                <!--                    <include name="verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTamaraPaymentMethodUsing3DSCardForForRegisteredUser"></include>-->
-                <!--                    <include name="verifyClickingOnTheSecondSideBannersWorksCorrectly"></include>-->
+<!--            <methods>-->
+<!--                <include name="verifyAbilityToAccessAllAccessoriesAndApparelCorrectly"></include>-->
+<!--&lt;!&ndash;                <include name="verifyAbilityToAccessAllMostSellingProductsCorrectly"></include>&ndash;&gt;-->
+<!--                &lt;!&ndash;                    <include name="verifyInabilityToAddNewAddressWithIncorrectPhoneNumberFormat"></include>&ndash;&gt;-->
+<!--                &lt;!&ndash;                    <include name="verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTamaraPaymentMethodUsing3DSCardForForRegisteredUser"></include>&ndash;&gt;-->
+<!--                &lt;!&ndash;                    <include name="verifyClickingOnTheSecondSideBannersWorksCorrectly"></include>&ndash;&gt;-->
 
 
-            </methods>
+<!--            </methods>-->
             </class>
 
 
