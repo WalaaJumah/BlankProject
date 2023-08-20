@@ -160,14 +160,34 @@
             <class name="sporter_test.vitaminsAndHealthCategoryTestCases.QatarVitaminsAndHealthCategoryTestCases"/>
             <class name="sporter_test.sports_category_test_cases.QatarSportsCategoryTestCases"></class>ml.
             <class name="sporter_test.checkoutForRegisteredUserTestCases.KuwaitCheckoutForRegisteredTestCases"></class>
-<!--            <class name="sporter_test.tamara_payment_method_test_cases.UAETamaraPaymentMethodTestCases"></class>-->
-<!--            <class name="sporter_test.tamara_payment_method_test_cases.KSATamaraPaymentMethodTestCases"></class>-->
-<!--            <class name="sporter_test.tabby_payment_method_test_cases.KSATabbyPaymentMethodTestCases"></class>-->
-<!--            <class name="sporter_test.tabby_payment_method_test_cases.UAETabbyPaymentMethodTestCases"></class>-->
-<!--            <class name="sporter_test.tabby_payment_method_test_cases.KuwaitTabbyPaymentMethodTestCases"></class>-->
-<!--            <class name="sporter_test.tabby_payment_method_test_cases.BahrainTabbyPaymentMethodTestCases"></class>-->
-<!--            <class name="sporter_test.tabby_payment_method_test_cases.KuwaitTabbyPaymentMethodTestCases"></class>-->
-<!--            <class name="sporter_test.tabby_payment_method_test_cases.QatarTabbyPaymentMethodTestCases"></class>-->
+
+            <class name="sporter_test.tamara_payment_method_test_cases.UAETamaraPaymentMethodTestCases"></class>
+            <class name="sporter_test.tamara_payment_method_test_cases.KSATamaraPaymentMethodTestCases"></class>
+            <class name="sporter_test.tabby_payment_method_test_cases.KSATabbyPaymentMethodTestCases"></class>
+            <class name="sporter_test.tabby_payment_method_test_cases.UAETabbyPaymentMethodTestCases"></class>
+            <class name="sporter_test.tabby_payment_method_test_cases.KuwaitTabbyPaymentMethodTestCases"></class>
+            <class name="sporter_test.tabby_payment_method_test_cases.BahrainTabbyPaymentMethodTestCases"></class>
+            <class name="sporter_test.tabby_payment_method_test_cases.KuwaitTabbyPaymentMethodTestCases"></class>
+            <class name="sporter_test.tabby_payment_method_test_cases.QatarTabbyPaymentMethodTestCases"></class>/
+
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.IraqCheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.guestCheckoutCycleTestCases.IraqGuestCheckoutCycleTestCases"></class>
+            <class name="sporter_test.homepage_test_cases.IraqHomePageTestCases"/>
+            <class name="sporter_test.headerTestCases.IraqHeaderTestCases"/>
+            <class name="sporter_test.productTestCases.IraqProductDetailsTestCases"/>
+            <class name="sporter_test.RecommendedProductsTestCases.IraqRecommendedProductTestCases"/>
+            <class name="sporter_test.AccountRegistrationTestCases.IraqAccountRegistrationTestCases"/>
+            <class name="sporter_test.loginTestCases.IraqLoginTestCases"/>
+            <class name="sporter_test.cartTestCases.IraqCartTestCases"></class>
+            <class name="sporter_test.cartRulesTestCases.IraqCartRulesTestCases"></class>
+            <class name="sporter_test.myAccountTestCases.IraqMyAccountTestCases"></class>
+            <class name="sporter_test.sportsSupplementsCategoryTestCases.IraqSportsSupplementsCategoryTestCases"></class>
+            <class name="sporter_test.healthy_food_category_test_cases.IraqHealthyFoodTestCases"></class>
+            <class name="sporter_test.womens_only_category_test_cases.IraqWomensOnlyCategoryTestCases"/>
+                        <class name="sporter_test.vitaminsAndHealthCategoryTestCases.IraqVitaminsAndHealthCategoryTestCases"/>
+            <class name="sporter_test.sports_category_test_cases.IraqSportsCategoryTestCases"></class>
+            <class name="sporter_test.footer_test_cases.IraqFooterTestCases"></class>
+            <class name="sporter_test.forgetPasswordTestCases.IraqForgetPasswordTestCases"></class>
         </classes>
     </test>
 </suite>
