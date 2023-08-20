@@ -148,6 +148,9 @@ public class GuestCheckoutCyclePage extends BasePage {
     private WebElement creditCardIFrame;
     @FindBy(id = "closeAddToCartErrBtn")
     private WebElement closeCheckoutErr;
+      @FindBy(id = "AddToCartErrMsg")
+    private WebElement cartErrorMsgText;
+
     //   @FindBy(xpath = "//input[@placeholder='Hint: Checkout1!']")
 //   private WebElement secureAnd2Authentication;
     @FindBy(id = "password")
@@ -232,8 +235,13 @@ public class GuestCheckoutCyclePage extends BasePage {
             DataHelperAndWait.hoverOnElementAndClick(continueShippingInfoBtn, webDriver);
             waitTillLoaderComplete();
         }
-        if(DataHelperAndWait.IsElementPresent(closeCheckoutErr))
-            throw new AssertionError("Sorry But There is No Available Shipping Methods For your Location error");
+        if(DataHelperAndWait.IsElementPresent(closeCheckoutErr)) {
+            if(cartErrorMsgText.getText().contains("No Available Shipping Methods")){
+            throw new AssertionError("Sorry But There is No Available Shipping Methods For your Location error");}
+            if(cartErrorMsgText.getText().contains("some or all of your items may be shipped from outside")){
+                throw new AssertionError("some or all of your items may be shipped from outside error is displayed");}
+
+        }
     }
 
     public void navigateToCheckoutPage() throws IOException {

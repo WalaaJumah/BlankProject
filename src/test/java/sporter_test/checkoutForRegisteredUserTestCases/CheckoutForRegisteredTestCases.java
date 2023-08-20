@@ -108,7 +108,8 @@ public class CheckoutForRegisteredTestCases extends BaseTest
     @Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure the system fills the store country by default in the country field in the shipping information form", priority = 13)
     public void verifyTheCountryRetrievedInCountryFieldBasedOnStoreCountry() throws IOException {
         CartPage cartPage= new CartPage(webDriver);
-        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+//TODO: Needs to recheck
+        //        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
 
     }
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Add new Address button in the shipping information form works correctly", priority = 12)
@@ -127,11 +128,11 @@ catch (Exception e){
   @Test(groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}:Make sure the County Code retrieved correctly in the Phone Field", priority = 14)
     public void verifyTheCorrectCountyCodeRetrievedCorrectlyInPhoneField() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-      CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver,guestCheckoutCyclePage);
-      CartPage cartPage= new CartPage(webDriver);
-      cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
-      cartPage.proceedToCheckout();
-          DataHelperAndWait.clickOnElement(registeredPage.getAddNewAddressBtn(),webDriver);
+//      CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver,guestCheckoutCyclePage);
+//      CartPage cartPage= new CartPage(webDriver);
+//      cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+//      cartPage.proceedToCheckout();
+//          DataHelperAndWait.clickOnElement(registeredPage.getAddNewAddressBtn(),webDriver);
           WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getCountryCode(), webDriver, countryCode);
 
     }

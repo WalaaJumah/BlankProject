@@ -25,17 +25,17 @@
 <!--            <class name="sporter_test.footer_test_cases.IraqFooterTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.IraqHeaderTestCases"/>-->
 <!--            <class name="sporter_test.forgetPasswordTestCases.IraqForgetPasswordTestCases"/>-->
-            <class name="sporter_test.guestCheckoutCycleTestCases.IraqGuestCheckoutCycleTestCases">
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.IraqCheckoutForRegisteredTestCases">
 
-            <methods>
-                <include name="verifyAllAramexCitiesAreListedInCityMenu"></include>
-<!--                <include name="verifyAbilityToAccessAllMostSellingProductsCorrectly"></include>-->
-                <!--                    <include name="verifyInabilityToAddNewAddressWithIncorrectPhoneNumberFormat"></include>-->
-                <!--                    <include name="verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTamaraPaymentMethodUsing3DSCardForForRegisteredUser"></include>-->
-                <!--                    <include name="verifyClickingOnTheSecondSideBannersWorksCorrectly"></include>-->
+<!--            <methods>-->
+<!--                <include name="verifyAllAramexCitiesAreListedInCityMenu"></include>-->
+<!--&lt;!&ndash;                <include name="verifyAbilityToAccessAllMostSellingProductsCorrectly"></include>&ndash;&gt;-->
+<!--                &lt;!&ndash;                    <include name="verifyInabilityToAddNewAddressWithIncorrectPhoneNumberFormat"></include>&ndash;&gt;-->
+<!--                &lt;!&ndash;                    <include name="verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTamaraPaymentMethodUsing3DSCardForForRegisteredUser"></include>&ndash;&gt;-->
+<!--                &lt;!&ndash;                    <include name="verifyClickingOnTheSecondSideBannersWorksCorrectly"></include>&ndash;&gt;-->
 
 
-            </methods>
+<!--            </methods>-->
             </class>
 
 

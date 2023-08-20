@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="4cc95732-25cc-415a-acca-362cf2afbff2" name="Changes" comment=" Update the Display product URL">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xml_reader/XmlReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xml_reader/XmlReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/IraqGuestCheckoutCycleTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/IraqGuestCheckoutCycleTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/aramexCities.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/aramexCities.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/guestCheckoutCyclePages/GuestCheckoutCyclePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/guestCheckoutCyclePages/GuestCheckoutCyclePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/CheckoutForRegisteredTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/CheckoutForRegisteredTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/IraqCheckoutForRegisteredTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/IraqCheckoutForRegisteredTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/RunTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RunTest.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -504,6 +505,7 @@
         <watch expression="getCardsList" />
         <watch expression="cardNumberInTheList" />
         <watch expression="guestCheckoutCyclePage.ifSecureAndAuthenticationIsRequired()" />
+        <watch expression="cityList" />
       </configuration>
     </watches-manager>
   </component>
