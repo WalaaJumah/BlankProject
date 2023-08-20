@@ -12,7 +12,7 @@ import org.testng.annotations.BeforeClass;
 import sporter_pages.homepage_classes.IraqHomePage;
 import sporter_test.cartRulesTestCases.CartRulesTestCases;
 @Getter
-public class IraqCartTestCases extends CartRulesTestCases {
+public class IraqCartTestCases extends CartTestCases {
     @BeforeClass(alwaysRun = true)
     public void switchToIraqStore() {
         IraqHomePage iraqHomePage = new IraqHomePage(webDriver);
