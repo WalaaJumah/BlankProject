@@ -58,15 +58,34 @@ public class IraqGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCases
         WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver, XmlReader.getXMLData("twoBusinessDayIraq"));
         WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getThreeFourBusinessDaysSuperExpressShipping(),webDriver, XmlReader.getXMLData("ThreeFourBusinessDaysShippingIraq"));
     }
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that each of COD & Credit Card Payment methods appear correctly", priority = 23)
+    public void verifyEachOfCODAndCreditCardPaymentMethodCorrectly() throws IOException {
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        guestCheckoutCyclePage.accessGuestCheckoutForm();
+        guestCheckoutCyclePage.fillInShippingInformationInputField(
+                XmlReader.getXMLData("firstName"),
+                XmlReader.getXMLData("lastName"),
+                XmlReader.getXMLData("correctEmail"),
+                XmlReader.getXMLData("phoneNumber"),
+//                XmlReader.getXMLData("AddressName"),
+                XmlReader.getXMLData("StreetOneAddressName"),
+                XmlReader.getXMLData("ksaPhoneNumber")
+        );
+        DataHelperAndWait.waitForTime(2000);
+        guestCheckoutCyclePage.clickOnContinueBtn();
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
+        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCreditCardPaymentMethod(),webDriver);
+    }
     @Test(enabled = false)
     public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNationalID() {
     }
     @Test(enabled = false)
     public void verifySameDayShippingMethodAppearsForDubaiCityOnly() {
     }
-    //TODO:The Same Day Delivery is Missing
     @Test(enabled = false)
     public void verifyAbilityToSelectSameDayShippingMethodCorrectly() {
     }
-
+    @Test(enabled = false)
+    public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod() {}
 }
