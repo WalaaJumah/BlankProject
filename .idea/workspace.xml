@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4cc95732-25cc-415a-acca-362cf2afbff2" name="Changes" comment=" Update the Display product URL">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/footerSections/FooterSection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/footerSections/FooterSection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/IraqStore/IraqFull.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/IraqStore/IraqFull.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/RunTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RunTest.xml" afterDir="false" />
     </list>
@@ -106,6 +107,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/IraqStore/IraqFull.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="sporter-web-automation" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/IraqStore/IraqFull.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/KSAStore/KSAFullTest.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/KSAStore/KSAFullTest.xml" />
@@ -126,16 +137,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/RunMethod.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="sporter-web-automation" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/RunMethod.xml" />
-      <option name="TEST_OBJECT" value="SUITE" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/RunTest.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/RunTest.xml" />
@@ -147,19 +148,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/IraqStore/IraqFull.xml" />
       <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/KSAStore/KSAFullTest.xml" />
       <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/RunTest.xml" />
       <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/QatarStore/QatarFull.xml" />
-      <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/RunMethod.xml" />
       <item itemvalue="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/Sporter2.1OnProdution/ProductionSporter2.1SmokeReport.xml" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/RunTest.xml" />
+        <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/IraqStore/IraqFull.xml" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/QatarStore/QatarFull.xml" />
         <item itemvalue="TestNG.C:/Users/User/IdeaProjects/QATesting/src/test/resources/Sporter2.1OnProdution/ProductionSporter2.1SmokeReport.xml" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/KSAStore/KSAFullTest.xml" />
-        <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/RunMethod.xml" />
       </list>
     </recent_temporary>
   </component>
