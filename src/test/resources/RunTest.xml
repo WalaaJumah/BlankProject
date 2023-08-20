@@ -25,7 +25,7 @@
 <!--            <class name="sporter_test.footer_test_cases.IraqFooterTestCases"/>-->
 <!--            <class name="sporter_test.headerTestCases.IraqHeaderTestCases"/>-->
 <!--            <class name="sporter_test.forgetPasswordTestCases.IraqForgetPasswordTestCases"/>-->
-            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.IraqVitaminsAndHealthCategoryTestCases">
+            <class name="sporter_test.guestCheckoutCycleTestCases.IraqGuestCheckoutCycleTestCases">
 
 <!--            <methods>-->
 <!--                <include name="verifyAllAramexCitiesAreListedInCityMenu"></include>-->

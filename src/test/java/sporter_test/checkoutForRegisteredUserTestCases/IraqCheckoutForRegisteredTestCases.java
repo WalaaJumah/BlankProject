@@ -39,8 +39,8 @@ public class IraqCheckoutForRegisteredTestCases extends CheckoutForRegisteredTes
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:Verify All Shipping Methods appear correctly", priority = 21)
     public void verifyAllShippingMethodsAppearCorrectly(){
         IraqGuestCheckoutCyclePage guestCheckoutCyclePage = new IraqGuestCheckoutCyclePage(webDriver);
-        WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver, XmlReader.getXMLData("twoBusinessDayIraq"));
         WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getThreeFourBusinessDaysSuperExpressShipping(),webDriver, XmlReader.getXMLData("ThreeFourBusinessDaysShippingIraq"));
+        Assert.assertFalse(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping().isDisplayed(),"TwoBusinessDaysSuperExpressShipping is displayed");
     }
     @Test(enabled = false)
     public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod() {}
@@ -150,4 +150,8 @@ public class IraqCheckoutForRegisteredTestCases extends CheckoutForRegisteredTes
         double cartTotal = subTotal + tax;
         Assert.assertEquals(df.format(orderTotal), df.format(cartTotal));
     }
+    @Test(enabled = false)
+    public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithValidCreditCardPaymentMethod() {}
+    @Test(enabled = false)
+    public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCreditCardPaymentMethod() {}
 }
