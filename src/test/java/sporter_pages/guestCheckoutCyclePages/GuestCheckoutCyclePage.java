@@ -245,17 +245,25 @@ public class GuestCheckoutCyclePage extends BasePage {
     }
 
     public void accessGuestCheckoutForm() throws IOException {
-            CartPage cartPage = new CartPage(webDriver);
+        CartPage cartPage = new CartPage(webDriver);
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        cartPage.proceedToCheckout();
+        cartPage.waitTillCartSpinnerDisappear(webDriver);
+        if(DataHelperAndWait.IsElementPresent(checkoutAsGuestBtn)){
+        try {
+
+            DataHelperAndWait.waitToBeClickable(checkoutAsGuestBtn, webDriver);
+            DataHelperAndWait.clickOnElement(checkoutAsGuestBtn, webDriver);
+        } catch (Exception e) {
             cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
             cartPage.proceedToCheckout();
-        cartPage.waitTillCartSpinnerDisappear(webDriver);
-        try {
-            DataHelperAndWait.waitToBeVisible(checkoutAsGuestBtn, webDriver);
-            DataHelperAndWait.clickOnElement(checkoutAsGuestBtn, webDriver);
+            if(DataHelperAndWait.IsElementPresent(checkoutAsGuestBtn)) {
+                DataHelperAndWait.waitToBeClickable(checkoutAsGuestBtn, webDriver);
+                DataHelperAndWait.clickOnElement(checkoutAsGuestBtn, webDriver);
+            }
+
         }
-        catch (Exception e){
-            checkoutAsGuestBtn.click();
-        }
+    }
     }
 
     public void selectCity() {
