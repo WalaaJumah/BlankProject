@@ -63,7 +63,8 @@ public class BasePage {
     public final String aeArabicCurrency = "د.إ";
     public final String aeEnglishCurrency = "AED";
     public final String kSAEnglishCurrency = "SAR";
-    public final String iraqCurrency = "$";
+    public final String iraqCurrencySign = "$";
+    public final String iraqCurrency = "USD";
     public final String kSAArabicCurrency = "ر.س";
     public final String omanDomain = "/en-om";
     public final String bahrainDomain = "/en-bh";
