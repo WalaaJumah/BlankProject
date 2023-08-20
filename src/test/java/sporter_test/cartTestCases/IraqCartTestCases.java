@@ -7,10 +7,18 @@
 package sporter_test.cartTestCases;
 
 import core.BasePage;
+import core.DataHelperAndWait;
+import core.WebElementsAssertion;
 import lombok.Getter;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+import sporter_pages.cartPages.CartPage;
 import sporter_pages.homepage_classes.IraqHomePage;
 import sporter_test.cartRulesTestCases.CartRulesTestCases;
+
+import java.io.IOException;
+
 @Getter
 public class IraqCartTestCases extends CartTestCases {
     @BeforeClass(alwaysRun = true)
@@ -20,5 +28,22 @@ public class IraqCartTestCases extends CartTestCases {
         if (!webDriver.getCurrentUrl().contains(iraqHomePage.iraqDomain)) {
             webDriver.navigate().to(BasePage.BaseURL + iraqHomePage.iraqDomain);
         }
+    }
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that all payment methods are appear correctly in the Cart page", priority = 21)
+    public void verifyAllPaymentMethodAppearingTheCartPage() throws IOException {
+        CartPage cartPage = new CartPage(webDriver);
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getWeAcceptLabel(), webDriver);
+        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCreditCardOption(), webDriver);
+    }
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 24)
+    public void verifyOrderTotalCalculationInCartPageWorksCorrectly() throws IOException {
+        CartPage cartPage = new CartPage(webDriver);
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        float subTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue(), webDriver, cartPage.iraqCurrency);
+        float tax = DataHelperAndWait.convertTheStringToFloat(cartPage.getTaxValue(), webDriver, cartPage.iraqCurrency);
+        float orderTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(), webDriver, cartPage.iraqCurrency);
+        double cartTotal = subTotal + tax;
+        Assert.assertEquals(orderTotal, cartTotal);
     }
 }
