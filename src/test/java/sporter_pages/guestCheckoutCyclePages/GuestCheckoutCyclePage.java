@@ -248,21 +248,12 @@ public class GuestCheckoutCyclePage extends BasePage {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         cartPage.proceedToCheckout();
-        cartPage.waitTillCartSpinnerDisappear(webDriver);
-        if(DataHelperAndWait.IsElementPresent(checkoutAsGuestBtn)){
+            //TODO: Needs to check this button
         try {
-
-            DataHelperAndWait.waitToBeClickable(checkoutAsGuestBtn, webDriver);
+            DataHelperAndWait.waitForTime(1000);
             DataHelperAndWait.clickOnElement(checkoutAsGuestBtn, webDriver);
         } catch (Exception e) {
-            cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
-            cartPage.proceedToCheckout();
-            if(DataHelperAndWait.IsElementPresent(checkoutAsGuestBtn)) {
-                DataHelperAndWait.waitToBeClickable(checkoutAsGuestBtn, webDriver);
-                DataHelperAndWait.clickOnElement(checkoutAsGuestBtn, webDriver);
-            }
-
-        }
+  checkoutAsGuestBtn.click();
     }
     }
 
