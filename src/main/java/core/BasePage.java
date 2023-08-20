@@ -33,6 +33,12 @@ public class BasePage {
     public static String BaseURL = "";
     public static String productUrl = "/optimum-gold-standard-100-whey-6202";
     public static String productUrlIraq = "/pre-pregnacy-couples-bundle/";
+    public static String productUrlIraqHighPrice = "/lean-muscle-mass-combo-3/";
+    public static String productUrlIraq2 = "/fade-fit-protein-munchies-54804/";
+    public static String productUrlIraq3 = "/project-7-naturally-sweetened-chewing-gum-52184/";
+    public static String productUrlIraq4 = "/organic-larder-canned-veg-edamame-soybean-25133/";
+    public static String productUrlIraq5 = "/ellas-kitchen-organic-mangoes-puree-baby-pouch-58615/";
+
     public static String ksaDomainArabic = "/ar-sa";
     public static String productUrl9 = "/cellucor-c4-26162";
 

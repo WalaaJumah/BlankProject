@@ -23,6 +23,7 @@
             <class name="sporter_test.AccountRegistrationTestCases.IraqAccountRegistrationTestCases"/>
             <class name="sporter_test.loginTestCases.IraqLoginTestCases"/>
             <class name="sporter_test.cartTestCases.IraqCartTestCases"></class>
+            <class name="sporter_test.cartRulesTestCases.IraqCartRulesTestCases"></class>
             <class name="sporter_test.myAccountTestCases.IraqMyAccountTestCases"></class>
             <class name="sporter_test.sportsSupplementsCategoryTestCases.IraqSportsSupplementsCategoryTestCases"></class>
             <class name="sporter_test.healthy_food_category_test_cases.IraqHealthyFoodTestCases"></class>
