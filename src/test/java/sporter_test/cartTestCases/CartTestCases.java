@@ -145,6 +145,7 @@ DataHelperAndWait.waitToBeVisible(cartPage.getCartIcon(),webDriver);
     public void verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
         productDetailsPage.displayTheProduct();
         productDetailsPage.increaseTheQuantity();
         cartPage.addToCartAndViewCart();
