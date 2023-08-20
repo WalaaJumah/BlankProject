@@ -22,6 +22,8 @@ import xml_reader.XmlReader;
 
 import java.io.IOException;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 public class IraqGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCases{
@@ -145,8 +147,15 @@ public class IraqGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCases
         DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getCityMenu(), webDriver);
         DataHelperAndWait.waitForTime(400);
         guestCheckoutCyclePage.getCityMenu().click();
-        for (WebElement e: guestCheckoutCyclePage.getCitiesOptions()){
-            System.out.println(e.getText());
+        String[] lines = guestCheckoutCyclePage.getCitiesOptions().get(0).getText().split("\n");
+        List<String> cityList = new ArrayList<>();
+        for (String line : lines) {
+            cityList.add(line);
+        }
+        for (int i=1;i<cityList.size();i++){
+            System.out.println(cityList.size());
+            System.out.println(cityList.get(i));
+            Assert.assertEquals(cityList.get(i),XmlReader.getXMLDataFromFile("TestData"+i,"src/test/resources/aramexCities.xml"));
         }
 
     }

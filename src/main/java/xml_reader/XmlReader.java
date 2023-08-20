@@ -29,7 +29,7 @@ public class XmlReader {
 
         return nodeValue;
     }
-    public static String getXMLData(String dataFor,String filePath) {
+    public static String getXMLDataFromFile(String dataFor,String filePath) {
         String nodeValue = null;
         try {
             File file = new File(filePath);
