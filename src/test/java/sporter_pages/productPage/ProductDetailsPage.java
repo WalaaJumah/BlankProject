@@ -181,6 +181,9 @@ public class ProductDetailsPage extends BasePage {
         if (currentUrl.contains("-om")) {
             productUrl1 = productUrl;
         }
+        if (currentUrl.contains("-iq")) {
+            productUrl1 = productUrl;
+        }
 
         webDriver.navigate().to(BaseURL + productUrl1);
         DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
