@@ -23,6 +23,7 @@ import sporter_pages.cartPages.CartPage;
 import xml_reader.XmlReader;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.List;
 
 @Getter
 public class GuestCheckoutCyclePage extends BasePage {
@@ -90,6 +91,8 @@ public class GuestCheckoutCyclePage extends BasePage {
     private WebElement duabiCity;
     @FindBy(xpath = "//div[@id='citiesSelector']/div[2]/div[2]/div[2]")
     private WebElement firstCity;
+    @FindBy(xpath = "//div[@id='citiesSelector']/div[2]/div[2]")
+    private List<WebElement> citiesOptions;
 
 
     @FindBy(id = "countrySelector")

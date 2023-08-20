@@ -10,6 +10,7 @@ import core.BasePage;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
 import lombok.Getter;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -137,4 +138,16 @@ public class IraqGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCases
     }
     @Test(enabled = false)
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod() {}
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Verify All Aramex cites are listed in the CityMenu", priority = 101)
+    public void verifyAllAramexCitiesAreListedInCityMenu() throws IOException {
+        IraqGuestCheckoutCyclePage guestCheckoutCyclePage = new IraqGuestCheckoutCyclePage(webDriver);
+        guestCheckoutCyclePage.accessGuestCheckoutForm();
+        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getCityMenu(), webDriver);
+        DataHelperAndWait.waitForTime(400);
+        guestCheckoutCyclePage.getCityMenu().click();
+        for (WebElement e: guestCheckoutCyclePage.getCitiesOptions()){
+            System.out.println(e.getText());
+        }
+
+    }
 }

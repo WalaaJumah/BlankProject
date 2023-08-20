@@ -29,7 +29,20 @@ public class XmlReader {
 
         return nodeValue;
     }
+    public static String getXMLData(String dataFor,String filePath) {
+        String nodeValue = null;
+        try {
+            File file = new File(filePath);
+            DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+            org.w3c.dom.Document document = documentBuilder.parse(file);
+            nodeValue = document.getElementsByTagName(dataFor).item(0).getTextContent();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
+        return nodeValue;
+    }
     public static ArrayList<String> getChildNodeValuesAsArray(String dataFor) {
 
         ArrayList<String> array = new ArrayList<>();
