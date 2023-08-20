@@ -163,7 +163,7 @@ public class ProductDetailsPage extends BasePage {
         if (currentUrl.contains("-sa")) {
             productUrl1 = productUrl;
         }
-        if (currentUrl.contains("eg")) {
+        if (currentUrl.contains("-eg")) {
             productUrl1 = productUrlEgypt;
         }
         if (currentUrl.contains("-qa")) {
@@ -182,7 +182,7 @@ public class ProductDetailsPage extends BasePage {
             productUrl1 = productUrl;
         }
         if (currentUrl.contains("-iq")) {
-            productUrl1 = productUrl;
+            productUrl1 = productUrlIraq;
         }
 
         webDriver.navigate().to(BaseURL + productUrl1);
