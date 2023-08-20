@@ -21,5 +21,7 @@ public class IraqGuestCheckoutCyclePage extends GuestCheckoutCyclePage{
     private WebElement twoBusinessDaysSuperExpressShipping;
        @FindBy(xpath = "(//div[@id='shippingMethod']/div)[2]")
     private WebElement threeFourBusinessDaysSuperExpressShipping;
+       @FindBy(xpath = "(//div[@id='shippingMethod']/div)[2]")
+    private WebElement payPal;
 
 }

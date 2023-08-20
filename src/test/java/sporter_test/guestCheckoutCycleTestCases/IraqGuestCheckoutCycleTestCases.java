@@ -60,7 +60,7 @@ public class IraqGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCases
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that each of COD & Credit Card Payment methods appear correctly", priority = 23)
     public void verifyEachOfCODAndCreditCardPaymentMethodCorrectly() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        IraqGuestCheckoutCyclePage guestCheckoutCyclePage = new IraqGuestCheckoutCyclePage(webDriver);
         guestCheckoutCyclePage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
@@ -76,6 +76,8 @@ public class IraqGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCases
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCreditCardPaymentMethod(),webDriver);
+        //TODO: PayPal Needs to recheck after activated it
+        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getPayPal(),webDriver);
     }
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the Three Four Business Days Super Express Shipping Method With Valid Credit Card Payment Method", priority = 30)
     public void verifyAbilityToSelectTheThreeFourBusinessDaysSuperExpressShippingMethodWithValidCreditCardPaymentMethod() throws IOException {
