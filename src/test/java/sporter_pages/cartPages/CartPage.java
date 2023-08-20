@@ -244,7 +244,7 @@ public class CartPage extends BasePage {
         navigateToCartPage();
         try {
             //TODO: Needs to review after solving cart loading issue https://sporter1.atlassian.net/browse/MH-398
-            DataHelperAndWait.waitForTime(2000);
+            DataHelperAndWait.waitForTime(1500);
             if(hereLink == null)
                 return false;
 
