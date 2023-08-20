@@ -28,6 +28,5 @@ public class UAEGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCases 
     }
 
     @Test(enabled = false)
-    public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNationalID() {
-    }
+    public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNationalID() {}
 }
