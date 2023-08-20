@@ -260,12 +260,10 @@ public class GuestCheckoutCyclePage extends BasePage {
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         cartPage.proceedToCheckout();
             //TODO: Needs to check this button
-        try {
             DataHelperAndWait.waitForTime(1500);
-            DataHelperAndWait.clickOnElement(checkoutAsGuestBtn, webDriver);
-        } catch (Exception e) {
-  checkoutAsGuestBtn.click();
-    }
+            WebElement checkoutAsGuest=webDriver.findElement(By.id("submitGuestOptionBtn"));
+            DataHelperAndWait.clickOnElement(checkoutAsGuest, webDriver);
+
     }
 
     public void selectCity() {

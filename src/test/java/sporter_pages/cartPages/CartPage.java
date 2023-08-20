@@ -313,6 +313,8 @@ public class CartPage extends BasePage {
         this.waitTillCartSpinnerDisappear(webDriver);
         this.getProceedCheckoutBtn().click();
         this.waitTillCartSpinnerDisappear(webDriver);
+        if(IsEmptyCart())
+            throw new AssertionError("Clicking on the Proceed to checkout display an Empty Page Cart");
 
 //            DataHelperAndWait.clickOnElement(this.getProceedCheckoutBtn(),webDriver);
 //            DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getContinueShippingInfoBtn(),webDriver);
