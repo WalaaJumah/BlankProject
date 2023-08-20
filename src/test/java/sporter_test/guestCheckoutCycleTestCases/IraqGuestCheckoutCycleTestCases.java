@@ -15,7 +15,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import sporter_pages.cartPages.CartPage;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
+import sporter_pages.guestCheckoutCyclePages.IraqGuestCheckoutCyclePage;
 import sporter_pages.homepage_classes.IraqHomePage;
+import xml_reader.XmlReader;
 
 import java.io.IOException;
 import java.text.DecimalFormat;
@@ -50,8 +52,21 @@ public class IraqGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCases
         double cartTotal = subTotal + tax;
         Assert.assertEquals(df.format(orderTotal), df.format(cartTotal));
     }
+    @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:Verify All Shipping Methods appear correctly", priority = 21)
+    public void verifyAllShippingMethodsAppearCorrectly(){
+        IraqGuestCheckoutCyclePage guestCheckoutCyclePage = new IraqGuestCheckoutCyclePage(webDriver);
+        WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver, XmlReader.getXMLData("nextDayDelivery"));
+        WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getThreeFourBusinessDaysSuperExpressShipping(),webDriver, XmlReader.getXMLData("nextDayDelivery"));
+    }
     @Test(enabled = false)
     public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNationalID() {
+    }
+    @Test(enabled = false)
+    public void verifySameDayShippingMethodAppearsForDubaiCityOnly() {
+    }
+    //TODO:The Same Day Delivery is Missing
+    @Test(enabled = false)
+    public void verifyAbilityToSelectSameDayShippingMethodCorrectly() {
     }
 
 }
