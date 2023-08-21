@@ -259,8 +259,6 @@ public class GuestCheckoutCyclePage extends BasePage {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         cartPage.proceedToCheckout();
-            //TODO: Needs to check this button
-            DataHelperAndWait.waitForTime(1500);
             DataHelperAndWait.clickOnElement(checkoutAsGuestBtn, webDriver);
 
     }
