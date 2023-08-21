@@ -41,7 +41,7 @@ public class IraqCartTestCases extends CartTestCases {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         float subTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue(), webDriver, cartPage.iraqCurrency);
-        float tax = DataHelperAndWait.convertTheStringToFloat(cartPage.getTaxValue(), webDriver, cartPage.iraqCurrencySign);
+        float tax = DataHelperAndWait.convertTheStringToFloat(cartPage.getTaxValue(), webDriver, cartPage.iraqCurrencySign+"0");
         float orderTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(), webDriver, cartPage.iraqCurrency);
         double cartTotal = subTotal + tax;
         Assert.assertEquals(orderTotal, cartTotal);

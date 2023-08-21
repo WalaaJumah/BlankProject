@@ -118,7 +118,7 @@ public class CartPage extends BasePage {
     private List<WebElement> productImg;
     @FindBy(xpath = "//div[starts-with(@id,'cartItemImage')]")
     private WebElement productImgForOneProduct;
-    @FindBy(xpath = "(//a[starts-with(@class,'cartItem_itemName')])[1]")
+    @FindBy(xpath = "(//a[starts-with(@id,'cartItemImage')])[1]")
     private WebElement productNameForOneProduct;
     @FindBy(xpath = "//div[starts-with(@id,'itemToWhishListBtn')]")
     private List<WebElement> moveToWishList;
