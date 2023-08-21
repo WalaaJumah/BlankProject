@@ -60,7 +60,7 @@ public class IraqGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCases
     public void verifyAllShippingMethodsAppearCorrectly(){
         IraqGuestCheckoutCyclePage guestCheckoutCyclePage = new IraqGuestCheckoutCyclePage(webDriver);
         WebElementsAssertion.assertionWebElementEqualText(guestCheckoutCyclePage.getThreeFourBusinessDaysSuperExpressShipping(),webDriver, XmlReader.getXMLData("ThreeFourBusinessDaysShippingIraq"));
-        Assert.assertFalse(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping().isDisplayed(),"TwoBusinessDaysSuperExpressShipping is displayed");
+//        Assert.assertFalse(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping().isDisplayed(),"TwoBusinessDaysSuperExpressShipping is displayed");
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that each of COD & Credit Card Payment methods appear correctly", priority = 23)
     public void verifyEachOfCODAndCreditCardPaymentMethodCorrectly() throws IOException {

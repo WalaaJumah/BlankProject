@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cc95732-25cc-415a-acca-362cf2afbff2" name="Changes" comment=" Update the Display product URL">
-      <change beforePath="$PROJECT_DIR$/src/test/resources/IraqStore/IraqFull.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/IraqStore/IraqFull.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/guestCheckoutCyclePages/IraqGuestCheckoutCyclePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/guestCheckoutCyclePages/IraqGuestCheckoutCyclePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/homepage_classes/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/homepage_classes/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/IraqGuestCheckoutCycleTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/guestCheckoutCycleTestCases/IraqGuestCheckoutCycleTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/productTestCases/ProductDetailsTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/productTestCases/ProductDetailsTestCases.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
