@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4cc95732-25cc-415a-acca-362cf2afbff2" name="Changes" comment=" Update the Display product URL" />
+    <list default="true" id="4cc95732-25cc-415a-acca-362cf2afbff2" name="Changes" comment=" Update the Display product URL">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/DataHelperAndWait.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/cartPages/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/cartPages/CartPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/guestCheckoutCyclePages/GuestCheckoutCyclePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/guestCheckoutCyclePages/GuestCheckoutCyclePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/homepage_classes/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/homepage_classes/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/cartTestCases/CartTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/cartTestCases/CartTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/IraqStore/IraqFull.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/IraqStore/IraqFull.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -480,6 +489,11 @@
           <properties field="signInOption" class="sporter_pages.loginPage.LoginPage" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/sporter_test/checkoutForRegisteredUserTestCases/CheckoutForRegisteredTestCases.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
@@ -500,6 +514,9 @@
         <watch expression="cardNumberInTheList" />
         <watch expression="guestCheckoutCyclePage.ifSecureAndAuthenticationIsRequired()" />
         <watch expression="cityList" />
+        <watch expression="waitTillCartSpinnerDisappear" />
+        <watch expression="getProceedCheckoutBtn()" />
+        <watch expression="this.getProceedCheckoutBtn()" />
       </configuration>
     </watches-manager>
   </component>

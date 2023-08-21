@@ -87,20 +87,21 @@ public class BaseTest {
                     break;
                 case "chrome":
                     //Selenium Version4.10
-                    WebDriverManager.chromedriver().setup();
-//                    ChromeOptions chromeOptions = new ChromeOptions();
-//                    chromeOptions.setPageLoadStrategy(PageLoadStrategy.NONE);
-//                    webDriver = new ChromeDriver(chromeOptions);
-                    webDriver = new ChromeDriver();
+//                    WebDriverManager.chromedriver().setup();
+////                    ChromeOptions chromeOptions = new ChromeOptions();
+////                    chromeOptions.setPageLoadStrategy(PageLoadStrategy.NONE);
+////                    webDriver = new ChromeDriver(chromeOptions);
+//                    webDriver = new ChromeDriver();
 //                    webDriver.navigate().to(BasePage.BaseURL);
-                    /**
+
                      ChromeOptions options = new ChromeOptions();
-                     options.addArguments("headless");
-                     options.addArguments("disable-gpu");
+//                     options.addArguments("headless");
+//                     options.addArguments("disable-gpu");
+                    options.addArguments("--disable-notifications");
                      options.addArguments("window-size=1200,1100");
                      webDriver = new ChromeDriver(options);
                      webDriver.navigate().to("https://www.sporter.com");
-                     **/
+
                     break;
                 case "edge":
                     WebDriverManager.edgedriver().setup();

@@ -245,6 +245,7 @@ public class CartTestCases extends BaseTest {
             DataHelperAndWait.updateAllText(cartPage.getFirstQtyField(),"999");
             //TODO: Needs to recheck after solving Cart loading issue
         cartPage.increaseQty();
+        cartPage.waitTillCartSpinnerDisappear(webDriver);
             DataHelperAndWait.waitToBeVisible(cartPage.getCloseAddToCartErrorMsg(), webDriver);
     }
     //TODO:There's a bug here, check: https://sporter1.atlassian.net/browse/NS-184/https://sporter1.atlassian.net/browse/NS-107
@@ -258,13 +259,17 @@ public class CartTestCases extends BaseTest {
     public void verifyAbilityToDisplayTheProductFromTheCartPage() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-//        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
-//        cartPage.waitTillCartSpinnerDisappear(webDriver);
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        cartPage.waitTillCartSpinnerDisappear(webDriver);
+
+        DataHelperAndWait.waitToBeClickable(cartPage.getProductNameForOneProduct(), webDriver);
+        DataHelperAndWait.JsExecutorToClickOnElement(cartPage.getProductNameForOneProduct(),webDriver);
+
 //        DataHelperAndWait.waitToBeClickable(cartPage.getProductNameForOneProduct(),webDriver);
 //        DataHelperAndWait.clickOnElement(cartPage.getProductNameForOneProduct(),webDriver);
-////        cartPage.getProductNameForOneProduct().click();
-////        DataHelperAndWait.clickOnElement(cartPage.getProductNameForOneProduct(), webDriver);
-//        DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductName(), webDriver);
+//        cartPage.getProductNameForOneProduct().click();
+//        DataHelperAndWait.clickOnElement(cartPage.getProductNameForOneProduct(), webDriver);
+        DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductName(), webDriver);
     }
 
     //TODO: This test case should be revisit after solving: https://sporter1.atlassian.net/browse/NS-120 & https://sporter1.atlassian.net/browse/NS-42

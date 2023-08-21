@@ -181,16 +181,16 @@ public class CartPage extends BasePage {
         }
     }
     public  void waitTillCartSpinnerDisappear(WebDriver webDriver) {
-        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(50));
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(4));
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(this.cartLoaderXpath)));
 
     }
     public void addToCartAndDisplayTheCart() throws IOException {
-        if(IsEmptyCart()) {
+//        if(IsEmptyCart()) {
             productDetailsPage.displayTheProduct();
             productDetailsPage.addToCart();
             productDetailsPage.viewCart();
-        }
+//        }
     }
     public void navigateToCartOrAddProductToItInCaseTheCartIsEmpty() throws IOException {
         if(IsEmptyCart())
@@ -226,6 +226,7 @@ public class CartPage extends BasePage {
 
     public void navigateToCartPage() throws IOException {
         try {
+
             webDriver.navigate().to(BaseURL + cartURL);
             verifyTheDisplayedPageDoesNotHaveErrors();
             DataHelperAndWait.waitForUrlContains(cartURL, webDriver);
@@ -243,7 +244,7 @@ public class CartPage extends BasePage {
     public boolean IsEmptyCart() throws IOException {
         navigateToCartPage();
         try {
-            DataHelperAndWait.waitForTime(3000);
+            DataHelperAndWait.waitForTime(3500);
             if(hereLink == null)
                 return false;
 
@@ -263,10 +264,13 @@ public class CartPage extends BasePage {
     }
 
     public void removeItem() {
+//        this.waitTillCartSpinnerDisappear(webDriver);
+        DataHelperAndWait.waitToBeClickable(removeItemBtn, webDriver);
+        DataHelperAndWait.JsExecutorToClickOnElement(removeItemBtn,webDriver);
+//        DataHelperAndWait.waitToBeClickable(this.removeItemBtn, webDriver);
+//        this.removeItemBtn.click();
         this.waitTillCartSpinnerDisappear(webDriver);
-        DataHelperAndWait.waitToBeClickable(this.removeItemBtn, webDriver);
-        this.removeItemBtn.click();
-        this.waitTillCartSpinnerDisappear(webDriver);    }
+    }
 
     public void clearCart() throws IOException {
         if(IsEmptyCart())
@@ -307,18 +311,20 @@ public class CartPage extends BasePage {
     }
 
     public void proceedToCheckout() throws IOException {
-        navigateToHomePage();
-        DataHelperAndWait.clickOnElement(getCartIcon(), webDriver);
-        DataHelperAndWait.clickOnElement(getProceedCheckoutBtnInCartPopup(), webDriver);
+//        navigateToHomePage();
+//        DataHelperAndWait.clickOnElement(getCartIcon(), webDriver);
+//        DataHelperAndWait.clickOnElement(getProceedCheckoutBtnInCartPopup(), webDriver);
         //TODO: Need to recheck after solving it by Moamen
-  /**      this.waitTillCartSpinnerDisappear(webDriver);
-        DataHelperAndWait.waitToBeVisible(this.getProceedCheckoutBtn(),webDriver);
-        this.waitTillCartSpinnerDisappear(webDriver);
-        this.getProceedCheckoutBtn().click();
-        this.waitTillCartSpinnerDisappear(webDriver);
-        if(IsEmptyCart())
-            throw new AssertionError("Clicking on the Proceed to checkout display an Empty Page Cart");
-   **/
+//      this.waitTillCartSpinnerDisappear(webDriver);
+        DataHelperAndWait.waitToBeClickable(this.getProceedCheckoutBtn(),webDriver);
+
+
+        DataHelperAndWait.JsExecutorToClickOnElement(this.getProceedCheckoutBtn(),webDriver);
+//        this.getProceedCheckoutBtn().click();
+//        this.waitTillCartSpinnerDisappear(webDriver);
+//        if(IsEmptyCart())
+//            throw new AssertionError("Clicking on the Proceed to checkout display an Empty Page Cart");
+
 
 //            DataHelperAndWait.clickOnElement(this.getProceedCheckoutBtn(),webDriver);
 //            DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getContinueShippingInfoBtn(),webDriver);

@@ -123,7 +123,7 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
         //Find The element
         //jse.executeScript("arguments[0].click();", element);
         jse.executeScript("arguments[0]." +
-                "focus(); arguments[0].click();", element);
+                "focus(); arguments[0].click(); ", element);
 //        jse.executeScript("if(document.getElementById('submitShippingAddressBtn')!= null){ document.getElementById('submitShippingAddressBtn').click();}", element);
     }
     public static void HandleAlert(WebDriver driver, WebDriverWait wait) {
