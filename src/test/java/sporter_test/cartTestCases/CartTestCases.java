@@ -244,7 +244,7 @@ public class CartTestCases extends BaseTest {
             DataHelperAndWait.hoverOnElementAndClick(cartPage.getFirstQtyField(), webDriver);
             DataHelperAndWait.updateAllText(cartPage.getFirstQtyField(),"999");
             //TODO: Needs to recheck after solving Cart loading issue
-        cartPage.increaseQty();
+        cartPage.proceedToCheckout();
         cartPage.waitTillCartSpinnerDisappear(webDriver);
             DataHelperAndWait.waitToBeVisible(cartPage.getCloseAddToCartErrorMsg(), webDriver);
     }

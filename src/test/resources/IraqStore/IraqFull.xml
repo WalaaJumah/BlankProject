@@ -14,7 +14,8 @@
         <parameter name="oOSProduct" value="/rip-van-protien-wafles-box-of-12/"/>
         <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
         <classes>
-            <class name="sporter_test.cartTestCases.IraqCartTestCases"></class>
+            <class name="sporter_test.cartTestCases.IraqCartTestCases">
+            </class>
             <class name="sporter_test.guestCheckoutCycleTestCases.IraqGuestCheckoutCycleTestCases"></class>
             <class name="sporter_test.checkoutForRegisteredUserTestCases.IraqCheckoutForRegisteredTestCases"></class>
             <class name="sporter_test.homepage_test_cases.IraqHomePageTestCases"/>

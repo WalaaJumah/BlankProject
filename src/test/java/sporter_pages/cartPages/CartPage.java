@@ -337,8 +337,14 @@ public class CartPage extends BasePage {
 //        }
     }
     public void increaseQty() {
-        DataHelperAndWait.clickOnElement(getIncreaseQtyBtn(), webDriver);
+//        DataHelperAndWait.clickOnElement(getIncreaseQtyBtn(), webDriver);
+//        waitTillCartSpinnerDisappear(webDriver);
+        DataHelperAndWait.waitToBeClickable(getIncreaseQtyBtn(),webDriver);
+
+
+        DataHelperAndWait.JsExecutorToClickOnElement(this.getIncreaseQtyBtn(),webDriver);
         waitTillCartSpinnerDisappear(webDriver);
+
     }
     public void decreaseQty(){
         DataHelperAndWait.clickOnElement(getDecreaseQtyBtn(), webDriver);
