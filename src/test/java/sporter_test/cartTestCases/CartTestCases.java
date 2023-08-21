@@ -242,7 +242,8 @@ public class CartTestCases extends BaseTest {
             cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
             DataHelperAndWait.hoverOnElementAndClick(cartPage.getFirstQtyField(), webDriver);
             DataHelperAndWait.updateAllText(cartPage.getFirstQtyField(),"999");
-            cartPage.proceedToCheckout();
+        this.waitTillCartSpinnerDisappear(webDriver);
+        cartPage.proceedToCheckout();
             DataHelperAndWait.waitToBeVisible(cartPage.getCloseAddToCartErrorMsg(), webDriver);
     }
     //TODO:There's a bug here, check: https://sporter1.atlassian.net/browse/NS-184/https://sporter1.atlassian.net/browse/NS-107
