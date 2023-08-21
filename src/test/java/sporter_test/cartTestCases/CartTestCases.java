@@ -242,7 +242,7 @@ public class CartTestCases extends BaseTest {
             cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
             DataHelperAndWait.hoverOnElementAndClick(cartPage.getFirstQtyField(), webDriver);
             DataHelperAndWait.updateAllText(cartPage.getFirstQtyField(),"999");
-        this.waitTillCartSpinnerDisappear(webDriver);
+        cartPage.waitTillCartSpinnerDisappear(webDriver);
         cartPage.proceedToCheckout();
             DataHelperAndWait.waitToBeVisible(cartPage.getCloseAddToCartErrorMsg(), webDriver);
     }
