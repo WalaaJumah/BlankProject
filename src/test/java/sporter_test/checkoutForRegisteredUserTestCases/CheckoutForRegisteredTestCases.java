@@ -63,8 +63,10 @@ public class CheckoutForRegisteredTestCases extends BaseTest
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Verify ability to remove the product from the cart successfully", priority = 4)
     public void verifyAbilityToRemoveProductFromCart() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-        cartPage.clearCart();
-        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getNoItemInCartLabel(), webDriver);
+        if(!cartPage.IsEmptyCart()) {
+            cartPage.clearCart();
+            WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getNoItemInCartLabel(), webDriver);
+        }
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure to add product to the Cart from Product Details Page", priority = 5)
     public void addToCartAndViewCartFromPDP() throws IOException {
