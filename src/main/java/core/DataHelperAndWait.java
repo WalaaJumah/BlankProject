@@ -487,7 +487,7 @@ for(int i=0;i<jsErrors.getAll().size()-1;i++){
             return false;
         }
     }
-    public static void waitTillAttributeToBe(WebElement element,String attribute, String attributeValue,WebDriver webDriver{
+    public static void waitTillAttributeToBe(WebElement element,String attribute, String attributeValue,WebDriver webDriver){
         WebDriverWait wait;
         wait = new WebDriverWait(webDriver, Duration.ofSeconds(WaitTime));
         wait.until(ExpectedConditions.attributeToBe(element, attribute, attributeValue));
