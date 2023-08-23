@@ -92,6 +92,43 @@ public class RelatedProductsTestCases extends BaseTest {
         Assert.assertTrue(DataHelperAndWait.IsElementPresent(relatedProductSection.getRelatedProductsSection()));
     }
 
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure the Related Products section is displayed for in stock Bundle ", priority = 13)
+    public void verifyRelatedProductSectionIsDisplayedForInStockBundle() throws IOException {
+        RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
+        relatedProductSection.displayTheInStockBundle();
+        Assert.assertTrue(DataHelperAndWait.IsElementPresent(relatedProductSection.getRelatedProductsSection()));
+    }
 
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure that each of Related Products title,Product Names,images, prices appear correctly in the Bundle", priority = 14)
+    public void verifyAllRelatedProductComponentsAreDisplayedForBundle() {
+        RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
+        Assert.assertTrue(DataHelperAndWait.IsElementPresent(relatedProductSection.getRelatedProductsTitle()), "Related Product title is missing");
+        Assert.assertTrue(DataHelperAndWait.IsElementPresent(relatedProductSection.getRelatedProductsImages().get(0)), "Product image is missing");
+        Assert.assertTrue(DataHelperAndWait.IsElementPresent(relatedProductSection.getRelatedProductsNames().get(0)), "Product name is missing");
+        Assert.assertTrue(DataHelperAndWait.IsElementPresent(relatedProductSection.getRelatedProductsPrices().get(0)), "Product price is missing");
+    }
+
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure add To Cart button appears correctly for all Related Products in Bundle", priority = 15)
+    public void verifyAddToCartBtnAppearsForAllRelatedProductForBundle() {
+        RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
+        for (int i = 0; i < relatedProductSection.getAddRelatedProductToCart().size(); i++) {
+            DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(i), webDriver);
+            DataHelperAndWait.waitForTime(1000);
+            Assert.assertTrue(relatedProductSection.getAddRelatedProductToCart().get(i).isDisplayed(), "Add to cart is missing");
+        }
+    }
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure add To Cart button works correctly for Bundle", priority = 17)
+    public void verifyAddToCartBtnWorksCorrectlyForBundle() {
+        RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
+        CartPage cartPage= new CartPage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        productPrice=DataHelperAndWait.convertTheStringToFloat(relatedProductSection.getRelatedProductsPrices().get(0), webDriver, currency);
+        System.out.println(productPrice);
+        DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
+        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.JsExecutorToClickOnElement(relatedProductSection.getAddRelatedProductToCart().get(0),webDriver);
+        DataHelperAndWait.waitForTime(1000);
+        WebElementsAssertion.assertionTextIsEqual(cartPage.getCartCounter(), webDriver, "1");
+    }
 
 }

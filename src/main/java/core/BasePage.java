@@ -58,6 +58,7 @@ public class BasePage {
     public static String productUrlJordan = "/optimum-gold-standard-100-whey";
     public static String productUrlJordan7 = "/optimum-gold-standard-100-whey";
     public static String inStockProductHaveRelatedItems = "/muscletech-nitro-tech-performance-series-6266/";
+    public static String inStockBundleHaveRelatedItems = "/grenade-carb-killa-protein-bar-box-of-12/";
     public static String productUrlJordanWithLowPrice = "/jack-links-beef-jerky-54840/";
     public static String productUrlJordanWithHighPrice = "/dymatize-iso-100-7164/";
     public static String productUrlQatarWithHighPrice = "/optimum-gold-standard-100-whey-6202";

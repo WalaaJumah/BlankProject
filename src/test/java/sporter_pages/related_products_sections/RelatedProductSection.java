@@ -24,7 +24,8 @@ import java.util.List;
 
 @Getter
 public class RelatedProductSection extends BasePage {
-    //https://app.qa1.sporter.com/admin_1uidvr/catalog/product/edit/id/6875/set/16/key/ba40f6ed3583beafdcb4374b48c718cf31deb225ac6171a6ecaa4b0d6ba0dc32/type/configurable/store/0/back/edit/
+    //https://app.qa1.sporter.com/admin_1uidvr/catalog/product/edit/id/6875/set/16/key/ba40f6ed3583beafdcb4374b48c718cf31deb225ac6171a6ecaa4b0d6ba0dc32/type/configurable/store/0/back/edit/https://app.qa1.sporter.com/admin_1uidvr/catalog/product/edit/id/18422/key/ba40f6ed3583beafdcb4374b48c718cf31deb225ac6171a6ecaa4b0d6ba0dc32/
+
 
     @FindBy(xpath = "//div[starts-with(@class,'relatedProducts_container')]")
     private WebElement relatedProductsSection;
@@ -49,6 +50,11 @@ public class RelatedProductSection extends BasePage {
 
     public void displayTheInStockProduct() throws IOException {
         webDriver.navigate().to(BaseURL + inStockProductHaveRelatedItems);
+        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,10);
+        verifyTheDisplayedPageDoesNotHaveErrors();
+    }
+    public void displayTheInStockBundle() throws IOException {
+        webDriver.navigate().to(BaseURL + inStockBundleHaveRelatedItems);
         DataHelperAndWait.waitTillPageFullyLoaded(webDriver,10);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
