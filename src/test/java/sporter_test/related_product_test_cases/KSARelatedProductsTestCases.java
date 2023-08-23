@@ -77,5 +77,42 @@ public class KSARelatedProductsTestCases extends RelatedProductsTestCases {
         DataHelperAndWait.waitForTime(1000);
         Assert.assertTrue(DataHelperAndWait.IsElementPresent(cartPage.getCartErrorMsg()));
     }
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:(Cart Rules-ForOOS) Make sure that inability to add the same SKU appears in Related product section 3 times & the site display error mSG ", priority = 9)
+    public void verifyInabilityToAddSameSKUToCart3TimesFromRelatedProductSectionForOOS() throws IOException {
+        RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
+        CartPage cartPage= new CartPage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        relatedProductSection.displayTheOutStockProduct();
+        DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
+        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.JsExecutorToClickOnElement(relatedProductSection.getAddRelatedProductToCart().get(0),webDriver);
+        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
+        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.JsExecutorToClickOnElement(relatedProductSection.getAddRelatedProductToCart().get(0),webDriver);
+        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
+        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.JsExecutorToClickOnElement(relatedProductSection.getAddRelatedProductToCart().get(0),webDriver);
+        DataHelperAndWait.waitForTime(1000);
+        Assert.assertTrue(DataHelperAndWait.IsElementPresent(cartPage.getCartErrorMsg()));
+    }
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:(Cart Rules-ForOOS) Make sure that inability to add related products their values exceed 819 JOD ", priority = 9)
+    public void verifyInabilityToAddRelatedProductsToCartWhenTheirValuesExceed819JODForOOS() throws IOException {
+        RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
+        ProductDetailsPage productDetailsPage= new ProductDetailsPage(webDriver);
+        CartPage cartPage= new CartPage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        relatedProductSection.displayTheOutStockProduct();
+        DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
+        productDetailsPage.addToCart();
+        productDetailsPage.viewCart();
+        DataHelperAndWait.waitForTime(2500);
+        DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
+        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.JsExecutorToClickOnElement(relatedProductSection.getAddRelatedProductToCart().get(0),webDriver);
+        DataHelperAndWait.waitForTime(1000);
+        Assert.assertTrue(DataHelperAndWait.IsElementPresent(cartPage.getCartErrorMsg()));
+    }
 
 }

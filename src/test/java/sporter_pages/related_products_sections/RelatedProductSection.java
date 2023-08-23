@@ -53,6 +53,12 @@ public class RelatedProductSection extends BasePage {
         DataHelperAndWait.waitTillPageFullyLoaded(webDriver,10);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
+      public void displayTheOutStockProduct() throws IOException {
+        webDriver.navigate().to(BaseURL + oOSProductUrl);
+        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,10);
+        verifyTheDisplayedPageDoesNotHaveErrors();
+    }
+
     public void displayTheInStockBundle() throws IOException {
         webDriver.navigate().to(BaseURL + inStockBundleHaveRelatedItems);
         DataHelperAndWait.waitTillPageFullyLoaded(webDriver,10);

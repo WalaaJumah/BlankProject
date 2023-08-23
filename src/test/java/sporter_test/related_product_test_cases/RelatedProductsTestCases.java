@@ -130,5 +130,75 @@ public class RelatedProductsTestCases extends BaseTest {
         DataHelperAndWait.waitForTime(1000);
         WebElementsAssertion.assertionTextIsEqual(cartPage.getCartCounter(), webDriver, "1");
     }
+//OOS Products: https://app.qa1.sporter.com/admin_1uidvr/catalog/product/edit/id/53428/key/ba40f6ed3583beafdcb4374b48c718cf31deb225ac6171a6ecaa4b0d6ba0dc32/
+@Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:(Related Product For OOS)Make sure the Related Products section is displayed for out stock product ", priority = 18)
+public void verifyRelatedProductSectionIsDisplayedForOutStockProduct() throws IOException {
+    RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
+    webDriver.manage().deleteCookieNamed("guestCartId");
+    relatedProductSection.displayTheOutStockProduct();
+    Assert.assertTrue(DataHelperAndWait.IsElementPresent(relatedProductSection.getRelatedProductsSection()));
+}
+
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:(Related Product For OOS)Make sure that each of Related Products title,Product Names,images, prices appear correctly", priority = 19)
+    public void verifyAllRelatedProductComponentsAreDisplayedForOOS() {
+        RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
+        Assert.assertTrue(DataHelperAndWait.IsElementPresent(relatedProductSection.getRelatedProductsTitle()), "Related Product title is missing");
+        Assert.assertTrue(DataHelperAndWait.IsElementPresent(relatedProductSection.getRelatedProductsImages().get(0)), "Product image is missing");
+        Assert.assertTrue(DataHelperAndWait.IsElementPresent(relatedProductSection.getRelatedProductsNames().get(0)), "Product name is missing");
+        Assert.assertTrue(DataHelperAndWait.IsElementPresent(relatedProductSection.getRelatedProductsPrices().get(0)), "Product price is missing");
+    }
+
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:(Related Product For OOS)Make sure add To Cart button appears correctly for all Related Products", priority = 20)
+    public void verifyAddToCartBtnAppearsForAllRelatedProductForOOS() {
+        RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
+        for (int i = 0; i < relatedProductSection.getAddRelatedProductToCart().size(); i++) {
+            DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(i), webDriver);
+            DataHelperAndWait.waitForTime(1000);
+            Assert.assertTrue(relatedProductSection.getAddRelatedProductToCart().get(i).isDisplayed(), "Add to cart is missing");
+        }
+    }
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:(Related Product For OOS)Make sure the related products section appears in the correct language", priority = 21)
+    public void verifyRelatedProductAppearsWithCorrectLanguageForOOS(){
+        RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
+        if(webDriver.getCurrentUrl().contains("/en")){
+            Assert.assertTrue(DataHelperAndWait.isTextOnlyEnglish(relatedProductSection.getRelatedProductsTitle().getText()));
+            Assert.assertTrue(DataHelperAndWait.isTextOnlyEnglish(relatedProductSection.getRelatedProductsNames().get(0).getText()));
+        }
+        else {
+            Assert.assertTrue(DataHelperAndWait.isTextOnlyArabic(relatedProductSection.getRelatedProductsTitle().getText()));
+            Assert.assertTrue(DataHelperAndWait.isTextOnlyArabic(relatedProductSection.getRelatedProductsNames().get(0).getText()));
+        }
+    }
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:(Related Product For OOS)Make sure add To Cart button works correctly", priority = 22)
+    public void verifyAddToCartBtnWorksCorrectlyForOOS() {
+        RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
+        CartPage cartPage= new CartPage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        productPrice=DataHelperAndWait.convertTheStringToFloat(relatedProductSection.getRelatedProductsPrices().get(0), webDriver, currency);
+        System.out.println(productPrice);
+        DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
+        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.JsExecutorToClickOnElement(relatedProductSection.getAddRelatedProductToCart().get(0),webDriver);
+        DataHelperAndWait.waitForTime(1000);
+        WebElementsAssertion.assertionTextIsEqual(cartPage.getCartCounter(), webDriver, "1");
+    }
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:(Related Product For OOS)Make sure the product price appears in the Related Products section is the same price when added it to the cart", priority = 23)
+    public void verifyProductPriceInRelatedProductSectionMatchedWithPriceInCartForOOS() throws IOException {
+        CartPage cartPage= new CartPage(webDriver);
+        cartPage.navigateToCartPage();
+        DataHelperAndWait.waitToBeVisible(cartPage.getOrderTotalValue(),webDriver);
+        Assert.assertEquals(productPrice, DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(), webDriver, currency));
+    }
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:(Related Product For OOS)Make sure the related products section appears correctly after adding the original product to the cart", priority = 24)
+    public void verifyRelatedProductsSectionAppearAfterAddingTheOriginalProductToCartForOOS() throws IOException {
+        RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
+        ProductDetailsPage productDetailsPage= new ProductDetailsPage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        relatedProductSection.displayTheOutStockProduct();
+        productDetailsPage.addToCart();
+        productDetailsPage.keepShopping();
+        Assert.assertTrue(DataHelperAndWait.IsElementPresent(relatedProductSection.getRelatedProductsSection()));
+    }
+
 
 }
