@@ -34,9 +34,9 @@ public class ProductDetailsPage extends BasePage {
     private WebElement qtyPlusButton;
     @FindBy(id = "decreaseQty")
     private WebElement qtyMinusButton;
-    @FindBy(id = "addToCartBtn")
+    @FindBy(xpath = "(.//*[@id='productOrderContainer'])//button[@id='addToCartBtn']")
     private WebElement addToCartBtn;
-    @FindBy(id = "addToCartBtn")
+    @FindBy(xpath = "(.//*[@id='productOrderContainer'])//button[@id='addToCartBtn']")
     private WebElement addToCartBtn2;
     @FindBy(id = "popup-block")
     private WebElement cartPopUp;

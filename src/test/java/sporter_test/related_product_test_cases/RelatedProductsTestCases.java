@@ -12,6 +12,7 @@ import core.WebElementsAssertion;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.cartPages.CartPage;
+import sporter_pages.productPage.ProductDetailsPage;
 import sporter_pages.related_products_sections.RelatedProductSection;
 
 import java.io.IOException;
@@ -79,6 +80,16 @@ public class RelatedProductsTestCases extends BaseTest {
        cartPage.navigateToCartPage();
        DataHelperAndWait.waitToBeVisible(cartPage.getOrderTotalValue(),webDriver);
        Assert.assertEquals(productPrice, DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(), webDriver, currency));
+    }
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure the related products section appears correctly after adding the original product to the cart", priority = 7)
+    public void verifyRelatedProductsSectionAppearAfterAddingTheOriginalProductToCart() throws IOException {
+        RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
+        ProductDetailsPage productDetailsPage= new ProductDetailsPage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        relatedProductSection.displayTheInStockProduct();
+        productDetailsPage.addToCart();
+        productDetailsPage.keepShopping();
+        Assert.assertTrue(DataHelperAndWait.IsElementPresent(relatedProductSection.getRelatedProductsSection()));
     }
 
 
