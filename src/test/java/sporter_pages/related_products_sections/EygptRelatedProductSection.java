@@ -18,15 +18,4 @@ public class EygptRelatedProductSection extends RelatedProductSection {
         PageFactory.initElements(webDriver, this);
 
     }
-
-    public void displayTheProduct() throws IOException {
-        webDriver.navigate().to(BaseURL + egyptDomain + productUrl);
-        WebElementsAssertion.validateTheCurrentUrlContainsString(productUrl, webDriver);
-        verifyTheDisplayedPageDoesNotHaveErrors();
-    }
-
-    public void displayOOSProduct() throws IOException {
-        webDriver.navigate().to(BaseURL + egyptDomain + "/organic-nation-guilt-free-chocolate-spread/");
-        verifyTheDisplayedPageDoesNotHaveErrors();
-    }
 }

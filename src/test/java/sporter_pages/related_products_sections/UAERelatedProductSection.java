@@ -18,10 +18,4 @@ public class UAERelatedProductSection extends RelatedProductSection {
         PageFactory.initElements(webDriver, this);
 
     }
-
-    public void displayTheProduct() throws IOException {
-        webDriver.navigate().to(BaseURL + aeDomain + productUrl);
-        WebElementsAssertion.validateTheCurrentUrlContainsString(productUrl, webDriver);
-        verifyTheDisplayedPageDoesNotHaveErrors();
-    }
 }

@@ -18,15 +18,4 @@ public class QatarRelatedProductSection extends RelatedProductSection {
         PageFactory.initElements(webDriver, this);
 
     }
-
-    public void displayTheProduct() throws IOException {
-        webDriver.navigate().to(BaseURL + qatarDomain + productUrl);
-        verifyTheDisplayedPageDoesNotHaveErrors();
-        WebElementsAssertion.validateTheCurrentUrlContainsString(productUrl, webDriver);
-    }
-
-    public void displayOOSProduct() throws IOException {
-        webDriver.navigate().to(BaseURL + qatarDomain + oOSProductUrl);
-        verifyTheDisplayedPageDoesNotHaveErrors();
-    }
 }

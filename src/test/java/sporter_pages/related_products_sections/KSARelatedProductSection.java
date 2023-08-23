@@ -19,14 +19,4 @@ public class KSARelatedProductSection extends RelatedProductSection {
 
     }
 
-    public void displayTheProduct() throws IOException {
-        webDriver.navigate().to(BaseURL + saudiDomainArabic + productUrl);
-        WebElementsAssertion.validateTheCurrentUrlContainsString(productUrl, webDriver);
-        verifyTheDisplayedPageDoesNotHaveErrors();
-    }
-
-    public void displayOOSProduct() throws IOException {
-        webDriver.navigate().to(BaseURL + saudiDomainArabic + oOSProductUrl);
-        verifyTheDisplayedPageDoesNotHaveErrors();
-    }
 }
