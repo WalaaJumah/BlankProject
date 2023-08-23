@@ -19,14 +19,14 @@
 <!--                    </run>-->
 <!--                </groups>-->
         <classes>
-            <class name="sporter_test.related_product_test_cases.EgyptRelatedProductsTestCases"/>
+            <class name="sporter_test.related_product_test_cases.UAERelatedProductsTestCases"/>
             <class name="sporter_test.related_product_test_cases.OmanRelatedProductsTestCases"/>
             <class name="sporter_test.related_product_test_cases.KSARelatedProductsTestCases"/>
-            <class name="sporter_test.related_product_test_cases.UAERelatedProductsTestCases"/>
             <class name="sporter_test.related_product_test_cases.BahrainRelatedProductsTestCases"/>
             <class name="sporter_test.related_product_test_cases.KuwaitRelatedProductsTestCases"/>
             <class name="sporter_test.related_product_test_cases.QatarRelatedProductsTestCases"/>
             <class name="sporter_test.related_product_test_cases.IraqRelatedProductsTestCases"/>
+            <class name="sporter_test.related_product_test_cases.EgyptRelatedProductsTestCases"/>
             <class name="sporter_test.related_product_test_cases.JordanRelatedProductsTestCases">
 
 

@@ -50,12 +50,12 @@ public class RelatedProductSection extends BasePage {
     }
 
     public void displayTheInStockProduct() throws IOException {
-        webDriver.navigate().to(BaseURL + inStockProductHaveRelatedItems);
+        webDriver.navigate().to(BaseURL +this. inStockProductHaveRelatedItems);
         DataHelperAndWait.waitTillPageFullyLoaded(webDriver,15);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
       public void displayTheOutStockProduct() throws IOException {
-        webDriver.navigate().to(BaseURL + oOSProductUrl);
+        webDriver.navigate().to(BaseURL + this.oOSProductUrl);
         DataHelperAndWait.waitTillPageFullyLoaded(webDriver,10);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
