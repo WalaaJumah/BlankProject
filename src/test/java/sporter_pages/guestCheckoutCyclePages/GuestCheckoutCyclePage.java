@@ -31,7 +31,8 @@ public class GuestCheckoutCyclePage extends BasePage {
     DataHelperAndWait dataHelperAndWait;
     @FindBy(id = "placeOrderSideBtn")
     private WebElement placeOrderBtn;
-    @FindBy(id = "submitGuestOptionBtn")
+//    @FindBy(id = "submitGuestOptionBtn")
+    @FindBy(xpath = "//div[@id='guestOption']/button[@id='submitGuestOptionBtn']")
     private WebElement checkoutAsGuestBtn;
     @FindBy(xpath = "//a[contains(@class,'orderPage_head')]")
     private WebElement logoInCheckoutMethod;
