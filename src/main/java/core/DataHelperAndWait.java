@@ -14,6 +14,8 @@ import java.util.*;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
@@ -492,4 +494,23 @@ for(int i=0;i<jsErrors.getAll().size()-1;i++){
         wait = new WebDriverWait(webDriver, Duration.ofSeconds(WaitTime));
         wait.until(ExpectedConditions.attributeToBe(element, attribute, attributeValue));
     }
+    public static Boolean isTextOnlyEnglish(String text) {
+            // Regular expression to match non-English characters
+            String nonEnglishRegex = "[^a-zA-Z]";
+
+            // Check if the text contains any non-English characters
+            return text.matches(".*" + nonEnglishRegex + ".*");
+        }
+     public static Boolean isTextOnlyArabic(String text) {
+            // Regular expression to match non-English characters
+// Regular expression to match Arabic characters
+         String arabicRegex = "\\p{InArabic}+";
+
+         Pattern pattern = Pattern.compile(arabicRegex);
+         Matcher matcher = pattern.matcher(text);
+
+         // Check if the entire text matches the Arabic pattern
+         return matcher.matches();
+        }
+
 }

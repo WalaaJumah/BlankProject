@@ -48,8 +48,19 @@ public class RelatedProductsTestCases extends BaseTest {
             Assert.assertTrue(relatedProductSection.getAddRelatedProductToCart().get(i).isDisplayed(), "Add to cart is missing");
         }
     }
-
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure add To Cart button works correctly", priority = 4)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure the related products section appears in the correct language", priority = 4)
+    public void verifyRelatedProductAppearsWithCorrectLanguage(){
+        RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
+        if(webDriver.getCurrentUrl().contains("/en")){
+        Assert.assertTrue(DataHelperAndWait.isTextOnlyEnglish(relatedProductSection.getRelatedProductsTitle().getText()));
+        Assert.assertTrue(DataHelperAndWait.isTextOnlyEnglish(relatedProductSection.getRelatedProductsNames().get(0).getText()));
+        }
+        else {
+            Assert.assertTrue(DataHelperAndWait.isTextOnlyArabic(relatedProductSection.getRelatedProductsTitle().getText()));
+            Assert.assertTrue(DataHelperAndWait.isTextOnlyArabic(relatedProductSection.getRelatedProductsNames().get(0).getText()));
+        }
+    }
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure add To Cart button works correctly", priority = 5)
     public void verifyAddToCartBtnWorksCorrectly() {
         RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
         CartPage cartPage= new CartPage(webDriver);
@@ -62,13 +73,14 @@ public class RelatedProductsTestCases extends BaseTest {
         DataHelperAndWait.waitForTime(1000);
         WebElementsAssertion.assertionTextIsEqual(cartPage.getCartCounter(), webDriver, "1");
     }
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure the product price appears in the Related Products section is the same price when added it to the cart", priority = 5)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure the product price appears in the Related Products section is the same price when added it to the cart", priority = 6)
     public void verifyProductPriceInRelatedProductSectionMatchedWithPriceInCart() throws IOException {
         CartPage cartPage= new CartPage(webDriver);
        cartPage.navigateToCartPage();
        DataHelperAndWait.waitToBeVisible(cartPage.getOrderTotalValue(),webDriver);
        Assert.assertEquals(productPrice, DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(), webDriver, currency));
     }
+
 
 
 }
