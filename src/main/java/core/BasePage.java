@@ -57,7 +57,8 @@ public class BasePage {
     public static String productUrlEgypt = "/now-royal-jelly-1500-mg-equivalency-super-food-16790/";
     public static String productUrlJordan = "/optimum-gold-standard-100-whey";
     public static String productUrlJordan7 = "/optimum-gold-standard-100-whey";
-    public static String inStockProductHaveRelatedItems = "/muscletech-nitro-tech-performance-series-6266/";
+//    public static String inStockProductHaveRelatedItems = "/muscletech-nitro-tech-performance-series-6266/";
+    public static String inStockProductHaveRelatedItems = "/optimum-gold-standard-100-whey-6200/";
     public static String inStockBundleHaveRelatedItems = "/grenade-carb-killa-protein-bar-box-of-12/";
     public static String productUrlJordanWithLowPrice = "/jack-links-beef-jerky-54840/";
     public static String productUrlJordanWithHighPrice = "/dymatize-iso-100-7164/";

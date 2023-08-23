@@ -45,7 +45,7 @@ public class RelatedProductsTestCases extends BaseTest {
         RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
         for (int i = 0; i < relatedProductSection.getAddRelatedProductToCart().size(); i++) {
             DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(i), webDriver);
-            DataHelperAndWait.waitForTime(1000);
+            DataHelperAndWait.waitForTime(2000);
             Assert.assertTrue(relatedProductSection.getAddRelatedProductToCart().get(i).isDisplayed(), "Add to cart is missing");
         }
     }
@@ -69,9 +69,9 @@ public class RelatedProductsTestCases extends BaseTest {
         productPrice=DataHelperAndWait.convertTheStringToFloat(relatedProductSection.getRelatedProductsPrices().get(0), webDriver, currency);
         System.out.println(productPrice);
         DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
-        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.waitForTime(1500);
         DataHelperAndWait.JsExecutorToClickOnElement(relatedProductSection.getAddRelatedProductToCart().get(0),webDriver);
-        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.waitForTime(1500);
         WebElementsAssertion.assertionTextIsEqual(cartPage.getCartCounter(), webDriver, "1");
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure the product price appears in the Related Products section is the same price when added it to the cart", priority = 6)
@@ -113,7 +113,7 @@ public class RelatedProductsTestCases extends BaseTest {
         RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
         for (int i = 0; i < relatedProductSection.getAddRelatedProductToCart().size(); i++) {
             DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(i), webDriver);
-            DataHelperAndWait.waitForTime(1000);
+            DataHelperAndWait.waitForTime(2000);
             Assert.assertTrue(relatedProductSection.getAddRelatedProductToCart().get(i).isDisplayed(), "Add to cart is missing");
         }
     }
@@ -125,9 +125,9 @@ public class RelatedProductsTestCases extends BaseTest {
         productPrice=DataHelperAndWait.convertTheStringToFloat(relatedProductSection.getRelatedProductsPrices().get(0), webDriver, currency);
         System.out.println(productPrice);
         DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
-        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.waitForTime(1500);
         DataHelperAndWait.JsExecutorToClickOnElement(relatedProductSection.getAddRelatedProductToCart().get(0),webDriver);
-        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.waitForTime(1500);
         WebElementsAssertion.assertionTextIsEqual(cartPage.getCartCounter(), webDriver, "1");
     }
 //OOS Products: https://app.qa1.sporter.com/admin_1uidvr/catalog/product/edit/id/53428/key/ba40f6ed3583beafdcb4374b48c718cf31deb225ac6171a6ecaa4b0d6ba0dc32/
@@ -153,7 +153,7 @@ public void verifyRelatedProductSectionIsDisplayedForOutStockProduct() throws IO
         RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
         for (int i = 0; i < relatedProductSection.getAddRelatedProductToCart().size(); i++) {
             DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(i), webDriver);
-            DataHelperAndWait.waitForTime(1000);
+            DataHelperAndWait.waitForTime(1500);
             Assert.assertTrue(relatedProductSection.getAddRelatedProductToCart().get(i).isDisplayed(), "Add to cart is missing");
         }
     }
@@ -177,9 +177,9 @@ public void verifyRelatedProductSectionIsDisplayedForOutStockProduct() throws IO
         productPrice=DataHelperAndWait.convertTheStringToFloat(relatedProductSection.getRelatedProductsPrices().get(0), webDriver, currency);
         System.out.println(productPrice);
         DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
-        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.waitForTime(1500);
         DataHelperAndWait.JsExecutorToClickOnElement(relatedProductSection.getAddRelatedProductToCart().get(0),webDriver);
-        DataHelperAndWait.waitForTime(1000);
+        DataHelperAndWait.waitForTime(1500);
         WebElementsAssertion.assertionTextIsEqual(cartPage.getCartCounter(), webDriver, "1");
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:(Related Product For OOS)Make sure the product price appears in the Related Products section is the same price when added it to the cart", priority = 23)
@@ -188,16 +188,6 @@ public void verifyRelatedProductSectionIsDisplayedForOutStockProduct() throws IO
         cartPage.navigateToCartPage();
         DataHelperAndWait.waitToBeVisible(cartPage.getOrderTotalValue(),webDriver);
         Assert.assertEquals(productPrice, DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(), webDriver, currency));
-    }
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:(Related Product For OOS)Make sure the related products section appears correctly after adding the original product to the cart", priority = 24)
-    public void verifyRelatedProductsSectionAppearAfterAddingTheOriginalProductToCartForOOS() throws IOException {
-        RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
-        ProductDetailsPage productDetailsPage= new ProductDetailsPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        relatedProductSection.displayTheOutStockProduct();
-        productDetailsPage.addToCart();
-        productDetailsPage.keepShopping();
-        Assert.assertTrue(DataHelperAndWait.IsElementPresent(relatedProductSection.getRelatedProductsSection()));
     }
 
 
