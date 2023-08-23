@@ -49,7 +49,7 @@ public class RelatedProductSection extends BasePage {
 
     public void displayTheInStockProduct() throws IOException {
         webDriver.navigate().to(BaseURL + inStockProductHaveRelatedItems);
-        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,6);
+        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,10);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
