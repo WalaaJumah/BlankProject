@@ -16,6 +16,7 @@ public class OmanRelatedProductsTestCases extends RelatedProductsTestCases {
     public void switchToOmanStore() {
         OmanMyAccountPage omanMyAccountPage = new OmanMyAccountPage(webDriver);
         EgyptHomePage egyptHomePage = new EgyptHomePage(webDriver);
+        currency=egyptHomePage.OMRCurrency;
         egyptHomePage.switchCountry(omanMyAccountPage.getOmanCountry());
         if (webDriver.getCurrentUrl().contains(egyptHomePage.omanDomain)) {
             System.out.println("You are in Oman Store");

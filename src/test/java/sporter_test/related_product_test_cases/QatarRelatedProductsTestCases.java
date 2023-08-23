@@ -25,6 +25,7 @@ public class QatarRelatedProductsTestCases extends RelatedProductsTestCases {
     public void switchToQatarStore() {
         QatarHomePage qatarHomePage = new QatarHomePage(webDriver);
         qatarHomePage.switchCountry(qatarHomePage.getQatarCountry());
+        currency=qatarHomePage.QARCurrency;
         if (webDriver.getCurrentUrl().contains(qatarHomePage.qatarDomain)) {
             System.out.println("You are in Qatar Store");
         } else {

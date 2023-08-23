@@ -24,5 +24,6 @@ public class BahrainRelatedProductsTestCases extends RelatedProductsTestCases {
             //CloseInitialDialog();
         }
         storeCountry = "Bahrain";
+        currency=bahrainMyAccountPage.bahrainCurrency;
     }
 }

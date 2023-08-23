@@ -20,7 +20,8 @@ import java.io.IOException;
 
 public class RelatedProductsTestCases extends BaseTest {
     String storeCountry;
-    String productPrice;
+    String currency;
+    float productPrice;
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure the Related Products section is displayed for in stock product ", priority = 1)
     public void verifyRelatedProductSectionIsDisplayedForInStockProduct() throws IOException {
@@ -52,12 +53,13 @@ public class RelatedProductsTestCases extends BaseTest {
     public void verifyAddToCartBtnWorksCorrectly() {
         RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
         CartPage cartPage= new CartPage(webDriver);
-        webDriver.manage().deleteAllCookies();
-        productPrice=relatedProductSection.getRelatedProductsPrices().get(0).getText();
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        productPrice=DataHelperAndWait.convertTheStringToFloat(relatedProductSection.getRelatedProductsPrices().get(0), webDriver, currency);
         System.out.println(productPrice);
         DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
         DataHelperAndWait.waitForTime(1000);
         DataHelperAndWait.JsExecutorToClickOnElement(relatedProductSection.getAddRelatedProductToCart().get(0),webDriver);
+        DataHelperAndWait.waitForTime(1000);
         WebElementsAssertion.assertionTextIsEqual(cartPage.getCartCounter(), webDriver, "1");
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure the product price appears in the Related Products section is the same price when added it to the cart", priority = 5)
@@ -65,8 +67,7 @@ public class RelatedProductsTestCases extends BaseTest {
         CartPage cartPage= new CartPage(webDriver);
        cartPage.navigateToCartPage();
        DataHelperAndWait.waitToBeVisible(cartPage.getOrderTotalValue(),webDriver);
-       System.out.println(cartPage.getOrderTotalValue().getText());
-       Assert.assertEquals(productPrice, webDriver, cartPage.getOrderTotalValue().getText());
+       Assert.assertEquals(productPrice, DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(), webDriver, currency));
     }
 
 

@@ -25,6 +25,7 @@ public class JordanRelatedProductsTestCases extends RelatedProductsTestCases {
     public void switchToJordanStore() {
         JordanHomePage jordanHomePage = new JordanHomePage(webDriver);
         jordanHomePage.switchCountry(jordanHomePage.getJordanCountry());
+        currency=jordanHomePage.JODCurrency;
         if (webDriver.getCurrentUrl().contains(jordanHomePage.jordanDomain)) {
             System.out.println("You are in Jordan Store");
         } else {

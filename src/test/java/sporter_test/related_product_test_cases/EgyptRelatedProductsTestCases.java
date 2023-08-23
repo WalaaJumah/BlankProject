@@ -32,6 +32,7 @@ public class EgyptRelatedProductsTestCases extends RelatedProductsTestCases {
         EgyptHomePage egyptHomePage = new EgyptHomePage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         egyptHomePage.switchCountry(egyptHomePage.getEgyptCountry());
+        currency=egyptHomePage.EGPCurrency;
         if (webDriver.getCurrentUrl().contains(egyptHomePage.egyptDomain)) {
             System.out.println("You are in Jordan Store");
         } else {

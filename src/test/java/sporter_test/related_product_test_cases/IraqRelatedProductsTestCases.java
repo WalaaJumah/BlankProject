@@ -17,6 +17,7 @@ public class IraqRelatedProductsTestCases extends RelatedProductsTestCases {
     public void switchToIraqStore() {
         IraqHomePage iraqHomePage = new IraqHomePage(webDriver);
         iraqHomePage.switchCountry(iraqHomePage.getIraqCountry());
+        currency=iraqHomePage.iraqCurrency;
         if (!webDriver.getCurrentUrl().contains(iraqHomePage.iraqDomain)) {
             webDriver.navigate().to(BasePage.BaseURL + iraqHomePage.iraqDomain);
         }
