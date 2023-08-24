@@ -39,7 +39,7 @@ public class BahrainTabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCa
         storeCountry = "Bahrain";
         countryCode = "973";
     }
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Ability to login correctly from Sign In Page using valid credential", priority = 1)
+    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"}, description = "{{CountryName}}: Ability to login correctly from Sign In Page using valid credential", priority = 1)
     public void verifyAbilityToLoginCorrectlyWithValidCredentials() throws Exception {
         HeaderSection header = new HeaderSection(webDriver);
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
