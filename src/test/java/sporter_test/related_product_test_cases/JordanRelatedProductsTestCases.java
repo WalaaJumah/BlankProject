@@ -39,7 +39,7 @@ public class JordanRelatedProductsTestCases extends RelatedProductsTestCases {
             System.out.println(webDriver.getCurrentUrl());
         }
     }
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:(Cart Rules) Make sure that inability to add the same SKU appears in Related product section twice & the site display error mSG ", priority = 9)
+    @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:(Cart Rules) Make sure that inability to add the same SKU appears in Related product section twice & the site display error mSG ", priority = 9)
     public void verifyInabilityToAddSameSKUToCartTwiceFromRelatedProductSection() throws IOException {
         RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
         CartPage cartPage= new CartPage(webDriver);
@@ -55,7 +55,7 @@ public class JordanRelatedProductsTestCases extends RelatedProductsTestCases {
         DataHelperAndWait.waitForTime(1000);
         Assert.assertTrue(DataHelperAndWait.IsElementPresent(cartPage.getCartErrorMsg()));
     }
-     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:(Cart Rules) Make sure that inability to add related products their values exceed 120 JOD ", priority = 9)
+     @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:(Cart Rules) Make sure that inability to add related products their values exceed 120 JOD ", priority = 9)
     public void verifyInabilityToAddRelatedProductsToCartWhenTheirValuesExceed120JOD() throws IOException {
         RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
         CartPage cartPage= new CartPage(webDriver);

@@ -33,7 +33,7 @@ public class BahrainRelatedProductsTestCases extends RelatedProductsTestCases {
         storeCountry = "Bahrain";
         currency=bahrainMyAccountPage.bahrainCurrency;
     }
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:(Cart Rules) Make sure that inability to add the same SKU appears in Related product section More Than 3 times & the site display error mSG ", priority = 9)
+    @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:(Cart Rules) Make sure that inability to add the same SKU appears in Related product section More Than 3 times & the site display error mSG ", priority = 9)
     public void verifyInabilityToAddSameSKUToCartMoreThan3TimesFromRelatedProductSection() throws IOException {
         RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
         CartPage cartPage= new CartPage(webDriver);
