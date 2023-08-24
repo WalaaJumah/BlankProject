@@ -87,12 +87,16 @@ public class TabbyPaymentPage extends BasePage {
        @FindBy(xpath = "//div[starts-with(@class,'popUp_container')]//div[@id='AddToCartErrContainer']")
     private WebElement errorMsgInPaymentMethod;
 
-    public void SelectTabbyInstallmentsMethod() throws Exception {
-        GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
-        DataHelperAndWait.waitToBeVisible(tabbyInstallmentsPaymentMethod,webDriver);
-        DataHelperAndWait.clickOnElement(tabbyInstallmentsPaymentMethod,webDriver);
-        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
+    public void SelectTabbyInstallmentsMethod() {
+        if(DataHelperAndWait.IsElementPresent(tabbyInstallmentsPaymentMethod)) {
+            GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+            DataHelperAndWait.waitToBeVisible(tabbyInstallmentsPaymentMethod, webDriver);
+            DataHelperAndWait.clickOnElement(tabbyInstallmentsPaymentMethod, webDriver);
+            DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
+            DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
+        }
+        else
+            throw new AssertionError("Tabby Payment is missing");
     }
     public void addToCartAndDisplayTheCart() throws IOException {
         ProductDetailsPage productDetailsPage= new ProductDetailsPage(webDriver);

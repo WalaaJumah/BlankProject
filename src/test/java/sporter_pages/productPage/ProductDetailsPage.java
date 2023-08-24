@@ -28,11 +28,14 @@ public class ProductDetailsPage extends BasePage {
 
     DataHelperAndWait dataHelperAndWait;
     //declare all locators related to the Product Details Page
-    @FindBy(id = "productQty")
+//    @FindBy(id = "productQty")
+    @FindBy(xpath = "(//div[@id='qtyContainer']/input[@id='productQty'])[2]")
     private WebElement quantityField;
-    @FindBy(id = "increaseQty")
+    @FindBy(xpath = "//div[@id='productOrderContainer']//div[@id='increaseQty']")
+//    @FindBy(id = "increaseQty")
     private WebElement qtyPlusButton;
-    @FindBy(id = "decreaseQty")
+//    @FindBy(id = "decreaseQty")
+    @FindBy(xpath = "//div[@id='productOrderContainer']//div[@id='decreaseQty']")
     private WebElement qtyMinusButton;
     @FindBy(xpath = "(.//*[@id='productOrderContainer'])//button[@id='addToCartBtn']")
     private WebElement addToCartBtn;
@@ -247,7 +250,7 @@ public class ProductDetailsPage extends BasePage {
     }
 
     public void increaseTheQuantity() {
-        DataHelperAndWait.clickOnElement(quantityField, webDriver);
+//        DataHelperAndWait.clickOnElement(quantityField, webDriver);
         DataHelperAndWait.clickOnElement(qtyPlusButton, webDriver);
         this.waitTillCartSpinnerDisappear(webDriver);
     }

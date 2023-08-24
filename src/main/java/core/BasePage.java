@@ -55,7 +55,7 @@ public class BasePage {
     public static String productUrlKSAWithHighPrice1 = "/puma-speed-orbiter-black-nrgy-red-yellow-33980";
     public static String productUrlKSAWithHighPrice2 = "/puma-speed-orbiter-black-nrgy-red-yellow-33764/";
     public static String productUrlKSAWithHighPrice3 = "/muscletech-nitro-tech-performance-series-16114/";
-    public static String productUrlEgypt = "/now-royal-jelly-1500-mg-equivalency-super-food-16790/";
+    public static String productUrlEgypt = "/optimum-gold-standard-100-whey-6200/";
     public static String productUrlJordan = "/optimum-gold-standard-100-whey";
     public static String productUrlJordan7 = "/optimum-gold-standard-100-whey";
     public static String inStockProductHaveRelatedItems = "/muscletech-nitro-tech-performance-series/";

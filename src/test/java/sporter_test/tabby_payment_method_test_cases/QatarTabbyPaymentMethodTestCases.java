@@ -65,7 +65,7 @@ public class QatarTabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCase
         jo.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(tabbyPaymentPage.getTabbyInstallmentsPaymentMethod(),webDriver);
+        Assert.assertTrue(DataHelperAndWait.IsElementPresent(tabbyPaymentPage.getTabbyInstallmentsPaymentMethod()));
     }
     @Test(groups = {"All Smoke Testing Result","1.2 High Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when Selecting 2_4 Business Days Super Express Shipping Method With tabby Payment Method ", priority = 3)
     public void verifyAbilityToPlaceOrderWhenWhenSelecting2_4BusinessDaysSuperExpressShippingMethodWithTabbyPaymentMethodForRegisteredUser() throws Exception, InterruptedException {

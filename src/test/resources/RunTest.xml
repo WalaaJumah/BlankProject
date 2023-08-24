@@ -19,27 +19,35 @@
 <!--                    </run>-->
 <!--                </groups>-->
         <classes>
-            <class name="sporter_test.related_product_test_cases.UAERelatedProductsTestCases"/>
-            <class name="sporter_test.related_product_test_cases.OmanRelatedProductsTestCases"/>
-            <class name="sporter_test.related_product_test_cases.KSARelatedProductsTestCases"/>
-            <class name="sporter_test.related_product_test_cases.BahrainRelatedProductsTestCases"/>
-            <class name="sporter_test.related_product_test_cases.KuwaitRelatedProductsTestCases"/>
-            <class name="sporter_test.related_product_test_cases.QatarRelatedProductsTestCases"/>
-            <class name="sporter_test.related_product_test_cases.IraqRelatedProductsTestCases"/>
-            <class name="sporter_test.related_product_test_cases.EgyptRelatedProductsTestCases"/>
-            <class name="sporter_test.related_product_test_cases.JordanRelatedProductsTestCases">
-
-
+            <class name="sporter_test.tamara_payment_method_test_cases.KSATamaraPaymentMethodTestCases">
 <!--            <methods>-->
-<!--                <include name="verifyAllAramexCitiesAreListedInCityMenu"></include>-->
-<!--&lt;!&ndash;                <include name="verifyAbilityToAccessAllMostSellingProductsCorrectly"></include>&ndash;&gt;-->
-<!--                &lt;!&ndash;                    <include name="verifyInabilityToAddNewAddressWithIncorrectPhoneNumberFormat"></include>&ndash;&gt;-->
-<!--                &lt;!&ndash;                    <include name="verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTamaraPaymentMethodUsing3DSCardForForRegisteredUser"></include>&ndash;&gt;-->
-<!--                &lt;!&ndash;                    <include name="verifyClickingOnTheSecondSideBannersWorksCorrectly"></include>&ndash;&gt;-->
-
-
+<!--                <include name="verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct"/>-->
 <!--            </methods>-->
             </class>
+
+
+
+<!--            <class name="sporter_test.related_product_test_cases.UAERelatedProductsTestCases"/>-->
+<!--            <class name="sporter_test.related_product_test_cases.OmanRelatedProductsTestCases"/>-->
+<!--            <class name="sporter_test.related_product_test_cases.KSARelatedProductsTestCases"/>-->
+<!--            <class name="sporter_test.related_product_test_cases.BahrainRelatedProductsTestCases"/>-->
+<!--            <class name="sporter_test.related_product_test_cases.KuwaitRelatedProductsTestCases"/>-->
+<!--            <class name="sporter_test.related_product_test_cases.QatarRelatedProductsTestCases"/>-->
+<!--            <class name="sporter_test.related_product_test_cases.IraqRelatedProductsTestCases"/>-->
+<!--            <class name="sporter_test.related_product_test_cases.EgyptRelatedProductsTestCases"/>-->
+<!--            <class name="sporter_test.related_product_test_cases.JordanRelatedProductsTestCases">-->
+
+
+<!--&lt;!&ndash;            <methods>&ndash;&gt;-->
+<!--&lt;!&ndash;                <include name="verifyAllAramexCitiesAreListedInCityMenu"></include>&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                <include name="verifyAbilityToAccessAllMostSellingProductsCorrectly"></include>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                &lt;!&ndash;                    <include name="verifyInabilityToAddNewAddressWithIncorrectPhoneNumberFormat"></include>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                &lt;!&ndash;                    <include name="verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTamaraPaymentMethodUsing3DSCardForForRegisteredUser"></include>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                &lt;!&ndash;                    <include name="verifyClickingOnTheSecondSideBannersWorksCorrectly"></include>&ndash;&gt;&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;            </methods>&ndash;&gt;-->
+<!--            </class>-->
 
 
 

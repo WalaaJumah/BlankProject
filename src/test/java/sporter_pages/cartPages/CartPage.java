@@ -61,7 +61,8 @@ public class CartPage extends BasePage {
     //TODO: To replace it with ID after added it by Moamen
 //    @FindBy(css = "#FaShoppingCart > path")
 //    private WebElement cartIcon;
-    @FindBy(id = "CartIconContainer")
+//    @FindBy(id = "CartIconContainer")
+    @FindBy(xpath = "//div[@id='CartIconInnerContainer']/span[@id='CartIconContainerqty']")
     private WebElement cartIcon;
     @FindBy(id = "cartPagelink")
     private WebElement viewCartInCartPopup;

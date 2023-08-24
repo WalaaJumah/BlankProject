@@ -328,7 +328,8 @@ DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
         webDriver.navigate().to(BaseURL+ checkoutUrl);
         DataHelperAndWait.waitForUrlContains(checkoutUrl,webDriver);
         DataHelperAndWait.scrollTo(guestCheckoutCyclePage.getCheckoutAsGuestBtn(), webDriver);
-           DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCheckoutAsGuestBtn(), webDriver);
+           DataHelperAndWait.waitToBeClickable(guestCheckoutCyclePage.getCheckoutAsGuestBtn(), webDriver);
+           DataHelperAndWait.JsExecutorToClickOnElement(guestCheckoutCyclePage.getCheckoutAsGuestBtn(), webDriver);
     }
 
     public void displayProductAndAddToCart() throws IOException {
