@@ -68,7 +68,8 @@ public class CartPage extends BasePage {
     @FindBy(id = "checkoutbtn")
     private WebElement proceedCheckoutBtnInCartPopup;
     //TODO: To replace it with ID after added it by Moamen
-    @FindBy(xpath = "//a[starts-with(@class,'cartPage_link')]")
+//    @FindBy(xpath = "//a[starts-with(@class,'cartPage_link')]")
+    @FindBy(id = "cart_empty_link")
     private WebElement hereLink;
     @FindBy(xpath = "(//div[@id='decreaseQtyBtn'])[1]")
     private WebElement decreaseQtyBtn;
@@ -182,7 +183,7 @@ public class CartPage extends BasePage {
     }
     public  void waitTillCartSpinnerDisappear(WebDriver webDriver) {
         WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(4));
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(this.cartLoaderXpath)));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id(this.cartLoaderXpath)));
 
     }
     public void addToCartAndDisplayTheCart() throws IOException {

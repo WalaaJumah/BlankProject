@@ -21,6 +21,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import sporter_pages.cartPages.CartPage;
 import xml_reader.XmlReader;
+
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
@@ -31,7 +32,8 @@ public class GuestCheckoutCyclePage extends BasePage {
     DataHelperAndWait dataHelperAndWait;
     @FindBy(id = "placeOrderSideBtn")
     private WebElement placeOrderBtn;
-    @FindBy(id = "submitGuestOptionBtn")
+    //    @FindBy(id = "submitGuestOptionBtn")
+    @FindBy(xpath = "//div[@id='guestOption']/button[@id='submitGuestOptionBtn']")
     private WebElement checkoutAsGuestBtn;
     @FindBy(xpath = "//a[contains(@class,'orderPage_head')]")
     private WebElement logoInCheckoutMethod;
@@ -148,7 +150,7 @@ public class GuestCheckoutCyclePage extends BasePage {
     private WebElement creditCardIFrame;
     @FindBy(id = "closeAddToCartErrBtn")
     private WebElement closeCheckoutErr;
-      @FindBy(id = "AddToCartErrMsg")
+    @FindBy(id = "AddToCartErrMsg")
     private WebElement cartErrorMsgText;
 
     //   @FindBy(xpath = "//input[@placeholder='Hint: Checkout1!']")
@@ -167,6 +169,7 @@ public class GuestCheckoutCyclePage extends BasePage {
     private WebElement orderTotalValueInrReviewPage;
     @FindBy(xpath = "(//span[starts-with(@class,'shippingMethod_amount')])[1]")
     private WebElement firstShippingMethodAmount;
+
     public GuestCheckoutCyclePage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
@@ -190,6 +193,7 @@ public class GuestCheckoutCyclePage extends BasePage {
         DataHelperAndWait.updateAllText(streetLineTwoField, streetLineTwo);
         this.selectCity();
     }
+
     public void fillInShippingInformationInputFieldWithDubai(String firstName, String lastName, String email, String phone, String streetLineOne, String streetLineTwo) {
         DataHelperAndWait.waitToBeVisible(firstNameField, webDriver);
         DataHelperAndWait.updateAllText(firstNameField, firstName);
@@ -207,21 +211,23 @@ public class GuestCheckoutCyclePage extends BasePage {
         DataHelperAndWait.updateAllText(streetLineTwoField, streetLineTwo);
         setSelectDubaiCityCity();
     }
-    public void fillInShippingInformationInputFieldWithDubaiForRegisteredUser(String firstName, String lastName,  String phone, String streetLineOne, String streetLineTwo, String address) {
+
+    public void fillInShippingInformationInputFieldWithDubaiForRegisteredUser(String firstName, String lastName, String phone, String streetLineOne, String streetLineTwo, String address) {
         DataHelperAndWait.waitToBeVisible(firstNameField, webDriver);
         DataHelperAndWait.updateAllText(firstNameField, firstName);
         DataHelperAndWait.waitToBeVisible(lastNameField, webDriver);
         DataHelperAndWait.updateAllText(lastNameField, lastName);
         DataHelperAndWait.waitToBeVisible(phoneField, webDriver);
         DataHelperAndWait.updateAllText(phoneField, phone);
-        DataHelperAndWait.waitToBeVisible(addressNameField ,webDriver);
-        DataHelperAndWait.updateAllText(addressNameField,address);
+        DataHelperAndWait.waitToBeVisible(addressNameField, webDriver);
+        DataHelperAndWait.updateAllText(addressNameField, address);
         DataHelperAndWait.waitToBeVisible(streetLineOneField, webDriver);
         DataHelperAndWait.updateAllText(streetLineOneField, streetLineOne);
         DataHelperAndWait.waitToBeVisible(streetLineTwoField, webDriver);
         DataHelperAndWait.updateAllText(streetLineTwoField, streetLineTwo);
         setSelectDubaiCityCity();
     }
+
     public void clickOnContinueBtn() throws IOException {
         DataHelperAndWait.waitToBeVisible(continueShippingInfoBtn, webDriver);
         DataHelperAndWait.scrollTo(continueShippingInfoBtn, webDriver);
@@ -235,11 +241,13 @@ public class GuestCheckoutCyclePage extends BasePage {
             DataHelperAndWait.hoverOnElementAndClick(continueShippingInfoBtn, webDriver);
             waitTillLoaderComplete();
         }
-        if(DataHelperAndWait.IsElementPresent(closeCheckoutErr)) {
-            if(cartErrorMsgText.getText().contains("No Available Shipping Methods")){
-            throw new AssertionError("Sorry But There is No Available Shipping Methods For your Location error");}
-            if(cartErrorMsgText.getText().contains("some or all of your items may be shipped from outside")){
-                throw new AssertionError("some or all of your items may be shipped from outside error is displayed");}
+        if (DataHelperAndWait.IsElementPresent(closeCheckoutErr)) {
+            if (cartErrorMsgText.getText().contains("No Available Shipping Methods")) {
+                throw new AssertionError("Sorry But There is No Available Shipping Methods For your Location error");
+            }
+            if (cartErrorMsgText.getText().contains("some or all of your items may be shipped from outside")) {
+                throw new AssertionError("some or all of your items may be shipped from outside error is displayed");
+            }
 
         }
     }
@@ -259,8 +267,8 @@ public class GuestCheckoutCyclePage extends BasePage {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         cartPage.proceedToCheckout();
-            DataHelperAndWait.waitToBeClickable(checkoutAsGuestBtn, webDriver);
-        DataHelperAndWait.JsExecutorToClickOnElement(checkoutAsGuestBtn,webDriver);
+        DataHelperAndWait.waitToBeClickable(checkoutAsGuestBtn, webDriver);
+        DataHelperAndWait.JsExecutorToClickOnElement(checkoutAsGuestBtn, webDriver);
 
     }
 
@@ -395,16 +403,19 @@ public class GuestCheckoutCyclePage extends BasePage {
         }
 
     }
+
     public void IsQouteIDisDisplayed() throws IOException {
         DataHelperAndWait.waitForTime(5000);
         verifyTheDisplayedPageDoesNotHaveErrors();
-        System.out.println("CurrentURL is: "+webDriver.getCurrentUrl());
-        if(!(webDriver.getCurrentUrl().contains("sandbox.checkout.com/"))){
-        String orderNumber= DataHelperAndWait.extractDigitsFromString(successPage,webDriver);
-        System.out.println(orderNumber);}
+        System.out.println("CurrentURL is: " + webDriver.getCurrentUrl());
+        if (!(webDriver.getCurrentUrl().contains("sandbox.checkout.com/"))) {
+            String orderNumber = DataHelperAndWait.extractDigitsFromString(successPage, webDriver);
+            System.out.println(orderNumber);
+        }
     }
-public void waitTillLoaderComplete(){
-    WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(50));
-    wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(this.cartLoaderXpath)));
-}
+
+    public void waitTillLoaderComplete() {
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(50));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(this.cartLoaderXpath)));
+    }
 }
