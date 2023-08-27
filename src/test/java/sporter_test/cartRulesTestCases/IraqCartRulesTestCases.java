@@ -35,7 +35,6 @@ public class IraqCartRulesTestCases extends CartRulesTestCases {
     public void verify3ItemOfTheSameKindRuleWorksCorrectlyWhenIncreasingTheQtyTo2FromProductPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
         webDriver.navigate().to(cartPage.productUrlIraq2);
         productDetailsPage.increaseTheQuantity();
         productDetailsPage.increaseTheQuantity();

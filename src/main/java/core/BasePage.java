@@ -34,7 +34,7 @@ public class BasePage {
     public static String productUrl = "/optimum-gold-standard-100-whey-6202";
     public static String bogoProductIraq = "/catalog-pro-32569-32569/";
     public static String productUrlIraq = "/betancourt-nutrition-b-nox-androrush-34834/";
-    public static String productUrlIraqHighPrice = "/lean-muscle-mass-combo-3/";
+    public static String productUrlIraqHighPrice = "/evl-nutrition-100-isolate-protein-55121/";
     public static String productUrlIraq2 = "/fade-fit-protein-munchies-54804/";
     public static String productUrlIraq3 = "/project-7-naturally-sweetened-chewing-gum-52184/";
     public static String productUrlIraq4 = "/organic-larder-canned-veg-edamame-soybean-25133/";
@@ -54,7 +54,7 @@ public class BasePage {
     public static String productUrlKSAWithHighPrice1 = "/puma-speed-orbiter-black-nrgy-red-yellow-33980";
     public static String productUrlKSAWithHighPrice2 = "/puma-speed-orbiter-black-nrgy-red-yellow-33764/";
     public static String productUrlKSAWithHighPrice3 = "/muscletech-nitro-tech-performance-series-16114/";
-    public static String productUrlEgypt = "/now-royal-jelly-1500-mg-equivalency-super-food-16790/";
+    public static String productUrlEgypt = "/optimum-amino-energy-6737/";
     public static String productUrlJordan = "/optimum-gold-standard-100-whey";
     public static String productUrlJordan7 = "/optimum-gold-standard-100-whey";
     public static String productUrlJordanWithLowPrice = "/jack-links-beef-jerky-54840/";
