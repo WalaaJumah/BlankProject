@@ -40,10 +40,12 @@ public class RelatedProductsTestCases extends BaseTest {
         Assert.assertTrue(DataHelperAndWait.IsElementPresent(relatedProductSection.getRelatedProductsPrices().get(0)), "Product price is missing");
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure add To Cart button appears correctly for all Related Products", priority = 3)
-    public void verifyAddToCartBtnAppearsForAllRelatedProduct() {
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure add To Cart button appears correctly for all Related Products", priority = 50)
+    public void verifyAddToCartBtnAppearsForAllRelatedProduct() throws IOException {
         RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
         for (int i = 0; i < relatedProductSection.getAddRelatedProductToCart().size(); i++) {
+            webDriver.manage().deleteCookieNamed("guestCartId");
+            relatedProductSection.displayTheInStockProduct();
             DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(i), webDriver);
             DataHelperAndWait.waitForTime(2000);
             Assert.assertTrue(relatedProductSection.getAddRelatedProductToCart().get(i).isDisplayed(), "Add to cart is missing");
@@ -62,10 +64,11 @@ public class RelatedProductsTestCases extends BaseTest {
         }
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure add To Cart button works correctly", priority = 5)
-    public void verifyAddToCartBtnWorksCorrectly() {
+    public void verifyAddToCartBtnWorksCorrectly() throws IOException {
         RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
+        relatedProductSection.displayTheInStockProduct();
         productPrice=DataHelperAndWait.convertTheStringToFloat(relatedProductSection.getRelatedProductsPrices().get(0), webDriver, currency);
         System.out.println(productPrice);
         DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
@@ -109,19 +112,22 @@ public class RelatedProductsTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure add To Cart button appears correctly for all Related Products in Bundle", priority = 15)
-    public void verifyAddToCartBtnAppearsForAllRelatedProductForBundle() {
+    public void verifyAddToCartBtnAppearsForAllRelatedProductForBundle() throws IOException {
         RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
         for (int i = 0; i < relatedProductSection.getAddRelatedProductToCart().size(); i++) {
+            webDriver.manage().deleteCookieNamed("guestCartId");
+            relatedProductSection.displayTheInStockBundle();
             DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(i), webDriver);
             DataHelperAndWait.waitForTime(2000);
             Assert.assertTrue(relatedProductSection.getAddRelatedProductToCart().get(i).isDisplayed(), "Add to cart is missing");
         }
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure add To Cart button works correctly for Bundle", priority = 17)
-    public void verifyAddToCartBtnWorksCorrectlyForBundle() {
+    public void verifyAddToCartBtnWorksCorrectlyForBundle() throws IOException {
         RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
+        relatedProductSection.displayTheInStockBundle();
         productPrice=DataHelperAndWait.convertTheStringToFloat(relatedProductSection.getRelatedProductsPrices().get(0), webDriver, currency);
         System.out.println(productPrice);
         DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
@@ -149,9 +155,11 @@ public void verifyRelatedProductSectionIsDisplayedForOutStockProduct() throws IO
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:(Related Product For OOS)Make sure add To Cart button appears correctly for all Related Products", priority = 20)
-    public void verifyAddToCartBtnAppearsForAllRelatedProductForOOS() {
+    public void verifyAddToCartBtnAppearsForAllRelatedProductForOOS() throws IOException {
         RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
         for (int i = 0; i < relatedProductSection.getAddRelatedProductToCart().size(); i++) {
+            webDriver.manage().deleteCookieNamed("guestCartId");
+            relatedProductSection.displayTheOutStockProduct();
             DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(i), webDriver);
             DataHelperAndWait.waitForTime(1500);
             Assert.assertTrue(relatedProductSection.getAddRelatedProductToCart().get(i).isDisplayed(), "Add to cart is missing");

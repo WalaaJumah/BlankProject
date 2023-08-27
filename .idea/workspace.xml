@@ -11,7 +11,6 @@
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/related_products_sections/RelatedProductSection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/related_products_sections/RelatedProductSection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/related_product_test_cases/RelatedProductsTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/related_product_test_cases/RelatedProductsTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/RunTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RunTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/Sporter2.1OnProdution/ProductionSporter2.1SmokeReport.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Sporter2.1OnProdution/ProductionSporter2.1SmokeReport.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
