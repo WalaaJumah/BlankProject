@@ -28,6 +28,9 @@
             <class name="sporter_test.related_product_test_cases.KSARelatedProductsTestCases"></class>/
             <class name="sporter_test.related_product_test_cases.KuwaitRelatedProductsTestCases"></class>/
             <class name="sporter_test.related_product_test_cases.OmanRelatedProductsTestCases"></class>/
+            <class name="sporter_test.cartRulesTestCases.JordanCartRulesTestCases"></class>
+            <class name="sporter_test.cartRulesTestCases.KSACartRulesTestCases"></class>
+            <class name="sporter_test.cartRulesTestCases.QatarCartRulesTestCases"></class>
 
 
         </classes>
