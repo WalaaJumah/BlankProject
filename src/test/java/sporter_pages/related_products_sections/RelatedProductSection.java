@@ -55,12 +55,17 @@ public class RelatedProductSection extends BasePage {
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
       public void displayTheOutStockProduct() throws IOException {
-        webDriver.navigate().to(BaseURL + this.oOSProductUrl);
+          if(webDriver.getCurrentUrl().contains("-eg/"))
+              webDriver.navigate().to(BaseURL + this.oOSProductUrlForEg);
+
+          webDriver.navigate().to(BaseURL + this.oOSProductUrl);
         DataHelperAndWait.waitTillPageFullyLoaded(webDriver,10);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
     public void displayTheInStockBundle() throws IOException {
+        if(webDriver.getCurrentUrl().contains("-eg/"))
+            webDriver.navigate().to(BaseURL +this. inStockBundleHaveRelatedItemsEg);
         webDriver.navigate().to(BaseURL + inStockBundleHaveRelatedItems);
         DataHelperAndWait.waitTillPageFullyLoaded(webDriver,15);
         verifyTheDisplayedPageDoesNotHaveErrors();

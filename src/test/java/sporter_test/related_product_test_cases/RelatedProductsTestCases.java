@@ -189,6 +189,31 @@ public void verifyRelatedProductSectionIsDisplayedForOutStockProduct() throws IO
         DataHelperAndWait.waitToBeVisible(cartPage.getOrderTotalValue(),webDriver);
         Assert.assertEquals(productPrice, DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(), webDriver, currency));
     }
-
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure clicking on the Cross selling product/ Or click on Add to cart button will redirect the user to the product details page ", priority = 40)
+    public void verifyClickingOnRelatedProductSectionRedirectsToPDP() throws IOException {
+        RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
+        relatedProductSection.displayTheInStockProduct();
+        DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
+        DataHelperAndWait.waitForTime(1500);
+        DataHelperAndWait.JsExecutorToClickOnElement(relatedProductSection.getAddRelatedProductToCart().get(0),webDriver);
+    }
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure clicking on the Cross selling product/ Or click on Add to cart button will redirect the user to the product details page for Bundle ", priority = 41)
+    public void verifyClickingOnRelatedProductSectionRedirectsToPDPForBundle() throws IOException {
+        RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        relatedProductSection.displayTheInStockBundle();
+        DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
+        DataHelperAndWait.waitForTime(1500);
+        DataHelperAndWait.JsExecutorToClickOnElement(relatedProductSection.getAddRelatedProductToCart().get(0),webDriver);
+    }
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure clicking on the Similar product/ Or click on Add to cart button for OOS will redirect the user to the product details page ", priority = 42)
+    public void verifyClickingOnRelatedProductSectionForOOSRedirectsToPDP() throws IOException {
+        RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        relatedProductSection.displayTheOutStockProduct();
+        DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
+        DataHelperAndWait.waitForTime(1500);
+        DataHelperAndWait.JsExecutorToClickOnElement(relatedProductSection.getAddRelatedProductToCart().get(0),webDriver);
+    }
 
 }

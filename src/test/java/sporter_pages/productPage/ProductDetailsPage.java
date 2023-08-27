@@ -127,7 +127,7 @@ public class ProductDetailsPage extends BasePage {
     private WebElement ProductHeaderBar;
     @FindBy(id = "fixedAddToCartBtn")
     private WebElement addToCartBtnInProductHeaderBar;
-    @FindBy(xpath = "//a[starts-with(@class,'ProductBrandLink_brand')]")
+    @FindBy(xpath = "//div[@id='productInfoContainer']//a[starts-with(@class,'ProductBrandLink_brand')]")
     private WebElement productBrandLink;
     @FindBy(xpath = "(//div[@id='expectedDeliveryDate']/span)[1]")
     private WebElement expectedDeliveryDateLabel;

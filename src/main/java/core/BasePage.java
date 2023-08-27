@@ -61,6 +61,7 @@ public class BasePage {
     public static String inStockProductHaveRelatedItems = "/optimum-gold-standard-100-whey";
 //    public static String inStockProductHaveRelatedItems = "/optimum-gold-standard-100-whey-6200/";
     public static String inStockBundleHaveRelatedItems = "/grenade-carb-killa-protein-bar-box-of-12/";
+    public static String inStockBundleHaveRelatedItemsEg = "/organic-nation-secrets-protein-bars-box-of-12";
     public static String productUrlJordanWithLowPrice = "/jack-links-beef-jerky-54840/";
     public static String productUrlJordanWithHighPrice = "/dymatize-iso-100-7164/";
     public static String productUrlQatarWithHighPrice = "/optimum-gold-standard-100-whey-6202";
@@ -69,6 +70,7 @@ public class BasePage {
     public static String productUrlQatarWithHighPrice4 = "/evl-nutrition-100-whey-protein-55126";
     public static String productUrlJordanWithHighPrice2 = "/evl-nutrition-stacked-protein-55117";
     public static String oOSProductUrl = "";
+    public static String oOSProductUrlForEg = "/organic-nation-cashew-spread-pro-added-whey-protein/";
     public static String bundleUrl = "";
     public static String bogoProduct = "";
     public final String aeDomain = "/en-ae";
