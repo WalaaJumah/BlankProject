@@ -66,6 +66,7 @@ public class CartTestCases extends BaseTest {
     public void verifyIncreaseQtyBtnInCartPageWorking() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
 //        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         cartPage.increaseQty();
     }
 

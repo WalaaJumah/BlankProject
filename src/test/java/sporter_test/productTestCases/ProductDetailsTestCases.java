@@ -80,8 +80,9 @@ public class ProductDetailsTestCases extends BaseTest {
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:Make sure that the Decrease quantity function works fine ", priority = 6)
-    public void verifyDecreaseQuantityButtonWorkingFine() {
+    public void verifyDecreaseQuantityButtonWorkingFine() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
         productDetailsPage.decreaseTheQuantity();
         WebElementsAssertion.assertionAttributeTrueForElement(productDetailsPage.getQuantityField(), webDriver, "value", "1");
 //        WebElementsAssertion.assertionAttributeTrueForElement(productDetailsPage.getQuantityField(),webDriver,"value","1");
