@@ -265,8 +265,8 @@ guestCheckoutCyclePage.accessGuestCheckoutForm();
         LocalTime targetTime = LocalTime.of(14, 0);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         // Set the target times to 2:00 AM and 2:00 PM
-        LocalTime targetTimeAM = LocalTime.of(2, 0);
-        LocalTime targetTimePM = LocalTime.of(14, 0);
+        LocalTime targetTimeAM = LocalTime.of(12, 0);
+        LocalTime targetTimePM = LocalTime.of(12, 0);
         if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM)) {
             webDriver.manage().deleteCookieNamed("guestCartId");
             guestCheckoutCyclePage.accessGuestCheckoutForm();
@@ -358,7 +358,7 @@ guestCheckoutCyclePage.accessGuestCheckoutForm();
         LocalTime targetTime = LocalTime.of(14, 0);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         // Set the target times to 2:00 AM and 2:00 PM
-        LocalTime targetTimeAM = LocalTime.of(2, 0);
+        LocalTime targetTimeAM = LocalTime.of(12, 0);
         LocalTime targetTimePM = LocalTime.of(14, 0);
         if (!currentTime.isAfter(targetTimeAM)) {
             webDriver.manage().deleteCookieNamed("guestCartId");
