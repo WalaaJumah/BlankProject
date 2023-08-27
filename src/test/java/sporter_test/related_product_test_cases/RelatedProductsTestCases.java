@@ -90,6 +90,7 @@ public class RelatedProductsTestCases extends BaseTest {
         DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
         DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.JsExecutorToClickOnElement(relatedProductSection.getAddRelatedProductToCart().get(0), webDriver);
+        DataHelperAndWait.waitForTime(2000);
        Assert.assertEquals(productPrice, DataHelperAndWait.convertTheStringToFloat(productDetailsPage.getFinalProductPrice(), webDriver, currency));
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure the related products section appears correctly after adding the original product to the cart", priority = 7)
