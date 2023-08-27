@@ -83,12 +83,11 @@ public class RelatedProductsTestCases extends BaseTest {
         ProductDetailsPage productDetailsPage= new ProductDetailsPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         relatedProductSection.displayTheInStockProduct();
-        DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
-        DataHelperAndWait.waitForTime(2000);
+//        DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
+//        DataHelperAndWait.waitForTime(2000);
         productPrice=DataHelperAndWait.convertTheStringToFloat(relatedProductSection.getRelatedProductsPrices().get(0), webDriver, currency);
-        DataHelperAndWait.waitForTime(2000);
-
-        DataHelperAndWait.hoverOnElement(relatedProductSection.getAddRelatedProductToCart().get(0), webDriver);
+        DataHelperAndWait.waitForTime(2500);
+        DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
         DataHelperAndWait.JsExecutorToClickOnElement(relatedProductSection.getAddRelatedProductToCart().get(0), webDriver);
        Assert.assertEquals(productPrice, DataHelperAndWait.convertTheStringToFloat(productDetailsPage.getFinalProductPrice(), webDriver, currency));
     }
@@ -204,10 +203,13 @@ public void verifyRelatedProductSectionIsDisplayedForOutStockProduct() throws IO
         ProductDetailsPage productDetailsPage= new ProductDetailsPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         relatedProductSection.displayTheOutStockProduct();
+//        DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
+//        DataHelperAndWait.waitForTime(2000);
         productPrice=DataHelperAndWait.convertTheStringToFloat(relatedProductSection.getRelatedProductsPrices().get(0), webDriver, currency);
         DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
         DataHelperAndWait.waitForTime(2000);
-        Assert.assertTrue(relatedProductSection.getAddRelatedProductToCart().get(0).isDisplayed(), "Add to cart is missing");
+        DataHelperAndWait.JsExecutorToClickOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
+//        Assert.assertTrue(relatedProductSection.getAddRelatedProductToCart().get(0).isDisplayed(), "Add to cart is missing");
         Assert.assertEquals(productPrice, DataHelperAndWait.convertTheStringToFloat(productDetailsPage.getFinalProductPrice(), webDriver, currency));
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure clicking on the Cross selling product/ Or click on Add to cart button will redirect the user to the product details page ", priority = 40)

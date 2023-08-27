@@ -69,8 +69,9 @@ else {
         if(webDriver.getCurrentUrl().contains("-eg/")){
             webDriver.navigate().to(BaseURL + inStockBundleHaveRelatedItemsEg);}
         else
-        {
-        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,15);}
+        {            webDriver.navigate().to(BaseURL + inStockBundleHaveRelatedItems);}
+
+        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,15);
         verifyTheDisplayedPageDoesNotHaveErrors();
         DataHelperAndWait.waitToBeVisible(relatedProductsSection,webDriver);
 
