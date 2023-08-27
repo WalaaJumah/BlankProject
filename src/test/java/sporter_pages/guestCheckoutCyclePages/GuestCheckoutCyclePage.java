@@ -416,6 +416,6 @@ public class GuestCheckoutCyclePage extends BasePage {
 
     public void waitTillLoaderComplete() {
         WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(50));
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(this.cartLoaderXpath)));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id(this.cartLoaderXpath)));
     }
 }

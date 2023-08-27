@@ -29,21 +29,21 @@ public class ProductDetailsPage extends BasePage {
     DataHelperAndWait dataHelperAndWait;
     //declare all locators related to the Product Details Page
 //    @FindBy(id = "productQty")
-    @FindBy(xpath = "(//div[@id='qtyContainer']/input[@id='productQty'])[2]")
+    @FindBy(id = "main_productQty")
     private WebElement quantityField;
-    @FindBy(xpath = "//div[@id='productOrderContainer']//div[@id='increaseQty']")
+    @FindBy(id = "main_increaseQty")
 //    @FindBy(id = "increaseQty")
     private WebElement qtyPlusButton;
 //    @FindBy(id = "decreaseQty")
-    @FindBy(xpath = "//div[@id='productOrderContainer']//div[@id='decreaseQty']")
+    @FindBy(id = "main_decreaseQty")
     private WebElement qtyMinusButton;
-    @FindBy(xpath = "(.//*[@id='productOrderContainer'])//button[@id='addToCartBtn']")
+    @FindBy(id = "addToCartBtn")
     private WebElement addToCartBtn;
-    @FindBy(xpath = "(.//*[@id='productOrderContainer'])//button[@id='addToCartBtn']")
+    @FindBy(id = "addToCartBtn")
     private WebElement addToCartBtn2;
     @FindBy(id = "popup-block")
     private WebElement cartPopUp;
-    @FindBy(xpath = "//span[starts-with(@class,'spinner_loader')]")
+    @FindBy(xpath = "spinner")
     private WebElement cartSpinner;
     @FindBy(id = "keepShoppingBtn")
     private WebElement keepShippingBtn;
@@ -212,7 +212,7 @@ public class ProductDetailsPage extends BasePage {
     }
     public   void waitTillCartSpinnerDisappear(WebDriver webDriver) {
         WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(50));
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(this.cartLoaderXpath)));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id(this.cartLoaderXpath)));
 
     }
     public void keepShopping() {
