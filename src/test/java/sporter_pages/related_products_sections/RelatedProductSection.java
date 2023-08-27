@@ -53,23 +53,27 @@ public class RelatedProductSection extends BasePage {
         webDriver.navigate().to(BaseURL +this. inStockProductHaveRelatedItems);
         DataHelperAndWait.waitTillPageFullyLoaded(webDriver,15);
         verifyTheDisplayedPageDoesNotHaveErrors();
+        DataHelperAndWait.waitToBeVisible(relatedProductsSection,webDriver);
     }
       public void displayTheOutStockProduct() throws IOException {
           if(webDriver.getCurrentUrl().contains("-eg/"))
               webDriver.navigate().to(BaseURL + this.oOSProductUrlForEg);
-
-          webDriver.navigate().to(BaseURL + this.oOSProductUrl);
+else {
+              webDriver.navigate().to(BaseURL + this.oOSProductUrl);
+          }
         DataHelperAndWait.waitTillPageFullyLoaded(webDriver,10);
         verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
     public void displayTheInStockBundle() throws IOException {
-        if(webDriver.getCurrentUrl().contains("-eg/"))
-            webDriver.navigate().to(BaseURL +this. inStockBundleHaveRelatedItemsEg);
-        webDriver.navigate().to(BaseURL + inStockBundleHaveRelatedItems);
-        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,15);
+        if(webDriver.getCurrentUrl().contains("-eg/")){
+            webDriver.navigate().to(BaseURL + inStockBundleHaveRelatedItemsEg);}
+        else
+        {
+        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,15);}
         verifyTheDisplayedPageDoesNotHaveErrors();
-        DataHelperAndWait.waitForTime(500);
+        DataHelperAndWait.waitToBeVisible(relatedProductsSection,webDriver);
+
     }
 
 }

@@ -159,6 +159,14 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
         String elementValueWithoutSpace = elementValueWithoutCurrency.replaceAll(" ", "");
         return Float.parseFloat(elementValueWithoutSpace);
     }
+    public static  float convertTheStringToFloatWithoutthousandComma(WebElement element,WebDriver webDriver,String currency) {
+        DataHelperAndWait.waitToBeVisible(element,webDriver);
+        String elementValue = element.getText();
+        String elementValueWithoutCurrency = elementValue.replaceAll(currency, "");
+        String elementValueWithoutthousandComma = elementValueWithoutCurrency.replaceAll(",", "");
+        String elementValueWithoutSpace = elementValueWithoutthousandComma.replaceAll(" ", "");
+        return Float.parseFloat(elementValueWithoutthousandComma);
+    }
 
         public static  int convertTheStringToInt(WebElement element,WebDriver webDriver) {
         DataHelperAndWait.waitToBeVisible(element,webDriver);

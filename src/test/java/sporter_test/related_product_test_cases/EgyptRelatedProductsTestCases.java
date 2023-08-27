@@ -19,6 +19,7 @@ import sporter_pages.megaMenuPages.EgyptMegaMenuPage;
 import sporter_pages.megaMenuPages.MegaMenuPage;
 import sporter_pages.productPage.EgyptProductDetailsPage;
 import sporter_pages.productPage.ProductDetailsPage;
+import sporter_pages.related_products_sections.RelatedProductSection;
 
 import java.io.IOException;
 
@@ -41,5 +42,20 @@ public class EgyptRelatedProductsTestCases extends RelatedProductsTestCases {
 //            productDetailsPage.storeCountry="/en-eg";
             productDetailsPage.storeCountry = "/en-eg";
         }
+    }
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure the product price appears in the Related Products section is the same price when added it to the product Details Page", priority = 6)
+    public void verifyProductPriceInRelatedProductSectionMatchedWithPriceInProductDetailsPage() throws IOException {
+        RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
+        ProductDetailsPage productDetailsPage= new ProductDetailsPage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        relatedProductSection.displayTheInStockProduct();
+        DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
+        DataHelperAndWait.waitForTime(2000);
+        productPrice=DataHelperAndWait.convertTheStringToFloat(relatedProductSection.getRelatedProductsPrices().get(0), webDriver, currency);
+        DataHelperAndWait.hoverOnElement(relatedProductSection.getAddRelatedProductToCart().get(0), webDriver);
+        DataHelperAndWait.waitForTime(2000);
+        DataHelperAndWait.JsExecutorToClickOnElement(relatedProductSection.getAddRelatedProductToCart().get(0), webDriver);
+        DataHelperAndWait.waitForTime(2000);
+        Assert.assertEquals(productPrice, DataHelperAndWait.convertTheStringToFloatWithoutthousandComma(productDetailsPage.getFinalProductPrice(), webDriver, currency));
     }
 }

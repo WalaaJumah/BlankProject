@@ -40,8 +40,8 @@ public class RelatedProductsTestCases extends BaseTest {
         Assert.assertTrue(DataHelperAndWait.IsElementPresent(relatedProductSection.getRelatedProductsPrices().get(0)), "Product price is missing");
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure add To Cart button appears correctly for all Related Products", priority = 50)
-    public void verifyAddToCartBtnAppearsForAllRelatedProduct() throws IOException {
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure Shop Now button appears correctly for all Related Products", priority = 50)
+    public void verifyShopNowBtnAppearsForAllRelatedProduct() throws IOException {
         RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
         for (int i = 0; i < relatedProductSection.getAddRelatedProductToCart().size(); i++) {
             webDriver.manage().deleteCookieNamed("guestCartId");
@@ -63,10 +63,10 @@ public class RelatedProductsTestCases extends BaseTest {
             Assert.assertTrue(DataHelperAndWait.isTextOnlyArabic(relatedProductSection.getRelatedProductsNames().get(0).getText()));
         }
     }
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure add To Cart button works correctly", priority = 5)
+    @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure add To Cart button works correctly", priority = 5)
     public void verifyAddToCartBtnWorksCorrectly() throws IOException {
         RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
-        CartPage cartPage= new CartPage(webDriver);
+        ProductDetailsPage productDetailsPage= new ProductDetailsPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         relatedProductSection.displayTheInStockProduct();
         productPrice=DataHelperAndWait.convertTheStringToFloat(relatedProductSection.getRelatedProductsPrices().get(0), webDriver, currency);
@@ -75,14 +75,22 @@ public class RelatedProductsTestCases extends BaseTest {
         DataHelperAndWait.waitForTime(1500);
         DataHelperAndWait.JsExecutorToClickOnElement(relatedProductSection.getAddRelatedProductToCart().get(0),webDriver);
         DataHelperAndWait.waitForTime(1500);
-        WebElementsAssertion.assertionTextIsEqual(cartPage.getCartCounter(), webDriver, "1");
+//        WebElementsAssertion.assertionTextIsEqual(cartPage.getCartCounter(), webDriver, "1");
     }
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure the product price appears in the Related Products section is the same price when added it to the cart", priority = 6)
-    public void verifyProductPriceInRelatedProductSectionMatchedWithPriceInCart() throws IOException {
-        CartPage cartPage= new CartPage(webDriver);
-       cartPage.navigateToCartPage();
-       DataHelperAndWait.waitToBeVisible(cartPage.getOrderTotalValue(),webDriver);
-       Assert.assertEquals(productPrice, DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(), webDriver, currency));
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure the product price appears in the Related Products section is the same price when added it to the product Details Page", priority = 6)
+    public void verifyProductPriceInRelatedProductSectionMatchedWithPriceInProductDetailsPage() throws IOException {
+        RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
+        ProductDetailsPage productDetailsPage= new ProductDetailsPage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        relatedProductSection.displayTheInStockProduct();
+        DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
+        DataHelperAndWait.waitForTime(2000);
+        productPrice=DataHelperAndWait.convertTheStringToFloat(relatedProductSection.getRelatedProductsPrices().get(0), webDriver, currency);
+        DataHelperAndWait.waitForTime(2000);
+
+        DataHelperAndWait.hoverOnElement(relatedProductSection.getAddRelatedProductToCart().get(0), webDriver);
+        DataHelperAndWait.JsExecutorToClickOnElement(relatedProductSection.getAddRelatedProductToCart().get(0), webDriver);
+       Assert.assertEquals(productPrice, DataHelperAndWait.convertTheStringToFloat(productDetailsPage.getFinalProductPrice(), webDriver, currency));
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure the related products section appears correctly after adding the original product to the cart", priority = 7)
     public void verifyRelatedProductsSectionAppearAfterAddingTheOriginalProductToCart() throws IOException {
@@ -123,9 +131,9 @@ public class RelatedProductsTestCases extends BaseTest {
         }
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure add To Cart button works correctly for Bundle", priority = 17)
-    public void verifyAddToCartBtnWorksCorrectlyForBundle() throws IOException {
+    public void verifyShopNowBtnWorksCorrectlyForBundle() throws IOException {
         RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
-        CartPage cartPage= new CartPage(webDriver);
+        ProductDetailsPage productDetailsPage= new ProductDetailsPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         relatedProductSection.displayTheInStockBundle();
         productPrice=DataHelperAndWait.convertTheStringToFloat(relatedProductSection.getRelatedProductsPrices().get(0), webDriver, currency);
@@ -134,7 +142,9 @@ public class RelatedProductsTestCases extends BaseTest {
         DataHelperAndWait.waitForTime(1500);
         DataHelperAndWait.JsExecutorToClickOnElement(relatedProductSection.getAddRelatedProductToCart().get(0),webDriver);
         DataHelperAndWait.waitForTime(1500);
-        WebElementsAssertion.assertionTextIsEqual(cartPage.getCartCounter(), webDriver, "1");
+        relatedProductSection.verifyTheDisplayedPageDoesNotHaveErrors();
+        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getProductName(),webDriver);
+//        WebElementsAssertion.assertionTextIsEqual(cartPage.getCartCounter(), webDriver, "1");
     }
 //OOS Products: https://app.qa1.sporter.com/admin_1uidvr/catalog/product/edit/id/53428/key/ba40f6ed3583beafdcb4374b48c718cf31deb225ac6171a6ecaa4b0d6ba0dc32/
 @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:(Related Product For OOS)Make sure the Related Products section is displayed for out stock product ", priority = 18)
@@ -178,24 +188,27 @@ public void verifyRelatedProductSectionIsDisplayedForOutStockProduct() throws IO
         }
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:(Related Product For OOS)Make sure add To Cart button works correctly", priority = 22)
-    public void verifyAddToCartBtnWorksCorrectlyForOOS() {
+    public void verifyShopNowBtnWorksCorrectlyForOOS() {
         RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
-        CartPage cartPage= new CartPage(webDriver);
+        ProductDetailsPage productDetailsPage= new ProductDetailsPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
-        productPrice=DataHelperAndWait.convertTheStringToFloat(relatedProductSection.getRelatedProductsPrices().get(0), webDriver, currency);
-        System.out.println(productPrice);
         DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
         DataHelperAndWait.waitForTime(1500);
         DataHelperAndWait.JsExecutorToClickOnElement(relatedProductSection.getAddRelatedProductToCart().get(0),webDriver);
         DataHelperAndWait.waitForTime(1500);
-        WebElementsAssertion.assertionTextIsEqual(cartPage.getCartCounter(), webDriver, "1");
+        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getProductName(),webDriver);
     }
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:(Related Product For OOS)Make sure the product price appears in the Related Products section is the same price when added it to the cart", priority = 23)
-    public void verifyProductPriceInRelatedProductSectionMatchedWithPriceInCartForOOS() throws IOException {
-        CartPage cartPage= new CartPage(webDriver);
-        cartPage.navigateToCartPage();
-        DataHelperAndWait.waitToBeVisible(cartPage.getOrderTotalValue(),webDriver);
-        Assert.assertEquals(productPrice, DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(), webDriver, currency));
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:(Related Product For OOS)Make sure the product price appears in the Related Products section is the same price when displaying the product", priority = 23)
+    public void verifyProductPriceInRelatedProductSectionMatchedWithPriceInProductDetailsPageForOOS() throws IOException {
+        RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
+        ProductDetailsPage productDetailsPage= new ProductDetailsPage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        relatedProductSection.displayTheOutStockProduct();
+        productPrice=DataHelperAndWait.convertTheStringToFloat(relatedProductSection.getRelatedProductsPrices().get(0), webDriver, currency);
+        DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
+        DataHelperAndWait.waitForTime(2000);
+        Assert.assertTrue(relatedProductSection.getAddRelatedProductToCart().get(0).isDisplayed(), "Add to cart is missing");
+        Assert.assertEquals(productPrice, DataHelperAndWait.convertTheStringToFloat(productDetailsPage.getFinalProductPrice(), webDriver, currency));
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure clicking on the Cross selling product/ Or click on Add to cart button will redirect the user to the product details page ", priority = 40)
     public void verifyClickingOnRelatedProductSectionRedirectsToPDP() throws IOException {

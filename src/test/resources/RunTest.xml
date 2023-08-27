@@ -18,9 +18,9 @@
         <!--                            </run>-->
         <!--                        </groups>-->
         <classes>
+            <class name="sporter_test.related_product_test_cases.QatarRelatedProductsTestCases"></class>/
 
             <class name="sporter_test.related_product_test_cases.EgyptRelatedProductsTestCases"></class>/
-            <class name="sporter_test.related_product_test_cases.QatarRelatedProductsTestCases"></class>/
             <class name="sporter_test.related_product_test_cases.JordanRelatedProductsTestCases"></class>/
             <class name="sporter_test.related_product_test_cases.IraqRelatedProductsTestCases"></class>/
             <class name="sporter_test.related_product_test_cases.BahrainRelatedProductsTestCases"></class>/
