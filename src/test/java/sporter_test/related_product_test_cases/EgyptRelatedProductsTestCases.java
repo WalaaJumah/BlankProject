@@ -58,4 +58,19 @@ public class EgyptRelatedProductsTestCases extends RelatedProductsTestCases {
         DataHelperAndWait.waitForTime(2000);
         Assert.assertEquals(productPrice, DataHelperAndWait.convertTheStringToFloatWithoutthousandComma(productDetailsPage.getFinalProductPrice(), webDriver, currency));
     }
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:(Related Product For OOS)Make sure the product price appears in the Related Products section is the same price when displaying the product", priority = 23)
+    public void verifyProductPriceInRelatedProductSectionMatchedWithPriceInProductDetailsPageForOOS() throws IOException {
+        RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
+        ProductDetailsPage productDetailsPage= new ProductDetailsPage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        relatedProductSection.displayTheOutStockProduct();
+//        DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
+//        DataHelperAndWait.waitForTime(2000);
+        productPrice=DataHelperAndWait.convertTheStringToFloat(relatedProductSection.getRelatedProductsPrices().get(0), webDriver, currency);
+        DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
+        DataHelperAndWait.waitForTime(2000);
+        DataHelperAndWait.JsExecutorToClickOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
+//        Assert.assertTrue(relatedProductSection.getAddRelatedProductToCart().get(0).isDisplayed(), "Add to cart is missing");
+        Assert.assertEquals(productPrice, DataHelperAndWait.convertTheStringToFloatWithoutthousandComma(productDetailsPage.getFinalProductPrice(), webDriver, currency));
+    }
 }
