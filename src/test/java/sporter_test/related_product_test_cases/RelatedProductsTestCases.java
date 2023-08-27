@@ -88,6 +88,7 @@ public class RelatedProductsTestCases extends BaseTest {
         productPrice=DataHelperAndWait.convertTheStringToFloat(relatedProductSection.getRelatedProductsPrices().get(0), webDriver, currency);
         DataHelperAndWait.waitForTime(2500);
         DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
+        DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.JsExecutorToClickOnElement(relatedProductSection.getAddRelatedProductToCart().get(0), webDriver);
        Assert.assertEquals(productPrice, DataHelperAndWait.convertTheStringToFloat(productDetailsPage.getFinalProductPrice(), webDriver, currency));
     }
