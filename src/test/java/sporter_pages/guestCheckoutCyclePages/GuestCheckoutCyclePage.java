@@ -173,7 +173,7 @@ public class GuestCheckoutCyclePage extends BasePage {
     public GuestCheckoutCyclePage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
-        _cartPage= new CartPage(webDriver);
+//        _cartPage= new CartPage(webDriver);
 
     }
     public GuestCheckoutCyclePage(WebDriver webDriver,CartPage cartPage) {
