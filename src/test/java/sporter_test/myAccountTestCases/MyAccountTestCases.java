@@ -184,6 +184,7 @@ public class MyAccountTestCases extends BaseTest {
     public void verifyAbilityToSubscribeWNewsLetterSubscriptionPage() {
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
         myAccountPage.navigateToNewsLetterSubscriptionPage();
+        DataHelperAndWait.waitToBeVisible(myAccountPage.getGeneralSubscriptionOption(),webDriver);
         if (myAccountPage.getGeneralSubscriptionOption().getAttribute("class").contains("checkbox_inactive")) {
             DataHelperAndWait.clickOnElement(myAccountPage.getGeneralSubscriptionOption(), webDriver);
             DataHelperAndWait.clickOnElement(myAccountPage.getSubmitNewsLetterBtn(), webDriver);

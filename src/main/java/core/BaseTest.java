@@ -100,7 +100,7 @@ public class BaseTest {
                     options.addArguments("--disable-notifications");
                      options.addArguments("window-size=1200,1100");
                      webDriver = new ChromeDriver(options);
-                     webDriver.navigate().to("https://www.sporter.com");
+//                     webDriver.navigate().to("https://www.sporter.com");
 
                     break;
                 case "edge":
