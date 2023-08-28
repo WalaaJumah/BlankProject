@@ -16,12 +16,13 @@
         <classes>
 <!--            <class name="sporter_test.sportsSupplementsCategoryTestCases.KSASportsSupplementsCategoryTestCases"/>-->
             <class name="sporter_test.tabby_payment_method_test_cases.KSATabbyPaymentMethodTestCases">
-<!--                <methods>-->
-<!--                    <include name="verifyAbilityToAddBundleToCart"/>-->
-<!--&lt;!&ndash;                    <include name="verifyAbilityToPlaceOrderWhenSelecting2_4BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <include name="verifyInabilityToUseInvalidCreditCardPaymentMethod"/>&ndash;&gt;-->
+                <methods>
+                    <include name="verifyAbilityToLoginCorrectlyWithValidCredentials"/>
+                    <include name="verifyAbilityToPlaceOrderWhenSelectingDoorToDoorShippingMethodWithTabbyPaymentMethodForRegisteredUser"/>
+<!--                    <include name="verifyAbilityToPlaceOrderWhenSelecting2_4BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod"/>-->
+<!--                    <include name="verifyInabilityToUseInvalidCreditCardPaymentMethod"/>-->
 
-<!--                </methods>-->
+                </methods>
             </class>
 
 <!--            <class name="sporter_test.checkoutForRegisteredUserTestCases.EgyptCheckoutForRegisteredTestCases">-->

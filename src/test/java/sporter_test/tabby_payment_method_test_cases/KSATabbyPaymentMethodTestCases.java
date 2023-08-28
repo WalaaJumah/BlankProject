@@ -42,12 +42,11 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     }
     @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"}, description = "{{CountryName}}: GuestUser- Make sure that the tabby Payment method appear correctly", priority = 1)
     public void verifyTabbyPaymentMethodMethodCorrectlyForGuestUser() throws Exception {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         tabbyPaymentPage.accessGuestCheckoutForm();
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
+        kSA.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -56,20 +55,19 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
                 XmlReader.getXMLData("ksaPhoneNumber")
         );
         DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        kSA.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(tabbyPaymentPage.getTabbyInstallmentsPaymentMethod(),webDriver);
     }
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:GuestUser- Make sure ability to place Order successfully when Selecting Door To Door Shipping Method With tabby Payment Method ", priority = 2)
     public void verifyAbilityToPlaceOrderWhenSelectingDoorToDoorShippingMethodWithTabbyPaymentMethodForGuestUser() throws Exception {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         tabbyPaymentPage.accessGuestCheckoutForm();
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
+        kSA.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -77,9 +75,9 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
         DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        kSA.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
         tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
         tabbyPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
@@ -89,13 +87,12 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:GuestUser- Make sure inability to place Order successfully when Selecting Door To Door Shipping Method With tabby Payment Method using Negative Flow ", priority = 3)
     public void verifyAbilityToPlaceOrderWhenSelectingDoorToDoorShippingMethodWithTabbyPaymentMethodWithNegativeFlowForGuestUser() throws Exception {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         webDriver.manage().deleteCookieNamed("guestCartId");
         tabbyPaymentPage.accessGuestCheckoutForm();
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
+        kSA.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -103,9 +100,9 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
         DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        kSA.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
         tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
         tabbyPaymentPage.submitTabbyInfoWithNegativeFlow();
@@ -113,12 +110,11 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:GuestUser- Make sure the Installments Amounts In Tabby Page Are Matched With The Grand Total In Case Door To Door Shipping Method", priority = 4)
     public void verifyInstallmentsAmountsInTabbyPageAreMatchedWithTheGrandTotalForGuestUserInCaseDoorToDoorShippingMethod() throws Exception {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         tabbyPaymentPage.accessGuestCheckoutForm();
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
+        kSA.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -126,11 +122,11 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
         DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        kSA.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver,"SAR");
+        double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(kSA.getOrderTotalFieldInrReviewPage(),webDriver,"SAR");
         tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
         DataHelperAndWait.waitToBeVisible(tabbyPaymentPage.getTabbyHeaderTitle(),webDriver);
         double InstallmentsAmountsTotal=tabbyPaymentPage.calculateInstallmentsAmount("SAR");
@@ -141,13 +137,11 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:GuestUser- Make sure Ability to back to Sporter after clicking on the Return To store from Tabby Page", priority = 5)
     public void verifyAbilityToBackToSporterAfterClickingOnBackToStoreFromTabbyForGuestUser() throws Exception, InterruptedException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CartPage cartPage= new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         tabbyPaymentPage.accessGuestCheckoutForm();
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
+        kSA.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -155,9 +149,9 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
         DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        kSA.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
         tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
         DataHelperAndWait.waitToBeVisible(tabbyPaymentPage.getTabbyPage(),webDriver);
@@ -167,13 +161,12 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:GuestUser- Make sure ability to place Order successfully when Selecting PickUpInStore Shipping Method With tabby Payment Method ", priority = 6)
     public void verifyAbilityToPlaceOrderWhenSelectingPickUpInStoreShippingMethodWithTabbyPaymentMethodForGuestUser() throws Exception, InterruptedException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         tabbyPaymentPage.accessGuestCheckoutForm();
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
+        kSA.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -181,9 +174,9 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
         DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        kSA.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
         tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
         tabbyPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
@@ -193,13 +186,12 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:GuestUser- Make sure inability to place Order successfully when Selecting PickUpInStore Shipping Method With tabby Payment Method using Negative Flow ", priority = 7)
     public void verifyAbilityToPlaceOrderWhenSelectingPickUpInStoreShippingMethodWithTabbyPaymentMethodWithNegativeFlowForGuestUser() throws Exception {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         webDriver.manage().deleteCookieNamed("guestCartId");
         tabbyPaymentPage.accessGuestCheckoutForm();
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
+        kSA.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -207,9 +199,9 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
         DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        kSA.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
         tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
         tabbyPaymentPage.submitTabbyInfoWithNegativeFlow();
@@ -217,12 +209,11 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:GuestUser- Make sure the Installments Amounts In Tabby Page Are Matched With The Grand Total In Case PickUpInStore Shipping Method", priority = 8)
     public void verifyInstallmentsAmountsInTabbyPageAreMatchedWithTheGrandTotalForGuestUserInCasePickUpInStoreShippingMethod() throws Exception {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         tabbyPaymentPage.accessGuestCheckoutForm();
-        guestCheckoutCyclePage.fillInShippingInformationInputField(
+        kSA.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("correctEmail"),
@@ -230,11 +221,11 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
                 XmlReader.getXMLData("StreetOneAddressName"),
                 XmlReader.getXMLData("StreetTwoAddressName"));
         DataHelperAndWait.waitForTime(2000);
-        guestCheckoutCyclePage.clickOnContinueBtn();
+        kSA.clickOnContinueBtn();
         DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver,"SAR");
+        double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(kSA.getOrderTotalFieldInrReviewPage(),webDriver,"SAR");
         tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
         DataHelperAndWait.waitToBeVisible(tabbyPaymentPage.getTabbyHeaderTitle(),webDriver);
         double InstallmentsAmountsTotal=tabbyPaymentPage.calculateInstallmentsAmount("SAR");
@@ -272,14 +263,13 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when Selecting Door To Door Shipping Method With tabby Payment Method ", priority = 10)
     public void verifyAbilityToPlaceOrderWhenSelectingDoorToDoorShippingMethodWithTabbyPaymentMethodForRegisteredUser() throws Exception, InterruptedException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         registeredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
         tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
         tabbyPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
@@ -289,13 +279,12 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure inability to place Order successfully when Selecting Door To Door Shipping Method With tabby Payment Method using Negative Flow ", priority = 11)
     public void verifyAbilityToPlaceOrderWhenSelectingDoorToDoorShippingMethodWithTabbyPaymentMethodWithNegativeFlowForRegisteredUser() throws Exception {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         registeredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
         tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
         tabbyPaymentPage.submitTabbyInfoWithNegativeFlow();
@@ -304,14 +293,12 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure Ability to back to Sporter after clicking on the Return To store from Tabby Page", priority = 12)
     public void verifyAbilityToBackToSporterAfterClickingOnBackToStoreFromTabbyForRegisteredUser() throws Exception, InterruptedException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        CartPage cartPage= new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         registeredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
         tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
         DataHelperAndWait.waitToBeVisible(tabbyPaymentPage.getTabbyPage(),webDriver);
@@ -321,14 +308,13 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when Selecting PickUpInStore Shipping Method With tabby Payment Method ", priority = 13)
     public void verifyAbilityToPlaceOrderWhenSelectingPickUpInStoreShippingMethodWithTabbyPaymentMethodForRegisteredUser() throws Exception, InterruptedException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         registeredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
         tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
         tabbyPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
@@ -338,13 +324,12 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure inability to place Order successfully when Selecting PickUpInStore Shipping Method With tabby Payment Method using Negative Flow ", priority = 14)
     public void verifyAbilityToPlaceOrderWhenSelectingPickUpInStoreShippingMethodWithTabbyPaymentMethodWithNegativeFlowForRegisteredUser() throws Exception {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
         CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver);
         registeredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
         tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
         tabbyPaymentPage.submitTabbyInfoWithNegativeFlow();
