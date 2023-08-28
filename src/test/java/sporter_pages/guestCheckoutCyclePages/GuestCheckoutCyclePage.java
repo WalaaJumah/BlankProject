@@ -169,13 +169,25 @@ public class GuestCheckoutCyclePage extends BasePage {
     private WebElement orderTotalValueInrReviewPage;
     @FindBy(xpath = "(//span[starts-with(@class,'shippingMethod_amount')])[1]")
     private WebElement firstShippingMethodAmount;
-
+    CartPage _cartPage = null;
     public GuestCheckoutCyclePage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
 
     }
+    public GuestCheckoutCyclePage(WebDriver webDriver,CartPage cartPage) {
+        super(webDriver);
+        PageFactory.initElements(webDriver, this);
+        if(cartPage == null)
+        {
+            _cartPage = new CartPage(webDriver);
+        }
+        else
+        {
+            _cartPage =cartPage ;
+        }
 
+    }
     public void fillInShippingInformationInputField(String firstName, String lastName, String email, String phone, String streetLineOne, String streetLineTwo) {
         DataHelperAndWait.waitToBeVisible(firstNameField, webDriver);
         DataHelperAndWait.updateAllText(firstNameField, firstName);

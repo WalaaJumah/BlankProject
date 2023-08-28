@@ -50,7 +50,8 @@ public class CheckoutForRegisteredPage extends BasePage {
     @FindBy(id = "MyWishlist")
     private WebElement wishListTab;
     GuestCheckoutCyclePage _guestCheckoutCyclePage = null;
-    
+    CartPage _cartPage = null;
+
     
     
     public CheckoutForRegisteredPage(WebDriver webDriver) {
@@ -73,6 +74,29 @@ public class CheckoutForRegisteredPage extends BasePage {
         {
             _guestCheckoutCyclePage =guestCheckoutCyclePage ;
         }        
+    }
+    public CheckoutForRegisteredPage(WebDriver webDriver,GuestCheckoutCyclePage guestCheckoutCyclePage,CartPage cartPage) {
+        super(webDriver);
+
+        PageFactory.initElements(webDriver, this);
+
+        if(guestCheckoutCyclePage == null)
+        {
+            _guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        }
+        else
+        {
+            _guestCheckoutCyclePage =guestCheckoutCyclePage ;
+        }
+        if(cartPage == null)
+        {
+            _cartPage = new CartPage(webDriver);
+        }
+        else
+        {
+            _cartPage =cartPage ;
+        }
+
     }
 
     public void setSelectDubaiCityCity() {

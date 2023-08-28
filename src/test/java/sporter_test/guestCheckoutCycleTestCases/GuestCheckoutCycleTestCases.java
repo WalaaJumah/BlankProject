@@ -548,8 +548,8 @@ guestCheckoutCyclePage.accessGuestCheckoutForm();
     }
     @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when using a Free Coupon Code ", priority = 99)
     public void verifyAbilityToPlaceOrderWhenUsingFreeCouponCode() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver,cartPage);
         webDriver.manage().deleteCookieNamed("guestCartId");
         cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));

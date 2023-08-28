@@ -41,19 +41,7 @@ public class EgyptGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCase
     }
     //TODO:The Same Day Delivery is Missing
     @Test(enabled = false)
-    public void verifyAbilityToSelectSameDayShippingMethodCorrectly() {
-    }
-//    @Test(groups = { "All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the order total calculation in the cart page works correctly", priority = 6)
-//    public void verifyOrderTotalCalculationInCartPageWorksCorrectly() {
-//        CartPage cartPage = new CartPage(webDriver);
-//        DecimalFormat df = new DecimalFormat("0.00");
-//        cartPage.navigateToCartPage();
-//        double subTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getSubTotalValue(), webDriver,"EGP");
-//        double tax = DataHelperAndWait.convertTheStringToFloat(cartPage.getTaxValue(), webDriver,"EGP");
-//        double orderTotal = DataHelperAndWait.convertTheStringToFloat(cartPage.getOrderTotalValue(), webDriver,",");
-//        double cartTotal = subTotal + tax;
-//        Assert.assertEquals(df.format(orderTotal), df.format(cartTotal));
-//    }
+    public void verifyAbilityToSelectSameDayShippingMethodCorrectly() {}
     @Test(enabled = false)
     public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNationalID() {}
     @Test(groups = {"1.3 Medium Severity"},description = "{{CountryName}}:Verify All Shipping Methods appear correctly", priority = 21)
