@@ -88,6 +88,7 @@ public class TabbyPaymentPage extends BasePage {
     private WebElement errorMsgInPaymentMethod;
 
     public void SelectTabbyInstallmentsMethod() {
+        waitTillLoaderComplete();
         if(DataHelperAndWait.IsElementPresent(tabbyInstallmentsPaymentMethod)) {
             GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
             DataHelperAndWait.waitToBeVisible(tabbyInstallmentsPaymentMethod, webDriver);
