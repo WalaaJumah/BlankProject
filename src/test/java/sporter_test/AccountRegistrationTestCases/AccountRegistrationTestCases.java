@@ -26,7 +26,7 @@ public class AccountRegistrationTestCases extends BaseTest {
     public void verifyAbilityToAccessNewAccountRegistrationScreen() {
         HeaderSection header = new HeaderSection(webDriver);
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
-        DataHelperAndWait.waitToBeClickable(header.getAccountProfileIcon(), webDriver);
+        DataHelperAndWait.waitToBeVisible(header.getAccountProfileIcon(), webDriver);
         DataHelperAndWait.JsExecutorToClickOnElement(header.getAccountProfileIcon(), webDriver);
         DataHelperAndWait.clickOnElement(registerPage.getCreateAccountOption(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getBecomeASporterHeader(), webDriver);
