@@ -10,9 +10,7 @@ import core.BaseTest;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.cartPages.CartPage;
@@ -25,7 +23,6 @@ import xml_reader.XmlReader;
 
 import java.io.IOException;
 import java.text.DecimalFormat;
-import java.time.Duration;
 import java.util.List;
 
 @Test(groups = "2.08 Cart Page")
@@ -70,7 +67,7 @@ public class CartTestCases extends BaseTest {
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Verify ability to Decrease the product quantity from Cart page from the Cart Page works successfully", priority = 6)
-    public void verifyDecreaseQtyBtnInCartPageWorking() throws IOException {
+    public void verifyDecreaseQtyBtnInCartPageWorking(){
         CartPage cartPage = new CartPage(webDriver);
 //        cartPage.navigateToCartPage();
         cartPage.decreaseQty();
@@ -188,32 +185,24 @@ public class CartTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = " Cart Page- Make sure ability to add a bundle to the cart ", priority = 17)
     public void verifyAbilityToAddBundleToCart() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        WebDriverWait wait;
-        try {
             productDetailsPage.displayBundle();
             DataHelperAndWait.waitToBeVisible(productDetailsPage.getBundleMenu(), webDriver);
-        }
-        catch (Exception e) {
-            productDetailsPage.displayBundle();
-            DataHelperAndWait.waitToBeVisible(productDetailsPage.getBundleMenu(), webDriver);
-        }
         Select select = new Select(productDetailsPage.getBundleMenu());
         List<WebElement> elementCount = select.getOptions();
         int menuSize = elementCount.size();
         for (int i = 0; i < menuSize; i++) {
-            try {
                 select.selectByIndex(i);
-                wait = new WebDriverWait(webDriver, Duration.ofSeconds(3));
-                wait.until(ExpectedConditions.visibilityOf(productDetailsPage.getAddToCartBtn())).isDisplayed();
+                DataHelperAndWait.waitToBeVisible(productDetailsPage.getAddToCartBtn(),webDriver);
                 productDetailsPage.getAddToCartBtn().click();
+                if (!DataHelperAndWait.IsElementPresent(productDetailsPage.getRecommendedProductsPopup()))
+                    throw new AssertionError("The system display error msg ");
                 productDetailsPage.viewCart();
                 break;
-            } catch (Exception e) {
-                productDetailsPage.getCloseToCartErrorPopUp().click();
-            }
+
         }
         WebElementsAssertion.validateTheCurrentUrlContainsString(productDetailsPage.cartURL, webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
+
     }
 
     //    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = " Cart Page- Make sure ability to add a bundle to the cart with all bundle options", priority = 50)

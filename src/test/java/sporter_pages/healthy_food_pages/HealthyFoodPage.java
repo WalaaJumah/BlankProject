@@ -24,7 +24,6 @@ public class HealthyFoodPage extends BasePage {
     }
 
     public void clickOnHealthyFoodMainMenu() throws IOException {
-        Actions actions = new Actions(webDriver);
         MegaMenuPage megaMenuPage = new MegaMenuPage(webDriver);
         DataHelperAndWait.waitToBeVisible(megaMenuPage.getHealthyFoodMenu(), webDriver);
 //        actions.moveToElement(megaMenuPage.getHealthyFoodMenu()).click().perform();
