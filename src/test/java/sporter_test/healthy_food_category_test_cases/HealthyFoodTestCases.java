@@ -81,7 +81,8 @@ public class HealthyFoodTestCases extends BaseTest {
     public void verifyNextPageBtnWorksCorrectly() {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         if (sportsSupplementsCategoryPage.getPaginationBtns().size() > 3) {
-            DataHelperAndWait.clickOnElement(sportsSupplementsCategoryPage.getNextPageBtn(), webDriver);
+            DataHelperAndWait.waitToBeClickable(sportsSupplementsCategoryPage.getNextPageBtn(), webDriver);
+            DataHelperAndWait.JsExecutorToClickOnElement(sportsSupplementsCategoryPage.getNextPageBtn(), webDriver);
             WebElementsAssertion.validateTheCurrentUrlContainsString("p=2", webDriver);
         } else {
             System.out.println("There's only one page in the list");
@@ -91,9 +92,11 @@ public class HealthyFoodTestCases extends BaseTest {
     public void verifyPreviousPageBtnWorksCorrectly() {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         if (sportsSupplementsCategoryPage.getPaginationBtns().size() > 3) {
-            DataHelperAndWait.clickOnElement(sportsSupplementsCategoryPage.getNextPageBtn(), webDriver);
+            DataHelperAndWait.waitToBeClickable(sportsSupplementsCategoryPage.getNextPageBtn(), webDriver);
+            DataHelperAndWait.JsExecutorToClickOnElement(sportsSupplementsCategoryPage.getNextPageBtn(), webDriver);
             sportsSupplementsCategoryPage.waitTillLoaderComplete();
-            DataHelperAndWait.clickOnElement(sportsSupplementsCategoryPage.getPreviousPageBtn(), webDriver);
+            DataHelperAndWait.waitToBeClickable(sportsSupplementsCategoryPage.getPreviousPageBtn(), webDriver);
+            DataHelperAndWait.JsExecutorToClickOnElement(sportsSupplementsCategoryPage.getPreviousPageBtn(), webDriver);
             sportsSupplementsCategoryPage.waitTillLoaderComplete();
             WebElementsAssertion.validateTheCurrentUrlContainsString("p=2", webDriver);
         } else {

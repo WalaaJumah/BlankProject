@@ -116,8 +116,8 @@ public class SportsSupplementsCategoryPage extends BasePage {
             do {
                 String pageNumber = Integer.toString(i);
                 DataHelperAndWait.waitToBeClickable(element, webDriver);
-                element.click();
-//                DataHelperAndWait.waitForTime(6000);
+                DataHelperAndWait.JsExecutorToClickOnElement(element,webDriver);
+//                element.click();
                 waitTillLoaderComplete();
                 DataHelperAndWait.waitForUrlContains(pageNumber, webDriver);
                 this.verifyTheDisplayedPageDoesNotHaveErrors();

@@ -14,11 +14,12 @@
         <parameter name="oOSProduct" value="/rip-van-protien-wafles-box-of-12/"/>
         <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
         <classes>
-            <class name="sporter_test.AccountRegistrationTestCases.UAEAccountRegistrationTestCases">
+<!--            <class name="sporter_test.sportsSupplementsCategoryTestCases.KSASportsSupplementsCategoryTestCases"/>-->
+            <class name="sporter_test.healthy_food_category_test_cases.KSAHealthyFoodTestCases">
 <!--                <methods>-->
-<!--                    <include name="verifyAbilityToLoginCorrectlyWithValidCredentials"/>-->
-<!--                    <include name="verifyAbilityToPlaceOrderWhenSelecting2_4BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod"/>-->
-<!--                    <include name="verifyInabilityToUseInvalidCreditCardPaymentMethod"/>-->
+<!--                    <include name="verifyAbilityToAccessAllPagesInsideSportSupplementsCategoryPage"/>-->
+<!--&lt;!&ndash;                    <include name="verifyAbilityToPlaceOrderWhenSelecting2_4BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="verifyInabilityToUseInvalidCreditCardPaymentMethod"/>&ndash;&gt;-->
 
 <!--                </methods>-->
             </class>
