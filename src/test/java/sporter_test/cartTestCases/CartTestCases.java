@@ -188,32 +188,21 @@ public class CartTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = " Cart Page- Make sure ability to add a bundle to the cart ", priority = 17)
     public void verifyAbilityToAddBundleToCart() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
-        CartPage cartPage= new CartPage(webDriver);
         WebDriverWait wait;
-        try {
             productDetailsPage.displayBundle();
             DataHelperAndWait.waitToBeVisible(productDetailsPage.getBundleMenu(), webDriver);
-        }
-        catch (Exception e) {
-            productDetailsPage.displayBundle();
-            DataHelperAndWait.waitToBeVisible(productDetailsPage.getBundleMenu(), webDriver);
-        }
         Select select = new Select(productDetailsPage.getBundleMenu());
         List<WebElement> elementCount = select.getOptions();
         int menuSize = elementCount.size();
         for (int i = 0; i < menuSize; i++) {
-            try {
                 select.selectByIndex(i);
-                wait = new WebDriverWait(webDriver, Duration.ofSeconds(3));
-                wait.until(ExpectedConditions.visibilityOf(productDetailsPage.getAddToCartBtn())).isDisplayed();
+                DataHelperAndWait.waitToBeVisible(productDetailsPage.getAddToCartBtn(),webDriver);
                 productDetailsPage.getAddToCartBtn().click();
-                if (DataHelperAndWait.IsElementPresent(cartPage.getCartErrorMsg()))
-                    throw new AssertionError("The system display error msg & the Mg is:"+cartPage.getCartErrorMsg().getText());
+                if (!DataHelperAndWait.IsElementPresent(productDetailsPage.getRecommendedProductsPopup()))
+                    throw new AssertionError("The system display error msg ");
                 productDetailsPage.viewCart();
                 break;
-            } catch (Exception e) {
-                productDetailsPage.getCloseToCartErrorPopUp().click();
-            }
+
         }
         WebElementsAssertion.validateTheCurrentUrlContainsString(productDetailsPage.cartURL, webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
