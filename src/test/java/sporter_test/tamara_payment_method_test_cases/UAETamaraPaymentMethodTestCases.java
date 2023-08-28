@@ -318,18 +318,14 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
     }
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting Same Day Shipping Method With Tamara Payment Method Using 3DS Card ", priority = 18)
     public void verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTamaraPaymentMethodUsing3DSCardForForRegisteredUser() throws Exception, InterruptedException {
-//        LocalTime currentTime = LocalTime.now();
-//        LocalTime targetTimeAM = LocalTime.of(23, 0);
-//        LocalTime targetTimePM = LocalTime.of(12, 0);
-//        if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM)) {
-//        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+        LocalTime currentTime = LocalTime.now();
+        LocalTime targetTimeAM = LocalTime.of(23, 0);
+        LocalTime targetTimePM = LocalTime.of(12, 0);
+        if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM)) {
         TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
         tamaraPaymentPage.addToCartAndAccessTamaraDashboardForSameDayShippingForRegisteredUser();
         tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(tamaraPaymentPage.ThreeCard);
-        //guestCheckoutCyclePage.IsQouteIDisDisplayed();
-//        }
-//        else
-//            System.out.println("Same Day Delivery is off in the current time");
+       }
     }
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting Same Day Shipping Method With Tamara Payment Method Using Master Card ", priority = 19)
     public void verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTamaraPaymentMethodUsingMasterCardForForRegisteredUser() throws Exception, InterruptedException {
