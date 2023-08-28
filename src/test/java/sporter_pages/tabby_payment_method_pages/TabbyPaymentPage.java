@@ -114,7 +114,7 @@ public class TabbyPaymentPage extends BasePage {
         GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
         try {
             CartPage cartPage = new CartPage(webDriver);
-           addToCartAndDisplayTheCart();
+           cartPage.addToCartAndDisplayTheCart();
             try {
                 cartPage.proceedToCheckout();
             } catch (Exception e) {

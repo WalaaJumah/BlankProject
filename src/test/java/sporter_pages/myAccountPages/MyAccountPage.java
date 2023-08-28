@@ -72,7 +72,7 @@ public class MyAccountPage extends BasePage {
     private WebElement openOrdersTab;
     @FindBy(xpath = "(//span[contains(@class,'allOrders_type')])[3]")
     private WebElement canceledOrdersTab;
-    @FindBy(xpath = "//a[contains(@class,'myAddresses_addNew')]")
+    @FindBy(id = "addAddress")
     private WebElement addNewAddressBtn;
     @FindBy(xpath = "(//a[@id='editLabel'])[1]")
     private WebElement editAddressBtn;

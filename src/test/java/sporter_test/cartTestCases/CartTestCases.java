@@ -65,7 +65,7 @@ public class CartTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Verify increase quantity button from Cart page works successfully", priority = 5)
     public void verifyIncreaseQtyBtnInCartPageWorking() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-//        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         cartPage.increaseQty();
     }
 

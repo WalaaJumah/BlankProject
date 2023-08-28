@@ -94,6 +94,7 @@ public class HealthyFoodTestCases extends BaseTest {
             DataHelperAndWait.clickOnElement(sportsSupplementsCategoryPage.getNextPageBtn(), webDriver);
             sportsSupplementsCategoryPage.waitTillLoaderComplete();
             DataHelperAndWait.clickOnElement(sportsSupplementsCategoryPage.getPreviousPageBtn(), webDriver);
+            sportsSupplementsCategoryPage.waitTillLoaderComplete();
             WebElementsAssertion.validateTheCurrentUrlContainsString("p=2", webDriver);
         } else {
             System.out.println("There's only one page in the list");

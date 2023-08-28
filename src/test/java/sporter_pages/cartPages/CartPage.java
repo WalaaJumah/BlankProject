@@ -72,9 +72,9 @@ public class CartPage extends BasePage {
 //    @FindBy(xpath = "//a[starts-with(@class,'cartPage_link')]")
     @FindBy(id = "cart_empty_link")
     private WebElement hereLink;
-    @FindBy(xpath = "(//div[@id='decreaseQtyBtn'])[1]")
+    @FindBy(xpath = "(//div[starts-with(@id,'decreaseQtyBtn')])[1]")
     private WebElement decreaseQtyBtn;
-    @FindBy(xpath = "(//div[@id='increaseQtyBtn'])[1]")
+    @FindBy(xpath = "(//div[starts-with(@id,'increaseQtyBtn')])[1]")
     private WebElement increaseQtyBtn;
     //TODO: To replace it with ID after added it by Moamen
 //    @FindBy(xpath = "//div[@id='toCheckoutContainer']/a/button")
@@ -98,7 +98,7 @@ public class CartPage extends BasePage {
     private List<WebElement> qtyFieldList;
     @FindBy(id = "cartItemQty")
     private WebElement qtyField;
-    @FindBy(xpath = "(//input[@id='cartItemQty'])[1]")
+    @FindBy(xpath = "(//input[starts-with(@id,'cartItemQty')])[1]")
     private WebElement firstQtyField;
     @FindBy(css = "#cartcloseIcon > path")
     private WebElement cartCloseIcon;
@@ -188,11 +188,11 @@ public class CartPage extends BasePage {
 
     }
     public void addToCartAndDisplayTheCart() throws IOException {
-//        if(IsEmptyCart()) {
+        if(IsEmptyCart()) {
             productDetailsPage.displayTheProduct();
             productDetailsPage.addToCart();
             productDetailsPage.viewCart();
-//        }
+        }
     }
     public void navigateToCartOrAddProductToItInCaseTheCartIsEmpty() throws IOException {
         if(IsEmptyCart())

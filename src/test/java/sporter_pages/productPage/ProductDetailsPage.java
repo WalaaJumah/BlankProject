@@ -89,7 +89,7 @@ public class ProductDetailsPage extends BasePage {
     private WebElement subCategoriesSectionInMegaMenu;
     @FindBy(id = "SortItem_Sports Supplements_span")
     private WebElement sportsSupplementsInShopBy;
-    @FindBy(xpath = "(//div[@id='currentPrice'])[3]")
+    @FindBy(id = "currentPricemain_")
     private WebElement FinalProductPrice;
     @FindBy(xpath = "//input[contains(@class,'searchInput')]")
     private WebElement searchField;

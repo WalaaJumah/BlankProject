@@ -38,9 +38,10 @@ public class RecommendedProductTestCases extends BaseTest {
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the view Cart button appearing the Recommended products works correctly ", priority = 3)
-    public void verifyViewCartWorksBtnCorrectly() {
+    public void verifyViewCartWorksBtnCorrectly() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
+        productDetailsPage.displayTheProduct();
         productDetailsPage.addToCart();
         DataHelperAndWait.clickOnElement(productDetailsPage.getViewCartBtn(), webDriver);
         WebElementsAssertion.validateTheCurrentUrlContainsString(productDetailsPage.cartURL, webDriver);

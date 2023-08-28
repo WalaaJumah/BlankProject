@@ -60,7 +60,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(), webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
 
-        WebElementsAssertion.validateTheElementIsDisplayed(tamaraPaymentPage.getTamaraInstallmentsPaymentMethod(), webDriver);
+        tamaraPaymentPage.SelectTamaraInstallmentsMethod();
     }
         @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:GuestUser- Make sure the Installments Amounts In Tamara Page Are Matched With The Grand Total In Case 2Business Days Super Express Shipping Method", priority = 2)
     public void verifyInstallmentsAmountsInTamaraPageAreMatchedWithTheGrandTotalForGuestUserInCase2BusinessDaysSuperExpressShippingMethod() throws Exception {
@@ -81,7 +81,6 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
             guestCheckoutCyclePage.clickOnContinueBtn();
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(), webDriver);
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
-            WebElementsAssertion.validateTheElementIsDisplayed(tamaraPaymentPage.getTamaraInstallmentsPaymentMethod(), webDriver);
         tamaraPaymentPage.SelectTamaraInstallmentsMethod();
         DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver);
         DataHelperAndWait.scrollTo(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver);
@@ -260,7 +259,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         tamaraPaymentPage.AddToCartAndAccessShippingMethodsPageForRegistered(XmlReader.getXMLData("UAEPhoneNumber"));
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(tamaraPaymentPage.getTamaraInstallmentsPaymentMethod(),webDriver);
+        tamaraPaymentPage.SelectTamaraInstallmentsMethod();
     }
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Tamara Payment Method Using 3DS Card ", priority = 14)

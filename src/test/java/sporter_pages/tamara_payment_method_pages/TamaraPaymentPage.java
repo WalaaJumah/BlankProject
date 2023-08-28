@@ -303,7 +303,7 @@ DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
-        displayProductAndAddToCart();
+        cartPage.addToCartAndDisplayTheCart();
         cartPage.proceedToCheckout();
         DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getAddNewAddressBtn(),webDriver);
         this.fillInShippingInformationInputFieldForRegistered(
