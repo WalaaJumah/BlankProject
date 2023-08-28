@@ -267,18 +267,18 @@ public class GuestCheckoutCyclePage extends BasePage {
     public void navigateToCheckoutPage() throws IOException {
 //        webDriver.navigate().to(BaseURL+shippingInformationUrl);
 //        DataHelperAndWait.waitForUrlContains(shippingInformationUrl,webDriver);
-        CartPage cartPage = new CartPage(webDriver);
+//        CartPage cartPage = new CartPage(webDriver);
 //        cartPage.navigateToCartPage();
-        cartPage.navigateToHomePage();
-        cartPage.clickOnCartIcon();
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
+        _cartPage.navigateToHomePage();
+        _cartPage.clickOnCartIcon();
+        DataHelperAndWait.clickOnElement(_cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
         //TODO: CHECK pROCEED TO CHECKOUT AFTER SOLVED IT BY MOAMEN
     }
 
     public void accessGuestCheckoutForm() throws IOException {
-        CartPage cartPage = new CartPage(webDriver);
-        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
-        cartPage.proceedToCheckout();
+//        CartPage cartPage = new CartPage(webDriver);
+        _cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        _cartPage.proceedToCheckout();
         DataHelperAndWait.waitToBeClickable(checkoutAsGuestBtn, webDriver);
         DataHelperAndWait.JsExecutorToClickOnElement(checkoutAsGuestBtn, webDriver);
 
@@ -335,8 +335,8 @@ public class GuestCheckoutCyclePage extends BasePage {
     }
 
     public void AddToCartAndAccessShippingMethodsPage() throws IOException {
-        CartPage cartPage = new CartPage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
+
+        _cartPage.addToCartAndDisplayTheCart();
         this.accessGuestCheckoutForm();
         this.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
@@ -352,8 +352,8 @@ public class GuestCheckoutCyclePage extends BasePage {
     }
 
     public void viewCartAndAccessShippingMethodsPage() throws IOException {
-        CartPage cartPage = new CartPage(webDriver);
-        cartPage.addToCartAndDisplayTheCart();
+//        CartPage cartPage = new CartPage(webDriver);
+        _cartPage.addToCartAndDisplayTheCart();
         this.accessGuestCheckoutForm();
         this.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
