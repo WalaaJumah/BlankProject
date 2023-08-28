@@ -188,6 +188,7 @@ public class CartTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = " Cart Page- Make sure ability to add a bundle to the cart ", priority = 17)
     public void verifyAbilityToAddBundleToCart() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        CartPage cartPage= new CartPage(webDriver);
         WebDriverWait wait;
         try {
             productDetailsPage.displayBundle();
@@ -206,6 +207,8 @@ public class CartTestCases extends BaseTest {
                 wait = new WebDriverWait(webDriver, Duration.ofSeconds(3));
                 wait.until(ExpectedConditions.visibilityOf(productDetailsPage.getAddToCartBtn())).isDisplayed();
                 productDetailsPage.getAddToCartBtn().click();
+                if (DataHelperAndWait.IsElementPresent(cartPage.getCartErrorMsg()))
+                    throw new AssertionError("The system display error msg & the Mg is:"+cartPage.getCartErrorMsg().getText());
                 productDetailsPage.viewCart();
                 break;
             } catch (Exception e) {
@@ -214,6 +217,7 @@ public class CartTestCases extends BaseTest {
         }
         WebElementsAssertion.validateTheCurrentUrlContainsString(productDetailsPage.cartURL, webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
+
     }
 
     //    @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = " Cart Page- Make sure ability to add a bundle to the cart with all bundle options", priority = 50)

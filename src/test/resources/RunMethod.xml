@@ -4,7 +4,7 @@
 <suite name="Automation Reports">
     <listeners>
         <!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
-        <listener class-name="extent_report_listner.ExtentReportListener"/>
+<!--        <listener class-name="extent_report_listner.ExtentReportListener"/>-->
     </listeners>
     <test name=" Tamara Payment" preserve-order="true">
         <parameter name="environment" value="https://qa1.sporter.com"/>
@@ -14,7 +14,7 @@
         <parameter name="oOSProduct" value="/rip-van-protien-wafles-box-of-12/"/>
         <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
         <classes>
-            <class name="sporter_test.checkoutForRegisteredUserTestCases.EgyptCheckoutForRegisteredTestCases">
+            <class name="sporter_test.AccountRegistrationTestCases.UAEAccountRegistrationTestCases">
 <!--                <methods>-->
 <!--                    <include name="verifyAbilityToLoginCorrectlyWithValidCredentials"/>-->
 <!--                    <include name="verifyAbilityToPlaceOrderWhenSelecting2_4BusinessDaysSuperExpressShippingMethodWithCODPaymentMethod"/>-->
