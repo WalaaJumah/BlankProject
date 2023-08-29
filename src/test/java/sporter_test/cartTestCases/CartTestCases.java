@@ -314,7 +314,7 @@ public class CartTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the  close icon appears in the cart pop-up works correctly", priority = 25)
     public void verifyTheCloseIconInCartPopupWorksCorrectly() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-//        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         cartPage.navigateToHomePage();
         cartPage.waitTillLoaderComplete();
         cartPage.clickOnCartIcon();

@@ -303,7 +303,8 @@ public class CartPage extends BasePage {
 
     public void clickOnCartIcon() {
 //       DataHelperAndWait.waitForTime(2000);
-        DataHelperAndWait.clickOnElement(cartIcon, webDriver);
+        DataHelperAndWait.waitToBeClickable(cartIcon, webDriver);
+        DataHelperAndWait.JsExecutorToClickOnElement(cartIcon, webDriver);
     }
 
     public void waitTillQtyValueChanges(String expectedText) {
