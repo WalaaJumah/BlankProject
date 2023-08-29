@@ -211,6 +211,7 @@ public class ProductDetailsTestCases extends BaseTest {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
         MegaMenuPage megaMenuPage = new MegaMenuPage(webDriver);
+        productDetailsPage.waitTillLoaderComplete();
         megaMenuPage.makeSureToDisplayShopByMenu();
     }
 

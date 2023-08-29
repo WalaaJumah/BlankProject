@@ -28,8 +28,10 @@ public class LoginTestCases extends BaseTest {
         HeaderSection header = new HeaderSection(webDriver);
         LoginPage loginPage = new LoginPage(webDriver);
         DataHelperAndWait.waitToBeVisible(header.getAccountProfileIcon(), webDriver);
-        DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
-        DataHelperAndWait.clickOnElement(loginPage.getSignInOption(), webDriver);
+        DataHelperAndWait.waitToBeClickable(header.getAccountProfileIcon(), webDriver);
+        DataHelperAndWait.JsExecutorToClickOnElement(header.getAccountProfileIcon(), webDriver);
+        DataHelperAndWait.waitToBeClickable(loginPage.getSignInOption(), webDriver);
+        DataHelperAndWait.JsExecutorToClickOnElement(loginPage.getSignInOption(), webDriver);
         WebElementsAssertion.validateTheCurrentUrlContainsString(loginPage.loginLink, webDriver);
     }
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Make sure all secure tabs appears correctly(100% Secure Payments+ 100% Authentic Products+Fast Delivery Service blocks)", priority = 2)

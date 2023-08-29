@@ -114,7 +114,9 @@ public class HealthyFoodTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure that the BreadCrumb appears correctly after sorting the product ", priority = 11)
     public void verifyTheBreadCrumbAppearingCorrectlyAfterSortingTheProducts(){
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
-        DataHelperAndWait.clickOnElement(sportsSupplementsCategoryPage.getHomePageBreadCrumb(), webDriver);
+        DataHelperAndWait.waitToBeClickable(sportsSupplementsCategoryPage.getHomePageBreadCrumb(), webDriver);
+        DataHelperAndWait.JsExecutorToClickOnElement(sportsSupplementsCategoryPage.getHomePageBreadCrumb(), webDriver);
+        sportsSupplementsCategoryPage.waitTillLoaderComplete();
         WebElementsAssertion.validateTheElementIsDisplayed(sportsSupplementsCategoryPage.getSportsSupplementsCategoryFromHomePage(), webDriver);
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure clicking on the Healthy Food Category from HomePage Redirect User To CorrectURL", priority = 12)
