@@ -48,6 +48,7 @@ public class WomensOnlyCategoryTestCases extends BaseTest {
         womensOnlyCategoryPage.navigateToWomenOnlyPage();
         DataHelperAndWait.waitToBeClickable(sportsSupplementsCategoryPage.getHomePageBreadCrumb(), webDriver);
         DataHelperAndWait.JsExecutorToClickOnElement(sportsSupplementsCategoryPage.getHomePageBreadCrumb(), webDriver);
+        homePage.waitTillLoaderComplete();
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getSportsSupplementsCategory(), webDriver);
     }
 
