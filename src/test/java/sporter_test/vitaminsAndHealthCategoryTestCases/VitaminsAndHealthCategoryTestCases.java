@@ -65,7 +65,9 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         HomePage homePage = new HomePage(webDriver);
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
-        DataHelperAndWait.clickOnElement(sportsSupplementsCategoryPage.getHomePageBreadCrumb(), webDriver);
+        DataHelperAndWait.waitToBeClickable(sportsSupplementsCategoryPage.getHomePageBreadCrumb(), webDriver);
+        DataHelperAndWait.JsExecutorToClickOnElement(sportsSupplementsCategoryPage.getHomePageBreadCrumb(), webDriver);
+        homePage.waitTillLoaderComplete();
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getSportsSupplementsCategory(), webDriver);
     }
 
