@@ -98,6 +98,7 @@ public class EgyptVitaminsAndHealthCategoryTestCases extends VitaminsAndHealthCa
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         if (sportsSupplementsCategoryPage.getPaginationBtns().size() > 3) {
             DataHelperAndWait.clickOnElement(sportsSupplementsCategoryPage.getNextPageBtn(), webDriver);
+            sportsSupplementsCategoryPage.waitTillLoaderComplete();
             DataHelperAndWait.clickOnElement(sportsSupplementsCategoryPage.getPreviousPageBtn(), webDriver);
             sportsSupplementsCategoryPage.waitTillLoaderComplete();
             Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));

@@ -330,7 +330,8 @@ public class HomePageTestCases extends BaseTest {
     public void verifyAbilityToClickOnUnderShopByCategoryWorksCorrectly() throws IOException {
         HomePage homePage = new HomePage(webDriver);
         for (int i = 0; i < homePage.getUnderShopByCategoryBanners().size(); i++) {
-            DataHelperAndWait.clickOnElement(homePage.getUnderShopByCategoryBanners().get(i), webDriver);
+            DataHelperAndWait.waitToBeClickable(homePage.getUnderShopByCategoryBanners().get(i), webDriver);
+            DataHelperAndWait.JsExecutorToClickOnElement(homePage.getUnderShopByCategoryBanners().get(i), webDriver);
            homePage.verifyTheDisplayedPageDoesNotHaveErrors();
            homePage.navigateToHomePage();
         }

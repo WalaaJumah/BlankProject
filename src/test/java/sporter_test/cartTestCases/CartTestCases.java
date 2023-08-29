@@ -316,6 +316,7 @@ public class CartTestCases extends BaseTest {
         CartPage cartPage = new CartPage(webDriver);
 //        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         cartPage.navigateToHomePage();
+        cartPage.waitTillLoaderComplete();
         cartPage.clickOnCartIcon();
         DataHelperAndWait.waitToBeVisible(cartPage.getCartCloseIcon(), webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getCartCloseIcon(), webDriver);
