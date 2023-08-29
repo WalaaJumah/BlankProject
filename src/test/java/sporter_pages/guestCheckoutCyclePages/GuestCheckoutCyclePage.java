@@ -259,9 +259,17 @@ public class GuestCheckoutCyclePage extends BasePage {
     public void accessGuestCheckoutForm() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
-        cartPage.proceedToCheckout();
+        try {
+            cartPage.proceedToCheckout();
             DataHelperAndWait.waitToBeClickable(checkoutAsGuestBtn, webDriver);
-        DataHelperAndWait.JsExecutorToClickOnElement(checkoutAsGuestBtn,webDriver);
+            DataHelperAndWait.JsExecutorToClickOnElement(checkoutAsGuestBtn, webDriver);
+        }
+        catch (Exception e){
+            cartPage.navigateToCartPage();
+            cartPage.proceedToCheckout();
+            DataHelperAndWait.waitToBeClickable(checkoutAsGuestBtn, webDriver);
+            DataHelperAndWait.JsExecutorToClickOnElement(checkoutAsGuestBtn, webDriver);
+        }
 
     }
 

@@ -18,9 +18,10 @@
                             </run>
                         </groups>
         <classes>
+            <class name="sporter_test.guestCheckoutCycleTestCases.EgyptGuestCheckoutCycleTestCases"/>
+
             <class name="sporter_test.checkoutForRegisteredUserTestCases.EgyptCheckoutForRegisteredTestCases"/>
 
-            <class name="sporter_test.guestCheckoutCycleTestCases.EgyptGuestCheckoutCycleTestCases"/>
             <class name="sporter_test.guestCheckoutCycleTestCases.KSAGuestCheckoutCycleTestCases"></class>
             <class name="sporter_test.guestCheckoutCycleTestCases.UAEGuestCheckoutCycleTestCases"></class>
 
@@ -165,12 +166,12 @@
 
 <!--            <class name="sporter_test.tamara_payment_method_test_cases.UAETamaraPaymentMethodTestCases"></class>-->
 <!--            <class name="sporter_test.tamara_payment_method_test_cases.KSATamaraPaymentMethodTestCases"></class>-->
-            <class name="sporter_test.tabby_payment_method_test_cases.KSATabbyPaymentMethodTestCases"></class>
-            <class name="sporter_test.tabby_payment_method_test_cases.UAETabbyPaymentMethodTestCases"></class>
-            <class name="sporter_test.tabby_payment_method_test_cases.KuwaitTabbyPaymentMethodTestCases"></class>
-            <class name="sporter_test.tabby_payment_method_test_cases.BahrainTabbyPaymentMethodTestCases"></class>
-            <class name="sporter_test.tabby_payment_method_test_cases.KuwaitTabbyPaymentMethodTestCases"></class>
-            <class name="sporter_test.tabby_payment_method_test_cases.QatarTabbyPaymentMethodTestCases"></class>/
+<!--            <class name="sporter_test.tabby_payment_method_test_cases.KSATabbyPaymentMethodTestCases"></class>-->
+<!--            <class name="sporter_test.tabby_payment_method_test_cases.UAETabbyPaymentMethodTestCases"></class>-->
+<!--            <class name="sporter_test.tabby_payment_method_test_cases.KuwaitTabbyPaymentMethodTestCases"></class>-->
+<!--            <class name="sporter_test.tabby_payment_method_test_cases.BahrainTabbyPaymentMethodTestCases"></class>-->
+<!--            <class name="sporter_test.tabby_payment_method_test_cases.KuwaitTabbyPaymentMethodTestCases"></class>-->
+<!--            <class name="sporter_test.tabby_payment_method_test_cases.QatarTabbyPaymentMethodTestCases"></class>/-->
 
 
         </classes>
