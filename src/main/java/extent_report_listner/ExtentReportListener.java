@@ -30,7 +30,7 @@ public class ExtentReportListener implements IReporter {
             Map<String, ISuiteResult> result = suite.getResults();
 
             for (ISuiteResult r : result.values()) {
-                extent = new ExtentReports("C:\\Users\\w.jumaa\\desktop" + File.separator
+                extent = new ExtentReports("G:\\My Drive\\Automation Reports" + File.separator
                         + "[" + r.getTestContext().getName() + "]" + date + ".html", true);
                 extent.loadConfig(new File(System.getProperty("user.dir") + "./src/test/resources/extent-config.xml"));
                 ITestContext context = r.getTestContext();
