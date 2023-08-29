@@ -47,8 +47,12 @@ public class RecommendedProductTestCases extends BaseTest {
     }
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Recommended product pop-up will hide after clicking on the View Cart Button", priority = 4)
-    public void verifyRecommendedProductsPopUpisHiddenAfterClickingOnTheViewBtn() {
+    public void verifyRecommendedProductsPopUpisHiddenAfterClickingOnTheViewBtn() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        productDetailsPage.addToCart();
+        DataHelperAndWait.clickOnElement(productDetailsPage.getViewCartBtn(), webDriver);
+        productDetailsPage.waitTillLoaderComplete();
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getRemoveItem(), webDriver);
         DataHelperAndWait.clickOnElement(productDetailsPage.getRemoveItem(), webDriver);
     }

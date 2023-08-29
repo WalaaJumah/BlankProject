@@ -82,6 +82,7 @@ public class ForgetPasswordTestCases extends BaseTest {
     public void verifyInAbilityToClickOnSubmitInForgetPasswordWithIncorrectEmailFormat() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.navigateToForgetPassword();
+        loginPage.waitTillLoaderComplete();
         DataHelperAndWait.typeTextInElement(loginPage.getEmailField(), webDriver, XmlReader.getXMLData("incorrectEmailFormate"));
         DataHelperAndWait.clickOnElement(loginPage.getSubmitBtnInForgetPassword(), webDriver);
         if (webDriver.getCurrentUrl().contains("sporter.com/ar")) {

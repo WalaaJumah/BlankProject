@@ -269,6 +269,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         DataHelperAndWait.scrollToPositionZero(webDriver);
+        DataHelperAndWait.waitToBeVisible(vitaminsAndHealthCategoryPage.getBeautyCategory(),webDriver);
         Assert.assertTrue(DataHelperAndWait.IsElementPresent(vitaminsAndHealthCategoryPage.getBeautyCategory()));
             DataHelperAndWait.clickOnElement(vitaminsAndHealthCategoryPage.getBeautyCategory(), webDriver);
             vitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -280,6 +281,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         DataHelperAndWait.scrollToPositionZero(webDriver);
+        DataHelperAndWait.waitToBeVisible(vitaminsAndHealthCategoryPage.getBoneAndJointCategory(),webDriver);
         Assert.assertTrue(DataHelperAndWait.IsElementPresent(vitaminsAndHealthCategoryPage.getBoneAndJointCategory()));
         DataHelperAndWait.clickOnElement(vitaminsAndHealthCategoryPage.getBoneAndJointCategory(), webDriver);
         vitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();

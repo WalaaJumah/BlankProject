@@ -42,8 +42,9 @@ public class CartTestCases extends BaseTest {
     }
 
     @Test(groups = { "1.4 Low Severity"}, description = "{{CountryName}}: Make sure that the product counter that appears in the cart page works correctly", priority = 2)
-    public void verifyProductCounterAppearsInTheCartPageWorksCorrectly() {
+    public void verifyProductCounterAppearsInTheCartPageWorksCorrectly() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
+        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         itemsCounter = "1";
         WebElementsAssertion.assertionTextIsEqual(cartPage.getItemsCounter(), webDriver, itemsCounter);
     }

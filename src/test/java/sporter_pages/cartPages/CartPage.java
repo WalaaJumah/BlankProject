@@ -317,8 +317,6 @@ public class CartPage extends BasePage {
         //TODO: Need to recheck after solving it by Moamen
 //      this.waitTillCartSpinnerDisappear(webDriver);
         DataHelperAndWait.waitToBeClickable(this.getProceedCheckoutBtn(),webDriver);
-
-
         DataHelperAndWait.JsExecutorToClickOnElement(this.getProceedCheckoutBtn(),webDriver);
 //        this.getProceedCheckoutBtn().click();
 //        this.waitTillCartSpinnerDisappear(webDriver);

@@ -158,7 +158,9 @@ cartPage.proceedToCheckout();
         CartPage cartPage= new CartPage(webDriver);
         KSAGuestCheckoutCyclePage kSA= new KSAGuestCheckoutCyclePage(webDriver);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
-        cartPage.proceedToCheckout();
+            cartPage.proceedToCheckout();
+
+
         try{            DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getSavedAddressOption(),webDriver);
         }
         catch (Exception e){
