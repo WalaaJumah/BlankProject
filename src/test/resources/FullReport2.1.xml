@@ -18,8 +18,9 @@
 <!--            </run>-->
 <!--        </groups>-->
         <classes>
-            <class name="sporter_test.cartTestCases.KuwaitCartTestCases"></class>
             <class name="sporter_test.cartTestCases.UAECartTestCases"></class>
+
+            <class name="sporter_test.cartTestCases.KuwaitCartTestCases"></class>
             <class name="sporter_test.vitaminsAndHealthCategoryTestCases.EgyptVitaminsAndHealthCategoryTestCases"/>
             <class name="sporter_test.vitaminsAndHealthCategoryTestCases.QatarVitaminsAndHealthCategoryTestCases"/>
             <class name="sporter_test.homepage_test_cases.EgyptHomePageTestCases"/>
