@@ -197,7 +197,7 @@ public void submitEmailAndPhoneNumberInPositiveFlow(){
 
     }
 
-public void fillInTheCardInfo() throws IOException, InterruptedException {
+public void fillInTheCardInfo() {
     DataHelperAndWait.waitToBeVisible(cardNumberFieldInTabbyPage,webDriver);
     DataHelperAndWait.updateAllText(cardNumberFieldInTabbyPage,XmlReader.getXMLData("tabbyPositiveCard"));
     DataHelperAndWait.waitToBeVisible(cvvFieldInTabbyPage,webDriver);
@@ -205,6 +205,7 @@ public void fillInTheCardInfo() throws IOException, InterruptedException {
     DataHelperAndWait.updateAllText(cvvFieldInTabbyPage,XmlReader.getXMLData("tabbyPositiveCVV"));
     DataHelperAndWait.waitToBeVisible(expiredDateFieldInTabbyPage,webDriver);
     DataHelperAndWait.updateAllText(expiredDateFieldInTabbyPage,XmlReader.getXMLData("tabbyPositiveCardDate"));
+    DataHelperAndWait.JsExecutorToClickOnElement(cardNumberFieldInTabbyPage,webDriver);
     try{
         if(getExpiryDateError().isDisplayed())
             DataHelperAndWait.clickOnElement(expiredDateFieldInTabbyPage,webDriver);

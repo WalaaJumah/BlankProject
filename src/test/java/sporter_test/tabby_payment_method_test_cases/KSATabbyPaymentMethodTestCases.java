@@ -303,7 +303,7 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
         DataHelperAndWait.waitToBeVisible(tabbyPaymentPage.getTabbyPage(),webDriver);
         tabbyPaymentPage.clickOnReturnToStore();
-        WebElementsAssertion.validateTheElementIsDisplayed(tabbyPaymentPage.getTransactionFailedError(),webDriver);
+       Assert.assertTrue(DataHelperAndWait.IsElementPresent(tabbyPaymentPage.getTransactionFailedError()));
     }
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:RegisteredUser- Make sure ability to place Order successfully when Selecting PickUpInStore Shipping Method With tabby Payment Method ", priority = 13)
