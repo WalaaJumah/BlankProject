@@ -71,6 +71,8 @@ public class EgyptRelatedProductsTestCases extends RelatedProductsTestCases {
         DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.JsExecutorToClickOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
 //        Assert.assertTrue(relatedProductSection.getAddRelatedProductToCart().get(0).isDisplayed(), "Add to cart is missing");
+        relatedProductSection.waitTillLoaderComplete();
+        DataHelperAndWait.waitToBeVisible(productDetailsPage.getFinalProductPrice(),webDriver);
         Assert.assertEquals(productPrice, DataHelperAndWait.convertTheStringToFloatWithoutthousandComma(productDetailsPage.getFinalProductPrice(), webDriver, currency));
     }
 }
