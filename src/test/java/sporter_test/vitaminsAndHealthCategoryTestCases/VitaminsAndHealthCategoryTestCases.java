@@ -275,7 +275,8 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         DataHelperAndWait.scrollToPositionZero(webDriver);
-        Assert.assertTrue(DataHelperAndWait.IsElementPresent(vitaminsAndHealthCategoryPage.getBeautyCategory()));
+
+     DataHelperAndWait.waitToBeVisible(vitaminsAndHealthCategoryPage.getBeautyCategory(),webDriver);
             DataHelperAndWait.clickOnElement(vitaminsAndHealthCategoryPage.getBeautyCategory(), webDriver);
             vitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
 
@@ -286,7 +287,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         DataHelperAndWait.scrollToPositionZero(webDriver);
-        Assert.assertTrue(DataHelperAndWait.IsElementPresent(vitaminsAndHealthCategoryPage.getBoneAndJointCategory()));
+        DataHelperAndWait.waitToBeVisible(vitaminsAndHealthCategoryPage.getBoneAndJointCategory(),webDriver);
         DataHelperAndWait.clickOnElement(vitaminsAndHealthCategoryPage.getBoneAndJointCategory(), webDriver);
         vitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -296,7 +297,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         DataHelperAndWait.scrollToPositionZero(webDriver);
-        Assert.assertTrue(DataHelperAndWait.IsElementPresent(vitaminsAndHealthCategoryPage.getBrainSupportCategory()));
+        DataHelperAndWait.waitToBeVisible(vitaminsAndHealthCategoryPage.getBrainSupportCategory(),webDriver);
         DataHelperAndWait.clickOnElement(vitaminsAndHealthCategoryPage.getBrainSupportCategory(), webDriver);
         vitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -306,7 +307,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         DataHelperAndWait.scrollToPositionZero(webDriver);
-        Assert.assertTrue(DataHelperAndWait.IsElementPresent(vitaminsAndHealthCategoryPage.getDetoxAndLiverSupportCategory()));
+        DataHelperAndWait.waitToBeVisible(vitaminsAndHealthCategoryPage.getDetoxAndLiverSupportCategory(),webDriver);
         DataHelperAndWait.clickOnElement(vitaminsAndHealthCategoryPage.getDetoxAndLiverSupportCategory(), webDriver);
         vitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -316,7 +317,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
         vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         DataHelperAndWait.scrollToPositionZero(webDriver);
-        Assert.assertTrue(DataHelperAndWait.IsElementPresent(vitaminsAndHealthCategoryPage.getDigestiveSupportCategory()));
+        DataHelperAndWait.waitToBeVisible(vitaminsAndHealthCategoryPage.getDigestiveSupportCategory(),webDriver);
         DataHelperAndWait.clickOnElement(vitaminsAndHealthCategoryPage.getDigestiveSupportCategory(), webDriver);
         vitaminsAndHealthCategoryPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }

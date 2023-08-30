@@ -78,6 +78,7 @@ public class CheckoutForRegisteredTestCases extends BaseTest
     public void viewCartFromCartIcon() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.navigateToHomePage();
+        cartPage.waitTillLoaderComplete();
         DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
         DataHelperAndWait.clickOnElement(cartPage.getViewCartInCartPopup(), webDriver);
         WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.cartURL, webDriver);
