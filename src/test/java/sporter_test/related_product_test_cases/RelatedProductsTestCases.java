@@ -55,6 +55,8 @@ public class RelatedProductsTestCases extends BaseTest {
     public void verifyRelatedProductAppearsWithCorrectLanguage(){
         RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
         if(webDriver.getCurrentUrl().contains("/en")){
+            relatedProductSection.waitTillLoaderComplete();
+        Assert.assertTrue(DataHelperAndWait.IsElementPresent(relatedProductSection.getRelatedProductsSection()));
         Assert.assertTrue(DataHelperAndWait.isTextOnlyEnglish(relatedProductSection.getRelatedProductsTitle().getText()));
         Assert.assertTrue(DataHelperAndWait.isTextOnlyEnglish(relatedProductSection.getRelatedProductsNames().get(0).getText()));
         }

@@ -16,6 +16,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import sporter_pages.homepage_classes.HomePage;
 
 import java.io.IOException;
@@ -51,8 +52,10 @@ public class RelatedProductSection extends BasePage {
 
     public void displayTheInStockProduct() throws IOException {
         webDriver.navigate().to(BaseURL +this. inStockProductHaveRelatedItems);
-        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,15);
+        waitTillLoaderComplete();
         verifyTheDisplayedPageDoesNotHaveErrors();
+       waitTillLoaderComplete();
+        Assert.assertTrue(DataHelperAndWait.IsElementPresent(relatedProductsSection)," The Related products section are missing");
         DataHelperAndWait.waitToBeVisible(relatedProductsSection,webDriver);
     }
       public void displayTheOutStockProduct() throws IOException {
@@ -63,6 +66,9 @@ else {
           }
         DataHelperAndWait.waitTillPageFullyLoaded(webDriver,10);
         verifyTheDisplayedPageDoesNotHaveErrors();
+          waitTillLoaderComplete();
+          Assert.assertTrue(DataHelperAndWait.IsElementPresent(relatedProductsSection)," The Related products section are missing");
+          DataHelperAndWait.waitToBeVisible(relatedProductsSection,webDriver);
     }
 
     public void displayTheInStockBundle() throws IOException {
@@ -73,7 +79,11 @@ else {
 
         DataHelperAndWait.waitTillPageFullyLoaded(webDriver,15);
         verifyTheDisplayedPageDoesNotHaveErrors();
+        waitTillLoaderComplete();
+        Assert.assertTrue(DataHelperAndWait.IsElementPresent(relatedProductsSection)," The Related products section are missing");
         DataHelperAndWait.waitToBeVisible(relatedProductsSection,webDriver);
+        DataHelperAndWait.waitToBeVisible(relatedProductsSection,webDriver);
+
 
     }
 
