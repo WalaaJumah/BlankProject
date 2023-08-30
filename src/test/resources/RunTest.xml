@@ -4,7 +4,7 @@
 <suite name="Automation Reports">
     <listeners>
         <!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
-        <listener class-name="extent_report_listner.ExtentReportListener"/>
+<!--        <listener class-name="extent_report_listner.ExtentReportListener"/>-->
     </listeners>
     <test name=" Related/Cross Selling Products " preserve-order="true">
         <parameter name="environment" value="https://qa1.sporter.com"/>          <parameter name="browser" value="chrome"/>
@@ -18,19 +18,9 @@
         <!--                            </run>-->
         <!--                        </groups>-->
         <classes>
-            <class name="sporter_test.related_product_test_cases.QatarRelatedProductsTestCases"></class>/
+            <class name="sporter_test.myAccountTestCases.QatarMyAccountTestCases"></class>/
 
-            <class name="sporter_test.related_product_test_cases.EgyptRelatedProductsTestCases"></class>/
-            <class name="sporter_test.related_product_test_cases.JordanRelatedProductsTestCases"></class>/
-            <class name="sporter_test.related_product_test_cases.IraqRelatedProductsTestCases"></class>/
-            <class name="sporter_test.related_product_test_cases.BahrainRelatedProductsTestCases"></class>/
-            <class name="sporter_test.related_product_test_cases.UAERelatedProductsTestCases"></class>/
-            <class name="sporter_test.related_product_test_cases.KSARelatedProductsTestCases"></class>/
-            <class name="sporter_test.related_product_test_cases.KuwaitRelatedProductsTestCases"></class>/
-            <class name="sporter_test.related_product_test_cases.OmanRelatedProductsTestCases"></class>/
-            <class name="sporter_test.cartRulesTestCases.JordanCartRulesTestCases"></class>
-            <class name="sporter_test.cartRulesTestCases.KSACartRulesTestCases"></class>
-            <class name="sporter_test.cartRulesTestCases.QatarCartRulesTestCases"></class>
+
 
 
         </classes>
