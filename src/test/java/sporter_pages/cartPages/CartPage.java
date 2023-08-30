@@ -319,6 +319,7 @@ public class CartPage extends BasePage {
 //        DataHelperAndWait.clickOnElement(getProceedCheckoutBtnInCartPopup(), webDriver);
         //TODO: Need to recheck after solving it by Moamen
 //      this.waitTillCartSpinnerDisappear(webDriver);
+        DataHelperAndWait.waitForTime(500);
         DataHelperAndWait.waitToBeClickable(this.getProceedCheckoutBtn(),webDriver);
 
 
