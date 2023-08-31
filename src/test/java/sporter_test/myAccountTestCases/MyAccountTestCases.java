@@ -301,7 +301,7 @@ public class MyAccountTestCases extends BaseTest {
         myAccountPage.navigateToAddressesPage();
         DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(), webDriver);
         myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        myAccountPage.fillInNewAddressForm(
+        myAccountPage.fillInNewAddressFormWithIncorrectPhone(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("SmallPhoneNumber"),
