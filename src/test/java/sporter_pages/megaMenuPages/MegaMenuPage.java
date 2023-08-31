@@ -62,6 +62,9 @@ public class MegaMenuPage extends BasePage {
     private WebElement ShopBySubMenu;
     @FindBy(id = "cat_1343")
     private WebElement womensOnlyMenu;
+      @FindBy(xpath = "//a[@id='cat_1343']")
+    private WebElement womensOnlyMenuFromShopBy;
+
     public MegaMenuPage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
@@ -148,12 +151,12 @@ public class MegaMenuPage extends BasePage {
         try {
             DataHelperAndWait.waitToBeVisible(megaMenuPage.getShopByMenu(), webDriver);
             actions.moveToElement(megaMenuPage.getShopByMenu()).perform();
-            DataHelperAndWait.waitToBeVisible(megaMenuPage.getWomensOnlyMenu(), webDriver);
+            DataHelperAndWait.waitToBeVisible(megaMenuPage.getWomensOnlyMenuFromShopBy(), webDriver);
             verifyTheDisplayedPageDoesNotHaveErrors();
         } catch (Exception e) {
             DataHelperAndWait.waitToBeVisible(megaMenuPage.getShopByMenu(), webDriver);
             actions.moveToElement(megaMenuPage.getShopByMenu()).perform();
-            DataHelperAndWait.waitToBeVisible(megaMenuPage.getWomensOnlyMenu(), webDriver);
+            DataHelperAndWait.waitToBeVisible(megaMenuPage.getWomensOnlyMenuFromShopBy(), webDriver);
             verifyTheDisplayedPageDoesNotHaveErrors();
         }
     }
