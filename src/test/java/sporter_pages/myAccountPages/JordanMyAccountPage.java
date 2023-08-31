@@ -49,7 +49,8 @@ public class JordanMyAccountPage extends MyAccountPage {
         DataHelperAndWait.updateAllText(this.getLastNameFieldInAddress(), lastName);
         DataHelperAndWait.waitToBeVisible(this.getPhoneFieldInAddress(), webDriver);
         DataHelperAndWait.updateAllText(this.getPhoneFieldInAddress(), phone);
-        DataHelperAndWait.waitForTime(500);
+        DataHelperAndWait.waitForTime(600);
+        getPhoneFieldInAddress().sendKeys("9");
         DataHelperAndWait.waitToBeVisible(this.getAddressNameField(), webDriver);
         DataHelperAndWait.updateAllText(this.getAddressNameField(), addressName);
         DataHelperAndWait.waitToBeVisible(this.getStreet1Field(), webDriver);

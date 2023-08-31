@@ -60,7 +60,7 @@ public class JordanMyAccountTestCases extends MyAccountTestCases {
         myAccountPage.navigateToAddressesPage();
         DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(), webDriver);
         myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        myAccountPage.fillInNewAddressForm(XmlReader.getXMLData("firstName"),
+        myAccountPage.fillInNewAddressFormWithIncorrectPhone(XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("SmallPhoneNumber"),
                 XmlReader.getXMLData("AddressName"),

@@ -15,6 +15,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 
+import java.io.IOException;
+
 @Getter
 public class MyAccountPage extends BasePage {
     private String myAccountURL = "/dashboard/my_account";
@@ -22,6 +24,7 @@ public class MyAccountPage extends BasePage {
     private String allOrdersURL = "/dashboard/all_orders";
     private String newsletterURL = "/dashboard/newsletter";
     private String addressedUrl = "/dashboard/my_addresses";
+    private String addNewAddressUrl = "/dashboard/my_addresses/new/";
     @FindBy(id = "myAccountBtn")
     private WebElement myAccountOption;
     @FindBy(id = "recentOrdersBtn")
@@ -127,6 +130,11 @@ public class MyAccountPage extends BasePage {
         webDriver.navigate().to(BaseURL + addressedUrl);
         DataHelperAndWait.waitForUrlContains(addressedUrl, webDriver);
     }
+    public void navigateToNewAddressesPage() throws IOException {
+        webDriver.navigate().to(BaseURL + addNewAddressUrl);
+        DataHelperAndWait.waitForUrlContains(addressedUrl, webDriver);
+        verifyTheDisplayedPageDoesNotHaveErrors();
+    }
 
     public void fillInNewAddressForm(String firstName, String lastName, String phone, String addressName, String streetLineOne, String streetLineTwo) {
         GuestCheckoutCyclePage guestCheckoutCyclePage=new GuestCheckoutCyclePage(webDriver);
@@ -153,6 +161,7 @@ public class MyAccountPage extends BasePage {
         DataHelperAndWait.updateAllText(this.getLastNameFieldInAddress(), lastName);
         DataHelperAndWait.waitToBeVisible(this.getPhoneFieldInAddress(), webDriver);
         DataHelperAndWait.updateAllText(this.getPhoneFieldInAddress(), phone);
+        getPhoneFieldInAddress().sendKeys("9");
         DataHelperAndWait.waitToBeVisible(this.getAddressNameField(), webDriver);
         DataHelperAndWait.updateAllText(this.getAddressNameField(), addressName);
         DataHelperAndWait.waitToBeVisible(this.getStreet1Field(), webDriver);
