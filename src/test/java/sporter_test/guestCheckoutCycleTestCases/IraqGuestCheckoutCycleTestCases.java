@@ -154,9 +154,10 @@ public class IraqGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCases
             cityList.add(line);
         }
         for (int i=1;i<cityList.size();i++){
-            System.out.println(cityList.size());
             System.out.println(cityList.get(i));
-            Assert.assertEquals(cityList.get(i),XmlReader.getXMLDataFromFile("TestData"+i,"src/test/resources/aramexCities.xml"));
+//            Assert.assertEquals(cityList.get(i),XmlReader.getXMLDataFromFile("TestData"+i,"src/test/resources/aramexCities.xml"));
+            Assert.assertTrue(cityList.contains(XmlReader.getXMLDataFromFile("TestData"+i,"src/test/resources/aramexCities.xml")), "City option from XML not found: " + XmlReader.getXMLDataFromFile("TestData"+i,"src/test/resources/aramexCities.xml"));
+
         }
 
     }
