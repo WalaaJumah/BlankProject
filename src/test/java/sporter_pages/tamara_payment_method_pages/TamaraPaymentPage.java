@@ -86,6 +86,7 @@ public class TamaraPaymentPage extends BasePage {
     @FindBy(id = "pInfoEdit")
     private WebElement editBtnInPaymentMethodInfoLabel;
     public void SelectTamaraInstallmentsMethod() throws Exception {
+        waitTillLoaderComplete();
         if(DataHelperAndWait.IsElementPresent(tamaraInstallmentsPaymentMethod)) {
             GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
             DataHelperAndWait.waitToBeVisible(tamaraInstallmentsPaymentMethod, webDriver);
@@ -328,6 +329,7 @@ DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
         webDriver.navigate().to(BaseURL+ checkoutUrl);
         DataHelperAndWait.waitForUrlContains(checkoutUrl,webDriver);
         DataHelperAndWait.scrollTo(guestCheckoutCyclePage.getCheckoutAsGuestBtn(), webDriver);
+        DataHelperAndWait.waitForTime(500);
            DataHelperAndWait.waitToBeClickable(guestCheckoutCyclePage.getCheckoutAsGuestBtn(), webDriver);
            DataHelperAndWait.JsExecutorToClickOnElement(guestCheckoutCyclePage.getCheckoutAsGuestBtn(), webDriver);
     }

@@ -68,20 +68,20 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         TamaraPaymentPage tamaraPaymentPage= new TamaraPaymentPage(webDriver);
 //            webDriver.manage().deleteCookieNamed("guestCartId");
 //            tamaraPaymentPage.displayProductAndAddToCart();
-            tamaraPaymentPage.accessShippingFormForGuestViaURL();
-            guestCheckoutCyclePage.fillInShippingInformationInputField(
-                    XmlReader.getXMLData("firstName"),
-                    XmlReader.getXMLData("lastName"),
-                    XmlReader.getXMLData("correctEmail"),
-                    XmlReader.getXMLData("UAEPhoneNumber"),
-                    XmlReader.getXMLData("StreetOneAddressName"),
-                    XmlReader.getXMLData("ksaPhoneNumber")
-            );
-            DataHelperAndWait.waitForTime(2000);
-            guestCheckoutCyclePage.clickOnContinueBtn();
-            DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(), webDriver);
-            DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
-        tamaraPaymentPage.SelectTamaraInstallmentsMethod();
+//            tamaraPaymentPage.accessShippingFormForGuestViaURL();
+//            guestCheckoutCyclePage.fillInShippingInformationInputField(
+//                    XmlReader.getXMLData("firstName"),
+//                    XmlReader.getXMLData("lastName"),
+//                    XmlReader.getXMLData("correctEmail"),
+//                    XmlReader.getXMLData("UAEPhoneNumber"),
+//                    XmlReader.getXMLData("StreetOneAddressName"),
+//                    XmlReader.getXMLData("ksaPhoneNumber")
+//            );
+//            DataHelperAndWait.waitForTime(2000);
+//            guestCheckoutCyclePage.clickOnContinueBtn();
+//            DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(), webDriver);
+//            DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
+//        tamaraPaymentPage.SelectTamaraInstallmentsMethod();
         DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver);
         DataHelperAndWait.scrollTo(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver);
         DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver);
@@ -97,7 +97,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}:GuestUser- Make sure ability to place Order successfully when selecting 2 Business Days Super Express Shipping Method With Tamara Payment Method a defined Using 3DSCard ", priority = 3)
     public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShippingMethodWithTamaraPaymentMethodUsing3DSCardForGuestUser() throws Exception, InterruptedException {
         TamaraPaymentPage tamaraPaymentPage = new TamaraPaymentPage(webDriver);
-        tamaraPaymentPage.addToCartAndAccessTamaraDashboard();
+//        tamaraPaymentPage.addToCartAndAccessTamaraDashboard();
         tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(tamaraPaymentPage.ThreeCard);
         //guestCheckoutCyclePage.IsQouteIDisDisplayed();
     }

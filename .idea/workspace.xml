@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cc95732-25cc-415a-acca-362cf2afbff2" name="Changes" comment=" Update the Display product URL">
-      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/vitaminsAndHealthCategoryTestCases/VitaminsAndHealthCategoryTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/vitaminsAndHealthCategoryTestCases/VitaminsAndHealthCategoryTestCases.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_pages/tamara_payment_method_pages/TamaraPaymentPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_pages/tamara_payment_method_pages/TamaraPaymentPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sporter_test/tamara_payment_method_test_cases/UAETamaraPaymentMethodTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sporter_test/tamara_payment_method_test_cases/UAETamaraPaymentMethodTestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/RunMethod.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RunMethod.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
