@@ -13,14 +13,13 @@
         <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32569"/>
         <parameter name="oOSProduct" value="/rip-van-protien-wafles-box-of-12/"/>
         <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
+<!--                <groups>-->
+<!--                    <run>-->
+<!--                        <include name="All Smoke Testing Result"/>-->
+<!--                    </run>-->
+<!--                </groups>-->
         <classes>
-            <class name="sporter_test.myAccountTestCases.QatarMyAccountTestCases"/>
-            <class name="sporter_test.myAccountTestCases.KSAMyAccountTestCases"/>
-            <class name="sporter_test.myAccountTestCases.UAEMyAccountTestCases"/>
-            <class name="sporter_test.myAccountTestCases.OmanMyAccountTestCases"/>
-            <class name="sporter_test.myAccountTestCases.BahrainMyAccountTestCases"/>
-            <class name="sporter_test.myAccountTestCases.KuwaitMyAccountTestCases"/>
-            <class name="sporter_test.myAccountTestCases.JordanMyAccountTestCases">
+            <class name="sporter_test.womens_only_category_test_cases.KSAWomensOnlyCategoryTestCases">
 <!--                <methods>-->
 <!--                    <include name="verifyInabilityToCheckoutOrderWhenTheTotalExceed100USD"/>-->
 <!--                </methods>-->

@@ -320,6 +320,7 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
             DataHelperAndWait.waitToBeVisible(webElement,webDriver);
             action.moveToElement(webElement).click();}
         }
+
     public static void typeTextInElement(WebElement webElement,WebDriver webDriver, String text){
         try {
             DataHelperAndWait.waitToBeVisible(webElement,webDriver);
