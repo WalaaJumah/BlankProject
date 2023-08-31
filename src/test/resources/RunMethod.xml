@@ -19,7 +19,7 @@
 <!--                    </run>-->
 <!--                </groups>-->
         <classes>
-            <class name="sporter_test.womens_only_category_test_cases.KuwaitWomensOnlyCategoryTestCases">
+            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.KuwaitVitaminsAndHealthCategoryTestCases">
 <!--                <methods>-->
 <!--                    <include name="verifyInabilityToCheckoutOrderWhenTheTotalExceed100USD"/>-->
 <!--                </methods>-->
