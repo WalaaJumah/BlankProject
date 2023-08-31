@@ -80,7 +80,7 @@ public class IraqCartRulesTestCases extends CartRulesTestCases {
 
     //TODO:https://sporter1.atlassian.net/browse/NS-488
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure that inability to checkout the order when its total exceed 120 JOD (Tax excluded) ", priority = 3)
-    public void verifyInabilityToCheckoutOrderWhenTheTotalExceed100USD() throws Exception {
+    public void verifyInabilityToCheckoutOrderWhenTheTotalExceed500USD() throws Exception {
         CartPage cartPage = new CartPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
 //        loginPage.navigateToLoginPage();
