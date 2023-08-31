@@ -35,7 +35,8 @@ public class BasePage {
     public static String productUrl = "/optimum-gold-standard-100-whey-6202";
     public static String bogoProductIraq = "/catalog-pro-32569-32569/";
     public static String productUrlIraq = "/betancourt-nutrition-b-nox-androrush-34834/";
-    public static String productUrlIraqHighPrice = "/lean-muscle-mass-combo-3/";
+    public static String productUrlIraqHighPrice = "/supercharged-immunity-stack/";
+    public static String productUrlIraqHighPrice2 = "/inno-starter-stack/";
     public static String productUrlIraq2 = "/fade-fit-protein-munchies-54804/";
     public static String productUrlIraq3 = "/project-7-naturally-sweetened-chewing-gum-52184/";
     public static String productUrlIraq4 = "/organic-larder-canned-veg-edamame-soybean-25133/";

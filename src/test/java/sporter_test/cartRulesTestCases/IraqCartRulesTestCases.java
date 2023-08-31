@@ -94,6 +94,9 @@ public class IraqCartRulesTestCases extends CartRulesTestCases {
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         productDetailsPage.addToCart();
         DataHelperAndWait.waitForTime(2000);
+        webDriver.navigate().to(BaseURL + cartPage.productUrlIraqHighPrice2);
+        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        productDetailsPage.addToCart();
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(), webDriver);
         DataHelperAndWait.refreshPage(webDriver);
     }
