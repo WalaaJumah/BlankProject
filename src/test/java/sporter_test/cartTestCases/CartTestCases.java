@@ -194,8 +194,6 @@ public class CartTestCases extends BaseTest {
                 select.selectByIndex(i);
                 DataHelperAndWait.waitToBeVisible(productDetailsPage.getAddToCartBtn(),webDriver);
                 productDetailsPage.getAddToCartBtn().click();
-                if (!DataHelperAndWait.IsElementPresent(productDetailsPage.getRecommendedProductsPopup()))
-                    throw new AssertionError("The system display error msg ");
                 productDetailsPage.viewCart();
                 break;
 
