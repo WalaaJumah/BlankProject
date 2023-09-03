@@ -261,6 +261,7 @@ public class GuestCheckoutCyclePage extends BasePage {
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         try {
             cartPage.proceedToCheckout();
+            DataHelperAndWait.waitForTime(500);
             DataHelperAndWait.waitToBeClickable(checkoutAsGuestBtn, webDriver);
             DataHelperAndWait.JsExecutorToClickOnElement(checkoutAsGuestBtn, webDriver);
         }
