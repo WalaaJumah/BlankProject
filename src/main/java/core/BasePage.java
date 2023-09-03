@@ -48,7 +48,7 @@ public class BasePage {
     public static String productUrlKSA8 = "/the-pack-bcaas-flow-32569";
     public static String productUrlKSA2 = "/organic-larder-corn-in-brine-25129/";
     public static String productUrlKSA3 = "/ellas-kitchen-organic-mangoes-puree-baby-pouch-58615/";
-    public static String productUrlKSA4 = "/evl-nutrition-bcaa-5000-capsules-13934/";
+    public static String productUrlKSA4 = "/natural-factors-l-glutamine-500mg-16710/";
     public static String productUrlKSA5 = "/novo-protein-chips-box-of-6/";
     public static String productUrlKSA6 = "/yumearth-organic-assorted-vitamin-c-lollipops-14-pops";
     public static String productUrlKSAWithHighPrice1 = "/puma-speed-orbiter-black-nrgy-red-yellow-33980";
