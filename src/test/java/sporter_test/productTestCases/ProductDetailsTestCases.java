@@ -63,8 +63,10 @@ public class ProductDetailsTestCases extends BaseTest {
     public void verifyAbilityToDisplayTheProductFromSearchScreen() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
+        DataHelperAndWait.waitForTime(1000);
         DataHelperAndWait.clickOnElement(productDetailsPage.getSearchBtn(), webDriver);
         productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        DataHelperAndWait.waitForTime(100);
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductCard(), webDriver);
         productDetailsPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
