@@ -159,9 +159,10 @@ public void verifyAbilityToClickOnSportsMenuIsDisplayedFromCartPage() throws IOE
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         cartPage.waitTillCartSpinnerDisappear(webDriver);
         DataHelperAndWait.waitForTime(2000);
+        cartPage.waitTillLoaderComplete();
         DataHelperAndWait.waitToBeClickable(cartPage.getProductNameForOneProduct(), webDriver);
-        cartPage.getProductNameForOneProduct().click();
-//        DataHelperAndWait.clickOnElement(cartPage.getProductNameForOneProduct(), webDriver);
+        DataHelperAndWait.JsExecutorToClickOnElement(cartPage.getProductNameForOneProduct(), webDriver);
+        //        DataHelperAndWait.clickOnElement(cartPage.getProductNameForOneProduct(), webDriver);
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductName(), webDriver);
     }
 }
