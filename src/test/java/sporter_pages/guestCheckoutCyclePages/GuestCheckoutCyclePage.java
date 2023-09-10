@@ -32,7 +32,8 @@ public class GuestCheckoutCyclePage extends BasePage {
     @FindBy(id = "placeOrderSideBtn")
     private WebElement placeOrderBtn;
 //    @FindBy(id = "submitGuestOptionBtn")
-    @FindBy(xpath = "//div[@id='guestOption']/button[@id='submitGuestOptionBtn']")
+//    @FindBy(xpath = "//div[@id='guestOption']/button[@id='submitGuestOptionBtn']")
+    @FindBy(id = "submitGuestOptionBtn")
     private WebElement checkoutAsGuestBtn;
     @FindBy(xpath = "//a[contains(@class,'orderPage_head')]")
     private WebElement logoInCheckoutMethod;
