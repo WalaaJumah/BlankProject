@@ -9,6 +9,7 @@ package sporter_test.loginTestCases;
 import core.BaseTest;
 import core.DataHelperAndWait;
 import core.WebElementsAssertion;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import sporter_pages.AccountRegistrationPage.AccountRegistrationPage;
 import sporter_pages.footerSections.FooterSection;
@@ -146,7 +147,10 @@ public class LoginTestCases extends BaseTest {
         loginPage.fillinLoginForm(XmlReader.getXMLData("incorrectEmailFormate"), XmlReader.getXMLData("correctPassword"));
         DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
         if (webDriver.getCurrentUrl().contains("sporter.com/ar")) {
-            WebElementsAssertion.assertionWebElementConatinsText(loginPage.getEmailErrorMsg(), webDriver, XmlReader.getXMLData("emailFormatErrorAr"));
+//            WebElementsAssertion.assertionWebElementConatinsText(loginPage.getEmailErrorMsg(), webDriver, XmlReader.getXMLData("emailFormatErrorAr"));
+            DataHelperAndWait.waitToBeVisible(loginPage.getEmailErrorMsg(),webDriver );
+            Assert.assertEquals(loginPage.getEmailErrorMsg().getText(),XmlReader.getXMLData("emailFormatErrorAr"));
+
         }
         if (webDriver.getCurrentUrl().contains("sporter.com/en")) {
             WebElementsAssertion.assertionWebElementEqualText(loginPage.getEmailErrorMsg(), webDriver, XmlReader.getXMLData("emailFormatErrorEn"));
@@ -239,18 +243,19 @@ public class LoginTestCases extends BaseTest {
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
         LoginPage loginPage = new LoginPage(webDriver);
         HomePage homePage = new HomePage(webDriver);
+        MyAccountPage myAccountPage= new MyAccountPage(webDriver);
         webDriver.manage().deleteCookieNamed("uid");
         loginPage.navigateToLoginPage();
         loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword"));
         DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
-        DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
+        myAccountPage.clickOnAccountProfileIcon();
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
         DataHelperAndWait.clickOnElement(header.getCountryMenuIcon(), webDriver);
         DataHelperAndWait.clickOnElement(header.getCountryList().get(8), webDriver);
         DataHelperAndWait.clickOnElement(header.getSporterLogo(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getVitaminsAndHealthCategory(), webDriver);
 //        DataHelperAndWait.waitForTime(3000);
-        DataHelperAndWait.clickOnElement(header.getAccountProfileIcon(), webDriver);
+        myAccountPage.clickOnAccountProfileIcon();
         WebElementsAssertion.validateTheElementIsDisplayed(registerPage.getMyAccountOption(), webDriver);
     }
 }

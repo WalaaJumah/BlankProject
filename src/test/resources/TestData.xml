@@ -48,7 +48,7 @@
         <requiredErrorMsEn>This is a required field.</requiredErrorMsEn>
         <requiredErrorMsAr>هذه الخانة مطلوبة</requiredErrorMsAr>
         <emailFormatErrorEn>Please enter a valid email address (Ex: johndoe@domain.com).</emailFormatErrorEn>
-        <emailFormatErrorAr>The Msg is not translate</emailFormatErrorAr>
+        <emailFormatErrorAr>الرجاء إدخال عنوان بريد إلكتروني صحيح (على سبيل المثال: johndoe@domain.com).</emailFormatErrorAr>
         <passwordShortErrorEn>Please enter 8 or more characters. Leading and trailing spaces will be ignored.</passwordShortErrorEn>
         <passwordShortErrorAr>The Msg is not translate</passwordShortErrorAr>
         <passwordFormatErrorEn>Minimum of different classes of characters in password is 3. Classes of characters: Lower Case, Upper Case, Digits, Special Characters.</passwordFormatErrorEn>

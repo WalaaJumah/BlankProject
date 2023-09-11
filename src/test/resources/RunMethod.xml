@@ -19,8 +19,9 @@
 <!--                    </run>-->
 <!--                </groups>-->
         <classes>
-            <class name="sporter_test.loginTestCases.UAELoginTestCases"></class>
             <class name="sporter_test.loginTestCases.KSALoginTestCases"></class>
+
+            <class name="sporter_test.loginTestCases.UAELoginTestCases"></class>
             <class name="sporter_test.checkoutForRegisteredUserTestCases.JordanCheckoutForRegisteredTestCases"></class>
             <class name="sporter_test.checkoutForRegisteredUserTestCases.BahrainCheckoutForRegisteredTestCases"></class>
             <class name="sporter_test.checkoutForRegisteredUserTestCases.KuwaitCheckoutForRegisteredTestCases"></class>
