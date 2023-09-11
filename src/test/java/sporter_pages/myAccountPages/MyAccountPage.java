@@ -160,7 +160,6 @@ public class MyAccountPage extends BasePage {
         DataHelperAndWait.updateAllText(this.getLastNameFieldInAddress(), lastName);
         DataHelperAndWait.waitToBeVisible(this.getPhoneFieldInAddress(), webDriver);
         DataHelperAndWait.updateAllText(this.getPhoneFieldInAddress(), phone);
-        getPhoneFieldInAddress().sendKeys("9");
         DataHelperAndWait.waitToBeVisible(this.getAddressNameField(), webDriver);
         DataHelperAndWait.updateAllText(this.getAddressNameField(), addressName);
         DataHelperAndWait.waitToBeVisible(this.getStreet1Field(), webDriver);
