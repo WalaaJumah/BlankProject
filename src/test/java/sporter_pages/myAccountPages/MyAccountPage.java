@@ -154,7 +154,6 @@ public class MyAccountPage extends BasePage {
     }
     public void fillInNewAddressFormWithIncorrectPhone(String firstName, String lastName, String phone, String addressName, String streetLineOne, String streetLineTwo) {
         GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
-        DataHelperAndWait.waitForTime(500);
         DataHelperAndWait.waitToBeVisible(this.getFirstNameFieldInAddress(), webDriver);
         DataHelperAndWait.updateAllText(this.getFirstNameFieldInAddress(), firstName);
         DataHelperAndWait.waitToBeVisible(this.getLastNameFieldInAddress(), webDriver);
