@@ -16,6 +16,7 @@ import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.healthy_food_pages.HealthyFoodPage;
 import sporter_pages.homepage_classes.HomePage;
 import sporter_pages.loginPage.LoginPage;
+import sporter_pages.myAccountPages.MyAccountPage;
 import xml_reader.XmlReader;
 import java.io.IOException;
 
@@ -25,11 +26,9 @@ public class LoginTestCases extends BaseTest {
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Ability to access login page From Account profile icon", priority = 1)
     public void verifyAbilityToAccessNewAccountRegistrationScreen() {
-        HeaderSection header = new HeaderSection(webDriver);
         LoginPage loginPage = new LoginPage(webDriver);
-        DataHelperAndWait.waitToBeVisible(header.getAccountProfileIcon(), webDriver);
-        DataHelperAndWait.waitToBeClickable(header.getAccountProfileIcon(), webDriver);
-        DataHelperAndWait.JsExecutorToClickOnElement(header.getAccountProfileIcon(), webDriver);
+        MyAccountPage myAccountPage= new MyAccountPage(webDriver);
+        myAccountPage.clickOnAccountProfileIcon();
         DataHelperAndWait.waitToBeVisible(loginPage.getSignInOption(), webDriver);
         DataHelperAndWait.clickOnElement(loginPage.getSignInOption(), webDriver);
         WebElementsAssertion.validateTheCurrentUrlContainsString(loginPage.loginLink, webDriver);
