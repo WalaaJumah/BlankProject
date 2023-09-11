@@ -20,6 +20,7 @@ import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 import sporter_pages.guestCheckoutCyclePages.JordanGuestCheckoutCyclePage;
 import sporter_pages.headerSection.HeaderSection;
 import sporter_pages.loginPage.LoginPage;
+import sporter_pages.myAccountPages.MyAccountPage;
 import sporter_pages.productPage.ProductDetailsPage;
 import xml_reader.XmlReader;
 
@@ -48,9 +49,22 @@ public class CheckoutForRegisteredTestCases extends BaseTest
     @Test(groups = {"All Smoke Testing Result","1.2 High Severity"}, description = "{{CountryName}}: Ability to login correctly from Sign In Page using valid credential", priority = 1)
     public void verifyAbilityToLoginCorrectlyWithValidCredentials() throws IOException {
         LoginPage loginPage = new LoginPage(webDriver);
-        loginPage.navigateToLoginPage();
-        loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword"));
-        loginPage.clickOnLoginBtn();
+        MyAccountPage myAccountPage= new MyAccountPage(webDriver);
+        try {
+            loginPage.navigateToLoginPage();
+            loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword"));
+            loginPage.clickOnLoginBtn();
+            myAccountPage.clickOnAccountProfileIcon();
+            WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyAccountOption(), webDriver);
+        }
+        catch (Exception e){
+            loginPage.navigateToLoginPage();
+            loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword"));
+            loginPage.clickOnLoginBtn();
+            myAccountPage.clickOnAccountProfileIcon();
+            WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyAccountOption(), webDriver);
+        }
+
     }
     @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure the shopper is able to keep the shopping after adding the product to the cart ", priority = 3)
     public void keepShoppingAfterAddingToTheCart() throws IOException {

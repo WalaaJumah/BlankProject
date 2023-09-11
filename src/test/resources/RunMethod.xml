@@ -19,12 +19,21 @@
 <!--                    </run>-->
 <!--                </groups>-->
         <classes>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.JordanCheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.BahrainCheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.KuwaitCheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.QatarCheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.BahrainCheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.OmanCheckoutForRegisteredTestCases"></class>
+
+
+            <class name="sporter_test.myAccountTestCases.UAEMyAccountTestCases"></class>
+
             <class name="sporter_test.myAccountTestCases.KSAMyAccountTestCases"></class>
             <class name="sporter_test.myAccountTestCases.QatarMyAccountTestCases"></class>
             <class name="sporter_test.myAccountTestCases.JordanMyAccountTestCases"></class>
             <class name="sporter_test.myAccountTestCases.BahrainMyAccountTestCases"></class>
             <class name="sporter_test.myAccountTestCases.OmanMyAccountTestCases"></class>
-            <class name="sporter_test.myAccountTestCases.UAEMyAccountTestCases"></class>
             <class name="sporter_test.myAccountTestCases.EgyptMyAccountTestCases"></class>
             <class name="sporter_test.myAccountTestCases.KuwaitMyAccountTestCases">
 <!--                <methods>-->

@@ -130,6 +130,10 @@ public class MyAccountPage extends BasePage {
         webDriver.navigate().to(BaseURL + addressedUrl);
         DataHelperAndWait.waitForUrlContains(addressedUrl, webDriver);
     }
+    public void clickOnAccountProfileIcon(){
+        DataHelperAndWait.waitTillAttributeToBe(accountProfileIcon,"data-is-clickable","1",webDriver);
+        DataHelperAndWait.clickOnElement(accountProfileIcon, webDriver);
+    }
     public void navigateToNewAddressesPage() throws IOException {
         webDriver.navigate().to(BaseURL + addNewAddressUrl);
         DataHelperAndWait.waitForUrlContains(addressedUrl, webDriver);
