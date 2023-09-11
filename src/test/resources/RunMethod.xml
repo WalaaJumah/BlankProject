@@ -19,6 +19,7 @@
 <!--                    </run>-->
 <!--                </groups>-->
         <classes>
+<<<<<<< HEAD
             <class name="sporter_test.myAccountTestCases.KSAMyAccountTestCases"></class>
             <class name="sporter_test.myAccountTestCases.QatarMyAccountTestCases"></class>
             <class name="sporter_test.myAccountTestCases.JordanMyAccountTestCases"></class>
@@ -28,6 +29,9 @@
             <class name="sporter_test.myAccountTestCases.IraqMyAccountTestCases"></class>
             <class name="sporter_test.myAccountTestCases.EgyptMyAccountTestCases"></class>
             <class name="sporter_test.myAccountTestCases.KuwaitMyAccountTestCases">
+=======
+            <class name="sporter_test.tamara_payment_method_test_cases.UAETamaraPaymentMethodTestCases">
+>>>>>>> ab56c261ccd2ffd93fec3b47b812aaca8078c798
 <!--                <methods>-->
 <!--                    <include name="verifyInabilityToCheckoutOrderWhenTheTotalExceed100USD"/>-->
 <!--                </methods>-->
