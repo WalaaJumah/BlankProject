@@ -198,6 +198,7 @@
             <class name="sporter_test.sports_category_test_cases.IraqSportsCategoryTestCases"></class>
             <class name="sporter_test.footer_test_cases.IraqFooterTestCases"></class>
             <class name="sporter_test.forgetPasswordTestCases.IraqForgetPasswordTestCases"></class>
+            <class name="sporter_test.related_product_test_cases.UAERelatedProductsTestCases"></class>
 
         </classes>
     </test>

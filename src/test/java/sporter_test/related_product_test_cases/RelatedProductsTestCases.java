@@ -68,7 +68,6 @@ public class RelatedProductsTestCases extends BaseTest {
     @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure add To Cart button works correctly", priority = 5)
     public void verifyAddToCartBtnWorksCorrectly() throws IOException {
         RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
-        ProductDetailsPage productDetailsPage= new ProductDetailsPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
         relatedProductSection.displayTheInStockProduct();
         productPrice=DataHelperAndWait.convertTheStringToFloat(relatedProductSection.getRelatedProductsPrices().get(0), webDriver, currency);
