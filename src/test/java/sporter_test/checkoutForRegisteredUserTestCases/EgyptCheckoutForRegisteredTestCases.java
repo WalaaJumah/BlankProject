@@ -95,6 +95,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         DataHelperAndWait.clickOnElement(egypt.getContinuePaymentMethodsBtn(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getFinalPlaceOrderBtn(),webDriver);
+        cartPage.waitTillLoaderComplete();
 //        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getSuccessPage(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
 

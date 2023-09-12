@@ -27,6 +27,8 @@ public class BasePage {
 
     private String pageTitle = null;
     private String pageSource = null;
+    //TODO: Add it as Config and remove static
+    public static boolean enableWhoBoughtThisAlsoBoughtConfig;
 //    public String cartLoaderXpath = "//div[starts-with(@class,'loading_container')]";
     public String cartLoaderXpath = "cart_loader";
     public String pageLoader = "//div[starts-with(@class,'spinner_container')]";
