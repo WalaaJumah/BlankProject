@@ -435,6 +435,7 @@ public class GuestCheckoutCyclePage extends BasePage {
     public void clickOnPlaceOrderBtn(){
         WebElementsAssertion.validateTheElementIsDisplayed(finalPlaceOrderBtn,webDriver);
         DataHelperAndWait.clickOnElement(finalPlaceOrderBtn,webDriver);
+        //TODO: Should review the loader & remove the implicit wait time AUT-551
         DataHelperAndWait.waitForTime(2500);
     }
 
