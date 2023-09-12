@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!--<suite name=" Test" thread-count="1" >-->
+<suite name="cart_suite">
+    <listeners>
+        <!-- <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
+        <listener class-name="extent_report_listner.ExtentReportListener"/>
+    </listeners>
+    <test name=" Smoke  Testing on Stg-Release27 " preserve-order="true">
+        <parameter name="environment" value="https://stg.sporter.com"/>
+        <parameter name="browser" value="edge"/>
+        <!-- <parameter name="country" value="en-qa" />-->
+        <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32566/"/>
+        <parameter name="oOSProduct" value="/rip-van-protien-wafles-box-of-12/"/>
+        <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
+        <groups>
+            <run>
+                <include name="All Smoke Testing Result"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.EgyptCheckoutForRegisteredTestCases"/>
+        </classes>
+    </test>
+</suite>
