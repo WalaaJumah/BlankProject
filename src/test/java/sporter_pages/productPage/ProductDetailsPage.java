@@ -11,6 +11,7 @@ import core.DataHelperAndWait;
 import core.WebElementsAssertion;
 import lombok.Getter;
 import org.openqa.selenium.By;
+import org.openqa.selenium.InvalidElementStateException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -216,13 +217,21 @@ public class ProductDetailsPage extends BasePage {
 
     }
     public void keepShopping() {
-        DataHelperAndWait.clickOnElement(keepShippingBtn, webDriver);
+        if(webDriver.getCurrentUrl().contains("-sa/"))
+            enableWhoBoughtThisAlsoBoughtConfig=true;
+        if(enableWhoBoughtThisAlsoBoughtConfig) {
+            DataHelperAndWait.clickOnElement(keepShippingBtn, webDriver);
+        }
+        else
+            webDriver.navigate().refresh();
     }
 
     public void viewCart() {
         System.out.println("enableWhoBoughtThisAlsoBoughtConfig: "+enableWhoBoughtThisAlsoBoughtConfig);
+        if(webDriver.getCurrentUrl().contains("-sa/"))
+            enableWhoBoughtThisAlsoBoughtConfig=true;
         if(enableWhoBoughtThisAlsoBoughtConfig) {
-//        DataHelperAndWait.waitForTime(3000);
+            System.out.println("enableWhoBoughtThisAlsoBoughtConfig2: "+enableWhoBoughtThisAlsoBoughtConfig);
             DataHelperAndWait.waitToBeVisible(viewCartBtn, webDriver);
             viewCartBtn.click();
             this.waitTillCartSpinnerDisappear(webDriver);
