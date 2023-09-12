@@ -220,10 +220,19 @@ public class ProductDetailsPage extends BasePage {
     }
 
     public void viewCart() {
+        System.out.println("enableWhoBoughtThisAlsoBoughtConfig: "+enableWhoBoughtThisAlsoBoughtConfig);
+        if(enableWhoBoughtThisAlsoBoughtConfig) {
 //        DataHelperAndWait.waitForTime(3000);
-        DataHelperAndWait.waitToBeVisible(viewCartBtn, webDriver);
-        viewCartBtn.click();
-        this.waitTillCartSpinnerDisappear(webDriver);    }
+            DataHelperAndWait.waitToBeVisible(viewCartBtn, webDriver);
+            viewCartBtn.click();
+            this.waitTillCartSpinnerDisappear(webDriver);
+        }
+        else{
+            DataHelperAndWait.waitForTime(3000);
+            webDriver.navigate().to(BaseURL+cartURL);
+            this.waitTillCartSpinnerDisappear(webDriver);
+        }
+        }
 
     public void keepShoppingAfterAddingToCart() throws IOException {
         HomePage homePage = new HomePage(webDriver);

@@ -67,8 +67,8 @@ public class BaseTest {
     // The Below Method to run the TCs on Onc Browser like Chrome
 
     @BeforeClass(alwaysRun = true)
-    @Parameters({"environment", "browser", "country", "bogoProduct", "oOSProduct", "bundleProductUrl"})
-    public void setupBrowser(String environment, String browser, @Optional("") String country, String bogoProduct, String oOSProduct, String bundleProductUrl) throws Exception {
+    @Parameters({"environment", "browser", "country", "bogoProduct", "oOSProduct", "bundleProductUrl","enable_who_bought_this_also_bought_config"})
+    public void setupBrowser(String environment, String browser, @Optional("") String country, String bogoProduct, String oOSProduct, String bundleProductUrl, boolean enableWhoBoughtThisAlsoBoughtConfig) throws Exception {
         environmentName = environment;
         this.browserName = browser;
         BasePage.BaseURL = environment;
@@ -76,6 +76,7 @@ public class BaseTest {
         BasePage.bogoProduct = bogoProduct;
         BasePage.oOSProductUrl = oOSProduct;
         BasePage.bundleUrl = bundleProductUrl;
+        BasePage.enableWhoBoughtThisAlsoBoughtConfig=enableWhoBoughtThisAlsoBoughtConfig;
         try {
             switch (browser) {
                 case "firefox":
