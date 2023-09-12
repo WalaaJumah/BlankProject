@@ -29,6 +29,8 @@ public class BasePage {
     private String pageSource = null;
 //    public String cartLoaderXpath = "//div[starts-with(@class,'loading_container')]";
     public String cartLoaderXpath = "cart_loader";
+    public String egyptLoaderInCheckOutForCreditCard = "background_loader";
+    public String spinnerIcon = "spinnerContainer";
     public String pageLoader = "//div[starts-with(@class,'spinner_container')]";
     public String loadingLayout = "//div[starts-with(@class,'loading_container')]";
     public static String BaseURL = "";
@@ -338,5 +340,16 @@ public String getTitle() {
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(this.pageLoader)));
 
     }
+       public  void waitTillCartSpinnerAppear(WebDriver webDriver) {
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(50));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(this.spinnerIcon)));
+
+    }
+       public  void waitTillCartSpinnerForEgyptCreditCardAppear(WebDriver webDriver) {
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(50));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(this.egyptLoaderInCheckOutForCreditCard)));
+
+    }
+
 }
 

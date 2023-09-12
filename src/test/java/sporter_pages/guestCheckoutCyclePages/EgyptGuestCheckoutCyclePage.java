@@ -7,6 +7,7 @@
 package sporter_pages.guestCheckoutCyclePages;
 
 import core.DataHelperAndWait;
+import core.WebElementsAssertion;
 import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -209,6 +210,10 @@ public class EgyptGuestCheckoutCyclePage extends GuestCheckoutCyclePage {
         DataHelperAndWait.clickOnElement(this.getContinuePaymentMethodsBtn(), webDriver);
 
     }
-
+    public void clickOnPlaceOrderBtnForCreditCard(){
+        WebElementsAssertion.validateTheElementIsDisplayed(getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(getFinalPlaceOrderBtn(),webDriver);
+        waitTillCartSpinnerForEgyptCreditCardAppear(webDriver);
+    }
 
 }

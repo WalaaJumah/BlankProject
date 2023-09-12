@@ -168,8 +168,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
            DataHelperAndWait.clickOnElement(qatar.getContinueShippingMethodsBtn(),webDriver);
            DataHelperAndWait.clickOnElement(qatar.getCODPaymentMethod(),webDriver);
            DataHelperAndWait.clickOnElement(qatar.getContinuePaymentMethodsBtn(),webDriver);
-           WebElementsAssertion.validateTheElementIsDisplayed(qatar.getFinalPlaceOrderBtn(),webDriver);
-           DataHelperAndWait.clickOnElement(qatar.getFinalPlaceOrderBtn(),webDriver);
+           qatar.clickOnPlaceOrderBtn();
            jo.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 
@@ -219,8 +218,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         DataHelperAndWait.clickOnElement(qatar.getFourToFiveDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(jo.getContinueShippingMethodsBtn(),webDriver);
         jo.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
-        WebElementsAssertion.validateTheElementIsDisplayed(jo.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(jo.getFinalPlaceOrderBtn(),webDriver);
+        jo.clickOnPlaceOrderBtn();
         jo.verifyTheDisplayedPageDoesNotHaveErrors();
 
 //        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
@@ -319,8 +317,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         DataHelperAndWait.clickOnElement(qatar.getFourToFiveDayMethod(),webDriver);
         DataHelperAndWait.clickOnElement(jo.getContinueShippingMethodsBtn(),webDriver);
         jo.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
-        WebElementsAssertion.validateTheElementIsDisplayed(jo.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(jo.getFinalPlaceOrderBtn(),webDriver);
+        jo.clickOnPlaceOrderBtn();
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //        orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
 //        System.out.println(orderNumber);
@@ -447,8 +444,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         DataHelperAndWait.clickOnElement(jo.getContinueShippingMethodsBtn(),webDriver);
         DataHelperAndWait.clickOnElement(jo.getCODPaymentMethod(),webDriver);
         DataHelperAndWait.clickOnElement(jo.getContinuePaymentMethodsBtn(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(jo.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(jo.getFinalPlaceOrderBtn(), webDriver);
+        jo.clickOnPlaceOrderBtn();
         DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.waitToBeVisible(jo.getSuccessPage(),webDriver);
         orderNumber= DataHelperAndWait.extractDigitsFromString(jo.getSuccessPage(),webDriver);

@@ -92,6 +92,11 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
         wait = new WebDriverWait(webDriver, Duration.ofSeconds(WaitTime));
         wait.until(ExpectedConditions.visibilityOf(element));
     }
+    public static  void waitToBeInVisible(WebElement element, WebDriver webDriver) {
+        WebDriverWait wait;
+        wait = new WebDriverWait(webDriver, Duration.ofSeconds(WaitTime));
+        wait.until(ExpectedConditions.invisibilityOf(element));
+    }
 
     public static  void refreshPage(WebDriver webDriver) {
         webDriver.navigate().refresh();
@@ -258,6 +263,11 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(WaitTime));
         ExpectedCondition<Boolean> urlIsCorrect = arg0 ->    driver.getCurrentUrl().contains(expectedString);
         wait.until(urlIsCorrect);
+    }
+    public static  void waitForUrlDoesNotContain(String unExpectedString, WebDriver driver) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(WaitTime));
+        wait.until(ExpectedConditions.not(ExpectedConditions.urlContains(unExpectedString)));
+
     }
 
     public static  void accessAllPagesInsideTheProductsListPage( String numberOfProductInTheList, WebElement element,WebDriver webDriver ){

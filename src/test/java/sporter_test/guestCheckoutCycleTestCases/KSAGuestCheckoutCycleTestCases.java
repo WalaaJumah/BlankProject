@@ -125,7 +125,7 @@ public void verifyAbilityToSelectSameDayShippingMethodCorrectly() {}
         DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
         DataHelperAndWait.clickOnElement(kSA.getCODPaymentMethod(),webDriver);
         DataHelperAndWait.clickOnElement(kSA.getContinuePaymentMethodsBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(kSA.getFinalPlaceOrderBtn(),webDriver);
+       kSA.clickOnPlaceOrderBtn();
 //        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getSuccessPage(),webDriver);
 //        orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
 //        System.out.println(orderNumber);
@@ -183,8 +183,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         }
         DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
         kSA.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
-        WebElementsAssertion.validateTheElementIsDisplayed(kSA.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(kSA.getFinalPlaceOrderBtn(),webDriver);
+        kSA.clickOnPlaceOrderBtn();
         kSA.verifyTheDisplayedPageDoesNotHaveErrors();
 //        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
 ////        DataHelperAndWait.waitForTime(2000);
@@ -247,8 +246,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
         DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
         kSA.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
-        WebElementsAssertion.validateTheElementIsDisplayed(kSA.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(kSA.getFinalPlaceOrderBtn(),webDriver);
+        kSA.clickOnPlaceOrderBtn();
         kSA.verifyTheDisplayedPageDoesNotHaveErrors();
 
 

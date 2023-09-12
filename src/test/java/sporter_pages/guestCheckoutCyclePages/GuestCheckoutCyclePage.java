@@ -432,4 +432,10 @@ public class GuestCheckoutCyclePage extends BasePage {
         WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(50));
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id(this.cartLoaderXpath)));
     }
+    public void clickOnPlaceOrderBtn(){
+        WebElementsAssertion.validateTheElementIsDisplayed(finalPlaceOrderBtn,webDriver);
+        DataHelperAndWait.clickOnElement(finalPlaceOrderBtn,webDriver);
+        DataHelperAndWait.waitForTime(2500);
+    }
+
 }
