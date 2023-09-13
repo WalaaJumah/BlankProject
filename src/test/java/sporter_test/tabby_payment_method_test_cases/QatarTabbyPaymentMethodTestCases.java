@@ -135,8 +135,8 @@ public class QatarTabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCase
         CartPage cartPage= new CartPage(webDriver);
         JordanCheckoutForRegisteredPage jo= new JordanCheckoutForRegisteredPage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        tabbyPaymentPage.accessGuestCheckoutForm();
+        jo.AddToCartAndAccessShippingMethodsPageForSavedAddress();
+
         try {
             jo.fillInShippingInformationInputField(
                     XmlReader.getXMLData("firstName"),

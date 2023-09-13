@@ -138,8 +138,7 @@ public class KuwaitTabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCas
         CartPage cartPage= new CartPage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         KuwaitCheckoutForRegisteredPage kuwaitCheckoutForRegisteredPage= new KuwaitCheckoutForRegisteredPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        tabbyPaymentPage.accessGuestCheckoutForm();
+        kuwaitCheckoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),

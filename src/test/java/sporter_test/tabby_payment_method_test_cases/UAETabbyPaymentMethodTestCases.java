@@ -327,6 +327,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         CartPage cartPage= new CartPage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
+        webDriver.manage().deleteCookieNamed("uid");
         tabbyPaymentPage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),

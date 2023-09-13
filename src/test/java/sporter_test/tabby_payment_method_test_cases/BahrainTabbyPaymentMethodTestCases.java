@@ -137,8 +137,7 @@ public class BahrainTabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCa
         CartPage cartPage= new CartPage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         OmanCheckoutForRegisteredPage omanCheckoutForRegisteredPage= new OmanCheckoutForRegisteredPage(webDriver);
-        webDriver.manage().deleteCookieNamed("guestCartId");
-        tabbyPaymentPage.accessGuestCheckoutForm();
+        omanCheckoutForRegisteredPage.AddToCartAndAccessShippingMethodsPageForSavedAddress();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),

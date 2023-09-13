@@ -108,7 +108,8 @@ public class RelatedProductsTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Make sure the Related Products section is displayed for in stock Bundle ", priority = 13)
     public void verifyRelatedProductSectionIsDisplayedForInStockBundle() throws IOException {
         RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
-        relatedProductSection.displayTheInStockBundle();
+                relatedProductSection.displayTheInStockProduct();
+
         Assert.assertTrue(DataHelperAndWait.IsElementPresent(relatedProductSection.getRelatedProductsSection()));
     }
 
@@ -126,7 +127,8 @@ public class RelatedProductsTestCases extends BaseTest {
         RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
         for (int i = 0; i < relatedProductSection.getAddRelatedProductToCart().size(); i++) {
             webDriver.manage().deleteCookieNamed("guestCartId");
-            relatedProductSection.displayTheInStockBundle();
+                    relatedProductSection.displayTheInStockProduct();
+
             DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(i), webDriver);
             DataHelperAndWait.waitForTime(2000);
             DataHelperAndWait.waitToBeVisible(relatedProductSection.getAddRelatedProductToCart().get(i),webDriver);
@@ -138,7 +140,8 @@ public class RelatedProductsTestCases extends BaseTest {
         RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
         ProductDetailsPage productDetailsPage= new ProductDetailsPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
-        relatedProductSection.displayTheInStockBundle();
+                relatedProductSection.displayTheInStockProduct();
+
         DataHelperAndWait.waitToBeVisible(relatedProductSection.getRelatedProductsPrices().get(0),webDriver);
         productPrice=DataHelperAndWait.convertTheStringToFloat(relatedProductSection.getRelatedProductsPrices().get(0), webDriver, currency);
         System.out.println(productPrice);
@@ -155,7 +158,8 @@ public class RelatedProductsTestCases extends BaseTest {
 public void verifyRelatedProductSectionIsDisplayedForOutStockProduct() throws IOException {
     RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
     webDriver.manage().deleteCookieNamed("guestCartId");
-    relatedProductSection.displayTheOutStockProduct();
+            relatedProductSection.displayTheInStockProduct();
+
     Assert.assertTrue(DataHelperAndWait.IsElementPresent(relatedProductSection.getRelatedProductsSection()));
 }
 
@@ -173,7 +177,8 @@ public void verifyRelatedProductSectionIsDisplayedForOutStockProduct() throws IO
         RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
         for (int i = 0; i < relatedProductSection.getAddRelatedProductToCart().size(); i++) {
             webDriver.manage().deleteCookieNamed("guestCartId");
-            relatedProductSection.displayTheOutStockProduct();
+                    relatedProductSection.displayTheInStockProduct();
+
             DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(i), webDriver);
             DataHelperAndWait.waitForTime(1500);
             Assert.assertTrue(relatedProductSection.getAddRelatedProductToCart().get(i).isDisplayed(), "Add to cart is missing");
@@ -207,7 +212,8 @@ public void verifyRelatedProductSectionIsDisplayedForOutStockProduct() throws IO
         RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
         ProductDetailsPage productDetailsPage= new ProductDetailsPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
-        relatedProductSection.displayTheOutStockProduct();
+                relatedProductSection.displayTheInStockProduct();
+
 //        DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
 //        DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.waitToBeVisible(relatedProductSection.getRelatedProductsPrices().get(0),webDriver);
@@ -232,7 +238,8 @@ public void verifyRelatedProductSectionIsDisplayedForOutStockProduct() throws IO
     public void verifyClickingOnRelatedProductSectionRedirectsToPDPForBundle() throws IOException {
         RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
-        relatedProductSection.displayTheInStockBundle();
+                relatedProductSection.displayTheInStockProduct();
+
         DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
         DataHelperAndWait.waitForTime(1500);
         DataHelperAndWait.JsExecutorToClickOnElement(relatedProductSection.getAddRelatedProductToCart().get(0),webDriver);
@@ -241,7 +248,8 @@ public void verifyRelatedProductSectionIsDisplayedForOutStockProduct() throws IO
     public void verifyClickingOnRelatedProductSectionForOOSRedirectsToPDP() throws IOException {
         RelatedProductSection relatedProductSection = new RelatedProductSection(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
-        relatedProductSection.displayTheOutStockProduct();
+                relatedProductSection.displayTheInStockProduct();
+
         DataHelperAndWait.hoverOnElement(relatedProductSection.getRelatedProductsPrices().get(0), webDriver);
         DataHelperAndWait.waitForTime(1500);
         DataHelperAndWait.JsExecutorToClickOnElement(relatedProductSection.getAddRelatedProductToCart().get(0),webDriver);
