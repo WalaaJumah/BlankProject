@@ -52,8 +52,8 @@ public class RelatedProductSection extends BasePage {
 
     public void displayTheInStockProduct() throws IOException {
         webDriver.navigate().to(BaseURL +this. inStockProductHaveRelatedItems);
+        DataHelperAndWait.waitForTime(2500);
         waitTillLoaderComplete();
-        DataHelperAndWait.waitForTime(1000);
         verifyTheDisplayedPageDoesNotHaveErrors();
         Assert.assertTrue(DataHelperAndWait.IsElementPresent(relatedProductsSection)," The Related products section are missing");
         DataHelperAndWait.waitToBeVisible(relatedProductsSection,webDriver);
