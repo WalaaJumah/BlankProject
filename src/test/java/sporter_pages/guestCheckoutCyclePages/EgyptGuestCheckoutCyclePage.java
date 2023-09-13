@@ -213,7 +213,7 @@ public class EgyptGuestCheckoutCyclePage extends GuestCheckoutCyclePage {
     public void clickOnPlaceOrderBtnForCreditCard(){
         WebElementsAssertion.validateTheElementIsDisplayed(getFinalPlaceOrderBtn(),webDriver);
         DataHelperAndWait.clickOnElement(getFinalPlaceOrderBtn(),webDriver);
-        waitTillCartSpinnerForEgyptCreditCardAppear(webDriver);
+        waitTillCartLoaderInCreditCardDisappear(webDriver);
     }
 
 }

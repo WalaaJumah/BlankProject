@@ -126,7 +126,7 @@ public class IraqGuestCheckoutCycleTestCases extends GuestCheckoutCycleTestCases
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
         }
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
-        guestCheckoutCyclePage.clickOnPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         guestCheckoutCyclePage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     @Test(enabled = false)

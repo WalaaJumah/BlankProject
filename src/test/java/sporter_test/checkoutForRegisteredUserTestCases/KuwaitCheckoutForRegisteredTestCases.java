@@ -92,10 +92,10 @@ public class KuwaitCheckoutForRegisteredTestCases extends  CheckoutForRegistered
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
         try {
-            guestCheckoutCyclePage.clickOnPlaceOrderBtn();
+            guestCheckoutCyclePage.clickOnPlaceOrderBtn(false);
         }
         catch (Exception e){
-            guestCheckoutCyclePage.clickOnPlaceOrderBtn();
+            guestCheckoutCyclePage.clickOnPlaceOrderBtn(false);
         }
         guestCheckoutCyclePage.verifyTheDisplayedPageDoesNotHaveErrors();
         DataHelperAndWait.waitForTime(3000);
@@ -173,7 +173,7 @@ public class KuwaitCheckoutForRegisteredTestCases extends  CheckoutForRegistered
         DataHelperAndWait.clickOnElement(kuwaitCheckoutForRegisteredPage.getExpressDeliveryMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
-        guestCheckoutCyclePage.clickOnPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getSuccessPage(),webDriver);
 //        orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);

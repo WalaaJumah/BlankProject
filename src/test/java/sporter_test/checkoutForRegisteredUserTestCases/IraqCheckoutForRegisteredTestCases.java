@@ -134,7 +134,7 @@ public class IraqCheckoutForRegisteredTestCases extends CheckoutForRegisteredTes
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
         }
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
-guestCheckoutCyclePage.clickOnPlaceOrderBtn();
+guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         guestCheckoutCyclePage.verifyTheDisplayedPageDoesNotHaveErrors();
 
     }

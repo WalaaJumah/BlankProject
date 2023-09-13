@@ -347,9 +347,9 @@ public String getTitle() {
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(this.spinnerIcon)));
 
     }
-       public  void waitTillCartSpinnerForEgyptCreditCardAppear(WebDriver webDriver) {
+       public  void waitTillCartLoaderInCreditCardDisappear(WebDriver webDriver) {
         WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(50));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(this.egyptLoaderInCheckOutForCreditCard)));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id(this.egyptLoaderInCheckOutForCreditCard)));
 
     }
 

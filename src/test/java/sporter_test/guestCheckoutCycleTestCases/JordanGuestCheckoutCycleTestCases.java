@@ -192,7 +192,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         DataHelperAndWait.clickOnElement(jo.getFiveBusinessDays(),webDriver);
         DataHelperAndWait.clickOnElement(jo.getContinueShippingMethodsBtn(),webDriver);
         jo.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
-        jo.clickOnPlaceOrderBtn();
+        jo.clickOnPlaceOrderBtn(true);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
 @Test(enabled = false)
@@ -259,7 +259,7 @@ public void verifyAbilityToSelect2BusinessDaysShippingMethodCorrectly() {}
         DataHelperAndWait.clickOnElement(jo.getFiveBusinessDays(),webDriver);
         DataHelperAndWait.clickOnElement(jo.getContinueShippingMethodsBtn(),webDriver);
         jo.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
-        jo.clickOnPlaceOrderBtn();
+        jo.clickOnPlaceOrderBtn(true);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     @Test(groups = {"All Smoke Testing Result","1.2 High Severity"},description = "{{CountryName}}:Verify Edit Shipping information button works fine", priority = 20)
@@ -336,7 +336,7 @@ public void verifyAbilityToSelect2BusinessDaysShippingMethodCorrectly() {}
         DataHelperAndWait.clickOnElement(jo.getFiveBusinessDays(),webDriver);
         DataHelperAndWait.clickOnElement(jo.getContinueShippingMethodsBtn(),webDriver);
         jo.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
-        jo.clickOnPlaceOrderBtn();
+        jo.clickOnPlaceOrderBtn(true);
         DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.waitToBeVisible(jo.getSuccessPage(),webDriver);
         orderNumber= DataHelperAndWait.extractDigitsFromString(jo.getSuccessPage(),webDriver);

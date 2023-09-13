@@ -444,7 +444,7 @@ guestCheckoutCyclePage.accessGuestCheckoutForm();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
-        guestCheckoutCyclePage.clickOnPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(false);
 //        DataHelperAndWait.waitForTime(2000);
 //DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getSuccessPage(),webDriver);
         guestCheckoutCyclePage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -493,7 +493,7 @@ guestCheckoutCyclePage.accessGuestCheckoutForm();
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
         }
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
-        guestCheckoutCyclePage.clickOnPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         guestCheckoutCyclePage.verifyTheDisplayedPageDoesNotHaveErrors();
 
 
@@ -572,7 +572,7 @@ guestCheckoutCyclePage.accessGuestCheckoutForm();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
-        guestCheckoutCyclePage.clickOnPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
 
 //        DataHelperAndWait.waitForTime(10000);
 //        String mainWindow= webDriver.getWindowHandle();
@@ -613,7 +613,7 @@ guestCheckoutCyclePage.accessGuestCheckoutForm();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
-        guestCheckoutCyclePage.clickOnPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(false);
         guestCheckoutCyclePage.waitTillCartSpinnerDisappear(webDriver);
 DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getSuccessPage(),webDriver);
         orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);

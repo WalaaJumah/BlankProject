@@ -102,10 +102,10 @@ public class OmanCheckoutForRegisteredTestCases extends CheckoutForRegisteredTes
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
         try {
-            guestCheckoutCyclePage.clickOnPlaceOrderBtn();
+            guestCheckoutCyclePage.clickOnPlaceOrderBtn(false);
         }
         catch (Exception e){
-            guestCheckoutCyclePage.clickOnPlaceOrderBtn();
+            guestCheckoutCyclePage.clickOnPlaceOrderBtn(false);
         }
 //        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getSuccessPage(),webDriver);
 //       orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
@@ -180,7 +180,7 @@ public class OmanCheckoutForRegisteredTestCases extends CheckoutForRegisteredTes
             guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"), XmlReader.getXMLData("creditCardDate"), XmlReader.getXMLData("testCVV"));
             DataHelperAndWait.waitForTime(2000);
 
-            guestCheckoutCyclePage.clickOnPlaceOrderBtn();
+            guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
             cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getSuccessPage(),webDriver);
 //        orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
@@ -214,7 +214,7 @@ public class OmanCheckoutForRegisteredTestCases extends CheckoutForRegisteredTes
             guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"), XmlReader.getXMLData("creditCardDate"), XmlReader.getXMLData("testCVV"));
             DataHelperAndWait.waitForTime(2000);
 
-            guestCheckoutCyclePage.clickOnPlaceOrderBtn();
+            guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
             cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getSuccessPage(),webDriver);
 //        orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);

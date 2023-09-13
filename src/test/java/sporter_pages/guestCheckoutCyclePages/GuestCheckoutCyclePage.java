@@ -432,12 +432,15 @@ public class GuestCheckoutCyclePage extends BasePage {
         WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(50));
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id(this.cartLoaderXpath)));
     }
-    public void clickOnPlaceOrderBtn(){
+    public void clickOnPlaceOrderBtn(boolean isCreditCard){
         WebElementsAssertion.validateTheElementIsDisplayed(finalPlaceOrderBtn,webDriver);
         DataHelperAndWait.clickOnElement(finalPlaceOrderBtn,webDriver);
         //TODO: Should review the loader & remove the implicit wait time AUT-551
 //        DataHelperAndWait.waitForTime(2500);
+        if(!isCreditCard)
         DataHelperAndWait.waitTillAttributeToBe(finalPlaceOrderBtn,"data-request-complete","1",webDriver);
+        else
+        waitTillCartLoaderInCreditCardDisappear(webDriver);
     }
 
 }

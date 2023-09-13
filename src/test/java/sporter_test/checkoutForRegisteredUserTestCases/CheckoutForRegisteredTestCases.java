@@ -470,7 +470,7 @@ catch (Exception e){
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
         guestCheckoutCyclePage.waitTillLoaderComplete();
-        guestCheckoutCyclePage.clickOnPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(false);
         guestCheckoutCyclePage.waitTillCartSpinnerDisappear(webDriver);
         DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getSuccessPage(),webDriver);
@@ -532,7 +532,7 @@ catch (Exception e){
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
-guestCheckoutCyclePage.clickOnPlaceOrderBtn();
+guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
     @Test(groups = { "All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure Inability to continue the placing order process using invalid Credit Card", priority = 31)
@@ -595,7 +595,7 @@ guestCheckoutCyclePage.clickOnPlaceOrderBtn();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
-guestCheckoutCyclePage.clickOnPlaceOrderBtn();
+guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getSuccessPage(),webDriver);
         orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
         System.out.println(orderNumber);
