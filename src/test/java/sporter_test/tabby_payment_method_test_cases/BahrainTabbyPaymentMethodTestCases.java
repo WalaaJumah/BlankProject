@@ -79,7 +79,7 @@ public class BahrainTabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCa
         DataHelperAndWait.clickOnElement(omanCheckoutForRegisteredPage.getFiveToSevenBusinessDaysShippingMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         tabbyPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
         tabbyPaymentPage.fillInTheCardInfo();
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -94,7 +94,7 @@ public class BahrainTabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCa
         DataHelperAndWait.clickOnElement(omanCheckoutForRegisteredPage.getFiveToSevenBusinessDaysShippingMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         tabbyPaymentPage.submitTabbyInfoWithNegativeFlow();
     }
 
@@ -108,7 +108,7 @@ public class BahrainTabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCa
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
         double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver,"BHD");
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         DataHelperAndWait.waitToBeVisible(tabbyPaymentPage.getTabbyHeaderTitle(),webDriver);
         double InstallmentsAmountsTotal=tabbyPaymentPage.calculateInstallmentsAmount("BHD");
         System.out.println("GrandTotal"+GrandTotal);
@@ -125,7 +125,7 @@ public class BahrainTabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCa
         DataHelperAndWait.clickOnElement(omanCheckoutForRegisteredPage.getFiveToSevenBusinessDaysShippingMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         DataHelperAndWait.waitToBeVisible(tabbyPaymentPage.getTabbyPage(),webDriver);
         tabbyPaymentPage.clickOnReturnToStore();
         WebElementsAssertion.validateTheElementIsDisplayed(tabbyPaymentPage.getTransactionFailedError(),webDriver);
@@ -151,7 +151,7 @@ public class BahrainTabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCa
         DataHelperAndWait.clickOnElement(omanCheckoutForRegisteredPage.getFiveToSevenBusinessDaysShippingMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         DataHelperAndWait.waitToBeVisible(tabbyPaymentPage.getTabbyPage(),webDriver);
         webDriver.navigate().back();
         DataHelperAndWait.waitToBeVisible(cartPage.getProceedCheckoutBtn(),webDriver);
@@ -175,7 +175,7 @@ public class BahrainTabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCa
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         tabbyPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
         tabbyPaymentPage.fillInTheCardInfo();
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();

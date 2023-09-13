@@ -80,7 +80,7 @@ public class KuwaitTabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCas
          DataHelperAndWait.clickOnElement(kuwaitCheckoutForRegisteredPage.getExpressDeliveryMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         tabbyPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
         tabbyPaymentPage.fillInTheCardInfo();
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -95,7 +95,7 @@ public class KuwaitTabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCas
          DataHelperAndWait.clickOnElement(kuwaitCheckoutForRegisteredPage.getExpressDeliveryMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         tabbyPaymentPage.submitTabbyInfoWithNegativeFlow();
     }
 
@@ -109,7 +109,7 @@ public class KuwaitTabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCas
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
         double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver,"KWD");
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         DataHelperAndWait.waitToBeVisible(tabbyPaymentPage.getTabbyHeaderTitle(),webDriver);
         double InstallmentsAmountsTotal=tabbyPaymentPage.calculateInstallmentsAmount("KWD");
         System.out.println("GrandTotal"+GrandTotal);
@@ -126,7 +126,7 @@ public class KuwaitTabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCas
          DataHelperAndWait.clickOnElement(kuwaitCheckoutForRegisteredPage.getExpressDeliveryMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         DataHelperAndWait.waitToBeVisible(tabbyPaymentPage.getTabbyPage(),webDriver);
         tabbyPaymentPage.clickOnReturnToStore();
         WebElementsAssertion.validateTheElementIsDisplayed(tabbyPaymentPage.getTransactionFailedError(),webDriver);
@@ -152,7 +152,7 @@ public class KuwaitTabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCas
          DataHelperAndWait.clickOnElement(kuwaitCheckoutForRegisteredPage.getExpressDeliveryMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         DataHelperAndWait.waitToBeVisible(tabbyPaymentPage.getTabbyPage(),webDriver);
         webDriver.navigate().back();
         DataHelperAndWait.waitToBeVisible(cartPage.getProceedCheckoutBtn(),webDriver);
@@ -176,7 +176,7 @@ public class KuwaitTabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCas
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         tabbyPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
         tabbyPaymentPage.fillInTheCardInfo();
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();

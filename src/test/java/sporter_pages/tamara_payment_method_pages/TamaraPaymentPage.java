@@ -87,6 +87,7 @@ public class TamaraPaymentPage extends BasePage {
     private WebElement editBtnInPaymentMethodInfoLabel;
     public void SelectTamaraInstallmentsMethod() throws Exception {
         waitTillLoaderComplete();
+        DataHelperAndWait.waitForTime(1000);
         if(DataHelperAndWait.IsElementPresent(tamaraInstallmentsPaymentMethod)) {
             GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
             DataHelperAndWait.waitToBeVisible(tamaraInstallmentsPaymentMethod, webDriver);
@@ -328,7 +329,7 @@ DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
         guestCheckoutCyclePage.waitTillLoaderComplete();
         SelectTamaraInstallmentsMethod();
-      clickOnFinalPlaceOrderBtn();
+      guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         submitEmailAndPhoneNumberInPositiveFlow();
         DataHelperAndWait.waitForTime(2500);
     }
@@ -351,7 +352,7 @@ DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
         guestCheckoutCyclePage.waitTillLoaderComplete();
             SelectTamaraInstallmentsMethod();
-            clickOnFinalPlaceOrderBtn();
+            guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
             submitEmailAndPhoneNumberInPositiveFlow();
             DataHelperAndWait.waitForTime(2500);
     }
@@ -376,7 +377,7 @@ DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
         guestCheckoutCyclePage.waitTillLoaderComplete();
         SelectTamaraInstallmentsMethod();
-        clickOnFinalPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         submitEmailAndPhoneNumberInPositiveFlow();
         DataHelperAndWait.waitForTime(2500);
     }

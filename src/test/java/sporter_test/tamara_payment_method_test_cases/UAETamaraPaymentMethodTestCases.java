@@ -89,7 +89,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver);
         DataHelperAndWait.waitForTime(2500);
         double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver,tamaraPaymentPage.aeEnglishCurrency);
-        tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         //TODO: Needs to recheck
 //        tamaraPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
 //        DataHelperAndWait.waitToBeVisible(tamaraPaymentPage.getTamaraHeaderInPaymentSchedulePage(),webDriver);
@@ -227,7 +227,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
             DataHelperAndWait.scrollTo(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(), webDriver);
             DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(), webDriver);
             double GrandTotal = DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(), webDriver, tamaraPaymentPage.aeEnglishCurrency);
-            tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
+            guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
             tamaraPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
             DataHelperAndWait.waitToBeVisible(tamaraPaymentPage.getTamaraHeaderInPaymentSchedulePage(), webDriver);
             double InstallmentsAmountsTotal = tamaraPaymentPage.calculateInstallmentsAmount(tamaraPaymentPage.aeArabicCurrency);
@@ -239,7 +239,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
             System.out.println("Current time is after or equal to 2:00 PM");
         }
     }
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Ability to login correctly from Sign In Page using valid credential", priority = 12)
+    @Test(groups = {"All Smoke Testing Result","1.3 Medium Severity"}, description = "{{CountryName}}: Ability to login correctly from Sign In Page using valid credential", priority = 12)
     public void verifyAbilityToLoginCorrectlyWithValidCredentials() throws Exception {
         HeaderSection header = new HeaderSection(webDriver);
         AccountRegistrationPage registerPage = new AccountRegistrationPage(webDriver);
@@ -278,7 +278,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tamaraPaymentPage.SelectTamaraInstallmentsMethod();
-        tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
 //        tamaraPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
 //        tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(tamaraPaymentPage.ThreeCard);
 //guestCheckoutCyclePage.IsQouteIDisDisplayed();
@@ -292,7 +292,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tamaraPaymentPage.SelectTamaraInstallmentsMethod();
-        tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
 //        tamaraPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
 //        tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(tamaraPaymentPage.MasterCard);
         //guestCheckoutCyclePage.IsQouteIDisDisplayed();
@@ -305,7 +305,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tamaraPaymentPage.SelectTamaraInstallmentsMethod();
-        tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         //TODO: Needs to recheck
 //        tamaraPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
 //        tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(tamaraPaymentPage.DeclineTransactionCard);
@@ -319,7 +319,7 @@ public class UAETamaraPaymentMethodTestCases extends TamaraPaymentMethodTestCase
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tamaraPaymentPage.SelectTamaraInstallmentsMethod();
-        tamaraPaymentPage.clickOnFinalPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         if(BasePage.BaseURL.equalsIgnoreCase("https://www.sporter.com")) {
             tamaraPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
             tamaraPaymentPage.SelectDefinedCardAndSubmitTheCard(tamaraPaymentPage.DeclineTransactionCard);

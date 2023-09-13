@@ -79,7 +79,7 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
         DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        kSA.clickOnPlaceOrderBtn(true);
         tabbyPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
         tabbyPaymentPage.fillInTheCardInfo();
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -104,7 +104,7 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
         DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        kSA.clickOnPlaceOrderBtn(true);
         tabbyPaymentPage.submitTabbyInfoWithNegativeFlow();
     }
 
@@ -127,7 +127,7 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
         double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(kSA.getOrderTotalFieldInrReviewPage(),webDriver,"SAR");
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        kSA.clickOnPlaceOrderBtn(true);
         DataHelperAndWait.waitToBeVisible(tabbyPaymentPage.getTabbyHeaderTitle(),webDriver);
         double InstallmentsAmountsTotal=tabbyPaymentPage.calculateInstallmentsAmount("SAR");
         System.out.println("GrandTotal"+GrandTotal);
@@ -153,7 +153,7 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
         DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        kSA.clickOnPlaceOrderBtn(true);
         DataHelperAndWait.waitToBeVisible(tabbyPaymentPage.getTabbyPage(),webDriver);
         tabbyPaymentPage.clickOnReturnToStore();
         WebElementsAssertion.validateTheElementIsDisplayed(tabbyPaymentPage.getTransactionFailedError(),webDriver);
@@ -178,7 +178,7 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
         DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        kSA.clickOnPlaceOrderBtn(true);
         tabbyPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
         tabbyPaymentPage.fillInTheCardInfo();
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -203,7 +203,7 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
         DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        kSA.clickOnPlaceOrderBtn(true);
         tabbyPaymentPage.submitTabbyInfoWithNegativeFlow();
     }
 
@@ -226,7 +226,7 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
         double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(kSA.getOrderTotalFieldInrReviewPage(),webDriver,"SAR");
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        kSA.clickOnPlaceOrderBtn(true);
         DataHelperAndWait.waitToBeVisible(tabbyPaymentPage.getTabbyHeaderTitle(),webDriver);
         double InstallmentsAmountsTotal=tabbyPaymentPage.calculateInstallmentsAmount("SAR");
         System.out.println("GrandTotal"+GrandTotal);
@@ -271,7 +271,7 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
         DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        kSA.clickOnPlaceOrderBtn(true);
         tabbyPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
         tabbyPaymentPage.fillInTheCardInfo();
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -286,7 +286,7 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
         DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        kSA.clickOnPlaceOrderBtn(true);
         tabbyPaymentPage.submitTabbyInfoWithNegativeFlow();
     }
 
@@ -300,7 +300,7 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         DataHelperAndWait.clickOnElement(kSA.getDoorToDoorMethod(),webDriver);
         DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        kSA.clickOnPlaceOrderBtn(true);
         DataHelperAndWait.waitToBeVisible(tabbyPaymentPage.getTabbyPage(),webDriver);
         tabbyPaymentPage.clickOnReturnToStore();
        Assert.assertTrue(DataHelperAndWait.IsElementPresent(tabbyPaymentPage.getTransactionFailedError()));
@@ -316,7 +316,7 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
         DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        kSA.clickOnPlaceOrderBtn(true);
         tabbyPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
         tabbyPaymentPage.fillInTheCardInfo();
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -331,7 +331,7 @@ public class KSATabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         DataHelperAndWait.clickOnElement(kSA.getPickupInStoreMethod(),webDriver);
         DataHelperAndWait.clickOnElement(kSA.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        kSA.clickOnPlaceOrderBtn(true);
         tabbyPaymentPage.submitTabbyInfoWithNegativeFlow();
     }
 
