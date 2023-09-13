@@ -30,7 +30,7 @@ public class KSARelatedProductsTestCases extends RelatedProductsTestCases {
     public void switchToKsaStore() {
         KsaHomePage ksaHomePage = new KsaHomePage(webDriver);
         ksaHomePage.switchCountry(ksaHomePage.getKsaCountry());
-        currency=ksaHomePage.kSAArabicCurrency;
+        currency=ksaHomePage.kSAEnglishCurrency;
         if (!webDriver.getCurrentUrl().contains(ksaHomePage.saudiDomain)) {
             webDriver.navigate().to(BasePage.BaseURL +BasePage.ksaDomainArabic);
         }

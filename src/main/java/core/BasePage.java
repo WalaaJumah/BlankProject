@@ -91,6 +91,7 @@ public class BasePage {
     public final String OMRCurrency = "OMR";
     public final String QARCurrency = "QAR";
     public final String kSAArabicCurrency = "ر.س";
+    public final String getkSAEnglishCurrency = "SAR";
     public final String omanDomain = "/en-om";
     public final String bahrainDomain = "/en-bh";
     public final String iraqDomain = "/en-iq";
