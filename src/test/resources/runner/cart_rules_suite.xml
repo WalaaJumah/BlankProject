@@ -20,10 +20,10 @@
         <!--            </run>-->
         <!--        </groups>-->
         <classes>
-            <class name="sporter_test.cartRulesTestCases.QatarCartRulesTestCases"></class>
-            <class name="sporter_test.cartRulesTestCases.JordanCartRulesTestCases"></class>
             <class name="sporter_test.cartRulesTestCases.KSACartRulesTestCases"></class>
             <class name="sporter_test.cartRulesTestCases.IraqCartRulesTestCases"></class>
+            <class name="sporter_test.cartRulesTestCases.QatarCartRulesTestCases"></class>
+            <class name="sporter_test.cartRulesTestCases.JordanCartRulesTestCases"></class>
 
         </classes>
     </test>

@@ -36,11 +36,11 @@ public class IraqCartRulesTestCases extends CartRulesTestCases {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
-        webDriver.navigate().to(cartPage.productUrlIraq2);
+        webDriver.navigate().to(BaseURL+cartPage.productUrlIraq2);
+        productDetailsPage.increaseTheQuantity();
         productDetailsPage.increaseTheQuantity();
         productDetailsPage.increaseTheQuantity();
         productDetailsPage.addToCart();
-        DataHelperAndWait.waitForTime(1500);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(), webDriver);
         DataHelperAndWait.refreshPage(webDriver);
     }
@@ -54,10 +54,9 @@ public class IraqCartRulesTestCases extends CartRulesTestCases {
             productDetailsPage.displayTheProduct();
             productDetailsPage.addToCart();
             productDetailsPage.viewCart();
-            DataHelperAndWait.waitToBeVisible(cartPage.getIncreaseQtyBtn(), webDriver);
-            DataHelperAndWait.waitForTime(2000);
-            DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
-            DataHelperAndWait.waitForTime(2000);
+            cartPage.increaseQty();
+            productDetailsPage.viewCart();
+            cartPage.increaseQty();
             cartPage.proceedToCheckout();
             WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(), webDriver);
             DataHelperAndWait.refreshPage(webDriver);
@@ -92,10 +91,15 @@ public class IraqCartRulesTestCases extends CartRulesTestCases {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         webDriver.navigate().to(BaseURL + cartPage.productUrlIraqHighPrice);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        productDetailsPage.increaseTheQuantity();
         productDetailsPage.addToCart();
-        DataHelperAndWait.waitForTime(2000);
         webDriver.navigate().to(BaseURL + cartPage.productUrlIraqHighPrice2);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        productDetailsPage.increaseTheQuantity();
+        productDetailsPage.addToCart();
+        webDriver.navigate().to(BaseURL + cartPage.productUrlIraqHighPrice3);
+        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        productDetailsPage.increaseTheQuantity();
         productDetailsPage.addToCart();
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(), webDriver);
         DataHelperAndWait.refreshPage(webDriver);
