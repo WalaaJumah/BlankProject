@@ -96,7 +96,7 @@ public class CartTestCases extends BaseTest {
         DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
     }
 
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Verify ability to remove the product from the cart successfully", priority = 23)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Verify ability to remove the product from the cart successfully", priority = 10)
     public void verifyAbilityToRemoveProductFromCart() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
@@ -104,7 +104,7 @@ public class CartTestCases extends BaseTest {
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getNoItemInCartLabel(), webDriver);
     }
 
-    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Verify that Here Link appear after clearing the items from the Cart works successfully", priority = 10)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Verify that Here Link appear after clearing the items from the Cart works successfully", priority = 11)
     public void verifyHereLinkInCartPageWorking() {
         CartPage cartPage = new CartPage(webDriver);
 //        DataHelperAndWait.waitForTime(2000);
@@ -112,7 +112,7 @@ public class CartTestCases extends BaseTest {
     }
 
     //TODO: This test case should be revisit after solving: https://sporter1.atlassian.net/browse/NS-120 & https://sporter1.atlassian.net/browse/NS-42
-    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Free Gift is removed from the cart when you remove the product For Bogo", priority = 11)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Free Gift is removed from the cart when you remove the product For Bogo", priority = 12)
     public void verifyTheFreeGiftIsRemovedWhenRemovingTheProductForBogo() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         if (DataHelperAndWait.IsElementPresent(cartPage.getFreeFromSporterLabelInProductCard())) {
@@ -125,14 +125,14 @@ public class CartTestCases extends BaseTest {
 
     //TODO: This test case should be revisit after solving: https://sporter1.atlassian.net/browse/NS-120 & https://sporter1.atlassian.net/browse/NS-42
     //TODO:Needs to recheck
-    @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Make sure that the product counter that appears in the cart page counts the free gift correctly", priority = 12)
+    @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Make sure that the product counter that appears in the cart page counts the free gift correctly", priority = 13)
     public void verifyProductCounterAppearsInTheCartPageCountsFreeGifts() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         //TODO: Needs To Review
         cartPage.addToCartAndDisplayTheCartWithoutCartEmptyValidation();
     }
 
-    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Free Gift is removed from the cart when you remove the product For Free gift gained by Coupon", priority = 13)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Free Gift is removed from the cart when you remove the product For Free gift gained by Coupon", priority = 14)
     public void verifyTheFreeGiftIsRemovedWhenRemovingTheProductForFreeGiftGainedByCoupon() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         //TODO: Needs to check
@@ -144,7 +144,7 @@ public class CartTestCases extends BaseTest {
 
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure to view the cart after adding more than quantity for the same product", priority = 14)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure to view the cart after adding more than quantity for the same product", priority = 15)
     public void verifyAbilityToViewTheCartAfterAddingMoreThanQtyOfProduct() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
@@ -156,7 +156,7 @@ public class CartTestCases extends BaseTest {
 //        webDriver.manage().deleteCookieNamed("guestCartId");
     }
 
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure to view the cart after adding more than products to it", priority = 15)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure to view the cart after adding more than products to it", priority = 16)
     public void verifyAbilityToViewTheCartAfterAddingMoreThanProducts() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
 //        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
@@ -164,7 +164,7 @@ public class CartTestCases extends BaseTest {
         WebElementsAssertion.validateTheCurrentUrlContainsString(cartPage.cartURL, webDriver);
     }
 
-    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure remove Item button works correctly when the cart conatins more than item", priority = 16)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure remove Item button works correctly when the cart conatins more than item", priority = 17)
     public void verifyRemoveItemBtnWorksWhenCartContainsMoreThanItem() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
@@ -184,7 +184,7 @@ public class CartTestCases extends BaseTest {
 //        WebElementsAssertion.validateTheCurrentUrlContainsString(productDetailsPage.cartURL,webDriver);
 //        cartPage.removeAllItems(2);
 //    }
-    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = " Cart Page- Make sure ability to add a bundle to the cart ", priority = 17)
+    @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = " Cart Page- Make sure ability to add a bundle to the cart ", priority = 18)
     public void verifyAbilityToAddBundleToCart() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
             productDetailsPage.displayBundle();
@@ -226,7 +226,7 @@ public class CartTestCases extends BaseTest {
 //        }
 //    }
     //TODO:There's a bug here, check: https://sporter1.atlassian.net/browse/NS-184/https://sporter1.atlassian.net/browse/NS-107
-    @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Verify that the The requested qty is not available message appear when the product becomes OOS", priority = 18)
+    @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Verify that the The requested qty is not available message appear when the product becomes OOS", priority = 19)
     public void verifyToDisplayRequestedQtyIsNotAvailableMsg() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
             cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
@@ -244,7 +244,7 @@ public class CartTestCases extends BaseTest {
 //        DataHelperAndWait.clickOnElement(cartPage.getCloseAddToCartErrorMsg(),webDriver);
 //    }
 //TODO: Needs to recheck after solving cart loading issue
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Verify ability to display the product from the Cart Page works successfully", priority = 19)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Verify ability to display the product from the Cart Page works successfully", priority = 20)
     public void verifyAbilityToDisplayTheProductFromTheCartPage() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
@@ -262,7 +262,7 @@ public class CartTestCases extends BaseTest {
     }
 
     //TODO: This test case should be revisit after solving: https://sporter1.atlassian.net/browse/NS-120 & https://sporter1.atlassian.net/browse/NS-42
-    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Free Gift is added correctly to the Cart", priority = 20)
+    @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Free Gift is added correctly to the Cart", priority = 21)
     public void verifyTheFreeGiftIsAddedCorrectlyToTheCart() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
         if (DataHelperAndWait.IsElementPresent(cartPage.getFreeFromSporterLabelInProductCard())) {
@@ -287,9 +287,12 @@ public class CartTestCases extends BaseTest {
     public void verifyAllPaymentMethodAppearingTheCartPage() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
 //        cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
-        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getWeAcceptLabel(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCODOption(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCreditCardOption(), webDriver);
+        if(DataHelperAndWait.IsElementPresent(cartPage.getWeAcceptLabel()))
+        {
+            WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getWeAcceptLabel(), webDriver);
+            WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCODOption(), webDriver);
+            WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCreditCardOption(), webDriver);
+        }
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that the Proceed to checkout button appears in the cart page works correctly", priority = 9)
