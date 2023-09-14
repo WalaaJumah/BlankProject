@@ -4,7 +4,7 @@
 <suite name="Automation Reports">
     <listeners>
         <!--        <listener class-name="retry_failed_test_cases.AnnotationTransfer"/>-->
-<!--        <listener class-name="extent_report_listner.ExtentReportListener"/>-->
+        <!--        <listener class-name="extent_report_listner.ExtentReportListener"/>-->
     </listeners>
     <test name=" Account_Registration_suite" preserve-order="true">
         <parameter name="environment" value="https://stg.sporter.com"/>
@@ -16,10 +16,10 @@
         <parameter name="enable_who_bought_this_also_bought_config" value="false"/>
 
         <!--                <groups>-->
-<!--                    <run>-->
-<!--                        <include name="All Smoke Testing Result"/>-->
-<!--                    </run>-->
-<!--                </groups>-->
+        <!--                    <run>-->
+        <!--                        <include name="All Smoke Testing Result"/>-->
+        <!--                    </run>-->
+        <!--                </groups>-->
         <classes>
             <class name="sporter_test.AccountRegistrationTestCases.IraqAccountRegistrationTestCases"/>
             <class name="sporter_test.AccountRegistrationTestCases.UAEAccountRegistrationTestCases"/>
