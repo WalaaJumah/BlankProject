@@ -183,6 +183,7 @@
             <class name="sporter_test.cartTestCases.IraqCartTestCases">
             </class>
             <class name="sporter_test.checkoutForRegisteredUserTestCases.IraqCheckoutForRegisteredTestCases"></class>
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.EgyptCheckoutForRegisteredTestCases"></class>
             <class name="sporter_test.homepage_test_cases.IraqHomePageTestCases"/>
             <class name="sporter_test.headerTestCases.IraqHeaderTestCases"/>
             <class name="sporter_test.productTestCases.IraqProductDetailsTestCases"/>
