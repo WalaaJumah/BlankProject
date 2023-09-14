@@ -33,6 +33,7 @@ public class RecommendedProductTestCases extends BaseTest {
         webDriver.manage().deleteCookieNamed("guestCartId");
         productDetailsPage.keepShoppingAfterAddingToCart();
         RecommendedProductPage recommendedProductpage = new RecommendedProductPage(webDriver);
+        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,20);
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getAddToCartBtn(), webDriver);
         recommendedProductpage.removeProductFromCart();
     }
