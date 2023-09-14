@@ -14,11 +14,11 @@
         <parameter name="oOSProduct" value="/rip-van-protien-wafles-box-of-12/"/>
         <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
         <parameter name="enable_who_bought_this_also_bought_config" value="false"/>
-        <groups>
-            <run>
-                <include name="All Smoke Testing Result"/>
-            </run>
-        </groups>
+<!--        <groups>-->
+<!--            <run>-->
+<!--                <include name="All Smoke Testing Result"/>-->
+<!--            </run>-->
+<!--        </groups>-->
         <classes>
             <class name="sporter_test.cartTestCases.UAECartTestCases"></class>
             <class name="sporter_test.cartTestCases.KSACartTestCases"></class>

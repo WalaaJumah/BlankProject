@@ -12,7 +12,7 @@ import sporter_pages.homepage_classes.UAEHomePage;
 
 public class UAEAccountRegistrationTestCases extends AccountRegistrationTestCases {
     @BeforeClass(alwaysRun = true)
-    public void switchToQatarStore() {
+    public void switchToUAEStore() {
         UAEHomePage uaeHomePage = new UAEHomePage(webDriver);
         uaeHomePage.switchCountry(uaeHomePage.getAeCountry());
         if (!webDriver.getCurrentUrl().contains(uaeHomePage.aeDomain)) {

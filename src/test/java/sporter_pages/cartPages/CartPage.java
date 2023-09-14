@@ -194,6 +194,12 @@ public class CartPage extends BasePage {
             productDetailsPage.viewCart();
         }
     }
+      public void addToCartAndDisplayTheCartWithoutCartEmptyValidation() throws IOException {
+            productDetailsPage.displayTheProduct();
+            productDetailsPage.addToCart();
+            productDetailsPage.viewCart();
+    }
+
     public void navigateToCartOrAddProductToItInCaseTheCartIsEmpty() throws IOException {
         if(IsEmptyCart())
             addToCartAndDisplayTheCart();

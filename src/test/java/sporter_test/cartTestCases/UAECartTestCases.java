@@ -32,12 +32,7 @@ public class UAECartTestCases extends CartTestCases {
     @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Verify that the The requested qty is not available message appear when the product becomes OOS", priority = 18)
     public void verifyToDisplayRequestedQtyIsNotAvailableMsg() throws IOException {
         CartPage cartPage = new CartPage(webDriver);
-        ProductDetailsPage productDetailsPage= new ProductDetailsPage(webDriver);
-        if(cartPage.IsEmptyCart()) {
-            webDriver.navigate().to("https://qa1.sporter.com/en-ae/grenade-carb-killa-protein-bar-18617/");
-            productDetailsPage.addToCart();
-            productDetailsPage.viewCart();
-        }
+        cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.hoverOnElementAndClick(cartPage.getFirstQtyField(), webDriver);
         DataHelperAndWait.updateAllText(cartPage.getFirstQtyField(),"999");
         //TODO: Needs to recheck after solving Cart loading issue
