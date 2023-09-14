@@ -205,12 +205,15 @@ public class ProductDetailsPage extends BasePage {
     }
 
     public void addToCart() {
-//        DataHelperAndWait.waitForTime(2000);
-        DataHelperAndWait.waitToBeVisible(addToCartBtn2, webDriver);
-        DataHelperAndWait.waitToBeClickable(addToCartBtn2, webDriver);
-        DataHelperAndWait.JsExecutorToClickOnElement(addToCartBtn,webDriver);
-        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,15);
+            DataHelperAndWait.waitTillAttributeToBe(addToCartBtn2,"data-is-request-processing","0",webDriver);
+            DataHelperAndWait.waitToBeVisible(addToCartBtn2, webDriver);
+            DataHelperAndWait.waitToBeClickable(addToCartBtn2, webDriver);
+            DataHelperAndWait.JsExecutorToClickOnElement(addToCartBtn,webDriver);
+            DataHelperAndWait.waitTillAttributeToBe(addToCartBtn2,"data-is-request-processing","0",webDriver);
+            System.out.println(addToCartBtn2.getAttribute("data-is-request-processing"));
 //        addToCartBtn.click();
+
+//
     }
     public   void waitTillCartSpinnerDisappear(WebDriver webDriver) {
         WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(50));

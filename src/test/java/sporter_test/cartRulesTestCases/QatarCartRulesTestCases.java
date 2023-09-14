@@ -39,24 +39,15 @@ public class QatarCartRulesTestCases extends CartRulesTestCases {
     public void verify2ItemOfTheSameKindRuleWorksCorrectly() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        try {
-            webDriver.manage().deleteCookieNamed("guestCartId");
-            productDetailsPage.keepShoppingAfterAddingToCart();
+            productDetailsPage.displayTheProduct();
             productDetailsPage.addToCart();
-            productDetailsPage.keepShopping();
+
+        productDetailsPage.displayTheProduct();
             productDetailsPage.addToCart();
+        productDetailsPage.displayTheProduct();
+        productDetailsPage.addToCart();
             WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(), webDriver);
             DataHelperAndWait.refreshPage(webDriver);
-        }
-        catch (Exception e){
-            webDriver.manage().deleteCookieNamed("guestCartId");
-            productDetailsPage.keepShoppingAfterAddingToCart();
-            productDetailsPage.addToCart();
-            productDetailsPage.keepShopping();
-            productDetailsPage.addToCart();
-            WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(), webDriver);
-            DataHelperAndWait.refreshPage(webDriver);
-        }
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure that inability to add more than 3 items of the same kind to the cart by increasing the quantity to 3", priority = 2)
