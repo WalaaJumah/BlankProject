@@ -209,6 +209,7 @@ public class ProductDetailsPage extends BasePage {
         DataHelperAndWait.waitToBeVisible(addToCartBtn2, webDriver);
         DataHelperAndWait.waitToBeClickable(addToCartBtn2, webDriver);
         DataHelperAndWait.JsExecutorToClickOnElement(addToCartBtn,webDriver);
+        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,15);
 //        addToCartBtn.click();
     }
     public   void waitTillCartSpinnerDisappear(WebDriver webDriver) {
