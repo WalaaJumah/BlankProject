@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cc95732-25cc-415a-acca-362cf2afbff2" name="Changes" comment=" Update the Display product URL">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/runner/guest_checkout_flow_suite.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/runner/full_suite_parallel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,27 +94,7 @@
       <command value="ProductDetailsPageTestCases.verifyAbilityToDisplayBundleAndSelectAllOptions" />
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/runner/guest_checkout_flow_suite.xml">
-    <configuration name="C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/RunMethod.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="sporter-web-automation" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/RunMethod.xml" />
-      <option name="TEST_OBJECT" value="SUITE" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/runner/account_registration_suite.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="sporter-web-automation" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/runner/account_registration_suite.xml" />
-      <option name="TEST_OBJECT" value="SUITE" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/runner/full_suite_parallel.xml">
     <configuration name="C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/runner/cart_rules_suite.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/runner/cart_rules_suite.xml" />
@@ -134,6 +115,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/runner/full_suite_parallel.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="sporter-web-automation" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/runner/full_suite_parallel.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/runner/full_suite.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="sporter-web-automation" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/runner/full_suite.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/runner/guest_checkout_flow_suite.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="sporter-web-automation" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/runner/guest_checkout_flow_suite.xml" />
@@ -145,19 +146,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/runner/full_suite.xml" />
+      <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/runner/full_suite_parallel.xml" />
       <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/runner/guest_checkout_flow_suite.xml" />
       <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/runner/cart_rules_suite.xml" />
-      <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/runner/account_registration_suite.xml" />
       <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/runner/cart_suite.xml" />
-      <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/RunMethod.xml" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/runner/full_suite_parallel.xml" />
+        <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/runner/full_suite.xml" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/runner/guest_checkout_flow_suite.xml" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/runner/cart_rules_suite.xml" />
         <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/runner/cart_suite.xml" />
-        <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/runner/account_registration_suite.xml" />
-        <item itemvalue="TestNG.C:/Users/w.jumaa/IdeaProjects/QATesting/src/test/resources/RunMethod.xml" />
       </list>
     </recent_temporary>
   </component>
