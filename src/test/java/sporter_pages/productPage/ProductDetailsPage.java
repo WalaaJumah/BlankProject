@@ -227,11 +227,9 @@ public class ProductDetailsPage extends BasePage {
     }
 
     public void viewCart() {
-        System.out.println("enableWhoBoughtThisAlsoBoughtConfig: "+enableWhoBoughtThisAlsoBoughtConfig);
         if(webDriver.getCurrentUrl().contains("-sa/"))
             enableWhoBoughtThisAlsoBoughtConfig=true;
         if(enableWhoBoughtThisAlsoBoughtConfig) {
-            System.out.println("enableWhoBoughtThisAlsoBoughtConfig2: "+enableWhoBoughtThisAlsoBoughtConfig);
             DataHelperAndWait.waitToBeVisible(viewCartBtn, webDriver);
             viewCartBtn.click();
             this.waitTillCartSpinnerDisappear(webDriver);
