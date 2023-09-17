@@ -309,6 +309,7 @@ public class ProductDetailsTestCases extends BaseTest {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
         DataHelperAndWait.scrollDown(webDriver);
+        DataHelperAndWait.scrollDown(webDriver);
         DataHelperAndWait.waitForTime(2000);
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getProductHeaderBar(), webDriver);
     }
@@ -317,6 +318,7 @@ public class ProductDetailsTestCases extends BaseTest {
     public void verifyHeaderBarDisplaysCorrectlyInProductDetailsPageWhenScrollingThePage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.displayTheProduct();
+        DataHelperAndWait.scrollDown(webDriver);
         DataHelperAndWait.scrollDown(webDriver);
         DataHelperAndWait.waitForTime(2000);
         DataHelperAndWait.clickOnElement(productDetailsPage.getAddToCartBtnInProductHeaderBar(), webDriver);
