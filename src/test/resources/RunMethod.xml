@@ -15,13 +15,13 @@
         <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
         <parameter name="enable_who_bought_this_also_bought_config" value="false"/>
 
-        <!--                <groups>-->
+<!--                        <groups>-->
 <!--                    <run>-->
 <!--                        <include name="All Smoke Testing Result"/>-->
 <!--                    </run>-->
 <!--                </groups>-->
         <classes>
-            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.UAEVitaminsAndHealthCategoryTestCases"/>
+            <class name="sporter_test.cartTestCases.BahrainCartTestCases"/>
 
 
         </classes>
