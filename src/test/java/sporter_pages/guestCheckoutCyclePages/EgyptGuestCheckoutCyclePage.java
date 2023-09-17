@@ -38,7 +38,8 @@ public class EgyptGuestCheckoutCyclePage extends GuestCheckoutCyclePage {
     private WebElement cvvField;
     @FindBy(name = "owner")
     private WebElement cardOwnerNameField;
-    @FindBy(xpath = "//div[@id='geideaModalForm']/div[11]/button")
+//    @FindBy(xpath = "//div[@id='geideaModalForm']/div[11]/button")
+    @FindBy(xpath = "//div[@class='geideaPayButtonWrapper paddingStyle']/button[@type='submit']")
     private WebElement payBtn;
     @FindBy(xpath = "//input[@value='Submit']")
     private WebElement submitEmulator;
@@ -56,6 +57,8 @@ public class EgyptGuestCheckoutCyclePage extends GuestCheckoutCyclePage {
     private WebElement aCSEmulatorScreen;
       @FindBy(id = "redirectTo3ds1Frame")
     private WebElement aCSEmulatorFrame;
+      @FindBy(xpath = "(//span[@class='geideaFieldErrorMessage'])[1]")
+    private WebElement geideaIncorrectCrediCardMsg;
 
     @FindBy(xpath = "(//iframe)[2]")
     private WebElement geideaPopUpFrame;

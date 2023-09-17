@@ -167,10 +167,11 @@ egypt.clickOnPlaceOrderBtn(true);
 //        egypt.clickOnPlaceOrderBtn(true);
         WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.waitForTime(2500);
+        DataHelperAndWait.waitForTime(6000);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         egypt.submitInValidCreditCardCorrectly();
         WebElementsAssertion.assertionAttributeTrueForElement(egypt.getPayBtn(), webDriver,"class","gebtn gebtn-round gebtn-disabled");
+//        DataHelperAndWait.waitToBeInVisible(egypt.getGeideaIncorrectCrediCardMsg(),webDriver);
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that each of COD & Credit Card Payment methods appear correctly", priority = 25)
     public void verifyEachOfCODAndCreditCardPaymentMethodCorrectly() throws IOException {

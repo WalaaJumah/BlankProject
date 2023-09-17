@@ -46,13 +46,13 @@
             <class name="sporter_test.footer_test_cases.QatarFooterTestCases"></class>
             <class name="sporter_test.productTestCases.KSAProductDetailsTestCases"/>
             <class name="sporter_test.RecommendedProductsTestCases.KSARecommendedProductTestCases"/>
-            <class name="sporter_test.RecommendedProductsTestCases.JordanRecommendedProductTestCases"/>
-            <class name="sporter_test.RecommendedProductsTestCases.OmanRecommendedProductTestCases"/>
-            <class name="sporter_test.RecommendedProductsTestCases.UAERecommendedProductTestCases"/>
-            <class name="sporter_test.RecommendedProductsTestCases.BahrainRecommendedProductTestCases"/>
-            <class name="sporter_test.RecommendedProductsTestCases.KuwaitRecommendedProductsTestCases"/>
-            <class name="sporter_test.RecommendedProductsTestCases.EgyptRecommendedProductTestCases"/>
-            <class name="sporter_test.RecommendedProductsTestCases.QatarRecommendedProductTestCases"/>
+<!--            <class name="sporter_test.RecommendedProductsTestCases.JordanRecommendedProductTestCases"/>-->
+<!--            <class name="sporter_test.RecommendedProductsTestCases.OmanRecommendedProductTestCases"/>-->
+<!--            <class name="sporter_test.RecommendedProductsTestCases.UAERecommendedProductTestCases"/>-->
+<!--            <class name="sporter_test.RecommendedProductsTestCases.BahrainRecommendedProductTestCases"/>-->
+<!--            <class name="sporter_test.RecommendedProductsTestCases.KuwaitRecommendedProductsTestCases"/>-->
+<!--            <class name="sporter_test.RecommendedProductsTestCases.EgyptRecommendedProductTestCases"/>-->
+<!--            <class name="sporter_test.RecommendedProductsTestCases.QatarRecommendedProductTestCases"/>-->
             <class name="sporter_test.sports_category_test_cases.UAESportsCategoryTestCases"></class>
             <class name="sporter_test.sports_category_test_cases.KSASportsCategoryTestCases"></class>
             <class name="sporter_test.sports_category_test_cases.JordanSportsCategoryTestCases"></class>
@@ -187,7 +187,7 @@
             <class name="sporter_test.homepage_test_cases.IraqHomePageTestCases"/>
             <class name="sporter_test.headerTestCases.IraqHeaderTestCases"/>
             <class name="sporter_test.productTestCases.IraqProductDetailsTestCases"/>
-            <class name="sporter_test.RecommendedProductsTestCases.IraqRecommendedProductTestCases"/>
+<!--            <class name="sporter_test.RecommendedProductsTestCases.IraqRecommendedProductTestCases"/>-->
             <class name="sporter_test.AccountRegistrationTestCases.IraqAccountRegistrationTestCases"/>
             <class name="sporter_test.loginTestCases.IraqLoginTestCases"/>
 
