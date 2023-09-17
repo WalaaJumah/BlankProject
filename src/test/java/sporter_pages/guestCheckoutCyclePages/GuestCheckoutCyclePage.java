@@ -439,8 +439,11 @@ public class GuestCheckoutCyclePage extends BasePage {
 //        DataHelperAndWait.waitForTime(2500);
         if(!isCreditCard)
         DataHelperAndWait.waitTillAttributeToBe(finalPlaceOrderBtn,"data-request-complete","1",webDriver);
-        else
-        waitTillCartLoaderInCreditCardDisappear(webDriver);
+        else {
+            DataHelperAndWait.refreshPage(webDriver);
+            DataHelperAndWait.waitForTime(2500);
+            waitTillCartLoaderInCreditCardDisappear(webDriver);
+        }
     }
 
 }
