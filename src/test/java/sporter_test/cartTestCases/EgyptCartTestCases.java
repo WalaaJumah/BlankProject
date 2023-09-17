@@ -164,4 +164,9 @@ public void verifyAbilityToClickOnSportsMenuIsDisplayedFromCartPage() throws IOE
 //        DataHelperAndWait.clickOnElement(cartPage.getProductNameForOneProduct(), webDriver);
         DataHelperAndWait.waitToBeVisible(productDetailsPage.getProductName(), webDriver);
     }
+    @Test(groups = {"1.4 Low Severity"}, description = "{{CountryName}}: Make sure that the counter-number appears in the cart icon works correctly", priority = 31)
+    public void verifyTheCounterInCartIconWorksCorrectly() {
+        CartPage cartPage = new CartPage(webDriver);
+        WebElementsAssertion.assertionTextIsEqual(cartPage.getCartCounter(), webDriver, "1");
+    }
 }
