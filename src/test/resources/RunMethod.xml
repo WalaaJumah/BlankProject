@@ -21,7 +21,7 @@
 <!--                    </run>-->
 <!--                </groups>-->
         <classes>
-            <class name="sporter_test.footer_test_cases.KSAFooterTestCases"/>
+            <class name="sporter_test.sports_category_test_cases.QatarSportsCategoryTestCases"/>
 
 
 
