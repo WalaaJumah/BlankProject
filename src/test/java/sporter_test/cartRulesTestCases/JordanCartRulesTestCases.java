@@ -96,11 +96,12 @@ public class JordanCartRulesTestCases extends CartRulesTestCases {
         webDriver.navigate().to(BaseURL + cartPage.productUrlJordanWithHighPrice);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         productDetailsPage.addToCart();
-        productDetailsPage.keepShopping();
+//        productDetailsPage.keepShopping();
+        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,15);
         webDriver.navigate().to(BaseURL + cartPage.productUrlJordanWithHighPrice2);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         productDetailsPage.addToCart();
-        DataHelperAndWait.waitForTime(2000);
+        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,15);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(), webDriver);
         DataHelperAndWait.refreshPage(webDriver);
     }

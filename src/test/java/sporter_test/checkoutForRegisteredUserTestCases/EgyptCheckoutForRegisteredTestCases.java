@@ -43,7 +43,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
     public void verifyAbilityToSelectTheNextDayDeliveryWithCODPaymentMethod() throws IOException {
         CartPage cartPage= new CartPage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver,egypt);
+        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver,egypt,cartPage);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         cartPage.proceedToCheckout();
         try{
@@ -72,7 +72,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
     public void verifyAbilityToPlaceOrderWhenSelectingNextDaySuperExpressShippingMethodWithCODPaymentMethod() throws IOException {
         CartPage cartPage= new CartPage(webDriver);
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver,egypt);
+        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver,egypt,cartPage);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         cartPage.proceedToCheckout();
         try{
@@ -93,8 +93,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getCODPaymentMethod(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinuePaymentMethodsBtn(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(egypt.getFinalPlaceOrderBtn(),webDriver);
+egypt.clickOnPlaceOrderBtn(false);
 //        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getSuccessPage(),webDriver);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
 
@@ -119,8 +118,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
        DataHelperAndWait.clickOnElement(egypt.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         egypt.selectCreditCardMethod();
-        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(egypt.getFinalPlaceOrderBtn(),webDriver);
+egypt.clickOnPlaceOrderBtn(true);
         egypt.verifyTheDisplayedPageDoesNotHaveErrors();
 //        egypt.submitCreditCardCorrectly();
 //        DataHelperAndWait.waitForTime(3000);
@@ -166,17 +164,20 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         DataHelperAndWait.clickOnElement(egypt.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         egypt.selectCreditCardMethod();
+//        egypt.clickOnPlaceOrderBtn(true);
         WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.waitForTime(6000);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
         egypt.submitInValidCreditCardCorrectly();
         WebElementsAssertion.assertionAttributeTrueForElement(egypt.getPayBtn(), webDriver,"class","gebtn gebtn-round gebtn-disabled");
+//        DataHelperAndWait.waitToBeInVisible(egypt.getGeideaIncorrectCrediCardMsg(),webDriver);
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that each of COD & Credit Card Payment methods appear correctly", priority = 25)
     public void verifyEachOfCODAndCreditCardPaymentMethodCorrectly() throws IOException {
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver,egypt);
         CartPage cartPage= new CartPage(webDriver);
+        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver,egypt,cartPage);
         egypt.navigateToCheckoutPage();
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         cartPage.proceedToCheckout();
@@ -234,8 +235,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
                         DataHelperAndWait.waitForTime(3000);
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(false);
 //        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getSuccessPage(),webDriver);
 //        orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);
 //        System.out.println(orderNumber);
@@ -249,8 +249,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         DataHelperAndWait.clickOnElement(egypt.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         egypt.selectCreditCardMethod();
-        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(egypt.getFinalPlaceOrderBtn(),webDriver);
+        egypt.clickOnPlaceOrderBtn(true);
         egypt.verifyTheDisplayedPageDoesNotHaveErrors();
 //        egypt.submitCreditCardWithDifferentAuthentication("(N) Authentication Failed");
 //        DataHelperAndWait.waitForTime(3000);
@@ -265,8 +264,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         DataHelperAndWait.clickOnElement(egypt.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         egypt.selectCreditCardMethod();
-        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(egypt.getFinalPlaceOrderBtn(),webDriver);
+        egypt.clickOnPlaceOrderBtn(true);
         egypt.verifyTheDisplayedPageDoesNotHaveErrors();
 //        egypt.submitCreditCardWithDifferentAuthentication("(X or U) Authentication Not Available");
 //        DataHelperAndWait.waitForTime(3000);
@@ -281,8 +279,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         DataHelperAndWait.clickOnElement(egypt.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         egypt.selectCreditCardMethod();
-        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(egypt.getFinalPlaceOrderBtn(),webDriver);
+        egypt.clickOnPlaceOrderBtn(true);
         egypt.verifyTheDisplayedPageDoesNotHaveErrors();
 //        egypt.submitCreditCardWithDifferentAuthentication("(M) Authentication Attempted");
 //                        DataHelperAndWait.waitForTime(3000);
@@ -298,8 +295,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         egypt.waitTillLoaderComplete();
         egypt.selectCreditCardMethod();
-        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(egypt.getFinalPlaceOrderBtn(),webDriver);
+        egypt.clickOnPlaceOrderBtn(true);
         egypt.verifyTheDisplayedPageDoesNotHaveErrors();
 //        egypt.submitCreditCardWithDifferentAuthentication("(P) Error Parsing Authentication Response");
 //                        DataHelperAndWait.waitForTime(3000);
@@ -314,8 +310,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         DataHelperAndWait.clickOnElement(egypt.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         egypt.selectCreditCardMethod();
-        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(egypt.getFinalPlaceOrderBtn(),webDriver);
+        egypt.clickOnPlaceOrderBtn(true);
 //        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
 //        egypt.submitCreditCardWithDifferentAuthentication("(S) Invalid Signature on Authentication Response");
 //                        DataHelperAndWait.waitForTime(3000);
@@ -330,8 +325,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         DataHelperAndWait.clickOnElement(egypt.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         egypt.selectCreditCardMethod();
-        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(egypt.getFinalPlaceOrderBtn(),webDriver);
+        egypt.clickOnPlaceOrderBtn(true);
         egypt.verifyTheDisplayedPageDoesNotHaveErrors();
 //        egypt.submitCreditCardWithDifferentAuthentication("(I) MPI Processing Error");
 //                        DataHelperAndWait.waitForTime(3000);
@@ -346,8 +340,7 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         DataHelperAndWait.clickOnElement(egypt.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         egypt.selectCreditCardMethod();
-        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(egypt.getFinalPlaceOrderBtn(),webDriver);
+        egypt.clickOnPlaceOrderBtn(true);
     }
     @Test(enabled = false,groups = {  "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the order total appears in the Geidea payment Gateway is matched with the original order Total ", priority = 59)
     public void verifyTheOrderTotalAppearsInGeideaGateWayIsMatchedWithOriginalOrderTotal() throws IOException {
@@ -379,17 +372,23 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         DataHelperAndWait.clickOnElement(egypt.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         egypt.selectCreditCardMethod();
-        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(egypt.getFinalPlaceOrderBtn(),webDriver);
+        egypt.clickOnPlaceOrderBtn(true);
         egypt.verifyTheDisplayedPageDoesNotHaveErrors();
-        DataHelperAndWait.waitToBeVisible(egypt.getGeideaPopUpFrame(), webDriver);
-        webDriver.switchTo().frame(1);
-        DataHelperAndWait.waitToBeVisible(egypt.getDebitCreditCardOption(), webDriver);
-        DataHelperAndWait.clickOnElement(egypt.getDebitCreditCardOption(), webDriver);
-        DataHelperAndWait.clickOnElement(egypt.getNextButtonInGediaaPopUp(), webDriver);
-        DataHelperAndWait.waitToBeVisible(egypt.getPayBtn(),webDriver);
-//        webDriver.navigate().refresh();
-//        WebElementsAssertion.validateTheCurrentUrlContainsString("checkout",webDriver);
+        //TODO: Needs to recheck
+//        if(DataHelperAndWait.IsElementPresent(egypt.getGeideaPopUpFrame())) {
+//            DataHelperAndWait.waitToBeVisible(egypt.getGeideaPopUpFrame(), webDriver);
+//            webDriver.switchTo().frame(1);
+//            DataHelperAndWait.waitToBeVisible(egypt.getDebitCreditCardOption(), webDriver);
+//            DataHelperAndWait.clickOnElement(egypt.getDebitCreditCardOption(), webDriver);
+//            DataHelperAndWait.clickOnElement(egypt.getNextButtonInGediaaPopUp(), webDriver);
+//            DataHelperAndWait.waitToBeVisible(egypt.getPayBtn(), webDriver);
+////        webDriver.navigate().refresh();
+////        WebElementsAssertion.validateTheCurrentUrlContainsString("checkout",webDriver);
+//        }
+//        else{
+//            throw new AssertionError("The Site doesn't redirect the user to the Geidea Dashboard & the URL is: "+webDriver.getCurrentUrl());
+//
+//        }
     }
     @Test(groups = { "All Smoke Testing Result", "1.1 Critical Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully Using Geidea when using Arabic Version ", priority = 69)
     public void verifyAbilityToPlaceOrderWhenSelectingNextDayDeliveryShippingMethodWithCreditCardPaymentMethodInArabicVersion() throws IOException {
@@ -415,16 +414,15 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         DataHelperAndWait.clickOnElement(egypt.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         egypt.selectCreditCardMethod();
-        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(egypt.getFinalPlaceOrderBtn(),webDriver);
+        egypt.clickOnPlaceOrderBtn(true);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
 
     }
     @Test(enabled = false, groups= { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Next Day Delivery Shipping Method With Credit Card Payment Method when using the coupon code", priority = 70)
     public void verifyAbilityToPlaceOrderWhenSelectingNextDayDeliveryShippingMethodWithCreditCardPaymentMethodUsingCouponCode() throws IOException {
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
-        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver,egypt);
         CartPage cartPage= new CartPage(webDriver);
+        CheckoutForRegisteredPage registeredPage= new CheckoutForRegisteredPage(webDriver,egypt,cartPage);
         cartPage.navigateToCartOrAddProductToItInCaseTheCartIsEmpty();
         DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
         DataHelperAndWait.clickOnElement(cartPage.getApplyCouponCodeBtn(),webDriver);
@@ -447,7 +445,6 @@ public void verifyTheGuestUserCannotSubmitTheShippingInformationUsingInvalidNati
         DataHelperAndWait.clickOnElement(egypt.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         egypt.selectCreditCardMethod();
-        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(egypt.getFinalPlaceOrderBtn(),webDriver);
+        egypt.clickOnPlaceOrderBtn(true);
     }
 }

@@ -78,7 +78,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         tabbyPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
         tabbyPaymentPage.fillInTheCardInfo();
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -103,7 +103,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         tabbyPaymentPage.submitTabbyInfoWithNegativeFlow();
     }
 
@@ -126,7 +126,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
         double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver,"AED");
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         DataHelperAndWait.waitToBeVisible(tabbyPaymentPage.getTabbyHeaderTitle(),webDriver);
         double InstallmentsAmountsTotal=tabbyPaymentPage.calculateInstallmentsAmount("AED");
         System.out.println("GrandTotal"+GrandTotal);
@@ -152,7 +152,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         DataHelperAndWait.waitToBeVisible(tabbyPaymentPage.getTabbyPage(),webDriver);
         tabbyPaymentPage.clickOnReturnToStore();
         WebElementsAssertion.validateTheElementIsDisplayed(tabbyPaymentPage.getTransactionFailedError(),webDriver);
@@ -162,16 +162,16 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     public void verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTabbyPaymentMethodForGuestUser() throws Exception, InterruptedException {
 // Get the current time
         LocalTime currentTime = LocalTime.now();
-
+        LocalTime targetTimeAM = LocalTime.of(2, 0);
+        LocalTime targetTimePM = LocalTime.of(12, 0);
+        if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM))
+        {
         // Set the target time to 2:00 PM
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         // Set the target times to 2:00 AM and 2:00 PM
-        LocalTime targetTimeAM = LocalTime.of(2, 0);
-        LocalTime targetTimePM = LocalTime.of(14, 0);
-        if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM))
-        {
+
             System.out.println(currentTime);
             System.out.println("Current time is before 2:00 PM");
             tabbyPaymentPage.accessGuestCheckoutForm();
@@ -189,7 +189,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getSameDayDelivery(), webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         tabbyPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
         tabbyPaymentPage.fillInTheCardInfo();
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -202,13 +202,14 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:GuestUser- Make sure inability to place Order successfully when selecting Same Day Express Shipping Method With tabby Payment Method using Negative Flow ", priority = 7)
     public void verifyAbilityToPlaceOrderWhenSelectingSameDayShippingMethodWithTabbyPaymentMethodWithNegativeFlowForGuestUser() throws Exception {
         LocalTime currentTime = LocalTime.now();
+        LocalTime targetTimeAM = LocalTime.of(2, 0);
+        LocalTime targetTimePM = LocalTime.of(12, 0);
+        if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM)){
         // Set the target time to 2:00 PM
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         // Set the target times to 2:00 AM and 2:00 PM
-        LocalTime targetTimeAM = LocalTime.of(2, 0);
-        LocalTime targetTimePM = LocalTime.of(14, 0);
-        if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM)){
+
             System.out.println(currentTime);
             System.out.println("Current time is before 2:00 PM");
             tabbyPaymentPage.accessGuestCheckoutForm();
@@ -226,7 +227,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getSameDayDelivery(), webDriver);
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
             tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-            tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+            guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
             tabbyPaymentPage.submitTabbyInfoWithNegativeFlow();
         }
         else{
@@ -238,15 +239,16 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:GuestUser- Make sure the system display the Quote ID for the user after checkout the order with Selecting 2Business Days Super Express Shipping Method using tabby payment", priority = 8)
     public void verifyTheSystemDisplayTheQuoteIdForTheUserAfterCheckoutTheOrderWithSelecting2BusinessDaysSuperExpressShippingMethodForGuestUser() throws Exception, InterruptedException {
         LocalTime currentTime = LocalTime.now();
+        LocalTime targetTimeAM = LocalTime.of(2, 0);
+        LocalTime targetTimePM = LocalTime.of(12, 0);
+        if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM))
+        {
         // Set the target time to 2:00 PM
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         // Set the target times to 2:00 AM and 2:00 PM
-        LocalTime targetTimeAM = LocalTime.of(2, 0);
-        LocalTime targetTimePM = LocalTime.of(14, 0);
-        if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM))
-            {
+
                 System.out.println(currentTime);
                 System.out.println("Current time is before 2:00 PM");
                 tabbyPaymentPage.accessGuestCheckoutForm();
@@ -264,7 +266,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
                 DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getSameDayDelivery(), webDriver);
                 DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
                 tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-                tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+                guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
                 tabbyPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
                 tabbyPaymentPage.fillInTheCardInfo();
                 cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -280,14 +282,15 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:GuestUser- Make sure the Installments Amounts In Tabby Page Are Matched With The Grand Total For Same Day Shipping Method", priority = 9)
     public void verifyInstallmentsAmountsInTabbyPageAreMatchedWithTheGrandTotalForSameDayShippingMethodForGuestUser() throws Exception, InterruptedException {
         LocalTime currentTime = LocalTime.now();
+        LocalTime targetTimeAM = LocalTime.of(2, 0);
+        LocalTime targetTimePM = LocalTime.of(12, 0);
+        if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM))
+        {
         // Set the target time to 2:00 PM
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         // Set the target times to 2:00 AM and 2:00 PM
-        LocalTime targetTimeAM = LocalTime.of(2, 0);
-        LocalTime targetTimePM = LocalTime.of(14, 0);
-        if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM))
-        {
+
             System.out.println(currentTime);
             System.out.println("Current time is before 2:00 PM");
             tabbyPaymentPage.accessGuestCheckoutForm();
@@ -305,9 +308,9 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getSameDayDelivery(), webDriver);
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
             tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-            tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+            guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
             double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver,"AED");
-            tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+            guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
             DataHelperAndWait.waitToBeVisible(tabbyPaymentPage.getTabbyHeaderTitle(),webDriver);
             double InstallmentsAmountsTotal=tabbyPaymentPage.calculateInstallmentsAmount("AED");
             System.out.println("GrandTotal"+GrandTotal);
@@ -324,6 +327,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         CartPage cartPage= new CartPage(webDriver);
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
+        webDriver.manage().deleteCookieNamed("uid");
         tabbyPaymentPage.accessGuestCheckoutForm();
         guestCheckoutCyclePage.fillInShippingInformationInputField(
                 XmlReader.getXMLData("firstName"),
@@ -337,7 +341,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         DataHelperAndWait.waitToBeVisible(tabbyPaymentPage.getTabbyPage(),webDriver);
         webDriver.navigate().back();
         DataHelperAndWait.waitToBeVisible(cartPage.getProceedCheckoutBtn(),webDriver);
@@ -361,7 +365,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         tabbyPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
         tabbyPaymentPage.fillInTheCardInfo();
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -407,7 +411,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         tabbyPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
         tabbyPaymentPage.fillInTheCardInfo();
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -422,7 +426,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         tabbyPaymentPage.submitTabbyInfoWithNegativeFlow();
     }
 
@@ -436,7 +440,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
         double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver,"AED");
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         DataHelperAndWait.waitToBeVisible(tabbyPaymentPage.getTabbyHeaderTitle(),webDriver);
         double InstallmentsAmountsTotal=tabbyPaymentPage.calculateInstallmentsAmount("AED");
         System.out.println("GrandTotal"+GrandTotal);
@@ -453,7 +457,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-        tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         DataHelperAndWait.waitToBeVisible(tabbyPaymentPage.getTabbyPage(),webDriver);
         tabbyPaymentPage.clickOnReturnToStore();
         WebElementsAssertion.validateTheElementIsDisplayed(tabbyPaymentPage.getTransactionFailedError(),webDriver);
@@ -470,7 +474,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         CartPage cartPage= new CartPage(webDriver);
         // Set the target times to 2:00 AM and 2:00 PM
         LocalTime targetTimeAM = LocalTime.of(2, 0);
-        LocalTime targetTimePM = LocalTime.of(14, 0);
+        LocalTime targetTimePM = LocalTime.of(12, 0);
         if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM))
         {
             System.out.println(currentTime);
@@ -480,7 +484,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getSameDayDelivery(), webDriver);
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
             tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-            tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+            guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
             tabbyPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
             tabbyPaymentPage.fillInTheCardInfo();
             cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -498,7 +502,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         // Set the target times to 2:00 AM and 2:00 PM
         LocalTime targetTimeAM = LocalTime.of(2, 0);
-        LocalTime targetTimePM = LocalTime.of(14, 0);
+        LocalTime targetTimePM = LocalTime.of(12, 0);
         if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM)){
             System.out.println(currentTime);
             System.out.println("Current time is before 2:00 PM");
@@ -507,7 +511,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getSameDayDelivery(), webDriver);
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
             tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-            tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+            guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
             tabbyPaymentPage.submitTabbyInfoWithNegativeFlow();
         }
         else{
@@ -525,7 +529,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         CartPage cartPage= new CartPage(webDriver);
         // Set the target times to 2:00 AM and 2:00 PM
         LocalTime targetTimeAM = LocalTime.of(2, 0);
-        LocalTime targetTimePM = LocalTime.of(14, 0);
+        LocalTime targetTimePM = LocalTime.of(12, 0);
         if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM))
         {
             System.out.println(currentTime);
@@ -535,7 +539,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getSameDayDelivery(), webDriver);
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
             tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-            tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+            guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
             tabbyPaymentPage.submitEmailAndPhoneNumberInPositiveFlow();
             tabbyPaymentPage.fillInTheCardInfo();
             cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -556,7 +560,7 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
         TabbyPaymentPage tabbyPaymentPage= new TabbyPaymentPage(webDriver);
         // Set the target times to 2:00 AM and 2:00 PM
         LocalTime targetTimeAM = LocalTime.of(2, 0);
-        LocalTime targetTimePM = LocalTime.of(14, 0);
+        LocalTime targetTimePM = LocalTime.of(12, 0);
         if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM))
         {
             System.out.println(currentTime);
@@ -566,9 +570,9 @@ public class UAETabbyPaymentMethodTestCases extends TabbyPaymentMethodTestCases 
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getSameDayDelivery(), webDriver);
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
             tabbyPaymentPage.SelectTabbyInstallmentsMethod();
-            tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+            guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
             double GrandTotal=DataHelperAndWait.extractDigitsFromWithoutCurrencyConvertToDouble(guestCheckoutCyclePage.getOrderTotalFieldInrReviewPage(),webDriver,"AED");
-            tabbyPaymentPage.clickOnFinalPlaceOrderBtn();
+            guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
             DataHelperAndWait.waitToBeVisible(tabbyPaymentPage.getTabbyHeaderTitle(),webDriver);
             double InstallmentsAmountsTotal=tabbyPaymentPage.calculateInstallmentsAmount("AED");
             System.out.println("GrandTotal"+GrandTotal);

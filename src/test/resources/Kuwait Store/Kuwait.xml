@@ -57,13 +57,13 @@
 <!--            <class name="sporter_test.headerTestCases.BahrainHeaderTestCases"/>-->
             <class name="sporter_test.headerTestCases.KuwaitHeaderTestCases"/>
             <!--Products Page-->
-<!--            <class name="sporter_test.productTestCases.KSAProductDetailsTestCases"/>-->
-<!--            <class name="sporter_test.productTestCases.UAEProductDetailsTestCases"/>-->
-<!--            <class name="sporter_test.productTestCases.JordanProductDetailsTestCases"/>-->
-<!--            <class name="sporter_test.productTestCases.QatarProductDetailsTestCases"/>-->
-<!--            <class name="sporter_test.productTestCases.EgyptProductDetailsTestCases"/>-->
-<!--            <class name="sporter_test.productTestCases.OmanProductDetailsTestCases"/>-->
-<!--            <class name="sporter_test.productTestCases.BahrainProductDetailsTestCases"/>-->
+<!--            <class name="sporter_test.productTestCases.KSARelatedProductsTestCases"/>-->
+<!--            <class name="sporter_test.productTestCases.UAERelatedProductsTestCases"/>-->
+<!--            <class name="sporter_test.productTestCases.JordanRelatedProductsTestCases"/>-->
+<!--            <class name="sporter_test.productTestCases.QatarRelatedProductsTestCases"/>-->
+<!--            <class name="sporter_test.productTestCases.EgyptRelatedProductsTestCases"/>-->
+<!--            <class name="sporter_test.productTestCases.OmanRelatedProductsTestCases"/>-->
+<!--            <class name="sporter_test.productTestCases.RelatedProductsTestCases"/>-->
             <class name="sporter_test.productTestCases.KuwaitProductsTestCases"/>
 <!--            <class name="sporter_test.RecommendedProductsTestCases.KSARecommendedProductTestCases"/>-->
 <!--            <class name="sporter_test.RecommendedProductsTestCases.UAERecommendedProductTestCases"/>-->

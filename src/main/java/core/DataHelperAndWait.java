@@ -14,6 +14,8 @@ import java.util.*;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
@@ -90,6 +92,11 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
         wait = new WebDriverWait(webDriver, Duration.ofSeconds(WaitTime));
         wait.until(ExpectedConditions.visibilityOf(element));
     }
+    public static  void waitToBeInVisible(WebElement element, WebDriver webDriver) {
+        WebDriverWait wait;
+        wait = new WebDriverWait(webDriver, Duration.ofSeconds(WaitTime));
+        wait.until(ExpectedConditions.invisibilityOf(element));
+    }
 
     public static  void refreshPage(WebDriver webDriver) {
         webDriver.navigate().refresh();
@@ -156,6 +163,14 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
         String elementValueWithoutCurrency = elementValue.replaceAll(currency, "");
         String elementValueWithoutSpace = elementValueWithoutCurrency.replaceAll(" ", "");
         return Float.parseFloat(elementValueWithoutSpace);
+    }
+    public static  float convertTheStringToFloatWithoutthousandComma(WebElement element,WebDriver webDriver,String currency) {
+        DataHelperAndWait.waitToBeVisible(element,webDriver);
+        String elementValue = element.getText();
+        String elementValueWithoutCurrency = elementValue.replaceAll(currency, "");
+        String elementValueWithoutthousandComma = elementValueWithoutCurrency.replaceAll(",", "");
+        String elementValueWithoutSpace = elementValueWithoutthousandComma.replaceAll(" ", "");
+        return Float.parseFloat(elementValueWithoutthousandComma);
     }
 
         public static  int convertTheStringToInt(WebElement element,WebDriver webDriver) {
@@ -249,6 +264,11 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
         ExpectedCondition<Boolean> urlIsCorrect = arg0 ->    driver.getCurrentUrl().contains(expectedString);
         wait.until(urlIsCorrect);
     }
+    public static  void waitForUrlDoesNotContain(String unExpectedString, WebDriver driver) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(WaitTime));
+        wait.until(ExpectedConditions.not(ExpectedConditions.urlContains(unExpectedString)));
+
+    }
 
     public static  void accessAllPagesInsideTheProductsListPage( String numberOfProductInTheList, WebElement element,WebDriver webDriver ){
         ///New
@@ -310,6 +330,7 @@ public static void navigateToUrl(String uRL, WebDriver webDriver) {
             DataHelperAndWait.waitToBeVisible(webElement,webDriver);
             action.moveToElement(webElement).click();}
         }
+
     public static void typeTextInElement(WebElement webElement,WebDriver webDriver, String text){
         try {
             DataHelperAndWait.waitToBeVisible(webElement,webDriver);
@@ -487,4 +508,28 @@ for(int i=0;i<jsErrors.getAll().size()-1;i++){
             return false;
         }
     }
+    public static void waitTillAttributeToBe(WebElement element,String attribute, String attributeValue,WebDriver webDriver){
+        WebDriverWait wait;
+        wait = new WebDriverWait(webDriver, Duration.ofSeconds(WaitTime));
+        wait.until(ExpectedConditions.attributeToBe(element, attribute, attributeValue));
+    }
+    public static Boolean isTextOnlyEnglish(String text) {
+            // Regular expression to match non-English characters
+            String nonEnglishRegex = "[^a-zA-Z]";
+
+            // Check if the text contains any non-English characters
+            return text.matches(".*" + nonEnglishRegex + ".*");
+        }
+     public static Boolean isTextOnlyArabic(String text) {
+            // Regular expression to match non-English characters
+// Regular expression to match Arabic characters
+         String arabicRegex = "\\p{InArabic}+";
+
+         Pattern pattern = Pattern.compile(arabicRegex);
+         Matcher matcher = pattern.matcher(text);
+
+         // Check if the entire text matches the Arabic pattern
+         return matcher.matches();
+        }
+
 }

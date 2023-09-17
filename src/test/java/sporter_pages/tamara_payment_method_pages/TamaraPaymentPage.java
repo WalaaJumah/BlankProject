@@ -86,6 +86,8 @@ public class TamaraPaymentPage extends BasePage {
     @FindBy(id = "pInfoEdit")
     private WebElement editBtnInPaymentMethodInfoLabel;
     public void SelectTamaraInstallmentsMethod() throws Exception {
+        waitTillLoaderComplete();
+        DataHelperAndWait.waitForTime(1000);
         if(DataHelperAndWait.IsElementPresent(tamaraInstallmentsPaymentMethod)) {
             GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
             DataHelperAndWait.waitToBeVisible(tamaraInstallmentsPaymentMethod, webDriver);
@@ -206,40 +208,7 @@ public void AddNewCardAndSubmitIt() throws IOException, InterruptedException {
         DataHelperAndWait.waitToBeVisible(this.getTamaraHeaderInPaymentSchedulePage(),webDriver);
         DataHelperAndWait.waitForTime(2500);
         try {
-            DataHelperAndWait.waitToBeVisible(this.getCardsList().get(cardNumberInTheList), webDriver);
-            DataHelperAndWait.clickOnElement(this.getCardsList().get(cardNumberInTheList), webDriver);
-            DataHelperAndWait.waitToBeVisible(this.getCvvInCardsList().get(cardNumberInTheList), webDriver);
-            switch (cardNumberInTheList) {
-                case 0:
-                    DataHelperAndWait.typeTextInElement(this.getCvvInCardsList().get(cardNumberInTheList), webDriver, "100");
-                    webDriver.switchTo().defaultContent();
-                    DataHelperAndWait.waitForTime(2000);
-                    payBtnInTamaraPage.click();
-                    DataHelperAndWait.waitForTime(3000);
-                    break;
-                case 1:
-                    DataHelperAndWait.typeTextInElement(this.getCvvInCardsList().get(cardNumberInTheList), webDriver, "257");
-                    webDriver.switchTo().defaultContent();
-                    DataHelperAndWait.waitForTime(2000);
-                    payBtnInTamaraPage.click();
-                    DataHelperAndWait.waitForTime(3000);
-                    break;
-                case 2:
-                    DataHelperAndWait.typeTextInElement(this.getCvvInCardsList().get(cardNumberInTheList), webDriver, "100");
-                    webDriver.switchTo().defaultContent();
-                    DataHelperAndWait.waitForTime(2000);
-                    payBtnInTamaraPage.click();
-                    DataHelperAndWait.waitForTime(3000);
-                    break;
-
-                case 3:
-                    DataHelperAndWait.typeTextInElement(this.getCvvInCardsList().get(cardNumberInTheList), webDriver, "956");
-                    webDriver.switchTo().defaultContent();
-                    DataHelperAndWait.waitForTime(2000);
-                    payBtnInTamaraPage.click();
-                    DataHelperAndWait.waitForTime(3000);
-                    break;
-            }
+            AddNewCardAndSubmitIt();
         }
         catch (Exception e){
             AddNewCardAndSubmitIt();
@@ -303,7 +272,7 @@ DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage= new CartPage(webDriver);
         CheckoutForRegisteredPage checkoutForRegisteredPage = new CheckoutForRegisteredPage(webDriver);
-        displayProductAndAddToCart();
+        cartPage.addToCartAndDisplayTheCart();
         cartPage.proceedToCheckout();
         DataHelperAndWait.clickOnElement(checkoutForRegisteredPage.getAddNewAddressBtn(),webDriver);
         this.fillInShippingInformationInputFieldForRegistered(
@@ -328,7 +297,9 @@ DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
         webDriver.navigate().to(BaseURL+ checkoutUrl);
         DataHelperAndWait.waitForUrlContains(checkoutUrl,webDriver);
         DataHelperAndWait.scrollTo(guestCheckoutCyclePage.getCheckoutAsGuestBtn(), webDriver);
-           DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCheckoutAsGuestBtn(), webDriver);
+        DataHelperAndWait.waitForTime(500);
+           DataHelperAndWait.waitToBeClickable(guestCheckoutCyclePage.getCheckoutAsGuestBtn(), webDriver);
+           DataHelperAndWait.JsExecutorToClickOnElement(guestCheckoutCyclePage.getCheckoutAsGuestBtn(), webDriver);
     }
 
     public void displayProductAndAddToCart() throws IOException {
@@ -358,7 +329,7 @@ DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
         guestCheckoutCyclePage.waitTillLoaderComplete();
         SelectTamaraInstallmentsMethod();
-      clickOnFinalPlaceOrderBtn();
+      guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         submitEmailAndPhoneNumberInPositiveFlow();
         DataHelperAndWait.waitForTime(2500);
     }
@@ -381,7 +352,7 @@ DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
         guestCheckoutCyclePage.waitTillLoaderComplete();
             SelectTamaraInstallmentsMethod();
-            clickOnFinalPlaceOrderBtn();
+            guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
             submitEmailAndPhoneNumberInPositiveFlow();
             DataHelperAndWait.waitForTime(2500);
     }
@@ -406,7 +377,7 @@ DataHelperAndWait.waitTillPageFullyLoaded(webDriver,50);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
         guestCheckoutCyclePage.waitTillLoaderComplete();
         SelectTamaraInstallmentsMethod();
-        clickOnFinalPlaceOrderBtn();
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         submitEmailAndPhoneNumberInPositiveFlow();
         DataHelperAndWait.waitForTime(2500);
     }

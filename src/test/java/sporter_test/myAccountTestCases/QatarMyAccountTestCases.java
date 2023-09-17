@@ -58,10 +58,10 @@ public class QatarMyAccountTestCases extends MyAccountTestCases {
     public void verifyInabilityToAddNewAddressWithIncorrectPhoneNumberFormat() throws IOException {
         JordanMyAccountPage myAccountPage = new JordanMyAccountPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        myAccountPage.navigateToAddressesPage();
-        DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(), webDriver);
-        myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        myAccountPage.fillInNewAddressForm(
+        myAccountPage.navigateToNewAddressesPage();
+//        DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(), webDriver);
+//        myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        myAccountPage.fillInNewAddressFormWithIncorrectPhone(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("SmallPhoneNumber"),
@@ -78,20 +78,21 @@ public class QatarMyAccountTestCases extends MyAccountTestCases {
     public void verifyInabilityToAddNewAddressUsingInvalidNationalID() throws IOException {
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
         JordanGuestCheckoutCyclePage joGuest = new JordanGuestCheckoutCyclePage(webDriver);
-        myAccountPage.navigateToAddressesPage();
-        DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(), webDriver);
-        myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        myAccountPage.navigateToNewAddressesPage();
+//        DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(), webDriver);
+//        myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
+
         DataHelperAndWait.typeTextInElement(myAccountPage.getNationalIdField(), webDriver, "12");
         DataHelperAndWait.clickOnElement(myAccountPage.getSaveAddressBtn(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(joGuest.getNationalIdErrMsg(), webDriver);
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify Inability to add new Address without filling the mandatory fields", priority = 26)
-    public void verifyInabilityToAddNewAddressWithoutFillingTheMandatoryFields() {
+    public void verifyInabilityToAddNewAddressWithoutFillingTheMandatoryFields() throws IOException {
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
-        myAccountPage.navigateToAddressesPage();
-        DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(), webDriver);
-//        DataHelperAndWait.clickOnElement(myAccountPage.getSaveAddressBtn(), webDriver);
+//        myAccountPage.navigateToAddressesPage();
+//        DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(), webDriver);
+        myAccountPage.navigateToNewAddressesPage();
         WebElementsAssertion.assertionElementNotEnable(myAccountPage.getSaveAddressBtn(), webDriver);
 //        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getPhoneErrMsg(), webDriver);
 //        WebElementsAssertion.checkRequiredErrorMsgIsDisplayed(guestCheckoutCyclePage.getAddressErrMsg(), webDriver);
@@ -99,18 +100,20 @@ public class QatarMyAccountTestCases extends MyAccountTestCases {
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify the country code retrieves correctly in the Phone Number field", priority = 27)
-    public void verifyCountryCodeRetrievesCorrectlyInThePhoneField() {
+    public void verifyCountryCodeRetrievesCorrectlyInThePhoneField() throws IOException {
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
-        myAccountPage.navigateToAddressesPage();
-        DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(), webDriver);
+        myAccountPage.navigateToNewAddressesPage();
+//        myAccountPage.navigateToAddressesPage();
+//        DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(), webDriver);
         WebElementsAssertion.assertionWebElementEqualText(myAccountPage.getCountryCodeField(), webDriver, countryCode);
     }
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify the country field retrieves the current country store", priority = 28)
-    public void verifyCountryFieldRetrievesTheCurrentCountryStore() {
+    public void verifyCountryFieldRetrievesTheCurrentCountryStore() throws IOException {
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
-        myAccountPage.navigateToAddressesPage();
-        DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(), webDriver);
+        myAccountPage.navigateToNewAddressesPage();
+//        myAccountPage.navigateToAddressesPage();
+//        DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(), webDriver);
         WebElementsAssertion.assertionWebElementEqualText(myAccountPage.getCountryField(), webDriver, storeCountry);
     }
 

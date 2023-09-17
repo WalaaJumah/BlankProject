@@ -48,7 +48,7 @@
         <requiredErrorMsEn>This is a required field.</requiredErrorMsEn>
         <requiredErrorMsAr>هذه الخانة مطلوبة</requiredErrorMsAr>
         <emailFormatErrorEn>Please enter a valid email address (Ex: johndoe@domain.com).</emailFormatErrorEn>
-        <emailFormatErrorAr>The Msg is not translate</emailFormatErrorAr>
+        <emailFormatErrorAr>الرجاء إدخال عنوان بريد إلكتروني صحيح (على سبيل المثال: johndoe@domain.com).</emailFormatErrorAr>
         <passwordShortErrorEn>Please enter 8 or more characters. Leading and trailing spaces will be ignored.</passwordShortErrorEn>
         <passwordShortErrorAr>The Msg is not translate</passwordShortErrorAr>
         <passwordFormatErrorEn>Minimum of different classes of characters in password is 3. Classes of characters: Lower Case, Upper Case, Digits, Special Characters.</passwordFormatErrorEn>
@@ -82,7 +82,7 @@
         <StreetOneAddressName>Automation Street 1 Address</StreetOneAddressName>
         <StreetTwoAddressName>Automation Street 2 Address</StreetTwoAddressName>
         <phoneNumber>22222222</phoneNumber>
-        <SmallPhoneNumber>22</SmallPhoneNumber>
+        <SmallPhoneNumber>222</SmallPhoneNumber>
         <LongPhoneNumber>3333333333333333333333</LongPhoneNumber>
         <LongLenghthText>This text is for automation Use This text is for automation Use This text is for automation Use
             This text is for automation Use This text is for automation Use This text is for automation Use
@@ -164,6 +164,7 @@ Cash on Delivery Service Available</twoBusinessDayIraq>
     <TamaraPayment>
         <UAEPhoneNumber>536741259</UAEPhoneNumber>
         <UAEPhoneNumber2>545879631</UAEPhoneNumber2>
+        <UAEPhoneNumber3>526478963</UAEPhoneNumber3>
         <KSAPhoneNumber>575369741</KSAPhoneNumber>
         <tamaraPositiveCard>4242424242424242</tamaraPositiveCard>
         <tamaraPositiveCardDate>1231</tamaraPositiveCardDate>

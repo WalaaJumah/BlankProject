@@ -15,6 +15,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import sporter_pages.guestCheckoutCyclePages.GuestCheckoutCyclePage;
 
+import java.io.IOException;
+
 @Getter
 public class MyAccountPage extends BasePage {
     private String myAccountURL = "/dashboard/my_account";
@@ -22,6 +24,7 @@ public class MyAccountPage extends BasePage {
     private String allOrdersURL = "/dashboard/all_orders";
     private String newsletterURL = "/dashboard/newsletter";
     private String addressedUrl = "/dashboard/my_addresses";
+    private String addNewAddressUrl = "/dashboard/my_addresses/new/";
     @FindBy(id = "myAccountBtn")
     private WebElement myAccountOption;
     @FindBy(id = "recentOrdersBtn")
@@ -72,7 +75,7 @@ public class MyAccountPage extends BasePage {
     private WebElement openOrdersTab;
     @FindBy(xpath = "(//span[contains(@class,'allOrders_type')])[3]")
     private WebElement canceledOrdersTab;
-    @FindBy(xpath = "//a[contains(@class,'myAddresses_addNew')]")
+    @FindBy(id = "addAddress")
     private WebElement addNewAddressBtn;
     @FindBy(xpath = "(//a[@id='editLabel'])[1]")
     private WebElement editAddressBtn;
@@ -127,6 +130,15 @@ public class MyAccountPage extends BasePage {
         webDriver.navigate().to(BaseURL + addressedUrl);
         DataHelperAndWait.waitForUrlContains(addressedUrl, webDriver);
     }
+    public void clickOnAccountProfileIcon(){
+        DataHelperAndWait.waitTillAttributeToBe(accountProfileIcon,"data-is-clickable","1",webDriver);
+        DataHelperAndWait.clickOnElement(accountProfileIcon, webDriver);
+    }
+    public void navigateToNewAddressesPage() throws IOException {
+        webDriver.navigate().to(BaseURL + addNewAddressUrl);
+        DataHelperAndWait.waitForUrlContains(addressedUrl, webDriver);
+        verifyTheDisplayedPageDoesNotHaveErrors();
+    }
 
     public void fillInNewAddressForm(String firstName, String lastName, String phone, String addressName, String streetLineOne, String streetLineTwo) {
         GuestCheckoutCyclePage guestCheckoutCyclePage=new GuestCheckoutCyclePage(webDriver);
@@ -143,5 +155,29 @@ public class MyAccountPage extends BasePage {
         DataHelperAndWait.waitToBeVisible(this.getStreet2Field(), webDriver);
         DataHelperAndWait.updateAllText(this.getStreet2Field(), streetLineTwo);
         guestCheckoutCyclePage.selectCity();
+    }
+    public void fillInNewAddressFormWithIncorrectPhone(String firstName, String lastName, String phone, String addressName, String streetLineOne, String streetLineTwo) {
+        GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
+        DataHelperAndWait.waitToBeVisible(this.getFirstNameFieldInAddress(), webDriver);
+        DataHelperAndWait.updateAllText(this.getFirstNameFieldInAddress(), firstName);
+        DataHelperAndWait.waitToBeVisible(this.getLastNameFieldInAddress(), webDriver);
+        DataHelperAndWait.updateAllText(this.getLastNameFieldInAddress(), lastName);
+        DataHelperAndWait.waitToBeVisible(this.getPhoneFieldInAddress(), webDriver);
+        DataHelperAndWait.updateAllText(this.getPhoneFieldInAddress(), phone);
+        DataHelperAndWait.waitToBeVisible(this.getAddressNameField(), webDriver);
+        DataHelperAndWait.updateAllText(this.getAddressNameField(), addressName);
+        DataHelperAndWait.waitToBeVisible(this.getStreet1Field(), webDriver);
+        DataHelperAndWait.updateAllText(this.getStreet1Field(), streetLineOne);
+//        getPhoneFieldInAddress().click();
+//        getPhoneFieldInAddress().sendKeys("2");
+        guestCheckoutCyclePage.selectCity();
+        if(webDriver.getCurrentUrl().contains("en-jo")) {
+            DataHelperAndWait.waitToBeVisible(this.getStreet2Field(), webDriver);
+            DataHelperAndWait.updateAllText(this.getStreet2Field(), streetLineTwo);
+        }
+        if(webDriver.getCurrentUrl().contains("-qa/")){
+            QatarMyAccountPage qatarMyAccountPage= new QatarMyAccountPage(webDriver);
+            qatarMyAccountPage.selectFirstOptionInAreaMenu();
+        }
     }
 }

@@ -87,12 +87,17 @@ public class TabbyPaymentPage extends BasePage {
        @FindBy(xpath = "//div[starts-with(@class,'popUp_container')]//div[@id='AddToCartErrContainer']")
     private WebElement errorMsgInPaymentMethod;
 
-    public void SelectTabbyInstallmentsMethod() throws Exception {
-        GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
-        DataHelperAndWait.waitToBeVisible(tabbyInstallmentsPaymentMethod,webDriver);
-        DataHelperAndWait.clickOnElement(tabbyInstallmentsPaymentMethod,webDriver);
-        DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
+    public void SelectTabbyInstallmentsMethod() {
+        waitTillLoaderComplete();
+        if(DataHelperAndWait.IsElementPresent(tabbyInstallmentsPaymentMethod)) {
+            GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
+            DataHelperAndWait.waitToBeVisible(tabbyInstallmentsPaymentMethod, webDriver);
+            DataHelperAndWait.clickOnElement(tabbyInstallmentsPaymentMethod, webDriver);
+            DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
+            DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
+        }
+        else
+            throw new AssertionError("Tabby Payment is missing");
     }
     public void addToCartAndDisplayTheCart() throws IOException {
         ProductDetailsPage productDetailsPage= new ProductDetailsPage(webDriver);
@@ -110,7 +115,7 @@ public class TabbyPaymentPage extends BasePage {
         GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
         try {
             CartPage cartPage = new CartPage(webDriver);
-           addToCartAndDisplayTheCart();
+           cartPage.addToCartAndDisplayTheCart();
             try {
                 cartPage.proceedToCheckout();
             } catch (Exception e) {
@@ -192,7 +197,7 @@ public void submitEmailAndPhoneNumberInPositiveFlow(){
 
     }
 
-public void fillInTheCardInfo() throws IOException, InterruptedException {
+public void fillInTheCardInfo() {
     DataHelperAndWait.waitToBeVisible(cardNumberFieldInTabbyPage,webDriver);
     DataHelperAndWait.updateAllText(cardNumberFieldInTabbyPage,XmlReader.getXMLData("tabbyPositiveCard"));
     DataHelperAndWait.waitToBeVisible(cvvFieldInTabbyPage,webDriver);
@@ -200,6 +205,7 @@ public void fillInTheCardInfo() throws IOException, InterruptedException {
     DataHelperAndWait.updateAllText(cvvFieldInTabbyPage,XmlReader.getXMLData("tabbyPositiveCVV"));
     DataHelperAndWait.waitToBeVisible(expiredDateFieldInTabbyPage,webDriver);
     DataHelperAndWait.updateAllText(expiredDateFieldInTabbyPage,XmlReader.getXMLData("tabbyPositiveCardDate"));
+    DataHelperAndWait.JsExecutorToClickOnElement(cardNumberFieldInTabbyPage,webDriver);
     try{
         if(getExpiryDateError().isDisplayed())
             DataHelperAndWait.clickOnElement(expiredDateFieldInTabbyPage,webDriver);

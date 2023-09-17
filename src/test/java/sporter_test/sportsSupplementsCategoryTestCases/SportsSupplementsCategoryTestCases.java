@@ -159,8 +159,11 @@ public class SportsSupplementsCategoryTestCases extends BaseTest {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         sportsSupplementsCategoryPage.navigateToSportsSupplementPage();
         if (sportsSupplementsCategoryPage.getPaginationBtns().size() > 3) {
-            DataHelperAndWait.clickOnElement(sportsSupplementsCategoryPage.getNextPageBtn(), webDriver);
-            DataHelperAndWait.clickOnElement(sportsSupplementsCategoryPage.getPreviousPageBtn(), webDriver);
+            DataHelperAndWait.waitToBeClickable(sportsSupplementsCategoryPage.getNextPageBtn(), webDriver);
+            DataHelperAndWait.JsExecutorToClickOnElement(sportsSupplementsCategoryPage.getNextPageBtn(), webDriver);
+            sportsSupplementsCategoryPage.waitTillLoaderComplete();
+            DataHelperAndWait.waitToBeClickable(sportsSupplementsCategoryPage.getPreviousPageBtn(), webDriver);
+            DataHelperAndWait.JsExecutorToClickOnElement(sportsSupplementsCategoryPage.getPreviousPageBtn(), webDriver);
             sportsSupplementsCategoryPage.waitTillLoaderComplete();
             Assert.assertFalse(webDriver.getCurrentUrl().contains("p=2"));
         } else {
@@ -195,7 +198,8 @@ public class SportsSupplementsCategoryTestCases extends BaseTest {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         HomePage homePage = new HomePage(webDriver);
         sportsSupplementsCategoryPage.navigateToSportsSupplementPage();
-        DataHelperAndWait.clickOnElement(sportsSupplementsCategoryPage.getHomePageBreadCrumb(), webDriver);
+        DataHelperAndWait.waitToBeClickable(sportsSupplementsCategoryPage.getHomePageBreadCrumb(), webDriver);
+        DataHelperAndWait.JsExecutorToClickOnElement(sportsSupplementsCategoryPage.getHomePageBreadCrumb(), webDriver);
         sportsSupplementsCategoryPage.waitTillLoaderComplete();
         WebElementsAssertion.validateTheElementIsDisplayed(homePage.getSportsSupplementsCategory(), webDriver);
     }

@@ -35,11 +35,12 @@ public class IraqCartRulesTestCases extends CartRulesTestCases {
     public void verify3ItemOfTheSameKindRuleWorksCorrectlyWhenIncreasingTheQtyTo2FromProductPage() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        webDriver.navigate().to(cartPage.productUrlIraq2);
+        webDriver.manage().deleteCookieNamed("guestCartId");
+        webDriver.navigate().to(BaseURL+cartPage.productUrlIraq2);
+        productDetailsPage.increaseTheQuantity();
         productDetailsPage.increaseTheQuantity();
         productDetailsPage.increaseTheQuantity();
         productDetailsPage.addToCart();
-        DataHelperAndWait.waitForTime(1500);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(), webDriver);
         DataHelperAndWait.refreshPage(webDriver);
     }
@@ -53,10 +54,9 @@ public class IraqCartRulesTestCases extends CartRulesTestCases {
             productDetailsPage.displayTheProduct();
             productDetailsPage.addToCart();
             productDetailsPage.viewCart();
-            DataHelperAndWait.waitToBeVisible(cartPage.getIncreaseQtyBtn(), webDriver);
-            DataHelperAndWait.waitForTime(2000);
-            DataHelperAndWait.clickOnElement(cartPage.getIncreaseQtyBtn(), webDriver);
-            DataHelperAndWait.waitForTime(2000);
+            cartPage.increaseQty();
+            productDetailsPage.viewCart();
+            cartPage.increaseQty();
             cartPage.proceedToCheckout();
             WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(), webDriver);
             DataHelperAndWait.refreshPage(webDriver);
@@ -79,7 +79,7 @@ public class IraqCartRulesTestCases extends CartRulesTestCases {
 
     //TODO:https://sporter1.atlassian.net/browse/NS-488
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure that inability to checkout the order when its total exceed 120 JOD (Tax excluded) ", priority = 3)
-    public void verifyInabilityToCheckoutOrderWhenTheTotalExceed100USD() throws Exception {
+    public void verifyInabilityToCheckoutOrderWhenTheTotalExceed500USD() throws Exception {
         CartPage cartPage = new CartPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
 //        loginPage.navigateToLoginPage();
@@ -91,8 +91,16 @@ public class IraqCartRulesTestCases extends CartRulesTestCases {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         webDriver.navigate().to(BaseURL + cartPage.productUrlIraqHighPrice);
         cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        productDetailsPage.increaseTheQuantity();
         productDetailsPage.addToCart();
-        DataHelperAndWait.waitForTime(2000);
+        webDriver.navigate().to(BaseURL + cartPage.productUrlIraqHighPrice2);
+        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        productDetailsPage.increaseTheQuantity();
+        productDetailsPage.addToCart();
+        webDriver.navigate().to(BaseURL + cartPage.productUrlIraqHighPrice3);
+        cartPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        productDetailsPage.increaseTheQuantity();
+        productDetailsPage.addToCart();
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCartErrorMsg(), webDriver);
         DataHelperAndWait.refreshPage(webDriver);
     }

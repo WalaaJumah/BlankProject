@@ -28,15 +28,11 @@ public class EgyptCheckoutForRegisteredPage extends CheckoutForRegisteredPage {
     public void AddToCartAndAccessShippingMethodsPageForEgypt() throws IOException {
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
-        try {
-            cartPage.clearCart();
-        } catch (Exception e) {
-            System.out.println("");
-        }
         cartPage.addToCartAndDisplayTheCart();
-        cartPage.navigateToHomePage();
-        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
-        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
+        cartPage.proceedToCheckout();
+//        cartPage.navigateToHomePage();
+//        DataHelperAndWait.clickOnElement(cartPage.getCartIcon(), webDriver);
+//        DataHelperAndWait.clickOnElement(cartPage.getProceedCheckoutBtnInCartPopup(), webDriver);
         try {
             DataHelperAndWait.clickOnElement(this.getSavedAddressOption(), webDriver);
         } catch (Exception e) {

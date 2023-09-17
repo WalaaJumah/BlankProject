@@ -61,18 +61,20 @@ public class CartPage extends BasePage {
     //TODO: To replace it with ID after added it by Moamen
 //    @FindBy(css = "#FaShoppingCart > path")
 //    private WebElement cartIcon;
-    @FindBy(id = "CartIconContainer")
+//    @FindBy(id = "CartIconContainer")
+    @FindBy(xpath = "//div[@id='CartIconInnerContainer']/span[@id='CartIconContainerqty']")
     private WebElement cartIcon;
     @FindBy(id = "cartPagelink")
     private WebElement viewCartInCartPopup;
     @FindBy(id = "checkoutbtn")
     private WebElement proceedCheckoutBtnInCartPopup;
     //TODO: To replace it with ID after added it by Moamen
-    @FindBy(xpath = "//a[starts-with(@class,'cartPage_link')]")
+//    @FindBy(xpath = "//a[starts-with(@class,'cartPage_link')]")
+    @FindBy(id = "cart_empty_link")
     private WebElement hereLink;
-    @FindBy(xpath = "(//div[@id='decreaseQtyBtn'])[1]")
+    @FindBy(xpath = "(//div[starts-with(@id,'decreaseQtyBtn')])[1]")
     private WebElement decreaseQtyBtn;
-    @FindBy(xpath = "(//div[@id='increaseQtyBtn'])[1]")
+    @FindBy(xpath = "(//div[starts-with(@id,'increaseQtyBtn')])[1]")
     private WebElement increaseQtyBtn;
     //TODO: To replace it with ID after added it by Moamen
 //    @FindBy(xpath = "//div[@id='toCheckoutContainer']/a/button")
@@ -94,9 +96,9 @@ public class CartPage extends BasePage {
 //    private WebElement qtyField;
     @FindBy(id = "cartItemQty")
     private List<WebElement> qtyFieldList;
-    @FindBy(id = "cartItemQty")
+    @FindBy(xpath = "(//input[starts-with(@id,'cartItemQty')])[1]")
     private WebElement qtyField;
-    @FindBy(xpath = "(//input[@id='cartItemQty'])[1]")
+    @FindBy(xpath = "(//input[starts-with(@id,'cartItemQty')])[1]")
     private WebElement firstQtyField;
     @FindBy(css = "#cartcloseIcon > path")
     private WebElement cartCloseIcon;
@@ -182,16 +184,22 @@ public class CartPage extends BasePage {
     }
     public  void waitTillCartSpinnerDisappear(WebDriver webDriver) {
         WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(4));
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(this.cartLoaderXpath)));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id(this.cartLoaderXpath)));
 
     }
     public void addToCartAndDisplayTheCart() throws IOException {
-//        if(IsEmptyCart()) {
+        if(IsEmptyCart()) {
             productDetailsPage.displayTheProduct();
             productDetailsPage.addToCart();
             productDetailsPage.viewCart();
-//        }
+        }
     }
+      public void addToCartAndDisplayTheCartWithoutCartEmptyValidation() throws IOException {
+            productDetailsPage.displayTheProduct();
+            productDetailsPage.addToCart();
+            productDetailsPage.viewCart();
+    }
+
     public void navigateToCartOrAddProductToItInCaseTheCartIsEmpty() throws IOException {
         if(IsEmptyCart())
             addToCartAndDisplayTheCart();
@@ -301,7 +309,8 @@ public class CartPage extends BasePage {
 
     public void clickOnCartIcon() {
 //       DataHelperAndWait.waitForTime(2000);
-        DataHelperAndWait.clickOnElement(cartIcon, webDriver);
+        DataHelperAndWait.waitToBeClickable(cartIcon, webDriver);
+        DataHelperAndWait.JsExecutorToClickOnElement(cartIcon, webDriver);
     }
 
     public void waitTillQtyValueChanges(String expectedText) {
@@ -316,8 +325,10 @@ public class CartPage extends BasePage {
 //        DataHelperAndWait.clickOnElement(getProceedCheckoutBtnInCartPopup(), webDriver);
         //TODO: Need to recheck after solving it by Moamen
 //      this.waitTillCartSpinnerDisappear(webDriver);
-        DataHelperAndWait.waitForTime(600);
+        DataHelperAndWait.waitForTime(500);
         DataHelperAndWait.waitToBeClickable(this.getProceedCheckoutBtn(),webDriver);
+
+
         DataHelperAndWait.JsExecutorToClickOnElement(this.getProceedCheckoutBtn(),webDriver);
 //        this.getProceedCheckoutBtn().click();
 //        this.waitTillCartSpinnerDisappear(webDriver);

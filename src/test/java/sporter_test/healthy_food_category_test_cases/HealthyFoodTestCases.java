@@ -81,7 +81,8 @@ public class HealthyFoodTestCases extends BaseTest {
     public void verifyNextPageBtnWorksCorrectly() {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         if (sportsSupplementsCategoryPage.getPaginationBtns().size() > 3) {
-            DataHelperAndWait.clickOnElement(sportsSupplementsCategoryPage.getNextPageBtn(), webDriver);
+            DataHelperAndWait.waitToBeClickable(sportsSupplementsCategoryPage.getNextPageBtn(), webDriver);
+            DataHelperAndWait.JsExecutorToClickOnElement(sportsSupplementsCategoryPage.getNextPageBtn(), webDriver);
             WebElementsAssertion.validateTheCurrentUrlContainsString("p=2", webDriver);
         } else {
             System.out.println("There's only one page in the list");
@@ -91,9 +92,12 @@ public class HealthyFoodTestCases extends BaseTest {
     public void verifyPreviousPageBtnWorksCorrectly() {
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
         if (sportsSupplementsCategoryPage.getPaginationBtns().size() > 3) {
-            DataHelperAndWait.clickOnElement(sportsSupplementsCategoryPage.getNextPageBtn(), webDriver);
+            DataHelperAndWait.waitToBeClickable(sportsSupplementsCategoryPage.getNextPageBtn(), webDriver);
+            DataHelperAndWait.JsExecutorToClickOnElement(sportsSupplementsCategoryPage.getNextPageBtn(), webDriver);
             sportsSupplementsCategoryPage.waitTillLoaderComplete();
-            DataHelperAndWait.clickOnElement(sportsSupplementsCategoryPage.getPreviousPageBtn(), webDriver);
+            DataHelperAndWait.waitToBeClickable(sportsSupplementsCategoryPage.getPreviousPageBtn(), webDriver);
+            DataHelperAndWait.JsExecutorToClickOnElement(sportsSupplementsCategoryPage.getPreviousPageBtn(), webDriver);
+            sportsSupplementsCategoryPage.waitTillLoaderComplete();
             WebElementsAssertion.validateTheCurrentUrlContainsString("p=2", webDriver);
         } else {
             System.out.println("There's only one page in the list");
@@ -110,7 +114,9 @@ public class HealthyFoodTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure that the BreadCrumb appears correctly after sorting the product ", priority = 11)
     public void verifyTheBreadCrumbAppearingCorrectlyAfterSortingTheProducts(){
         SportsSupplementsCategoryPage sportsSupplementsCategoryPage = new SportsSupplementsCategoryPage(webDriver);
-        DataHelperAndWait.clickOnElement(sportsSupplementsCategoryPage.getHomePageBreadCrumb(), webDriver);
+        DataHelperAndWait.waitToBeClickable(sportsSupplementsCategoryPage.getHomePageBreadCrumb(), webDriver);
+        DataHelperAndWait.JsExecutorToClickOnElement(sportsSupplementsCategoryPage.getHomePageBreadCrumb(), webDriver);
+        sportsSupplementsCategoryPage.waitTillLoaderComplete();
         WebElementsAssertion.validateTheElementIsDisplayed(sportsSupplementsCategoryPage.getSportsSupplementsCategoryFromHomePage(), webDriver);
     }
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Healthy Food Category- Make sure clicking on the Healthy Food Category from HomePage Redirect User To CorrectURL", priority = 12)

@@ -11,6 +11,7 @@ import core.DataHelperAndWait;
 import core.WebElementsAssertion;
 import lombok.Getter;
 import org.openqa.selenium.By;
+import org.openqa.selenium.InvalidElementStateException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,11 +29,14 @@ public class ProductDetailsPage extends BasePage {
 
     DataHelperAndWait dataHelperAndWait;
     //declare all locators related to the Product Details Page
-    @FindBy(id = "productQty")
+//    @FindBy(id = "productQty")
+    @FindBy(id = "main_productQty")
     private WebElement quantityField;
-    @FindBy(id = "increaseQty")
+    @FindBy(id = "main_increaseQty")
+//    @FindBy(id = "increaseQty")
     private WebElement qtyPlusButton;
-    @FindBy(id = "decreaseQty")
+//    @FindBy(id = "decreaseQty")
+    @FindBy(id = "main_decreaseQty")
     private WebElement qtyMinusButton;
     @FindBy(id = "addToCartBtn")
     private WebElement addToCartBtn;
@@ -40,7 +44,7 @@ public class ProductDetailsPage extends BasePage {
     private WebElement addToCartBtn2;
     @FindBy(id = "popup-block")
     private WebElement cartPopUp;
-    @FindBy(xpath = "//span[starts-with(@class,'spinner_loader')]")
+    @FindBy(xpath = "spinner")
     private WebElement cartSpinner;
     @FindBy(id = "keepShoppingBtn")
     private WebElement keepShippingBtn;
@@ -86,7 +90,7 @@ public class ProductDetailsPage extends BasePage {
     private WebElement subCategoriesSectionInMegaMenu;
     @FindBy(id = "SortItem_Sports Supplements_span")
     private WebElement sportsSupplementsInShopBy;
-    @FindBy(xpath = "(//div[@id='currentPrice'])[2]")
+    @FindBy(id = "currentPricemain_")
     private WebElement FinalProductPrice;
     @FindBy(xpath = "//input[contains(@class,'searchInput')]")
     private WebElement searchField;
@@ -124,7 +128,7 @@ public class ProductDetailsPage extends BasePage {
     private WebElement ProductHeaderBar;
     @FindBy(id = "fixedAddToCartBtn")
     private WebElement addToCartBtnInProductHeaderBar;
-    @FindBy(xpath = "//a[starts-with(@class,'ProductBrandLink_brand')]")
+    @FindBy(xpath = "//div[@id='productInfoContainer']//a[starts-with(@class,'ProductBrandLink_brand')]")
     private WebElement productBrandLink;
     @FindBy(xpath = "(//div[@id='expectedDeliveryDate']/span)[1]")
     private WebElement expectedDeliveryDateLabel;
@@ -201,26 +205,41 @@ public class ProductDetailsPage extends BasePage {
     }
 
     public void addToCart() {
-//        DataHelperAndWait.waitForTime(2000);
-        DataHelperAndWait.waitToBeVisible(addToCartBtn2, webDriver);
-        DataHelperAndWait.waitToBeClickable(addToCartBtn2, webDriver);
-        DataHelperAndWait.JsExecutorToClickOnElement(addToCartBtn,webDriver);
-//        addToCartBtn.click();
+            DataHelperAndWait.waitTillAttributeToBe(addToCartBtn2,"data-is-request-processing","0",webDriver);
+            DataHelperAndWait.waitToBeVisible(addToCartBtn2, webDriver);
+            DataHelperAndWait.waitToBeClickable(addToCartBtn2, webDriver);
+            DataHelperAndWait.JsExecutorToClickOnElement(addToCartBtn,webDriver);
+            DataHelperAndWait.waitTillAttributeToBe(addToCartBtn2,"data-is-request-processing","0",webDriver);
     }
     public   void waitTillCartSpinnerDisappear(WebDriver webDriver) {
         WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(50));
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(this.cartLoaderXpath)));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id(this.cartLoaderXpath)));
 
     }
     public void keepShopping() {
-        DataHelperAndWait.clickOnElement(keepShippingBtn, webDriver);
+        if(webDriver.getCurrentUrl().contains("-sa/"))
+            enableWhoBoughtThisAlsoBoughtConfig=true;
+        if(enableWhoBoughtThisAlsoBoughtConfig) {
+            DataHelperAndWait.clickOnElement(keepShippingBtn, webDriver);
+        }
+        else
+            webDriver.navigate().refresh();
     }
 
     public void viewCart() {
-//        DataHelperAndWait.waitForTime(3000);
-        DataHelperAndWait.waitToBeVisible(viewCartBtn, webDriver);
-        viewCartBtn.click();
-        this.waitTillCartSpinnerDisappear(webDriver);    }
+        if(webDriver.getCurrentUrl().contains("-sa/"))
+            enableWhoBoughtThisAlsoBoughtConfig=true;
+        if(enableWhoBoughtThisAlsoBoughtConfig) {
+            DataHelperAndWait.waitToBeVisible(viewCartBtn, webDriver);
+            viewCartBtn.click();
+            this.waitTillCartSpinnerDisappear(webDriver);
+        }
+        else{
+            DataHelperAndWait.waitForTime(3000);
+            webDriver.navigate().to(BaseURL+cartURL);
+            this.waitTillCartSpinnerDisappear(webDriver);
+        }
+        }
 
     public void keepShoppingAfterAddingToCart() throws IOException {
         HomePage homePage = new HomePage(webDriver);
@@ -247,7 +266,7 @@ public class ProductDetailsPage extends BasePage {
     }
 
     public void increaseTheQuantity() {
-        DataHelperAndWait.clickOnElement(quantityField, webDriver);
+//        DataHelperAndWait.clickOnElement(quantityField, webDriver);
         DataHelperAndWait.clickOnElement(qtyPlusButton, webDriver);
         this.waitTillCartSpinnerDisappear(webDriver);
     }

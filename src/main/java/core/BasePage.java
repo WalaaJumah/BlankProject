@@ -27,7 +27,12 @@ public class BasePage {
 
     private String pageTitle = null;
     private String pageSource = null;
-    public String cartLoaderXpath = "//div[starts-with(@class,'loading_container')]";
+    //TODO: Add it as Config and remove static
+    public static boolean enableWhoBoughtThisAlsoBoughtConfig;
+//    public String cartLoaderXpath = "//div[starts-with(@class,'loading_container')]";
+    public String cartLoaderXpath = "cart_loader";
+    public String egyptLoaderInCheckOutForCreditCard = "background_loader";
+    public String spinnerIcon = "spinnerContainer";
     public String pageLoader = "//div[starts-with(@class,'spinner_container')]";
     public String loadingLayout = "//div[starts-with(@class,'loading_container')]";
     public static String BaseURL = "";
@@ -35,6 +40,8 @@ public class BasePage {
     public static String bogoProductIraq = "/catalog-pro-32569-32569/";
     public static String productUrlIraq = "/betancourt-nutrition-b-nox-androrush-34834/";
     public static String productUrlIraqHighPrice = "/evl-nutrition-100-isolate-protein-55121/";
+    public static String productUrlIraqHighPrice2 = "/evl-nutrition-stacked-protein-55117/";
+    public static String productUrlIraqHighPrice3 = "/evl-nutrition-100-whey-protein-55126/";
     public static String productUrlIraq2 = "/fade-fit-protein-munchies-54804/";
     public static String productUrlIraq3 = "/project-7-naturally-sweetened-chewing-gum-52184/";
     public static String productUrlIraq4 = "/organic-larder-canned-veg-edamame-soybean-25133/";
@@ -48,15 +55,19 @@ public class BasePage {
     public static String productUrlKSA8 = "/the-pack-bcaas-flow-32569";
     public static String productUrlKSA2 = "/organic-larder-corn-in-brine-25129/";
     public static String productUrlKSA3 = "/ellas-kitchen-organic-mangoes-puree-baby-pouch-58615/";
-    public static String productUrlKSA4 = "/natural-factors-l-glutamine-500mg-16710/";
-    public static String productUrlKSA5 = "/novo-protein-chips-box-of-6/";
+    public static String productUrlKSA4 = "/nutrend-amino-power-liquid-54398/";
+    public static String productUrlKSA5 = "/organic-larder-rice-cakes-with-yogurt-coating-25150/";
     public static String productUrlKSA6 = "/yumearth-organic-assorted-vitamin-c-lollipops-14-pops";
     public static String productUrlKSAWithHighPrice1 = "/puma-speed-orbiter-black-nrgy-red-yellow-33980";
     public static String productUrlKSAWithHighPrice2 = "/puma-speed-orbiter-black-nrgy-red-yellow-33764/";
     public static String productUrlKSAWithHighPrice3 = "/muscletech-nitro-tech-performance-series-16114/";
-    public static String productUrlEgypt = "/optimum-gold-standard-100-whey";
+    public static String productUrlEgypt = "/optimum-gold-standard-100-whey-6200/";
     public static String productUrlJordan = "/optimum-gold-standard-100-whey";
     public static String productUrlJordan7 = "/optimum-gold-standard-100-whey";
+    public static String inStockProductHaveRelatedItems = "/optimum-gold-standard-100-whey";
+//    public static String inStockProductHaveRelatedItems = "/optimum-gold-standard-100-whey-6200/";
+    public static String inStockBundleHaveRelatedItems = "/grenade-carb-killa-protein-bar-box-of-12/";
+    public static String inStockBundleHaveRelatedItemsEg = "/organic-nation-secrets-protein-bars-box-of-12";
     public static String productUrlJordanWithLowPrice = "/jack-links-beef-jerky-54840/";
     public static String productUrlJordanWithHighPrice = "/dymatize-iso-100-7164/";
     public static String productUrlQatarWithHighPrice = "/optimum-gold-standard-100-whey-6202";
@@ -65,6 +76,7 @@ public class BasePage {
     public static String productUrlQatarWithHighPrice4 = "/evl-nutrition-100-whey-protein-55126";
     public static String productUrlJordanWithHighPrice2 = "/evl-nutrition-stacked-protein-55117";
     public static String oOSProductUrl = "";
+    public static String oOSProductUrlForEg = "/organic-nation-cashew-spread-pro-added-whey-protein/";
     public static String bundleUrl = "";
     public static String bogoProduct = "";
     public final String aeDomain = "/en-ae";
@@ -73,7 +85,14 @@ public class BasePage {
     public final String kSAEnglishCurrency = "SAR";
     public final String iraqCurrencySign = "$";
     public final String iraqCurrency = "USD";
+    public final String bahrainCurrency = "BHD";
+    public final String EGPCurrency = "EGP";
+    public final String JODCurrency = "JOD";
+    public final String KWDCurrency = "KWD";
+    public final String OMRCurrency = "OMR";
+    public final String QARCurrency = "QAR";
     public final String kSAArabicCurrency = "ر.س";
+    public final String getkSAEnglishCurrency = "SAR";
     public final String omanDomain = "/en-om";
     public final String bahrainDomain = "/en-bh";
     public final String iraqDomain = "/en-iq";
@@ -325,5 +344,16 @@ public String getTitle() {
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(this.pageLoader)));
 
     }
+       public  void waitTillCartSpinnerAppear(WebDriver webDriver) {
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(50));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(this.spinnerIcon)));
+
+    }
+       public  void waitTillCartLoaderInCreditCardDisappear(WebDriver webDriver) {
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(50));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id(this.egyptLoaderInCheckOutForCreditCard)));
+
+    }
+
 }
 

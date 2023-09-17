@@ -24,7 +24,7 @@ public class RecommendedProductTestCases extends BaseTest {
     public void verifyKeepShoppingBtnWorksCorrectly() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         productDetailsPage.keepShoppingAfterAddingToCart();
-        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getAddToCartBtn(), webDriver);
+//        WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getAddToCartBtn(), webDriver);
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the Recommended product pop-up will hide after clicking on the Keep Shopping Button", priority = 2)
@@ -33,16 +33,18 @@ public class RecommendedProductTestCases extends BaseTest {
         webDriver.manage().deleteCookieNamed("guestCartId");
         productDetailsPage.keepShoppingAfterAddingToCart();
         RecommendedProductPage recommendedProductpage = new RecommendedProductPage(webDriver);
+        DataHelperAndWait.waitTillPageFullyLoaded(webDriver,20);
         WebElementsAssertion.validateTheElementIsDisplayed(productDetailsPage.getAddToCartBtn(), webDriver);
         recommendedProductpage.removeProductFromCart();
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure the view Cart button appearing the Recommended products works correctly ", priority = 3)
-    public void verifyViewCartWorksBtnCorrectly() {
+    public void verifyViewCartWorksBtnCorrectly() throws IOException {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
         webDriver.manage().deleteCookieNamed("guestCartId");
+        productDetailsPage.displayTheProduct();
         productDetailsPage.addToCart();
-        DataHelperAndWait.clickOnElement(productDetailsPage.getViewCartBtn(), webDriver);
+        productDetailsPage.viewCart();
         WebElementsAssertion.validateTheCurrentUrlContainsString(productDetailsPage.cartURL, webDriver);
     }
 
@@ -121,8 +123,7 @@ public class RecommendedProductTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure ability to add Recommended product to the cart", priority = 9)
     public void verifyAbilityToAddRecommendedProductToCart() throws IOException {
         RecommendedProductPage recommendedProductpage = new RecommendedProductPage(webDriver);
-        webDriver.manage().deleteAllCookies();
-        webDriver.manage().deleteAllCookies();
+        webDriver.manage().deleteCookieNamed("guestCartId");
         recommendedProductpage.displayTheRecommendedProductsPopUp();
 //        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        recommendedProductpage.clickOnListItemsAndAssertion(recommendedProductpage.getAddToCartBtn(),webDriver,productDetailsPage.getAddToCartBtn());

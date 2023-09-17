@@ -33,25 +33,12 @@ public class MyAccountTestCases extends BaseTest {
         loginPage.navigateToLoginPage();
         loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword"));
         DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
-        DataHelperAndWait.waitForTime(2000);
-        try{
-            DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
-            DataHelperAndWait.waitForTime(2000);
+        myAccountPage.clickOnAccountProfileIcon();
             WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyAccountOption(), webDriver);
             WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyOrdersOption(), webDriver);
             WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyRewardsOption(), webDriver);
-            WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getLogoutOption(), webDriver);}
-        catch (Exception e){
-            webDriver.navigate().refresh();
-            DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
-            webDriver.navigate().refresh();
-            DataHelperAndWait.waitForTime(4000);
-            //TODo: needs to recheck
-//            WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyAccountOption(), webDriver);
-//            WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyOrdersOption(), webDriver);
-//            WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getMyRewardsOption(), webDriver);
-//            WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getLogoutOption(), webDriver);
-        }
+            WebElementsAssertion.validateTheElementIsDisplayed(myAccountPage.getLogoutOption(), webDriver);
+
     }
 
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Verify clicking on My Account Option redirect the user to the correct Page ", priority = 2)
@@ -59,15 +46,13 @@ public class MyAccountTestCases extends BaseTest {
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
         try{
             myAccountPage.navigateToHomePage();
-            DataHelperAndWait.waitForTime(2000);
-            DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
+            myAccountPage.clickOnAccountProfileIcon();
 //        DataHelperAndWait.hoverOnElementAndClick(myAccountPage.getAccountProfileIcon(), webDriver);
             DataHelperAndWait.clickOnElement(myAccountPage.getMyAccountOption(), webDriver);
             WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getMyAccountURL(), webDriver);}
         catch (Exception e){
             myAccountPage.navigateToHomePage();
-            DataHelperAndWait.waitForTime(2000);
-            DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
+            myAccountPage.clickOnAccountProfileIcon();
 //        DataHelperAndWait.hoverOnElementAndClick(myAccountPage.getAccountProfileIcon(), webDriver);
             DataHelperAndWait.clickOnElement(myAccountPage.getMyAccountOption(), webDriver);
             WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getMyAccountURL(), webDriver);
@@ -80,19 +65,13 @@ public class MyAccountTestCases extends BaseTest {
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
         try {
             myAccountPage.navigateToHomePage();
-            DataHelperAndWait.waitForTime(1500);
-            DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
+            myAccountPage.clickOnAccountProfileIcon();
             DataHelperAndWait.clickOnElement(myAccountPage.getMyOrdersOption(), webDriver);
             WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getRecentOrdersURL(), webDriver);
         }
         catch (Exception w){
-            loginPage.navigateToLoginPage();
-            loginPage.fillinLoginForm(XmlReader.getXMLData("correctEmail2"), XmlReader.getXMLData("correctPassword"));
-            DataHelperAndWait.clickOnElement(loginPage.getLoginBtn(), webDriver);
-            DataHelperAndWait.waitForTime(2000);
             myAccountPage.navigateToHomePage();
-            DataHelperAndWait.waitForTime(1500);
-            DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
+            myAccountPage.clickOnAccountProfileIcon();
             DataHelperAndWait.clickOnElement(myAccountPage.getMyOrdersOption(), webDriver);
             WebElementsAssertion.validateTheCurrentUrlContainsString(myAccountPage.getRecentOrdersURL(), webDriver);
         }
@@ -102,8 +81,7 @@ public class MyAccountTestCases extends BaseTest {
     public void verifyClickingOnMyRewardsOptionsWorksCorrectly() throws IOException {
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
         myAccountPage.navigateToHomePage();
-        DataHelperAndWait.waitForTime(1500);
-        DataHelperAndWait.clickOnElement(myAccountPage.getAccountProfileIcon(), webDriver);
+        myAccountPage.clickOnAccountProfileIcon();
         DataHelperAndWait.clickOnElement(myAccountPage.getMyRewardsOption(), webDriver);
         myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
     }
@@ -184,6 +162,7 @@ public class MyAccountTestCases extends BaseTest {
     public void verifyAbilityToSubscribeWNewsLetterSubscriptionPage() {
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
         myAccountPage.navigateToNewsLetterSubscriptionPage();
+        DataHelperAndWait.waitToBeVisible(myAccountPage.getGeneralSubscriptionOption(),webDriver);
         if (myAccountPage.getGeneralSubscriptionOption().getAttribute("class").contains("checkbox_inactive")) {
             DataHelperAndWait.clickOnElement(myAccountPage.getGeneralSubscriptionOption(), webDriver);
             DataHelperAndWait.clickOnElement(myAccountPage.getSubmitNewsLetterBtn(), webDriver);
@@ -297,10 +276,11 @@ public class MyAccountTestCases extends BaseTest {
     public void verifyInabilityToAddNewAddressWithIncorrectPhoneNumberFormat() throws IOException {
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
-        myAccountPage.navigateToAddressesPage();
-        DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(), webDriver);
-        myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
-        myAccountPage.fillInNewAddressForm(
+        myAccountPage.navigateToNewAddressesPage();
+//        myAccountPage.navigateToAddressesPage();
+//        DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(), webDriver);
+//        myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        myAccountPage.fillInNewAddressFormWithIncorrectPhone(
                 XmlReader.getXMLData("firstName"),
                 XmlReader.getXMLData("lastName"),
                 XmlReader.getXMLData("SmallPhoneNumber"),
@@ -316,19 +296,21 @@ public class MyAccountTestCases extends BaseTest {
     public void verifyInabilityToAddNewAddressUsingInvalidNationalID() throws IOException {
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
         JordanGuestCheckoutCyclePage joGuest = new JordanGuestCheckoutCyclePage(webDriver);
-        myAccountPage.navigateToAddressesPage();
-        DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(), webDriver);
-        myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
+        myAccountPage.navigateToNewAddressesPage();
+//        myAccountPage.navigateToAddressesPage();
+//        DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(), webDriver);
+//        myAccountPage.verifyTheDisplayedPageDoesNotHaveErrors();
         DataHelperAndWait.typeTextInElement(myAccountPage.getNationalIdField(), webDriver, "12");
         DataHelperAndWait.clickOnElement(myAccountPage.getSaveAddressBtn(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(joGuest.getNationalIdErrMsg(), webDriver);
     }
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify Inability to add new Address without filling the mandatory fields", priority = 26)
-    public void verifyInabilityToAddNewAddressWithoutFillingTheMandatoryFields() {
+    public void verifyInabilityToAddNewAddressWithoutFillingTheMandatoryFields() throws IOException {
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
-        myAccountPage.navigateToAddressesPage();
-        DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(), webDriver);
+        myAccountPage.navigateToNewAddressesPage();
+//        myAccountPage.navigateToAddressesPage();
+//        DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(), webDriver);
         DataHelperAndWait.waitToBeVisible(myAccountPage.getSaveAddressBtn(), webDriver);
         Assert.assertFalse(myAccountPage.getSaveAddressBtn().isEnabled());
 //        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getPhoneErrMsg(), webDriver);
@@ -337,18 +319,20 @@ public class MyAccountTestCases extends BaseTest {
     }
 
     @Test(groups ={ "1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify the country code retrieves correctly in the Phone Number field", priority = 27)
-    public void verifyCountryCodeRetrievesCorrectlyInThePhoneField() {
+    public void verifyCountryCodeRetrievesCorrectlyInThePhoneField() throws IOException {
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
-        myAccountPage.navigateToAddressesPage();
-        DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(), webDriver);
+        myAccountPage.navigateToNewAddressesPage();
+//        myAccountPage.navigateToAddressesPage();
+//        DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(), webDriver);
         WebElementsAssertion.assertionWebElementEqualText(myAccountPage.getCountryCodeField(), webDriver, countryCode);
     }
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Addresses screen: Verify the country field retrieves the current country store", priority = 28)
-    public void verifyCountryFieldRetrievesTheCurrentCountryStore() {
+    public void verifyCountryFieldRetrievesTheCurrentCountryStore() throws IOException {
         MyAccountPage myAccountPage = new MyAccountPage(webDriver);
-        myAccountPage.navigateToAddressesPage();
-        DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(), webDriver);
+        myAccountPage.navigateToNewAddressesPage();
+//        myAccountPage.navigateToAddressesPage();
+//        DataHelperAndWait.clickOnElement(myAccountPage.getAddNewAddressBtn(), webDriver);
         WebElementsAssertion.assertionWebElementEqualText(myAccountPage.getCountryField(), webDriver, storeCountry);
     }
 

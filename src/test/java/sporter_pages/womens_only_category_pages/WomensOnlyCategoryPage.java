@@ -95,6 +95,8 @@ public class WomensOnlyCategoryPage extends BasePage {
     public void navigateToWomenOnlyPage() throws IOException {
         webDriver.navigate().to(BaseURL + womenOnlyUrl);
         verifyTheDisplayedPageDoesNotHaveErrors();
+        waitTillLoaderComplete();
         DataHelperAndWait.waitForUrlContains(womenOnlyUrl, webDriver);
+
     }
 }

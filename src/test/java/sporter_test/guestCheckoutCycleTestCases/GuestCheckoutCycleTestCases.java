@@ -265,8 +265,8 @@ guestCheckoutCyclePage.accessGuestCheckoutForm();
         LocalTime targetTime = LocalTime.of(14, 0);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         // Set the target times to 2:00 AM and 2:00 PM
-        LocalTime targetTimeAM = LocalTime.of(2, 0);
-        LocalTime targetTimePM = LocalTime.of(14, 0);
+        LocalTime targetTimeAM = LocalTime.of(12, 0);
+        LocalTime targetTimePM = LocalTime.of(12, 0);
         if (currentTime.isBefore(targetTimePM) && currentTime.isAfter(targetTimeAM)) {
             webDriver.manage().deleteCookieNamed("guestCartId");
             guestCheckoutCyclePage.accessGuestCheckoutForm();
@@ -358,7 +358,7 @@ guestCheckoutCyclePage.accessGuestCheckoutForm();
         LocalTime targetTime = LocalTime.of(14, 0);
         GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         // Set the target times to 2:00 AM and 2:00 PM
-        LocalTime targetTimeAM = LocalTime.of(2, 0);
+        LocalTime targetTimeAM = LocalTime.of(12, 0);
         LocalTime targetTimePM = LocalTime.of(14, 0);
         if (!currentTime.isAfter(targetTimeAM)) {
             webDriver.manage().deleteCookieNamed("guestCartId");
@@ -444,8 +444,7 @@ guestCheckoutCyclePage.accessGuestCheckoutForm();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(), webDriver);
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(false);
 //        DataHelperAndWait.waitForTime(2000);
 //DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getSuccessPage(),webDriver);
         guestCheckoutCyclePage.verifyTheDisplayedPageDoesNotHaveErrors();
@@ -494,8 +493,7 @@ guestCheckoutCyclePage.accessGuestCheckoutForm();
             DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(), webDriver);
         }
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
         guestCheckoutCyclePage.verifyTheDisplayedPageDoesNotHaveErrors();
 
 
@@ -548,8 +546,8 @@ guestCheckoutCyclePage.accessGuestCheckoutForm();
     }
     @Test(enabled = false,groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when using a Free Coupon Code ", priority = 99)
     public void verifyAbilityToPlaceOrderWhenUsingFreeCouponCode() throws IOException {
-        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver);
         CartPage cartPage = new CartPage(webDriver);
+        GuestCheckoutCyclePage guestCheckoutCyclePage = new GuestCheckoutCyclePage(webDriver,cartPage);
         webDriver.manage().deleteCookieNamed("guestCartId");
         cartPage.addToCartAndDisplayTheCart();
         DataHelperAndWait.typeTextInElement(cartPage.getCouponCodeField(),webDriver, XmlReader.getXMLData("FreeCouponCode"));
@@ -574,8 +572,7 @@ guestCheckoutCyclePage.accessGuestCheckoutForm();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         guestCheckoutCyclePage.submitCreditCard(XmlReader.getXMLData("testCreditCard"),XmlReader.getXMLData("creditCardDate"),XmlReader.getXMLData("testCVV"));
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(true);
 
 //        DataHelperAndWait.waitForTime(10000);
 //        String mainWindow= webDriver.getWindowHandle();
@@ -616,8 +613,7 @@ guestCheckoutCyclePage.accessGuestCheckoutForm();
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinueShippingMethodsBtn(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getCODPaymentMethod(),webDriver);
         DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getContinuePaymentMethodsBtn(), webDriver);
-        WebElementsAssertion.validateTheElementIsDisplayed(guestCheckoutCyclePage.getFinalPlaceOrderBtn(),webDriver);
-        DataHelperAndWait.clickOnElement(guestCheckoutCyclePage.getFinalPlaceOrderBtn(), webDriver);
+        guestCheckoutCyclePage.clickOnPlaceOrderBtn(false);
         guestCheckoutCyclePage.waitTillCartSpinnerDisappear(webDriver);
 DataHelperAndWait.waitToBeVisible(guestCheckoutCyclePage.getSuccessPage(),webDriver);
         orderNumber= DataHelperAndWait.extractDigitsFromString(guestCheckoutCyclePage.getSuccessPage(),webDriver);

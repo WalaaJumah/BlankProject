@@ -43,4 +43,30 @@ public class JordanMyAccountPage extends MyAccountPage {
         DataHelperAndWait.waitToBeVisible(this.getNationalIdField(), webDriver);
         DataHelperAndWait.updateAllText(this.getNationalIdField(), nationalId);
     }
+    public void fillInNewAddressFormWithIncorrectPhone(String firstName, String lastName, String phone, String addressName, String streetLineOne, String streetLineTwo, String nationalId) {
+        GuestCheckoutCyclePage guestCheckoutCyclePage= new GuestCheckoutCyclePage(webDriver);
+        DataHelperAndWait.waitToBeVisible(this.getFirstNameFieldInAddress(), webDriver);
+        DataHelperAndWait.updateAllText(this.getFirstNameFieldInAddress(), firstName);
+        DataHelperAndWait.waitToBeVisible(this.getLastNameFieldInAddress(), webDriver);
+        DataHelperAndWait.updateAllText(this.getLastNameFieldInAddress(), lastName);
+        DataHelperAndWait.waitToBeVisible(this.getPhoneFieldInAddress(), webDriver);
+        DataHelperAndWait.updateAllText(this.getPhoneFieldInAddress(), phone);
+        DataHelperAndWait.waitToBeVisible(this.getAddressNameField(), webDriver);
+        DataHelperAndWait.updateAllText(this.getAddressNameField(), addressName);
+        DataHelperAndWait.waitToBeVisible(this.getStreet1Field(), webDriver);
+        DataHelperAndWait.updateAllText(this.getStreet1Field(), streetLineOne);
+//        getPhoneFieldInAddress().click();
+//        getPhoneFieldInAddress().sendKeys("2");
+        guestCheckoutCyclePage.selectCity();
+        if(webDriver.getCurrentUrl().contains("en-jo")) {
+            DataHelperAndWait.waitToBeVisible(this.getStreet2Field(), webDriver);
+            DataHelperAndWait.updateAllText(this.getStreet2Field(), streetLineTwo);
+        }
+        if(webDriver.getCurrentUrl().contains("-qa/")){
+            QatarMyAccountPage qatarMyAccountPage= new QatarMyAccountPage(webDriver);
+            qatarMyAccountPage.selectFirstOptionInAreaMenu();
+        }
+        DataHelperAndWait.waitToBeVisible(this.getNationalIdField(), webDriver);
+        DataHelperAndWait.updateAllText(this.getNationalIdField(), nationalId);
+    }
 }
