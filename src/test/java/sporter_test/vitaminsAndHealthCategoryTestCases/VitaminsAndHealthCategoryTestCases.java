@@ -415,24 +415,24 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
     }
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Vitamins A-Z section have at least a product", priority = 42)
-    public void verifyTheVitaminsA_zAtLeastAProduct()  {
+    public void verifyTheVitaminsA_zAtLeastAProduct() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
-//        vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
+        vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
 //        DataHelperAndWait.waitForTime(3000);
         WebElementsAssertion.validateTheElementIsDisplayed(vitaminsAndHealthCategoryPage.getVitaminsAZSection(), webDriver);
     }
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Minerals section have at least a product", priority = 43)
-    public void verifyTheMineralsAtLeastAProduct() {
+    public void verifyTheMineralsAtLeastAProduct() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
-//        vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
+        vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
         WebElementsAssertion.validateTheElementIsDisplayed(vitaminsAndHealthCategoryPage.getMineralsSection(), webDriver);
     }
 
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Antioxidants section have at least a product", priority = 44)
     public void verifyTheAntioxodantsAtLeastAProduct() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
-//        vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
+        vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
 //        DataHelperAndWait.waitForTime(2000);
         WebElementsAssertion.validateTheElementIsDisplayed(vitaminsAndHealthCategoryPage.getAntioxodantsSection(), webDriver);
     }
@@ -440,7 +440,7 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
     @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Super Foods section have at least a product", priority = 45)
     public void verifyTheSuperFoodsAtLeastAProduct() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
-//        vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
+        vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
 //        DataHelperAndWait.waitForTime(2000);
         WebElementsAssertion.validateTheElementIsDisplayed(vitaminsAndHealthCategoryPage.getSuperFoodsSection(), webDriver);
     }
@@ -448,15 +448,15 @@ public class VitaminsAndHealthCategoryTestCases extends BaseTest {
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Melatonin section have at least a product", priority = 46)
     public void verifyTheMelatoninAtLeastAProduct() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
-//        vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
+        vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
 //        DataHelperAndWait.waitForTime(3000);
         WebElementsAssertion.validateTheElementIsDisplayed(vitaminsAndHealthCategoryPage.getMelatoninSection(), webDriver);
     }
 
     @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}:Vitamins & Health Category- Make sure the Collagen section have at least a product", priority = 47)
-    public void verifyTheCollagenAtLeastAProduct(){
+    public void verifyTheCollagenAtLeastAProduct() throws IOException {
         VitaminsAndHealthCategoryPage vitaminsAndHealthCategoryPage = new VitaminsAndHealthCategoryPage(webDriver);
-//        vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
+        vitaminsAndHealthCategoryPage.navigateToVitaminsAndHealthPage();
 //        DataHelperAndWait.waitForTime(3000);
         WebElementsAssertion.validateTheElementIsDisplayed(vitaminsAndHealthCategoryPage.getCollagenSection(), webDriver);
     }

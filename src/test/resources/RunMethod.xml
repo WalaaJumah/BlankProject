@@ -7,7 +7,7 @@
 <!--        <listener class-name="extent_report_listner.ExtentReportListener"/>-->
     </listeners>
     <test name=" Account_Registration_suite" preserve-order="true">
-        <parameter name="environment" value="https://stg.sporter.com"/>
+        <parameter name="environment" value="https://www.sporter.com"/>
         <parameter name="browser" value="chrome"/>
         <!-- <parameter name="country" value="en-qa" />-->
         <parameter name="bogoProduct" value="/the-pack-bcaas-flow-32569"/>
@@ -21,15 +21,7 @@
 <!--                    </run>-->
 <!--                </groups>-->
         <classes>
-            <class name="sporter_test.AccountRegistrationTestCases.IraqAccountRegistrationTestCases"/>
-            <class name="sporter_test.AccountRegistrationTestCases.UAEAccountRegistrationTestCases"/>
-            <class name="sporter_test.AccountRegistrationTestCases.KSAAccountRegistrationTestCases"/>
-            <class name="sporter_test.AccountRegistrationTestCases.KuwaitAccountRegistrationTestCases"/>
-            <class name="sporter_test.AccountRegistrationTestCases.JordanAccountRegistrationTestCases"/>
-            <class name="sporter_test.AccountRegistrationTestCases.QatarAccountRegistrationTestCases"/>
-            <class name="sporter_test.AccountRegistrationTestCases.EgyptAccountRegistrationTestCases"/>
-            <class name="sporter_test.AccountRegistrationTestCases.BahrainAccountRegistrationTestCases"/>
-            <class name="sporter_test.AccountRegistrationTestCases.OmanAccountRegistrationTestCases"/>
+            <class name="sporter_test.vitaminsAndHealthCategoryTestCases.UAEVitaminsAndHealthCategoryTestCases"/>
 
 
         </classes>
