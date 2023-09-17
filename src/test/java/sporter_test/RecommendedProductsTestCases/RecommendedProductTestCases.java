@@ -119,8 +119,7 @@ public class RecommendedProductTestCases extends BaseTest {
     @Test(groups = {"All Smoke Testing Result", "1.2 High Severity"}, description = "{{CountryName}}: Make sure ability to add Recommended product to the cart", priority = 9)
     public void verifyAbilityToAddRecommendedProductToCart() throws IOException {
         RecommendedProductPage recommendedProductpage = new RecommendedProductPage(webDriver);
-        webDriver.manage().deleteAllCookies();
-        webDriver.manage().deleteAllCookies();
+        webDriver.manage().deleteCookieNamed("guestCartId");
         recommendedProductpage.displayTheRecommendedProductsPopUp();
 //        ProductDetailsPage productDetailsPage = new ProductDetailsPage(webDriver);
 //        recommendedProductpage.clickOnListItemsAndAssertion(recommendedProductpage.getAddToCartBtn(),webDriver,productDetailsPage.getAddToCartBtn());

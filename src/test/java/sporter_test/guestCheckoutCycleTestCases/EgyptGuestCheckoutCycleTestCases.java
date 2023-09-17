@@ -561,7 +561,9 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         DataHelperAndWait.clickOnElement(egypt.getTwoBusinessDaysSuperExpressShipping(),webDriver);
         DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(),webDriver);
         egypt.selectCreditCardMethod();
-        egypt.clickOnPlaceOrderBtn(true);
+//        egypt.clickOnPlaceOrderBtn(true);
+        WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(),webDriver);
+        DataHelperAndWait.clickOnElement(egypt.getFinalPlaceOrderBtn(),webDriver);
 
     }
     @Test(enabled = false,groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to place Order successfully when selecting Next Day Delivery Shipping Method With Credit Card Payment Method when using the coupon code", priority = 70)
