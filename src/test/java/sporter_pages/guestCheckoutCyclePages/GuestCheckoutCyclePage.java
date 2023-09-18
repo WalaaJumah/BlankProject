@@ -242,27 +242,32 @@ public class GuestCheckoutCyclePage extends BasePage {
     }
 
     public void clickOnContinueBtn() throws IOException {
+        DataHelperAndWait.waitTillAttributeToBe(continueShippingInfoBtn,"data-is-clickable","1",webDriver);
         DataHelperAndWait.waitToBeVisible(continueShippingInfoBtn, webDriver);
-        DataHelperAndWait.scrollTo(continueShippingInfoBtn, webDriver);
-
-        try {
-            DataHelperAndWait.waitToBeVisible(continueShippingInfoBtn, webDriver);
-            DataHelperAndWait.waitToBeVisible(continueShippingInfoBtn, webDriver);
-            this.continueShippingInfoBtn.click();
-            waitTillLoaderComplete();
-        } catch (Exception e) {
-            DataHelperAndWait.hoverOnElementAndClick(continueShippingInfoBtn, webDriver);
-            waitTillLoaderComplete();
-        }
-        if (DataHelperAndWait.IsElementPresent(closeCheckoutErr)) {
-            if (cartErrorMsgText.getText().contains("No Available Shipping Methods")) {
-                throw new AssertionError("Sorry But There is No Available Shipping Methods For your Location error");
-            }
-            if (cartErrorMsgText.getText().contains("some or all of your items may be shipped from outside")) {
-                throw new AssertionError("some or all of your items may be shipped from outside error is displayed");
-            }
-
-        }
+        DataHelperAndWait.waitToBeClickable(continueShippingInfoBtn, webDriver);
+        DataHelperAndWait.JsExecutorToClickOnElement(continueShippingInfoBtn,webDriver);
+        DataHelperAndWait.waitToBeVisible(continueShippingMethodsBtn, webDriver);
+//        DataHelperAndWait.waitToBeVisible(continueShippingInfoBtn, webDriver);
+//        DataHelperAndWait.scrollTo(continueShippingInfoBtn, webDriver);
+//
+//        try {
+//            DataHelperAndWait.waitToBeVisible(continueShippingInfoBtn, webDriver);
+//            DataHelperAndWait.waitToBeVisible(continueShippingInfoBtn, webDriver);
+//            this.continueShippingInfoBtn.click();
+//            waitTillLoaderComplete();
+//        } catch (Exception e) {
+//            DataHelperAndWait.hoverOnElementAndClick(continueShippingInfoBtn, webDriver);
+//            waitTillLoaderComplete();
+//        }
+//        if (DataHelperAndWait.IsElementPresent(closeCheckoutErr)) {
+//            if (cartErrorMsgText.getText().contains("No Available Shipping Methods")) {
+//                throw new AssertionError("Sorry But There is No Available Shipping Methods For your Location error");
+//            }
+//            if (cartErrorMsgText.getText().contains("some or all of your items may be shipped from outside")) {
+//                throw new AssertionError("some or all of your items may be shipped from outside error is displayed");
+//            }
+//
+//        }
     }
 
     public void navigateToCheckoutPage() throws IOException {

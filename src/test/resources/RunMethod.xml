@@ -15,25 +15,18 @@
         <parameter name="bundleProductUrl" value="/novo-protein-chips-box-of-6/"/>
         <parameter name="enable_who_bought_this_also_bought_config" value="false"/>
 
-                        <groups>
-                    <run>
-                        <include name="All Smoke Testing Result"/>
-                    </run>
-                </groups>
+<!--                        <groups>-->
+<!--                    <run>-->
+<!--                        <include name="All Smoke Testing Result"/>-->
+<!--                    </run>-->
+<!--                </groups>-->
         <classes>
-            <class name="sporter_test.cartTestCases.KSACartTestCases"/>
-            <class name="sporter_test.cartTestCases.UAECartTestCases"/>
-            <class name="sporter_test.cartTestCases.EgyptCartTestCases"/>
-            <class name="sporter_test.cartTestCases.QatarCartTestCases"/>
-            <class name="sporter_test.cartTestCases.IraqCartTestCases"/>
-            <class name="sporter_test.cartTestCases.KuwaitCartTestCases"/>
-            <class name="sporter_test.cartTestCases.OmanCartTestCases"/>
-            <class name="sporter_test.cartTestCases.BahrainCartTestCases">
+            <class name="sporter_test.checkoutForRegisteredUserTestCases.OmanCheckoutForRegisteredTestCases"/>
+
 <!--                <methods>-->
 <!--                    <include name="verifyAbilityToLoginCorrectlyWithValidCredentials"/>-->
 <!--                    <include name="verifyInabilityToUseInvalidCreditCardPaymentMethod"/>-->
 <!--                </methods>-->
-            </class>
 
 
 
