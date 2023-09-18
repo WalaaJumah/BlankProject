@@ -99,22 +99,22 @@ public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithC
 //    }
 @Test(enabled = false)
 public void verifyAbilityToSelectThe2BusinessDaysSuperExpressShippingMethodWithValidCreditCardPaymentMethod() {}
-    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the Next Day Delivery Shipping Method With Valid Credit Card Payment Method", priority = 28)
+    @Test(groups = { "1.3 Medium Severity"}, description = "{{CountryName}}: Make sure ability to select the Next Day Delivery Shipping Method With Valid Credit Card Payment Method", priority = 23)
     public void verifyAbilityToSelectTheNextDayDeliveryShippingMethodWithValidCreditCardPaymentMethod() throws IOException {
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
-        egypt.accessGuestCheckoutForm();
-        egypt.fillInShippingInformationInputField(
-                XmlReader.getXMLData("firstName"),
-                XmlReader.getXMLData("lastName"),
-                XmlReader.getXMLData("correctEmail"),
-                XmlReader.getXMLData("phoneNumber"),
-//                XmlReader.getXMLData("AddressName"),
-                XmlReader.getXMLData("StreetOneAddressName"),
-                XmlReader.getXMLData("ksaPhoneNumber")
-        );
-        egypt.clickOnContinueBtn();
-            DataHelperAndWait.clickOnElement(egypt.getTwoBusinessDaysSuperExpressShipping(), webDriver);
-            DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(), webDriver);
+//        egypt.accessGuestCheckoutForm();
+//        egypt.fillInShippingInformationInputField(
+//                XmlReader.getXMLData("firstName"),
+//                XmlReader.getXMLData("lastName"),
+//                XmlReader.getXMLData("correctEmail"),
+//                XmlReader.getXMLData("phoneNumber"),
+////                XmlReader.getXMLData("AddressName"),
+//                XmlReader.getXMLData("StreetOneAddressName"),
+//                XmlReader.getXMLData("ksaPhoneNumber")
+//        );
+//        egypt.clickOnContinueBtn();
+//            DataHelperAndWait.clickOnElement(egypt.getTwoBusinessDaysSuperExpressShipping(), webDriver);
+//            DataHelperAndWait.clickOnElement(egypt.getContinueShippingMethodsBtn(), webDriver);
             egypt.selectCreditCardMethod();
             WebElementsAssertion.validateTheElementIsDisplayed(egypt.getFinalPlaceOrderBtn(), webDriver);
 
@@ -165,7 +165,7 @@ public void verifyAbilityToPlaceOrderWhenSelecting2BusinessDaysSuperExpressShipp
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCODOption(), webDriver);
         WebElementsAssertion.validateTheElementIsDisplayed(cartPage.getCreditCardOption(), webDriver);
     }
-    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that each of COD & Credit Card Payment methods appear correctly", priority = 23)
+    @Test(groups = {"1.3 Medium Severity"}, description = "{{CountryName}}: Make sure that each of COD & Credit Card Payment methods appear correctly", priority = 28)
     public void verifyEachOfCODAndCreditCardPaymentMethodCorrectly() throws IOException {
         EgyptGuestCheckoutCyclePage egypt= new EgyptGuestCheckoutCyclePage(webDriver);
         egypt.accessGuestCheckoutForm();

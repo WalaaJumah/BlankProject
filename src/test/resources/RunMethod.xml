@@ -22,7 +22,7 @@
 <!--                </groups>-->
         <classes>
 
-            <class name="sporter_test.guestCheckoutCycleTestCases.UAEGuestCheckoutCycleTestCases"></class>
+            <class name="sporter_test.guestCheckoutCycleTestCases.EgyptGuestCheckoutCycleTestCases"></class>
 <!--                    <include name="verifyAbilityToLoginCorrectlyWithValidCredentials"/>-->
 <!--                    <include name="verifyInabilityToUseInvalidCreditCardPaymentMethod"/>-->
 <!--                </methods>-->
